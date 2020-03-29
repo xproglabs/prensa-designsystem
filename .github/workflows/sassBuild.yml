@@ -5,21 +5,21 @@ jobs:
     name: Compila SASS do projeto
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source Git branch
+      name: Checkout source Git branch
       uses: actions/checkout@v2
       with:
         ref: ${{ github.ref }}
 
-      - name: Make destination directory for compiled CSS
-      - run: mkdir -vp /tmp/xprog-designsystem/css
+      name: Make destination directory for compiled CSS
+      run: mkdir -vp /tmp/xprog-designsystem/css
 
-      - name: Compile CSS from SCSS files
+      name: Compile CSS from SCSS files
       uses: gha-utilities/sass-build@v0.2.2
       with:
         source: src/sass/index.scss
         destination: /tmp/xprog-designsystem/css/main.css
 
-      - name: Checkout destination Git branch
+      name: Checkout destination Git branch
       uses: actions/checkout@v2
       with:
         ref: master
