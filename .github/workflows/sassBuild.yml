@@ -1,5 +1,6 @@
-on: push
 name: Build SASS CI
+on: [push]
+
 jobs:
   build_SASS:
     name: Compila SASS do projeto
@@ -9,4 +10,18 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: ${{ github.ref }}
+
+      - name: Make destination directory for compiled CSS
+      run: mkdir -vp /tmp/xprog-designsystem/css
+
+      - name: Compile CSS from SCSS files
+      uses: gha-utilities/sass-build@v0.2.2
+      with:
+        source: src/sass/index.scss
+        destination: /tmp/xprog-designsystem/css/main.css
+
+      - name: Checkout destination Git branch
+      uses: actions/checkout@v2
+      with:
+        ref: master
         
