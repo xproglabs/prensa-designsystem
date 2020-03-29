@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source Git branch
-      - uses: actions/checkout@v2
+      uses: actions/checkout@v2
       with:
         ref: ${{ github.ref }}
 
@@ -14,13 +14,13 @@ jobs:
       - run: mkdir -vp /tmp/xprog-designsystem/css
 
       - name: Compile CSS from SCSS files
-      - uses: gha-utilities/sass-build@v0.2.2
+      uses: gha-utilities/sass-build@v0.2.2
       with:
         source: src/sass/index.scss
         destination: /tmp/xprog-designsystem/css/main.css
 
       - name: Checkout destination Git branch
-      - uses: actions/checkout@v2
+      uses: actions/checkout@v2
       with:
         ref: master
         
