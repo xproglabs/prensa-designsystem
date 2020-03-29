@@ -1,0 +1,22 @@
+{
+  "name": "xprog-ds",
+  "version": "1.0.0",
+  "description": "Xprog styleguide",
+  "main": "src/index.js",
+  "files": [
+    "./src",
+    "./src/components",
+    "./src/styleguide"
+  ],
+  "scripts": {
+    "build:esm": "rollup --config rollup.config.js"
+  },
+  "author": "Giovanni Bombassaro",
+  "license": "ISC",
+  "repository": "https://github.com/xproglabs/xprog-designsystem.git",
+  "dependencies": {
+    "auto": "^9.22.1",
+    "rollup": "^2.2.0"
+  },
+  "devDependencies": {}
+}
