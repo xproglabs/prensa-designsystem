@@ -1,6 +1,5 @@
-name: Build SASS CI
 on: push
-    
+name: Build SASS CI
 jobs:
   build_css:
     runs-on: ubuntu-latest
