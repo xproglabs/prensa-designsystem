@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ github.ref }}
-
-      # Cria novo diretório para receber CSS compilado
-      - name: Make destination directory for compiled CSS
-      run: mkdir -vp /tmp/xprog-designsystem/css
+      # Executa checkout na branch referência
+      - name: Create destination for compiled CSS
+        run: mkdir -vp /tmp/xprog-designsystem/css
