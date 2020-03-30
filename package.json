@@ -6,7 +6,7 @@
   "files": [
     "./src",
     "./src/components",
-    "./src/styleguide"
+    "./src/sass"
   ],
   "scripts": {
     "build:esm": "rollup --config rollup.config.js"
