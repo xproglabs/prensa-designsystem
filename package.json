@@ -8,15 +8,11 @@
     "./src/components",
     "./src/sass"
   ],
-  "scripts": {
-    "build:esm": "rollup --config rollup.config.js"
-  },
   "author": "Giovanni Bombassaro",
   "license": "ISC",
   "repository": "https://github.com/xproglabs/xprog-designsystem.git",
   "dependencies": {
-    "auto": "^9.22.1",
-    "rollup": "^2.2.0"
+    "auto": "^9.22.1"
   },
   "devDependencies": {}
 }
