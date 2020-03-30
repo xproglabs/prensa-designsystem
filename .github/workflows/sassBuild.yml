@@ -4,20 +4,15 @@ on: [push]
 
 jobs:
   build:
-    # o nome do trabalho é greeting (cumprimentar)
-    name: BuildSASS
-    # Este trabalho executa no Linux
+    name: BuildSASS 
     runs-on: ubuntu-latest
     steps:
-      # Executa checkout na branch referência
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
           ref: ${{ github.ref }}
-      # Executa checkout na branch referência
       - name: Create destination for compiled CSS
         run: mkdir -vp /tmp/xprog-designsystem/css
-      # Executa checkout na branch referência
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.2.2
         with:
