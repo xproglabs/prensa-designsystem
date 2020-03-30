@@ -2,12 +2,7 @@
   "name": "xprog-ds",
   "version": "1.0.4",
   "description": "Xprog styleguide",
-  "main": "src/index.js",
-  "files": [
-    "./src",
-    "./src/components",
-    "./src/sass"
-  ],
+  "main": "/src",
   "author": "Giovanni Bombassaro",
   "license": "ISC",
   "repository": "https://github.com/xproglabs/xprog-designsystem.git",
