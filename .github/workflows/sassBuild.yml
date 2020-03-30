@@ -23,3 +23,7 @@ jobs:
         with:
           source: src/sass/index.scss
           destination: /tmp/xprog-designsystem/css/main.css
+      - name: Checkout destination Git branch
+        uses: actions/checkout@v2
+        with:
+          ref: master
