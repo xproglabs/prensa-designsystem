@@ -17,3 +17,9 @@ jobs:
       # Executa checkout na branch referência
       - name: Create destination for compiled CSS
         run: mkdir -vp /tmp/xprog-designsystem/css
+      # Executa checkout na branch referência
+      - name: Compile CSS from SCSS files
+        uses: gha-utilities/sass-build@v0.2.2
+        with:
+          source: src/sass/index.scss
+          destination: /tmp/xprog-designsystem/css/main.css
