@@ -1,3 +1,6 @@
+# v1.0.2 (Sun Mar 29 2020)
+- Corrige diretório incorreto
+
 # v1.0.1 (Sun Mar 29 2020)
 
 #### ⚠️  Pushed to `master`
