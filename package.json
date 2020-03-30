@@ -1,6 +1,6 @@
 {
   "name": "xprog-ds",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Xprog styleguide",
   "main": "src/index.js",
   "files": [
