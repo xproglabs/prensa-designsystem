@@ -50,8 +50,8 @@
   justify-content: $n2;
 }
 @mixin area($n) {
-	@include w($n1);
-	@include h($n2);
+	@include w($n);
+	@include h($n);
 }
 @mixin space-width($w, $x) {
 	@include px($x);
