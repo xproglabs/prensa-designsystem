@@ -16,7 +16,7 @@ jobs:
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.2.2
         with:
-          source: src/index.scss
+          source: styles/index.scss
           destination: /tmp/xprog-designsystem/css/main.css
       - name: Checkout destination Git branch
         uses: actions/checkout@v2
