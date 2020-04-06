@@ -7,7 +7,6 @@
   "license": "ISC",
   "repository": "https://github.com/xproglabs/xprog-designsystem.git",
   "dependencies": {
-    "auto": "^9.22.1"
   },
   "devDependencies": {}
 }
