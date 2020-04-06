@@ -1,10 +1,10 @@
-name: Build no SASS
+name: Build XPROG-DS
 # Este fluxo de trabalho é acionado em pushes para o repositório.
 on: [push]
 
 jobs:
   build:
-    name: BuildSASS 
+    name: Build SASS and JS 
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source Git branch
