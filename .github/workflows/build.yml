@@ -41,7 +41,7 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          text: CSS and JS build ${{ job.status }}
+          text: ${GH_USERNAME} CSS and JS build ${{ job.status }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
         if: always()
