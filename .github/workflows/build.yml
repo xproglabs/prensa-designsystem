@@ -38,11 +38,8 @@ jobs:
           ref: master
 
       - name: Slack Notification
-        if: success()
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
         env:
-          SLACK_COLOR: '#3278BD'
-          SLACK_MESSAGE: 'Post Content :rocket:'
-          SLACK_TITLE: Post Title
-          SLACK_USERNAME: rtCamp
-          SLACK_WEBHOOK: ${{ secrets.slack }}
+          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
