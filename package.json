@@ -1,12 +1,29 @@
 {
   "name": "xprog-ds",
-  "version": "1.0.82",
-  "description": "Xprog styleguide",
-  "main": "/src",
-  "author": "Giovanni Bombassaro",
+  "version": "1.1.0",
+  "description": "XPROG Styleguide",
+  "main": "/",
+  "author": "XPROG",
   "license": "ISC",
   "repository": "https://github.com/xproglabs/xprog-designsystem.git",
-  "dependencies": {
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "@rollup/plugin-json": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup": "^2.3.3",
+    "rollup-plugin-babel": "^4.4.0"
   },
-  "devDependencies": {}
+  "peerDependencies": {
+    "react": "^16.13.x",
+    "react-dom": "^16.13.x"
+  },
+  "scripts": {
+    "build": "rollup --config"
+  }
 }

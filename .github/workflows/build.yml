@@ -1,0 +1,47 @@
+name: Build XPROG-DS
+# Este fluxo de trabalho é acionado em pushes para o repositório.
+on: [push]
+
+jobs:
+  build:
+    name: Build SASS and JS 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source Git branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+          
+      - name: Create destination for compiled CSS
+        run: mkdir -vp /tmp/xprog-designsystem/css
+
+      - name: Compile CSS from SCSS files
+        uses: gha-utilities/sass-build@v0.2.2
+        with:
+          source: styles/index.scss
+          destination: /tmp/xprog-designsystem/css/main.css
+
+      - name: Set Node.js version ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: Install packages
+        run: yarn
+
+      - name: Build
+        run: yarn build
+
+      - name: Checkout destination Git branch
+        uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: Slack Notification
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: CSS and JS build ${{ job.status }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+        if: always()
