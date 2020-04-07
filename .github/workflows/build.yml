@@ -38,7 +38,7 @@ jobs:
           ref: master
 
       - name: Notify slack success
-        if: success()
+        
         env:
           SLACK_BOT_TOKEN: ${{ secrets.slack }}
         uses: voxmedia/github-action-slack-notify-build@v1
@@ -47,12 +47,12 @@ jobs:
           status: SUCCESS
           color: good
 
-      - name: Notify slack fail
-        if: failure()
+      - name: Slack Notification
+        if: success()
+        uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.slack }}
-        uses: voxmedia/github-action-slack-notify-build@v1
-        with:
-          channel: app-alerts
-          status: FAILED
-          color: danger
+          SLACK_COLOR: '#3278BD'
+          SLACK_MESSAGE: 'Post Content :rocket:'
+          SLACK_TITLE: Post Title
+          SLACK_USERNAME: rtCamp
+          SLACK_WEBHOOK: ${{ secrets.slack }}
