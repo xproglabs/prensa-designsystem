@@ -37,16 +37,6 @@ jobs:
         with:
           ref: master
 
-      - name: Notify slack success
-        
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.slack }}
-        uses: voxmedia/github-action-slack-notify-build@v1
-        with:
-          channel: app-alerts
-          status: SUCCESS
-          color: good
-
       - name: Slack Notification
         if: success()
         uses: rtCamp/action-slack-notify@v2.0.0
