@@ -7,7 +7,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = _interopDefault(require('react'));
 var PropTypes = _interopDefault(require('prop-types'));
 
-var version = "1.1.1";
+var version = "1.1.2";
 
 var Forms = function Forms() {
   console.log('form ' + version);
@@ -28,7 +28,7 @@ Icon.propTypes = {
   height: PropTypes.number,
   viewBox: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  children: PropTypes.oneOfType([PropTypes.array.isRequired, PropTypes.object.isRequired])
 };
 Icon.defaultProps = {
   width: 24,
