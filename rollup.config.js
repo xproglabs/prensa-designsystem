@@ -5,7 +5,7 @@ import resolve from '@rollup/plugin-node-resolve';
 
 export default {
   input: 'src/index.js',
-  external: ['react'],
+  external: ['react', 'prop-types'],
   output: [
     {
       file: 'index.js',
