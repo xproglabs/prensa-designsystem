@@ -7,7 +7,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = _interopDefault(require('react'));
 var PropTypes = _interopDefault(require('prop-types'));
 
-var version = "1.1.2";
+var version = "1.1.3";
 
 var Forms = function Forms() {
   console.log('form ' + version);
