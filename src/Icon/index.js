@@ -8,7 +8,7 @@ Icon.propTypes = {
   height: PropTypes.number,
   viewBox: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  children: PropTypes.oneOfType([PropTypes.array.isRequired, PropTypes.object.isRequired])
 };
 
 Icon.defaultProps = {
