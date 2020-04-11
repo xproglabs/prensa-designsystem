@@ -4,9 +4,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var classnames = _interopDefault(require('classnames'));
 var PropTypes = _interopDefault(require('prop-types'));
 var React = _interopDefault(require('react'));
-var classnames = _interopDefault(require('classnames'));
 
 var Button = function Button(props) {
   var style = classnames({
