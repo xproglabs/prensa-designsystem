@@ -6,7 +6,7 @@ import sass from 'rollup-plugin-sass';
 
 export default {
   input: 'src/index.js',
-  external: ['react', 'prop-types', 'sass'],
+  external: ['react', 'prop-types', 'sass', 'classnames'],
   output: [
     {
       file: 'index.js',

@@ -1,0 +1,30 @@
+.button {
+  @include b(unset, unset, unset);
+  @include font('Montserrat', 12px, 14px, bold);
+  @include fx(center, center);
+  @include h($space-size-5);
+  @include r(5px);
+  @include miw(120px);
+  @include px($space-size-2);
+  @extend %uppercase;
+  cursor: pointer;
+  &.primary {
+    @include b(1px, solid, $color-gray-1);
+    @include bg($color-primary-1);
+    @include fc($color-white);
+  }
+  &.secondary {
+    @include b(1px, solid, $color-gray-1);
+    @include bg(unset);
+    @include fc($color-gray-1);
+  }
+  &.tertiary {
+    @include bg(unset);
+    @include fc($color-gray-6);
+  }
+  &.disabled {
+    @include bg($color-gray-8);
+    @include fc($color-white);
+    cursor: unset;
+  }
+}
