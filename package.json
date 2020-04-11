@@ -17,7 +17,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup": "^2.3.3",
-    "rollup-plugin-babel": "^4.4.0"
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-sass": "^1.2.2"
   },
   "peerDependencies": {
     "react": "^16.13.x",
