@@ -9,34 +9,62 @@ var PropTypes = _interopDefault(require('prop-types'));
 
 var Input = function Input(_ref) {
   var disabled = _ref.disabled,
+      invalid = _ref.invalid,
+      label = _ref.label,
       onEnter = _ref.onEnter,
       setValue = _ref.setValue,
-      value = _ref.value;
+      type = _ref.type,
+      value = _ref.value,
+      warning = _ref.warning;
 
-  var handleKeyDown = function handleKeyDown(_ref2) {
+  var KeyDown = function KeyDown(_ref2) {
     var key = _ref2.key;
     return key === "Enter" && onEnter && onEnter();
   };
 
+  var Label = function Label() {
+    return /*#__PURE__*/React.createElement("p", {
+      className: "label"
+    }, label && label);
+  };
+
+  var Warning = function Warning() {
+    return invalid ? /*#__PURE__*/React.createElement("p", {
+      className: "warning"
+    }, warning && warning) : "";
+  };
+
   return /*#__PURE__*/React.createElement("div", {
-    className: "input-field"
-  }, /*#__PURE__*/React.createElement("input", {
+    className: "input-field ".concat(invalid ? "invalid" : "", " ").concat(type ? type : "")
+  }, /*#__PURE__*/React.createElement(Label, null), type === "textarea" ? /*#__PURE__*/React.createElement("textarea", {
     defaultValue: value,
     disabled: disabled ? disabled : false,
     onChange: function onChange(_ref3) {
       var target = _ref3.target;
       return setValue(target.value);
     },
-    onKeyDown: handleKeyDown,
-    type: "text"
-  }));
+    onKeyDown: KeyDown
+  }) : /*#__PURE__*/React.createElement("input", {
+    defaultValue: value,
+    disabled: disabled,
+    onChange: function onChange(_ref4) {
+      var target = _ref4.target;
+      return setValue(target.value);
+    },
+    onKeyDown: KeyDown,
+    type: type ? type : "text"
+  }), /*#__PURE__*/React.createElement(Warning, null));
 };
 
 Input.propTypes = {
   disabled: PropTypes.bool,
+  invalid: PropTypes.bool,
+  label: PropTypes.string,
   onEnter: PropTypes.func,
   setValue: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired
+  type: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  warning: PropTypes.string
 };
 var index = {
   Input: Input
