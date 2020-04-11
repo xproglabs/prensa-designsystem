@@ -30,12 +30,6 @@
 @mixin td($n) { text-decoration: $n; }
 @mixin ta($n) { text-align: $n; }
 @mixin r($n) { border-radius: $n; }
-@mixin bc($n) { border-color: $n; }
-@mixin bt($n) { border-top: $n; }
-@mixin bb($n) { border-bottom: $n; }
-@mixin bl($n) { border-left: $n; }
-@mixin br($n) { border-right: $n; }
-@mixin bs($n) { border-style: $n; }
 
 @mixin fx($n1, $n2) {
   display: flex;
@@ -93,19 +87,37 @@
 @mixin button-outline($c) {
 	box-shadow: 0 0 0 2pt $c;
 }
-@mixin bx($n) {
-	@include bl($n);
-	@include br($n);
+@mixin bt($n1, $n2, $n3) { 
+	border-top-width: $n1;
+	border-top-style: $n2;
+	border-top-color: $n3;
 }
-@mixin by($n) {
-	@include bt($n);
-	@include bb($n);
+@mixin bb($n1, $n2, $n3) { 
+	border-bottom-width: $n1;
+	border-bottom-style: $n2;
+	border-bottom-color: $n3;
 }
-@mixin b($n, $s, $c) {
-	@include bx($n);
-	@include by($n);
-	@include bs($s);
-	@include bc($c);
+@mixin bl($n1, $n2, $n3) { 
+	border-left-width: $n1;
+	border-left-style: $n2;
+	border-left-color: $n3;
+}
+@mixin br($n1, $n2, $n3) { 
+	border-right-width: $n1;
+	border-right-style: $n2;
+	border-right-color: $n3;
+}
+@mixin bx($n1, $n2, $n3) {
+	@include bl($n1, $n2, $n3);
+	@include br($n1, $n2, $n3);
+}
+@mixin by($n1, $n2, $n3) {
+	@include bt($n1, $n2, $n3);
+	@include bb($n1, $n2, $n3);
+}
+@mixin b($n1, $n2, $n3) {
+	@include bx($n1, $n2, $n3);
+	@include by($n1, $n2, $n3);
 }
 
 %fwrap { flex-wrap: wrap; }

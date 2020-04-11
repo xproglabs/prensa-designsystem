@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap');
 
-$font-primary: 'Montserrat', sans-serif;
+$font-primary: 'Montserrat' !default;
 
-$thin: 100;
-$light: 300;
-$regular: 400;
-$medium: 500;
-$bold: bold;
-$italic: italic;
+%thin { font-weight: 100 };
+%light { font-weight: 300 };
+%regular { font-weight: 400 };
+%medium { font-weight: 500 };
+%bold { font-weight: bold };
+%italic { font-weight: italic };

@@ -1,4 +1,9 @@
 import Forms from './forms';
 import Version from './version';
+import Icon from './Icon';
 
-export {Forms, Version};
+export {
+  Icon,
+  Version,
+  Forms
+};
