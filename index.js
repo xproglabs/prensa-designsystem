@@ -8,30 +8,36 @@ var React = _interopDefault(require('react'));
 var PropTypes = _interopDefault(require('prop-types'));
 
 var Input = function Input(_ref) {
-  var onEnter = _ref.onEnter,
+  var disabled = _ref.disabled,
+      onEnter = _ref.onEnter,
       setValue = _ref.setValue,
       value = _ref.value;
 
   var handleKeyDown = function handleKeyDown(_ref2) {
     var key = _ref2.key;
-    return key === "Enter" && onEnter();
+    return key === "Enter" && onEnter && onEnter();
   };
 
   return /*#__PURE__*/React.createElement("div", {
-    className: "form"
-  }, /*#__PURE__*/React.createElement("div", {
     className: "input-field"
   }, /*#__PURE__*/React.createElement("input", {
     defaultValue: value,
+    disabled: disabled ? disabled : false,
     onChange: function onChange(_ref3) {
       var target = _ref3.target;
       return setValue(target.value);
     },
     onKeyDown: handleKeyDown,
     type: "text"
-  })));
+  }));
 };
 
+Input.propTypes = {
+  disabled: PropTypes.bool,
+  onEnter: PropTypes.func,
+  setValue: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired
+};
 var index = {
   Input: Input
 };
