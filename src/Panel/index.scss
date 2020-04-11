@@ -1,0 +1,9 @@
+.panel-body {
+  @include b(1px, solid, $color-gray-9);
+  @include bg($color-white);
+  @include r(2%);
+  @include h(fit-content);
+  @include p(40px);
+  @include mw(600px);
+  @include w(calc(100% - 160px));
+}

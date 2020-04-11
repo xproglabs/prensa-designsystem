@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form} from '../../';
+import {Form, Panel} from '../../';
 
 const Example = () => {
   const [fullname, setFullName] = React.useState(``)
@@ -19,7 +19,7 @@ const Example = () => {
   }
   const handleClick = () => checkInvalidFields()
   return (
-    <div>
+    <Panel.Body>
       <Form.Input
         disabled={loading}
         label={`Nome completo`}
@@ -57,7 +57,7 @@ const Example = () => {
         value={password} 
         warning={`Escreva uma senha`}
       />
-    </div>
+    </Panel.Body>
   );
 }
 

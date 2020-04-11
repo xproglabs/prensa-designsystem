@@ -1,5 +1,5 @@
 .form-field {
-  @include mt(25px);
+  @include mt(15px);
   @include mw(600px);
   @include w(100%);
   input,
@@ -20,7 +20,11 @@
     @include p(0px);
     @include m(0px);
     @include mb(10px);
-    @include mt(15px);
+  }
+  .warning {
+    @include m(0px);
+    @include mt(5px);
+    @include mih(20px);
   }
   &.password {
     @include mw(200px);
@@ -33,8 +37,6 @@
     .warning {
       @include fc(red);
       @include p(0px);
-      @include m(0px);
-      @include mt(5px);
       display: block;
     }
   }
