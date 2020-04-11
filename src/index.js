@@ -1,4 +1,4 @@
-import Form from './form';
+import Form from './Form';
 import Icon from './Icon';
 import Version from './version';
 
