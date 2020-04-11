@@ -7,7 +7,7 @@ const Input = ({disabled, invalid, label, onEnter, setValue, type, value, warnin
   
   const Label = () => <p className={'label'}>{label && label}</p>;
   
-  const Warning = () => <p className={`warning`}>{warning && invalid ? warning : ` `}</p>
+  const Warning = () => <p className={'warning'}>{warning && invalid ? warning : ' '}</p>;
 
   return (
     <div className={`form-field ${invalid ? 'invalid' : ''} ${type ? type : ''}`}>
