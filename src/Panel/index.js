@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Body = ({children}) => {
+const Panel = ({children, style}) => {
   return (
-    <div className={`panel-body`}>
+    <div className={`panel-body ${style ? style : ``}`}>
       {children && children}
     </div>
   )
 }
 
-Body.propTypes = {}
+Panel.propTypes = {
+  style: PropTypes.string
+}
 
-export default {Body}
+export default Panel

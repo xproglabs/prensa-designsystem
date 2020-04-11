@@ -1,6 +1,5 @@
 .form-field {
-  @include mt(15px);
-  @include mw(600px);
+  @include mt($space-size-2);
   @include w(100%);
   input,
   textarea {
@@ -25,9 +24,6 @@
     @include m(0px);
     @include mt(5px);
     @include mih(20px);
-  }
-  &.password {
-    @include mw(200px);
   }
   &.invalid {
     input,

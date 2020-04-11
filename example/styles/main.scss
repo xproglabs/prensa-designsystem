@@ -3,3 +3,9 @@
 .body {
   background-color: $color-primary-2;
 }
+
+.panel-body {
+  &.dialog {
+    @include mw(300px);
+  }
+}
