@@ -1,5 +1,41 @@
-.input-field {
-  input {
-    @include p(10px);
+.form-field {
+  @include mt(25px);
+  @include mw(600px);
+  @include w(100%);
+  input,
+  textarea {
+    @include b(1px, solid, $color-black);
+    @include fs(15px);
+    @include px(10px);
+    @include py(10px);
+    @include m(0px);
+    @include r(3px);
+    @include w(calc(100% - 24px));
+  }
+  textarea {
+    @include mih(100px);
+  }
+  .label {
+    @include fs(15px);
+    @include p(0px);
+    @include m(0px);
+    @include mb(10px);
+    @include mt(15px);
+  }
+  &.password {
+    @include mw(200px);
+  }
+  &.invalid {
+    input,
+    textarea {
+      @include b(1px, solid, red);
+    }
+    .warning {
+      @include fc(red);
+      @include p(0px);
+      @include m(0px);
+      @include mt(5px);
+      display: block;
+    }
   }
 }
