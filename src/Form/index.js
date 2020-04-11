@@ -10,7 +10,7 @@ const Input = ({disabled, invalid, label, onEnter, setValue, type, value, warnin
   const Warning = () => invalid ? <p className={`warning`}>{warning && warning}</p> : ``
 
   return (
-    <div className={`input-field ${invalid ? `invalid` : ``} ${type ? type : ``}`}>
+    <div className={`form-field ${invalid ? `invalid` : ``} ${type ? type : ``}`}>
       <Label />
       {type === `textarea` ? (
           <textarea
