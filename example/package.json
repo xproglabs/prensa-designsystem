@@ -1,0 +1,27 @@
+{
+  "name": "xprog-ds-example",
+  "version": "0.1.0",
+  "description": "XPROG Styleguide example page",
+  "main": "/",
+  "author": "XPROG",
+  "license": "ISC",
+  "repository": "https://github.com/xproglabs/xprog-designsystem.git",
+  "scripts": {
+    "build": "next build",
+    "dev": "npm run local",
+    "local": "next build && npm run pm2-start-local && npm run pm2-logs",
+    "pm2-start-local": "pm2 start env.json --env local",
+    "pm2-logs": "pm2 flush && pm2 logs xprog-ds-ex"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.3",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "next": "^9.3.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-svg-loader": "^3.0.3",
+    "sass": "^1.26.3"
+  }
+}

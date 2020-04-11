@@ -1,11 +1,9 @@
-import Forms from './forms';
-import Version from './version';
+import Form from './form';
 import Icon from './Icon';
-
-import '../styles/index.scss'
+import Version from './version';
 
 export {
+  Form,
   Icon,
-  Version,
-  Forms
+  Version
 };

@@ -7,19 +7,33 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = _interopDefault(require('react'));
 var PropTypes = _interopDefault(require('prop-types'));
 
-var Forms = function Forms() {
+var Input = function Input(_ref) {
+  var onEnter = _ref.onEnter,
+      setValue = _ref.setValue,
+      value = _ref.value;
+
+  var handleKeyDown = function handleKeyDown(_ref2) {
+    var key = _ref2.key;
+    return key === "Enter" && onEnter();
+  };
+
   return /*#__PURE__*/React.createElement("div", {
     className: "form"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "wrap colorized"
-  }, /*#__PURE__*/React.createElement("p", null, "form.loaded2")));
+    className: "input-field"
+  }, /*#__PURE__*/React.createElement("input", {
+    defaultValue: value,
+    onChange: function onChange(_ref3) {
+      var target = _ref3.target;
+      return setValue(target.value);
+    },
+    onKeyDown: handleKeyDown,
+    type: "text"
+  })));
 };
 
-var version = "1.1.4";
-
-var Version = function Version() {
-  console.log('version ' + version);
-  return /*#__PURE__*/React.createElement("p", null, "version: ", version);
+var index = {
+  Input: Input
 };
 
 var Icon = function Icon(data) {
@@ -39,6 +53,13 @@ Icon.defaultProps = {
   viewBox: '0 0 24 24'
 };
 
-exports.Forms = Forms;
+var version = "1.1.4";
+
+var Version = function Version() {
+  console.log('version ' + version);
+  return /*#__PURE__*/React.createElement("p", null, "version: ", version);
+};
+
+exports.Form = index;
 exports.Icon = Icon;
 exports.Version = Version;

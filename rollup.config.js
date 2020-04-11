@@ -19,7 +19,7 @@ export default {
   ],
   plugins: [ 
     babel({
-      exclude: 'node_modules/**'
+      exclude: 'example, node_modules/**'
     }),
     json(),
     resolve(),
