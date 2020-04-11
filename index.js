@@ -7,12 +7,15 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = _interopDefault(require('react'));
 var PropTypes = _interopDefault(require('prop-types'));
 
-var version = "1.1.4";
-
 var Forms = function Forms() {
-  console.log('form ' + version);
-  return /*#__PURE__*/React.createElement("p", null, "form.loaded");
+  return /*#__PURE__*/React.createElement("div", {
+    className: "form"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap colorized"
+  }, /*#__PURE__*/React.createElement("p", null, "form.loaded2")));
 };
+
+var version = "1.1.4";
 
 var Version = function Version() {
   console.log('version ' + version);

@@ -1,0 +1,6 @@
+.form {
+  .wrap {
+    @include bg($color-primary-1);
+    // background-color: yellow;
+  }
+}

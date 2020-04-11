@@ -1,5 +1,7 @@
-@forward '../sass/colors.scss';
-@forward '../sass/fonts.scss';
-@forward '../sass/mixings.scss';
-@forward '../sass/breakpoints.scss';
-@forward '../sass/spaces.scss';
+@import '../sass/colors.scss';
+@import '../sass/fonts.scss';
+@import '../sass/mixings.scss';
+@import '../sass/breakpoints.scss';
+@import '../sass/spaces.scss';
+
+@import './forms.scss'

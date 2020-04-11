@@ -1,10 +1,12 @@
 import React from 'react';
-import { version } from '../package.json';
 
 const Forms = () => {
-  console.log('form ' + version);
   return (
-    <p>form.loaded</p>
+    <div className={`form`}>
+      <div className={`wrap colorized`}>
+        <p>form.loaded2</p>
+      </div>
+    </div>
   );
 }
 
