@@ -45,24 +45,24 @@ var Input = function Input(_ref) {
 
   var KeyDown = function KeyDown(_ref2) {
     var key = _ref2.key;
-    return key === "Enter" && onEnter && onEnter();
+    return key === 'Enter' && onEnter && onEnter();
   };
 
   var Label = function Label() {
     return /*#__PURE__*/React.createElement("p", {
-      className: "label"
+      className: 'label'
     }, label && label);
   };
 
   var Warning = function Warning() {
-    return invalid ? /*#__PURE__*/React.createElement("p", {
-      className: "warning"
-    }, warning && warning) : "";
+    return /*#__PURE__*/React.createElement("p", {
+      className: 'warning'
+    }, warning && invalid ? warning : ' ');
   };
 
   return /*#__PURE__*/React.createElement("div", {
-    className: "form-field ".concat(invalid ? "invalid" : "", " ").concat(type ? type : "")
-  }, /*#__PURE__*/React.createElement(Label, null), type === "textarea" ? /*#__PURE__*/React.createElement("textarea", {
+    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type ? type : '')
+  }, /*#__PURE__*/React.createElement(Label, null), type === 'textarea' ? /*#__PURE__*/React.createElement("textarea", {
     defaultValue: value,
     disabled: disabled ? disabled : false,
     onChange: function onChange(_ref3) {
@@ -78,7 +78,7 @@ var Input = function Input(_ref) {
       return setValue(target.value);
     },
     onKeyDown: KeyDown,
-    type: type ? type : "text"
+    type: type ? type : 'text'
   }), /*#__PURE__*/React.createElement(Warning, null));
 };
 
@@ -113,6 +113,19 @@ Icon.defaultProps = {
   viewBox: '0 0 24 24'
 };
 
+var Panel = function Panel(_ref) {
+  var children = _ref.children,
+      style = _ref.style;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "panel-body ".concat(style ? style : '')
+  }, children && children);
+};
+
+Panel.propTypes = {
+  children: PropTypes.object,
+  style: PropTypes.string
+};
+
 var version = "1.1.4";
 
 var Version = function Version() {
@@ -123,4 +136,5 @@ var Version = function Version() {
 exports.Button = Button;
 exports.Form = index;
 exports.Icon = Icon;
+exports.Panel = Panel;
 exports.Version = Version;

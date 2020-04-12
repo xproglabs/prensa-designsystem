@@ -1,0 +1,8 @@
+@use 'index.scss' as *;
+
+body {
+  @include font('Montserrat', 12px, 14px, bold);
+  @include p(0px);
+  @include m(0px);
+  @include w(100%);
+}
