@@ -6,6 +6,7 @@
   @include r(5px);
   @include miw(120px);
   @include px($space-size-2);
+  @include mt($space-size-2);
   @extend %uppercase;
   cursor: pointer;
   &.primary {

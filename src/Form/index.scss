@@ -1,6 +1,5 @@
 .form-field {
-  @include mt(25px);
-  @include mw(600px);
+  @include mt($space-size-2);
   @include w(100%);
   input,
   textarea {
@@ -20,21 +19,20 @@
     @include p(0px);
     @include m(0px);
     @include mb(10px);
-    @include mt(15px);
   }
-  &.password {
-    @include mw(200px);
+  .warning {
+    @include m(0px);
+    @include mt(5px);
+    @include mih(20px);
   }
   &.invalid {
     input,
     textarea {
-      @include b(1px, solid, red);
+      @include b(1px, solid, $color-alert-2);
     }
     .warning {
-      @include fc(red);
+      @include fc($color-alert-2);
       @include p(0px);
-      @include m(0px);
-      @include mt(5px);
       display: block;
     }
   }

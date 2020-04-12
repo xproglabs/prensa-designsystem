@@ -1,5 +1,19 @@
 @use './index.scss' as *;
 
-.body {
-  background-color: $color-primary-2;
+body {
+  @include h(100vh);
+  & > div {
+    @include bg($color-gray-10);
+    @include fy(center, center);
+    @include h(100%);
+    @include p(0px);
+    @include m(0px);
+    @include w(100%);
+  }
+}
+
+.panel-body {
+  &.dialog {
+    @include mw(300px);
+  }
 }
