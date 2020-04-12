@@ -5,8 +5,14 @@
   @include bg($color-white);
   @include r(8px);
   @include h(fit-content);
-  @include p(40px);
-  @include mw(600px);
+  @include p($space-size-3);
+  @include mw(calc(100% - calc(#{$space-size-3} * 4)));
   @include my($space-size-3);
-  @include w(calc(100% - 160px));
+  @include w(100%);
+  @media(min-width: $md) {
+    @include p($space-size-4);
+    @include mw(calc(448px - calc(#{$space-size-4} * 2)));
+  }
+  @include animation(0, slide-right, 0.5s, 0.2s);
+  animation-iteration-count: 1;
 }

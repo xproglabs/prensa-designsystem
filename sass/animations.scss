@@ -1,0 +1,20 @@
+@mixin animation($o, $name, $duration, $delay) {
+  opacity: $o;
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: $delay;
+}
+@mixin translate($o, $x, $y) {
+  opacity: $o;
+  -webkit-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+// keyframes
+@keyframes slide-right {
+  0% { @include translate(0, 0px, 0px); }
+  100% { @include translate(1, 0px, 0px); }
+}
