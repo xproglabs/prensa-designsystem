@@ -8,11 +8,11 @@
   @include r(5px);
   @include miw(120px);
   @include px($space-size-2);
+  @include py(0px);
   @include mt($space-size-2);
   @extend %uppercase;
   cursor: pointer;
   &.primary {
-    @include b(1px, solid, $color-gray-1);
     @include bg($color-primary-1);
     @include fc($color-white);
   }

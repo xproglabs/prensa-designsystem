@@ -60,8 +60,10 @@ const PanelForm = () => {
       <Button
         disabled={loading}
         onClick={handleClick}
-        style={`primary`}
-      >Registrar</Button>
+        style='primary'
+      >
+        Registrar
+      </Button>
     </Panel>
   );
 }
