@@ -28,7 +28,7 @@
   &.invalid {
     input,
     textarea {
-      @include b(1px, solid, red);
+      @include b(1px, solid, $color-alert-2);
     }
     .warning {
       @include fc(red);
