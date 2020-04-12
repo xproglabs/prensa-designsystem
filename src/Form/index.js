@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Input = ({disabled, invalid, label, onEnter, setValue, type, value, warning}) => {
+const Input = ({autoFocus, disabled, invalid, label, onEnter, setValue, type, value, warning}) => {
   
   const KeyDown = ({key}) => key === 'Enter' && onEnter && onEnter();
   
@@ -9,32 +9,26 @@ const Input = ({disabled, invalid, label, onEnter, setValue, type, value, warnin
   
   const Warning = () => <p className={'warning'}>{warning && invalid ? warning : ' '}</p>;
 
+  const props = {
+    autoFocus,
+    defaultValue: value,
+    disabled,
+    onChange: ({target}) => setValue(target.value),
+    onKeyDown: KeyDown,
+    type
+  };
   return (
-    <div className={`form-field ${invalid ? 'invalid' : ''} ${type ? type : ''}`}>
+    <div className={`form-field ${invalid ? 'invalid' : ''} ${type}`}>
       <Label />
-      {type === 'textarea' ? (
-        <textarea
-          defaultValue={value} 
-          disabled={disabled ? disabled : false}
-          onChange={({target}) => setValue(target.value)} 
-          onKeyDown={KeyDown} 
-        ></textarea>
-      ) : (
-        <input 
-          defaultValue={value} 
-          disabled={disabled}
-          onChange={({target}) => setValue(target.value)} 
-          onKeyDown={KeyDown} 
-          type={type ? type : 'text'} 
-        />
-      )
-      }
+      {type === 'textarea' && (<textarea {...props}></textarea>)}
+      {type !== 'textarea' && (<input {...props} />)}
       <Warning />
     </div>
   );
 };
 
 Input.propTypes = {
+  autoFocus: PropTypes.bool,
   disabled: PropTypes.bool,
   invalid: PropTypes.bool,
   label: PropTypes.string,
@@ -43,6 +37,13 @@ Input.propTypes = {
   type: PropTypes.string,
   value: PropTypes.string.isRequired,
   warning: PropTypes.string
+};
+
+Input.defaultProps = {
+  autofocus: false,
+  disabled: 'disabled',
+  invalid: false,
+  type: 'text'
 };
 
 export default {Input};

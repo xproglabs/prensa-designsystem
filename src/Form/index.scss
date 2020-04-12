@@ -5,7 +5,7 @@
   @include w(100%);
   input,
   textarea {
-    @include b(1px, solid, $color-black);
+    @include b(1px, solid, $color-gray-8);
     @include fs(15px);
     @include px(10px);
     @include py(10px);
@@ -17,7 +17,8 @@
     @include mih(100px);
   }
   .label {
-    @include fs(15px);
+    @include fs(14px);
+    @include fc($color-gray-6);
     @include p(0px);
     @include m(0px);
     @include mb(10px);

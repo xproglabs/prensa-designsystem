@@ -34,7 +34,8 @@ Button.defaultProps = {
 };
 
 var Input = function Input(_ref) {
-  var disabled = _ref.disabled,
+  var autoFocus = _ref.autoFocus,
+      disabled = _ref.disabled,
       invalid = _ref.invalid,
       label = _ref.label,
       onEnter = _ref.onEnter,
@@ -60,29 +61,24 @@ var Input = function Input(_ref) {
     }, warning && invalid ? warning : ' ');
   };
 
-  return /*#__PURE__*/React.createElement("div", {
-    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type ? type : '')
-  }, /*#__PURE__*/React.createElement(Label, null), type === 'textarea' ? /*#__PURE__*/React.createElement("textarea", {
+  var props = {
+    autoFocus: autoFocus,
     defaultValue: value,
-    disabled: disabled ? disabled : false,
+    disabled: disabled,
     onChange: function onChange(_ref3) {
       var target = _ref3.target;
       return setValue(target.value);
     },
-    onKeyDown: KeyDown
-  }) : /*#__PURE__*/React.createElement("input", {
-    defaultValue: value,
-    disabled: disabled,
-    onChange: function onChange(_ref4) {
-      var target = _ref4.target;
-      return setValue(target.value);
-    },
     onKeyDown: KeyDown,
-    type: type ? type : 'text'
-  }), /*#__PURE__*/React.createElement(Warning, null));
+    type: type
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
+  }, /*#__PURE__*/React.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React.createElement("input", props), /*#__PURE__*/React.createElement(Warning, null));
 };
 
 Input.propTypes = {
+  autoFocus: PropTypes.bool,
   disabled: PropTypes.bool,
   invalid: PropTypes.bool,
   label: PropTypes.string,
@@ -91,6 +87,12 @@ Input.propTypes = {
   type: PropTypes.string,
   value: PropTypes.string.isRequired,
   warning: PropTypes.string
+};
+Input.defaultProps = {
+  autofocus: false,
+  disabled: "disabled",
+  invalid: false,
+  type: "text"
 };
 var index = {
   Input: Input
@@ -122,7 +124,7 @@ var Panel = function Panel(_ref) {
 };
 
 Panel.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   style: PropTypes.string
 };
 
