@@ -31,7 +31,7 @@
       @include b(1px, solid, $color-alert-2);
     }
     .warning {
-      @include fc(red);
+      @include fc($color-alert-2);
       @include p(0px);
       display: block;
     }
