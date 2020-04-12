@@ -6,18 +6,9 @@
 
 body {
   @include font('Montserrat', 12px, 14px, bold);
-  @include h(100vh);
   @include p(0px);
   @include m(0px);
   @include w(100%);
-  & > div {
-    @include bg($color-gray-10);
-    @include fy(center, center);
-    @include h(100%);
-    @include p(0px);
-    @include m(0px);
-    @include w(100%);
-  }
 }
 
 @import '../src/Button';
