@@ -10,7 +10,10 @@ const Panel = ({children, style}) => {
 };
 
 Panel.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object
+  ]),
   style: PropTypes.string
 };
 
