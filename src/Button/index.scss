@@ -1,3 +1,5 @@
+@use '../../styles' as *;
+
 .button {
   @include b(unset, unset, unset);
   @include font('Montserrat', 12px, 14px, bold);

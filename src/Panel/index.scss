@@ -1,3 +1,5 @@
+@use '../../styles' as *;
+
 .panel-body {
   @include b(1px, solid, $color-gray-9);
   @include bg($color-white);

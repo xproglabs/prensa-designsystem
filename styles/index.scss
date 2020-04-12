@@ -1,16 +1,5 @@
-@import '../sass/colors.scss';
-@import '../sass/fonts.scss';
-@import '../sass/mixings.scss';
-@import '../sass/breakpoints.scss';
-@import '../sass/spaces.scss';
-
-body {
-  @include font('Montserrat', 12px, 14px, bold);
-  @include p(0px);
-  @include m(0px);
-  @include w(100%);
-}
-
-@import '../src/Button';
-@import '../src/Form';
-@import '../src/Panel';
+@forward '../sass/colors.scss';
+@forward '../sass/fonts.scss';
+@forward '../sass/mixings.scss';
+@forward '../sass/breakpoints.scss';
+@forward '../sass/spaces.scss';

@@ -1,3 +1,5 @@
+@use '../../styles' as *;
+
 .form-field {
   @include mt($space-size-2);
   @include w(100%);
