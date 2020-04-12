@@ -1,5 +1,5 @@
-.github
+/.github
 .env
-.example
+/example
 .eslintignore
 .eslintrc.json
