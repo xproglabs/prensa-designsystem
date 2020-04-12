@@ -2,6 +2,7 @@ Prerequisites:
 - If you use Next.JS at least version 9.3.x
 - React and React-dom (16.13.x)
 - npm install sass (latest implementation dart-sass)
+- There is no need to use preprocessors like node-sass-chockidar. React team has built in the sass-loader in last updates.
 
 Use xprog-ds on your project:
 - npm install xprog-ds
