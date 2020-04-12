@@ -12,10 +12,11 @@ Use xprog-ds on your project:
 
 <br>
 
-**Styleguide documentation: https://zeroheight.com/80cad880e**
+**Styleguide documentation:**
+- https://zeroheight.com/80cad880e
 
 <br>
 
-Lear about dart-sass implementation:
+**Lear about dart-sass implementation:**
 - https://sass-lang.com/documentation/at-rules
 - https://css-tricks.com/introducing-sass-modules/
