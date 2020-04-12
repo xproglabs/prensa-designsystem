@@ -16,7 +16,7 @@ const Input = ({autoFocus, disabled, invalid, label, onEnter, setValue, type, va
     onChange: ({target}) => setValue(target.value),
     onKeyDown: KeyDown,
     type
-  }
+  };
   return (
     <div className={`form-field ${invalid ? 'invalid' : ''} ${type}`}>
       <Label />
@@ -41,9 +41,9 @@ Input.propTypes = {
 
 Input.defaultProps = {
   autofocus: false,
-  disabled: `disabled`,
+  disabled: 'disabled',
   invalid: false,
-  type: `text`
-}
+  type: 'text'
+};
 
 export default {Input};
