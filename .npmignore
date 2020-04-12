@@ -1,2 +1,5 @@
 .github
 .env
+.example
+.eslintignore
+.eslintrc.json
