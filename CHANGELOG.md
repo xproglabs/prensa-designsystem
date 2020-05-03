@@ -1,3 +1,6 @@
+# v1.1.6 (Sun May 03 2020)
+- Added module wireframes
+
 # v1.1.0 (Sun Apr 06 2020)
 - Installed rollup-plugins
 
