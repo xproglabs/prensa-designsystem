@@ -90,12 +90,22 @@ Input.propTypes = {
 };
 Input.defaultProps = {
   autofocus: false,
-  disabled: "disabled",
+  disabled: 'disabled',
   invalid: false,
-  type: "text"
+  type: 'text'
 };
 var index = {
   Input: Input
+};
+
+var Container = function Container(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-container"
+  }, props.children);
+};
+
+var index$1 = {
+  Container: Container
 };
 
 var Icon = function Icon(data) {
@@ -128,7 +138,7 @@ Panel.propTypes = {
   style: PropTypes.string
 };
 
-var version = "1.1.4";
+var version = "1.1.6";
 
 var Version = function Version() {
   console.log('version ' + version);
@@ -137,6 +147,7 @@ var Version = function Version() {
 
 exports.Button = Button;
 exports.Form = index;
+exports.Frame = index$1;
 exports.Icon = Icon;
 exports.Panel = Panel;
 exports.Version = Version;
