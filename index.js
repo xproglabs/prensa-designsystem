@@ -98,32 +98,67 @@ var index = {
   Input: Input
 };
 
+var goToPage = function goToPage(location) {
+  return window.location = location;
+};
+
 var Block = function Block(props) {
   return /*#__PURE__*/React.createElement("div", {
-    className: "fr-block"
+    className: "fr-block ".concat(props["class"])
   }, props.children);
 };
 
-var ButtonPrimary = function ButtonPrimary(props) {
+var ButtonPrimary = function ButtonPrimary(_ref) {
+  var children = _ref.children,
+      goTo = _ref.goTo;
+
+  var handeClick = function handeClick() {
+    return goTo ? goToPage(goTo) : false;
+  };
+
   return /*#__PURE__*/React.createElement("div", {
-    className: "fr-button-primary"
-  }, props.children);
+    className: "fr-button-primary",
+    onClick: handeClick
+  }, children);
 };
 
-var ButtonSecondary = function ButtonSecondary(props) {
+var ButtonSecondary = function ButtonSecondary(_ref2) {
+  var children = _ref2.children,
+      goTo = _ref2.goTo;
+
+  var handeClick = function handeClick() {
+    return goTo ? goToPage(goTo) : false;
+  };
+
   return /*#__PURE__*/React.createElement("div", {
-    className: "fr-button-secondary"
-  }, props.children);
+    className: "fr-button-secondary",
+    onClick: handeClick
+  }, children);
 };
 
 var Card = function Card(props) {
+  var handeClick = function handeClick() {
+    return goToPage('/frames/page');
+  };
+
   return /*#__PURE__*/React.createElement("div", {
-    className: "fr-card"
+    className: "fr-card",
+    onClick: handeClick
   }, /*#__PURE__*/React.createElement("div", {
     className: "fr-card-image"
   }), /*#__PURE__*/React.createElement("div", {
     className: "fr-card-text"
-  }, props.children, /*#__PURE__*/React.createElement(Line, null), /*#__PURE__*/React.createElement(Line, null), /*#__PURE__*/React.createElement(Line, null), /*#__PURE__*/React.createElement(Line, null)));
+  }, props.children, /*#__PURE__*/React.createElement(Line, {
+    "class": "card-title"
+  }), /*#__PURE__*/React.createElement(Line, {
+    "class": "card-title"
+  }), /*#__PURE__*/React.createElement(Line, {
+    "class": "card-lead"
+  }), /*#__PURE__*/React.createElement(FlexBtwn, null, /*#__PURE__*/React.createElement(Line, {
+    "class": "card-author"
+  }), /*#__PURE__*/React.createElement(Line, {
+    "class": "card-date"
+  }))));
 };
 
 var Container = function Container(props) {
@@ -174,34 +209,62 @@ var FooterLead = function FooterLead(props) {
   }, /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null));
 };
 
-var Line = function Line(props) {
-  return /*#__PURE__*/React.createElement("p", {
-    className: "fr-line"
+var Grid = function Grid(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-grid"
   }, props.children);
 };
 
-var Logo = function Logo(props) {
+var ListView = function ListView(props) {
   return /*#__PURE__*/React.createElement("div", {
-    className: "fr-logo"
+    className: "fr-listview"
   }, props.children);
+};
+
+var Line = function Line(props) {
+  return /*#__PURE__*/React.createElement("p", {
+    className: "fr-line ".concat(props["class"])
+  }, props.children);
+};
+
+var Logo = function Logo(_ref3) {
+  var children = _ref3.children,
+      goTo = _ref3.goTo;
+
+  var handeClick = function handeClick() {
+    return goTo ? goToPage(goTo) : false;
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-logo",
+    onClick: handeClick
+  }, children);
 };
 
 var Slide = function Slide(props) {
   return /*#__PURE__*/React.createElement("div", {
-    className: "fr-slide"
+    className: "fr-slide ".concat(props["class"])
   }, props.children);
 };
 
 var SlideTitle = function SlideTitle(props) {
   return /*#__PURE__*/React.createElement("div", {
     className: "fr-slide-title"
-  }, /*#__PURE__*/React.createElement("p", null));
+  }, /*#__PURE__*/React.createElement(Line, {
+    "class": "home-title"
+  }));
 };
 
 var SlideText = function SlideText(props) {
   return /*#__PURE__*/React.createElement("div", {
     className: "fr-slide-text"
-  }, /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null));
+  }, /*#__PURE__*/React.createElement(Line, {
+    "class": "home-lead"
+  }), /*#__PURE__*/React.createElement(Line, {
+    "class": "home-lead"
+  }), /*#__PURE__*/React.createElement(Line, {
+    "class": "home-lead"
+  }));
 };
 
 var SlideLead = function SlideLead(props) {
@@ -229,7 +292,9 @@ var index$1 = {
   FlexStart: FlexStart,
   Footer: Footer,
   FooterLead: FooterLead,
+  Grid: Grid,
   Line: Line,
+  ListView: ListView,
   Logo: Logo,
   Slide: Slide,
   SlideText: SlideText,
