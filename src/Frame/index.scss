@@ -1,5 +1,157 @@
 @use '../../styles' as *;
 
-.fr-main {
-
+.fr-button-primary {
+  @include bg($color-gray-6);
+  @include h($space-size-5);
+  @include my(0px);
+  @include r(20px);
+  @include w(200px);
+}
+.fr-button-secondary {
+  @include bg($color-gray-8);
+  @include h($space-size-2);
+  @include mr($space-size-4);
+  @include r(10px);
+  @include w(100px);
+}
+.fr-card {
+  @include b(1px, solid, $color-gray-9);
+  @include bg($color-gray-8);
+  @include mih(320px);
+  .fr-card-image {
+    @include bg($color-gray-8);
+    @include h(160px);
+    @include w(100%);
+  }
+  .fr-card-text {
+    @include bg($color-white);
+    @include h(160px);
+    @include px($space-size-4);
+    @include py($space-size-4);
+    @include w(calc(100% - calc(2 * #{$space-size-4})));
+  }
+  .fr-line {
+    @include h($space-size-3);
+  }
+}
+.fr-fx {
+  @include fx(flex-start, flex-start);
+  @include mw(1080px);
+  @include w(100%);
+}
+.fr-fy {
+  @include fy(flex-start, flex-start);
+  @include mw(1080px);
+  @include w(100%);
+}
+.fr-flex-btwn {
+  @include fx(center, space-between);
+  @include mw(1080px);
+  @include w(100%);
+}
+.fr-flex-start {
+  @include fx(center, flex-start);
+}
+.fr-flex-end {
+  @include fx(center, flex-end);
+  @include w(100%);
+}
+.fr-line {
+  @include bg($color-gray-8);
+  @include h($space-size-1);
+  @include mb($space-size-1);
+  @include mt(0px);
+  @include r(5px);
+  @include w(100%);
+  &:last-child {
+    @include w(calc(80%));
+  }
+}
+.fr-logo {
+  @include bg($color-gray-8);
+  @include h($space-size-5);
+  @include r(10px);
+  @include w(200px);
+}
+.fr-slide-title {
+  @include mt($space-size-16);
+  p {
+    @include bg($color-gray-6);
+    @include h($space-size-4);
+    @include r(5px);
+    @include w(400px);
+  }
+}
+.fr-slide-text {
+  @include fy(flex-start, flex-start);
+  @include w(calc(100% - calc(2 * #{$space-size-10})));
+  p {
+    @include bg($color-gray-8);
+    @include h($space-size-2);
+    @include r(5px);
+    @include w(100%);
+    &:last-child {
+      @include w(calc(80% - calc(2 * #{$space-size-10})));
+    }
+  }
+}
+// elements
+.fr-container {
+  @include bg($color-gray-10);
+  @include h(100vh);
+  @include w(100vw);
+  overflow-y: scroll;
+}
+.fr-footer {
+  @include bg($color-white);
+  @include fx(flex-start, center);
+  @include py($space-size-6);
+  @include w(100vw);
+  .fr-block {
+    @include fy(flex-start, flex-start);
+    @include w(300px);
+  }
+  .fr-logo {
+    @include mt($space-size-3);
+  }
+}
+.fr-slide {
+  @include fy(center, flex-start);
+  @include mb($space-size-10);
+  @include mih(100vh); // remove
+  @include w(100vw);
+  .fr-button-primary {
+    @include w(300px);
+  }
+  .fr-block {
+    @include fx(flex-start, space-between);
+    @include mb($space-size-4);
+    @include mt($space-size-24);
+    @include w(100%);
+    flex-wrap: wrap;
+    .fr-card {
+      @include mb($space-size-5);
+      @include w(calc(calc(100% - calc(2 * #{$space-size-5})) / 3));
+    }
+  }
+  .fr-fy {
+    @include mx($space-size-10);
+    @include w(calc(100% - calc(2 * #{$space-size-10})));
+  }
+  .fr-slide-title {
+    @include mt($space-size-26);
+  }
+  .fr-slide-text {
+    @include my($space-size-8);
+  }
+}
+.fr-topbar {
+  @include bg($color-white);
+  @include fx(center, center);
+  @include h($space-size-10);
+  @include w(100vw);
+  position: fixed;
+  .fr-block {
+    @include w(calc(100% / 3));
+  }
 }
