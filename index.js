@@ -90,12 +90,152 @@ Input.propTypes = {
 };
 Input.defaultProps = {
   autofocus: false,
-  disabled: "disabled",
+  disabled: 'disabled',
   invalid: false,
-  type: "text"
+  type: 'text'
 };
 var index = {
   Input: Input
+};
+
+var Block = function Block(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-block"
+  }, props.children);
+};
+
+var ButtonPrimary = function ButtonPrimary(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-button-primary"
+  }, props.children);
+};
+
+var ButtonSecondary = function ButtonSecondary(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-button-secondary"
+  }, props.children);
+};
+
+var Card = function Card(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-card"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "fr-card-image"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "fr-card-text"
+  }, props.children, /*#__PURE__*/React.createElement(Line, null), /*#__PURE__*/React.createElement(Line, null), /*#__PURE__*/React.createElement(Line, null), /*#__PURE__*/React.createElement(Line, null)));
+};
+
+var Container = function Container(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-container"
+  }, props.children);
+};
+
+var FX = function FX(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-fx"
+  }, props.children);
+};
+
+var FY = function FY(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-fy"
+  }, props.children);
+};
+
+var FlexBtwn = function FlexBtwn(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-flex-btwn"
+  }, props.children);
+};
+
+var FlexEnd = function FlexEnd(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-flex-end"
+  }, props.children);
+};
+
+var FlexStart = function FlexStart(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-flex-start"
+  }, props.children);
+};
+
+var Footer = function Footer(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-footer"
+  }, props.children);
+};
+
+var FooterLead = function FooterLead(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-footer-lead"
+  }, /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null));
+};
+
+var Line = function Line(props) {
+  return /*#__PURE__*/React.createElement("p", {
+    className: "fr-line"
+  }, props.children);
+};
+
+var Logo = function Logo(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-logo"
+  }, props.children);
+};
+
+var Slide = function Slide(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-slide"
+  }, props.children);
+};
+
+var SlideTitle = function SlideTitle(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-slide-title"
+  }, /*#__PURE__*/React.createElement("p", null));
+};
+
+var SlideText = function SlideText(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-slide-text"
+  }, /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null));
+};
+
+var SlideLead = function SlideLead(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-slide-lead"
+  }, props.children);
+};
+
+var Topbar = function Topbar(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-topbar"
+  }, props.children);
+};
+
+var index$1 = {
+  Block: Block,
+  ButtonPrimary: ButtonPrimary,
+  ButtonSecondary: ButtonSecondary,
+  Card: Card,
+  Container: Container,
+  FX: FX,
+  FY: FY,
+  FlexBtwn: FlexBtwn,
+  FlexEnd: FlexEnd,
+  FlexStart: FlexStart,
+  Footer: Footer,
+  FooterLead: FooterLead,
+  Line: Line,
+  Logo: Logo,
+  Slide: Slide,
+  SlideText: SlideText,
+  SlideTitle: SlideTitle,
+  SlideLead: SlideLead,
+  Topbar: Topbar
 };
 
 var Icon = function Icon(data) {
@@ -128,7 +268,7 @@ Panel.propTypes = {
   style: PropTypes.string
 };
 
-var version = "1.1.4";
+var version = "1.1.6";
 
 var Version = function Version() {
   console.log('version ' + version);
@@ -137,6 +277,7 @@ var Version = function Version() {
 
 exports.Button = Button;
 exports.Form = index;
+exports.Frame = index$1;
 exports.Icon = Icon;
 exports.Panel = Panel;
 exports.Version = Version;
