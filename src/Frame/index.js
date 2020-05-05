@@ -1,24 +1,36 @@
 import React from 'react';
 
+const goToPage = (location) => window.location = location
+
 const Block = props => {
   return (
-    <div className={`fr-block`}>
+    <div className={`fr-block ${props.class}`}>
       {props.children}
     </div>
   )
 }
-const ButtonPrimary = props => <div className={`fr-button-primary`}>{props.children}</div>
-const ButtonSecondary = props => <div className={`fr-button-secondary`}>{props.children}</div>
+const ButtonPrimary = ({children, goTo}) => {
+  const handeClick = () => goTo ? goToPage(goTo) : false
+  return <div className={`fr-button-primary`} onClick={handeClick}>{children}</div>
+}
+const ButtonSecondary = ({children, goTo}) => {
+  const handeClick = () => goTo ? goToPage(goTo) : false
+  return <div className={`fr-button-secondary`} onClick={handeClick}>{children}</div>
+}
 const Card = props => {
+  const handeClick = () => goToPage('/frames/page')
   return (
-    <div className={`fr-card`}>
+    <div className={`fr-card`} onClick={handeClick}>
       <div className={`fr-card-image`}></div>
       <div className={`fr-card-text`}>
         {props.children}
-        <Line />
-        <Line />
-        <Line />
-        <Line />
+        <Line class='card-title' />
+        <Line class='card-title' />
+        <Line class='card-lead' />
+        <FlexBtwn>
+          <Line class='card-author' />
+          <Line class='card-date' />
+        </FlexBtwn>
       </div>
     </div>
   )
@@ -47,22 +59,39 @@ const FooterLead = props => {
     </div>
   )
 }
-const Line = props => <p className={`fr-line`}>{props.children}</p>
-const Logo = props => <div className={`fr-logo`}>{props.children}</div>
-const Slide = props => <div className={`fr-slide`}>{props.children}</div>
+const Grid = props => {
+  return (
+    <div className={`fr-grid`}>
+      {props.children}
+    </div>
+  )
+}
+const ListView = props => {
+  return (
+    <div className={`fr-listview`}>
+      {props.children}
+    </div>
+  )
+}
+const Line = props => <p className={`fr-line ${props.class}`}>{props.children}</p>
+const Logo = ({children, goTo}) => {
+  const handeClick = () => goTo ? goToPage(goTo) : false
+  return <div className={`fr-logo`} onClick={handeClick}>{children}</div>
+}
+const Slide = props => <div className={`fr-slide ${props.class}`}>{props.children}</div>
 const SlideTitle = props => {
   return (
     <div className={`fr-slide-title`}>
-      <p></p>
+      <Line class='home-title' />
     </div>
   )
 }
 const SlideText = props => {
   return (
     <div className={`fr-slide-text`}>
-      <p></p> 
-      <p></p>
-      <p></p>
+      <Line class='home-lead' />
+      <Line class='home-lead' />
+      <Line class='home-lead' />
     </div>
   )
 }
@@ -81,7 +110,9 @@ export default {
   FlexStart,
   Footer,
   FooterLead,
+  Grid,
   Line,
+  ListView,
   Logo,
   Slide,
   SlideText,

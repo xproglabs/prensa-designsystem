@@ -1,8 +1,15 @@
 @use '../../styles' as *;
 
+@mixin hover($o) {
+  cursor: pointer;
+  &:hover {
+    opacity: $o;
+  }
+}
 .fr-button-primary {
   @include bg($color-gray-6);
   @include h($space-size-5);
+  @include hover(0.9);
   @include my(0px);
   @include r(20px);
   @include w(200px);
@@ -10,29 +17,10 @@
 .fr-button-secondary {
   @include bg($color-gray-8);
   @include h($space-size-2);
+  @include hover(0.9);
   @include mr($space-size-4);
   @include r(10px);
   @include w(100px);
-}
-.fr-card {
-  @include b(1px, solid, $color-gray-9);
-  @include bg($color-gray-8);
-  @include mih(320px);
-  .fr-card-image {
-    @include bg($color-gray-8);
-    @include h(160px);
-    @include w(100%);
-  }
-  .fr-card-text {
-    @include bg($color-white);
-    @include h(160px);
-    @include px($space-size-4);
-    @include py($space-size-4);
-    @include w(calc(100% - calc(2 * #{$space-size-4})));
-  }
-  .fr-line {
-    @include h($space-size-3);
-  }
 }
 .fr-fx {
   @include fx(flex-start, flex-start);
@@ -63,13 +51,11 @@
   @include mt(0px);
   @include r(5px);
   @include w(100%);
-  &:last-child {
-    @include w(calc(80%));
-  }
 }
 .fr-logo {
   @include bg($color-gray-8);
   @include h($space-size-5);
+  @include hover(0.9);
   @include r(10px);
   @include w(200px);
 }
@@ -104,6 +90,7 @@
 }
 .fr-footer {
   @include bg($color-white);
+  @include bt(1px, solid, $color-gray-9);
   @include fx(flex-start, center);
   @include py($space-size-6);
   @include w(100vw);
@@ -115,6 +102,117 @@
     @include mt($space-size-3);
   }
 }
+.fr-grid {
+  @include fx(flex-start, space-between);
+  @include mb($space-size-4);
+  @include mt($space-size-24);
+  @include w(100%);
+  flex-wrap: wrap;
+  .fr-card {
+    @include b(1px, solid, $color-gray-9);
+    @include bg($color-gray-8);
+    @include hover(0.9);
+    @include mb($space-size-5);
+    @include mih(320px);
+    @include r(5px);
+    @include w(calc(calc(100% - calc(2 * #{$space-size-5})) / 3));
+    .fr-card-image {
+      @include bg($color-gray-9);
+      @include h(160px);
+      @include r(5px);
+      @include w(100%);
+    }
+    .fr-card-text {
+      @include bg($color-white);
+      @include h(160px);
+      @include px($space-size-4);
+      @include py($space-size-4);
+      @include w(calc(100% - calc(2 * #{$space-size-4})));
+    }
+    .fr-line {
+      &.card-author {
+        @include bg($color-gray-10);
+        @include h($space-size-2);
+        @include mt($space-size-2);
+        @include w(40%);
+      }
+      &.card-date {
+        @include bg($color-gray-10);
+        @include h($space-size-2);
+        @include mt($space-size-2);
+        @include w(20%);
+      }
+      &.card-title {
+        @include bg($color-gray-8);
+        @include h($space-size-3);
+        @include w(100%);
+      }
+      &.card-lead {
+        @include bg($color-gray-6);
+        @include h($space-size-3);
+        @include mt($space-size-2);
+        @include w(60%);
+      }
+    }
+  }
+}
+.fr-listview {
+  @include fx(center, center);
+  @include mb($space-size-4);
+  @include mt($space-size-16);
+  @include w(100%);
+  flex-wrap: wrap;
+  .fr-fy {
+    @include mw(720px);
+    @include w(100%);
+  }
+  .fr-card {
+    @include b(1px, solid, $color-gray-9);
+    @include bg($color-white);
+    @include fx(flex-start, space-between);
+    @include hover(0.9);
+    @include mb($space-size-5);
+    @include p($space-size-3);
+    @include r(5px);
+    @include space-width(calc(100% - 2px), $space-size-3);
+    .fr-card-image {
+      @include bg($color-gray-9);
+      @include h(130px);
+      @include r(5px);
+      @include w(270px);
+    }
+    .fr-card-text {
+      @include bg($color-white);
+      @include pl($space-size-4);
+      @include w(calc(calc(100% - 270px) - #{$space-size-4}));
+    }
+    .fr-line {
+      &.card-author {
+        @include bg($color-gray-10);
+        @include h($space-size-2);
+        @include mt($space-size-2);
+        @include w(40%);
+      }
+      &.card-date {
+        @include bg($color-gray-10);
+        @include h($space-size-2);
+        @include mt($space-size-2);
+        @include w(20%);
+      }
+      &.card-title {
+        @include bg($color-gray-8);
+        @include h($space-size-3);
+        @include w(100%);
+      }
+      &.card-lead {
+        @include bg($color-gray-6);
+        @include h($space-size-3);
+        @include mt($space-size-2);
+        @include w(60%);
+      }
+    }
+  }
+}
 .fr-slide {
   @include fy(center, flex-start);
   @include mb($space-size-10);
@@ -122,21 +220,6 @@
   @include w(100vw);
   .fr-button-primary {
     @include w(300px);
-  }
-  .fr-block {
-    @include fx(flex-start, space-between);
-    @include mb($space-size-4);
-    @include mt($space-size-24);
-    @include w(100%);
-    flex-wrap: wrap;
-    .fr-card {
-      @include mb($space-size-5);
-      @include w(calc(calc(100% - calc(2 * #{$space-size-5})) / 3));
-    }
-  }
-  .fr-fy {
-    @include mx($space-size-10);
-    @include w(calc(100% - calc(2 * #{$space-size-10})));
   }
   .fr-slide-title {
     @include mt($space-size-26);
@@ -146,12 +229,101 @@
   }
 }
 .fr-topbar {
+  @include bb(1px, solid, $color-gray-9);
   @include bg($color-white);
   @include fx(center, center);
   @include h($space-size-10);
   @include w(100vw);
   position: fixed;
+  z-index: 10;
   .fr-block {
     @include w(calc(100% / 3));
+  }
+}
+
+// slides
+.fr-article {
+  @include mt($space-size-26);
+  & > .fr-fy {
+    @include mx($space-size-10);
+    @include mw(780px);
+  }
+  .fr-block {
+    &.block-image {
+      @include bt(1px, solid, $color-gray-8);
+      @include my($space-size-4);
+      @include pt($space-size-10);
+      @include w(100%);
+    }
+    &.block-textbody {
+      @include fy(center, flex-start);
+      @include w(100%);
+      .textbody {
+        @include mt($space-size-4);
+        // @include pt($space-size-4);
+        @include w(600px);
+      }
+      .fr-line {
+        @include bg($color-gray-8);
+        @include h($space-size-2);
+        @include mb($space-size-2);
+        @include w(100%);
+        &:last-child {
+          @include w(75%);
+        }
+      }
+    }
+  }
+  .fr-line {
+    &.article-author {
+      @include bg($color-gray-8);
+      @include h($space-size-1);
+      @include mb($space-size-1);
+      @include w(150px);
+    }
+    &.article-image {
+      @include bg($color-gray-9);
+      @include h(400px);
+      @include mb($space-size-1);
+      @include w(100%);
+      // @include w(150px);
+    }
+    &.article-lead {
+      @include bg($color-gray-9);
+      @include h($space-size-2);
+      @include mb($space-size-2);
+      &:last-child {
+        @include mb($space-size-8);
+        @include w(82%);
+      }
+    }
+    &.article-title {
+      @include h($space-size-4);
+      @include mb($space-size-2);
+      &:last-child {
+        @include w(70%);
+      }
+    }
+    &.article-subtitle {
+      @include bg($color-gray-7);
+      @include h($space-size-3);
+      @include mb($space-size-10);
+      @include mt($space-size-4);
+      @include w(150px);
+    }
+  }
+}
+.fr-home {
+  .fr-fy {
+    @include mx($space-size-10);
+    @include w(calc(100% - calc(2 * #{$space-size-10})));
+  }
+  .fr-line {
+    &.home-title {
+      // @include mt($space-size-26);
+    }
+    &.home-lead {
+      @include mb($space-size-2);
+    }
   }
 }
