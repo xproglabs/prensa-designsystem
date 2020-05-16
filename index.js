@@ -146,9 +146,9 @@ var Card = function Card(props) {
     onClick: handeClick
   }, /*#__PURE__*/React.createElement("div", {
     className: "fr-card-image"
-  }), /*#__PURE__*/React.createElement("div", {
+  }, props.image), /*#__PURE__*/React.createElement("div", {
     className: "fr-card-text"
-  }, props.children, /*#__PURE__*/React.createElement(Line, {
+  }, props.children ? props.children : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Line, {
     "class": "card-title"
   }), /*#__PURE__*/React.createElement(Line, {
     "class": "card-title"
@@ -158,7 +158,7 @@ var Card = function Card(props) {
     "class": "card-author"
   }), /*#__PURE__*/React.createElement(Line, {
     "class": "card-date"
-  }))));
+  })))));
 };
 
 var Container = function Container(props) {
@@ -247,30 +247,39 @@ var Slide = function Slide(props) {
   }, props.children);
 };
 
-var SlideTitle = function SlideTitle(props) {
+var SlideLead = function SlideLead(props) {
   return /*#__PURE__*/React.createElement("div", {
-    className: "fr-slide-title"
-  }, /*#__PURE__*/React.createElement(Line, {
-    "class": "home-title"
-  }));
+    className: "fr-slide-lead"
+  }, props.children);
 };
 
 var SlideText = function SlideText(props) {
   return /*#__PURE__*/React.createElement("div", {
     className: "fr-slide-text"
-  }, /*#__PURE__*/React.createElement(Line, {
+  }, props.children ? props.children : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Line, {
     "class": "home-lead"
   }), /*#__PURE__*/React.createElement(Line, {
     "class": "home-lead"
   }), /*#__PURE__*/React.createElement(Line, {
     "class": "home-lead"
+  })));
+};
+
+var SlideTitle = function SlideTitle(props) {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "fr-slide-title"
+  }, props.value ? /*#__PURE__*/React.createElement(Text, {
+    "class": "home-title",
+    value: props.value
+  }) : /*#__PURE__*/React.createElement(Line, {
+    "class": "home-title mkp"
   }));
 };
 
-var SlideLead = function SlideLead(props) {
-  return /*#__PURE__*/React.createElement("div", {
-    className: "fr-slide-lead"
-  }, props.children);
+var Text = function Text(props) {
+  return /*#__PURE__*/React.createElement("p", {
+    className: "fr-text ".concat(props.value ? props["class"] : "mkp")
+  }, props.value);
 };
 
 var Topbar = function Topbar(props) {
@@ -300,6 +309,7 @@ var index$1 = {
   SlideText: SlideText,
   SlideTitle: SlideTitle,
   SlideLead: SlideLead,
+  Text: Text,
   Topbar: Topbar
 };
 

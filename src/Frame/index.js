@@ -21,16 +21,21 @@ const Card = props => {
   const handeClick = () => goToPage('/frames/page')
   return (
     <div className={`fr-card`} onClick={handeClick}>
-      <div className={`fr-card-image`}></div>
+      <div className={`fr-card-image`}>
+        {props.image}
+      </div>
       <div className={`fr-card-text`}>
-        {props.children}
-        <Line class='card-title' />
-        <Line class='card-title' />
-        <Line class='card-lead' />
-        <FlexBtwn>
-          <Line class='card-author' />
-          <Line class='card-date' />
-        </FlexBtwn>
+        {props.children ? props.children : (
+          <>
+            <Line class='card-title' />
+            <Line class='card-title' />
+            <Line class='card-lead' />
+            <FlexBtwn>
+              <Line class='card-author' />
+              <Line class='card-date' />
+            </FlexBtwn>
+          </>
+          )}
       </div>
     </div>
   )
@@ -79,23 +84,28 @@ const Logo = ({children, goTo}) => {
   return <div className={`fr-logo`} onClick={handeClick}>{children}</div>
 }
 const Slide = props => <div className={`fr-slide ${props.class}`}>{props.children}</div>
-const SlideTitle = props => {
-  return (
-    <div className={`fr-slide-title`}>
-      <Line class='home-title' />
-    </div>
-  )
-}
+const SlideLead = props => <div className={`fr-slide-lead`}>{props.children}</div>
 const SlideText = props => {
   return (
     <div className={`fr-slide-text`}>
-      <Line class='home-lead' />
-      <Line class='home-lead' />
-      <Line class='home-lead' />
+      {props.children ? props.children : (
+        <>
+        <Line class='home-lead' />
+        <Line class='home-lead' />
+        <Line class='home-lead' />
+        </>
+      )}
     </div>
   )
 }
-const SlideLead = props => <div className={`fr-slide-lead`}>{props.children}</div>
+const SlideTitle = props => {
+  return (
+    <div className={`fr-slide-title`}>
+      {props.value ? <Text class='home-title' value={props.value} /> : <Line class='home-title mkp' />}
+    </div>
+  )
+}
+const Text = props => <p className={`fr-text ${props.value ? props.class : `mkp`}`}>{props.value}</p>
 const Topbar = props => <div className={`fr-topbar`}>{props.children}</div>
 
 export default {
@@ -118,5 +128,6 @@ export default {
   SlideText,
   SlideTitle,
   SlideLead,
+  Text,
   Topbar
 };

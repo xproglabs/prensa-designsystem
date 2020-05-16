@@ -1,0 +1,91 @@
+@use '../index.scss' as *;
+// fx top
+.fx-top-lft {
+  @include fx(flex-start, flex-start);
+}
+.fx-top-cnt {
+  @include fx(flex-start, center);
+}
+.fx-top-rgt {
+  @include fx(flex-start, flex-end);
+}
+// fx cnt
+.fx-cnt-lft {
+  @include fx(center, flex-start);
+}
+.fx-cnt-cnt {
+  @include fx(center, center);
+}
+.fx-cnt-rgt {
+  @include fx(center, flex-end);
+}
+// fx btm
+.fx-btm-lft {
+  @include fx(flex-end, flex-start);
+}
+.fx-btm-cnt {
+  @include fx(flex-end, center);
+}
+.fx-btm-rgt {
+  @include fx(flex-end, flex-end);
+}
+// fy top
+.fy-top-lft {
+  @include fy(flex-start, flex-start);
+}
+.fy-top-cnt {
+  @include fy(center, flex-start);
+}
+.fy-top-rgt {
+  @include fy(flex-end, flex-start);
+}
+// fy cnt
+.fy-cnt-lft {
+  @include fy(flex-start, center);
+}
+.fy-cnt-cnt {
+  @include fy(center, center);
+}
+.fy-cnt-rgt {
+  @include fy(flex-end, center);
+}
+// fy btm
+.fy-btm-lft {
+  @include fy(flex-start, flex-end);
+}
+.fy-btm-cnt {
+  @include fy(center, flex-end);
+}
+.fy-btm-rgt {
+  @include fy(flex-end, flex-end);
+}
+.fx-cnt-btw {
+  @include fx(center, space-between);
+}
+.mw-sm {
+  @include space-width(100%, $space-size-4);
+}
+.mw-md {
+  @media(min-width: $md) {
+    @include mw(720px);
+    @include px(0px);
+    @include w(100%);
+  }
+}
+.mw-lg {
+  @media(min-width: $lg) {
+    @include mw(920px);
+    @include px(0px);
+    @include w(100%);
+  }
+}
+.mw-xl {
+  @media(min-width: $xl) {
+    @include mw(1220px);
+    @include px(0px);
+    @include w(100%);
+  }
+}
+.w-100 {
+  @include w(100%);
+}

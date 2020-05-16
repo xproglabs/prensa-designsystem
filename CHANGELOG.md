@@ -1,3 +1,6 @@
+# v1.1.7 (Sun May 16 2020)
+- Added alignments classes
+
 # v1.1.6 (Sun May 03 2020)
 - Added module wireframes
 

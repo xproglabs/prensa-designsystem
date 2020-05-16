@@ -61,23 +61,30 @@
 }
 .fr-slide-title {
   @include mt($space-size-16);
-  p {
-    @include bg($color-gray-6);
+  p.fr-text {
     @include h($space-size-4);
+    @include fc($color-primary-1);
+    @include fs(32px);
+    @include fw(bold);
     @include r(5px);
     @include w(400px);
+    &.mkp {
+      @include bg($color-gray-6);
+    }
   }
 }
 .fr-slide-text {
   @include fy(flex-start, flex-start);
   @include w(calc(100% - calc(2 * #{$space-size-10})));
   p {
-    @include bg($color-gray-8);
-    @include h($space-size-2);
-    @include r(5px);
     @include w(100%);
-    &:last-child {
-      @include w(calc(80% - calc(2 * #{$space-size-10})));
+    &.mkp {
+      @include bg($color-gray-8);
+      @include r(5px);
+      @include h($space-size-2);
+      &:last-child {
+        @include w(calc(80% - calc(2 * #{$space-size-10})));
+      }
     }
   }
 }
