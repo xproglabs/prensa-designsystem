@@ -1,5 +1,7 @@
 /.github
+/.storybook
 .env
 /example
 .eslintignore
 .eslintrc.json
+/stories
