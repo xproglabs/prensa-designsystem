@@ -27,7 +27,6 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  children: 'Label',
   style: 'primary'
 };
 

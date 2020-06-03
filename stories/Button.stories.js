@@ -1,16 +1,16 @@
 import React from 'react';
 
 import Button from '../src/Button';
+import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
   title: 'Button',
-  component: Button
+  component: Button,
+  decorators: [sassWrapper]
 };
 
 export const Primary = () => {
   return (
-    <div>
-      testando
-    </div>
+    <Button>label</Button>
   );
 };

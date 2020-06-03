@@ -8,5 +8,13 @@ module.exports = {
         configureJSX: true,
       },
     },
-  ],
+    {
+      name: '@storybook/preset-scss',
+      options: {
+        sassLoaderOptions: {
+          implementation: require('sass')
+        }
+      }
+    }
+  ]
 };
