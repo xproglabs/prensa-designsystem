@@ -3,3 +3,5 @@
 /example/.next
 .env
 *.lock
+
+package-lock.json

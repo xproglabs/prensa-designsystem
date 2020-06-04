@@ -1,6 +1,6 @@
 {
   "name": "xprog-ds",
-  "version": "1.1.7",
+  "version": "1.2.0",
   "description": "XPROG Styleguide",
   "main": "/",
   "author": "XPROG",
@@ -14,7 +14,13 @@
     "@babel/preset-react": "^7.9.4",
     "@rollup/plugin-json": "^4.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/preset-scss": "^1.0.2",
+    "@storybook/react": "^5.3.19",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-import-helpers": "^1.0.2",
     "eslint-plugin-react": "^7.19.0",
@@ -24,7 +30,9 @@
     "react-dom": "^16.13.1",
     "rollup": "^2.3.3",
     "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-sass": "^1.2.2"
+    "rollup-plugin-sass": "^1.2.2",
+    "sass": "^1.26.7",
+    "sass-loader": "^8.0.2"
   },
   "husky": {
     "hooks": {
@@ -41,7 +49,9 @@
     "react-dom": "^16.13.x"
   },
   "scripts": {
-    "build": "rollup --config"
+    "storybook": "start-storybook -p 9009 -s public",
+    "build": "rollup --config",
+    "eslint": "eslint --ext js,jsx src/ stories/ utils/"
   },
   "dependencies": {
     "classnames": "^2.2.6",

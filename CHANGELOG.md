@@ -1,3 +1,7 @@
+# v1.2.0 (Sun Jun 02 2020)
+- Add storybook
+- Change grayscale colors to neutral
+
 # v1.1.7 (Sun May 16 2020)
 - Added alignments classes
 

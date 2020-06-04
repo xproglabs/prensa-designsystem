@@ -3,7 +3,7 @@
 body {
   @include h(100vh);
   & > div {
-    @include bg($color-gray-10);
+    @include bg($color-neutral-10);
     @include fy(center, center);
     @include h(100%);
     @include p(0px);
