@@ -1,0 +1,38 @@
+$xs: 360px !default;
+$sm: 460px !default;
+$md: 768px !default;
+$lg: 1016px !default;
+$xl: 1280px !default;
+
+$col-space-sm: 24px;
+$col-space-md: 24px;
+$col-space-lg: 32px;
+$col-space-xl: 32px;
+$col-sm: 48px;
+$col-md: 84px;
+$col-lg: 50px;
+$col-xl: 72px;
+
+@mixin grid($n) {
+	width: 100%;
+	@media(min-width: $sm) {
+    padding-left: $col-space-sm;
+    padding-right: $col-space-sm;
+		width: calc(calc(#{$col-sm} * #{$n}) + calc(#{$col-space-sm} * calc(#{$n} - 1)));
+	}
+	@media(min-width: $md) {
+		padding-left: $col-space-md;
+    padding-right: $col-space-md;
+		width: calc(calc(#{$col-md} * #{$n}) + calc(#{$col-space-md} * calc(#{$n} - 1)));
+	}
+	@media(min-width: $lg) {
+		padding-left: $col-space-lg;
+    padding-right: $col-space-lg;
+		width: calc(calc(#{$col-lg} * #{$n}) + calc(#{$col-space-lg} * calc(#{$n} - 1)));
+	}
+	@media(min-width: $xl) {
+		padding-left: $col-space-xl;
+    padding-right: $col-space-xl;
+		width: calc(calc(#{$col-xl} * #{$n}) + calc(#{$col-space-xl} * calc(#{$n} - 1)));
+	}
+}
