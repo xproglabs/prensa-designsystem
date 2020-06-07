@@ -1,0 +1,35 @@
+@use '../../styles' as *;
+// @extend %regular;
+// @extend %medium;
+// @extend %bold;
+
+.xp-title-xs {
+  @include fs(16px);
+  @include lh(18px);
+  @include ff($font-primary);
+  @extend %bold;
+}
+.xp-title-sm {
+  @include fs(24px);
+  @include lh(26px);
+  @include ff($font-primary);
+  @extend %bold;
+}
+.xp-title-md {
+  @include fs(32px);
+  @include lh(34px);
+  @include ff($font-primary);
+  @extend %bold;
+}
+.xp-title-lg {
+  @include fs(40px);
+  @include lh(42px);
+  @include ff($font-primary);
+  @extend %bold;
+}
+.xp-title-xl {
+  @include fs(48px);
+  @include lh(50px);
+  @include ff($font-primary);
+  @extend %bold;
+}
