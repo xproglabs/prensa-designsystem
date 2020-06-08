@@ -6,6 +6,7 @@ const Typography = props => {
 
   const {
     children,
+    custom,
     size,
     title,
     subtitle,
@@ -13,9 +14,11 @@ const Typography = props => {
   } = props;
 
   const classes = classnames({
+    'xp-typography-root': true,
     [`xp-title-${size}`]: title,
     [`xp-subtitle-${size}`]: subtitle,
     [`xp-paragraph-${size}`]: paragraph,
+    [`${custom}`]: custom
   });
 
   return (
@@ -24,19 +27,36 @@ const Typography = props => {
 };
 
 Typography.defaultProps = {
-  weight: 'regular'
+  weight: 'regular',
+  size: 'sm'
 };
 
 Typography.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array
-  ]).isRequired,
+  /**
+   * Texto que será inserido na tela
+   */
+  children: PropTypes.string,
+  /**
+   * Permite a passagem de class customizado para o componente
+   */
+  custom: PropTypes.string,
+  /**
+   * Modifica o tamanho da fonte de acordo com as guias do design
+   */
   size: PropTypes.oneOf([
     'xs', 'sm', 'md', 'lg', 'xl'
   ]).isRequired,
+  /**
+   * Ativa o layout de título no componente
+   */
   title: PropTypes.bool,
+  /**
+   * Ativa o layout de subtítulo no componente
+   */
   subtitle: PropTypes.bool,
+  /**
+   * Ativa o layout de parágrafo no componente
+   */
   paragraph: PropTypes.bool,
 };
 

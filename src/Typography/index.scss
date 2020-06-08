@@ -33,3 +33,17 @@
   @include ff($font-primary);
   @extend %bold;
 }
+
+.xp-subtitle-sm {
+  @include fs(18px);
+  @include lh(24px);
+  @include ff($font-primary);
+  @extend %regular;
+}
+
+.xp-paragraph-sm {
+  @include fs(18px);
+  @include lh(42px);
+  @include ff($font-secondary);
+  @extend %regular;
+}
