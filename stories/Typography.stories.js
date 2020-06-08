@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Typography, {propTypes} from '../src/Typography';
+import Typography from '../src/Typography';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
@@ -24,5 +24,3 @@ export const Default = () => {
     </div>
   );
 };
-
-Typography.propTypes = propTypes;

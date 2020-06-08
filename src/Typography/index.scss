@@ -47,3 +47,11 @@
   @include ff($font-secondary);
   @extend %regular;
 }
+
+.xp-subject-sm {
+  @include fs(16px);
+  @include lh(18px);
+  @include ff($font-primary);
+  @extend %bold;
+  @extend %uppercase;
+}

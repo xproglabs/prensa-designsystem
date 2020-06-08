@@ -11,6 +11,7 @@ const Typography = props => {
     title,
     subtitle,
     paragraph,
+    subject
   } = props;
 
   const classes = classnames({
@@ -18,6 +19,7 @@ const Typography = props => {
     [`xp-title-${size}`]: title,
     [`xp-subtitle-${size}`]: subtitle,
     [`xp-paragraph-${size}`]: paragraph,
+    [`xp-subject-${size}`]: subject,
     [`${custom}`]: custom
   });
 
@@ -35,7 +37,7 @@ Typography.propTypes = {
   /**
    * Texto que será inserido na tela
    */
-  children: PropTypes.string,
+  children: PropTypes.string.isRequired,
   /**
    * Permite a passagem de class customizado para o componente
    */
@@ -58,6 +60,7 @@ Typography.propTypes = {
    * Ativa o layout de parágrafo no componente
    */
   paragraph: PropTypes.bool,
+  subject: PropTypes.bool
 };
 
 export default Typography;

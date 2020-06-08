@@ -1,0 +1,9 @@
+@use '../../styles' as *;
+
+.xp-subject-root {
+  @include w(max-content);
+  @include px($space-size-1);
+  @include py($space-size-0);
+  @include bg($color-primary-1);
+  @include r(5px);
+}
