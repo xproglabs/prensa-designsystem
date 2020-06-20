@@ -27,9 +27,18 @@ const Block = (props) => {
     pt,
     row,
     height,
-    width
+    width,
+    style
   } = props;
-  
+
+  const getStyle = () => {
+    switch(style) {
+      case '4-col':
+        return 'four-col';
+      default:
+        return '';
+    }
+  };
 
   const classes = classnames({
     'ds-block': true,
@@ -68,7 +77,7 @@ const Block = (props) => {
     [`${custom}`]: custom
   });
   return (
-    <div className={classes}>
+    <div className={classnames(classes, getStyle())}>
       {props.children}
     </div>
   );
@@ -126,6 +135,9 @@ Block.propTypes = {
   ]),
   width: PropTypes.oneOf([
     'xs', 'sm', 'md', 'lg', 'xl', 'full'
+  ]),
+  style: PropTypes.oneOf([
+    '4-col'
   ])
 };
 

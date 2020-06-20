@@ -110,5 +110,13 @@ $size-xl: 512px;
   display: flex;
   flex-direction: row;
 }
-.fx-fit-h {@include h(fit-content)}
-.fx-fit-w {@include w(fit-content)}
+.fx-fit-h {
+  @include h(fit-content)
+};
+.fx-fit-w {
+  @include w(fit-content)
+};
+
+.four-col {
+  flex-wrap: wrap;
+};

@@ -4,27 +4,12 @@ $md: 768px !default;
 $lg: 1016px !default;
 $xl: 1280px !default;
 
-$col-space-sm: 16px;
-$col-space-md: 16px;
 $col-space-lg: 16px;
 $col-space-xl: 16px;
-$col-sm: 48px;
-$col-md: 84px;
 $col-lg: 50px;
 $col-xl: 72px;
 
 @mixin grid($n) {
-	width: 100%;
-	@media(min-width: $sm) {
-    padding-left: $col-space-sm;
-    padding-right: $col-space-sm;
-		width: calc(calc(#{$col-sm} * #{$n}) + calc(#{$col-space-sm} * calc(#{$n} - 1)));
-	}
-	@media(min-width: $md) {
-		padding-left: $col-space-md;
-    padding-right: $col-space-md;
-		width: calc(calc(#{$col-md} * #{$n}) + calc(#{$col-space-md} * calc(#{$n} - 1)));
-	}
 	@media(min-width: $lg) {
 		padding-left: $col-space-lg;
     padding-right: $col-space-lg;
@@ -34,5 +19,70 @@ $col-xl: 72px;
 		padding-left: $col-space-xl;
     padding-right: $col-space-xl;
 		width: calc(calc(#{$col-xl} * #{$n}) + calc(#{$col-space-xl} * calc(#{$n} - 1)));
+	}
+}
+
+.xs-25 {
+	width: 100%;
+	@media(min-width: $xs) {
+		width: 25%;
+	}
+}
+.xs-50 {
+	width: 100%;
+	@media(min-width: $xs) {
+		width: 50%;
+	}
+}
+.xs-75 {
+	width: 100%;
+	@media(min-width: $xs) {
+		width: 75%;
+	}
+}
+.xs-100 {
+	width: 100%;
+	@media(min-width: $xs) {
+		width: 100%;
+	}
+}
+.sm-25 {
+	@media(min-width: $sm) {
+		width: 25%;
+	}
+}
+.sm-50 {
+	@media(min-width: $sm) {
+		width: 50%;
+	}
+}
+.sm-75 {
+	@media(min-width: $sm) {
+		width: 75%;
+	}
+}
+.sm-100 {
+	@media(min-width: $sm) {
+		width: 100%;
+	}
+}
+.md-25 {
+	@media(min-width: $md) {
+		width: 25%;
+	}
+}
+.md-50 {
+	@media(min-width: $md) {
+		width: 50%;
+	}
+}
+.md-75 {
+	@media(min-width: $md) {
+		width: 75%;
+	}
+}
+.md-100 {
+	@media(min-width: $md) {
+		width: 100%;
 	}
 }

@@ -15,29 +15,29 @@ export default {
 
 export const QuatroManchetes = () => {
   return (
-    <Block row>
-      <Grid columns={3}>
+    <Block row style='4-col'>
+      <Grid xs={100} md={50} columns={3}>
         <Teaser 
           title={text('title', 'The quick brown fox jumps over the lazy dog')}
           subtitle={text('subtitle', 'Lorem ipsum sit dolor amet lorem situation')}
           subject={text('subject', 'Assunto')}
         />
       </Grid>
-      <Grid columns={3}>
+      <Grid xs={100} md={50} columns={3}>
         <Teaser 
           title={text('title', 'The quick brown fox jumps over the lazy dog')}
           subtitle={text('subtitle', 'Lorem ipsum sit dolor amet lorem situation')}
           subject={text('subject', 'Assunto')}
         />
       </Grid>
-      <Grid columns={3}>
+      <Grid xs={100} md={50} columns={3}>
         <Teaser 
           title={text('title', 'The quick brown fox jumps over the lazy dog')}
           subtitle={text('subtitle', 'Lorem ipsum sit dolor amet lorem situation')}
           subject={text('subject', 'Assunto')}
         />
       </Grid>
-      <Grid columns={3}>
+      <Grid xs={100} md={50} columns={3}>
         <Teaser 
           title={text('title', 'The quick brown fox jumps over the lazy dog')}
           subtitle={text('subtitle', 'Lorem ipsum sit dolor amet lorem situation')}
