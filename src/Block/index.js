@@ -141,4 +141,8 @@ Block.propTypes = {
   ])
 };
 
+Block.defaultProps = {
+  p: 'md'
+};
+
 export default Block;
