@@ -26,86 +26,74 @@ $col-xl: 72px;
 	width: calc(100% - 32px);
 	@media(min-width: $xs) {
 		width: calc(25% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
+		padding: 16px;
 	}
 }
 .xs-50 {
 	width: calc(100% - 32px);
 	@media(min-width: $xs) {
 		width: calc(50% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
+		padding: 16px;
 	}
 }
 .xs-75 {
 	width: calc(100% - 32px);
 	@media(min-width: $xs) {
 		width: calc(75% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
+		padding: 16px;
 	}
 }
 .xs-100 {
 	width: calc(100% - 32px);
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 16px;
 	@media(min-width: $xs) {
 		width: calc(100% - 32px);
 	}
 }
 .sm-25 {
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 16px;
 	@media(min-width: $sm) {
 		width: calc(25% - 32px);
 	}
 }
 .sm-50 {
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 16px;
 	@media(min-width: $sm) {
 		width: calc(50% - 32px);
 	}
 }
 .sm-75 {
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 16px;
 	@media(min-width: $sm) {
 		width: calc(75% - 32px);
 	}
 }
 .sm-100 {
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 16px;
 	@media(min-width: $sm) {
 		width: calc(100% - 32px);
 	}
 }
 .md-25 {
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 16px;
 	@media(min-width: $md) {
 		width: calc(25% - 32px);
 	}
 }
 .md-50 {
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 16px;
 	@media(min-width: $md) {
 		width: calc(50% - 32px);
 	}
 }
 .md-75 {
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 16px;
 	@media(min-width: $md) {
 		width: calc(75% - 32px);
 	}
 }
 .md-100 {
-	padding-left: 16px;
-	padding-right: 16px;
+	padding: 16px;
 	@media(min-width: $md) {
 		width: calc(100% - 32px);
 	}
