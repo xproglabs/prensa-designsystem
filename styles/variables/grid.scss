@@ -23,7 +23,7 @@ $col-xl: 72px;
 }
 
 .xs-25 {
-	width: 100%;
+	width: calc(100% - 32px);
 	@media(min-width: $xs) {
 		width: calc(25% - 32px);
 		padding-left: 16px;
@@ -31,7 +31,7 @@ $col-xl: 72px;
 	}
 }
 .xs-50 {
-	width: 100%;
+	width: calc(100% - 32px);
 	@media(min-width: $xs) {
 		width: calc(50% - 32px);
 		padding-left: 16px;
@@ -39,7 +39,7 @@ $col-xl: 72px;
 	}
 }
 .xs-75 {
-	width: 100%;
+	width: calc(100% - 32px);
 	@media(min-width: $xs) {
 		width: calc(75% - 32px);
 		padding-left: 16px;
@@ -47,66 +47,66 @@ $col-xl: 72px;
 	}
 }
 .xs-100 {
-	width: 100%;
+	width: calc(100% - 32px);
+	padding-left: 16px;
+	padding-right: 16px;
 	@media(min-width: $xs) {
 		width: calc(100% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
 	}
 }
 .sm-25 {
+	padding-left: 16px;
+	padding-right: 16px;
 	@media(min-width: $sm) {
 		width: calc(25% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
 	}
 }
 .sm-50 {
+	padding-left: 16px;
+	padding-right: 16px;
 	@media(min-width: $sm) {
 		width: calc(50% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
 	}
 }
 .sm-75 {
+	padding-left: 16px;
+	padding-right: 16px;
 	@media(min-width: $sm) {
 		width: calc(75% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
 	}
 }
 .sm-100 {
+	padding-left: 16px;
+	padding-right: 16px;
 	@media(min-width: $sm) {
 		width: calc(100% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
 	}
 }
 .md-25 {
+	padding-left: 16px;
+	padding-right: 16px;
 	@media(min-width: $md) {
 		width: calc(25% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
 	}
 }
 .md-50 {
+	padding-left: 16px;
+	padding-right: 16px;
 	@media(min-width: $md) {
 		width: calc(50% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
 	}
 }
 .md-75 {
+	padding-left: 16px;
+	padding-right: 16px;
 	@media(min-width: $md) {
 		width: calc(75% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
 	}
 }
 .md-100 {
+	padding-left: 16px;
+	padding-right: 16px;
 	@media(min-width: $md) {
 		width: calc(100% - 32px);
-		padding-left: 16px;
-		padding-right: 16px;
 	}
 }
