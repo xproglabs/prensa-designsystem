@@ -117,6 +117,9 @@ $size-xl: 512px;
   @include w(fit-content)
 };
 
-.four-col {
+.block-three-col {
+  flex-wrap: wrap;
+};
+.block-four-col {
   flex-wrap: wrap;
 };

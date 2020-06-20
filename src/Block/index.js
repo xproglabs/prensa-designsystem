@@ -33,12 +33,15 @@ const Block = (props) => {
 
   const getStyle = () => {
     switch(style) {
+      case '3-col':
+        return 'block-three-col';
       case '4-col':
-        return 'four-col';
+        return 'block-four-col';
       default:
         return '';
     }
   };
+  console.log(getStyle());
 
   const classes = classnames({
     'ds-block': true,
@@ -137,7 +140,7 @@ Block.propTypes = {
     'xs', 'sm', 'md', 'lg', 'xl', 'full'
   ]),
   style: PropTypes.oneOf([
-    '4-col'
+    '3-col', '4-col'
   ])
 };
 

@@ -50,7 +50,7 @@ export const QuatroManchetes = () => {
 
 export const TresManchetes = () => {
   return (
-    <Block row style='4-col'>
+    <Block row style='3-col'>
       <Grid xs={100} md={33} columns={4}>
         <Teaser 
           title={text('title', 'The quick brown fox jumps over the lazy dog')}
