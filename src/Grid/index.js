@@ -10,6 +10,8 @@ const Grid = props => {
     switch(xs) {
       case 25:
         return 'xs-25';
+      case 33:
+        return 'xs-33';
       case 50:
         return 'xs-50';
       case 75:
@@ -24,6 +26,8 @@ const Grid = props => {
     switch(sm) {
       case 25:
         return 'sm-25';
+      case 33:
+        return 'sm-33';
       case 50:
         return 'sm-50';
       case 75:
@@ -38,6 +42,8 @@ const Grid = props => {
     switch(md) {
       case 25:
         return 'md-25';
+      case 33:
+        return 'md-33';
       case 50:
         return 'md-50';
       case 75:
@@ -96,13 +102,13 @@ Grid.propTypes = {
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
   ]),
   xs: PropTypes.oneOf([
-    25, 50, 75, 100
+    25, 33, 50, 75, 100
   ]),
   sm: PropTypes.oneOf([
-    25, 50, 75, 100
+    25, 33, 50, 75, 100
   ]),
   md: PropTypes.oneOf([
-    25, 50, 75, 100
+    25, 33, 50, 75, 100
   ])
 };
 

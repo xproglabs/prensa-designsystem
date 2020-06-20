@@ -28,6 +28,13 @@ $col-xl: 72px;
 		width: calc(25% - 32px);
 		padding: 16px;
 	}
+	.xs-33 {
+		width: calc(100% - 32px);
+		@media(min-width: $xs) {
+			width: calc(33.3% - 32px);
+			padding: 16px;
+		}
+	}
 }
 .xs-50 {
 	width: calc(100% - 32px);
@@ -56,6 +63,12 @@ $col-xl: 72px;
 		width: calc(25% - 32px);
 	}
 }
+.sm-33 {
+	padding: 16px;
+	@media(min-width: $sm) {
+		width: calc(33.3% - 32px);
+	}
+}
 .sm-50 {
 	padding: 16px;
 	@media(min-width: $sm) {
@@ -78,6 +91,12 @@ $col-xl: 72px;
 	padding: 16px;
 	@media(min-width: $md) {
 		width: calc(25% - 32px);
+	}
+}
+.md-33 {
+	padding: 16px;
+	@media(min-width: $md) {
+		width: calc(33.3% - 32px);
 	}
 }
 .md-50 {
