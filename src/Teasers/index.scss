@@ -1,0 +1,6 @@
+@use '../../styles' as *;
+
+.xp-teaser {
+  @include fy(flex-start, flex-start);
+  @include w(100%);
+}

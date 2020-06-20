@@ -2,8 +2,15 @@
 
 .xp-subject-root {
   @include w(max-content);
+  @include fc($color-primary-1);
+  @include mb(4px);
+}
+
+.secondary {
+  @include bg($color-primary-1);
+  @include fc($color-white);
   @include px($space-size-1);
   @include py($space-size-0);
-  @include bg($color-primary-1);
   @include r(5px);
+  @include mb(4px);
 }

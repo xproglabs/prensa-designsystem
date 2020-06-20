@@ -13,6 +13,7 @@
   @include fs(24px);
   @include lh(26px);
   @include ff($font-primary);
+  @include mb(8px);
   @extend %bold;
 }
 .xp-title-md {
