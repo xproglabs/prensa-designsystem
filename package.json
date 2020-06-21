@@ -16,6 +16,7 @@
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/addon-storysource": "^5.3.19",
     "@storybook/addons": "^5.3.18",
     "@storybook/preset-scss": "^1.0.2",
     "@storybook/react": "^5.3.19",
@@ -54,7 +55,6 @@
     "eslint": "eslint --ext js,jsx src/ stories/ utils/"
   },
   "dependencies": {
-    "@storybook/addon-storysource": "^5.3.19",
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2"
