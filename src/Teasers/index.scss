@@ -3,3 +3,8 @@
 .skeleton {
   @include bg($color-neutral-9);
 }
+
+.teaser-aria {
+  @include w(100%);
+  cursor: pointer;
+}

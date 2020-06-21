@@ -17,8 +17,12 @@ const Teaser = props => {
   return (
     <div className='xp-teaser'>
       {subject && <Subject>{subject}</Subject>}
-      {image && getImageFromProps()}
-      <a href={articleUrl} aria-label={`Abrir matéria ${title}`}>
+      {image && 
+        <a className='teaser-aria' href={articleUrl} aria-label={`Imagem da matéria ${title}`}>
+          {getImageFromProps()}
+        </a>
+      }
+      <a className='teaser-aria' href={articleUrl} aria-label={`Abrir matéria ${title}`}>
         <Typography title>
           {title}
         </Typography>

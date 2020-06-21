@@ -18,10 +18,14 @@ const TeaserFeatured = (props) => {
 
   return (
     <div className={`xp-teaser-featured ${teaserHasImage}`}>
-      {image && getImageFromProps()}
+      {image && 
+        <a className='teaser-aria' href={articleUrl} aria-label={`Imagem da matéria ${title}`}>
+          {getImageFromProps()}
+        </a>
+      }
       <div className='teaser-content'>
         {subject && <Subject filled>{subject}</Subject>}
-        <a href={articleUrl} aria-label={`Abrir matéria ${title}`}>
+        <a className='teaser-aria' href={articleUrl} aria-label={`Abrir matéria ${title}`}>
           <Typography title size='xl'>
             {title}
           </Typography>
