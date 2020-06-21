@@ -17,9 +17,8 @@ const Grid = props => {
       case 75:
         return 'xs-75';
       case 100:
-        return 'xs-100';
       default:
-        return null;
+        return 'xs-100';
     }
   };
   const handlesm = () => {
@@ -33,9 +32,8 @@ const Grid = props => {
       case 75:
         return 'sm-75';
       case 100:
-        return 'sm-100';
       default:
-        return null;
+        return 'sm-100';
     }
   };
   const handlemd = () => {
@@ -49,9 +47,8 @@ const Grid = props => {
       case 75:
         return 'md-75';
       case 100:
-        return 'md-100';
       default:
-        return null;
+        return 'md-100';
     }
   };
 

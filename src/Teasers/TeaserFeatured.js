@@ -6,9 +6,9 @@ import Typography from '../Typography';
 import {BackgroundImage} from '../utils';
 
 const TeaserFeatured = (props) => {
-  const {title, subject, articleUrl} = props.getContent;
-  const {loading, error} = props.getStatus;
-  const imageData = props.getImage;
+  const {title, subject, articleUrl} = props.content;
+  const {loading, error} = props.status;
+  const imageData = props.image;
 
   const getImageFromProps = () => {
     if (!imageData || loading || error) return <div className='image-box skeleton'/>;
@@ -31,20 +31,19 @@ const TeaserFeatured = (props) => {
 };
 
 TeaserFeatured.propTypes = {
-  getContent: PropTypes.shape({
+  content: PropTypes.shape({
     title: PropTypes.string,
     subject: PropTypes.string,
     articleUrl: PropTypes.string
   }),
-  getImage: PropTypes.shape({
+  image: PropTypes.shape({
     imageUrl: PropTypes.string,
     captionAndByline: PropTypes.string,
   }),
-  getStatus: PropTypes.shape({
+  status: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.bool
   })
-
 };
 
 export default TeaserFeatured;

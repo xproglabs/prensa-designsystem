@@ -24,6 +24,6 @@ export const Featured = () => {
     error: false
   };
   return (
-    <TeaserFeatured getContent={content} getStatus={status} />
+    <TeaserFeatured content={content} status={status} />
   );
 };

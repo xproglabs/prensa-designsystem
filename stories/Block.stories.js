@@ -1,11 +1,10 @@
-import {text, withKnobs} from '@storybook/addon-knobs';
+import {text, boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import Block from '../src/Block';
 import Grid from '../src/Grid';
-import {Teaser} from '../src/Teasers';
+import {Teaser, TeaserFeatured} from '../src/Teasers';
 import {sassWrapper} from '../utils/SassWrapper';
-
 
 export default {
   title: 'Components | Block',
@@ -77,13 +76,20 @@ export const TresManchetes = () => {
 };
 
 export const BreakingNews = () => {
+  const status = {
+    loading: boolean('loading', false),
+    error: boolean('error', false)
+  };
+  const content = {
+    title: text('title', 'The quick brown fox jumps over the lazy dog'),
+    subject: text('subtitle', 'Lorem ipsum sit'),
+  };
   return (
     <Block row style='breaking-news'>
       <Grid columns={12}>
-        <Teaser 
-          title={text('title', 'The quick brown fox jumps over the lazy dog')}
-          subtitle={text('subtitle', 'Lorem ipsum sit dolor amet lorem situation')}
-          subject={text('subject', 'Assunto')}
+        <TeaserFeatured 
+          content={content}
+          status={status}
         />
       </Grid>
     </Block>
