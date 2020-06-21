@@ -75,7 +75,33 @@ export const TresManchetes = () => {
   );
 };
 
-export const BreakingNews = () => {
+export const BreakingNewsComImagem = () => {
+  const status = {
+    loading: boolean('loading', true),
+    error: boolean('error', false)
+  };
+  const content = {
+    title: text('title', 'The quick brown fox jumps over the lazy dog'),
+    subject: text('subtitle', 'Lorem ipsum sit'),
+  };
+  const image = {
+    imageUrl: null,
+    captionAndByline: null
+  };
+  return (
+    <Block row style='breaking-news'>
+      <Grid columns={12}>
+        <TeaserFeatured 
+          content={content}
+          status={status}
+          image={image}
+        />
+      </Grid>
+    </Block>
+  );
+};
+
+export const BreakingNewsSemImagem = () => {
   const status = {
     loading: boolean('loading', false),
     error: boolean('error', false)

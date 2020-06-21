@@ -11,13 +11,15 @@ const TeaserFeatured = (props) => {
   const imageData = props.image;
 
   const getImageFromProps = () => {
-    if (!imageData || loading || error) return <div className='image-box skeleton'/>;
+    if (loading || error) return <div className='image-box skeleton'/>;
     return <BackgroundImage data={imageData} />;
   };
 
+  const teaserHasImage = imageData ? 'has-image' : 'no-image';
+
   return (
-    <div className='xp-teaser-featured'>
-      {getImageFromProps()}
+    <div className={`xp-teaser-featured ${teaserHasImage}`}>
+      {imageData && getImageFromProps()}
       <div className='teaser-content'>
         {subject && <Subject filled>{subject}</Subject>}
         <a href={articleUrl} aria-label={`Abrir matéria ${title}`}>
