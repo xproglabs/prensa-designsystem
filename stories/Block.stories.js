@@ -2,8 +2,9 @@ import {text, boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import Block from '../src/Block';
+import {BreakingNews} from '../src/Blocks';
 import Grid from '../src/Grid';
-import {Teaser, TeaserFeatured} from '../src/Teasers';
+import {Teaser} from '../src/Teasers';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
@@ -75,31 +76,28 @@ export const TresManchetes = () => {
   );
 };
 
-export const BreakingNews = () => {
+export const BlocoBreakingNews = () => {
   const status = {
     loading: boolean('loading', true),
     error: boolean('error', false)
   };
-
   const content = {
     title: text('title', 'The quick brown fox jumps over the lazy dog'),
     subject: text('subtitle', 'Lorem ipsum sit'),
   };
-
   const hasImage = boolean('image', false);
   const image = {
     imageUrl: null,
     captionAndByline: null
   };
+
+  //POLOPOLY JSON
+  const blockData = {
+    content: content,
+    status: status,
+    image: hasImage && image
+  };
   return (
-    <Block row style='breaking-news'>
-      <Grid columns={12}>
-        <TeaserFeatured 
-          content={content}
-          status={status}
-          image={hasImage && image}
-        />
-      </Grid>
-    </Block>
+    <BreakingNews blockData={blockData} />
   );
 };
