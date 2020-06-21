@@ -11,8 +11,8 @@ const FourCol = props => {
   return (
     <Block row style='4-col'>
       {map(content, (teaser, k) => (
-        <Grid xs={100} md={50} columns={3}>
-          <Teaser key={k} content={teaser} status={status}/>
+        <Grid key={k} xs={100} md={50} columns={3}>
+          <Teaser content={teaser} status={status}/>
         </Grid>
       ))}
     </Block>
