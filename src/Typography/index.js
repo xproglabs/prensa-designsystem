@@ -23,6 +23,7 @@ const Typography = props => {
     [`${custom}`]: custom
   });
 
+  if (title) return <h1 className={classes}>{children}</h1>;
   return (
     <span className={classes}>{children}</span>
   );

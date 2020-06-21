@@ -2,7 +2,7 @@ import {text, boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import Block from '../src/Block';
-import {BreakingNews} from '../src/Blocks';
+import {BreakingNews, FourCol} from '../src/Blocks';
 import Grid from '../src/Grid';
 import {Teaser} from '../src/Teasers';
 import {sassWrapper} from '../utils/SassWrapper';
@@ -14,37 +14,49 @@ export default {
 };
 
 export const QuatroManchetes = () => {
+  const hasImage = boolean('image', false);
+  const image = {
+    imageUrl: null,
+    captionAndByline: null
+  };
+  const content = [
+    {
+      title: text('title', 'The quick brown fox jumps over the lazy dog'),
+      subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
+      subject: text('subject', 'Assunto'),
+      image: hasImage && image
+    },
+    {
+      title: text('title', 'The quick brown fox jumps over the lazy dog'),
+      subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
+      subject: text('subject', 'Assunto'),
+      image: hasImage && image
+    },
+    {
+      title: text('title', 'The quick brown fox jumps over the lazy dog'),
+      subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
+      subject: text('subject', 'Assunto'),
+      image: hasImage && image
+    },
+    {
+      title: text('title', 'The quick brown fox jumps over the lazy dog'),
+      subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
+      subject: text('subject', 'Assunto'),
+      image: hasImage && image
+    },
+  ];
+
+  const status = {
+    loading: boolean('loading', false),
+    error: boolean('loading', false)
+  };
+  
+  const blockData = {
+    content: content,
+    status: status
+  };
   return (
-    <Block row style='4-col'>
-      <Grid xs={100} md={50} columns={3}>
-        <Teaser 
-          title={text('title', 'The quick brown fox jumps over the lazy dog')}
-          subtitle={text('subtitle', 'Lorem ipsum sit dolor amet lorem situation')}
-          subject={text('subject', 'Assunto')}
-        />
-      </Grid>
-      <Grid xs={100} md={50} columns={3}>
-        <Teaser 
-          title={text('title', 'The quick brown fox jumps over the lazy dog')}
-          subtitle={text('subtitle', 'Lorem ipsum sit dolor amet lorem situation')}
-          subject={text('subject', 'Assunto')}
-        />
-      </Grid>
-      <Grid xs={100} md={50} columns={3}>
-        <Teaser 
-          title={text('title', 'The quick brown fox jumps over the lazy dog')}
-          subtitle={text('subtitle', 'Lorem ipsum sit dolor amet lorem situation')}
-          subject={text('subject', 'Assunto')}
-        />
-      </Grid>
-      <Grid xs={100} md={50} columns={3}>
-        <Teaser 
-          title={text('title', 'The quick brown fox jumps over the lazy dog')}
-          subtitle={text('subtitle', 'Lorem ipsum sit dolor amet lorem situation')}
-          subject={text('subject', 'Assunto')}
-        />
-      </Grid>
-    </Block>
+    <FourCol blockData={blockData} />
   );
 };
 

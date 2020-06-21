@@ -1,33 +1,5 @@
 @use '../../styles' as *;
 
-.xp-teaser {
-  @include fy(flex-start, flex-start);
-  @include w(100%);
-}
-
 .skeleton {
   @include bg($color-neutral-9);
-}
-
-.xp-teaser-featured {
-  @include fy(flex-start, flex-start);
-  @include w(100%);
-  .teaser-content {
-  }
-  &.has-image {
-    position: relative;
-    .teaser-content {
-      position: absolute;
-      bottom: 0;
-      @include px(24px);
-      @include pb(24px);
-    }
-  }
-  .image-box {
-    @include h(400px);
-    @include w(100%);
-    background-position-x: center;
-    background-position-y: center;
-    background-repeat: no-repeat;
-  }
 }
