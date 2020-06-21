@@ -77,25 +77,26 @@ export const TresManchetes = () => {
 };
 
 export const BlocoBreakingNews = () => {
+  const hasImage = boolean('image', false);
+  
   const status = {
     loading: boolean('loading', true),
     error: boolean('error', false)
   };
-  const content = {
-    title: text('title', 'The quick brown fox jumps over the lazy dog'),
-    subject: text('subtitle', 'Lorem ipsum sit'),
-  };
-  const hasImage = boolean('image', false);
   const image = {
     imageUrl: null,
     captionAndByline: null
   };
-
+  const content = {
+    title: text('title', 'The quick brown fox jumps over the lazy dog'),
+    subject: text('subtitle', 'Lorem ipsum sit'),
+    image: hasImage && image
+  };
+  
   //POLOPOLY JSON
   const blockData = {
-    content: content,
+    content: [content],
     status: status,
-    image: hasImage && image
   };
   return (
     <BreakingNews blockData={blockData} />

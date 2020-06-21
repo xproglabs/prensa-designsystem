@@ -6,20 +6,19 @@ import Typography from '../Typography';
 import {BackgroundImage} from '../utils';
 
 const TeaserFeatured = (props) => {
-  const {title, subject, articleUrl} = props.content;
+  const {title, subject, articleUrl, image} = props.content;
   const {loading, error} = props.status;
-  const imageData = props.image;
 
   const getImageFromProps = () => {
     if (loading || error) return <div className='image-box skeleton'/>;
-    return <BackgroundImage data={imageData} />;
+    return <BackgroundImage data={image} />;
   };
 
-  const teaserHasImage = imageData ? 'has-image' : 'no-image';
+  const teaserHasImage = image ? 'has-image' : 'no-image';
 
   return (
     <div className={`xp-teaser-featured ${teaserHasImage}`}>
-      {imageData && getImageFromProps()}
+      {image && getImageFromProps()}
       <div className='teaser-content'>
         {subject && <Subject filled>{subject}</Subject>}
         <a href={articleUrl} aria-label={`Abrir matéria ${title}`}>
@@ -36,11 +35,8 @@ TeaserFeatured.propTypes = {
   content: PropTypes.shape({
     title: PropTypes.string,
     subject: PropTypes.string,
-    articleUrl: PropTypes.string
-  }),
-  image: PropTypes.shape({
-    imageUrl: PropTypes.string,
-    captionAndByline: PropTypes.string,
+    articleUrl: PropTypes.string,
+    image: PropTypes.object
   }),
   status: PropTypes.shape({
     loading: PropTypes.bool,

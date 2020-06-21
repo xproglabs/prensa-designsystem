@@ -6,14 +6,13 @@ import Grid from '../Grid';
 import {TeaserFeatured} from '../Teasers';
 
 const BreakingNews = props => {
-  const {content, image, status} = props.blockData;
+  const {content, status} = props.blockData;
   return (
     <Block row style='breaking-news'>
       <Grid columns={12}>
         <TeaserFeatured 
-          content={content}
+          content={content[0]}
           status={status}
-          image={image}
         />
       </Grid>
     </Block>
@@ -22,8 +21,7 @@ const BreakingNews = props => {
 
 BreakingNews.propTypes = {
   blockData: PropTypes.shape({
-    content: PropTypes.object,
-    image: PropTypes.object,
+    content: PropTypes.array,
     status: PropTypes.object,
   })
 };
