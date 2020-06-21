@@ -75,3 +75,17 @@ export const TresManchetes = () => {
     </Block>
   );
 };
+
+export const BreakingNews = () => {
+  return (
+    <Block row style='breaking-news'>
+      <Grid columns={12}>
+        <Teaser 
+          title={text('title', 'The quick brown fox jumps over the lazy dog')}
+          subtitle={text('subtitle', 'Lorem ipsum sit dolor amet lorem situation')}
+          subject={text('subject', 'Assunto')}
+        />
+      </Grid>
+    </Block>
+  );
+};

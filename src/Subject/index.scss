@@ -6,7 +6,7 @@
   @include mb(4px);
 }
 
-.secondary {
+.filled {
   @include bg($color-primary-1);
   @include fc($color-white);
   @include px($space-size-1);

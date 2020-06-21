@@ -41,7 +41,6 @@ const Block = (props) => {
         return '';
     }
   };
-  console.log(getStyle());
 
   const classes = classnames({
     'ds-block': true,

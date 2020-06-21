@@ -5,13 +5,13 @@ import React from 'react';
 import Typography from '../Typography';
 
 const Subject = props => {
-  const {children, custom, secondary} = props;
+  const {children, custom, filled} = props;
 
   if (!children) return null;
 
   const classes = classnames({
     'xp-subject-root': true,
-    'secondary': secondary,
+    'filled': filled,
     [`${custom}`]: custom
   });
 
@@ -25,7 +25,7 @@ const Subject = props => {
 Subject.propTypes = {
   children: PropTypes.string.isRequired,
   custom: PropTypes.string,
-  secondary: PropTypes.bool,
+  filled: PropTypes.bool,
   // size: PropTypes.oneOf([
   //   'sm', 'md', 'lg'
   // ])

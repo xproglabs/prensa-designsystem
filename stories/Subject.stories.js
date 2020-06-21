@@ -18,3 +18,12 @@ export const Default = () => {
     </div>
   );
 };
+export const Filled = () => {
+  return (
+    <div style={{display: 'flex', flexDirection: 'column', padding: 40}}>
+      <Subject filled>
+        The quick fox
+      </Subject>
+    </div>
+  );
+};
