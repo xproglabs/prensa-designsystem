@@ -1,0 +1,7 @@
+@use '../../styles' as *;
+
+$xp-topbar-height: 70px;
+
+.xp-topbar {
+  @include h($xp-topbar-height);
+}
