@@ -12,7 +12,9 @@ const Block = (props) => {
     alignMiddle,
     alignRight,
     alignTop,
+    bgColor,
     custom,
+    fColor,
     fitH,
     fitW,
     m,
@@ -64,6 +66,8 @@ const Block = (props) => {
     'fx-dir-row': row,
     'fx-fit-h': fitH,
     'fx-fit-w': fitW,
+    [`xp-bg-${bgColor}`]: bgColor,
+    [`xp-f-${fColor}`]: fColor,
     [`xp-h-${height}`]: height,
     [`xp-m-${m}`]: m,
     [`xp-mb-${mb}`]: mb,
@@ -94,11 +98,13 @@ Block.propTypes = {
   alignMiddle: PropTypes.bool,
   alignRight: PropTypes.bool,
   alignTop: PropTypes.bool,
+  bgColor: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object
   ]).isRequired,
   custom: PropTypes.string,
+  fColor: PropTypes.string,
   fitH: PropTypes.bool,
   fitW: PropTypes.bool,
   m: PropTypes.oneOf([

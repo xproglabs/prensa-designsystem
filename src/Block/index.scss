@@ -51,6 +51,7 @@ $size-xl: 512px;
 .xp-mr-xl { @include mr($margin-xl)}
 .xp-mt-xl { @include mt($margin-xl)}
 
+.xp-p-0 { @include p(0px)}
 .xp-p-xs { @include p($padding-xs)}
 .xp-pb-xs { @include pb($padding-xs)}
 .xp-pl-xs { @include pl($padding-xs)}
@@ -123,3 +124,51 @@ $size-xl: 512px;
 .block-four-col {
   flex-wrap: wrap;
 };
+
+.xp-bg-primary-1 { @include bg($color-primary-1)}
+.xp-bg-primary-2 { @include bg($color-primary-2)}
+.xp-bg-primary-3 { @include bg($color-primary-3)}
+.xp-bg-secondary-1 { @include bg($color-secondary-1)}
+.xp-bg-secondary-2 { @include bg($color-secondary-2)}
+.xp-bg-secondary-3 { @include bg($color-secondary-3)}
+.xp-bg-black { @include bg($color-black)}
+.xp-bg-neutral-1 { @include bg($color-neutral-1)}
+.xp-bg-neutral-2 { @include bg($color-neutral-2)}
+.xp-bg-neutral-3 { @include bg($color-neutral-3)}
+.xp-bg-neutral-4 { @include bg($color-neutral-4)}
+.xp-bg-neutral-5 { @include bg($color-neutral-5)}
+.xp-bg-neutral-6 { @include bg($color-neutral-6)}
+.xp-bg-neutral-7 { @include bg($color-neutral-7)}
+.xp-bg-neutral-8 { @include bg($color-neutral-8)}
+.xp-bg-neutral-9 { @include bg($color-neutral-9)}
+.xp-bg-neutral-10 { @include bg($color-neutral-10)}
+.xp-bg-neutral-11 { @include bg($color-neutral-11)}
+.xp-bg-white { @include bg($color-white)}
+.xp-bg-alert-1 { @include bg($color-alert-1)}
+.xp-bg-alert-2 { @include bg($color-alert-2)}
+
+.xp-f-primary-1 { @include fc($color-primary-1)}
+.xp-f-primary-2 { @include fc($color-primary-2)}
+.xp-f-primary-3 { @include fc($color-primary-3)}
+.xp-f-secondary-1 { @include fc($color-secondary-1)}
+.xp-f-secondary-2 { @include fc($color-secondary-2)}
+.xp-f-secondary-3 { @include fc($color-secondary-3)}
+.xp-f-black { @include fc($color-black)}
+.xp-f-neutral-1 { @include fc($color-neutral-1)}
+.xp-f-neutral-2 { @include fc($color-neutral-2)}
+.xp-f-neutral-3 { @include fc($color-neutral-3)}
+.xp-f-neutral-4 { @include fc($color-neutral-4)}
+.xp-f-neutral-5 { @include fc($color-neutral-5)}
+.xp-f-neutral-6 { @include fc($color-neutral-6)}
+.xp-f-neutral-7 { @include fc($color-neutral-7)}
+.xp-f-neutral-8 { @include fc($color-neutral-8)}
+.xp-f-neutral-9 { @include fc($color-neutral-9)}
+.xp-f-neutral-10 { @include fc($color-neutral-10)}
+.xp-f-neutral-11 { @include fc($color-neutral-11)}
+.xp-f-white { @include fc($color-white)}
+.xp-f-alert-1 { @include fc($color-alert-1)}
+.xp-f-alert-2 { @include fc($color-alert-2)}
+
+.xp-mockup {
+  @include r(5%);
+}
