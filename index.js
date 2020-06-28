@@ -7,6 +7,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var classnames = _interopDefault(require('classnames'));
 var PropTypes = _interopDefault(require('prop-types'));
 var React = _interopDefault(require('react'));
+var lodash = require('lodash');
 
 var Button = function Button(props) {
   var style = classnames({
@@ -240,6 +241,80 @@ Block.defaultProps = {
   p: '0'
 };
 
+var MenuLeftItems = function MenuLeftItems(_ref) {
+  var content = _ref.content,
+      functions = _ref.functions;
+
+  var SubItem = function SubItem(_ref2) {
+    var item = _ref2.item;
+    return /*#__PURE__*/React.createElement(Block, {
+      custom: "subitem",
+      functions: {
+        handleClick: function handleClick() {
+          return functions.onMenuItem(item.path);
+        }
+      },
+      mt: "xs"
+    }, /*#__PURE__*/React.createElement("a", {
+      href: item.path
+    }, item.name));
+  };
+
+  SubItem.propTypes = {
+    item: PropTypes.object
+  };
+
+  var LeftItem = function LeftItem(_ref3) {
+    var item = _ref3.item;
+    return /*#__PURE__*/React.createElement(Block, {
+      custom: "listitem",
+      mt: "md"
+    }, /*#__PURE__*/React.createElement(Block, {
+      custom: "item",
+      functions: {
+        handleClick: function handleClick() {
+          return functions.onMenuItem(item.path);
+        }
+      },
+      mb: "md",
+      mt: "md"
+    }, /*#__PURE__*/React.createElement("a", {
+      href: item.path
+    }, item.name)), /*#__PURE__*/React.createElement(Block, {
+      custom: "subitems"
+    }, lodash.map(item.subitems, function (item, key) {
+      return /*#__PURE__*/React.createElement(SubItem, {
+        item: item,
+        key: key
+      });
+    })));
+  };
+
+  LeftItem.propTypes = {
+    item: PropTypes.object
+  };
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: 'xp-menu-left-items'
+  }, lodash.map(content.items, function (item, key) {
+    return /*#__PURE__*/React.createElement(LeftItem, {
+      item: item,
+      key: key
+    });
+  }));
+};
+/* required props */
+
+
+MenuLeftItems.propTypes = {
+  content: PropTypes.object,
+  functions: PropTypes.shape({
+    onMenuItem: PropTypes.func
+  })
+};
+MenuLeftItems.defaultProps = {
+  content: {}
+};
+
 var MainTopbar = function MainTopbar(_ref) {
   var content = _ref.content,
       functions = _ref.functions;
@@ -331,6 +406,7 @@ var MenuLeft = function MenuLeft(_ref) {
 
 
 MenuLeft.propTypes = {
+  children: PropTypes.node,
   content: PropTypes.object,
   functions: PropTypes.shape({
     onCloseModal: PropTypes.func
@@ -353,6 +429,7 @@ MenuLeft.defaultProps = {
 
 var index$1 = {
   MenuLeft: MenuLeft,
+  MenuLeftItems: MenuLeftItems,
   MainTopbar: MainTopbar
 };
 

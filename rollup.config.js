@@ -6,7 +6,7 @@ import sass from 'rollup-plugin-sass';
 
 export default {
   input: 'src/index.js',
-  external: ['react', 'prop-types', 'sass', 'classnames'],
+  external: ['react', 'prop-types', 'sass', 'lodash', 'classnames'],
   output: [
     {
       file: 'index.js',
@@ -19,7 +19,7 @@ export default {
   ],
   plugins: [ 
     babel({
-      exclude: 'example, node_modules/**, stories, .github, .storybook'
+      exclude: 'example, node_modules/**, stories, .github, .storybook',
     }),
     json(),
     resolve(),

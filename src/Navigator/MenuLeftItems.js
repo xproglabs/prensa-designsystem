@@ -12,8 +12,9 @@ const MenuLeftItems = ({content, functions}) => {
         custom="subitem" 
         functions={{handleClick: () => functions.onMenuItem(item.path)}}
         mt="xs">
-        {item.name}
-        {item.path}
+        <a href={item.path}>
+          {item.name}
+        </a>
       </Block>
     );
   };
@@ -30,8 +31,9 @@ const MenuLeftItems = ({content, functions}) => {
         functions={{handleClick: () => functions.onMenuItem(item.path)}}
         mb="md"
         mt="md">
-        {item.name}
-        {item.path}
+        <a href={item.path}>
+          {item.name}
+        </a>
       </Block>
       <Block 
         custom="subitems">

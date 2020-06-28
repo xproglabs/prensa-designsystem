@@ -1,4 +1,5 @@
 import MainTopbar from './MainTopbar';
 import MenuLeft from './MenuLeft';
+import MenuLeftItems from './MenuLeftItems';
 
-export default {MenuLeft, MainTopbar};
+export default {MenuLeft, MenuLeftItems, MainTopbar};
