@@ -10,7 +10,18 @@ export default {
   decorators: [withKnobs, sassWrapper]
 };
 
-export const Readme = () => <pre>Intro</pre>;
+export const Readme = () => {
+  return (
+    <p>
+      <h3>Modelo de payload JSON</h3><br />
+      <a href="https://pastebin.com/MqNVQ6uR" 
+        rel="noopener noreferrer"
+        target="_blank">
+        https://pastebin.com/MqNVQ6uR
+      </a>
+    </p>
+  );
+};
 
 export const MainMenu = () => 
   <Topbar data={null} />;

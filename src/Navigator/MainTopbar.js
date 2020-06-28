@@ -3,25 +3,30 @@ import React from 'react';
 
 import Block from '../Block';
 
-const MainTopbar = ({LeftContent, CenterContent, RightContent}) =>
-  <Block custom="xp-topbar" 
-    alignBetween
-    alignMiddle
-    bgColor="primary-1" 
-    p="0" 
-    row
-    width="full">
-    <Block>
-      <LeftContent />
+const MainTopbar = ({content}) => {
+  const {LeftContent, CenterContent, RightContent} = content;
+  return (
+    <Block custom="xp-topbar" 
+      alignBetween
+      alignMiddle
+      bgColor="primary-1" 
+      p="0" 
+      row
+      width="full">
+      <Block>
+        <LeftContent />
+      </Block>
+      <Block>
+        <CenterContent />
+      </Block>
+      <Block>
+        <RightContent />
+      </Block>
     </Block>
-    <Block>
-      <CenterContent />
-    </Block>
-    <Block>
-      <RightContent />
-    </Block>
-  </Block>;
+  );
+};
 
+/* mockups */
 const LeftContentMockup = () => 
   <Block custom="xp-mockup" 
     bgColor="neutral-6" 
@@ -43,16 +48,15 @@ const RightContentMockup = () =>
     RightContent
   </Block>;
 
+/* required props */
 MainTopbar.propTypes = {
-  LeftContent: PropTypes.node,
-  CenterContent: PropTypes.node,
-  RightContent: PropTypes.node
+  content: PropTypes.object
 };
-
 MainTopbar.defaultProps = {
-  LeftContent: LeftContentMockup,
-  CenterContent: CenterContentMockup,
-  RightContent: RightContentMockup
+  content: {
+    LeftContent: LeftContentMockup,
+    CenterContent: CenterContentMockup,
+    RightContent: RightContentMockup
+  }
 };
-
 export default MainTopbar;
