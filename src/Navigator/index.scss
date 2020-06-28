@@ -1,7 +1,39 @@
 @use '../../styles' as *;
 
-$xp-topbar-height: 70px;
+$topbar-height: 70px;
+$menu-max-width: 350px;
+$menu-opacity: rgba(0,0,0,0.5);
 
 .xp-topbar {
-  @include h($xp-topbar-height);
+  @include h($topbar-height);
+}
+.xp-menu-left {
+  @include h(100vh);
+  @include mw($menu-max-width);
+  @include w(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+.xp-menu-left-icon {
+  cursor: pointer;
+}
+.xp-menu-modal {
+  &.closed {
+    display: none;
+  }
+  &.opened {
+    display: flex;
+  }
+}
+.xp-menu-opacity {
+  @include bg($menu-opacity);
+  @include h(100vh);
+  @include w(100vw);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 
 import Block from '../Block';
 
-const MainTopbar = ({content}) => {
+const MainTopbar = ({content, functions}) => {
   const {LeftContent, CenterContent, RightContent} = content;
   return (
     <Block custom="xp-topbar" 
@@ -14,26 +14,28 @@ const MainTopbar = ({content}) => {
       row
       width="full">
       <Block>
-        <LeftContent />
+        {LeftContent && <LeftContent functions={functions} />}
       </Block>
       <Block>
-        <CenterContent />
+        {CenterContent && <CenterContent />}
       </Block>
       <Block>
-        <RightContent />
+        {RightContent && <RightContent />}
       </Block>
     </Block>
   );
 };
 
-/* mockups */
-const LeftContentMockup = () => 
-  <Block custom="xp-mockup" 
-    bgColor="neutral-6" 
-    p="sm">
-    LeftContent
-  </Block>;
-
+const LeftMenuIcon = ({functions}) => {
+  return (
+    <Block custom="xp-menu-left-icon" 
+      bgColor="neutral-6" 
+      functions={{handleClick: functions.onLeftIcon}}
+      p="sm">
+      ICON
+    </Block>
+  );
+};
 const CenterContentMockup = () => 
   <Block custom="xp-mockup" 
     bgColor="neutral-4" 
@@ -49,14 +51,27 @@ const RightContentMockup = () =>
   </Block>;
 
 /* required props */
+LeftMenuIcon.propTypes = {
+  functions: PropTypes.objectOf(
+    PropTypes.shape({
+      onLeftIcon: PropTypes.func
+    })
+  )
+};
+
 MainTopbar.propTypes = {
-  content: PropTypes.object
+  content: PropTypes.object,
+  functions: PropTypes.objectOf(
+    PropTypes.shape({
+      onLeftIcon: PropTypes.func
+    })
+  )
 };
 MainTopbar.defaultProps = {
   content: {
-    LeftContent: LeftContentMockup,
+    LeftContent: LeftMenuIcon,
     CenterContent: CenterContentMockup,
-    RightContent: RightContentMockup
+    RightContent: RightContentMockup,
   }
 };
 export default MainTopbar;

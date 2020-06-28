@@ -1,7 +1,8 @@
 import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
-import Topbar from '../src/Navigator/MainTopbar';
+import MainTopbar from '../src/Navigator/MainTopbar';
+import MenuLeft from '../src/Navigator/MenuLeft';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
@@ -23,20 +24,57 @@ export const Readme = () => {
   );
 };
 
-export const MainMenu = () => 
-  <Topbar data={null} />;
-
-export const MainTopbar = () => {
-  const content = {};
-  const status = {
-    loading: boolean('loading', false),
-    error: boolean('loading', false)
+export const MainMenu = () => {
+  const dataMenuLeft = {
+    status: {
+      error: boolean('loading', false),
+      loading: boolean('loading', false),
+      opened: boolean('opened', true)
+    }
   };
-  const data = {
-    content: content,
-    status: status
+  return <MenuLeft {...dataMenuLeft} />;
+};
+
+export const Topbar = () => {
+  const dataMainTopbar = {
+    functions: {
+      onLeftIcon: () => null
+    }, 
+    status: {
+      loading: boolean('loading', false),
+      error: boolean('loading', false)
+    }
   };
   return (
-    <Topbar data={data} />
+    <MainTopbar {...dataMainTopbar} />
+  );
+};
+  
+export const TopbarFull = () => {
+  
+  const [isMenuLeftOpened, toggleMenuLeft] = React.useState(false);
+
+  const dataMainTopbar = {
+    functions: {
+      onLeftIcon: () => toggleMenuLeft(!isMenuLeftOpened)
+    },
+    status: {
+      loading: boolean('loading', false),
+      error: boolean('loading', false)
+    }
+  };
+  const dataMenuLeft = {
+    functions: {
+      onCloseModal: () => toggleMenuLeft(!isMenuLeftOpened)
+    },
+    status: {
+      opened: isMenuLeftOpened
+    }
+  };
+  return (
+    <>
+      <MainTopbar {...dataMainTopbar} />
+      <MenuLeft {...dataMenuLeft} />
+    </>
   );
 };
