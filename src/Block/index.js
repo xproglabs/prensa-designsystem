@@ -158,7 +158,7 @@ Block.propTypes = {
 
 Block.defaultProps = {
   functions: {},
-  p: 'md'
+  p: '0'
 };
 
 export default Block;

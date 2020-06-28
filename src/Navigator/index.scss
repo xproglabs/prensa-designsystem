@@ -19,6 +19,17 @@ $menu-opacity: rgba(0,0,0,0.5);
 .xp-menu-left-icon {
   cursor: pointer;
 }
+.xp-menu-left-items {
+  .item {
+    cursor: pointer;
+  }
+  .subitems {
+    
+  }
+  .subitem {
+    cursor: pointer;
+  }
+}
 .xp-menu-modal {
   &.closed {
     display: none;

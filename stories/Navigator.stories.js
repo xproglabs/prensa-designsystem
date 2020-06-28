@@ -1,8 +1,10 @@
 import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
+import navigation from '../mockup/navigation';
 import MainTopbar from '../src/Navigator/MainTopbar';
 import MenuLeft from '../src/Navigator/MenuLeft';
+import MenuLeftItems from '../src/Navigator/MenuLeftItems';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
@@ -24,8 +26,15 @@ export const Readme = () => {
   );
 };
 
+
 export const MainMenu = () => {
+  const menuLeftItemsProps = {
+    content: {
+      items: navigation.side
+    }
+  };
   const dataMenuLeft = {
+    children: <MenuLeftItems {...menuLeftItemsProps} />,
     status: {
       error: boolean('loading', false),
       loading: boolean('loading', false),
@@ -54,6 +63,14 @@ export const TopbarFull = () => {
   
   const [isMenuLeftOpened, toggleMenuLeft] = React.useState(false);
 
+  const menuLeftItemsProps = {
+    content: {
+      items: navigation.side
+    },
+    functions: {
+      onMenuItem: () => toggleMenuLeft(!isMenuLeftOpened)
+    }
+  };
   const dataMainTopbar = {
     functions: {
       onLeftIcon: () => toggleMenuLeft(!isMenuLeftOpened)
@@ -64,6 +81,7 @@ export const TopbarFull = () => {
     }
   };
   const dataMenuLeft = {
+    children: <MenuLeftItems {...menuLeftItemsProps} />,
     functions: {
       onCloseModal: () => toggleMenuLeft(!isMenuLeftOpened)
     },

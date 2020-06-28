@@ -3,7 +3,7 @@ import React from 'react';
 
 import Block from '../Block';
 
-const MenuLeft = ({functions, status}) => {
+const MenuLeft = ({children, functions, status}) => {
   const menuModalClasses = status.opened ? 'opened' : 'closed';
   return (
     <Block 
@@ -12,12 +12,13 @@ const MenuLeft = ({functions, status}) => {
       <Block 
         custom="xp-menu-opacity" 
         functions={{handleClick: functions.onCloseModal}}
-        p="0"></Block>
+        p="0">
+      </Block>
       <Block 
         custom="xp-menu-left" 
         bgColor="white" 
         p="0">
-        LeftContent===!284397q
+        {children && children}
       </Block>
     </Block>
   );
@@ -25,6 +26,7 @@ const MenuLeft = ({functions, status}) => {
 
 /* required props */
 MenuLeft.propTypes = {
+  children: PropTypes.node,
   content: PropTypes.object,
   functions: PropTypes.shape({
     onCloseModal: PropTypes.func

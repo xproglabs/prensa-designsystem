@@ -10,7 +10,6 @@ const MainTopbar = ({content, functions}) => {
       alignBetween
       alignMiddle
       bgColor="primary-1" 
-      p="0" 
       row
       width="full">
       <Block>

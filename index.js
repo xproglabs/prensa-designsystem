@@ -237,7 +237,7 @@ Block.propTypes = {
 };
 Block.defaultProps = {
   functions: {},
-  p: 'md'
+  p: '0'
 };
 
 var MainTopbar = function MainTopbar(_ref) {
@@ -251,7 +251,6 @@ var MainTopbar = function MainTopbar(_ref) {
     alignBetween: true,
     alignMiddle: true,
     bgColor: "primary-1",
-    p: "0",
     row: true,
     width: "full"
   }, /*#__PURE__*/React.createElement(Block, null, LeftContent && /*#__PURE__*/React.createElement(LeftContent, {
@@ -309,7 +308,8 @@ MainTopbar.defaultProps = {
 };
 
 var MenuLeft = function MenuLeft(_ref) {
-  var functions = _ref.functions,
+  var children = _ref.children,
+      functions = _ref.functions,
       status = _ref.status;
   var menuModalClasses = status.opened ? 'opened' : 'closed';
   return /*#__PURE__*/React.createElement(Block, {
@@ -325,7 +325,7 @@ var MenuLeft = function MenuLeft(_ref) {
     custom: "xp-menu-left",
     bgColor: "white",
     p: "0"
-  }, "LeftContent===!284397q"));
+  }, children && children));
 };
 /* required props */
 
