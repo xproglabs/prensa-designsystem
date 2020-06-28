@@ -101,41 +101,42 @@ Block.propTypes = {
   bgColor: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.array,
-    PropTypes.object
+    PropTypes.object,
+    PropTypes.node
   ]).isRequired,
   custom: PropTypes.string,
   fColor: PropTypes.string,
   fitH: PropTypes.bool,
   fitW: PropTypes.bool,
   m: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
+    '0', 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   mb: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
+    '0', 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   ml: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
+    '0', 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   mr: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
+    '0', 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   mt: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
+    '0', 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   p: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
+    '0', 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   pb: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
+    '0', 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   pl: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
+    '0', 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   pr: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
+    '0', 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   pt: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
+    '0', 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   row: PropTypes.bool,
   height: PropTypes.oneOf([
