@@ -4,116 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var classnames = _interopDefault(require('classnames'));
-var PropTypes = _interopDefault(require('prop-types'));
 var React = _interopDefault(require('react'));
+var PropTypes = _interopDefault(require('prop-types'));
+var classnames = _interopDefault(require('classnames'));
 var lodash = require('lodash');
-
-var Button = function Button(props) {
-  var style = classnames({
-    'button': true,
-    'primary': props.style === 'primary' && !props.disabled,
-    'secondary': props.style === 'secondary' && !props.disabled,
-    'tertiary': props.style === 'tertiary' && !props.disabled,
-    'disabled': props.disabled
-  });
-  return /*#__PURE__*/React.createElement("button", {
-    className: style,
-    onClick: props.disabled ? null : props.onClick
-  }, props.children);
-};
-
-Button.propTypes = {
-  children: PropTypes.node,
-  style: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func
-};
-Button.defaultProps = {
-  style: 'primary'
-};
-
-var Input = function Input(_ref) {
-  var autoFocus = _ref.autoFocus,
-      disabled = _ref.disabled,
-      invalid = _ref.invalid,
-      label = _ref.label,
-      onEnter = _ref.onEnter,
-      setValue = _ref.setValue,
-      type = _ref.type,
-      value = _ref.value,
-      warning = _ref.warning;
-
-  var KeyDown = function KeyDown(_ref2) {
-    var key = _ref2.key;
-    return key === 'Enter' && onEnter && onEnter();
-  };
-
-  var Label = function Label() {
-    return /*#__PURE__*/React.createElement("p", {
-      className: 'label'
-    }, label && label);
-  };
-
-  var Warning = function Warning() {
-    return /*#__PURE__*/React.createElement("p", {
-      className: 'warning'
-    }, warning && invalid ? warning : ' ');
-  };
-
-  var props = {
-    autoFocus: autoFocus,
-    defaultValue: value,
-    disabled: disabled,
-    onChange: function onChange(_ref3) {
-      var target = _ref3.target;
-      return setValue(target.value);
-    },
-    onKeyDown: KeyDown,
-    type: type
-  };
-  return /*#__PURE__*/React.createElement("div", {
-    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
-  }, /*#__PURE__*/React.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React.createElement("input", props), /*#__PURE__*/React.createElement(Warning, null));
-};
-
-Input.propTypes = {
-  autoFocus: PropTypes.bool,
-  disabled: PropTypes.bool,
-  invalid: PropTypes.bool,
-  label: PropTypes.string,
-  onEnter: PropTypes.func,
-  setValue: PropTypes.func.isRequired,
-  type: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  warning: PropTypes.string
-};
-Input.defaultProps = {
-  autofocus: false,
-  disabled: 'disabled',
-  invalid: false,
-  type: 'text'
-};
-var index = {
-  Input: Input
-};
-
-var Icon = function Icon(data) {
-  return /*#__PURE__*/React.createElement("svg", data, data.children);
-};
-
-Icon.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  viewBox: PropTypes.string,
-  className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.array.isRequired, PropTypes.object.isRequired])
-};
-Icon.defaultProps = {
-  width: 24,
-  height: 24,
-  viewBox: '0 0 24 24'
-};
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -239,6 +133,127 @@ Block.propTypes = {
 Block.defaultProps = {
   functions: {},
   p: '0'
+};
+
+var Article = function Article() {
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "xp-article"
+  }, "Article");
+};
+/* required props */
+
+
+Article.propTypes = {
+  content: PropTypes.object
+};
+Article.defaultProps = {
+  content: {}
+};
+
+var Button = function Button(props) {
+  var style = classnames({
+    'button': true,
+    'primary': props.style === 'primary' && !props.disabled,
+    'secondary': props.style === 'secondary' && !props.disabled,
+    'tertiary': props.style === 'tertiary' && !props.disabled,
+    'disabled': props.disabled
+  });
+  return /*#__PURE__*/React.createElement("button", {
+    className: style,
+    onClick: props.disabled ? null : props.onClick
+  }, props.children);
+};
+
+Button.propTypes = {
+  children: PropTypes.node,
+  style: PropTypes.string,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func
+};
+Button.defaultProps = {
+  style: 'primary'
+};
+
+var Input = function Input(_ref) {
+  var autoFocus = _ref.autoFocus,
+      disabled = _ref.disabled,
+      invalid = _ref.invalid,
+      label = _ref.label,
+      onEnter = _ref.onEnter,
+      setValue = _ref.setValue,
+      type = _ref.type,
+      value = _ref.value,
+      warning = _ref.warning;
+
+  var KeyDown = function KeyDown(_ref2) {
+    var key = _ref2.key;
+    return key === 'Enter' && onEnter && onEnter();
+  };
+
+  var Label = function Label() {
+    return /*#__PURE__*/React.createElement("p", {
+      className: 'label'
+    }, label && label);
+  };
+
+  var Warning = function Warning() {
+    return /*#__PURE__*/React.createElement("p", {
+      className: 'warning'
+    }, warning && invalid ? warning : ' ');
+  };
+
+  var props = {
+    autoFocus: autoFocus,
+    defaultValue: value,
+    disabled: disabled,
+    onChange: function onChange(_ref3) {
+      var target = _ref3.target;
+      return setValue(target.value);
+    },
+    onKeyDown: KeyDown,
+    type: type
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
+  }, /*#__PURE__*/React.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React.createElement("input", props), /*#__PURE__*/React.createElement(Warning, null));
+};
+
+Input.propTypes = {
+  autoFocus: PropTypes.bool,
+  disabled: PropTypes.bool,
+  invalid: PropTypes.bool,
+  label: PropTypes.string,
+  onEnter: PropTypes.func,
+  setValue: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  warning: PropTypes.string
+};
+Input.defaultProps = {
+  autofocus: false,
+  disabled: 'disabled',
+  invalid: false,
+  type: 'text'
+};
+var index = {
+  Input: Input
+};
+
+var Icon = function Icon(data) {
+  return /*#__PURE__*/React.createElement("svg", data, data.children);
+};
+
+Icon.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+  viewBox: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.array.isRequired, PropTypes.object.isRequired])
+};
+Icon.defaultProps = {
+  width: 24,
+  height: 24,
+  viewBox: '0 0 24 24'
 };
 
 var MainTopbar = function MainTopbar(_ref) {
@@ -433,6 +448,66 @@ var index$1 = {
   MainTopbar: MainTopbar
 };
 
+var List = function List(_ref) {
+  var content = _ref.content;
+
+  var Item = function Item(_ref2) {
+    var item = _ref2.item;
+    return /*#__PURE__*/React.createElement(Block, {
+      custom: "item",
+      mt: "xs"
+    }, /*#__PURE__*/React.createElement("a", {
+      href: item.path
+    }, item.name));
+  };
+
+  Item.propTypes = {
+    item: PropTypes.object
+  };
+
+  if (!content.items || content.items.length === 0) {
+    return /*#__PURE__*/React.createElement(Block, {
+      custom: "xp-news-list"
+    }, /*#__PURE__*/React.createElement("pre", null, "Items not found"));
+  }
+
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "xp-news-list"
+  }, lodash.map(content.items, function (item, key) {
+    return /*#__PURE__*/React.createElement(Item, {
+      item: item,
+      key: key
+    });
+  }));
+};
+/* required props */
+
+
+List.propTypes = {
+  content: PropTypes.object,
+  functions: PropTypes.shape({
+    onCloseModal: PropTypes.func
+  }),
+  status: PropTypes.shape({
+    opened: PropTypes.bool
+  })
+};
+List.defaultProps = {
+  content: {},
+  functions: {
+    onCloseModal: function onCloseModal() {
+      return null;
+    }
+  },
+  status: {
+    opened: false
+  }
+};
+
+var index$2 = {
+  List: List
+};
+
 var Panel = function Panel(_ref) {
   var children = _ref.children,
       style = _ref.style;
@@ -446,8 +521,10 @@ Panel.propTypes = {
   style: PropTypes.string
 };
 
+exports.Article = Article;
 exports.Button = Button;
 exports.Form = index;
 exports.Icon = Icon;
 exports.Navigator = index$1;
+exports.NewsList = index$2;
 exports.Panel = Panel;

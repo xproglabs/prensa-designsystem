@@ -1,5 +1,6 @@
 @forward 'base';
 @forward './variables/alignments.scss';
+@forward '../src/Article';
 @forward '../src/Button';
 @forward '../src/Form';
 @forward '../src/Panel';
