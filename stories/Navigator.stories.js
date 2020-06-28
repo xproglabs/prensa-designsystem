@@ -8,7 +8,7 @@ import MenuLeftItems from '../src/Navigator/MenuLeftItems';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Modules | Navigator',
+  title: 'Components | Navigator',
   component: Readme,
   decorators: [withKnobs, sassWrapper]
 };
@@ -45,21 +45,6 @@ export const MainMenu = () => {
 };
 
 export const Topbar = () => {
-  const dataMainTopbar = {
-    functions: {
-      onLeftIcon: () => null
-    }, 
-    status: {
-      loading: boolean('loading', false),
-      error: boolean('loading', false)
-    }
-  };
-  return (
-    <MainTopbar {...dataMainTopbar} />
-  );
-};
-  
-export const TopbarFull = () => {
   
   const [isMenuLeftOpened, toggleMenuLeft] = React.useState(false);
 
