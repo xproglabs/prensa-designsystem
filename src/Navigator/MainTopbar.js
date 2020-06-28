@@ -52,20 +52,16 @@ const RightContentMockup = () =>
 
 /* required props */
 LeftMenuIcon.propTypes = {
-  functions: PropTypes.objectOf(
-    PropTypes.shape({
-      onLeftIcon: PropTypes.func
-    })
-  )
+  functions: PropTypes.shape({
+    onLeftIcon: PropTypes.func
+  })
 };
 
 MainTopbar.propTypes = {
   content: PropTypes.object,
-  functions: PropTypes.objectOf(
-    PropTypes.shape({
-      onLeftIcon: PropTypes.func
-    })
-  )
+  functions: PropTypes.shape({
+    onLeftIcon: PropTypes.func
+  })
 };
 MainTopbar.defaultProps = {
   content: {

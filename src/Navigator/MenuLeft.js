@@ -26,10 +26,12 @@ const MenuLeft = ({functions, status}) => {
 /* required props */
 MenuLeft.propTypes = {
   content: PropTypes.object,
-  functions: PropTypes.object,
-  status: {
+  functions: PropTypes.shape({
+    onCloseModal: PropTypes.func
+  }),
+  status: PropTypes.shape({
     opened: PropTypes.bool
-  }
+  })
 };
 MenuLeft.defaultProps = {
   content: {},
@@ -37,7 +39,7 @@ MenuLeft.defaultProps = {
     onCloseModal: () => null
   },
   status: {
-    opened: false,
+    opened: false
   }
 };
 export default MenuLeft;

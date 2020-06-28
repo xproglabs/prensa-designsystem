@@ -290,15 +290,15 @@ var RightContentMockup = function RightContentMockup() {
 
 
 LeftMenuIcon.propTypes = {
-  functions: PropTypes.objectOf(PropTypes.shape({
+  functions: PropTypes.shape({
     onLeftIcon: PropTypes.func
-  }))
+  })
 };
 MainTopbar.propTypes = {
   content: PropTypes.object,
-  functions: PropTypes.objectOf(PropTypes.shape({
+  functions: PropTypes.shape({
     onLeftIcon: PropTypes.func
-  }))
+  })
 };
 MainTopbar.defaultProps = {
   content: {
@@ -332,10 +332,12 @@ var MenuLeft = function MenuLeft(_ref) {
 
 MenuLeft.propTypes = {
   content: PropTypes.object,
-  functions: PropTypes.object,
-  status: {
+  functions: PropTypes.shape({
+    onCloseModal: PropTypes.func
+  }),
+  status: PropTypes.shape({
     opened: PropTypes.bool
-  }
+  })
 };
 MenuLeft.defaultProps = {
   content: {},
