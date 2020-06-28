@@ -14,6 +14,7 @@ const Block = (props) => {
     alignTop,
     bgColor,
     custom,
+    functions,
     fColor,
     fitH,
     fitW,
@@ -82,9 +83,13 @@ const Block = (props) => {
     [`xp-w-${width}`]: width,
     [`${custom}`]: custom
   });
+
+  const {handleClick} = functions;
   return (
-    <div className={classnames(classes, getStyle())}>
-      {props.children}
+    <div className={classnames(classes, getStyle())} 
+      onClick={handleClick && handleClick}
+    >
+      {props.children && props.children}
     </div>
   );
 };
@@ -103,8 +108,9 @@ Block.propTypes = {
     PropTypes.array,
     PropTypes.object,
     PropTypes.node
-  ]).isRequired,
+  ]),
   custom: PropTypes.string,
+  functions: PropTypes.object,
   fColor: PropTypes.string,
   fitH: PropTypes.bool,
   fitW: PropTypes.bool,
@@ -151,6 +157,7 @@ Block.propTypes = {
 };
 
 Block.defaultProps = {
+  functions: {},
   p: 'md'
 };
 
