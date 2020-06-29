@@ -1,50 +1,19 @@
 import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
-import MainTopbar from '../components/Navigator/MainTopbar';
-import SideMenu from '../components/Navigator/SideMenu';
-import SideMenuItems from '../components/Navigator/SideMenuItems';
+import SideMenu from '../components/SideMenu';
+import SideMenuItems from '../components/SideMenu/Items';
+import MainTopbar from '../components/Topbar';
 import navigation from '../mockup/navigation';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
   title: 'Components | Navigator',
-  component: Readme,
+  component: Default,
   decorators: [withKnobs, sassWrapper]
 };
 
-export const Readme = () => {
-  return (
-    <p>
-      <h3>Modelo de payload JSON</h3><br />
-      <a href="https://pastebin.com/MqNVQ6uR" 
-        rel="noopener noreferrer"
-        target="_blank">
-        https://pastebin.com/MqNVQ6uR
-      </a>
-    </p>
-  );
-};
-
-
-export const MainMenu = () => {
-  const menuLeftItemsProps = {
-    content: {
-      items: navigation.side
-    }
-  };
-  const dataSideMenu = {
-    children: <SideMenuItems {...menuLeftItemsProps} />,
-    status: {
-      error: boolean('loading', false),
-      loading: boolean('loading', false),
-      opened: boolean('opened', true)
-    }
-  };
-  return <SideMenu {...dataSideMenu} />;
-};
-
-export const Topbar = () => {
+export const Default = () => {
   
   const [isSideMenuOpened, toggleSideMenu] = React.useState(false);
 
@@ -56,7 +25,7 @@ export const Topbar = () => {
       onMenuItem: () => toggleSideMenu(!isSideMenuOpened)
     }
   };
-  const dataMainTopbar = {
+  const dataTopbar = {
     functions: {
       handleMenuClick: () => toggleSideMenu(!isSideMenuOpened)
     },
@@ -76,7 +45,7 @@ export const Topbar = () => {
   };
   return (
     <>
-      <MainTopbar {...dataMainTopbar} />
+      <MainTopbar {...dataTopbar} />
       <SideMenu {...dataSideMenu} />
     </>
   );

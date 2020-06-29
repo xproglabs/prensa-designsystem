@@ -3,7 +3,7 @@ import React from 'react';
 
 import Block from '../Block';
 
-const MainTopbar = ({content, functions}) => {
+const Topbar = ({content, functions}) => {
   const {LeftContent, CenterContent, RightContent} = content;
   return (
     <Block custom="xp-topbar" 
@@ -55,17 +55,17 @@ LeftMenuIcon.propTypes = {
   })
 };
 
-MainTopbar.propTypes = {
+Topbar.propTypes = {
   content: PropTypes.object.isRequired,
   functions: PropTypes.shape({
     handleMenuClick: PropTypes.func
   })
 };
-MainTopbar.defaultProps = {
+Topbar.defaultProps = {
   content: {
     LeftContent: LeftMenuIcon,
     CenterContent: CenterContentMockup,
     RightContent: RightContentMockup,
   }
 };
-export default MainTopbar;
+export default Topbar;

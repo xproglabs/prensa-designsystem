@@ -1,16 +1,17 @@
 @forward 'base';
 @forward './variables/alignments.scss';
 @forward '../components/Article';
+@forward '../components/Block';
 @forward '../components/Button';
 @forward '../components/Form';
-@forward '../components/Panel';
 @forward '../components/Grid';
-@forward '../components/Block';
-@forward '../components/Teasers';
-@forward '../components/Navigator';
 @forward '../components/NewsList';
-@forward '../components/Typography';
+@forward '../components/Panel';
+@forward '../components/SideMenu';
 @forward '../components/Subject';
+@forward '../components/Teasers';
+@forward '../components/Topbar';
+@forward '../components/Typography';
 
 @forward '../components/Teasers/Teaser.scss';
 @forward '../components/Teasers/TeaserFeatured.scss';

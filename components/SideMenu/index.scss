@@ -1,12 +1,8 @@
 @use '../../styles' as *;
 
-$topbar-height: 70px;
 $menu-max-width: 350px;
 $menu-opacity: rgba(0,0,0,0.5);
 
-.xp-topbar {
-  @include h($topbar-height);
-}
 .xp-menu-left {
   @include h(100vh);
   @include mw($menu-max-width);
@@ -22,9 +18,6 @@ $menu-opacity: rgba(0,0,0,0.5);
 .xp-menu-left-items {
   .item {
     cursor: pointer;
-  }
-  .subitems {
-    
   }
   .subitem {
     cursor: pointer;

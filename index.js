@@ -361,71 +361,6 @@ Grid.propTypes = {
   md: PropTypes.oneOf([25, 33, 50, 75, 100])
 };
 
-var MainTopbar = function MainTopbar(_ref) {
-  var content = _ref.content,
-      functions = _ref.functions;
-  var LeftContent = content.LeftContent,
-      CenterContent = content.CenterContent,
-      RightContent = content.RightContent;
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-topbar",
-    alignBetween: true,
-    alignMiddle: true,
-    bgColor: "primary-1",
-    row: true,
-    width: "full"
-  }, /*#__PURE__*/React.createElement(Block, null, LeftContent && /*#__PURE__*/React.createElement(LeftContent, {
-    functions: functions
-  })), /*#__PURE__*/React.createElement(Block, null, CenterContent && /*#__PURE__*/React.createElement(CenterContent, null)), /*#__PURE__*/React.createElement(Block, null, RightContent && /*#__PURE__*/React.createElement(RightContent, null)));
-};
-
-var LeftMenuIcon = function LeftMenuIcon(_ref2) {
-  var functions = _ref2.functions;
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-menu-left-icon",
-    bgColor: "neutral-6",
-    functions: {
-      handleClick: functions.handleMenuClick
-    },
-    p: "sm"
-  }, "ICON");
-};
-
-var CenterContentMockup = function CenterContentMockup() {
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-mockup",
-    bgColor: "neutral-4",
-    p: "sm"
-  }, "CenterContent");
-};
-
-var RightContentMockup = function RightContentMockup() {
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-mockup",
-    bgColor: "neutral-6",
-    p: "sm"
-  }, "RightContent");
-};
-
-LeftMenuIcon.propTypes = {
-  functions: PropTypes.shape({
-    handleMenuClick: PropTypes.func
-  })
-};
-MainTopbar.propTypes = {
-  content: PropTypes.object.isRequired,
-  functions: PropTypes.shape({
-    handleMenuClick: PropTypes.func
-  })
-};
-MainTopbar.defaultProps = {
-  content: {
-    LeftContent: LeftMenuIcon,
-    CenterContent: CenterContentMockup,
-    RightContent: RightContentMockup
-  }
-};
-
 var SideMenu = function SideMenu(_ref) {
   var children = _ref.children,
       functions = _ref.functions,
@@ -543,10 +478,69 @@ SideMenuItems.defaultProps = {
   content: {}
 };
 
-var index$1 = {
-  SideMenu: SideMenu,
-  SideMenuItems: SideMenuItems,
-  MainTopbar: MainTopbar
+var Topbar = function Topbar(_ref) {
+  var content = _ref.content,
+      functions = _ref.functions;
+  var LeftContent = content.LeftContent,
+      CenterContent = content.CenterContent,
+      RightContent = content.RightContent;
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "xp-topbar",
+    alignBetween: true,
+    alignMiddle: true,
+    bgColor: "primary-1",
+    row: true,
+    width: "full"
+  }, /*#__PURE__*/React.createElement(Block, null, LeftContent && /*#__PURE__*/React.createElement(LeftContent, {
+    functions: functions
+  })), /*#__PURE__*/React.createElement(Block, null, CenterContent && /*#__PURE__*/React.createElement(CenterContent, null)), /*#__PURE__*/React.createElement(Block, null, RightContent && /*#__PURE__*/React.createElement(RightContent, null)));
+};
+
+var LeftMenuIcon = function LeftMenuIcon(_ref2) {
+  var functions = _ref2.functions;
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "xp-menu-left-icon",
+    bgColor: "neutral-6",
+    functions: {
+      handleClick: functions.handleMenuClick
+    },
+    p: "sm"
+  }, "ICON");
+};
+
+var CenterContentMockup = function CenterContentMockup() {
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "xp-mockup",
+    bgColor: "neutral-4",
+    p: "sm"
+  }, "CenterContent");
+};
+
+var RightContentMockup = function RightContentMockup() {
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "xp-mockup",
+    bgColor: "neutral-6",
+    p: "sm"
+  }, "RightContent");
+};
+
+LeftMenuIcon.propTypes = {
+  functions: PropTypes.shape({
+    handleMenuClick: PropTypes.func
+  })
+};
+Topbar.propTypes = {
+  content: PropTypes.object.isRequired,
+  functions: PropTypes.shape({
+    handleMenuClick: PropTypes.func
+  })
+};
+Topbar.defaultProps = {
+  content: {
+    LeftContent: LeftMenuIcon,
+    CenterContent: CenterContentMockup,
+    RightContent: RightContentMockup
+  }
 };
 
 var List = function List(_ref) {
@@ -706,8 +700,10 @@ exports.Block = Block;
 exports.Button = Button;
 exports.Form = index;
 exports.Grid = Grid;
-exports.Navigator = index$1;
 exports.NewsList = List;
 exports.Panel = Panel;
+exports.SideMenu = SideMenu;
+exports.SideMenuItems = SideMenuItems;
 exports.Subject = Subject;
+exports.Topbar = Topbar;
 exports.Typography = Typography;
