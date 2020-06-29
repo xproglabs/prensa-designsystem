@@ -1,10 +1,10 @@
 import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
+import MainTopbar from '../components/Navigator/MainTopbar';
+import SideMenu from '../components/Navigator/SideMenu';
+import SideMenuItems from '../components/Navigator/SideMenuItems';
 import navigation from '../mockup/navigation';
-import MainTopbar from '../src/Navigator/MainTopbar';
-import SideMenu from '../src/Navigator/SideMenu';
-import SideMenuItems from '../src/Navigator/SideMenuItems';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {

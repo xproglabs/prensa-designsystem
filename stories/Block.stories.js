@@ -1,8 +1,8 @@
 import {text, boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
-import Block from '../src/Block';
-import {BreakingNews, ThreeCol, FourCol} from '../src/Templates';
+import Block from '../components/Block';
+import {BreakingNews, ThreeCol, FourCol} from '../components/Templates';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {

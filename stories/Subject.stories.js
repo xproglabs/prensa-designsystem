@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Subject from '../src/Subject';
+import Subject from '../components/Subject';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {

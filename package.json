@@ -55,6 +55,6 @@
   "scripts": {
     "storybook": "start-storybook -p 9009 -s public",
     "build": "rollup --config",
-    "eslint": "eslint --ext js,jsx src/ stories/ utils/"
+    "eslint": "eslint --ext js,jsx components/ stories/ utils/"
   }
 }

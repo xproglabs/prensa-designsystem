@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Block from '../src/Block';
-import Grid from '../src/Grid';
+import Block from '../components/Block';
+import Grid from '../components/Grid';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {

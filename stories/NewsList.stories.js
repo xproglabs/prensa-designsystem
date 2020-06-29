@@ -1,8 +1,8 @@
 import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
+import List from '../components/NewsList';
 import pagelist from '../mockup/pagelist';
-import List from '../src/NewsList';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {

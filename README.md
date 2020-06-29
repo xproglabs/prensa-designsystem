@@ -6,7 +6,8 @@ Prerequisites:
 
 Use xprog-ds on your project:
 - npm install xprog-ds
-- Create index.scss file (here goes your stylesheet import [@forward 'xprog-ds/styles']
+- Create index.scss file (here you can redefine tokens [@forward 'xprog-ds/styles']
+- Import xprog-ds router in your index.scss file [@forward 'xprog-ds/styles/router.scss']
 - Create router.scss file (here goes all imports from your components [@forward 'path-to-component']
 - Import router.scss in your root index.js file (pages.js for next)
 - For every file SCSS you want to use the xprog-ds you must `@use 'path-to-your-index.scss' as *`; 

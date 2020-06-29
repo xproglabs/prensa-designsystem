@@ -1,3 +1,16 @@
+# v1.2.1 (Sun Jun 29 2020)
+- Adiciona Templates
+- Adiciona Teasers
+- Adiciona Block
+- Adiciona Article
+- Adiciona Grid
+- Adiciona folder navigator com o SideMenu e TopBar
+- Adiciona componente Subject
+- Adiciona componente Typography
+- Separa build do rollup em três paths: xprog-ds/ xprog-ds/templates xprog-ds/teasers
+- Atualiza readme com novo passo para uso nos projetos
+- Atualiza .ignores
+
 # v1.2.0 (Sun Jun 02 2020)
 - Add storybook
 - Change grayscale colors to neutral

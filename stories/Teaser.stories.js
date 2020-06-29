@@ -1,7 +1,7 @@
 import {text, boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
-import {Teaser, TeaserFeatured} from '../src/Teasers';
+import {Teaser, TeaserFeatured} from '../components/Teasers';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {

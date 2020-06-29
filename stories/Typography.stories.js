@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Typography from '../src/Typography';
+import Typography from '../components/Typography';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
