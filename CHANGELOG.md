@@ -10,6 +10,7 @@
 - Separa build do rollup em três paths: xprog-ds/ xprog-ds/templates xprog-ds/teasers
 - Atualiza readme com novo passo para uso nos projetos
 - Atualiza .ignores
+- Remove componente Icon
 
 # v1.2.0 (Sun Jun 02 2020)
 - Add storybook
