@@ -4,10 +4,10 @@ import React from 'react';
 import Block from '../Block';
 
 const MenuLeft = ({children, functions, status}) => {
-  const menuModalClasses = status.opened ? 'opened' : 'closed';
+  const menuIsOpen = status.opened ? 'opened' : 'closed';
   return (
     <Block 
-      custom={`xp-menu-modal ${menuModalClasses}`} 
+      custom={`xp-menu-modal ${menuIsOpen}`} 
       p="0">
       <Block 
         custom="xp-menu-opacity" 
