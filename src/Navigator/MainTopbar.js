@@ -56,7 +56,7 @@ LeftMenuIcon.propTypes = {
 };
 
 MainTopbar.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.object.isRequired,
   functions: PropTypes.shape({
     onLeftIcon: PropTypes.func
   })
