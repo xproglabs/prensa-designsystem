@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = _interopDefault(require('react'));
 var PropTypes = _interopDefault(require('prop-types'));
+var React = _interopDefault(require('react'));
 var classnames = _interopDefault(require('classnames'));
 var lodash = require('lodash');
 
@@ -301,8 +301,6 @@ var RightContentMockup = function RightContentMockup() {
     p: "sm"
   }, "RightContent");
 };
-/* required props */
-
 
 LeftMenuIcon.propTypes = {
   functions: PropTypes.shape({
@@ -310,7 +308,7 @@ LeftMenuIcon.propTypes = {
   })
 };
 MainTopbar.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.object.isRequired,
   functions: PropTypes.shape({
     onLeftIcon: PropTypes.func
   })
@@ -323,13 +321,13 @@ MainTopbar.defaultProps = {
   }
 };
 
-var MenuLeft = function MenuLeft(_ref) {
+var SideMenu = function SideMenu(_ref) {
   var children = _ref.children,
       functions = _ref.functions,
       status = _ref.status;
-  var menuModalClasses = status.opened ? 'opened' : 'closed';
+  var menuIsOpen = status.opened ? 'opened' : 'closed';
   return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-menu-modal ".concat(menuModalClasses),
+    custom: "xp-menu-modal ".concat(menuIsOpen),
     p: "0"
   }, /*#__PURE__*/React.createElement(Block, {
     custom: "xp-menu-opacity",
@@ -346,7 +344,7 @@ var MenuLeft = function MenuLeft(_ref) {
 /* required props */
 
 
-MenuLeft.propTypes = {
+SideMenu.propTypes = {
   children: PropTypes.node,
   content: PropTypes.object,
   functions: PropTypes.shape({
@@ -356,7 +354,7 @@ MenuLeft.propTypes = {
     opened: PropTypes.bool
   })
 };
-MenuLeft.defaultProps = {
+SideMenu.defaultProps = {
   content: {},
   functions: {
     onCloseModal: function onCloseModal() {
@@ -368,7 +366,7 @@ MenuLeft.defaultProps = {
   }
 };
 
-var MenuLeftItems = function MenuLeftItems(_ref) {
+var SideMenuItems = function SideMenuItems(_ref) {
   var content = _ref.content,
       functions = _ref.functions;
 
@@ -391,7 +389,7 @@ var MenuLeftItems = function MenuLeftItems(_ref) {
     item: PropTypes.object
   };
 
-  var LeftItem = function LeftItem(_ref3) {
+  var Item = function Item(_ref3) {
     var item = _ref3.item;
     return /*#__PURE__*/React.createElement(Block, {
       custom: "listitem",
@@ -417,13 +415,13 @@ var MenuLeftItems = function MenuLeftItems(_ref) {
     })));
   };
 
-  LeftItem.propTypes = {
+  Item.propTypes = {
     item: PropTypes.object
   };
   return /*#__PURE__*/React.createElement(Block, {
     custom: 'xp-menu-left-items'
   }, lodash.map(content.items, function (item, key) {
-    return /*#__PURE__*/React.createElement(LeftItem, {
+    return /*#__PURE__*/React.createElement(Item, {
       item: item,
       key: key
     });
@@ -432,19 +430,19 @@ var MenuLeftItems = function MenuLeftItems(_ref) {
 /* required props */
 
 
-MenuLeftItems.propTypes = {
+SideMenuItems.propTypes = {
   content: PropTypes.object,
   functions: PropTypes.shape({
     onMenuItem: PropTypes.func
   })
 };
-MenuLeftItems.defaultProps = {
+SideMenuItems.defaultProps = {
   content: {}
 };
 
 var index$1 = {
-  MenuLeft: MenuLeft,
-  MenuLeftItems: MenuLeftItems,
+  SideMenu: SideMenu,
+  SideMenuItems: SideMenuItems,
   MainTopbar: MainTopbar
 };
 
@@ -504,10 +502,6 @@ List.defaultProps = {
   }
 };
 
-var index$2 = {
-  List: List
-};
-
 var Panel = function Panel(_ref) {
   var children = _ref.children,
       style = _ref.style;
@@ -526,5 +520,5 @@ exports.Button = Button;
 exports.Form = index;
 exports.Icon = Icon;
 exports.Navigator = index$1;
-exports.NewsList = index$2;
+exports.NewsList = List;
 exports.Panel = Panel;
