@@ -24,10 +24,9 @@ const SideMenu = ({children, functions, status}) => {
   );
 };
 
-/* required props */
 SideMenu.propTypes = {
   children: PropTypes.node,
-  content: PropTypes.object,
+  content: PropTypes.object.isRequired,
   functions: PropTypes.shape({
     onCloseModal: PropTypes.func
   }),
