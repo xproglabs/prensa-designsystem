@@ -58,7 +58,7 @@ export const Topbar = () => {
   };
   const dataMainTopbar = {
     functions: {
-      onLeftIcon: () => toggleSideMenu(!isSideMenuOpened)
+      handleMenuClick: () => toggleSideMenu(!isSideMenuOpened)
     },
     status: {
       loading: boolean('loading', false),

@@ -280,7 +280,7 @@ var LeftMenuIcon = function LeftMenuIcon(_ref2) {
     custom: "xp-menu-left-icon",
     bgColor: "neutral-6",
     functions: {
-      handleClick: functions.onLeftIcon
+      handleClick: functions.handleMenuClick
     },
     p: "sm"
   }, "ICON");
@@ -304,13 +304,13 @@ var RightContentMockup = function RightContentMockup() {
 
 LeftMenuIcon.propTypes = {
   functions: PropTypes.shape({
-    onLeftIcon: PropTypes.func
+    handleMenuClick: PropTypes.func
   })
 };
 MainTopbar.propTypes = {
   content: PropTypes.object.isRequired,
   functions: PropTypes.shape({
-    onLeftIcon: PropTypes.func
+    handleMenuClick: PropTypes.func
   })
 };
 MainTopbar.defaultProps = {
