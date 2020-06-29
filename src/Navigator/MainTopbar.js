@@ -49,7 +49,6 @@ const RightContentMockup = () =>
     RightContent
   </Block>;
 
-/* required props */
 LeftMenuIcon.propTypes = {
   functions: PropTypes.shape({
     onLeftIcon: PropTypes.func
