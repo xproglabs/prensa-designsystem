@@ -3,8 +3,8 @@ import React from 'react';
 
 import navigation from '../mockup/navigation';
 import MainTopbar from '../src/Navigator/MainTopbar';
-import MenuLeft from '../src/Navigator/MenuLeft';
-import MenuLeftItems from '../src/Navigator/MenuLeftItems';
+import SideMenu from '../src/Navigator/SideMenu';
+import SideMenuItems from '../src/Navigator/SideMenuItems';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
@@ -33,51 +33,51 @@ export const MainMenu = () => {
       items: navigation.side
     }
   };
-  const dataMenuLeft = {
-    children: <MenuLeftItems {...menuLeftItemsProps} />,
+  const dataSideMenu = {
+    children: <SideMenuItems {...menuLeftItemsProps} />,
     status: {
       error: boolean('loading', false),
       loading: boolean('loading', false),
       opened: boolean('opened', true)
     }
   };
-  return <MenuLeft {...dataMenuLeft} />;
+  return <SideMenu {...dataSideMenu} />;
 };
 
 export const Topbar = () => {
   
-  const [isMenuLeftOpened, toggleMenuLeft] = React.useState(false);
+  const [isSideMenuOpened, toggleSideMenu] = React.useState(false);
 
-  const menuLeftItemsProps = {
+  const sideMenuItemsProps = {
     content: {
       items: navigation.side
     },
     functions: {
-      onMenuItem: () => toggleMenuLeft(!isMenuLeftOpened)
+      onMenuItem: () => toggleSideMenu(!isSideMenuOpened)
     }
   };
   const dataMainTopbar = {
     functions: {
-      onLeftIcon: () => toggleMenuLeft(!isMenuLeftOpened)
+      onLeftIcon: () => toggleSideMenu(!isSideMenuOpened)
     },
     status: {
       loading: boolean('loading', false),
       error: boolean('loading', false)
     }
   };
-  const dataMenuLeft = {
-    children: <MenuLeftItems {...menuLeftItemsProps} />,
+  const dataSideMenu = {
+    children: <SideMenuItems {...sideMenuItemsProps} />,
     functions: {
-      onCloseModal: () => toggleMenuLeft(!isMenuLeftOpened)
+      onCloseModal: () => toggleSideMenu(!isSideMenuOpened)
     },
     status: {
-      opened: isMenuLeftOpened
+      opened: isSideMenuOpened
     }
   };
   return (
     <>
       <MainTopbar {...dataMainTopbar} />
-      <MenuLeft {...dataMenuLeft} />
+      <SideMenu {...dataSideMenu} />
     </>
   );
 };

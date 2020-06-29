@@ -3,7 +3,7 @@ import React from 'react';
 
 import Block from '../Block';
 
-const MenuLeft = ({children, functions, status}) => {
+const SideMenu = ({children, functions, status}) => {
   const menuIsOpen = status.opened ? 'opened' : 'closed';
   return (
     <Block 
@@ -25,7 +25,7 @@ const MenuLeft = ({children, functions, status}) => {
 };
 
 /* required props */
-MenuLeft.propTypes = {
+SideMenu.propTypes = {
   children: PropTypes.node,
   content: PropTypes.object,
   functions: PropTypes.shape({
@@ -35,7 +35,7 @@ MenuLeft.propTypes = {
     opened: PropTypes.bool
   })
 };
-MenuLeft.defaultProps = {
+SideMenu.defaultProps = {
   content: {},
   functions: {
     onCloseModal: () => null
@@ -44,4 +44,4 @@ MenuLeft.defaultProps = {
     opened: false
   }
 };
-export default MenuLeft;
+export default SideMenu;

@@ -4,7 +4,7 @@ import React from 'react';
 
 import Block from '../Block';
 
-const MenuLeftItems = ({content, functions}) => {
+const SideMenuItems = ({content, functions}) => {
 
   const SubItem = ({item}) => {
     return (
@@ -22,7 +22,7 @@ const MenuLeftItems = ({content, functions}) => {
     item: PropTypes.object
   };
 
-  const LeftItem = ({item}) => (
+  const Item = ({item}) => (
     <Block 
       custom="listitem"
       mt="md">
@@ -42,7 +42,7 @@ const MenuLeftItems = ({content, functions}) => {
       </Block>
     </Block>
   );
-  LeftItem.propTypes = {
+  Item.propTypes = {
     item: PropTypes.object
   };
 
@@ -50,19 +50,19 @@ const MenuLeftItems = ({content, functions}) => {
     <Block 
       custom={'xp-menu-left-items'}>
       {map(content.items, (item, key) => 
-        <LeftItem item={item} key={key} />)}
+        <Item item={item} key={key} />)}
     </Block>
   );
 };
 
 /* required props */
-MenuLeftItems.propTypes = {
+SideMenuItems.propTypes = {
   content: PropTypes.object,
   functions: PropTypes.shape({
     onMenuItem: PropTypes.func
   })
 };
-MenuLeftItems.defaultProps = {
+SideMenuItems.defaultProps = {
   content: {}
 };
-export default MenuLeftItems;
+export default SideMenuItems;

@@ -1,5 +1,5 @@
 import MainTopbar from './MainTopbar';
-import MenuLeft from './MenuLeft';
 import MenuLeftItems from './MenuLeftItems';
+import SideMenu from './SideMenu';
 
-export default {MenuLeft, MenuLeftItems, MainTopbar};
+export default {SideMenu, MenuLeftItems, MainTopbar};
