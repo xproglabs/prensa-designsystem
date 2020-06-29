@@ -2,7 +2,7 @@ import {text, boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import Block from '../src/Block';
-import {BreakingNews, ThreeCol, FourCol} from '../src/Blocks';
+import {BreakingNews, ThreeCol, FourCol} from '../src/Templates';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
