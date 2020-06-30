@@ -26,7 +26,7 @@ const TeaserFeatured = (props) => {
       <div className='teaser-content'>
         {subject && <Subject filled>{subject}</Subject>}
         <a className='teaser-aria' href={articleUrl} aria-label={`Abrir matéria ${title}`}>
-          <Typography title size='xl'>
+          <Typography tokenVariant='title' size='xl'>
             {title}
           </Typography>
         </a>

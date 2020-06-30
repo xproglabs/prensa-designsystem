@@ -1,5 +1,17 @@
 @use '../../styles' as *;
 
+$xp-article-title-fs-sm: 32px !default;
+$xp-article-title-lh-sm: 34px !default;
+$xp-article-title-fs-lg: 48px !default;
+$xp-article-title-lh-lg: 50px !default;
+$xp-article-title-ff: $font-primary !default;
+$xp-article-title-fc: $color-neutral-2 !default;
+
+$xp-article-subtitle-fs: 18px !default;
+$xp-article-subtitle-lh: 26px !default;
+$xp-article-subtitle-ff: $font-primary !default;
+$xp-article-subtitle-fc: $color-neutral-4 !default;
+
 .xp-title-xs {
   @include fs(16px);
   @include lh(18px);
@@ -62,4 +74,26 @@
   @include ff($font-primary);
   @extend %bold;
   @extend %uppercase;
+}
+
+.xp-article-title {
+  @include fs($xp-article-title-fs-sm);
+  @include lh($xp-article-title-lh-sm);
+  @include ff($xp-article-title-ff);
+  @include fc($xp-article-title-fc);
+  @extend %bold;
+  @include mt($space-size-3);
+  @include mb($space-size-2);
+  @media (min-width: $lg) {
+    @include fs($xp-article-title-fs-lg);
+    @include lh($xp-article-title-lh-lg);
+  }
+}
+
+.xp-article-subtitle {
+  @include fs($xp-article-subtitle-fs);
+  @include lh($xp-article-subtitle-lh);
+  @include fc($xp-article-subtitle-fc);
+  @include ff($font-primary);
+  @extend %regular;
 }

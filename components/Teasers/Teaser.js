@@ -23,11 +23,11 @@ const Teaser = props => {
         </a>
       }
       <a className='teaser-aria' href={articleUrl} aria-label={`Abrir matéria ${title}`}>
-        <Typography title>
+        <Typography tokenVariant='title'>
           {title}
         </Typography>
       </a>
-      <Typography subtitle>
+      <Typography tokenVariant='title'>
         {subtitle}
       </Typography>
     </div>
