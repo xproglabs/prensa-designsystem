@@ -5,3 +5,4 @@
 .eslintignore
 .eslintrc.json
 /stories
+/mockup

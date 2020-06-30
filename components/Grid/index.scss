@@ -1,0 +1,42 @@
+@use '../../styles' as *;
+
+.xp-grid {
+  @include fx(center, center);
+}
+
+.xp-1-col {
+  @include grid(1);
+}
+.xp-2-col {
+  @include grid(2);
+}
+.xp-3-col {
+  @include grid(3);
+}
+.xp-4-col {
+  @include grid(4);
+}
+.xp-5-col {
+  @include grid(5);
+}
+.xp-6-col {
+  @include grid(6);
+}
+.xp-7-col {
+  @include grid(7);
+}
+.xp-8-col {
+  @include grid(8);
+}
+.xp-9-col {
+  @include grid(9);
+}
+.xp-10-col {
+  @include grid(10);
+}
+.xp-11-col {
+  @include grid(11);
+}
+.xp-12-col {
+  @include grid(12);
+}

@@ -1,0 +1,174 @@
+@use '../../styles' as *;
+
+$margin-xs: 4px;
+$margin-sm: 8px;
+$margin-md: 16px;
+$margin-lg: 32px;
+$margin-xl: 64px;
+
+$padding-xs: 4px;
+$padding-sm: 8px;
+$padding-md: 16px;
+$padding-lg: 32px;
+$padding-xl: 64px;
+
+$size-xs: 32px;
+$size-sm: 64px;
+$size-md: 128px;
+$size-lg: 256px;
+$size-xl: 512px;
+
+.xp-h-xs { @include h($size-xs)}
+.xp-h-sm { @include h($size-sm)}
+.xp-h-md { @include h($size-md)}
+.xp-h-lg { @include h($size-lg)}
+.xp-h-xl { @include h($size-xl)}
+.xp-h-full { @include h(100%)}
+
+.xp-m-xs { @include m($margin-xs)}
+.xp-mb-xs { @include mb($margin-xs)}
+.xp-ml-xs { @include ml($margin-xs)}
+.xp-mr-xs { @include mr($margin-xs)}
+.xp-mt-xs { @include mt($margin-xs)}
+.xp-m-sm { @include m($margin-sm)}
+.xp-mb-sm { @include mb($margin-sm)}
+.xp-ml-sm { @include ml($margin-sm)}
+.xp-mr-sm { @include mr($margin-sm)}
+.xp-mt-sm { @include mt($margin-sm)}
+.xp-m-md { @include m($margin-md)}
+.xp-mb-md { @include mb($margin-md)}
+.xp-ml-md { @include ml($margin-md)}
+.xp-mr-md { @include mr($margin-md)}
+.xp-mt-md { @include mt($margin-md)}
+.xp-m-lg { @include m($margin-lg)}
+.xp-mb-lg { @include mb($margin-lg)}
+.xp-ml-lg { @include ml($margin-lg)}
+.xp-mr-lg { @include mr($margin-lg)}
+.xp-mt-lg { @include mt($margin-lg)}
+.xp-m-xl { @include m($margin-xl)}
+.xp-mb-xl { @include mb($margin-xl)}
+.xp-ml-xl { @include ml($margin-xl)}
+.xp-mr-xl { @include mr($margin-xl)}
+.xp-mt-xl { @include mt($margin-xl)}
+
+.xp-p-0 { @include p(0px)}
+.xp-p-xs { @include p($padding-xs)}
+.xp-pb-xs { @include pb($padding-xs)}
+.xp-pl-xs { @include pl($padding-xs)}
+.xp-pr-xs { @include pr($padding-xs)}
+.xp-pt-xs { @include pt($padding-xs)}
+.xp-p-sm { @include p($padding-sm)}
+.xp-pb-sm { @include pb($padding-sm)}
+.xp-pl-sm { @include pl($padding-sm)}
+.xp-pr-sm { @include pr($padding-sm)}
+.xp-pt-sm { @include pt($padding-sm)}
+.xp-p-md { @include p($padding-md)}
+.xp-pb-md { @include pb($padding-md)}
+.xp-pl-md { @include pl($padding-md)}
+.xp-pr-md { @include pr($padding-md)}
+.xp-pt-md { @include pt($padding-md)}
+.xp-p-lg { @include p($padding-lg)}
+.xp-pb-lg { @include pb($padding-lg)}
+.xp-pl-lg { @include pl($padding-lg)}
+.xp-pr-lg { @include pr($padding-lg)}
+.xp-pt-lg { @include pt($padding-lg)}
+.xp-p-xl { @include p($padding-xl)}
+.xp-pb-xl { @include pb($padding-xl)}
+.xp-pl-xl { @include pl($padding-xl)}
+.xp-pr-xl { @include pr($padding-xl)}
+.xp-pt-xl { @include pt($padding-xl)}
+
+.xp-w-xs { @include w($size-xs)}
+.xp-w-sm { @include w($size-sm)}
+.xp-w-md { @include w($size-md)}
+.xp-w-lg { @include w($size-lg)}
+.xp-w-xl { @include w($size-xl)}
+.xp-w-full { @include w(100%)}
+
+.fx-align-between {@include jc(space-between)}
+.fx-align-bottom {@include jc(flex-end)}
+.fx-align-evenly {@include jc(space-evenly)}
+.fx-align-left {@include ai(flex-start)}
+.fx-align-center {@include ai(center)}
+.fx-align-middle {@include jc(center)}
+.fx-align-right {@include ai(flex-end)}
+.fx-align-top {@include jc(flex-start)}
+
+.fy-align-between {@include jc(space-between)}
+.fy-align-bottom {@include ai(flex-end)}
+.fy-align-evenly {@include jc(space-evenly)}
+.fy-align-center {@include jc(center)}
+.fy-align-left {@include jc(flex-start)}
+.fy-align-middle {@include ai(center)}
+.fy-align-right {@include jc(flex-end)}
+.fy-align-top {@include ai(flex-start)}
+
+.fx-dir-col {
+  display: flex;
+  flex-direction: column;
+}
+.fx-dir-row {
+  display: flex;
+  flex-direction: row;
+}
+.fx-fit-h {
+  @include h(fit-content)
+};
+.fx-fit-w {
+  @include w(fit-content)
+};
+
+.block-three-col {
+  flex-wrap: wrap;
+};
+.block-four-col {
+  flex-wrap: wrap;
+};
+
+.xp-bg-primary-1 { @include bg($color-primary-1)}
+.xp-bg-primary-2 { @include bg($color-primary-2)}
+.xp-bg-primary-3 { @include bg($color-primary-3)}
+.xp-bg-secondary-1 { @include bg($color-secondary-1)}
+.xp-bg-secondary-2 { @include bg($color-secondary-2)}
+.xp-bg-secondary-3 { @include bg($color-secondary-3)}
+.xp-bg-black { @include bg($color-black)}
+.xp-bg-neutral-1 { @include bg($color-neutral-1)}
+.xp-bg-neutral-2 { @include bg($color-neutral-2)}
+.xp-bg-neutral-3 { @include bg($color-neutral-3)}
+.xp-bg-neutral-4 { @include bg($color-neutral-4)}
+.xp-bg-neutral-5 { @include bg($color-neutral-5)}
+.xp-bg-neutral-6 { @include bg($color-neutral-6)}
+.xp-bg-neutral-7 { @include bg($color-neutral-7)}
+.xp-bg-neutral-8 { @include bg($color-neutral-8)}
+.xp-bg-neutral-9 { @include bg($color-neutral-9)}
+.xp-bg-neutral-10 { @include bg($color-neutral-10)}
+.xp-bg-neutral-11 { @include bg($color-neutral-11)}
+.xp-bg-white { @include bg($color-white)}
+.xp-bg-alert-1 { @include bg($color-alert-1)}
+.xp-bg-alert-2 { @include bg($color-alert-2)}
+
+.xp-f-primary-1 { @include fc($color-primary-1)}
+.xp-f-primary-2 { @include fc($color-primary-2)}
+.xp-f-primary-3 { @include fc($color-primary-3)}
+.xp-f-secondary-1 { @include fc($color-secondary-1)}
+.xp-f-secondary-2 { @include fc($color-secondary-2)}
+.xp-f-secondary-3 { @include fc($color-secondary-3)}
+.xp-f-black { @include fc($color-black)}
+.xp-f-neutral-1 { @include fc($color-neutral-1)}
+.xp-f-neutral-2 { @include fc($color-neutral-2)}
+.xp-f-neutral-3 { @include fc($color-neutral-3)}
+.xp-f-neutral-4 { @include fc($color-neutral-4)}
+.xp-f-neutral-5 { @include fc($color-neutral-5)}
+.xp-f-neutral-6 { @include fc($color-neutral-6)}
+.xp-f-neutral-7 { @include fc($color-neutral-7)}
+.xp-f-neutral-8 { @include fc($color-neutral-8)}
+.xp-f-neutral-9 { @include fc($color-neutral-9)}
+.xp-f-neutral-10 { @include fc($color-neutral-10)}
+.xp-f-neutral-11 { @include fc($color-neutral-11)}
+.xp-f-white { @include fc($color-white)}
+.xp-f-alert-1 { @include fc($color-alert-1)}
+.xp-f-alert-2 { @include fc($color-alert-2)}
+
+.xp-mockup {
+  @include r(5%);
+}

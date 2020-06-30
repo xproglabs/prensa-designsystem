@@ -1,0 +1,52 @@
+@use '../../styles' as *;
+
+$menu-max-width: 350px;
+$menu-opacity: rgba(0,0,0,0.5);
+
+.xp-menu-left {
+  @include h(100vh);
+  @include mw($menu-max-width);
+  @include w(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+.xp-menu-left-icon {
+  cursor: pointer;
+}
+.xp-menu-left-items {
+  .item {
+    cursor: pointer;
+  }
+  .subitem {
+    cursor: pointer;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:focus,
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+.xp-menu-modal {
+  &.closed {
+    display: none;
+  }
+  &.opened {
+    display: flex;
+  }
+}
+.xp-menu-opacity {
+  @include bg($menu-opacity);
+  @include h(100vh);
+  @include w(100vw);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}

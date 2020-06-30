@@ -1,0 +1,65 @@
+@use '../../styles' as *;
+
+.xp-title-xs {
+  @include fs(16px);
+  @include lh(18px);
+  @include ff($font-primary);
+  @extend %bold;
+  @include mt(0px);
+  @include mb($space-size-1);
+}
+.xp-title-sm {
+  @include fs(24px);
+  @include lh(26px);
+  @include ff($font-primary);
+  @include mb(8px);
+  @extend %bold;
+  @include mt(0px);
+  @include mb($space-size-1);
+}
+.xp-title-md {
+  @include fs(32px);
+  @include lh(34px);
+  @include ff($font-primary);
+  @extend %bold;
+  @include mt(0px);
+  @include mb($space-size-1);
+}
+.xp-title-lg {
+  @include fs(40px);
+  @include lh(42px);
+  @include ff($font-primary);
+  @extend %bold;
+  @include mt(0px);
+  @include mb($space-size-1);
+}
+.xp-title-xl {
+  @include fs(48px);
+  @include lh(50px);
+  @include ff($font-primary);
+  @extend %bold;
+  @include mt(0px);
+  @include mb($space-size-1);
+}
+
+.xp-subtitle-sm {
+  @include fs(18px);
+  @include lh(24px);
+  @include ff($font-primary);
+  @extend %regular;
+}
+
+.xp-paragraph-sm {
+  @include fs(18px);
+  @include lh(42px);
+  @include ff($font-secondary);
+  @extend %regular;
+}
+
+.xp-subject-sm {
+  @include fs(16px);
+  @include lh(18px);
+  @include ff($font-primary);
+  @extend %bold;
+  @extend %uppercase;
+}

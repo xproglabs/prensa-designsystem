@@ -135,110 +135,6 @@ Block.defaultProps = {
   p: '0'
 };
 
-var Article = function Article() {
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-article"
-  }, "Article");
-};
-/* required props */
-
-
-Article.propTypes = {
-  content: PropTypes.object
-};
-Article.defaultProps = {
-  content: {}
-};
-
-var Button = function Button(props) {
-  var style = classnames({
-    'button': true,
-    'primary': props.style === 'primary' && !props.disabled,
-    'secondary': props.style === 'secondary' && !props.disabled,
-    'tertiary': props.style === 'tertiary' && !props.disabled,
-    'disabled': props.disabled
-  });
-  return /*#__PURE__*/React.createElement("button", {
-    className: style,
-    onClick: props.disabled ? null : props.onClick
-  }, props.children);
-};
-
-Button.propTypes = {
-  children: PropTypes.node,
-  style: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func
-};
-Button.defaultProps = {
-  style: 'primary'
-};
-
-var Input = function Input(_ref) {
-  var autoFocus = _ref.autoFocus,
-      disabled = _ref.disabled,
-      invalid = _ref.invalid,
-      label = _ref.label,
-      onEnter = _ref.onEnter,
-      setValue = _ref.setValue,
-      type = _ref.type,
-      value = _ref.value,
-      warning = _ref.warning;
-
-  var KeyDown = function KeyDown(_ref2) {
-    var key = _ref2.key;
-    return key === 'Enter' && onEnter && onEnter();
-  };
-
-  var Label = function Label() {
-    return /*#__PURE__*/React.createElement("p", {
-      className: 'label'
-    }, label && label);
-  };
-
-  var Warning = function Warning() {
-    return /*#__PURE__*/React.createElement("p", {
-      className: 'warning'
-    }, warning && invalid ? warning : ' ');
-  };
-
-  var props = {
-    autoFocus: autoFocus,
-    defaultValue: value,
-    disabled: disabled,
-    onChange: function onChange(_ref3) {
-      var target = _ref3.target;
-      return setValue(target.value);
-    },
-    onKeyDown: KeyDown,
-    type: type
-  };
-  return /*#__PURE__*/React.createElement("div", {
-    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
-  }, /*#__PURE__*/React.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React.createElement("input", props), /*#__PURE__*/React.createElement(Warning, null));
-};
-
-Input.propTypes = {
-  autoFocus: PropTypes.bool,
-  disabled: PropTypes.bool,
-  invalid: PropTypes.bool,
-  label: PropTypes.string,
-  onEnter: PropTypes.func,
-  setValue: PropTypes.func.isRequired,
-  type: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  warning: PropTypes.string
-};
-Input.defaultProps = {
-  autofocus: false,
-  disabled: 'disabled',
-  invalid: false,
-  type: 'text'
-};
-var index = {
-  Input: Input
-};
-
 var Grid = function Grid(props) {
   var xs = props.xs,
       sm = props.sm,
@@ -361,257 +257,6 @@ Grid.propTypes = {
   md: PropTypes.oneOf([25, 33, 50, 75, 100])
 };
 
-var SideMenu = function SideMenu(_ref) {
-  var children = _ref.children,
-      functions = _ref.functions,
-      status = _ref.status;
-  var menuIsOpen = status.opened ? 'opened' : 'closed';
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-menu-modal ".concat(menuIsOpen),
-    p: "0"
-  }, /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-menu-opacity",
-    functions: {
-      handleClick: functions.onCloseModal
-    },
-    p: "0"
-  }), /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-menu-left",
-    bgColor: "white",
-    p: "0"
-  }, children && children));
-};
-
-SideMenu.propTypes = {
-  children: PropTypes.node,
-  content: PropTypes.object.isRequired,
-  functions: PropTypes.shape({
-    onCloseModal: PropTypes.func
-  }),
-  status: PropTypes.shape({
-    opened: PropTypes.bool
-  })
-};
-SideMenu.defaultProps = {
-  content: {},
-  functions: {
-    onCloseModal: function onCloseModal() {
-      return null;
-    }
-  },
-  status: {
-    opened: false
-  }
-};
-
-var SideMenuItems = function SideMenuItems(_ref) {
-  var content = _ref.content,
-      functions = _ref.functions;
-
-  var SubItem = function SubItem(_ref2) {
-    var item = _ref2.item;
-    return /*#__PURE__*/React.createElement(Block, {
-      custom: "subitem",
-      functions: {
-        handleClick: function handleClick() {
-          return functions.onMenuItem(item.path);
-        }
-      },
-      mt: "xs"
-    }, /*#__PURE__*/React.createElement("a", {
-      href: item.path
-    }, item.name));
-  };
-
-  SubItem.propTypes = {
-    item: PropTypes.object
-  };
-
-  var Item = function Item(_ref3) {
-    var item = _ref3.item;
-    return /*#__PURE__*/React.createElement(Block, {
-      custom: "listitem",
-      mt: "md"
-    }, /*#__PURE__*/React.createElement(Block, {
-      custom: "item",
-      functions: {
-        handleClick: function handleClick() {
-          return functions.onMenuItem(item.path);
-        }
-      },
-      mb: "md",
-      mt: "md"
-    }, /*#__PURE__*/React.createElement("a", {
-      href: item.path
-    }, item.name)), /*#__PURE__*/React.createElement(Block, {
-      custom: "subitems"
-    }, lodash.map(item.subitems, function (item, key) {
-      return /*#__PURE__*/React.createElement(SubItem, {
-        item: item,
-        key: key
-      });
-    })));
-  };
-
-  Item.propTypes = {
-    item: PropTypes.object
-  };
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: 'xp-menu-left-items'
-  }, lodash.map(content.items, function (item, key) {
-    return /*#__PURE__*/React.createElement(Item, {
-      item: item,
-      key: key
-    });
-  }));
-};
-/* required props */
-
-
-SideMenuItems.propTypes = {
-  content: PropTypes.object,
-  functions: PropTypes.shape({
-    onMenuItem: PropTypes.func
-  })
-};
-SideMenuItems.defaultProps = {
-  content: {}
-};
-
-var Topbar = function Topbar(_ref) {
-  var content = _ref.content,
-      functions = _ref.functions;
-  var LeftContent = content.LeftContent,
-      CenterContent = content.CenterContent,
-      RightContent = content.RightContent;
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-topbar",
-    alignBetween: true,
-    alignMiddle: true,
-    bgColor: "primary-1",
-    row: true,
-    width: "full"
-  }, /*#__PURE__*/React.createElement(Block, null, LeftContent && /*#__PURE__*/React.createElement(LeftContent, {
-    functions: functions
-  })), /*#__PURE__*/React.createElement(Block, null, CenterContent && /*#__PURE__*/React.createElement(CenterContent, null)), /*#__PURE__*/React.createElement(Block, null, RightContent && /*#__PURE__*/React.createElement(RightContent, null)));
-};
-
-var LeftMenuIcon = function LeftMenuIcon(_ref2) {
-  var functions = _ref2.functions;
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-menu-left-icon",
-    bgColor: "neutral-6",
-    functions: {
-      handleClick: functions.handleMenuClick
-    },
-    p: "sm"
-  }, "ICON");
-};
-
-var CenterContentMockup = function CenterContentMockup() {
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-mockup",
-    bgColor: "neutral-4",
-    p: "sm"
-  }, "CenterContent");
-};
-
-var RightContentMockup = function RightContentMockup() {
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-mockup",
-    bgColor: "neutral-6",
-    p: "sm"
-  }, "RightContent");
-};
-
-LeftMenuIcon.propTypes = {
-  functions: PropTypes.shape({
-    handleMenuClick: PropTypes.func
-  })
-};
-Topbar.propTypes = {
-  content: PropTypes.object.isRequired,
-  functions: PropTypes.shape({
-    handleMenuClick: PropTypes.func
-  })
-};
-Topbar.defaultProps = {
-  content: {
-    LeftContent: LeftMenuIcon,
-    CenterContent: CenterContentMockup,
-    RightContent: RightContentMockup
-  }
-};
-
-var List = function List(_ref) {
-  var content = _ref.content;
-
-  var Item = function Item(_ref2) {
-    var item = _ref2.item;
-    return /*#__PURE__*/React.createElement(Block, {
-      custom: "item",
-      mt: "xs"
-    }, /*#__PURE__*/React.createElement("a", {
-      href: item.path
-    }, item.name));
-  };
-
-  Item.propTypes = {
-    item: PropTypes.object
-  };
-
-  if (!content.items || content.items.length === 0) {
-    return /*#__PURE__*/React.createElement(Block, {
-      custom: "xp-news-list"
-    }, /*#__PURE__*/React.createElement("pre", null, "Items not found"));
-  }
-
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-news-list"
-  }, lodash.map(content.items, function (item, key) {
-    return /*#__PURE__*/React.createElement(Item, {
-      item: item,
-      key: key
-    });
-  }));
-};
-/* required props */
-
-
-List.propTypes = {
-  content: PropTypes.object,
-  functions: PropTypes.shape({
-    onCloseModal: PropTypes.func
-  }),
-  status: PropTypes.shape({
-    opened: PropTypes.bool
-  })
-};
-List.defaultProps = {
-  content: {},
-  functions: {
-    onCloseModal: function onCloseModal() {
-      return null;
-    }
-  },
-  status: {
-    opened: false
-  }
-};
-
-var Panel = function Panel(_ref) {
-  var children = _ref.children,
-      style = _ref.style;
-  return /*#__PURE__*/React.createElement("div", {
-    className: "panel-body ".concat(style ? style : '')
-  }, children && children);
-};
-
-Panel.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  style: PropTypes.string
-};
-
 var Typography = function Typography(props) {
   var _classnames;
 
@@ -695,15 +340,210 @@ Subject.propTypes = {
 
 };
 
-exports.Article = Article;
-exports.Block = Block;
-exports.Button = Button;
-exports.Form = index;
-exports.Grid = Grid;
-exports.NewsList = List;
-exports.Panel = Panel;
-exports.SideMenu = SideMenu;
-exports.SideMenuItems = SideMenuItems;
-exports.Subject = Subject;
-exports.Topbar = Topbar;
-exports.Typography = Typography;
+var RenderImageBackground = function RenderImageBackground(props) {
+  var _props$data = props.data,
+      imageUrl = _props$data.imageUrl,
+      captionAndByline = _props$data.captionAndByline;
+  var background = {
+    backgroundImage: "url('".concat(imageUrl, "')")
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "image-box",
+    style: background
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "label"
+  }, captionAndByline));
+};
+
+RenderImageBackground.propTypes = {
+  data: PropTypes.shape({
+    imageUrl: PropTypes.string,
+    captionAndByline: PropTypes.string
+  })
+};
+
+var Teaser = function Teaser(props) {
+  var _props$content = props.content,
+      articleUrl = _props$content.articleUrl,
+      image = _props$content.image,
+      subject = _props$content.subject,
+      subtitle = _props$content.subtitle,
+      title = _props$content.title;
+  var _props$status = props.status,
+      loading = _props$status.loading,
+      error = _props$status.error;
+
+  var getImageFromProps = function getImageFromProps() {
+    if (loading || error) return /*#__PURE__*/React.createElement("div", {
+      className: "image-box skeleton"
+    });
+    return /*#__PURE__*/React.createElement(RenderImageBackground, {
+      data: image
+    });
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "xp-teaser"
+  }, subject && /*#__PURE__*/React.createElement(Subject, null, subject), image && /*#__PURE__*/React.createElement("a", {
+    className: "teaser-aria",
+    href: articleUrl,
+    "aria-label": "Imagem da mat\xE9ria ".concat(title)
+  }, getImageFromProps()), /*#__PURE__*/React.createElement("a", {
+    className: "teaser-aria",
+    href: articleUrl,
+    "aria-label": "Abrir mat\xE9ria ".concat(title)
+  }, /*#__PURE__*/React.createElement(Typography, {
+    title: true
+  }, title)), /*#__PURE__*/React.createElement(Typography, {
+    subtitle: true
+  }, subtitle));
+};
+
+Teaser.propTypes = {
+  content: PropTypes.shape({
+    articleUrl: PropTypes.string,
+    image: PropTypes.object,
+    subtitle: PropTypes.string,
+    subject: PropTypes.string,
+    title: PropTypes.string
+  }),
+  status: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.bool
+  })
+};
+
+var TeaserFeatured = function TeaserFeatured(props) {
+  var _props$content = props.content,
+      title = _props$content.title,
+      subject = _props$content.subject,
+      articleUrl = _props$content.articleUrl,
+      image = _props$content.image;
+  var _props$status = props.status,
+      loading = _props$status.loading,
+      error = _props$status.error;
+
+  var getImageFromProps = function getImageFromProps() {
+    if (loading || error) return /*#__PURE__*/React.createElement("div", {
+      className: "image-box skeleton"
+    });
+    return /*#__PURE__*/React.createElement(RenderImageBackground, {
+      data: image
+    });
+  };
+
+  var teaserHasImage = image ? 'has-image' : 'no-image';
+  return /*#__PURE__*/React.createElement("div", {
+    className: "xp-teaser-featured ".concat(teaserHasImage)
+  }, image && /*#__PURE__*/React.createElement("a", {
+    className: "teaser-aria",
+    href: articleUrl,
+    "aria-label": "Imagem da mat\xE9ria ".concat(title)
+  }, getImageFromProps()), /*#__PURE__*/React.createElement("div", {
+    className: "teaser-content"
+  }, subject && /*#__PURE__*/React.createElement(Subject, {
+    filled: true
+  }, subject), /*#__PURE__*/React.createElement("a", {
+    className: "teaser-aria",
+    href: articleUrl,
+    "aria-label": "Abrir mat\xE9ria ".concat(title)
+  }, /*#__PURE__*/React.createElement(Typography, {
+    title: true,
+    size: "xl"
+  }, title))));
+};
+
+TeaserFeatured.propTypes = {
+  content: PropTypes.shape({
+    title: PropTypes.string,
+    subject: PropTypes.string,
+    articleUrl: PropTypes.string,
+    image: PropTypes.object
+  }),
+  status: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.bool
+  })
+};
+
+var BreakingNews = function BreakingNews(props) {
+  var _props$blockData = props.blockData,
+      content = _props$blockData.content,
+      status = _props$blockData.status;
+  return /*#__PURE__*/React.createElement(Block, {
+    row: true,
+    style: "breaking-news"
+  }, /*#__PURE__*/React.createElement(Grid, {
+    columns: 12
+  }, /*#__PURE__*/React.createElement(TeaserFeatured, {
+    content: content[0],
+    status: status
+  })));
+};
+
+BreakingNews.propTypes = {
+  blockData: PropTypes.shape({
+    content: PropTypes.array,
+    status: PropTypes.object
+  })
+};
+
+var FourCol = function FourCol(props) {
+  var _props$blockData = props.blockData,
+      content = _props$blockData.content,
+      status = _props$blockData.status;
+  return /*#__PURE__*/React.createElement(Block, {
+    row: true,
+    style: "3-col"
+  }, lodash.map(content, function (teaser, k) {
+    return /*#__PURE__*/React.createElement(Grid, {
+      key: k,
+      xs: 100,
+      md: 33,
+      columns: 3
+    }, /*#__PURE__*/React.createElement(Teaser, {
+      content: teaser,
+      status: status
+    }));
+  }));
+};
+
+FourCol.propTypes = {
+  blockData: PropTypes.shape({
+    content: PropTypes.array,
+    image: PropTypes.array,
+    status: PropTypes.object
+  })
+};
+
+var FourCol$1 = function FourCol(props) {
+  var _props$blockData = props.blockData,
+      content = _props$blockData.content,
+      status = _props$blockData.status;
+  return /*#__PURE__*/React.createElement(Block, {
+    row: true,
+    style: "4-col"
+  }, lodash.map(content, function (teaser, k) {
+    return /*#__PURE__*/React.createElement(Grid, {
+      key: k,
+      xs: 100,
+      md: 50,
+      columns: 3
+    }, /*#__PURE__*/React.createElement(Teaser, {
+      content: teaser,
+      status: status
+    }));
+  }));
+};
+
+FourCol$1.propTypes = {
+  blockData: PropTypes.shape({
+    content: PropTypes.array,
+    image: PropTypes.array,
+    status: PropTypes.object
+  })
+};
+
+exports.BreakingNews = BreakingNews;
+exports.FourCol = FourCol$1;
+exports.ThreeCol = FourCol;
