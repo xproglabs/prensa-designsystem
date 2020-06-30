@@ -1,17 +1,5 @@
 @use '../../styles' as *;
 
-$xp-article-title-fs-sm: 32px !default;
-$xp-article-title-lh-sm: 34px !default;
-$xp-article-title-fs-lg: 48px !default;
-$xp-article-title-lh-lg: 50px !default;
-$xp-article-title-ff: $font-primary !default;
-$xp-article-title-fc: $color-neutral-2 !default;
-
-$xp-article-subtitle-fs: 18px !default;
-$xp-article-subtitle-lh: 26px !default;
-$xp-article-subtitle-ff: $font-primary !default;
-$xp-article-subtitle-fc: $color-neutral-4 !default;
-
 .xp-title-xs {
   @include fs(16px);
   @include lh(18px);

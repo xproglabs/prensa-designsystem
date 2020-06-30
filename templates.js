@@ -58,6 +58,9 @@ var Block = function Block(props) {
 
   var getStyle = function getStyle() {
     switch (style) {
+      case 'article':
+        return 'xp-article';
+
       case '3-col':
         return 'block-three-col';
 
@@ -128,7 +131,7 @@ Block.propTypes = {
   row: PropTypes.bool,
   height: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'full']),
   width: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'full']),
-  style: PropTypes.oneOf(['3-col', '4-col'])
+  style: PropTypes.oneOf(['article', '3-col', '4-col'])
 };
 Block.defaultProps = {
   functions: {},
@@ -263,19 +266,53 @@ var Typography = function Typography(props) {
   var children = props.children,
       custom = props.custom,
       size = props.size,
-      title = props.title,
-      subtitle = props.subtitle,
-      paragraph = props.paragraph,
-      subject = props.subject;
+      tokenVariant = props.tokenVariant;
+
+  var getTokenVariant = function getTokenVariant() {
+    switch (tokenVariant) {
+      case 'article-title':
+        return 'xp-article-title';
+
+      case 'article-subtitle':
+        return 'xp-article-subtitle';
+
+      case 'title':
+        return "xp-title-".concat(size);
+
+      case 'subtitle':
+        return "xp-subtitle-".concat(size);
+
+      case 'paragraph':
+        return "xp-paragraph-".concat(size);
+
+      case 'subject':
+        return "xp-subject-".concat(size);
+
+      default:
+        return '';
+    }
+  };
+
   var classes = classnames((_classnames = {
     'xp-typography-root': true
-  }, _defineProperty(_classnames, "xp-title-".concat(size), title), _defineProperty(_classnames, "xp-subtitle-".concat(size), subtitle), _defineProperty(_classnames, "xp-paragraph-".concat(size), paragraph), _defineProperty(_classnames, "xp-subject-".concat(size), subject), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
-  if (title) return /*#__PURE__*/React.createElement("h1", {
-    className: classes
-  }, children);
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes
-  }, children);
+  }, _defineProperty(_classnames, getTokenVariant(), true), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
+
+  switch (tokenVariant) {
+    case 'article-title':
+    case 'title':
+      return /*#__PURE__*/React.createElement("h1", {
+        className: classes
+      }, children);
+
+    case 'article-subtitle':
+    case 'subtitle':
+    case 'paragraph':
+    case 'subject':
+    default:
+      return /*#__PURE__*/React.createElement("span", {
+        className: classes
+      }, children);
+  }
 };
 
 Typography.defaultProps = {
@@ -297,22 +334,7 @@ Typography.propTypes = {
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-
-  /**
-   * Ativa o layout de título no componente
-   */
-  title: PropTypes.bool,
-
-  /**
-   * Ativa o layout de subtítulo no componente
-   */
-  subtitle: PropTypes.bool,
-
-  /**
-   * Ativa o layout de parágrafo no componente
-   */
-  paragraph: PropTypes.bool,
-  subject: PropTypes.bool
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'title', 'subtitle', 'paragraph', 'subject'])
 };
 
 var Subject = function Subject(props) {
@@ -327,7 +349,7 @@ var Subject = function Subject(props) {
   return /*#__PURE__*/React.createElement("div", {
     className: classes
   }, /*#__PURE__*/React.createElement(Typography, {
-    subject: true
+    tokenVariant: "subject"
   }, children));
 };
 
@@ -393,9 +415,9 @@ var Teaser = function Teaser(props) {
     href: articleUrl,
     "aria-label": "Abrir mat\xE9ria ".concat(title)
   }, /*#__PURE__*/React.createElement(Typography, {
-    title: true
+    tokenVariant: "title"
   }, title)), /*#__PURE__*/React.createElement(Typography, {
-    subtitle: true
+    tokenVariant: "title"
   }, subtitle));
 };
 
@@ -448,7 +470,7 @@ var TeaserFeatured = function TeaserFeatured(props) {
     href: articleUrl,
     "aria-label": "Abrir mat\xE9ria ".concat(title)
   }, /*#__PURE__*/React.createElement(Typography, {
-    title: true,
+    tokenVariant: "title",
     size: "xl"
   }, title))));
 };

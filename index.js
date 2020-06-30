@@ -58,6 +58,9 @@ var Block = function Block(props) {
 
   var getStyle = function getStyle() {
     switch (style) {
+      case 'article':
+        return 'xp-article';
+
       case '3-col':
         return 'block-three-col';
 
@@ -128,115 +131,11 @@ Block.propTypes = {
   row: PropTypes.bool,
   height: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'full']),
   width: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'full']),
-  style: PropTypes.oneOf(['3-col', '4-col'])
+  style: PropTypes.oneOf(['article', '3-col', '4-col'])
 };
 Block.defaultProps = {
   functions: {},
   p: '0'
-};
-
-var Article = function Article() {
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-article"
-  }, "Article");
-};
-/* required props */
-
-
-Article.propTypes = {
-  content: PropTypes.object
-};
-Article.defaultProps = {
-  content: {}
-};
-
-var Button = function Button(props) {
-  var style = classnames({
-    'button': true,
-    'primary': props.style === 'primary' && !props.disabled,
-    'secondary': props.style === 'secondary' && !props.disabled,
-    'tertiary': props.style === 'tertiary' && !props.disabled,
-    'disabled': props.disabled
-  });
-  return /*#__PURE__*/React.createElement("button", {
-    className: style,
-    onClick: props.disabled ? null : props.onClick
-  }, props.children);
-};
-
-Button.propTypes = {
-  children: PropTypes.node,
-  style: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func
-};
-Button.defaultProps = {
-  style: 'primary'
-};
-
-var Input = function Input(_ref) {
-  var autoFocus = _ref.autoFocus,
-      disabled = _ref.disabled,
-      invalid = _ref.invalid,
-      label = _ref.label,
-      onEnter = _ref.onEnter,
-      setValue = _ref.setValue,
-      type = _ref.type,
-      value = _ref.value,
-      warning = _ref.warning;
-
-  var KeyDown = function KeyDown(_ref2) {
-    var key = _ref2.key;
-    return key === 'Enter' && onEnter && onEnter();
-  };
-
-  var Label = function Label() {
-    return /*#__PURE__*/React.createElement("p", {
-      className: 'label'
-    }, label && label);
-  };
-
-  var Warning = function Warning() {
-    return /*#__PURE__*/React.createElement("p", {
-      className: 'warning'
-    }, warning && invalid ? warning : ' ');
-  };
-
-  var props = {
-    autoFocus: autoFocus,
-    defaultValue: value,
-    disabled: disabled,
-    onChange: function onChange(_ref3) {
-      var target = _ref3.target;
-      return setValue(target.value);
-    },
-    onKeyDown: KeyDown,
-    type: type
-  };
-  return /*#__PURE__*/React.createElement("div", {
-    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
-  }, /*#__PURE__*/React.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React.createElement("input", props), /*#__PURE__*/React.createElement(Warning, null));
-};
-
-Input.propTypes = {
-  autoFocus: PropTypes.bool,
-  disabled: PropTypes.bool,
-  invalid: PropTypes.bool,
-  label: PropTypes.string,
-  onEnter: PropTypes.func,
-  setValue: PropTypes.func.isRequired,
-  type: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  warning: PropTypes.string
-};
-Input.defaultProps = {
-  autofocus: false,
-  disabled: 'disabled',
-  invalid: false,
-  type: 'text'
-};
-var index = {
-  Input: Input
 };
 
 var Grid = function Grid(props) {
@@ -359,6 +258,227 @@ Grid.propTypes = {
   xs: PropTypes.oneOf([25, 33, 50, 75, 100]),
   sm: PropTypes.oneOf([25, 33, 50, 75, 100]),
   md: PropTypes.oneOf([25, 33, 50, 75, 100])
+};
+
+var Typography = function Typography(props) {
+  var _classnames;
+
+  var children = props.children,
+      custom = props.custom,
+      size = props.size,
+      tokenVariant = props.tokenVariant;
+
+  var getTokenVariant = function getTokenVariant() {
+    switch (tokenVariant) {
+      case 'article-title':
+        return 'xp-article-title';
+
+      case 'article-subtitle':
+        return 'xp-article-subtitle';
+
+      case 'title':
+        return "xp-title-".concat(size);
+
+      case 'subtitle':
+        return "xp-subtitle-".concat(size);
+
+      case 'paragraph':
+        return "xp-paragraph-".concat(size);
+
+      case 'subject':
+        return "xp-subject-".concat(size);
+
+      default:
+        return '';
+    }
+  };
+
+  var classes = classnames((_classnames = {
+    'xp-typography-root': true
+  }, _defineProperty(_classnames, getTokenVariant(), true), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
+
+  switch (tokenVariant) {
+    case 'article-title':
+    case 'title':
+      return /*#__PURE__*/React.createElement("h1", {
+        className: classes
+      }, children);
+
+    case 'article-subtitle':
+    case 'subtitle':
+    case 'paragraph':
+    case 'subject':
+    default:
+      return /*#__PURE__*/React.createElement("span", {
+        className: classes
+      }, children);
+  }
+};
+
+Typography.defaultProps = {
+  weight: 'regular',
+  size: 'sm'
+};
+Typography.propTypes = {
+  /**
+   * Texto que será inserido na tela
+   */
+  children: PropTypes.string.isRequired,
+
+  /**
+   * Permite a passagem de class customizado para o componente
+   */
+  custom: PropTypes.string,
+
+  /**
+   * Modifica o tamanho da fonte de acordo com as guias do design
+   */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'title', 'subtitle', 'paragraph', 'subject'])
+};
+
+var Subject = function Subject(props) {
+  var children = props.children,
+      custom = props.custom,
+      filled = props.filled;
+  if (!children) return null;
+  var classes = classnames(_defineProperty({
+    'xp-subject-root': true,
+    'filled': filled
+  }, "".concat(custom), custom));
+  return /*#__PURE__*/React.createElement("div", {
+    className: classes
+  }, /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "subject"
+  }, children));
+};
+
+Subject.propTypes = {
+  children: PropTypes.string.isRequired,
+  custom: PropTypes.string,
+  filled: PropTypes.bool // size: PropTypes.oneOf([
+  //   'sm', 'md', 'lg'
+  // ])
+
+};
+
+var Article = function Article(_ref) {
+  var content = _ref.content;
+  var subject = content.subject,
+      subtitle = content.subtitle,
+      title = content.title;
+  return /*#__PURE__*/React.createElement(Block, {
+    alignCenter: true,
+    style: "article"
+  }, /*#__PURE__*/React.createElement(Grid, {
+    columns: 12
+  }, /*#__PURE__*/React.createElement(Subject, {
+    filled: true
+  }, subject), /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "article-title"
+  }, title), /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "article-subtitle"
+  }, subtitle)));
+};
+
+Article.propTypes = {
+  content: PropTypes.shape({
+    subject: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired
+  })
+};
+Article.defaultProps = {
+  content: {}
+};
+
+var Button = function Button(props) {
+  var style = classnames({
+    'button': true,
+    'primary': props.style === 'primary' && !props.disabled,
+    'secondary': props.style === 'secondary' && !props.disabled,
+    'tertiary': props.style === 'tertiary' && !props.disabled,
+    'disabled': props.disabled
+  });
+  return /*#__PURE__*/React.createElement("button", {
+    className: style,
+    onClick: props.disabled ? null : props.onClick
+  }, props.children);
+};
+
+Button.propTypes = {
+  children: PropTypes.node,
+  style: PropTypes.string,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func
+};
+Button.defaultProps = {
+  style: 'primary'
+};
+
+var Input = function Input(_ref) {
+  var autoFocus = _ref.autoFocus,
+      disabled = _ref.disabled,
+      invalid = _ref.invalid,
+      label = _ref.label,
+      onEnter = _ref.onEnter,
+      setValue = _ref.setValue,
+      type = _ref.type,
+      value = _ref.value,
+      warning = _ref.warning;
+
+  var KeyDown = function KeyDown(_ref2) {
+    var key = _ref2.key;
+    return key === 'Enter' && onEnter && onEnter();
+  };
+
+  var Label = function Label() {
+    return /*#__PURE__*/React.createElement("p", {
+      className: 'label'
+    }, label && label);
+  };
+
+  var Warning = function Warning() {
+    return /*#__PURE__*/React.createElement("p", {
+      className: 'warning'
+    }, warning && invalid ? warning : ' ');
+  };
+
+  var props = {
+    autoFocus: autoFocus,
+    defaultValue: value,
+    disabled: disabled,
+    onChange: function onChange(_ref3) {
+      var target = _ref3.target;
+      return setValue(target.value);
+    },
+    onKeyDown: KeyDown,
+    type: type
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
+  }, /*#__PURE__*/React.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React.createElement("input", props), /*#__PURE__*/React.createElement(Warning, null));
+};
+
+Input.propTypes = {
+  autoFocus: PropTypes.bool,
+  disabled: PropTypes.bool,
+  invalid: PropTypes.bool,
+  label: PropTypes.string,
+  onEnter: PropTypes.func,
+  setValue: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  warning: PropTypes.string
+};
+Input.defaultProps = {
+  autofocus: false,
+  disabled: 'disabled',
+  invalid: false,
+  type: 'text'
+};
+var index = {
+  Input: Input
 };
 
 var SideMenu = function SideMenu(_ref) {
@@ -610,89 +730,6 @@ var Panel = function Panel(_ref) {
 Panel.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   style: PropTypes.string
-};
-
-var Typography = function Typography(props) {
-  var _classnames;
-
-  var children = props.children,
-      custom = props.custom,
-      size = props.size,
-      title = props.title,
-      subtitle = props.subtitle,
-      paragraph = props.paragraph,
-      subject = props.subject;
-  var classes = classnames((_classnames = {
-    'xp-typography-root': true
-  }, _defineProperty(_classnames, "xp-title-".concat(size), title), _defineProperty(_classnames, "xp-subtitle-".concat(size), subtitle), _defineProperty(_classnames, "xp-paragraph-".concat(size), paragraph), _defineProperty(_classnames, "xp-subject-".concat(size), subject), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
-  if (title) return /*#__PURE__*/React.createElement("h1", {
-    className: classes
-  }, children);
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes
-  }, children);
-};
-
-Typography.defaultProps = {
-  weight: 'regular',
-  size: 'sm'
-};
-Typography.propTypes = {
-  /**
-   * Texto que será inserido na tela
-   */
-  children: PropTypes.string.isRequired,
-
-  /**
-   * Permite a passagem de class customizado para o componente
-   */
-  custom: PropTypes.string,
-
-  /**
-   * Modifica o tamanho da fonte de acordo com as guias do design
-   */
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-
-  /**
-   * Ativa o layout de título no componente
-   */
-  title: PropTypes.bool,
-
-  /**
-   * Ativa o layout de subtítulo no componente
-   */
-  subtitle: PropTypes.bool,
-
-  /**
-   * Ativa o layout de parágrafo no componente
-   */
-  paragraph: PropTypes.bool,
-  subject: PropTypes.bool
-};
-
-var Subject = function Subject(props) {
-  var children = props.children,
-      custom = props.custom,
-      filled = props.filled;
-  if (!children) return null;
-  var classes = classnames(_defineProperty({
-    'xp-subject-root': true,
-    'filled': filled
-  }, "".concat(custom), custom));
-  return /*#__PURE__*/React.createElement("div", {
-    className: classes
-  }, /*#__PURE__*/React.createElement(Typography, {
-    subject: true
-  }, children));
-};
-
-Subject.propTypes = {
-  children: PropTypes.string.isRequired,
-  custom: PropTypes.string,
-  filled: PropTypes.bool // size: PropTypes.oneOf([
-  //   'sm', 'md', 'lg'
-  // ])
-
 };
 
 exports.Article = Article;
