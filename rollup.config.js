@@ -20,7 +20,7 @@ export default [
     ],
     plugins: [ 
       babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**',
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**',
       }),
       json(),
       resolve(),
@@ -42,7 +42,7 @@ export default [
     ],
     plugins: [ 
       babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**',
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**',
       }),
       json(),
       resolve(),
@@ -64,7 +64,7 @@ export default [
     ],
     plugins: [ 
       babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**',
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**',
       }),
       json(),
       resolve(),
