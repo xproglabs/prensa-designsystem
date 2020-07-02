@@ -85,3 +85,14 @@
   @include ff($font-primary);
   @extend %regular;
 }
+
+.xp-system-sm {
+  @include fs($xp-system-fs-sm);
+  @include lh($xp-system-lh);
+  @include fc($xp-system-fc);
+  @include ff($font-primary);
+  @extend %regular;
+  &.bold {
+    @extend %bold;
+  }
+}

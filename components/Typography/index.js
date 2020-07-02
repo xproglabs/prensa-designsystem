@@ -25,9 +25,13 @@ const Typography = props => {
         return `xp-paragraph-${size}`;
       case 'subject':
         return `xp-subject-${size}`;
+      case 'system':
+        return `xp-system-${size}`;
+      case 'system-bold':
+        return `xp-system-${size} bold`;
       default:
         return '';
-    };
+    }
   };
 
   const classes = classnames({
@@ -40,13 +44,9 @@ const Typography = props => {
     case 'article-title':
     case 'title':
       return <h1 className={classes}>{children}</h1>;
-    case 'article-subtitle':
-    case 'subtitle':
-    case 'paragraph':
-    case 'subject':
     default:
       return <span className={classes}>{children}</span>;
-  };
+  }
 };
 
 Typography.defaultProps = {
@@ -58,7 +58,10 @@ Typography.propTypes = {
   /**
    * Texto que será inserido na tela
    */
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array
+  ]).isRequired,
   /**
    * Permite a passagem de class customizado para o componente
    */
@@ -70,7 +73,7 @@ Typography.propTypes = {
     'xs', 'sm', 'md', 'lg', 'xl'
   ]).isRequired,
   tokenVariant: PropTypes.oneOf([
-    'article-title', 'article-subtitle', 'title', 'subtitle', 'paragraph', 'subject'
+    'article-title', 'article-subtitle', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'
   ])
 };
 
