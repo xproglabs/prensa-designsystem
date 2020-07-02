@@ -36,20 +36,25 @@ const Article = ({content}) => {
 
   return (
     <Block alignCenter style='article'>
-      <Block pb='xl'>
+      <Block alignCenter pb='xl' width="full">
         <Grid columns={12}>
           <Subject filled>{subject}</Subject>
           <Typography tokenVariant='article-title'>{title}</Typography>
           <Typography tokenVariant='article-subtitle'>{subtitle}</Typography>
         </Grid>
       </Block>
-      <Block pb='xl'>
+      <Block alignCenter pb='xl' width="full">
         <Grid columns={12}>
           <Block column>
             <Typography tokenVariant='system-bold'>{author}</Typography>
             <Typography tokenVariant='system'>Criado em: {createdAt}</Typography>
             {updatedAt && <Typography tokenVariant='system'>Atualizado em: {updatedAt}</Typography>}
           </Block>
+        </Grid>
+      </Block>
+      <Block alignCenter pb='xl' width="full">
+        <Grid columns={12}>
+          <pre>textbody</pre>
         </Grid>
       </Block>
     </Block>
