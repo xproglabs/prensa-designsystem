@@ -1,23 +1,51 @@
 import {html2json} from 'html2json';
 import {filter, map} from 'lodash';
 import PropTypes from 'prop-types';
+import React from 'react';
+
+import Image from './Image';
+import Paragraph from './Paragraph';
 
 const TextBody = ({content}) => {
-
+  
   if(!content) return null;
-  const switchNode = (item) => {
-    // console.log(`switchnode`, item)
-    switch(item.node) {
-      case 'element':
-        // console.log(`item.node.element`)
-        return null;
-    }
-    return null;
+  
+  const bodyItems = [];
+  const switchNode = ({attr, child, node, tag, text}) => {
+    
+    node === 'element' && tag !== 'a' &&
+      map(child, (item) => switchNode(item));
+
+    node === 'text' &&
+      bodyItems.push({type: 'Paragraph', value: text});
+    
+    node === 'p' &&
+      console.log('P', attr, child, text);
+
+    tag === 'a' && attr.class && attr.class === 'p-smartembed' &&
+      bodyItems.push({type: 'Image', value: attr['data-onecms-id']});
+      
+    tag === 'a' && attr.href && !attr.class && attr.href !== '' &&
+      bodyItems.push({type: 'Link', value: attr['href']});
+
   };
-  // render
+
+  // convert html
   const parsed = html2json(content);
   const elements = filter(parsed.child, ({node: 'element'}));
-  return map(elements, (item) => switchNode(item));
+
+  // parse elements
+  map(elements, (item) => switchNode(item));
+
+  // render elements
+  return map(bodyItems, ({type, value}, key) => {
+    switch(type) {
+      case 'Image':
+        return <Image key={key} value={value} />;
+      case 'Paragraph':
+        return <Paragraph key={key} value={value} />;
+    }
+  });
 };
 
 TextBody.propTypes = {
