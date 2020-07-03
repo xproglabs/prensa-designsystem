@@ -6,9 +6,8 @@ import React from 'react';
 import Image from './Image';
 import Link from './Link';
 import Paragraph from './Paragraph';
-import Tweet from './Tweet';
 
-const TextBody = ({content}) => {
+const TextBody = ({content, embeds}) => {
   
   if(!content) return null;
   
@@ -52,13 +51,14 @@ const TextBody = ({content}) => {
       case 'Paragraph':
         return <Paragraph key={key} value={value} />;
       case 'Tweet':
-        return <Tweet key={key} value={value} />;
+        return embeds && embeds.Tweet && <embeds.Tweet key={key} value={value} />;
     }
   });
 };
 
 TextBody.propTypes = {
-  content: PropTypes.string.isRequired
+  content: PropTypes.string.isRequired,
+  embeds: PropTypes.object
 };
 
 TextBody.defaultProps = {

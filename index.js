@@ -9,7 +9,6 @@ var React = _interopDefault(require('react'));
 var classnames = _interopDefault(require('classnames'));
 var html2json = require('html2json');
 var lodash = require('lodash');
-var reactTwitterEmbed = require('react-twitter-embed');
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -407,25 +406,9 @@ Paragraph.defaultProps = {
   value: {}
 };
 
-var Tweet = function Tweet(_ref) {
-  var value = _ref.value;
-  var splitted = value.split('status/');
-  var postid = splitted.length > 0 ? splitted[1] : '';
-  if (!postid) return false;
-  return /*#__PURE__*/React.createElement(reactTwitterEmbed.TwitterTweetEmbed, {
-    tweetId: postid
-  });
-};
-
-Tweet.propTypes = {
-  value: PropTypes.string.isRequired
-};
-Tweet.defaultProps = {
-  value: {}
-};
-
 var TextBody = function TextBody(_ref) {
-  var content = _ref.content;
+  var content = _ref.content,
+      embeds = _ref.embeds;
   if (!content) return null;
   var bodyItems = [];
 
@@ -497,7 +480,7 @@ var TextBody = function TextBody(_ref) {
         });
 
       case 'Tweet':
-        return /*#__PURE__*/React.createElement(Tweet, {
+        return embeds && embeds.Tweet && /*#__PURE__*/React.createElement(embeds.Tweet, {
           key: key,
           value: value
         });
@@ -506,7 +489,8 @@ var TextBody = function TextBody(_ref) {
 };
 
 TextBody.propTypes = {
-  content: PropTypes.string.isRequired
+  content: PropTypes.string.isRequired,
+  embeds: PropTypes.object
 };
 TextBody.defaultProps = {
   content: {}
@@ -515,7 +499,8 @@ TextBody.defaultProps = {
 var _PropTypes$shape;
 
 var Article = function Article(_ref) {
-  var content = _ref.content;
+  var content = _ref.content,
+      embeds = _ref.embeds;
   var subject = content.subject,
       subtitle = content.subtitle,
       title = content.title,
@@ -559,7 +544,8 @@ var Article = function Article(_ref) {
   }, /*#__PURE__*/React.createElement(Grid, {
     columns: 12
   }, /*#__PURE__*/React.createElement(TextBody, {
-    content: text
+    content: text,
+    embeds: embeds
   }))));
 };
 
@@ -570,7 +556,8 @@ Article.propTypes = {
     subtitle: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired
-  }, _defineProperty(_PropTypes$shape, 'time-created', PropTypes.string.isRequired), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes.string.isRequired), _PropTypes$shape))
+  }, _defineProperty(_PropTypes$shape, 'time-created', PropTypes.string.isRequired), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes.string.isRequired), _PropTypes$shape)),
+  embeds: PropTypes.object
 };
 Article.defaultProps = {
   content: {}

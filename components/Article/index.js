@@ -7,7 +7,7 @@ import Subject from '../Subject';
 import Typography from '../Typography';
 import TextBody from './TextBody';
 
-const Article = ({content}) => {
+const Article = ({content, embeds}) => {
 
   const {subject, subtitle, title, text, author} = content;
   const createdAt = content['time-created'];
@@ -33,7 +33,7 @@ const Article = ({content}) => {
       </Block>
       <Block alignCenter pb='xl' width="full">
         <Grid columns={12}>
-          <TextBody content={text} />
+          <TextBody content={text} embeds={embeds} />
         </Grid>
       </Block>
     </Block>
@@ -49,7 +49,8 @@ Article.propTypes = {
     text: PropTypes.string.isRequired,
     ['time-created']: PropTypes.string.isRequired,
     ['time-modified']: PropTypes.string.isRequired,
-  })
+  }),
+  embeds: PropTypes.object
 };
 
 Article.defaultProps = {
