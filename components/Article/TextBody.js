@@ -27,8 +27,13 @@ const TextBody = ({content, embeds}) => {
       bodyItems.push({type: 'Image', value: attr['data-onecms-id']});
       
     if(tag === 'a' && attr.href && !attr.class && attr.href !== '') {
-      if(attr['href'].indexOf('twitter.com')) {
+      
+      if(attr['href'].indexOf('twitter.com') > -1) {
         bodyItems.push({type: 'Tweet', value: attr['href']});
+        
+      } else if(attr['href'].indexOf('youtube.com') > -1) {
+        bodyItems.push({type: 'Youtube', value: attr['href']});
+
       } else {
         bodyItems.push({type: 'Link', value: attr['href']});
       }
@@ -41,6 +46,7 @@ const TextBody = ({content, embeds}) => {
   // parse elements
   map(elements, (item) => switchNode(item));
 
+  console.log('bodyItems', bodyItems);
   // render elements
   return map(bodyItems, ({type, value}, key) => {
     switch(type) {
@@ -52,6 +58,8 @@ const TextBody = ({content, embeds}) => {
         return <Paragraph key={key} value={value} />;
       case 'Tweet':
         return embeds && embeds.Tweet && <embeds.Tweet key={key} value={value} />;
+      case 'Youtube':
+        return embeds && embeds.Youtube && <embeds.Youtube key={key} value={value} />;
     }
   });
 };

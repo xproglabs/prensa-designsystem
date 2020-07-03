@@ -432,9 +432,14 @@ var TextBody = function TextBody(_ref) {
     });
 
     if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
-      if (attr['href'].indexOf('twitter.com')) {
+      if (attr['href'].indexOf('twitter.com') > -1) {
         bodyItems.push({
           type: 'Tweet',
+          value: attr['href']
+        });
+      } else if (attr['href'].indexOf('youtube.com') > -1) {
+        bodyItems.push({
+          type: 'Youtube',
           value: attr['href']
         });
       } else {
@@ -454,7 +459,8 @@ var TextBody = function TextBody(_ref) {
 
   lodash.map(elements, function (item) {
     return switchNode(item);
-  }); // render elements
+  });
+  console.log('bodyItems', bodyItems); // render elements
 
   return lodash.map(bodyItems, function (_ref3, key) {
     var type = _ref3.type,
@@ -481,6 +487,12 @@ var TextBody = function TextBody(_ref) {
 
       case 'Tweet':
         return embeds && embeds.Tweet && /*#__PURE__*/React.createElement(embeds.Tweet, {
+          key: key,
+          value: value
+        });
+
+      case 'Youtube':
+        return embeds && embeds.Youtube && /*#__PURE__*/React.createElement(embeds.Youtube, {
           key: key,
           value: value
         });
