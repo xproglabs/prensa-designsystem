@@ -7,8 +7,8 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var PropTypes = _interopDefault(require('prop-types'));
 var React = _interopDefault(require('react'));
 var classnames = _interopDefault(require('classnames'));
-var html2json = require('html2json');
 var lodash = require('lodash');
+var html2json = require('html2json');
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -365,23 +365,6 @@ Subject.propTypes = {
 
 };
 
-var imageUrlBuilder = function imageUrlBuilder(policy, derivative, width) {
-  return "/image/".concat(policy, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
-};
-
-var Image = function Image(_ref) {
-  var value = _ref.value;
-  var imagePath = imageUrlBuilder(value, '2x1', 1000);
-  return /*#__PURE__*/React.createElement("p", null, imagePath);
-};
-
-Image.propTypes = {
-  value: PropTypes.string.isRequired
-};
-Image.defaultProps = {
-  value: {}
-};
-
 var Link = function Link(_ref) {
   var value = _ref.value;
   return /*#__PURE__*/React.createElement("p", null, value);
@@ -406,18 +389,15 @@ Paragraph.defaultProps = {
   value: {}
 };
 
-var TextBody = function TextBody(_ref) {
-  var content = _ref.content,
-      embeds = _ref.embeds;
-  if (!content) return null;
+var parseBody = function parseBody(content) {
   var bodyItems = [];
 
-  var switchNode = function switchNode(_ref2) {
-    var attr = _ref2.attr,
-        child = _ref2.child,
-        node = _ref2.node,
-        tag = _ref2.tag,
-        text = _ref2.text;
+  var switchNode = function switchNode(_ref) {
+    var attr = _ref.attr,
+        child = _ref.child,
+        node = _ref.node,
+        tag = _ref.tag,
+        text = _ref.text;
     node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
       return switchNode(item);
     });
@@ -460,19 +440,20 @@ var TextBody = function TextBody(_ref) {
   lodash.map(elements, function (item) {
     return switchNode(item);
   });
-  console.log('bodyItems', bodyItems); // render elements
+  return bodyItems;
+};
 
-  return lodash.map(bodyItems, function (_ref3, key) {
-    var type = _ref3.type,
-        value = _ref3.value;
+var TextBody = function TextBody(_ref) {
+  var content = _ref.content,
+      embeds = _ref.embeds;
+  if (!content) return null;
+  var bodyItems = parseBody(content); // render elements
+
+  return lodash.map(bodyItems, function (_ref2, key) {
+    var type = _ref2.type,
+        value = _ref2.value;
 
     switch (type) {
-      case 'Image':
-        return /*#__PURE__*/React.createElement(Image, {
-          key: key,
-          value: value
-        });
-
       case 'Link':
         return /*#__PURE__*/React.createElement(Link, {
           key: key,
@@ -481,6 +462,12 @@ var TextBody = function TextBody(_ref) {
 
       case 'Paragraph':
         return /*#__PURE__*/React.createElement(Paragraph, {
+          key: key,
+          value: value
+        });
+
+      case 'Image':
+        return embeds && embeds.Image && /*#__PURE__*/React.createElement(embeds.Image, {
           key: key,
           value: value
         });
