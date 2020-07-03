@@ -51,6 +51,12 @@ var Typography = function Typography(props) {
       case 'subject':
         return "xp-subject-".concat(size);
 
+      case 'system':
+        return "xp-system-".concat(size);
+
+      case 'system-bold':
+        return "xp-system-".concat(size, " bold");
+
       default:
         return '';
     }
@@ -67,10 +73,6 @@ var Typography = function Typography(props) {
         className: classes
       }, children);
 
-    case 'article-subtitle':
-    case 'subtitle':
-    case 'paragraph':
-    case 'subject':
     default:
       return /*#__PURE__*/React.createElement("span", {
         className: classes
@@ -86,7 +88,7 @@ Typography.propTypes = {
   /**
    * Texto que será inserido na tela
    */
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
 
   /**
    * Permite a passagem de class customizado para o componente
@@ -97,7 +99,7 @@ Typography.propTypes = {
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'title', 'subtitle', 'paragraph', 'subject'])
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'])
 };
 
 var Subject = function Subject(props) {

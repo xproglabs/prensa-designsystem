@@ -8,6 +8,7 @@ var PropTypes = _interopDefault(require('prop-types'));
 var React = _interopDefault(require('react'));
 var classnames = _interopDefault(require('classnames'));
 var lodash = require('lodash');
+var html2json = require('html2json');
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -288,6 +289,12 @@ var Typography = function Typography(props) {
       case 'subject':
         return "xp-subject-".concat(size);
 
+      case 'system':
+        return "xp-system-".concat(size);
+
+      case 'system-bold':
+        return "xp-system-".concat(size, " bold");
+
       default:
         return '';
     }
@@ -304,10 +311,6 @@ var Typography = function Typography(props) {
         className: classes
       }, children);
 
-    case 'article-subtitle':
-    case 'subtitle':
-    case 'paragraph':
-    case 'subject':
     default:
       return /*#__PURE__*/React.createElement("span", {
         className: classes
@@ -323,7 +326,7 @@ Typography.propTypes = {
   /**
    * Texto que será inserido na tela
    */
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
 
   /**
    * Permite a passagem de class customizado para o componente
@@ -334,7 +337,7 @@ Typography.propTypes = {
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'title', 'subtitle', 'paragraph', 'subject'])
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'])
 };
 
 var Subject = function Subject(props) {
@@ -362,14 +365,155 @@ Subject.propTypes = {
 
 };
 
+var Link = function Link(_ref) {
+  var value = _ref.value;
+  return /*#__PURE__*/React.createElement("p", null, value);
+};
+
+Link.propTypes = {
+  value: PropTypes.string.isRequired
+};
+Link.defaultProps = {
+  value: {}
+};
+
+var Paragraph = function Paragraph(_ref) {
+  var value = _ref.value;
+  return /*#__PURE__*/React.createElement("p", null, value);
+};
+
+Paragraph.propTypes = {
+  value: PropTypes.string.isRequired
+};
+Paragraph.defaultProps = {
+  value: {}
+};
+
+var parseBody = function parseBody(content) {
+  var bodyItems = [];
+
+  var switchNode = function switchNode(_ref) {
+    var attr = _ref.attr,
+        child = _ref.child,
+        node = _ref.node,
+        tag = _ref.tag,
+        text = _ref.text;
+    node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
+      return switchNode(item);
+    });
+    node === 'text' && bodyItems.push({
+      type: 'Paragraph',
+      value: text
+    });
+
+    tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed' && bodyItems.push({
+      type: 'Image',
+      value: attr['data-onecms-id']
+    });
+
+    if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
+      if (attr['href'].indexOf('twitter.com') > -1) {
+        bodyItems.push({
+          type: 'Tweet',
+          value: attr['href']
+        });
+      } else if (attr['href'].indexOf('youtube.com') > -1) {
+        bodyItems.push({
+          type: 'Youtube',
+          value: attr['href']
+        });
+      } else {
+        bodyItems.push({
+          type: 'Link',
+          value: attr['href']
+        });
+      }
+    }
+  }; // convert html
+
+
+  var parsed = html2json.html2json(content);
+  var elements = lodash.filter(parsed.child, {
+    node: 'element'
+  }); // parse elements
+
+  lodash.map(elements, function (item) {
+    return switchNode(item);
+  });
+  return bodyItems;
+};
+
+var TextBody = function TextBody(_ref) {
+  var content = _ref.content,
+      embeds = _ref.embeds;
+  if (!content) return null;
+  var bodyItems = parseBody(content); // render elements
+
+  return lodash.map(bodyItems, function (_ref2, key) {
+    var type = _ref2.type,
+        value = _ref2.value;
+
+    switch (type) {
+      case 'Link':
+        return /*#__PURE__*/React.createElement(Link, {
+          key: key,
+          value: value
+        });
+
+      case 'Paragraph':
+        return /*#__PURE__*/React.createElement(Paragraph, {
+          key: key,
+          value: value
+        });
+
+      case 'Image':
+        return embeds && embeds.Image && /*#__PURE__*/React.createElement(embeds.Image, {
+          key: key,
+          value: value
+        });
+
+      case 'Tweet':
+        return embeds && embeds.Tweet && /*#__PURE__*/React.createElement(embeds.Tweet, {
+          key: key,
+          value: value
+        });
+
+      case 'Youtube':
+        return embeds && embeds.Youtube && /*#__PURE__*/React.createElement(embeds.Youtube, {
+          key: key,
+          value: value
+        });
+    }
+  });
+};
+
+TextBody.propTypes = {
+  content: PropTypes.string.isRequired,
+  embeds: PropTypes.object
+};
+TextBody.defaultProps = {
+  content: {}
+};
+
+var _PropTypes$shape;
+
 var Article = function Article(_ref) {
-  var content = _ref.content;
+  var content = _ref.content,
+      embeds = _ref.embeds;
   var subject = content.subject,
       subtitle = content.subtitle,
-      title = content.title;
+      title = content.title,
+      text = content.text,
+      author = content.author;
+  var createdAt = content['time-created'];
+  var updatedAt = content['time-modified'];
   return /*#__PURE__*/React.createElement(Block, {
     alignCenter: true,
     style: "article"
+  }, /*#__PURE__*/React.createElement(Block, {
+    alignCenter: true,
+    pb: "xl",
+    width: "full"
   }, /*#__PURE__*/React.createElement(Grid, {
     columns: 12
   }, /*#__PURE__*/React.createElement(Subject, {
@@ -378,15 +522,41 @@ var Article = function Article(_ref) {
     tokenVariant: "article-title"
   }, title), /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "article-subtitle"
-  }, subtitle)));
+  }, subtitle))), /*#__PURE__*/React.createElement(Block, {
+    alignCenter: true,
+    pb: "xl",
+    width: "full"
+  }, /*#__PURE__*/React.createElement(Grid, {
+    columns: 12
+  }, /*#__PURE__*/React.createElement(Block, {
+    column: true
+  }, /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "system-bold"
+  }, author), /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "system"
+  }, "Criado em: ", createdAt), updatedAt && /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "system"
+  }, "Atualizado em: ", updatedAt)))), /*#__PURE__*/React.createElement(Block, {
+    alignCenter: true,
+    pb: "xl",
+    width: "full"
+  }, /*#__PURE__*/React.createElement(Grid, {
+    columns: 12
+  }, /*#__PURE__*/React.createElement(TextBody, {
+    content: text,
+    embeds: embeds
+  }))));
 };
 
 Article.propTypes = {
-  content: PropTypes.shape({
+  content: PropTypes.shape((_PropTypes$shape = {
+    author: PropTypes.string.isRequired,
     subject: PropTypes.string,
+    subtitle: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired
-  })
+    text: PropTypes.string.isRequired
+  }, _defineProperty(_PropTypes$shape, 'time-created', PropTypes.string.isRequired), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes.string.isRequired), _PropTypes$shape)),
+  embeds: PropTypes.object
 };
 Article.defaultProps = {
   content: {}
