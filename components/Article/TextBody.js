@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Image from './Image';
+import Link from './Link';
 import Paragraph from './Paragraph';
+import Tweet from './Tweet';
 
 const TextBody = ({content}) => {
   
@@ -19,17 +21,20 @@ const TextBody = ({content}) => {
     node === 'text' &&
       bodyItems.push({type: 'Paragraph', value: text});
     
-    node === 'p' &&
-      console.log('P', attr, child, text);
+    node === 'p' && null;
+    // console.log('P', attr, child, text)
 
     tag === 'a' && attr.class && attr.class === 'p-smartembed' &&
       bodyItems.push({type: 'Image', value: attr['data-onecms-id']});
       
-    tag === 'a' && attr.href && !attr.class && attr.href !== '' &&
-      bodyItems.push({type: 'Link', value: attr['href']});
-
+    if(tag === 'a' && attr.href && !attr.class && attr.href !== '') {
+      if(attr['href'].indexOf('twitter.com')) {
+        bodyItems.push({type: 'Tweet', value: attr['href']});
+      } else {
+        bodyItems.push({type: 'Link', value: attr['href']});
+      }
+    }
   };
-
   // convert html
   const parsed = html2json(content);
   const elements = filter(parsed.child, ({node: 'element'}));
@@ -42,8 +47,12 @@ const TextBody = ({content}) => {
     switch(type) {
       case 'Image':
         return <Image key={key} value={value} />;
+      case 'Link':
+        return <Link key={key} value={value} />;
       case 'Paragraph':
         return <Paragraph key={key} value={value} />;
+      case 'Tweet':
+        return <Tweet key={key} value={value} />;
     }
   });
 };
