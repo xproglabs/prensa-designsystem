@@ -279,6 +279,25 @@ Grid.propTypes = {
   md: PropTypes.oneOf([25, 33, 50, 75, 100])
 };
 
+var SocialMedias = function SocialMedias(props) {
+  var content = props.content;
+  if (!content) return null;
+  return /*#__PURE__*/React.createElement(Block, {
+    row: true
+  }, lodash.map(content, function (item, k) {
+    return /*#__PURE__*/React.createElement("a", {
+      href: item.path,
+      key: k
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "xp-social-circle"
+    }, item.icon));
+  }));
+};
+
+SocialMedias.propTypes = {
+  content: PropTypes.array.isRequired
+};
+
 var Typography = function Typography(props) {
   var _classnames;
 
@@ -294,6 +313,9 @@ var Typography = function Typography(props) {
 
       case 'article-subtitle':
         return 'xp-article-subtitle';
+
+      case 'article-paragraph':
+        return 'xp-article-paragraph';
 
       case 'title':
         return "xp-title-".concat(size);
@@ -329,6 +351,11 @@ var Typography = function Typography(props) {
         className: classes
       }, children);
 
+    case 'article-paragraph':
+      return /*#__PURE__*/React.createElement("p", {
+        className: classes
+      }, children);
+
     default:
       return /*#__PURE__*/React.createElement("span", {
         className: classes
@@ -355,7 +382,7 @@ Typography.propTypes = {
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'])
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'])
 };
 
 var Subject = function Subject(props) {
@@ -397,7 +424,9 @@ Link.defaultProps = {
 
 var Paragraph = function Paragraph(_ref) {
   var value = _ref.value;
-  return /*#__PURE__*/React.createElement("p", null, value);
+  return /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "article-paragraph"
+  }, value);
 };
 
 Paragraph.propTypes = {
@@ -465,8 +494,7 @@ var TextBody = function TextBody(_ref) {
   var content = _ref.content,
       embeds = _ref.embeds;
   if (!content) return null;
-  var bodyItems = parseBody(content); // render elements
-
+  var bodyItems = parseBody(content);
   return lodash.map(bodyItems, function (_ref2, key) {
     var type = _ref2.type,
         value = _ref2.value;
@@ -517,12 +545,13 @@ var _PropTypes$shape;
 
 var Article = function Article(_ref) {
   var content = _ref.content,
-      embeds = _ref.embeds;
-  var subject = content.subject,
+      embeds = _ref.embeds,
+      socialMedias = _ref.socialMedias;
+  var author = content.author,
+      subject = content.subject,
       subtitle = content.subtitle,
-      title = content.title,
       text = content.text,
-      author = content.author;
+      title = content.title;
   var createdAt = content['time-created'];
   var updatedAt = content['time-modified'];
   return /*#__PURE__*/React.createElement(Block, {
@@ -547,6 +576,12 @@ var Article = function Article(_ref) {
   }, /*#__PURE__*/React.createElement(Grid, {
     columns: 12
   }, /*#__PURE__*/React.createElement(Block, {
+    row: true,
+    alignBetween: true,
+    alignMiddle: true,
+    custom: "has-border-bottom",
+    pb: "lg"
+  }, /*#__PURE__*/React.createElement(Block, {
     column: true
   }, /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "system-bold"
@@ -554,12 +589,14 @@ var Article = function Article(_ref) {
     tokenVariant: "system"
   }, "Criado em: ", createdAt), updatedAt && /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "system"
-  }, "Atualizado em: ", updatedAt)))), /*#__PURE__*/React.createElement(Block, {
+  }, "Atualizado em: ", updatedAt)), /*#__PURE__*/React.createElement(SocialMedias, {
+    content: socialMedias
+  })))), /*#__PURE__*/React.createElement(Block, {
     alignCenter: true,
     pb: "xl",
     width: "full"
   }, /*#__PURE__*/React.createElement(Grid, {
-    columns: 12
+    columns: 8
   }, /*#__PURE__*/React.createElement(TextBody, {
     content: text,
     embeds: embeds
@@ -574,6 +611,7 @@ Article.propTypes = {
     title: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired
   }, _defineProperty(_PropTypes$shape, 'time-created', PropTypes.string.isRequired), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes.string.isRequired), _PropTypes$shape)),
+  socialMedias: PropTypes.array,
   embeds: PropTypes.object
 };
 Article.defaultProps = {

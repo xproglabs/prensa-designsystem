@@ -39,6 +39,9 @@ var Typography = function Typography(props) {
       case 'article-subtitle':
         return 'xp-article-subtitle';
 
+      case 'article-paragraph':
+        return 'xp-article-paragraph';
+
       case 'title':
         return "xp-title-".concat(size);
 
@@ -73,6 +76,11 @@ var Typography = function Typography(props) {
         className: classes
       }, children);
 
+    case 'article-paragraph':
+      return /*#__PURE__*/React.createElement("p", {
+        className: classes
+      }, children);
+
     default:
       return /*#__PURE__*/React.createElement("span", {
         className: classes
@@ -99,7 +107,7 @@ Typography.propTypes = {
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'])
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'])
 };
 
 var Subject = function Subject(props) {
