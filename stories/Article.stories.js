@@ -13,6 +13,11 @@ export default {
 };
 
 export const ArticleTeste = () => {
+
+  const handleTagClick = param => {
+    console.log('clicou', param);
+  };
+
   const socialMedias = [
     {
       path: 'https://twitter.com',
@@ -28,6 +33,6 @@ export const ArticleTeste = () => {
     },
   ];
   return (
-    <Article content={articledata} socialMedias={socialMedias} />
+    <Article content={articledata} socialMedias={socialMedias} handleTagClick={handleTagClick} />
   );
 };
