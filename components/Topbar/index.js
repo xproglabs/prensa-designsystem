@@ -28,26 +28,13 @@ const Topbar = ({content, functions}) => {
 const LeftMenuIcon = ({functions}) => {
   return (
     <Block custom="xp-menu-left-icon" 
-      bgColor="neutral-6" 
+      fColor="neutral-8" 
       functions={{handleClick: functions.handleMenuClick}}
-      p="sm">
-      ICON
+      pl="md">
+      MENU
     </Block>
   );
 };
-const CenterContentMockup = () => 
-  <Block custom="xp-mockup" 
-    bgColor="neutral-4" 
-    p="sm">
-    CenterContent
-  </Block>;
-
-const RightContentMockup = () => 
-  <Block custom="xp-mockup" 
-    bgColor="neutral-6" 
-    p="sm">
-    RightContent
-  </Block>;
 
 LeftMenuIcon.propTypes = {
   functions: PropTypes.shape({
@@ -63,9 +50,7 @@ Topbar.propTypes = {
 };
 Topbar.defaultProps = {
   content: {
-    LeftContent: LeftMenuIcon,
-    CenterContent: CenterContentMockup,
-    RightContent: RightContentMockup,
+    LeftContent: LeftMenuIcon
   }
 };
 export default Topbar;

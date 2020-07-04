@@ -25,6 +25,24 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
 var Block = function Block(props) {
   var _classnames;
 
@@ -657,18 +675,16 @@ var SideMenu = function SideMenu(_ref) {
       status = _ref.status;
   var menuIsOpen = status.opened ? 'opened' : 'closed';
   return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-menu-modal ".concat(menuIsOpen),
-    p: "0"
+    custom: "xp-menu-modal ".concat(menuIsOpen)
   }, /*#__PURE__*/React.createElement(Block, {
     custom: "xp-menu-opacity",
     functions: {
       handleClick: functions.onCloseModal
-    },
-    p: "0"
+    }
   }), /*#__PURE__*/React.createElement(Block, {
+    p: "md",
     custom: "xp-menu-left",
-    bgColor: "white",
-    p: "0"
+    bgColor: "white"
   }, children && children));
 };
 
@@ -698,49 +714,26 @@ var SideMenuItems = function SideMenuItems(_ref) {
   var content = _ref.content,
       functions = _ref.functions;
 
-  var SubItem = function SubItem(_ref2) {
+  var Item = function Item(_ref2) {
     var item = _ref2.item;
-    return /*#__PURE__*/React.createElement(Block, {
-      custom: "subitem",
+    var hasSubitems = item.subitems.length > 0;
+    var propsItem = {
       functions: {
         handleClick: function handleClick() {
-          return functions.onMenuItem(item.path);
+          return functions.onMenuItem(item);
         }
-      },
-      mt: "xs"
-    }, /*#__PURE__*/React.createElement("a", {
-      href: item.path
-    }, item.name));
-  };
-
-  SubItem.propTypes = {
-    item: PropTypes.object
-  };
-
-  var Item = function Item(_ref3) {
-    var item = _ref3.item;
+      }
+    };
     return /*#__PURE__*/React.createElement(Block, {
       custom: "listitem",
       mt: "md"
-    }, /*#__PURE__*/React.createElement(Block, {
-      custom: "item",
-      functions: {
-        handleClick: function handleClick() {
-          return functions.onMenuItem(item.path);
-        }
-      },
-      mb: "md",
-      mt: "md"
-    }, /*#__PURE__*/React.createElement("a", {
+    }, /*#__PURE__*/React.createElement(Block, _extends({
+      custom: "item"
+    }, propsItem), !hasSubitems ? /*#__PURE__*/React.createElement("a", {
       href: item.path
-    }, item.name)), /*#__PURE__*/React.createElement(Block, {
-      custom: "subitems"
-    }, lodash.map(item.subitems, function (item, key) {
-      return /*#__PURE__*/React.createElement(SubItem, {
-        item: item,
-        key: key
-      });
-    })));
+    }, item.name) : /*#__PURE__*/React.createElement("span", {
+      href: item.path
+    }, item.name)));
   };
 
   Item.propTypes = {
@@ -755,8 +748,6 @@ var SideMenuItems = function SideMenuItems(_ref) {
     });
   }));
 };
-/* required props */
-
 
 SideMenuItems.propTypes = {
   content: PropTypes.object,
@@ -790,28 +781,12 @@ var LeftMenuIcon = function LeftMenuIcon(_ref2) {
   var functions = _ref2.functions;
   return /*#__PURE__*/React.createElement(Block, {
     custom: "xp-menu-left-icon",
-    bgColor: "neutral-6",
+    fColor: "neutral-8",
     functions: {
       handleClick: functions.handleMenuClick
     },
-    p: "sm"
-  }, "ICON");
-};
-
-var CenterContentMockup = function CenterContentMockup() {
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-mockup",
-    bgColor: "neutral-4",
-    p: "sm"
-  }, "CenterContent");
-};
-
-var RightContentMockup = function RightContentMockup() {
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-mockup",
-    bgColor: "neutral-6",
-    p: "sm"
-  }, "RightContent");
+    pl: "md"
+  }, "MENU");
 };
 
 LeftMenuIcon.propTypes = {
@@ -827,9 +802,7 @@ Topbar.propTypes = {
 };
 Topbar.defaultProps = {
   content: {
-    LeftContent: LeftMenuIcon,
-    CenterContent: CenterContentMockup,
-    RightContent: RightContentMockup
+    LeftContent: LeftMenuIcon
   }
 };
 
