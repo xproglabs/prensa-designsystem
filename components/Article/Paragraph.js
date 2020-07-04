@@ -1,8 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Paragraph = ({value}) => 
-  <p>{value}</p>;
+import Typography from '../Typography';
+
+const Paragraph = ({value}) => {
+  return (
+    <Typography tokenVariant='article-paragraph'>{value}</Typography>
+  );
+};
 
 Paragraph.propTypes = {
   value: PropTypes.string.isRequired

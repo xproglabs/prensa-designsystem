@@ -17,6 +17,8 @@ const Typography = props => {
         return 'xp-article-title';
       case 'article-subtitle':
         return 'xp-article-subtitle';
+      case 'article-paragraph':
+        return 'xp-article-paragraph';
       case 'title':
         return `xp-title-${size}`;
       case 'subtitle':
@@ -44,6 +46,8 @@ const Typography = props => {
     case 'article-title':
     case 'title':
       return <h1 className={classes}>{children}</h1>;
+    case 'article-paragraph':
+      return <p className={classes}>{children}</p>;
     default:
       return <span className={classes}>{children}</span>;
   }
@@ -73,7 +77,7 @@ Typography.propTypes = {
     'xs', 'sm', 'md', 'lg', 'xl'
   ]).isRequired,
   tokenVariant: PropTypes.oneOf([
-    'article-title', 'article-subtitle', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'
+    'article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'
   ])
 };
 

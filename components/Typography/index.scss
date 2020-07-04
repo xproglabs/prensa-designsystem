@@ -86,6 +86,15 @@
   @extend %regular;
 }
 
+.xp-article-paragraph {
+  @include fs($xp-article-paragraph-fs);
+  @include lh($xp-article-paragraph-lh);
+  @include fc($xp-article-paragraph-fc);
+  @include ff($font-secondary);
+  @include my($xp-article-paragraph-space);
+  @extend %regular;
+}
+
 .xp-system-sm {
   @include fs($xp-system-fs-sm);
   @include lh($xp-system-lh);

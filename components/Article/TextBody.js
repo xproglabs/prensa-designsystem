@@ -8,10 +8,9 @@ import {parseBody} from './Utils';
 
 const TextBody = ({content, embeds}) => {
   
-  if(!content) return null;
+  if (!content) return null;
   
   const bodyItems = parseBody(content);
-  // render elements
   return map(bodyItems, ({type, value}, key) => {
     switch(type) {
       case 'Link':
