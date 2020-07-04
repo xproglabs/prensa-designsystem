@@ -1,12 +1,12 @@
 @use '../../styles' as *;
 
-$menu-max-width: 350px;
+$menu-width: 318px; // + 32px
 $menu-opacity: rgba(0,0,0,0.5);
 
 .xp-menu-left {
-  @include h(100vh);
-  @include mw($menu-max-width);
-  @include w(100%);
+  @include h(calc(100vh - 32px)); // todo
+  @include w($menu-width);
+  // @include w(calc(100% - 32px)); // todo
   position: absolute;
   top: 0;
   left: 0;
