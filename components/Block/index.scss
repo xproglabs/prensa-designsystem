@@ -172,3 +172,7 @@ $size-xl: 512px;
 .xp-mockup {
   @include r(5%);
 }
+
+.has-border-bottom {
+  @include bb(1px, solid, $color-neutral-9);
+}

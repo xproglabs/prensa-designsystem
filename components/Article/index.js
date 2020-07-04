@@ -25,7 +25,7 @@ const Article = ({content, embeds, socialMedias}) => {
       </Block>
       <Block alignCenter pb='xl' width="full">
         <Grid columns={12}>
-          <Block row alignBetween alignMiddle>
+          <Block row alignBetween alignMiddle custom='has-border-bottom' pb='lg'>
             <Block column>
               <Typography tokenVariant='system-bold'>{author}</Typography>
               <Typography tokenVariant='system'>Criado em: {createdAt}</Typography>
