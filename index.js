@@ -323,6 +323,9 @@ var Typography = function Typography(props) {
       case 'subtitle':
         return "xp-subtitle-".concat(size);
 
+      case 'paragraph-inner':
+        return "xp-paragraph-".concat(size);
+
       case 'paragraph':
         return "xp-paragraph-".concat(size);
 
@@ -356,6 +359,14 @@ var Typography = function Typography(props) {
         className: classes
       }, children);
 
+    case 'paragraph-inner':
+      return /*#__PURE__*/React.createElement("p", {
+        className: classes,
+        dangerouslySetInnerHTML: {
+          __html: children
+        }
+      });
+
     default:
       return /*#__PURE__*/React.createElement("span", {
         className: classes
@@ -382,7 +393,7 @@ Typography.propTypes = {
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'])
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
 };
 
 var Subject = function Subject(props) {
@@ -410,27 +421,20 @@ Subject.propTypes = {
 
 };
 
-var Link = function Link(_ref) {
-  var value = _ref.value;
-  return /*#__PURE__*/React.createElement("p", null, value);
-};
-
-Link.propTypes = {
-  value: PropTypes.string.isRequired
-};
-Link.defaultProps = {
-  value: {}
-};
-
 var Paragraph = function Paragraph(_ref) {
   var value = _ref.value;
+  var attr = value.attr,
+      child = value.child,
+      node = value.node,
+      text = value.text;
+  console.log("child", attr, child, node);
   return /*#__PURE__*/React.createElement(Typography, {
-    tokenVariant: "article-paragraph"
-  }, value);
+    tokenVariant: "paragraph-inner"
+  }, text);
 };
 
 Paragraph.propTypes = {
-  value: PropTypes.string.isRequired
+  value: PropTypes.object.isRequired
 };
 Paragraph.defaultProps = {
   value: {}
@@ -448,10 +452,34 @@ var parseBody = function parseBody(content) {
     node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
       return switchNode(item);
     });
-    node === 'text' && bodyItems.push({
-      type: 'Paragraph',
-      value: text
-    });
+
+    if (tag === 'p') {
+      var contentText = "";
+      lodash.map(child, function (children) {
+        if (children.node === "text") {
+          contentText = "".concat(contentText).concat(children.text);
+        }
+
+        if (children.tag === "a" && children.attr["class"] !== 'p-smartembed') {
+          var _text = children.child && children.child.length > 0 ? children.child[0].text : children.attr["aria-label"];
+
+          var _attr = "";
+          lodash.map(children.attr, function (value, key) {
+            _attr = "".concat(_attr, " ").concat(key, "=").concat(value);
+          });
+          contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(_text, "</a>");
+        }
+      });
+
+      if (contentText && contentText !== "") {
+        bodyItems.push({
+          type: 'Paragraph',
+          value: {
+            text: contentText
+          }
+        });
+      }
+    }
 
     tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed' && bodyItems.push({
       type: 'Image',
@@ -467,11 +495,6 @@ var parseBody = function parseBody(content) {
       } else if (attr['href'].indexOf('youtube.com') > -1) {
         bodyItems.push({
           type: 'Youtube',
-          value: attr['href']
-        });
-      } else {
-        bodyItems.push({
-          type: 'Link',
           value: attr['href']
         });
       }
@@ -500,12 +523,6 @@ var TextBody = function TextBody(_ref) {
         value = _ref2.value;
 
     switch (type) {
-      case 'Link':
-        return /*#__PURE__*/React.createElement(Link, {
-          key: key,
-          value: value
-        });
-
       case 'Paragraph':
         return /*#__PURE__*/React.createElement(Paragraph, {
           key: key,

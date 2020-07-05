@@ -4,16 +4,34 @@ import {filter, map} from 'lodash';
 const parseBody = (content) => {
 
   const bodyItems = [];
-  const switchNode = ({attr, child, node, tag, text}) => {
+  const switchNode = ({attr, child, node, tag}) => {
     
     node === 'element' && tag !== 'a' &&
       map(child, (item) => switchNode(item));
 
-    node === 'text' &&
-      bodyItems.push({type: 'Paragraph', value: text});
-    
-    node === 'p' && null;
-    // console.log('P', attr, child, text)
+    if(tag === 'p') {
+      let contentText = '';
+      map(child, (children) => {
+        if(children.node === 'text') {
+          contentText = `${contentText}${children.text}`;
+        }
+        if(children.tag === 'a' && children.attr.class !== 'p-smartembed') {
+          
+          let text = children.child && children.child.length > 0 ? 
+            children.child[0].text : 
+            children.attr['aria-label'];
+
+          let attr = '';
+          map(children.attr, (value, key) => {
+            attr = `${attr} ${key}=${value}`;
+          });
+          contentText = `${contentText}<a ${attr}>${text}</a>`;
+        }
+      });
+      if(contentText && contentText !== '') {
+        bodyItems.push({type: 'Paragraph', value: contentText});
+      }
+    }
 
     tag === 'a' && attr.class && attr.class === 'p-smartembed' &&
       bodyItems.push({type: 'Image', value: attr['data-onecms-id']});
@@ -25,9 +43,6 @@ const parseBody = (content) => {
         
       } else if(attr['href'].indexOf('youtube.com') > -1) {
         bodyItems.push({type: 'Youtube', value: attr['href']});
-
-      } else {
-        bodyItems.push({type: 'Link', value: attr['href']});
       }
     }
   };

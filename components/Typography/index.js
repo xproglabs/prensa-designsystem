@@ -23,6 +23,8 @@ const Typography = props => {
         return `xp-title-${size}`;
       case 'subtitle':
         return `xp-subtitle-${size}`;
+      case 'paragraph-inner':
+        return `xp-paragraph-${size}`;
       case 'paragraph':
         return `xp-paragraph-${size}`;
       case 'subject':
@@ -48,6 +50,8 @@ const Typography = props => {
       return <h1 className={classes}>{children}</h1>;
     case 'article-paragraph':
       return <p className={classes}>{children}</p>;
+    case 'paragraph-inner':
+      return <p className={classes} dangerouslySetInnerHTML={{__html: children}} />;
     default:
       return <span className={classes}>{children}</span>;
   }
@@ -77,7 +81,7 @@ Typography.propTypes = {
     'xs', 'sm', 'md', 'lg', 'xl'
   ]).isRequired,
   tokenVariant: PropTypes.oneOf([
-    'article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'
+    'article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'
   ])
 };
 

@@ -285,6 +285,9 @@ var Typography = function Typography(props) {
       case 'subtitle':
         return "xp-subtitle-".concat(size);
 
+      case 'paragraph-inner':
+        return "xp-paragraph-".concat(size);
+
       case 'paragraph':
         return "xp-paragraph-".concat(size);
 
@@ -318,6 +321,14 @@ var Typography = function Typography(props) {
         className: classes
       }, children);
 
+    case 'paragraph-inner':
+      return /*#__PURE__*/React.createElement("p", {
+        className: classes,
+        dangerouslySetInnerHTML: {
+          __html: children
+        }
+      });
+
     default:
       return /*#__PURE__*/React.createElement("span", {
         className: classes
@@ -344,7 +355,7 @@ Typography.propTypes = {
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'subject', 'system', 'system-bold'])
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
 };
 
 var Subject = function Subject(props) {

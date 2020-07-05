@@ -2,7 +2,6 @@ import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Link from './Link';
 import Paragraph from './Paragraph';
 import {parseBody} from './Utils';
 
@@ -13,8 +12,6 @@ const TextBody = ({content, embeds}) => {
   const bodyItems = parseBody(content);
   return map(bodyItems, ({type, value}, key) => {
     switch(type) {
-      case 'Link':
-        return <Link key={key} value={value} />;
       case 'Paragraph':
         return <Paragraph key={key} value={value} />;
       case 'Image':
