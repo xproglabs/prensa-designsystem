@@ -42,6 +42,9 @@ var Typography = function Typography(props) {
       case 'article-paragraph':
         return 'xp-article-paragraph';
 
+      case 'article-tag':
+        return 'xp-article-tag';
+
       case 'title':
         return "xp-title-".concat(size);
 
@@ -118,7 +121,7 @@ Typography.propTypes = {
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
 };
 
 var Subject = function Subject(props) {

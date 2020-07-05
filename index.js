@@ -317,6 +317,9 @@ var Typography = function Typography(props) {
       case 'article-paragraph':
         return 'xp-article-paragraph';
 
+      case 'article-tag':
+        return 'xp-article-tag';
+
       case 'title':
         return "xp-title-".concat(size);
 
@@ -393,7 +396,7 @@ Typography.propTypes = {
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
 };
 
 var Subject = function Subject(props) {
@@ -421,20 +424,43 @@ Subject.propTypes = {
 
 };
 
+var Tags = function Tags(props) {
+  var content = props.content,
+      _onClick = props.onClick;
+
+  var renderTag = function renderTag(tag, k) {
+    return /*#__PURE__*/React.createElement("div", {
+      key: k,
+      className: "xp-tag",
+      onClick: function onClick() {
+        return _onClick(tag);
+      }
+    }, /*#__PURE__*/React.createElement(Typography, {
+      tokenVariant: "article-tag"
+    }, tag));
+  };
+
+  return /*#__PURE__*/React.createElement(Block, {
+    row: true
+  }, lodash.map(content, function (item, k) {
+    return renderTag(item, k);
+  }));
+};
+
+Tags.propTypes = {
+  content: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired
+};
+
 var Paragraph = function Paragraph(_ref) {
   var value = _ref.value;
-  var attr = value.attr,
-      child = value.child,
-      node = value.node,
-      text = value.text;
-  console.log("child", attr, child, node);
   return /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "paragraph-inner"
-  }, text);
+  }, value);
 };
 
 Paragraph.propTypes = {
-  value: PropTypes.object.isRequired
+  value: PropTypes.string.isRequired
 };
 Paragraph.defaultProps = {
   value: {}
@@ -447,36 +473,32 @@ var parseBody = function parseBody(content) {
     var attr = _ref.attr,
         child = _ref.child,
         node = _ref.node,
-        tag = _ref.tag,
-        text = _ref.text;
+        tag = _ref.tag;
     node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
       return switchNode(item);
     });
 
     if (tag === 'p') {
-      var contentText = "";
+      var contentText = '';
       lodash.map(child, function (children) {
-        if (children.node === "text") {
+        if (children.node === 'text') {
           contentText = "".concat(contentText).concat(children.text);
         }
 
-        if (children.tag === "a" && children.attr["class"] !== 'p-smartembed') {
-          var _text = children.child && children.child.length > 0 ? children.child[0].text : children.attr["aria-label"];
-
-          var _attr = "";
+        if (children.tag === 'a' && children.attr["class"] !== 'p-smartembed') {
+          var text = children.child && children.child.length > 0 ? children.child[0].text : children.attr['aria-label'];
+          var _attr = '';
           lodash.map(children.attr, function (value, key) {
             _attr = "".concat(_attr, " ").concat(key, "=").concat(value);
           });
-          contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(_text, "</a>");
+          contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(text, "</a>");
         }
       });
 
-      if (contentText && contentText !== "") {
+      if (contentText && contentText !== '') {
         bodyItems.push({
           type: 'Paragraph',
-          value: {
-            text: contentText
-          }
+          value: contentText
         });
       }
     }
@@ -563,8 +585,10 @@ var _PropTypes$shape;
 var Article = function Article(_ref) {
   var content = _ref.content,
       embeds = _ref.embeds,
+      handleTagClick = _ref.handleTagClick,
       socialMedias = _ref.socialMedias;
   var author = content.author,
+      metadata = content.metadata,
       subject = content.subject,
       subtitle = content.subtitle,
       text = content.text,
@@ -617,17 +641,26 @@ var Article = function Article(_ref) {
   }, /*#__PURE__*/React.createElement(TextBody, {
     content: text,
     embeds: embeds
+  }))), /*#__PURE__*/React.createElement(Block, {
+    row: true
+  }, /*#__PURE__*/React.createElement(Grid, {
+    columns: 8
+  }, /*#__PURE__*/React.createElement(Tags, {
+    content: metadata,
+    onClick: handleTagClick
   }))));
 };
 
 Article.propTypes = {
   content: PropTypes.shape((_PropTypes$shape = {
     author: PropTypes.string.isRequired,
+    metadata: PropTypes.array.isRequired,
     subject: PropTypes.string,
     subtitle: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired
   }, _defineProperty(_PropTypes$shape, 'time-created', PropTypes.string.isRequired), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes.string.isRequired), _PropTypes$shape)),
+  handleTagClick: PropTypes.func.isRequired,
   socialMedias: PropTypes.array,
   embeds: PropTypes.object
 };
