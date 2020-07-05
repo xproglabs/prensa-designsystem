@@ -5,12 +5,13 @@ import Block from '../Block';
 import Grid from '../Grid';
 import SocialMedias from '../SocialMedias';
 import Subject from '../Subject';
+import Tags from '../Tags';
 import Typography from '../Typography';
 import TextBody from './TextBody';
 
-const Article = ({content, embeds, socialMedias}) => {
+const Article = ({content, embeds, handleTagClick, socialMedias}) => {
 
-  const {author, subject, subtitle, text, title} = content;
+  const {author, metadata, subject, subtitle, text, title} = content;
   const createdAt = content['time-created'];
   const updatedAt = content['time-modified'];
 
@@ -40,6 +41,11 @@ const Article = ({content, embeds, socialMedias}) => {
           <TextBody content={text} embeds={embeds} />
         </Grid>
       </Block>
+      <Block row>
+        <Grid columns={8}>
+          <Tags content={metadata} onClick={handleTagClick}/>
+        </Grid>
+      </Block>
     </Block>
   );
 };
@@ -47,6 +53,7 @@ const Article = ({content, embeds, socialMedias}) => {
 Article.propTypes = {
   content: PropTypes.shape({
     author: PropTypes.string.isRequired,
+    metadata: PropTypes.array.isRequired,
     subject: PropTypes.string,
     subtitle: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -54,6 +61,7 @@ Article.propTypes = {
     ['time-created']: PropTypes.string.isRequired,
     ['time-modified']: PropTypes.string.isRequired,
   }),
+  handleTagClick: PropTypes.func.isRequired,
   socialMedias: PropTypes.array,
   embeds: PropTypes.object
 };

@@ -19,6 +19,8 @@ const Typography = props => {
         return 'xp-article-subtitle';
       case 'article-paragraph':
         return 'xp-article-paragraph';
+      case 'article-tag':
+        return 'xp-article-tag';
       case 'title':
         return `xp-title-${size}`;
       case 'subtitle':
@@ -81,7 +83,7 @@ Typography.propTypes = {
     'xs', 'sm', 'md', 'lg', 'xl'
   ]).isRequired,
   tokenVariant: PropTypes.oneOf([
-    'article-title', 'article-subtitle', 'article-paragraph', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'
+    'article-title', 'article-subtitle', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'
   ])
 };
 

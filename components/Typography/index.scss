@@ -95,6 +95,15 @@
   @extend %regular;
 }
 
+.xp-article-tag {
+  @include fs($xp-article-tag-fs);
+  @include lh($xp-article-tag-lh);
+  @include fc($xp-article-tag-fc);
+  @include ff($font-primary);
+  @extend %bold;
+  @extend %uppercase;
+}
+
 .xp-system-sm {
   @include fs($xp-system-fs-sm);
   @include lh($xp-system-lh);
