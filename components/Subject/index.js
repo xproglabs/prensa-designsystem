@@ -17,7 +17,7 @@ const Subject = props => {
 
   return (
     <div className={classes}>
-      <Typography subject>{children}</Typography>
+      <Typography tokenVariant='subject'>{children}</Typography>
     </div>
   );
 };

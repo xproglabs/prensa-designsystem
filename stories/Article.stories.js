@@ -1,31 +1,38 @@
-import {boolean, withKnobs} from '@storybook/addon-knobs';
+import {withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import Article from '../components/Article';
-import articledata from '../mockup/articledata';
+import articledata from '../mockup/articledata.json';
+import TwitterIcon from '../mockup/twitter-icon.js';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
   title: 'Components | Article',
-  component: Readme,
+  component: Article,
   decorators: [withKnobs, sassWrapper]
 };
 
-export const Readme = () => {
-  return (
-    <p>
-      <h3>Article</h3>
-    </p>
-  );
-};
+export const ArticleTeste = () => {
 
-export const Default = () => {
-  const dataList = {
-    content: articledata,
-    status: {
-      error: boolean('loading', false),
-      loading: boolean('loading', false)
-    }
+  const handleTagClick = param => {
+    console.log('clicou', param);
   };
-  return <Article {...dataList} />;
+
+  const socialMedias = [
+    {
+      path: 'https://twitter.com',
+      icon: <TwitterIcon />
+    },
+    {
+      path: 'https://twitter.com',
+      icon: <TwitterIcon />
+    },
+    {
+      path: 'https://twitter.com',
+      icon: <TwitterIcon />
+    },
+  ];
+  return (
+    <Article content={articledata} socialMedias={socialMedias} handleTagClick={handleTagClick} />
+  );
 };

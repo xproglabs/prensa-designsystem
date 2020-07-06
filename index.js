@@ -8,6 +8,7 @@ var PropTypes = _interopDefault(require('prop-types'));
 var React = _interopDefault(require('react'));
 var classnames = _interopDefault(require('classnames'));
 var lodash = require('lodash');
+var html2json = require('html2json');
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -22,6 +23,24 @@ function _defineProperty(obj, key, value) {
   }
 
   return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
 }
 
 var Block = function Block(props) {
@@ -58,6 +77,9 @@ var Block = function Block(props) {
 
   var getStyle = function getStyle() {
     switch (style) {
+      case 'article':
+        return 'xp-article';
+
       case '3-col':
         return 'block-three-col';
 
@@ -128,115 +150,11 @@ Block.propTypes = {
   row: PropTypes.bool,
   height: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'full']),
   width: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'full']),
-  style: PropTypes.oneOf(['3-col', '4-col'])
+  style: PropTypes.oneOf(['article', '3-col', '4-col'])
 };
 Block.defaultProps = {
   functions: {},
   p: '0'
-};
-
-var Article = function Article() {
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-article"
-  }, "Article");
-};
-/* required props */
-
-
-Article.propTypes = {
-  content: PropTypes.object
-};
-Article.defaultProps = {
-  content: {}
-};
-
-var Button = function Button(props) {
-  var style = classnames({
-    'button': true,
-    'primary': props.style === 'primary' && !props.disabled,
-    'secondary': props.style === 'secondary' && !props.disabled,
-    'tertiary': props.style === 'tertiary' && !props.disabled,
-    'disabled': props.disabled
-  });
-  return /*#__PURE__*/React.createElement("button", {
-    className: style,
-    onClick: props.disabled ? null : props.onClick
-  }, props.children);
-};
-
-Button.propTypes = {
-  children: PropTypes.node,
-  style: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func
-};
-Button.defaultProps = {
-  style: 'primary'
-};
-
-var Input = function Input(_ref) {
-  var autoFocus = _ref.autoFocus,
-      disabled = _ref.disabled,
-      invalid = _ref.invalid,
-      label = _ref.label,
-      onEnter = _ref.onEnter,
-      setValue = _ref.setValue,
-      type = _ref.type,
-      value = _ref.value,
-      warning = _ref.warning;
-
-  var KeyDown = function KeyDown(_ref2) {
-    var key = _ref2.key;
-    return key === 'Enter' && onEnter && onEnter();
-  };
-
-  var Label = function Label() {
-    return /*#__PURE__*/React.createElement("p", {
-      className: 'label'
-    }, label && label);
-  };
-
-  var Warning = function Warning() {
-    return /*#__PURE__*/React.createElement("p", {
-      className: 'warning'
-    }, warning && invalid ? warning : ' ');
-  };
-
-  var props = {
-    autoFocus: autoFocus,
-    defaultValue: value,
-    disabled: disabled,
-    onChange: function onChange(_ref3) {
-      var target = _ref3.target;
-      return setValue(target.value);
-    },
-    onKeyDown: KeyDown,
-    type: type
-  };
-  return /*#__PURE__*/React.createElement("div", {
-    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
-  }, /*#__PURE__*/React.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React.createElement("input", props), /*#__PURE__*/React.createElement(Warning, null));
-};
-
-Input.propTypes = {
-  autoFocus: PropTypes.bool,
-  disabled: PropTypes.bool,
-  invalid: PropTypes.bool,
-  label: PropTypes.string,
-  onEnter: PropTypes.func,
-  setValue: PropTypes.func.isRequired,
-  type: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  warning: PropTypes.string
-};
-Input.defaultProps = {
-  autofocus: false,
-  disabled: 'disabled',
-  invalid: false,
-  type: 'text'
-};
-var index = {
-  Input: Input
 };
 
 var Grid = function Grid(props) {
@@ -361,24 +279,500 @@ Grid.propTypes = {
   md: PropTypes.oneOf([25, 33, 50, 75, 100])
 };
 
+var SocialMedias = function SocialMedias(props) {
+  var content = props.content;
+  if (!content) return null;
+  return /*#__PURE__*/React.createElement(Block, {
+    row: true
+  }, lodash.map(content, function (item, k) {
+    return /*#__PURE__*/React.createElement("a", {
+      href: item.path,
+      key: k
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "xp-social-circle"
+    }, item.icon));
+  }));
+};
+
+SocialMedias.propTypes = {
+  content: PropTypes.array.isRequired
+};
+
+var Typography = function Typography(props) {
+  var _classnames;
+
+  var children = props.children,
+      custom = props.custom,
+      size = props.size,
+      tokenVariant = props.tokenVariant;
+
+  var getTokenVariant = function getTokenVariant() {
+    switch (tokenVariant) {
+      case 'article-title':
+        return 'xp-article-title';
+
+      case 'article-subtitle':
+        return 'xp-article-subtitle';
+
+      case 'article-paragraph':
+        return 'xp-article-paragraph';
+
+      case 'article-tag':
+        return 'xp-article-tag';
+
+      case 'title':
+        return "xp-title-".concat(size);
+
+      case 'subtitle':
+        return "xp-subtitle-".concat(size);
+
+      case 'paragraph-inner':
+        return "xp-paragraph-".concat(size);
+
+      case 'paragraph':
+        return "xp-paragraph-".concat(size);
+
+      case 'subject':
+        return "xp-subject-".concat(size);
+
+      case 'system':
+        return "xp-system-".concat(size);
+
+      case 'system-bold':
+        return "xp-system-".concat(size, " bold");
+
+      default:
+        return '';
+    }
+  };
+
+  var classes = classnames((_classnames = {
+    'xp-typography-root': true
+  }, _defineProperty(_classnames, getTokenVariant(), true), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
+
+  switch (tokenVariant) {
+    case 'article-title':
+    case 'title':
+      return /*#__PURE__*/React.createElement("h1", {
+        className: classes
+      }, children);
+
+    case 'article-paragraph':
+      return /*#__PURE__*/React.createElement("p", {
+        className: classes
+      }, children);
+
+    case 'paragraph-inner':
+      return /*#__PURE__*/React.createElement("p", {
+        className: classes,
+        dangerouslySetInnerHTML: {
+          __html: children
+        }
+      });
+
+    default:
+      return /*#__PURE__*/React.createElement("span", {
+        className: classes
+      }, children);
+  }
+};
+
+Typography.defaultProps = {
+  weight: 'regular',
+  size: 'sm'
+};
+Typography.propTypes = {
+  /**
+   * Texto que será inserido na tela
+   */
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+
+  /**
+   * Permite a passagem de class customizado para o componente
+   */
+  custom: PropTypes.string,
+
+  /**
+   * Modifica o tamanho da fonte de acordo com as guias do design
+   */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
+};
+
+var Subject = function Subject(props) {
+  var children = props.children,
+      custom = props.custom,
+      filled = props.filled;
+  if (!children) return null;
+  var classes = classnames(_defineProperty({
+    'xp-subject-root': true,
+    'filled': filled
+  }, "".concat(custom), custom));
+  return /*#__PURE__*/React.createElement("div", {
+    className: classes
+  }, /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "subject"
+  }, children));
+};
+
+Subject.propTypes = {
+  children: PropTypes.string.isRequired,
+  custom: PropTypes.string,
+  filled: PropTypes.bool // size: PropTypes.oneOf([
+  //   'sm', 'md', 'lg'
+  // ])
+
+};
+
+var Tags = function Tags(props) {
+  var content = props.content,
+      _onClick = props.onClick;
+
+  var renderTag = function renderTag(tag, k) {
+    return /*#__PURE__*/React.createElement("div", {
+      key: k,
+      className: "xp-tag",
+      onClick: function onClick() {
+        return _onClick(tag);
+      }
+    }, /*#__PURE__*/React.createElement(Typography, {
+      tokenVariant: "article-tag"
+    }, tag));
+  };
+
+  return /*#__PURE__*/React.createElement(Block, {
+    row: true
+  }, lodash.map(content, function (item, k) {
+    return renderTag(item, k);
+  }));
+};
+
+Tags.propTypes = {
+  content: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired
+};
+
+var Paragraph = function Paragraph(_ref) {
+  var value = _ref.value;
+  return /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "paragraph-inner"
+  }, value);
+};
+
+Paragraph.propTypes = {
+  value: PropTypes.string.isRequired
+};
+Paragraph.defaultProps = {
+  value: {}
+};
+
+var parseBody = function parseBody(content) {
+  var bodyItems = [];
+
+  var switchNode = function switchNode(_ref) {
+    var attr = _ref.attr,
+        child = _ref.child,
+        node = _ref.node,
+        tag = _ref.tag;
+    node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
+      return switchNode(item);
+    });
+
+    if (tag === 'p') {
+      var contentText = '';
+      lodash.map(child, function (children) {
+        if (children.node === 'text') {
+          contentText = "".concat(contentText).concat(children.text);
+        }
+
+        if (children.tag === 'a' && children.attr["class"] !== 'p-smartembed') {
+          var text = children.child && children.child.length > 0 ? children.child[0].text : children.attr['aria-label'];
+          var _attr = '';
+          lodash.map(children.attr, function (value, key) {
+            _attr = "".concat(_attr, " ").concat(key, "=").concat(value);
+          });
+          contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(text, "</a>");
+        }
+      });
+
+      if (contentText && contentText !== '') {
+        bodyItems.push({
+          type: 'Paragraph',
+          value: contentText
+        });
+      }
+    }
+
+    tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed' && bodyItems.push({
+      type: 'Image',
+      value: attr['data-onecms-id']
+    });
+
+    if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
+      if (attr['href'].indexOf('twitter.com') > -1) {
+        bodyItems.push({
+          type: 'Tweet',
+          value: attr['href']
+        });
+      } else if (attr['href'].indexOf('youtube.com') > -1) {
+        bodyItems.push({
+          type: 'Youtube',
+          value: attr['href']
+        });
+      }
+    }
+  }; // convert html
+
+
+  var parsed = html2json.html2json(content);
+  var elements = lodash.filter(parsed.child, {
+    node: 'element'
+  }); // parse elements
+
+  lodash.map(elements, function (item) {
+    return switchNode(item);
+  });
+  return bodyItems;
+};
+
+var TextBody = function TextBody(_ref) {
+  var content = _ref.content,
+      embeds = _ref.embeds;
+  if (!content) return null;
+  var bodyItems = parseBody(content);
+  return lodash.map(bodyItems, function (_ref2, key) {
+    var type = _ref2.type,
+        value = _ref2.value;
+
+    switch (type) {
+      case 'Paragraph':
+        return /*#__PURE__*/React.createElement(Paragraph, {
+          key: key,
+          value: value
+        });
+
+      case 'Image':
+        return embeds && embeds.Image && /*#__PURE__*/React.createElement(embeds.Image, {
+          key: key,
+          value: value
+        });
+
+      case 'Tweet':
+        return embeds && embeds.Tweet && /*#__PURE__*/React.createElement(embeds.Tweet, {
+          key: key,
+          value: value
+        });
+
+      case 'Youtube':
+        return embeds && embeds.Youtube && /*#__PURE__*/React.createElement(embeds.Youtube, {
+          key: key,
+          value: value
+        });
+    }
+  });
+};
+
+TextBody.propTypes = {
+  content: PropTypes.string.isRequired,
+  embeds: PropTypes.object
+};
+TextBody.defaultProps = {
+  content: {}
+};
+
+var _PropTypes$shape;
+
+var Article = function Article(_ref) {
+  var content = _ref.content,
+      embeds = _ref.embeds,
+      handleTagClick = _ref.handleTagClick,
+      socialMedias = _ref.socialMedias;
+  var author = content.author,
+      metadata = content.metadata,
+      subject = content.subject,
+      subtitle = content.subtitle,
+      text = content.text,
+      title = content.title;
+  var createdAt = content['time-created'];
+  var updatedAt = content['time-modified'];
+  return /*#__PURE__*/React.createElement(Block, {
+    alignCenter: true,
+    style: "article"
+  }, /*#__PURE__*/React.createElement(Block, {
+    alignCenter: true,
+    pb: "xl",
+    width: "full"
+  }, /*#__PURE__*/React.createElement(Grid, {
+    columns: 12
+  }, /*#__PURE__*/React.createElement(Subject, {
+    filled: true
+  }, subject), /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "article-title"
+  }, title), /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "article-subtitle"
+  }, subtitle))), /*#__PURE__*/React.createElement(Block, {
+    alignCenter: true,
+    pb: "xl",
+    width: "full"
+  }, /*#__PURE__*/React.createElement(Grid, {
+    columns: 12
+  }, /*#__PURE__*/React.createElement(Block, {
+    row: true,
+    alignBetween: true,
+    alignMiddle: true,
+    custom: "has-border-bottom",
+    pb: "lg"
+  }, /*#__PURE__*/React.createElement(Block, {
+    column: true
+  }, /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "system-bold"
+  }, author), /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "system"
+  }, "Criado em: ", createdAt), updatedAt && /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "system"
+  }, "Atualizado em: ", updatedAt)), /*#__PURE__*/React.createElement(SocialMedias, {
+    content: socialMedias
+  })))), /*#__PURE__*/React.createElement(Block, {
+    alignCenter: true,
+    pb: "xl",
+    width: "full"
+  }, /*#__PURE__*/React.createElement(Grid, {
+    columns: 8
+  }, /*#__PURE__*/React.createElement(TextBody, {
+    content: text,
+    embeds: embeds
+  }))), /*#__PURE__*/React.createElement(Block, {
+    row: true
+  }, /*#__PURE__*/React.createElement(Grid, {
+    columns: 8
+  }, /*#__PURE__*/React.createElement(Tags, {
+    content: metadata,
+    onClick: handleTagClick
+  }))));
+};
+
+Article.propTypes = {
+  content: PropTypes.shape((_PropTypes$shape = {
+    author: PropTypes.string.isRequired,
+    metadata: PropTypes.array.isRequired,
+    subject: PropTypes.string,
+    subtitle: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
+  }, _defineProperty(_PropTypes$shape, 'time-created', PropTypes.string.isRequired), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes.string.isRequired), _PropTypes$shape)),
+  handleTagClick: PropTypes.func.isRequired,
+  socialMedias: PropTypes.array,
+  embeds: PropTypes.object
+};
+Article.defaultProps = {
+  content: {}
+};
+
+var Button = function Button(props) {
+  var style = classnames({
+    'button': true,
+    'primary': props.style === 'primary' && !props.disabled,
+    'secondary': props.style === 'secondary' && !props.disabled,
+    'tertiary': props.style === 'tertiary' && !props.disabled,
+    'disabled': props.disabled
+  });
+  return /*#__PURE__*/React.createElement("button", {
+    className: style,
+    onClick: props.disabled ? null : props.onClick
+  }, props.children);
+};
+
+Button.propTypes = {
+  children: PropTypes.node,
+  style: PropTypes.string,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func
+};
+Button.defaultProps = {
+  style: 'primary'
+};
+
+var Input = function Input(_ref) {
+  var autoFocus = _ref.autoFocus,
+      disabled = _ref.disabled,
+      invalid = _ref.invalid,
+      label = _ref.label,
+      onEnter = _ref.onEnter,
+      setValue = _ref.setValue,
+      type = _ref.type,
+      value = _ref.value,
+      warning = _ref.warning;
+
+  var KeyDown = function KeyDown(_ref2) {
+    var key = _ref2.key;
+    return key === 'Enter' && onEnter && onEnter();
+  };
+
+  var Label = function Label() {
+    return /*#__PURE__*/React.createElement("p", {
+      className: 'label'
+    }, label && label);
+  };
+
+  var Warning = function Warning() {
+    return /*#__PURE__*/React.createElement("p", {
+      className: 'warning'
+    }, warning && invalid ? warning : ' ');
+  };
+
+  var props = {
+    autoFocus: autoFocus,
+    defaultValue: value,
+    disabled: disabled,
+    onChange: function onChange(_ref3) {
+      var target = _ref3.target;
+      return setValue(target.value);
+    },
+    onKeyDown: KeyDown,
+    type: type
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
+  }, /*#__PURE__*/React.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React.createElement("input", props), /*#__PURE__*/React.createElement(Warning, null));
+};
+
+Input.propTypes = {
+  autoFocus: PropTypes.bool,
+  disabled: PropTypes.bool,
+  invalid: PropTypes.bool,
+  label: PropTypes.string,
+  onEnter: PropTypes.func,
+  setValue: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  warning: PropTypes.string
+};
+Input.defaultProps = {
+  autofocus: false,
+  disabled: 'disabled',
+  invalid: false,
+  type: 'text'
+};
+var index = {
+  Input: Input
+};
+
 var SideMenu = function SideMenu(_ref) {
   var children = _ref.children,
       functions = _ref.functions,
       status = _ref.status;
   var menuIsOpen = status.opened ? 'opened' : 'closed';
   return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-menu-modal ".concat(menuIsOpen),
-    p: "0"
+    custom: "xp-menu-modal ".concat(menuIsOpen)
   }, /*#__PURE__*/React.createElement(Block, {
     custom: "xp-menu-opacity",
     functions: {
       handleClick: functions.onCloseModal
-    },
-    p: "0"
+    }
   }), /*#__PURE__*/React.createElement(Block, {
+    p: "md",
     custom: "xp-menu-left",
-    bgColor: "white",
-    p: "0"
+    bgColor: "white"
   }, children && children));
 };
 
@@ -408,49 +802,26 @@ var SideMenuItems = function SideMenuItems(_ref) {
   var content = _ref.content,
       functions = _ref.functions;
 
-  var SubItem = function SubItem(_ref2) {
+  var Item = function Item(_ref2) {
     var item = _ref2.item;
-    return /*#__PURE__*/React.createElement(Block, {
-      custom: "subitem",
+    var hasSubitems = item.subitems.length > 0;
+    var propsItem = {
       functions: {
         handleClick: function handleClick() {
-          return functions.onMenuItem(item.path);
+          return functions.onMenuItem(item);
         }
-      },
-      mt: "xs"
-    }, /*#__PURE__*/React.createElement("a", {
-      href: item.path
-    }, item.name));
-  };
-
-  SubItem.propTypes = {
-    item: PropTypes.object
-  };
-
-  var Item = function Item(_ref3) {
-    var item = _ref3.item;
+      }
+    };
     return /*#__PURE__*/React.createElement(Block, {
       custom: "listitem",
       mt: "md"
-    }, /*#__PURE__*/React.createElement(Block, {
-      custom: "item",
-      functions: {
-        handleClick: function handleClick() {
-          return functions.onMenuItem(item.path);
-        }
-      },
-      mb: "md",
-      mt: "md"
-    }, /*#__PURE__*/React.createElement("a", {
+    }, /*#__PURE__*/React.createElement(Block, _extends({
+      custom: "item"
+    }, propsItem), !hasSubitems ? /*#__PURE__*/React.createElement("a", {
       href: item.path
-    }, item.name)), /*#__PURE__*/React.createElement(Block, {
-      custom: "subitems"
-    }, lodash.map(item.subitems, function (item, key) {
-      return /*#__PURE__*/React.createElement(SubItem, {
-        item: item,
-        key: key
-      });
-    })));
+    }, item.name) : /*#__PURE__*/React.createElement("span", {
+      href: item.path
+    }, item.name)));
   };
 
   Item.propTypes = {
@@ -465,8 +836,6 @@ var SideMenuItems = function SideMenuItems(_ref) {
     });
   }));
 };
-/* required props */
-
 
 SideMenuItems.propTypes = {
   content: PropTypes.object,
@@ -500,28 +869,12 @@ var LeftMenuIcon = function LeftMenuIcon(_ref2) {
   var functions = _ref2.functions;
   return /*#__PURE__*/React.createElement(Block, {
     custom: "xp-menu-left-icon",
-    bgColor: "neutral-6",
+    fColor: "neutral-8",
     functions: {
       handleClick: functions.handleMenuClick
     },
-    p: "sm"
-  }, "ICON");
-};
-
-var CenterContentMockup = function CenterContentMockup() {
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-mockup",
-    bgColor: "neutral-4",
-    p: "sm"
-  }, "CenterContent");
-};
-
-var RightContentMockup = function RightContentMockup() {
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "xp-mockup",
-    bgColor: "neutral-6",
-    p: "sm"
-  }, "RightContent");
+    pl: "md"
+  }, "MENU");
 };
 
 LeftMenuIcon.propTypes = {
@@ -537,9 +890,7 @@ Topbar.propTypes = {
 };
 Topbar.defaultProps = {
   content: {
-    LeftContent: LeftMenuIcon,
-    CenterContent: CenterContentMockup,
-    RightContent: RightContentMockup
+    LeftContent: LeftMenuIcon
   }
 };
 
@@ -610,89 +961,6 @@ var Panel = function Panel(_ref) {
 Panel.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   style: PropTypes.string
-};
-
-var Typography = function Typography(props) {
-  var _classnames;
-
-  var children = props.children,
-      custom = props.custom,
-      size = props.size,
-      title = props.title,
-      subtitle = props.subtitle,
-      paragraph = props.paragraph,
-      subject = props.subject;
-  var classes = classnames((_classnames = {
-    'xp-typography-root': true
-  }, _defineProperty(_classnames, "xp-title-".concat(size), title), _defineProperty(_classnames, "xp-subtitle-".concat(size), subtitle), _defineProperty(_classnames, "xp-paragraph-".concat(size), paragraph), _defineProperty(_classnames, "xp-subject-".concat(size), subject), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
-  if (title) return /*#__PURE__*/React.createElement("h1", {
-    className: classes
-  }, children);
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes
-  }, children);
-};
-
-Typography.defaultProps = {
-  weight: 'regular',
-  size: 'sm'
-};
-Typography.propTypes = {
-  /**
-   * Texto que será inserido na tela
-   */
-  children: PropTypes.string.isRequired,
-
-  /**
-   * Permite a passagem de class customizado para o componente
-   */
-  custom: PropTypes.string,
-
-  /**
-   * Modifica o tamanho da fonte de acordo com as guias do design
-   */
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-
-  /**
-   * Ativa o layout de título no componente
-   */
-  title: PropTypes.bool,
-
-  /**
-   * Ativa o layout de subtítulo no componente
-   */
-  subtitle: PropTypes.bool,
-
-  /**
-   * Ativa o layout de parágrafo no componente
-   */
-  paragraph: PropTypes.bool,
-  subject: PropTypes.bool
-};
-
-var Subject = function Subject(props) {
-  var children = props.children,
-      custom = props.custom,
-      filled = props.filled;
-  if (!children) return null;
-  var classes = classnames(_defineProperty({
-    'xp-subject-root': true,
-    'filled': filled
-  }, "".concat(custom), custom));
-  return /*#__PURE__*/React.createElement("div", {
-    className: classes
-  }, /*#__PURE__*/React.createElement(Typography, {
-    subject: true
-  }, children));
-};
-
-Subject.propTypes = {
-  children: PropTypes.string.isRequired,
-  custom: PropTypes.string,
-  filled: PropTypes.bool // size: PropTypes.oneOf([
-  //   'sm', 'md', 'lg'
-  // ])
-
 };
 
 exports.Article = Article;

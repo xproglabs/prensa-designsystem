@@ -1,0 +1,15 @@
+@use '../../styles' as *;
+
+.xp-social-circle {
+  @include fx(center, center);
+  @include w(32px);
+  @include h(32px);
+  @include b(1px, solid, $color-primary-1);
+  @include r(50%);
+  @include ml($space-size-2);
+  svg {
+    @include w(16px);
+    @include h(16px);
+    fill: $color-primary-1;
+  }
+}

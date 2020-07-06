@@ -2,6 +2,25 @@ $font-primary: 'Work Sans' !default;
 $font-secondary: 'Merriweather' !default;
 $font-tertiary: 'Arvo' !default;
 
+$xp-article-title-fs-sm: 32px !default;
+$xp-article-title-lh-sm: 34px !default;
+$xp-article-title-fs-lg: 48px !default;
+$xp-article-title-lh-lg: 50px !default;
+$xp-article-title-ff: $font-primary !default;
+
+$xp-article-subtitle-fs: 18px !default;
+$xp-article-subtitle-lh: 26px !default;
+$xp-article-subtitle-ff: $font-primary !default;
+
+$xp-article-paragraph-fs: 18px !default;
+$xp-article-paragraph-lh: 42px !default;
+
+$xp-article-tag-fs: 14px !default;
+$xp-article-tag-lh: 26px !default;
+
+$xp-system-fs-sm: 14px !default;
+$xp-system-lh: 18px !default;
+
 %thin { font-weight: 100 };
 %light { font-weight: 300 };
 %regular { font-weight: 400 };

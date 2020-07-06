@@ -6,56 +6,30 @@ import Block from '../Block';
 
 const SideMenuItems = ({content, functions}) => {
 
-  const SubItem = ({item}) => {
+  const Item = ({item}) => {
+    const hasSubitems = item.subitems.length > 0;
+    const propsItem = {functions: {handleClick: () => functions.onMenuItem(item)}};
     return (
-      <Block 
-        custom="subitem" 
-        functions={{handleClick: () => functions.onMenuItem(item.path)}}
-        mt="xs">
-        <a href={item.path}>
-          {item.name}
-        </a>
+      <Block custom="listitem" mt="md">
+        <Block custom="item" {...propsItem}>
+          {!hasSubitems ? 
+            <a href={item.path}>{item.name}</a> :
+            <span href={item.path}>{item.name}</span>}
+        </Block>
       </Block>
     );
   };
-  SubItem.propTypes = {
-    item: PropTypes.object
-  };
-
-  const Item = ({item}) => (
-    <Block 
-      custom="listitem"
-      mt="md">
-      <Block 
-        custom="item" 
-        functions={{handleClick: () => functions.onMenuItem(item.path)}}
-        mb="md"
-        mt="md">
-        <a href={item.path}>
-          {item.name}
-        </a>
-      </Block>
-      <Block 
-        custom="subitems">
-        {map(item.subitems, (item, key) => 
-          <SubItem item={item} key={key} />)}
-      </Block>
-    </Block>
-  );
   Item.propTypes = {
     item: PropTypes.object
   };
-
   return (
-    <Block 
-      custom={'xp-menu-left-items'}>
+    <Block custom={'xp-menu-left-items'}>
       {map(content.items, (item, key) => 
         <Item item={item} key={key} />)}
     </Block>
   );
 };
 
-/* required props */
 SideMenuItems.propTypes = {
   content: PropTypes.object,
   functions: PropTypes.shape({

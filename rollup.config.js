@@ -7,7 +7,7 @@ import sass from 'rollup-plugin-sass';
 export default [
   {
     input: 'components/index.js',
-    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames'],
+    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json'],
     output: [
       {
         file: 'index.js',
@@ -20,7 +20,7 @@ export default [
     ],
     plugins: [ 
       babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**',
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**',
       }),
       json(),
       resolve(),
@@ -29,7 +29,7 @@ export default [
   },
   {
     input: 'components/Templates/index.js',
-    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames'],
+    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json'],
     output: [
       {
         file: 'templates.js',
@@ -42,7 +42,7 @@ export default [
     ],
     plugins: [ 
       babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**',
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**',
       }),
       json(),
       resolve(),
@@ -51,7 +51,7 @@ export default [
   },
   {
     input: 'components/Teasers/index.js',
-    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames'],
+    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json'],
     output: [
       {
         file: 'teasers.js',
@@ -64,7 +64,7 @@ export default [
     ],
     plugins: [ 
       babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**',
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**',
       }),
       json(),
       resolve(),

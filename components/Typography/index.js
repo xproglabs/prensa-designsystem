@@ -8,25 +8,55 @@ const Typography = props => {
     children,
     custom,
     size,
-    title,
-    subtitle,
-    paragraph,
-    subject
+    tokenVariant
   } = props;
+
+  const getTokenVariant = () => {
+    switch(tokenVariant) {
+      case 'article-title':
+        return 'xp-article-title';
+      case 'article-subtitle':
+        return 'xp-article-subtitle';
+      case 'article-paragraph':
+        return 'xp-article-paragraph';
+      case 'article-tag':
+        return 'xp-article-tag';
+      case 'title':
+        return `xp-title-${size}`;
+      case 'subtitle':
+        return `xp-subtitle-${size}`;
+      case 'paragraph-inner':
+        return `xp-paragraph-${size}`;
+      case 'paragraph':
+        return `xp-paragraph-${size}`;
+      case 'subject':
+        return `xp-subject-${size}`;
+      case 'system':
+        return `xp-system-${size}`;
+      case 'system-bold':
+        return `xp-system-${size} bold`;
+      default:
+        return '';
+    }
+  };
 
   const classes = classnames({
     'xp-typography-root': true,
-    [`xp-title-${size}`]: title,
-    [`xp-subtitle-${size}`]: subtitle,
-    [`xp-paragraph-${size}`]: paragraph,
-    [`xp-subject-${size}`]: subject,
-    [`${custom}`]: custom
+    [getTokenVariant()]: true,
+    [`${custom}`]: custom,
   });
 
-  if (title) return <h1 className={classes}>{children}</h1>;
-  return (
-    <span className={classes}>{children}</span>
-  );
+  switch(tokenVariant) {
+    case 'article-title':
+    case 'title':
+      return <h1 className={classes}>{children}</h1>;
+    case 'article-paragraph':
+      return <p className={classes}>{children}</p>;
+    case 'paragraph-inner':
+      return <p className={classes} dangerouslySetInnerHTML={{__html: children}} />;
+    default:
+      return <span className={classes}>{children}</span>;
+  }
 };
 
 Typography.defaultProps = {
@@ -38,7 +68,10 @@ Typography.propTypes = {
   /**
    * Texto que será inserido na tela
    */
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array
+  ]).isRequired,
   /**
    * Permite a passagem de class customizado para o componente
    */
@@ -49,19 +82,9 @@ Typography.propTypes = {
   size: PropTypes.oneOf([
     'xs', 'sm', 'md', 'lg', 'xl'
   ]).isRequired,
-  /**
-   * Ativa o layout de título no componente
-   */
-  title: PropTypes.bool,
-  /**
-   * Ativa o layout de subtítulo no componente
-   */
-  subtitle: PropTypes.bool,
-  /**
-   * Ativa o layout de parágrafo no componente
-   */
-  paragraph: PropTypes.bool,
-  subject: PropTypes.bool
+  tokenVariant: PropTypes.oneOf([
+    'article-title', 'article-subtitle', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'
+  ])
 };
 
 export default Typography;

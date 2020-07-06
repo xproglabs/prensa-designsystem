@@ -63,3 +63,54 @@
   @extend %bold;
   @extend %uppercase;
 }
+
+.xp-article-title {
+  @include fs($xp-article-title-fs-sm);
+  @include lh($xp-article-title-lh-sm);
+  @include ff($xp-article-title-ff);
+  @include fc($xp-article-title-fc);
+  @extend %bold;
+  @include mt($space-size-3);
+  @include mb($space-size-2);
+  @media (min-width: $lg) {
+    @include fs($xp-article-title-fs-lg);
+    @include lh($xp-article-title-lh-lg);
+  }
+}
+
+.xp-article-subtitle {
+  @include fs($xp-article-subtitle-fs);
+  @include lh($xp-article-subtitle-lh);
+  @include fc($xp-article-subtitle-fc);
+  @include ff($font-primary);
+  @extend %regular;
+}
+
+.xp-article-paragraph {
+  @include fs($xp-article-paragraph-fs);
+  @include lh($xp-article-paragraph-lh);
+  @include fc($xp-article-paragraph-fc);
+  @include ff($font-secondary);
+  @include my($xp-article-paragraph-space);
+  @extend %regular;
+}
+
+.xp-article-tag {
+  @include fs($xp-article-tag-fs);
+  @include lh($xp-article-tag-lh);
+  @include fc($xp-article-tag-fc);
+  @include ff($font-primary);
+  @extend %bold;
+  @extend %uppercase;
+}
+
+.xp-system-sm {
+  @include fs($xp-system-fs-sm);
+  @include lh($xp-system-lh);
+  @include fc($xp-system-fc);
+  @include ff($font-primary);
+  @extend %regular;
+  &.bold {
+    @extend %bold;
+  }
+}

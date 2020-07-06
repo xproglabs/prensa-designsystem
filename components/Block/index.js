@@ -36,6 +36,8 @@ const Block = (props) => {
 
   const getStyle = () => {
     switch(style) {
+      case 'article':
+        return 'xp-article'
       case '3-col':
         return 'block-three-col';
       case '4-col':
@@ -152,7 +154,7 @@ Block.propTypes = {
     'xs', 'sm', 'md', 'lg', 'xl', 'full'
   ]),
   style: PropTypes.oneOf([
-    '3-col', '4-col'
+    'article', '3-col', '4-col'
   ])
 };
 
