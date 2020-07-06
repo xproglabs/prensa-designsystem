@@ -16,7 +16,7 @@ const Tags = props => {
   );
 
   return (
-    <Block row>
+    <Block row custom='wrap'>
       {map(content, (item, k) => renderTag(item, k))}
     </Block>
   );
