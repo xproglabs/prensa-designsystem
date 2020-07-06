@@ -441,7 +441,8 @@ var Tags = function Tags(props) {
   };
 
   return /*#__PURE__*/React.createElement(Block, {
-    row: true
+    row: true,
+    custom: "wrap"
   }, lodash.map(content, function (item, k) {
     return renderTag(item, k);
   }));
