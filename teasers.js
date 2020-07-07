@@ -84,11 +84,6 @@ var Typography = function Typography(props) {
 
     case 'article-paragraph':
       return /*#__PURE__*/React.createElement("p", {
-        className: classes
-      }, children);
-
-    case 'paragraph-inner':
-      return /*#__PURE__*/React.createElement("p", {
         className: classes,
         dangerouslySetInnerHTML: {
           __html: children
