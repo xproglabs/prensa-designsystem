@@ -288,9 +288,6 @@ var Typography = function Typography(props) {
       case 'subtitle':
         return "xp-subtitle-".concat(size);
 
-      case 'paragraph-inner':
-        return "xp-paragraph-".concat(size);
-
       case 'paragraph':
         return "xp-paragraph-".concat(size);
 

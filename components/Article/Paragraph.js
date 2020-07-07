@@ -5,7 +5,7 @@ import Typography from '../Typography';
 
 const Paragraph = ({value}) => {
   return (
-    <Typography tokenVariant='paragraph-inner'>{value}</Typography>
+    <Typography tokenVariant='article-paragraph'>{value}</Typography>
   );
 };
 
