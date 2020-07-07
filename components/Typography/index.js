@@ -51,8 +51,6 @@ const Typography = props => {
     case 'title':
       return <h1 className={classes}>{children}</h1>;
     case 'article-paragraph':
-      return <p className={classes}>{children}</p>;
-    case 'paragraph-inner':
       return <p className={classes} dangerouslySetInnerHTML={{__html: children}} />;
     default:
       return <span className={classes}>{children}</span>;
