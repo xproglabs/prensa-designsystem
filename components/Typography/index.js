@@ -25,8 +25,6 @@ const Typography = props => {
         return `xp-title-${size}`;
       case 'subtitle':
         return `xp-subtitle-${size}`;
-      case 'paragraph-inner':
-        return `xp-paragraph-${size}`;
       case 'paragraph':
         return `xp-paragraph-${size}`;
       case 'subject':

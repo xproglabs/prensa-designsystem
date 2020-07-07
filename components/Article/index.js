@@ -17,16 +17,16 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
 
   return (
     <Block alignCenter style='article'>
-      <Block alignCenter pb='xl' width="full">
+      <Block alignCenter width="full">
         <Grid columns={12}>
           <Subject filled>{subject}</Subject>
           <Typography tokenVariant='article-title'>{title}</Typography>
           <Typography tokenVariant='article-subtitle'>{subtitle}</Typography>
         </Grid>
       </Block>
-      <Block alignCenter pb='xl' width="full">
+      <Block alignCenter width="full">
         <Grid columns={12}>
-          <Block row alignBetween alignMiddle custom='has-border-bottom' pb='lg'>
+          <Block row alignBetween alignMiddle custom='has-border-bottom'>
             <Block column>
               <Typography tokenVariant='system-bold'>{author}</Typography>
               <Typography tokenVariant='system'>Criado em: {createdAt}</Typography>
@@ -36,7 +36,7 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
           </Block>
         </Grid>
       </Block>
-      <Block alignCenter pb='xl' width="full">
+      <Block alignCenter width="full">
         <Grid columns={8}>
           <TextBody content={text} embeds={embeds} />
         </Grid>

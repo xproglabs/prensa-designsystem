@@ -326,9 +326,6 @@ var Typography = function Typography(props) {
       case 'subtitle':
         return "xp-subtitle-".concat(size);
 
-      case 'paragraph-inner':
-        return "xp-paragraph-".concat(size);
-
       case 'paragraph':
         return "xp-paragraph-".concat(size);
 
@@ -451,7 +448,7 @@ Tags.propTypes = {
 var Paragraph = function Paragraph(_ref) {
   var value = _ref.value;
   return /*#__PURE__*/React.createElement(Typography, {
-    tokenVariant: "paragraph-inner"
+    tokenVariant: "article-paragraph"
   }, value);
 };
 
@@ -596,7 +593,6 @@ var Article = function Article(_ref) {
     style: "article"
   }, /*#__PURE__*/React.createElement(Block, {
     alignCenter: true,
-    pb: "xl",
     width: "full"
   }, /*#__PURE__*/React.createElement(Grid, {
     columns: 12
@@ -608,7 +604,6 @@ var Article = function Article(_ref) {
     tokenVariant: "article-subtitle"
   }, subtitle))), /*#__PURE__*/React.createElement(Block, {
     alignCenter: true,
-    pb: "xl",
     width: "full"
   }, /*#__PURE__*/React.createElement(Grid, {
     columns: 12
@@ -616,8 +611,7 @@ var Article = function Article(_ref) {
     row: true,
     alignBetween: true,
     alignMiddle: true,
-    custom: "has-border-bottom",
-    pb: "lg"
+    custom: "has-border-bottom"
   }, /*#__PURE__*/React.createElement(Block, {
     column: true
   }, /*#__PURE__*/React.createElement(Typography, {
@@ -630,7 +624,6 @@ var Article = function Article(_ref) {
     content: socialMedias
   })))), /*#__PURE__*/React.createElement(Block, {
     alignCenter: true,
-    pb: "xl",
     width: "full"
   }, /*#__PURE__*/React.createElement(Grid, {
     columns: 8
