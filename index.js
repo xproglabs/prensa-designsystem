@@ -626,14 +626,14 @@ var Article = function Article(_ref) {
     alignCenter: true,
     width: "full"
   }, /*#__PURE__*/React.createElement(Grid, {
-    columns: 8
+    columns: 10
   }, /*#__PURE__*/React.createElement(TextBody, {
     content: text,
     embeds: embeds
   }))), /*#__PURE__*/React.createElement(Block, {
     row: true
   }, /*#__PURE__*/React.createElement(Grid, {
-    columns: 8
+    columns: 10
   }, /*#__PURE__*/React.createElement(Tags, {
     content: metadata,
     onClick: handleTagClick

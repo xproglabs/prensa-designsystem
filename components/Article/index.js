@@ -37,12 +37,12 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
         </Grid>
       </Block>
       <Block alignCenter width="full">
-        <Grid columns={8}>
+        <Grid columns={10}>
           <TextBody content={text} embeds={embeds} />
         </Grid>
       </Block>
       <Block row>
-        <Grid columns={8}>
+        <Grid columns={10}>
           <Tags content={metadata} onClick={handleTagClick}/>
         </Grid>
       </Block>
