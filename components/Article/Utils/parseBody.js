@@ -9,10 +9,15 @@ const parseBody = (content) => {
     node === 'element' && tag !== 'a' &&
       map(child, (item) => switchNode(item));
 
-    if(tag === 'p') {
+    const enabledTags = ['p', 'em'];
+    
+    if(enabledTags.indexOf(tag) > -1) {
       let contentText = '';
+
       map(child, (children) => {
-        if(children.node === 'text') {
+        if(children.node === 'text' && tag === 'em') {
+          contentText = `${contentText}<i>${children.text}</i>`;
+        } else if(children.node === 'text') {
           contentText = `${contentText}${children.text}`;
         }
         if(children.tag === 'a' && children.attr.class !== 'p-smartembed') {
