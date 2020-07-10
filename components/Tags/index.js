@@ -10,7 +10,7 @@ const Tags = props => {
   const {content, onClick} = props;
 
   const renderTag = (tag, k) => (
-    <div key={k} className='xp-tag' onClick={() => onClick(tag)}>
+    <div key={k} className='tag' onClick={() => onClick(tag)}>
       <Typography tokenVariant='article-tag'>{tag}</Typography>
     </div>
   );

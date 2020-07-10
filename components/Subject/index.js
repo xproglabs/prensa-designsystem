@@ -10,7 +10,7 @@ const Subject = props => {
   if (!children) return null;
 
   const classes = classnames({
-    'xp-subject-root': true,
+    'subject-root': true,
     'filled': filled,
     [`${custom}`]: custom
   });

@@ -37,7 +37,7 @@ const Block = (props) => {
   const getStyle = () => {
     switch(style) {
       case 'article':
-        return 'xp-article'
+        return 'article';
       case '3-col':
         return 'block-three-col';
       case '4-col':
@@ -69,20 +69,20 @@ const Block = (props) => {
     'fx-dir-row': row,
     'fx-fit-h': fitH,
     'fx-fit-w': fitW,
-    [`xp-bg-${bgColor}`]: bgColor,
-    [`xp-f-${fColor}`]: fColor,
-    [`xp-h-${height}`]: height,
-    [`xp-m-${m}`]: m,
-    [`xp-mb-${mb}`]: mb,
-    [`xp-ml-${ml}`]: ml,
-    [`xp-mr-${mr}`]: mr,
-    [`xp-mt-${mt}`]: mt,
-    [`xp-p-${p}`]: p,
-    [`xp-pb-${pb}`]: pb,
-    [`xp-pl-${pl}`]: pl,
-    [`xp-pr-${pr}`]: pr,
-    [`xp-pt-${pt}`]: pt,
-    [`xp-w-${width}`]: width,
+    [`bg-${bgColor}`]: bgColor,
+    [`f-${fColor}`]: fColor,
+    [`h-${height}`]: height,
+    [`m-${m}`]: m,
+    [`mb-${mb}`]: mb,
+    [`ml-${ml}`]: ml,
+    [`mr-${mr}`]: mr,
+    [`mt-${mt}`]: mt,
+    [`p-${p}`]: p,
+    [`pb-${pb}`]: pb,
+    [`pl-${pl}`]: pl,
+    [`pr-${pr}`]: pr,
+    [`pt-${pt}`]: pt,
+    [`w-${width}`]: width,
     [`${custom}`]: custom
   });
 

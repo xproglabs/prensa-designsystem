@@ -1,6 +1,6 @@
 @use '../../styles' as *;
 
-.xp-title-xs {
+.title-xs {
   @include fs(16px);
   @include lh(18px);
   @include ff($font-primary);
@@ -8,7 +8,7 @@
   @include mt(0px);
   @include mb($space-size-1);
 }
-.xp-title-sm {
+.title-sm {
   @include fs(24px);
   @include lh(26px);
   @include ff($font-primary);
@@ -17,7 +17,7 @@
   @include mt(0px);
   @include mb($space-size-1);
 }
-.xp-title-md {
+.title-md {
   @include fs(32px);
   @include lh(34px);
   @include ff($font-primary);
@@ -25,7 +25,7 @@
   @include mt(0px);
   @include mb($space-size-1);
 }
-.xp-title-lg {
+.title-lg {
   @include fs(40px);
   @include lh(42px);
   @include ff($font-primary);
@@ -33,7 +33,7 @@
   @include mt(0px);
   @include mb($space-size-1);
 }
-.xp-title-xl {
+.title-xl {
   @include fs(48px);
   @include lh(50px);
   @include ff($font-primary);
@@ -42,21 +42,21 @@
   @include mb($space-size-1);
 }
 
-.xp-subtitle-sm {
+.subtitle-sm {
   @include fs(18px);
   @include lh(24px);
   @include ff($font-primary);
   @extend %regular;
 }
 
-.xp-paragraph-sm {
+.paragraph-sm {
   @include fs(18px);
   @include lh(42px);
   @include ff($font-secondary);
   @extend %regular;
 }
 
-.xp-subject-sm {
+.subject-sm {
   @include fs(16px);
   @include lh(18px);
   @include ff($font-primary);
@@ -64,50 +64,50 @@
   @extend %uppercase;
 }
 
-.xp-article-title {
-  @include fs($xp-article-title-fs-sm);
-  @include lh($xp-article-title-lh-sm);
-  @include ff($xp-article-title-ff);
-  @include fc($xp-article-title-fc);
+.article-title {
+  @include fs($article-title-fs-sm);
+  @include lh($article-title-lh-sm);
+  @include ff($article-title-ff);
+  @include fc($article-title-fc);
   @extend %bold;
   @include mt($space-size-3);
   @include mb($space-size-2);
   @media (min-width: $lg) {
-    @include fs($xp-article-title-fs-lg);
-    @include lh($xp-article-title-lh-lg);
+    @include fs($article-title-fs-lg);
+    @include lh($article-title-lh-lg);
   }
 }
 
-.xp-article-subtitle {
-  @include fs($xp-article-subtitle-fs);
-  @include lh($xp-article-subtitle-lh);
-  @include fc($xp-article-subtitle-fc);
+.article-subtitle {
+  @include fs($article-subtitle-fs);
+  @include lh($article-subtitle-lh);
+  @include fc($article-subtitle-fc);
   @include ff($font-primary);
   @extend %regular;
 }
 
-.xp-article-paragraph {
-  @include fs($xp-article-paragraph-fs);
-  @include lh($xp-article-paragraph-lh);
-  @include fc($xp-article-paragraph-fc);
+.article-paragraph {
+  @include fs($article-paragraph-fs);
+  @include lh($article-paragraph-lh);
+  @include fc($article-paragraph-fc);
   @include ff($font-secondary);
-  @include my($xp-article-paragraph-space);
+  @include my($article-paragraph-space);
   @extend %regular;
 }
 
-.xp-article-tag {
-  @include fs($xp-article-tag-fs);
-  @include lh($xp-article-tag-lh);
-  @include fc($xp-article-tag-fc);
+.article-tag {
+  @include fs($article-tag-fs);
+  @include lh($article-tag-lh);
+  @include fc($article-tag-fc);
   @include ff($font-primary);
   @extend %bold;
   @extend %uppercase;
 }
 
-.xp-system-sm {
-  @include fs($xp-system-fs-sm);
-  @include lh($xp-system-lh);
-  @include fc($xp-system-fc);
+.system-sm {
+  @include fs($system-fs-sm);
+  @include lh($system-lh);
+  @include fc($system-fc);
   @include ff($font-primary);
   @extend %regular;
   &.bold {

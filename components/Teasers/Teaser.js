@@ -15,7 +15,7 @@ const Teaser = props => {
   };
 
   return (
-    <div className='xp-teaser'>
+    <div className='teaser'>
       {subject && <Subject>{subject}</Subject>}
       {image && 
         <a className='teaser-aria' href={articleUrl} aria-label={`Imagem da matéria ${title}`}>

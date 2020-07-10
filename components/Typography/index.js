@@ -14,32 +14,32 @@ const Typography = props => {
   const getTokenVariant = () => {
     switch(tokenVariant) {
       case 'article-title':
-        return 'xp-article-title';
+        return 'article-title';
       case 'article-subtitle':
-        return 'xp-article-subtitle';
+        return 'article-subtitle';
       case 'article-paragraph':
-        return 'xp-article-paragraph';
+        return 'article-paragraph';
       case 'article-tag':
-        return 'xp-article-tag';
+        return 'article-tag';
       case 'title':
-        return `xp-title-${size}`;
+        return `title-${size}`;
       case 'subtitle':
-        return `xp-subtitle-${size}`;
+        return `subtitle-${size}`;
       case 'paragraph':
-        return `xp-paragraph-${size}`;
+        return `paragraph-${size}`;
       case 'subject':
-        return `xp-subject-${size}`;
+        return `subject-${size}`;
       case 'system':
-        return `xp-system-${size}`;
+        return `system-${size}`;
       case 'system-bold':
-        return `xp-system-${size} bold`;
+        return `system-${size} bold`;
       default:
         return '';
     }
   };
 
   const classes = classnames({
-    'xp-typography-root': true,
+    'typography-root': true,
     [getTokenVariant()]: true,
     [`${custom}`]: custom,
   });

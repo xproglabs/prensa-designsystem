@@ -17,7 +17,7 @@ const TeaserFeatured = (props) => {
   const teaserHasImage = image ? 'has-image' : 'no-image';
 
   return (
-    <div className={`xp-teaser-featured ${teaserHasImage}`}>
+    <div className={`teaser-featured ${teaserHasImage}`}>
       {image && 
         <a className='teaser-aria' href={articleUrl} aria-label={`Imagem da matéria ${title}`}>
           {getImageFromProps()}

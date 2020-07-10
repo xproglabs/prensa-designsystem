@@ -1,6 +1,6 @@
 @use '../../styles' as *;
 
-.xp-teaser-featured {
+.teaser-featured {
   @include fy(flex-start, flex-start);
   @include w(100%);
   &.has-image {

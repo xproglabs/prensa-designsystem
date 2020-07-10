@@ -55,29 +55,29 @@ const Grid = props => {
   const getColumns = () => {
     switch(columns) {
       case 1:
-        return 'xp-1-col';
+        return 'grid-1-col';
       case 2:
-        return 'xp-2-col';
+        return 'grid-2-col';
       case 3:
-        return 'xp-3-col';
+        return 'grid-3-col';
       case 4:
-        return 'xp-4-col';
+        return 'grid-4-col';
       case 5:
-        return 'xp-5-col';
+        return 'grid-5-col';
       case 6:
-        return 'xp-6-col';
+        return 'grid-6-col';
       case 7:
-        return 'xp-7-col';
+        return 'grid-7-col';
       case 8:
-        return 'xp-8-col';
+        return 'grid-8-col';
       case 9:
-        return 'xp-9-col';
+        return 'grid-9-col';
       case 10:
-        return 'xp-10-col';
+        return 'grid-10-col';
       case 11:
-        return 'xp-11-col';
+        return 'grid-11-col';
       case 12:
-        return 'xp-12-col';
+        return 'grid-12-col';
       default:
         return null;
     }

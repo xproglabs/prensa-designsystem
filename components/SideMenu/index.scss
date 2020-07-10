@@ -3,7 +3,7 @@
 $menu-width: 318px; // + 32px
 $menu-opacity: rgba(0,0,0,0.5);
 
-.xp-menu-left {
+.menu-left {
   @include h(calc(100vh - 32px)); // todo
   @include w($menu-width);
   // @include w(calc(100% - 32px)); // todo
@@ -12,10 +12,10 @@ $menu-opacity: rgba(0,0,0,0.5);
   left: 0;
   z-index: 11;
 }
-.xp-menu-left-icon {
+.menu-left-icon {
   cursor: pointer;
 }
-.xp-menu-left-items {
+.menu-left-items {
   .item {
     cursor: pointer;
   }
@@ -32,7 +32,7 @@ $menu-opacity: rgba(0,0,0,0.5);
     }
   }
 }
-.xp-menu-modal {
+.menu-modal {
   &.closed {
     display: none;
   }
@@ -40,7 +40,7 @@ $menu-opacity: rgba(0,0,0,0.5);
     display: flex;
   }
 }
-.xp-menu-opacity {
+.menu-opacity {
   @include bg($menu-opacity);
   @include h(100vh);
   @include w(100vw);
