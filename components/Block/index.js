@@ -13,8 +13,7 @@ const Block = (props) => {
     alignRight,
     alignTop,
     bgColor,
-    custom,
-    functions,
+    custom,    
     fColor,
     fitH,
     fitW,
@@ -31,7 +30,8 @@ const Block = (props) => {
     row,
     height,
     width,
-    style
+    style,
+    onClick
   } = props;
 
   const getStyle = () => {
@@ -86,11 +86,8 @@ const Block = (props) => {
     [`${custom}`]: custom
   });
 
-  const {handleClick} = functions;
   return (
-    <div className={classnames(classes, getStyle())} 
-      onClick={handleClick && handleClick}
-    >
+    <div className={classnames(classes, getStyle())} onClick={onClick}>
       {props.children && props.children}
     </div>
   );
@@ -111,40 +108,39 @@ Block.propTypes = {
     PropTypes.object,
     PropTypes.node
   ]),
-  custom: PropTypes.string,
-  functions: PropTypes.object,
+  custom: PropTypes.string, 
   fColor: PropTypes.string,
   fitH: PropTypes.bool,
   fitW: PropTypes.bool,
   m: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
+    null, 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   mb: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
+    null, 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   ml: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
+    null, 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   mr: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
+    null, 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   mt: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
+    null, 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   p: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
+    null, 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   pb: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
+    null, 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   pl: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
+    null, 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   pr: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
+    null, 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   pt: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
+    null, 'xs', 'sm', 'md', 'lg', 'xl'
   ]),
   row: PropTypes.bool,
   height: PropTypes.oneOf([
@@ -155,12 +151,12 @@ Block.propTypes = {
   ]),
   style: PropTypes.oneOf([
     'article', '3-col', '4-col'
-  ])
+  ]),
+  onClick: PropTypes.func,
 };
 
 Block.defaultProps = {
-  functions: {},
-  p: '0'
+  p: null
 };
 
 export default Block;

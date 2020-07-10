@@ -29,7 +29,7 @@ const LeftMenuIcon = ({functions}) => {
   return (
     <Block custom="menu-left-icon" 
       fColor="neutral-8" 
-      functions={{handleClick: functions.handleMenuClick}}
+      onClick={functions.handleMenuClick}
       pl="md">
       MENU
     </Block>

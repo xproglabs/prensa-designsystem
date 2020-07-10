@@ -7,11 +7,10 @@ import Block from '../Block';
 const SideMenuItems = ({content, functions}) => {
 
   const Item = ({item}) => {
-    const hasSubitems = item.subitems.length > 0;
-    const propsItem = {functions: {handleClick: () => functions.onMenuItem(item)}};
+    const hasSubitems = item.subitems.length > 0; 
     return (
       <Block custom="listitem" mt="md">
-        <Block custom="item" {...propsItem}>
+        <Block custom="item" onClick={functions.onMenuItem} >
           {!hasSubitems ? 
             <a href={item.path}>{item.name}</a> :
             <span href={item.path}>{item.name}</span>}

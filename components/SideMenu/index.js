@@ -9,7 +9,7 @@ const SideMenu = ({children, functions, status}) => {
     <Block custom={`menu-modal ${menuIsOpen}`}>
       <Block 
         custom="menu-opacity" 
-        functions={{handleClick: functions.onCloseModal}}>
+        onClick={functions.onCloseModal}>
       </Block>
       <Block 
         p="md"
