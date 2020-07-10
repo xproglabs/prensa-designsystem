@@ -7,11 +7,12 @@ import SocialMedias from '../SocialMedias';
 import Subject from '../Subject';
 import Tags from '../Tags';
 import Typography from '../Typography';
+import Image from './Image';
 import TextBody from './TextBody';
 
 const Article = ({content, embeds, handleTagClick, socialMedias}) => {
 
-  const {author, metadata, subject, subtitle, text, title} = content;
+  const {author, images, metadata, subject, subtitle, text, title} = content;
   const createdAt = content['time-created'];
   const updatedAt = content['time-modified'];
 
@@ -37,6 +38,9 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
         </Grid>
       </Block>
       <Block alignCenter width="full">
+        <Grid columns={12}>
+          {images['image-contentId'] && <Image value={images} />}
+        </Grid>
         <Grid columns={10}>
           <TextBody content={text} embeds={embeds} />
         </Grid>
@@ -53,6 +57,7 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
 Article.propTypes = {
   content: PropTypes.shape({
     author: PropTypes.string.isRequired,
+    images: PropTypes.object.isRequired,
     metadata: PropTypes.array.isRequired,
     subject: PropTypes.string,
     subtitle: PropTypes.string.isRequired,
