@@ -18,6 +18,8 @@ const TextBody = ({content, embeds}) => {
         return embeds && embeds.Facebook && <embeds.Facebook key={key} value={value} />;
       case 'Image':
         return embeds && embeds.Image && <embeds.Image key={key} value={value} />;
+      case 'Instagram':
+        return embeds && embeds.Instagram && <embeds.Instagram key={key} value={value} />;
       case 'Tweet':
         return embeds && embeds.Tweet && <embeds.Tweet key={key} value={value} />;
       case 'Youtube':

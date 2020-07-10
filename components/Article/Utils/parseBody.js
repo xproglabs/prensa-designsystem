@@ -46,6 +46,9 @@ const parseBody = (content) => {
       if(attr['href'].indexOf('facebook.com') > -1) {
         bodyItems.push({type: 'Facebook', value: attr['href']});
       
+      } else if(attr['href'].indexOf('instagram.com') > -1) {
+        bodyItems.push({type: 'Instagram', value: attr['href']});
+      
       } else if(attr['href'].indexOf('twitter.com') > -1) {
         bodyItems.push({type: 'Tweet', value: attr['href']});
         
