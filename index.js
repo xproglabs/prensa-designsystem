@@ -157,6 +157,33 @@ Block.defaultProps = {
   p: '0'
 };
 
+var Image = function Image(_ref) {
+  var value = _ref.value;
+  if (!value || !value["image-contentId"]) return false;
+  var contentid = value["image-contentId"];
+  var captionAndByline = value["image-subtitle"] ? "".concat(value["image-subtitle"], " (").concat(value["image-byline"], ")") : "".concat(value["image-subtitle-original"], " (").concat(value["image-byline"], ")");
+  var width = 1000;
+  var derivative = "2x1";
+  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "article-image-box",
+    width: "full"
+  }, /*#__PURE__*/React.createElement("img", {
+    className: "image-article",
+    src: imagePath,
+    alt: captionAndByline ? captionAndByline : "Imagem ".concat(contentid)
+  }), /*#__PURE__*/React.createElement(Block, {
+    custom: "label"
+  }, captionAndByline));
+};
+
+Image.propTypes = {
+  value: PropTypes.object.isRequired
+};
+Image.defaultProps = {
+  value: {}
+};
+
 var Grid = function Grid(props) {
   var xs = props.xs,
       sm = props.sm,
@@ -581,6 +608,7 @@ var Article = function Article(_ref) {
       handleTagClick = _ref.handleTagClick,
       socialMedias = _ref.socialMedias;
   var author = content.author,
+      images = content.images,
       metadata = content.metadata,
       subject = content.subject,
       subtitle = content.subtitle,
@@ -626,14 +654,18 @@ var Article = function Article(_ref) {
     alignCenter: true,
     width: "full"
   }, /*#__PURE__*/React.createElement(Grid, {
-    columns: 8
+    columns: 12
+  }, images["image-contentId"] && /*#__PURE__*/React.createElement(Image, {
+    value: images
+  })), /*#__PURE__*/React.createElement(Grid, {
+    columns: 10
   }, /*#__PURE__*/React.createElement(TextBody, {
     content: text,
     embeds: embeds
   }))), /*#__PURE__*/React.createElement(Block, {
     row: true
   }, /*#__PURE__*/React.createElement(Grid, {
-    columns: 8
+    columns: 10
   }, /*#__PURE__*/React.createElement(Tags, {
     content: metadata,
     onClick: handleTagClick
@@ -643,6 +675,7 @@ var Article = function Article(_ref) {
 Article.propTypes = {
   content: PropTypes.shape((_PropTypes$shape = {
     author: PropTypes.string.isRequired,
+    images: PropTypes.object.isRequired,
     metadata: PropTypes.array.isRequired,
     subject: PropTypes.string,
     subtitle: PropTypes.string.isRequired,

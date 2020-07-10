@@ -175,4 +175,5 @@ $size-xl: 512px;
 
 .has-border-bottom {
   @include bb(1px, solid, $color-neutral-9);
+  @include pb($space-size-2);
 }
