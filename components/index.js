@@ -7,6 +7,5 @@ export {default as SideMenu} from './SideMenu';
 export {default as SideMenuItems} from './SideMenu/Items';
 export {default as Topbar} from './Topbar';
 export {default as NewsList} from './NewsList';
-export {default as Panel} from './Panel';
 export {default as Subject} from './Subject';
 export {default as Typography} from './Typography';

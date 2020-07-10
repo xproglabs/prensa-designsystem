@@ -1,3 +1,9 @@
+# v1.3.0 (Fri Jul 10 2020)
+- Updates no componente Article
+- Remove prefixo xp dos tokens
+- Remove projeto exemplo
+- Remove componente Panel
+
 # v1.2.1 (Sun Jun 29 2020)
 - Adiciona Templates
 - Adiciona Teasers

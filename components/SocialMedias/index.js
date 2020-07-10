@@ -13,7 +13,7 @@ const SocialMedias = props => {
     <Block row>
       {map(content, (item, k) => (
         <a href={item.path} key={k}>
-          <div className='xp-social-circle' >
+          <div className='social-circle' >
             {item.icon}
           </div>
         </a>

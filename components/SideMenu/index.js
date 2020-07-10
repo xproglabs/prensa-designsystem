@@ -6,14 +6,14 @@ import Block from '../Block';
 const SideMenu = ({children, functions, status}) => {
   const menuIsOpen = status.opened ? 'opened' : 'closed';
   return (
-    <Block custom={`xp-menu-modal ${menuIsOpen}`}>
+    <Block custom={`menu-modal ${menuIsOpen}`}>
       <Block 
-        custom="xp-menu-opacity" 
+        custom="menu-opacity" 
         functions={{handleClick: functions.onCloseModal}}>
       </Block>
       <Block 
         p="md"
-        custom="xp-menu-left" 
+        custom="menu-left" 
         bgColor="white">
         {children && children}
       </Block>

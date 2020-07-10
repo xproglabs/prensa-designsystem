@@ -34,34 +34,34 @@ var Typography = function Typography(props) {
   var getTokenVariant = function getTokenVariant() {
     switch (tokenVariant) {
       case 'article-title':
-        return 'xp-article-title';
+        return 'article-title';
 
       case 'article-subtitle':
-        return 'xp-article-subtitle';
+        return 'article-subtitle';
 
       case 'article-paragraph':
-        return 'xp-article-paragraph';
+        return 'article-paragraph';
 
       case 'article-tag':
-        return 'xp-article-tag';
+        return 'article-tag';
 
       case 'title':
-        return "xp-title-".concat(size);
+        return "title-".concat(size);
 
       case 'subtitle':
-        return "xp-subtitle-".concat(size);
+        return "subtitle-".concat(size);
 
       case 'paragraph':
-        return "xp-paragraph-".concat(size);
+        return "paragraph-".concat(size);
 
       case 'subject':
-        return "xp-subject-".concat(size);
+        return "subject-".concat(size);
 
       case 'system':
-        return "xp-system-".concat(size);
+        return "system-".concat(size);
 
       case 'system-bold':
-        return "xp-system-".concat(size, " bold");
+        return "system-".concat(size, " bold");
 
       default:
         return '';
@@ -69,7 +69,7 @@ var Typography = function Typography(props) {
   };
 
   var classes = classnames((_classnames = {
-    'xp-typography-root': true
+    'typography-root': true
   }, _defineProperty(_classnames, getTokenVariant(), true), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
 
   switch (tokenVariant) {
@@ -122,7 +122,7 @@ var Subject = function Subject(props) {
       filled = props.filled;
   if (!children) return null;
   var classes = classnames(_defineProperty({
-    'xp-subject-root': true,
+    'subject-root': true,
     'filled': filled
   }, "".concat(custom), custom));
   return /*#__PURE__*/React.createElement("div", {
@@ -184,7 +184,7 @@ var Teaser = function Teaser(props) {
   };
 
   return /*#__PURE__*/React.createElement("div", {
-    className: "xp-teaser"
+    className: "teaser"
   }, subject && /*#__PURE__*/React.createElement(Subject, null, subject), image && /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
     href: articleUrl,
@@ -235,7 +235,7 @@ var TeaserFeatured = function TeaserFeatured(props) {
 
   var teaserHasImage = image ? 'has-image' : 'no-image';
   return /*#__PURE__*/React.createElement("div", {
-    className: "xp-teaser-featured ".concat(teaserHasImage)
+    className: "teaser-featured ".concat(teaserHasImage)
   }, image && /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
     href: articleUrl,

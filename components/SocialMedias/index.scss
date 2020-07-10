@@ -1,6 +1,6 @@
 @use '../../styles' as *;
 
-.xp-social-circle {
+.social-circle {
   @include fx(center, center);
   @include w(32px);
   @include h(32px);

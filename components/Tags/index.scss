@@ -1,6 +1,6 @@
 @use '../../styles' as *;
 
-.xp-tag {
+.tag {
   @include w(max-content);
   @include px(20px);
   @include py(12px);

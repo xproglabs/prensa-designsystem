@@ -6,7 +6,7 @@ import Block from '../Block';
 const Topbar = ({content, functions}) => {
   const {LeftContent, CenterContent, RightContent} = content;
   return (
-    <Block custom="xp-topbar" 
+    <Block custom="topbar" 
       alignBetween
       alignMiddle
       bgColor="primary-1" 
@@ -27,7 +27,7 @@ const Topbar = ({content, functions}) => {
 
 const LeftMenuIcon = ({functions}) => {
   return (
-    <Block custom="xp-menu-left-icon" 
+    <Block custom="menu-left-icon" 
       fColor="neutral-8" 
       functions={{handleClick: functions.handleMenuClick}}
       pl="md">

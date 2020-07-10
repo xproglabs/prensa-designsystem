@@ -24,14 +24,14 @@ const List = ({content}) => {
   if(!content.items || content.items.length === 0) {
     return (
       <Block 
-        custom="xp-news-list">
+        custom="news-list">
         <pre>Items not found</pre>
       </Block>
     );
   }
   return (
     <Block 
-      custom="xp-news-list">
+      custom="news-list">
       {map(content.items, (item, key) => 
         <Item item={item} key={key} />)}
     </Block>

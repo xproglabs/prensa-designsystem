@@ -23,7 +23,7 @@ const SideMenuItems = ({content, functions}) => {
     item: PropTypes.object
   };
   return (
-    <Block custom={'xp-menu-left-items'}>
+    <Block custom='menu-left-items'>
       {map(content.items, (item, key) => 
         <Item item={item} key={key} />)}
     </Block>

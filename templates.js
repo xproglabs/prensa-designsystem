@@ -59,7 +59,7 @@ var Block = function Block(props) {
   var getStyle = function getStyle() {
     switch (style) {
       case 'article':
-        return 'xp-article';
+        return 'article';
 
       case '3-col':
         return 'block-three-col';
@@ -94,7 +94,7 @@ var Block = function Block(props) {
     'fx-dir-row': row,
     'fx-fit-h': fitH,
     'fx-fit-w': fitW
-  }, _defineProperty(_classnames, "xp-bg-".concat(bgColor), bgColor), _defineProperty(_classnames, "xp-f-".concat(fColor), fColor), _defineProperty(_classnames, "xp-h-".concat(height), height), _defineProperty(_classnames, "xp-m-".concat(m), m), _defineProperty(_classnames, "xp-mb-".concat(mb), mb), _defineProperty(_classnames, "xp-ml-".concat(ml), ml), _defineProperty(_classnames, "xp-mr-".concat(mr), mr), _defineProperty(_classnames, "xp-mt-".concat(mt), mt), _defineProperty(_classnames, "xp-p-".concat(p), p), _defineProperty(_classnames, "xp-pb-".concat(pb), pb), _defineProperty(_classnames, "xp-pl-".concat(pl), pl), _defineProperty(_classnames, "xp-pr-".concat(pr), pr), _defineProperty(_classnames, "xp-pt-".concat(pt), pt), _defineProperty(_classnames, "xp-w-".concat(width), width), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
+  }, _defineProperty(_classnames, "bg-".concat(bgColor), bgColor), _defineProperty(_classnames, "f-".concat(fColor), fColor), _defineProperty(_classnames, "h-".concat(height), height), _defineProperty(_classnames, "m-".concat(m), m), _defineProperty(_classnames, "mb-".concat(mb), mb), _defineProperty(_classnames, "ml-".concat(ml), ml), _defineProperty(_classnames, "mr-".concat(mr), mr), _defineProperty(_classnames, "mt-".concat(mt), mt), _defineProperty(_classnames, "p-".concat(p), p), _defineProperty(_classnames, "pb-".concat(pb), pb), _defineProperty(_classnames, "pl-".concat(pl), pl), _defineProperty(_classnames, "pr-".concat(pr), pr), _defineProperty(_classnames, "pt-".concat(pt), pt), _defineProperty(_classnames, "w-".concat(width), width), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
   var handleClick = functions.handleClick;
   return /*#__PURE__*/React.createElement("div", {
     className: classnames(classes, getStyle()),
@@ -207,40 +207,40 @@ var Grid = function Grid(props) {
   var getColumns = function getColumns() {
     switch (columns) {
       case 1:
-        return 'xp-1-col';
+        return 'grid-1-col';
 
       case 2:
-        return 'xp-2-col';
+        return 'grid-2-col';
 
       case 3:
-        return 'xp-3-col';
+        return 'grid-3-col';
 
       case 4:
-        return 'xp-4-col';
+        return 'grid-4-col';
 
       case 5:
-        return 'xp-5-col';
+        return 'grid-5-col';
 
       case 6:
-        return 'xp-6-col';
+        return 'grid-6-col';
 
       case 7:
-        return 'xp-7-col';
+        return 'grid-7-col';
 
       case 8:
-        return 'xp-8-col';
+        return 'grid-8-col';
 
       case 9:
-        return 'xp-9-col';
+        return 'grid-9-col';
 
       case 10:
-        return 'xp-10-col';
+        return 'grid-10-col';
 
       case 11:
-        return 'xp-11-col';
+        return 'grid-11-col';
 
       case 12:
-        return 'xp-12-col';
+        return 'grid-12-col';
 
       default:
         return null;
@@ -271,34 +271,34 @@ var Typography = function Typography(props) {
   var getTokenVariant = function getTokenVariant() {
     switch (tokenVariant) {
       case 'article-title':
-        return 'xp-article-title';
+        return 'article-title';
 
       case 'article-subtitle':
-        return 'xp-article-subtitle';
+        return 'article-subtitle';
 
       case 'article-paragraph':
-        return 'xp-article-paragraph';
+        return 'article-paragraph';
 
       case 'article-tag':
-        return 'xp-article-tag';
+        return 'article-tag';
 
       case 'title':
-        return "xp-title-".concat(size);
+        return "title-".concat(size);
 
       case 'subtitle':
-        return "xp-subtitle-".concat(size);
+        return "subtitle-".concat(size);
 
       case 'paragraph':
-        return "xp-paragraph-".concat(size);
+        return "paragraph-".concat(size);
 
       case 'subject':
-        return "xp-subject-".concat(size);
+        return "subject-".concat(size);
 
       case 'system':
-        return "xp-system-".concat(size);
+        return "system-".concat(size);
 
       case 'system-bold':
-        return "xp-system-".concat(size, " bold");
+        return "system-".concat(size, " bold");
 
       default:
         return '';
@@ -306,7 +306,7 @@ var Typography = function Typography(props) {
   };
 
   var classes = classnames((_classnames = {
-    'xp-typography-root': true
+    'typography-root': true
   }, _defineProperty(_classnames, getTokenVariant(), true), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
 
   switch (tokenVariant) {
@@ -359,7 +359,7 @@ var Subject = function Subject(props) {
       filled = props.filled;
   if (!children) return null;
   var classes = classnames(_defineProperty({
-    'xp-subject-root': true,
+    'subject-root': true,
     'filled': filled
   }, "".concat(custom), custom));
   return /*#__PURE__*/React.createElement("div", {
@@ -421,7 +421,7 @@ var Teaser = function Teaser(props) {
   };
 
   return /*#__PURE__*/React.createElement("div", {
-    className: "xp-teaser"
+    className: "teaser"
   }, subject && /*#__PURE__*/React.createElement(Subject, null, subject), image && /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
     href: articleUrl,
@@ -472,7 +472,7 @@ var TeaserFeatured = function TeaserFeatured(props) {
 
   var teaserHasImage = image ? 'has-image' : 'no-image';
   return /*#__PURE__*/React.createElement("div", {
-    className: "xp-teaser-featured ".concat(teaserHasImage)
+    className: "teaser-featured ".concat(teaserHasImage)
   }, image && /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
     href: articleUrl,
