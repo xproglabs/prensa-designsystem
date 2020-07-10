@@ -1,1 +1,14 @@
 @use '../../styles' as *;
+
+.article-image-box {
+  .image-article {
+    @include h(auto);
+    @include w(100%);
+  }
+  .label {
+    @include bg($color-neutral-10);
+    @include ff($font-secondary);
+    @include px($space-size-2);
+    @include py($space-size-2);
+  }
+}
