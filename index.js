@@ -157,33 +157,6 @@ Block.defaultProps = {
   p: '0'
 };
 
-var Image = function Image(_ref) {
-  var value = _ref.value;
-  if (!value || !value["image-contentId"]) return false;
-  var contentid = value["image-contentId"];
-  var captionAndByline = value["image-subtitle"] ? "".concat(value["image-subtitle"], " (").concat(value["image-byline"], ")") : "".concat(value["image-subtitle-original"], " (").concat(value["image-byline"], ")");
-  var width = 1000;
-  var derivative = "2x1";
-  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "article-image-box",
-    width: "full"
-  }, /*#__PURE__*/React.createElement("img", {
-    className: "image-article",
-    src: imagePath,
-    alt: captionAndByline ? captionAndByline : "Imagem ".concat(contentid)
-  }), /*#__PURE__*/React.createElement(Block, {
-    custom: "label"
-  }, captionAndByline));
-};
-
-Image.propTypes = {
-  value: PropTypes.object.isRequired
-};
-Image.defaultProps = {
-  value: {}
-};
-
 var Grid = function Grid(props) {
   var xs = props.xs,
       sm = props.sm,
@@ -472,6 +445,33 @@ Tags.propTypes = {
   onClick: PropTypes.func.isRequired
 };
 
+var Image = function Image(_ref) {
+  var value = _ref.value;
+  if (!value || !value['image-contentId']) return false;
+  var contentid = value['image-contentId'];
+  var captionAndByline = value['image-subtitle'] ? "".concat(value['image-subtitle'], " (").concat(value['image-byline'], ")") : "".concat(value['image-subtitle-original'], " (").concat(value['image-byline'], ")");
+  var width = 1000;
+  var derivative = '2x1';
+  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "article-image-box",
+    width: "full"
+  }, /*#__PURE__*/React.createElement("img", {
+    className: "image-article",
+    src: imagePath,
+    alt: captionAndByline ? captionAndByline : "Imagem ".concat(contentid)
+  }), /*#__PURE__*/React.createElement(Block, {
+    custom: "label"
+  }, captionAndByline));
+};
+
+Image.propTypes = {
+  value: PropTypes.object.isRequired
+};
+Image.defaultProps = {
+  value: {}
+};
+
 var Paragraph = function Paragraph(_ref) {
   var value = _ref.value;
   return /*#__PURE__*/React.createElement(Typography, {
@@ -497,11 +497,14 @@ var parseBody = function parseBody(content) {
     node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
       return switchNode(item);
     });
+    var enabledTags = ['p', 'em'];
 
-    if (tag === 'p') {
+    if (enabledTags.indexOf(tag) > -1) {
       var contentText = '';
       lodash.map(child, function (children) {
-        if (children.node === 'text') {
+        if (children.node === 'text' && tag === 'em') {
+          contentText = "".concat(contentText, "<i>").concat(children.text, "</i>");
+        } else if (children.node === 'text') {
           contentText = "".concat(contentText).concat(children.text);
         }
 
@@ -655,7 +658,7 @@ var Article = function Article(_ref) {
     width: "full"
   }, /*#__PURE__*/React.createElement(Grid, {
     columns: 12
-  }, images["image-contentId"] && /*#__PURE__*/React.createElement(Image, {
+  }, images['image-contentId'] && /*#__PURE__*/React.createElement(Image, {
     value: images
   })), /*#__PURE__*/React.createElement(Grid, {
     columns: 10
