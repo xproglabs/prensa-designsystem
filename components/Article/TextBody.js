@@ -2,6 +2,7 @@ import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Image from './Image';
 import Paragraph from './Paragraph';
 import {parseBody} from './Utils';
 
@@ -15,7 +16,7 @@ const TextBody = ({content, embeds}) => {
       case 'Paragraph':
         return <Paragraph key={key} value={value} />;
       case 'Image':
-        return embeds && embeds.Image && <embeds.Image key={key} value={value} />;
+        return <Image key={key} value={value} />;
       case 'Tweet':
         return embeds && embeds.Tweet && <embeds.Tweet key={key} value={value} />;
       case 'Youtube':
