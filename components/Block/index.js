@@ -31,7 +31,7 @@ const Block = (props) => {
     height,
     width,
     style,
-    onClick
+    onClick,
   } = props;
 
   const getStyle = () => {
@@ -46,6 +46,53 @@ const Block = (props) => {
         return '';
     }
   };
+
+  // const getDirection = () => {
+  //   switch(direction) {
+  //     case 'column':
+  //       return 'fy-'
+  //     default:
+  //       return 'fx-'
+  //   }
+  // };
+
+  // const getAlignBetween = () => {
+  //   switch(alignBetween) {
+  //     case true:
+  //       return 'align-between';
+  //     case 'xs-alignBetween':
+  //       return 'align-between';
+  //     case 'sm-alignBetween':
+  //       return 'align-between';
+  //     case 'md-alignBetween':
+  //       return 'align-between';
+  //     case 'lg-alignBetween':
+  //       return 'align-between';
+  //     case 'xl-alignBetween':
+  //       return 'align-between';
+  //     default:
+  //       return false;
+  //   };
+  // };
+
+  // const getAlignBottom = () => {
+  //   switch(alignBottom) {
+  //     case true:
+  //       return 'align-bottom';
+  //     case 'xs-alignBottom':
+  //       return 'xs-align-bottom';
+  //     case 'sm-alignBottom':
+  //       return 'sm-align-bottom';
+  //     case 'md-alignBottom':
+  //       return 'md-align-bottom';
+  //     case 'lg-alignBottom':
+  //       return 'lg-align-bottom';
+  //     case 'xl-alignBottom':
+  //       return 'xl-align-bottom';
+  //     default:
+  //       return false;
+  //   };
+  // };
 
   const classes = classnames({
     'ds-block': true,
