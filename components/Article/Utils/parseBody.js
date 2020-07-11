@@ -1,5 +1,5 @@
 import {html2json} from 'html2json';
-import {filter, map} from 'lodash';
+import {find, filter, replace, map} from 'lodash';
 
 const parseBody = (content) => {
 
@@ -9,17 +9,26 @@ const parseBody = (content) => {
     node === 'element' && tag !== 'a' &&
       map(child, (item) => switchNode(item));
 
-    const enabledTags = ['p', 'em'];
+    const enabledTags = ['p', 'em', 'h2'];
     
     if(enabledTags.indexOf(tag) > -1) {
+
       let contentText = '';
 
       map(child, (children) => {
-        if(children.node === 'text' && tag === 'em') {
+
+        // render h2, em and pure text
+        if(children.node === 'text' && tag === 'h2') {
+          contentText = `${contentText}<span class="paragraph-title">${children.text}</span>`;
+
+        } else if(children.node === 'text' && tag === 'em') {
           contentText = `${contentText}<i>${children.text}</i>`;
+
         } else if(children.node === 'text') {
           contentText = `${contentText}${children.text}`;
         }
+
+        // render a
         if(children.tag === 'a' && children.attr.class !== 'p-smartembed') {
           
           let text = children.child && children.child.length > 0 ? 
@@ -33,17 +42,38 @@ const parseBody = (content) => {
           contentText = `${contentText}<a ${attr}>${text}</a>`;
         }
       });
+
+      // add paragraph
       if(contentText && contentText !== '') {
         bodyItems.push({type: 'Paragraph', value: contentText});
       }
     }
 
-    tag === 'a' && attr.class && attr.class === 'p-smartembed' &&
-      bodyItems.push({type: 'Image', value: attr['data-onecms-id']});
+    // render image
+    if(tag === 'a' && attr.class && attr.class === 'p-smartembed') {
+      const childImage = find(child, {tag: 'img'});
+      if(childImage) {
+        let subtitle = childImage.attr['alt'].toString();
+        subtitle = replace(subtitle, new RegExp(',', 'g'), ' ');
+        const propsImage = {
+          'image-contentId': attr['data-onecms-id'].replace('policy:', ''),
+          'image-subtitle': subtitle,
+          'image-byline': ''
+        };
+        bodyItems.push({type: 'Image', value: propsImage});
+      }
+    }
       
+    // render embed
     if(tag === 'a' && attr.href && !attr.class && attr.href !== '') {
       
-      if(attr['href'].indexOf('twitter.com') > -1) {
+      if(attr['href'].indexOf('facebook.com') > -1) {
+        bodyItems.push({type: 'Facebook', value: attr['href']});
+      
+      } else if(attr['href'].indexOf('instagram.com') > -1) {
+        bodyItems.push({type: 'Instagram', value: attr['href']});
+      
+      } else if(attr['href'].indexOf('twitter.com') > -1) {
         bodyItems.push({type: 'Tweet', value: attr['href']});
         
       } else if(attr['href'].indexOf('youtube.com') > -1) {
@@ -51,6 +81,7 @@ const parseBody = (content) => {
       }
     }
   };
+
   // convert html
   const parsed = html2json(content);
   const elements = filter(parsed.child, ({node: 'element'}));

@@ -12,3 +12,13 @@
     @include py($space-size-2);
   }
 }
+
+.article-paragraph {
+  a {
+    word-break: break-word;
+  }
+}
+.paragraph-title {
+  @include fs(22px);
+  @include fw(bold);
+}
