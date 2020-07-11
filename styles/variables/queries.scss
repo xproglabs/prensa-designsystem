@@ -16,24 +16,6 @@ $queries: (
   '--lg' $q-lg, 
   '--xl' $q-xl
 );
-
-@mixin create-classes($list) {
-  @each $item in $list {
-    .#{nth($item, 1)} {
-      #{nth($item, 2)}: #{nth($item, 3)}
-    }
-  }
-  @each $q in $queries {
-    @each $item in $list {
-      @media(min-width: #{nth($q, 2)}) {
-        .#{nth($item, 1)}--#{nth($q, 1)} {
-          #{nth($item, 2)}: #{nth($item, 3)}
-        }
-      }
-    }
-  }
-}
-
 $sides: (
   '' '', 
   't' '-top',
@@ -64,6 +46,22 @@ $size-iterator: (0 1 2 3 4 5 6 7 8 9 10);
       $breakp: #{nth($q, 2)};
       @media(min-width: #{$breakp}) {
         @include classes-render($prefix, $querie, $name, $size);
+      }
+    }
+  }
+}
+
+@mixin classes-colors($list) {
+  @each $item in $list {
+    $prefix: #{nth($item, 1)};
+    $name: #{nth($item, 2)};
+    $value: #{nth($item, 3)};
+    .#{$prefix}{#{$name}: #{$value}}
+    @each $q in $queries {
+      $querie: #{nth($q, 1)};
+      $breakp: #{nth($q, 2)};
+      @media(min-width: #{$breakp}) {
+        .#{$prefix}#{$querie}{#{$name}: #{$value}}
       }
     }
   }
