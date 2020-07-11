@@ -497,12 +497,14 @@ var parseBody = function parseBody(content) {
     node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
       return switchNode(item);
     });
-    var enabledTags = ['p', 'em'];
+    var enabledTags = ['p', 'em', 'h2'];
 
     if (enabledTags.indexOf(tag) > -1) {
       var contentText = '';
       lodash.map(child, function (children) {
-        if (children.node === 'text' && tag === 'em') {
+        if (children.node === 'text' && tag === 'h2') {
+          contentText = "".concat(contentText, "<span class=\"paragraph-title\">").concat(children.text, "</span>");
+        } else if (children.node === 'text' && tag === 'em') {
           contentText = "".concat(contentText, "<i>").concat(children.text, "</i>");
         } else if (children.node === 'text') {
           contentText = "".concat(contentText).concat(children.text);
@@ -532,7 +534,12 @@ var parseBody = function parseBody(content) {
     });
 
     if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
-      if (attr['href'].indexOf('twitter.com') > -1) {
+      if (attr['href'].indexOf('facebook.com') > -1) {
+        bodyItems.push({
+          type: 'Facebook',
+          value: attr['href']
+        });
+      } else if (attr['href'].indexOf('twitter.com') > -1) {
         bodyItems.push({
           type: 'Tweet',
           value: attr['href']
@@ -574,8 +581,14 @@ var TextBody = function TextBody(_ref) {
           value: value
         });
 
+      case 'Facebook':
+        return embeds && embeds.Facebook && /*#__PURE__*/React.createElement(embeds.Facebook, {
+          key: key,
+          value: value
+        });
+
       case 'Image':
-        return embeds && embeds.Image && /*#__PURE__*/React.createElement(embeds.Image, {
+        return /*#__PURE__*/React.createElement(Image, {
           key: key,
           value: value
         });

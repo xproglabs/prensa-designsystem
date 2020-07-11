@@ -9,7 +9,7 @@ const parseBody = (content) => {
     node === 'element' && tag !== 'a' &&
       map(child, (item) => switchNode(item));
 
-    const enabledTags = ['p', 'em'];
+    const enabledTags = ['p', 'em', 'h2'];
     
     if(enabledTags.indexOf(tag) > -1) {
 
@@ -23,6 +23,7 @@ const parseBody = (content) => {
 
         } else if(children.node === 'text' && tag === 'em') {
           contentText = `${contentText}<i>${children.text}</i>`;
+
         } else if(children.node === 'text') {
           contentText = `${contentText}${children.text}`;
         }
@@ -66,7 +67,13 @@ const parseBody = (content) => {
     // render embed
     if(tag === 'a' && attr.href && !attr.class && attr.href !== '') {
       
-      if(attr['href'].indexOf('twitter.com') > -1) {
+      if(attr['href'].indexOf('facebook.com') > -1) {
+        bodyItems.push({type: 'Facebook', value: attr['href']});
+      
+      } else if(attr['href'].indexOf('instagram.com') > -1) {
+        bodyItems.push({type: 'Instagram', value: attr['href']});
+      
+      } else if(attr['href'].indexOf('twitter.com') > -1) {
         bodyItems.push({type: 'Tweet', value: attr['href']});
         
       } else if(attr['href'].indexOf('youtube.com') > -1) {
