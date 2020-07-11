@@ -12,3 +12,7 @@
     @include py($space-size-2);
   }
 }
+.paragraph-title {
+  @include fs(22px);
+  @include fw(bold);
+}
