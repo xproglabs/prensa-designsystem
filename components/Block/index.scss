@@ -18,10 +18,6 @@ $size-md: 128px;
 $size-lg: 256px;
 $size-xl: 512px;
 
-@include create-class('bg-secondary-1', 'background-color', $color-secondary-1);
-@include create-class('bg-secondary-2', 'background-color', $color-secondary-2);
-@include create-class('bg-secondary-3', 'background-color', $color-secondary-3);
-
 .h-xs { @include h($size-xs)}
 .h-sm { @include h($size-sm)}
 .h-md { @include h($size-md)}
