@@ -9,14 +9,19 @@ const parseBody = (content) => {
     node === 'element' && tag !== 'a' &&
       map(child, (item) => switchNode(item));
 
-    const enabledTags = ['p', 'em'];
+    const enabledTags = ['p', 'em', 'h2'];
     
     if(enabledTags.indexOf(tag) > -1) {
       let contentText = '';
 
       map(child, (children) => {
-        if(children.node === 'text' && tag === 'em') {
+
+        if(children.node === 'text' && tag === 'h2') {
+          contentText = `${contentText}<span class="paragraph-title">${children.text}</span>`;
+
+        } else if(children.node === 'text' && tag === 'em') {
           contentText = `${contentText}<i>${children.text}</i>`;
+
         } else if(children.node === 'text') {
           contentText = `${contentText}${children.text}`;
         }

@@ -497,12 +497,14 @@ var parseBody = function parseBody(content) {
     node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
       return switchNode(item);
     });
-    var enabledTags = ['p', 'em'];
+    var enabledTags = ['p', 'em', 'h2'];
 
     if (enabledTags.indexOf(tag) > -1) {
       var contentText = '';
       lodash.map(child, function (children) {
-        if (children.node === 'text' && tag === 'em') {
+        if (children.node === 'text' && tag === 'h2') {
+          contentText = "".concat(contentText, "<span class=\"paragraph-title\">").concat(children.text, "</span>");
+        } else if (children.node === 'text' && tag === 'em') {
           contentText = "".concat(contentText, "<i>").concat(children.text, "</i>");
         } else if (children.node === 'text') {
           contentText = "".concat(contentText).concat(children.text);
@@ -586,7 +588,7 @@ var TextBody = function TextBody(_ref) {
         });
 
       case 'Image':
-        return embeds && embeds.Image && /*#__PURE__*/React.createElement(embeds.Image, {
+        return /*#__PURE__*/React.createElement(Image, {
           key: key,
           value: value
         });

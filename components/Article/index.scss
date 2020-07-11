@@ -18,3 +18,7 @@
     word-break: break-word;
   }
 }
+.paragraph-title {
+  @include fs(22px);
+  @include fw(bold);
+}
