@@ -11,16 +11,18 @@ export default {
 };
 
 export const Default = () => {
-  const propsXs = {
-    alignCenter: true, 
-    bgColor: 'primary-1',
-    fColor: 'white',
-    full: 'width',
-    pb: 'md',
-    pt: 'md',
+  const propsBlock = {
+    'def': {
+      bgColor: 'secondary-1',
+    }, 
+    'md': {
+      bgColor: 'secondary-2',
+    },
+    'lg': {
+      bgColor: 'secondary-3',
+    }
   };
-  // const propsBlock = {xs: propsXs}
   return (
-    <Block {...propsXs}>teste</Block>
+    <Block {...propsBlock}>teste</Block>
   );
 };

@@ -30,69 +30,27 @@ const Block = (props) => {
     row,
     height,
     width,
-    style,
+    def,
+    xs,
+    sm,
+    md,
+    lg,
+    xl,
     onClick,
   } = props;
 
-  const getStyle = () => {
-    switch(style) {
-      case 'article':
-        return 'article';
-      case '3-col':
-        return 'block-three-col';
-      case '4-col':
-        return 'block-four-col';
-      default:
-        return '';
-    }
-  };
+  const defProps = (prefix, media) => classnames({
+    [`${prefix}-bg-${media && media.bgColor}`]: media && media.bgColor,
+  });
 
-  // const getDirection = () => {
-  //   switch(direction) {
-  //     case 'column':
-  //       return 'fy-'
-  //     default:
-  //       return 'fx-'
-  //   }
-  // };
+  const dProps = defProps('def', def);
+  const xsProps = defProps('xs', xs);
+  const smProps = defProps('sm', sm);
+  const mdProps = defProps('md', md);
+  const lgProps = defProps('lg', lg);
+  const xlProps = defProps('xl', xl);
 
-  // const getAlignBetween = () => {
-  //   switch(alignBetween) {
-  //     case true:
-  //       return 'align-between';
-  //     case 'xs-alignBetween':
-  //       return 'align-between';
-  //     case 'sm-alignBetween':
-  //       return 'align-between';
-  //     case 'md-alignBetween':
-  //       return 'align-between';
-  //     case 'lg-alignBetween':
-  //       return 'align-between';
-  //     case 'xl-alignBetween':
-  //       return 'align-between';
-  //     default:
-  //       return false;
-  //   };
-  // };
-
-  // const getAlignBottom = () => {
-  //   switch(alignBottom) {
-  //     case true:
-  //       return 'align-bottom';
-  //     case 'xs-alignBottom':
-  //       return 'xs-align-bottom';
-  //     case 'sm-alignBottom':
-  //       return 'sm-align-bottom';
-  //     case 'md-alignBottom':
-  //       return 'md-align-bottom';
-  //     case 'lg-alignBottom':
-  //       return 'lg-align-bottom';
-  //     case 'xl-alignBottom':
-  //       return 'xl-align-bottom';
-  //     default:
-  //       return false;
-  //   };
-  // };
+  const classProps = [dProps, xsProps, smProps, mdProps, lgProps, xlProps];
 
   const classes = classnames({
     'ds-block': true,
@@ -134,7 +92,7 @@ const Block = (props) => {
   });
 
   return (
-    <div className={classnames(classes, getStyle())} onClick={onClick}>
+    <div className={classnames(classes, ...classProps)} onClick={onClick}>
       {props.children && props.children}
     </div>
   );
@@ -200,6 +158,12 @@ Block.propTypes = {
     'article', '3-col', '4-col'
   ]),
   onClick: PropTypes.func,
+  def: PropTypes.object,
+  xs: PropTypes.object,
+  sm: PropTypes.object,
+  md: PropTypes.object,
+  lg: PropTypes.object,
+  xl: PropTypes.object
 };
 
 Block.defaultProps = {
