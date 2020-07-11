@@ -534,7 +534,12 @@ var parseBody = function parseBody(content) {
     });
 
     if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
-      if (attr['href'].indexOf('twitter.com') > -1) {
+      if (attr['href'].indexOf('facebook.com') > -1) {
+        bodyItems.push({
+          type: 'Facebook',
+          value: attr['href']
+        });
+      } else if (attr['href'].indexOf('twitter.com') > -1) {
         bodyItems.push({
           type: 'Tweet',
           value: attr['href']
@@ -572,6 +577,12 @@ var TextBody = function TextBody(_ref) {
     switch (type) {
       case 'Paragraph':
         return /*#__PURE__*/React.createElement(Paragraph, {
+          key: key,
+          value: value
+        });
+
+      case 'Facebook':
+        return embeds && embeds.Facebook && /*#__PURE__*/React.createElement(embeds.Facebook, {
           key: key,
           value: value
         });
