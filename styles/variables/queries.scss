@@ -3,3 +3,34 @@ $q-sm: 560px;
 $q-md: 768px;
 $q-lg: 980px;
 $q-xl: 1120px;
+
+@mixin create-class($name, $prop, $value) {
+  .def-#{$name} {
+    #{$prop}: $value
+  }
+  @media(min-width: $q-xs) {
+    .xs-#{$name} {
+      #{$prop}: $value
+    }
+  }
+  @media(min-width: $q-sm) {
+    .sm-#{$name} {
+      #{$prop}: $value
+    }
+  }
+  @media(min-width: $q-md) {
+    .md-#{$name} {
+      #{$prop}: $value
+    }
+  }
+  @media(min-width: $q-lg) {
+    .lg-#{$name} {
+      #{$prop}: $value
+    }
+  }
+  @media(min-width: $q-xl) {
+    .xl-#{$name} {
+      #{$prop}: $value
+    }
+  }
+}
