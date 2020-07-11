@@ -1,4 +1,5 @@
 @use '../../styles' as *;
+@use '../../styles/variables/queries.scss' as *;
 
 $margin-xs: 4px;
 $margin-sm: 8px;
@@ -18,65 +19,30 @@ $size-md: 128px;
 $size-lg: 256px;
 $size-xl: 512px;
 
-.h-xs { @include h($size-xs)}
-.h-sm { @include h($size-sm)}
-.h-md { @include h($size-md)}
-.h-lg { @include h($size-lg)}
-.h-xl { @include h($size-xl)}
-.h-full { @include h(100%)}
+@include create-classes((
+  'h-xs' 'height' $size-xs,
+  'h-sm' 'height' $size-sm,
+  'h-md' 'height' $size-md,
+  'h-lg' 'height' $size-lg,
+  'h-xl' 'height' $size-xl,
+  'h-full' 'height' 100%
+));
 
-.m-xs { @include m($margin-xs)}
-.mb-xs { @include mb($margin-xs)}
-.ml-xs { @include ml($margin-xs)}
-.mr-xs { @include mr($margin-xs)}
-.mt-xs { @include mt($margin-xs)}
-.m-sm { @include m($margin-sm)}
-.mb-sm { @include mb($margin-sm)}
-.ml-sm { @include ml($margin-sm)}
-.mr-sm { @include mr($margin-sm)}
-.mt-sm { @include mt($margin-sm)}
-.m-md { @include m($margin-md)}
-.mb-md { @include mb($margin-md)}
-.ml-md { @include ml($margin-md)}
-.mr-md { @include mr($margin-md)}
-.mt-md { @include mt($margin-md)}
-.m-lg { @include m($margin-lg)}
-.mb-lg { @include mb($margin-lg)}
-.ml-lg { @include ml($margin-lg)}
-.mr-lg { @include mr($margin-lg)}
-.mt-lg { @include mt($margin-lg)}
-.m-xl { @include m($margin-xl)}
-.mb-xl { @include mb($margin-xl)}
-.ml-xl { @include ml($margin-xl)}
-.mr-xl { @include mr($margin-xl)}
-.mt-xl { @include mt($margin-xl)}
+@include create-classes-rad((
+  'm-xs' 'margin' $margin-xs,
+  'm-sm' 'margin' $margin-sm,
+  'm-md' 'margin' $margin-md,
+  'm-lg' 'margin' $margin-lg,
+  'm-xl' 'margin' $margin-xl
+));
 
-.p-0 { @include p(0px)}
-.p-xs { @include p($padding-xs)}
-.pb-xs { @include pb($padding-xs)}
-.pl-xs { @include pl($padding-xs)}
-.pr-xs { @include pr($padding-xs)}
-.pt-xs { @include pt($padding-xs)}
-.p-sm { @include p($padding-sm)}
-.pb-sm { @include pb($padding-sm)}
-.pl-sm { @include pl($padding-sm)}
-.pr-sm { @include pr($padding-sm)}
-.pt-sm { @include pt($padding-sm)}
-.p-md { @include p($padding-md)}
-.pb-md { @include pb($padding-md)}
-.pl-md { @include pl($padding-md)}
-.pr-md { @include pr($padding-md)}
-.pt-md { @include pt($padding-md)}
-.p-lg { @include p($padding-lg)}
-.pb-lg { @include pb($padding-lg)}
-.pl-lg { @include pl($padding-lg)}
-.pr-lg { @include pr($padding-lg)}
-.pt-lg { @include pt($padding-lg)}
-.p-xl { @include p($padding-xl)}
-.pb-xl { @include pb($padding-xl)}
-.pl-xl { @include pl($padding-xl)}
-.pr-xl { @include pr($padding-xl)}
-.pt-xl { @include pt($padding-xl)}
+@include create-classes-rad((
+  'p-xs' 'padding' $padding-xs,
+  'p-sm' 'padding' $padding-sm,
+  'p-md' 'padding' $padding-md,
+  'p-lg' 'padding' $padding-lg,
+  'p-xl' 'padding' $padding-xl
+));
 
 .w-xs { @include w($size-xs)}
 .w-sm { @include w($size-sm)}

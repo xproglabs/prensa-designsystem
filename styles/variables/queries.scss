@@ -33,3 +33,26 @@ $queries: (
     }
   }
 }
+
+$sides: ('' '-top' '-right' '-bottom' '-left');
+
+@mixin create-classes-rad($list) {
+  @each $item in $list {
+    @each $sides in $sides {
+      .#{nth($item, 1)}#{nth($sides, 1)} {
+        #{nth($item, 2)}#{nth($sides, 1)}: #{nth($item, 3)}
+      }
+    }
+  }
+  @each $q in $queries {
+    @each $item in $list {
+      @media(min-width: #{nth($q, 2)}) {
+        @each $sides in $sides {
+          .#{nth($item, 1)}#{nth($sides, 1)}--#{nth($q, 1)} {
+            #{nth($item, 2)}#{nth($sides, 1)}: #{nth($item, 3)}
+          }
+        }
+      }
+    }
+  }
+}

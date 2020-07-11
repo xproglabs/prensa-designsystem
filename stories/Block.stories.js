@@ -14,9 +14,13 @@ export const Default = () => {
   const propsBlock = {
     bgColor: 'secondary-1',
     fontColor: 'white',
+    p: 'xs',
+    m: 'xs',
     'md': {
       bgColor: 'secondary-2',
       fontColor: 'black',
+      p: 'md',
+      mt: 'lg',
     },
     'lg': {
       bgColor: 'primary-1'

@@ -15,16 +15,6 @@ const Block = (props) => {
     custom,    
     fitH,
     fitW,
-    m,
-    mb,
-    ml,
-    mr,
-    mt,
-    p,
-    pb,
-    pl,
-    pr,
-    pt,
     row,
     height,
     width,
@@ -39,6 +29,16 @@ const Block = (props) => {
   const defProps = (prefix, media) => classnames({
     [`bg-${media && media.bgColor}${prefix}`]: media && media.bgColor,
     [`fc-${media && media.fontColor}${prefix}`]: media && media.fontColor,
+    [`m-${media && media.m}${prefix}`]: media && media.m,
+    [`m-${media && media.mt}-top${prefix}`]: media && media.mt,
+    [`m-${media && media.mr}-right${prefix}`]: media && media.mr,
+    [`m-${media && media.mb}-bottom${prefix}`]: media && media.mb,
+    [`m-${media && media.ml}-left${prefix}`]: media && media.ml,
+    [`p-${media && media.p}${prefix}`]: media && media.p,
+    [`p-${media && media.pt}-top${prefix}`]: media && media.pt,
+    [`p-${media && media.pr}-right${prefix}`]: media && media.pr,
+    [`p-${media && media.pb}-bottom${prefix}`]: media && media.pb,
+    [`p-${media && media.pl}-left${prefix}`]: media && media.pl
   });
 
   const dProps = defProps('', props);
@@ -73,16 +73,6 @@ const Block = (props) => {
     'fx-fit-h': fitH,
     'fx-fit-w': fitW,
     [`h-${height}`]: height,
-    [`m-${m}`]: m,
-    [`mb-${mb}`]: mb,
-    [`ml-${ml}`]: ml,
-    [`mr-${mr}`]: mr,
-    [`mt-${mt}`]: mt,
-    [`p-${p}`]: p,
-    [`pb-${pb}`]: pb,
-    [`pl-${pl}`]: pl,
-    [`pr-${pr}`]: pr,
-    [`pt-${pt}`]: pt,
     [`w-${width}`]: width,
     [`${custom}`]: custom
   });
@@ -112,36 +102,6 @@ Block.propTypes = {
   fColor: PropTypes.string,
   fitH: PropTypes.bool,
   fitW: PropTypes.bool,
-  m: PropTypes.oneOf([
-    null, 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  mb: PropTypes.oneOf([
-    null, 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  ml: PropTypes.oneOf([
-    null, 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  mr: PropTypes.oneOf([
-    null, 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  mt: PropTypes.oneOf([
-    null, 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  p: PropTypes.oneOf([
-    null, 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  pb: PropTypes.oneOf([
-    null, 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  pl: PropTypes.oneOf([
-    null, 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  pr: PropTypes.oneOf([
-    null, 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  pt: PropTypes.oneOf([
-    null, 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
   row: PropTypes.bool,
   height: PropTypes.oneOf([
     'xs', 'sm', 'md', 'lg', 'xl', 'full'
