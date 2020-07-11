@@ -1,36 +1,35 @@
 $q-xs: 360px;
+$q-xs-mw: 359px;
 $q-sm: 560px;
+$q-sm-mw: 559px;
 $q-md: 768px;
+$q-md-mw: 767px;
 $q-lg: 980px;
+$q-lg-mw: 979px;
 $q-xl: 1120px;
+$q-xl-mw: 1119px;
 
-@mixin create-class($name, $prop, $value) {
-  .def-#{$name} {
-    #{$prop}: $value
-  }
-  @media(min-width: $q-xs) {
-    .xs-#{$name} {
-      #{$prop}: $value
+$queries: (
+  'xs' $q-xs,
+  'sm' $q-sm,
+  'md' $q-md, 
+  'lg' $q-lg, 
+  'xl' $q-xl
+);
+
+@mixin create-classes($list) {
+  @each $item in $list {
+    .#{nth($item, 1)} {
+      #{nth($item, 2)}: #{nth($item, 3)}
     }
   }
-  @media(min-width: $q-sm) {
-    .sm-#{$name} {
-      #{$prop}: $value
-    }
-  }
-  @media(min-width: $q-md) {
-    .md-#{$name} {
-      #{$prop}: $value
-    }
-  }
-  @media(min-width: $q-lg) {
-    .lg-#{$name} {
-      #{$prop}: $value
-    }
-  }
-  @media(min-width: $q-xl) {
-    .xl-#{$name} {
-      #{$prop}: $value
+  @each $q in $queries {
+    @each $item in $list {
+      @media(min-width: #{nth($q, 2)}) {
+        .#{nth($item, 1)}--#{nth($q, 1)} {
+          #{nth($item, 2)}: #{nth($item, 3)}
+        }
+      }
     }
   }
 }

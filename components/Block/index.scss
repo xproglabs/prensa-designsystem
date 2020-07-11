@@ -125,13 +125,7 @@ $size-xl: 512px;
   flex-wrap: wrap;
 };
 
-.bg-primary-1 { @include bg($color-primary-1)}
-.bg-primary-2 { @include bg($color-primary-2)}
-.bg-primary-3 { @include bg($color-primary-3)}
 
-.bg-secondary-1 { @include bg($color-secondary-1)}
-.bg-secondary-2 { @include bg($color-secondary-2)}
-.bg-secondary-3 { @include bg($color-secondary-3)}
 .bg-black { @include bg($color-black)}
 .bg-neutral-1 { @include bg($color-neutral-1)}
 .bg-neutral-2 { @include bg($color-neutral-2)}
