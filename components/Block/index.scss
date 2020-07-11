@@ -19,29 +19,13 @@ $size-md: 128px;
 $size-lg: 256px;
 $size-xl: 512px;
 
-@include create-classes((
-  'h-xs' 'height' $size-xs,
-  'h-sm' 'height' $size-sm,
-  'h-md' 'height' $size-md,
-  'h-lg' 'height' $size-lg,
-  'h-xl' 'height' $size-xl,
-  'h-full' 'height' 100%
-));
 
-@include create-classes-rad((
-  'm-xs' 'margin' $margin-xs,
-  'm-sm' 'margin' $margin-sm,
-  'm-md' 'margin' $margin-md,
-  'm-lg' 'margin' $margin-lg,
-  'm-xl' 'margin' $margin-xl
-));
+$margin-space: 4px;
+$padding-space: 4px;
 
-@include create-classes-rad((
-  'p-xs' 'padding' $padding-xs,
-  'p-sm' 'padding' $padding-sm,
-  'p-md' 'padding' $padding-md,
-  'p-lg' 'padding' $padding-lg,
-  'p-xl' 'padding' $padding-xl
+@include classes-side((
+  'm' 'margin' $margin-space,
+  'p' 'padding' $padding-space,
 ));
 
 .w-xs { @include w($size-xs)}

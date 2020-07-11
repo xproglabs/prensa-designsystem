@@ -10,11 +10,11 @@ $q-xl: 1120px;
 $q-xl-mw: 1119px;
 
 $queries: (
-  'xs' $q-xs,
-  'sm' $q-sm,
-  'md' $q-md, 
-  'lg' $q-lg, 
-  'xl' $q-xl
+  '--xs' $q-xs,
+  '--sm' $q-sm,
+  '--md' $q-md, 
+  '--lg' $q-lg, 
+  '--xl' $q-xl
 );
 
 @mixin create-classes($list) {
@@ -34,24 +34,36 @@ $queries: (
   }
 }
 
-$sides: ('' '-top' '-right' '-bottom' '-left');
-
-@mixin create-classes-rad($list) {
-  @each $item in $list {
-    @each $sides in $sides {
-      .#{nth($item, 1)}#{nth($sides, 1)} {
-        #{nth($item, 2)}#{nth($sides, 1)}: #{nth($item, 3)}
-      }
+$sides: (
+  '' '', 
+  't' '-top',
+  'r' '-right',
+  'b' '-bottom',
+  'l' '-left',
+);
+$size-iterator: (0 1 2 3 4 5 6 7 8 9 10);
+@mixin classes-render($prefix, $querie, $name, $size) {
+  @each $sides in $sides {
+    $side: #{nth($sides, 1)};
+    $attr: #{nth($sides, 2)};
+    $prop: #{$name}#{$attr};
+    @each $i in $size-iterator {
+      $value: calc(#{$i} * #{$size});
+      .#{$prefix}#{$side}-#{$i}#{$querie} {#{$prop}: #{$value}}
     }
   }
-  @each $q in $queries {
-    @each $item in $list {
-      @media(min-width: #{nth($q, 2)}) {
-        @each $sides in $sides {
-          .#{nth($item, 1)}#{nth($sides, 1)}--#{nth($q, 1)} {
-            #{nth($item, 2)}#{nth($sides, 1)}: #{nth($item, 3)}
-          }
-        }
+}
+@mixin classes-side($list) {
+  @each $item in $list {
+    $prefix: #{nth($item, 1)};
+    $name: #{nth($item, 2)};
+    $size: #{nth($item, 3)};
+    @include classes-render($prefix, '', $name, $size);
+    @each $q in $queries {
+      $querie: #{nth($q, 1)};
+      $breakp: #{nth($q, 2)};
+      @media(min-width: #{$breakp}) {
+        @include classes-render($prefix, $querie, $name, $size);
       }
     }
   }

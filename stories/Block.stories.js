@@ -12,21 +12,21 @@ export default {
 
 export const Default = () => {
   const propsBlock = {
-    bgColor: 'secondary-1',
-    fontColor: 'white',
-    p: 'xs',
-    m: 'xs',
+    bg: 'secondary-1',
+    color: 'white',
+    p: '2',
+    m: '4',
     'md': {
-      bgColor: 'secondary-2',
-      fontColor: 'black',
-      p: 'md',
-      mt: 'lg',
+      bg: 'secondary-2',
+      color: 'black',
+      pt: '6',
+      mt: '8',
     },
     'lg': {
-      bgColor: 'primary-1'
+      bg: 'primary-1'
     },
     'xl': {
-      bgColor: 'primary-2'
+      bg: 'primary-2'
     }
   };
   return (

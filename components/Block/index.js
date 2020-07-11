@@ -27,18 +27,18 @@ const Block = (props) => {
   } = props;
 
   const defProps = (prefix, media) => classnames({
-    [`bg-${media && media.bgColor}${prefix}`]: media && media.bgColor,
-    [`fc-${media && media.fontColor}${prefix}`]: media && media.fontColor,
+    [`bg-${media && media.bg}${prefix}`]: media && media.bg,
+    [`fc-${media && media.color}${prefix}`]: media && media.color,
     [`m-${media && media.m}${prefix}`]: media && media.m,
-    [`m-${media && media.mt}-top${prefix}`]: media && media.mt,
-    [`m-${media && media.mr}-right${prefix}`]: media && media.mr,
-    [`m-${media && media.mb}-bottom${prefix}`]: media && media.mb,
-    [`m-${media && media.ml}-left${prefix}`]: media && media.ml,
+    [`mt-${media && media.mt}${prefix}`]: media && media.mt,
+    [`mr-${media && media.mr}${prefix}`]: media && media.mr,
+    [`mb-${media && media.mb}${prefix}`]: media && media.mb,
+    [`ml-${media && media.ml}${prefix}`]: media && media.ml,
     [`p-${media && media.p}${prefix}`]: media && media.p,
-    [`p-${media && media.pt}-top${prefix}`]: media && media.pt,
-    [`p-${media && media.pr}-right${prefix}`]: media && media.pr,
-    [`p-${media && media.pb}-bottom${prefix}`]: media && media.pb,
-    [`p-${media && media.pl}-left${prefix}`]: media && media.pl
+    [`pt-${media && media.pt}${prefix}`]: media && media.pt,
+    [`pr-${media && media.pr}${prefix}`]: media && media.pr,
+    [`pb-${media && media.pb}${prefix}`]: media && media.pb,
+    [`pl-${media && media.pl}${prefix}`]: media && media.pl
   });
 
   const dProps = defProps('', props);
