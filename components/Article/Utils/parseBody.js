@@ -1,5 +1,5 @@
 import {html2json} from 'html2json';
-import {filter, map} from 'lodash';
+import {find, filter, replace, map} from 'lodash';
 
 const parseBody = (content) => {
 
@@ -12,10 +12,12 @@ const parseBody = (content) => {
     const enabledTags = ['p', 'em', 'h2'];
     
     if(enabledTags.indexOf(tag) > -1) {
+
       let contentText = '';
 
       map(child, (children) => {
 
+        // render h2, em and pure text
         if(children.node === 'text' && tag === 'h2') {
           contentText = `${contentText}<span class="paragraph-title">${children.text}</span>`;
 
@@ -25,6 +27,8 @@ const parseBody = (content) => {
         } else if(children.node === 'text') {
           contentText = `${contentText}${children.text}`;
         }
+
+        // render a
         if(children.tag === 'a' && children.attr.class !== 'p-smartembed') {
           
           let text = children.child && children.child.length > 0 ? 
@@ -38,14 +42,29 @@ const parseBody = (content) => {
           contentText = `${contentText}<a ${attr}>${text}</a>`;
         }
       });
+
+      // add paragraph
       if(contentText && contentText !== '') {
         bodyItems.push({type: 'Paragraph', value: contentText});
       }
     }
 
-    tag === 'a' && attr.class && attr.class === 'p-smartembed' &&
-      bodyItems.push({type: 'Image', value: attr['data-onecms-id']});
+    // render image
+    if(tag === 'a' && attr.class && attr.class === 'p-smartembed') {
+      const childImage = find(child, {tag: 'img'});
+      if(childImage) {
+        let subtitle = childImage.attr['alt'].toString();
+        subtitle = replace(subtitle, new RegExp(',', 'g'), ' ');
+        const propsImage = {
+          'image-contentId': attr['data-onecms-id'].replace('policy:', ''),
+          'image-subtitle': subtitle,
+          'image-byline': ''
+        };
+        bodyItems.push({type: 'Image', value: propsImage});
+      }
+    }
       
+    // render embed
     if(tag === 'a' && attr.href && !attr.class && attr.href !== '') {
       
       if(attr['href'].indexOf('facebook.com') > -1) {
@@ -62,6 +81,7 @@ const parseBody = (content) => {
       }
     }
   };
+
   // convert html
   const parsed = html2json(content);
   const elements = filter(parsed.child, ({node: 'element'}));
