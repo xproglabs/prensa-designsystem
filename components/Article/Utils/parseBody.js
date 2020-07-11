@@ -53,7 +53,7 @@ const parseBody = (content) => {
     if(tag === 'a' && attr.class && attr.class === 'p-smartembed') {
       const childImage = find(child, {tag: 'img'});
       if(childImage) {
-        let subtitle = childImage.attr['alt'].toString();
+        let subtitle = childImage && childImage.attr && childImage.attr['alt'] && childImage.attr['alt'].toString();
         subtitle = replace(subtitle, new RegExp(',', 'g'), ' ');
         const propsImage = {
           'image-contentId': attr['data-onecms-id'].replace('policy:', ''),
