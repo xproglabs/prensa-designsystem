@@ -12,9 +12,7 @@ const Block = (props) => {
     alignMiddle,
     alignRight,
     alignTop,
-    bgColor,
     custom,    
-    fColor,
     fitH,
     fitW,
     m,
@@ -30,7 +28,6 @@ const Block = (props) => {
     row,
     height,
     width,
-    def,
     xs,
     sm,
     md,
@@ -40,15 +37,16 @@ const Block = (props) => {
   } = props;
 
   const defProps = (prefix, media) => classnames({
-    [`${prefix}-bg-${media && media.bgColor}`]: media && media.bgColor,
+    [`bg-${media && media.bgColor}${prefix}`]: media && media.bgColor,
+    [`fc-${media && media.fontColor}${prefix}`]: media && media.fontColor,
   });
 
-  const dProps = defProps('def', def);
-  const xsProps = defProps('xs', xs);
-  const smProps = defProps('sm', sm);
-  const mdProps = defProps('md', md);
-  const lgProps = defProps('lg', lg);
-  const xlProps = defProps('xl', xl);
+  const dProps = defProps('', props);
+  const xsProps = defProps('--xs', xs);
+  const smProps = defProps('--sm', sm);
+  const mdProps = defProps('--md', md);
+  const lgProps = defProps('--lg', lg);
+  const xlProps = defProps('--xl', xl);
 
   const classProps = [dProps, xsProps, smProps, mdProps, lgProps, xlProps];
 
@@ -74,8 +72,6 @@ const Block = (props) => {
     'fx-dir-row': row,
     'fx-fit-h': fitH,
     'fx-fit-w': fitW,
-    [`bg-${bgColor}`]: bgColor,
-    [`f-${fColor}`]: fColor,
     [`h-${height}`]: height,
     [`m-${m}`]: m,
     [`mb-${mb}`]: mb,
@@ -107,7 +103,6 @@ Block.propTypes = {
   alignMiddle: PropTypes.bool,
   alignRight: PropTypes.bool,
   alignTop: PropTypes.bool,
-  bgColor: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object,
@@ -158,7 +153,6 @@ Block.propTypes = {
     'article', '3-col', '4-col'
   ]),
   onClick: PropTypes.func,
-  def: PropTypes.object,
   xs: PropTypes.object,
   sm: PropTypes.object,
   md: PropTypes.object,
