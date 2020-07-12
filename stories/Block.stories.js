@@ -15,25 +15,29 @@ export const Default = () => {
     align: 'center middle',
     bg: 'secondary-1',
     color: 'white',
-    h: '2',
-    p: '2',
-    m: '2',
+    h: '6',
+    pl: '2',
+    m: '0',
+    w: '50p-2',
     'md': {
-      bg: 'secondary-2',
       color: 'black',
       h: '6',
-      pb: '3',
-      pt: '3',
+      pb: '0',
+      pt: '0',
       mt: '0',
-    },
-    'lg': {
-      bg: 'primary-1'
-    },
-    'xl': {
-      bg: 'primary-2'
+      pl: '5',
+      w: '100p-5'
     }
   };
+  const propsMain = {
+    bg: 'secondary-3',
+    mb: '10',
+  };
   return (
-    <Block {...propsBlock}>teste</Block>
+    <>
+      <Block {...propsMain}>
+        <Block {...propsBlock}>teste</Block>
+      </Block>
+    </>
   );
 };

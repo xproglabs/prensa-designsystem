@@ -19,25 +19,15 @@ $size-md: 128px;
 $size-lg: 256px;
 $size-xl: 512px;
 
-
-$height-space: 12px;
-$margin-space: 4px;
-$padding-space: 4px;
+@include classes-incremental((
+  'w' 'width' $size-pixel,
+  'h' 'height' $size-pixel,
+));
 
 @include classes-side((
-  'm' 'margin' $margin-space,
-  'p' 'padding' $padding-space,
+  'm' 'margin' $size-space,
+  'p' 'padding' $size-space,
 ));
-@include classes-incremental((
-  'h' 'height' $height-space,
-));
-
-.w-xs { @include w($size-xs)}
-.w-sm { @include w($size-sm)}
-.w-md { @include w($size-md)}
-.w-lg { @include w($size-lg)}
-.w-xl { @include w($size-xl)}
-.w-full { @include w(100%)}
 
 .fx-align-between {@include jc(space-between)}
 .fx-align-bottom {@include jc(flex-end)}
@@ -79,47 +69,47 @@ $padding-space: 4px;
   flex-wrap: wrap;
 };
 
-.bg-black { @include bg($color-black)}
-.bg-neutral-1 { @include bg($color-neutral-1)}
-.bg-neutral-2 { @include bg($color-neutral-2)}
-.bg-neutral-3 { @include bg($color-neutral-3)}
-.bg-neutral-4 { @include bg($color-neutral-4)}
-.bg-neutral-5 { @include bg($color-neutral-5)}
-.bg-neutral-6 { @include bg($color-neutral-6)}
-.bg-neutral-7 { @include bg($color-neutral-7)}
-.bg-neutral-8 { @include bg($color-neutral-8)}
-.bg-neutral-9 { @include bg($color-neutral-9)}
-.bg-neutral-10 { @include bg($color-neutral-10)}
-.bg-neutral-11 { @include bg($color-neutral-11)}
-.bg-white { @include bg($color-white)}
-.bg-alert-1 { @include bg($color-alert-1)}
-.bg-alert-2 { @include bg($color-alert-2)}
+// .bg-black { @include bg($color-black)}
+// .bg-neutral-1 { @include bg($color-neutral-1)}
+// .bg-neutral-2 { @include bg($color-neutral-2)}
+// .bg-neutral-3 { @include bg($color-neutral-3)}
+// .bg-neutral-4 { @include bg($color-neutral-4)}
+// .bg-neutral-5 { @include bg($color-neutral-5)}
+// .bg-neutral-6 { @include bg($color-neutral-6)}
+// .bg-neutral-7 { @include bg($color-neutral-7)}
+// .bg-neutral-8 { @include bg($color-neutral-8)}
+// .bg-neutral-9 { @include bg($color-neutral-9)}
+// .bg-neutral-10 { @include bg($color-neutral-10)}
+// .bg-neutral-11 { @include bg($color-neutral-11)}
+// .bg-white { @include bg($color-white)}
+// .bg-alert-1 { @include bg($color-alert-1)}
+// .bg-alert-2 { @include bg($color-alert-2)}
 
-.f-primary-1 { @include fc($color-primary-1)}
-.f-primary-2 { @include fc($color-primary-2)}
-.f-primary-3 { @include fc($color-primary-3)}
-.f-secondary-1 { @include fc($color-secondary-1)}
-.f-secondary-2 { @include fc($color-secondary-2)}
-.f-secondary-3 { @include fc($color-secondary-3)}
-.f-black { @include fc($color-black)}
-.f-neutral-1 { @include fc($color-neutral-1)}
-.f-neutral-2 { @include fc($color-neutral-2)}
-.f-neutral-3 { @include fc($color-neutral-3)}
-.f-neutral-4 { @include fc($color-neutral-4)}
-.f-neutral-5 { @include fc($color-neutral-5)}
-.f-neutral-6 { @include fc($color-neutral-6)}
-.f-neutral-7 { @include fc($color-neutral-7)}
-.f-neutral-8 { @include fc($color-neutral-8)}
-.f-neutral-9 { @include fc($color-neutral-9)}
-.f-neutral-10 { @include fc($color-neutral-10)}
-.f-neutral-11 { @include fc($color-neutral-11)}
-.f-white { @include fc($color-white)}
-.f-alert-1 { @include fc($color-alert-1)}
-.f-alert-2 { @include fc($color-alert-2)}
+// .f-primary-1 { @include fc($color-primary-1)}
+// .f-primary-2 { @include fc($color-primary-2)}
+// .f-primary-3 { @include fc($color-primary-3)}
+// .f-secondary-1 { @include fc($color-secondary-1)}
+// .f-secondary-2 { @include fc($color-secondary-2)}
+// .f-secondary-3 { @include fc($color-secondary-3)}
+// .f-black { @include fc($color-black)}
+// .f-neutral-1 { @include fc($color-neutral-1)}
+// .f-neutral-2 { @include fc($color-neutral-2)}
+// .f-neutral-3 { @include fc($color-neutral-3)}
+// .f-neutral-4 { @include fc($color-neutral-4)}
+// .f-neutral-5 { @include fc($color-neutral-5)}
+// .f-neutral-6 { @include fc($color-neutral-6)}
+// .f-neutral-7 { @include fc($color-neutral-7)}
+// .f-neutral-8 { @include fc($color-neutral-8)}
+// .f-neutral-9 { @include fc($color-neutral-9)}
+// .f-neutral-10 { @include fc($color-neutral-10)}
+// .f-neutral-11 { @include fc($color-neutral-11)}
+// .f-white { @include fc($color-white)}
+// .f-alert-1 { @include fc($color-alert-1)}
+// .f-alert-2 { @include fc($color-alert-2)}
 
-.mockup {
-  @include r(5%);
-}
+// .mockup {
+//   @include r(5%);
+// }
 
 .has-border-bottom {
   @include bb(1px, solid, $color-neutral-9);

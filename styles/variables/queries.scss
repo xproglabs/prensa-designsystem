@@ -23,43 +23,55 @@ $sides: (
   'b' '-bottom',
   'l' '-left',
 );
-$size-iterator: (0 1 2 3 4 5 6 7 8 9 10);
 
-@mixin classes-iterator-calc($prefix, $prop, $querie, $size) {
-  @each $i in $size-iterator {
-    $value: calc(#{$i} * #{$size});
-    .#{$prefix}-#{$i}#{$querie} {#{$prop}: #{$value}}
+$size-space: 6px;
+$size-pixel: 12px;
+
+$sizepix-it: (0 1 2 3 4 5 6 7 8 9 10);
+
+@mixin classes-iterator-calc($prefix, $prop, $querie) {
+  @each $i in $sizepix-it {
+    $value_pixel: calc(#{$i} * #{$size-pixel});
+    $value_percn: calc(#{$i}0%);
+    .#{$prefix}-#{$i}#{$querie} {#{$prop}: #{$value_pixel}}
+    .#{$prefix}-#{$i}0p#{$querie} {#{$prop}: #{$value_percn}}
+    @each $j in $sizepix-it {
+      $value_pixel: calc(calc(#{$i} * #{$size-pixel}) - calc(#{$j} * #{$size-space}));
+      $value_percn: calc(#{$i}0% - calc(#{$j} * #{$size-space}));
+      .#{$prefix}-#{$i}-#{$j}#{$querie} {#{$prop}: #{$value_pixel}}
+      .#{$prefix}-#{$i}0p-#{$j}#{$querie} {#{$prop}: #{$value_percn}}
+    }
   }
 }
-
 @mixin classes-incremental($list) {
   @each $item in $list {
     $prefix: #{nth($item, 1)};
     $prop: #{nth($item, 2)};
-    $size: #{nth($item, 3)};
-    @include classes-iterator-calc($prefix, $prop, '', $size);
+    @include classes-iterator-calc($prefix, $prop, '');
     @each $q in $queries {
       $querie: #{nth($q, 1)};
       $breakp: #{nth($q, 2)};
       @media(min-width: #{$breakp}) {
-        @include classes-iterator-calc($prefix, $prop, $querie, $size);
+        @include classes-iterator-calc($prefix, $prop, $querie);
       }
     }
   }
 }
-
-@mixin classes-simple($list) {
+@mixin classes-simple-render($list, $querie) {
   @each $item in $list {
     $prefix: #{nth($item, 1)};
     $prop: #{nth($item, 2)};
     $value: #{nth($item, 3)};
-    .#{$prefix}{#{$prop}: #{$value}}
-    @each $q in $queries {
-      $querie: #{nth($q, 1)};
-      $breakp: #{nth($q, 2)};
-      @media(min-width: #{$breakp}) {
-        .#{$prefix}#{$querie}{#{$prop}: #{$value}}
-      }
+    .#{$prefix}#{$querie}{#{$prop}: #{$value}}
+  }
+}
+@mixin classes-simple($list) {
+  @include classes-simple-render($list, '');
+  @each $q in $queries {
+    $querie: #{nth($q, 1)};
+    $breakp: #{nth($q, 2)};
+    @media(min-width: #{$breakp}) {
+      @include classes-simple-render($list, $querie);
     }
   }
 }
@@ -69,7 +81,7 @@ $size-iterator: (0 1 2 3 4 5 6 7 8 9 10);
     $side: #{nth($sides, 1)};
     $attr: #{nth($sides, 2)};
     $prop: #{$name}#{$attr};
-    @each $i in $size-iterator {
+    @each $i in $sizepix-it {
       $value: calc(#{$i} * #{$size});
       .#{$prefix}#{$side}-#{$i}#{$querie} {#{$prop}: #{$value}}
     }
