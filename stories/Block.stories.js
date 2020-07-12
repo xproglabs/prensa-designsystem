@@ -12,15 +12,19 @@ export default {
 
 export const Default = () => {
   const propsBlock = {
+    align: 'center middle',
     bg: 'secondary-1',
     color: 'white',
+    h: '2',
     p: '2',
-    m: '4',
+    m: '2',
     'md': {
       bg: 'secondary-2',
       color: 'black',
-      pt: '6',
-      mt: '8',
+      h: '6',
+      pb: '3',
+      pt: '3',
+      mt: '0',
     },
     'lg': {
       bg: 'primary-1'

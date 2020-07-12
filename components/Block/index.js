@@ -29,6 +29,7 @@ const Block = (props) => {
   const defProps = (prefix, media) => classnames({
     [`bg-${media && media.bg}${prefix}`]: media && media.bg,
     [`fc-${media && media.color}${prefix}`]: media && media.color,
+    [`h-${media && media.h}${prefix}`]: media && media.h,
     [`m-${media && media.m}${prefix}`]: media && media.m,
     [`mt-${media && media.mt}${prefix}`]: media && media.mt,
     [`mr-${media && media.mr}${prefix}`]: media && media.mr,

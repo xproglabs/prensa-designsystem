@@ -20,12 +20,16 @@ $size-lg: 256px;
 $size-xl: 512px;
 
 
+$height-space: 12px;
 $margin-space: 4px;
 $padding-space: 4px;
 
 @include classes-side((
   'm' 'margin' $margin-space,
   'p' 'padding' $padding-space,
+));
+@include classes-incremental((
+  'h' 'height' $height-space,
 ));
 
 .w-xs { @include w($size-xs)}
@@ -74,7 +78,6 @@ $padding-space: 4px;
 .block-four-col {
   flex-wrap: wrap;
 };
-
 
 .bg-black { @include bg($color-black)}
 .bg-neutral-1 { @include bg($color-neutral-1)}

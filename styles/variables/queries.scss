@@ -24,7 +24,47 @@ $sides: (
   'l' '-left',
 );
 $size-iterator: (0 1 2 3 4 5 6 7 8 9 10);
-@mixin classes-render($prefix, $querie, $name, $size) {
+
+@mixin classes-iterator-calc($prefix, $prop, $querie, $size) {
+  @each $i in $size-iterator {
+    $value: calc(#{$i} * #{$size});
+    .#{$prefix}-#{$i}#{$querie} {#{$prop}: #{$value}}
+  }
+}
+
+@mixin classes-incremental($list) {
+  @each $item in $list {
+    $prefix: #{nth($item, 1)};
+    $prop: #{nth($item, 2)};
+    $size: #{nth($item, 3)};
+    @include classes-iterator-calc($prefix, $prop, '', $size);
+    @each $q in $queries {
+      $querie: #{nth($q, 1)};
+      $breakp: #{nth($q, 2)};
+      @media(min-width: #{$breakp}) {
+        @include classes-iterator-calc($prefix, $prop, $querie, $size);
+      }
+    }
+  }
+}
+
+@mixin classes-simple($list) {
+  @each $item in $list {
+    $prefix: #{nth($item, 1)};
+    $prop: #{nth($item, 2)};
+    $value: #{nth($item, 3)};
+    .#{$prefix}{#{$prop}: #{$value}}
+    @each $q in $queries {
+      $querie: #{nth($q, 1)};
+      $breakp: #{nth($q, 2)};
+      @media(min-width: #{$breakp}) {
+        .#{$prefix}#{$querie}{#{$prop}: #{$value}}
+      }
+    }
+  }
+}
+
+@mixin classes-side-render($prefix, $querie, $name, $size) {
   @each $sides in $sides {
     $side: #{nth($sides, 1)};
     $attr: #{nth($sides, 2)};
@@ -40,28 +80,12 @@ $size-iterator: (0 1 2 3 4 5 6 7 8 9 10);
     $prefix: #{nth($item, 1)};
     $name: #{nth($item, 2)};
     $size: #{nth($item, 3)};
-    @include classes-render($prefix, '', $name, $size);
+    @include classes-side-render($prefix, '', $name, $size);
     @each $q in $queries {
       $querie: #{nth($q, 1)};
       $breakp: #{nth($q, 2)};
       @media(min-width: #{$breakp}) {
-        @include classes-render($prefix, $querie, $name, $size);
-      }
-    }
-  }
-}
-
-@mixin classes-colors($list) {
-  @each $item in $list {
-    $prefix: #{nth($item, 1)};
-    $name: #{nth($item, 2)};
-    $value: #{nth($item, 3)};
-    .#{$prefix}{#{$name}: #{$value}}
-    @each $q in $queries {
-      $querie: #{nth($q, 1)};
-      $breakp: #{nth($q, 2)};
-      @media(min-width: #{$breakp}) {
-        .#{$prefix}#{$querie}{#{$name}: #{$value}}
+        @include classes-side-render($prefix, $querie, $name, $size);
       }
     }
   }
