@@ -1,73 +1,21 @@
 @use '../../styles' as *;
-@use '../../styles/variables/queries.scss' as *;
 
-$margin-xs: 4px;
-$margin-sm: 8px;
-$margin-md: 16px;
-$margin-lg: 32px;
-$margin-xl: 64px;
-
-$padding-xs: 4px;
-$padding-sm: 8px;
-$padding-md: 16px;
-$padding-lg: 32px;
-$padding-xl: 64px;
-
-$size-xs: 32px;
-$size-sm: 64px;
-$size-md: 128px;
-$size-lg: 256px;
-$size-xl: 512px;
-
-@include classes-incremental((
-  'w' 'width' $size-pixel,
-  'h' 'height' $size-pixel,
-));
-
-@include classes-side((
-  'm' 'margin' $size-space,
-  'p' 'padding' $size-space,
-));
-
-.fx-align-between {@include jc(space-between)}
-.fx-align-bottom {@include jc(flex-end)}
-.fx-align-evenly {@include jc(space-evenly)}
-.fx-align-left {@include ai(flex-start)}
-.fx-align-center {@include ai(center)}
-.fx-align-middle {@include jc(center)}
-.fx-align-right {@include ai(flex-end)}
-.fx-align-top {@include jc(flex-start)}
-
-.fy-align-between {@include jc(space-between)}
-.fy-align-bottom {@include ai(flex-end)}
-.fy-align-evenly {@include jc(space-evenly)}
-.fy-align-center {@include jc(center)}
-.fy-align-left {@include jc(flex-start)}
-.fy-align-middle {@include ai(center)}
-.fy-align-right {@include jc(flex-end)}
-.fy-align-top {@include ai(flex-start)}
-
-.fx-dir-col {
-  display: flex;
-  flex-direction: column;
-}
-.fx-dir-row {
-  display: flex;
-  flex-direction: row;
-}
 .fx-fit-h {
   @include h(fit-content)
 };
 .fx-fit-w {
   @include w(fit-content)
 };
-
 .block-three-col {
   flex-wrap: wrap;
 };
 .block-four-col {
   flex-wrap: wrap;
 };
+.has-border-bottom {
+  @include bb(1px, solid, $color-neutral-9);
+  @include pb($space-size-2);
+}
 
 // .bg-black { @include bg($color-black)}
 // .bg-neutral-1 { @include bg($color-neutral-1)}
@@ -110,8 +58,3 @@ $size-xl: 512px;
 // .mockup {
 //   @include r(5%);
 // }
-
-.has-border-bottom {
-  @include bb(1px, solid, $color-neutral-9);
-  @include pb($space-size-2);
-}
