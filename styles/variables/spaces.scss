@@ -1,3 +1,35 @@
+@use '../../styles/variables/queries.scss' as *;
+
+// name ai jc
+@include classes-align((
+  'col' 'between' '' 'space-between',
+  'col' 'bottom' '' 'flex-end',
+  'col' 'center' 'center' '',
+  'col' 'evenly' '' 'space-evenly',
+  'col' 'left' 'flex-start' '',
+  'col' 'middle' '' 'center',
+  'col' 'right' 'flex-end' '',
+  'col' 'top' '' 'flex-start',
+  'row' 'between' '' 'space-between',
+  'row' 'bottom' 'flex-end' '',
+  'row' 'center' '' 'center',
+  'row' 'evenly' '' 'space-evenly',
+  'row' 'left' 'flex-start' '',
+  'row' 'middle' 'center' '',
+  'row' 'right' '' 'flex-end',
+  'row' 'top' 'flex-start' '',
+));
+
+@include classes-side((
+  'm' 'margin' $size-space,
+  'p' 'padding' $size-space,
+));
+
+@include classes-incremental((
+  'h' 'height' $size-pixel,
+  'w' 'width' $size-pixel,
+));
+
 $space-size-0: 4px !default;
 $space-size-1: 8px !default;
 $space-size-2: 16px !default;

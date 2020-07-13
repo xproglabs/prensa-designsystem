@@ -11,15 +11,22 @@ export default {
 };
 
 export const Default = () => {
+  const propsMain = {
+    align: 'row center middle',
+    mb: '10',
+    'md': {
+      align: 'top'
+    }
+  };
   const propsBlock = {
-    align: 'center middle',
-    bg: 'secondary-1',
+    align: 'row middle evenly',
+    bg: 'primary-2',
     color: 'white',
     h: '6',
-    pl: '2',
     m: '0',
-    w: '50p-2',
+    w: '50p',
     'md': {
+      align: 'evenly right',
       color: 'black',
       h: '6',
       pb: '0',
@@ -29,14 +36,18 @@ export const Default = () => {
       w: '100p-5'
     }
   };
-  const propsMain = {
-    bg: 'secondary-3',
-    mb: '10',
+  const propsBlockA = {
+    bg: 'primary-3',
   };
   return (
     <>
       <Block {...propsMain}>
-        <Block {...propsBlock}>teste</Block>
+        <Block {...propsBlock}>
+          <span>teste</span>
+          <span>teste</span>
+          <span>teste</span>
+        </Block>
+        <Block {...propsBlock} {...propsBlockA}>teste</Block>
       </Block>
     </>
   );

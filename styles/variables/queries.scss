@@ -29,6 +29,28 @@ $size-pixel: 12px;
 
 $sizepix-it: (0 1 2 3 4 5 6 7 8 9 10);
 
+@mixin classes-align-render($list, $querie) {
+  @each $item in $list {
+    $dir: #{nth($item, 1)};
+    $prop: #{nth($item, 2)};
+    $ai: #{nth($item, 3)};
+    $jc: #{nth($item, 4)};
+    .#{$dir}-#{$prop}#{$querie} {
+      align-items: $ai;
+      justify-content: $jc;
+    }
+  }
+}
+@mixin classes-align($list) {
+  @include classes-align-render($list, '');
+  @each $q in $queries {
+    $querie: #{nth($q, 1)};
+    $breakp: #{nth($q, 2)};
+    @media(min-width: #{$breakp}) {
+      @include classes-align-render($list, $querie);
+    }
+  }
+}
 @mixin classes-iterator-calc($prefix, $prop, $querie) {
   @each $i in $sizepix-it {
     $value_pixel: calc(#{$i} * #{$size-pixel});
@@ -75,7 +97,6 @@ $sizepix-it: (0 1 2 3 4 5 6 7 8 9 10);
     }
   }
 }
-
 @mixin classes-side-render($prefix, $querie, $name, $size) {
   @each $sides in $sides {
     $side: #{nth($sides, 1)};
@@ -99,6 +120,26 @@ $sizepix-it: (0 1 2 3 4 5 6 7 8 9 10);
       @media(min-width: #{$breakp}) {
         @include classes-side-render($prefix, $querie, $name, $size);
       }
+    }
+  }
+}
+.fx-col {
+  display: flex;
+  flex-direction: column;
+}
+.fx-row {
+  display: flex;
+  flex-direction: row;
+}
+@each $q in $queries {
+  $querie: #{nth($q, 1)};
+  $breakp: #{nth($q, 2)};
+  @media(min-width: #{$breakp}) {
+    .fx-col#{$querie} {
+      flex-direction: column;
+    }
+    .fx-row#{$querie} {
+      flex-direction: row;
     }
   }
 }
