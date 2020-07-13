@@ -37,13 +37,13 @@ $article-tag-fc: $color-primary-2 !default;
 $system-fc: $color-neutral-4 !default;
 
 @include classes-simple((
+  'fc-primary-1' 'color' $color-primary-1,
+  'fc-white' 'color' $color-white,
+  'fc-black' 'color' $color-black,
   'bg-primary-1' 'background-color' $color-primary-1,
   'bg-primary-2' 'background-color' $color-primary-2,
   'bg-primary-3' 'background-color' $color-primary-3,
   'bg-secondary-1' 'background-color' $color-secondary-1,
   'bg-secondary-2' 'background-color' $color-secondary-2,
   'bg-secondary-3' 'background-color' $color-secondary-3,
-  'fc-primary-1' 'color' $color-primary-1,
-  'fc-white' 'color' $color-white,
-  'fc-black' 'color' $color-black
 ));
