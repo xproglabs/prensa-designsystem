@@ -44,7 +44,7 @@ const Block = (props) => {
       [`pb-${props.pb}${prefix}`]: props.pb,
       [`pl-${props.pl}${prefix}`]: props.pl,
       [`w-${props.w}${prefix}`]: props.w,
-      [`${props.style}`]: props.style,
+      [`${props.custom}`]: props.custom,
     });
   };
 
@@ -84,7 +84,7 @@ Block.propTypes = {
     PropTypes.object,
     PropTypes.node
   ]),
-  style: PropTypes.string, 
+  custom: PropTypes.string, 
   xs: PropTypes.object,
   sm: PropTypes.object,
   md: PropTypes.object,
