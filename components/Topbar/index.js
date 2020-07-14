@@ -6,12 +6,11 @@ import Block from '../Block';
 const Topbar = ({content, functions}) => {
   const {LeftContent, CenterContent, RightContent} = content;
   return (
-    <Block custom="topbar" 
-      alignBetween
-      alignMiddle
-      bgColor="primary-1" 
-      row
-      width="full">
+    <Block 
+      align="row middle between"
+      bg="primary-1" 
+      custom="topbar" 
+      width="100p">
       <Block>
         {LeftContent && <LeftContent functions={functions} />}
       </Block>
@@ -27,10 +26,11 @@ const Topbar = ({content, functions}) => {
 
 const LeftMenuIcon = ({functions}) => {
   return (
-    <Block custom="menu-left-icon" 
-      fColor="neutral-8" 
-      onClick={functions.handleMenuClick}
-      pl="md">
+    <Block 
+      custom="menu-left-icon" 
+      fc="neutral-8" 
+      pl="4"
+      onClick={functions.handleMenuClick}>
       MENU
     </Block>
   );

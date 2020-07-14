@@ -9,7 +9,7 @@ const SideMenuItems = ({content, functions}) => {
   const Item = ({item}) => {
     const hasSubitems = item.subitems.length > 0; 
     return (
-      <Block custom="listitem" mt="md">
+      <Block custom="listitem" mt="4">
         <Block custom="item" onClick={functions.onMenuItem} >
           {!hasSubitems ? 
             <a href={item.path}>{item.name}</a> :
