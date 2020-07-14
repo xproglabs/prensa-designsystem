@@ -4,7 +4,6 @@
 @forward '../components/Button';
 @forward '../components/Form';
 @forward '../components/Grid';
-@forward '../components/NewsList';
 @forward '../components/SideMenu';
 @forward '../components/Subject';
 @forward '../components/Teasers';
@@ -15,3 +14,4 @@
 
 @forward '../components/Teasers/Teaser.scss';
 @forward '../components/Teasers/TeaserFeatured.scss';
+@forward '../components/Teasers/NewsListTeaser.scss';

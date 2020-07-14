@@ -653,7 +653,8 @@ var Article = function Article(_ref) {
   };
   var propsArticleMedia = {
     align: 'row between middle',
-    custom: 'article-body has-border-bottom',
+    custom: 'article-media has-border-bottom',
+    mb: '4',
     w: '100p'
   };
   var propsArticleAuthor = {
@@ -818,9 +819,9 @@ var SideMenu = function SideMenu(_ref) {
     custom: "menu-opacity",
     onClick: functions.onCloseModal
   }), /*#__PURE__*/React.createElement(Block, {
-    p: "4",
+    bg: "white",
     custom: "menu-left",
-    bgColor: "white"
+    p: "4"
   }, children && children));
 };
 
@@ -898,6 +899,7 @@ var Topbar = function Topbar(_ref) {
   return /*#__PURE__*/React.createElement(Block, {
     align: "row middle between",
     bg: "primary-1",
+    color: "white",
     custom: "topbar",
     width: "100p"
   }, /*#__PURE__*/React.createElement(Block, null, LeftContent && /*#__PURE__*/React.createElement(LeftContent, {
@@ -932,68 +934,11 @@ Topbar.defaultProps = {
   }
 };
 
-var List = function List(_ref) {
-  var content = _ref.content;
-
-  var Item = function Item(_ref2) {
-    var item = _ref2.item;
-    return /*#__PURE__*/React.createElement(Block, {
-      custom: "item",
-      mt: "xs"
-    }, /*#__PURE__*/React.createElement("a", {
-      href: item.path
-    }, item.name));
-  };
-
-  Item.propTypes = {
-    item: PropTypes.object
-  };
-
-  if (!content.items || content.items.length === 0) {
-    return /*#__PURE__*/React.createElement(Block, {
-      custom: "news-list"
-    }, /*#__PURE__*/React.createElement("pre", null, "Items not found"));
-  }
-
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "news-list"
-  }, lodash.map(content.items, function (item, key) {
-    return /*#__PURE__*/React.createElement(Item, {
-      item: item,
-      key: key
-    });
-  }));
-};
-/* required props */
-
-
-List.propTypes = {
-  content: PropTypes.object,
-  functions: PropTypes.shape({
-    onCloseModal: PropTypes.func
-  }),
-  status: PropTypes.shape({
-    opened: PropTypes.bool
-  })
-};
-List.defaultProps = {
-  content: {},
-  functions: {
-    onCloseModal: function onCloseModal() {
-      return null;
-    }
-  },
-  status: {
-    opened: false
-  }
-};
-
 exports.Article = Article;
 exports.Block = Block;
 exports.Button = Button;
 exports.Form = index;
 exports.Grid = Grid;
-exports.NewsList = List;
 exports.SideMenu = SideMenu;
 exports.SideMenuItems = SideMenuItems;
 exports.Subject = Subject;

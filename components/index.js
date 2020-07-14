@@ -6,6 +6,5 @@ export {default as Grid} from './Grid';
 export {default as SideMenu} from './SideMenu';
 export {default as SideMenuItems} from './SideMenu/Items';
 export {default as Topbar} from './Topbar';
-export {default as NewsList} from './NewsList';
 export {default as Subject} from './Subject';
 export {default as Typography} from './Typography';

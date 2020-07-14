@@ -1,7 +1,7 @@
 import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
-import List from '../components/NewsList';
+import {NewsList} from '../components/Templates';
 import pagelist from '../mockup/pagelist';
 import {sassWrapper} from '../utils/SassWrapper';
 
@@ -21,13 +21,11 @@ export const Readme = () => {
 
 export const Default = () => {
   const dataList = {
-    content: {
-      items: pagelist
-    },
+    content: pagelist,
     status: {
       error: boolean('loading', false),
       loading: boolean('loading', false)
     }
   };
-  return <List {...dataList} />;
+  return <NewsList {...dataList} />;
 };

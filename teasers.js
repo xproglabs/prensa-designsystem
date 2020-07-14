@@ -267,5 +267,119 @@ TeaserFeatured.propTypes = {
   })
 };
 
+var Block = function Block(props) {
+  var children = props.children,
+      xs = props.xs,
+      sm = props.sm,
+      md = props.md,
+      lg = props.lg,
+      xl = props.xl,
+      onClick = props.onClick;
+
+  var defProps = function defProps(prefix, props) {
+    var _classnames;
+
+    var checkAttr = function checkAttr(_props, name) {
+      return _props.align && _props.align.indexOf(name) > -1;
+    };
+
+    var direction = props && props.align && (props.align.indexOf('row') > -1 ? 'row' : 'col');
+    return classnames((_classnames = {}, _defineProperty(_classnames, "fx-col".concat(prefix), direction === 'col'), _defineProperty(_classnames, "fx-row".concat(prefix), direction === 'row'), _defineProperty(_classnames, "".concat(direction, "-between").concat(prefix), checkAttr(props, 'between')), _defineProperty(_classnames, "".concat(direction, "-bottom").concat(prefix), checkAttr(props, 'bottom')), _defineProperty(_classnames, "".concat(direction, "-center").concat(prefix), checkAttr(props, 'center')), _defineProperty(_classnames, "".concat(direction, "-evenly").concat(prefix), checkAttr(props, 'evenly')), _defineProperty(_classnames, "".concat(direction, "-left").concat(prefix), checkAttr(props, 'left')), _defineProperty(_classnames, "".concat(direction, "-middle").concat(prefix), checkAttr(props, 'middle')), _defineProperty(_classnames, "".concat(direction, "-right").concat(prefix), checkAttr(props, 'right')), _defineProperty(_classnames, "".concat(direction, "-top").concat(prefix), checkAttr(props, 'top')), _defineProperty(_classnames, "".concat(direction, "-wrap").concat(prefix), checkAttr(props, 'wrap')), _defineProperty(_classnames, "bg-".concat(props.bg).concat(prefix), props.bg), _defineProperty(_classnames, "fc-".concat(props.color).concat(prefix), props.color), _defineProperty(_classnames, "h-".concat(props.h).concat(prefix), props.h), _defineProperty(_classnames, "m-".concat(props.m).concat(prefix), props.m), _defineProperty(_classnames, "mt-".concat(props.mt).concat(prefix), props.mt), _defineProperty(_classnames, "mr-".concat(props.mr).concat(prefix), props.mr), _defineProperty(_classnames, "mb-".concat(props.mb).concat(prefix), props.mb), _defineProperty(_classnames, "ml-".concat(props.ml).concat(prefix), props.ml), _defineProperty(_classnames, "p-".concat(props.p).concat(prefix), props.p), _defineProperty(_classnames, "pt-".concat(props.pt).concat(prefix), props.pt), _defineProperty(_classnames, "pr-".concat(props.pr).concat(prefix), props.pr), _defineProperty(_classnames, "pb-".concat(props.pb).concat(prefix), props.pb), _defineProperty(_classnames, "pl-".concat(props.pl).concat(prefix), props.pl), _defineProperty(_classnames, "w-".concat(props.w).concat(prefix), props.w), _defineProperty(_classnames, "".concat(props.custom), props.custom), _classnames));
+  };
+
+  var dProps = defProps('', props);
+  var xsProps = xs && defProps('--xs', xs);
+  var smProps = sm && defProps('--sm', sm);
+  var mdProps = md && defProps('--md', md);
+  var lgProps = lg && defProps('--lg', lg);
+  var xlProps = xl && defProps('--xl', xl);
+  var classProps = {
+    className: classnames(dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block',
+    children: children,
+    onClick: onClick
+  };
+  return /*#__PURE__*/React.createElement("div", classProps);
+};
+
+Block.propTypes = {
+  align: PropTypes.string,
+  bg: PropTypes.string,
+  color: PropTypes.string,
+  h: PropTypes.string,
+  m: PropTypes.string,
+  mt: PropTypes.string,
+  mr: PropTypes.string,
+  mb: PropTypes.string,
+  ml: PropTypes.string,
+  p: PropTypes.string,
+  pt: PropTypes.string,
+  pr: PropTypes.string,
+  pb: PropTypes.string,
+  pl: PropTypes.string,
+  w: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]),
+  custom: PropTypes.string,
+  xs: PropTypes.object,
+  sm: PropTypes.object,
+  md: PropTypes.object,
+  lg: PropTypes.object,
+  xl: PropTypes.object,
+  onClick: PropTypes.func
+};
+Block.defaultProps = {};
+
+var NewsListTeaser = function NewsListTeaser(props) {
+  var _props$content = props.content,
+      path = _props$content.path,
+      image = _props$content.image,
+      subtitle = _props$content.subtitle,
+      name = _props$content.name;
+  var _props$status = props.status,
+      loading = _props$status.loading,
+      error = _props$status.error;
+
+  var getImageFromProps = function getImageFromProps() {
+    if (loading || error || !image) return /*#__PURE__*/React.createElement("div", {
+      className: "image-box skeleton"
+    });
+    return /*#__PURE__*/React.createElement(RenderImageBackground, {
+      data: image
+    });
+  };
+
+  var wrapperProps = {
+    align: 'row',
+    mb: '4',
+    'md': {
+      mb: '2'
+    }
+  };
+  var imageWrapperProps = {
+    align: 'row',
+    'md': {
+      p: '2'
+    }
+  };
+  var contentWrapperProps = {
+    p: '4',
+    'md': {
+      p: '2',
+      pr: '1'
+    }
+  };
+  return /*#__PURE__*/React.createElement(Block, wrapperProps, /*#__PURE__*/React.createElement(Block, imageWrapperProps, /*#__PURE__*/React.createElement("a", {
+    href: path,
+    "aria-label": "Imagem da mat\xE9ria ".concat(name)
+  }, getImageFromProps())), /*#__PURE__*/React.createElement(Block, contentWrapperProps, /*#__PURE__*/React.createElement("a", {
+    href: path,
+    "aria-label": "Abrir mat\xE9ria ".concat(name)
+  }, /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "title"
+  }, name)), subtitle && /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "title"
+  }, subtitle)));
+};
+
+exports.NewsListTeaser = NewsListTeaser;
 exports.Teaser = Teaser;
 exports.TeaserFeatured = TeaserFeatured;

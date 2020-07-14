@@ -451,6 +451,58 @@ TeaserFeatured.propTypes = {
   })
 };
 
+var NewsListTeaser = function NewsListTeaser(props) {
+  var _props$content = props.content,
+      path = _props$content.path,
+      image = _props$content.image,
+      subtitle = _props$content.subtitle,
+      name = _props$content.name;
+  var _props$status = props.status,
+      loading = _props$status.loading,
+      error = _props$status.error;
+
+  var getImageFromProps = function getImageFromProps() {
+    if (loading || error || !image) return /*#__PURE__*/React.createElement("div", {
+      className: "image-box skeleton"
+    });
+    return /*#__PURE__*/React.createElement(RenderImageBackground, {
+      data: image
+    });
+  };
+
+  var wrapperProps = {
+    align: 'row',
+    mb: '4',
+    'md': {
+      mb: '2'
+    }
+  };
+  var imageWrapperProps = {
+    align: 'row',
+    'md': {
+      p: '2'
+    }
+  };
+  var contentWrapperProps = {
+    p: '4',
+    'md': {
+      p: '2',
+      pr: '1'
+    }
+  };
+  return /*#__PURE__*/React.createElement(Block, wrapperProps, /*#__PURE__*/React.createElement(Block, imageWrapperProps, /*#__PURE__*/React.createElement("a", {
+    href: path,
+    "aria-label": "Imagem da mat\xE9ria ".concat(name)
+  }, getImageFromProps())), /*#__PURE__*/React.createElement(Block, contentWrapperProps, /*#__PURE__*/React.createElement("a", {
+    href: path,
+    "aria-label": "Abrir mat\xE9ria ".concat(name)
+  }, /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "title"
+  }, name)), subtitle && /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "title"
+  }, subtitle)));
+};
+
 var BreakingNews = function BreakingNews(props) {
   var _props$blockData = props.blockData,
       content = _props$blockData.content,
@@ -529,6 +581,33 @@ FourCol$1.propTypes = {
   })
 };
 
+var NewsList = function NewsList(_ref) {
+  var content = _ref.content,
+      status = _ref.status;
+
+  if (!content || content.length === 0) {
+    return /*#__PURE__*/React.createElement("pre", null, "Items not found");
+  }
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "news-list"
+  }, lodash.map(content, function (item, key) {
+    return /*#__PURE__*/React.createElement(NewsListTeaser, {
+      content: item,
+      status: status,
+      key: key
+    });
+  }));
+};
+
+NewsList.propTypes = {
+  content: PropTypes.array.isRequired,
+  status: PropTypes.shape({
+    error: PropTypes.bool,
+    loading: PropTypes.bool
+  })
+};
+
 exports.BreakingNews = BreakingNews;
 exports.FourCol = FourCol$1;
+exports.NewsList = NewsList;
 exports.ThreeCol = FourCol;

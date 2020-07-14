@@ -1,0 +1,13 @@
+@use '../../styles' as *;
+
+.image-box {
+  @include w(280px);
+  @include h(210px);
+  @media (max-width: $md) {
+    @include w(64px);
+    @include h(64px);
+  }
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
