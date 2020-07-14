@@ -27,9 +27,9 @@ export const Default = () => {
   return (
     <>
       <Block {...propsBlock}>
-        <span>teste</span>
-        <span>teste</span>
-        <span>teste</span>
+        <Block>teste</Block>
+        <Block>teste</Block>
+        <Block>teste</Block>
       </Block>
     </>
   );

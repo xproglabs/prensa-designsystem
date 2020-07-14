@@ -95,23 +95,3 @@
     }
   }
 }
-.fx-col {
-  display: flex;
-  flex-direction: column;
-}
-.fx-row {
-  display: flex;
-  flex-direction: row;
-}
-@each $q in $queries {
-  $querie: #{nth($q, 1)};
-  $breakp: #{nth($q, 2)};
-  @media(min-width: #{$breakp}) {
-    .fx-col#{$querie} {
-      flex-direction: column;
-    }
-    .fx-row#{$querie} {
-      flex-direction: row;
-    }
-  }
-}
