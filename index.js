@@ -25,6 +25,40 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
 var Block = function Block(props) {
   var children = props.children,
       xs = props.xs,
@@ -42,7 +76,7 @@ var Block = function Block(props) {
     };
 
     var direction = props && props.align && (props.align.indexOf('row') > -1 ? 'row' : 'col');
-    return classnames((_classnames = {}, _defineProperty(_classnames, "fx-col".concat(prefix), direction === 'col'), _defineProperty(_classnames, "fx-row".concat(prefix), direction === 'row'), _defineProperty(_classnames, "".concat(direction, "-between").concat(prefix), checkAttr(props, 'between')), _defineProperty(_classnames, "".concat(direction, "-bottom").concat(prefix), checkAttr(props, 'bottom')), _defineProperty(_classnames, "".concat(direction, "-center").concat(prefix), checkAttr(props, 'center')), _defineProperty(_classnames, "".concat(direction, "-evenly").concat(prefix), checkAttr(props, 'evenly')), _defineProperty(_classnames, "".concat(direction, "-left").concat(prefix), checkAttr(props, 'left')), _defineProperty(_classnames, "".concat(direction, "-middle").concat(prefix), checkAttr(props, 'middle')), _defineProperty(_classnames, "".concat(direction, "-right").concat(prefix), checkAttr(props, 'right')), _defineProperty(_classnames, "".concat(direction, "-top").concat(prefix), checkAttr(props, 'top')), _defineProperty(_classnames, "".concat(direction, "-wrap").concat(prefix), checkAttr(props, 'wrap')), _defineProperty(_classnames, "bg-".concat(props.bg).concat(prefix), props.bg), _defineProperty(_classnames, "fc-".concat(props.color).concat(prefix), props.color), _defineProperty(_classnames, "h-".concat(props.h).concat(prefix), props.h), _defineProperty(_classnames, "m-".concat(props.m).concat(prefix), props.m), _defineProperty(_classnames, "mt-".concat(props.mt).concat(prefix), props.mt), _defineProperty(_classnames, "mr-".concat(props.mr).concat(prefix), props.mr), _defineProperty(_classnames, "mb-".concat(props.mb).concat(prefix), props.mb), _defineProperty(_classnames, "ml-".concat(props.ml).concat(prefix), props.ml), _defineProperty(_classnames, "p-".concat(props.p).concat(prefix), props.p), _defineProperty(_classnames, "pt-".concat(props.pt).concat(prefix), props.pt), _defineProperty(_classnames, "pr-".concat(props.pr).concat(prefix), props.pr), _defineProperty(_classnames, "pb-".concat(props.pb).concat(prefix), props.pb), _defineProperty(_classnames, "pl-".concat(props.pl).concat(prefix), props.pl), _defineProperty(_classnames, "w-".concat(props.w).concat(prefix), props.w), _defineProperty(_classnames, "".concat(props.style), props.style), _classnames));
+    return classnames((_classnames = {}, _defineProperty(_classnames, "fx-col".concat(prefix), direction === 'col'), _defineProperty(_classnames, "fx-row".concat(prefix), direction === 'row'), _defineProperty(_classnames, "".concat(direction, "-between").concat(prefix), checkAttr(props, 'between')), _defineProperty(_classnames, "".concat(direction, "-bottom").concat(prefix), checkAttr(props, 'bottom')), _defineProperty(_classnames, "".concat(direction, "-center").concat(prefix), checkAttr(props, 'center')), _defineProperty(_classnames, "".concat(direction, "-evenly").concat(prefix), checkAttr(props, 'evenly')), _defineProperty(_classnames, "".concat(direction, "-left").concat(prefix), checkAttr(props, 'left')), _defineProperty(_classnames, "".concat(direction, "-middle").concat(prefix), checkAttr(props, 'middle')), _defineProperty(_classnames, "".concat(direction, "-right").concat(prefix), checkAttr(props, 'right')), _defineProperty(_classnames, "".concat(direction, "-top").concat(prefix), checkAttr(props, 'top')), _defineProperty(_classnames, "".concat(direction, "-wrap").concat(prefix), checkAttr(props, 'wrap')), _defineProperty(_classnames, "bg-".concat(props.bg).concat(prefix), props.bg), _defineProperty(_classnames, "fc-".concat(props.color).concat(prefix), props.color), _defineProperty(_classnames, "h-".concat(props.h).concat(prefix), props.h), _defineProperty(_classnames, "m-".concat(props.m).concat(prefix), props.m), _defineProperty(_classnames, "mt-".concat(props.mt).concat(prefix), props.mt), _defineProperty(_classnames, "mr-".concat(props.mr).concat(prefix), props.mr), _defineProperty(_classnames, "mb-".concat(props.mb).concat(prefix), props.mb), _defineProperty(_classnames, "ml-".concat(props.ml).concat(prefix), props.ml), _defineProperty(_classnames, "p-".concat(props.p).concat(prefix), props.p), _defineProperty(_classnames, "pt-".concat(props.pt).concat(prefix), props.pt), _defineProperty(_classnames, "pr-".concat(props.pr).concat(prefix), props.pr), _defineProperty(_classnames, "pb-".concat(props.pb).concat(prefix), props.pb), _defineProperty(_classnames, "pl-".concat(props.pl).concat(prefix), props.pl), _defineProperty(_classnames, "w-".concat(props.w).concat(prefix), props.w), _defineProperty(_classnames, "".concat(props.custom), props.custom), _classnames));
   };
 
   var dProps = defProps('', props);
@@ -76,7 +110,7 @@ Block.propTypes = {
   pl: PropTypes.string,
   w: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]),
-  style: PropTypes.string,
+  custom: PropTypes.string,
   xs: PropTypes.object,
   sm: PropTypes.object,
   md: PropTypes.object,
@@ -349,8 +383,14 @@ Subject.propTypes = {
 };
 
 var Tags = function Tags(props) {
-  var content = props.content,
+  var custom = props.custom,
+      content = props.content,
       _onClick = props.onClick;
+
+  var prosWrap = _objectSpread2({
+    align: 'row wrap',
+    w: '100p'
+  }, custom);
 
   var renderTag = function renderTag(tag, k) {
     return /*#__PURE__*/React.createElement("div", {
@@ -364,15 +404,13 @@ var Tags = function Tags(props) {
     }, tag));
   };
 
-  return /*#__PURE__*/React.createElement(Block, {
-    row: true,
-    custom: "wrap"
-  }, lodash.map(content, function (item, k) {
+  return /*#__PURE__*/React.createElement(Block, prosWrap, lodash.map(content, function (item, k) {
     return renderTag(item, k);
   }));
 };
 
 Tags.propTypes = {
+  custom: PropTypes.object,
   content: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired
 };
@@ -387,7 +425,7 @@ var Image = function Image(_ref) {
   var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
   return /*#__PURE__*/React.createElement(Block, {
     custom: "article-image-box",
-    width: "full"
+    width: "100p"
   }, /*#__PURE__*/React.createElement("img", {
     className: "image-article",
     src: imagePath,
@@ -596,37 +634,35 @@ var Article = function Article(_ref) {
   var updatedAt = content['time-modified'];
   var propsArticle = {
     align: 'center',
-    style: 'article'
+    custom: 'article'
   };
   var propsArticleHead = {
     align: 'center',
-    style: 'article-head',
+    custom: 'article-head',
     w: '100p'
   };
   var propsArticleData = {
     align: 'center',
-    style: 'article-data',
+    custom: 'article-data',
     w: '100p'
   };
   var propsArticleBody = {
     align: 'center',
-    style: 'article-body',
+    custom: 'article-body',
     w: '100p'
   };
   var propsArticleMedia = {
     align: 'row between middle',
-    style: 'article-body has-border-bottom',
+    custom: 'article-body has-border-bottom',
     w: '100p'
   };
   var propsArticleAuthor = {
     align: 'col',
-    style: '',
+    custom: '',
     w: '100p'
   };
-  var propsArticleTag = {
-    align: 'row wrap',
-    style: 'article-tag',
-    w: '100p'
+  var customArticleTag = {
+    custom: 'article-tag'
   };
   return /*#__PURE__*/React.createElement(Block, propsArticle, /*#__PURE__*/React.createElement(Block, propsArticleHead, /*#__PURE__*/React.createElement(Grid, {
     columns: 12
@@ -657,10 +693,11 @@ var Article = function Article(_ref) {
     embeds: embeds
   }))), /*#__PURE__*/React.createElement(Grid, {
     columns: 10
-  }, /*#__PURE__*/React.createElement(Block, propsArticleTag, /*#__PURE__*/React.createElement(Tags, {
+  }, /*#__PURE__*/React.createElement(Tags, {
+    custom: customArticleTag,
     content: metadata,
     onClick: handleTagClick
-  }))));
+  })));
 };
 
 Article.propTypes = {
@@ -781,7 +818,7 @@ var SideMenu = function SideMenu(_ref) {
     custom: "menu-opacity",
     onClick: functions.onCloseModal
   }), /*#__PURE__*/React.createElement(Block, {
-    p: "md",
+    p: "4",
     custom: "menu-left",
     bgColor: "white"
   }, children && children));
@@ -818,7 +855,7 @@ var SideMenuItems = function SideMenuItems(_ref) {
     var hasSubitems = item.subitems.length > 0;
     return /*#__PURE__*/React.createElement(Block, {
       custom: "listitem",
-      mt: "md"
+      mt: "4"
     }, /*#__PURE__*/React.createElement(Block, {
       custom: "item",
       onClick: functions.onMenuItem
@@ -859,12 +896,10 @@ var Topbar = function Topbar(_ref) {
       CenterContent = content.CenterContent,
       RightContent = content.RightContent;
   return /*#__PURE__*/React.createElement(Block, {
+    align: "row middle between",
+    bg: "primary-1",
     custom: "topbar",
-    alignBetween: true,
-    alignMiddle: true,
-    bgColor: "primary-1",
-    row: true,
-    width: "full"
+    width: "100p"
   }, /*#__PURE__*/React.createElement(Block, null, LeftContent && /*#__PURE__*/React.createElement(LeftContent, {
     functions: functions
   })), /*#__PURE__*/React.createElement(Block, null, CenterContent && /*#__PURE__*/React.createElement(CenterContent, null)), /*#__PURE__*/React.createElement(Block, null, RightContent && /*#__PURE__*/React.createElement(RightContent, null)));
@@ -874,9 +909,9 @@ var LeftMenuIcon = function LeftMenuIcon(_ref2) {
   var functions = _ref2.functions;
   return /*#__PURE__*/React.createElement(Block, {
     custom: "menu-left-icon",
-    fColor: "neutral-8",
-    onClick: functions.handleMenuClick,
-    pl: "md"
+    fc: "neutral-8",
+    pl: "4",
+    onClick: functions.handleMenuClick
   }, "MENU");
 };
 

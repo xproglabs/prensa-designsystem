@@ -5,8 +5,10 @@
     $dir: #{nth($item, 1)};
     $prop: #{nth($item, 2)};
     $ai: #{nth($item, 3)};
+    $jc: #{nth($item, 4)};
     .#{$dir}-#{$prop}#{$querie} {
-      flex-wrap: $ai;
+      align-items: $ai;
+      justify-content: $jc;
     }
   }
 }
