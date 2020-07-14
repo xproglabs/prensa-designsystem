@@ -30,3 +30,14 @@ $space-unit: 8px;
 $size-pixel: 24px;
 
 $sizepix-it: (0 1 2 3 4 5 6 7 8 9 10);
+
+$space-size-1: calc(#{$space-unit} * 1);
+$space-size-2: calc(#{$space-unit} * 2);
+$space-size-3: calc(#{$space-unit} * 3);
+$space-size-4: calc(#{$space-unit} * 4);
+$space-size-5: calc(#{$space-unit} * 5);
+$space-size-6: calc(#{$space-unit} * 6);
+$space-size-7: calc(#{$space-unit} * 7);
+$space-size-8: calc(#{$space-unit} * 8);
+$space-size-9: calc(#{$space-unit} * 9);
+$space-size-10: calc(#{$space-unit} * 10);

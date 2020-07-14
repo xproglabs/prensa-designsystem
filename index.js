@@ -76,7 +76,7 @@ Block.propTypes = {
   pl: PropTypes.string,
   w: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]),
-  custom: PropTypes.string,
+  style: PropTypes.string,
   xs: PropTypes.object,
   sm: PropTypes.object,
   md: PropTypes.object,
