@@ -9,6 +9,7 @@ const Topbar = ({content, functions}) => {
     <Block 
       align="row middle between"
       bg="primary-1" 
+      color="white" 
       custom="topbar" 
       width="100p">
       <Block>

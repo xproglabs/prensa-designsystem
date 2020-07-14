@@ -17,6 +17,9 @@ export const MainMenu = () => {
   const menuLeftItemsProps = {
     content: {
       items: navigation.side
+    },
+    functions: {
+      onMenuItem: () => null
     }
   };
   const dataSideMenu = {

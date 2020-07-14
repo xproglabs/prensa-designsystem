@@ -12,9 +12,9 @@ const SideMenu = ({children, functions, status}) => {
         onClick={functions.onCloseModal}>
       </Block>
       <Block 
-        p="4"
+        bg="white"
         custom="menu-left" 
-        bgColor="white">
+        p="4">
         {children && children}
       </Block>
     </Block>
