@@ -16,12 +16,13 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
   const createdAt = content['time-created'];
   const updatedAt = content['time-modified'];
 
-  const propsArticle = {align: 'center', style: 'article'};
-  const propsArticleHead = {align: 'center', style: 'article-head', w: '100p'};
-  const propsArticleData = {align: 'center', style: 'article-data', w: '100p'};
-  const propsArticleBody = {align: 'center', style: 'article-body', w: '100p'};
-  const propsArticleMedia = {align: 'row between middle', style: 'article-body has-border-bottom', w: '100p'};
-  const propsArticleAuthor = {align: 'col', style: '', w: '100p'};
+  const propsArticle = {align: 'center', custom: 'article'};
+  const propsArticleHead = {align: 'center', custom: 'article-head', w: '100p'};
+  const propsArticleData = {align: 'center', custom: 'article-data', w: '100p'};
+  const propsArticleBody = {align: 'center', custom: 'article-body', w: '100p'};
+  const propsArticleMedia = {align: 'row between middle', custom: 'article-body has-border-bottom', w: '100p'};
+  const propsArticleAuthor = {align: 'col', custom: '', w: '100p'};
+  const customArticleTag = {custom: 'article-tag'};
   return (
     <Block {...propsArticle}>
       <Block {...propsArticleHead}>
@@ -51,11 +52,9 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
           <TextBody content={text} embeds={embeds} />
         </Grid>
       </Block>
-      <Block row>
-        <Grid columns={10}>
-          <Tags content={metadata} onClick={handleTagClick}/>
-        </Grid>
-      </Block>
+      <Grid columns={10}>
+        <Tags custom={customArticleTag} content={metadata} onClick={handleTagClick}/>
+      </Grid>
     </Block>
   );
 };

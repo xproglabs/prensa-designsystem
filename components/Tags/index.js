@@ -7,7 +7,8 @@ import Typography from '../Typography';
 
 
 const Tags = props => {
-  const {content, onClick} = props;
+  const {custom, content, onClick} = props;
+  const prosWrap = {align: 'row wrap', w: '100p', ...custom};
 
   const renderTag = (tag, k) => (
     <div key={k} className='tag' onClick={() => onClick(tag)}>
@@ -16,13 +17,14 @@ const Tags = props => {
   );
 
   return (
-    <Block row custom='wrap'>
+    <Block {...prosWrap}>
       {map(content, (item, k) => renderTag(item, k))}
     </Block>
   );
 };
 
 Tags.propTypes = {
+  custom: PropTypes.object,
   content: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired
 };
