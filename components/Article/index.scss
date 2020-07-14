@@ -8,8 +8,8 @@
   .label {
     @include bg($color-neutral-10);
     @include ff($font-secondary);
-    @include px($space-size-2);
-    @include py($space-size-2);
+    @include px(calc($space-unit * 2));
+    @include py(calc($space-unit * 2));
   }
 }
 

@@ -6,7 +6,7 @@
   @include ff($font-primary);
   @extend %bold;
   @include mt(0px);
-  @include mb($space-size-1);
+  @include mb(calc($space-unit * 1));
 }
 .title-sm {
   @include fs(24px);
@@ -15,7 +15,7 @@
   @include mb(8px);
   @extend %bold;
   @include mt(0px);
-  @include mb($space-size-1);
+  @include mb(calc($space-unit * 1));
 }
 .title-md {
   @include fs(32px);
@@ -23,7 +23,7 @@
   @include ff($font-primary);
   @extend %bold;
   @include mt(0px);
-  @include mb($space-size-1);
+  @include mb(calc($space-unit * 1));
 }
 .title-lg {
   @include fs(40px);
@@ -31,7 +31,7 @@
   @include ff($font-primary);
   @extend %bold;
   @include mt(0px);
-  @include mb($space-size-1);
+  @include mb(calc($space-unit * 1));
 }
 .title-xl {
   @include fs(48px);
@@ -39,7 +39,7 @@
   @include ff($font-primary);
   @extend %bold;
   @include mt(0px);
-  @include mb($space-size-1);
+  @include mb(calc($space-unit * 1));
 }
 
 .subtitle-sm {
@@ -70,8 +70,8 @@
   @include ff($article-title-ff);
   @include fc($article-title-fc);
   @extend %bold;
-  @include mt($space-size-3);
-  @include mb($space-size-2);
+  @include mt($space-unit * 3);
+  @include mb($space-unit * 2);
   @media (min-width: $lg) {
     @include fs($article-title-fs-lg);
     @include lh($article-title-lh-lg);

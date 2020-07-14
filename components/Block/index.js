@@ -93,7 +93,8 @@ Block.propTypes = {
 
 Block.defaultProps = {
   align: [],
-  p: null
+  p: '0',
+  m: '0'
 };
 
 export default Block;

@@ -9,8 +9,8 @@
 .filled {
   @include bg($color-primary-1);
   @include fc($color-white);
-  @include px($space-size-1);
-  @include py($space-size-0);
+  @include px(calc($space-unit * 1));
+  @include py(0);
   @include r(5px);
   @include mb(4px);
 }

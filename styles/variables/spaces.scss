@@ -1,4 +1,5 @@
-@use '../../styles/variables/queries.scss' as *;
+@use './creators.scss' as *;
+@use './queries.scss' as *;
 
 // name ai jc
 @include classes-align((
@@ -21,8 +22,8 @@
 ));
 
 @include classes-side((
-  'm' 'margin' $size-space,
-  'p' 'padding' $size-space,
+  'm' 'margin' $space-unit,
+  'p' 'padding' $space-unit,
 ));
 
 @include classes-incremental((
@@ -30,36 +31,5 @@
   'w' 'width' $size-pixel,
 ));
 
-$space-size-0: 4px !default;
-$space-size-1: 8px !default;
-$space-size-2: 16px !default;
-$space-size-3: 24px !default;
-$space-size-4: 32px !default;
-$space-size-5: 40px !default;
-$space-size-6: 48px !default;
-$space-size-7: 56px !default;
-$space-size-8: 64px !default;
-$space-size-9: 72px !default;
-$space-size-10: 80px !default;
-$space-size-11: 88px !default;
-$space-size-12: 96px !default;
-$space-size-13: 104px !default;
-$space-size-14: 112px !default;
-$space-size-15: 120px !default;
-$space-size-16: 128px !default;
-$space-size-17: 136px !default;
-$space-size-18: 144px !default;
-$space-size-19: 152px !default;
-$space-size-20: 160px !default;
-$space-size-21: 168px !default;
-$space-size-22: 176px !default;
-$space-size-23: 184px !default;
-$space-size-24: 192px !default;
-$space-size-25: 200px !default;
-$space-size-26: 208px !default;
-$space-size-27: 216px !default;
-$space-size-28: 224px !default;
-$space-size-29: 232px !default;
-
 //TOKENS
-$article-paragraph-space: $space-size-7 !default;
+$article-paragraph-space: calc($space-unit * 7) !default;

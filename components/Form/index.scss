@@ -1,7 +1,7 @@
 @use '../../styles' as *;
 
 .form-field {
-  @include mt($space-size-2);
+  @include mt(calc($space-unit * 2));
   @include w(100%);
   input,
   textarea {

@@ -6,7 +6,7 @@
   .image-box {
     @include h(160px);
     @include w(100%);
-    @include mb($space-size-3);
+    @include mb(calc($space-unit * 3));
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;
