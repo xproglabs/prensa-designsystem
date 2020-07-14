@@ -20,7 +20,7 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
   const propsArticleHead = {align: 'center', custom: 'article-head', w: '100p'};
   const propsArticleData = {align: 'center', custom: 'article-data', w: '100p'};
   const propsArticleBody = {align: 'center', custom: 'article-body', w: '100p'};
-  const propsArticleMedia = {align: 'row between middle', custom: 'article-body has-border-bottom', w: '100p'};
+  const propsArticleMedia = {align: 'row between middle', custom: 'article-media has-border-bottom', mb: '4', w: '100p'};
   const propsArticleAuthor = {align: 'col', custom: '', w: '100p'};
   const customArticleTag = {custom: 'article-tag'};
   return (
