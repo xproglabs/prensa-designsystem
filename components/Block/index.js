@@ -4,23 +4,23 @@ import React from 'react';
 
 const Block = (props) => {
 
-  const {xs, sm, md, lg, xl, onClick} = props;
+  const {children, xs, sm, md, lg, xl, onClick} = props;
 
   const defProps = (prefix, props) => {
 
     const checkAttr = (_props, name) => 
       _props.align && 
-      _props.align.indexOf(name) > -1;
+        _props.align.indexOf(name) > -1;
     
     const direction = 
       props && 
         props.align && 
-          props.align.indexOf('row') > -1 ?
-        'row' : 'col';
+          (props.align.indexOf('row') > -1 ?
+            'row' : 'col');
     
     return classnames({
-      [`fx-row${prefix}`]: direction === 'row',
       [`fx-col${prefix}`]: direction === 'col',
+      [`fx-row${prefix}`]: direction === 'row',
       [`${direction}-between${prefix}`]: checkAttr(props, 'between'),
       [`${direction}-bottom${prefix}`]: checkAttr(props, 'bottom'),
       [`${direction}-center${prefix}`]: checkAttr(props, 'center'),
@@ -43,7 +43,7 @@ const Block = (props) => {
       [`pb-${props.pb}${prefix}`]: props.pb,
       [`pl-${props.pl}${prefix}`]: props.pl,
       [`w-${props.w}${prefix}`]: props.w,
-      [`${props.custom}`]: props.custom,
+      [`${props.style}`]: props.style,
     });
   };
 
@@ -54,13 +54,14 @@ const Block = (props) => {
   const lgProps = lg && defProps('--lg', lg);
   const xlProps = xl && defProps('--xl', xl);
 
-  const classProps = [dProps, xsProps, smProps, mdProps, lgProps, xlProps];
-  return (
-    <div className={classnames(...classProps)} onClick={onClick}>
-      {props.children && props.children}
-    </div>
-  );
+  const classProps = {
+    className: classnames(dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block', 
+    children, 
+    onClick
+  };
+  return <div {...classProps}></div>;
 };
+
 Block.propTypes = {
   align: PropTypes.string, 
   bg: PropTypes.string, 
@@ -82,7 +83,7 @@ Block.propTypes = {
     PropTypes.object,
     PropTypes.node
   ]),
-  custom: PropTypes.string, 
+  style: PropTypes.string, 
   xs: PropTypes.object,
   sm: PropTypes.object,
   md: PropTypes.object,
@@ -91,10 +92,6 @@ Block.propTypes = {
   onClick: PropTypes.func
 };
 
-Block.defaultProps = {
-  align: [],
-  p: '0',
-  m: '0'
-};
+Block.defaultProps = {};
 
 export default Block;

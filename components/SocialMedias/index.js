@@ -8,14 +8,15 @@ const SocialMedias = props => {
   const {content} = props;
 
   if (!content) return null;
-
+  const propsSocialMedia = {align: 'row evenly'};
+  const propsSocialCirlce = {ml: '1', style: 'social-circle'};
   return (
-    <Block row>
+    <Block {...propsSocialMedia}>
       {map(content, (item, k) => (
         <a href={item.path} key={k}>
-          <div className='social-circle' >
+          <Block {...propsSocialCirlce}>
             {item.icon}
-          </div>
+          </Block>
         </a>
       ))}
     </Block>

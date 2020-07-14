@@ -16,19 +16,25 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
   const createdAt = content['time-created'];
   const updatedAt = content['time-modified'];
 
+  const propsArticle = {align: 'center', style: 'article'};
+  const propsArticleHead = {align: 'center', style: 'article-head', w: '100p'};
+  const propsArticleData = {align: 'center', style: 'article-data', w: '100p'};
+  const propsArticleBody = {align: 'center', style: 'article-body', w: '100p'};
+  const propsArticleMedia = {align: 'row between middle', style: 'article-body has-border-bottom', w: '100p'};
+  const propsArticleAuthor = {align: 'col', style: '', w: '100p'};
   return (
-    <Block alignCenter style='article'>
-      <Block alignCenter width="full">
+    <Block {...propsArticle}>
+      <Block {...propsArticleHead}>
         <Grid columns={12}>
           <Subject filled>{subject}</Subject>
           <Typography tokenVariant='article-title'>{title}</Typography>
           <Typography tokenVariant='article-subtitle'>{subtitle}</Typography>
         </Grid>
       </Block>
-      <Block alignCenter width="full">
+      <Block {...propsArticleData}>
         <Grid columns={12}>
-          <Block row alignBetween alignMiddle custom='has-border-bottom'>
-            <Block column>
+          <Block {...propsArticleMedia}>
+            <Block {...propsArticleAuthor}>
               <Typography tokenVariant='system-bold'>{author}</Typography>
               <Typography tokenVariant='system'>Criado em: {createdAt}</Typography>
               {updatedAt && <Typography tokenVariant='system'>Atualizado em: {updatedAt}</Typography>}
@@ -37,7 +43,7 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
           </Block>
         </Grid>
       </Block>
-      <Block alignCenter width="full">
+      <Block {...propsArticleBody}>
         <Grid columns={12}>
           {images['image-contentId'] && <Image value={images} />}
         </Grid>
