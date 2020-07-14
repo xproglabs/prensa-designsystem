@@ -21,6 +21,11 @@
   'row' 'top' 'flex-start' '',
 ));
 
+@include classes-wrap((
+  'row' 'flex-wrap' 'wrap',
+  'row' 'flex-wrap' 'nowrap',
+));
+
 @include classes-side((
   'm' 'margin' $space-unit,
   'p' 'padding' $space-unit,

@@ -5,10 +5,8 @@
     $dir: #{nth($item, 1)};
     $prop: #{nth($item, 2)};
     $ai: #{nth($item, 3)};
-    $jc: #{nth($item, 4)};
     .#{$dir}-#{$prop}#{$querie} {
-      align-items: $ai;
-      justify-content: $jc;
+      flex-wrap: $ai;
     }
   }
 }
@@ -19,6 +17,26 @@
     $breakp: #{nth($q, 2)};
     @media(min-width: #{$breakp}) {
       @include classes-align-render($list, $querie);
+    }
+  }
+}
+@mixin classes-wrap-render($list, $querie) {
+  @each $item in $list {
+    $dir: #{nth($item, 1)};
+    $prop: #{nth($item, 2)};
+    $wrap: #{nth($item, 3)};
+    .#{$dir}-#{$wrap}#{$querie} {
+      #{$prop}: $wrap;
+    }
+  }
+}
+@mixin classes-wrap($list) {
+  @include classes-wrap-render($list, '');
+  @each $q in $queries {
+    $querie: #{nth($q, 1)};
+    $breakp: #{nth($q, 2)};
+    @media(min-width: #{$breakp}) {
+      @include classes-wrap-render($list, $querie);
     }
   }
 }

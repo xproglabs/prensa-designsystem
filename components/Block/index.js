@@ -29,6 +29,7 @@ const Block = (props) => {
       [`${direction}-middle${prefix}`]: checkAttr(props, 'middle'),
       [`${direction}-right${prefix}`]: checkAttr(props, 'right'),
       [`${direction}-top${prefix}`]: checkAttr(props, 'top'),
+      [`${direction}-wrap${prefix}`]: checkAttr(props, 'wrap'),
       [`bg-${props.bg}${prefix}`]: props.bg,
       [`fc-${props.color}${prefix}`]: props.color,
       [`h-${props.h}${prefix}`]: props.h,
