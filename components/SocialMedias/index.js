@@ -9,7 +9,7 @@ const SocialMedias = props => {
 
   if (!content) return null;
   const propsSocialMedia = {align: 'row evenly'};
-  const propsSocialCirlce = {ml: '1', style: 'social-circle'};
+  const propsSocialCirlce = {mr: '1', custom: 'social-circle', 'md': {mr: '0', ml: '1'}};
   return (
     <Block {...propsSocialMedia}>
       {map(content, (item, k) => (

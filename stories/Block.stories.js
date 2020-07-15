@@ -25,13 +25,10 @@ export const Default = () => {
   };
 
   return (
-    <>
-      <Block {...propsBlock}>
-        <Block>teste</Block>
-        <Block>teste</Block>
-        <Block>teste</Block>
-      </Block>
-    </>
+    <Block {...propsBlock}>
+      <Block>teste</Block>
+      <Block>teste</Block>
+      <Block>teste</Block>
+    </Block>
   );
-
 };

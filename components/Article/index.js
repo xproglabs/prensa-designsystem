@@ -20,7 +20,7 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
   const propsArticleHead = {align: 'center', custom: 'article-head', w: '100p'};
   const propsArticleData = {align: 'center', custom: 'article-data', w: '100p'};
   const propsArticleBody = {align: 'center', custom: 'article-body', w: '100p'};
-  const propsArticleMedia = {align: 'row between middle', custom: 'article-media has-border-bottom', mb: '4', w: '100p'};
+  const propsArticleInfo = {align: 'column left middle', custom: 'article-media has-border-bottom', mb: '4', w: '100p', 'md': {align: 'row between middle'}};
   const propsArticleAuthor = {align: 'col', custom: '', w: '100p'};
   const customArticleTag = {custom: 'article-tag'};
   return (
@@ -34,7 +34,7 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
       </Block>
       <Block {...propsArticleData}>
         <Grid columns={12}>
-          <Block {...propsArticleMedia}>
+          <Block {...propsArticleInfo}>
             <Block {...propsArticleAuthor}>
               <Typography tokenVariant='system-bold'>{author}</Typography>
               <Typography tokenVariant='system'>Criado em: {createdAt}</Typography>
