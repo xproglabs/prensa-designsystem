@@ -64,35 +64,57 @@ const Block = (props) => {
   return <div {...classProps}></div>;
 };
 
+const propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
 Block.propTypes = {
-  align: PropTypes.string, 
-  bg: PropTypes.string, 
+  align: PropTypes.string,
+  bg: PropTypes.string,
   color: PropTypes.string, 
   cursor: PropTypes.string, 
-  h: PropTypes.string, 
-  m: PropTypes.string, 
-  mt: PropTypes.string, 
-  mr: PropTypes.string, 
-  mb: PropTypes.string, 
-  ml: PropTypes.string, 
-  p: PropTypes.string, 
-  pt: PropTypes.string, 
-  pr: PropTypes.string, 
-  pb: PropTypes.string, 
-  pl: PropTypes.string, 
-  w: PropTypes.string, 
+  m: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  mt: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  mr: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  mb: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  ml: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  p: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  pt: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  pr: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  pb: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  pl: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  xs: PropTypes.object,
+  sm: PropTypes.object,
+  md: PropTypes.object,
+  lg: PropTypes.object,
+  xl: PropTypes.object,
   children: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object,
     PropTypes.node
   ]),
   custom: PropTypes.string, 
-  xs: PropTypes.object,
-  sm: PropTypes.object,
-  md: PropTypes.object,
-  lg: PropTypes.object,
-  xl: PropTypes.object,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  w: PropTypes.string,
+  h: PropTypes.string,
 };
 
 Block.defaultProps = {};
