@@ -37,6 +37,11 @@ $article-tag-fc: $color-primary-2 !default;
 $system-fc: $color-neutral-4 !default;
 
 @include classes-simple((
+  'cursor-default' 'cursor' 'default',
+  'cursor-pointer' 'cursor' 'pointer',
+));
+
+@include classes-simple((
   'fc-primary-1' 'color' $color-primary-1,
   'fc-white' 'color' $color-white,
   'fc-black' 'color' $color-black,

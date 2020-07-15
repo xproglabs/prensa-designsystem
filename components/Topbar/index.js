@@ -29,6 +29,7 @@ const LeftMenuIcon = ({functions}) => {
   return (
     <Block 
       custom="menu-left-icon" 
+      cursor="pointer"
       fc="neutral-8" 
       pl="4"
       onClick={functions.handleMenuClick}>
