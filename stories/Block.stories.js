@@ -13,14 +13,16 @@ export default {
 export const Default = () => {
 
   const propsBlock = {
-    align: 'col center evenly',
+    align: 'col center between',
     bg: 'primary-2',
     color: 'white',
     h: '10',
     pl: '6',
     w: '100p-6',
     'md': {
-      align: 'row center evenly'
+      pl: '0',
+      align: 'row between',
+      w: '100p'
     }
   };
 

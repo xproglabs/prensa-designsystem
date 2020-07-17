@@ -93,31 +93,32 @@ var Block = function Block(props) {
   return /*#__PURE__*/React.createElement("div", classProps);
 };
 
+var propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 Block.propTypes = {
   align: PropTypes.string,
   bg: PropTypes.string,
   color: PropTypes.string,
   cursor: PropTypes.string,
-  h: PropTypes.string,
-  m: PropTypes.string,
-  mt: PropTypes.string,
-  mr: PropTypes.string,
-  mb: PropTypes.string,
-  ml: PropTypes.string,
-  p: PropTypes.string,
-  pt: PropTypes.string,
-  pr: PropTypes.string,
-  pb: PropTypes.string,
-  pl: PropTypes.string,
-  w: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]),
-  custom: PropTypes.string,
+  m: PropTypes.oneOf([].concat(propTypesSizes)),
+  mt: PropTypes.oneOf([].concat(propTypesSizes)),
+  mr: PropTypes.oneOf([].concat(propTypesSizes)),
+  mb: PropTypes.oneOf([].concat(propTypesSizes)),
+  ml: PropTypes.oneOf([].concat(propTypesSizes)),
+  p: PropTypes.oneOf([].concat(propTypesSizes)),
+  pt: PropTypes.oneOf([].concat(propTypesSizes)),
+  pr: PropTypes.oneOf([].concat(propTypesSizes)),
+  pb: PropTypes.oneOf([].concat(propTypesSizes)),
+  pl: PropTypes.oneOf([].concat(propTypesSizes)),
   xs: PropTypes.object,
   sm: PropTypes.object,
   md: PropTypes.object,
   lg: PropTypes.object,
   xl: PropTypes.object,
-  onClick: PropTypes.func
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]),
+  custom: PropTypes.string,
+  onClick: PropTypes.func,
+  w: PropTypes.string,
+  h: PropTypes.string
 };
 Block.defaultProps = {};
 
@@ -250,8 +251,12 @@ var SocialMedias = function SocialMedias(props) {
     align: 'row evenly'
   };
   var propsSocialCirlce = {
-    ml: '1',
-    style: 'social-circle'
+    mr: '1',
+    custom: 'social-circle',
+    'md': {
+      mr: '0',
+      ml: '1'
+    }
   };
   return /*#__PURE__*/React.createElement(Block, propsSocialMedia, lodash.map(content, function (item, k) {
     return /*#__PURE__*/React.createElement("a", {
@@ -621,6 +626,7 @@ var _PropTypes$shape;
 
 var Article = function Article(_ref) {
   var content = _ref.content,
+      customProps = _ref.customProps,
       embeds = _ref.embeds,
       handleTagClick = _ref.handleTagClick,
       socialMedias = _ref.socialMedias;
@@ -652,11 +658,14 @@ var Article = function Article(_ref) {
     custom: 'article-body',
     w: '100p'
   };
-  var propsArticleMedia = {
-    align: 'row between middle',
+  var propsArticleInfo = {
+    align: 'column left middle',
     custom: 'article-media has-border-bottom',
     mb: '4',
-    w: '100p'
+    w: '100p',
+    'md': {
+      align: 'row between middle'
+    }
   };
   var propsArticleAuthor = {
     align: 'col',
@@ -670,13 +679,15 @@ var Article = function Article(_ref) {
     columns: 12
   }, /*#__PURE__*/React.createElement(Subject, {
     filled: true
-  }, subject), /*#__PURE__*/React.createElement(Typography, {
-    tokenVariant: "article-title"
+  }, subject), /*#__PURE__*/React.createElement(Title, {
+    title: title
+  }), /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "article-article"
   }, title), /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "article-subtitle"
   }, subtitle))), /*#__PURE__*/React.createElement(Block, propsArticleData, /*#__PURE__*/React.createElement(Grid, {
     columns: 12
-  }, /*#__PURE__*/React.createElement(Block, propsArticleMedia, /*#__PURE__*/React.createElement(Block, propsArticleAuthor, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React.createElement(Block, propsArticleInfo, /*#__PURE__*/React.createElement(Block, propsArticleAuthor, /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "system-bold"
   }, author), /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "system"
@@ -860,9 +871,7 @@ var SideMenuItems = function SideMenuItems(_ref) {
       mt: "4"
     }, /*#__PURE__*/React.createElement(Block, {
       custom: "item",
-      onClick: function onClick() {
-        return functions.onMenuItem(item);
-      }
+      onClick: functions.onMenuItem
     }, !hasSubitems ? /*#__PURE__*/React.createElement("a", {
       href: item.path
     }, item.name) : /*#__PURE__*/React.createElement("span", {
@@ -943,8 +952,12 @@ exports.Block = Block;
 exports.Button = Button;
 exports.Form = index;
 exports.Grid = Grid;
+exports.Image = Image;
 exports.SideMenu = SideMenu;
 exports.SideMenuItems = SideMenuItems;
+exports.SocialMedias = SocialMedias;
 exports.Subject = Subject;
+exports.Tags = Tags;
+exports.TextBody = TextBody;
 exports.Topbar = Topbar;
 exports.Typography = Typography;

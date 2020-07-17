@@ -301,31 +301,32 @@ var Block = function Block(props) {
   return /*#__PURE__*/React.createElement("div", classProps);
 };
 
+var propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 Block.propTypes = {
   align: PropTypes.string,
   bg: PropTypes.string,
   color: PropTypes.string,
   cursor: PropTypes.string,
-  h: PropTypes.string,
-  m: PropTypes.string,
-  mt: PropTypes.string,
-  mr: PropTypes.string,
-  mb: PropTypes.string,
-  ml: PropTypes.string,
-  p: PropTypes.string,
-  pt: PropTypes.string,
-  pr: PropTypes.string,
-  pb: PropTypes.string,
-  pl: PropTypes.string,
-  w: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]),
-  custom: PropTypes.string,
+  m: PropTypes.oneOf([].concat(propTypesSizes)),
+  mt: PropTypes.oneOf([].concat(propTypesSizes)),
+  mr: PropTypes.oneOf([].concat(propTypesSizes)),
+  mb: PropTypes.oneOf([].concat(propTypesSizes)),
+  ml: PropTypes.oneOf([].concat(propTypesSizes)),
+  p: PropTypes.oneOf([].concat(propTypesSizes)),
+  pt: PropTypes.oneOf([].concat(propTypesSizes)),
+  pr: PropTypes.oneOf([].concat(propTypesSizes)),
+  pb: PropTypes.oneOf([].concat(propTypesSizes)),
+  pl: PropTypes.oneOf([].concat(propTypesSizes)),
   xs: PropTypes.object,
   sm: PropTypes.object,
   md: PropTypes.object,
   lg: PropTypes.object,
   xl: PropTypes.object,
-  onClick: PropTypes.func
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]),
+  custom: PropTypes.string,
+  onClick: PropTypes.func,
+  w: PropTypes.string,
+  h: PropTypes.string
 };
 Block.defaultProps = {};
 
