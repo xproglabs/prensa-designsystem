@@ -10,6 +10,7 @@ const parseBody = (content) => {
       map(child, (item) => switchNode(item));
 
     const enabledTags = ['p', 'em', 'h2'];
+    const embedTags = ['facebook.com', 'youtube.com', 'twitter.com', 'instagram.com'];
     
     if(enabledTags.indexOf(tag) > -1) {
 
@@ -35,11 +36,21 @@ const parseBody = (content) => {
             children.child[0].text : 
             children.attr['aria-label'];
 
-          let attr = '';
-          map(children.attr, (value, key) => {
-            attr = `${attr} ${key}=${value}`;
+          // check if is not an embed
+          let isEmbed = false;
+          map(embedTags, (tag) => {
+            if(text.indexOf(tag) > -1) {
+              isEmbed = true;
+            }
           });
-          contentText = `${contentText}<a ${attr}>${text}</a>`;
+          
+          if(!isEmbed) {
+            let attr = '';
+            map(children.attr, (value, key) => {
+              attr = `${attr} ${key}=${value}`;
+            });
+            contentText = `${contentText}<a ${attr}>${text}</a>`;
+          }
         }
       });
 
