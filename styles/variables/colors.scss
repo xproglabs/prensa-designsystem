@@ -42,6 +42,7 @@ $system-fc: $color-neutral-4 !default;
 ));
 
 @include classes-simple((
+  'w-auto' 'width' 'auto',
   'fc-primary-1' 'color' $color-primary-1,
   'fc-white' 'color' $color-white,
   'fc-black' 'color' $color-black,

@@ -15,7 +15,8 @@ const NewsList = ({content, status}) => {
 
   return (
     <Block custom="news-list">
-      {map(content, (item, key) => <NewsListTeaser content={item} status={status} key={key} />)}
+      {map(content, (item, key) => 
+        <NewsListTeaser content={item} status={status} key={key} />)}
     </Block>
   );
 };

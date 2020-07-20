@@ -38,12 +38,13 @@ const parseBody = (content) => {
 
           // check if is not an embed
           let isEmbed = false;
-          map(embedTags, (tag) => {
-            if(text.indexOf(tag) > -1) {
-              isEmbed = true;
-            }
-          });
-          
+          if(text) {
+            map(embedTags, (tag) => {
+              if(text.indexOf(tag) > -1) {
+                isEmbed = true;
+              }
+            });
+          }
           if(!isEmbed) {
             let attr = '';
             map(children.attr, (value, key) => {

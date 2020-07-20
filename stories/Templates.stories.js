@@ -2,8 +2,10 @@ import {text, boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import Block from '../components/Block';
-import {BreakingNews, ThreeCol, FourCol} from '../components/Templates';
+import {BreakingNews, ThreeCol, FourCol, NewsList} from '../components/Templates';
+import pagelist from '../mockup/pagelist.json';
 import {sassWrapper} from '../utils/SassWrapper';
+
 
 export default {
   title: 'Components | Templates',
@@ -128,4 +130,8 @@ export const BlocoBreakingNews = () => {
   return (
     <BreakingNews blockData={blockData} />
   );
+};
+
+export const BlocoUltimas = () => {
+  return <NewsList content={pagelist} status={{loading: false}} />;
 };

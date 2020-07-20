@@ -12,7 +12,9 @@
     @include py($space-size-2);
   }
 }
-
+.article-image-embed {
+  max-width: $md;
+}
 .article-paragraph {
   a {
     word-break: break-all;

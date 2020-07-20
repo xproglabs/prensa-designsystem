@@ -3,11 +3,11 @@ import React from 'react';
 
 import Block from '../Block';
 import Grid from '../Grid';
+import Image from '../Image';
 import SocialMedias from '../SocialMedias';
 import Subject from '../Subject';
 import Tags from '../Tags';
 import Typography from '../Typography';
-import Image from './Image';
 import TextBody from './TextBody';
 
 const Article = ({content, embeds, handleTagClick, socialMedias}) => {

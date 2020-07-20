@@ -431,7 +431,7 @@ var Image = function Image(_ref) {
   var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
   return /*#__PURE__*/React.createElement(Block, {
     custom: "article-image-box",
-    width: "100p"
+    w: "100p"
   }, /*#__PURE__*/React.createElement("img", {
     className: "image-article",
     src: imagePath,
@@ -474,6 +474,7 @@ var parseBody = function parseBody(content) {
       return switchNode(item);
     });
     var enabledTags = ['p', 'em', 'h2'];
+    var embedTags = ['facebook.com', 'youtube.com', 'twitter.com', 'instagram.com'];
 
     if (enabledTags.indexOf(tag) > -1) {
       var contentText = '';
@@ -489,12 +490,25 @@ var parseBody = function parseBody(content) {
 
 
         if (children.tag === 'a' && children.attr["class"] !== 'p-smartembed') {
-          var text = children.child && children.child.length > 0 ? children.child[0].text : children.attr['aria-label'];
-          var _attr = '';
-          lodash.map(children.attr, function (value, key) {
-            _attr = "".concat(_attr, " ").concat(key, "=").concat(value);
-          });
-          contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(text, "</a>");
+          var text = children.child && children.child.length > 0 ? children.child[0].text : children.attr['aria-label']; // check if is not an embed
+
+          var isEmbed = false;
+
+          if (text) {
+            lodash.map(embedTags, function (tag) {
+              if (text.indexOf(tag) > -1) {
+                isEmbed = true;
+              }
+            });
+          }
+
+          if (!isEmbed) {
+            var _attr = '';
+            lodash.map(children.attr, function (value, key) {
+              _attr = "".concat(_attr, " ").concat(key, "=").concat(value);
+            });
+            contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(text, "</a>");
+          }
         }
       }); // add paragraph
 
@@ -588,10 +602,12 @@ var TextBody = function TextBody(_ref) {
         });
 
       case 'Image':
-        return /*#__PURE__*/React.createElement(Image, {
+        return /*#__PURE__*/React.createElement(Block, {
+          custom: "article-image-embed"
+        }, /*#__PURE__*/React.createElement(Image, {
           key: key,
           value: value
-        });
+        }));
 
       case 'Instagram':
         return embeds && embeds.Instagram && /*#__PURE__*/React.createElement(embeds.Instagram, {
@@ -626,7 +642,6 @@ var _PropTypes$shape;
 
 var Article = function Article(_ref) {
   var content = _ref.content,
-      customProps = _ref.customProps,
       embeds = _ref.embeds,
       handleTagClick = _ref.handleTagClick,
       socialMedias = _ref.socialMedias;
@@ -679,10 +694,8 @@ var Article = function Article(_ref) {
     columns: 12
   }, /*#__PURE__*/React.createElement(Subject, {
     filled: true
-  }, subject), /*#__PURE__*/React.createElement(Title, {
-    title: title
-  }), /*#__PURE__*/React.createElement(Typography, {
-    tokenVariant: "article-article"
+  }, subject), /*#__PURE__*/React.createElement(Typography, {
+    tokenVariant: "article-title"
   }, title), /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "article-subtitle"
   }, subtitle))), /*#__PURE__*/React.createElement(Block, propsArticleData, /*#__PURE__*/React.createElement(Grid, {

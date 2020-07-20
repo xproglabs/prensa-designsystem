@@ -1,10 +1,37 @@
 @use '../../styles' as *;
 
-.skeleton {
-  @include bg($color-neutral-9);
-}
+$teaser-card-title-color: $color-black;
+$teaser-card-title-font: $font-primary;
+$teaser-card-title-height: 36px;
+$teaser-card-title-size: 32px;
 
+.image-background {
+  @include bg($color-neutral-10);
+  @include h(210px);
+  @include w(100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media (min-width: $sm) {
+    @include h(210px);
+    @include w(280px);
+  }
+}
+.teaser-card {
+  a, h1 {
+    @include w(100%);
+    text-decoration: none;
+  }
+}
+.teaser-card-title {
+  @include fc($teaser-card-title-color);
+  @include ff($teaser-card-title-font);
+  @include fs($teaser-card-title-size);
+  @include lh($teaser-card-title-height);
+}
 .teaser-aria {
   @include w(100%);
   cursor: pointer;
+}
+.skeleton {
+  @include bg($color-neutral-9);
 }

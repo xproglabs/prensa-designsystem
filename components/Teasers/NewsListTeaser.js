@@ -2,56 +2,61 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
+import Image from '../Image/Teaser';
 import Typography from '../Typography';
-import {BackgroundImage} from '../utils';
+// import {BackgroundImage} from '../utils';
 
 const NewsListTeaser = props => {
   const {path, image, subtitle, name} = props.content;
   const {loading, error} = props.status;
-
-  const getImageFromProps = () => {
-    if (loading || error || !image) return <div className='image-box skeleton'/>;
-    return <BackgroundImage data={image} />;
-  };
-
-  const wrapperProps = {
-    align: 'row',
+  const propsTeaser = {
+    align: 'col',
+    custom: 'teaser-card',
     mb: '4',
-    'md': {
-      mb: '2',
+    'sm': {
+      align: 'row left'
     }
   };
-
-  const imageWrapperProps = {
+  const propsImage = {
     align: 'row',
-    'md': {
-      p: '2',
+    w: '100p',
+    'sm': {
+      w: 'auto'
     }
   };
-
-  const contentWrapperProps = {
-    p: '4',
-    'md': {
-      p: '2',
-      pr: '1'
+  const propsContent = {
+    m: '4',
+    w: '100p-8',
+    'sm': {
+      w: 'auto'
     }
   };
+  const TeaserImage = () => {
+    if (loading || error || !image) 
+      return <div className='image-box skeleton'/>;
 
-  return (
-    <Block {...wrapperProps}>
-      <Block {...imageWrapperProps}>
+    if(!image['image-contentId'])
+      return null; 
+
+    return (
+      <Block {...propsImage}>
         <a href={path} aria-label={`Imagem da matéria ${name}`}>
-          {getImageFromProps()}
+          <Image value={image} />
         </a>
       </Block>
-      <Block {...contentWrapperProps}>
+    );
+  };
+  return (
+    <Block {...propsTeaser}>
+      <TeaserImage />
+      <Block {...propsContent}>
         <a href={path} aria-label={`Abrir matéria ${name}`}>
-          <Typography tokenVariant='title'>
+          <Typography custom='teaser-card-title'>
             {name}
           </Typography>
         </a>
         {subtitle && 
-          <Typography tokenVariant='title'>
+          <Typography custom='teaser-card-subtitle'>
             {subtitle}
           </Typography>
         }

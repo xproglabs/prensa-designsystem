@@ -453,6 +453,31 @@ TeaserFeatured.propTypes = {
   })
 };
 
+var Image = function Image(_ref) {
+  var value = _ref.value;
+  if (!value || !value['image-contentId']) return false;
+  var contentid = value['image-contentId'];
+  var width = 1000;
+  var derivative = '2x1';
+  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
+  var policyid = contentid.replace('.', '-').replace('.', '-');
+  var inlinestyle = "\n    .image-background.policy-".concat(policyid, " {\n      background-image: url(").concat(imagePath, ");\n    }");
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", {
+    dangerouslySetInnerHTML: {
+      __html: inlinestyle
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "image-background policy-".concat(policyid)
+  }));
+};
+
+Image.propTypes = {
+  value: PropTypes.object.isRequired
+};
+Image.defaultProps = {
+  value: {}
+};
+
 var NewsListTeaser = function NewsListTeaser(props) {
   var _props$content = props.content,
       path = _props$content.path,
@@ -462,46 +487,49 @@ var NewsListTeaser = function NewsListTeaser(props) {
   var _props$status = props.status,
       loading = _props$status.loading,
       error = _props$status.error;
+  var propsTeaser = {
+    align: 'col',
+    custom: 'teaser-card',
+    mb: '4',
+    'sm': {
+      align: 'row left'
+    }
+  };
+  var propsImage = {
+    align: 'row',
+    w: '100p',
+    'sm': {
+      w: 'auto'
+    }
+  };
+  var propsContent = {
+    m: '4',
+    w: '100p-8',
+    'sm': {
+      w: 'auto'
+    }
+  };
 
-  var getImageFromProps = function getImageFromProps() {
+  var TeaserImage = function TeaserImage() {
     if (loading || error || !image) return /*#__PURE__*/React.createElement("div", {
       className: "image-box skeleton"
     });
-    return /*#__PURE__*/React.createElement(RenderImageBackground, {
-      data: image
-    });
+    if (!image["image-contentId"]) return null;
+    return /*#__PURE__*/React.createElement(Block, propsImage, /*#__PURE__*/React.createElement("a", {
+      href: path,
+      "aria-label": "Imagem da mat\xE9ria ".concat(name)
+    }, /*#__PURE__*/React.createElement(Image, {
+      value: image
+    })));
   };
 
-  var wrapperProps = {
-    align: 'row',
-    mb: '4',
-    'md': {
-      mb: '2'
-    }
-  };
-  var imageWrapperProps = {
-    align: 'row',
-    'md': {
-      p: '2'
-    }
-  };
-  var contentWrapperProps = {
-    p: '4',
-    'md': {
-      p: '2',
-      pr: '1'
-    }
-  };
-  return /*#__PURE__*/React.createElement(Block, wrapperProps, /*#__PURE__*/React.createElement(Block, imageWrapperProps, /*#__PURE__*/React.createElement("a", {
-    href: path,
-    "aria-label": "Imagem da mat\xE9ria ".concat(name)
-  }, getImageFromProps())), /*#__PURE__*/React.createElement(Block, contentWrapperProps, /*#__PURE__*/React.createElement("a", {
+  return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement("a", {
     href: path,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
   }, /*#__PURE__*/React.createElement(Typography, {
-    tokenVariant: "title"
+    custom: "teaser-card-title"
   }, name)), subtitle && /*#__PURE__*/React.createElement(Typography, {
-    tokenVariant: "title"
+    custom: "teaser-card-subtitle"
   }, subtitle)));
 };
 
