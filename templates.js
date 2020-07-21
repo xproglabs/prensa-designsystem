@@ -209,6 +209,31 @@ Grid.propTypes = {
   md: PropTypes.oneOf([25, 33, 50, 75, 100])
 };
 
+var Image = function Image(_ref) {
+  var value = _ref.value;
+  if (!value || !value['image-contentId']) return false;
+  var contentid = value['image-contentId'];
+  var width = 1000;
+  var derivative = '2x1';
+  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
+  var policyid = contentid.replace('.', '-').replace('.', '-');
+  var inlinestyle = "\n    .image-background.policy-".concat(policyid, " {\n      background-image: url(").concat(imagePath, ");\n    }");
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", {
+    dangerouslySetInnerHTML: {
+      __html: inlinestyle
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "image-background policy-".concat(policyid)
+  }));
+};
+
+Image.propTypes = {
+  value: PropTypes.object.isRequired
+};
+Image.defaultProps = {
+  value: {}
+};
+
 var Typography = function Typography(props) {
   var _classnames;
 
@@ -309,7 +334,7 @@ var Subject = function Subject(props) {
   if (!children) return null;
   var classes = classnames(_defineProperty({
     'subject-root': true,
-    'filled': filled
+    'filled bg-primary-1': filled
   }, "".concat(custom), custom));
   return /*#__PURE__*/React.createElement("div", {
     className: classes
@@ -325,6 +350,100 @@ Subject.propTypes = {
   //   'sm', 'md', 'lg'
   // ])
 
+};
+
+var Teaser = function Teaser(_ref) {
+  var content = _ref.content,
+      status = _ref.status;
+  var image = content.image,
+      name = content.name,
+      path = content.path,
+      subject = content.subject,
+      subtitle = content.subtitle;
+  var loading = status.loading,
+      error = status.error;
+  var propsTeaser = {
+    align: 'col',
+    custom: 'teaser-default',
+    mb: '4',
+    'sm': {
+      align: 'row left'
+    }
+  };
+  var propsImage = {
+    align: 'row',
+    custom: 'teaser-image',
+    mb: '1',
+    w: '100p',
+    'md': {
+      mb: '0',
+      mr: '1',
+      w: 'auto'
+    }
+  };
+  var propsContent = {
+    mt: '3',
+    mb: '3',
+    ml: '2',
+    mr: '2',
+    w: '100p-4',
+    'md': {
+      m: '3',
+      w: 'auto'
+    }
+  };
+  var propsDate = {
+    custom: 'teaser-date',
+    mt: '4',
+    w: '100p'
+  };
+  var propsSubject = {
+    mb: '1',
+    mt: '0'
+  };
+  var propsTitle = {};
+
+  var TeaserImage = function TeaserImage() {
+    if (loading || error || !image) return /*#__PURE__*/React.createElement("div", {
+      className: "image-box skeleton"
+    });
+    if (!image['image-contentId']) return null;
+    return /*#__PURE__*/React.createElement(Block, propsImage, /*#__PURE__*/React.createElement("a", {
+      className: "teaser-aria",
+      href: path,
+      "aria-label": "Imagem da mat\xE9ria ".concat(name)
+    }, /*#__PURE__*/React.createElement(Image, {
+      value: image
+    })));
+  };
+
+  return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
+    filled: true
+  }, subject)), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
+    className: "teaser-aria",
+    href: path,
+    "aria-label": "Abrir mat\xE9ria ".concat(name)
+  }, /*#__PURE__*/React.createElement(Typography, {
+    custom: "teaser-title"
+  }, name))), subtitle && /*#__PURE__*/React.createElement(Typography, {
+    custom: "teaser-subtitle"
+  }, subtitle), /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
+    custom: "teaser-datetime"
+  }, content["time-published"]))));
+};
+
+Teaser.propTypes = {
+  content: PropTypes.shape({
+    image: PropTypes.object,
+    name: PropTypes.string,
+    path: PropTypes.string,
+    subtitle: PropTypes.string,
+    subject: PropTypes.string
+  }),
+  status: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.bool
+  })
 };
 
 var RenderImageBackground = function RenderImageBackground(props) {
@@ -349,62 +468,11 @@ RenderImageBackground.propTypes = {
   })
 };
 
-var Teaser = function Teaser(props) {
-  var _props$content = props.content,
-      articleUrl = _props$content.articleUrl,
-      image = _props$content.image,
-      subject = _props$content.subject,
-      subtitle = _props$content.subtitle,
-      title = _props$content.title;
-  var _props$status = props.status,
-      loading = _props$status.loading,
-      error = _props$status.error;
-
-  var getImageFromProps = function getImageFromProps() {
-    if (loading || error) return /*#__PURE__*/React.createElement("div", {
-      className: "image-box skeleton"
-    });
-    return /*#__PURE__*/React.createElement(RenderImageBackground, {
-      data: image
-    });
-  };
-
-  return /*#__PURE__*/React.createElement("div", {
-    className: "teaser"
-  }, subject && /*#__PURE__*/React.createElement(Subject, null, subject), image && /*#__PURE__*/React.createElement("a", {
-    className: "teaser-aria",
-    href: articleUrl,
-    "aria-label": "Imagem da mat\xE9ria ".concat(title)
-  }, getImageFromProps()), /*#__PURE__*/React.createElement("a", {
-    className: "teaser-aria",
-    href: articleUrl,
-    "aria-label": "Abrir mat\xE9ria ".concat(title)
-  }, /*#__PURE__*/React.createElement(Typography, {
-    tokenVariant: "title"
-  }, title)), /*#__PURE__*/React.createElement(Typography, {
-    tokenVariant: "title"
-  }, subtitle));
-};
-
-Teaser.propTypes = {
-  content: PropTypes.shape({
-    articleUrl: PropTypes.string,
-    image: PropTypes.object,
-    subtitle: PropTypes.string,
-    subject: PropTypes.string,
-    title: PropTypes.string
-  }),
-  status: PropTypes.shape({
-    loading: PropTypes.bool,
-    error: PropTypes.bool
-  })
-};
-
 var TeaserFeatured = function TeaserFeatured(props) {
   var _props$content = props.content,
-      title = _props$content.title,
+      name = _props$content.name,
       subject = _props$content.subject,
-      articleUrl = _props$content.articleUrl,
+      path = _props$content.path,
       image = _props$content.image;
   var _props$status = props.status,
       loading = _props$status.loading,
@@ -424,125 +492,32 @@ var TeaserFeatured = function TeaserFeatured(props) {
     className: "teaser-featured ".concat(teaserHasImage)
   }, image && /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
-    href: articleUrl,
-    "aria-label": "Imagem da mat\xE9ria ".concat(title)
+    href: path,
+    "aria-label": "Imagem da mat\xE9ria ".concat(name)
   }, getImageFromProps()), /*#__PURE__*/React.createElement("div", {
     className: "teaser-content"
   }, subject && /*#__PURE__*/React.createElement(Subject, {
     filled: true
   }, subject), /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
-    href: articleUrl,
-    "aria-label": "Abrir mat\xE9ria ".concat(title)
+    href: path,
+    "aria-label": "Abrir mat\xE9ria ".concat(name)
   }, /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "title",
     size: "xl"
-  }, title))));
+  }, name))));
 };
 
 TeaserFeatured.propTypes = {
   content: PropTypes.shape({
-    title: PropTypes.string,
+    name: PropTypes.string,
     subject: PropTypes.string,
-    articleUrl: PropTypes.string,
+    path: PropTypes.string,
     image: PropTypes.object
   }),
   status: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.bool
-  })
-};
-
-var Image = function Image(_ref) {
-  var value = _ref.value;
-  if (!value || !value['image-contentId']) return false;
-  var contentid = value['image-contentId'];
-  var width = 1000;
-  var derivative = '2x1';
-  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
-  var policyid = contentid.replace('.', '-').replace('.', '-');
-  var inlinestyle = "\n    .image-background.policy-".concat(policyid, " {\n      background-image: url(").concat(imagePath, ");\n    }");
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", {
-    dangerouslySetInnerHTML: {
-      __html: inlinestyle
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "image-background policy-".concat(policyid)
-  }));
-};
-
-Image.propTypes = {
-  value: PropTypes.object.isRequired
-};
-Image.defaultProps = {
-  value: {}
-};
-
-var NewsListTeaser = function NewsListTeaser(props) {
-  var _props$content = props.content,
-      path = _props$content.path,
-      image = _props$content.image,
-      subtitle = _props$content.subtitle,
-      name = _props$content.name;
-  var _props$status = props.status,
-      loading = _props$status.loading,
-      error = _props$status.error;
-  var propsTeaser = {
-    align: 'col',
-    custom: 'teaser-card',
-    mb: '4',
-    'sm': {
-      align: 'row left'
-    }
-  };
-  var propsImage = {
-    align: 'row',
-    w: '100p',
-    'sm': {
-      w: 'auto'
-    }
-  };
-  var propsContent = {
-    m: '4',
-    w: '100p-8',
-    'sm': {
-      w: 'auto'
-    }
-  };
-
-  var TeaserImage = function TeaserImage() {
-    if (loading || error || !image) return /*#__PURE__*/React.createElement("div", {
-      className: "image-box skeleton"
-    });
-    if (!image["image-contentId"]) return null;
-    return /*#__PURE__*/React.createElement(Block, propsImage, /*#__PURE__*/React.createElement("a", {
-      href: path,
-      "aria-label": "Imagem da mat\xE9ria ".concat(name)
-    }, /*#__PURE__*/React.createElement(Image, {
-      value: image
-    })));
-  };
-
-  return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement("a", {
-    href: path,
-    "aria-label": "Abrir mat\xE9ria ".concat(name)
-  }, /*#__PURE__*/React.createElement(Typography, {
-    custom: "teaser-card-title"
-  }, name)), subtitle && /*#__PURE__*/React.createElement(Typography, {
-    custom: "teaser-card-subtitle"
-  }, subtitle)));
-};
-
-NewsListTeaser.propTypes = {
-  content: PropTypes.shape({
-    path: PropTypes.string,
-    image: PropTypes.object,
-    subtitle: PropTypes.string,
-    name: PropTypes.string
-  }),
-  status: PropTypes.shape({
-    error: PropTypes.bool,
-    loading: PropTypes.bool
   })
 };
 
@@ -635,7 +610,7 @@ var NewsList = function NewsList(_ref) {
   return /*#__PURE__*/React.createElement(Block, {
     custom: "news-list"
   }, lodash.map(content, function (item, key) {
-    return /*#__PURE__*/React.createElement(NewsListTeaser, {
+    return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       status: status,
       key: key

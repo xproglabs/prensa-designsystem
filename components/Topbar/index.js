@@ -7,24 +7,28 @@ const Topbar = ({content, functions}) => {
   const {LeftContent, CenterContent, RightContent} = content;
   return (
     <Block 
-      align="row middle between"
+      align="row center"
       bg="primary-1" 
       color="white" 
       custom="topbar" 
-      width="100p">
-      <Block>
-        {LeftContent && <LeftContent functions={functions} />}
-      </Block>
-      <Block>
-        {CenterContent && <CenterContent />}
-      </Block>
-      <Block>
-        {RightContent && <RightContent />}
+      w="100p">
+      <Block 
+        align="row middle between"
+        custom="wrap"
+        w="100p">
+        <Block>
+          {LeftContent && <LeftContent functions={functions} />}
+        </Block>
+        <Block>
+          {CenterContent && <CenterContent />}
+        </Block>
+        <Block>
+          {RightContent && <RightContent />}
+        </Block>
       </Block>
     </Block>
   );
 };
-
 const LeftMenuIcon = ({functions}) => {
   return (
     <Block 
@@ -37,13 +41,11 @@ const LeftMenuIcon = ({functions}) => {
     </Block>
   );
 };
-
 LeftMenuIcon.propTypes = {
   functions: PropTypes.shape({
     handleMenuClick: PropTypes.func
   })
 };
-
 Topbar.propTypes = {
   content: PropTypes.object.isRequired,
   functions: PropTypes.shape({

@@ -2,8 +2,10 @@
   {
     "contentId": "1.119",
     "input-template": "standard.Article",
-    "path": "/costanorte/cidades/city-of-edinburgh-council-reviews-clause-affecting-live-music-scene-1.119",
+    "path": "/cidades/city-of-edinburgh-council-reviews-clause-affecting-live-music-scene-1.119",
     "name": "City of Edinburgh Council reviews clause affecting live music scene",
+    "subject": "SUBJECT",
+    "time-published": "20.06.2020 13:45",
     "image": {
       "image-byline": "Brian McNeil",
       "image-contentId": "1.149.1595195486",
@@ -12,22 +14,57 @@
     }
   },
   {
-    "contentId": "1.124",
+    "contentId": "1.1945",
     "input-template": "standard.Article",
-    "path": "/costanorte/cidades/bertioga/f-c-barcelona-wins-uefa-champions-league-2014-15-1.124",
-    "name": "F.C. Barcelona wins UEFA Champions League 2014/15",
-    "image": {
-      "image-byline": "Brian McNeil",
-      "image-contentId": "1.149.1595195486",
-      "image-subtitle": "",
-      "image-subtitle-original": "The Phoenix Bar on Broughton Street in Edinburgh."
-    }
+    "path": "/geral/bom-dia-comece-o-domingo-31-de-maio-bem-informado-1.1945",
+    "name": "Bom dia! Comece o domingo, 31 de maio, bem informado",
+    "subject": "BOM DIA!",
+    "time-published": "30.05.2020 18:51",
+    "image": {}
   },
   {
-    "contentId": "1.123",
+    "contentId": "1.1944",
     "input-template": "standard.Article",
-    "path": "/costanorte/cidades/researcher-discovers-39-new-cockroach-species-increasing-genus-arenivaga-fivefold-1.123",
-    "name": "Researcher discovers 39 new cockroach species, increasing genus Arenivaga fivefold",
+    "path": "/internacional/eua-solicitam-guarda-nacional-para-conter-protestos-em-minneapolis-1.1944",
+    "name": "EUA solicitam Guarda Nacional para conter protestos em Minneapolis",
+    "subject": "QUATRO NOITES DE PROTESTOS",
+    "time-published": "30.05.2020 18:00",
+    "image": {}
+  },
+  {
+    "contentId": "1.1943",
+    "input-template": "standard.Article",
+    "path": "/saude/covid-19-brasil-tem-quase-500-mil-casos-confirmados-e-28-834-mortes-1.1943",
+    "name": "Covid-19: Brasil tem quase 500 mil casos confirmados e 28.834 mortes",
+    "subject": "PANDEMIA",
+    "time-published": "30.05.2020 17:15",
+    "image": {}
+  },
+  {
+    "contentId": "1.1942",
+    "input-template": "standard.Article",
+    "path": "/saude/covid-19-em-guaruj%C3%A1-prefeitura-registra-mais-quatro-%C3%B3bitos-1.1942",
+    "name": "Covid-19 em Guarujá: prefeitura registra mais quatro óbitos",
+    "subject": "NOVO BOLETIM",
+    "time-published": "30.05.2020 17:02",
+    "image": {}
+  },
+  {
+    "contentId": "1.1941",
+    "input-template": "standard.Article",
+    "path": "/saude/covid-19-em-praia-grande-cidade-tem-50-pacientes-internados-pela-doen%C3%A7a-1.1941",
+    "name": "Covid-19 em Praia Grande: cidade tem 50 pacientes internados pela doença",
+    "subject": "ATUALIZAÇÃO",
+    "time-published": "30.05.2020 16:45",
+    "image": {}
+  },
+  {
+    "contentId": "1.1940",
+    "input-template": "standard.Article",
+    "path": "/saude/registros-de-%C3%B3bitos-por-covid-19-em-s%C3%A3o-paulo-ultrapassam-7-5-mil-1.1940",
+    "name": "Registros de óbitos por covid-19 em São Paulo ultrapassam 7,5 mil",
+    "subject": "Saúde",
+    "time-published": "30.05.2020 16:35",
     "image": {}
   }
 ]

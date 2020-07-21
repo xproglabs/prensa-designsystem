@@ -6,7 +6,7 @@ import Typography from '../Typography';
 import {BackgroundImage} from '../utils';
 
 const TeaserFeatured = (props) => {
-  const {title, subject, articleUrl, image} = props.content;
+  const {name, subject, path, image} = props.content;
   const {loading, error} = props.status;
 
   const getImageFromProps = () => {
@@ -19,15 +19,15 @@ const TeaserFeatured = (props) => {
   return (
     <div className={`teaser-featured ${teaserHasImage}`}>
       {image && 
-        <a className='teaser-aria' href={articleUrl} aria-label={`Imagem da matéria ${title}`}>
+        <a className='teaser-aria' href={path} aria-label={`Imagem da matéria ${name}`}>
           {getImageFromProps()}
         </a>
       }
       <div className='teaser-content'>
         {subject && <Subject filled>{subject}</Subject>}
-        <a className='teaser-aria' href={articleUrl} aria-label={`Abrir matéria ${title}`}>
+        <a className='teaser-aria' href={path} aria-label={`Abrir matéria ${name}`}>
           <Typography tokenVariant='title' size='xl'>
-            {title}
+            {name}
           </Typography>
         </a>
       </div>
@@ -37,9 +37,9 @@ const TeaserFeatured = (props) => {
 
 TeaserFeatured.propTypes = {
   content: PropTypes.shape({
-    title: PropTypes.string,
+    name: PropTypes.string,
     subject: PropTypes.string,
-    articleUrl: PropTypes.string,
+    path: PropTypes.string,
     image: PropTypes.object
   }),
   status: PropTypes.shape({

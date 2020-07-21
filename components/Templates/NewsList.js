@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
-import {NewsListTeaser} from '../Teasers';
+import {Teaser} from '../Teasers';
 
 const NewsList = ({content, status}) => {
 
@@ -16,7 +16,7 @@ const NewsList = ({content, status}) => {
   return (
     <Block custom="news-list">
       {map(content, (item, key) => 
-        <NewsListTeaser content={item} status={status} key={key} />)}
+        <Teaser content={item} status={status} key={key} />)}
     </Block>
   );
 };

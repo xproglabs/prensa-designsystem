@@ -244,6 +244,33 @@ Grid.propTypes = {
   md: PropTypes.oneOf([25, 33, 50, 75, 100])
 };
 
+var Image = function Image(_ref) {
+  var value = _ref.value;
+  if (!value || !value['image-contentId']) return false;
+  var contentid = value['image-contentId'];
+  var captionAndByline = value['image-subtitle'] ? "".concat(value['image-subtitle'], " (").concat(value['image-byline'], ")") : "".concat(value['image-subtitle-original'], " (").concat(value['image-byline'], ")");
+  var width = 1000;
+  var derivative = '2x1';
+  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "article-image-box",
+    w: "100p"
+  }, /*#__PURE__*/React.createElement("img", {
+    className: "image-article",
+    src: imagePath,
+    alt: captionAndByline ? captionAndByline : "Imagem ".concat(contentid)
+  }), /*#__PURE__*/React.createElement(Block, {
+    custom: "label"
+  }, captionAndByline));
+};
+
+Image.propTypes = {
+  value: PropTypes.object.isRequired
+};
+Image.defaultProps = {
+  value: {}
+};
+
 var SocialMedias = function SocialMedias(props) {
   var content = props.content;
   if (!content) return null;
@@ -370,7 +397,7 @@ var Subject = function Subject(props) {
   if (!children) return null;
   var classes = classnames(_defineProperty({
     'subject-root': true,
-    'filled': filled
+    'filled bg-primary-1': filled
   }, "".concat(custom), custom));
   return /*#__PURE__*/React.createElement("div", {
     className: classes
@@ -419,33 +446,6 @@ Tags.propTypes = {
   custom: PropTypes.object,
   content: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired
-};
-
-var Image = function Image(_ref) {
-  var value = _ref.value;
-  if (!value || !value['image-contentId']) return false;
-  var contentid = value['image-contentId'];
-  var captionAndByline = value['image-subtitle'] ? "".concat(value['image-subtitle'], " (").concat(value['image-byline'], ")") : "".concat(value['image-subtitle-original'], " (").concat(value['image-byline'], ")");
-  var width = 1000;
-  var derivative = '2x1';
-  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "article-image-box",
-    w: "100p"
-  }, /*#__PURE__*/React.createElement("img", {
-    className: "image-article",
-    src: imagePath,
-    alt: captionAndByline ? captionAndByline : "Imagem ".concat(contentid)
-  }), /*#__PURE__*/React.createElement(Block, {
-    custom: "label"
-  }, captionAndByline));
-};
-
-Image.propTypes = {
-  value: PropTypes.object.isRequired
-};
-Image.defaultProps = {
-  value: {}
 };
 
 var Paragraph = function Paragraph(_ref) {
@@ -872,6 +872,19 @@ SideMenu.defaultProps = {
   }
 };
 
+var SectionTitle = function SectionTitle(_ref) {
+  var name = _ref.name;
+  return /*#__PURE__*/React.createElement(Block, {
+    mb: "2"
+  }, /*#__PURE__*/React.createElement(Typography, {
+    custom: "section-title"
+  }, name));
+};
+
+SectionTitle.propTypes = {
+  name: PropTypes.string
+};
+
 var SideMenuItems = function SideMenuItems(_ref) {
   var content = _ref.content,
       functions = _ref.functions;
@@ -922,14 +935,18 @@ var Topbar = function Topbar(_ref) {
       CenterContent = content.CenterContent,
       RightContent = content.RightContent;
   return /*#__PURE__*/React.createElement(Block, {
-    align: "row middle between",
+    align: "row center",
     bg: "primary-1",
     color: "white",
     custom: "topbar",
-    width: "100p"
+    w: "100p"
+  }, /*#__PURE__*/React.createElement(Block, {
+    align: "row middle between",
+    custom: "wrap",
+    w: "100p"
   }, /*#__PURE__*/React.createElement(Block, null, LeftContent && /*#__PURE__*/React.createElement(LeftContent, {
     functions: functions
-  })), /*#__PURE__*/React.createElement(Block, null, CenterContent && /*#__PURE__*/React.createElement(CenterContent, null)), /*#__PURE__*/React.createElement(Block, null, RightContent && /*#__PURE__*/React.createElement(RightContent, null)));
+  })), /*#__PURE__*/React.createElement(Block, null, CenterContent && /*#__PURE__*/React.createElement(CenterContent, null)), /*#__PURE__*/React.createElement(Block, null, RightContent && /*#__PURE__*/React.createElement(RightContent, null))));
 };
 
 var LeftMenuIcon = function LeftMenuIcon(_ref2) {
@@ -966,6 +983,7 @@ exports.Button = Button;
 exports.Form = index;
 exports.Grid = Grid;
 exports.Image = Image;
+exports.SectionTitle = SectionTitle;
 exports.SideMenu = SideMenu;
 exports.SideMenuItems = SideMenuItems;
 exports.SocialMedias = SocialMedias;

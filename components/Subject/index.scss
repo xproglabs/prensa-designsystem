@@ -1,16 +1,12 @@
 @use '../../styles' as *;
 
 .subject-root {
-  @include w(max-content);
   @include fc($color-primary-1);
-  @include mb(4px);
+  @include w(max-content);
 }
-
 .filled {
-  @include bg($color-primary-1);
   @include fc($color-white);
-  @include mb(4px);
   @include px($space-size-1);
-  @include py($space-size-1);
+  @include py(calc(#{$space-size-1} / 2));
   @include r(5px);
 }

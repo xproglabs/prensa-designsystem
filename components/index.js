@@ -5,6 +5,7 @@ export {default as Form} from './Form';
 export {default as Grid} from './Grid';
 export {default as Image} from './Image';
 export {default as SideMenu} from './SideMenu';
+export {default as SectionTitle} from './SectionTitle';
 export {default as SideMenuItems} from './SideMenu/Items';
 export {default as SocialMedias} from './SocialMedias';
 export {default as Topbar} from './Topbar';
