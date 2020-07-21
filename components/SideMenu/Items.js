@@ -9,8 +9,8 @@ const SideMenuItems = ({content, functions}) => {
   const Item = ({item}) => {
     const hasSubitems = item.subitems.length > 0; 
     return (
-      <Block custom="listitem" mt="4">
-        <Block custom="item" onClick={functions.onMenuItem} >
+      <Block custom="sidemenu-group" mt="4">
+        <Block custom="sidemenu-group-item" pb="2" onClick={() => functions.onMenuItem(item)} >
           {!hasSubitems ? 
             <a href={item.path}>{item.name}</a> :
             <span href={item.path}>{item.name}</span>}
@@ -22,7 +22,7 @@ const SideMenuItems = ({content, functions}) => {
     item: PropTypes.object
   };
   return (
-    <Block custom='menu-left-items'>
+    <Block custom='sidemenu-items'>
       {map(content.items, (item, key) => 
         <Item item={item} key={key} />)}
     </Block>

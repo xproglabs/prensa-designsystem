@@ -893,11 +893,14 @@ var SideMenuItems = function SideMenuItems(_ref) {
     var item = _ref2.item;
     var hasSubitems = item.subitems.length > 0;
     return /*#__PURE__*/React.createElement(Block, {
-      custom: "listitem",
+      custom: "sidemenu-group",
       mt: "4"
     }, /*#__PURE__*/React.createElement(Block, {
-      custom: "item",
-      onClick: functions.onMenuItem
+      custom: "sidemenu-group-item",
+      pb: "2",
+      onClick: function onClick() {
+        return functions.onMenuItem(item);
+      }
     }, !hasSubitems ? /*#__PURE__*/React.createElement("a", {
       href: item.path
     }, item.name) : /*#__PURE__*/React.createElement("span", {
@@ -909,7 +912,7 @@ var SideMenuItems = function SideMenuItems(_ref) {
     item: PropTypes.object
   };
   return /*#__PURE__*/React.createElement(Block, {
-    custom: "menu-left-items"
+    custom: "sidemenu-items"
   }, lodash.map(content.items, function (item, key) {
     return /*#__PURE__*/React.createElement(Item, {
       item: item,

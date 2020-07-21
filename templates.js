@@ -429,17 +429,17 @@ var Teaser = function Teaser(_ref) {
     custom: "teaser-subtitle"
   }, subtitle), /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-datetime"
-  }, content["time-published"]))));
+  }, content['time-published']))));
 };
 
 Teaser.propTypes = {
-  content: PropTypes.shape({
+  content: PropTypes.shape(_defineProperty({
     image: PropTypes.object,
     name: PropTypes.string,
     path: PropTypes.string,
     subtitle: PropTypes.string,
     subject: PropTypes.string
-  }),
+  }, 'time-published', PropTypes.string)),
   status: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.bool
