@@ -835,20 +835,32 @@ var index = {
 };
 
 var SearchForm = function SearchForm(_ref) {
-  var functions = _ref.functions;
+  var functions = _ref.functions,
+      state = _ref.state;
+  var fieldValue = state.fieldValue,
+      setFieldValue = state.setFieldValue;
 
   var handleSubmit = function handleSubmit() {
-    return functions.onSubmit();
+    var string = fieldValue;
+    string = string.normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z\s])/g, '');
+    functions.onSubmit(string);
   };
 
+  var fieldController = {
+    type: "text",
+    className: "search-field",
+    placeholder: "O que você está procurando?",
+    onChange: function onChange(event) {
+      return setFieldValue(event.target.value);
+    },
+    onKeyPress: function onKeyPress(event) {
+      return event.key === 'Enter' && handleSubmit();
+    }
+  };
   return /*#__PURE__*/React.createElement(Block, {
     align: "right",
     custom: 'search-form'
-  }, /*#__PURE__*/React.createElement("input", {
-    className: "search-field",
-    type: "text",
-    placeholder: "O que voc\xEA est\xE1 procurando?"
-  }), /*#__PURE__*/React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement("input", fieldController), /*#__PURE__*/React.createElement(Button, {
     disabled: false,
     onClick: function onClick() {
       return handleSubmit();
@@ -861,12 +873,22 @@ SearchForm.propTypes = {
   content: PropTypes.object.isRequired,
   functions: PropTypes.shape({
     onSubmit: PropTypes.func
+  }),
+  state: PropTypes.shape({
+    fieldValue: PropTypes.string,
+    setFieldValue: PropTypes.func
   })
 };
 SearchForm.defaultProps = {
   content: {},
   functions: {
     onSubmit: function onSubmit() {
+      return null;
+    }
+  },
+  state: {
+    fieldValue: '',
+    setFieldValue: function setFieldValue() {
       return null;
     }
   }
