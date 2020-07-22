@@ -4,7 +4,7 @@
   @include b(unset, unset, unset);
   @include font('Montserrat', 12px, 14px, bold);
   @include fx(center, center);
-  @include h(48px);
+  @include h(40px);
   @include r(5px);
   @include miw(120px);
   @include px($space-size-2);

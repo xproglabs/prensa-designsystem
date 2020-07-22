@@ -3,7 +3,7 @@ import React from 'react';
 
 import Block from '../Block';
 
-const SideMenu = ({children, functions, status}) => {
+const SearchMenu = ({children, functions, status}) => {
   const menuIsOpen = status.opened ? 'opened' : 'closed';
   return (
     <Block custom={`menu-modal ${menuIsOpen}`}>
@@ -12,16 +12,15 @@ const SideMenu = ({children, functions, status}) => {
         onClick={functions.onCloseModal}>
       </Block>
       <Block 
-        bg="white"
-        custom="menu-left" 
+        bg="neutral-10"
+        custom="menu-right" 
         p="4">
         {children && children}
       </Block>
     </Block>
   );
 };
-
-SideMenu.propTypes = {
+SearchMenu.propTypes = {
   children: PropTypes.node,
   content: PropTypes.object.isRequired,
   functions: PropTypes.shape({
@@ -31,7 +30,7 @@ SideMenu.propTypes = {
     opened: PropTypes.bool
   })
 };
-SideMenu.defaultProps = {
+SearchMenu.defaultProps = {
   content: {},
   functions: {
     onCloseModal: () => null
@@ -40,4 +39,4 @@ SideMenu.defaultProps = {
     opened: false
   }
 };
-export default SideMenu;
+export default SearchMenu;

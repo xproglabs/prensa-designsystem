@@ -833,6 +833,82 @@ var index = {
   Input: Input
 };
 
+var SearchForm = function SearchForm(_ref) {
+  var functions = _ref.functions;
+
+  var handleSubmit = function handleSubmit() {
+    return functions.onSubmit();
+  };
+
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "search-form"
+  }, /*#__PURE__*/React.createElement("input", {
+    className: "search-field",
+    type: "text",
+    placeholder: "O que voc\xEA est\xE1 procurando?"
+  }), /*#__PURE__*/React.createElement(Button, {
+    disabled: false,
+    onClick: function onClick() {
+      return handleSubmit();
+    },
+    style: "primary"
+  }, "Buscar"));
+};
+
+SearchForm.propTypes = {
+  content: PropTypes.object.isRequired,
+  functions: PropTypes.shape({
+    onSubmit: PropTypes.func
+  })
+};
+SearchForm.defaultProps = {
+  content: {},
+  functions: {
+    onSubmit: function onSubmit() {
+      return null;
+    }
+  }
+};
+
+var SearchMenu = function SearchMenu(_ref) {
+  var children = _ref.children,
+      functions = _ref.functions,
+      status = _ref.status;
+  var menuIsOpen = status.opened ? 'opened' : 'closed';
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "menu-modal ".concat(menuIsOpen)
+  }, /*#__PURE__*/React.createElement(Block, {
+    custom: "menu-opacity",
+    onClick: functions.onCloseModal
+  }), /*#__PURE__*/React.createElement(Block, {
+    bg: "neutral-10",
+    custom: "menu-right",
+    p: "4"
+  }, children && children));
+};
+
+SearchMenu.propTypes = {
+  children: PropTypes.node,
+  content: PropTypes.object.isRequired,
+  functions: PropTypes.shape({
+    onCloseModal: PropTypes.func
+  }),
+  status: PropTypes.shape({
+    opened: PropTypes.bool
+  })
+};
+SearchMenu.defaultProps = {
+  content: {},
+  functions: {
+    onCloseModal: function onCloseModal() {
+      return null;
+    }
+  },
+  status: {
+    opened: false
+  }
+};
+
 var SideMenu = function SideMenu(_ref) {
   var children = _ref.children,
       functions = _ref.functions,
@@ -870,19 +946,6 @@ SideMenu.defaultProps = {
   status: {
     opened: false
   }
-};
-
-var SectionTitle = function SectionTitle(_ref) {
-  var name = _ref.name;
-  return /*#__PURE__*/React.createElement(Block, {
-    mb: "2"
-  }, /*#__PURE__*/React.createElement(Typography, {
-    custom: "section-title"
-  }, name));
-};
-
-SectionTitle.propTypes = {
-  name: PropTypes.string
 };
 
 var SideMenuItems = function SideMenuItems(_ref) {
@@ -929,6 +992,19 @@ SideMenuItems.propTypes = {
 };
 SideMenuItems.defaultProps = {
   content: {}
+};
+
+var SectionTitle = function SectionTitle(_ref) {
+  var name = _ref.name;
+  return /*#__PURE__*/React.createElement(Block, {
+    mb: "2"
+  }, /*#__PURE__*/React.createElement(Typography, {
+    custom: "section-title"
+  }, name));
+};
+
+SectionTitle.propTypes = {
+  name: PropTypes.string
 };
 
 var Topbar = function Topbar(_ref) {
@@ -986,6 +1062,8 @@ exports.Button = Button;
 exports.Form = index;
 exports.Grid = Grid;
 exports.Image = Image;
+exports.SearchForm = SearchForm;
+exports.SearchMenu = SearchMenu;
 exports.SectionTitle = SectionTitle;
 exports.SideMenu = SideMenu;
 exports.SideMenuItems = SideMenuItems;
