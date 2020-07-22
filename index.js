@@ -841,7 +841,8 @@ var SearchForm = function SearchForm(_ref) {
   };
 
   return /*#__PURE__*/React.createElement(Block, {
-    custom: "search-form"
+    align: "right",
+    custom: 'search-form'
   }, /*#__PURE__*/React.createElement("input", {
     className: "search-field",
     type: "text",

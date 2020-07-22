@@ -9,7 +9,7 @@ const SearchForm = ({functions}) => {
     return functions.onSubmit();
   };
   return (
-    <Block custom={'search-form'}>
+    <Block align='right' custom={'search-form'}>
       <input className="search-field" type="text" placeholder="O que você está procurando?" />
       <Button disabled={false} onClick={() => handleSubmit()} style="primary">Buscar</Button>
     </Block>
