@@ -747,7 +747,8 @@ Article.defaultProps = {
 var Button = function Button(props) {
   var style = classnames({
     'button': true,
-    'primary': props.style === 'primary' && !props.disabled,
+    'bg-primary-1': props.style === 'primary' && !props.disabled,
+    'fc-white': props.style === 'primary' && !props.disabled,
     'secondary': props.style === 'secondary' && !props.disabled,
     'tertiary': props.style === 'tertiary' && !props.disabled,
     'disabled': props.disabled
