@@ -502,13 +502,15 @@ var parseBody = function parseBody(content) {
     if (enabledTags.indexOf(tag) > -1) {
       var contentText = '';
       lodash.map(child, function (children) {
+        // render h2, em and pure text
         if (children.node === 'text' && tag === 'h2') {
           contentText = "".concat(contentText, "<span class=\"paragraph-title\">").concat(children.text, "</span>");
         } else if (children.node === 'text' && tag === 'em') {
           contentText = "".concat(contentText, "<i>").concat(children.text, "</i>");
         } else if (children.node === 'text') {
           contentText = "".concat(contentText).concat(children.text);
-        }
+        } // render a
+
 
         if (children.tag === 'a' && children.attr["class"] !== 'p-smartembed') {
           var text = children.child && children.child.length > 0 ? children.child[0].text : children.attr['aria-label'];
@@ -518,7 +520,7 @@ var parseBody = function parseBody(content) {
           });
           contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(text, "</a>");
         }
-      });
+      }); // add paragraph
 
       if (contentText && contentText !== '') {
         bodyItems.push({
@@ -526,17 +528,39 @@ var parseBody = function parseBody(content) {
           value: contentText
         });
       }
-    }
+    } // render image
 
-    tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed' && bodyItems.push({
-      type: 'Image',
-      value: attr['data-onecms-id']
-    });
+
+    if (tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed') {
+      var childImage = lodash.find(child, {
+        tag: 'img'
+      });
+
+      if (childImage) {
+        var subtitle = childImage.attr['alt'].toString();
+        subtitle = lodash.replace(subtitle, new RegExp(',', 'g'), ' ');
+        var propsImage = {
+          'image-contentId': attr['data-onecms-id'].replace('policy:', ''),
+          'image-subtitle': subtitle,
+          'image-byline': ''
+        };
+        bodyItems.push({
+          type: 'Image',
+          value: propsImage
+        });
+      }
+    } // render embed
+
 
     if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
       if (attr['href'].indexOf('facebook.com') > -1) {
         bodyItems.push({
           type: 'Facebook',
+          value: attr['href']
+        });
+      } else if (attr['href'].indexOf('instagram.com') > -1) {
+        bodyItems.push({
+          type: 'Instagram',
           value: attr['href']
         });
       } else if (attr['href'].indexOf('twitter.com') > -1) {
@@ -589,6 +613,12 @@ var TextBody = function TextBody(_ref) {
 
       case 'Image':
         return /*#__PURE__*/React.createElement(Image, {
+          key: key,
+          value: value
+        });
+
+      case 'Instagram':
+        return embeds && embeds.Instagram && /*#__PURE__*/React.createElement(embeds.Instagram, {
           key: key,
           value: value
         });
