@@ -8,16 +8,16 @@ import Typography from '../Typography';
 
 const Tags = props => {
   const {custom, content, onClick} = props;
-  const prosWrap = {align: 'row wrap', w: '100p', ...custom};
 
   const renderTag = (tag, k) => (
     <div key={k} className='tag' onClick={() => onClick(tag)}>
       <Typography tokenVariant='article-tag'>{tag}</Typography>
     </div>
   );
-
+  
+  const propsWrap = {align: 'row wrap', w: '100p', ...custom};
   return (
-    <Block {...prosWrap}>
+    <Block {...propsWrap}>
       {map(content, (item, k) => renderTag(item, k))}
     </Block>
   );
