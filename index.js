@@ -527,7 +527,7 @@ var parseBody = function parseBody(content) {
       });
 
       if (childImage) {
-        var subtitle = childImage && childImage.attr && childImage.attr['alt'] && childImage.attr['alt'].toString();
+        var subtitle = childImage.attr['alt'].toString();
         subtitle = lodash.replace(subtitle, new RegExp(',', 'g'), ' ');
         var propsImage = {
           'image-contentId': attr['data-onecms-id'].replace('policy:', ''),
@@ -608,6 +608,12 @@ var TextBody = function TextBody(_ref) {
           key: key,
           value: value
         }));
+
+      case 'Instagram':
+        return embeds && embeds.Instagram && /*#__PURE__*/React.createElement(embeds.Instagram, {
+          key: key,
+          value: value
+        });
 
       case 'Instagram':
         return embeds && embeds.Instagram && /*#__PURE__*/React.createElement(embeds.Instagram, {

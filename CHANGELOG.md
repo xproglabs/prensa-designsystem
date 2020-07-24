@@ -1,3 +1,6 @@
+# v1.3.1 (Fri Jul 24 2020)
+- Instalado lib svgr no projeto
+
 # v1.3.0 (Fri Jul 10 2020)
 - Updates no componente Article
 - Remove prefixo xp dos tokens
@@ -37,7 +40,7 @@
 # v1.0.1 (Sun Mar 29 2020)
 - Merge branch 'develop'
 
-#### Authors: 1
+#### Authors: 2
 
 - Fernando Bombassaro (fernando.bombassaro@gmail.com)
 - Giovanni Bombassaro (giovanni.bombassaro@gmail.com)
