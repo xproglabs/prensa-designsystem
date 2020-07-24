@@ -14,7 +14,7 @@ const Tags = props => {
       <Typography tokenVariant='article-tag'>{tag}</Typography>
     </div>
   );
-  
+
   const propsWrap = {align: 'row wrap', w: '100p', ...custom};
   return (
     <Block {...propsWrap}>
@@ -24,7 +24,7 @@ const Tags = props => {
 };
 
 Tags.propTypes = {
-  custom: PropTypes.object,
+  custom: PropTypes.string,
   content: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired
 };

@@ -420,11 +420,6 @@ var Tags = function Tags(props) {
       content = props.content,
       _onClick = props.onClick;
 
-  var prosWrap = _objectSpread2({
-    align: 'row wrap',
-    w: '100p'
-  }, custom);
-
   var renderTag = function renderTag(tag, k) {
     return /*#__PURE__*/React.createElement("div", {
       key: k,
@@ -437,13 +432,18 @@ var Tags = function Tags(props) {
     }, tag));
   };
 
-  return /*#__PURE__*/React.createElement(Block, prosWrap, lodash.map(content, function (item, k) {
+  var propsWrap = _objectSpread2({
+    align: 'row wrap',
+    w: '100p'
+  }, custom);
+
+  return /*#__PURE__*/React.createElement(Block, propsWrap, lodash.map(content, function (item, k) {
     return renderTag(item, k);
   }));
 };
 
 Tags.propTypes = {
-  custom: PropTypes.object,
+  custom: PropTypes.string,
   content: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired
 };
@@ -527,7 +527,7 @@ var parseBody = function parseBody(content) {
       });
 
       if (childImage) {
-        var subtitle = childImage.attr['alt'].toString();
+        var subtitle = childImage && childImage.attr && childImage.attr['alt'] && childImage.attr['alt'].toString();
         subtitle = lodash.replace(subtitle, new RegExp(',', 'g'), ' ');
         var propsImage = {
           'image-contentId': attr['data-onecms-id'].replace('policy:', ''),
@@ -608,12 +608,6 @@ var TextBody = function TextBody(_ref) {
           key: key,
           value: value
         }));
-
-      case 'Instagram':
-        return embeds && embeds.Instagram && /*#__PURE__*/React.createElement(embeds.Instagram, {
-          key: key,
-          value: value
-        });
 
       case 'Instagram':
         return embeds && embeds.Instagram && /*#__PURE__*/React.createElement(embeds.Instagram, {
@@ -853,9 +847,9 @@ var SearchForm = function SearchForm(_ref) {
   };
 
   var fieldController = {
-    type: "text",
-    className: "search-field",
-    placeholder: "O que você está procurando?",
+    type: 'text',
+    className: 'search-field',
+    placeholder: 'O que você está procurando?',
     onChange: function onChange(event) {
       return setFieldValue(event.target.value);
     },
@@ -987,7 +981,7 @@ var SideMenuItems = function SideMenuItems(_ref) {
     var hasSubitems = item.subitems.length > 0;
     return /*#__PURE__*/React.createElement(Block, {
       custom: "sidemenu-group",
-      mt: "4"
+      mb: "4"
     }, /*#__PURE__*/React.createElement(Block, {
       custom: "sidemenu-group-item",
       pb: "2",
