@@ -1,3 +1,11 @@
+# v1.3.2 (Fri Jul 24 2020)
+- Upgrade no Article component
+- Upgrade no Block component
+- Upgrade no Image component
+- Upgrade no Navigator
+- Upgrade no NewsList
+- Upgrade no Teaser-default
+
 # v1.3.1 (Fri Jul 24 2020)
 - Instalado lib svgr no projeto
 
