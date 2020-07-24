@@ -10,7 +10,8 @@ const Button = props => {
     'fc-white': props.style === 'primary' && !props.disabled,
     'secondary': props.style === 'secondary' && !props.disabled,
     'tertiary': props.style === 'tertiary' && !props.disabled,
-    'disabled': props.disabled
+    'disabled': props.disabled,
+    [`${props.custom}`]: props.custom
   });
 
   return (
@@ -22,6 +23,7 @@ const Button = props => {
 
 Button.propTypes = {
   children: PropTypes.node,
+  custom: PropTypes.string, 
   style: PropTypes.string,
   disabled: PropTypes.bool,
   onClick: PropTypes.func

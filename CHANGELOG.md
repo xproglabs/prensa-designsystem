@@ -1,3 +1,6 @@
+# v1.3.3 (Fri Jul 24 2020)
+- Permite custom class no Button
+
 # v1.3.2 (Fri Jul 24 2020)
 - Upgrade no Article component
 - Upgrade no Block component

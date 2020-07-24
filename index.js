@@ -745,14 +745,14 @@ Article.defaultProps = {
 };
 
 var Button = function Button(props) {
-  var style = classnames({
+  var style = classnames(_defineProperty({
     'button': true,
     'bg-primary-1': props.style === 'primary' && !props.disabled,
     'fc-white': props.style === 'primary' && !props.disabled,
     'secondary': props.style === 'secondary' && !props.disabled,
     'tertiary': props.style === 'tertiary' && !props.disabled,
     'disabled': props.disabled
-  });
+  }, "".concat(props.custom), props.custom));
   return /*#__PURE__*/React.createElement("button", {
     className: style,
     onClick: props.disabled ? null : props.onClick
@@ -761,6 +761,7 @@ var Button = function Button(props) {
 
 Button.propTypes = {
   children: PropTypes.node,
+  custom: PropTypes.string,
   style: PropTypes.string,
   disabled: PropTypes.bool,
   onClick: PropTypes.func
