@@ -8,7 +8,12 @@ import {Teaser} from '../Teasers';
 const GridNews = props => {
   const {content, status} = props;
   const {items} = content;
-  const propsTemplate = {custom: 'templates-newsgrid', md: {align: 'row'}};
+  
+  const propsTemplate = {
+    align: 'between', 
+    custom: 'templates-newsgrid', 
+    md: {align: 'row'}
+  };
   
   if(items.length === 3) {
     propsTemplate.custom = 'templates-newsgrid three';

@@ -18,7 +18,7 @@ const Featured = props => {
     );
   }
   if(items.length === 3) {
-    const propsTemplate = {custom: 'templates-featured', md: {align: 'row'}};
+    const propsTemplate = {custom: 'templates-featured three', md: {align: 'row between'}};
     return (
       <Block {...propsTemplate}>
         <Block custom='block-left'>

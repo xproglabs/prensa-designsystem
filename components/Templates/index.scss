@@ -2,21 +2,23 @@
 
 .templates-featured {
   @media(min-width: $md) {
-    .block-left {
-      @include w(65%);
-    }
-    .block-right {
-      @include w(35%);
+    &.three {
+      .block-left {
+        @include w(calc(65% - #{$space-size-1}));
+      }
+      .block-right {
+        @include w(calc(35% - #{$space-size-1}));
+      }
     }
   }
 }
 .templates-newsgrid {
   @media(min-width: $md) {
     &.three > div {
-      @include w(calc(100% / 3));
+      @include w(calc(calc(100% - #{$space-size-4}) / 3));
     }
     &.four > div {
-      @include w(calc(100% / 4));
+      @include w(calc(calc(100% - #{$space-size-6}) / 4));
     }
   }
 }

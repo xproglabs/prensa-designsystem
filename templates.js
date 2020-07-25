@@ -266,8 +266,8 @@ var Teaser = function Teaser(_ref) {
     mr: '2',
     w: '100p-4',
     'md': {
-      m: '3',
-      w: 'auto'
+      m: '2',
+      w: '100p-4'
     }
   };
   var propsDate = {
@@ -415,9 +415,9 @@ var Featured = function Featured(props) {
 
   if (items.length === 3) {
     var propsTemplate = {
-      custom: 'templates-featured',
+      custom: 'templates-featured three',
       md: {
-        align: 'row'
+        align: 'row between'
       }
     };
     return /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
@@ -449,6 +449,7 @@ var GridNews = function GridNews(props) {
       status = props.status;
   var items = content.items;
   var propsTemplate = {
+    align: 'between',
     custom: 'templates-newsgrid',
     md: {
       align: 'row'
@@ -456,11 +457,11 @@ var GridNews = function GridNews(props) {
   };
 
   if (items.length === 3) {
-    propsTemplate.custom = "templates-newsgrid three";
+    propsTemplate.custom = 'templates-newsgrid three';
   }
 
   if (items.length === 4) {
-    propsTemplate.custom = "templates-newsgrid four";
+    propsTemplate.custom = 'templates-newsgrid four';
   }
 
   return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(items, function (item, key) {

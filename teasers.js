@@ -265,8 +265,8 @@ var Teaser = function Teaser(_ref) {
     mr: '2',
     w: '100p-4',
     'md': {
-      m: '3',
-      w: 'auto'
+      m: '2',
+      w: '100p-4'
     }
   };
   var propsDate = {
