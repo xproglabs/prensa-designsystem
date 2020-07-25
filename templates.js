@@ -87,128 +87,6 @@ Block.propTypes = {
 };
 Block.defaultProps = {};
 
-var Grid = function Grid(props) {
-  var xs = props.xs,
-      sm = props.sm,
-      md = props.md,
-      columns = props.columns;
-
-  var handlexs = function handlexs() {
-    switch (xs) {
-      case 25:
-        return 'xs-25';
-
-      case 33:
-        return 'xs-33';
-
-      case 50:
-        return 'xs-50';
-
-      case 75:
-        return 'xs-75';
-
-      case 100:
-      default:
-        return 'xs-100';
-    }
-  };
-
-  var handlesm = function handlesm() {
-    switch (sm) {
-      case 25:
-        return 'sm-25';
-
-      case 33:
-        return 'sm-33';
-
-      case 50:
-        return 'sm-50';
-
-      case 75:
-        return 'sm-75';
-
-      case 100:
-      default:
-        return 'sm-100';
-    }
-  };
-
-  var handlemd = function handlemd() {
-    switch (md) {
-      case 25:
-        return 'md-25';
-
-      case 33:
-        return 'md-33';
-
-      case 50:
-        return 'md-50';
-
-      case 75:
-        return 'md-75';
-
-      case 100:
-      default:
-        return 'md-100';
-    }
-  };
-
-  var getColumns = function getColumns() {
-    switch (columns) {
-      case 1:
-        return 'grid-1-col';
-
-      case 2:
-        return 'grid-2-col';
-
-      case 3:
-        return 'grid-3-col';
-
-      case 4:
-        return 'grid-4-col';
-
-      case 5:
-        return 'grid-5-col';
-
-      case 6:
-        return 'grid-6-col';
-
-      case 7:
-        return 'grid-7-col';
-
-      case 8:
-        return 'grid-8-col';
-
-      case 9:
-        return 'grid-9-col';
-
-      case 10:
-        return 'grid-10-col';
-
-      case 11:
-        return 'grid-11-col';
-
-      case 12:
-        return 'grid-12-col';
-
-      default:
-        return null;
-    }
-  };
-
-  return /*#__PURE__*/React.createElement("div", {
-    className: classnames(getColumns(), handlexs(), handlesm(), handlemd())
-  }, props.children);
-};
-
-Grid.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
-  columns: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
-  xs: PropTypes.oneOf([25, 33, 50, 75, 100]),
-  sm: PropTypes.oneOf([25, 33, 50, 75, 100]),
-  md: PropTypes.oneOf([25, 33, 50, 75, 100])
-};
-
 var Image = function Image(_ref) {
   var value = _ref.value;
   if (!value || !value['image-contentId']) return false;
@@ -521,85 +399,85 @@ TeaserFeatured.propTypes = {
   })
 };
 
-var BreakingNews = function BreakingNews(props) {
-  var _props$blockData = props.blockData,
-      content = _props$blockData.content,
-      status = _props$blockData.status;
-  return /*#__PURE__*/React.createElement(Block, {
-    row: true,
-    style: "breaking-news"
-  }, /*#__PURE__*/React.createElement(Grid, {
-    columns: 12
-  }, /*#__PURE__*/React.createElement(TeaserFeatured, {
-    content: content[0],
-    status: status
-  })));
-};
+var Featured = function Featured(props) {
+  var content = props.content,
+      status = props.status;
+  var items = content.items;
 
-BreakingNews.propTypes = {
-  blockData: PropTypes.shape({
-    content: PropTypes.array,
-    status: PropTypes.object
-  })
-};
-
-var FourCol = function FourCol(props) {
-  var _props$blockData = props.blockData,
-      content = _props$blockData.content,
-      status = _props$blockData.status;
-  return /*#__PURE__*/React.createElement(Block, {
-    row: true,
-    style: "3-col"
-  }, lodash.map(content, function (teaser, k) {
-    return /*#__PURE__*/React.createElement(Grid, {
-      key: k,
-      xs: 100,
-      md: 33,
-      columns: 3
+  if (items.length === 1) {
+    return /*#__PURE__*/React.createElement(Block, {
+      custom: "templates-featured"
     }, /*#__PURE__*/React.createElement(Teaser, {
-      content: teaser,
+      content: items[0],
       status: status
     }));
+  }
+
+  if (items.length === 3) {
+    var propsTemplate = {
+      custom: 'templates-featured',
+      md: {
+        align: 'row'
+      }
+    };
+    return /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
+      custom: "block-left"
+    }, /*#__PURE__*/React.createElement(Teaser, {
+      content: items[0],
+      status: status
+    })), /*#__PURE__*/React.createElement(Block, {
+      custom: "block-right"
+    }, /*#__PURE__*/React.createElement(Teaser, {
+      content: items[1],
+      status: status
+    }), /*#__PURE__*/React.createElement(Teaser, {
+      content: items[2],
+      status: status
+    })));
+  }
+
+  return null;
+};
+
+Featured.propTypes = {
+  content: PropTypes.object,
+  status: PropTypes.object
+};
+
+var GridNews = function GridNews(props) {
+  var content = props.content,
+      status = props.status;
+  var items = content.items;
+  var propsTemplate = {
+    custom: 'templates-newsgrid',
+    md: {
+      align: 'row'
+    }
+  };
+
+  if (items.length === 3) {
+    propsTemplate.custom = "templates-newsgrid three";
+  }
+
+  if (items.length === 4) {
+    propsTemplate.custom = "templates-newsgrid four";
+  }
+
+  return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(items, function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      key: key,
+      content: item,
+      status: status
+    });
   }));
 };
 
-FourCol.propTypes = {
-  blockData: PropTypes.shape({
-    content: PropTypes.array,
-    image: PropTypes.array,
-    status: PropTypes.object
-  })
+GridNews.propTypes = {
+  content: PropTypes.object,
+  status: PropTypes.object
 };
 
-var FourCol$1 = function FourCol(props) {
-  var _props$blockData = props.blockData,
-      content = _props$blockData.content,
-      status = _props$blockData.status;
-  return /*#__PURE__*/React.createElement(Block, {
-    row: true,
-    style: "4-col"
-  }, lodash.map(content, function (teaser, k) {
-    return /*#__PURE__*/React.createElement(Grid, {
-      key: k,
-      xs: 100,
-      md: 50,
-      columns: 3
-    }, /*#__PURE__*/React.createElement(Teaser, {
-      content: teaser,
-      status: status
-    }));
-  }));
-};
-
-FourCol$1.propTypes = {
-  blockData: PropTypes.shape({
-    content: PropTypes.array,
-    image: PropTypes.array,
-    status: PropTypes.object
-  })
-};
-
-var NewsList = function NewsList(_ref) {
+var ListNews = function ListNews(_ref) {
   var content = _ref.content,
       status = _ref.status;
 
@@ -608,7 +486,7 @@ var NewsList = function NewsList(_ref) {
   }
 
   return /*#__PURE__*/React.createElement(Block, {
-    custom: "news-list"
+    custom: "list-news"
   }, lodash.map(content, function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
@@ -618,7 +496,7 @@ var NewsList = function NewsList(_ref) {
   }));
 };
 
-NewsList.propTypes = {
+ListNews.propTypes = {
   content: PropTypes.array.isRequired,
   status: PropTypes.shape({
     error: PropTypes.bool,
@@ -626,7 +504,6 @@ NewsList.propTypes = {
   })
 };
 
-exports.BreakingNews = BreakingNews;
-exports.FourCol = FourCol$1;
-exports.NewsList = NewsList;
-exports.ThreeCol = FourCol;
+exports.Featured = Featured;
+exports.GridNews = GridNews;
+exports.NewsList = ListNews;

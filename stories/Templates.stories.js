@@ -1,11 +1,14 @@
-import {text, boolean, withKnobs} from '@storybook/addon-knobs';
+import {withKnobs} from '@storybook/addon-knobs';
+import {find} from 'lodash';
 import React from 'react';
 
 import Block from '../components/Block';
-import {BreakingNews, ThreeCol, FourCol, NewsList} from '../components/Templates';
+import {
+  Featured, 
+  GridNews
+} from '../components/Templates';
 import pagelist from '../mockup/pagelist.json';
 import {sassWrapper} from '../utils/SassWrapper';
-
 
 export default {
   title: 'Components | Templates',
@@ -13,125 +16,26 @@ export default {
   decorators: [withKnobs, sassWrapper]
 };
 
-export const QuatroManchetes = () => {
-  const hasImage = boolean('image', false);
-  const image = {
-    imageUrl: null,
-    captionAndByline: null
-  };
-
-  //POLOPOLY JSON
-  const content = [
-    {
-      title: text('title', 'The quick brown fox jumps over the lazy dog'),
-      subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
-      subject: text('subject', 'Assunto'),
-      image: hasImage && image
-    },
-    {
-      title: text('title', 'The quick brown fox jumps over the lazy dog'),
-      subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
-      subject: text('subject', 'Assunto'),
-      image: hasImage && image
-    },
-    {
-      title: text('title', 'The quick brown fox jumps over the lazy dog'),
-      subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
-      subject: text('subject', 'Assunto'),
-      image: hasImage && image
-    },
-    {
-      title: text('title', 'The quick brown fox jumps over the lazy dog'),
-      subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
-      subject: text('subject', 'Assunto'),
-      image: hasImage && image
-    },
-  ];
-
-  const status = {
-    loading: boolean('loading', false),
-    error: boolean('loading', false)
-  };
-  
-  const blockData = {
-    content: content,
-    status: status
-  };
-  return (
-    <FourCol blockData={blockData} />
-  );
+export const Featured1 = () => {
+  const status = {loading: false, error: false};
+  const template = find(pagelist, {contentId: '1.1984'});
+  return <Featured content={template} status={status} />;
 };
 
-export const TresManchetes = () => {
-  const hasImage = boolean('image', false);
-  const image = {
-    imageUrl: null,
-    captionAndByline: null
-  };
-
-  //POLOPOLY JSON
-  const content = [
-    {
-      title: text('title', 'The quick brown fox jumps over the lazy dog'),
-      subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
-      subject: text('subject', 'Assunto'),
-      image: hasImage && image
-    },
-    {
-      title: text('title', 'The quick brown fox jumps over the lazy dog'),
-      subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
-      subject: text('subject', 'Assunto'),
-      image: hasImage && image
-    },
-    {
-      title: text('title', 'The quick brown fox jumps over the lazy dog'),
-      subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
-      subject: text('subject', 'Assunto'),
-      image: hasImage && image
-    },
-  ];
-
-  const status = {
-    loading: boolean('loading', false),
-    error: boolean('loading', false)
-  };
-  
-  const blockData = {
-    content: content,
-    status: status
-  };
-  return (
-    <ThreeCol blockData={blockData}/>
-  );
+export const Featured3 = () => {
+  const status = {loading: false, error: false};
+  const template = find(pagelist, {contentId: '1.1985'});
+  return <Featured content={template} status={status} />;
 };
 
-export const BlocoBreakingNews = () => {
-  const hasImage = boolean('image', false);
-  
-  const status = {
-    loading: boolean('loading', true),
-    error: boolean('error', false)
-  };
-  const image = {
-    imageUrl: null,
-    captionAndByline: null
-  };
-  const content = {
-    title: text('title', 'The quick brown fox jumps over the lazy dog'),
-    subject: text('subtitle', 'Lorem ipsum sit'),
-    image: hasImage && image
-  };
-  
-  //POLOPOLY JSON
-  const blockData = {
-    content: [content],
-    status: status,
-  };
-  return (
-    <BreakingNews blockData={blockData} />
-  );
+export const GridCom3 = () => {
+  const status = {loading: false, error: false};
+  const template = find(pagelist, {contentId: '1.1983'});
+  return <GridNews content={template} status={status} />;
 };
 
-export const BlocoUltimas = () => {
-  return <NewsList content={pagelist} status={{loading: false}} />;
+export const GridCom4 = () => {
+  const status = {loading: false, error: false};
+  const template = find(pagelist, {contentId: '1.1986'});
+  return <GridNews content={template} status={status} />;
 };
