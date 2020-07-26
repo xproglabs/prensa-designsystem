@@ -3,11 +3,11 @@ import React from 'react';
 
 import Block from '../Block';
 import Grid from '../Grid';
+import Image from '../Image';
 import SocialMedias from '../SocialMedias';
 import Subject from '../Subject';
 import Tags from '../Tags';
 import Typography from '../Typography';
-import Image from './Image';
 import TextBody from './TextBody';
 
 const Article = ({content, embeds, handleTagClick, socialMedias}) => {
@@ -16,19 +16,26 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
   const createdAt = content['time-created'];
   const updatedAt = content['time-modified'];
 
+  const propsArticle = {align: 'center', custom: 'article'};
+  const propsArticleHead = {align: 'center', custom: 'article-head', w: '100p'};
+  const propsArticleData = {align: 'center', custom: 'article-data', w: '100p'};
+  const propsArticleBody = {align: 'center', custom: 'article-body', w: '100p'};
+  const propsArticleInfo = {align: 'column left middle', custom: 'article-media has-border-bottom', mb: '4', w: '100p', 'md': {align: 'row between middle'}};
+  const propsArticleAuthor = {align: 'col', custom: '', w: '100p'};
+  const customArticleTag = {custom: 'article-tag'};
   return (
-    <Block alignCenter style='article'>
-      <Block alignCenter width="full">
+    <Block {...propsArticle}>
+      <Block {...propsArticleHead}>
         <Grid columns={12}>
           <Subject filled>{subject}</Subject>
           <Typography tokenVariant='article-title'>{title}</Typography>
           <Typography tokenVariant='article-subtitle'>{subtitle}</Typography>
         </Grid>
       </Block>
-      <Block alignCenter width="full">
+      <Block {...propsArticleData}>
         <Grid columns={12}>
-          <Block row alignBetween alignMiddle custom='has-border-bottom'>
-            <Block column>
+          <Block {...propsArticleInfo}>
+            <Block {...propsArticleAuthor}>
               <Typography tokenVariant='system-bold'>{author}</Typography>
               <Typography tokenVariant='system'>Criado em: {createdAt}</Typography>
               {updatedAt && <Typography tokenVariant='system'>Atualizado em: {updatedAt}</Typography>}
@@ -37,7 +44,7 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
           </Block>
         </Grid>
       </Block>
-      <Block alignCenter width="full">
+      <Block {...propsArticleBody}>
         <Grid columns={12}>
           {images['image-contentId'] && <Image value={images} />}
         </Grid>
@@ -45,11 +52,9 @@ const Article = ({content, embeds, handleTagClick, socialMedias}) => {
           <TextBody content={text} embeds={embeds} />
         </Grid>
       </Block>
-      <Block row>
-        <Grid columns={10}>
-          <Tags content={metadata} onClick={handleTagClick}/>
-        </Grid>
-      </Block>
+      <Grid columns={10}>
+        <Tags custom={customArticleTag} content={metadata} onClick={handleTagClick}/>
+      </Grid>
     </Block>
   );
 };

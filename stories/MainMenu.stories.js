@@ -1,8 +1,8 @@
 import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
-import SideMenu from '../components/SideMenu';
-import SideMenuItems from '../components/SideMenu/Items';
+import SideMenuItems from '../components/Menus/SideItems';
+import SideMenu from '../components/Menus/SideMenu';
 import navigation from '../mockup/navigation';
 import {sassWrapper} from '../utils/SassWrapper';
 
@@ -17,6 +17,9 @@ export const MainMenu = () => {
   const menuLeftItemsProps = {
     content: {
       items: navigation.side
+    },
+    functions: {
+      onMenuItem: () => null
     }
   };
   const dataSideMenu = {

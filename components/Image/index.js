@@ -18,7 +18,7 @@ const Image = ({value}) => {
   const imagePath = `/image/policy:${contentid}/image.jpg?f=${derivative}&w=${width}`;
 
   return (
-    <Block custom="article-image-box" width="full">
+    <Block custom="article-image-box" w="100p">
       <img className='image-article' src={imagePath} alt={captionAndByline ? captionAndByline : `Imagem ${contentid}`} />
       <Block custom='label'>{captionAndByline}</Block>
     </Block>

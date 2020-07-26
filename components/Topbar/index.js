@@ -6,42 +6,46 @@ import Block from '../Block';
 const Topbar = ({content, functions}) => {
   const {LeftContent, CenterContent, RightContent} = content;
   return (
-    <Block custom="topbar" 
-      alignBetween
-      alignMiddle
-      bgColor="primary-1" 
-      row
-      width="full">
-      <Block>
-        {LeftContent && <LeftContent functions={functions} />}
-      </Block>
-      <Block>
-        {CenterContent && <CenterContent />}
-      </Block>
-      <Block>
-        {RightContent && <RightContent />}
+    <Block 
+      align="row center"
+      bg="primary-1" 
+      color="white" 
+      custom="topbar" 
+      w="100p">
+      <Block 
+        align="row middle between"
+        custom="wrap"
+        w="100p">
+        <Block>
+          {LeftContent && <LeftContent functions={functions} />}
+        </Block>
+        <Block>
+          {CenterContent && <CenterContent />}
+        </Block>
+        <Block>
+          {RightContent && <RightContent />}
+        </Block>
       </Block>
     </Block>
   );
 };
-
 const LeftMenuIcon = ({functions}) => {
   return (
-    <Block custom="menu-left-icon" 
-      fColor="neutral-8" 
-      functions={{handleClick: functions.handleMenuClick}}
-      pl="md">
+    <Block 
+      custom="menu-left-icon" 
+      cursor="pointer"
+      fc="neutral-8" 
+      pl="4"
+      onClick={functions.handleMenuClick}>
       MENU
     </Block>
   );
 };
-
 LeftMenuIcon.propTypes = {
   functions: PropTypes.shape({
     handleMenuClick: PropTypes.func
   })
 };
-
 Topbar.propTypes = {
   content: PropTypes.object.isRequired,
   functions: PropTypes.shape({

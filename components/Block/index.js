@@ -3,164 +3,120 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Block = (props) => {
-  const {
-    alignBetween,
-    alignBottom,
-    alignCenter,
-    alignEvenly,
-    alignLeft,
-    alignMiddle,
-    alignRight,
-    alignTop,
-    bgColor,
-    custom,
-    functions,
-    fColor,
-    fitH,
-    fitW,
-    m,
-    mb,
-    ml,
-    mr,
-    mt,
-    p,
-    pb,
-    pl,
-    pr,
-    pt,
-    row,
-    height,
-    width,
-    style
-  } = props;
 
-  const getStyle = () => {
-    switch(style) {
-      case 'article':
-        return 'article';
-      case '3-col':
-        return 'block-three-col';
-      case '4-col':
-        return 'block-four-col';
-      default:
-        return '';
-    }
+  const {children, xs, sm, md, lg, xl, onClick} = props;
+
+  const defProps = (prefix, props) => {
+
+    const checkAttr = (_props, name) => 
+      _props.align && 
+        _props.align.indexOf(name) > -1;
+    
+    const direction = 
+      props && 
+        props.align && 
+          (props.align.indexOf('row') > -1 ?
+            'row' : 'col');
+    
+    return classnames({
+      [`fx-col${prefix}`]: direction === 'col',
+      [`fx-row${prefix}`]: direction === 'row',
+      [`${direction}-between${prefix}`]: checkAttr(props, 'between'),
+      [`${direction}-bottom${prefix}`]: checkAttr(props, 'bottom'),
+      [`${direction}-center${prefix}`]: checkAttr(props, 'center'),
+      [`${direction}-evenly${prefix}`]: checkAttr(props, 'evenly'),
+      [`${direction}-left${prefix}`]: checkAttr(props, 'left'),
+      [`${direction}-middle${prefix}`]: checkAttr(props, 'middle'),
+      [`${direction}-right${prefix}`]: checkAttr(props, 'right'),
+      [`${direction}-top${prefix}`]: checkAttr(props, 'top'),
+      [`${direction}-wrap${prefix}`]: checkAttr(props, 'wrap'),
+      [`bg-${props.bg}${prefix}`]: props.bg,
+      [`cursor-${props.cursor}${prefix}`]: props.cursor,
+      [`fc-${props.color}${prefix}`]: props.color,
+      [`h-${props.h}${prefix}`]: props.h,
+      [`m-${props.m}${prefix}`]: props.m,
+      [`mt-${props.mt}${prefix}`]: props.mt,
+      [`mr-${props.mr}${prefix}`]: props.mr,
+      [`mb-${props.mb}${prefix}`]: props.mb,
+      [`ml-${props.ml}${prefix}`]: props.ml,
+      [`p-${props.p}${prefix}`]: props.p,
+      [`pt-${props.pt}${prefix}`]: props.pt,
+      [`pr-${props.pr}${prefix}`]: props.pr,
+      [`pb-${props.pb}${prefix}`]: props.pb,
+      [`pl-${props.pl}${prefix}`]: props.pl,
+      [`w-${props.w}${prefix}`]: props.w,
+      [`${props.custom}`]: props.custom,
+    });
   };
 
-  const classes = classnames({
-    'ds-block': true,
-    'fx-align-between': !row && alignBetween,
-    'fx-align-bottom': !row && alignBottom,
-    'fx-align-center': !row && alignCenter,
-    'fx-align-evenly': !row && alignEvenly,
-    'fx-align-left': !row && alignLeft,
-    'fx-align-middle': !row && alignMiddle,
-    'fx-align-right': !row && alignRight,
-    'fx-align-top': !row && alignTop,
-    'fy-align-between': row && alignBetween,
-    'fy-align-bottom': row && alignBottom,
-    'fy-align-center': row && alignCenter,
-    'fy-align-evenly': row && alignEvenly,
-    'fy-align-left': row && alignLeft,
-    'fy-align-middle': row && alignMiddle,
-    'fy-align-right': row && alignRight,
-    'fy-align-top': row && alignTop,
-    'fx-dir-col': !row,
-    'fx-dir-row': row,
-    'fx-fit-h': fitH,
-    'fx-fit-w': fitW,
-    [`bg-${bgColor}`]: bgColor,
-    [`f-${fColor}`]: fColor,
-    [`h-${height}`]: height,
-    [`m-${m}`]: m,
-    [`mb-${mb}`]: mb,
-    [`ml-${ml}`]: ml,
-    [`mr-${mr}`]: mr,
-    [`mt-${mt}`]: mt,
-    [`p-${p}`]: p,
-    [`pb-${pb}`]: pb,
-    [`pl-${pl}`]: pl,
-    [`pr-${pr}`]: pr,
-    [`pt-${pt}`]: pt,
-    [`w-${width}`]: width,
-    [`${custom}`]: custom
-  });
+  const dProps = defProps('', props);
+  const xsProps = xs && defProps('--xs', xs);
+  const smProps = sm && defProps('--sm', sm);
+  const mdProps = md && defProps('--md', md);
+  const lgProps = lg && defProps('--lg', lg);
+  const xlProps = xl && defProps('--xl', xl);
 
-  const {handleClick} = functions;
-  return (
-    <div className={classnames(classes, getStyle())} 
-      onClick={handleClick && handleClick}
-    >
-      {props.children && props.children}
-    </div>
-  );
+  const classProps = {
+    className: classnames(dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block', 
+    children, 
+    onClick
+  };
+  return <div {...classProps}></div>;
 };
 
+const propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
 Block.propTypes = {
-  alignBetween: PropTypes.bool,
-  alignBottom: PropTypes.bool,
-  alignCenter: PropTypes.bool,
-  alignEvenly: PropTypes.bool,
-  alignLeft: PropTypes.bool,
-  alignMiddle: PropTypes.bool,
-  alignRight: PropTypes.bool,
-  alignTop: PropTypes.bool,
-  bgColor: PropTypes.string,
+  align: PropTypes.string,
+  bg: PropTypes.string,
+  color: PropTypes.string, 
+  cursor: PropTypes.string, 
+  m: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  mt: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  mr: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  mb: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  ml: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  p: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  pt: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  pr: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  pb: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  pl: PropTypes.oneOf([
+    ...propTypesSizes
+  ]), 
+  xs: PropTypes.object,
+  sm: PropTypes.object,
+  md: PropTypes.object,
+  lg: PropTypes.object,
+  xl: PropTypes.object,
   children: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object,
     PropTypes.node
   ]),
-  custom: PropTypes.string,
-  functions: PropTypes.object,
-  fColor: PropTypes.string,
-  fitH: PropTypes.bool,
-  fitW: PropTypes.bool,
-  m: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  mb: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  ml: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  mr: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  mt: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  p: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  pb: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  pl: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  pr: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  pt: PropTypes.oneOf([
-    '0', 'xs', 'sm', 'md', 'lg', 'xl'
-  ]),
-  row: PropTypes.bool,
-  height: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl', 'full'
-  ]),
-  width: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl', 'full'
-  ]),
-  style: PropTypes.oneOf([
-    'article', '3-col', '4-col'
-  ])
+  custom: PropTypes.string, 
+  onClick: PropTypes.func,
+  w: PropTypes.string,
+  h: PropTypes.string,
 };
 
-Block.defaultProps = {
-  functions: {},
-  p: '0'
-};
+Block.defaultProps = {};
 
 export default Block;

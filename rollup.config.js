@@ -24,7 +24,7 @@ export default [
       }),
       json(),
       resolve(),
-      sass()
+      sass(),
     ]
   },
   {
@@ -46,7 +46,7 @@ export default [
       }),
       json(),
       resolve(),
-      sass()
+      sass(),
     ]
   },
   {
@@ -68,7 +68,7 @@ export default [
       }),
       json(),
       resolve(),
-      sass()
+      sass(),
     ]
   }
 ];

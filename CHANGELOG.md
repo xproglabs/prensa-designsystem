@@ -3,6 +3,14 @@
 - Remove prefixo xp dos tokens
 - Remove projeto exemplo
 - Remove componente Panel
+- Instalado lib svgr no projeto
+- Upgrade no Article component
+- Upgrade no Block component
+- Upgrade no Image component
+- Upgrade no Navigator
+- Upgrade no NewsList
+- Upgrade no Teaser-default
+- Permite custom class no Button
 
 # v1.2.1 (Sun Jun 29 2020)
 - Adiciona Templates
@@ -37,7 +45,7 @@
 # v1.0.1 (Sun Mar 29 2020)
 - Merge branch 'develop'
 
-#### Authors: 1
+#### Authors: 2
 
 - Fernando Bombassaro (fernando.bombassaro@gmail.com)
 - Giovanni Bombassaro (giovanni.bombassaro@gmail.com)

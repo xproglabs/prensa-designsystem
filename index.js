@@ -25,137 +25,102 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
 
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
     }
+  }
 
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
+  return target;
 }
 
 var Block = function Block(props) {
-  var _classnames;
+  var children = props.children,
+      xs = props.xs,
+      sm = props.sm,
+      md = props.md,
+      lg = props.lg,
+      xl = props.xl,
+      onClick = props.onClick;
 
-  var alignBetween = props.alignBetween,
-      alignBottom = props.alignBottom,
-      alignCenter = props.alignCenter,
-      alignEvenly = props.alignEvenly,
-      alignLeft = props.alignLeft,
-      alignMiddle = props.alignMiddle,
-      alignRight = props.alignRight,
-      alignTop = props.alignTop,
-      bgColor = props.bgColor,
-      custom = props.custom,
-      functions = props.functions,
-      fColor = props.fColor,
-      fitH = props.fitH,
-      fitW = props.fitW,
-      m = props.m,
-      mb = props.mb,
-      ml = props.ml,
-      mr = props.mr,
-      mt = props.mt,
-      p = props.p,
-      pb = props.pb,
-      pl = props.pl,
-      pr = props.pr,
-      pt = props.pt,
-      row = props.row,
-      height = props.height,
-      width = props.width,
-      style = props.style;
+  var defProps = function defProps(prefix, props) {
+    var _classnames;
 
-  var getStyle = function getStyle() {
-    switch (style) {
-      case 'article':
-        return 'article';
+    var checkAttr = function checkAttr(_props, name) {
+      return _props.align && _props.align.indexOf(name) > -1;
+    };
 
-      case '3-col':
-        return 'block-three-col';
-
-      case '4-col':
-        return 'block-four-col';
-
-      default:
-        return '';
-    }
+    var direction = props && props.align && (props.align.indexOf('row') > -1 ? 'row' : 'col');
+    return classnames((_classnames = {}, _defineProperty(_classnames, "fx-col".concat(prefix), direction === 'col'), _defineProperty(_classnames, "fx-row".concat(prefix), direction === 'row'), _defineProperty(_classnames, "".concat(direction, "-between").concat(prefix), checkAttr(props, 'between')), _defineProperty(_classnames, "".concat(direction, "-bottom").concat(prefix), checkAttr(props, 'bottom')), _defineProperty(_classnames, "".concat(direction, "-center").concat(prefix), checkAttr(props, 'center')), _defineProperty(_classnames, "".concat(direction, "-evenly").concat(prefix), checkAttr(props, 'evenly')), _defineProperty(_classnames, "".concat(direction, "-left").concat(prefix), checkAttr(props, 'left')), _defineProperty(_classnames, "".concat(direction, "-middle").concat(prefix), checkAttr(props, 'middle')), _defineProperty(_classnames, "".concat(direction, "-right").concat(prefix), checkAttr(props, 'right')), _defineProperty(_classnames, "".concat(direction, "-top").concat(prefix), checkAttr(props, 'top')), _defineProperty(_classnames, "".concat(direction, "-wrap").concat(prefix), checkAttr(props, 'wrap')), _defineProperty(_classnames, "bg-".concat(props.bg).concat(prefix), props.bg), _defineProperty(_classnames, "cursor-".concat(props.cursor).concat(prefix), props.cursor), _defineProperty(_classnames, "fc-".concat(props.color).concat(prefix), props.color), _defineProperty(_classnames, "h-".concat(props.h).concat(prefix), props.h), _defineProperty(_classnames, "m-".concat(props.m).concat(prefix), props.m), _defineProperty(_classnames, "mt-".concat(props.mt).concat(prefix), props.mt), _defineProperty(_classnames, "mr-".concat(props.mr).concat(prefix), props.mr), _defineProperty(_classnames, "mb-".concat(props.mb).concat(prefix), props.mb), _defineProperty(_classnames, "ml-".concat(props.ml).concat(prefix), props.ml), _defineProperty(_classnames, "p-".concat(props.p).concat(prefix), props.p), _defineProperty(_classnames, "pt-".concat(props.pt).concat(prefix), props.pt), _defineProperty(_classnames, "pr-".concat(props.pr).concat(prefix), props.pr), _defineProperty(_classnames, "pb-".concat(props.pb).concat(prefix), props.pb), _defineProperty(_classnames, "pl-".concat(props.pl).concat(prefix), props.pl), _defineProperty(_classnames, "w-".concat(props.w).concat(prefix), props.w), _defineProperty(_classnames, "".concat(props.custom), props.custom), _classnames));
   };
 
-  var classes = classnames((_classnames = {
-    'ds-block': true,
-    'fx-align-between': !row && alignBetween,
-    'fx-align-bottom': !row && alignBottom,
-    'fx-align-center': !row && alignCenter,
-    'fx-align-evenly': !row && alignEvenly,
-    'fx-align-left': !row && alignLeft,
-    'fx-align-middle': !row && alignMiddle,
-    'fx-align-right': !row && alignRight,
-    'fx-align-top': !row && alignTop,
-    'fy-align-between': row && alignBetween,
-    'fy-align-bottom': row && alignBottom,
-    'fy-align-center': row && alignCenter,
-    'fy-align-evenly': row && alignEvenly,
-    'fy-align-left': row && alignLeft,
-    'fy-align-middle': row && alignMiddle,
-    'fy-align-right': row && alignRight,
-    'fy-align-top': row && alignTop,
-    'fx-dir-col': !row,
-    'fx-dir-row': row,
-    'fx-fit-h': fitH,
-    'fx-fit-w': fitW
-  }, _defineProperty(_classnames, "bg-".concat(bgColor), bgColor), _defineProperty(_classnames, "f-".concat(fColor), fColor), _defineProperty(_classnames, "h-".concat(height), height), _defineProperty(_classnames, "m-".concat(m), m), _defineProperty(_classnames, "mb-".concat(mb), mb), _defineProperty(_classnames, "ml-".concat(ml), ml), _defineProperty(_classnames, "mr-".concat(mr), mr), _defineProperty(_classnames, "mt-".concat(mt), mt), _defineProperty(_classnames, "p-".concat(p), p), _defineProperty(_classnames, "pb-".concat(pb), pb), _defineProperty(_classnames, "pl-".concat(pl), pl), _defineProperty(_classnames, "pr-".concat(pr), pr), _defineProperty(_classnames, "pt-".concat(pt), pt), _defineProperty(_classnames, "w-".concat(width), width), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
-  var handleClick = functions.handleClick;
-  return /*#__PURE__*/React.createElement("div", {
-    className: classnames(classes, getStyle()),
-    onClick: handleClick && handleClick
-  }, props.children && props.children);
+  var dProps = defProps('', props);
+  var xsProps = xs && defProps('--xs', xs);
+  var smProps = sm && defProps('--sm', sm);
+  var mdProps = md && defProps('--md', md);
+  var lgProps = lg && defProps('--lg', lg);
+  var xlProps = xl && defProps('--xl', xl);
+  var classProps = {
+    className: classnames(dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block',
+    children: children,
+    onClick: onClick
+  };
+  return /*#__PURE__*/React.createElement("div", classProps);
 };
 
+var propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 Block.propTypes = {
-  alignBetween: PropTypes.bool,
-  alignBottom: PropTypes.bool,
-  alignCenter: PropTypes.bool,
-  alignEvenly: PropTypes.bool,
-  alignLeft: PropTypes.bool,
-  alignMiddle: PropTypes.bool,
-  alignRight: PropTypes.bool,
-  alignTop: PropTypes.bool,
-  bgColor: PropTypes.string,
+  align: PropTypes.string,
+  bg: PropTypes.string,
+  color: PropTypes.string,
+  cursor: PropTypes.string,
+  m: PropTypes.oneOf([].concat(propTypesSizes)),
+  mt: PropTypes.oneOf([].concat(propTypesSizes)),
+  mr: PropTypes.oneOf([].concat(propTypesSizes)),
+  mb: PropTypes.oneOf([].concat(propTypesSizes)),
+  ml: PropTypes.oneOf([].concat(propTypesSizes)),
+  p: PropTypes.oneOf([].concat(propTypesSizes)),
+  pt: PropTypes.oneOf([].concat(propTypesSizes)),
+  pr: PropTypes.oneOf([].concat(propTypesSizes)),
+  pb: PropTypes.oneOf([].concat(propTypesSizes)),
+  pl: PropTypes.oneOf([].concat(propTypesSizes)),
+  xs: PropTypes.object,
+  sm: PropTypes.object,
+  md: PropTypes.object,
+  lg: PropTypes.object,
+  xl: PropTypes.object,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]),
   custom: PropTypes.string,
-  functions: PropTypes.object,
-  fColor: PropTypes.string,
-  fitH: PropTypes.bool,
-  fitW: PropTypes.bool,
-  m: PropTypes.oneOf(['0', 'xs', 'sm', 'md', 'lg', 'xl']),
-  mb: PropTypes.oneOf(['0', 'xs', 'sm', 'md', 'lg', 'xl']),
-  ml: PropTypes.oneOf(['0', 'xs', 'sm', 'md', 'lg', 'xl']),
-  mr: PropTypes.oneOf(['0', 'xs', 'sm', 'md', 'lg', 'xl']),
-  mt: PropTypes.oneOf(['0', 'xs', 'sm', 'md', 'lg', 'xl']),
-  p: PropTypes.oneOf(['0', 'xs', 'sm', 'md', 'lg', 'xl']),
-  pb: PropTypes.oneOf(['0', 'xs', 'sm', 'md', 'lg', 'xl']),
-  pl: PropTypes.oneOf(['0', 'xs', 'sm', 'md', 'lg', 'xl']),
-  pr: PropTypes.oneOf(['0', 'xs', 'sm', 'md', 'lg', 'xl']),
-  pt: PropTypes.oneOf(['0', 'xs', 'sm', 'md', 'lg', 'xl']),
-  row: PropTypes.bool,
-  height: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'full']),
-  width: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'full']),
-  style: PropTypes.oneOf(['article', '3-col', '4-col'])
+  onClick: PropTypes.func,
+  w: PropTypes.string,
+  h: PropTypes.string
 };
-Block.defaultProps = {
-  functions: {},
-  p: '0'
-};
+Block.defaultProps = {};
 
 var Grid = function Grid(props) {
   var xs = props.xs,
@@ -279,18 +244,52 @@ Grid.propTypes = {
   md: PropTypes.oneOf([25, 33, 50, 75, 100])
 };
 
+var Image = function Image(_ref) {
+  var value = _ref.value;
+  if (!value || !value['image-contentId']) return false;
+  var contentid = value['image-contentId'];
+  var captionAndByline = value['image-subtitle'] ? "".concat(value['image-subtitle'], " (").concat(value['image-byline'], ")") : "".concat(value['image-subtitle-original'], " (").concat(value['image-byline'], ")");
+  var width = 1000;
+  var derivative = '2x1';
+  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "article-image-box",
+    w: "100p"
+  }, /*#__PURE__*/React.createElement("img", {
+    className: "image-article",
+    src: imagePath,
+    alt: captionAndByline ? captionAndByline : "Imagem ".concat(contentid)
+  }), /*#__PURE__*/React.createElement(Block, {
+    custom: "label"
+  }, captionAndByline));
+};
+
+Image.propTypes = {
+  value: PropTypes.object.isRequired
+};
+Image.defaultProps = {
+  value: {}
+};
+
 var SocialMedias = function SocialMedias(props) {
   var content = props.content;
   if (!content) return null;
-  return /*#__PURE__*/React.createElement(Block, {
-    row: true
-  }, lodash.map(content, function (item, k) {
+  var propsSocialMedia = {
+    align: 'row evenly'
+  };
+  var propsSocialCirlce = {
+    mr: '1',
+    custom: 'social-circle',
+    'md': {
+      mr: '0',
+      ml: '1'
+    }
+  };
+  return /*#__PURE__*/React.createElement(Block, propsSocialMedia, lodash.map(content, function (item, k) {
     return /*#__PURE__*/React.createElement("a", {
       href: item.path,
       key: k
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "social-circle"
-    }, item.icon));
+    }, /*#__PURE__*/React.createElement(Block, propsSocialCirlce, item.icon));
   }));
 };
 
@@ -398,7 +397,7 @@ var Subject = function Subject(props) {
   if (!children) return null;
   var classes = classnames(_defineProperty({
     'subject-root': true,
-    'filled': filled
+    'filled bg-primary-1': filled
   }, "".concat(custom), custom));
   return /*#__PURE__*/React.createElement("div", {
     className: classes
@@ -417,7 +416,8 @@ Subject.propTypes = {
 };
 
 var Tags = function Tags(props) {
-  var content = props.content,
+  var custom = props.custom,
+      content = props.content,
       _onClick = props.onClick;
 
   var renderTag = function renderTag(tag, k) {
@@ -432,44 +432,20 @@ var Tags = function Tags(props) {
     }, tag));
   };
 
-  return /*#__PURE__*/React.createElement(Block, {
-    row: true,
-    custom: "wrap"
-  }, lodash.map(content, function (item, k) {
+  var propsWrap = _objectSpread2({
+    align: 'row wrap',
+    w: '100p'
+  }, custom);
+
+  return /*#__PURE__*/React.createElement(Block, propsWrap, lodash.map(content, function (item, k) {
     return renderTag(item, k);
   }));
 };
 
 Tags.propTypes = {
+  custom: PropTypes.string,
   content: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired
-};
-
-var Image = function Image(_ref) {
-  var value = _ref.value;
-  if (!value || !value['image-contentId']) return false;
-  var contentid = value['image-contentId'];
-  var captionAndByline = value['image-subtitle'] ? "".concat(value['image-subtitle'], " (").concat(value['image-byline'], ")") : "".concat(value['image-subtitle-original'], " (").concat(value['image-byline'], ")");
-  var width = 1000;
-  var derivative = '2x1';
-  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "article-image-box",
-    width: "full"
-  }, /*#__PURE__*/React.createElement("img", {
-    className: "image-article",
-    src: imagePath,
-    alt: captionAndByline ? captionAndByline : "Imagem ".concat(contentid)
-  }), /*#__PURE__*/React.createElement(Block, {
-    custom: "label"
-  }, captionAndByline));
-};
-
-Image.propTypes = {
-  value: PropTypes.object.isRequired
-};
-Image.defaultProps = {
-  value: {}
 };
 
 var Paragraph = function Paragraph(_ref) {
@@ -498,27 +474,43 @@ var parseBody = function parseBody(content) {
       return switchNode(item);
     });
     var enabledTags = ['p', 'em', 'h2'];
+    var embedTags = ['facebook.com', 'youtube.com', 'twitter.com', 'instagram.com'];
 
     if (enabledTags.indexOf(tag) > -1) {
       var contentText = '';
       lodash.map(child, function (children) {
+        // render h2, em and pure text
         if (children.node === 'text' && tag === 'h2') {
           contentText = "".concat(contentText, "<span class=\"paragraph-title\">").concat(children.text, "</span>");
         } else if (children.node === 'text' && tag === 'em') {
           contentText = "".concat(contentText, "<i>").concat(children.text, "</i>");
         } else if (children.node === 'text') {
           contentText = "".concat(contentText).concat(children.text);
-        }
+        } // render a
+
 
         if (children.tag === 'a' && children.attr["class"] !== 'p-smartembed') {
-          var text = children.child && children.child.length > 0 ? children.child[0].text : children.attr['aria-label'];
-          var _attr = '';
-          lodash.map(children.attr, function (value, key) {
-            _attr = "".concat(_attr, " ").concat(key, "=").concat(value);
-          });
-          contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(text, "</a>");
+          var text = children.child && children.child.length > 0 ? children.child[0].text : children.attr['aria-label']; // check if is not an embed
+
+          var isEmbed = false;
+
+          if (text) {
+            lodash.map(embedTags, function (tag) {
+              if (text.indexOf(tag) > -1) {
+                isEmbed = true;
+              }
+            });
+          }
+
+          if (!isEmbed) {
+            var _attr = '';
+            lodash.map(children.attr, function (value, key) {
+              _attr = "".concat(_attr, " ").concat(key, "=").concat(value);
+            });
+            contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(text, "</a>");
+          }
         }
-      });
+      }); // add paragraph
 
       if (contentText && contentText !== '') {
         bodyItems.push({
@@ -526,17 +518,39 @@ var parseBody = function parseBody(content) {
           value: contentText
         });
       }
-    }
+    } // render image
 
-    tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed' && bodyItems.push({
-      type: 'Image',
-      value: attr['data-onecms-id']
-    });
+
+    if (tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed') {
+      var childImage = lodash.find(child, {
+        tag: 'img'
+      });
+
+      if (childImage) {
+        var subtitle = childImage && childImage.attr && childImage.attr['alt'] && childImage.attr['alt'].toString();
+        subtitle = lodash.replace(subtitle, new RegExp(',', 'g'), ' ');
+        var propsImage = {
+          'image-contentId': attr['data-onecms-id'].replace('policy:', ''),
+          'image-subtitle': subtitle,
+          'image-byline': ''
+        };
+        bodyItems.push({
+          type: 'Image',
+          value: propsImage
+        });
+      }
+    } // render embed
+
 
     if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
       if (attr['href'].indexOf('facebook.com') > -1) {
         bodyItems.push({
           type: 'Facebook',
+          value: attr['href']
+        });
+      } else if (attr['href'].indexOf('instagram.com') > -1) {
+        bodyItems.push({
+          type: 'Instagram',
           value: attr['href']
         });
       } else if (attr['href'].indexOf('twitter.com') > -1) {
@@ -588,7 +602,15 @@ var TextBody = function TextBody(_ref) {
         });
 
       case 'Image':
-        return /*#__PURE__*/React.createElement(Image, {
+        return /*#__PURE__*/React.createElement(Block, {
+          custom: "article-image-embed"
+        }, /*#__PURE__*/React.createElement(Image, {
+          key: key,
+          value: value
+        }));
+
+      case 'Instagram':
+        return embeds && embeds.Instagram && /*#__PURE__*/React.createElement(embeds.Instagram, {
           key: key,
           value: value
         });
@@ -632,13 +654,43 @@ var Article = function Article(_ref) {
       title = content.title;
   var createdAt = content['time-created'];
   var updatedAt = content['time-modified'];
-  return /*#__PURE__*/React.createElement(Block, {
-    alignCenter: true,
-    style: "article"
-  }, /*#__PURE__*/React.createElement(Block, {
-    alignCenter: true,
-    width: "full"
-  }, /*#__PURE__*/React.createElement(Grid, {
+  var propsArticle = {
+    align: 'center',
+    custom: 'article'
+  };
+  var propsArticleHead = {
+    align: 'center',
+    custom: 'article-head',
+    w: '100p'
+  };
+  var propsArticleData = {
+    align: 'center',
+    custom: 'article-data',
+    w: '100p'
+  };
+  var propsArticleBody = {
+    align: 'center',
+    custom: 'article-body',
+    w: '100p'
+  };
+  var propsArticleInfo = {
+    align: 'column left middle',
+    custom: 'article-media has-border-bottom',
+    mb: '4',
+    w: '100p',
+    'md': {
+      align: 'row between middle'
+    }
+  };
+  var propsArticleAuthor = {
+    align: 'col',
+    custom: '',
+    w: '100p'
+  };
+  var customArticleTag = {
+    custom: 'article-tag'
+  };
+  return /*#__PURE__*/React.createElement(Block, propsArticle, /*#__PURE__*/React.createElement(Block, propsArticleHead, /*#__PURE__*/React.createElement(Grid, {
     columns: 12
   }, /*#__PURE__*/React.createElement(Subject, {
     filled: true
@@ -646,19 +698,9 @@ var Article = function Article(_ref) {
     tokenVariant: "article-title"
   }, title), /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "article-subtitle"
-  }, subtitle))), /*#__PURE__*/React.createElement(Block, {
-    alignCenter: true,
-    width: "full"
-  }, /*#__PURE__*/React.createElement(Grid, {
+  }, subtitle))), /*#__PURE__*/React.createElement(Block, propsArticleData, /*#__PURE__*/React.createElement(Grid, {
     columns: 12
-  }, /*#__PURE__*/React.createElement(Block, {
-    row: true,
-    alignBetween: true,
-    alignMiddle: true,
-    custom: "has-border-bottom"
-  }, /*#__PURE__*/React.createElement(Block, {
-    column: true
-  }, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React.createElement(Block, propsArticleInfo, /*#__PURE__*/React.createElement(Block, propsArticleAuthor, /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "system-bold"
   }, author), /*#__PURE__*/React.createElement(Typography, {
     tokenVariant: "system"
@@ -666,10 +708,7 @@ var Article = function Article(_ref) {
     tokenVariant: "system"
   }, "Atualizado em: ", updatedAt)), /*#__PURE__*/React.createElement(SocialMedias, {
     content: socialMedias
-  })))), /*#__PURE__*/React.createElement(Block, {
-    alignCenter: true,
-    width: "full"
-  }, /*#__PURE__*/React.createElement(Grid, {
+  })))), /*#__PURE__*/React.createElement(Block, propsArticleBody, /*#__PURE__*/React.createElement(Grid, {
     columns: 12
   }, images['image-contentId'] && /*#__PURE__*/React.createElement(Image, {
     value: images
@@ -678,14 +717,13 @@ var Article = function Article(_ref) {
   }, /*#__PURE__*/React.createElement(TextBody, {
     content: text,
     embeds: embeds
-  }))), /*#__PURE__*/React.createElement(Block, {
-    row: true
-  }, /*#__PURE__*/React.createElement(Grid, {
+  }))), /*#__PURE__*/React.createElement(Grid, {
     columns: 10
   }, /*#__PURE__*/React.createElement(Tags, {
+    custom: customArticleTag,
     content: metadata,
     onClick: handleTagClick
-  }))));
+  })));
 };
 
 Article.propTypes = {
@@ -707,13 +745,14 @@ Article.defaultProps = {
 };
 
 var Button = function Button(props) {
-  var style = classnames({
+  var style = classnames(_defineProperty({
     'button': true,
-    'primary': props.style === 'primary' && !props.disabled,
+    'bg-primary-1': props.style === 'primary' && !props.disabled,
+    'fc-white': props.style === 'primary' && !props.disabled,
     'secondary': props.style === 'secondary' && !props.disabled,
     'tertiary': props.style === 'tertiary' && !props.disabled,
     'disabled': props.disabled
-  });
+  }, "".concat(props.custom), props.custom));
   return /*#__PURE__*/React.createElement("button", {
     className: style,
     onClick: props.disabled ? null : props.onClick
@@ -722,6 +761,7 @@ var Button = function Button(props) {
 
 Button.propTypes = {
   children: PropTypes.node,
+  custom: PropTypes.string,
   style: PropTypes.string,
   disabled: PropTypes.bool,
   onClick: PropTypes.func
@@ -795,6 +835,105 @@ var index = {
   Input: Input
 };
 
+var SearchForm = function SearchForm(_ref) {
+  var functions = _ref.functions,
+      state = _ref.state;
+  var fieldValue = state.fieldValue,
+      setFieldValue = state.setFieldValue;
+
+  var handleSubmit = function handleSubmit() {
+    var string = fieldValue;
+    string = string.normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z\s])/g, '');
+    functions.onSubmit(string);
+  };
+
+  var fieldController = {
+    type: 'text',
+    className: 'search-field',
+    placeholder: 'O que você está procurando?',
+    onChange: function onChange(event) {
+      return setFieldValue(event.target.value);
+    },
+    onKeyPress: function onKeyPress(event) {
+      return event.key === 'Enter' && handleSubmit();
+    }
+  };
+  return /*#__PURE__*/React.createElement(Block, {
+    align: "right",
+    custom: 'search-form'
+  }, /*#__PURE__*/React.createElement("input", fieldController), /*#__PURE__*/React.createElement(Button, {
+    disabled: false,
+    onClick: function onClick() {
+      return handleSubmit();
+    },
+    style: "primary"
+  }, "Buscar"));
+};
+
+SearchForm.propTypes = {
+  content: PropTypes.object.isRequired,
+  functions: PropTypes.shape({
+    onSubmit: PropTypes.func
+  }),
+  state: PropTypes.shape({
+    fieldValue: PropTypes.string,
+    setFieldValue: PropTypes.func
+  })
+};
+SearchForm.defaultProps = {
+  content: {},
+  functions: {
+    onSubmit: function onSubmit() {
+      return null;
+    }
+  },
+  state: {
+    fieldValue: '',
+    setFieldValue: function setFieldValue() {
+      return null;
+    }
+  }
+};
+
+var SearchMenu = function SearchMenu(_ref) {
+  var children = _ref.children,
+      functions = _ref.functions,
+      status = _ref.status;
+  var menuIsOpen = status.opened ? 'opened' : 'closed';
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "menu-modal ".concat(menuIsOpen)
+  }, /*#__PURE__*/React.createElement(Block, {
+    custom: "menu-opacity",
+    onClick: functions.onCloseModal
+  }), /*#__PURE__*/React.createElement(Block, {
+    bg: "neutral-10",
+    custom: "menu-right",
+    p: "4"
+  }, children && children));
+};
+
+SearchMenu.propTypes = {
+  children: PropTypes.node,
+  content: PropTypes.object.isRequired,
+  functions: PropTypes.shape({
+    onCloseModal: PropTypes.func
+  }),
+  status: PropTypes.shape({
+    opened: PropTypes.bool
+  })
+};
+SearchMenu.defaultProps = {
+  content: {},
+  functions: {
+    onCloseModal: function onCloseModal() {
+      return null;
+    }
+  },
+  status: {
+    opened: false
+  }
+};
+
 var SideMenu = function SideMenu(_ref) {
   var children = _ref.children,
       functions = _ref.functions,
@@ -804,13 +943,11 @@ var SideMenu = function SideMenu(_ref) {
     custom: "menu-modal ".concat(menuIsOpen)
   }, /*#__PURE__*/React.createElement(Block, {
     custom: "menu-opacity",
-    functions: {
-      handleClick: functions.onCloseModal
-    }
+    onClick: functions.onCloseModal
   }), /*#__PURE__*/React.createElement(Block, {
-    p: "md",
+    bg: "white",
     custom: "menu-left",
-    bgColor: "white"
+    p: "4"
   }, children && children));
 };
 
@@ -843,19 +980,16 @@ var SideMenuItems = function SideMenuItems(_ref) {
   var Item = function Item(_ref2) {
     var item = _ref2.item;
     var hasSubitems = item.subitems.length > 0;
-    var propsItem = {
-      functions: {
-        handleClick: function handleClick() {
-          return functions.onMenuItem(item);
-        }
-      }
-    };
     return /*#__PURE__*/React.createElement(Block, {
-      custom: "listitem",
-      mt: "md"
-    }, /*#__PURE__*/React.createElement(Block, _extends({
-      custom: "item"
-    }, propsItem), !hasSubitems ? /*#__PURE__*/React.createElement("a", {
+      custom: "sidemenu-group",
+      mb: "4"
+    }, /*#__PURE__*/React.createElement(Block, {
+      custom: "sidemenu-group-item",
+      pb: "2",
+      onClick: function onClick() {
+        return functions.onMenuItem(item);
+      }
+    }, !hasSubitems ? /*#__PURE__*/React.createElement("a", {
       href: item.path
     }, item.name) : /*#__PURE__*/React.createElement("span", {
       href: item.path
@@ -866,7 +1000,7 @@ var SideMenuItems = function SideMenuItems(_ref) {
     item: PropTypes.object
   };
   return /*#__PURE__*/React.createElement(Block, {
-    custom: "menu-left-items"
+    custom: "sidemenu-items"
   }, lodash.map(content.items, function (item, key) {
     return /*#__PURE__*/React.createElement(Item, {
       item: item,
@@ -885,6 +1019,19 @@ SideMenuItems.defaultProps = {
   content: {}
 };
 
+var SectionTitle = function SectionTitle(_ref) {
+  var name = _ref.name;
+  return /*#__PURE__*/React.createElement(Block, {
+    mb: "2"
+  }, /*#__PURE__*/React.createElement(Typography, {
+    custom: "section-title"
+  }, name));
+};
+
+SectionTitle.propTypes = {
+  name: PropTypes.string
+};
+
 var Topbar = function Topbar(_ref) {
   var content = _ref.content,
       functions = _ref.functions;
@@ -892,26 +1039,28 @@ var Topbar = function Topbar(_ref) {
       CenterContent = content.CenterContent,
       RightContent = content.RightContent;
   return /*#__PURE__*/React.createElement(Block, {
+    align: "row center",
+    bg: "primary-1",
+    color: "white",
     custom: "topbar",
-    alignBetween: true,
-    alignMiddle: true,
-    bgColor: "primary-1",
-    row: true,
-    width: "full"
+    w: "100p"
+  }, /*#__PURE__*/React.createElement(Block, {
+    align: "row middle between",
+    custom: "wrap",
+    w: "100p"
   }, /*#__PURE__*/React.createElement(Block, null, LeftContent && /*#__PURE__*/React.createElement(LeftContent, {
     functions: functions
-  })), /*#__PURE__*/React.createElement(Block, null, CenterContent && /*#__PURE__*/React.createElement(CenterContent, null)), /*#__PURE__*/React.createElement(Block, null, RightContent && /*#__PURE__*/React.createElement(RightContent, null)));
+  })), /*#__PURE__*/React.createElement(Block, null, CenterContent && /*#__PURE__*/React.createElement(CenterContent, null)), /*#__PURE__*/React.createElement(Block, null, RightContent && /*#__PURE__*/React.createElement(RightContent, null))));
 };
 
 var LeftMenuIcon = function LeftMenuIcon(_ref2) {
   var functions = _ref2.functions;
   return /*#__PURE__*/React.createElement(Block, {
     custom: "menu-left-icon",
-    fColor: "neutral-8",
-    functions: {
-      handleClick: functions.handleMenuClick
-    },
-    pl: "md"
+    cursor: "pointer",
+    fc: "neutral-8",
+    pl: "4",
+    onClick: functions.handleMenuClick
   }, "MENU");
 };
 
@@ -932,70 +1081,20 @@ Topbar.defaultProps = {
   }
 };
 
-var List = function List(_ref) {
-  var content = _ref.content;
-
-  var Item = function Item(_ref2) {
-    var item = _ref2.item;
-    return /*#__PURE__*/React.createElement(Block, {
-      custom: "item",
-      mt: "xs"
-    }, /*#__PURE__*/React.createElement("a", {
-      href: item.path
-    }, item.name));
-  };
-
-  Item.propTypes = {
-    item: PropTypes.object
-  };
-
-  if (!content.items || content.items.length === 0) {
-    return /*#__PURE__*/React.createElement(Block, {
-      custom: "news-list"
-    }, /*#__PURE__*/React.createElement("pre", null, "Items not found"));
-  }
-
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "news-list"
-  }, lodash.map(content.items, function (item, key) {
-    return /*#__PURE__*/React.createElement(Item, {
-      item: item,
-      key: key
-    });
-  }));
-};
-/* required props */
-
-
-List.propTypes = {
-  content: PropTypes.object,
-  functions: PropTypes.shape({
-    onCloseModal: PropTypes.func
-  }),
-  status: PropTypes.shape({
-    opened: PropTypes.bool
-  })
-};
-List.defaultProps = {
-  content: {},
-  functions: {
-    onCloseModal: function onCloseModal() {
-      return null;
-    }
-  },
-  status: {
-    opened: false
-  }
-};
-
 exports.Article = Article;
 exports.Block = Block;
 exports.Button = Button;
 exports.Form = index;
 exports.Grid = Grid;
-exports.NewsList = List;
+exports.Image = Image;
+exports.SearchForm = SearchForm;
+exports.SearchMenu = SearchMenu;
+exports.SectionTitle = SectionTitle;
 exports.SideMenu = SideMenu;
 exports.SideMenuItems = SideMenuItems;
+exports.SocialMedias = SocialMedias;
 exports.Subject = Subject;
+exports.Tags = Tags;
+exports.TextBody = TextBody;
 exports.Topbar = Topbar;
 exports.Typography = Typography;

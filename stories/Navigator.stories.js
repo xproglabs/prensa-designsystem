@@ -1,8 +1,8 @@
 import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
-import SideMenu from '../components/SideMenu';
-import SideMenuItems from '../components/SideMenu/Items';
+import SideMenuItems from '../components/Menus/SideItems';
+import SideMenu from '../components/Menus/SideMenu';
 import MainTopbar from '../components/Topbar';
 import navigation from '../mockup/navigation';
 import {sassWrapper} from '../utils/SassWrapper';

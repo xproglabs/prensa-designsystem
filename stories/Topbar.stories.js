@@ -22,8 +22,6 @@ export const Topbar = () => {
     }
   };
   return (
-    <>
-      <MainTopbar {...dataTopbar} />
-    </>
+    <MainTopbar {...dataTopbar} />
   );
 };

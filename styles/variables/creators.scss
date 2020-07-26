@@ -1,0 +1,117 @@
+@use './queries.scss' as *;
+
+@mixin classes-align-render($list, $querie) {
+  @each $item in $list {
+    $dir: #{nth($item, 1)};
+    $prop: #{nth($item, 2)};
+    $ai: #{nth($item, 3)};
+    $jc: #{nth($item, 4)};
+    .#{$dir}-#{$prop}#{$querie} {
+      align-items: $ai;
+      justify-content: $jc;
+    }
+  }
+}
+@mixin classes-align($list) {
+  @include classes-align-render($list, '');
+  @each $q in $queries {
+    $querie: #{nth($q, 1)};
+    $breakp: #{nth($q, 2)};
+    @media(min-width: #{$breakp}) {
+      @include classes-align-render($list, $querie);
+    }
+  }
+}
+@mixin classes-wrap-render($list, $querie) {
+  @each $item in $list {
+    $dir: #{nth($item, 1)};
+    $prop: #{nth($item, 2)};
+    $wrap: #{nth($item, 3)};
+    .#{$dir}-#{$wrap}#{$querie} {
+      #{$prop}: $wrap;
+    }
+  }
+}
+@mixin classes-wrap($list) {
+  @include classes-wrap-render($list, '');
+  @each $q in $queries {
+    $querie: #{nth($q, 1)};
+    $breakp: #{nth($q, 2)};
+    @media(min-width: #{$breakp}) {
+      @include classes-wrap-render($list, $querie);
+    }
+  }
+}
+// width & height definitions
+@mixin classes-iterator-calc($prefix, $prop, $querie) {
+  @each $i in $sizepix-it {
+    $value_pixel: calc(#{$i} * #{$size-pixel});
+    $value_percn: calc(#{$i}0%);
+    .#{$prefix}-#{$i}#{$querie} {#{$prop}: #{$value_pixel}}
+    .#{$prefix}-#{$i}0p#{$querie} {#{$prop}: #{$value_percn}}
+    @each $j in $sizepix-it {
+      $value_pixel: calc(calc(#{$i} * #{$size-pixel}) - calc(#{$j} * #{$space-unit}));
+      $value_percn: calc(#{$i}0% - calc(#{$j} * #{$space-unit}));
+      .#{$prefix}-#{$i}-#{$j}#{$querie} {#{$prop}: #{$value_pixel}}
+      .#{$prefix}-#{$i}0p-#{$j}#{$querie} {#{$prop}: #{$value_percn}}
+    }
+  }
+}
+@mixin classes-incremental($list) {
+  @each $item in $list {
+    $prefix: #{nth($item, 1)};
+    $prop: #{nth($item, 2)};
+    @include classes-iterator-calc($prefix, $prop, '');
+    @each $q in $queries {
+      $querie: #{nth($q, 1)};
+      $breakp: #{nth($q, 2)};
+      @media(min-width: #{$breakp}) {
+        @include classes-iterator-calc($prefix, $prop, $querie);
+      }
+    }
+  }
+}
+@mixin classes-simple-render($list, $querie) {
+  @each $item in $list {
+    $prefix: #{nth($item, 1)};
+    $prop: #{nth($item, 2)};
+    $value: #{nth($item, 3)};
+    .#{$prefix}#{$querie}{#{$prop}: #{$value}}
+  }
+}
+@mixin classes-simple($list) {
+  @include classes-simple-render($list, '');
+  @each $q in $queries {
+    $querie: #{nth($q, 1)};
+    $breakp: #{nth($q, 2)};
+    @media(min-width: #{$breakp}) {
+      @include classes-simple-render($list, $querie);
+    }
+  }
+}
+@mixin classes-side-render($prefix, $querie, $name, $size) {
+  @each $sides in $sides {
+    $side: #{nth($sides, 1)};
+    $attr: #{nth($sides, 2)};
+    $prop: #{$name}#{$attr};
+    @each $i in $sizepix-it {
+      $value: calc(#{$i} * #{$size});
+      .#{$prefix}#{$side}-#{$i}#{$querie} {#{$prop}: #{$value}}
+    }
+  }
+}
+@mixin classes-side($list) {
+  @each $item in $list {
+    $prefix: #{nth($item, 1)};
+    $name: #{nth($item, 2)};
+    $size: #{nth($item, 3)};
+    @include classes-side-render($prefix, '', $name, $size);
+    @each $q in $queries {
+      $querie: #{nth($q, 1)};
+      $breakp: #{nth($q, 2)};
+      @media(min-width: #{$breakp}) {
+        @include classes-side-render($prefix, $querie, $name, $size);
+      }
+    }
+  }
+}

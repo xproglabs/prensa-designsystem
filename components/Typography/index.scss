@@ -91,7 +91,8 @@
   @include lh($article-paragraph-lh);
   @include fc($article-paragraph-fc);
   @include ff($font-secondary);
-  @include my($article-paragraph-space);
+  @include mb($article-paragraph-space);
+  @include w(100%);
   @extend %regular;
 }
 

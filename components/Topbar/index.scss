@@ -1,7 +1,10 @@
 @use '../../styles' as *;
 
-$topbar-height: 70px;
+$topbar-height: 70px !default;
 
 .topbar {
   @include h($topbar-height);
+  .wrap {
+    @include mw($lg);
+  }
 }

@@ -11,7 +11,7 @@ const Subject = props => {
 
   const classes = classnames({
     'subject-root': true,
-    'filled': filled,
+    'filled bg-primary-1': filled,
     [`${custom}`]: custom
   });
 

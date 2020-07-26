@@ -2,7 +2,8 @@ import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Image from './Image';
+import Block from '../Block';
+import Image from '../Image';
 import Paragraph from './Paragraph';
 import {parseBody} from './Utils';
 
@@ -18,7 +19,7 @@ const TextBody = ({content, embeds}) => {
       case 'Facebook':
         return embeds && embeds.Facebook && <embeds.Facebook key={key} value={value} />;
       case 'Image':
-        return <Image key={key} value={value} />;
+        return <Block custom="article-image-embed"><Image key={key} value={value} /></Block>;
       case 'Instagram':
         return embeds && embeds.Instagram && <embeds.Instagram key={key} value={value} />;
       case 'Tweet':
