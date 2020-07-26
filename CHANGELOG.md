@@ -3,7 +3,6 @@
 - Remove prefixo xp dos tokens
 - Remove projeto exemplo
 - Remove componente Panel
-- Instalado lib svgr no projeto
 - Upgrade no Article component
 - Upgrade no Block component
 - Upgrade no Image component
