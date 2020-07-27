@@ -9,9 +9,11 @@ const Featured = props => {
   const {items} = content;
   if(items.length === 1) {
     return (
-      <Block custom='templates-featured'>
+      <Block custom='templates-featured one'>
         <Teaser 
           content={items[0]}
+          hasSubjectFilled={true}
+          hasSubtitle={true}
           status={status}
         />
       </Block>
@@ -24,6 +26,7 @@ const Featured = props => {
         <Block custom='block-left'>
           <Teaser 
             content={items[0]}
+            hasSubjectFilled={true}
             status={status}
           />
         </Block>

@@ -28,6 +28,7 @@ const GridNews = props => {
         <Teaser 
           key={key}
           content={item}
+          hasImageTop={true}
           status={status}
         />
       )}

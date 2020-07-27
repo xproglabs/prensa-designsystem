@@ -232,6 +232,9 @@ Subject.propTypes = {
 
 var Teaser = function Teaser(_ref) {
   var content = _ref.content,
+      hasImageTop = _ref.hasImageTop,
+      hasSubjectFilled = _ref.hasSubjectFilled,
+      hasSubtitle = _ref.hasSubtitle,
       status = _ref.status;
   var image = content.image,
       name = content.name,
@@ -244,31 +247,21 @@ var Teaser = function Teaser(_ref) {
     align: 'col',
     custom: 'teaser-default',
     mb: '4',
-    'sm': {
-      align: 'row left'
+    md: {
+      align: hasImageTop ? 'col' : 'row left'
     }
   };
   var propsImage = {
     align: 'row',
-    custom: 'teaser-image',
-    mb: '1',
-    w: '100p',
-    'md': {
-      mb: '0',
-      mr: '1',
-      w: 'auto'
-    }
+    custom: "teaser-image ".concat(hasImageTop ? "image-top" : "image-left")
   };
   var propsContent = {
+    custom: 'teaser-content',
     mt: '3',
     mb: '3',
     ml: '2',
     mr: '2',
-    w: '100p-4',
-    'md': {
-      m: '2',
-      w: '100p-4'
-    }
+    w: '100p-4'
   };
   var propsDate = {
     custom: 'teaser-date',
@@ -276,10 +269,11 @@ var Teaser = function Teaser(_ref) {
     w: '100p'
   };
   var propsSubject = {
-    mb: '1',
-    mt: '0'
+    custom: 'teaser-subject'
   };
-  var propsTitle = {};
+  var propsTitle = {
+    custom: 'teaser-title'
+  };
 
   var TeaserImage = function TeaserImage() {
     if (loading || error || !image) return /*#__PURE__*/React.createElement("div", {
@@ -296,16 +290,16 @@ var Teaser = function Teaser(_ref) {
   };
 
   return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
-    filled: true
+    filled: hasSubjectFilled
   }, subject)), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
     href: path,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
   }, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-title"
-  }, name))), subtitle && /*#__PURE__*/React.createElement(Typography, {
+  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-subtitle"
-  }, subtitle), /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
+  }, subtitle), content['time-published'] && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-datetime"
   }, content['time-published']))));
 };
@@ -318,10 +312,18 @@ Teaser.propTypes = {
     subtitle: PropTypes.string,
     subject: PropTypes.string
   }, 'time-published', PropTypes.string)),
+  hasImageTop: PropTypes.bool,
+  hasSubtitle: PropTypes.bool,
+  hasSubjectFilled: PropTypes.bool,
   status: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.bool
   })
+};
+Teaser.defaultProps = {
+  hasImageTop: false,
+  hasSubtitle: false,
+  hasSubjectFilled: false
 };
 
 var RenderImageBackground = function RenderImageBackground(props) {
@@ -406,9 +408,11 @@ var Featured = function Featured(props) {
 
   if (items.length === 1) {
     return /*#__PURE__*/React.createElement(Block, {
-      custom: "templates-featured"
+      custom: "templates-featured one"
     }, /*#__PURE__*/React.createElement(Teaser, {
       content: items[0],
+      hasSubjectFilled: true,
+      hasSubtitle: true,
       status: status
     }));
   }
@@ -424,6 +428,7 @@ var Featured = function Featured(props) {
       custom: "block-left"
     }, /*#__PURE__*/React.createElement(Teaser, {
       content: items[0],
+      hasSubjectFilled: true,
       status: status
     })), /*#__PURE__*/React.createElement(Block, {
       custom: "block-right"
@@ -468,6 +473,7 @@ var GridNews = function GridNews(props) {
     return /*#__PURE__*/React.createElement(Teaser, {
       key: key,
       content: item,
+      hasImageTop: true,
       status: status
     });
   }));
@@ -491,6 +497,7 @@ var ListNews = function ListNews(_ref) {
   }, lodash.map(content, function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
+      hasSubjectFilled: true,
       status: status,
       key: key
     });

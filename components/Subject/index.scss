@@ -2,6 +2,7 @@
 
 .subject-root {
   @include fc($color-primary-1);
+  @include ff($font-secondary);
   @include w(max-content);
 }
 .filled {
