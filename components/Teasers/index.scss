@@ -19,7 +19,6 @@ $teaser-date-height: 16px !default;
 $teaser-date-size: 12px !default;
 
 .teaser-default {
-  @include mw($lg);
   a, h1 {
     @include w(100%);
     text-decoration: none;

@@ -252,7 +252,7 @@ var Teaser = function Teaser(_ref) {
   };
   var propsImage = {
     align: 'row',
-    custom: "teaser-image ".concat(hasImageTop ? "image-top" : "image-left")
+    custom: "teaser-image ".concat(hasImageTop ? 'image-top' : 'image-left')
   };
   var propsContent = {
     custom: 'teaser-content',
