@@ -1,22 +1,15 @@
-# v1.3.3 (Fri Jul 24 2020)
-- Permite custom class no Button
-
-# v1.3.2 (Fri Jul 24 2020)
+# v1.3.0 (Fri Jul 10 2020)
+- Updates no componente Article
+- Remove prefixo xp dos tokens
+- Remove projeto exemplo
+- Remove componente Panel
 - Upgrade no Article component
 - Upgrade no Block component
 - Upgrade no Image component
 - Upgrade no Navigator
 - Upgrade no NewsList
 - Upgrade no Teaser-default
-
-# v1.3.1 (Fri Jul 24 2020)
-- Instalado lib svgr no projeto
-
-# v1.3.0 (Fri Jul 10 2020)
-- Updates no componente Article
-- Remove prefixo xp dos tokens
-- Remove projeto exemplo
-- Remove componente Panel
+- Permite custom class no Button
 
 # v1.2.1 (Sun Jun 29 2020)
 - Adiciona Templates
