@@ -1,3 +1,7 @@
+# v1.3.1 (Mon Jul 27 2020)
+- Upgrade nos Templates
+- Upgrade nos Teasers
+
 # v1.3.0 (Fri Jul 10 2020)
 - Updates no componente Article
 - Remove prefixo xp dos tokens
