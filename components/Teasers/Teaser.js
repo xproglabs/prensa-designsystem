@@ -10,12 +10,9 @@ const Teaser = ({content, hasImageTop, hasSubjectFilled, hasSubtitle, status}) =
   const {image, name, path, subject, subtitle} = content;
   const {loading, error} = status;
   const propsTeaser = {
-    align: 'col',
+    align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
-    mb: '4',
-    md: {
-      align: hasImageTop ? 'col' : 'row left'
-    }
+    mb: '4'
   };
   const propsImage = {
     align: 'row',

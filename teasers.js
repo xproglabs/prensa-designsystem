@@ -243,12 +243,9 @@ var Teaser = function Teaser(_ref) {
   var loading = status.loading,
       error = status.error;
   var propsTeaser = {
-    align: 'col',
+    align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
-    mb: '4',
-    md: {
-      align: hasImageTop ? 'col' : 'row left'
-    }
+    mb: '4'
   };
   var propsImage = {
     align: 'row',

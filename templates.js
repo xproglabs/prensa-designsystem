@@ -244,12 +244,9 @@ var Teaser = function Teaser(_ref) {
   var loading = status.loading,
       error = status.error;
   var propsTeaser = {
-    align: 'col',
+    align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
-    mb: '4',
-    md: {
-      align: hasImageTop ? 'col' : 'row left'
-    }
+    mb: '4'
   };
   var propsImage = {
     align: 'row',
@@ -512,6 +509,48 @@ ListNews.propTypes = {
   })
 };
 
+var Subjects = function Subjects(props) {
+  var content = props.content,
+      status = props.status;
+  var propsTemplate = {
+    custom: 'templates-subjects',
+    lg: {
+      align: "row between"
+    }
+  };
+  return /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
+    custom: "col left"
+  }, lodash.map(content["items-left"], function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      content: item,
+      key: key,
+      status: status
+    });
+  })), /*#__PURE__*/React.createElement(Block, {
+    custom: "col center"
+  }, lodash.map(content["items-center"], function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      content: item,
+      key: key,
+      status: status
+    });
+  })), /*#__PURE__*/React.createElement(Block, {
+    custom: "col right"
+  }, lodash.map(content["items-right"], function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      content: item,
+      key: key,
+      status: status
+    });
+  })));
+};
+
+Subjects.propTypes = {
+  content: PropTypes.object,
+  status: PropTypes.object
+};
+
 exports.Featured = Featured;
 exports.GridNews = GridNews;
 exports.NewsList = ListNews;
+exports.Subjects = Subjects;
