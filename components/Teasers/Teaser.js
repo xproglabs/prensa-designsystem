@@ -6,38 +6,25 @@ import Image from '../Image/Teaser';
 import Subject from '../Subject';
 import Typography from '../Typography';
 
-const Teaser = ({content, status}) => {
+const Teaser = ({content, hasImageTop, hasSubjectFilled, hasSubtitle, status}) => {
   const {image, name, path, subject, subtitle} = content;
   const {loading, error} = status;
   const propsTeaser = {
-    align: 'col',
+    align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
-    mb: '4',
-    'sm': {
-      align: 'row left'
-    }
+    mb: '4'
   };
   const propsImage = {
     align: 'row',
-    custom: 'teaser-image',
-    mb: '1',
-    w: '100p',
-    'md': {
-      mb: '0',
-      mr: '1',
-      w: 'auto'
-    }
+    custom: `teaser-image ${hasImageTop ? 'image-top' : 'image-left'}`
   };
   const propsContent = {
+    custom: 'teaser-content',
     mt: '3',
     mb: '3',
     ml: '2',
     mr: '2',
-    w: '100p-4',
-    'md': {
-      m: '3',
-      w: 'auto'
-    }
+    w: '100p-4'
   };
   const propsDate = {
     custom: 'teaser-date',
@@ -45,12 +32,12 @@ const Teaser = ({content, status}) => {
     w: '100p'
   };
   const propsSubject = {
-    mb: '1',
-    mt: '0'
+    custom: 'teaser-subject'
   };
   const propsTitle = {
-
+    custom: 'teaser-title'
   };
+
   const TeaserImage = () => {
     if (loading || error || !image) 
       return <div className='image-box skeleton'/>;
@@ -72,7 +59,7 @@ const Teaser = ({content, status}) => {
       <Block {...propsContent}>
         {subject && 
           <Block {...propsSubject}>
-            <Subject filled>{subject}</Subject>
+            <Subject filled={hasSubjectFilled}>{subject}</Subject>
           </Block>
         }
         <Block {...propsTitle}>
@@ -80,12 +67,14 @@ const Teaser = ({content, status}) => {
             <Typography custom='teaser-title'>{name}</Typography>
           </a>
         </Block>
-        {subtitle && 
+        {subtitle && hasSubtitle &&
           <Typography custom='teaser-subtitle'>{subtitle}</Typography>
         }
-        <Block {...propsDate}>
-          <Typography custom='teaser-datetime'>{content['time-published']}</Typography>
-        </Block>
+        {content['time-published'] && (
+          <Block {...propsDate}>
+            <Typography custom='teaser-datetime'>{content['time-published']}</Typography>
+          </Block>
+        )}
       </Block>
     </Block>
   );
@@ -100,10 +89,18 @@ Teaser.propTypes = {
     subject: PropTypes.string,
     ['time-published']: PropTypes.string
   }),
+  hasImageTop: PropTypes.bool,
+  hasSubtitle: PropTypes.bool,
+  hasSubjectFilled: PropTypes.bool,
   status: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.bool
   })
+};
+Teaser.defaultProps = {
+  hasImageTop: false,
+  hasSubtitle: false,
+  hasSubjectFilled: false
 };
 
 export default Teaser;

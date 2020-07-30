@@ -19,7 +19,6 @@ $teaser-date-height: 16px !default;
 $teaser-date-size: 12px !default;
 
 .teaser-default {
-  @include mw($lg);
   a, h1 {
     @include w(100%);
     text-decoration: none;
@@ -57,18 +56,13 @@ $teaser-date-size: 12px !default;
 }
 .image-background {
   @include bg($color-neutral-10);
-  @include h(240px);
-  @include w(100%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  @media (min-width: $md) {
-    @include w(280px);
-  }
 }
 .image-box {
-  @include w(280px);
   @include h(210px);
+  @include w(280px);
   @media (max-width: $md) {
     @include w(64px);
     @include h(64px);
@@ -83,4 +77,28 @@ $teaser-date-size: 12px !default;
 .teaser-aria {
   @include w(100%);
   cursor: pointer;
+}
+.teaser-image {
+  &.image-left {
+    .image-background {
+      @include w(100%);
+    }
+  }
+  &.image-top {
+    .image-background {
+      @include w(100%);
+    }
+  }
+  @media (min-width: $md) {
+    &.image-left {
+      .image-background {
+        @include w(280px);
+      }
+    }
+    &.image-top {
+      .image-background {
+        @include w(100%);
+      }
+    }
+  }
 }

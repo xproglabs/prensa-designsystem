@@ -5,7 +5,7 @@ import React from 'react';
 import Block from '../Block';
 import {Teaser} from '../Teasers';
 
-const NewsList = ({content, status}) => {
+const ListNews = ({content, status}) => {
 
   if (!content || content.length === 0) {
     return (
@@ -14,14 +14,14 @@ const NewsList = ({content, status}) => {
   }
 
   return (
-    <Block custom="news-list">
+    <Block custom="list-news">
       {map(content, (item, key) => 
-        <Teaser content={item} status={status} key={key} />)}
+        <Teaser content={item} hasSubjectFilled={true} status={status} key={key} />)}
     </Block>
   );
 };
 
-NewsList.propTypes = {
+ListNews.propTypes = {
   content: PropTypes.array.isRequired,
   status: PropTypes.shape({
     error: PropTypes.bool,
@@ -29,4 +29,4 @@ NewsList.propTypes = {
   })
 };
 
-export default NewsList;
+export default ListNews;

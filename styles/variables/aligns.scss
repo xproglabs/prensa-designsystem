@@ -13,9 +13,11 @@
   $breakp: #{nth($q, 2)};
   @media(min-width: #{$breakp}) {
     .fx-col#{$querie} {
+      display: flex;
       flex-direction: column;
     }
     .fx-row#{$querie} {
+      display: flex;
       flex-direction: row;
     }
   }

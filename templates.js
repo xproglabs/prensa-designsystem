@@ -87,128 +87,6 @@ Block.propTypes = {
 };
 Block.defaultProps = {};
 
-var Grid = function Grid(props) {
-  var xs = props.xs,
-      sm = props.sm,
-      md = props.md,
-      columns = props.columns;
-
-  var handlexs = function handlexs() {
-    switch (xs) {
-      case 25:
-        return 'xs-25';
-
-      case 33:
-        return 'xs-33';
-
-      case 50:
-        return 'xs-50';
-
-      case 75:
-        return 'xs-75';
-
-      case 100:
-      default:
-        return 'xs-100';
-    }
-  };
-
-  var handlesm = function handlesm() {
-    switch (sm) {
-      case 25:
-        return 'sm-25';
-
-      case 33:
-        return 'sm-33';
-
-      case 50:
-        return 'sm-50';
-
-      case 75:
-        return 'sm-75';
-
-      case 100:
-      default:
-        return 'sm-100';
-    }
-  };
-
-  var handlemd = function handlemd() {
-    switch (md) {
-      case 25:
-        return 'md-25';
-
-      case 33:
-        return 'md-33';
-
-      case 50:
-        return 'md-50';
-
-      case 75:
-        return 'md-75';
-
-      case 100:
-      default:
-        return 'md-100';
-    }
-  };
-
-  var getColumns = function getColumns() {
-    switch (columns) {
-      case 1:
-        return 'grid-1-col';
-
-      case 2:
-        return 'grid-2-col';
-
-      case 3:
-        return 'grid-3-col';
-
-      case 4:
-        return 'grid-4-col';
-
-      case 5:
-        return 'grid-5-col';
-
-      case 6:
-        return 'grid-6-col';
-
-      case 7:
-        return 'grid-7-col';
-
-      case 8:
-        return 'grid-8-col';
-
-      case 9:
-        return 'grid-9-col';
-
-      case 10:
-        return 'grid-10-col';
-
-      case 11:
-        return 'grid-11-col';
-
-      case 12:
-        return 'grid-12-col';
-
-      default:
-        return null;
-    }
-  };
-
-  return /*#__PURE__*/React.createElement("div", {
-    className: classnames(getColumns(), handlexs(), handlesm(), handlemd())
-  }, props.children);
-};
-
-Grid.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
-  columns: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
-  xs: PropTypes.oneOf([25, 33, 50, 75, 100]),
-  sm: PropTypes.oneOf([25, 33, 50, 75, 100]),
-  md: PropTypes.oneOf([25, 33, 50, 75, 100])
-};
-
 var Image = function Image(_ref) {
   var value = _ref.value;
   if (!value || !value['image-contentId']) return false;
@@ -354,6 +232,9 @@ Subject.propTypes = {
 
 var Teaser = function Teaser(_ref) {
   var content = _ref.content,
+      hasImageTop = _ref.hasImageTop,
+      hasSubjectFilled = _ref.hasSubjectFilled,
+      hasSubtitle = _ref.hasSubtitle,
       status = _ref.status;
   var image = content.image,
       name = content.name,
@@ -363,34 +244,21 @@ var Teaser = function Teaser(_ref) {
   var loading = status.loading,
       error = status.error;
   var propsTeaser = {
-    align: 'col',
+    align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
-    mb: '4',
-    'sm': {
-      align: 'row left'
-    }
+    mb: '4'
   };
   var propsImage = {
     align: 'row',
-    custom: 'teaser-image',
-    mb: '1',
-    w: '100p',
-    'md': {
-      mb: '0',
-      mr: '1',
-      w: 'auto'
-    }
+    custom: "teaser-image ".concat(hasImageTop ? 'image-top' : 'image-left')
   };
   var propsContent = {
+    custom: 'teaser-content',
     mt: '3',
     mb: '3',
     ml: '2',
     mr: '2',
-    w: '100p-4',
-    'md': {
-      m: '3',
-      w: 'auto'
-    }
+    w: '100p-4'
   };
   var propsDate = {
     custom: 'teaser-date',
@@ -398,10 +266,11 @@ var Teaser = function Teaser(_ref) {
     w: '100p'
   };
   var propsSubject = {
-    mb: '1',
-    mt: '0'
+    custom: 'teaser-subject'
   };
-  var propsTitle = {};
+  var propsTitle = {
+    custom: 'teaser-title'
+  };
 
   var TeaserImage = function TeaserImage() {
     if (loading || error || !image) return /*#__PURE__*/React.createElement("div", {
@@ -418,16 +287,16 @@ var Teaser = function Teaser(_ref) {
   };
 
   return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
-    filled: true
+    filled: hasSubjectFilled
   }, subject)), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
     href: path,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
   }, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-title"
-  }, name))), subtitle && /*#__PURE__*/React.createElement(Typography, {
+  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-subtitle"
-  }, subtitle), /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
+  }, subtitle), content['time-published'] && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-datetime"
   }, content['time-published']))));
 };
@@ -440,10 +309,18 @@ Teaser.propTypes = {
     subtitle: PropTypes.string,
     subject: PropTypes.string
   }, 'time-published', PropTypes.string)),
+  hasImageTop: PropTypes.bool,
+  hasSubtitle: PropTypes.bool,
+  hasSubjectFilled: PropTypes.bool,
   status: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.bool
   })
+};
+Teaser.defaultProps = {
+  hasImageTop: false,
+  hasSubtitle: false,
+  hasSubjectFilled: false
 };
 
 var RenderImageBackground = function RenderImageBackground(props) {
@@ -521,85 +398,90 @@ TeaserFeatured.propTypes = {
   })
 };
 
-var BreakingNews = function BreakingNews(props) {
-  var _props$blockData = props.blockData,
-      content = _props$blockData.content,
-      status = _props$blockData.status;
-  return /*#__PURE__*/React.createElement(Block, {
-    row: true,
-    style: "breaking-news"
-  }, /*#__PURE__*/React.createElement(Grid, {
-    columns: 12
-  }, /*#__PURE__*/React.createElement(TeaserFeatured, {
-    content: content[0],
-    status: status
-  })));
-};
+var Featured = function Featured(props) {
+  var content = props.content,
+      status = props.status;
+  var items = content.items;
 
-BreakingNews.propTypes = {
-  blockData: PropTypes.shape({
-    content: PropTypes.array,
-    status: PropTypes.object
-  })
-};
-
-var FourCol = function FourCol(props) {
-  var _props$blockData = props.blockData,
-      content = _props$blockData.content,
-      status = _props$blockData.status;
-  return /*#__PURE__*/React.createElement(Block, {
-    row: true,
-    style: "3-col"
-  }, lodash.map(content, function (teaser, k) {
-    return /*#__PURE__*/React.createElement(Grid, {
-      key: k,
-      xs: 100,
-      md: 33,
-      columns: 3
+  if (items.length === 1) {
+    return /*#__PURE__*/React.createElement(Block, {
+      custom: "templates-featured one"
     }, /*#__PURE__*/React.createElement(Teaser, {
-      content: teaser,
+      content: items[0],
+      hasSubjectFilled: true,
+      hasSubtitle: true,
       status: status
     }));
+  }
+
+  if (items.length === 3) {
+    var propsTemplate = {
+      custom: 'templates-featured three',
+      md: {
+        align: 'row between'
+      }
+    };
+    return /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
+      custom: "block-left"
+    }, /*#__PURE__*/React.createElement(Teaser, {
+      content: items[0],
+      hasSubjectFilled: true,
+      status: status
+    })), /*#__PURE__*/React.createElement(Block, {
+      custom: "block-right"
+    }, /*#__PURE__*/React.createElement(Teaser, {
+      content: items[1],
+      status: status
+    }), /*#__PURE__*/React.createElement(Teaser, {
+      content: items[2],
+      status: status
+    })));
+  }
+
+  return null;
+};
+
+Featured.propTypes = {
+  content: PropTypes.object,
+  status: PropTypes.object
+};
+
+var GridNews = function GridNews(props) {
+  var content = props.content,
+      status = props.status;
+  var items = content.items;
+  var propsTemplate = {
+    align: 'between',
+    custom: 'templates-newsgrid',
+    md: {
+      align: 'row'
+    }
+  };
+
+  if (items.length === 3) {
+    propsTemplate.custom = 'templates-newsgrid three';
+  }
+
+  if (items.length === 4) {
+    propsTemplate.custom = 'templates-newsgrid four';
+  }
+
+  return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(items, function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      key: key,
+      content: item,
+      hasImageTop: true,
+      status: status
+    });
   }));
 };
 
-FourCol.propTypes = {
-  blockData: PropTypes.shape({
-    content: PropTypes.array,
-    image: PropTypes.array,
-    status: PropTypes.object
-  })
+GridNews.propTypes = {
+  content: PropTypes.object,
+  status: PropTypes.object
 };
 
-var FourCol$1 = function FourCol(props) {
-  var _props$blockData = props.blockData,
-      content = _props$blockData.content,
-      status = _props$blockData.status;
-  return /*#__PURE__*/React.createElement(Block, {
-    row: true,
-    style: "4-col"
-  }, lodash.map(content, function (teaser, k) {
-    return /*#__PURE__*/React.createElement(Grid, {
-      key: k,
-      xs: 100,
-      md: 50,
-      columns: 3
-    }, /*#__PURE__*/React.createElement(Teaser, {
-      content: teaser,
-      status: status
-    }));
-  }));
-};
-
-FourCol$1.propTypes = {
-  blockData: PropTypes.shape({
-    content: PropTypes.array,
-    image: PropTypes.array,
-    status: PropTypes.object
-  })
-};
-
-var NewsList = function NewsList(_ref) {
+var ListNews = function ListNews(_ref) {
   var content = _ref.content,
       status = _ref.status;
 
@@ -608,17 +490,18 @@ var NewsList = function NewsList(_ref) {
   }
 
   return /*#__PURE__*/React.createElement(Block, {
-    custom: "news-list"
+    custom: "list-news"
   }, lodash.map(content, function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
+      hasSubjectFilled: true,
       status: status,
       key: key
     });
   }));
 };
 
-NewsList.propTypes = {
+ListNews.propTypes = {
   content: PropTypes.array.isRequired,
   status: PropTypes.shape({
     error: PropTypes.bool,
@@ -626,7 +509,48 @@ NewsList.propTypes = {
   })
 };
 
-exports.BreakingNews = BreakingNews;
-exports.FourCol = FourCol$1;
-exports.NewsList = NewsList;
-exports.ThreeCol = FourCol;
+var Subjects = function Subjects(props) {
+  var content = props.content,
+      status = props.status;
+  var propsTemplate = {
+    custom: 'templates-subjects',
+    lg: {
+      align: 'row between'
+    }
+  };
+  return /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
+    custom: "col left"
+  }, lodash.map(content['items-left'], function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      content: item,
+      key: key,
+      status: status
+    });
+  })), /*#__PURE__*/React.createElement(Block, {
+    custom: "col center"
+  }, lodash.map(content['items-center'], function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      content: item,
+      key: key,
+      status: status
+    });
+  })), /*#__PURE__*/React.createElement(Block, {
+    custom: "col right"
+  }, lodash.map(content['items-right'], function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      content: item,
+      key: key,
+      status: status
+    });
+  })));
+};
+
+Subjects.propTypes = {
+  content: PropTypes.object,
+  status: PropTypes.object
+};
+
+exports.Featured = Featured;
+exports.GridNews = GridNews;
+exports.NewsList = ListNews;
+exports.Subjects = Subjects;

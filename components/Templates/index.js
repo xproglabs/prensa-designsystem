@@ -1,4 +1,4 @@
-export {default as BreakingNews} from './BreakingNews';
-export {default as ThreeCol} from './ThreeCol';
-export {default as FourCol} from './FourCol';
-export {default as NewsList} from './NewsList';
+export {default as Featured} from './Featured';
+export {default as GridNews} from './GridNews';
+export {default as NewsList} from './ListNews';
+export {default as Subjects} from './Subjects';
