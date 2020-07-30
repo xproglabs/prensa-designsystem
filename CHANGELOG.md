@@ -1,4 +1,4 @@
-# v1.3.1 (Mon Jul 27 2020)
+# v1.3.1 (Mon Jul 29 2020)
 - Upgrade nos Templates
 - Upgrade nos Teasers
 

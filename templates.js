@@ -515,12 +515,12 @@ var Subjects = function Subjects(props) {
   var propsTemplate = {
     custom: 'templates-subjects',
     lg: {
-      align: "row between"
+      align: 'row between'
     }
   };
   return /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
     custom: "col left"
-  }, lodash.map(content["items-left"], function (item, key) {
+  }, lodash.map(content['items-left'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       key: key,
@@ -528,7 +528,7 @@ var Subjects = function Subjects(props) {
     });
   })), /*#__PURE__*/React.createElement(Block, {
     custom: "col center"
-  }, lodash.map(content["items-center"], function (item, key) {
+  }, lodash.map(content['items-center'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       key: key,
@@ -536,7 +536,7 @@ var Subjects = function Subjects(props) {
     });
   })), /*#__PURE__*/React.createElement(Block, {
     custom: "col right"
-  }, lodash.map(content["items-right"], function (item, key) {
+  }, lodash.map(content['items-right'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       key: key,
