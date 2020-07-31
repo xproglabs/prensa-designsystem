@@ -145,12 +145,18 @@ $listnews-1-teaser-image-height: 210px;
     @include fw(700);
   }
   &.three {
+    .teaser-content {
+      @include mb($space-size-2)
+    }
     .teaser-image {
       &.image-top {
         .image-background {
           @include h($newsgrid-1-teaser-image-height);
         }
       }
+    }
+    .teaser-title {
+      @include mb($space-size-2);
     }
   }
   &.four {
