@@ -52,6 +52,7 @@ $listnews-1-teaser-image-height: 210px;
     .block-left {
       .teaser-content {
         @include mb($space-size-3);
+        @include mx($space-size-3)
       }
     }  
     .block-right {
@@ -99,6 +100,7 @@ $listnews-1-teaser-image-height: 210px;
     &.one {
       .teaser-content {
         @include m($space-size-5);
+        @include mb($space-size-8);
       }
       .teaser-subject {
         @include mb($space-size-5);
