@@ -245,7 +245,11 @@ var Teaser = function Teaser(_ref) {
   var propsTeaser = {
     align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
-    mb: '4'
+    mb: '2',
+    pt: "2",
+    pb: "2",
+    pl: "2",
+    pr: "2"
   };
   var propsImage = {
     align: 'row',
@@ -253,7 +257,6 @@ var Teaser = function Teaser(_ref) {
   };
   var propsContent = {
     custom: 'teaser-content',
-    mt: '3',
     mb: '3',
     ml: '2',
     mr: '2',
@@ -265,7 +268,8 @@ var Teaser = function Teaser(_ref) {
     w: '100p'
   };
   var propsSubject = {
-    custom: 'teaser-subject'
+    custom: 'teaser-subject',
+    mb: '1'
   };
   var propsTitle = {
     custom: 'teaser-title'

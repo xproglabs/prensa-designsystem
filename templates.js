@@ -246,7 +246,11 @@ var Teaser = function Teaser(_ref) {
   var propsTeaser = {
     align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
-    mb: '4'
+    mb: '2',
+    pt: "2",
+    pb: "2",
+    pl: "2",
+    pr: "2"
   };
   var propsImage = {
     align: 'row',
@@ -254,7 +258,6 @@ var Teaser = function Teaser(_ref) {
   };
   var propsContent = {
     custom: 'teaser-content',
-    mt: '3',
     mb: '3',
     ml: '2',
     mr: '2',
@@ -266,7 +269,8 @@ var Teaser = function Teaser(_ref) {
     w: '100p'
   };
   var propsSubject = {
-    custom: 'teaser-subject'
+    custom: 'teaser-subject',
+    mb: '1'
   };
   var propsTitle = {
     custom: 'teaser-title'
@@ -550,6 +554,30 @@ Subjects.propTypes = {
   status: PropTypes.object
 };
 
+var Columnists = function Columnists(props) {
+  var content = props.content,
+      status = props.status;
+  var propsTemplate = {
+    custom: 'templates-columnists',
+    lg: {
+      align: 'row between wrap'
+    }
+  };
+  return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      content: item,
+      key: key,
+      status: status
+    });
+  }));
+};
+
+Columnists.propTypes = {
+  content: PropTypes.object,
+  status: PropTypes.object
+};
+
+exports.Columnists = Columnists;
 exports.Featured = Featured;
 exports.GridNews = GridNews;
 exports.NewsList = ListNews;

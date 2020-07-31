@@ -12,7 +12,11 @@ const Teaser = ({content, hasImageTop, hasSubjectFilled, hasSubtitle, status}) =
   const propsTeaser = {
     align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
-    mb: '4'
+    mb: '2',
+    pt: '2',
+    pb: '2',
+    pl: '2',
+    pr: '2'
   };
   const propsImage = {
     align: 'row',
@@ -20,7 +24,6 @@ const Teaser = ({content, hasImageTop, hasSubjectFilled, hasSubtitle, status}) =
   };
   const propsContent = {
     custom: 'teaser-content',
-    mt: '3',
     mb: '3',
     ml: '2',
     mr: '2',
@@ -32,7 +35,8 @@ const Teaser = ({content, hasImageTop, hasSubjectFilled, hasSubtitle, status}) =
     w: '100p'
   };
   const propsSubject = {
-    custom: 'teaser-subject'
+    custom: 'teaser-subject',
+    mb: '1'
   };
   const propsTitle = {
     custom: 'teaser-title'
