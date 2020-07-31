@@ -10,9 +10,19 @@ $columnists-1-teaser-image-height: 80px;
 $columnists-1-teaser-image-width: 80px;
 
 .templates-columnists {
+  .teaser-default {
+    @include mb($space-size-2);
+    @include p($space-size-2);
+  }
+  .teaser-content {
+    @include my(0px);
+  }
   .teaser-title {
     @include fs($columnists-1-teaser-title-size);
     @include lh($columnists-1-teaser-title-height);
+  }
+  .teaser-subject {
+    @include mb($space-size-1);
   }
   .teaser-image {
     &.image-left {

@@ -12,11 +12,7 @@ const Teaser = ({content, hasImageTop, hasSubjectFilled, hasSubtitle, status}) =
   const propsTeaser = {
     align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
-    mb: '2',
-    pt: '2',
-    pb: '2',
-    pl: '2',
-    pr: '2'
+    mb: '4'
   };
   const propsImage = {
     align: 'row',
@@ -27,6 +23,7 @@ const Teaser = ({content, hasImageTop, hasSubjectFilled, hasSubtitle, status}) =
     mb: '3',
     ml: '2',
     mr: '2',
+    mt: '3',
     w: '100p-4'
   };
   const propsDate = {
