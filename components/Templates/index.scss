@@ -36,6 +36,7 @@ $listnews-1-teaser-image-height: 210px;
   &.one {
     .teaser-content {
       @include mt($space-size-5);
+      @include mx($space-size-3);
     }
     .teaser-subject {
       @include mb($space-size-3);
@@ -45,6 +46,18 @@ $listnews-1-teaser-image-height: 210px;
       @include fw(700);
       @include lh($featured-1-teaser-title-height);
       @include mb($space-size-5);
+    }
+  }
+  &.three {
+    .block-left {
+      .teaser-content {
+        @include mb($space-size-3);
+      }
+    }  
+    .block-right {
+      .teaser-content {
+        @include mb($space-size-2);
+      }
     }
   }
   .block-left {
