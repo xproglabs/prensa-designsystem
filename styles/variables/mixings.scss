@@ -29,6 +29,7 @@
 @mixin ls($n) { letter-spacing: $n; }
 @mixin td($n) { text-decoration: $n; }
 @mixin ta($n) { text-align: $n; }
+@mixin tt($n) { text-transform: $n; }
 @mixin r($n) { border-radius: $n; }
 
 @mixin fx($n1, $n2) {

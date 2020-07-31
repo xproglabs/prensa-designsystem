@@ -253,10 +253,10 @@ var Teaser = function Teaser(_ref) {
   };
   var propsContent = {
     custom: 'teaser-content',
-    mt: '3',
     mb: '3',
     ml: '2',
     mr: '2',
+    mt: '3',
     w: '100p-4'
   };
   var propsDate = {
@@ -265,7 +265,8 @@ var Teaser = function Teaser(_ref) {
     w: '100p'
   };
   var propsSubject = {
-    custom: 'teaser-subject'
+    custom: 'teaser-subject',
+    mb: '1'
   };
   var propsTitle = {
     custom: 'teaser-title'

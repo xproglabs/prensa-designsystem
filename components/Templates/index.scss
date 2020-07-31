@@ -75,10 +75,10 @@ $listnews-1-teaser-image-height: 210px;
   @media(min-width: $md) {
     &.three {
       .block-left {
-        @include w(calc(calc(calc(100% / 3 * 2) - #{$space-size-2}) +6px));
+        @include w(calc(calc(calc(100% / 3 * 2) - #{$space-size-2}) + 6px));
       }
       .block-right {
-        @include w(calc(calc(calc(100% / 3) - #{$space-size-2}) -2px));
+        @include w(calc(calc(calc(100% / 3) - #{$space-size-2}) - 2px));
       }
     }
   }

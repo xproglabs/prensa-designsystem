@@ -20,10 +20,10 @@ const Teaser = ({content, hasImageTop, hasSubjectFilled, hasSubtitle, status}) =
   };
   const propsContent = {
     custom: 'teaser-content',
-    mt: '3',
     mb: '3',
     ml: '2',
     mr: '2',
+    mt: '3',
     w: '100p-4'
   };
   const propsDate = {
@@ -32,7 +32,8 @@ const Teaser = ({content, hasImageTop, hasSubjectFilled, hasSubtitle, status}) =
     w: '100p'
   };
   const propsSubject = {
-    custom: 'teaser-subject'
+    custom: 'teaser-subject',
+    mb: '1'
   };
   const propsTitle = {
     custom: 'teaser-title'
