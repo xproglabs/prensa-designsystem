@@ -10,6 +10,7 @@ $subjects-1-teaser-image-width: 80px;
   .teaser-default {
     @include mb($space-size-2);
     @include p($space-size-2);
+    @include pt($space-size-3)
   }
   .teaser-content {
     @include my(0px);
