@@ -35,6 +35,7 @@ $columnists-1-teaser-image-width: 80px;
   }
   @media (min-width: $lg) {
     .teaser-default {
+      @include pt($space-size-3);
       @include w(calc(calc(100% - calc(#{$space-size-10} * 2)) / 3));
     }  
     .teaser-title {
