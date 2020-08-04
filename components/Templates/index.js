@@ -4,3 +4,4 @@ export {default as Latest} from './Latest';
 export {default as NewsList} from './ListNews';
 export {default as Subjects} from './Subjects';
 export {default as Columnists} from './Columnists';
+export {default as MostRead} from './MostRead';
