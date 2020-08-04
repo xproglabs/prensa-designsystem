@@ -24,6 +24,24 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
 var Block = function Block(props) {
   var children = props.children,
       xs = props.xs,
@@ -596,10 +614,15 @@ var MostReadItem = function MostReadItem(_ref) {
     custom: 'most-read-number'
   };
   var propsTitle = {
-    custom: 'most-read-title'
+    custom: 'most-read-title',
+    ml: '3'
   };
   var position = number + 1;
-  return /*#__PURE__*/React.createElement(Block, propsMostItem, /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement(Block, propsNumber, position), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
+  return /*#__PURE__*/React.createElement(Block, propsMostItem, /*#__PURE__*/React.createElement(Block, _extends({}, propsContent, {
+    align: "row"
+  }), /*#__PURE__*/React.createElement(Block, _extends({}, propsNumber, {
+    align: "row center middle"
+  }), position), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
     href: path,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
@@ -625,7 +648,7 @@ var MostRead = function MostRead(props) {
       align: 'row between'
     }
   };
-  console.log("content", content);
+  console.log('content', content);
   return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content, function (item, key) {
     return /*#__PURE__*/React.createElement(MostReadItem, {
       content: item,
