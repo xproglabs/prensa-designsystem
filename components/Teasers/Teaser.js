@@ -6,7 +6,7 @@ import Image from '../Image/Teaser';
 import Subject from '../Subject';
 import Typography from '../Typography';
 
-const Teaser = ({content, hasImageTop, hasSubjectFilled, hasSubtitle, status}) => {
+const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, status}) => {
   const {image, name, path, subject, subtitle} = content;
   const {loading, error} = status;
   const propsTeaser = {
@@ -49,7 +49,7 @@ const Teaser = ({content, hasImageTop, hasSubjectFilled, hasSubtitle, status}) =
     return (
       <Block {...propsImage}>
         <a className='teaser-aria' href={path} aria-label={`Imagem da matéria ${name}`}>
-          <Image value={image} />
+          <Image domain={domain} value={image} />
         </a>
       </Block>
     );
@@ -90,6 +90,7 @@ Teaser.propTypes = {
     subject: PropTypes.string,
     ['time-published']: PropTypes.string
   }),
+  domain: PropTypes.string,
   hasImageTop: PropTypes.bool,
   hasSubtitle: PropTypes.bool,
   hasSubjectFilled: PropTypes.bool,

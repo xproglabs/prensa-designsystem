@@ -106,12 +106,13 @@ Block.propTypes = {
 Block.defaultProps = {};
 
 var Image = function Image(_ref) {
-  var value = _ref.value;
+  var domain = _ref.domain,
+      value = _ref.value;
   if (!value || !value['image-contentId']) return false;
   var contentid = value['image-contentId'];
   var width = 1000;
   var derivative = '2x1';
-  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
+  var imagePath = "".concat(domain, "/image/policy:").concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
   var policyid = contentid.replace('.', '-').replace('.', '-');
   var inlinestyle = "\n    .image-background.policy-".concat(policyid, " {\n      background-image: url(").concat(imagePath, ");\n    }");
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", {
@@ -124,6 +125,7 @@ var Image = function Image(_ref) {
 };
 
 Image.propTypes = {
+  domain: PropTypes.string,
   value: PropTypes.object.isRequired
 };
 Image.defaultProps = {
@@ -250,6 +252,7 @@ Subject.propTypes = {
 
 var Teaser = function Teaser(_ref) {
   var content = _ref.content,
+      domain = _ref.domain,
       hasImageTop = _ref.hasImageTop,
       hasSubjectFilled = _ref.hasSubjectFilled,
       hasSubtitle = _ref.hasSubtitle,
@@ -301,6 +304,7 @@ var Teaser = function Teaser(_ref) {
       href: path,
       "aria-label": "Imagem da mat\xE9ria ".concat(name)
     }, /*#__PURE__*/React.createElement(Image, {
+      domain: domain,
       value: image
     })));
   };
@@ -328,6 +332,7 @@ Teaser.propTypes = {
     subtitle: PropTypes.string,
     subject: PropTypes.string
   }, 'time-published', PropTypes.string)),
+  domain: PropTypes.string,
   hasImageTop: PropTypes.bool,
   hasSubtitle: PropTypes.bool,
   hasSubjectFilled: PropTypes.bool,
@@ -419,6 +424,7 @@ TeaserFeatured.propTypes = {
 
 var Featured = function Featured(props) {
   var content = props.content,
+      domain = props.domain,
       status = props.status;
   var items = content.items;
 
@@ -427,6 +433,7 @@ var Featured = function Featured(props) {
       custom: "templates-featured one"
     }, /*#__PURE__*/React.createElement(Teaser, {
       content: items[0],
+      domain: domain,
       hasSubjectFilled: true,
       hasSubtitle: true,
       status: status
@@ -444,15 +451,18 @@ var Featured = function Featured(props) {
       custom: "block-left"
     }, /*#__PURE__*/React.createElement(Teaser, {
       content: items[0],
+      domain: domain,
       hasSubjectFilled: true,
       status: status
     })), /*#__PURE__*/React.createElement(Block, {
       custom: "block-right"
     }, /*#__PURE__*/React.createElement(Teaser, {
       content: items[1],
+      domain: domain,
       status: status
     }), /*#__PURE__*/React.createElement(Teaser, {
       content: items[2],
+      domain: domain,
       status: status
     })));
   }
@@ -462,6 +472,7 @@ var Featured = function Featured(props) {
 
 Featured.propTypes = {
   content: PropTypes.object,
+  domain: PropTypes.string,
   status: PropTypes.object
 };
 
@@ -482,6 +493,7 @@ SectionTitle.propTypes = {
 
 var GridNews = function GridNews(props) {
   var content = props.content,
+      domain = props.domain,
       status = props.status;
   var items = content.items,
       title = content.title;
@@ -507,6 +519,7 @@ var GridNews = function GridNews(props) {
     return /*#__PURE__*/React.createElement(Teaser, {
       key: key,
       content: item,
+      domain: domain,
       hasImageTop: true,
       status: status
     });
@@ -515,6 +528,7 @@ var GridNews = function GridNews(props) {
 
 GridNews.propTypes = {
   content: PropTypes.object,
+  domain: PropTypes.string,
   status: PropTypes.object
 };
 
@@ -563,11 +577,12 @@ MostReadItem.propTypes = {
     name: PropTypes.string,
     path: PropTypes.string
   }),
-  number: PropTypes.integer
+  number: PropTypes.number
 };
 
 var MostRead = function MostRead(props) {
   var content = props.content,
+      domain = props.domain,
       status = props.status;
   var propsTemplate = {
     custom: 'templates-most-read',
@@ -578,6 +593,7 @@ var MostRead = function MostRead(props) {
   return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content, function (item, key) {
     return /*#__PURE__*/React.createElement(MostReadItem, {
       content: item,
+      domain: domain,
       key: key,
       status: status,
       number: key
@@ -587,11 +603,13 @@ var MostRead = function MostRead(props) {
 
 MostRead.propTypes = {
   content: PropTypes.array,
+  domain: PropTypes.string,
   status: PropTypes.object
 };
 
 var Latest = function Latest(_ref) {
   var content = _ref.content,
+      domain = _ref.domain,
       ReadMore = _ref.ReadMore,
       status = _ref.status;
   var propsContainer = {
@@ -618,6 +636,7 @@ var Latest = function Latest(_ref) {
   }, lodash.map(content["items-latest"], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
+      domain: domain,
       hasSubjectFilled: true,
       hasImageTop: true,
       status: status,
@@ -633,7 +652,7 @@ var Latest = function Latest(_ref) {
 
 Latest.propTypes = {
   content: PropTypes.object,
-  ReadMore: PropTypes["function"],
+  ReadMore: PropTypes.func,
   status: PropTypes.shape({
     error: PropTypes.bool,
     loading: PropTypes.bool
@@ -642,6 +661,7 @@ Latest.propTypes = {
 
 var ListNews = function ListNews(_ref) {
   var content = _ref.content,
+      domain = _ref.domain,
       status = _ref.status;
 
   if (!content || content.length === 0) {
@@ -653,6 +673,7 @@ var ListNews = function ListNews(_ref) {
   }, lodash.map(content, function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
+      domain: domain,
       hasSubjectFilled: true,
       hasImageTop: true,
       status: status,
@@ -663,6 +684,7 @@ var ListNews = function ListNews(_ref) {
 
 ListNews.propTypes = {
   content: PropTypes.array.isRequired,
+  domain: PropTypes.string,
   status: PropTypes.shape({
     error: PropTypes.bool,
     loading: PropTypes.bool
@@ -671,6 +693,7 @@ ListNews.propTypes = {
 
 var Subjects = function Subjects(props) {
   var content = props.content,
+      domain = props.domain,
       status = props.status;
   var title = content.title;
   var propsTemplate = {
@@ -686,6 +709,7 @@ var Subjects = function Subjects(props) {
   }, lodash.map(content['items-left'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
+      domain: domain,
       key: key,
       status: status
     });
@@ -694,6 +718,7 @@ var Subjects = function Subjects(props) {
   }, lodash.map(content['items-center'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
+      domain: domain,
       key: key,
       status: status
     });
@@ -702,6 +727,7 @@ var Subjects = function Subjects(props) {
   }, lodash.map(content['items-right'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
+      domain: domain,
       key: key,
       status: status
     });
@@ -710,11 +736,13 @@ var Subjects = function Subjects(props) {
 
 Subjects.propTypes = {
   content: PropTypes.object,
+  domain: PropTypes.string,
   status: PropTypes.object
 };
 
 var Columnists = function Columnists(props) {
   var content = props.content,
+      domain = props.domain,
       status = props.status;
   var title = content.title;
   var propsTemplate = {
@@ -728,6 +756,7 @@ var Columnists = function Columnists(props) {
   }), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
+      domain: domain,
       key: key,
       status: status
     });
@@ -736,6 +765,7 @@ var Columnists = function Columnists(props) {
 
 Columnists.propTypes = {
   content: PropTypes.object,
+  domain: PropTypes.string,
   status: PropTypes.object
 };
 

@@ -7,7 +7,7 @@ import {Teaser} from '../Teasers';
 import SectionTitle from '../SectionTitle'
 
 const GridNews = props => {
-  const {content, status} = props;
+  const {content, domain, status} = props;
   const {items, title} = content;
   
   const propsTemplate = {
@@ -31,6 +31,7 @@ const GridNews = props => {
           <Teaser 
             key={key}
             content={item}
+            domain={domain}
             hasImageTop={true}
             status={status}
           />
@@ -41,6 +42,7 @@ const GridNews = props => {
 };
 GridNews.propTypes = {
   content: PropTypes.object,
+  domain: PropTypes.string,
   status: PropTypes.object
 };
 export default GridNews;

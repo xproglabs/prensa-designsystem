@@ -48,7 +48,7 @@ MostReadItem.propTypes = {
     name: PropTypes.string,
     path: PropTypes.string
   }),
-  number: PropTypes.integer,
+  number: PropTypes.number,
 };
 
 export default MostReadItem;

@@ -5,7 +5,7 @@ import React from 'react';
 import Block from '../Block';
 import {Teaser} from '../Teasers';
 
-const ListNews = ({content, status}) => {
+const ListNews = ({content, domain, status}) => {
 
   if (!content || content.length === 0) {
     return (
@@ -18,6 +18,7 @@ const ListNews = ({content, status}) => {
       {map(content, (item, key) => 
         <Teaser 
           content={item} 
+          domain={domain}
           hasSubjectFilled={true} 
           hasImageTop={true}
           status={status} 
@@ -29,6 +30,7 @@ const ListNews = ({content, status}) => {
 
 ListNews.propTypes = {
   content: PropTypes.array.isRequired,
+  domain: PropTypes.string,
   status: PropTypes.shape({
     error: PropTypes.bool,
     loading: PropTypes.bool

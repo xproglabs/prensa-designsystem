@@ -3,7 +3,7 @@ import React from 'react';
 
 import Block from '../Block';
 
-const Image = ({value}) => {
+const Image = ({domain, value}) => {
 
   if(!value || !value['image-contentId'])
     return false;
@@ -15,7 +15,7 @@ const Image = ({value}) => {
     
   const width = 1000;
   const derivative = '2x1';
-  const imagePath = `/image/policy:${contentid}/image.jpg?f=${derivative}&w=${width}`;
+  const imagePath = `${domain}/image/policy:${contentid}/image.jpg?f=${derivative}&w=${width}`;
 
   return (
     <Block custom="article-image-box" w="100p">

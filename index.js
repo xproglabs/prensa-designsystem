@@ -245,13 +245,14 @@ Grid.propTypes = {
 };
 
 var Image = function Image(_ref) {
-  var value = _ref.value;
+  var domain = _ref.domain,
+      value = _ref.value;
   if (!value || !value['image-contentId']) return false;
   var contentid = value['image-contentId'];
   var captionAndByline = value['image-subtitle'] ? "".concat(value['image-subtitle'], " (").concat(value['image-byline'], ")") : "".concat(value['image-subtitle-original'], " (").concat(value['image-byline'], ")");
   var width = 1000;
   var derivative = '2x1';
-  var imagePath = "/image/policy:".concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
+  var imagePath = "".concat(domain, "/image/policy:").concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
   return /*#__PURE__*/React.createElement(Block, {
     custom: "article-image-box",
     w: "100p"

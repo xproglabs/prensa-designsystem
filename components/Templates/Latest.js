@@ -7,7 +7,7 @@ import {Teaser} from '../Teasers'
 import SectionTitle from '../SectionTitle'
 import MostRead from './MostRead'
 
-const Latest = ({content, ReadMore, status}) => {
+const Latest = ({content, domain, ReadMore, status}) => {
   const propsContainer = {custom: 'templates-latest-news', align: 'col left', w: '100p', md: {align: 'row between'}}
   const propsPageLeft = {custom: 'page-left', mb: '4'}
   const propsPageRight = {custom: 'page-right', mb: '4'}
@@ -20,6 +20,7 @@ const Latest = ({content, ReadMore, status}) => {
           {map(content["items-latest"], (item, key) => 
             <Teaser 
               content={item} 
+              domain={domain}
               hasSubjectFilled={true} 
               hasImageTop={true}
               status={status} 
@@ -39,7 +40,7 @@ const Latest = ({content, ReadMore, status}) => {
 
 Latest.propTypes = {
   content: PropTypes.object,
-  ReadMore: PropTypes.function,
+  ReadMore: PropTypes.func,
   status: PropTypes.shape({
     error: PropTypes.bool,
     loading: PropTypes.bool
