@@ -482,6 +482,75 @@ GridNews.propTypes = {
   status: PropTypes.object
 };
 
+var SectionTitle = function SectionTitle(_ref) {
+  var name = _ref.name;
+  return /*#__PURE__*/React.createElement(Block, {
+    mb: "2"
+  }, /*#__PURE__*/React.createElement(Typography, {
+    custom: "section-title"
+  }, name));
+};
+
+SectionTitle.propTypes = {
+  name: PropTypes.string
+};
+
+var Latest = function Latest(_ref) {
+  var content = _ref.content,
+      ReadMore = _ref.ReadMore,
+      status = _ref.status;
+  var propsContainer = {
+    custom: 'templates-latest-news',
+    align: 'col left',
+    w: '100p',
+    lg: {
+      align: 'row'
+    }
+  };
+  var propsPageLeft = {
+    custom: 'page-left',
+    mb: '2',
+    mt: '4',
+    w: '100p',
+    lg: {
+      mr: '2',
+      w: '70p-2'
+    }
+  };
+  var propsPageRight = {
+    custom: 'page-right',
+    m: '2',
+    mt: '4',
+    w: '100p-4',
+    lg: {
+      w: '30p-4'
+    }
+  };
+  return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, propsPageLeft, /*#__PURE__*/React.createElement(SectionTitle, {
+    name: "\xDALTIMAS NOT\xCDCIAS"
+  }), /*#__PURE__*/React.createElement(Block, {
+    custom: "latest-news"
+  }, lodash.map(content["items-latest"], function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      content: item,
+      hasSubjectFilled: true,
+      status: status,
+      key: key
+    });
+  })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, propsPageRight, /*#__PURE__*/React.createElement(SectionTitle, {
+    name: "MAIS LIDAS"
+  })));
+};
+
+Latest.propTypes = {
+  content: PropTypes.object,
+  ReadMore: PropTypes.object,
+  status: PropTypes.shape({
+    error: PropTypes.bool,
+    loading: PropTypes.bool
+  })
+};
+
 var ListNews = function ListNews(_ref) {
   var content = _ref.content,
       status = _ref.status;
@@ -577,5 +646,6 @@ Columnists.propTypes = {
 exports.Columnists = Columnists;
 exports.Featured = Featured;
 exports.GridNews = GridNews;
+exports.Latest = Latest;
 exports.NewsList = ListNews;
 exports.Subjects = Subjects;

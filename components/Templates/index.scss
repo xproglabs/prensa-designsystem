@@ -30,6 +30,9 @@ $newsgrid-2-teaser-image-height--lg: 140px;
 $listnews-1-teaser-image-height: 210px;
 
 .templates-featured {
+  .teaser-image {
+    display: none;
+  }
   .teaser-subtitle {
     display: none;
   }
@@ -203,6 +206,7 @@ $listnews-1-teaser-image-height: 210px;
     }
   }
 }
+.latest-news,
 .list-news {
   @media (min-width: $md) {
     .teaser-image {

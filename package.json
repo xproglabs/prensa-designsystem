@@ -39,11 +39,6 @@
     "sass": "^1.26.10",
     "sass-loader": "^8.0.2"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.+(js|jsx)": [
       "eslint --fix"
