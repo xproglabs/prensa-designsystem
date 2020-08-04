@@ -23,14 +23,15 @@ const MostReadItem = ({content, number}) => {
     custom: 'most-read-number'
   };
   const propsTitle = {
-    custom: 'most-read-title'
+    custom: 'most-read-title',
+    ml: '3'
   };
   const position = number + 1; 
   
   return (
     <Block {...propsMostItem}>
-      <Block {...propsContent}>
-        <Block {...propsNumber}>{position}</Block>
+      <Block {...propsContent} align='row'>
+        <Block {...propsNumber} align='row center middle'>{position}</Block>
         <Block {...propsTitle}>
           <a className='teaser-aria' href={path} aria-label={`Abrir matéria ${name}`}>
             <Typography custom='teaser-title'>{name}</Typography>
