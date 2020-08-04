@@ -608,14 +608,15 @@ var MostReadItem = function MostReadItem(_ref) {
     ml: '2',
     mr: '2',
     mt: '3',
-    w: '100p'
+    w: '100p-3'
   };
   var propsNumber = {
     custom: 'most-read-number'
   };
   var propsTitle = {
     custom: 'most-read-title',
-    ml: '3'
+    ml: '3',
+    w: '100p-3'
   };
   var position = number + 1;
   return /*#__PURE__*/React.createElement(Block, propsMostItem, /*#__PURE__*/React.createElement(Block, _extends({}, propsContent, {
