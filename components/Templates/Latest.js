@@ -8,13 +8,14 @@ import SectionTitle from '../SectionTitle'
 import MostRead from './MostRead'
 
 const Latest = ({content, ReadMore, status}) => {
-  const propsContainer = {custom: 'templates-latest-news', align: 'col left', mt: '2', w: '100p', md: {align: 'row between'}}
+  const propsContainer = {custom: 'templates-latest-news', align: 'col left', w: '100p', md: {align: 'row between'}}
   const propsPageLeft = {custom: 'page-left', mb: '4'}
   const propsPageRight = {custom: 'page-right', mb: '4'}
+  const {title} = content
   return (
     <Block {...propsContainer}>
       <Block {...propsPageLeft}>
-        <SectionTitle name="ÚLTIMAS NOTÍCIAS" />
+        <SectionTitle name={title ? title : "ÚLTIMAS NOTÍCIAS"} />
         <Block custom="latest-news">
           {map(content["items-latest"], (item, key) => 
             <Teaser 

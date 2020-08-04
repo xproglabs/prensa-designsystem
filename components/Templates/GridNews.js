@@ -4,10 +4,11 @@ import React from 'react';
 
 import Block from '../Block';
 import {Teaser} from '../Teasers';
+import SectionTitle from '../SectionTitle'
 
 const GridNews = props => {
   const {content, status} = props;
-  const {items} = content;
+  const {items, title} = content;
   
   const propsTemplate = {
     align: 'between', 
@@ -23,16 +24,19 @@ const GridNews = props => {
   }
 
   return (
-    <Block {...propsTemplate}>
-      {map(items, (item, key) =>
-        <Teaser 
-          key={key}
-          content={item}
-          hasImageTop={true}
-          status={status}
-        />
-      )}
-    </Block>
+    <>
+      {title && title !== ""&& <SectionTitle name={title} />}
+      <Block {...propsTemplate}>
+        {map(items, (item, key) =>
+          <Teaser 
+            key={key}
+            content={item}
+            hasImageTop={true}
+            status={status}
+          />
+        )}
+      </Block>
+    </>
   );
 };
 GridNews.propTypes = {

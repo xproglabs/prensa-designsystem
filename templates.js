@@ -465,10 +465,26 @@ Featured.propTypes = {
   status: PropTypes.object
 };
 
+var SectionTitle = function SectionTitle(_ref) {
+  var name = _ref.name;
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "section-title-block",
+    mt: "2",
+    mb: "4"
+  }, /*#__PURE__*/React.createElement(Typography, {
+    custom: "section-title"
+  }, name));
+};
+
+SectionTitle.propTypes = {
+  name: PropTypes.string
+};
+
 var GridNews = function GridNews(props) {
   var content = props.content,
       status = props.status;
-  var items = content.items;
+  var items = content.items,
+      title = content.title;
   var propsTemplate = {
     align: 'between',
     custom: 'templates-newsgrid',
@@ -485,32 +501,21 @@ var GridNews = function GridNews(props) {
     propsTemplate.custom = 'templates-newsgrid four';
   }
 
-  return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(items, function (item, key) {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== "" && /*#__PURE__*/React.createElement(SectionTitle, {
+    name: title
+  }), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(items, function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       key: key,
       content: item,
       hasImageTop: true,
       status: status
     });
-  }));
+  })));
 };
 
 GridNews.propTypes = {
   content: PropTypes.object,
   status: PropTypes.object
-};
-
-var SectionTitle = function SectionTitle(_ref) {
-  var name = _ref.name;
-  return /*#__PURE__*/React.createElement(Block, {
-    mb: "2"
-  }, /*#__PURE__*/React.createElement(Typography, {
-    custom: "section-title"
-  }, name));
-};
-
-SectionTitle.propTypes = {
-  name: PropTypes.string
 };
 
 var MostReadItem = function MostReadItem(_ref) {
@@ -604,8 +609,9 @@ var Latest = function Latest(_ref) {
     custom: 'page-right',
     mb: '4'
   };
+  var title = content.title;
   return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, propsPageLeft, /*#__PURE__*/React.createElement(SectionTitle, {
-    name: "\xDALTIMAS NOT\xCDCIAS"
+    name: title ? title : "ÚLTIMAS NOTÍCIAS"
   }), /*#__PURE__*/React.createElement(Block, {
     custom: "latest-news"
   }, lodash.map(content["items-latest"], function (item, key) {
@@ -664,13 +670,16 @@ ListNews.propTypes = {
 var Subjects = function Subjects(props) {
   var content = props.content,
       status = props.status;
+  var title = content.title;
   var propsTemplate = {
     custom: 'templates-subjects',
     lg: {
       align: 'row between'
     }
   };
-  return /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== "" && /*#__PURE__*/React.createElement(SectionTitle, {
+    name: title
+  }), /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
     custom: "col left"
   }, lodash.map(content['items-left'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
@@ -694,7 +703,7 @@ var Subjects = function Subjects(props) {
       key: key,
       status: status
     });
-  })));
+  }))));
 };
 
 Subjects.propTypes = {
@@ -705,19 +714,22 @@ Subjects.propTypes = {
 var Columnists = function Columnists(props) {
   var content = props.content,
       status = props.status;
+  var title = content.title;
   var propsTemplate = {
     custom: 'templates-columnists',
     lg: {
       align: 'row between wrap'
     }
   };
-  return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== "" && /*#__PURE__*/React.createElement(SectionTitle, {
+    name: title
+  }), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       key: key,
       status: status
     });
-  }));
+  })));
 };
 
 Columnists.propTypes = {

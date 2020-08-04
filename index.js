@@ -1022,7 +1022,9 @@ SideMenuItems.defaultProps = {
 var SectionTitle = function SectionTitle(_ref) {
   var name = _ref.name;
   return /*#__PURE__*/React.createElement(Block, {
-    mb: "2"
+    custom: "section-title-block",
+    mt: "2",
+    mb: "4"
   }, /*#__PURE__*/React.createElement(Typography, {
     custom: "section-title"
   }, name));
