@@ -16,7 +16,13 @@ const ListNews = ({content, status}) => {
   return (
     <Block custom="list-news">
       {map(content, (item, key) => 
-        <Teaser content={item} hasSubjectFilled={true} status={status} key={key} />)}
+        <Teaser 
+          content={item} 
+          hasSubjectFilled={true} 
+          hasImageTop={true}
+          status={status} 
+          key={key} />
+        )}
     </Block>
   );
 };

@@ -653,6 +653,7 @@ var ListNews = function ListNews(_ref) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       hasSubjectFilled: true,
+      hasImageTop: true,
       status: status,
       key: key
     });
