@@ -25,7 +25,7 @@ const MostReadItem = ({content, number}) => {
   const propsTitle = {
     custom: 'most-read-title',
     ml: '3',
-    w: '100p-3'
+    w: '100p-8'
   };
   const position = number + 1; 
   
