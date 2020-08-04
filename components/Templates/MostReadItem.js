@@ -17,14 +17,15 @@ const MostReadItem = ({content, number}) => {
     ml: '2',
     mr: '2',
     mt: '3',
-    w: '100p'
+    w: '100p-3'
   };
   const propsNumber = {
     custom: 'most-read-number'
   };
   const propsTitle = {
     custom: 'most-read-title',
-    ml: '3'
+    ml: '3',
+    w: '100p-3'
   };
   const position = number + 1; 
   
