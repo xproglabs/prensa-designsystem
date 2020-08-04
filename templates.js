@@ -495,6 +495,72 @@ SectionTitle.propTypes = {
   name: PropTypes.string
 };
 
+var MostReadItem = function MostReadItem(_ref) {
+  var content = _ref.content,
+      number = _ref.number;
+  var name = content.name,
+      path = content.path;
+  var propsMostItem = {
+    align: 'row left',
+    custom: 'most-read-item',
+    mb: '4'
+  };
+  var propsContent = {
+    custom: 'most-read-content',
+    mb: '3',
+    ml: '2',
+    mr: '2',
+    mt: '3',
+    w: '100p'
+  };
+  var propsNumber = {
+    custom: 'most-read-number'
+  };
+  var propsTitle = {
+    custom: 'most-read-title'
+  };
+  var position = number + 1;
+  return /*#__PURE__*/React.createElement(Block, propsMostItem, /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement(Block, propsNumber, position), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
+    className: "teaser-aria",
+    href: path,
+    "aria-label": "Abrir mat\xE9ria ".concat(name)
+  }, /*#__PURE__*/React.createElement(Typography, {
+    custom: "teaser-title"
+  }, name)))));
+};
+
+MostReadItem.propTypes = {
+  content: PropTypes.shape({
+    name: PropTypes.string,
+    path: PropTypes.string
+  }),
+  number: PropTypes.integer
+};
+
+var MostRead = function MostRead(props) {
+  var content = props.content,
+      status = props.status;
+  var propsTemplate = {
+    custom: 'templates-most-read',
+    lg: {
+      align: 'row between'
+    }
+  };
+  return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content, function (item, key) {
+    return /*#__PURE__*/React.createElement(MostReadItem, {
+      content: item,
+      key: key,
+      status: status,
+      number: key
+    });
+  }));
+};
+
+MostRead.propTypes = {
+  content: PropTypes.object,
+  status: PropTypes.object
+};
+
 var Latest = function Latest(_ref) {
   var content = _ref.content,
       ReadMore = _ref.ReadMore,
@@ -534,11 +600,15 @@ var Latest = function Latest(_ref) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       hasSubjectFilled: true,
+      hasImageTop: true,
       status: status,
       key: key
     });
   })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, propsPageRight, /*#__PURE__*/React.createElement(SectionTitle, {
     name: "MAIS LIDAS"
+  }), /*#__PURE__*/React.createElement(MostRead, {
+    content: content["items-mostread"],
+    status: status
   })));
 };
 
@@ -639,73 +709,6 @@ var Columnists = function Columnists(props) {
 };
 
 Columnists.propTypes = {
-  content: PropTypes.object,
-  status: PropTypes.object
-};
-
-var MostReadItem = function MostReadItem(_ref) {
-  var content = _ref.content,
-      number = _ref.number;
-  var name = content.name,
-      path = content.path;
-  var propsMostItem = {
-    align: 'row left',
-    custom: 'most-read-item',
-    mb: '4'
-  };
-  var propsContent = {
-    custom: 'most-read-content',
-    mb: '3',
-    ml: '2',
-    mr: '2',
-    mt: '3',
-    w: '100p'
-  };
-  var propsNumber = {
-    custom: 'most-read-number'
-  };
-  var propsTitle = {
-    custom: 'most-read-title'
-  };
-  var position = number + 1;
-  return /*#__PURE__*/React.createElement(Block, propsMostItem, /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement(Block, propsNumber, position), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
-    className: "teaser-aria",
-    href: path,
-    "aria-label": "Abrir mat\xE9ria ".concat(name)
-  }, /*#__PURE__*/React.createElement(Typography, {
-    custom: "teaser-title"
-  }, name)))));
-};
-
-MostReadItem.propTypes = {
-  content: PropTypes.shape({
-    name: PropTypes.string,
-    path: PropTypes.string
-  }),
-  number: PropTypes.integer
-};
-
-var MostRead = function MostRead(props) {
-  var content = props.content,
-      status = props.status;
-  var propsTemplate = {
-    custom: 'templates-most-read',
-    lg: {
-      align: 'row between'
-    }
-  };
-  console.log('content', content);
-  return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content, function (item, key) {
-    return /*#__PURE__*/React.createElement(MostReadItem, {
-      content: item,
-      key: key,
-      status: status,
-      number: key
-    });
-  }));
-};
-
-MostRead.propTypes = {
   content: PropTypes.object,
   status: PropTypes.object
 };

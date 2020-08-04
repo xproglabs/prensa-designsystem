@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import Block from '../Block'
 import {Teaser} from '../Teasers'
 import SectionTitle from '../SectionTitle'
+import MostRead from './MostRead'
 
 const Latest = ({content, ReadMore, status}) => {
 
@@ -18,12 +19,20 @@ const Latest = ({content, ReadMore, status}) => {
         <SectionTitle name="ÚLTIMAS NOTÍCIAS" />
         <Block custom="latest-news">
           {map(content["items-latest"], (item, key) => 
-            <Teaser content={item} hasSubjectFilled={true} status={status} key={key} />)}
+            <Teaser 
+              content={item} 
+              hasSubjectFilled={true} 
+              hasImageTop={true}
+              status={status} 
+              key={key} 
+            />
+          )}
         </Block>
         {ReadMore && <ReadMore />}
       </Block>
       <Block {...propsPageRight}>
         <SectionTitle name="MAIS LIDAS" />
+        <MostRead content={content["items-mostread"]} status={status}/>
       </Block>
     </Block>
   )

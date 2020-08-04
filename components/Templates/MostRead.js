@@ -9,7 +9,6 @@ import MostReadItem from '../Templates/MostReadItem';
 const MostRead = props => {
   const {content, status} = props;
   const propsTemplate = {custom: 'templates-most-read', lg:{align: 'row between'}};
-  console.log('content', content);
   return (
     <Block {...propsTemplate} > 
       {map(content, (item, key) =>
