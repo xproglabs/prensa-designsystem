@@ -207,6 +207,17 @@ $latest-1-teaser-image-width: 280px;
     }
   }
 }
+.templates-latest-news {
+  @include w(100%);
+  @media(min-width: $md) {
+    .page-left {
+      @include w(calc(calc(calc(100% / 3 * 2) - #{$space-size-2}) + 6px));
+    }
+    .page-right {
+      @include w(calc(calc(calc(100% / 3) - #{$space-size-2}) - 2px));
+    }
+  }
+}
 .latest-news {
   .teaser-image {
     &.image-top {

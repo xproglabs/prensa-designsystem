@@ -8,11 +8,9 @@ import SectionTitle from '../SectionTitle'
 import MostRead from './MostRead'
 
 const Latest = ({content, ReadMore, status}) => {
-
-  
-  const propsContainer = {custom: 'templates-latest-news', align: 'col left', w: '100p', lg: {align: 'row'}}
-  const propsPageLeft = {custom: 'page-left', mb: '2', mt: '4', w: '100p', lg: {mr: '2', w: '70p-2'}}
-  const propsPageRight = {custom: 'page-right', m: '2', mt: '4', w: '100p-4', lg: {w: '30p-4'}}
+  const propsContainer = {custom: 'templates-latest-news', align: 'col left', mt: '2', w: '100p', md: {align: 'row between'}}
+  const propsPageLeft = {custom: 'page-left', mb: '4'}
+  const propsPageRight = {custom: 'page-right', mb: '4'}
   return (
     <Block {...propsContainer}>
       <Block {...propsPageLeft}>
@@ -40,7 +38,7 @@ const Latest = ({content, ReadMore, status}) => {
 
 Latest.propTypes = {
   content: PropTypes.object,
-  ReadMore: PropTypes.object,
+  ReadMore: PropTypes.function,
   status: PropTypes.shape({
     error: PropTypes.bool,
     loading: PropTypes.bool

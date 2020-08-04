@@ -580,7 +580,7 @@ var MostRead = function MostRead(props) {
 };
 
 MostRead.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.array,
   status: PropTypes.object
 };
 
@@ -592,28 +592,17 @@ var Latest = function Latest(_ref) {
     custom: 'templates-latest-news',
     align: 'col left',
     w: '100p',
-    lg: {
-      align: 'row'
+    md: {
+      align: 'row between'
     }
   };
   var propsPageLeft = {
     custom: 'page-left',
-    mb: '2',
-    mt: '4',
-    w: '100p',
-    lg: {
-      mr: '2',
-      w: '70p-2'
-    }
+    mb: '4'
   };
   var propsPageRight = {
     custom: 'page-right',
-    m: '2',
-    mt: '4',
-    w: '100p-4',
-    lg: {
-      w: '30p-4'
-    }
+    mb: '4'
   };
   return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, propsPageLeft, /*#__PURE__*/React.createElement(SectionTitle, {
     name: "\xDALTIMAS NOT\xCDCIAS"
@@ -637,7 +626,7 @@ var Latest = function Latest(_ref) {
 
 Latest.propTypes = {
   content: PropTypes.object,
-  ReadMore: PropTypes.object,
+  ReadMore: PropTypes["function"],
   status: PropTypes.shape({
     error: PropTypes.bool,
     loading: PropTypes.bool

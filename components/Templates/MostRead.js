@@ -5,7 +5,6 @@ import React from 'react';
 import Block from '../Block';
 import MostReadItem from '../Templates/MostReadItem';
 
-
 const MostRead = props => {
   const {content, status} = props;
   const propsTemplate = {custom: 'templates-most-read', lg:{align: 'row between'}};
@@ -17,7 +16,7 @@ const MostRead = props => {
   );
 };
 MostRead.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.array,
   status: PropTypes.object
 };
 
