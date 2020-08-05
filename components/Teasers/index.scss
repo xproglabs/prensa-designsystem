@@ -15,6 +15,11 @@ $teaser-title-size--lg: 32px !default;
 $teaser-title-height--xl: 36px !default;
 $teaser-title-size--xl: 32px !default;
 
+$teaser-subtitle-color: $color-neutral-4;
+$teaser-subtitle-family: $font-secondary;
+$teaser-subtitle-height: 28px;
+$teaser-subtitle-size: 20px;
+
 $teaser-date-height: 16px !default;
 $teaser-date-size: 12px !default;
 
@@ -49,7 +54,11 @@ $teaser-date-size: 12px !default;
       @include lh($teaser-title-height--xl);
     }
   }
-  .teaser-date {
+  .teaser-subtitle {
+    @include fs($teaser-subtitle-size);
+    @include lh($teaser-subtitle-height);
+  }
+  .teaser-datetime {
     @include fs($teaser-date-size);
     @include lh($teaser-date-height);
   }

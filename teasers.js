@@ -237,6 +237,7 @@ var Teaser = function Teaser(_ref) {
       hasImageTop = _ref.hasImageTop,
       hasSubjectFilled = _ref.hasSubjectFilled,
       hasSubtitle = _ref.hasSubtitle,
+      hasDate = _ref.hasDate,
       status = _ref.status;
   var image = content.image,
       name = content.name,
@@ -290,6 +291,7 @@ var Teaser = function Teaser(_ref) {
     })));
   };
 
+  console.log("time", content['time-published'], hasDate, hasSubtitle);
   return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
     filled: hasSubjectFilled
   }, subject)), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
@@ -298,9 +300,9 @@ var Teaser = function Teaser(_ref) {
     "aria-label": "Abrir mat\xE9ria ".concat(name)
   }, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-title"
-  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React.createElement(Typography, {
+  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-subtitle"
-  }, subtitle), content['time-published'] && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
+  }, subtitle)), content['time-published'] && hasDate && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-datetime"
   }, content['time-published']))));
 };
@@ -316,6 +318,7 @@ Teaser.propTypes = {
   domain: PropTypes.string,
   hasImageTop: PropTypes.bool,
   hasSubtitle: PropTypes.bool,
+  hasDate: PropTypes.bool,
   hasSubjectFilled: PropTypes.bool,
   status: PropTypes.shape({
     loading: PropTypes.bool,
@@ -323,9 +326,10 @@ Teaser.propTypes = {
   })
 };
 Teaser.defaultProps = {
+  hasSubjectFilled: false,
   hasImageTop: false,
   hasSubtitle: false,
-  hasSubjectFilled: false
+  hasDate: true
 };
 
 var RenderImageBackground = function RenderImageBackground(props) {
