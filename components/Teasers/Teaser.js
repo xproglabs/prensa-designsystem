@@ -6,7 +6,7 @@ import Image from '../Image/Teaser';
 import Subject from '../Subject';
 import Typography from '../Typography';
 
-const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, status}) => {
+const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, status}) => {
   const {image, name, path, subject, subtitle} = content;
   const {loading, error} = status;
   const propsTeaser = {
@@ -54,6 +54,7 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, st
       </Block>
     );
   };
+  console.log("time", content['time-published'], hasDate, hasSubtitle)
   return (
     <Block {...propsTeaser}>
       <TeaserImage />
@@ -69,13 +70,15 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, st
           </a>
         </Block>
         {subtitle && hasSubtitle &&
-          <Typography custom='teaser-subtitle'>{subtitle}</Typography>
+          <Block>
+            <Typography custom='teaser-subtitle'>{subtitle}</Typography>
+          </Block>  
         }
-        {content['time-published'] && (
+        {content['time-published'] && hasDate &&
           <Block {...propsDate}>
             <Typography custom='teaser-datetime'>{content['time-published']}</Typography>
           </Block>
-        )}
+        }
       </Block>
     </Block>
   );
@@ -93,6 +96,7 @@ Teaser.propTypes = {
   domain: PropTypes.string,
   hasImageTop: PropTypes.bool,
   hasSubtitle: PropTypes.bool,
+  hasDate: PropTypes.bool,
   hasSubjectFilled: PropTypes.bool,
   status: PropTypes.shape({
     loading: PropTypes.bool,
@@ -100,9 +104,10 @@ Teaser.propTypes = {
   })
 };
 Teaser.defaultProps = {
+  hasSubjectFilled: false,
   hasImageTop: false,
   hasSubtitle: false,
-  hasSubjectFilled: false
+  hasDate: true
 };
 
 export default Teaser;
