@@ -1,0 +1,117 @@
+@use '../../styles' as *;
+
+.title-xs {
+  @include fs(16px);
+  @include lh(18px);
+  @include ff($font-primary);
+  @extend %bold;
+  @include mt(0px);
+  @include mb($space-size-1);
+}
+.title-sm {
+  @include fs(24px);
+  @include lh(26px);
+  @include ff($font-primary);
+  @include mb(8px);
+  @extend %bold;
+  @include mt(0px);
+  @include mb($space-size-1);
+}
+.title-md {
+  @include fs(32px);
+  @include lh(34px);
+  @include ff($font-primary);
+  @extend %bold;
+  @include mt(0px);
+  @include mb($space-size-1);
+}
+.title-lg {
+  @include fs(40px);
+  @include lh(42px);
+  @include ff($font-primary);
+  @extend %bold;
+  @include mt(0px);
+  @include mb($space-size-1);
+}
+.title-xl {
+  @include fs(48px);
+  @include lh(50px);
+  @include ff($font-primary);
+  @extend %bold;
+  @include mt(0px);
+  @include mb($space-size-1);
+}
+
+.subtitle-sm {
+  @include fs(18px);
+  @include lh(24px);
+  @include ff($font-primary);
+  @extend %regular;
+}
+
+.paragraph-sm {
+  @include fs(18px);
+  @include lh(42px);
+  @include ff($font-secondary);
+  @extend %regular;
+}
+
+.subject-sm {
+  @include fs(16px);
+  @include lh(18px);
+  @include ff($font-primary);
+  @extend %bold;
+  @extend %uppercase;
+}
+
+.article-title {
+  @include fs($article-title-fs-sm);
+  @include lh($article-title-lh-sm);
+  @include ff($article-title-ff);
+  @include fc($article-title-fc);
+  @extend %bold;
+  @include mt($space-size-3);
+  @include mb($space-size-2);
+  @media (min-width: $lg) {
+    @include fs($article-title-fs-lg);
+    @include lh($article-title-lh-lg);
+  }
+}
+
+.article-subtitle {
+  @include fs($article-subtitle-fs);
+  @include lh($article-subtitle-lh);
+  @include fc($article-subtitle-fc);
+  @include ff($font-primary);
+  @extend %regular;
+}
+
+.article-paragraph {
+  @include fs($article-paragraph-fs);
+  @include lh($article-paragraph-lh);
+  @include fc($article-paragraph-fc);
+  @include ff($font-secondary);
+  @include mb($article-paragraph-space);
+  @include w(100%);
+  @extend %regular;
+}
+
+.article-tag {
+  @include fs($article-tag-fs);
+  @include lh($article-tag-lh);
+  @include fc($article-tag-fc);
+  @include ff($font-primary);
+  @extend %bold;
+  @extend %uppercase;
+}
+
+.system-sm {
+  @include fs($system-fs-sm);
+  @include lh($system-lh);
+  @include fc($system-fc);
+  @include ff($font-primary);
+  @extend %regular;
+  &.bold {
+    @extend %bold;
+  }
+}

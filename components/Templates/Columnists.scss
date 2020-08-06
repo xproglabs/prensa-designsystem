@@ -1,0 +1,46 @@
+@use '../../styles' as *;
+
+$columnists-1-teaser-title-height: 20px;
+$columnists-1-teaser-title-size: 16px;
+
+$columnists-1-teaser-title-height--lg: 28px;
+$columnists-1-teaser-title-size--lg: 24px;
+
+$columnists-1-teaser-image-height: 80px;
+$columnists-1-teaser-image-width: 80px;
+
+.templates-columnists {
+  .teaser-default {
+    @include mb($space-size-2);
+    @include p($space-size-2);
+  }
+  .teaser-content {
+    @include my(0px);
+  }
+  .teaser-title {
+    @include fs($columnists-1-teaser-title-size);
+    @include lh($columnists-1-teaser-title-height);
+  }
+  .teaser-subject {
+    @include mb($space-size-1);
+  }
+  .teaser-image {
+    &.image-left {
+      .image-background {
+        @include mih($columnists-1-teaser-image-height);
+        @include w($columnists-1-teaser-image-width);
+        @include r(40px);
+      }
+    }
+  }
+  @media (min-width: $lg) {
+    .teaser-default {
+      @include pt($space-size-3);
+      @include w(calc(calc(100% - calc(#{$space-size-10} * 2)) / 3));
+    }  
+    .teaser-title {
+      @include fs($columnists-1-teaser-title-size--lg);
+      @include lh($columnists-1-teaser-title-height--lg);
+    }
+  }
+}

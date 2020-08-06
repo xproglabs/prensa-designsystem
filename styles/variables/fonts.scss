@@ -1,0 +1,29 @@
+$font-primary: 'Work Sans' !default;
+$font-secondary: 'Merriweather' !default;
+$font-tertiary: 'Arvo' !default;
+
+$article-title-fs-sm: 32px !default;
+$article-title-lh-sm: 34px !default;
+$article-title-fs-lg: 48px !default;
+$article-title-lh-lg: 50px !default;
+$article-title-ff: $font-primary !default;
+
+$article-subtitle-fs: 18px !default;
+$article-subtitle-lh: 26px !default;
+$article-subtitle-ff: $font-primary !default;
+
+$article-paragraph-fs: 18px !default;
+$article-paragraph-lh: 42px !default;
+
+$article-tag-fs: 14px !default;
+$article-tag-lh: 26px !default;
+
+$system-fs-sm: 14px !default;
+$system-lh: 18px !default;
+
+%thin { font-weight: 100 };
+%light { font-weight: 300 };
+%regular { font-weight: 400 };
+%medium { font-weight: 500 };
+%bold { font-weight: bold };
+%italic { font-weight: italic };

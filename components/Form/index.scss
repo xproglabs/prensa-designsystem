@@ -1,0 +1,42 @@
+@use '../../styles' as *;
+
+.form-field {
+  @include mt($space-size-2);
+  @include w(100%);
+  input,
+  textarea {
+    @include b(1px, solid, $color-neutral-8);
+    @include fs(15px);
+    @include px(10px);
+    @include py(10px);
+    @include m(0px);
+    @include r(3px);
+    @include w(calc(100% - 24px));
+  }
+  textarea {
+    @include mih(100px);
+  }
+  .label {
+    @include fs(14px);
+    @include fc($color-neutral-6);
+    @include p(0px);
+    @include m(0px);
+    @include mb(10px);
+  }
+  .warning {
+    @include m(0px);
+    @include mt(5px);
+    @include mih(20px);
+  }
+  &.invalid {
+    input,
+    textarea {
+      @include b(1px, solid, $color-alert-2);
+    }
+    .warning {
+      @include fc($color-alert-2);
+      @include p(0px);
+      display: block;
+    }
+  }
+}

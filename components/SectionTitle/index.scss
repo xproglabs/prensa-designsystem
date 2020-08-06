@@ -1,0 +1,16 @@
+@use '../../styles' as *;
+
+$section-title-color: $color-primary-1;
+$section-title-family: $font-secondary;
+$section-title-height: 24px !default;
+$section-title-size: 20px !default;
+
+.section-title {
+  @include fc($section-title-color);
+  @include ff($section-title-family);
+  @include fs($section-title-size);
+  @include lh($section-title-height);
+  @include fw(700);
+  text-transform: uppercase;
+  text-decoration: none;
+}

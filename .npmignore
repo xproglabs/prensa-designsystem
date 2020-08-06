@@ -1,3 +1,9 @@
-/src
-.babelrc
-webpack.config.js
+/.github
+/.storybook
+.env
+/example
+.eslintignore
+.eslintrc.json
+/stories
+/mockup
+/utils

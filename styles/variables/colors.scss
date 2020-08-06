@@ -1,0 +1,68 @@
+@use './creators.scss' as *;
+
+//PRIMARY
+$color-primary-1: #30417D !default;
+$color-primary-2: #4881AF !default;
+$color-primary-3: #9AC4FE !default;
+
+//SECONDARY
+$color-secondary-1: #3D8A7C !default;
+$color-secondary-2: #1CC664 !default;
+$color-secondary-3: #55E581 !default;
+
+//GRAYSCALE
+$color-black: #000000 !default;
+$color-neutral-1: #151515 !default;
+$color-neutral-2: #333333 !default;
+$color-neutral-3: #555555 !default;
+$color-neutral-4: #666666 !default;
+$color-neutral-5: #707070 !default;
+$color-neutral-6: #999999 !default;
+$color-neutral-7: #B5B5B5 !default;
+$color-neutral-8: #D7D7D7 !default;
+$color-neutral-9: #EAEAEA !default;
+$color-neutral-10: #F2F2F2 !default;
+$color-neutral-11: #FAFAFA !default;
+$color-white: #FFFFFF !default;
+
+//ALERT
+$color-alert-1: #439943 !default;
+$color-alert-2: #FF5648 !default;
+
+//TOKENS
+$article-title-fc: $color-neutral-2 !default;
+$article-subtitle-fc: $color-neutral-4 !default;
+$article-paragraph-fc: $color-neutral-2 !default;
+$article-tag-fc: $color-primary-2 !default;
+$system-fc: $color-neutral-4 !default;
+
+@include classes-simple((
+  'cursor-default' 'cursor' 'default',
+  'cursor-pointer' 'cursor' 'pointer',
+));
+
+@include classes-simple((
+  'w-auto' 'width' 'auto',
+  'fc-primary-1' 'color' $color-primary-1,
+  'fc-white' 'color' $color-white,
+  'fc-black' 'color' $color-black,
+  'bg-white' 'background-color' $color-white,
+  'bg-black' 'background-color' $color-black,
+  'bg-primary-1' 'background-color' $color-primary-1,
+  'bg-primary-2' 'background-color' $color-primary-2,
+  'bg-primary-3' 'background-color' $color-primary-3,
+  'bg-secondary-1' 'background-color' $color-secondary-1,
+  'bg-secondary-2' 'background-color' $color-secondary-2,
+  'bg-secondary-3' 'background-color' $color-secondary-3,
+  'bg-neutral-1' 'background-color' $color-neutral-1,
+  'bg-neutral-2' 'background-color' $color-neutral-2,
+  'bg-neutral-3' 'background-color' $color-neutral-3,
+  'bg-neutral-4' 'background-color' $color-neutral-4,
+  'bg-neutral-5' 'background-color' $color-neutral-5,
+  'bg-neutral-6' 'background-color' $color-neutral-6,
+  'bg-neutral-7' 'background-color' $color-neutral-7,
+  'bg-neutral-8' 'background-color' $color-neutral-8,
+  'bg-neutral-9' 'background-color' $color-neutral-9,
+  'bg-neutral-10' 'background-color' $color-neutral-10,
+  'bg-neutral-11' 'background-color' $color-neutral-11,
+));

@@ -1,0 +1,26 @@
+@use '../../styles' as *;
+
+.article-image-box {
+  .image-article {
+    @include h(auto);
+    @include w(100%);
+  }
+  .label {
+    @include bg($color-neutral-10);
+    @include ff($font-secondary);
+    @include px($space-size-2);
+    @include py($space-size-2);
+  }
+}
+.article-image-embed {
+  max-width: $md;
+}
+.article-paragraph {
+  a {
+    word-break: break-all;
+  }
+}
+.paragraph-title {
+  @include fs(22px);
+  @include fw(bold);
+}

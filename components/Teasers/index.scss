@@ -1,0 +1,113 @@
+@use '../../styles' as *;
+
+$teaser-title-color: $color-black;
+$teaser-title-family: $font-primary;
+$teaser-title-height: 28px !default;
+$teaser-title-size: 24px !default;
+$teaser-title-height--xs: 28px !default;
+$teaser-title-size--xs: 24px !default;
+$teaser-title-height--sm: 28px !default;
+$teaser-title-size--sm: 24px !default;
+$teaser-title-height--md: 32px !default;
+$teaser-title-size--md: 28px !default;
+$teaser-title-height--lg: 36px !default;
+$teaser-title-size--lg: 32px !default;
+$teaser-title-height--xl: 36px !default;
+$teaser-title-size--xl: 32px !default;
+
+$teaser-subtitle-color: $color-neutral-4;
+$teaser-subtitle-family: $font-secondary;
+$teaser-subtitle-height: 28px;
+$teaser-subtitle-size: 20px;
+
+$teaser-date-height: 16px !default;
+$teaser-date-size: 12px !default;
+
+.teaser-default {
+  a, h1 {
+    @include w(100%);
+    text-decoration: none;
+  }
+  .teaser-title {
+    @include fc($teaser-title-color);
+    @include ff($teaser-title-family);
+    @include fs($teaser-title-size);
+    @include lh($teaser-title-height);
+    @media(min-width: $xs) {
+      @include fs($teaser-title-size--xs);
+      @include lh($teaser-title-height--xs);
+    }
+    @media(min-width: $sm) {
+      @include fs($teaser-title-size--sm);
+      @include lh($teaser-title-height--sm);
+    }
+    @media(min-width: $md) {
+      @include fs($teaser-title-size--md);
+      @include lh($teaser-title-height--md);
+    }
+    @media(min-width: $lg) {
+      @include fs($teaser-title-size--lg);
+      @include lh($teaser-title-height--lg);
+    }
+    @media(min-width: $xl) {
+      @include fs($teaser-title-size--xl);
+      @include lh($teaser-title-height--xl);
+    }
+  }
+  .teaser-subtitle {
+    @include fs($teaser-subtitle-size);
+    @include lh($teaser-subtitle-height);
+  }
+  .teaser-datetime {
+    @include fs($teaser-date-size);
+    @include lh($teaser-date-height);
+  }
+}
+.image-background {
+  @include bg($color-neutral-10);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.image-box {
+  @include h(210px);
+  @include w(280px);
+  @media (max-width: $md) {
+    @include w(64px);
+    @include h(64px);
+  }
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+.skeleton {
+  @include bg($color-neutral-9);
+}
+.teaser-aria {
+  @include w(100%);
+  cursor: pointer;
+}
+.teaser-image {
+  &.image-left {
+    .image-background {
+      @include w(100%);
+    }
+  }
+  &.image-top {
+    .image-background {
+      @include w(100%);
+    }
+  }
+  @media (min-width: $md) {
+    &.image-left {
+      .image-background {
+        @include w(280px);
+      }
+    }
+    &.image-top {
+      .image-background {
+        @include w(100%);
+      }
+    }
+  }
+}

@@ -1,2 +1,7 @@
 /node_modules
+/example/node_modules
+/example/.next
 .env
+*.lock
+
+package-lock.json

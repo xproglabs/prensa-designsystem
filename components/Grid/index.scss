@@ -1,0 +1,42 @@
+@use '../../styles' as *;
+
+.grid {
+  @include fx(center, center);
+}
+
+.grid-1-col {
+  @include grid(1);
+}
+.grid-2-col {
+  @include grid(2);
+}
+.grid-3-col {
+  @include grid(3);
+}
+.grid-4-col {
+  @include grid(4);
+}
+.grid-5-col {
+  @include grid(5);
+}
+.grid-6-col {
+  @include grid(6);
+}
+.grid-7-col {
+  @include grid(7);
+}
+.grid-8-col {
+  @include grid(8);
+}
+.grid-9-col {
+  @include grid(9);
+}
+.grid-10-col {
+  @include grid(10);
+}
+.grid-11-col {
+  @include grid(11);
+}
+.grid-12-col {
+  @include grid(12);
+}

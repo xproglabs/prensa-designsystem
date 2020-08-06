@@ -1,0 +1,18 @@
+@use '../../styles' as *;
+
+.fx-fit-h {
+  @include h(fit-content)
+};
+.fx-fit-w {
+  @include w(fit-content)
+};
+.block-three-col {
+  flex-wrap: wrap;
+};
+.block-four-col {
+  flex-wrap: wrap;
+};
+.has-border-bottom {
+  @include bb(1px, solid, $color-neutral-9);
+  @include pb($space-size-2);
+}
