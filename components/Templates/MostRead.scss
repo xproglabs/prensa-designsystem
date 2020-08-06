@@ -1,6 +1,10 @@
 @use '../../styles' as *;
 
 .templates-most-read {
+  .most-read-item {
+    @include bg($color-white);
+    @include b(1px, solid, $color-neutral-9)
+  }
   .most-read-title {
     @include fs(16px);
     @include lh(20px);
