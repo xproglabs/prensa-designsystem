@@ -8,9 +8,17 @@ $subjects-1-teaser-image-width: 80px;
 
 .templates-subjects {
   .col {
+    .button-read-more {
+      @include b(1px, solid, $color-neutral-9);
+      @include mb($space-size-2);
+    }
     &.black { 
       .section-title,
       .typography-root.subject-sm {
+        @include fc($color-subject-black); 
+      }
+      .button-read-more {
+        @include bg($color-white);
         @include fc($color-subject-black); 
       }
     }
@@ -19,10 +27,18 @@ $subjects-1-teaser-image-width: 80px;
       .typography-root.subject-sm {
         @include fc($color-subject-blue); 
       }
+      .button-read-more {
+        @include bg($color-white);
+        @include fc($color-subject-blue); 
+      }
     }
     &.default { 
       .section-title,
       .typography-root.subject-sm {
+        @include fc($color-primary-1); 
+      }
+      .button-read-more {
+        @include bg($color-white);
         @include fc($color-primary-1); 
       }
     }
@@ -31,16 +47,28 @@ $subjects-1-teaser-image-width: 80px;
       .typography-root.subject-sm {
         @include fc($color-subject-green); 
       }
+      .button-read-more {
+        @include bg($color-white);
+        @include fc($color-subject-green); 
+      }
     }
     &.red { 
       .section-title,
       .typography-root.subject-sm {
         @include fc($color-subject-red); 
       }
+      .button-read-more {
+        @include bg($color-white);
+        @include fc($color-subject-red); 
+      }
     }
     &.yellow { 
       .section-title,
       .typography-root.subject-sm {
+        @include fc($color-subject-yellow); 
+      }
+      .button-read-more {
+        @include bg($color-white);
         @include fc($color-subject-yellow); 
       }
     }

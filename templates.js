@@ -1202,6 +1202,7 @@ ListNews.propTypes = {
 var Subjects = function Subjects(props) {
   var content = props.content,
       domain = props.domain,
+      ReadMore = props.ReadMore,
       status = props.status;
   var title = content.title;
   var propsTemplate = {
@@ -1223,7 +1224,7 @@ var Subjects = function Subjects(props) {
       key: key,
       status: status
     });
-  })), /*#__PURE__*/React.createElement(Block, {
+  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, {
     custom: "col center ".concat(content["style-center"])
   }, /*#__PURE__*/React.createElement(SectionTitle, {
     name: content["title-center"]
@@ -1234,7 +1235,7 @@ var Subjects = function Subjects(props) {
       key: key,
       status: status
     });
-  })), /*#__PURE__*/React.createElement(Block, {
+  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, {
     custom: "col right ".concat(content["style-right"])
   }, /*#__PURE__*/React.createElement(SectionTitle, {
     name: content["title-right"]
@@ -1245,12 +1246,13 @@ var Subjects = function Subjects(props) {
       key: key,
       status: status
     });
-  }))));
+  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null))));
 };
 
 Subjects.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
+  ReadMore: PropTypes.func,
   status: PropTypes.object
 };
 
