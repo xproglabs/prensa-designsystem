@@ -57,7 +57,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run icons && rimraf ./icons/assets/* && lint-staged && git add ."
+      "pre-commit": "npm run icons && lint-staged && git add ."
     }
   }
 }
