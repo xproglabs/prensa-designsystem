@@ -15,7 +15,7 @@ const convertDateFromPtBrToDistance = (date) => {
     ["almost", ""],
     ["hour", "hora"],
     ["hours", "horas"],
-    ["month", "meses"],
+    ["month", "mês"],
     ["months", "meses"],
     ["minute", "minuto"],
     ["minutes", "minutos"],
