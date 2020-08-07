@@ -1,6 +1,7 @@
 /node_modules
 /example/node_modules
 /example/.next
+/icons/assets
 .env
 *.lock
 

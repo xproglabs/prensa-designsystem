@@ -1,0 +1,1 @@
+export {default as Accessibility24Px} from './Accessibility24Px';
