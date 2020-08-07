@@ -760,6 +760,7 @@ var Teaser = function Teaser(_ref) {
   };
   var propsContent = {
     custom: 'teaser-content',
+    align: 'col between',
     mb: '3',
     ml: '2',
     mr: '2',
@@ -795,7 +796,7 @@ var Teaser = function Teaser(_ref) {
   };
 
   var dateDistance = convertDateFromPtBrToDistance(content['time-published']);
-  return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
+  return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement(Block, null, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
     filled: hasSubjectFilled
   }, subject)), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
@@ -805,9 +806,9 @@ var Teaser = function Teaser(_ref) {
     custom: "teaser-title"
   }, name))), subtitle && hasSubtitle && /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-subtitle"
-  }, subtitle)), dateDistance && hasDate && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
+  }, subtitle))), /*#__PURE__*/React.createElement(Block, null, dateDistance && hasDate && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-datetime"
-  }, dateDistance))));
+  }, dateDistance)))));
 };
 
 Teaser.propTypes = {

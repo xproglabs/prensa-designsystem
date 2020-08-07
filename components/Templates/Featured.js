@@ -29,6 +29,7 @@ const Featured = props => {
             content={items[0]}
             domain={domain}
             hasSubjectFilled={true}
+            hasSubtitle={true}
             status={status}
           />
         </Block>
