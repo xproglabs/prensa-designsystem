@@ -1018,6 +1018,7 @@ var SideMenuItems = function SideMenuItems(_ref) {
     }, /*#__PURE__*/React__default.createElement(Block, {
       custom: "sidemenu-group-item",
       pb: "2",
+      align: "row between middle",
       onClick: function onClick() {
         return functions.onMenuItem(item);
       }
