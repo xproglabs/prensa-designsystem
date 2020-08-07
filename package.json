@@ -50,5 +50,15 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build": "rollup --config",
     "eslint": "eslint --ext js,jsx components/ stories/ utils/"
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run icons"
+    }
   }
 }
