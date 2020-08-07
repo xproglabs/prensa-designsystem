@@ -7,6 +7,44 @@ $subjects-1-teaser-image-height: 80px;
 $subjects-1-teaser-image-width: 80px;
 
 .templates-subjects {
+  .col {
+    &.black { 
+      .section-title,
+      .typography-root.subject-sm {
+        @include fc($color-subject-black); 
+      }
+    }
+    &.blue { 
+      .section-title,
+      .typography-root.subject-sm {
+        @include fc($color-subject-blue); 
+      }
+    }
+    &.default { 
+      .section-title,
+      .typography-root.subject-sm {
+        @include fc($color-primary-1); 
+      }
+    }
+    &.green { 
+      .section-title,
+      .typography-root.subject-sm {
+        @include fc($color-subject-green); 
+      }
+    }
+    &.red { 
+      .section-title,
+      .typography-root.subject-sm {
+        @include fc($color-subject-red); 
+      }
+    }
+    &.yellow { 
+      .section-title,
+      .typography-root.subject-sm {
+        @include fc($color-subject-yellow); 
+      }
+    }
+  }
   .teaser-default {
     @include mb($space-size-2);
     @include p($space-size-2);

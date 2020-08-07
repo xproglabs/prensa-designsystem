@@ -983,17 +983,19 @@ Featured.propTypes = {
 };
 
 var SectionTitle = function SectionTitle(_ref) {
-  var name = _ref.name;
+  var custom = _ref.custom,
+      name = _ref.name;
   return /*#__PURE__*/React.createElement(Block, {
     custom: "section-title-block",
     mt: "2",
     mb: "4"
   }, /*#__PURE__*/React.createElement(Typography, {
-    custom: "section-title"
+    custom: "section-title ".concat(custom)
   }, name));
 };
 
 SectionTitle.propTypes = {
+  custom: PropTypes.string,
   name: PropTypes.string
 };
 
@@ -1211,8 +1213,10 @@ var Subjects = function Subjects(props) {
   return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== "" && /*#__PURE__*/React.createElement(SectionTitle, {
     name: title
   }), /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
-    custom: "col left"
-  }, lodash.map(content['items-left'], function (item, key) {
+    custom: "col left ".concat(content["style-left"])
+  }, /*#__PURE__*/React.createElement(SectionTitle, {
+    name: content["title-left"]
+  }), lodash.map(content['items-left'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,
@@ -1220,8 +1224,10 @@ var Subjects = function Subjects(props) {
       status: status
     });
   })), /*#__PURE__*/React.createElement(Block, {
-    custom: "col center"
-  }, lodash.map(content['items-center'], function (item, key) {
+    custom: "col center ".concat(content["style-center"])
+  }, /*#__PURE__*/React.createElement(SectionTitle, {
+    name: content["title-center"]
+  }), lodash.map(content['items-center'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,
@@ -1229,8 +1235,10 @@ var Subjects = function Subjects(props) {
       status: status
     });
   })), /*#__PURE__*/React.createElement(Block, {
-    custom: "col right"
-  }, lodash.map(content['items-right'], function (item, key) {
+    custom: "col right ".concat(content["style-right"])
+  }, /*#__PURE__*/React.createElement(SectionTitle, {
+    name: content["title-right"]
+  }), lodash.map(content['items-right'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,

@@ -14,15 +14,18 @@ const Subjects = props => {
     <>
       {title && title !== ""&& <SectionTitle name={title} />}
       <Block {...propsTemplate} > 
-        <Block custom='col left'>
+        <Block custom={`col left ${content["style-left"]}`}>
+          <SectionTitle name={content["title-left"]} />
           {map(content['items-left'], (item, key) =>
             <Teaser content={item} domain={domain} key={key} status={status} />)}
         </Block>
-        <Block custom='col center'>
+        <Block custom={`col center ${content["style-center"]}`}>
+          <SectionTitle name={content["title-center"]} />
           {map(content['items-center'], (item, key) =>
             <Teaser content={item} domain={domain} key={key} status={status} />)}
         </Block>
-        <Block custom='col right'>
+        <Block custom={`col right ${content["style-right"]}`}>
+          <SectionTitle name={content["title-right"]} />
           {map(content['items-right'], (item, key) =>
             <Teaser content={item} domain={domain} key={key} status={status} />)}
         </Block>
