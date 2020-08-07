@@ -21,6 +21,7 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, ha
   }
   const propsContent = {
     custom: 'teaser-content',
+    align: 'col between',
     mb: '3',
     ml: '2',
     mr: '2',
@@ -60,26 +61,30 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, ha
     <Block {...propsTeaser}>
       <TeaserImage />
       <Block {...propsContent}>
-        {subject && 
-          <Block {...propsSubject}>
-            <Subject filled={hasSubjectFilled}>{subject}</Subject>
+        <Block>
+          {subject && 
+            <Block {...propsSubject}>
+              <Subject filled={hasSubjectFilled}>{subject}</Subject>
+            </Block>
+          }
+          <Block {...propsTitle}>
+            <a className='teaser-aria' href={path} aria-label={`Abrir matéria ${name}`}>
+              <Typography custom='teaser-title'>{name}</Typography>
+            </a>
           </Block>
-        }
-        <Block {...propsTitle}>
-          <a className='teaser-aria' href={path} aria-label={`Abrir matéria ${name}`}>
-            <Typography custom='teaser-title'>{name}</Typography>
-          </a>
+          {subtitle && hasSubtitle &&
+            <Block>
+              <Typography custom='teaser-subtitle'>{subtitle}</Typography>
+            </Block>  
+          }
         </Block>
-        {subtitle && hasSubtitle &&
-          <Block>
-            <Typography custom='teaser-subtitle'>{subtitle}</Typography>
-          </Block>  
-        }
-        {dateDistance && hasDate &&
-          <Block {...propsDate}>
-            <Typography custom='teaser-datetime'>{dateDistance}</Typography>
-          </Block>
-        }
+        <Block>  
+          {dateDistance && hasDate &&
+            <Block {...propsDate}>
+              <Typography custom='teaser-datetime'>{dateDistance}</Typography>
+            </Block>
+          }
+        </Block>  
       </Block>
     </Block>
   )
