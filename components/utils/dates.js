@@ -11,18 +11,18 @@ const convertDateFromPtBrToDistance = (date) => {
   const replaces = [
     ["less than a minute", "menos de 1 minuto"],
     ["about", ""],
-    ["over", ""],
     ["almost", ""],
-    ["hour", "hora"],
+    ["over", ""],
     ["hours", "horas"],
-    ["month", "mês"],
+    ["hour", "hora"],
     ["months", "meses"],
-    ["minute", "minuto"],
+    ["month", "mês"],
     ["minutes", "minutos"],
-    ["year", "ano"],
+    ["minute", "minuto"],
     ["years", "anos"],
-    ["day", "dia"],
+    ["year", "ano"],
     ["days", "dias"],
+    ["day", "dia"]
   ]
   let date_string = distanteInWords
   map(replaces, (r, k) => {

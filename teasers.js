@@ -726,7 +726,7 @@ var convertDateFromPtBrToDistance = function convertDateFromPtBrToDistance(date)
   var distanteInWords = dateFns.distanceInWords(new_date, new Date(), {
     locale: locale
   });
-  var replaces = [["less than a minute", "menos de 1 minuto"], ["about", ""], ["over", ""], ["almost", ""], ["hour", "hora"], ["hours", "horas"], ["month", "mês"], ["months", "meses"], ["minute", "minuto"], ["minutes", "minutos"], ["year", "ano"], ["years", "anos"], ["day", "dia"], ["days", "dias"]];
+  var replaces = [["less than a minute", "menos de 1 minuto"], ["about", ""], ["almost", ""], ["over", ""], ["hours", "horas"], ["hour", "hora"], ["months", "meses"], ["month", "mês"], ["minutes", "minutos"], ["minute", "minuto"], ["years", "anos"], ["year", "ano"], ["days", "dias"], ["day", "dia"]];
   var date_string = distanteInWords;
   lodash.map(replaces, function (r, k) {
     date_string = date_string.replace(r[0], r[1]);
