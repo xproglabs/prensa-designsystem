@@ -20,7 +20,7 @@ export default [
     ],
     plugins: [ 
       babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**',
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
       }),
       json(),
       resolve(),
@@ -42,7 +42,7 @@ export default [
     ],
     plugins: [ 
       babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**',
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
       }),
       json(),
       resolve(),
@@ -64,7 +64,29 @@ export default [
     ],
     plugins: [ 
       babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**',
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
+      }),
+      json(),
+      resolve(),
+      sass(),
+    ]
+  },
+  {
+    input: 'icons/index.js',
+    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json'],
+    output: [
+      {
+        file: 'icons.js',
+        format: 'cjs',
+        globals: {
+          react: 'React'
+        },
+        name: 'xprog-ds/icons'
+      }
+    ],
+    plugins: [ 
+      babel({
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
       }),
       json(),
       resolve(),

@@ -1,3 +1,8 @@
+# v1.3.2 (Thu Ago 06 2020)
+- Adiciona módulo de ícones
+- Adiciona SVGR-cli
+- Adiciona comandos no husky para renderização de componentes dos ícones
+
 # v1.3.1 (Mon Jul 29 2020)
 - Upgrade nos Templates
 - Upgrade nos Teasers
