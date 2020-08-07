@@ -5,7 +5,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var PropTypes = _interopDefault(require('prop-types'));
-var React = _interopDefault(require('react'));
+var React = require('react');
+var React__default = _interopDefault(React);
 var classnames = _interopDefault(require('classnames'));
 var lodash = require('lodash');
 var html2json = require('html2json');
@@ -23,6 +24,24 @@ function _defineProperty(obj, key, value) {
   }
 
   return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
 }
 
 function ownKeys(object, enumerableOnly) {
@@ -90,7 +109,7 @@ var Block = function Block(props) {
     children: children,
     onClick: onClick
   };
-  return /*#__PURE__*/React.createElement("div", classProps);
+  return /*#__PURE__*/React__default.createElement("div", classProps);
 };
 
 var propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
@@ -231,7 +250,7 @@ var Grid = function Grid(props) {
     }
   };
 
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default.createElement("div", {
     className: classnames(getColumns(), handlexs(), handlesm(), handlemd())
   }, props.children);
 };
@@ -253,14 +272,14 @@ var Image = function Image(_ref) {
   var width = 1000;
   var derivative = '2x1';
   var imagePath = "".concat(domain, "/image/policy:").concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
-  return /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default.createElement(Block, {
     custom: "article-image-box",
     w: "100p"
-  }, /*#__PURE__*/React.createElement("img", {
+  }, /*#__PURE__*/React__default.createElement("img", {
     className: "image-article",
     src: imagePath,
     alt: captionAndByline ? captionAndByline : "Imagem ".concat(contentid)
-  }), /*#__PURE__*/React.createElement(Block, {
+  }), /*#__PURE__*/React__default.createElement(Block, {
     custom: "label"
   }, captionAndByline));
 };
@@ -286,11 +305,11 @@ var SocialMedias = function SocialMedias(props) {
       ml: '1'
     }
   };
-  return /*#__PURE__*/React.createElement(Block, propsSocialMedia, lodash.map(content, function (item, k) {
-    return /*#__PURE__*/React.createElement("a", {
+  return /*#__PURE__*/React__default.createElement(Block, propsSocialMedia, lodash.map(content, function (item, k) {
+    return /*#__PURE__*/React__default.createElement("a", {
       href: item.path,
       key: k
-    }, /*#__PURE__*/React.createElement(Block, propsSocialCirlce, item.icon));
+    }, /*#__PURE__*/React__default.createElement(Block, propsSocialCirlce, item.icon));
   }));
 };
 
@@ -350,12 +369,12 @@ var Typography = function Typography(props) {
   switch (tokenVariant) {
     case 'article-title':
     case 'title':
-      return /*#__PURE__*/React.createElement("h1", {
+      return /*#__PURE__*/React__default.createElement("h1", {
         className: classes
       }, children);
 
     case 'article-paragraph':
-      return /*#__PURE__*/React.createElement("p", {
+      return /*#__PURE__*/React__default.createElement("p", {
         className: classes,
         dangerouslySetInnerHTML: {
           __html: children
@@ -363,7 +382,7 @@ var Typography = function Typography(props) {
       });
 
     default:
-      return /*#__PURE__*/React.createElement("span", {
+      return /*#__PURE__*/React__default.createElement("span", {
         className: classes
       }, children);
   }
@@ -400,9 +419,9 @@ var Subject = function Subject(props) {
     'subject-root': true,
     'filled bg-primary-1': filled
   }, "".concat(custom), custom));
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default.createElement("div", {
     className: classes
-  }, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React__default.createElement(Typography, {
     tokenVariant: "subject"
   }, children));
 };
@@ -422,13 +441,13 @@ var Tags = function Tags(props) {
       _onClick = props.onClick;
 
   var renderTag = function renderTag(tag, k) {
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React__default.createElement("div", {
       key: k,
       className: "tag",
       onClick: function onClick() {
         return _onClick(tag);
       }
-    }, /*#__PURE__*/React.createElement(Typography, {
+    }, /*#__PURE__*/React__default.createElement(Typography, {
       tokenVariant: "article-tag"
     }, tag));
   };
@@ -438,7 +457,7 @@ var Tags = function Tags(props) {
     w: '100p'
   }, custom);
 
-  return /*#__PURE__*/React.createElement(Block, propsWrap, lodash.map(content, function (item, k) {
+  return /*#__PURE__*/React__default.createElement(Block, propsWrap, lodash.map(content, function (item, k) {
     return renderTag(item, k);
   }));
 };
@@ -451,7 +470,7 @@ Tags.propTypes = {
 
 var Paragraph = function Paragraph(_ref) {
   var value = _ref.value;
-  return /*#__PURE__*/React.createElement(Typography, {
+  return /*#__PURE__*/React__default.createElement(Typography, {
     tokenVariant: "article-paragraph"
   }, value);
 };
@@ -591,39 +610,39 @@ var TextBody = function TextBody(_ref) {
 
     switch (type) {
       case 'Paragraph':
-        return /*#__PURE__*/React.createElement(Paragraph, {
+        return /*#__PURE__*/React__default.createElement(Paragraph, {
           key: key,
           value: value
         });
 
       case 'Facebook':
-        return embeds && embeds.Facebook && /*#__PURE__*/React.createElement(embeds.Facebook, {
+        return embeds && embeds.Facebook && /*#__PURE__*/React__default.createElement(embeds.Facebook, {
           key: key,
           value: value
         });
 
       case 'Image':
-        return /*#__PURE__*/React.createElement(Block, {
+        return /*#__PURE__*/React__default.createElement(Block, {
           custom: "article-image-embed"
-        }, /*#__PURE__*/React.createElement(Image, {
+        }, /*#__PURE__*/React__default.createElement(Image, {
           key: key,
           value: value
         }));
 
       case 'Instagram':
-        return embeds && embeds.Instagram && /*#__PURE__*/React.createElement(embeds.Instagram, {
+        return embeds && embeds.Instagram && /*#__PURE__*/React__default.createElement(embeds.Instagram, {
           key: key,
           value: value
         });
 
       case 'Tweet':
-        return embeds && embeds.Tweet && /*#__PURE__*/React.createElement(embeds.Tweet, {
+        return embeds && embeds.Tweet && /*#__PURE__*/React__default.createElement(embeds.Tweet, {
           key: key,
           value: value
         });
 
       case 'Youtube':
-        return embeds && embeds.Youtube && /*#__PURE__*/React.createElement(embeds.Youtube, {
+        return embeds && embeds.Youtube && /*#__PURE__*/React__default.createElement(embeds.Youtube, {
           key: key,
           value: value
         });
@@ -691,36 +710,36 @@ var Article = function Article(_ref) {
   var customArticleTag = {
     custom: 'article-tag'
   };
-  return /*#__PURE__*/React.createElement(Block, propsArticle, /*#__PURE__*/React.createElement(Block, propsArticleHead, /*#__PURE__*/React.createElement(Grid, {
+  return /*#__PURE__*/React__default.createElement(Block, propsArticle, /*#__PURE__*/React__default.createElement(Block, propsArticleHead, /*#__PURE__*/React__default.createElement(Grid, {
     columns: 12
-  }, /*#__PURE__*/React.createElement(Subject, {
+  }, /*#__PURE__*/React__default.createElement(Subject, {
     filled: true
-  }, subject), /*#__PURE__*/React.createElement(Typography, {
+  }, subject), /*#__PURE__*/React__default.createElement(Typography, {
     tokenVariant: "article-title"
-  }, title), /*#__PURE__*/React.createElement(Typography, {
+  }, title), /*#__PURE__*/React__default.createElement(Typography, {
     tokenVariant: "article-subtitle"
-  }, subtitle))), /*#__PURE__*/React.createElement(Block, propsArticleData, /*#__PURE__*/React.createElement(Grid, {
+  }, subtitle))), /*#__PURE__*/React__default.createElement(Block, propsArticleData, /*#__PURE__*/React__default.createElement(Grid, {
     columns: 12
-  }, /*#__PURE__*/React.createElement(Block, propsArticleInfo, /*#__PURE__*/React.createElement(Block, propsArticleAuthor, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React__default.createElement(Block, propsArticleInfo, /*#__PURE__*/React__default.createElement(Block, propsArticleAuthor, /*#__PURE__*/React__default.createElement(Typography, {
     tokenVariant: "system-bold"
-  }, author), /*#__PURE__*/React.createElement(Typography, {
+  }, author), /*#__PURE__*/React__default.createElement(Typography, {
     tokenVariant: "system"
-  }, "Criado em: ", createdAt), updatedAt && /*#__PURE__*/React.createElement(Typography, {
+  }, "Criado em: ", createdAt), updatedAt && /*#__PURE__*/React__default.createElement(Typography, {
     tokenVariant: "system"
-  }, "Atualizado em: ", updatedAt)), /*#__PURE__*/React.createElement(SocialMedias, {
+  }, "Atualizado em: ", updatedAt)), /*#__PURE__*/React__default.createElement(SocialMedias, {
     content: socialMedias
-  })))), /*#__PURE__*/React.createElement(Block, propsArticleBody, /*#__PURE__*/React.createElement(Grid, {
+  })))), /*#__PURE__*/React__default.createElement(Block, propsArticleBody, /*#__PURE__*/React__default.createElement(Grid, {
     columns: 12
-  }, images['image-contentId'] && /*#__PURE__*/React.createElement(Image, {
+  }, images['image-contentId'] && /*#__PURE__*/React__default.createElement(Image, {
     value: images
-  })), /*#__PURE__*/React.createElement(Grid, {
+  })), /*#__PURE__*/React__default.createElement(Grid, {
     columns: 10
-  }, /*#__PURE__*/React.createElement(TextBody, {
+  }, /*#__PURE__*/React__default.createElement(TextBody, {
     content: text,
     embeds: embeds
-  }))), /*#__PURE__*/React.createElement(Grid, {
+  }))), /*#__PURE__*/React__default.createElement(Grid, {
     columns: 10
-  }, /*#__PURE__*/React.createElement(Tags, {
+  }, /*#__PURE__*/React__default.createElement(Tags, {
     custom: customArticleTag,
     content: metadata,
     onClick: handleTagClick
@@ -754,7 +773,7 @@ var Button = function Button(props) {
     'tertiary': props.style === 'tertiary' && !props.disabled,
     'disabled': props.disabled
   }, "".concat(props.custom), props.custom));
-  return /*#__PURE__*/React.createElement("button", {
+  return /*#__PURE__*/React__default.createElement("button", {
     className: style,
     onClick: props.disabled ? null : props.onClick
   }, props.children);
@@ -788,13 +807,13 @@ var Input = function Input(_ref) {
   };
 
   var Label = function Label() {
-    return /*#__PURE__*/React.createElement("p", {
+    return /*#__PURE__*/React__default.createElement("p", {
       className: 'label'
     }, label && label);
   };
 
   var Warning = function Warning() {
-    return /*#__PURE__*/React.createElement("p", {
+    return /*#__PURE__*/React__default.createElement("p", {
       className: 'warning'
     }, warning && invalid ? warning : ' ');
   };
@@ -810,9 +829,9 @@ var Input = function Input(_ref) {
     onKeyDown: KeyDown,
     type: type
   };
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default.createElement("div", {
     className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
-  }, /*#__PURE__*/React.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React.createElement("input", props), /*#__PURE__*/React.createElement(Warning, null));
+  }, /*#__PURE__*/React__default.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React__default.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React__default.createElement("input", props), /*#__PURE__*/React__default.createElement(Warning, null));
 };
 
 Input.propTypes = {
@@ -859,10 +878,10 @@ var SearchForm = function SearchForm(_ref) {
       return event.key === 'Enter' && handleSubmit();
     }
   };
-  return /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default.createElement(Block, {
     align: "right",
     custom: 'search-form'
-  }, /*#__PURE__*/React.createElement("input", fieldController), /*#__PURE__*/React.createElement(Button, {
+  }, /*#__PURE__*/React__default.createElement("input", fieldController), /*#__PURE__*/React__default.createElement(Button, {
     disabled: false,
     onClick: function onClick() {
       return handleSubmit();
@@ -901,12 +920,12 @@ var SearchMenu = function SearchMenu(_ref) {
       functions = _ref.functions,
       status = _ref.status;
   var menuIsOpen = status.opened ? 'opened' : 'closed';
-  return /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default.createElement(Block, {
     custom: "menu-modal ".concat(menuIsOpen)
-  }, /*#__PURE__*/React.createElement(Block, {
+  }, /*#__PURE__*/React__default.createElement(Block, {
     custom: "menu-opacity",
     onClick: functions.onCloseModal
-  }), /*#__PURE__*/React.createElement(Block, {
+  }), /*#__PURE__*/React__default.createElement(Block, {
     bg: "neutral-10",
     custom: "menu-right",
     p: "4"
@@ -940,12 +959,12 @@ var SideMenu = function SideMenu(_ref) {
       functions = _ref.functions,
       status = _ref.status;
   var menuIsOpen = status.opened ? 'opened' : 'closed';
-  return /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default.createElement(Block, {
     custom: "menu-modal ".concat(menuIsOpen)
-  }, /*#__PURE__*/React.createElement(Block, {
+  }, /*#__PURE__*/React__default.createElement(Block, {
     custom: "menu-opacity",
     onClick: functions.onCloseModal
-  }), /*#__PURE__*/React.createElement(Block, {
+  }), /*#__PURE__*/React__default.createElement(Block, {
     bg: "white",
     custom: "menu-left",
     p: "4"
@@ -974,6 +993,18 @@ SideMenu.defaultProps = {
   }
 };
 
+function SvgIcArrow(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    height: 24,
+    width: 24
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0V0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+  }));
+}
+
 var SideMenuItems = function SideMenuItems(_ref) {
   var content = _ref.content,
       functions = _ref.functions;
@@ -981,29 +1012,30 @@ var SideMenuItems = function SideMenuItems(_ref) {
   var Item = function Item(_ref2) {
     var item = _ref2.item;
     var hasSubitems = item.subitems.length > 0;
-    return /*#__PURE__*/React.createElement(Block, {
+    return /*#__PURE__*/React__default.createElement(Block, {
       custom: "sidemenu-group",
       mb: "4"
-    }, /*#__PURE__*/React.createElement(Block, {
+    }, /*#__PURE__*/React__default.createElement(Block, {
       custom: "sidemenu-group-item",
       pb: "2",
+      align: "row between middle",
       onClick: function onClick() {
         return functions.onMenuItem(item);
       }
-    }, !hasSubitems ? /*#__PURE__*/React.createElement("a", {
+    }, !hasSubitems ? /*#__PURE__*/React__default.createElement("a", {
       href: item.path
-    }, item.name) : /*#__PURE__*/React.createElement("span", {
+    }, item.name) : /*#__PURE__*/React__default.createElement("span", {
       href: item.path
-    }, item.name)));
+    }, item.name), /*#__PURE__*/React__default.createElement(SvgIcArrow, null)));
   };
 
   Item.propTypes = {
     item: PropTypes.object
   };
-  return /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default.createElement(Block, {
     custom: "sidemenu-items"
   }, lodash.map(content.items, function (item, key) {
-    return /*#__PURE__*/React.createElement(Item, {
+    return /*#__PURE__*/React__default.createElement(Item, {
       item: item,
       key: key
     });
@@ -1023,11 +1055,11 @@ SideMenuItems.defaultProps = {
 var SectionTitle = function SectionTitle(_ref) {
   var custom = _ref.custom,
       name = _ref.name;
-  return /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default.createElement(Block, {
     custom: "section-title-block",
     mt: "2",
     mb: "4"
-  }, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React__default.createElement(Typography, {
     custom: "section-title ".concat(custom)
   }, name));
 };
@@ -1043,24 +1075,24 @@ var Topbar = function Topbar(_ref) {
   var LeftContent = content.LeftContent,
       CenterContent = content.CenterContent,
       RightContent = content.RightContent;
-  return /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default.createElement(Block, {
     align: "row center",
     bg: "primary-1",
     color: "white",
     custom: "topbar",
     w: "100p"
-  }, /*#__PURE__*/React.createElement(Block, {
+  }, /*#__PURE__*/React__default.createElement(Block, {
     align: "row middle between",
     custom: "wrap",
     w: "100p"
-  }, /*#__PURE__*/React.createElement(Block, null, LeftContent && /*#__PURE__*/React.createElement(LeftContent, {
+  }, /*#__PURE__*/React__default.createElement(Block, null, LeftContent && /*#__PURE__*/React__default.createElement(LeftContent, {
     functions: functions
-  })), /*#__PURE__*/React.createElement(Block, null, CenterContent && /*#__PURE__*/React.createElement(CenterContent, null)), /*#__PURE__*/React.createElement(Block, null, RightContent && /*#__PURE__*/React.createElement(RightContent, null))));
+  })), /*#__PURE__*/React__default.createElement(Block, null, CenterContent && /*#__PURE__*/React__default.createElement(CenterContent, null)), /*#__PURE__*/React__default.createElement(Block, null, RightContent && /*#__PURE__*/React__default.createElement(RightContent, null))));
 };
 
 var LeftMenuIcon = function LeftMenuIcon(_ref2) {
   var functions = _ref2.functions;
-  return /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default.createElement(Block, {
     custom: "menu-left-icon",
     cursor: "pointer",
     fc: "neutral-8",
