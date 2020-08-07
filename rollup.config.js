@@ -7,7 +7,7 @@ import sass from 'rollup-plugin-sass';
 export default [
   {
     input: 'components/index.js',
-    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json'],
+    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns'],
     output: [
       {
         file: 'index.js',
@@ -29,7 +29,7 @@ export default [
   },
   {
     input: 'components/Templates/index.js',
-    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json'],
+    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns'],
     output: [
       {
         file: 'templates.js',
@@ -51,7 +51,7 @@ export default [
   },
   {
     input: 'components/Teasers/index.js',
-    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json'],
+    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns'],
     output: [
       {
         file: 'teasers.js',

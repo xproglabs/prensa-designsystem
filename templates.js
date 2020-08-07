@@ -7,6 +7,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var PropTypes = _interopDefault(require('prop-types'));
 var React = _interopDefault(require('react'));
 var classnames = _interopDefault(require('classnames'));
+var dateFns = require('date-fns');
 var lodash = require('lodash');
 
 function _defineProperty(obj, key, value) {
@@ -250,6 +251,507 @@ Subject.propTypes = {
 
 };
 
+function buildFormatLongFn(args) {
+  return function (dirtyOptions) {
+    var options = dirtyOptions || {};
+    var width = options.width ? String(options.width) : args.defaultWidth;
+    var format = args.formats[width] || args.formats[args.defaultWidth];
+    return format;
+  };
+}
+
+function buildLocalizeFn(args) {
+  return function (dirtyIndex, dirtyOptions) {
+    var options = dirtyOptions || {};
+    var context = options.context ? String(options.context) : 'standalone';
+    var valuesArray;
+
+    if (context === 'formatting' && args.formattingValues) {
+      var defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
+      var width = options.width ? String(options.width) : defaultWidth;
+      valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
+    } else {
+      var _defaultWidth = args.defaultWidth;
+
+      var _width = options.width ? String(options.width) : args.defaultWidth;
+
+      valuesArray = args.values[_width] || args.values[_defaultWidth];
+    }
+
+    var index = args.argumentCallback ? args.argumentCallback(dirtyIndex) : dirtyIndex;
+    return valuesArray[index];
+  };
+}
+
+function buildMatchPatternFn(args) {
+  return function (dirtyString, dirtyOptions) {
+    var string = String(dirtyString);
+    var options = dirtyOptions || {};
+    var matchResult = string.match(args.matchPattern);
+
+    if (!matchResult) {
+      return null;
+    }
+
+    var matchedString = matchResult[0];
+    var parseResult = string.match(args.parsePattern);
+
+    if (!parseResult) {
+      return null;
+    }
+
+    var value = args.valueCallback ? args.valueCallback(parseResult[0]) : parseResult[0];
+    value = options.valueCallback ? options.valueCallback(value) : value;
+    return {
+      value: value,
+      rest: string.slice(matchedString.length)
+    };
+  };
+}
+
+function buildMatchFn(args) {
+  return function (dirtyString, dirtyOptions) {
+    var string = String(dirtyString);
+    var options = dirtyOptions || {};
+    var width = options.width;
+    var matchPattern = width && args.matchPatterns[width] || args.matchPatterns[args.defaultMatchWidth];
+    var matchResult = string.match(matchPattern);
+
+    if (!matchResult) {
+      return null;
+    }
+
+    var matchedString = matchResult[0];
+    var parsePatterns = width && args.parsePatterns[width] || args.parsePatterns[args.defaultParseWidth];
+    var value;
+
+    if (Object.prototype.toString.call(parsePatterns) === '[object Array]') {
+      value = findIndex(parsePatterns, function (pattern) {
+        return pattern.test(matchedString);
+      });
+    } else {
+      value = findKey(parsePatterns, function (pattern) {
+        return pattern.test(matchedString);
+      });
+    }
+
+    value = args.valueCallback ? args.valueCallback(value) : value;
+    value = options.valueCallback ? options.valueCallback(value) : value;
+    return {
+      value: value,
+      rest: string.slice(matchedString.length)
+    };
+  };
+}
+
+function findKey(object, predicate) {
+  for (var key in object) {
+    if (object.hasOwnProperty(key) && predicate(object[key])) {
+      return key;
+    }
+  }
+}
+
+function findIndex(array, predicate) {
+  for (var key = 0; key < array.length; key++) {
+    if (predicate(array[key])) {
+      return key;
+    }
+  }
+}
+
+var formatDistanceLocale = {
+  lessThanXSeconds: {
+    one: 'menos de um segundo',
+    other: 'menos de {{count}} segundos'
+  },
+  xSeconds: {
+    one: '1 segundo',
+    other: '{{count}} segundos'
+  },
+  halfAMinute: 'meio minuto',
+  lessThanXMinutes: {
+    one: 'menos de um minuto',
+    other: 'menos de {{count}} minutos'
+  },
+  xMinutes: {
+    one: '1 minuto',
+    other: '{{count}} minutos'
+  },
+  aboutXHours: {
+    one: 'aproximadamente 1 hora',
+    other: 'aproximadamente {{count}} horas'
+  },
+  xHours: {
+    one: '1 hora',
+    other: '{{count}} horas'
+  },
+  xDays: {
+    one: '1 dia',
+    other: '{{count}} dias'
+  },
+  aboutXWeeks: {
+    one: 'aproximadamente 1 mês',
+    // TODO
+    other: 'aproximadamente {{count}} meses' // TODO
+
+  },
+  xWeeks: {
+    one: '1 mês',
+    // TODO
+    other: '{{count}} meses' // TODO
+
+  },
+  aboutXMonths: {
+    one: 'aproximadamente 1 mês',
+    other: 'aproximadamente {{count}} meses'
+  },
+  xMonths: {
+    one: '1 mês',
+    other: '{{count}} meses'
+  },
+  aboutXYears: {
+    one: 'aproximadamente 1 ano',
+    other: 'aproximadamente {{count}} anos'
+  },
+  xYears: {
+    one: '1 ano',
+    other: '{{count}} anos'
+  },
+  overXYears: {
+    one: 'mais de 1 ano',
+    other: 'mais de {{count}} anos'
+  },
+  almostXYears: {
+    one: 'quase 1 ano',
+    other: 'quase {{count}} anos'
+  }
+};
+function formatDistance(token, count, options) {
+  options = options || {};
+  var result;
+
+  if (typeof formatDistanceLocale[token] === 'string') {
+    result = formatDistanceLocale[token];
+  } else if (count === 1) {
+    result = formatDistanceLocale[token].one;
+  } else {
+    result = formatDistanceLocale[token].other.replace('{{count}}', count);
+  }
+
+  if (options.addSuffix) {
+    if (options.comparison > 0) {
+      return 'daqui a ' + result;
+    } else {
+      return 'há ' + result;
+    }
+  }
+
+  return result;
+}
+
+var dateFormats = {
+  full: "EEEE, d 'de' MMMM 'de' y",
+  long: "d 'de' MMMM 'de' y",
+  medium: "d 'de' MMM 'de' y",
+  short: 'dd/MM/y'
+};
+var timeFormats = {
+  full: 'HH:mm:ss zzzz',
+  long: 'HH:mm:ss z',
+  medium: 'HH:mm:ss',
+  short: 'HH:mm'
+};
+var dateTimeFormats = {
+  full: "{{date}} 'às' {{time}}",
+  long: "{{date}} 'às' {{time}}",
+  medium: '{{date}}, {{time}}',
+  short: '{{date}}, {{time}}'
+};
+var formatLong = {
+  date: buildFormatLongFn({
+    formats: dateFormats,
+    defaultWidth: 'full'
+  }),
+  time: buildFormatLongFn({
+    formats: timeFormats,
+    defaultWidth: 'full'
+  }),
+  dateTime: buildFormatLongFn({
+    formats: dateTimeFormats,
+    defaultWidth: 'full'
+  })
+};
+
+var formatRelativeLocale = {
+  lastWeek: "'na última' eeee 'às' p",
+  yesterday: "'ontem às' p",
+  today: "'hoje às' p",
+  tomorrow: "'amanhã às' p",
+  nextWeek: "eeee 'às' p",
+  other: 'P'
+};
+function formatRelative(token, _date, _baseDate, _options) {
+  return formatRelativeLocale[token];
+}
+
+function ordinalNumber(dirtyNumber) {
+  var number = Number(dirtyNumber);
+  return number + 'º';
+}
+
+var eraValues = {
+  narrow: ['aC', 'dC'],
+  abbreviated: ['a.C.', 'd.C.'],
+  wide: ['antes de Cristo', 'depois de Cristo']
+};
+var quarterValues = {
+  narrow: ['1', '2', '3', '4'],
+  abbreviated: ['T1', 'T2', 'T3', 'T4'],
+  wide: ['1º trimestre', '2º trimestre', '3º trimestre', '4º trimestre']
+};
+var monthValues = {
+  narrow: ['j', 'f', 'm', 'a', 'm', 'j', 'j', 'a', 's', 'o', 'n', 'd'],
+  abbreviated: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'],
+  wide: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+};
+var dayValues = {
+  narrow: ['d', 's', 't', 'q', 'q', 's', 's'],
+  short: ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'],
+  abbreviated: ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'],
+  wide: ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado']
+};
+var dayPeriodValues = {
+  narrow: {
+    am: 'AM',
+    pm: 'PM',
+    midnight: 'meia-noite',
+    noon: 'meio-dia',
+    morning: 'manhã',
+    afternoon: 'tarde',
+    evening: 'noite',
+    night: 'madrugada'
+  },
+  abbreviated: {
+    am: 'AM',
+    pm: 'PM',
+    midnight: 'meia-noite',
+    noon: 'meio-dia',
+    morning: 'manhã',
+    afternoon: 'tarde',
+    evening: 'noite',
+    night: 'madrugada'
+  },
+  wide: {
+    am: 'AM',
+    pm: 'PM',
+    midnight: 'meia-noite',
+    noon: 'meio-dia',
+    morning: 'manhã',
+    afternoon: 'tarde',
+    evening: 'noite',
+    night: 'madrugada'
+  }
+};
+var formattingDayPeriodValues = {
+  narrow: {
+    am: 'AM',
+    pm: 'PM',
+    midnight: 'meia-noite',
+    noon: 'meio-dia',
+    morning: 'da manhã',
+    afternoon: 'da tarde',
+    evening: 'da noite',
+    night: 'da madrugada'
+  },
+  abbreviated: {
+    am: 'AM',
+    pm: 'PM',
+    midnight: 'meia-noite',
+    noon: 'meio-dia',
+    morning: 'da manhã',
+    afternoon: 'da tarde',
+    evening: 'da noite',
+    night: 'da madrugada'
+  },
+  wide: {
+    am: 'AM',
+    pm: 'PM',
+    midnight: 'meia-noite',
+    noon: 'meio-dia',
+    morning: 'da manhã',
+    afternoon: 'da tarde',
+    evening: 'da noite',
+    night: 'da madrugada'
+  }
+};
+var localize = {
+  ordinalNumber: ordinalNumber,
+  era: buildLocalizeFn({
+    values: eraValues,
+    defaultWidth: 'wide'
+  }),
+  quarter: buildLocalizeFn({
+    values: quarterValues,
+    defaultWidth: 'wide',
+    argumentCallback: function (quarter) {
+      return Number(quarter) - 1;
+    }
+  }),
+  month: buildLocalizeFn({
+    values: monthValues,
+    defaultWidth: 'wide'
+  }),
+  day: buildLocalizeFn({
+    values: dayValues,
+    defaultWidth: 'wide'
+  }),
+  dayPeriod: buildLocalizeFn({
+    values: dayPeriodValues,
+    defaultWidth: 'wide',
+    formattingValues: formattingDayPeriodValues,
+    defaultFormattingWidth: 'wide'
+  })
+};
+
+var matchOrdinalNumberPattern = /^(\d+)(º|ª)?/i;
+var parseOrdinalNumberPattern = /\d+/i;
+var matchEraPatterns = {
+  narrow: /^(ac|dc|a|d)/i,
+  abbreviated: /^(a\.?\s?c\.?|a\.?\s?e\.?\s?c\.?|d\.?\s?c\.?|e\.?\s?c\.?)/i,
+  wide: /^(antes de cristo|antes da era comum|depois de cristo|era comum)/i
+};
+var parseEraPatterns = {
+  any: [/^ac/i, /^dc/i],
+  wide: [/^(antes de cristo|antes da era comum)/i, /^(depois de cristo|era comum)/i]
+};
+var matchQuarterPatterns = {
+  narrow: /^[1234]/i,
+  abbreviated: /^T[1234]/i,
+  wide: /^[1234](º|ª)? trimestre/i
+};
+var parseQuarterPatterns = {
+  any: [/1/i, /2/i, /3/i, /4/i]
+};
+var matchMonthPatterns = {
+  narrow: /^[jfmasond]/i,
+  abbreviated: /^(jan|fev|mar|abr|mai|jun|jul|ago|set|out|nov|dez)/i,
+  wide: /^(janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)/i
+};
+var parseMonthPatterns = {
+  narrow: [/^j/i, /^f/i, /^m/i, /^a/i, /^m/i, /^j/i, /^j/i, /^a/i, /^s/i, /^o/i, /^n/i, /^d/i],
+  any: [/^ja/i, /^f/i, /^mar/i, /^ab/i, /^mai/i, /^jun/i, /^jul/i, /^ag/i, /^s/i, /^o/i, /^n/i, /^d/i]
+};
+var matchDayPatterns = {
+  narrow: /^[dstq]/i,
+  short: /^(dom|seg|ter|qua|qui|sex|s[áa]b)/i,
+  abbreviated: /^(dom|seg|ter|qua|qui|sex|s[áa]b)/i,
+  wide: /^(domingo|segunda-?\s?feira|terça-?\s?feira|quarta-?\s?feira|quinta-?\s?feira|sexta-?\s?feira|s[áa]bado)/i
+};
+var parseDayPatterns = {
+  narrow: [/^d/i, /^s/i, /^t/i, /^q/i, /^q/i, /^s/i, /^s/i],
+  any: [/^d/i, /^seg/i, /^t/i, /^qua/i, /^qui/i, /^sex/i, /^s[áa]/i]
+};
+var matchDayPeriodPatterns = {
+  narrow: /^(a|p|meia-?\s?noite|meio-?\s?dia|(da) (manh[ãa]|tarde|noite|madrugada))/i,
+  any: /^([ap]\.?\s?m\.?|meia-?\s?noite|meio-?\s?dia|(da) (manh[ãa]|tarde|noite|madrugada))/i
+};
+var parseDayPeriodPatterns = {
+  any: {
+    am: /^a/i,
+    pm: /^p/i,
+    midnight: /^meia/i,
+    noon: /^meio/i,
+    morning: /manh[ãa]/i,
+    afternoon: /tarde/i,
+    evening: /noite/i,
+    night: /madrugada/i
+  }
+};
+var match = {
+  ordinalNumber: buildMatchPatternFn({
+    matchPattern: matchOrdinalNumberPattern,
+    parsePattern: parseOrdinalNumberPattern,
+    valueCallback: function (value) {
+      return parseInt(value, 10);
+    }
+  }),
+  era: buildMatchFn({
+    matchPatterns: matchEraPatterns,
+    defaultMatchWidth: 'wide',
+    parsePatterns: parseEraPatterns,
+    defaultParseWidth: 'any'
+  }),
+  quarter: buildMatchFn({
+    matchPatterns: matchQuarterPatterns,
+    defaultMatchWidth: 'wide',
+    parsePatterns: parseQuarterPatterns,
+    defaultParseWidth: 'any',
+    valueCallback: function (index) {
+      return index + 1;
+    }
+  }),
+  month: buildMatchFn({
+    matchPatterns: matchMonthPatterns,
+    defaultMatchWidth: 'wide',
+    parsePatterns: parseMonthPatterns,
+    defaultParseWidth: 'any'
+  }),
+  day: buildMatchFn({
+    matchPatterns: matchDayPatterns,
+    defaultMatchWidth: 'wide',
+    parsePatterns: parseDayPatterns,
+    defaultParseWidth: 'any'
+  }),
+  dayPeriod: buildMatchFn({
+    matchPatterns: matchDayPeriodPatterns,
+    defaultMatchWidth: 'any',
+    parsePatterns: parseDayPeriodPatterns,
+    defaultParseWidth: 'any'
+  })
+};
+
+/**
+ * @type {Locale}
+ * @category Locales
+ * @summary Portuguese locale.
+ * @language Portuguese
+ * @iso-639-2 por
+ * @author Dário Freire [@dfreire]{@link https://github.com/dfreire}
+ * @author Adrián de la Rosa [@adrm]{@link https://github.com/adrm}
+ */
+
+var locale = {
+  code: 'pt',
+  formatDistance: formatDistance,
+  formatLong: formatLong,
+  formatRelative: formatRelative,
+  localize: localize,
+  match: match,
+  options: {
+    weekStartsOn: 1
+    /* Monday */
+    ,
+    firstWeekContainsDate: 4
+  }
+};
+
+var convertDateFromPtBrToDistance = function convertDateFromPtBrToDistance(date) {
+  var a = date ? date.trim().split(".") : "";
+  var b = a[2] ? a[2].split(" ") : "";
+  var c = b[1] ? b[1].split(":") : "";
+  var new_date = new Date(b[0], a[1], a[0], c[0], c[1]);
+  var distanteInWords = dateFns.distanceInWords(new_date, new Date(), {
+    locale: locale
+  });
+  var replaces = [["less than a minute", "menos de 1 minuto"], ["about", ""], ["almost", ""], ["over", ""], ["hours", "horas"], ["hour", "hora"], ["months", "meses"], ["month", "mês"], ["minutes", "minutos"], ["minute", "minuto"], ["years", "anos"], ["year", "ano"], ["days", "dias"], ["day", "dia"]];
+  var date_string = distanteInWords;
+  lodash.map(replaces, function (r, k) {
+    date_string = date_string.replace(r[0], r[1]);
+  });
+  return "H\xE1 ".concat(date_string);
+};
+
 var Teaser = function Teaser(_ref) {
   var content = _ref.content,
       domain = _ref.domain,
@@ -310,7 +812,7 @@ var Teaser = function Teaser(_ref) {
     })));
   };
 
-  console.log("time", content['time-published'], hasDate, hasSubtitle);
+  var dateDistance = convertDateFromPtBrToDistance(content['time-published']);
   return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
     filled: hasSubjectFilled
   }, subject)), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
@@ -321,9 +823,9 @@ var Teaser = function Teaser(_ref) {
     custom: "teaser-title"
   }, name))), subtitle && hasSubtitle && /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-subtitle"
-  }, subtitle)), content['time-published'] && hasDate && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
+  }, subtitle)), dateDistance && hasDate && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-datetime"
-  }, content['time-published']))));
+  }, dateDistance))));
 };
 
 Teaser.propTypes = {
@@ -481,17 +983,19 @@ Featured.propTypes = {
 };
 
 var SectionTitle = function SectionTitle(_ref) {
-  var name = _ref.name;
+  var custom = _ref.custom,
+      name = _ref.name;
   return /*#__PURE__*/React.createElement(Block, {
     custom: "section-title-block",
     mt: "2",
     mb: "4"
   }, /*#__PURE__*/React.createElement(Typography, {
-    custom: "section-title"
+    custom: "section-title ".concat(custom)
   }, name));
 };
 
 SectionTitle.propTypes = {
+  custom: PropTypes.string,
   name: PropTypes.string
 };
 
@@ -698,6 +1202,7 @@ ListNews.propTypes = {
 var Subjects = function Subjects(props) {
   var content = props.content,
       domain = props.domain,
+      ReadMore = props.ReadMore,
       status = props.status;
   var title = content.title;
   var propsTemplate = {
@@ -709,38 +1214,45 @@ var Subjects = function Subjects(props) {
   return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== "" && /*#__PURE__*/React.createElement(SectionTitle, {
     name: title
   }), /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
-    custom: "col left"
-  }, lodash.map(content['items-left'], function (item, key) {
+    custom: "col left ".concat(content["style-left"])
+  }, /*#__PURE__*/React.createElement(SectionTitle, {
+    name: content["title-left"]
+  }), lodash.map(content['items-left'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,
       key: key,
       status: status
     });
-  })), /*#__PURE__*/React.createElement(Block, {
-    custom: "col center"
-  }, lodash.map(content['items-center'], function (item, key) {
+  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, {
+    custom: "col center ".concat(content["style-center"])
+  }, /*#__PURE__*/React.createElement(SectionTitle, {
+    name: content["title-center"]
+  }), lodash.map(content['items-center'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,
       key: key,
       status: status
     });
-  })), /*#__PURE__*/React.createElement(Block, {
-    custom: "col right"
-  }, lodash.map(content['items-right'], function (item, key) {
+  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, {
+    custom: "col right ".concat(content["style-right"])
+  }, /*#__PURE__*/React.createElement(SectionTitle, {
+    name: content["title-right"]
+  }), lodash.map(content['items-right'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,
       key: key,
       status: status
     });
-  }))));
+  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null))));
 };
 
 Subjects.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
+  ReadMore: PropTypes.func,
   status: PropTypes.object
 };
 
