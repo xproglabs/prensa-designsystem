@@ -95,7 +95,11 @@ var Image = function Image(_ref) {
   var contentid = value['image-contentId'];
   var width = 1000;
   var derivative = '2x1';
-  var imagePath = "".concat(domain, "/image/policy:").concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
+
+  var _cid = contentid.split(".");
+
+  var versioned = "".concat(contentid, ":").concat(_cid[2]);
+  var imagePath = "".concat(domain, "/image/policy:").concat(versioned, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
   var policyid = contentid.replace('.', '-').replace('.', '-');
   var inlinestyle = "\n    .image-background.policy-".concat(policyid, " {\n      background-image: url(").concat(imagePath, ");\n    }");
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", {

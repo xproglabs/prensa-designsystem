@@ -271,7 +271,11 @@ var Image = function Image(_ref) {
   var captionAndByline = value['image-subtitle'] ? "".concat(value['image-subtitle'], " (").concat(value['image-byline'], ")") : "".concat(value['image-subtitle-original'], " (").concat(value['image-byline'], ")");
   var width = 1000;
   var derivative = '2x1';
-  var imagePath = "".concat(domain, "/image/policy:").concat(contentid, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
+
+  var _cid = contentid.split(".");
+
+  var versioned = "".concat(contentid, ":").concat(_cid[2]);
+  var imagePath = "".concat(domain, "/image/policy:").concat(versioned, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
   return /*#__PURE__*/React__default.createElement(Block, {
     custom: "article-image-box",
     w: "100p"
@@ -601,6 +605,7 @@ var parseBody = function parseBody(content) {
 
 var TextBody = function TextBody(_ref) {
   var content = _ref.content,
+      domain = _ref.domain,
       embeds = _ref.embeds;
   if (!content) return null;
   var bodyItems = parseBody(content);
@@ -625,6 +630,7 @@ var TextBody = function TextBody(_ref) {
         return /*#__PURE__*/React__default.createElement(Block, {
           custom: "article-image-embed"
         }, /*#__PURE__*/React__default.createElement(Image, {
+          domain: domain,
           key: key,
           value: value
         }));
@@ -652,6 +658,7 @@ var TextBody = function TextBody(_ref) {
 
 TextBody.propTypes = {
   content: PropTypes.string.isRequired,
+  domain: PropTypes.string,
   embeds: PropTypes.object
 };
 TextBody.defaultProps = {

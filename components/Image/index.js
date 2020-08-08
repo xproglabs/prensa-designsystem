@@ -15,7 +15,9 @@ const Image = ({domain, value}) => {
     
   const width = 1000;
   const derivative = '2x1';
-  const imagePath = `${domain}/image/policy:${contentid}/image.jpg?f=${derivative}&w=${width}`;
+  const _cid = contentid.split(".")
+  const versioned = `${contentid}:${_cid[2]}`
+  const imagePath = `${domain}/image/policy:${versioned}/image.jpg?f=${derivative}&w=${width}`;
 
   return (
     <Block custom="article-image-box" w="100p">

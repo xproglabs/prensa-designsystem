@@ -7,7 +7,7 @@ import Image from '../Image';
 import Paragraph from './Paragraph';
 import {parseBody} from './Utils';
 
-const TextBody = ({content, embeds}) => {
+const TextBody = ({content, domain, embeds}) => {
   
   if (!content) return null;
   
@@ -19,7 +19,7 @@ const TextBody = ({content, embeds}) => {
       case 'Facebook':
         return embeds && embeds.Facebook && <embeds.Facebook key={key} value={value} />;
       case 'Image':
-        return <Block custom="article-image-embed"><Image key={key} value={value} /></Block>;
+        return <Block custom="article-image-embed"><Image domain={domain} key={key} value={value} /></Block>;
       case 'Instagram':
         return embeds && embeds.Instagram && <embeds.Instagram key={key} value={value} />;
       case 'Tweet':
@@ -32,6 +32,7 @@ const TextBody = ({content, embeds}) => {
 
 TextBody.propTypes = {
   content: PropTypes.string.isRequired,
+  domain: PropTypes.string,
   embeds: PropTypes.object
 };
 

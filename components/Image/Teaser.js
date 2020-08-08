@@ -9,7 +9,9 @@ const Image = ({domain, value}) => {
   const contentid = value['image-contentId'];
   const width = 1000;
   const derivative = '2x1';
-  const imagePath = `${domain}/image/policy:${contentid}/image.jpg?f=${derivative}&w=${width}`;
+  const _cid = contentid.split(".")
+  const versioned = `${contentid}:${_cid[2]}`
+  const imagePath = `${domain}/image/policy:${versioned}/image.jpg?f=${derivative}&w=${width}`;
   const policyid = contentid.replace('.', '-').replace('.', '-');
   const inlinestyle = `
     .image-background.policy-${policyid} {
