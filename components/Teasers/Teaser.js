@@ -13,7 +13,7 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, ha
   const propsTeaser = {
     align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
-    mb: '4'
+    mb: '2'
   }
   const propsImage = {
     align: 'row',

@@ -2,8 +2,8 @@
 
 .tag {
   @include w(max-content);
-  @include px(20px);
-  @include py(12px);
+  @include px(4px);
+  @include py($space-size-1);
   @include mr(20px);
   @include mb(16px);
   @include b(2px, solid, $color-primary-2);

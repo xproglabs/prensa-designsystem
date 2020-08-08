@@ -717,6 +717,7 @@ var Article = function Article(_ref) {
   var customArticleTag = {
     custom: 'article-tag'
   };
+  console.log("content", content);
   return /*#__PURE__*/React__default.createElement(Block, propsArticle, /*#__PURE__*/React__default.createElement(Block, propsArticleHead, /*#__PURE__*/React__default.createElement(Grid, {
     columns: 12
   }, /*#__PURE__*/React__default.createElement(Subject, {
@@ -1008,6 +1009,7 @@ function SvgIcArrow(props) {
     d: "M0 0h24v24H0V0z",
     fill: "none"
   }), /*#__PURE__*/React.createElement("path", {
+    className: "ic-arrow_svg__arrow-item",
     d: "M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
   }));
 }
