@@ -717,7 +717,6 @@ var Article = function Article(_ref) {
   var customArticleTag = {
     custom: 'article-tag'
   };
-  console.log("content", content);
   return /*#__PURE__*/React__default.createElement(Block, propsArticle, /*#__PURE__*/React__default.createElement(Block, propsArticleHead, /*#__PURE__*/React__default.createElement(Grid, {
     columns: 12
   }, /*#__PURE__*/React__default.createElement(Subject, {

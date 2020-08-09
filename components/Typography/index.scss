@@ -84,6 +84,10 @@
   @include fc($article-subtitle-fc);
   @include ff($font-primary);
   @extend %regular;
+  @media (min-width: $lg) {
+    @include fs($article-subtitle-fs-lg);
+    @include lh($article-subtitle-lh-lg);
+  }
 }
 
 .article-paragraph {
