@@ -756,7 +756,7 @@ var Teaser = function Teaser(_ref) {
   var propsTeaser = {
     align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
-    mb: '4'
+    mb: '2'
   };
   var propsImage = {
     align: 'row',

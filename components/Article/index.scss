@@ -24,3 +24,11 @@
   @include fs(22px);
   @include fw(bold);
 }
+@media (min-width: $lg) {
+  .article {
+    @include mt(104px);
+    .article-head {
+      @include mb($space-size-8);
+    }
+  }
+}
