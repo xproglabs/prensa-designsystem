@@ -1,0 +1,28 @@
+@use '../../styles' as *;
+
+.ads-block {
+  &.mobile-on {}
+  &.mobile-off {
+    display: none;
+  }
+  &.desktop-on {}
+  &.desktop-off {
+    display: none;
+  }
+  @media(max-width: $lg) {
+    &.mobile-on {
+      display: flex;
+    }
+    &.desktop-on {
+      display: none;
+    }
+  }
+  @media(min-width: $lg) {
+    &.mobile-on {
+      display: none;
+    }
+    &.desktop-on {
+      display: flex;
+    }
+  }
+}

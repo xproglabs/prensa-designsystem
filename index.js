@@ -472,6 +472,38 @@ Tags.propTypes = {
   onClick: PropTypes.func.isRequired
 };
 
+var AdBlock = function AdBlock(_ref) {
+  var content = _ref.content;
+  var gpt_mobile_class = content["gpt-mobile-status"] === "true" ? "ads-block mobile-on" : "ads-block mobile-off";
+  var gpt_desktop_class = content["gpt-desktop-status"] === "true" ? "ads-block desktop-on" : "ads-block desktop-off";
+  React__default.useEffect(function () {
+    window.googletag.cmd.push(function () {
+      return googletag.display(content["gpt-mobile-code"]);
+    });
+    window.googletag.cmd.push(function () {
+      return googletag.display(content["gpt-desktop-code"]);
+    });
+  }, []);
+  return /*#__PURE__*/React__default.createElement(Block, {
+    align: "center",
+    custom: "blocks-ads",
+    mb: "6",
+    mt: "2"
+  }, /*#__PURE__*/React__default.createElement(Block, {
+    custom: gpt_mobile_class
+  }, /*#__PURE__*/React__default.createElement("div", {
+    id: content["gpt-mobile-code"]
+  })), /*#__PURE__*/React__default.createElement(Block, {
+    custom: gpt_desktop_class
+  }, /*#__PURE__*/React__default.createElement("div", {
+    id: content["gpt-desktop-code"]
+  })));
+};
+
+AdBlock.propTypes = {
+  content: PropTypes.object
+};
+
 var Paragraph = function Paragraph(_ref) {
   var value = _ref.value;
   return /*#__PURE__*/React__default.createElement(Typography, {
@@ -604,18 +636,46 @@ var parseBody = function parseBody(content) {
 };
 
 var TextBody = function TextBody(_ref) {
-  var content = _ref.content,
+  var adsblocks = _ref.adsblocks,
+      content = _ref.content,
       domain = _ref.domain,
       embeds = _ref.embeds;
   if (!content) return null;
   var bodyItems = parseBody(content);
-  return lodash.map(bodyItems, function (_ref2, key) {
-    var type = _ref2.type,
-        value = _ref2.value;
+  var ads_p = 0;
+  var ads_t = adsblocks.length;
+  var count_p = 0;
+
+  var RenderAds = function RenderAds() {
+    ads_p++;
+    if (ads_p > ads_t) return false;
+    return /*#__PURE__*/React__default.createElement(AdBlock, {
+      content: adsblocks[ads_p - 1]
+    });
+  };
+
+  var RenderParagraph = function RenderParagraph(_ref2) {
+    var value = _ref2.value;
+    var has_ads = false;
+    count_p++;
+
+    if (count_p === 2) {
+      count_p = 0;
+      has_ads = true;
+    }
+
+    return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement(Paragraph, {
+      value: value
+    }), has_ads && /*#__PURE__*/React__default.createElement(RenderAds, null));
+  };
+
+  return lodash.map(bodyItems, function (_ref3, key) {
+    var type = _ref3.type,
+        value = _ref3.value;
 
     switch (type) {
       case 'Paragraph':
-        return /*#__PURE__*/React__default.createElement(Paragraph, {
+        return /*#__PURE__*/React__default.createElement(RenderParagraph, {
           key: key,
           value: value
         });
@@ -657,6 +717,7 @@ var TextBody = function TextBody(_ref) {
 };
 
 TextBody.propTypes = {
+  adsblocks: PropTypes.array,
   content: PropTypes.string.isRequired,
   domain: PropTypes.string,
   embeds: PropTypes.object
@@ -1008,6 +1069,7 @@ function SvgIcArrow(props) {
     d: "M0 0h24v24H0V0z",
     fill: "none"
   }), /*#__PURE__*/React.createElement("path", {
+    className: "ic-arrow_svg__arrow-item",
     d: "M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
   }));
 }
@@ -1125,6 +1187,7 @@ Topbar.defaultProps = {
   }
 };
 
+exports.AdBlock = AdBlock;
 exports.Article = Article;
 exports.Block = Block;
 exports.Button = Button;
