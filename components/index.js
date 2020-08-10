@@ -1,4 +1,5 @@
 export {default as Article} from './Article';
+export {default as AdBlock} from './AdBlock';
 export {default as Block} from './Block';
 export {default as Button} from './Button';
 export {default as Form} from './Form';
