@@ -1,7 +1,7 @@
 @use '../../styles' as *;
 
-$subjects-1-teaser-title-height: 20px;
-$subjects-1-teaser-title-size: 16px;
+$subjects-1-teaser-title-height: 22px;
+$subjects-1-teaser-title-size: 18px;
 
 $subjects-1-teaser-image-height: 80px;
 $subjects-1-teaser-image-width: 80px;
@@ -84,6 +84,7 @@ $subjects-1-teaser-image-width: 80px;
   .teaser-title {
     @include fs($subjects-1-teaser-title-size);
     @include lh($subjects-1-teaser-title-height);
+    @include mb($space-size-1);
   }
   .teaser-subject {
     @include mb($space-size-1);

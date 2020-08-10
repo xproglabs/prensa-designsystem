@@ -13,6 +13,9 @@ $newsgrid-2-teaser-image-height: 164px;
 $newsgrid-2-teaser-image-height--lg: 140px;
 
 .templates-newsgrid {
+  .teaser-content {
+    @include h(100%);
+  }
   .teaser-subject {
     @include mb($space-size-1);
   }
@@ -24,7 +27,6 @@ $newsgrid-2-teaser-image-height--lg: 140px;
   &.three {
     .teaser-content {
       @include mb($space-size-2);
-      @include h(100%);
     }
     .teaser-image {
       &.image-top {

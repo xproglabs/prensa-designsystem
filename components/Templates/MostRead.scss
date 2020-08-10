@@ -6,8 +6,8 @@
     @include b(1px, solid, $color-neutral-9)
   }
   .most-read-title {
-    @include fs(16px);
-    @include lh(20px);
+    @include fs(18px);
+    @include lh(22px);
     @include ff($font-primary);
     a {
       @include fc($color-neutral-2);
@@ -19,6 +19,7 @@
     @include r(20px);
     @include bg($color-primary-1);
     @include fc($color-white);
+    @include fs(14px);
     @include fw(bold);
   }
   @media (min-width: $lg) {

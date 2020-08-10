@@ -782,16 +782,25 @@ var Teaser = function Teaser(_ref) {
   };
   var propsContent = {
     custom: 'teaser-content',
-    align: 'col between',
+    align: 'col',
     mb: '3',
     ml: '2',
     mr: '2',
     mt: '3',
     w: '100p-4'
   };
+  var propsSubTitle = {
+    mb: '2',
+    lg: {
+      mb: '8'
+    }
+  };
+  var propsDateContainer = {
+    h: '100p',
+    align: 'bottom'
+  };
   var propsDate = {
     custom: 'teaser-date',
-    mt: '4',
     w: '100p'
   };
   var propsSubject = {
@@ -820,15 +829,15 @@ var Teaser = function Teaser(_ref) {
   var dateDistance = convertDateFromPtBrToDistance(content['time-published']);
   return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement(Block, null, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
     filled: hasSubjectFilled
-  }, subject)), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
+  }, subject))), /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
     href: path,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
   }, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-title"
-  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Typography, {
+  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React.createElement(Block, propsSubTitle, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-subtitle"
-  }, subtitle))), /*#__PURE__*/React.createElement(Block, null, dateDistance && hasDate && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
+  }, subtitle))), /*#__PURE__*/React.createElement(Block, propsDateContainer, dateDistance && hasDate && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-datetime"
   }, dateDistance)))));
 };
@@ -1054,7 +1063,7 @@ var MostReadItem = function MostReadItem(_ref) {
   var propsMostItem = {
     align: 'row left',
     custom: 'most-read-item',
-    mb: '4'
+    mb: '2'
   };
   var propsContent = {
     custom: 'most-read-content',

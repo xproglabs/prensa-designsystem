@@ -20,6 +20,7 @@ $columnists-1-teaser-image-width: 80px;
   .teaser-title {
     @include fs($columnists-1-teaser-title-size);
     @include lh($columnists-1-teaser-title-height);
+    @include mb($space-size-1);
   }
   .teaser-subject {
     @include mb($space-size-1);
