@@ -59,7 +59,7 @@
 .subject-sm {
   @include fs(16px);
   @include lh(18px);
-  @include ff($font-primary);
+  @include ff($font-secondary);
   @extend %bold;
   @extend %uppercase;
 }

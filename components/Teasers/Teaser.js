@@ -21,16 +21,23 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, ha
   }
   const propsContent = {
     custom: 'teaser-content',
-    align: 'col between',
+    align: 'col',
     mb: '3',
     ml: '2',
     mr: '2',
     mt: '3',
-    w: '100p-4'
+    w: '100p-4',
+  }
+  const propsSubTitle = {
+    mb: '2',
+    lg:{mb: '8'}
+  } 
+  const propsDateContainer = {
+    h: '100p', 
+    align: 'bottom'
   }
   const propsDate = {
     custom: 'teaser-date',
-    mt: '4',
     w: '100p'
   }
   const propsSubject = {
@@ -67,18 +74,20 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, ha
               <Subject filled={hasSubjectFilled}>{subject}</Subject>
             </Block>
           }
+        </Block>
+        <Block>
           <Block {...propsTitle}>
             <a className='teaser-aria' href={path} aria-label={`Abrir matéria ${name}`}>
               <Typography custom='teaser-title'>{name}</Typography>
             </a>
-          </Block>
+          </Block >
           {subtitle && hasSubtitle &&
-            <Block>
+            <Block {...propsSubTitle}>
               <Typography custom='teaser-subtitle'>{subtitle}</Typography>
             </Block>  
           }
         </Block>
-        <Block>  
+        <Block {...propsDateContainer}>  
           {dateDistance && hasDate &&
             <Block {...propsDate}>
               <Typography custom='teaser-datetime'>{dateDistance}</Typography>

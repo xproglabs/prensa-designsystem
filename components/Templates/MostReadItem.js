@@ -9,7 +9,7 @@ const MostReadItem = ({content, number}) => {
   const propsMostItem = {
     align: 'row left',
     custom: 'most-read-item',
-    mb: '4'
+    mb: '2'
   };
   const propsContent = {
     custom: 'most-read-content',
