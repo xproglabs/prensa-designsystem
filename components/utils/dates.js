@@ -1,4 +1,4 @@
-import {formatDistance} from 'date-fns'
+import formatDistance from 'date-fns/formatDistance'
 import {pt} from 'date-fns/locale'
 import {map} from 'lodash'
 
