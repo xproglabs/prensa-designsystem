@@ -9,7 +9,7 @@ import SectionTitle from '../SectionTitle'
 const Columnists = props => {
   const {content, domain, status} = props;
   const {title} = content
-  const propsTemplate = {custom: 'templates-columnists', lg:{align: 'row between wrap'}};
+  const propsTemplate = {custom: 'templates-columnists', mb:'4', lg:{align: 'row between wrap'}};
   return (
     <>
       {title && title !== ""&& <SectionTitle name={title} />}

@@ -13,6 +13,7 @@ const GridNews = props => {
   const propsTemplate = {
     align: 'between', 
     custom: 'templates-newsgrid', 
+    mb: '2',
     md: {align: 'row'}
   };
   
