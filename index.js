@@ -939,6 +939,7 @@ function SvgIcArrowBack(props) {
 function SvgIcArrowForward(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
     height: 32,
+    viewBox: "0 0 24 24",
     width: 32
   }, props), /*#__PURE__*/React.createElement("path", {
     d: "M0 0h24v24H0z",
