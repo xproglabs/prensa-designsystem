@@ -5,11 +5,30 @@
     img {
       width: 100%;
     }
+    .image-name,
+    .image-lead {
+      display: none;
+    }
   }
   .gallery-item {
     cursor: pointer;
     img {
       @include w(300px);
+    }
+    .image-file {
+      width: 176px;
+      height: 88px;
+    }
+    .image-name {
+      @include fc($color-black);
+      @include ff($font-primary);
+      @include fs($image-gallery-name-fs);
+      @include lh($image-gallery-name-lh);
+    }
+    .image-lead {
+      @include ff($font-secondary);
+      @include fs($image-gallery-lead-fs);
+      @include lh($image-gallery-lead-lh);
     }
   }
   .arrow-left {
@@ -17,6 +36,12 @@
   }
   .arrow-right {
     @include w(40px);
+    svg {
+      path {
+        width: 32px;
+        height: 32px;
+      }
+    }
   }
   .image-list {
     overflow-x: scroll;
