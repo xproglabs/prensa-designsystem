@@ -923,6 +923,82 @@ var index = {
   Input: Input
 };
 
+var ImageGallery = function ImageGallery(_ref) {
+  var items = _ref.items,
+      selected = _ref.selected,
+      on = _ref.on;
+  if (!items || items.length === 0) return false;
+  var item_selected = selected ? selected : items[0];
+
+  var RenderItem = function RenderItem(_ref2) {
+    var linkurl = _ref2.linkurl,
+        name = _ref2.name,
+        lead = _ref2.lead,
+        selected = _ref2.selected;
+    var propsGallerySelected = {
+      custom: "gallery-selected",
+      w: "100p"
+    };
+    var propsGalleryItem = {
+      custom: "gallery-item",
+      mr: "2",
+      onClick: function onClick() {
+        return on({
+          linkurl: linkurl,
+          name: name,
+          lead: lead
+        });
+      }
+    };
+    var propsGallery = selected ? propsGallerySelected : propsGalleryItem;
+    return /*#__PURE__*/React__default.createElement(Block, propsGallery, /*#__PURE__*/React__default.createElement("img", {
+      className: "image-file",
+      src: linkurl,
+      alt: "".concat(name)
+    }), /*#__PURE__*/React__default.createElement(Block, {
+      custom: "image-name"
+    }, name), /*#__PURE__*/React__default.createElement(Block, {
+      custom: "image-lead"
+    }, lead));
+  };
+
+  return /*#__PURE__*/React__default.createElement(Block, {
+    custom: "article-image-gallery",
+    w: "100p"
+  }, /*#__PURE__*/React__default.createElement(Block, {
+    align: "row",
+    custom: "image-selected",
+    w: "100p"
+  }, /*#__PURE__*/React__default.createElement(RenderItem, _extends({}, item_selected, {
+    selected: true
+  }))), items.length > 1 && /*#__PURE__*/React__default.createElement(Block, {
+    align: "row",
+    custom: "box-list",
+    w: "100p"
+  }, /*#__PURE__*/React__default.createElement(Block, {
+    align: "row center middle",
+    custom: "arrow-left"
+  }, "L"), /*#__PURE__*/React__default.createElement(Block, {
+    align: "row",
+    custom: "image-list",
+    w: "100p"
+  }, lodash.map(items, function (item, key) {
+    return /*#__PURE__*/React__default.createElement(RenderItem, _extends({}, item, {
+      key: key
+    }));
+  })), /*#__PURE__*/React__default.createElement(Block, {
+    align: "row center middle",
+    custom: "arrow-right"
+  }, "R")));
+};
+
+ImageGallery.propTypes = {
+  items: PropTypes.array
+};
+ImageGallery.defaultProps = {
+  items: []
+};
+
 var SearchForm = function SearchForm(_ref) {
   var functions = _ref.functions,
       state = _ref.state;
@@ -1194,6 +1270,7 @@ exports.Button = Button;
 exports.Form = index;
 exports.Grid = Grid;
 exports.Image = Image;
+exports.ImageGallery = ImageGallery;
 exports.SearchForm = SearchForm;
 exports.SearchMenu = SearchMenu;
 exports.SectionTitle = SectionTitle;

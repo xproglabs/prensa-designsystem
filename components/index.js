@@ -5,6 +5,7 @@ export {default as Button} from './Button';
 export {default as Form} from './Form';
 export {default as Grid} from './Grid';
 export {default as Image} from './Image';
+export {default as ImageGallery} from './ImageGallery';
 export {default as SearchForm} from './Menus/SearchForm';
 export {default as SearchMenu} from './Menus/Search';
 export {default as SideMenu} from './Menus/SideMenu';

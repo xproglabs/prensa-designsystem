@@ -1,0 +1,25 @@
+@use '../../styles' as *;
+
+.article-image-gallery {
+  .gallery-selected {
+    img {
+      width: 100%;
+    }
+  }
+  .gallery-item {
+    cursor: pointer;
+    img {
+      @include w(300px);
+    }
+  }
+  .arrow-left {
+    @include w(40px);
+  }
+  .arrow-right {
+    @include w(40px);
+  }
+  .image-list {
+    overflow-x: scroll;
+    @include w(calc(100% - 80px));
+  }
+}
