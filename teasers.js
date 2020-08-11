@@ -727,7 +727,7 @@ var convertDateFromPtBrToDistance = function convertDateFromPtBrToDistance(date)
   var b = a[2] ? a[2].split(" ") : "";
   var c = b[1] ? b[1].split(":") : "";
   var new_date = new Date(b[0], a[1], a[0], c[0], c[1]);
-  var distanteInWords = dateFns.distanceInWords(new_date, new Date(), {
+  var distanteInWords = dateFns.formatDistance(new_date, new Date(), {
     locale: locale
   });
   var replaces = [["less than a minute", "menos de 1 minuto"], ["about", ""], ["almost", ""], ["over", ""], ["hours", "horas"], ["hour", "hora"], ["months", "meses"], ["month", "mês"], ["minutes", "minutos"], ["minute", "minuto"], ["years", "anos"], ["year", "ano"], ["days", "dias"], ["day", "dia"]];

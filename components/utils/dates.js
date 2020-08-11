@@ -1,4 +1,4 @@
-import {distanceInWords} from 'date-fns'
+import {formatDistance} from 'date-fns'
 import {pt} from 'date-fns/locale'
 import {map} from 'lodash'
 
@@ -7,7 +7,7 @@ const convertDateFromPtBrToDistance = (date) => {
   const b = a[2] ? a[2].split(" ") : ``
   const c = b[1] ? b[1].split(":") : ``
   const new_date = new Date(b[0], a[1], a[0], c[0], c[1])
-  const distanteInWords = distanceInWords(new_date, new Date(), {locale: pt})
+  const distanteInWords = formatDistance(new_date, new Date(), {locale: pt})
   const replaces = [
     ["less than a minute", "menos de 1 minuto"],
     ["about", ""],
