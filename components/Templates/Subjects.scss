@@ -8,6 +8,7 @@ $subjects-1-teaser-image-width: 80px;
 
 .templates-subjects {
   .col {
+    @include mb($space-size-4);
     .button-read-more {
       @include b(1px, solid, $color-neutral-9);
       @include mb($space-size-2);
