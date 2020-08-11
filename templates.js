@@ -1904,7 +1904,6 @@ var SectionTitle = function SectionTitle(_ref) {
       name = _ref.name;
   return /*#__PURE__*/React.createElement(Block, {
     custom: "section-title-block",
-    mt: "2",
     mb: "4"
   }, /*#__PURE__*/React.createElement(Typography, {
     custom: "section-title ".concat(custom)
@@ -1925,6 +1924,7 @@ var GridNews = function GridNews(props) {
   var propsTemplate = {
     align: 'between',
     custom: 'templates-newsgrid',
+    mb: '2',
     md: {
       align: 'row'
     }
@@ -2180,6 +2180,7 @@ var Columnists = function Columnists(props) {
   var title = content.title;
   var propsTemplate = {
     custom: 'templates-columnists',
+    mb: '4',
     lg: {
       align: 'row between wrap'
     }

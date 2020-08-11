@@ -1202,7 +1202,6 @@ var SectionTitle = function SectionTitle(_ref) {
       name = _ref.name;
   return /*#__PURE__*/React__default.createElement(Block, {
     custom: "section-title-block",
-    mt: "2",
     mb: "4"
   }, /*#__PURE__*/React__default.createElement(Typography, {
     custom: "section-title ".concat(custom)
