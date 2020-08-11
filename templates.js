@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var lodash = require('lodash');
 var PropTypes = _interopDefault(require('prop-types'));
 var React = _interopDefault(require('react'));
 var classnames = _interopDefault(require('classnames'));
-var lodash = require('lodash');
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -1728,7 +1728,7 @@ var Teaser = function Teaser(_ref) {
     })));
   };
 
-  var dateDistance = convertDateFromPtBrToDistance(content['time-published']);
+  var dateDistance = content['time-published'] ? convertDateFromPtBrToDistance(content['time-published']) : "";
   return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement(Block, null, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
     filled: hasSubjectFilled
   }, subject))), /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
@@ -1769,79 +1769,50 @@ Teaser.defaultProps = {
   hasDate: true
 };
 
-var RenderImageBackground = function RenderImageBackground(props) {
-  var _props$data = props.data,
-      imageUrl = _props$data.imageUrl,
-      captionAndByline = _props$data.captionAndByline;
-  var background = {
-    backgroundImage: "url('".concat(imageUrl, "')")
-  };
-  return /*#__PURE__*/React.createElement("div", {
-    className: "image-box",
-    style: background
-  }, /*#__PURE__*/React.createElement("p", {
-    className: "label"
-  }, captionAndByline));
-};
-
-RenderImageBackground.propTypes = {
-  data: PropTypes.shape({
-    imageUrl: PropTypes.string,
-    captionAndByline: PropTypes.string
-  })
-};
-
-var TeaserFeatured = function TeaserFeatured(props) {
-  var _props$content = props.content,
-      name = _props$content.name,
-      subject = _props$content.subject,
-      path = _props$content.path,
-      image = _props$content.image;
-  var _props$status = props.status,
-      loading = _props$status.loading,
-      error = _props$status.error;
-
-  var getImageFromProps = function getImageFromProps() {
-    if (loading || error) return /*#__PURE__*/React.createElement("div", {
-      className: "image-box skeleton"
-    });
-    return /*#__PURE__*/React.createElement(RenderImageBackground, {
-      data: image
-    });
-  };
-
-  var teaserHasImage = image ? 'has-image' : 'no-image';
-  return /*#__PURE__*/React.createElement("div", {
-    className: "teaser-featured ".concat(teaserHasImage)
-  }, image && /*#__PURE__*/React.createElement("a", {
-    className: "teaser-aria",
-    href: path,
-    "aria-label": "Imagem da mat\xE9ria ".concat(name)
-  }, getImageFromProps()), /*#__PURE__*/React.createElement("div", {
-    className: "teaser-content"
-  }, subject && /*#__PURE__*/React.createElement(Subject, {
-    filled: true
-  }, subject), /*#__PURE__*/React.createElement("a", {
-    className: "teaser-aria",
-    href: path,
-    "aria-label": "Abrir mat\xE9ria ".concat(name)
+var SectionTitle = function SectionTitle(_ref) {
+  var custom = _ref.custom,
+      name = _ref.name;
+  return /*#__PURE__*/React.createElement(Block, {
+    custom: "section-title-block",
+    mb: "4"
   }, /*#__PURE__*/React.createElement(Typography, {
-    tokenVariant: "title",
-    size: "xl"
-  }, name))));
+    custom: "section-title ".concat(custom)
+  }, name));
 };
 
-TeaserFeatured.propTypes = {
-  content: PropTypes.shape({
-    name: PropTypes.string,
-    subject: PropTypes.string,
-    path: PropTypes.string,
-    image: PropTypes.object
-  }),
-  status: PropTypes.shape({
-    loading: PropTypes.bool,
-    error: PropTypes.bool
-  })
+SectionTitle.propTypes = {
+  custom: PropTypes.string,
+  name: PropTypes.string
+};
+
+var Columnists = function Columnists(props) {
+  var content = props.content,
+      domain = props.domain,
+      status = props.status;
+  var title = content.title;
+  var propsTemplate = {
+    custom: 'templates-columnists',
+    mb: '4',
+    lg: {
+      align: 'row between wrap'
+    }
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== "" && /*#__PURE__*/React.createElement(SectionTitle, {
+    name: title
+  }), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      content: item,
+      domain: domain,
+      key: key,
+      status: status
+    });
+  })));
+};
+
+Columnists.propTypes = {
+  content: PropTypes.object,
+  domain: PropTypes.string,
+  status: PropTypes.object
 };
 
 var Featured = function Featured(props) {
@@ -1897,22 +1868,6 @@ Featured.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
   status: PropTypes.object
-};
-
-var SectionTitle = function SectionTitle(_ref) {
-  var custom = _ref.custom,
-      name = _ref.name;
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "section-title-block",
-    mb: "4"
-  }, /*#__PURE__*/React.createElement(Typography, {
-    custom: "section-title ".concat(custom)
-  }, name));
-};
-
-SectionTitle.propTypes = {
-  custom: PropTypes.string,
-  name: PropTypes.string
 };
 
 var GridNews = function GridNews(props) {
@@ -2084,38 +2039,6 @@ Latest.propTypes = {
   })
 };
 
-var ListNews = function ListNews(_ref) {
-  var content = _ref.content,
-      domain = _ref.domain,
-      status = _ref.status;
-
-  if (!content || content.length === 0) {
-    return /*#__PURE__*/React.createElement("pre", null, "Items not found");
-  }
-
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "list-news"
-  }, lodash.map(content, function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
-      content: item,
-      domain: domain,
-      hasSubjectFilled: true,
-      hasImageTop: true,
-      status: status,
-      key: key
-    });
-  }));
-};
-
-ListNews.propTypes = {
-  content: PropTypes.array.isRequired,
-  domain: PropTypes.string,
-  status: PropTypes.shape({
-    error: PropTypes.bool,
-    loading: PropTypes.bool
-  })
-};
-
 var Subjects = function Subjects(props) {
   var content = props.content,
       domain = props.domain,
@@ -2173,40 +2096,9 @@ Subjects.propTypes = {
   status: PropTypes.object
 };
 
-var Columnists = function Columnists(props) {
-  var content = props.content,
-      domain = props.domain,
-      status = props.status;
-  var title = content.title;
-  var propsTemplate = {
-    custom: 'templates-columnists',
-    mb: '4',
-    lg: {
-      align: 'row between wrap'
-    }
-  };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== "" && /*#__PURE__*/React.createElement(SectionTitle, {
-    name: title
-  }), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
-      content: item,
-      domain: domain,
-      key: key,
-      status: status
-    });
-  })));
-};
-
-Columnists.propTypes = {
-  content: PropTypes.object,
-  domain: PropTypes.string,
-  status: PropTypes.object
-};
-
 exports.Columnists = Columnists;
 exports.Featured = Featured;
 exports.GridNews = GridNews;
 exports.Latest = Latest;
 exports.MostRead = MostRead;
-exports.NewsList = ListNews;
 exports.Subjects = Subjects;

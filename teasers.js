@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var PropTypes = _interopDefault(require('prop-types'));
@@ -1710,7 +1708,7 @@ var Teaser = function Teaser(_ref) {
     })));
   };
 
-  var dateDistance = convertDateFromPtBrToDistance(content['time-published']);
+  var dateDistance = content['time-published'] ? convertDateFromPtBrToDistance(content['time-published']) : "";
   return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement(Block, null, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
     filled: hasSubjectFilled
   }, subject))), /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
@@ -1751,80 +1749,4 @@ Teaser.defaultProps = {
   hasDate: true
 };
 
-var RenderImageBackground = function RenderImageBackground(props) {
-  var _props$data = props.data,
-      imageUrl = _props$data.imageUrl,
-      captionAndByline = _props$data.captionAndByline;
-  var background = {
-    backgroundImage: "url('".concat(imageUrl, "')")
-  };
-  return /*#__PURE__*/React.createElement("div", {
-    className: "image-box",
-    style: background
-  }, /*#__PURE__*/React.createElement("p", {
-    className: "label"
-  }, captionAndByline));
-};
-
-RenderImageBackground.propTypes = {
-  data: PropTypes.shape({
-    imageUrl: PropTypes.string,
-    captionAndByline: PropTypes.string
-  })
-};
-
-var TeaserFeatured = function TeaserFeatured(props) {
-  var _props$content = props.content,
-      name = _props$content.name,
-      subject = _props$content.subject,
-      path = _props$content.path,
-      image = _props$content.image;
-  var _props$status = props.status,
-      loading = _props$status.loading,
-      error = _props$status.error;
-
-  var getImageFromProps = function getImageFromProps() {
-    if (loading || error) return /*#__PURE__*/React.createElement("div", {
-      className: "image-box skeleton"
-    });
-    return /*#__PURE__*/React.createElement(RenderImageBackground, {
-      data: image
-    });
-  };
-
-  var teaserHasImage = image ? 'has-image' : 'no-image';
-  return /*#__PURE__*/React.createElement("div", {
-    className: "teaser-featured ".concat(teaserHasImage)
-  }, image && /*#__PURE__*/React.createElement("a", {
-    className: "teaser-aria",
-    href: path,
-    "aria-label": "Imagem da mat\xE9ria ".concat(name)
-  }, getImageFromProps()), /*#__PURE__*/React.createElement("div", {
-    className: "teaser-content"
-  }, subject && /*#__PURE__*/React.createElement(Subject, {
-    filled: true
-  }, subject), /*#__PURE__*/React.createElement("a", {
-    className: "teaser-aria",
-    href: path,
-    "aria-label": "Abrir mat\xE9ria ".concat(name)
-  }, /*#__PURE__*/React.createElement(Typography, {
-    tokenVariant: "title",
-    size: "xl"
-  }, name))));
-};
-
-TeaserFeatured.propTypes = {
-  content: PropTypes.shape({
-    name: PropTypes.string,
-    subject: PropTypes.string,
-    path: PropTypes.string,
-    image: PropTypes.object
-  }),
-  status: PropTypes.shape({
-    loading: PropTypes.bool,
-    error: PropTypes.bool
-  })
-};
-
-exports.Teaser = Teaser;
-exports.TeaserFeatured = TeaserFeatured;
+module.exports = Teaser;
