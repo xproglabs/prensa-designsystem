@@ -2,7 +2,7 @@ import * as React from "react";
 
 function SvgIcArrow(props) {
   return (
-    <svg height={24} width={24} {...props}>
+    <svg height={32} viewBox="0 0 24 24" width={32} {...props}>
       <path d="M0 0h24v24H0V0z" fill="none" />
       <path
         className="ic-arrow_svg__arrow-item"

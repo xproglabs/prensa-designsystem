@@ -3,6 +3,9 @@ import React from 'react'
 import {map} from 'lodash'
 import Block from '../Block'
 
+import SvgIcArrowBack from '../../icons/IcArrowBack'
+import SvgIcArrowForward from '../../icons/IcArrowForward'
+
 const ImageGallery = ({items, selected, on}) => {
 
   if(!items || items.length === 0)
@@ -11,7 +14,7 @@ const ImageGallery = ({items, selected, on}) => {
   const item_selected = selected ? selected : items[0]
 
   const RenderItem = ({linkurl, name, lead, selected}) => {
-    const propsGallerySelected = {custom: `gallery-selected`, w: "100p"}
+    const propsGallerySelected = {custom: `gallery-selected`, w: "100p", mb: "2"}
     const propsGalleryItem = {custom: `gallery-item`, mr: "2", onClick: () => on({linkurl, name, lead})}
     const propsGallery = selected ? propsGallerySelected : propsGalleryItem
     return (
@@ -30,11 +33,11 @@ const ImageGallery = ({items, selected, on}) => {
       </Block>
       {(items.length > 1) && (
         <Block align="row" custom="box-list" w="100p">
-          <Block align="row center middle" custom="arrow-left">L</Block>
+          <Block align="row center middle" custom="arrow-left"><SvgIcArrowBack /></Block>
           <Block align="row" custom="image-list" w="100p">
             {map(items, (item, key) => <RenderItem {...item} key={key} />)}
           </Block>
-          <Block align="row center middle" custom="arrow-right">R</Block>
+          <Block align="row center middle" custom="arrow-right"><SvgIcArrowForward /></Block>
         </Block>
       )}
     </Block>

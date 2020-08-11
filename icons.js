@@ -35,10 +35,36 @@ function SvgArrowCircleDownBlack18Dp(props) {
   }));
 }
 
+function SvgIcArrowBack(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    height: 32,
+    viewBox: "0 0 24 24",
+    width: 32
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
+  }));
+}
+
+function SvgIcArrowForward(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    height: 32,
+    width: 32
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
+  }));
+}
+
 function SvgIcArrow(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
-    height: 24,
-    width: 24
+    height: 32,
+    viewBox: "0 0 24 24",
+    width: 32
   }, props), /*#__PURE__*/React.createElement("path", {
     d: "M0 0h24v24H0V0z",
     fill: "none"
@@ -50,3 +76,5 @@ function SvgIcArrow(props) {
 
 exports.ArrowCircleDownBlack18Dp = SvgArrowCircleDownBlack18Dp;
 exports.IcArrow = SvgIcArrow;
+exports.IcArrowBack = SvgIcArrowBack;
+exports.IcArrowForward = SvgIcArrowForward;

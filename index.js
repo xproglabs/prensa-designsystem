@@ -923,6 +923,31 @@ var index = {
   Input: Input
 };
 
+function SvgIcArrowBack(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    height: 32,
+    viewBox: "0 0 24 24",
+    width: 32
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
+  }));
+}
+
+function SvgIcArrowForward(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    height: 32,
+    width: 32
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
+  }));
+}
+
 var ImageGallery = function ImageGallery(_ref) {
   var items = _ref.items,
       selected = _ref.selected,
@@ -937,7 +962,8 @@ var ImageGallery = function ImageGallery(_ref) {
         selected = _ref2.selected;
     var propsGallerySelected = {
       custom: "gallery-selected",
-      w: "100p"
+      w: "100p",
+      mb: "2"
     };
     var propsGalleryItem = {
       custom: "gallery-item",
@@ -978,7 +1004,7 @@ var ImageGallery = function ImageGallery(_ref) {
   }, /*#__PURE__*/React__default.createElement(Block, {
     align: "row center middle",
     custom: "arrow-left"
-  }, "L"), /*#__PURE__*/React__default.createElement(Block, {
+  }, /*#__PURE__*/React__default.createElement(SvgIcArrowBack, null)), /*#__PURE__*/React__default.createElement(Block, {
     align: "row",
     custom: "image-list",
     w: "100p"
@@ -989,7 +1015,7 @@ var ImageGallery = function ImageGallery(_ref) {
   })), /*#__PURE__*/React__default.createElement(Block, {
     align: "row center middle",
     custom: "arrow-right"
-  }, "R")));
+  }, /*#__PURE__*/React__default.createElement(SvgIcArrowForward, null))));
 };
 
 ImageGallery.propTypes = {
@@ -1139,8 +1165,9 @@ SideMenu.defaultProps = {
 
 function SvgIcArrow(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
-    height: 24,
-    width: 24
+    height: 32,
+    viewBox: "0 0 24 24",
+    width: 32
   }, props), /*#__PURE__*/React.createElement("path", {
     d: "M0 0h24v24H0V0z",
     fill: "none"
