@@ -56,6 +56,7 @@ $teaser-date-size: 12px !default;
   }
   .teaser-subtitle {
     @include fc($teaser-subtitle-color);
+    @include ff($teaser-subtitle-family);
     @include fs($teaser-subtitle-size);
     @include lh($teaser-subtitle-height);
   }
@@ -63,6 +64,7 @@ $teaser-date-size: 12px !default;
     @include fc($color-neutral-4);
   }
   .teaser-datetime {
+    @include ff($font-secondary);
     @include fs($teaser-date-size);
     @include lh($teaser-date-height);
   }

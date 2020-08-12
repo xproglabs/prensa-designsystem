@@ -19,6 +19,7 @@
     @include r(20px);
     @include bg($color-primary-1);
     @include fc($color-white);
+    @include ff($font-secondary);
     @include fs(14px);
     @include fw(bold);
   }
