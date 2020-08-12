@@ -13,8 +13,8 @@ const GridNews = props => {
   const propsTemplate = {
     align: 'between', 
     custom: 'templates-newsgrid', 
-    mb: '2',
-    md: {align: 'row'}
+    mb: '6',
+    md: {align: 'row', mb: '5'}
   };
   
   if(items.length === 3) {

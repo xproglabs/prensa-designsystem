@@ -28,6 +28,11 @@ $newsgrid-2-teaser-image-height--lg: 140px;
     .teaser-content {
       @include mb($space-size-2);
     }
+    .teaser-default {
+      &:last-child {
+        @include mb(unset);
+      }
+    }
     .teaser-image {
       &.image-top {
         .image-background {
@@ -42,6 +47,11 @@ $newsgrid-2-teaser-image-height--lg: 140px;
   &.four {
     .teaser-content {
       @include mb($space-size-2);
+    }
+    .teaser-default {
+      &:last-child {
+        @include mb(unset);
+      }
     }
     .teaser-image {
       &.image-top {
@@ -63,6 +73,9 @@ $newsgrid-2-teaser-image-height--lg: 140px;
     }
   }
   @media (min-width: $md) {
+    .teaser-default {
+      @include mb(unset);
+    }
     &.three {
       .teaser-image {
         &.image-top {

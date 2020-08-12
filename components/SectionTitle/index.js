@@ -6,7 +6,7 @@ import Typography from '../Typography';
 
 const SectionTitle = ({custom, name}) => {
   return (
-    <Block custom="section-title-block" mb="4">
+    <Block custom="section-title-block" mb="3">
       <Typography custom={`section-title ${custom}`}>{name}</Typography>
     </Block>
   );
