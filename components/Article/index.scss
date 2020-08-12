@@ -35,4 +35,7 @@
       @include mb($space-size-8);
     }
   }
+  .article-image {
+    @include mb(120px);
+  }
 }

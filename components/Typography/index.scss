@@ -75,6 +75,7 @@
   @media (min-width: $lg) {
     @include fs($article-title-fs-lg);
     @include lh($article-title-lh-lg);
+    @include mb($space-size-3);
   }
 }
 
