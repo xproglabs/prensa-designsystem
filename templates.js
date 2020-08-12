@@ -1940,7 +1940,8 @@ var MostReadItem = function MostReadItem(_ref) {
   var propsTitle = {
     custom: 'most-read-title',
     ml: '3',
-    w: '100p-8'
+    w: '100p-8',
+    align: 'middle'
   };
   var position = number + 1;
   return /*#__PURE__*/React.createElement(Block, propsMostItem, /*#__PURE__*/React.createElement(Block, _extends({}, propsContent, {
