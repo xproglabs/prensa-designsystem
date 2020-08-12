@@ -9,8 +9,8 @@ import MostRead from './MostRead'
 
 const Latest = ({content, domain, ReadMore, status}) => {
   const propsContainer = {custom: 'templates-latest-news', align: 'col left', w: '100p', md: {align: 'row between'}}
-  const propsPageLeft = {custom: 'page-left', mb: '4'}
-  const propsPageRight = {custom: 'page-right', mb: '4'}
+  const propsPageLeft = {custom: 'page-left', mb: '6'}
+  const propsPageRight = {custom: 'page-right'}
   const {title} = content
   return (
     <Block {...propsContainer}>

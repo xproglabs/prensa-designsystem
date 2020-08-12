@@ -82,6 +82,9 @@ $latest-1-teaser-image-width: 280px;
     &.three {
       .block-left {
         @include w(calc(calc(calc(100% / 3 * 2) - #{$space-size-2}) + 6px));
+        .teaser-default {
+          @include mb(unset);
+        }
       }
       .block-right {
         @include w(calc(calc(calc(100% / 3) - #{$space-size-2}) - 2px));

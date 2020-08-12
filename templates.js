@@ -1774,7 +1774,7 @@ var SectionTitle = function SectionTitle(_ref) {
       name = _ref.name;
   return /*#__PURE__*/React.createElement(Block, {
     custom: "section-title-block",
-    mb: "4"
+    mb: "3"
   }, /*#__PURE__*/React.createElement(Typography, {
     custom: "section-title ".concat(custom)
   }, name));
@@ -1792,9 +1792,10 @@ var Columnists = function Columnists(props) {
   var title = content.title;
   var propsTemplate = {
     custom: 'templates-columnists',
-    mb: '4',
+    mb: '6',
     lg: {
-      align: 'row between wrap'
+      align: 'row between wrap',
+      mb: '3'
     }
   };
   return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== "" && /*#__PURE__*/React.createElement(SectionTitle, {
@@ -1836,8 +1837,10 @@ var Featured = function Featured(props) {
   if (items.length === 3) {
     var propsTemplate = {
       custom: 'templates-featured three',
+      mb: '6',
       md: {
-        align: 'row between'
+        align: 'row between',
+        mb: '5'
       }
     };
     return /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
@@ -1879,9 +1882,10 @@ var GridNews = function GridNews(props) {
   var propsTemplate = {
     align: 'between',
     custom: 'templates-newsgrid',
-    mb: '2',
+    mb: '6',
     md: {
-      align: 'row'
+      align: 'row',
+      mb: '5'
     }
   };
 
@@ -2002,11 +2006,10 @@ var Latest = function Latest(_ref) {
   };
   var propsPageLeft = {
     custom: 'page-left',
-    mb: '4'
+    mb: '6'
   };
   var propsPageRight = {
-    custom: 'page-right',
-    mb: '4'
+    custom: 'page-right'
   };
   var title = content.title;
   return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, propsPageLeft, /*#__PURE__*/React.createElement(SectionTitle, {
