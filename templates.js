@@ -2042,6 +2042,42 @@ Latest.propTypes = {
   })
 };
 
+var Related = function Related(_ref) {
+  var items = _ref.items,
+      domain = _ref.domain,
+      ReadMore = _ref.ReadMore,
+      status = _ref.status;
+  var propsContainer = {
+    custom: 'templates-related-news',
+    align: 'col left',
+    w: '100p',
+    md: {
+      align: 'row between'
+    }
+  };
+  return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, {
+    custom: "related-news"
+  }, lodash.map(items, function (item, key) {
+    return /*#__PURE__*/React.createElement(Teaser, {
+      content: item,
+      domain: domain,
+      hasSubjectFilled: true,
+      hasImageTop: true,
+      status: status,
+      key: key
+    });
+  })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null));
+};
+
+Related.propTypes = {
+  items: PropTypes.array,
+  ReadMore: PropTypes.func,
+  status: PropTypes.shape({
+    error: PropTypes.bool,
+    loading: PropTypes.bool
+  })
+};
+
 var Subjects = function Subjects(props) {
   var content = props.content,
       domain = props.domain,
@@ -2104,4 +2140,5 @@ exports.Featured = Featured;
 exports.GridNews = GridNews;
 exports.Latest = Latest;
 exports.MostRead = MostRead;
+exports.Related = Related;
 exports.Subjects = Subjects;
