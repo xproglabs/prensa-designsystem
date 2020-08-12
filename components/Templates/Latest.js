@@ -3,7 +3,7 @@ import {map} from 'lodash'
 import PropTypes from 'prop-types'
 
 import Block from '../Block'
-import {Teaser} from '../Teasers'
+import Teaser from '../Teasers'
 import SectionTitle from '../SectionTitle'
 import MostRead from './MostRead'
 

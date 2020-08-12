@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
-import {Teaser} from '../Teasers';
+import Teaser from '../Teasers';
 
 const Featured = props => {
   const {content, domain, status} = props;
