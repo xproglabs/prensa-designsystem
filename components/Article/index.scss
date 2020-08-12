@@ -1,5 +1,8 @@
 @use '../../styles' as *;
 
+.article-image {
+  @include mb($space-size-8);
+}
 .article-image-box {
   .image-article {
     @include h(auto);
@@ -7,6 +10,7 @@
   }
   .label {
     @include bg($color-neutral-10);
+    @include fc($color-neutral-4);
     @include ff($font-secondary);
     @include px($space-size-2);
     @include py($space-size-2);
@@ -30,5 +34,8 @@
     .article-head {
       @include mb($space-size-8);
     }
+  }
+  .article-image {
+    @include mb(120px);
   }
 }

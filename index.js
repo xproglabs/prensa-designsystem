@@ -1187,7 +1187,7 @@ var SideMenuItems = function SideMenuItems(_ref) {
     var hasSubitems = item.subitems.length > 0;
     return /*#__PURE__*/React__default.createElement(Block, {
       custom: "sidemenu-group",
-      mb: "4"
+      mb: "3"
     }, /*#__PURE__*/React__default.createElement(Block, {
       custom: "sidemenu-group-item",
       pb: "2",
