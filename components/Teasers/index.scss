@@ -1,6 +1,6 @@
 @use '../../styles' as *;
 
-$teaser-title-color: $color-black;
+$teaser-title-color: $color-neutral-2;
 $teaser-title-family: $font-primary;
 $teaser-title-height: 28px !default;
 $teaser-title-size: 24px !default;
@@ -55,6 +55,7 @@ $teaser-date-size: 12px !default;
     }
   }
   .teaser-subtitle {
+    @include fc($teaser-subtitle-color);
     @include fs($teaser-subtitle-size);
     @include lh($teaser-subtitle-height);
   }
