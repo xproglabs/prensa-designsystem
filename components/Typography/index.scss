@@ -71,7 +71,7 @@
   @include fc($article-title-fc);
   @extend %bold;
   @include mt($space-size-3);
-  @include mb($space-size-5);
+  @include mb($space-size-2);
   @media (min-width: $lg) {
     @include fs($article-title-fs-lg);
     @include lh($article-title-lh-lg);
