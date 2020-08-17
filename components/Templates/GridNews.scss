@@ -3,11 +3,14 @@
 $newsgrid-1-teaser-title-height: 28px;
 $newsgrid-1-teaser-title-size: 24px;
 
+$newsgrid-1-teaser-title-height--lg: 36px;
+$newsgrid-1-teaser-title-size--lg: 32px;
+
 $newsgrid-2-teaser-title-height: 28px;
 $newsgrid-2-teaser-title-size: 24px;
 
 $newsgrid-1-teaser-image-height: 192px;
-$newsgrid-1-teaser-image-height--lg: 192px;
+$newsgrid-1-teaser-image-height--lg: 296px;
 
 $newsgrid-2-teaser-image-height: 164px;
 $newsgrid-2-teaser-image-height--lg: 140px;
@@ -23,6 +26,18 @@ $newsgrid-2-teaser-image-height--lg: 140px;
     @include fs($newsgrid-1-teaser-title-size);
     @include lh($newsgrid-1-teaser-title-height);
     @include fw(700);
+  }
+  &.two {
+    .teaser-image {
+      &.image-top {
+        .image-background {
+          @include h($newsgrid-1-teaser-image-height);
+        }
+      }
+    }
+    .teaser-title {
+      @include mb($space-size-4);
+    }
   }
   &.three {
     .teaser-content {
@@ -66,7 +81,7 @@ $newsgrid-2-teaser-image-height--lg: 140px;
   }
   @media(min-width: $md) {
     &.two > div {
-      @include w(calc(calc(100% - calc(#{$space-size-4} * 2)) / 2));
+      @include w(calc(calc(100% - calc(#{$space-size-2} * 2)) / 2));
     }
     &.three > div {
       @include w(calc(calc(100% - calc(#{$space-size-4} * 2)) / 3));
@@ -78,6 +93,23 @@ $newsgrid-2-teaser-image-height--lg: 140px;
   @media (min-width: $md) {
     .teaser-default {
       @include mb(unset);
+      
+    }
+    &.two {
+      .teaser-content {
+        .teaser-title {
+          @include fs($newsgrid-1-teaser-title-size--lg);
+          @include lh($newsgrid-1-teaser-title-height--lg);
+
+        }
+      }
+      .teaser-image {
+        &.image-top {
+          .image-background {
+            @include h($newsgrid-1-teaser-image-height--lg);
+          }
+        }
+      }
     }
     &.three {
       .teaser-image {
