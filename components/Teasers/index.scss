@@ -32,6 +32,7 @@ $teaser-date-size: 12px !default;
     @include fc($teaser-title-color);
     @include ff($teaser-title-family);
     @include fs($teaser-title-size);
+    @include fw(bold);
     @include lh($teaser-title-height);
     @media(min-width: $xs) {
       @include fs($teaser-title-size--xs);
