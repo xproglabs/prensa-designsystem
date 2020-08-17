@@ -65,6 +65,9 @@ $newsgrid-2-teaser-image-height--lg: 140px;
     }
   }
   @media(min-width: $md) {
+    &.two > div {
+      @include w(calc(calc(100% - calc(#{$space-size-4} * 2)) / 2));
+    }
     &.three > div {
       @include w(calc(calc(100% - calc(#{$space-size-4} * 2)) / 3));
     }
