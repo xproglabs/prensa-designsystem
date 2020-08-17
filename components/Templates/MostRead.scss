@@ -9,6 +9,7 @@
     @include fs(18px);
     @include lh(22px);
     @include ff($font-primary);
+    @include fw(bold);
     a {
       @include fc($color-neutral-2);
     }  
