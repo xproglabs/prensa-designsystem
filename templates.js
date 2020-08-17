@@ -1889,6 +1889,10 @@ var GridNews = function GridNews(props) {
     }
   };
 
+  if (items.length === 2) {
+    propsTemplate.custom = 'templates-newsgrid two';
+  }
+
   if (items.length === 3) {
     propsTemplate.custom = 'templates-newsgrid three';
   }

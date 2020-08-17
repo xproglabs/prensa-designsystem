@@ -17,6 +17,9 @@ const GridNews = props => {
     md: {align: 'row', mb: '5'}
   };
   
+  if(items.length === 2) {
+    propsTemplate.custom = 'templates-newsgrid two';
+  }
   if(items.length === 3) {
     propsTemplate.custom = 'templates-newsgrid three';
   }
