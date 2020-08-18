@@ -858,6 +858,75 @@ Button.defaultProps = {
   style: 'primary'
 };
 
+var Image$1 = function Image(_ref) {
+  var domain = _ref.domain,
+      value = _ref.value;
+  if (!value || !value['image-contentId']) return false;
+  var contentid = value['image-contentId'];
+  var width = 1000;
+  var derivative = '2x1';
+
+  var _cid = contentid.split(".");
+
+  var versioned = "".concat(contentid, ":").concat(_cid[2]);
+  var imagePath = "".concat(domain, "/image/policy:").concat(versioned, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
+  var policyid = contentid.replace('.', '-').replace('.', '-');
+  var inlinestyle = "\n    .image-background.policy-".concat(policyid, " {\n      background-image: url(").concat(imagePath, ");\n    }");
+  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement("style", {
+    dangerouslySetInnerHTML: {
+      __html: inlinestyle
+    }
+  }), /*#__PURE__*/React__default.createElement("div", {
+    className: "image-background policy-".concat(policyid)
+  }));
+};
+
+Image$1.propTypes = {
+  domain: PropTypes.string,
+  value: PropTypes.object.isRequired
+};
+Image$1.defaultProps = {
+  value: {}
+};
+
+var ColumnHeader = function ColumnHeader(_ref) {
+  var item = _ref.item;
+  if (!item) return null;
+  var domain = "http://localhost:8080";
+  var path = "";
+  var image = item["column-image"] && item["column-image"]["image-contentId"] && item["column-image"];
+  var column_name = item["column-name"];
+  var column_description = item["column-desc"];
+  return /*#__PURE__*/React__default.createElement(Block, {
+    align: "row",
+    custom: "column-header",
+    mb: "3",
+    p: "3",
+    w: "100p-6"
+  }, /*#__PURE__*/React__default.createElement(Block, null, /*#__PURE__*/React__default.createElement("a", {
+    className: "teaser-aria",
+    href: path,
+    "aria-label": "Imagem do colunista ".concat(column_name)
+  }, /*#__PURE__*/React__default.createElement(Image$1, {
+    domain: domain,
+    value: image
+  }))), /*#__PURE__*/React__default.createElement(Block, {
+    align: "middle",
+    ml: "2"
+  }, /*#__PURE__*/React__default.createElement(Block, {
+    custom: "title"
+  }, column_name), /*#__PURE__*/React__default.createElement(Block, {
+    custom: "description"
+  }, column_description)));
+};
+
+ColumnHeader.propTypes = {
+  item: PropTypes.object
+};
+ColumnHeader.defaultProps = {
+  item: []
+};
+
 var Input = function Input(_ref) {
   var autoFocus = _ref.autoFocus,
       disabled = _ref.disabled,
@@ -1292,9 +1361,11 @@ exports.AdBlock = AdBlock;
 exports.Article = Article;
 exports.Block = Block;
 exports.Button = Button;
+exports.ColumnHeader = ColumnHeader;
 exports.Form = index;
 exports.Grid = Grid;
 exports.Image = Image;
+exports.ImageBackground = Image$1;
 exports.ImageGallery = ImageGallery;
 exports.SearchForm = SearchForm;
 exports.SearchMenu = SearchMenu;

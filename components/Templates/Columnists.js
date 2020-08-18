@@ -12,7 +12,7 @@ const Columnists = props => {
   const propsTemplate = {custom: 'templates-columnists', mb:'6', lg:{align: 'row between wrap', mb:'3'}};
   return (
     <>
-      {title && title !== ""&& <SectionTitle name={title} />}
+      {title && title !== "" && <SectionTitle name={title} />}
       <Block {...propsTemplate} > 
         {map(content['items'], (item, key) =>
           <Teaser content={item} domain={domain} key={key} status={status} />)}

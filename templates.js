@@ -2000,6 +2000,7 @@ var Latest = function Latest(_ref) {
   var content = _ref.content,
       domain = _ref.domain,
       ReadMore = _ref.ReadMore,
+      Title = _ref.Title,
       status = _ref.status;
   var propsContainer = {
     custom: 'templates-latest-news',
@@ -2016,10 +2017,7 @@ var Latest = function Latest(_ref) {
   var propsPageRight = {
     custom: 'page-right'
   };
-  var title = content.title;
-  return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, propsPageLeft, /*#__PURE__*/React.createElement(SectionTitle, {
-    name: title ? title : "ÚLTIMAS NOTÍCIAS"
-  }), /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, propsPageLeft, Title && /*#__PURE__*/React.createElement(Title, null), /*#__PURE__*/React.createElement(Block, {
     custom: "latest-news"
   }, lodash.map(content["items-latest"], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
@@ -2041,6 +2039,7 @@ var Latest = function Latest(_ref) {
 Latest.propTypes = {
   content: PropTypes.object,
   ReadMore: PropTypes.func,
+  Title: PropTypes.func,
   status: PropTypes.shape({
     error: PropTypes.bool,
     loading: PropTypes.bool
