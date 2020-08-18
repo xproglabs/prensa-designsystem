@@ -15,7 +15,6 @@ const ColumnHeader = ({item}) => {
   const image = item["column-image"] && item["column-image"]["image-contentId"] && item["column-image"]
   const column_name = item["column-name"]
   const column_description = item["column-desc"]
-  console.log("item", item)
   return (
     <Block align="row" custom="column-header" mb="3" p="3" w="100p-6">
       <Block>
@@ -25,7 +24,7 @@ const ColumnHeader = ({item}) => {
       </Block>
       <Block align="middle" ml="2">
         <Block custom="title">{column_name}</Block>
-        <Block custom="description">{column_description}</Block>
+        <Block custom="subtitle">{column_description}</Block>
       </Block>
     </Block>
   )

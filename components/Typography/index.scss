@@ -95,7 +95,7 @@
 .article-subtitle {
   @include fs($article-subtitle-fs);
   @include lh($article-subtitle-lh);
-  @include fc($color-white);
+  @include fc($color-neutral-4);
   @include ff($font-primary);
   @extend %regular;
   @media (min-width: $lg) {
