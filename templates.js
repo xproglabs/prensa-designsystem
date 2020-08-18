@@ -2055,10 +2055,7 @@ var Related = function Related(_ref) {
   var propsContainer = {
     custom: 'templates-related-news',
     align: 'col left',
-    w: '100p',
-    md: {
-      align: 'row between'
-    }
+    w: '100p'
   };
   return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, {
     custom: "related-news"

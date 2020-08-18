@@ -6,7 +6,7 @@ import Block from '../Block'
 import Teaser from '../Teasers'
 
 const Related = ({items, domain, ReadMore, status}) => {
-  const propsContainer = {custom: 'templates-related-news', align: 'col left', w: '100p', md: {align: 'row between'}}
+  const propsContainer = {custom: 'templates-related-news', align: 'col left', w: '100p'}
   return (
     <Block {...propsContainer}>
       <Block custom="related-news">
