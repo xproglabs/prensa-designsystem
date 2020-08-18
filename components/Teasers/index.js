@@ -5,7 +5,7 @@ import Block from '../Block'
 import Image from '../Image/Teaser'
 import Subject from '../Subject'
 import Typography from '../Typography'
-import {convertDateFromPtBrToDistance} from '../Utils/dates'
+import {convertDateFromPtBrToDistance} from '../utils/dates'
 
 const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, status}) => {
   const {image, name, path, subject, subtitle} = content
