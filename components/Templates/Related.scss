@@ -1,0 +1,10 @@
+@use '../../styles' as *;
+
+.templates-related-news {
+  .teaser-title {
+    @include mb($space-size-2);
+    @media(min-width: $md) {
+      @include mb($space-size-3);
+    }
+  }
+}
