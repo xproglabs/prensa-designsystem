@@ -1,7 +1,17 @@
 @use '../../styles' as *;
 
-$column-header-title-size: 22px;
+$column-header-title-fc: $color-neutral-2;
+$column-header-title-ff: $font-primary;
+$column-header-title-size: 24px;
 $column-header-title-height: 28px;
+
+$column-header-title-size--lg: 32px;
+$column-header-title-height--lg: 36px;
+
+$column-header-subtitle-fc: $color-neutral-4;
+$column-header-subtitle-ff: $font-secondary;
+$column-header-subtitle-size: 16px;
+$column-header-subtitle-height: 22px;
 
 .column-header {
   @include bg($color-white);
@@ -17,10 +27,21 @@ $column-header-title-height: 28px;
     background-size: cover;
   }
   .title {
+    @include fc($column-header-title-fc);
+    @include ff($column-header-title-ff);
     @include fs($column-header-title-size);
+    @include fw(bold);
     @include lh($column-header-title-height);
+    @include mb($space-size-1);
+    @media (min-width: $lg) {
+      @include fs($column-header-title-size--lg);
+      @include lh($column-header-title-height--lg);
+    }
   }
-  .description {
-
+  .subtitle {
+    @include fc($column-header-subtitle-fc);
+    @include ff($column-header-subtitle-ff);
+    @include fs($column-header-subtitle-size);
+    @include lh($column-header-subtitle-height);
   }
 }

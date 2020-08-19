@@ -334,8 +334,14 @@ var Typography = function Typography(props) {
       case 'article-title':
         return 'article-title';
 
+      case 'article-title-intro':
+        return 'article-title-intro';
+
       case 'article-subtitle':
         return 'article-subtitle';
+
+      case 'article-subtitle-intro':
+        return 'article-subtitle-intro';
 
       case 'article-paragraph':
         return 'article-paragraph';
@@ -411,7 +417,7 @@ Typography.propTypes = {
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-subtitle', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-title-intro', 'article-subtitle', 'article-subtitle-intro', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
 };
 
 var Subject = function Subject(props) {
@@ -916,7 +922,7 @@ var ColumnHeader = function ColumnHeader(_ref) {
   }, /*#__PURE__*/React__default.createElement(Block, {
     custom: "title"
   }, column_name), /*#__PURE__*/React__default.createElement(Block, {
-    custom: "description"
+    custom: "subtitle"
   }, column_description)));
 };
 

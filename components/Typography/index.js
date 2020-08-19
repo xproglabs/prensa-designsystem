@@ -15,8 +15,12 @@ const Typography = props => {
     switch(tokenVariant) {
       case 'article-title':
         return 'article-title';
+      case 'article-title-intro':
+        return 'article-title-intro';
       case 'article-subtitle':
         return 'article-subtitle';
+      case 'article-subtitle-intro':
+        return 'article-subtitle-intro';
       case 'article-paragraph':
         return 'article-paragraph';
       case 'article-tag':
@@ -79,7 +83,7 @@ Typography.propTypes = {
     'xs', 'sm', 'md', 'lg', 'xl'
   ]).isRequired,
   tokenVariant: PropTypes.oneOf([
-    'article-title', 'article-subtitle', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'
+    'article-title', 'article-title-intro', 'article-subtitle', 'article-subtitle-intro', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'
   ])
 };
 

@@ -24,7 +24,7 @@ const ColumnHeader = ({item}) => {
       </Block>
       <Block align="middle" ml="2">
         <Block custom="title">{column_name}</Block>
-        <Block custom="description">{column_description}</Block>
+        <Block custom="subtitle">{column_description}</Block>
       </Block>
     </Block>
   )

@@ -79,15 +79,41 @@
   }
 }
 
+.article-title-intro {
+  @include ff($article-title-intro-ff);
+  @include fc($article-title-intro-fc);
+  @include fs($article-title-intro-fs);
+  @include fw(bold);
+  @include lh($article-title-intro-lh);
+  @include mb($space-size-3);
+  @media (min-width: $lg) {
+    @include fs($article-title-intro-fs-lg);
+    @include lh($article-title-intro-lh-lg);
+  }  
+}
+
 .article-subtitle {
   @include fs($article-subtitle-fs);
   @include lh($article-subtitle-lh);
-  @include fc($article-subtitle-fc);
+  @include fc($color-neutral-4);
   @include ff($font-primary);
   @extend %regular;
   @media (min-width: $lg) {
     @include fs($article-subtitle-fs-lg);
     @include lh($article-subtitle-lh-lg);
+  }
+}
+
+.article-subtitle-intro {
+  @include fc($article-subtitle-intro-fc);
+  @include ff($article-subtitle-intro-ff);
+  @include fs($article-subtitle-intro-fs);
+  @include lh($article-subtitle-intro-lh);
+  @include mb($space-size-4);
+  @media (min-width: $lg) {
+    @include fs($article-subtitle-intro-fs-lg);
+    @include lh($article-subtitle-intro-lh-lg);
+    @include mb($space-size-10);
   }
 }
 
