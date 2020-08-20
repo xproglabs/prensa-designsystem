@@ -106,7 +106,9 @@ Block.propTypes = {
 Block.defaultProps = {};
 
 var Image = function Image(_ref) {
-  var domain = _ref.domain,
+  var children = _ref.children,
+      custom = _ref.custom,
+      domain = _ref.domain,
       value = _ref.value;
   if (!value || !value['image-contentId']) return false;
   var contentid = value['image-contentId'];
@@ -124,11 +126,13 @@ var Image = function Image(_ref) {
       __html: inlinestyle
     }
   }), /*#__PURE__*/React.createElement("div", {
-    className: "image-background policy-".concat(policyid)
-  }));
+    className: "image-background policy-".concat(policyid, " ").concat(custom && custom)
+  }, children && children));
 };
 
 Image.propTypes = {
+  children: PropTypes.node,
+  custom: PropTypes.string,
   domain: PropTypes.string,
   value: PropTypes.object.isRequired
 };

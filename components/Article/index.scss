@@ -30,7 +30,6 @@
 }
 @media (min-width: $lg) {
   .article {
-    @include mt(104px);
     .article-head {
       @include mb($space-size-8);
     }
