@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Image = ({domain, value}) => {
+const Image = ({children, custom, domain, value}) => {
 
   if(!value || !value['image-contentId'])
     return false;
@@ -20,12 +20,16 @@ const Image = ({domain, value}) => {
   return (
     <>
       <style dangerouslySetInnerHTML={{__html: inlinestyle}} />
-      <div className={`image-background policy-${policyid}`}></div>
+      <div className={`image-background policy-${policyid} ${custom && custom}`}>
+        {children && children}
+      </div>
     </>
   );
 };
 
 Image.propTypes = {
+  children: PropTypes.node,
+  custom: PropTypes.string,
   domain: PropTypes.string,
   value: PropTypes.object.isRequired
 };
