@@ -9,7 +9,7 @@ $newsgrid-1-teaser-title-size--lg: 32px;
 $newsgrid-2-teaser-title-height: 28px;
 $newsgrid-2-teaser-title-size: 24px;
 
-$newsgrid-1-teaser-image-height: 192px;
+$newsgrid-1-teaser-image-height: 246px;
 $newsgrid-1-teaser-image-height--lg: 296px;
 
 $newsgrid-2-teaser-image-height: 164px;
@@ -28,6 +28,12 @@ $newsgrid-2-teaser-image-height--lg: 140px;
     @include fw(700);
   }
   &.two {
+    .teaser-content {
+      @include my($space-size-2);
+      @media (min-width: $lg) {
+        @include my($space-size-3);
+      }
+    }
     .teaser-image {
       &.image-top {
         .image-background {
@@ -36,7 +42,7 @@ $newsgrid-2-teaser-image-height--lg: 140px;
       }
     }
     .teaser-title {
-      @include mb($space-size-4);
+      @include mb($space-size-3);
     }
   }
   &.three {

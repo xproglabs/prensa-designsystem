@@ -85,7 +85,7 @@
   @include fs($article-title-intro-fs);
   @include fw(bold);
   @include lh($article-title-intro-lh);
-  @include mb($space-size-3);
+  @include mb($space-size-2);
   @media (min-width: $lg) {
     @include fs($article-title-intro-fs-lg);
     @include lh($article-title-intro-lh-lg);
@@ -109,7 +109,7 @@
   @include ff($article-subtitle-intro-ff);
   @include fs($article-subtitle-intro-fs);
   @include lh($article-subtitle-intro-lh);
-  @include mb($space-size-4);
+  @include mb($space-size-7);
   @media (min-width: $lg) {
     @include fs($article-subtitle-intro-fs-lg);
     @include lh($article-subtitle-intro-lh-lg);
