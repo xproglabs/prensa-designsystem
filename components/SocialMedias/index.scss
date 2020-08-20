@@ -2,10 +2,11 @@
 
 .social-circle {
   @include fx(center, center);
-  @include w(32px);
   @include h(32px);
+  @include mr($space-size-4);
   @include r(50%);
+  @include w(32px);
   svg {
-    fill: $color-primary-1;
+    fill: transparent;
   }
 }
