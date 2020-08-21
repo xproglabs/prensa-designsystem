@@ -1702,6 +1702,8 @@ var Teaser = function Teaser(_ref) {
   var propsTitle = {
     custom: 'teaser-title'
   };
+  var path_split = path.split(":8080");
+  var url_rewrite = path_split.length > 1 ? "".concat(domain).concat(path_split[1]) : path;
 
   var TeaserImage = function TeaserImage() {
     if (loading || error || !image) return /*#__PURE__*/React.createElement("div", {
@@ -1710,7 +1712,7 @@ var Teaser = function Teaser(_ref) {
     if (!image['image-contentId']) return null;
     return /*#__PURE__*/React.createElement(Block, propsImage, /*#__PURE__*/React.createElement("a", {
       className: "teaser-aria",
-      href: path,
+      href: url_rewrite,
       "aria-label": "Imagem da mat\xE9ria ".concat(name)
     }, /*#__PURE__*/React.createElement(Image, {
       domain: domain,
@@ -1723,7 +1725,7 @@ var Teaser = function Teaser(_ref) {
     filled: hasSubjectFilled
   }, subject))), /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
-    href: path,
+    href: url_rewrite,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
   }, /*#__PURE__*/React.createElement(Typography, {
     custom: "teaser-title"

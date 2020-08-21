@@ -16,7 +16,7 @@ const Image = ({domain, value}) => {
   const width = 1000;
   const derivative = '2x1';
   const _cid = contentid.split(".")
-  const versioned = `${contentid}:${_cid[2]}`
+  const versioned = _cid.length > 2 ? `${contentid}:${_cid[2]}` : `${contentid}`
   const imagePath = `${domain}/image/policy:${versioned}/image.jpg?f=${derivative}&w=${width}`;
 
   return (
