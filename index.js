@@ -274,7 +274,7 @@ var Image = function Image(_ref) {
 
   var _cid = contentid.split(".");
 
-  var versioned = "".concat(contentid, ":").concat(_cid[2]);
+  var versioned = _cid.length > 2 ? "".concat(contentid, ":").concat(_cid[2]) : "".concat(contentid);
   var imagePath = "".concat(domain, "/image/policy:").concat(versioned, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
   return /*#__PURE__*/React__default.createElement(Block, {
     custom: "article-image-box",

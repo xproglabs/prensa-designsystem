@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-
 import Block from '../Block'
 import Image from '../Image/Teaser'
 import Subject from '../Subject'
@@ -19,6 +18,9 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, ha
   const propsSubject = {custom: 'teaser-subject',mb: '1'}
   const propsTitle = {custom: 'teaser-title'}
 
+  const path_split = path.split(":8080")
+  const url_rewrite = path_split.length > 1 ? `${domain}${path_split[1]}` : path
+
   const TeaserImage = () => {
     if (loading || error || !image) 
       return <div className='image-box skeleton'/>
@@ -28,7 +30,7 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, ha
 
     return (
       <Block {...propsImage}>
-        <a className='teaser-aria' href={path} aria-label={`Imagem da matéria ${name}`}>
+        <a className='teaser-aria' href={url_rewrite} aria-label={`Imagem da matéria ${name}`}>
           <Image domain={domain} value={image} />
         </a>
       </Block>
@@ -48,7 +50,7 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, ha
         </Block>
         <Block>
           <Block {...propsTitle}>
-            <a className='teaser-aria' href={path} aria-label={`Abrir matéria ${name}`}>
+            <a className='teaser-aria' href={url_rewrite} aria-label={`Abrir matéria ${name}`}>
               <Typography custom='teaser-title'>{name}</Typography>
             </a>
           </Block >
