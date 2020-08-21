@@ -694,7 +694,8 @@ var TextBody = function TextBody(_ref) {
 
       case 'Image':
         return /*#__PURE__*/React__default.createElement(Block, {
-          custom: "article-image-embed"
+          custom: "article-image-embed",
+          mb: "3"
         }, /*#__PURE__*/React__default.createElement(Image, {
           domain: domain,
           key: key,
