@@ -9,7 +9,7 @@ const Related = ({items, domain, ReadMore, status}) => {
   const propsContainer = {custom: 'templates-related-news', align: 'col left', w: '100p'}
   return (
     <Block {...propsContainer}>
-      <Block custom="related-news">
+      <Block custom="related-news" w="100p">
         {map(items, (item, key) => 
           <Teaser 
             content={item} 

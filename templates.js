@@ -3898,7 +3898,8 @@ var Related = function Related(_ref) {
     w: '100p'
   };
   return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, {
-    custom: "related-news"
+    custom: "related-news",
+    w: "100p"
   }, lodash.map(items, function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
