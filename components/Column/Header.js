@@ -5,12 +5,11 @@ import {map} from 'lodash'
 import Block from '../Block'
 import Image from '../Image/Teaser'
 
-const ColumnHeader = ({item}) => {
+const ColumnHeader = ({domain, item}) => {
   
   if(!item)
     return null
 
-  const domain = "http://localhost:8080"
   const path = ""
   const image = item["column-image"] && item["column-image"]["image-contentId"] && item["column-image"]
   const column_name = item["column-name"]
