@@ -12,6 +12,9 @@
     @include fw(bold);
     a {
       @include fc($color-neutral-2);
+      &:hover {
+        opacity: 0.8;
+      }
     }  
   }
   .most-read-number {
