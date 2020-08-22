@@ -4,7 +4,7 @@ import Block from '../Block'
 import Image from '../Image/Teaser'
 import Subject from '../Subject'
 import Typography from '../Typography'
-import utils from '../Utils'
+import utils from '../Util'
 
 const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, status}) => {
   const {image, name, path, subject, subtitle} = content
