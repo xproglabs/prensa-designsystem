@@ -19,6 +19,7 @@ const Latest = ({content, domain, ReadMore, Title, status}) => {
           {map(content["items-latest"], (item, key) => 
             <Teaser 
               content={item} 
+              datePublished={true}
               domain={domain}
               hasSubjectFilled={true} 
               hasImageTop={true}

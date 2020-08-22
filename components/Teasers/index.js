@@ -4,9 +4,9 @@ import Block from '../Block'
 import Image from '../Image/Teaser'
 import Subject from '../Subject'
 import Typography from '../Typography'
-import {convertDateFromPtBrToDistance} from '../utils/dates'
+import utils from '../Utils'
 
-const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, status}) => {
+const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, status}) => {
   const {image, name, path, subject, subtitle} = content
   const {loading, error} = status
   const propsTeaser = {align: hasImageTop ? 'col' : 'row left',custom: 'teaser-default',mb: '2'}
@@ -17,6 +17,17 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, ha
   const propsDate = {custom: 'teaser-date',w: '100p'}
   const propsSubject = {custom: 'teaser-subject',mb: '1'}
   const propsTitle = {custom: 'teaser-title'}
+  
+  let dateValue = 
+    !datePublished && content['time-modifiedDate'] ? 
+      utils.dateDistance(content['time-modifiedDate'], 2880) :
+        utils.datePtBrFull(content['time-published'])
+  
+  dateValue = datePublished ? 
+    `Publicado em ${dateValue}` : 
+      dateValue.startsWith("Há") ?
+        dateValue.replace(`Há`, `Atualizado há`) :
+          `Atualizado em ${dateValue}`
 
   const path_split = path.split(":8080")
   const url_rewrite = path_split.length > 1 ? `${domain}${path_split[1]}` : path
@@ -36,7 +47,6 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, ha
       </Block>
     )
   }
-  const dateDistance = content['time-published'] ? convertDateFromPtBrToDistance(content['time-published']) : ``
   return (
     <Block {...propsTeaser}>
       <TeaserImage />
@@ -61,9 +71,9 @@ const Teaser = ({content, domain, hasImageTop, hasSubjectFilled, hasSubtitle, ha
           }
         </Block>
         <Block {...propsDateContainer}>  
-          {dateDistance && hasDate &&
+          {dateValue && hasDate &&
             <Block {...propsDate}>
-              <Typography custom='teaser-datetime'>{dateDistance}</Typography>
+              <Typography custom='teaser-datetime'>{dateValue}</Typography>
             </Block>
           }
         </Block>  
@@ -81,6 +91,7 @@ Teaser.propTypes = {
     subject: PropTypes.string,
     ['time-published']: PropTypes.string
   }),
+  datePublished: PropTypes.bool,
   domain: PropTypes.string,
   hasImageTop: PropTypes.bool,
   hasSubtitle: PropTypes.bool,
