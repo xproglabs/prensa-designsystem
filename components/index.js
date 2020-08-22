@@ -19,3 +19,4 @@ export {default as Subject} from './Subject';
 export {default as Tags} from './Tags';
 export {default as TextBody} from './Article/TextBody';
 export {default as Typography} from './Typography';
+export {default as utils} from './Util';
