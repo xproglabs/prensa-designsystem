@@ -28,6 +28,11 @@ $teaser-date-size: 12px !default;
     @include w(100%);
     text-decoration: none;
   }
+  a {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
   .teaser-title {
     @include fc($teaser-title-color);
     @include ff($teaser-title-family);

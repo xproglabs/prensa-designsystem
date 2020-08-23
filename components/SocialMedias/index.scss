@@ -8,5 +8,8 @@
   @include w(32px);
   svg {
     fill: transparent;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }

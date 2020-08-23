@@ -1,6 +1,12 @@
 @use '../../styles' as *;
 
 .templates-related-news {
+  .button-read-more {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+    &:hover {
+      opacity: 0.8;
+    }
+  }
   .teaser-content {
     @include mx($space-size-3);
   }
