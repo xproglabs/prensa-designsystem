@@ -901,9 +901,9 @@ Image$1.defaultProps = {
 };
 
 var ColumnHeader = function ColumnHeader(_ref) {
-  var item = _ref.item;
+  var domain = _ref.domain,
+      item = _ref.item;
   if (!item) return null;
-  var domain = "http://localhost:8080";
   var path = "";
   var image = item["column-image"] && item["column-image"]["image-contentId"] && item["column-image"];
   var column_name = item["column-name"];
