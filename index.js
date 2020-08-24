@@ -510,6 +510,28 @@ AdBlock.propTypes = {
   content: PropTypes.object
 };
 
+var Image$1 = function Image(_ref) {
+  var domain = _ref.domain,
+      value = _ref.value;
+  if (!value || !value['image-legacy']) return false;
+  var imagePath = "".concat(value['image-legacy']);
+  return /*#__PURE__*/React__default.createElement(Block, {
+    custom: "article-image-box",
+    w: "100p"
+  }, /*#__PURE__*/React__default.createElement("img", {
+    className: "image-article",
+    src: imagePath,
+    alt: "Imagem importada do sistema legado"
+  }));
+};
+
+Image$1.propTypes = {
+  value: PropTypes.object.isRequired
+};
+Image$1.defaultProps = {
+  value: {}
+};
+
 var Paragraph = function Paragraph(_ref) {
   var value = _ref.value;
   return /*#__PURE__*/React__default.createElement(Typography, {
@@ -582,6 +604,13 @@ var parseBody = function parseBody(content) {
       }
     } // render image
 
+
+    if (tag === 'img' && attr.src && attr.src.startsWith('/legacy/image')) bodyItems.push({
+      type: 'ImageLegacy',
+      value: {
+        'image-legacy': attr.src
+      }
+    });
 
     if (tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed') {
       var childImage = lodash.find(child, {
@@ -694,11 +723,21 @@ var TextBody = function TextBody(_ref) {
 
       case 'Image':
         return /*#__PURE__*/React__default.createElement(Block, {
+          key: key,
           custom: "article-image-embed",
           mb: "3"
         }, /*#__PURE__*/React__default.createElement(Image, {
           domain: domain,
+          value: value
+        }));
+
+      case 'ImageLegacy':
+        return /*#__PURE__*/React__default.createElement(Block, {
           key: key,
+          custom: "article-image-embed",
+          mb: "3"
+        }, /*#__PURE__*/React__default.createElement(Image$1, {
+          domain: domain,
           value: value
         }));
 
@@ -865,7 +904,7 @@ Button.defaultProps = {
   style: 'primary'
 };
 
-var Image$1 = function Image(_ref) {
+var Image$2 = function Image(_ref) {
   var children = _ref.children,
       custom = _ref.custom,
       domain = _ref.domain,
@@ -890,13 +929,13 @@ var Image$1 = function Image(_ref) {
   }, children && children));
 };
 
-Image$1.propTypes = {
+Image$2.propTypes = {
   children: PropTypes.node,
   custom: PropTypes.string,
   domain: PropTypes.string,
   value: PropTypes.object.isRequired
 };
-Image$1.defaultProps = {
+Image$2.defaultProps = {
   value: {}
 };
 
@@ -918,7 +957,7 @@ var ColumnHeader = function ColumnHeader(_ref) {
     className: "teaser-aria",
     href: path,
     "aria-label": "Imagem do colunista ".concat(column_name)
-  }, /*#__PURE__*/React__default.createElement(Image$1, {
+  }, /*#__PURE__*/React__default.createElement(Image$2, {
     domain: domain,
     value: image
   }))), /*#__PURE__*/React__default.createElement(Block, {
@@ -4605,7 +4644,7 @@ exports.ColumnHeader = ColumnHeader;
 exports.Form = index;
 exports.Grid = Grid;
 exports.Image = Image;
-exports.ImageBackground = Image$1;
+exports.ImageBackground = Image$2;
 exports.ImageGallery = ImageGallery;
 exports.SearchForm = SearchForm;
 exports.SearchMenu = SearchMenu;
