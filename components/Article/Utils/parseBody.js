@@ -62,6 +62,9 @@ const parseBody = (content) => {
     }
 
     // render image
+    if(tag === 'img' && attr.src && attr.src.startsWith('/legacy/image'))
+      bodyItems.push({type: 'ImageLegacy', value: {'image-legacy': attr.src}})
+
     if(tag === 'a' && attr.class && attr.class === 'p-smartembed') {
       const childImage = find(child, {tag: 'img'});
       if(childImage) {
@@ -75,7 +78,6 @@ const parseBody = (content) => {
         bodyItems.push({type: 'Image', value: propsImage});
       }
     }
-      
     // render embed
     if(tag === 'a' && attr.href && !attr.class && attr.href !== '') {
       

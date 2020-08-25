@@ -5,6 +5,7 @@ import React from 'react';
 import AdBlock from '../AdBlock';
 import Block from '../Block';
 import Image from '../Image';
+import ImageLegacy from '../Image/Legacy';
 import Paragraph from './Paragraph';
 import {parseBody} from './Utils';
 
@@ -44,7 +45,9 @@ const TextBody = ({adsblocks, content, domain, embeds}) => {
       case 'Facebook':
         return embeds && embeds.Facebook && <embeds.Facebook key={key} value={value} />;
       case 'Image':
-        return <Block custom="article-image-embed" mb="3"><Image domain={domain} key={key} value={value} /></Block>;
+        return <Block key={key} custom="article-image-embed" mb="3"><Image domain={domain} value={value} /></Block>;
+      case 'ImageLegacy':
+        return <Block key={key} custom="article-image-embed" mb="3"><ImageLegacy domain={domain} value={value} /></Block>;
       case 'Instagram':
         return embeds && embeds.Instagram && <embeds.Instagram key={key} value={value} />;
       case 'Tweet':
