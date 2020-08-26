@@ -9,10 +9,10 @@ const parseBody = (content) => {
     node === 'element' && tag !== 'a' &&
       map(child, (item) => switchNode(item));
 
-    const enabledTags = ['p', 'em', 'h2'];
+    const enabledTags = ['div', 'span', 'p', 'em', 'h2'];
     const embedTags = ['facebook.com', 'youtube.com', 'twitter.com', 'instagram.com'];
     
-    if(enabledTags.indexOf(tag) > -1) {
+    if(!tag || enabledTags.indexOf(tag) > -1) {
 
       let contentText = '';
 

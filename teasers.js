@@ -3443,17 +3443,36 @@ function cleanEscapedString(input) {
 }
 
 var datePtBrFull = function datePtBrFull(date) {
-  var _date = new Date(date);
+  if (!date) return false;
+  var d = date.replace("T", " ");
 
+  var _y = d.split('-');
+
+  var _d = _y[2].split(' ');
+
+  var _t = _d.length > 1 ? _d[1].split(':') : [0, 0];
+
+  var _date = new Date(_y[0], _y[1] - 1, _d[0], _t[0], _t[1]);
+
+  if (!(_date instanceof Date)) return false;
   return "".concat(format(_date, "dd/MM/yyyy"), " \xE0s ").concat(format(_date, "HH:mm"));
 };
 
 var dateDistance = function dateDistance(date, limit) {
-  var _now = new Date();
+  if (!date) return false;
+  var d = date.replace("T", " ");
 
-  var _date = new Date(date);
+  var _y = d.split('-');
 
-  var distanteInWords = formatDistance$2(_date, _now, {
+  var _d = _y[2].split(' ');
+
+  var _t = _d.length > 1 ? _d[1].split(':') : [0, 0];
+
+  var _now = new Date().getTime();
+
+  var _date = new Date(_y[0], _y[1] - 1, _d[0], _t[0], _t[1]).getTime();
+
+  var distanteInWords = formatDistance$2(_now, _date, {
     locale: locale$1
   });
   var diffHours = differenceInHours(_now, _date, {
