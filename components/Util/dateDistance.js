@@ -6,10 +6,15 @@ import datePtBrFull from './datePtBrFull'
 
 const dateDistance = (date, limit) => {
 
-  const _now = new Date()
-  const _date = new Date(date)
-  
-  const distanteInWords = formatDistance(_date, _now, {locale: pt})
+  if(!date) return false
+  let d = date.replace("T", " ")
+  let _y = d.split('-')
+  let _d = _y[2].split(' ')
+  let _t = _d.length > 1 ? _d[1].split(':') : [0, 0]
+  let _now = new Date().getTime()
+  let _date = new Date(_y[0], _y[1] - 1, _d[0], _t[0], _t[1]).getTime()
+
+  const distanteInWords = formatDistance(_now, _date, {locale: pt})
   const diffHours = differenceInHours(_now, _date, {locale: pt})
 
   if(diffHours > limit)

@@ -17,7 +17,7 @@ const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, 
   const propsDate = {custom: 'teaser-date',w: '100p'}
   const propsSubject = {custom: 'teaser-subject',mb: '1'}
   const propsTitle = {custom: 'teaser-title'}
-  
+
   let dateValue = 
     !datePublished && content['time-modifiedDate'] ? 
       utils.dateDistance(content['time-modifiedDate'], 2880) :
