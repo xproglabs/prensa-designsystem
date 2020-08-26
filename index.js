@@ -557,10 +557,10 @@ var parseBody = function parseBody(content) {
     node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
       return switchNode(item);
     });
-    var enabledTags = ['p', 'em', 'h2'];
+    var enabledTags = ['div', 'span', 'p', 'em', 'h2'];
     var embedTags = ['facebook.com', 'youtube.com', 'twitter.com', 'instagram.com'];
 
-    if (enabledTags.indexOf(tag) > -1) {
+    if (!tag || enabledTags.indexOf(tag) > -1) {
       var contentText = '';
       lodash.map(child, function (children) {
         // render h2, em and pure text
