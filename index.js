@@ -1374,9 +1374,13 @@ var Topbar = function Topbar(_ref) {
     align: "row middle between",
     custom: "wrap",
     w: "100p"
-  }, /*#__PURE__*/React__default.createElement(Block, null, LeftContent && /*#__PURE__*/React__default.createElement(LeftContent, {
+  }, /*#__PURE__*/React__default.createElement(Block, {
+    custom: "left"
+  }, LeftContent && /*#__PURE__*/React__default.createElement(LeftContent, {
     functions: functions
-  })), /*#__PURE__*/React__default.createElement(Block, null, CenterContent && /*#__PURE__*/React__default.createElement(CenterContent, null)), /*#__PURE__*/React__default.createElement(Block, null, RightContent && /*#__PURE__*/React__default.createElement(RightContent, null))));
+  })), /*#__PURE__*/React__default.createElement(Block, null, CenterContent && /*#__PURE__*/React__default.createElement(CenterContent, null)), /*#__PURE__*/React__default.createElement(Block, {
+    custom: "right"
+  }, RightContent && /*#__PURE__*/React__default.createElement(RightContent, null))));
 };
 
 var LeftMenuIcon = function LeftMenuIcon(_ref2) {
