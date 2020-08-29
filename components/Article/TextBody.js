@@ -2,14 +2,13 @@ import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import AdBlock from '../AdBlock';
 import Block from '../Block';
 import Image from '../Image';
 import ImageLegacy from '../Image/Legacy';
 import Paragraph from './Paragraph';
 import {parseBody} from './Utils';
 
-const TextBody = ({adsblocks, content, domain, embeds}) => {
+const TextBody = ({AdComponent, adsblocks, content, domain, embeds}) => {
   
   if (!content) return null;
   const bodyItems = parseBody(content);
@@ -21,7 +20,7 @@ const TextBody = ({adsblocks, content, domain, embeds}) => {
     ads_p++
     if(ads_p > ads_t)
       return false
-    return <AdBlock content={adsblocks[ads_p - 1]} />
+    return <AdComponent content={adsblocks[ads_p - 1]} />
   }
   const RenderParagraph = ({value}) => {
     let has_ads = false
@@ -59,6 +58,7 @@ const TextBody = ({adsblocks, content, domain, embeds}) => {
 };
 
 TextBody.propTypes = {
+  AdComponent: PropTypes.node,
   adsblocks: PropTypes.array,
   content: PropTypes.string.isRequired,
   domain: PropTypes.string,
