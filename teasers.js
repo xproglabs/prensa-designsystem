@@ -3547,6 +3547,7 @@ var Teaser = function Teaser(_ref) {
   var propsTitle = {
     custom: 'teaser-title'
   };
+  if (!content['time-published']) return false;
   var dateValue = !datePublished && content['time-modifiedDate'] ? utils.dateDistance(content['time-modifiedDate'], 2880) : utils.datePtBrFull(content['time-published']);
   dateValue = datePublished ? "Publicado em ".concat(dateValue) : dateValue.startsWith("Há") ? dateValue.replace("H\xE1", "Atualizado h\xE1") : "Atualizado em ".concat(dateValue);
   var path_split = path.split(":8080");
