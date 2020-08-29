@@ -7,4 +7,8 @@ $topbar-height: 70px !default;
   .wrap {
     @include mw($xl);
   }
+  .left,
+  .right {
+    @include w(96px);
+  }
 }

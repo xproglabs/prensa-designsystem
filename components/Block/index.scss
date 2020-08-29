@@ -15,4 +15,8 @@
 .has-border-bottom {
   @include bb(1px, solid, $color-neutral-9);
   @include pb($space-size-2);
+  a {
+    @include w($space-size-4);
+    @include mr($space-size-4);
+  }
 }
