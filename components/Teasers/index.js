@@ -1,14 +1,13 @@
-import PropTypes from 'prop-types'
 import React from 'react'
+import PropTypes from 'prop-types'
 import Block from '../Block'
-import Image from '../Image/Teaser'
+import ImageBackground from '../Image/Background'
 import Subject from '../Subject'
 import Typography from '../Typography'
 import utils from '../Util'
 
-const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, status}) => {
+const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy}) => {
   const {image, name, path, subject, subtitle} = content
-  const {loading, error} = status
   const propsTeaser = {align: hasImageTop ? 'col' : 'row left',custom: 'teaser-default',mb: '2'}
   const propsImage = {align: 'row',custom: `teaser-image ${hasImageTop ? 'image-top' : 'image-left'}`}
   const propsContent = {custom: 'teaser-content',align: 'col',mb: '3',ml: '2',mr: '2',mt: '3',w: '100p-4',}
@@ -36,16 +35,10 @@ const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, 
   const url_rewrite = path_split.length > 1 ? `${domain}${path_split[1]}` : path
 
   const TeaserImage = () => {
-    if (loading || error || !image) 
-      return <div className='image-box skeleton'/>
-
-    if(!image['image-contentId'])
-      return null 
-
     return (
       <Block {...propsImage}>
         <a className='teaser-aria' href={url_rewrite} aria-label={`Imagem da matéria ${name}`}>
-          <Image domain={domain} value={image} />
+          <ImageBackground domain={domain} content={image} lazy={lazy} />
         </a>
       </Block>
     )

@@ -16,4 +16,7 @@
       @include mb($space-size-3);
     }
   }
+  .image-background {
+    @include h(280px);
+  }
 }

@@ -75,23 +75,6 @@ $teaser-date-size: 12px !default;
     @include lh($teaser-date-height);
   }
 }
-.image-background {
-  @include bg($color-neutral-10);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.image-box {
-  @include h(210px);
-  @include w(280px);
-  @media (max-width: $md) {
-    @include w(64px);
-    @include h(64px);
-  }
-  background-position-x: center;
-  background-position-y: center;
-  background-repeat: no-repeat;
-}
 .skeleton {
   @include bg($color-neutral-9);
 }
@@ -100,25 +83,10 @@ $teaser-date-size: 12px !default;
   cursor: pointer;
 }
 .teaser-image {
-  &.image-left {
-    .image-background {
-      @include w(100%);
-    }
-  }
-  &.image-top {
-    .image-background {
-      @include w(100%);
-    }
-  }
   @media (min-width: $md) {
     &.image-left {
       .image-background {
         @include w(280px);
-      }
-    }
-    &.image-top {
-      .image-background {
-        @include w(100%);
       }
     }
   }

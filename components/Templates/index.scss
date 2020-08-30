@@ -161,7 +161,6 @@ $latest-1-teaser-image-width: 280px;
     &.image-top {
       .image-background {
         @include h($latest-1-teaser-image-height);
-        @include w(100%);
       }
     }
   }

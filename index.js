@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var classnames = _interopDefault(require('classnames'));
 var PropTypes = _interopDefault(require('prop-types'));
 var React = require('react');
 var React__default = _interopDefault(React);
-var classnames = _interopDefault(require('classnames'));
 var lodash = require('lodash');
 var html2json = require('html2json');
 
@@ -141,6 +141,200 @@ Block.propTypes = {
 };
 Block.defaultProps = {};
 
+var Button = function Button(props) {
+  var style = classnames(_defineProperty({
+    'button': true,
+    'bg-primary-1': props.style === 'primary' && !props.disabled,
+    'fc-white': props.style === 'primary' && !props.disabled,
+    'secondary': props.style === 'secondary' && !props.disabled,
+    'tertiary': props.style === 'tertiary' && !props.disabled,
+    'disabled': props.disabled
+  }, "".concat(props.custom), props.custom));
+  return /*#__PURE__*/React__default.createElement("button", {
+    className: style,
+    onClick: props.disabled ? null : props.onClick
+  }, props.children);
+};
+
+Button.propTypes = {
+  children: PropTypes.node,
+  custom: PropTypes.string,
+  style: PropTypes.string,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func
+};
+Button.defaultProps = {
+  style: 'primary'
+};
+
+var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
+  if (!policy_id) return null;
+  var w = width || 1000;
+  var r = domain || 'https://costanorte.com.br';
+  var d = derivative || '2x1';
+  var id = policy_id.split(".");
+  var string = id.length > 2 ? "".concat(policy_id, ":").concat(id[2]) : "".concat(policy_id);
+  var path = "".concat(r, "/image/policy:").concat(string, "/image.jpg?f=").concat(d, "&w=").concat(w);
+  return path;
+};
+
+var Image = function Image(_ref) {
+  var children = _ref.children,
+      content = _ref.content,
+      custom = _ref.custom,
+      domain = _ref.domain,
+      height = _ref.height,
+      lazy = _ref.lazy,
+      placeholder = _ref.placeholder;
+  var img_placeholder = placeholder || null;
+
+  if (content['image-contentId']) {
+    var policy_id = content['image-contentId'];
+    var derivative = "2x1";
+    var width = 1000;
+    content['image-path'] = pathToImage(derivative, domain, policy_id, width);
+    img_placeholder = img_placeholder || pathToImage(derivative, domain, policy_id, 10);
+  }
+
+  var content_path = content['image-path'];
+  var image_style;
+
+  if (lazy) {
+    image_style = {
+      backgroundImage: "url(".concat(lazy(content_path, img_placeholder), ")")
+    };
+  } else {
+    image_style = {
+      backgroundImage: "url(".concat(content_path, ")")
+    };
+  }
+
+  if (height) {
+    image_style.height = height;
+  }
+
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: "image-background ".concat(custom || ''),
+    style: image_style
+  }, children && children);
+};
+
+Image.propTypes = {
+  children: PropTypes.node,
+  content: PropTypes.object.isRequired,
+  custom: PropTypes.string,
+  domain: PropTypes.string,
+  height: PropTypes.string,
+  lazy: PropTypes.func,
+  placeholder: PropTypes.string
+};
+Image.defaultProps = {
+  content: {}
+};
+
+var ColumnHeader = function ColumnHeader(_ref) {
+  var domain = _ref.domain,
+      item = _ref.item;
+  if (!item) return null;
+  var path = "";
+  var image = item["column-image"] && item["column-image"]["image-contentId"] && item["column-image"];
+  var column_name = item["column-name"];
+  var column_description = item["column-desc"];
+  return /*#__PURE__*/React__default.createElement(Block, {
+    align: "row",
+    custom: "column-header",
+    mb: "3",
+    p: "3",
+    w: "100p-6"
+  }, /*#__PURE__*/React__default.createElement(Block, null, /*#__PURE__*/React__default.createElement("a", {
+    className: "teaser-aria",
+    href: path,
+    "aria-label": "Imagem do colunista ".concat(column_name)
+  }, /*#__PURE__*/React__default.createElement(Image, {
+    domain: domain,
+    content: image
+  }))), /*#__PURE__*/React__default.createElement(Block, {
+    align: "middle",
+    ml: "2"
+  }, /*#__PURE__*/React__default.createElement(Block, {
+    custom: "title"
+  }, column_name), /*#__PURE__*/React__default.createElement(Block, {
+    custom: "subtitle"
+  }, column_description)));
+};
+
+ColumnHeader.propTypes = {
+  item: PropTypes.object
+};
+ColumnHeader.defaultProps = {
+  item: []
+};
+
+var Input = function Input(_ref) {
+  var autoFocus = _ref.autoFocus,
+      disabled = _ref.disabled,
+      invalid = _ref.invalid,
+      label = _ref.label,
+      onEnter = _ref.onEnter,
+      setValue = _ref.setValue,
+      type = _ref.type,
+      value = _ref.value,
+      warning = _ref.warning;
+
+  var KeyDown = function KeyDown(_ref2) {
+    var key = _ref2.key;
+    return key === 'Enter' && onEnter && onEnter();
+  };
+
+  var Label = function Label() {
+    return /*#__PURE__*/React__default.createElement("p", {
+      className: 'label'
+    }, label && label);
+  };
+
+  var Warning = function Warning() {
+    return /*#__PURE__*/React__default.createElement("p", {
+      className: 'warning'
+    }, warning && invalid ? warning : ' ');
+  };
+
+  var props = {
+    autoFocus: autoFocus,
+    defaultValue: value,
+    disabled: disabled,
+    onChange: function onChange(_ref3) {
+      var target = _ref3.target;
+      return setValue(target.value);
+    },
+    onKeyDown: KeyDown,
+    type: type
+  };
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
+  }, /*#__PURE__*/React__default.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React__default.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React__default.createElement("input", props), /*#__PURE__*/React__default.createElement(Warning, null));
+};
+
+Input.propTypes = {
+  autoFocus: PropTypes.bool,
+  disabled: PropTypes.bool,
+  invalid: PropTypes.bool,
+  label: PropTypes.string,
+  onEnter: PropTypes.func,
+  setValue: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  warning: PropTypes.string
+};
+Input.defaultProps = {
+  autofocus: false,
+  disabled: 'disabled',
+  invalid: false,
+  type: 'text'
+};
+var index = {
+  Input: Input
+};
+
 var Grid = function Grid(props) {
   var xs = props.xs,
       sm = props.sm,
@@ -263,783 +457,60 @@ Grid.propTypes = {
   md: PropTypes.oneOf([25, 33, 50, 75, 100])
 };
 
-var Image = function Image(_ref) {
-  var domain = _ref.domain,
-      value = _ref.value;
-  if (!value || !value['image-contentId']) return false;
-  var contentid = value['image-contentId'];
-  var captionAndByline = value['image-subtitle'] ? "".concat(value['image-subtitle'], " (").concat(value['image-byline'], ")") : "".concat(value['image-subtitle-original'], " (").concat(value['image-byline'], ")");
-  var width = 1000;
-  var derivative = '2x1';
-
-  var _cid = contentid.split(".");
-
-  var versioned = _cid.length > 2 ? "".concat(contentid, ":").concat(_cid[2]) : "".concat(contentid);
-  var imagePath = "".concat(domain, "/image/policy:").concat(versioned, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
-  return /*#__PURE__*/React__default.createElement(Block, {
-    custom: "article-image-box",
-    w: "100p"
-  }, /*#__PURE__*/React__default.createElement("img", {
-    className: "image-article",
-    src: imagePath,
-    alt: captionAndByline ? captionAndByline : "Imagem ".concat(contentid)
-  }), /*#__PURE__*/React__default.createElement(Block, {
-    custom: "label"
-  }, captionAndByline));
-};
-
-Image.propTypes = {
-  value: PropTypes.object.isRequired
-};
-Image.defaultProps = {
-  value: {}
-};
-
-var SocialMedias = function SocialMedias(props) {
-  var content = props.content;
-  if (!content) return null;
-  var propsSocialMedia = {
-    align: 'row evenly'
-  };
-  var propsSocialCirlce = {
-    mr: '1',
-    custom: 'social-circle',
-    'md': {
-      mr: '0',
-      ml: '1'
-    }
-  };
-  return /*#__PURE__*/React__default.createElement(Block, propsSocialMedia, lodash.map(content, function (item, k) {
-    return /*#__PURE__*/React__default.createElement("a", {
-      href: item.path,
-      key: k
-    }, /*#__PURE__*/React__default.createElement(Block, propsSocialCirlce, item.icon));
-  }));
-};
-
-SocialMedias.propTypes = {
-  content: PropTypes.array.isRequired
-};
-
-var Typography = function Typography(props) {
-  var _classnames;
-
-  var children = props.children,
-      custom = props.custom,
-      size = props.size,
-      tokenVariant = props.tokenVariant;
-
-  var getTokenVariant = function getTokenVariant() {
-    switch (tokenVariant) {
-      case 'article-title':
-        return 'article-title';
-
-      case 'article-title-intro':
-        return 'article-title-intro';
-
-      case 'article-subtitle':
-        return 'article-subtitle';
-
-      case 'article-subtitle-intro':
-        return 'article-subtitle-intro';
-
-      case 'article-paragraph':
-        return 'article-paragraph';
-
-      case 'article-tag':
-        return 'article-tag';
-
-      case 'title':
-        return "title-".concat(size);
-
-      case 'subtitle':
-        return "subtitle-".concat(size);
-
-      case 'paragraph':
-        return "paragraph-".concat(size);
-
-      case 'subject':
-        return "subject-".concat(size);
-
-      case 'system':
-        return "system-".concat(size);
-
-      case 'system-bold':
-        return "system-".concat(size, " bold");
-
-      default:
-        return '';
-    }
-  };
-
-  var classes = classnames((_classnames = {
-    'typography-root': true
-  }, _defineProperty(_classnames, getTokenVariant(), true), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
-
-  switch (tokenVariant) {
-    case 'article-title':
-    case 'title':
-      return /*#__PURE__*/React__default.createElement("h1", {
-        className: classes
-      }, children);
-
-    case 'article-paragraph':
-      return /*#__PURE__*/React__default.createElement("p", {
-        className: classes,
-        dangerouslySetInnerHTML: {
-          __html: children
-        }
-      });
-
-    default:
-      return /*#__PURE__*/React__default.createElement("span", {
-        className: classes
-      }, children);
-  }
-};
-
-Typography.defaultProps = {
-  weight: 'regular',
-  size: 'sm'
-};
-Typography.propTypes = {
-  /**
-   * Texto que será inserido na tela
-   */
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
-
-  /**
-   * Permite a passagem de class customizado para o componente
-   */
-  custom: PropTypes.string,
-
-  /**
-   * Modifica o tamanho da fonte de acordo com as guias do design
-   */
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-title-intro', 'article-subtitle', 'article-subtitle-intro', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
-};
-
-var Subject = function Subject(props) {
-  var children = props.children,
-      custom = props.custom,
-      filled = props.filled;
-  if (!children) return null;
-  var classes = classnames(_defineProperty({
-    'subject-root': true,
-    'filled bg-primary-1': filled
-  }, "".concat(custom), custom));
-  return /*#__PURE__*/React__default.createElement("div", {
-    className: classes
-  }, /*#__PURE__*/React__default.createElement(Typography, {
-    tokenVariant: "subject"
-  }, children));
-};
-
-Subject.propTypes = {
-  children: PropTypes.string.isRequired,
-  custom: PropTypes.string,
-  filled: PropTypes.bool // size: PropTypes.oneOf([
-  //   'sm', 'md', 'lg'
-  // ])
-
-};
-
-var Tags = function Tags(props) {
-  var custom = props.custom,
-      content = props.content,
-      _onClick = props.onClick;
-
-  var renderTag = function renderTag(tag, k) {
-    return /*#__PURE__*/React__default.createElement("div", {
-      key: k,
-      className: "tag",
-      onClick: function onClick() {
-        return _onClick(tag);
-      }
-    }, /*#__PURE__*/React__default.createElement(Typography, {
-      tokenVariant: "article-tag"
-    }, tag));
-  };
-
-  var propsWrap = _objectSpread2({
-    align: 'row wrap',
-    w: '100p'
-  }, custom);
-
-  return /*#__PURE__*/React__default.createElement(Block, propsWrap, lodash.map(content, function (item, k) {
-    return renderTag(item, k);
-  }));
-};
-
-Tags.propTypes = {
-  custom: PropTypes.string,
-  content: PropTypes.array.isRequired,
-  onClick: PropTypes.func.isRequired
-};
-
-var AdBlock = function AdBlock(_ref) {
-  var content = _ref.content;
-  var gpt_mobile_class = content["gpt-mobile-status"] === "true" ? "ads-block mobile-on" : "ads-block mobile-off";
-  var gpt_desktop_class = content["gpt-desktop-status"] === "true" ? "ads-block desktop-on" : "ads-block desktop-off";
-  React__default.useEffect(function () {
-    window.googletag.cmd.push(function () {
-      return googletag.display(content["gpt-mobile-code"]);
-    });
-    window.googletag.cmd.push(function () {
-      return googletag.display(content["gpt-desktop-code"]);
-    });
-  }, []);
-  return /*#__PURE__*/React__default.createElement(Block, {
-    align: "center",
-    custom: "blocks-ads",
-    mb: "6",
-    mt: "2"
-  }, /*#__PURE__*/React__default.createElement(Block, {
-    custom: gpt_mobile_class
-  }, /*#__PURE__*/React__default.createElement("div", {
-    id: content["gpt-mobile-code"]
-  })), /*#__PURE__*/React__default.createElement(Block, {
-    custom: gpt_desktop_class
-  }, /*#__PURE__*/React__default.createElement("div", {
-    id: content["gpt-desktop-code"]
-  })));
-};
-
-AdBlock.propTypes = {
-  content: PropTypes.object
-};
-
 var Image$1 = function Image(_ref) {
-  var domain = _ref.domain,
-      value = _ref.value;
-  if (!value || !value['image-legacy']) return false;
-  var imagePath = "".concat(value['image-legacy']);
-  return /*#__PURE__*/React__default.createElement(Block, {
-    custom: "article-image-box",
-    w: "100p"
-  }, /*#__PURE__*/React__default.createElement("img", {
-    className: "image-article",
-    src: imagePath,
-    alt: "Imagem importada do sistema legado"
-  }));
+  var content = _ref.content,
+      custom = _ref.custom,
+      domain = _ref.domain,
+      lazy = _ref.lazy,
+      placeholder = _ref.placeholder;
+  var img_placeholder = placeholder || null;
+
+  if (content['image-contentId']) {
+    var policy_id = content['image-contentId'];
+    var derivative = "2x1";
+    var width = 1000;
+    content['image-path'] = pathToImage(derivative, domain, policy_id, width);
+    img_placeholder = img_placeholder || pathToImage(derivative, domain, policy_id, 10);
+  }
+
+  if (content['image-legacy']) {
+    content['image-path'] = content['image-legacy'];
+    content['image-subtitle'] = "Imagem importada do sistema legado / Reprodução";
+    img_placeholder = '';
+  }
+
+  if (content['image-path']) {
+    var content_path = content['image-path'];
+
+    if (lazy) {
+      content_path = lazy(content_path, img_placeholder);
+    }
+
+    var byline = !content['image-byline'] || content['image-byline'] == "undefined" ? null : content['image-byline'];
+    var caption_byline = content['image-subtitle'] ? "".concat(content['image-subtitle']).concat(byline && " (".concat(byline, ")")) : "".concat(content['image-subtitle-original']).concat(byline && " (".concat(byline, ")"));
+    return /*#__PURE__*/React__default.createElement(Block, {
+      custom: "image-box ".concat(custom),
+      w: "100p"
+    }, /*#__PURE__*/React__default.createElement("img", {
+      alt: caption_byline ? caption_byline : "Reprodu\xE7\xE3o",
+      src: content_path
+    }), /*#__PURE__*/React__default.createElement(Block, {
+      custom: "label"
+    }, caption_byline));
+  }
+
+  return /*#__PURE__*/React__default.createElement("pre", null, "no-image");
 };
 
 Image$1.propTypes = {
-  value: PropTypes.object.isRequired
+  content: PropTypes.object.isRequired,
+  custom: PropTypes.string,
+  domain: PropTypes.string,
+  lazy: PropTypes.func,
+  placeholder: PropTypes.string
 };
 Image$1.defaultProps = {
-  value: {}
-};
-
-var Paragraph = function Paragraph(_ref) {
-  var value = _ref.value;
-  return /*#__PURE__*/React__default.createElement(Typography, {
-    tokenVariant: "article-paragraph"
-  }, value);
-};
-
-Paragraph.propTypes = {
-  value: PropTypes.string.isRequired
-};
-Paragraph.defaultProps = {
-  value: {}
-};
-
-var parseBody = function parseBody(content) {
-  var bodyItems = [];
-
-  var switchNode = function switchNode(_ref) {
-    var attr = _ref.attr,
-        child = _ref.child,
-        node = _ref.node,
-        tag = _ref.tag;
-    node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
-      return switchNode(item);
-    });
-    var enabledTags = ['div', 'span', 'p', 'em', 'h2'];
-    var embedTags = ['facebook.com', 'youtube.com', 'twitter.com', 'instagram.com'];
-
-    if (!tag || enabledTags.indexOf(tag) > -1) {
-      var contentText = '';
-      lodash.map(child, function (children) {
-        // render h2, em and pure text
-        if (children.node === 'text' && tag === 'h2') {
-          contentText = "".concat(contentText, "<span class=\"paragraph-title\">").concat(children.text, "</span>");
-        } else if (children.node === 'text' && tag === 'em') {
-          contentText = "".concat(contentText, "<i>").concat(children.text, "</i>");
-        } else if (children.node === 'text') {
-          contentText = "".concat(contentText).concat(children.text);
-        } // render a
-
-
-        if (children.tag === 'a' && children.attr["class"] !== 'p-smartembed') {
-          var text = children.child && children.child.length > 0 ? children.child[0].text : children.attr['aria-label']; // check if is not an embed
-
-          var isEmbed = false;
-
-          if (text) {
-            lodash.map(embedTags, function (tag) {
-              if (text.indexOf(tag) > -1) {
-                isEmbed = true;
-              }
-            });
-          }
-
-          if (!isEmbed) {
-            var _attr = '';
-            lodash.map(children.attr, function (value, key) {
-              _attr = "".concat(_attr, " ").concat(key, "=").concat(value);
-            });
-            contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(text, "</a>");
-          }
-        }
-      }); // add paragraph
-
-      if (contentText && contentText !== '') {
-        bodyItems.push({
-          type: 'Paragraph',
-          value: contentText
-        });
-      }
-    } // render image
-
-
-    if (tag === 'img' && attr.src && attr.src.startsWith('/legacy/image')) bodyItems.push({
-      type: 'ImageLegacy',
-      value: {
-        'image-legacy': attr.src
-      }
-    });
-
-    if (tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed') {
-      var childImage = lodash.find(child, {
-        tag: 'img'
-      });
-
-      if (childImage) {
-        var subtitle = childImage && childImage.attr && childImage.attr['alt'] && childImage.attr['alt'].toString();
-        subtitle = lodash.replace(subtitle, new RegExp(',', 'g'), ' ');
-        var propsImage = {
-          'image-contentId': attr['data-onecms-id'].replace('policy:', ''),
-          'image-subtitle': subtitle,
-          'image-byline': ''
-        };
-        bodyItems.push({
-          type: 'Image',
-          value: propsImage
-        });
-      }
-    } // render embed
-
-
-    if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
-      if (attr['href'].indexOf('facebook.com') > -1) {
-        bodyItems.push({
-          type: 'Facebook',
-          value: attr['href']
-        });
-      } else if (attr['href'].indexOf('instagram.com') > -1) {
-        bodyItems.push({
-          type: 'Instagram',
-          value: attr['href']
-        });
-      } else if (attr['href'].indexOf('twitter.com') > -1) {
-        bodyItems.push({
-          type: 'Tweet',
-          value: attr['href']
-        });
-      } else if (attr['href'].indexOf('youtube.com') > -1) {
-        bodyItems.push({
-          type: 'Youtube',
-          value: attr['href']
-        });
-      }
-    }
-  }; // convert html
-
-
-  var parsed = html2json.html2json(content);
-  var elements = lodash.filter(parsed.child, {
-    node: 'element'
-  }); // parse elements
-
-  lodash.map(elements, function (item) {
-    return switchNode(item);
-  });
-  return bodyItems;
-};
-
-var TextBody = function TextBody(_ref) {
-  var adsblocks = _ref.adsblocks,
-      content = _ref.content,
-      domain = _ref.domain,
-      embeds = _ref.embeds;
-  if (!content) return null;
-  var bodyItems = parseBody(content);
-  var ads_p = 0;
-  var ads_t = adsblocks.length;
-  var count_p = 0;
-
-  var RenderAds = function RenderAds() {
-    ads_p++;
-    if (ads_p > ads_t) return false;
-    return /*#__PURE__*/React__default.createElement(AdBlock, {
-      content: adsblocks[ads_p - 1]
-    });
-  };
-
-  var RenderParagraph = function RenderParagraph(_ref2) {
-    var value = _ref2.value;
-    var has_ads = false;
-    count_p++;
-
-    if (count_p === 2) {
-      count_p = 0;
-      has_ads = true;
-    }
-
-    return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement(Paragraph, {
-      value: value
-    }), has_ads && /*#__PURE__*/React__default.createElement(RenderAds, null));
-  };
-
-  return lodash.map(bodyItems, function (_ref3, key) {
-    var type = _ref3.type,
-        value = _ref3.value;
-
-    switch (type) {
-      case 'Paragraph':
-        return /*#__PURE__*/React__default.createElement(RenderParagraph, {
-          key: key,
-          value: value
-        });
-
-      case 'Facebook':
-        return embeds && embeds.Facebook && /*#__PURE__*/React__default.createElement(embeds.Facebook, {
-          key: key,
-          value: value
-        });
-
-      case 'Image':
-        return /*#__PURE__*/React__default.createElement(Block, {
-          key: key,
-          custom: "article-image-embed",
-          mb: "3"
-        }, /*#__PURE__*/React__default.createElement(Image, {
-          domain: domain,
-          value: value
-        }));
-
-      case 'ImageLegacy':
-        return /*#__PURE__*/React__default.createElement(Block, {
-          key: key,
-          custom: "article-image-embed",
-          mb: "3"
-        }, /*#__PURE__*/React__default.createElement(Image$1, {
-          domain: domain,
-          value: value
-        }));
-
-      case 'Instagram':
-        return embeds && embeds.Instagram && /*#__PURE__*/React__default.createElement(embeds.Instagram, {
-          key: key,
-          value: value
-        });
-
-      case 'Tweet':
-        return embeds && embeds.Tweet && /*#__PURE__*/React__default.createElement(embeds.Tweet, {
-          key: key,
-          value: value
-        });
-
-      case 'Youtube':
-        return embeds && embeds.Youtube && /*#__PURE__*/React__default.createElement(embeds.Youtube, {
-          key: key,
-          value: value
-        });
-    }
-  });
-};
-
-TextBody.propTypes = {
-  adsblocks: PropTypes.array,
-  content: PropTypes.string.isRequired,
-  domain: PropTypes.string,
-  embeds: PropTypes.object
-};
-TextBody.defaultProps = {
   content: {}
-};
-
-var _PropTypes$shape;
-
-var Article = function Article(_ref) {
-  var content = _ref.content,
-      embeds = _ref.embeds,
-      handleTagClick = _ref.handleTagClick,
-      socialMedias = _ref.socialMedias;
-  var author = content.author,
-      images = content.images,
-      metadata = content.metadata,
-      subject = content.subject,
-      subtitle = content.subtitle,
-      text = content.text,
-      title = content.title;
-  var createdAt = content['time-created'];
-  var updatedAt = content['time-modified'];
-  var propsArticle = {
-    align: 'center',
-    custom: 'article'
-  };
-  var propsArticleHead = {
-    align: 'center',
-    custom: 'article-head',
-    w: '100p'
-  };
-  var propsArticleData = {
-    align: 'center',
-    custom: 'article-data',
-    w: '100p'
-  };
-  var propsArticleBody = {
-    align: 'center',
-    custom: 'article-body',
-    w: '100p'
-  };
-  var propsArticleInfo = {
-    align: 'column left middle',
-    custom: 'article-media has-border-bottom',
-    mb: '4',
-    w: '100p',
-    'md': {
-      align: 'row between middle'
-    }
-  };
-  var propsArticleAuthor = {
-    align: 'col',
-    custom: '',
-    w: '100p'
-  };
-  var customArticleTag = {
-    custom: 'article-tag'
-  };
-  return /*#__PURE__*/React__default.createElement(Block, propsArticle, /*#__PURE__*/React__default.createElement(Block, propsArticleHead, /*#__PURE__*/React__default.createElement(Grid, {
-    columns: 12
-  }, /*#__PURE__*/React__default.createElement(Subject, {
-    filled: true
-  }, subject), /*#__PURE__*/React__default.createElement(Typography, {
-    tokenVariant: "article-title"
-  }, title), /*#__PURE__*/React__default.createElement(Typography, {
-    tokenVariant: "article-subtitle"
-  }, subtitle))), /*#__PURE__*/React__default.createElement(Block, propsArticleData, /*#__PURE__*/React__default.createElement(Grid, {
-    columns: 12
-  }, /*#__PURE__*/React__default.createElement(Block, propsArticleInfo, /*#__PURE__*/React__default.createElement(Block, propsArticleAuthor, /*#__PURE__*/React__default.createElement(Typography, {
-    tokenVariant: "system-bold"
-  }, author), /*#__PURE__*/React__default.createElement(Typography, {
-    tokenVariant: "system"
-  }, "Criado em: ", createdAt), updatedAt && /*#__PURE__*/React__default.createElement(Typography, {
-    tokenVariant: "system"
-  }, "Atualizado em: ", updatedAt)), /*#__PURE__*/React__default.createElement(SocialMedias, {
-    content: socialMedias
-  })))), /*#__PURE__*/React__default.createElement(Block, propsArticleBody, /*#__PURE__*/React__default.createElement(Grid, {
-    columns: 12
-  }, images['image-contentId'] && /*#__PURE__*/React__default.createElement(Image, {
-    value: images
-  })), /*#__PURE__*/React__default.createElement(Grid, {
-    columns: 10
-  }, /*#__PURE__*/React__default.createElement(TextBody, {
-    content: text,
-    embeds: embeds
-  }))), /*#__PURE__*/React__default.createElement(Grid, {
-    columns: 10
-  }, /*#__PURE__*/React__default.createElement(Tags, {
-    custom: customArticleTag,
-    content: metadata,
-    onClick: handleTagClick
-  })));
-};
-
-Article.propTypes = {
-  content: PropTypes.shape((_PropTypes$shape = {
-    author: PropTypes.string.isRequired,
-    images: PropTypes.object.isRequired,
-    metadata: PropTypes.array.isRequired,
-    subject: PropTypes.string,
-    subtitle: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
-  }, _defineProperty(_PropTypes$shape, 'time-created', PropTypes.string.isRequired), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes.string.isRequired), _PropTypes$shape)),
-  handleTagClick: PropTypes.func.isRequired,
-  socialMedias: PropTypes.array,
-  embeds: PropTypes.object
-};
-Article.defaultProps = {
-  content: {}
-};
-
-var Button = function Button(props) {
-  var style = classnames(_defineProperty({
-    'button': true,
-    'bg-primary-1': props.style === 'primary' && !props.disabled,
-    'fc-white': props.style === 'primary' && !props.disabled,
-    'secondary': props.style === 'secondary' && !props.disabled,
-    'tertiary': props.style === 'tertiary' && !props.disabled,
-    'disabled': props.disabled
-  }, "".concat(props.custom), props.custom));
-  return /*#__PURE__*/React__default.createElement("button", {
-    className: style,
-    onClick: props.disabled ? null : props.onClick
-  }, props.children);
-};
-
-Button.propTypes = {
-  children: PropTypes.node,
-  custom: PropTypes.string,
-  style: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func
-};
-Button.defaultProps = {
-  style: 'primary'
-};
-
-var Image$2 = function Image(_ref) {
-  var children = _ref.children,
-      custom = _ref.custom,
-      domain = _ref.domain,
-      value = _ref.value;
-  if (!value || !value['image-contentId']) return false;
-  var contentid = value['image-contentId'];
-  var width = 1000;
-  var derivative = '2x1';
-
-  var _cid = contentid.split(".");
-
-  var versioned = "".concat(contentid, ":").concat(_cid[2]);
-  var imagePath = "".concat(domain, "/image/policy:").concat(versioned, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
-  var policyid = contentid.replace('.', '-').replace('.', '-');
-  var inlinestyle = "\n    .image-background.policy-".concat(policyid, " {\n      background-image: url(").concat(imagePath, ");\n    }");
-  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement("style", {
-    dangerouslySetInnerHTML: {
-      __html: inlinestyle
-    }
-  }), /*#__PURE__*/React__default.createElement("div", {
-    className: "image-background policy-".concat(policyid, " ").concat(custom && custom)
-  }, children && children));
-};
-
-Image$2.propTypes = {
-  children: PropTypes.node,
-  custom: PropTypes.string,
-  domain: PropTypes.string,
-  value: PropTypes.object.isRequired
-};
-Image$2.defaultProps = {
-  value: {}
-};
-
-var ColumnHeader = function ColumnHeader(_ref) {
-  var domain = _ref.domain,
-      item = _ref.item;
-  if (!item) return null;
-  var path = "";
-  var image = item["column-image"] && item["column-image"]["image-contentId"] && item["column-image"];
-  var column_name = item["column-name"];
-  var column_description = item["column-desc"];
-  return /*#__PURE__*/React__default.createElement(Block, {
-    align: "row",
-    custom: "column-header",
-    mb: "3",
-    p: "3",
-    w: "100p-6"
-  }, /*#__PURE__*/React__default.createElement(Block, null, /*#__PURE__*/React__default.createElement("a", {
-    className: "teaser-aria",
-    href: path,
-    "aria-label": "Imagem do colunista ".concat(column_name)
-  }, /*#__PURE__*/React__default.createElement(Image$2, {
-    domain: domain,
-    value: image
-  }))), /*#__PURE__*/React__default.createElement(Block, {
-    align: "middle",
-    ml: "2"
-  }, /*#__PURE__*/React__default.createElement(Block, {
-    custom: "title"
-  }, column_name), /*#__PURE__*/React__default.createElement(Block, {
-    custom: "subtitle"
-  }, column_description)));
-};
-
-ColumnHeader.propTypes = {
-  item: PropTypes.object
-};
-ColumnHeader.defaultProps = {
-  item: []
-};
-
-var Input = function Input(_ref) {
-  var autoFocus = _ref.autoFocus,
-      disabled = _ref.disabled,
-      invalid = _ref.invalid,
-      label = _ref.label,
-      onEnter = _ref.onEnter,
-      setValue = _ref.setValue,
-      type = _ref.type,
-      value = _ref.value,
-      warning = _ref.warning;
-
-  var KeyDown = function KeyDown(_ref2) {
-    var key = _ref2.key;
-    return key === 'Enter' && onEnter && onEnter();
-  };
-
-  var Label = function Label() {
-    return /*#__PURE__*/React__default.createElement("p", {
-      className: 'label'
-    }, label && label);
-  };
-
-  var Warning = function Warning() {
-    return /*#__PURE__*/React__default.createElement("p", {
-      className: 'warning'
-    }, warning && invalid ? warning : ' ');
-  };
-
-  var props = {
-    autoFocus: autoFocus,
-    defaultValue: value,
-    disabled: disabled,
-    onChange: function onChange(_ref3) {
-      var target = _ref3.target;
-      return setValue(target.value);
-    },
-    onKeyDown: KeyDown,
-    type: type
-  };
-  return /*#__PURE__*/React__default.createElement("div", {
-    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
-  }, /*#__PURE__*/React__default.createElement(Label, null), type === 'textarea' && /*#__PURE__*/React__default.createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React__default.createElement("input", props), /*#__PURE__*/React__default.createElement(Warning, null));
-};
-
-Input.propTypes = {
-  autoFocus: PropTypes.bool,
-  disabled: PropTypes.bool,
-  invalid: PropTypes.bool,
-  label: PropTypes.string,
-  onEnter: PropTypes.func,
-  setValue: PropTypes.func.isRequired,
-  type: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  warning: PropTypes.string
-};
-Input.defaultProps = {
-  autofocus: false,
-  disabled: 'disabled',
-  invalid: false,
-  type: 'text'
-};
-var index = {
-  Input: Input
 };
 
 function SvgIcArrowBack(props) {
@@ -1342,6 +813,105 @@ SideMenuItems.defaultProps = {
   content: {}
 };
 
+var Typography = function Typography(props) {
+  var _classnames;
+
+  var children = props.children,
+      custom = props.custom,
+      size = props.size,
+      tokenVariant = props.tokenVariant;
+
+  var getTokenVariant = function getTokenVariant() {
+    switch (tokenVariant) {
+      case 'article-title':
+        return 'article-title';
+
+      case 'article-title-intro':
+        return 'article-title-intro';
+
+      case 'article-subtitle':
+        return 'article-subtitle';
+
+      case 'article-subtitle-intro':
+        return 'article-subtitle-intro';
+
+      case 'article-paragraph':
+        return 'article-paragraph';
+
+      case 'article-tag':
+        return 'article-tag';
+
+      case 'title':
+        return "title-".concat(size);
+
+      case 'subtitle':
+        return "subtitle-".concat(size);
+
+      case 'paragraph':
+        return "paragraph-".concat(size);
+
+      case 'subject':
+        return "subject-".concat(size);
+
+      case 'system':
+        return "system-".concat(size);
+
+      case 'system-bold':
+        return "system-".concat(size, " bold");
+
+      default:
+        return '';
+    }
+  };
+
+  var classes = classnames((_classnames = {
+    'typography-root': true
+  }, _defineProperty(_classnames, getTokenVariant(), true), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
+
+  switch (tokenVariant) {
+    case 'article-title':
+    case 'title':
+      return /*#__PURE__*/React__default.createElement("h1", {
+        className: classes
+      }, children);
+
+    case 'article-paragraph':
+      return /*#__PURE__*/React__default.createElement("p", {
+        className: classes,
+        dangerouslySetInnerHTML: {
+          __html: children
+        }
+      });
+
+    default:
+      return /*#__PURE__*/React__default.createElement("span", {
+        className: classes
+      }, children);
+  }
+};
+
+Typography.defaultProps = {
+  weight: 'regular',
+  size: 'sm'
+};
+Typography.propTypes = {
+  /**
+   * Texto que será inserido na tela
+   */
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+
+  /**
+   * Permite a passagem de class customizado para o componente
+   */
+  custom: PropTypes.string,
+
+  /**
+   * Modifica o tamanho da fonte de acordo com as guias do design
+   */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
+  tokenVariant: PropTypes.oneOf(['article-title', 'article-title-intro', 'article-subtitle', 'article-subtitle-intro', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
+};
+
 var SectionTitle = function SectionTitle(_ref) {
   var custom = _ref.custom,
       name = _ref.name;
@@ -1356,6 +926,32 @@ var SectionTitle = function SectionTitle(_ref) {
 SectionTitle.propTypes = {
   custom: PropTypes.string,
   name: PropTypes.string
+};
+
+var SocialMedias = function SocialMedias(props) {
+  var content = props.content;
+  if (!content) return null;
+  var propsSocialMedia = {
+    align: 'row evenly'
+  };
+  var propsSocialCirlce = {
+    mr: '1',
+    custom: 'social-circle',
+    'md': {
+      mr: '0',
+      ml: '1'
+    }
+  };
+  return /*#__PURE__*/React__default.createElement(Block, propsSocialMedia, lodash.map(content, function (item, k) {
+    return /*#__PURE__*/React__default.createElement("a", {
+      href: item.path,
+      key: k
+    }, /*#__PURE__*/React__default.createElement(Block, propsSocialCirlce, item.icon));
+  }));
+};
+
+SocialMedias.propTypes = {
+  content: PropTypes.array.isRequired
 };
 
 var Topbar = function Topbar(_ref) {
@@ -1409,6 +1005,300 @@ Topbar.defaultProps = {
   content: {
     LeftContent: LeftMenuIcon
   }
+};
+
+var Subject = function Subject(props) {
+  var children = props.children,
+      custom = props.custom,
+      filled = props.filled;
+  if (!children) return null;
+  var classes = classnames(_defineProperty({
+    'subject-root': true,
+    'filled bg-primary-1': filled
+  }, "".concat(custom), custom));
+  return /*#__PURE__*/React__default.createElement("div", {
+    className: classes
+  }, /*#__PURE__*/React__default.createElement(Typography, {
+    tokenVariant: "subject"
+  }, children));
+};
+
+Subject.propTypes = {
+  children: PropTypes.string.isRequired,
+  custom: PropTypes.string,
+  filled: PropTypes.bool // size: PropTypes.oneOf([
+  //   'sm', 'md', 'lg'
+  // ])
+
+};
+
+var Tags = function Tags(props) {
+  var custom = props.custom,
+      content = props.content,
+      _onClick = props.onClick;
+
+  var renderTag = function renderTag(tag, k) {
+    return /*#__PURE__*/React__default.createElement("div", {
+      key: k,
+      className: "tag",
+      onClick: function onClick() {
+        return _onClick(tag);
+      }
+    }, /*#__PURE__*/React__default.createElement(Typography, {
+      tokenVariant: "article-tag"
+    }, tag));
+  };
+
+  var propsWrap = _objectSpread2({
+    align: 'row wrap',
+    w: '100p'
+  }, custom);
+
+  return /*#__PURE__*/React__default.createElement(Block, propsWrap, lodash.map(content, function (item, k) {
+    return renderTag(item, k);
+  }));
+};
+
+Tags.propTypes = {
+  custom: PropTypes.string,
+  content: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired
+};
+
+var Paragraph = function Paragraph(_ref) {
+  var value = _ref.value;
+  return /*#__PURE__*/React__default.createElement(Typography, {
+    tokenVariant: "article-paragraph"
+  }, value);
+};
+
+Paragraph.propTypes = {
+  value: PropTypes.string.isRequired
+};
+Paragraph.defaultProps = {
+  value: {}
+};
+
+var parseBody = function parseBody(content) {
+  var bodyItems = [];
+
+  var switchNode = function switchNode(_ref) {
+    var attr = _ref.attr,
+        child = _ref.child,
+        node = _ref.node,
+        tag = _ref.tag;
+    node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
+      return switchNode(item);
+    });
+    var enabledTags = ['div', 'span', 'p', 'em', 'h2'];
+    var embedTags = ['facebook.com', 'youtube.com', 'twitter.com', 'instagram.com'];
+
+    if (!tag || enabledTags.indexOf(tag) > -1) {
+      var contentText = '';
+      lodash.map(child, function (children) {
+        // render h2, em and pure text
+        if (children.node === 'text' && tag === 'h2') {
+          contentText = "".concat(contentText, "<span class=\"paragraph-title\">").concat(children.text, "</span>");
+        } else if (children.node === 'text' && tag === 'em') {
+          contentText = "".concat(contentText, "<i>").concat(children.text, "</i>");
+        } else if (children.node === 'text') {
+          contentText = "".concat(contentText).concat(children.text);
+        } // render a
+
+
+        if (children.tag === 'a' && children.attr["class"] !== 'p-smartembed') {
+          var text = children.child && children.child.length > 0 ? children.child[0].text : children.attr['aria-label']; // check if is not an embed
+
+          var isEmbed = false;
+
+          if (text) {
+            lodash.map(embedTags, function (tag) {
+              if (text.indexOf(tag) > -1) {
+                isEmbed = true;
+              }
+            });
+          }
+
+          if (!isEmbed) {
+            var _attr = '';
+            lodash.map(children.attr, function (value, key) {
+              _attr = "".concat(_attr, " ").concat(key, "=").concat(value);
+            });
+            contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(text, "</a>");
+          }
+        }
+      }); // add paragraph
+
+      if (contentText && contentText !== '') {
+        bodyItems.push({
+          type: 'Paragraph',
+          value: contentText
+        });
+      }
+    } // render image
+
+
+    if (tag === 'img' && attr.src && attr.src.startsWith('/legacy/image')) bodyItems.push({
+      type: 'ImageLegacy',
+      value: {
+        'image-legacy': attr.src
+      }
+    });
+
+    if (tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed') {
+      var childImage = lodash.find(child, {
+        tag: 'img'
+      });
+
+      if (childImage) {
+        var subtitle = childImage && childImage.attr && childImage.attr['alt'] && childImage.attr['alt'].toString();
+        subtitle = lodash.replace(subtitle, new RegExp(',', 'g'), ' ');
+        var propsImage = {
+          'image-contentId': attr['data-onecms-id'].replace('policy:', ''),
+          'image-subtitle': subtitle,
+          'image-byline': ''
+        };
+        bodyItems.push({
+          type: 'Image',
+          value: propsImage
+        });
+      }
+    } // render embed
+
+
+    if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
+      if (attr['href'].indexOf('facebook.com') > -1) {
+        bodyItems.push({
+          type: 'Facebook',
+          value: attr['href']
+        });
+      } else if (attr['href'].indexOf('instagram.com') > -1) {
+        bodyItems.push({
+          type: 'Instagram',
+          value: attr['href']
+        });
+      } else if (attr['href'].indexOf('twitter.com') > -1) {
+        bodyItems.push({
+          type: 'Tweet',
+          value: attr['href']
+        });
+      } else if (attr['href'].indexOf('youtube.com') > -1) {
+        bodyItems.push({
+          type: 'Youtube',
+          value: attr['href']
+        });
+      }
+    }
+  }; // convert html
+
+
+  var parsed = html2json.html2json(content);
+  var elements = lodash.filter(parsed.child, {
+    node: 'element'
+  }); // parse elements
+
+  lodash.map(elements, function (item) {
+    return switchNode(item);
+  });
+  return bodyItems;
+};
+
+var TextBody = function TextBody(_ref) {
+  var AdComponent = _ref.AdComponent,
+      adsblocks = _ref.adsblocks,
+      content = _ref.content,
+      domain = _ref.domain,
+      embeds = _ref.embeds,
+      lazy = _ref.lazy;
+  if (!content) return null;
+  var bodyItems = parseBody(content);
+  var ads_p = 0;
+  var ads_t = adsblocks.length;
+  var count_p = 0;
+
+  var RenderAds = function RenderAds() {
+    ads_p++;
+    if (ads_p > ads_t) return false;
+    return /*#__PURE__*/React__default.createElement(AdComponent, {
+      content: adsblocks[ads_p - 1]
+    });
+  };
+
+  var RenderParagraph = function RenderParagraph(_ref2) {
+    var value = _ref2.value;
+    var has_ads = false;
+    count_p++;
+
+    if (count_p === 2) {
+      count_p = 0;
+      has_ads = true;
+    }
+
+    return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement(Paragraph, {
+      value: value
+    }), has_ads && /*#__PURE__*/React__default.createElement(RenderAds, null));
+  };
+
+  return lodash.map(bodyItems, function (_ref3, key) {
+    var type = _ref3.type,
+        value = _ref3.value;
+
+    switch (type) {
+      case 'Paragraph':
+        return /*#__PURE__*/React__default.createElement(RenderParagraph, {
+          key: key,
+          value: value
+        });
+
+      case 'Facebook':
+        return embeds && embeds.Facebook && /*#__PURE__*/React__default.createElement(embeds.Facebook, {
+          key: key,
+          value: value
+        });
+
+      case 'Image':
+      case 'ImageLegacy':
+        return /*#__PURE__*/React__default.createElement(Block, {
+          custom: "article-image-embed",
+          key: key,
+          mb: "3"
+        }, /*#__PURE__*/React__default.createElement(Image$1, {
+          custom: "image-article",
+          content: value,
+          domain: domain,
+          lazy: lazy
+        }));
+
+      case 'Instagram':
+        return embeds && embeds.Instagram && /*#__PURE__*/React__default.createElement(embeds.Instagram, {
+          key: key,
+          value: value
+        });
+
+      case 'Tweet':
+        return embeds && embeds.Tweet && /*#__PURE__*/React__default.createElement(embeds.Tweet, {
+          key: key,
+          value: value
+        });
+
+      case 'Youtube':
+        return embeds && embeds.Youtube && /*#__PURE__*/React__default.createElement(embeds.Youtube, {
+          key: key,
+          value: value
+        });
+    }
+  });
+};
+
+TextBody.propTypes = {
+  AdComponent: PropTypes.func,
+  adsblocks: PropTypes.array,
+  content: PropTypes.string.isRequired,
+  domain: PropTypes.string,
+  embeds: PropTypes.object
+};
+TextBody.defaultProps = {
+  content: {}
 };
 
 function buildFormatLongFn(args) {
@@ -4659,15 +4549,13 @@ var utils = {
   datePtBrFull: datePtBrFull
 };
 
-exports.AdBlock = AdBlock;
-exports.Article = Article;
 exports.Block = Block;
 exports.Button = Button;
 exports.ColumnHeader = ColumnHeader;
 exports.Form = index;
 exports.Grid = Grid;
-exports.Image = Image;
-exports.ImageBackground = Image$2;
+exports.Image = Image$1;
+exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;
 exports.SearchForm = SearchForm;
 exports.SearchMenu = SearchMenu;

@@ -23,7 +23,7 @@ const teasermockup = {
   "path": "/nacional/dia-do-trabalho-futebol-corta-empregos-por-conta-do-coronav%C3%ADrus-1.10909",
   "subject": "AUXÍLIO EMERGENCIAL",
   "subtitle": "Parada do futebol atinge em cheio finanças de clubes como o Flamengo",
-  "time-published": "01.05.2020 7:49"
+  "time-published": "2020-05-01 07:49"
 }
 
 export const Default = () => {

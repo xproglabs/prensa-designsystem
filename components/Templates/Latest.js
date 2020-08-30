@@ -7,7 +7,7 @@ import Teaser from '../Teasers'
 import SectionTitle from '../SectionTitle'
 import MostRead from './MostRead'
 
-const Latest = ({content, domain, ReadMore, Title, status}) => {
+const Latest = ({content, domain, lazy, ReadMore, Title, status}) => {
   const propsContainer = {custom: 'templates-latest-news', align: 'col left', w: '100p', md: {align: 'row between'}}
   const propsPageLeft = {custom: 'page-left', mb: '6'}
   const propsPageRight = {custom: 'page-right'}
@@ -18,13 +18,14 @@ const Latest = ({content, domain, ReadMore, Title, status}) => {
         <Block custom="latest-news">
           {map(content["items-latest"], (item, key) => 
             <Teaser 
-              content={item} 
+              content={item}
               datePublished={true}
               domain={domain}
-              hasSubjectFilled={true} 
+              hasSubjectFilled={true}
               hasImageTop={true}
-              status={status} 
-              key={key} 
+              key={key}
+              lazy={lazy}
+              status={status}
             />
           )}
         </Block>
@@ -37,9 +38,9 @@ const Latest = ({content, domain, ReadMore, Title, status}) => {
     </Block>
   )
 }
-
 Latest.propTypes = {
   content: PropTypes.object,
+  lazy: PropTypes.func,
   ReadMore: PropTypes.func,
   Title: PropTypes.func,
   status: PropTypes.shape({
@@ -47,5 +48,4 @@ Latest.propTypes = {
     loading: PropTypes.bool
   })
 }
-
 export default Latest

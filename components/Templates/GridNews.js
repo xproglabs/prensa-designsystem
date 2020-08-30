@@ -7,7 +7,7 @@ import Teaser from '../Teasers';
 import SectionTitle from '../SectionTitle'
 
 const GridNews = props => {
-  const {content, domain, status} = props;
+  const {content, domain, lazy, status} = props;
   const {items, title} = content;
   
   const propsTemplate = {
@@ -37,6 +37,7 @@ const GridNews = props => {
             content={item}
             domain={domain}
             hasImageTop={true}
+            lazy={lazy}
             status={status}
           />
         )}
@@ -47,6 +48,7 @@ const GridNews = props => {
 GridNews.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
+  lazy: PropTypes.func,
   status: PropTypes.object
 };
 export default GridNews;

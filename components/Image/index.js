@@ -1,36 +1,51 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import Block from '../Block';
+import Block from '../Block'
+import {pathToImage} from '../Util/pathToImage'
 
-const Image = ({domain, value}) => {
-
-  if(!value || !value['image-contentId'])
-    return false;
-
-  const contentid = value['image-contentId'];
-  const captionAndByline = value['image-subtitle'] ? 
-    `${value['image-subtitle']} (${value['image-byline']})` : 
-    `${value['image-subtitle-original']} (${value['image-byline']})`;
-    
-  const width = 1000;
-  const derivative = '2x1';
-  const _cid = contentid.split(".")
-  const versioned = _cid.length > 2 ? `${contentid}:${_cid[2]}` : `${contentid}`
-  const imagePath = `${domain}/image/policy:${versioned}/image.jpg?f=${derivative}&w=${width}`;
-
-  return (
-    <Block custom="article-image-box" w="100p">
-      <img className='image-article' src={imagePath} alt={captionAndByline ? captionAndByline : `Imagem ${contentid}`} />
-      <Block custom='label'>{captionAndByline}</Block>
-    </Block>
-  );
-};
+const Image = ({content, custom, domain, lazy, placeholder}) => {
+  let img_placeholder = placeholder || null
+  if(content['image-contentId']) {
+    let policy_id = content['image-contentId']
+    let derivative = "2x1"
+    let width = 1000
+    content['image-path'] = pathToImage(derivative, domain, policy_id, width)
+    img_placeholder = img_placeholder || pathToImage(derivative, domain, policy_id, 10)
+  }
+  if(content['image-legacy']) {
+    content['image-path'] = content['image-legacy']
+    content['image-subtitle'] = "Imagem importada do sistema legado / Reprodução"
+    img_placeholder = ''
+  }
+  if(content['image-path']) {
+    let content_path = content['image-path']
+    if(lazy) {
+      content_path = lazy(content_path, img_placeholder)
+    }
+    const byline = !content['image-byline'] || content['image-byline'] == "undefined" ? null : content['image-byline']
+    const caption_byline = content['image-subtitle'] ? 
+      `${content['image-subtitle']}${byline && ` (${byline})`}`: 
+      `${content['image-subtitle-original']}${byline && ` (${byline})`}`
+      
+    return (
+      <Block custom={`image-box ${custom}`} w="100p">
+        <img alt={caption_byline ? caption_byline : `Reprodução`} src={content_path} />
+        <Block custom='label'>{caption_byline}</Block>
+      </Block>
+    )
+  }
+  return <pre>no-image</pre>
+}
 
 Image.propTypes = {
-  value: PropTypes.object.isRequired
-};
+  content: PropTypes.object.isRequired,
+  custom: PropTypes.string,
+  domain: PropTypes.string,
+  lazy: PropTypes.func,
+  placeholder: PropTypes.string
+}
 Image.defaultProps = {
-  value: {}
-};
-export default Image;
+  content: {}
+}
+export default Image

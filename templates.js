@@ -105,39 +105,69 @@ Block.propTypes = {
 };
 Block.defaultProps = {};
 
+var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
+  if (!policy_id) return null;
+  var w = width || 1000;
+  var r = domain || 'https://costanorte.com.br';
+  var d = derivative || '2x1';
+  var id = policy_id.split(".");
+  var string = id.length > 2 ? "".concat(policy_id, ":").concat(id[2]) : "".concat(policy_id);
+  var path = "".concat(r, "/image/policy:").concat(string, "/image.jpg?f=").concat(d, "&w=").concat(w);
+  return path;
+};
+
 var Image = function Image(_ref) {
   var children = _ref.children,
+      content = _ref.content,
       custom = _ref.custom,
       domain = _ref.domain,
-      value = _ref.value;
-  if (!value || !value['image-contentId']) return false;
-  var contentid = value['image-contentId'];
-  var width = 1000;
-  var derivative = '2x1';
+      height = _ref.height,
+      lazy = _ref.lazy,
+      placeholder = _ref.placeholder;
+  var img_placeholder = placeholder || null;
 
-  var _cid = contentid.split(".");
+  if (content['image-contentId']) {
+    var policy_id = content['image-contentId'];
+    var derivative = "2x1";
+    var width = 1000;
+    content['image-path'] = pathToImage(derivative, domain, policy_id, width);
+    img_placeholder = img_placeholder || pathToImage(derivative, domain, policy_id, 10);
+  }
 
-  var versioned = "".concat(contentid, ":").concat(_cid[2]);
-  var imagePath = "".concat(domain, "/image/policy:").concat(versioned, "/image.jpg?f=").concat(derivative, "&w=").concat(width);
-  var policyid = contentid.replace('.', '-').replace('.', '-');
-  var inlinestyle = "\n    .image-background.policy-".concat(policyid, " {\n      background-image: url(").concat(imagePath, ");\n    }");
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", {
-    dangerouslySetInnerHTML: {
-      __html: inlinestyle
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "image-background policy-".concat(policyid, " ").concat(custom && custom)
-  }, children && children));
+  var content_path = content['image-path'];
+  var image_style;
+
+  if (lazy) {
+    image_style = {
+      backgroundImage: "url(".concat(lazy(content_path, img_placeholder), ")")
+    };
+  } else {
+    image_style = {
+      backgroundImage: "url(".concat(content_path, ")")
+    };
+  }
+
+  if (height) {
+    image_style.height = height;
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "image-background ".concat(custom || ''),
+    style: image_style
+  }, children && children);
 };
 
 Image.propTypes = {
   children: PropTypes.node,
+  content: PropTypes.object.isRequired,
   custom: PropTypes.string,
   domain: PropTypes.string,
-  value: PropTypes.object.isRequired
+  height: PropTypes.string,
+  lazy: PropTypes.func,
+  placeholder: PropTypes.string
 };
 Image.defaultProps = {
-  value: {}
+  content: {}
 };
 
 var Typography = function Typography(props) {
@@ -3520,14 +3550,12 @@ var Teaser = function Teaser(_ref) {
       hasSubjectFilled = _ref.hasSubjectFilled,
       hasSubtitle = _ref.hasSubtitle,
       hasDate = _ref.hasDate,
-      status = _ref.status;
+      lazy = _ref.lazy;
   var image = content.image,
       name = content.name,
       path = content.path,
       subject = content.subject,
       subtitle = content.subtitle;
-  var loading = status.loading,
-      error = status.error;
   var propsTeaser = {
     align: hasImageTop ? 'col' : 'row left',
     custom: 'teaser-default',
@@ -3574,17 +3602,14 @@ var Teaser = function Teaser(_ref) {
   var url_rewrite = path_split.length > 1 ? "".concat(domain).concat(path_split[1]) : path;
 
   var TeaserImage = function TeaserImage() {
-    if (loading || error || !image) return /*#__PURE__*/React.createElement("div", {
-      className: "image-box skeleton"
-    });
-    if (!image['image-contentId']) return null;
     return /*#__PURE__*/React.createElement(Block, propsImage, /*#__PURE__*/React.createElement("a", {
       className: "teaser-aria",
       href: url_rewrite,
       "aria-label": "Imagem da mat\xE9ria ".concat(name)
     }, /*#__PURE__*/React.createElement(Image, {
       domain: domain,
-      value: image
+      content: image,
+      lazy: lazy
     })));
   };
 
@@ -3648,6 +3673,7 @@ SectionTitle.propTypes = {
 var Columnists = function Columnists(props) {
   var content = props.content,
       domain = props.domain,
+      lazy = props.lazy,
       status = props.status;
   var title = content.title;
   var propsTemplate = {
@@ -3665,6 +3691,7 @@ var Columnists = function Columnists(props) {
       content: item,
       domain: domain,
       key: key,
+      lazy: lazy,
       status: status
     });
   })));
@@ -3673,12 +3700,14 @@ var Columnists = function Columnists(props) {
 Columnists.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
+  lazy: PropTypes.func,
   status: PropTypes.object
 };
 
 var Featured = function Featured(props) {
   var content = props.content,
       domain = props.domain,
+      lazy = props.lazy,
       status = props.status;
   var items = content.items;
 
@@ -3690,6 +3719,7 @@ var Featured = function Featured(props) {
       domain: domain,
       hasSubjectFilled: true,
       hasSubtitle: true,
+      lazy: lazy,
       status: status
     }));
   }
@@ -3710,16 +3740,19 @@ var Featured = function Featured(props) {
       domain: domain,
       hasSubjectFilled: true,
       hasSubtitle: true,
+      lazy: lazy,
       status: status
     })), /*#__PURE__*/React.createElement(Block, {
       custom: "block-right"
     }, /*#__PURE__*/React.createElement(Teaser, {
       content: items[1],
       domain: domain,
+      lazy: lazy,
       status: status
     }), /*#__PURE__*/React.createElement(Teaser, {
       content: items[2],
       domain: domain,
+      lazy: lazy,
       status: status
     })));
   }
@@ -3730,12 +3763,14 @@ var Featured = function Featured(props) {
 Featured.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
+  lazy: PropTypes.func,
   status: PropTypes.object
 };
 
 var GridNews = function GridNews(props) {
   var content = props.content,
       domain = props.domain,
+      lazy = props.lazy,
       status = props.status;
   var items = content.items,
       title = content.title;
@@ -3769,6 +3804,7 @@ var GridNews = function GridNews(props) {
       content: item,
       domain: domain,
       hasImageTop: true,
+      lazy: lazy,
       status: status
     });
   })));
@@ -3777,6 +3813,7 @@ var GridNews = function GridNews(props) {
 GridNews.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
+  lazy: PropTypes.func,
   status: PropTypes.object
 };
 
@@ -3859,6 +3896,7 @@ MostRead.propTypes = {
 var Latest = function Latest(_ref) {
   var content = _ref.content,
       domain = _ref.domain,
+      lazy = _ref.lazy,
       ReadMore = _ref.ReadMore,
       Title = _ref.Title,
       status = _ref.status;
@@ -3886,8 +3924,9 @@ var Latest = function Latest(_ref) {
       domain: domain,
       hasSubjectFilled: true,
       hasImageTop: true,
-      status: status,
-      key: key
+      key: key,
+      lazy: lazy,
+      status: status
     });
   })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, propsPageRight, /*#__PURE__*/React.createElement(SectionTitle, {
     name: "MAIS LIDAS"
@@ -3899,6 +3938,7 @@ var Latest = function Latest(_ref) {
 
 Latest.propTypes = {
   content: PropTypes.object,
+  lazy: PropTypes.func,
   ReadMore: PropTypes.func,
   Title: PropTypes.func,
   status: PropTypes.shape({
@@ -3910,6 +3950,7 @@ Latest.propTypes = {
 var Related = function Related(_ref) {
   var items = _ref.items,
       domain = _ref.domain,
+      lazy = _ref.lazy,
       ReadMore = _ref.ReadMore,
       status = _ref.status;
   var propsContainer = {
@@ -3925,15 +3966,17 @@ var Related = function Related(_ref) {
       content: item,
       domain: domain,
       hasSubjectFilled: true,
-      hasImageTop: true,
-      status: status,
-      key: key
+      hasImageTop: false,
+      key: key,
+      lazy: lazy,
+      status: status
     });
   })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null));
 };
 
 Related.propTypes = {
   items: PropTypes.array,
+  lazy: PropTypes.func,
   ReadMore: PropTypes.func,
   status: PropTypes.shape({
     error: PropTypes.bool,
@@ -3944,6 +3987,7 @@ Related.propTypes = {
 var Subjects = function Subjects(props) {
   var content = props.content,
       domain = props.domain,
+      lazy = props.lazy,
       ReadMore = props.ReadMore,
       status = props.status;
   var title = content.title;
@@ -3963,6 +4007,7 @@ var Subjects = function Subjects(props) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,
+      lazy: lazy,
       key: key,
       status: status
     });
@@ -3974,6 +4019,7 @@ var Subjects = function Subjects(props) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,
+      lazy: lazy,
       key: key,
       status: status
     });
@@ -3985,6 +4031,7 @@ var Subjects = function Subjects(props) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,
+      lazy: lazy,
       key: key,
       status: status
     });
@@ -3994,6 +4041,7 @@ var Subjects = function Subjects(props) {
 Subjects.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
+  lazy: PropTypes.func,
   ReadMore: PropTypes.func,
   status: PropTypes.object
 };

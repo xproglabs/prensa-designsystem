@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import {map} from 'lodash'
 
 import Block from '../Block'
-import Image from '../Image/Teaser'
+import Image from '../Image/Background'
 
 const ColumnHeader = ({domain, item}) => {
-  
   if(!item)
     return null
 
@@ -18,7 +16,7 @@ const ColumnHeader = ({domain, item}) => {
     <Block align="row" custom="column-header" mb="3" p="3" w="100p-6">
       <Block>
         <a className='teaser-aria' href={path} aria-label={`Imagem do colunista ${column_name}`}>
-          <Image domain={domain} value={image} />
+          <Image domain={domain} content={image} />
         </a>
       </Block>
       <Block align="middle" ml="2">

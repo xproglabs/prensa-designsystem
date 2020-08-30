@@ -3,8 +3,9 @@
 .article-image {
   @include mb($space-size-8);
 }
-.article-image-box {
-  .image-article {
+.article-image-box,
+.article-image-embed {
+  img {
     @include h(auto);
     @include w(100%);
   }

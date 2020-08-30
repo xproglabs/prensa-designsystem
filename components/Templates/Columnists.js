@@ -7,7 +7,7 @@ import Teaser from '../Teasers';
 import SectionTitle from '../SectionTitle'
 
 const Columnists = props => {
-  const {content, domain, status} = props;
+  const {content, domain, lazy, status} = props;
   const {title} = content
   const propsTemplate = {custom: 'templates-columnists', mb:'6', lg:{align: 'row between wrap', mb:'3'}};
   return (
@@ -15,7 +15,7 @@ const Columnists = props => {
       {title && title !== "" && <SectionTitle name={title} />}
       <Block {...propsTemplate} > 
         {map(content['items'], (item, key) =>
-          <Teaser content={item} domain={domain} key={key} status={status} />)}
+          <Teaser content={item} domain={domain} key={key} lazy={lazy} status={status} />)}
       </Block>
     </>
   );
@@ -23,6 +23,7 @@ const Columnists = props => {
 Columnists.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
+  lazy: PropTypes.func,
   status: PropTypes.object
 };
 export default Columnists;

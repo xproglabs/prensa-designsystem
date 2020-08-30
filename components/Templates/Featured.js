@@ -5,7 +5,7 @@ import Block from '../Block';
 import Teaser from '../Teasers';
 
 const Featured = props => {
-  const {content, domain, status} = props;
+  const {content, domain, lazy, status} = props;
   const {items} = content;
   if(items.length === 1) {
     return (
@@ -15,6 +15,7 @@ const Featured = props => {
           domain={domain}
           hasSubjectFilled={true}
           hasSubtitle={true}
+          lazy={lazy}
           status={status}
         />
       </Block>
@@ -30,18 +31,21 @@ const Featured = props => {
             domain={domain}
             hasSubjectFilled={true}
             hasSubtitle={true}
+            lazy={lazy}
             status={status}
-          />
+            />
         </Block>
         <Block custom='block-right'>
           <Teaser 
             content={items[1]}
             domain={domain}
+            lazy={lazy}
             status={status}
-          />
+            />
           <Teaser 
             content={items[2]}
             domain={domain}
+            lazy={lazy}
             status={status}
           />
         </Block>
@@ -53,6 +57,7 @@ const Featured = props => {
 Featured.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
+  lazy: PropTypes.func,
   status: PropTypes.object
 };
 export default Featured;
