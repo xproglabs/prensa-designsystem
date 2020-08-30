@@ -8,23 +8,30 @@ $sidemenu-item-size: 18px !default;
 $sidemenu-opacity: rgba(0,0,0,0.5);
 $sidemenu-width: 70% !default;
 
+.menu-opacity {
+  @include bg($sidemenu-opacity);
+  @include h(100vh);
+  @include w(100vw);
+  cursor: pointer;
+  left: 0;
+  position: fixed;
+  z-index: 10;
+}
 .menu-left {
   @include h(calc(100vh - 64px)); // todo
   @include w($sidemenu-width);
   @include mw(318px);
-  position: absolute;
-  top: 0;
   left: 0;
-  z-index: 11;
   overflow-y: scroll;
+  position: fixed;
+  z-index: 11;
 }
 .menu-right {
   @include h(calc(100vh - 64px)); // todo
   @include w($searchmenu-width);
   @include mw(318px);
-  position: absolute;
-  top: 0;
   right: 0;
+  position: fixed;
   z-index: 11;
 }
 .menu-modal {
@@ -34,16 +41,6 @@ $sidemenu-width: 70% !default;
   &.opened {
     display: flex;
   }
-}
-.menu-opacity {
-  @include bg($sidemenu-opacity);
-  @include h(100vh);
-  @include w(100vw);
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
 }
 .search-field {
   @include ff($font-secondary);
