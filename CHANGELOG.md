@@ -1,3 +1,6 @@
+# v1.3.3 (Mon Ago 31 2020)
+
+
 # v1.3.2 (Thu Ago 06 2020)
 - Adiciona módulo de ícones
 - Adiciona SVGR-cli

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
+import SectionTitle from '../SectionTitle';
 import Teaser from '../Teasers';
-import SectionTitle from '../SectionTitle'
 
 const GridNews = props => {
   const {content, domain, lazy, status} = props;
@@ -29,7 +29,7 @@ const GridNews = props => {
 
   return (
     <>
-      {title && title !== ""&& <SectionTitle name={title} />}
+      {title && title !== ''&& <SectionTitle name={title} />}
       <Block {...propsTemplate}>
         {map(items, (item, key) =>
           <Teaser 

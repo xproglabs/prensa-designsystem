@@ -2,8 +2,8 @@ import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import SvgIcArrowMenu from '../../icons/IcArrowMenu';
 import Block from '../Block';
-import SvgIcArrowMenu from '../../icons/IcArrowMenu'
 
 const SideMenuItems = ({content, functions}) => {
 
@@ -15,7 +15,7 @@ const SideMenuItems = ({content, functions}) => {
           {!hasSubitems ? 
             <a href={item.path}>{item.name}</a> :
             <span href={item.path}>{item.name}</span>}
-            <SvgIcArrowMenu />
+          <SvgIcArrowMenu />
         </Block>
       </Block>
     );

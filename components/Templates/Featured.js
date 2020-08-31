@@ -33,7 +33,7 @@ const Featured = props => {
             hasSubtitle={true}
             lazy={lazy}
             status={status}
-            />
+          />
         </Block>
         <Block custom='block-right'>
           <Teaser 
@@ -41,7 +41,7 @@ const Featured = props => {
             domain={domain}
             lazy={lazy}
             status={status}
-            />
+          />
           <Teaser 
             content={items[2]}
             domain={domain}

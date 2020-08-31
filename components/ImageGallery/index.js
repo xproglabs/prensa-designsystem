@@ -1,30 +1,30 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import {map} from 'lodash'
-import Block from '../Block'
+import {map} from 'lodash';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import SvgIcArrowBack from '../../icons/IcArrowBack'
-import SvgIcArrowForward from '../../icons/IcArrowForward'
+import SvgIcArrowBack from '../../icons/IcArrowBack';
+import SvgIcArrowForward from '../../icons/IcArrowForward';
+import Block from '../Block';
 
 const ImageGallery = ({items, selected, on}) => {
 
   if(!items || items.length === 0)
-    return false
+    return false;
 
-  const item_selected = selected ? selected : items[0]
+  const item_selected = selected ? selected : items[0];
 
   const RenderItem = ({linkurl, name, lead, selected}) => {
-    const propsGallerySelected = {custom: `gallery-selected`, w: "100p", mb: "2"}
-    const propsGalleryItem = {custom: `gallery-item`, mr: "2", onClick: () => on({linkurl, name, lead})}
-    const propsGallery = selected ? propsGallerySelected : propsGalleryItem
+    const propsGallerySelected = {custom: 'gallery-selected', w: '100p', mb: '2'};
+    const propsGalleryItem = {custom: 'gallery-item', mr: '2', onClick: () => on({linkurl, name, lead})};
+    const propsGallery = selected ? propsGallerySelected : propsGalleryItem;
     return (
       <Block {...propsGallery}>
         <img className='image-file' src={linkurl} alt={`${name}`} />
         <Block custom='image-name'>{name}</Block>
         <Block custom='image-lead'>{lead}</Block>
       </Block>
-    )
-  }
+    );
+  };
 
   return (
     <Block custom="article-image-gallery" w="100p">
@@ -41,13 +41,13 @@ const ImageGallery = ({items, selected, on}) => {
         </Block>
       )}
     </Block>
-  )
-}
+  );
+};
 
 ImageGallery.propTypes = {
   items: PropTypes.array
-}
+};
 ImageGallery.defaultProps = {
   items: []
-}
-export default ImageGallery
+};
+export default ImageGallery;

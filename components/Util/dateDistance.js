@@ -1,32 +1,33 @@
-import {map} from 'lodash'
-import {pt} from 'date-fns/locale'
-import formatDistance from 'date-fns/formatDistance'
-import differenceInHours from 'date-fns/differenceInHours'
-import datePtBrFull from './datePtBrFull'
+import differenceInHours from 'date-fns/differenceInHours';
+import formatDistance from 'date-fns/formatDistance';
+import {pt} from 'date-fns/locale';
+import {map} from 'lodash';
+
+import datePtBrFull from './datePtBrFull';
 
 const dateDistance = (date, limit) => {
 
-  if(!date) return false
-  let d = date.replace("T", " ")
-  let _y = d.split('-')
-  let _d = _y[2].split(' ')
-  let _t = _d.length > 1 ? _d[1].split(':') : [0, 0]
-  let _now = new Date().getTime()
-  let _date = new Date(_y[0], _y[1] - 1, _d[0], _t[0], _t[1]).getTime()
+  if(!date) return false;
+  let d = date.replace('T', ' ');
+  let _y = d.split('-');
+  let _d = _y[2].split(' ');
+  let _t = _d.length > 1 ? _d[1].split(':') : [0, 0];
+  let _now = new Date().getTime();
+  let _date = new Date(_y[0], _y[1] - 1, _d[0], _t[0], _t[1]).getTime();
 
-  const distanteInWords = formatDistance(_now, _date, {locale: pt})
-  const diffHours = differenceInHours(_now, _date, {locale: pt})
+  const distanteInWords = formatDistance(_now, _date, {locale: pt});
+  const diffHours = differenceInHours(_now, _date, {locale: pt});
 
   if(diffHours > limit)
-    return datePtBrFull(date)
+    return datePtBrFull(date);
 
   const replaces = [
-    ["aproximadamente ", ""],
-  ]
-  let date_string = distanteInWords
-  map(replaces, (r, k) => {
-    date_string = date_string.replace(r[0], r[1])
-  })
-  return `Há ${date_string}`
-}
-export default dateDistance
+    ['aproximadamente ', ''],
+  ];
+  let date_string = distanteInWords;
+  map(replaces, r => {
+    date_string = date_string.replace(r[0], r[1]);
+  });
+  return `Há ${date_string}`;
+};
+export default dateDistance;

@@ -1,17 +1,17 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import Block from '../Block'
-import Image from '../Image/Background'
+import Block from '../Block';
+import Image from '../Image/Background';
 
 const ColumnHeader = ({domain, item}) => {
   if(!item)
-    return null
+    return null;
 
-  const path = ""
-  const image = item["column-image"] && item["column-image"]["image-contentId"] && item["column-image"]
-  const column_name = item["column-name"]
-  const column_description = item["column-desc"]
+  const path = '';
+  const image = item['column-image'] && item['column-image']['image-contentId'] && item['column-image'];
+  const column_name = item['column-name'];
+  const column_description = item['column-desc'];
   return (
     <Block align="row" custom="column-header" mb="3" p="3" w="100p-6">
       <Block>
@@ -24,13 +24,13 @@ const ColumnHeader = ({domain, item}) => {
         <Block custom="subtitle">{column_description}</Block>
       </Block>
     </Block>
-  )
-}
+  );
+};
 
 ColumnHeader.propTypes = {
   item: PropTypes.object
-}
+};
 ColumnHeader.defaultProps = {
   item: []
-}
-export default ColumnHeader
+};
+export default ColumnHeader;
