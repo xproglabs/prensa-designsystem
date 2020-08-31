@@ -25,8 +25,8 @@ const Image = ({content, custom, domain, lazy, placeholder}) => {
     }
     const byline = !content['image-byline'] || content['image-byline'] == "undefined" ? null : content['image-byline']
     const caption_byline = content['image-subtitle'] ? 
-      `${content['image-subtitle']}${byline && ` (${byline})`}`: 
-      `${content['image-subtitle-original']}${byline && ` (${byline})`}`
+      `${content['image-subtitle']}${byline ? ` (${byline})` : ``}`: 
+      `${content['image-subtitle-original']}${byline ? ` (${byline})` : ``}`
       
     return (
       <Block custom={`image-box ${custom}`} w="100p">

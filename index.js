@@ -487,7 +487,7 @@ var Image$1 = function Image(_ref) {
     }
 
     var byline = !content['image-byline'] || content['image-byline'] == "undefined" ? null : content['image-byline'];
-    var caption_byline = content['image-subtitle'] ? "".concat(content['image-subtitle']).concat(byline && " (".concat(byline, ")")) : "".concat(content['image-subtitle-original']).concat(byline && " (".concat(byline, ")"));
+    var caption_byline = content['image-subtitle'] ? "".concat(content['image-subtitle']).concat(byline ? " (".concat(byline, ")") : "") : "".concat(content['image-subtitle-original']).concat(byline ? " (".concat(byline, ")") : "");
     return /*#__PURE__*/React__default.createElement(Block, {
       custom: "image-box ".concat(custom),
       w: "100p"
@@ -1081,69 +1081,51 @@ Paragraph.defaultProps = {
 
 var parseBody = function parseBody(content) {
   var bodyItems = [];
+  var tagItems = [];
 
-  var switchNode = function switchNode(_ref) {
-    var attr = _ref.attr,
-        child = _ref.child,
-        node = _ref.node,
-        tag = _ref.tag;
-    node === 'element' && tag !== 'a' && lodash.map(child, function (item) {
-      return switchNode(item);
-    });
-    var enabledTags = ['div', 'span', 'p', 'em', 'h2'];
-    var embedTags = ['facebook.com', 'youtube.com', 'twitter.com', 'instagram.com'];
+  var renderChildValue = function renderChildValue(child) {
+    return child && child.length > 0 && child[0].text;
+  };
 
-    if (!tag || enabledTags.indexOf(tag) > -1) {
-      var contentText = '';
-      lodash.map(child, function (children) {
-        // render h2, em and pure text
-        if (children.node === 'text' && tag === 'h2') {
-          contentText = "".concat(contentText, "<span class=\"paragraph-title\">").concat(children.text, "</span>");
-        } else if (children.node === 'text' && tag === 'em') {
-          contentText = "".concat(contentText, "<i>").concat(children.text, "</i>");
-        } else if (children.node === 'text') {
-          contentText = "".concat(contentText).concat(children.text);
-        } // render a
+  var switchNode = function switchNode(obj) {
+    var attr = obj.attr,
+        child = obj.child,
+        node = obj.node,
+        tag = obj.tag,
+        text = obj.text;
 
+    if (tag === "p" || tag === "br") {
+      tagItems.push({
+        "type": "p",
+        "value": ""
+      });
+    }
 
-        if (children.tag === 'a' && children.attr["class"] !== 'p-smartembed') {
-          var text = children.child && children.child.length > 0 ? children.child[0].text : children.attr['aria-label']; // check if is not an embed
+    if (tag === "strong") {
+      tagItems.push({
+        "type": "text",
+        "value": "<strong>".concat(renderChildValue(child), "</strong>")
+      });
+      return true;
+    }
 
-          var isEmbed = false;
+    if (tag === "em") {
+      tagItems.push({
+        "type": "text",
+        "value": "<em>".concat(renderChildValue(child), "</em>")
+      });
+      return true;
+    }
 
-          if (text) {
-            lodash.map(embedTags, function (tag) {
-              if (text.indexOf(tag) > -1) {
-                isEmbed = true;
-              }
-            });
-          }
-
-          if (!isEmbed) {
-            var _attr = '';
-            lodash.map(children.attr, function (value, key) {
-              _attr = "".concat(_attr, " ").concat(key, "=").concat(value);
-            });
-            contentText = "".concat(contentText, "<a ").concat(_attr, ">").concat(text, "</a>");
-          }
-        }
-      }); // add paragraph
-
-      if (contentText && contentText !== '') {
-        bodyItems.push({
-          type: 'Paragraph',
-          value: contentText
+    if (node === "text") {
+      if (text && text != "") {
+        tagItems.push({
+          "type": "text",
+          "value": text
         });
       }
     } // render image
 
-
-    if (tag === 'img' && attr.src && attr.src.startsWith('/legacy/image')) bodyItems.push({
-      type: 'ImageLegacy',
-      value: {
-        'image-legacy': attr.src
-      }
-    });
 
     if (tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed') {
       var childImage = lodash.find(child, {
@@ -1151,43 +1133,71 @@ var parseBody = function parseBody(content) {
       });
 
       if (childImage) {
-        var subtitle = childImage && childImage.attr && childImage.attr['alt'] && childImage.attr['alt'].toString();
-        subtitle = lodash.replace(subtitle, new RegExp(',', 'g'), ' ');
+        var subtitle = childImage && childImage.attr && childImage.attr['alt'] ? childImage.attr['alt'].toString() : "";
+        subtitle = subtitle && subtitle !== undefined && subtitle !== "undefined" ? subtitle : "Reprodu\xE7\xE3o";
         var propsImage = {
           'image-contentId': attr['data-onecms-id'].replace('policy:', ''),
           'image-subtitle': subtitle,
           'image-byline': ''
         };
-        bodyItems.push({
+        tagItems.push({
           type: 'Image',
           value: propsImage
         });
-      }
-    } // render embed
+        return true;
+      } // embeds
 
-
-    if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
+    } else if (tag === 'img' && attr && attr.src && attr.src.startsWith('/legacy/image')) {
+      // let source = attr.src.startsWith('/legacy/image')
+      // if(source) {
+      tagItems.push({
+        type: 'ImageLegacy',
+        value: {
+          'image-legacy': attr.src
+        }
+      });
+      return true; // }
+    } else if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
       if (attr['href'].indexOf('facebook.com') > -1) {
-        bodyItems.push({
+        tagItems.push({
           type: 'Facebook',
           value: attr['href']
         });
+        return true;
       } else if (attr['href'].indexOf('instagram.com') > -1) {
-        bodyItems.push({
+        tagItems.push({
           type: 'Instagram',
           value: attr['href']
         });
+        return true;
       } else if (attr['href'].indexOf('twitter.com') > -1) {
-        bodyItems.push({
+        tagItems.push({
           type: 'Tweet',
           value: attr['href']
         });
+        return true;
       } else if (attr['href'].indexOf('youtube.com') > -1) {
-        bodyItems.push({
+        tagItems.push({
           type: 'Youtube',
           value: attr['href']
         });
+        return true;
+      } else {
+        var child_string = renderChildValue(child) || attr.href;
+        tagItems.push({
+          "type": "text",
+          "value": "<a href=\"".concat(attr.href, "\" target=\"_blank\" alt=\"").concat(child_string, "\">").concat(child_string, "</a>")
+        });
+        return true;
       }
+    }
+
+    var child_len = child && child.length;
+
+    if (child && child_len > 0) {
+      lodash.map(child, function (item, key) {
+        switchNode(item);
+      });
     }
   }; // convert html
 
@@ -1200,6 +1210,45 @@ var parseBody = function parseBody(content) {
   lodash.map(elements, function (item) {
     return switchNode(item);
   });
+  var p_text = "";
+  lodash.map(tagItems, function (_ref) {
+    var type = _ref.type,
+        value = _ref.value;
+
+    switch (type) {
+      case "p":
+        // insert if exist and clean
+        if (p_text && p_text !== "") {
+          bodyItems.push({
+            type: 'Paragraph',
+            value: p_text
+          });
+          p_text = "";
+        }
+
+        break;
+
+      case "text":
+        p_text = "".concat(p_text).concat(value);
+        break;
+
+      default:
+        bodyItems.push({
+          type: type,
+          value: value
+        });
+        break;
+    }
+  });
+
+  if (p_text && p_text !== "") {
+    bodyItems.push({
+      type: 'Paragraph',
+      value: p_text
+    });
+    p_text = "";
+  }
+
   return bodyItems;
 };
 

@@ -3,106 +3,126 @@ import {find, filter, replace, map} from 'lodash';
 
 const parseBody = (content) => {
 
-  const bodyItems = [];
-  const switchNode = ({attr, child, node, tag}) => {
+  let bodyItems = []
+  let tagItems = []
+
+  const renderChildValue = (child) => child && child.length > 0 && child[0].text
+
+  const switchNode = (obj) => {
     
-    node === 'element' && tag !== 'a' &&
-      map(child, (item) => switchNode(item));
+    const {attr, child, node, tag, text} = obj
 
-    const enabledTags = ['div', 'span', 'p', 'em', 'h2'];
-    const embedTags = ['facebook.com', 'youtube.com', 'twitter.com', 'instagram.com'];
-    
-    if(!tag || enabledTags.indexOf(tag) > -1) {
-
-      let contentText = '';
-
-      map(child, (children) => {
-
-        // render h2, em and pure text
-        if(children.node === 'text' && tag === 'h2') {
-          contentText = `${contentText}<span class="paragraph-title">${children.text}</span>`;
-
-        } else if(children.node === 'text' && tag === 'em') {
-          contentText = `${contentText}<i>${children.text}</i>`;
-
-        } else if(children.node === 'text') {
-          contentText = `${contentText}${children.text}`;
-        }
-
-        // render a
-        if(children.tag === 'a' && children.attr.class !== 'p-smartembed') {
-          
-          let text = children.child && children.child.length > 0 ? 
-            children.child[0].text : 
-            children.attr['aria-label'];
-
-          // check if is not an embed
-          let isEmbed = false;
-          if(text) {
-            map(embedTags, (tag) => {
-              if(text.indexOf(tag) > -1) {
-                isEmbed = true;
-              }
-            });
-          }
-          if(!isEmbed) {
-            let attr = '';
-            map(children.attr, (value, key) => {
-              attr = `${attr} ${key}=${value}`;
-            });
-            contentText = `${contentText}<a ${attr}>${text}</a>`;
-          }
-        }
-      });
-
-      // add paragraph
-      if(contentText && contentText !== '') {
-        bodyItems.push({type: 'Paragraph', value: contentText});
-      }
+    if(tag === "p" || tag === "br") {
+      tagItems.push({"type": "p", "value": ""})
     }
 
-    // render image
-    if(tag === 'img' && attr.src && attr.src.startsWith('/legacy/image'))
-      bodyItems.push({type: 'ImageLegacy', value: {'image-legacy': attr.src}})
+    if(tag === "span") {}
 
+    if(tag === "strong") {
+      tagItems.push({"type": "text", "value": `<strong>${renderChildValue(child)}</strong>`})
+      return true
+    }
+
+    if(tag === "em") {
+      tagItems.push({"type": "text", "value": `<em>${renderChildValue(child)}</em>`})
+      return true
+    }
+
+    if(node === "text") {
+      if(text && text != "") {
+        tagItems.push({"type": "text", "value": text})
+      }
+    }
+    // render image
     if(tag === 'a' && attr.class && attr.class === 'p-smartembed') {
+
       const childImage = find(child, {tag: 'img'});
+      
       if(childImage) {
-        let subtitle = childImage && childImage.attr && childImage.attr['alt'] && childImage.attr['alt'].toString();
-        subtitle = replace(subtitle, new RegExp(',', 'g'), ' ');
+        let subtitle = 
+          childImage && 
+            childImage.attr && 
+              childImage.attr['alt'] ?
+                childImage.attr['alt'].toString() : ``
+
+        subtitle = subtitle && subtitle !== undefined && subtitle !== "undefined" ? subtitle : `Reprodução`
+
         const propsImage = {
           'image-contentId': attr['data-onecms-id'].replace('policy:', ''),
           'image-subtitle': subtitle,
           'image-byline': ''
-        };
-        bodyItems.push({type: 'Image', value: propsImage});
+        }
+        tagItems.push({type: 'Image', value: propsImage})
+        return true;
       }
-    }
-    // render embed
-    if(tag === 'a' && attr.href && !attr.class && attr.href !== '') {
+    // embeds
+    } else if(tag === 'img' && attr && attr.src && attr.src.startsWith('/legacy/image')) {
+      // let source = attr.src.startsWith('/legacy/image')
+      // if(source) {
+      tagItems.push({type: 'ImageLegacy', value: {'image-legacy': attr.src}})
+      return true
+      // }
+    } else if(tag === 'a' && attr.href && !attr.class && attr.href !== '') {
       
       if(attr['href'].indexOf('facebook.com') > -1) {
-        bodyItems.push({type: 'Facebook', value: attr['href']});
+        tagItems.push({type: 'Facebook', value: attr['href']});
+        return true
       
       } else if(attr['href'].indexOf('instagram.com') > -1) {
-        bodyItems.push({type: 'Instagram', value: attr['href']});
+        tagItems.push({type: 'Instagram', value: attr['href']});
+        return true
       
       } else if(attr['href'].indexOf('twitter.com') > -1) {
-        bodyItems.push({type: 'Tweet', value: attr['href']});
+        tagItems.push({type: 'Tweet', value: attr['href']});
+        return true
         
       } else if(attr['href'].indexOf('youtube.com') > -1) {
-        bodyItems.push({type: 'Youtube', value: attr['href']});
+        tagItems.push({type: 'Youtube', value: attr['href']});
+        return true
+
+      } else {
+        let child_string = renderChildValue(child) || attr.href
+        tagItems.push({"type": "text", "value": `<a href="${attr.href}" target="_blank" alt="${child_string}">${child_string}</a>`})
+        return true
       }
     }
-  };
-
+    
+    let child_len = child && child.length
+    if(child && child_len > 0) {
+      map(child, (item, key) => {
+        switchNode(item)
+      })
+    }
+  }
   // convert html
   const parsed = html2json(content);
   const elements = filter(parsed.child, ({node: 'element'}));
-
   // parse elements
   map(elements, (item) => switchNode(item));
+  
+  let p_text = ""
 
+  map(tagItems, ({type, value}) => {
+    switch(type) {
+      case "p":
+        // insert if exist and clean
+        if(p_text && p_text !== "") {
+          bodyItems.push({type: 'Paragraph', value: p_text});
+          p_text = ""
+        }
+        break;
+      case "text":
+        p_text = `${p_text}${value}`
+        break;
+      default:
+        bodyItems.push({type, value});
+        break;
+    }
+  })
+  if(p_text && p_text !== "") {
+    bodyItems.push({type: 'Paragraph', value: p_text});
+    p_text = ""
+  }
   return bodyItems;
 };
 export default parseBody;
