@@ -1,11 +1,9 @@
 @use '../../styles' as *;
 
 .ads-block {
-  &.mobile-on {}
   &.mobile-off {
     display: none;
   }
-  &.desktop-on {}
   &.desktop-off {
     display: none;
   }

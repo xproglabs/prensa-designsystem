@@ -30,7 +30,7 @@ const Image = ({content, custom, domain, lazy, placeholder}) => {
       
     return (
       <Block custom={`image-box ${custom}`} w="100p">
-        <img alt={caption_byline ? `$Legenda da imagem: {caption_byline}` : 'Legenda da imagem: Reprodução'} src={content_path} />
+        <img alt={caption_byline ? '$Legenda da imagem: {caption_byline}' : 'Legenda da imagem: Reprodução'} src={content_path} />
         <Block custom='label'>{caption_byline}</Block>
       </Block>
     );

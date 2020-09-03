@@ -15,12 +15,22 @@ const TextBody = ({AdComponent, adsblocks, content, domain, embeds, lazy}) => {
   let ads_p = 0;
   let ads_t = adsblocks.length;
   let count_p = 0;
+
   const RenderAds = () => {
     ads_p++;
     if(ads_p > ads_t)
       return false;
     return <AdComponent content={adsblocks[ads_p - 1]} />;
   };
+
+  const RenderImage = ({value}) => {
+    return (
+      <Block custom="article-image-embed" mb="3">
+        <Image custom="image-article" content={value} domain={domain} lazy={lazy} />
+      </Block>
+    );
+  }
+
   const RenderParagraph = ({value}) => {
     let has_ads = false;
     count_p++;
@@ -44,11 +54,7 @@ const TextBody = ({AdComponent, adsblocks, content, domain, embeds, lazy}) => {
         return embeds && embeds.Facebook && <embeds.Facebook key={key} value={value} />;
       case 'Image':
       case 'ImageLegacy':
-        return (
-          <Block custom="article-image-embed" key={key} mb="3">
-            <Image custom="image-article" content={value} domain={domain} lazy={lazy} />
-          </Block>
-        );
+        return <RenderImage key={key} value={value} />;
       case 'Instagram':
         return embeds && embeds.Instagram && <embeds.Instagram key={key} value={value} />;
       case 'Tweet':

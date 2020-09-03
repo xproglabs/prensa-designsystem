@@ -16,7 +16,7 @@ const parseBody = (content) => {
       tagItems.push({'type': 'p', 'value': ''});
     }
 
-    if(tag === 'span') {}
+    // if(tag === 'span') {}
 
     if(tag === 'strong') {
       tagItems.push({'type': 'text', 'value': `<strong>${renderChildValue(child)}</strong>`});
