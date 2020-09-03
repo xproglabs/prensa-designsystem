@@ -58,7 +58,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run icons"
+      "pre-commit": "npm run icons && lint-staged && git add ."
     }
   }
 }
