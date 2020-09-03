@@ -28,6 +28,7 @@ const ColumnHeader = ({domain, item}) => {
 };
 
 ColumnHeader.propTypes = {
+  domain: PropTypes.string,
   item: PropTypes.object
 };
 ColumnHeader.defaultProps = {
