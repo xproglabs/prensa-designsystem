@@ -15,10 +15,16 @@ jobs:
       - name: Create destination for compiled CSS
         run: mkdir -vp /tmp/xprog-designsystem/css
 
-      - name: Compile CSS from SCSS files
+      - name: Compile SCSS Theme
         uses: gha-utilities/sass-build@v0.2.2
         with:
           source: styles/index.scss
+          destination: /tmp/xprog-designsystem/css/main.css
+
+      - name: Compile SCSS Files
+        uses: gha-utilities/sass-build@v0.2.2
+        with:
+          source: styles/router.scss
           destination: /tmp/xprog-designsystem/css/main.css
 
       - name: Set Node.js version ${{ matrix.node_version }}
