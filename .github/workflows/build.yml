@@ -44,4 +44,4 @@ jobs:
           text: CSS and JS build ${{ job.status }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-        if: error()
+        if: ${{ failure() }}
