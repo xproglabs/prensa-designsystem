@@ -3,21 +3,27 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
-import {Teaser} from '../Teasers';
+import SectionTitle from '../SectionTitle';
+import Teaser from '../Teasers';
 
 const Columnists = props => {
-  const {content, status} = props;
-  const propsTemplate = {custom: 'templates-columnists', lg:{align: 'row between wrap'}};
+  const {content, domain, lazy, status} = props;
+  const {title} = content;
+  const propsTemplate = {custom: 'templates-columnists', mb:'6', lg:{align: 'row between wrap', mb:'3'}};
   return (
-    <Block {...propsTemplate} > 
-      {map(content['items'], (item, key) =>
-        <Teaser content={item} key={key} status={status} />)}
-    </Block>
-
+    <>
+      {title && title !== '' && <SectionTitle name={title} />}
+      <Block {...propsTemplate} > 
+        {map(content['items'], (item, key) =>
+          <Teaser content={item} domain={domain} key={key} lazy={lazy} status={status} />)}
+      </Block>
+    </>
   );
 };
 Columnists.propTypes = {
   content: PropTypes.object,
+  domain: PropTypes.string,
+  lazy: PropTypes.func,
   status: PropTypes.object
 };
 export default Columnists;

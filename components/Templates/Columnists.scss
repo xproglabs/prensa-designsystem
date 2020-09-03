@@ -1,7 +1,7 @@
 @use '../../styles' as *;
 
-$columnists-1-teaser-title-height: 20px;
-$columnists-1-teaser-title-size: 16px;
+$columnists-1-teaser-title-height: 22px;
+$columnists-1-teaser-title-size: 18px;
 
 $columnists-1-teaser-title-height--lg: 28px;
 $columnists-1-teaser-title-size--lg: 24px;
@@ -20,6 +20,7 @@ $columnists-1-teaser-image-width: 80px;
   .teaser-title {
     @include fs($columnists-1-teaser-title-size);
     @include lh($columnists-1-teaser-title-height);
+    @include mb($space-size-1);
   }
   .teaser-subject {
     @include mb($space-size-1);
@@ -35,6 +36,7 @@ $columnists-1-teaser-image-width: 80px;
   }
   @media (min-width: $lg) {
     .teaser-default {
+      @include pt($space-size-3);
       @include w(calc(calc(100% - calc(#{$space-size-10} * 2)) / 3));
     }  
     .teaser-title {

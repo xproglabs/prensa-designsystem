@@ -1,12 +1,17 @@
 @use '../../styles' as *;
 
-.article-image-box {
-  .image-article {
+.article-image {
+  @include mb($space-size-8);
+}
+.article-image-box,
+.article-image-embed {
+  img {
     @include h(auto);
     @include w(100%);
   }
   .label {
     @include bg($color-neutral-10);
+    @include fc($color-neutral-4);
     @include ff($font-secondary);
     @include px($space-size-2);
     @include py($space-size-2);
@@ -23,4 +28,14 @@
 .paragraph-title {
   @include fs(22px);
   @include fw(bold);
+}
+@media (min-width: $lg) {
+  .article {
+    .article-head {
+      @include mb($space-size-8);
+    }
+  }
+  .article-image {
+    @include mb(120px);
+  }
 }

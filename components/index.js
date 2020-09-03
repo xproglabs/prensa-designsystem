@@ -1,9 +1,11 @@
-export {default as Article} from './Article';
 export {default as Block} from './Block';
 export {default as Button} from './Button';
+export {default as ColumnHeader} from './Column/Header';
 export {default as Form} from './Form';
 export {default as Grid} from './Grid';
 export {default as Image} from './Image';
+export {default as ImageBackground} from './Image/Background';
+export {default as ImageGallery} from './ImageGallery';
 export {default as SearchForm} from './Menus/SearchForm';
 export {default as SearchMenu} from './Menus/Search';
 export {default as SideMenu} from './Menus/SideMenu';
@@ -15,3 +17,4 @@ export {default as Subject} from './Subject';
 export {default as Tags} from './Tags';
 export {default as TextBody} from './Article/TextBody';
 export {default as Typography} from './Typography';
+export {default as utils} from './Util';

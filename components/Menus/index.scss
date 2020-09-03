@@ -2,26 +2,36 @@
 
 $searchmenu-item-size: 18px !default;
 $searchmenu-opacity: rgba(0,0,0,0.5);
-$searchmenu-width: 318px !default; // + 32px
+$searchmenu-width: 70% !default; 
 
 $sidemenu-item-size: 18px !default;
 $sidemenu-opacity: rgba(0,0,0,0.5);
-$sidemenu-width: 318px !default; // + 32px
+$sidemenu-width: 70% !default;
 
+.menu-opacity {
+  @include bg($sidemenu-opacity);
+  @include h(100vh);
+  @include w(100vw);
+  cursor: pointer;
+  left: 0;
+  position: fixed;
+  z-index: 10;
+}
 .menu-left {
   @include h(calc(100vh - 64px)); // todo
   @include w($sidemenu-width);
-  position: absolute;
-  top: 0;
+  @include mw(318px);
   left: 0;
+  overflow-y: scroll;
+  position: fixed;
   z-index: 11;
 }
 .menu-right {
   @include h(calc(100vh - 64px)); // todo
   @include w($searchmenu-width);
-  position: absolute;
-  top: 0;
+  @include mw(318px);
   right: 0;
+  position: fixed;
   z-index: 11;
 }
 .menu-modal {
@@ -31,16 +41,6 @@ $sidemenu-width: 318px !default; // + 32px
   &.opened {
     display: flex;
   }
-}
-.menu-opacity {
-  @include bg($sidemenu-opacity);
-  @include h(100vh);
-  @include w(100vw);
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
 }
 .search-field {
   @include ff($font-secondary);

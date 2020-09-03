@@ -1,9 +1,13 @@
 @forward 'base';
+@forward '../components/AdBlock';
 @forward '../components/Article';
 @forward '../components/Block';
+@forward '../components/Column';
 @forward '../components/Button';
 @forward '../components/Form';
 @forward '../components/Grid';
+@forward '../components/Image';
+@forward '../components/ImageGallery';
 @forward '../components/Menus';
 @forward '../components/Subject';
 @forward '../components/Teasers';
@@ -16,5 +20,6 @@
 @forward '../components/Templates';
 @forward '../components/Templates/Subjects';
 @forward '../components/Templates/Columnists';
-@forward '../components/Teasers/Teaser.scss';
-@forward '../components/Teasers/TeaserFeatured.scss';
+@forward '../components/Templates/MostRead';
+@forward '../components/Templates/GridNews';
+@forward '../components/Templates/Related';

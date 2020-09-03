@@ -1,3 +1,82 @@
+# v1.3.3 (Mon Ago 31 2020)
+- Adiciona componente AdBlock
+- Adiciona componente Button
+- Adiciona template Column
+- Adiciona tratamento para as imagens com lazy-load e background
+- Adiciona componente de galeria de imagem
+- Adiciona utils para tratamento de data
+- Adiciona os templates: Columnist, Featured, GridNews, Latest, MostRead, Related
+- Ajustes finos no Article e seus filhos
+- Ajustes finos no Block
+- Corrige inconsistência ao abrir e fechar menus
+- Ajustes finos de layout no SocialMedia, SectionTitle e Tags
+- Refatora componente Teaser (serve para todos os teasers)
+- Remove o componente TeaserFeatured
+- Remove o template ListNews
+
+- Adiciona os tokens:
+  $column-header-title-fc: $color-neutral-2;
+  $column-header-title-ff: $font-primary;
+  $column-header-title-size: 24px;
+  $column-header-title-height: 28px;
+  $column-header-title-size--lg: 32px;
+  $column-header-title-height--lg: 36px;
+  $column-header-subtitle-fc: $color-neutral-4;
+  $column-header-subtitle-ff: $font-secondary;
+  $column-header-subtitle-size: 16px;
+  $column-header-subtitle-height: 22px;
+  $searchmenu-width: 70% !default; 
+  $sidemenu-width: 70% !default;
+  $teaser-title-color: $color-neutral-2;
+  $teaser-subtitle-color: $color-neutral-4;
+  $teaser-subtitle-family: $font-secondary;
+  $teaser-subtitle-height: 28px;
+  $teaser-subtitle-size: 20px;
+  $newsgrid-1-teaser-title-height: 28px;
+  $newsgrid-1-teaser-title-size: 24px;
+  $newsgrid-1-teaser-title-height--lg: 36px;
+  $newsgrid-1-teaser-title-size--lg: 32px;
+  $newsgrid-2-teaser-title-height: 28px;
+  $newsgrid-2-teaser-title-size: 24px;
+  $newsgrid-1-teaser-image-height: 246px;
+  $newsgrid-1-teaser-image-height--lg: 296px;
+  $newsgrid-2-teaser-image-height: 164px;
+  $newsgrid-2-teaser-image-height--lg: 140px;
+  $latest-1-teaser-image-height: 210px;
+  $latest-1-teaser-image-width: 280px;
+  $color-subject-black: #080808; 
+  $color-subject-blue: #0975B7;
+  $color-subject-green: #09B77B; 
+  $color-subject-red: #AB001B; 
+  $color-subject-yellow: #BFA525;
+  $article-title-intro-fc: #ffffff;
+  $article-title-intro-fs: 44px !default;
+  $article-title-intro-lh: 48px !default;
+  $article-title-intro-fs-lg: 62px !default;
+  $article-title-intro-lh-lg: 66px !default;
+  $article-title-intro-ff: $font-primary !default;
+  $article-subtitle-intro-fc: #ffffff;
+  $article-subtitle-fs-lg: 20px !default;
+  $article-subtitle-lh-lg: 28px !default;
+  $article-subtitle-intro-fs: 16px !default;
+  $article-subtitle-intro-lh: 22px !default;
+  $article-subtitle-intro-fs-lg: 20px !default;
+  $article-subtitle-intro-lh-lg: 28px !default;
+  $article-subtitle-intro-ff: $font-primary !default;
+  $image-gallery-name-fs: 24px !default;
+  $image-gallery-name-lh: 28px !default;
+  $image-gallery-lead-fs: 16px !default;
+  $image-gallery-lead-lh: 22px !default;
+
+- Remove os tokens:
+  $newsgrid-2-teaser-title-height: 28px;	
+  $newsgrid-2-teaser-title-size: 24px;	
+  $newsgrid-1-teaser-image-height: 192px;	
+  $newsgrid-1-teaser-image-height--lg: 192px;	
+  $newsgrid-2-teaser-image-height: 164px;	
+  $newsgrid-2-teaser-image-height--lg: 140px;	
+  $listnews-1-teaser-image-height: 210px;
+
 # v1.3.2 (Thu Ago 06 2020)
 - Adiciona módulo de ícones
 - Adiciona SVGR-cli

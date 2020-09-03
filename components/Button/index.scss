@@ -2,8 +2,9 @@
 
 .button {
   @include b(unset, unset, unset);
-  @include font('Montserrat', 12px, 14px, bold);
+  @include ff($font-secondary);
   @include fx(center, center);
+  @include fw(bold);
   @include h(40px);
   @include r(5px);
   @include miw(120px);

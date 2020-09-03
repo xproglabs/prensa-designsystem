@@ -16,13 +16,13 @@ const Topbar = ({content, functions}) => {
         align="row middle between"
         custom="wrap"
         w="100p">
-        <Block>
+        <Block custom="left">
           {LeftContent && <LeftContent functions={functions} />}
         </Block>
         <Block>
           {CenterContent && <CenterContent />}
         </Block>
-        <Block>
+        <Block custom="right">
           {RightContent && <RightContent />}
         </Block>
       </Block>

@@ -1,7 +1,7 @@
-import {text, boolean, withKnobs} from '@storybook/addon-knobs';
+import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
-import {Teaser, TeaserFeatured} from '../components/Teasers';
+import Teaser from '../components/Teasers';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
@@ -10,42 +10,28 @@ export default {
   decorators: [withKnobs, sassWrapper]
 };
 
-export const Default = () => {
-  const hasImage = boolean('image', false);
-  const image = {
-    imageUrl: null,
-    captionAndByline: null
-  };
-  const content = {
-    title: text('title', 'The quick brown fox jumps over the lazy dog'),
-    subtitle: text('subtitle', 'Lorem ipsum sit dolor amet lorem situation'),
-    subject: text('subject', 'Assunto'),
-    image: hasImage && image
-  };
-  const status = {
-    loading: boolean('loading', false),
-    error: boolean('loading', false)
-  };
-  return (
-    <Teaser content={content} status={status} />
-  );
+const teasermockup = {
+  'contentId': '7.137',
+  'inputTemplate': 'com.atex.plugins.teaser.Teaser',
+  'image': {
+    'image-byline': '',
+    'image-contentId': '1.10005.1596502233',
+    'image-subtitle': '',
+    'image-subtitle-original': '227341'
+  },
+  'name': 'Dia do trabalho: futebol corta empregos por conta do coronavírus',
+  'path': '/nacional/dia-do-trabalho-futebol-corta-empregos-por-conta-do-coronav%C3%ADrus-1.10909',
+  'subject': 'AUXÍLIO EMERGENCIAL',
+  'subtitle': 'Parada do futebol atinge em cheio finanças de clubes como o Flamengo',
+  'time-published': '2020-05-01 07:49'
 };
-export const Featured = () => {
-  const hasImage = boolean('image', false);
-  const image = {
-    imageUrl: null,
-    captionAndByline: null
-  };
-  const content = {
-    title: text('title', 'The quick brown fox jumps over the lazy dog'),
-    subject: text('subject', 'Assunto'),
-    image: hasImage && image
-  };
+
+export const Default = () => {
   const status = {
     loading: boolean('loading', false),
     error: boolean('loading', false)
   };
   return (
-    <TeaserFeatured content={content} status={status} />
+    <Teaser content={teasermockup} status={status} />
   );
 };

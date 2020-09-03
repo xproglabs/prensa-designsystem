@@ -1,0 +1,22 @@
+@use '../../styles' as *;
+
+.image-background {
+  @include bg($color-neutral-10);
+  @include w(100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+// .image-box {
+//   @include h(210px);
+//   @include w(280px);
+//   @media (max-width: $md) {
+//     @include w(64px);
+//     @include h(64px);
+//   }
+//   background-position-x: center;
+//   background-position-y: center;
+//   background-repeat: no-repeat;
+// }

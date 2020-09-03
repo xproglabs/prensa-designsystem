@@ -2,13 +2,14 @@
 
 .social-circle {
   @include fx(center, center);
-  @include w(32px);
   @include h(32px);
-  @include b(1px, solid, $color-primary-1);
+  @include mr($space-size-4);
   @include r(50%);
+  @include w(32px);
   svg {
-    @include w(16px);
-    @include h(16px);
-    fill: $color-primary-1;
+    fill: transparent;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }

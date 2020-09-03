@@ -2,15 +2,17 @@
 
 .tag {
   @include w(max-content);
-  @include px(20px);
-  @include py(12px);
+  @include px(4px);
+  @include py($space-size-1);
   @include mr(20px);
   @include mb(16px);
   @include b(2px, solid, $color-primary-2);
   @include r(3px);
-  cursor: pointer;
+  cursor: pointer;  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
 }
-
 .wrap {
   flex-wrap: wrap;
 }

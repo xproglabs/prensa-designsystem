@@ -35,4 +35,45 @@ function SvgArrowCircleDownBlack18Dp(props) {
   }));
 }
 
+function SvgIcArrowBack(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    height: 32,
+    viewBox: "0 0 24 24",
+    width: 32
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
+  }));
+}
+
+function SvgIcArrowForward(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    height: 32,
+    viewBox: "0 0 24 24",
+    width: 32
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
+  }));
+}
+
+function SvgIcArrowMenu(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    height: 24,
+    width: 24
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0V0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+  }));
+}
+
 exports.ArrowCircleDownBlack18Dp = SvgArrowCircleDownBlack18Dp;
+exports.IcArrowBack = SvgIcArrowBack;
+exports.IcArrowForward = SvgIcArrowForward;
+exports.IcArrowMenu = SvgIcArrowMenu;
