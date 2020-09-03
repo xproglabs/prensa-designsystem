@@ -19,7 +19,7 @@ const ImageGallery = ({items, selected, on}) => {
     const propsGallery = selected ? propsGallerySelected : propsGalleryItem;
     return (
       <Block {...propsGallery}>
-        <img className='image-file' src={linkurl} alt={`${name}`} />
+        <img className='image-file' src={linkurl} alt={name} />
         <Block custom='image-name'>{name}</Block>
         <Block custom='image-lead'>{lead}</Block>
       </Block>
