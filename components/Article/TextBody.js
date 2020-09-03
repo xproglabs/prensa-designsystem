@@ -23,9 +23,9 @@ const TextBody = ({AdComponent, adsblocks, content, domain, embeds, lazy}) => {
     return <AdComponent content={adsblocks[ads_p - 1]} />;
   };
 
-  const RenderImage = ({key, value}) => {
+  const RenderImage = ({value}) => {
     return (
-      <Block custom="article-image-embed" key={key} mb="3">
+      <Block custom="article-image-embed" mb="3">
         <Image custom="image-article" content={value} domain={domain} lazy={lazy} />
       </Block>
     );
@@ -54,7 +54,7 @@ const TextBody = ({AdComponent, adsblocks, content, domain, embeds, lazy}) => {
         return embeds && embeds.Facebook && <embeds.Facebook key={key} value={value} />;
       case 'Image':
       case 'ImageLegacy':
-        return <RenderImage key={key} value={value} />
+        return <RenderImage key={key} value={value} />;
       case 'Instagram':
         return embeds && embeds.Instagram && <embeds.Instagram key={key} value={value} />;
       case 'Tweet':
