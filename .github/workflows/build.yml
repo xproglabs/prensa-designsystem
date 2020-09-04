@@ -20,12 +20,16 @@ jobs:
         with:
           source: styles/index.scss
           destination: /tmp/xprog-designsystem/css/main.css
+          mention: 'Ocorreu um erro ao buildar o theme.'
+          if_mention: failure
 
       - name: Compile SCSS Files
         uses: gha-utilities/sass-build@v0.2.2
         with:
           source: styles/router.scss
           destination: /tmp/xprog-designsystem/css/main.css
+          mention: 'Ocorreu um erro ao buildar o router.'
+          if_mention: failure
 
       - name: Set Node.js version ${{ matrix.node_version }}
         uses: actions/setup-node@v1
