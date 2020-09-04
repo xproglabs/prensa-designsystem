@@ -26,12 +26,16 @@ jobs:
         text: Build na master iniciada
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-    
+      
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
+    - run: |
+        git config --global user.name "Giovanni"
+        git config --global user.email "giovanni@xproglabs.com"
+        npm version patch
     - run: npm run build
   
     - name: Commit build
@@ -42,12 +46,6 @@ jobs:
         git add .
         git commit -m "Build"
         git push --force
-        
-    - name: Upgrade version
-      run: |
-        git config --global user.name "Giovanni"
-        git config --global user.email "giovanni@xproglabs.com"
-        npm version patch
         
     - name: Publish NPM
       run: npm publish
