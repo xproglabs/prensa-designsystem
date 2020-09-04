@@ -1,0 +1,32 @@
+name: Build and commit
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run build
+      name: Lint source code
+
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v4
+      with:
+        author_name: Giovanni
+        author_email: giovanni@xproglabs.com
+        message: "Build xprog-ds"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
