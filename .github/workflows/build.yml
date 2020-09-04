@@ -3,8 +3,8 @@ name: Build XPROG-DS
 on: [push]
 
 jobs:
-  build:
-    name: Build SASS and JS 
+  build-sass-theme:
+    name: Build SASS Theme
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source Git branch
@@ -29,7 +29,18 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
         if: ${{ failure() }}
-
+        
+  build-sass-router:
+    name: Build SASS Router
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source Git branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+          
+      - name: Create destination for compiled CSS
+        run: mkdir -vp /tmp/xprog-designsystem/css
       - name: Compile SCSS Files
         uses: gha-utilities/sass-build@v0.2.2
         with:
@@ -45,6 +56,10 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
         if: ${{ failure() }}
 
+  build-js:
+    name: Build JS
+    runs-on: ubuntu-latest
+    steps:
       - name: Set Node.js version ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
@@ -64,9 +79,3 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
         if: ${{ failure() }}
-
-      - name: Checkout destination Git branch
-        uses: actions/checkout@v2
-        with:
-          ref: master
-
