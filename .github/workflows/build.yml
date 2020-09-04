@@ -47,10 +47,10 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
+          author_name: Pipeline
           text: CSS and JS build ${{ job.status }}
           fields: job, author
         env:
           GITHUB_TOKEN: ${{ github.token }}
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
         if: ${{ failure() }}
