@@ -20,13 +20,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run build
+  
+    - name: Commit build
+      run:
+        git config --global user.name "Giovanni"
+        git config --global user.email "giovanni@xproglabs.com"
 
-    - name: Commit changes
-      uses: EndBug/add-and-commit@ts-only
-      with:
-        author_name: Giovanni
-        author_email: giovanni@xproglabs.com
-        message: "Build xprog-ds"
-        force: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        git add .
+        git commit -m "Build"
+        git push --force
