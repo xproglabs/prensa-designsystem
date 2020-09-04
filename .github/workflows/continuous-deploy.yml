@@ -16,6 +16,15 @@ jobs:
     - uses: actions/checkout@v2
       with:
         token: ${{ secrets.deploy }}
+        
+    - name: Slack notifcation build started
+      uses: 8398a7/action-slack@v3
+      with:
+        author_name: 'build-action'
+        icon_emoji: 'rocket'
+        text: Build na master iniciada
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.slack }}
     
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
@@ -32,3 +41,15 @@ jobs:
         git add .
         git commit -m "Build"
         git push --force
+
+    - name: Slack notifcation build
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        author_name: 'build-action'
+        text: Build xprog-ds ${{ job.status }}
+        fields: commit, message, author
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+        SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+      if: ${{ always() }}
