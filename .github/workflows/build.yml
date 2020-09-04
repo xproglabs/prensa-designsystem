@@ -19,13 +19,31 @@ jobs:
         uses: gha-utilities/sass-build@v0.2.2
         with:
           source: styles/index.scss
-          destination: /tmp/xprog-designsystem/css/main.css
+          destination: /tmp/xprog-designsystem/css/theme.css
+          
+      - name: Slack notifcation theme
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: Build SCSS theme ${{ job.status }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+        if: ${{ failure() }}
 
       - name: Compile SCSS Files
         uses: gha-utilities/sass-build@v0.2.2
         with:
           source: styles/router.scss
-          destination: /tmp/xprog-designsystem/css/main.css
+          destination: /tmp/xprog-designsystem/css/router.css
+
+      - name: Slack notifcation router
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: Build SCSS router ${{ job.status }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+        if: ${{ failure() }}
 
       - name: Set Node.js version ${{ matrix.node_version }}
         uses: actions/setup-node@v1
@@ -37,16 +55,18 @@ jobs:
 
       - name: Build
         run: yarn build
+        
+      - name: Slack notifcation build
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: Build JS ${{ job.status }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+        if: ${{ failure() }}
 
       - name: Checkout destination Git branch
         uses: actions/checkout@v2
         with:
           ref: master
 
-      - name: Slack Notification
-        uses: rtCamp/action-slack-notify@master
-        env:
-          SLACK_WEBHOOK: ${{ secrets.slack }}
-          SLACK_USERNAME: Pipeline
-          SLACK_MESSAGE: 'Testando novo app de mensagens :rocket:'
-        if: ${{ failure() }}
