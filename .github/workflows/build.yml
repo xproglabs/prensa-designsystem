@@ -60,16 +60,21 @@ jobs:
     name: Build JS
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout source Git branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+
       - name: Set Node.js version ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node_version }}
 
       - name: Install packages
-        run: yarn
+        run: npm install
 
       - name: Build
-        run: yarn build
+        run: npm run build
         
       - name: Slack notifcation build
         uses: 8398a7/action-slack@v3
