@@ -25,8 +25,12 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          text: Build SCSS theme ${{ job.status }}
+          author_name: Pipeline Build
+          icon_emoji: 'warning'
+          text: Build SCSS router ${{ job.status }}
+          fields: commit, author
         env:
+          GITHUB_TOKEN: ${{ github.token }}
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
         if: ${{ failure() }}
         
@@ -54,7 +58,7 @@ jobs:
           author_name: Pipeline Build
           icon_emoji: 'warning'
           text: Build SCSS router ${{ job.status }}
-          fields: author, commit
+          fields: commit, author
         env:
           GITHUB_TOKEN: ${{ github.token }}
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
@@ -84,7 +88,10 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          text: Build JS ${{ job.status }}
+          author_name: Pipeline Build
+          icon_emoji: 'warning'
+          text: Build SCSS router ${{ job.status }}
+          fields: commit, author
         env:
           GITHUB_TOKEN: ${{ github.token }}
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
