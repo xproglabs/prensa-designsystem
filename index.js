@@ -962,7 +962,7 @@ var SocialMedias = function SocialMedias(props) {
       ml: '1'
     }
   };
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsSocialMedia, /*#__PURE__*/React__default['default'].createElement("p", null, "testando 12345678"), lodash.map(content, function (item, k) {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsSocialMedia, lodash.map(content, function (item, k) {
     return /*#__PURE__*/React__default['default'].createElement("a", {
       href: item.path,
       key: k
