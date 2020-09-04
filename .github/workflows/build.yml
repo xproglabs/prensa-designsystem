@@ -25,10 +25,10 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          author_name: Pipeline Build
+          author_name: ':small_blue_diamond: Build SCSS theme'
           icon_emoji: 'warning'
-          text: Build SCSS router ${{ job.status }}
-          fields: commit, author
+          text: Build SCSS theme ${{ job.status }}
+          fields: commit, message, author
         env:
           GITHUB_TOKEN: ${{ github.token }}
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
@@ -55,10 +55,10 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          author_name: Pipeline Build
+          author_name: ':small_blue_diamond: Build SCSS router'
           icon_emoji: 'warning'
           text: Build SCSS router ${{ job.status }}
-          fields: commit, author
+          fields: commit, message, author
         env:
           GITHUB_TOKEN: ${{ github.token }}
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
@@ -88,10 +88,10 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          author_name: Pipeline Build
+          author_name: ':small_blue_diamond: Build components'
           icon_emoji: 'warning'
-          text: Build SCSS router ${{ job.status }}
-          fields: commit, author
+          text: Build components ${{ job.status }}
+          fields: commit, message, author
         env:
           GITHUB_TOKEN: ${{ github.token }}
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
