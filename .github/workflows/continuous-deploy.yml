@@ -32,7 +32,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm version patch
     - run: npm run build
   
     - name: Commit build
@@ -43,6 +42,10 @@ jobs:
         git add .
         git commit -m "Build"
         git push --force
+        
+    - run: npm version patch
+        git config --global user.name "Giovanni"
+        git config --global user.email "giovanni@xproglabs.com"
         
     - name: Publish NPM
       run: npm publish
