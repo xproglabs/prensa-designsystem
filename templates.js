@@ -2,12 +2,16 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
 var lodash = require('lodash');
-var PropTypes = _interopDefault(require('prop-types'));
-var React = _interopDefault(require('react'));
-var classnames = _interopDefault(require('classnames'));
+var PropTypes = require('prop-types');
+var React = require('react');
+var classnames = require('classnames');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var classnames__default = /*#__PURE__*/_interopDefaultLegacy(classnames);
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -59,7 +63,7 @@ var Block = function Block(props) {
     };
 
     var direction = props && props.align && (props.align.indexOf('row') > -1 ? 'row' : 'col');
-    return classnames((_classnames = {}, _defineProperty(_classnames, "fx-col".concat(prefix), direction === 'col'), _defineProperty(_classnames, "fx-row".concat(prefix), direction === 'row'), _defineProperty(_classnames, "".concat(direction, "-between").concat(prefix), checkAttr(props, 'between')), _defineProperty(_classnames, "".concat(direction, "-bottom").concat(prefix), checkAttr(props, 'bottom')), _defineProperty(_classnames, "".concat(direction, "-center").concat(prefix), checkAttr(props, 'center')), _defineProperty(_classnames, "".concat(direction, "-evenly").concat(prefix), checkAttr(props, 'evenly')), _defineProperty(_classnames, "".concat(direction, "-left").concat(prefix), checkAttr(props, 'left')), _defineProperty(_classnames, "".concat(direction, "-middle").concat(prefix), checkAttr(props, 'middle')), _defineProperty(_classnames, "".concat(direction, "-right").concat(prefix), checkAttr(props, 'right')), _defineProperty(_classnames, "".concat(direction, "-top").concat(prefix), checkAttr(props, 'top')), _defineProperty(_classnames, "".concat(direction, "-wrap").concat(prefix), checkAttr(props, 'wrap')), _defineProperty(_classnames, "bg-".concat(props.bg).concat(prefix), props.bg), _defineProperty(_classnames, "cursor-".concat(props.cursor).concat(prefix), props.cursor), _defineProperty(_classnames, "fc-".concat(props.color).concat(prefix), props.color), _defineProperty(_classnames, "h-".concat(props.h).concat(prefix), props.h), _defineProperty(_classnames, "m-".concat(props.m).concat(prefix), props.m), _defineProperty(_classnames, "mt-".concat(props.mt).concat(prefix), props.mt), _defineProperty(_classnames, "mr-".concat(props.mr).concat(prefix), props.mr), _defineProperty(_classnames, "mb-".concat(props.mb).concat(prefix), props.mb), _defineProperty(_classnames, "ml-".concat(props.ml).concat(prefix), props.ml), _defineProperty(_classnames, "p-".concat(props.p).concat(prefix), props.p), _defineProperty(_classnames, "pt-".concat(props.pt).concat(prefix), props.pt), _defineProperty(_classnames, "pr-".concat(props.pr).concat(prefix), props.pr), _defineProperty(_classnames, "pb-".concat(props.pb).concat(prefix), props.pb), _defineProperty(_classnames, "pl-".concat(props.pl).concat(prefix), props.pl), _defineProperty(_classnames, "w-".concat(props.w).concat(prefix), props.w), _defineProperty(_classnames, "".concat(props.custom), props.custom), _classnames));
+    return classnames__default['default']((_classnames = {}, _defineProperty(_classnames, "fx-col".concat(prefix), direction === 'col'), _defineProperty(_classnames, "fx-row".concat(prefix), direction === 'row'), _defineProperty(_classnames, "".concat(direction, "-between").concat(prefix), checkAttr(props, 'between')), _defineProperty(_classnames, "".concat(direction, "-bottom").concat(prefix), checkAttr(props, 'bottom')), _defineProperty(_classnames, "".concat(direction, "-center").concat(prefix), checkAttr(props, 'center')), _defineProperty(_classnames, "".concat(direction, "-evenly").concat(prefix), checkAttr(props, 'evenly')), _defineProperty(_classnames, "".concat(direction, "-left").concat(prefix), checkAttr(props, 'left')), _defineProperty(_classnames, "".concat(direction, "-middle").concat(prefix), checkAttr(props, 'middle')), _defineProperty(_classnames, "".concat(direction, "-right").concat(prefix), checkAttr(props, 'right')), _defineProperty(_classnames, "".concat(direction, "-top").concat(prefix), checkAttr(props, 'top')), _defineProperty(_classnames, "".concat(direction, "-wrap").concat(prefix), checkAttr(props, 'wrap')), _defineProperty(_classnames, "bg-".concat(props.bg).concat(prefix), props.bg), _defineProperty(_classnames, "cursor-".concat(props.cursor).concat(prefix), props.cursor), _defineProperty(_classnames, "fc-".concat(props.color).concat(prefix), props.color), _defineProperty(_classnames, "h-".concat(props.h).concat(prefix), props.h), _defineProperty(_classnames, "m-".concat(props.m).concat(prefix), props.m), _defineProperty(_classnames, "mt-".concat(props.mt).concat(prefix), props.mt), _defineProperty(_classnames, "mr-".concat(props.mr).concat(prefix), props.mr), _defineProperty(_classnames, "mb-".concat(props.mb).concat(prefix), props.mb), _defineProperty(_classnames, "ml-".concat(props.ml).concat(prefix), props.ml), _defineProperty(_classnames, "p-".concat(props.p).concat(prefix), props.p), _defineProperty(_classnames, "pt-".concat(props.pt).concat(prefix), props.pt), _defineProperty(_classnames, "pr-".concat(props.pr).concat(prefix), props.pr), _defineProperty(_classnames, "pb-".concat(props.pb).concat(prefix), props.pb), _defineProperty(_classnames, "pl-".concat(props.pl).concat(prefix), props.pl), _defineProperty(_classnames, "w-".concat(props.w).concat(prefix), props.w), _defineProperty(_classnames, "".concat(props.custom), props.custom), _classnames));
   };
 
   var dProps = defProps('', props);
@@ -69,39 +73,39 @@ var Block = function Block(props) {
   var lgProps = lg && defProps('--lg', lg);
   var xlProps = xl && defProps('--xl', xl);
   var classProps = {
-    className: classnames(dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block',
+    className: classnames__default['default'](dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block',
     children: children,
     onClick: onClick
   };
-  return /*#__PURE__*/React.createElement("div", classProps);
+  return /*#__PURE__*/React__default['default'].createElement("div", classProps);
 };
 
 var propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 Block.propTypes = {
-  align: PropTypes.string,
-  bg: PropTypes.string,
-  color: PropTypes.string,
-  cursor: PropTypes.string,
-  m: PropTypes.oneOf([].concat(propTypesSizes)),
-  mt: PropTypes.oneOf([].concat(propTypesSizes)),
-  mr: PropTypes.oneOf([].concat(propTypesSizes)),
-  mb: PropTypes.oneOf([].concat(propTypesSizes)),
-  ml: PropTypes.oneOf([].concat(propTypesSizes)),
-  p: PropTypes.oneOf([].concat(propTypesSizes)),
-  pt: PropTypes.oneOf([].concat(propTypesSizes)),
-  pr: PropTypes.oneOf([].concat(propTypesSizes)),
-  pb: PropTypes.oneOf([].concat(propTypesSizes)),
-  pl: PropTypes.oneOf([].concat(propTypesSizes)),
-  xs: PropTypes.object,
-  sm: PropTypes.object,
-  md: PropTypes.object,
-  lg: PropTypes.object,
-  xl: PropTypes.object,
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]),
-  custom: PropTypes.string,
-  onClick: PropTypes.func,
-  w: PropTypes.string,
-  h: PropTypes.string
+  align: PropTypes__default['default'].string,
+  bg: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].string,
+  cursor: PropTypes__default['default'].string,
+  m: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  mt: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  mr: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  mb: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  ml: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  p: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  pt: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  pr: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  pb: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  pl: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  xs: PropTypes__default['default'].object,
+  sm: PropTypes__default['default'].object,
+  md: PropTypes__default['default'].object,
+  lg: PropTypes__default['default'].object,
+  xl: PropTypes__default['default'].object,
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object, PropTypes__default['default'].node]),
+  custom: PropTypes__default['default'].string,
+  onClick: PropTypes__default['default'].func,
+  w: PropTypes__default['default'].string,
+  h: PropTypes__default['default'].string
 };
 Block.defaultProps = {};
 
@@ -156,19 +160,19 @@ var Typography = function Typography(props) {
     }
   };
 
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'typography-root': true
   }, _defineProperty(_classnames, getTokenVariant(), true), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
 
   switch (tokenVariant) {
     case 'article-title':
     case 'title':
-      return /*#__PURE__*/React.createElement("h1", {
+      return /*#__PURE__*/React__default['default'].createElement("h1", {
         className: classes
       }, children);
 
     case 'article-paragraph':
-      return /*#__PURE__*/React.createElement("p", {
+      return /*#__PURE__*/React__default['default'].createElement("p", {
         className: classes,
         dangerouslySetInnerHTML: {
           __html: children
@@ -176,7 +180,7 @@ var Typography = function Typography(props) {
       });
 
     default:
-      return /*#__PURE__*/React.createElement("span", {
+      return /*#__PURE__*/React__default['default'].createElement("span", {
         className: classes
       }, children);
   }
@@ -190,34 +194,34 @@ Typography.propTypes = {
   /**
    * Texto que será inserido na tela
    */
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].array]).isRequired,
 
   /**
    * Permite a passagem de class customizado para o componente
    */
-  custom: PropTypes.string,
+  custom: PropTypes__default['default'].string,
 
   /**
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-title-intro', 'article-subtitle', 'article-subtitle-intro', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
+  size: PropTypes__default['default'].oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
+  tokenVariant: PropTypes__default['default'].oneOf(['article-title', 'article-title-intro', 'article-subtitle', 'article-subtitle-intro', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
 };
 
 var SectionTitle = function SectionTitle(_ref) {
   var custom = _ref.custom,
       name = _ref.name;
-  return /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "section-title-block",
     mb: "3"
-  }, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
     custom: "section-title ".concat(custom)
   }, name));
 };
 
 SectionTitle.propTypes = {
-  custom: PropTypes.string,
-  name: PropTypes.string
+  custom: PropTypes__default['default'].string,
+  name: PropTypes__default['default'].string
 };
 
 var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
@@ -266,20 +270,20 @@ var Image = function Image(_ref) {
     image_style.height = height;
   }
 
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default['default'].createElement("div", {
     className: "image-background ".concat(custom || ''),
     style: image_style
   }, children && children);
 };
 
 Image.propTypes = {
-  children: PropTypes.node,
-  content: PropTypes.object.isRequired,
-  custom: PropTypes.string,
-  domain: PropTypes.string,
-  height: PropTypes.string,
-  lazy: PropTypes.func,
-  placeholder: PropTypes.string
+  children: PropTypes__default['default'].node,
+  content: PropTypes__default['default'].object.isRequired,
+  custom: PropTypes__default['default'].string,
+  domain: PropTypes__default['default'].string,
+  height: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  placeholder: PropTypes__default['default'].string
 };
 Image.defaultProps = {
   content: {}
@@ -290,21 +294,21 @@ var Subject = function Subject(props) {
       custom = props.custom,
       filled = props.filled;
   if (!children) return null;
-  var classes = classnames(_defineProperty({
+  var classes = classnames__default['default'](_defineProperty({
     'subject-root': true,
     'filled bg-primary-1': filled
   }, "".concat(custom), custom));
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default['default'].createElement("div", {
     className: classes
-  }, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
     tokenVariant: "subject"
   }, children));
 };
 
 Subject.propTypes = {
-  children: PropTypes.string.isRequired,
-  custom: PropTypes.string,
-  filled: PropTypes.bool // size: PropTypes.oneOf([
+  children: PropTypes__default['default'].string.isRequired,
+  custom: PropTypes__default['default'].string,
+  filled: PropTypes__default['default'].bool // size: PropTypes.oneOf([
   //   'sm', 'md', 'lg'
   // ])
 
@@ -3620,50 +3624,50 @@ var Teaser = function Teaser(_ref) {
   var url_rewrite = path_split.length > 1 ? "".concat(domain).concat(path_split[1]) : path;
 
   var TeaserImage = function TeaserImage() {
-    return /*#__PURE__*/React.createElement(Block, propsImage, /*#__PURE__*/React.createElement("a", {
+    return /*#__PURE__*/React__default['default'].createElement(Block, propsImage, /*#__PURE__*/React__default['default'].createElement("a", {
       className: "teaser-aria",
       href: url_rewrite,
       "aria-label": "Imagem da mat\xE9ria ".concat(name)
-    }, /*#__PURE__*/React.createElement(Image, {
+    }, /*#__PURE__*/React__default['default'].createElement(Image, {
       domain: domain,
       content: image,
       lazy: lazy
     })));
   };
 
-  return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement(Block, null, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsTeaser, /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block, propsContent, /*#__PURE__*/React__default['default'].createElement(Block, null, subject && /*#__PURE__*/React__default['default'].createElement(Block, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
     filled: hasSubjectFilled
-  }, subject))), /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
+  }, subject))), /*#__PURE__*/React__default['default'].createElement(Block, null, /*#__PURE__*/React__default['default'].createElement(Block, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
     className: "teaser-aria",
     href: url_rewrite,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
-  }, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
     custom: "teaser-title"
-  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React.createElement(Block, propsSubTitle, /*#__PURE__*/React.createElement(Typography, {
+  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React__default['default'].createElement(Block, propsSubTitle, /*#__PURE__*/React__default['default'].createElement(Typography, {
     custom: "teaser-subtitle"
-  }, subtitle))), /*#__PURE__*/React.createElement(Block, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
+  }, subtitle))), /*#__PURE__*/React__default['default'].createElement(Block, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React__default['default'].createElement(Block, propsDate, /*#__PURE__*/React__default['default'].createElement(Typography, {
     custom: "teaser-datetime"
   }, dateValue)))));
 };
 
 Teaser.propTypes = {
-  content: PropTypes.shape((_PropTypes$shape = {
-    image: PropTypes.object,
-    name: PropTypes.string,
-    path: PropTypes.string,
-    subtitle: PropTypes.string,
-    subject: PropTypes.string
-  }, _defineProperty(_PropTypes$shape, 'time-published', PropTypes.string), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes.string), _PropTypes$shape)),
-  datePublished: PropTypes.bool,
-  domain: PropTypes.string,
-  hasImageTop: PropTypes.bool,
-  hasSubtitle: PropTypes.bool,
-  hasDate: PropTypes.bool,
-  hasSubjectFilled: PropTypes.bool,
-  lazy: PropTypes.func,
-  status: PropTypes.shape({
-    loading: PropTypes.bool,
-    error: PropTypes.bool
+  content: PropTypes__default['default'].shape((_PropTypes$shape = {
+    image: PropTypes__default['default'].object,
+    name: PropTypes__default['default'].string,
+    path: PropTypes__default['default'].string,
+    subtitle: PropTypes__default['default'].string,
+    subject: PropTypes__default['default'].string
+  }, _defineProperty(_PropTypes$shape, 'time-published', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes__default['default'].string), _PropTypes$shape)),
+  datePublished: PropTypes__default['default'].bool,
+  domain: PropTypes__default['default'].string,
+  hasImageTop: PropTypes__default['default'].bool,
+  hasSubtitle: PropTypes__default['default'].bool,
+  hasDate: PropTypes__default['default'].bool,
+  hasSubjectFilled: PropTypes__default['default'].bool,
+  lazy: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].shape({
+    loading: PropTypes__default['default'].bool,
+    error: PropTypes__default['default'].bool
   })
 };
 Teaser.defaultProps = {
@@ -3687,10 +3691,10 @@ var Columnists = function Columnists(props) {
       mb: '3'
     }
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== '' && /*#__PURE__*/React.createElement(SectionTitle, {
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: title
-  }), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+  }), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
       key: key,
@@ -3701,10 +3705,10 @@ var Columnists = function Columnists(props) {
 };
 
 Columnists.propTypes = {
-  content: PropTypes.object,
-  domain: PropTypes.string,
-  lazy: PropTypes.func,
-  status: PropTypes.object
+  content: PropTypes__default['default'].object,
+  domain: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].object
 };
 
 var Featured = function Featured(props) {
@@ -3715,9 +3719,9 @@ var Featured = function Featured(props) {
   var items = content.items;
 
   if (items.length === 1) {
-    return /*#__PURE__*/React.createElement(Block, {
+    return /*#__PURE__*/React__default['default'].createElement(Block, {
       custom: "templates-featured one"
-    }, /*#__PURE__*/React.createElement(Teaser, {
+    }, /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: items[0],
       domain: domain,
       hasSubjectFilled: true,
@@ -3736,23 +3740,23 @@ var Featured = function Featured(props) {
         mb: '5'
       }
     };
-    return /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
+    return /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, /*#__PURE__*/React__default['default'].createElement(Block, {
       custom: "block-left"
-    }, /*#__PURE__*/React.createElement(Teaser, {
+    }, /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: items[0],
       domain: domain,
       hasSubjectFilled: true,
       hasSubtitle: true,
       lazy: lazy,
       status: status
-    })), /*#__PURE__*/React.createElement(Block, {
+    })), /*#__PURE__*/React__default['default'].createElement(Block, {
       custom: "block-right"
-    }, /*#__PURE__*/React.createElement(Teaser, {
+    }, /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: items[1],
       domain: domain,
       lazy: lazy,
       status: status
-    }), /*#__PURE__*/React.createElement(Teaser, {
+    }), /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: items[2],
       domain: domain,
       lazy: lazy,
@@ -3764,10 +3768,10 @@ var Featured = function Featured(props) {
 };
 
 Featured.propTypes = {
-  content: PropTypes.object,
-  domain: PropTypes.string,
-  lazy: PropTypes.func,
-  status: PropTypes.object
+  content: PropTypes__default['default'].object,
+  domain: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].object
 };
 
 var GridNews = function GridNews(props) {
@@ -3799,10 +3803,10 @@ var GridNews = function GridNews(props) {
     propsTemplate.custom = 'templates-newsgrid four';
   }
 
-  return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== '' && /*#__PURE__*/React.createElement(SectionTitle, {
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: title
-  }), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(items, function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+  }), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(items, function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       key: key,
       content: item,
       domain: domain,
@@ -3814,10 +3818,10 @@ var GridNews = function GridNews(props) {
 };
 
 GridNews.propTypes = {
-  content: PropTypes.object,
-  domain: PropTypes.string,
-  lazy: PropTypes.func,
-  status: PropTypes.object
+  content: PropTypes__default['default'].object,
+  domain: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].object
 };
 
 var MostReadItem = function MostReadItem(_ref) {
@@ -3848,25 +3852,25 @@ var MostReadItem = function MostReadItem(_ref) {
     align: 'middle'
   };
   var position = number + 1;
-  return /*#__PURE__*/React.createElement(Block, propsMostItem, /*#__PURE__*/React.createElement(Block, _extends({}, propsContent, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsMostItem, /*#__PURE__*/React__default['default'].createElement(Block, _extends({}, propsContent, {
     align: "row"
-  }), /*#__PURE__*/React.createElement(Block, _extends({}, propsNumber, {
+  }), /*#__PURE__*/React__default['default'].createElement(Block, _extends({}, propsNumber, {
     align: "row center middle"
-  }), position), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
+  }), position), /*#__PURE__*/React__default['default'].createElement(Block, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
     className: "teaser-aria",
     href: path,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
-  }, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
     custom: "teaser-title"
   }, name)))));
 };
 
 MostReadItem.propTypes = {
-  content: PropTypes.shape({
-    name: PropTypes.string,
-    path: PropTypes.string
+  content: PropTypes__default['default'].shape({
+    name: PropTypes__default['default'].string,
+    path: PropTypes__default['default'].string
   }),
-  number: PropTypes.number
+  number: PropTypes__default['default'].number
 };
 
 var MostRead = function MostRead(props) {
@@ -3879,8 +3883,8 @@ var MostRead = function MostRead(props) {
       align: 'row between'
     }
   };
-  return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content, function (item, key) {
-    return /*#__PURE__*/React.createElement(MostReadItem, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(content, function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(MostReadItem, {
       content: item,
       domain: domain,
       key: key,
@@ -3891,9 +3895,9 @@ var MostRead = function MostRead(props) {
 };
 
 MostRead.propTypes = {
-  content: PropTypes.array,
-  domain: PropTypes.string,
-  status: PropTypes.object
+  content: PropTypes__default['default'].array,
+  domain: PropTypes__default['default'].string,
+  status: PropTypes__default['default'].object
 };
 
 var Latest = function Latest(_ref) {
@@ -3918,10 +3922,10 @@ var Latest = function Latest(_ref) {
   var propsPageRight = {
     custom: 'page-right'
   };
-  return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, propsPageLeft, Title && /*#__PURE__*/React.createElement(Title, null), /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsContainer, /*#__PURE__*/React__default['default'].createElement(Block, propsPageLeft, Title && /*#__PURE__*/React__default['default'].createElement(Title, null), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "latest-news"
   }, lodash.map(content['items-latest'], function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       datePublished: true,
       domain: domain,
@@ -3931,22 +3935,22 @@ var Latest = function Latest(_ref) {
       lazy: lazy,
       status: status
     });
-  })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, propsPageRight, /*#__PURE__*/React.createElement(SectionTitle, {
+  })), ReadMore && /*#__PURE__*/React__default['default'].createElement(ReadMore, null)), /*#__PURE__*/React__default['default'].createElement(Block, propsPageRight, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: "MAIS LIDAS"
-  }), /*#__PURE__*/React.createElement(MostRead, {
+  }), /*#__PURE__*/React__default['default'].createElement(MostRead, {
     content: content['items-mostread'],
     status: status
   })));
 };
 
 Latest.propTypes = {
-  content: PropTypes.object,
-  lazy: PropTypes.func,
-  ReadMore: PropTypes.func,
-  Title: PropTypes.func,
-  status: PropTypes.shape({
-    error: PropTypes.bool,
-    loading: PropTypes.bool
+  content: PropTypes__default['default'].object,
+  lazy: PropTypes__default['default'].func,
+  ReadMore: PropTypes__default['default'].func,
+  Title: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].shape({
+    error: PropTypes__default['default'].bool,
+    loading: PropTypes__default['default'].bool
   })
 };
 
@@ -3961,11 +3965,11 @@ var Related = function Related(_ref) {
     align: 'col left',
     w: '100p'
   };
-  return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsContainer, /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "related-news",
     w: "100p"
   }, lodash.map(items, function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
       hasSubjectFilled: true,
@@ -3974,17 +3978,17 @@ var Related = function Related(_ref) {
       lazy: lazy,
       status: status
     });
-  })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null));
+  })), ReadMore && /*#__PURE__*/React__default['default'].createElement(ReadMore, null));
 };
 
 Related.propTypes = {
-  domain: PropTypes.string,
-  items: PropTypes.array,
-  lazy: PropTypes.func,
-  ReadMore: PropTypes.func,
-  status: PropTypes.shape({
-    error: PropTypes.bool,
-    loading: PropTypes.bool
+  domain: PropTypes__default['default'].string,
+  items: PropTypes__default['default'].array,
+  lazy: PropTypes__default['default'].func,
+  ReadMore: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].shape({
+    error: PropTypes__default['default'].bool,
+    loading: PropTypes__default['default'].bool
   })
 };
 
@@ -4001,53 +4005,53 @@ var Subjects = function Subjects(props) {
       align: 'row between'
     }
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== '' && /*#__PURE__*/React.createElement(SectionTitle, {
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: title
-  }), /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
+  }), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col left ".concat(content['style-left'])
-  }, /*#__PURE__*/React.createElement(SectionTitle, {
+  }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: content['title-left']
   }), lodash.map(content['items-left'], function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
       lazy: lazy,
       key: key,
       status: status
     });
-  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, {
+  }), ReadMore && /*#__PURE__*/React__default['default'].createElement(ReadMore, null)), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col center ".concat(content['style-center'])
-  }, /*#__PURE__*/React.createElement(SectionTitle, {
+  }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: content['title-center']
   }), lodash.map(content['items-center'], function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
       lazy: lazy,
       key: key,
       status: status
     });
-  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, {
+  }), ReadMore && /*#__PURE__*/React__default['default'].createElement(ReadMore, null)), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col right ".concat(content['style-right'])
-  }, /*#__PURE__*/React.createElement(SectionTitle, {
+  }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: content['title-right']
   }), lodash.map(content['items-right'], function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
       lazy: lazy,
       key: key,
       status: status
     });
-  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null))));
+  }), ReadMore && /*#__PURE__*/React__default['default'].createElement(ReadMore, null))));
 };
 
 Subjects.propTypes = {
-  content: PropTypes.object,
-  domain: PropTypes.string,
-  lazy: PropTypes.func,
-  ReadMore: PropTypes.func,
-  status: PropTypes.object
+  content: PropTypes__default['default'].object,
+  domain: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  ReadMore: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].object
 };
 
 exports.Columnists = Columnists;
