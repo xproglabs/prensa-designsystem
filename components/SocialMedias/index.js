@@ -12,6 +12,7 @@ const SocialMedias = props => {
   const propsSocialCirlce = {mr: '1', custom: 'social-circle', 'md': {mr: '0', ml: '1'}};
   return (
     <Block {...propsSocialMedia}>
+      <p>testando 12345</p>
       {map(content, (item, k) => (
         <a href={item.path} key={k}>
           <Block {...propsSocialCirlce}>
