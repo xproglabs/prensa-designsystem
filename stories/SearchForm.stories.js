@@ -13,7 +13,7 @@ export default {
 
 export const Search = () => {
   return (
-    <Block bg="neutral-10" p="4" w="100p-8">
+    <Block bg="color-neutral-10" p="4" w="100p-8">
       <SearchForm />
     </Block>
   );

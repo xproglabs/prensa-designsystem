@@ -12,7 +12,7 @@ const SearchMenu = ({children, functions, status}) => {
         onClick={functions.onCloseModal}>
       </Block>
       <Block 
-        bg="neutral-10"
+        bg="color-neutral-10"
         custom="menu-right" 
         p="4">
         {children && children}

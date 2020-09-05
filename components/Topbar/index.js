@@ -8,7 +8,7 @@ const Topbar = ({content, functions}) => {
   return (
     <Block 
       align="row center"
-      bg="primary-1" 
+      bg="color-primary-1" 
       color="white" 
       custom="topbar" 
       w="100p">
