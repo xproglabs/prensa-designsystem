@@ -583,7 +583,7 @@ var SearchMenu = function SearchMenu(_ref) {
     custom: "menu-opacity",
     onClick: functions.onCloseModal
   }), /*#__PURE__*/React__default.createElement(Block, {
-    bg: "neutral-10",
+    bg: "color-neutral-10",
     custom: "menu-right",
     p: "4"
   }, children && children));
@@ -622,7 +622,7 @@ var SideMenu = function SideMenu(_ref) {
     custom: "menu-opacity",
     onClick: functions.onCloseModal
   }), /*#__PURE__*/React__default.createElement(Block, {
-    bg: "white",
+    bg: "color-white",
     custom: "menu-left",
     p: "4"
   }, children && children));
@@ -858,7 +858,7 @@ var Topbar = function Topbar(_ref) {
       RightContent = content.RightContent;
   return /*#__PURE__*/React__default.createElement(Block, {
     align: "row center",
-    bg: "primary-1",
+    bg: "color-primary-1",
     color: "white",
     custom: "topbar",
     w: "100p"
