@@ -1,5 +1,50 @@
 @use '../../styles' as *;
 
+@include classes-simple((
+  'w-auto' 'width' 'auto',
+  'cursor-default' 'cursor' 'default',
+  'cursor-pointer' 'cursor' 'pointer',
+  'bg-color-white' 'background-color' $color-white,
+  'bg-color-black' 'background-color' $color-black,
+  'bg-color-primary-1' 'background-color' $color-primary-1,
+  'bg-color-primary-2' 'background-color' $color-primary-2,
+  'bg-color-primary-3' 'background-color' $color-primary-3,
+  'bg-color-secondary-1' 'background-color' $color-secondary-1,
+  'bg-color-secondary-2' 'background-color' $color-secondary-2,
+  'bg-color-secondary-3' 'background-color' $color-secondary-3,
+  'bg-color-neutral-1' 'background-color' $color-neutral-1,
+  'bg-color-neutral-2' 'background-color' $color-neutral-2,
+  'bg-color-neutral-3' 'background-color' $color-neutral-3,
+  'bg-color-neutral-4' 'background-color' $color-neutral-4,
+  'bg-color-neutral-5' 'background-color' $color-neutral-5,
+  'bg-color-neutral-6' 'background-color' $color-neutral-6,
+  'bg-color-neutral-7' 'background-color' $color-neutral-7,
+  'bg-color-neutral-8' 'background-color' $color-neutral-8,
+  'bg-color-neutral-9' 'background-color' $color-neutral-9,
+  'bg-color-neutral-10' 'background-color' $color-neutral-10,
+  'bg-color-neutral-11' 'background-color' $color-neutral-11,
+  
+  'fc-color-white' 'color' $color-white,
+  'fc-color-black' 'color' $color-black,
+  'fc-color-primary-1' 'color' $color-primary-1,
+  'fc-color-primary-2' 'color' $color-primary-2,
+  'fc-color-primary-3' 'color' $color-primary-3,
+  'fc-color-secondary-1' 'color' $color-secondary-1,
+  'fc-color-secondary-2' 'color' $color-secondary-2,
+  'fc-color-secondary-3' 'color' $color-secondary-3,
+  'fc-color-neutral-1' 'color' $color-neutral-1,
+  'fc-color-neutral-2' 'color' $color-neutral-2,
+  'fc-color-neutral-3' 'color' $color-neutral-3,
+  'fc-color-neutral-4' 'color' $color-neutral-4,
+  'fc-color-neutral-5' 'color' $color-neutral-5,
+  'fc-color-neutral-6' 'color' $color-neutral-6,
+  'fc-color-neutral-7' 'color' $color-neutral-7,
+  'fc-color-neutral-8' 'color' $color-neutral-8,
+  'fc-color-neutral-9' 'color' $color-neutral-9,
+  'fc-color-neutral-10' 'color' $color-neutral-10,
+  'fc-color-neutral-11' 'color' $color-neutral-11,
+));
+
 .fx-fit-h {
   @include h(fit-content)
 };

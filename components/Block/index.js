@@ -32,7 +32,7 @@ const Block = (props) => {
       [`${direction}-wrap${prefix}`]: checkAttr(props, 'wrap'),
       [`bg-${props.bg}${prefix}`]: props.bg,
       [`cursor-${props.cursor}${prefix}`]: props.cursor,
-      [`fc-${props.color}${prefix}`]: props.color,
+      [`fc-${props.fc}${prefix}`]: props.fc,
       [`h-${props.h}${prefix}`]: props.h,
       [`m-${props.m}${prefix}`]: props.m,
       [`mt-${props.mt}${prefix}`]: props.mt,
@@ -65,11 +65,32 @@ const Block = (props) => {
 };
 
 const propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+const colorTokens = [
+  'color-white',
+  'color-black',
+  'color-primary-1',
+  'color-primary-2',
+  'color-primary-3',
+  'color-secondary-1',
+  'color-secondary-2',
+  'color-secondary-3',
+  'color-neutral-1',
+  'color-neutral-2',
+  'color-neutral-3',
+  'color-neutral-4',
+  'color-neutral-5',
+  'color-neutral-6',
+  'color-neutral-7',
+  'color-neutral-8',
+  'color-neutral-9',
+  'color-neutral-10',
+  'color-neutral-11',
+];
 
 Block.propTypes = {
   align: PropTypes.string,
-  bg: PropTypes.string,
-  color: PropTypes.string, 
+  bg: PropTypes.oneOf(colorTokens),
+  fc: PropTypes.oneOf(colorTokens),
   cursor: PropTypes.string, 
   m: PropTypes.oneOf([
     ...propTypesSizes

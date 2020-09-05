@@ -1,5 +1,8 @@
 # v1.3.4 (Mon Ago 31 2020)
 - Remove componente Grid
+- Altera posição de alguns includes
+- Altera valores da prop bg no Block
+- Altera prop color para fc no Block
 - Remove tokens: 
   $q-xs: 360px;
   $q-sm: 560px;

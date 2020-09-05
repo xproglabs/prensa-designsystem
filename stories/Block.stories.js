@@ -14,8 +14,8 @@ export const Default = () => {
 
   const propsBlock = {
     align: 'col center between',
-    bg: 'primary-2',
-    color: 'white',
+    bg: 'color-primary-2',
+    fc: 'color-white',
     h: '10',
     pl: '6',
     w: '100p-6',
