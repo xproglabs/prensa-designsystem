@@ -3,8 +3,8 @@ name: Build XPROG-DS
 on: [push]
 
 jobs:
-  build:
-    name: Build SASS and JS 
+  build-sass-theme:
+    name: Build SASS Theme
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source Git branch
@@ -15,11 +15,63 @@ jobs:
       - name: Create destination for compiled CSS
         run: mkdir -vp /tmp/xprog-designsystem/css
 
-      - name: Compile CSS from SCSS files
+      - name: Compile SCSS Theme
         uses: gha-utilities/sass-build@v0.2.2
         with:
           source: styles/index.scss
-          destination: /tmp/xprog-designsystem/css/main.css
+          destination: /tmp/xprog-designsystem/css/theme.css
+          
+      - name: Slack notifcation theme
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          author_name: ':small_blue_diamond: Build SCSS theme'
+          icon_emoji: 'warning'
+          text: Build SCSS theme ${{ job.status }}
+          fields: commit, message, author
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+        if: ${{ failure() }}
+        
+  build-sass-router:
+    name: Build SASS Router
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source Git branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+          
+      - name: Create destination for compiled CSS
+        run: mkdir -vp /tmp/xprog-designsystem/css
+      - name: Compile SCSS Files
+        uses: gha-utilities/sass-build@v0.2.2
+        with:
+          source: styles/router.scss
+          destination: /tmp/xprog-designsystem/css/router.css
+
+      - name: Slack notifcation router
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          author_name: ':small_blue_diamond: Build SCSS router'
+          icon_emoji: 'warning'
+          text: Build SCSS router ${{ job.status }}
+          fields: commit, message, author
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+        if: ${{ failure() }}
+
+  build-js:
+    name: Build JS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source Git branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
 
       - name: Set Node.js version ${{ matrix.node_version }}
         uses: actions/setup-node@v1
@@ -27,21 +79,20 @@ jobs:
           node-version: ${{ matrix.node_version }}
 
       - name: Install packages
-        run: yarn
+        run: npm install
 
       - name: Build
-        run: yarn build
-
-      - name: Checkout destination Git branch
-        uses: actions/checkout@v2
-        with:
-          ref: master
-
-      - name: Slack Notification
+        run: npm run build
+        
+      - name: Slack notifcation build
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          text: CSS and JS build ${{ job.status }}
+          author_name: ':small_blue_diamond: Build components'
+          icon_emoji: 'warning'
+          text: Build components ${{ job.status }}
+          fields: commit, message, author
         env:
+          GITHUB_TOKEN: ${{ github.token }}
           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-        if: always()
+        if: ${{ failure() }}

@@ -2,12 +2,16 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
 var lodash = require('lodash');
-var PropTypes = _interopDefault(require('prop-types'));
-var React = _interopDefault(require('react'));
-var classnames = _interopDefault(require('classnames'));
+var PropTypes = require('prop-types');
+var React = require('react');
+var classnames = require('classnames');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var classnames__default = /*#__PURE__*/_interopDefaultLegacy(classnames);
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -59,7 +63,7 @@ var Block = function Block(props) {
     };
 
     var direction = props && props.align && (props.align.indexOf('row') > -1 ? 'row' : 'col');
-    return classnames((_classnames = {}, _defineProperty(_classnames, "fx-col".concat(prefix), direction === 'col'), _defineProperty(_classnames, "fx-row".concat(prefix), direction === 'row'), _defineProperty(_classnames, "".concat(direction, "-between").concat(prefix), checkAttr(props, 'between')), _defineProperty(_classnames, "".concat(direction, "-bottom").concat(prefix), checkAttr(props, 'bottom')), _defineProperty(_classnames, "".concat(direction, "-center").concat(prefix), checkAttr(props, 'center')), _defineProperty(_classnames, "".concat(direction, "-evenly").concat(prefix), checkAttr(props, 'evenly')), _defineProperty(_classnames, "".concat(direction, "-left").concat(prefix), checkAttr(props, 'left')), _defineProperty(_classnames, "".concat(direction, "-middle").concat(prefix), checkAttr(props, 'middle')), _defineProperty(_classnames, "".concat(direction, "-right").concat(prefix), checkAttr(props, 'right')), _defineProperty(_classnames, "".concat(direction, "-top").concat(prefix), checkAttr(props, 'top')), _defineProperty(_classnames, "".concat(direction, "-wrap").concat(prefix), checkAttr(props, 'wrap')), _defineProperty(_classnames, "bg-".concat(props.bg).concat(prefix), props.bg), _defineProperty(_classnames, "cursor-".concat(props.cursor).concat(prefix), props.cursor), _defineProperty(_classnames, "fc-".concat(props.color).concat(prefix), props.color), _defineProperty(_classnames, "h-".concat(props.h).concat(prefix), props.h), _defineProperty(_classnames, "m-".concat(props.m).concat(prefix), props.m), _defineProperty(_classnames, "mt-".concat(props.mt).concat(prefix), props.mt), _defineProperty(_classnames, "mr-".concat(props.mr).concat(prefix), props.mr), _defineProperty(_classnames, "mb-".concat(props.mb).concat(prefix), props.mb), _defineProperty(_classnames, "ml-".concat(props.ml).concat(prefix), props.ml), _defineProperty(_classnames, "p-".concat(props.p).concat(prefix), props.p), _defineProperty(_classnames, "pt-".concat(props.pt).concat(prefix), props.pt), _defineProperty(_classnames, "pr-".concat(props.pr).concat(prefix), props.pr), _defineProperty(_classnames, "pb-".concat(props.pb).concat(prefix), props.pb), _defineProperty(_classnames, "pl-".concat(props.pl).concat(prefix), props.pl), _defineProperty(_classnames, "w-".concat(props.w).concat(prefix), props.w), _defineProperty(_classnames, "".concat(props.custom), props.custom), _classnames));
+    return classnames__default['default']((_classnames = {}, _defineProperty(_classnames, "fx-col".concat(prefix), direction === 'col'), _defineProperty(_classnames, "fx-row".concat(prefix), direction === 'row'), _defineProperty(_classnames, "".concat(direction, "-between").concat(prefix), checkAttr(props, 'between')), _defineProperty(_classnames, "".concat(direction, "-bottom").concat(prefix), checkAttr(props, 'bottom')), _defineProperty(_classnames, "".concat(direction, "-center").concat(prefix), checkAttr(props, 'center')), _defineProperty(_classnames, "".concat(direction, "-evenly").concat(prefix), checkAttr(props, 'evenly')), _defineProperty(_classnames, "".concat(direction, "-left").concat(prefix), checkAttr(props, 'left')), _defineProperty(_classnames, "".concat(direction, "-middle").concat(prefix), checkAttr(props, 'middle')), _defineProperty(_classnames, "".concat(direction, "-right").concat(prefix), checkAttr(props, 'right')), _defineProperty(_classnames, "".concat(direction, "-top").concat(prefix), checkAttr(props, 'top')), _defineProperty(_classnames, "".concat(direction, "-wrap").concat(prefix), checkAttr(props, 'wrap')), _defineProperty(_classnames, "bg-".concat(props.bg).concat(prefix), props.bg), _defineProperty(_classnames, "cursor-".concat(props.cursor).concat(prefix), props.cursor), _defineProperty(_classnames, "fc-".concat(props.color).concat(prefix), props.color), _defineProperty(_classnames, "h-".concat(props.h).concat(prefix), props.h), _defineProperty(_classnames, "m-".concat(props.m).concat(prefix), props.m), _defineProperty(_classnames, "mt-".concat(props.mt).concat(prefix), props.mt), _defineProperty(_classnames, "mr-".concat(props.mr).concat(prefix), props.mr), _defineProperty(_classnames, "mb-".concat(props.mb).concat(prefix), props.mb), _defineProperty(_classnames, "ml-".concat(props.ml).concat(prefix), props.ml), _defineProperty(_classnames, "p-".concat(props.p).concat(prefix), props.p), _defineProperty(_classnames, "pt-".concat(props.pt).concat(prefix), props.pt), _defineProperty(_classnames, "pr-".concat(props.pr).concat(prefix), props.pr), _defineProperty(_classnames, "pb-".concat(props.pb).concat(prefix), props.pb), _defineProperty(_classnames, "pl-".concat(props.pl).concat(prefix), props.pl), _defineProperty(_classnames, "w-".concat(props.w).concat(prefix), props.w), _defineProperty(_classnames, "".concat(props.custom), props.custom), _classnames));
   };
 
   var dProps = defProps('', props);
@@ -69,106 +73,41 @@ var Block = function Block(props) {
   var lgProps = lg && defProps('--lg', lg);
   var xlProps = xl && defProps('--xl', xl);
   var classProps = {
-    className: classnames(dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block',
+    className: classnames__default['default'](dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block',
     children: children,
     onClick: onClick
   };
-  return /*#__PURE__*/React.createElement("div", classProps);
+  return /*#__PURE__*/React__default['default'].createElement("div", classProps);
 };
 
 var propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 Block.propTypes = {
-  align: PropTypes.string,
-  bg: PropTypes.string,
-  color: PropTypes.string,
-  cursor: PropTypes.string,
-  m: PropTypes.oneOf([].concat(propTypesSizes)),
-  mt: PropTypes.oneOf([].concat(propTypesSizes)),
-  mr: PropTypes.oneOf([].concat(propTypesSizes)),
-  mb: PropTypes.oneOf([].concat(propTypesSizes)),
-  ml: PropTypes.oneOf([].concat(propTypesSizes)),
-  p: PropTypes.oneOf([].concat(propTypesSizes)),
-  pt: PropTypes.oneOf([].concat(propTypesSizes)),
-  pr: PropTypes.oneOf([].concat(propTypesSizes)),
-  pb: PropTypes.oneOf([].concat(propTypesSizes)),
-  pl: PropTypes.oneOf([].concat(propTypesSizes)),
-  xs: PropTypes.object,
-  sm: PropTypes.object,
-  md: PropTypes.object,
-  lg: PropTypes.object,
-  xl: PropTypes.object,
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]),
-  custom: PropTypes.string,
-  onClick: PropTypes.func,
-  w: PropTypes.string,
-  h: PropTypes.string
+  align: PropTypes__default['default'].string,
+  bg: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].string,
+  cursor: PropTypes__default['default'].string,
+  m: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  mt: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  mr: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  mb: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  ml: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  p: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  pt: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  pr: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  pb: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  pl: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
+  xs: PropTypes__default['default'].object,
+  sm: PropTypes__default['default'].object,
+  md: PropTypes__default['default'].object,
+  lg: PropTypes__default['default'].object,
+  xl: PropTypes__default['default'].object,
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object, PropTypes__default['default'].node]),
+  custom: PropTypes__default['default'].string,
+  onClick: PropTypes__default['default'].func,
+  w: PropTypes__default['default'].string,
+  h: PropTypes__default['default'].string
 };
 Block.defaultProps = {};
-
-var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
-  if (!policy_id) return null;
-  var w = width || 1000;
-  var r = domain || 'https://costanorte.com.br';
-  var d = derivative || '2x1';
-  var id = policy_id.split(".");
-  var string = id.length > 2 ? "".concat(policy_id, ":").concat(id[2]) : "".concat(policy_id);
-  var path = "".concat(r, "/image/policy:").concat(string, "/image.jpg?f=").concat(d, "&w=").concat(w);
-  return path;
-};
-
-var Image = function Image(_ref) {
-  var children = _ref.children,
-      content = _ref.content,
-      custom = _ref.custom,
-      domain = _ref.domain,
-      height = _ref.height,
-      lazy = _ref.lazy,
-      placeholder = _ref.placeholder;
-  var img_placeholder = placeholder || null;
-
-  if (content['image-contentId']) {
-    var policy_id = content['image-contentId'];
-    var derivative = "2x1";
-    var width = 1000;
-    content['image-path'] = pathToImage(derivative, domain, policy_id, width);
-    img_placeholder = img_placeholder || pathToImage(derivative, domain, policy_id, 10);
-  }
-
-  var content_path = content['image-path'];
-  var image_style;
-
-  if (lazy) {
-    image_style = {
-      backgroundImage: "url(".concat(lazy(content_path, img_placeholder), ")")
-    };
-  } else {
-    image_style = {
-      backgroundImage: "url(".concat(content_path, ")")
-    };
-  }
-
-  if (height) {
-    image_style.height = height;
-  }
-
-  return /*#__PURE__*/React.createElement("div", {
-    className: "image-background ".concat(custom || ''),
-    style: image_style
-  }, children && children);
-};
-
-Image.propTypes = {
-  children: PropTypes.node,
-  content: PropTypes.object.isRequired,
-  custom: PropTypes.string,
-  domain: PropTypes.string,
-  height: PropTypes.string,
-  lazy: PropTypes.func,
-  placeholder: PropTypes.string
-};
-Image.defaultProps = {
-  content: {}
-};
 
 var Typography = function Typography(props) {
   var _classnames;
@@ -221,19 +160,19 @@ var Typography = function Typography(props) {
     }
   };
 
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'typography-root': true
   }, _defineProperty(_classnames, getTokenVariant(), true), _defineProperty(_classnames, "".concat(custom), custom), _classnames));
 
   switch (tokenVariant) {
     case 'article-title':
     case 'title':
-      return /*#__PURE__*/React.createElement("h1", {
+      return /*#__PURE__*/React__default['default'].createElement("h1", {
         className: classes
       }, children);
 
     case 'article-paragraph':
-      return /*#__PURE__*/React.createElement("p", {
+      return /*#__PURE__*/React__default['default'].createElement("p", {
         className: classes,
         dangerouslySetInnerHTML: {
           __html: children
@@ -241,7 +180,7 @@ var Typography = function Typography(props) {
       });
 
     default:
-      return /*#__PURE__*/React.createElement("span", {
+      return /*#__PURE__*/React__default['default'].createElement("span", {
         className: classes
       }, children);
   }
@@ -255,18 +194,99 @@ Typography.propTypes = {
   /**
    * Texto que será inserido na tela
    */
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].array]).isRequired,
 
   /**
    * Permite a passagem de class customizado para o componente
    */
-  custom: PropTypes.string,
+  custom: PropTypes__default['default'].string,
 
   /**
    * Modifica o tamanho da fonte de acordo com as guias do design
    */
-  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
-  tokenVariant: PropTypes.oneOf(['article-title', 'article-title-intro', 'article-subtitle', 'article-subtitle-intro', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
+  size: PropTypes__default['default'].oneOf(['xs', 'sm', 'md', 'lg', 'xl']).isRequired,
+  tokenVariant: PropTypes__default['default'].oneOf(['article-title', 'article-title-intro', 'article-subtitle', 'article-subtitle-intro', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'])
+};
+
+var SectionTitle = function SectionTitle(_ref) {
+  var custom = _ref.custom,
+      name = _ref.name;
+  return /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "section-title-block",
+    mb: "3"
+  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
+    custom: "section-title ".concat(custom)
+  }, name));
+};
+
+SectionTitle.propTypes = {
+  custom: PropTypes__default['default'].string,
+  name: PropTypes__default['default'].string
+};
+
+var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
+  if (!policy_id) return null;
+  var w = width || 1000;
+  var r = domain || 'https://costanorte.com.br';
+  var d = derivative || '2x1';
+  var id = policy_id.split('.');
+  var string = id.length > 2 ? "".concat(policy_id, ":").concat(id[2]) : "".concat(policy_id);
+  var path = "".concat(r, "/image/policy:").concat(string, "/image.jpg?f=").concat(d, "&w=").concat(w);
+  return path;
+};
+
+var Image = function Image(_ref) {
+  var children = _ref.children,
+      content = _ref.content,
+      custom = _ref.custom,
+      domain = _ref.domain,
+      height = _ref.height,
+      lazy = _ref.lazy,
+      placeholder = _ref.placeholder;
+  var img_placeholder = placeholder || null;
+
+  if (content['image-contentId']) {
+    var policy_id = content['image-contentId'];
+    var derivative = '2x1';
+    var width = 1000;
+    content['image-path'] = pathToImage(derivative, domain, policy_id, width);
+    img_placeholder = img_placeholder || pathToImage(derivative, domain, policy_id, 10);
+  }
+
+  var content_path = content['image-path'];
+  var image_style;
+
+  if (lazy) {
+    image_style = {
+      backgroundImage: "url(".concat(lazy(content_path, img_placeholder), ")")
+    };
+  } else {
+    image_style = {
+      backgroundImage: "url(".concat(content_path, ")")
+    };
+  }
+
+  if (height) {
+    image_style.height = height;
+  }
+
+  return /*#__PURE__*/React__default['default'].createElement("div", {
+    className: "image-background ".concat(custom || ''),
+    style: image_style
+  }, children && children);
+};
+
+Image.propTypes = {
+  children: PropTypes__default['default'].node,
+  content: PropTypes__default['default'].object.isRequired,
+  custom: PropTypes__default['default'].string,
+  domain: PropTypes__default['default'].string,
+  height: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  placeholder: PropTypes__default['default'].string
+};
+Image.defaultProps = {
+  content: {}
 };
 
 var Subject = function Subject(props) {
@@ -274,148 +294,25 @@ var Subject = function Subject(props) {
       custom = props.custom,
       filled = props.filled;
   if (!children) return null;
-  var classes = classnames(_defineProperty({
+  var classes = classnames__default['default'](_defineProperty({
     'subject-root': true,
     'filled bg-primary-1': filled
   }, "".concat(custom), custom));
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default['default'].createElement("div", {
     className: classes
-  }, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
     tokenVariant: "subject"
   }, children));
 };
 
 Subject.propTypes = {
-  children: PropTypes.string.isRequired,
-  custom: PropTypes.string,
-  filled: PropTypes.bool // size: PropTypes.oneOf([
+  children: PropTypes__default['default'].string.isRequired,
+  custom: PropTypes__default['default'].string,
+  filled: PropTypes__default['default'].bool // size: PropTypes.oneOf([
   //   'sm', 'md', 'lg'
   // ])
 
 };
-
-function buildFormatLongFn(args) {
-  return function (dirtyOptions) {
-    var options = dirtyOptions || {};
-    var width = options.width ? String(options.width) : args.defaultWidth;
-    var format = args.formats[width] || args.formats[args.defaultWidth];
-    return format;
-  };
-}
-
-function buildLocalizeFn(args) {
-  return function (dirtyIndex, dirtyOptions) {
-    var options = dirtyOptions || {};
-    var context = options.context ? String(options.context) : 'standalone';
-    var valuesArray;
-
-    if (context === 'formatting' && args.formattingValues) {
-      var defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
-      var width = options.width ? String(options.width) : defaultWidth;
-      valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
-    } else {
-      var _defaultWidth = args.defaultWidth;
-
-      var _width = options.width ? String(options.width) : args.defaultWidth;
-
-      valuesArray = args.values[_width] || args.values[_defaultWidth];
-    }
-
-    var index = args.argumentCallback ? args.argumentCallback(dirtyIndex) : dirtyIndex;
-    return valuesArray[index];
-  };
-}
-
-function buildMatchPatternFn(args) {
-  return function (dirtyString, dirtyOptions) {
-    var string = String(dirtyString);
-    var options = dirtyOptions || {};
-    var matchResult = string.match(args.matchPattern);
-
-    if (!matchResult) {
-      return null;
-    }
-
-    var matchedString = matchResult[0];
-    var parseResult = string.match(args.parsePattern);
-
-    if (!parseResult) {
-      return null;
-    }
-
-    var value = args.valueCallback ? args.valueCallback(parseResult[0]) : parseResult[0];
-    value = options.valueCallback ? options.valueCallback(value) : value;
-    return {
-      value: value,
-      rest: string.slice(matchedString.length)
-    };
-  };
-}
-
-function buildMatchFn(args) {
-  return function (dirtyString, dirtyOptions) {
-    var string = String(dirtyString);
-    var options = dirtyOptions || {};
-    var width = options.width;
-    var matchPattern = width && args.matchPatterns[width] || args.matchPatterns[args.defaultMatchWidth];
-    var matchResult = string.match(matchPattern);
-
-    if (!matchResult) {
-      return null;
-    }
-
-    var matchedString = matchResult[0];
-    var parsePatterns = width && args.parsePatterns[width] || args.parsePatterns[args.defaultParseWidth];
-    var value;
-
-    if (Object.prototype.toString.call(parsePatterns) === '[object Array]') {
-      value = findIndex(parsePatterns, function (pattern) {
-        return pattern.test(matchedString);
-      });
-    } else {
-      value = findKey(parsePatterns, function (pattern) {
-        return pattern.test(matchedString);
-      });
-    }
-
-    value = args.valueCallback ? args.valueCallback(value) : value;
-    value = options.valueCallback ? options.valueCallback(value) : value;
-    return {
-      value: value,
-      rest: string.slice(matchedString.length)
-    };
-  };
-}
-
-function findKey(object, predicate) {
-  for (var key in object) {
-    if (object.hasOwnProperty(key) && predicate(object[key])) {
-      return key;
-    }
-  }
-}
-
-function findIndex(array, predicate) {
-  for (var key = 0; key < array.length; key++) {
-    if (predicate(array[key])) {
-      return key;
-    }
-  }
-}
-
-function toInteger(dirtyNumber) {
-  if (dirtyNumber === null || dirtyNumber === true || dirtyNumber === false) {
-    return NaN;
-  }
-
-  var number = Number(dirtyNumber);
-
-  if (isNaN(number)) {
-    return number;
-  }
-
-  return number < 0 ? Math.ceil(number) : Math.floor(number);
-}
 
 function requiredArgs(required, args) {
   if (args.length < required) {
@@ -466,7 +363,7 @@ function toDate(argument) {
   } else {
     if ((typeof argument === 'string' || argStr === '[object String]') && typeof console !== 'undefined') {
       // eslint-disable-next-line no-console
-      console.warn("Starting with v2.0.0-beta.1 date-fns doesn't accept strings as arguments. Please use `parseISO` to parse strings. See: https://git.io/fjule"); // eslint-disable-next-line no-console
+      console.warn("Starting with v2.0.0-beta.1 date-fns doesn't accept strings as date arguments. Please use `parseISO` to parse strings. See: https://git.io/fjule"); // eslint-disable-next-line no-console
 
       console.warn(new Error().stack);
     }
@@ -475,26 +372,229 @@ function toDate(argument) {
   }
 }
 
-// See issue: https://github.com/date-fns/date-fns/issues/376
+/**
+ * @name differenceInMilliseconds
+ * @category Millisecond Helpers
+ * @summary Get the number of milliseconds between the given dates.
+ *
+ * @description
+ * Get the number of milliseconds between the given dates.
+ *
+ * ### v2.0.0 breaking changes:
+ *
+ * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+ *
+ * @param {Date|Number} dateLeft - the later date
+ * @param {Date|Number} dateRight - the earlier date
+ * @returns {Number} the number of milliseconds
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // How many milliseconds are between
+ * // 2 July 2014 12:30:20.600 and 2 July 2014 12:30:21.700?
+ * var result = differenceInMilliseconds(
+ *   new Date(2014, 6, 2, 12, 30, 21, 700),
+ *   new Date(2014, 6, 2, 12, 30, 20, 600)
+ * )
+ * //=> 1100
+ */
 
-function startOfUTCWeek(dirtyDate, dirtyOptions) {
-  requiredArgs(1, arguments);
-  var options = dirtyOptions || {};
-  var locale = options.locale;
-  var localeWeekStartsOn = locale && locale.options && locale.options.weekStartsOn;
-  var defaultWeekStartsOn = localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
-  var weekStartsOn = options.weekStartsOn == null ? defaultWeekStartsOn : toInteger(options.weekStartsOn); // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
+function differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeft = toDate(dirtyDateLeft);
+  var dateRight = toDate(dirtyDateRight);
+  return dateLeft.getTime() - dateRight.getTime();
+}
 
-  if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
-    throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
+var MILLISECONDS_IN_HOUR = 3600000;
+/**
+ * @name differenceInHours
+ * @category Hour Helpers
+ * @summary Get the number of hours between the given dates.
+ *
+ * @description
+ * Get the number of hours between the given dates.
+ *
+ * ### v2.0.0 breaking changes:
+ *
+ * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+ *
+ * @param {Date|Number} dateLeft - the later date
+ * @param {Date|Number} dateRight - the earlier date
+ * @returns {Number} the number of hours
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // How many hours are between 2 July 2014 06:50:00 and 2 July 2014 19:00:00?
+ * var result = differenceInHours(
+ *   new Date(2014, 6, 2, 19, 0),
+ *   new Date(2014, 6, 2, 6, 50)
+ * )
+ * //=> 12
+ */
+
+function differenceInHours(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / MILLISECONDS_IN_HOUR;
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff);
+}
+
+/**
+ * @name compareAsc
+ * @category Common Helpers
+ * @summary Compare the two dates and return -1, 0 or 1.
+ *
+ * @description
+ * Compare the two dates and return 1 if the first date is after the second,
+ * -1 if the first date is before the second or 0 if dates are equal.
+ *
+ * ### v2.0.0 breaking changes:
+ *
+ * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+ *
+ * @param {Date|Number} dateLeft - the first date to compare
+ * @param {Date|Number} dateRight - the second date to compare
+ * @returns {Number} the result of the comparison
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Compare 11 February 1987 and 10 July 1989:
+ * var result = compareAsc(new Date(1987, 1, 11), new Date(1989, 6, 10))
+ * //=> -1
+ *
+ * @example
+ * // Sort the array of dates:
+ * var result = [
+ *   new Date(1995, 6, 2),
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * ].sort(compareAsc)
+ * //=> [
+ * //   Wed Feb 11 1987 00:00:00,
+ * //   Mon Jul 10 1989 00:00:00,
+ * //   Sun Jul 02 1995 00:00:00
+ * // ]
+ */
+
+function compareAsc(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeft = toDate(dirtyDateLeft);
+  var dateRight = toDate(dirtyDateRight);
+  var diff = dateLeft.getTime() - dateRight.getTime();
+
+  if (diff < 0) {
+    return -1;
+  } else if (diff > 0) {
+    return 1; // Return 0 if diff is 0; return NaN if diff is NaN
+  } else {
+    return diff;
   }
+}
 
-  var date = toDate(dirtyDate);
-  var day = date.getUTCDay();
-  var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
-  date.setUTCDate(date.getUTCDate() - diff);
-  date.setUTCHours(0, 0, 0, 0);
-  return date;
+/**
+ * @name differenceInCalendarMonths
+ * @category Month Helpers
+ * @summary Get the number of calendar months between the given dates.
+ *
+ * @description
+ * Get the number of calendar months between the given dates.
+ *
+ * ### v2.0.0 breaking changes:
+ *
+ * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+ *
+ * @param {Date|Number} dateLeft - the later date
+ * @param {Date|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar months
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // How many calendar months are between 31 January 2014 and 1 September 2014?
+ * var result = differenceInCalendarMonths(
+ *   new Date(2014, 8, 1),
+ *   new Date(2014, 0, 31)
+ * )
+ * //=> 8
+ */
+
+function differenceInCalendarMonths(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeft = toDate(dirtyDateLeft);
+  var dateRight = toDate(dirtyDateRight);
+  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear();
+  var monthDiff = dateLeft.getMonth() - dateRight.getMonth();
+  return yearDiff * 12 + monthDiff;
+}
+
+/**
+ * @name differenceInMonths
+ * @category Month Helpers
+ * @summary Get the number of full months between the given dates.
+ *
+ * @description
+ * Get the number of full months between the given dates.
+ *
+ * ### v2.0.0 breaking changes:
+ *
+ * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+ *
+ * @param {Date|Number} dateLeft - the later date
+ * @param {Date|Number} dateRight - the earlier date
+ * @returns {Number} the number of full months
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // How many full months are between 31 January 2014 and 1 September 2014?
+ * var result = differenceInMonths(new Date(2014, 8, 1), new Date(2014, 0, 31))
+ * //=> 7
+ */
+
+function differenceInMonths(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeft = toDate(dirtyDateLeft);
+  var dateRight = toDate(dirtyDateRight);
+  var sign = compareAsc(dateLeft, dateRight);
+  var difference = Math.abs(differenceInCalendarMonths(dateLeft, dateRight));
+  dateLeft.setMonth(dateLeft.getMonth() - sign * difference); // Math.abs(diff in full months - diff in calendar months) === 1 if last calendar month is not full
+  // If so, result must be decreased by 1 in absolute value
+
+  var isLastMonthNotFull = compareAsc(dateLeft, dateRight) === -sign;
+  var result = sign * (difference - isLastMonthNotFull); // Prevent negative zero
+
+  return result === 0 ? 0 : result;
+}
+
+/**
+ * @name differenceInSeconds
+ * @category Second Helpers
+ * @summary Get the number of seconds between the given dates.
+ *
+ * @description
+ * Get the number of seconds between the given dates.
+ *
+ * ### v2.0.0 breaking changes:
+ *
+ * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+ *
+ * @param {Date|Number} dateLeft - the later date
+ * @param {Date|Number} dateRight - the earlier date
+ * @returns {Number} the number of seconds
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // How many seconds are between
+ * // 2 July 2014 12:30:07.999 and 2 July 2014 12:30:20.000?
+ * var result = differenceInSeconds(
+ *   new Date(2014, 6, 2, 12, 30, 20, 0),
+ *   new Date(2014, 6, 2, 12, 30, 7, 999)
+ * )
+ * //=> 12
+ */
+
+function differenceInSeconds(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / 1000;
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff);
 }
 
 var formatDistanceLocale = {
@@ -583,6 +683,48 @@ function formatDistance(token, count, options) {
   return result;
 }
 
+function buildFormatLongFn(args) {
+  return function (dirtyOptions) {
+    var options = dirtyOptions || {};
+    var width = options.width ? String(options.width) : args.defaultWidth;
+    var format = args.formats[width] || args.formats[args.defaultWidth];
+    return format;
+  };
+}
+
+var dateFormats = {
+  full: 'EEEE, MMMM do, y',
+  long: 'MMMM do, y',
+  medium: 'MMM d, y',
+  short: 'MM/dd/yyyy'
+};
+var timeFormats = {
+  full: 'h:mm:ss a zzzz',
+  long: 'h:mm:ss a z',
+  medium: 'h:mm:ss a',
+  short: 'h:mm a'
+};
+var dateTimeFormats = {
+  full: "{{date}} 'at' {{time}}",
+  long: "{{date}} 'at' {{time}}",
+  medium: '{{date}}, {{time}}',
+  short: '{{date}}, {{time}}'
+};
+var formatLong = {
+  date: buildFormatLongFn({
+    formats: dateFormats,
+    defaultWidth: 'full'
+  }),
+  time: buildFormatLongFn({
+    formats: timeFormats,
+    defaultWidth: 'full'
+  }),
+  dateTime: buildFormatLongFn({
+    formats: dateTimeFormats,
+    defaultWidth: 'full'
+  })
+};
+
 var formatRelativeLocale = {
   lastWeek: "'last' eeee 'at' p",
   yesterday: "'yesterday at' p",
@@ -593,6 +735,29 @@ var formatRelativeLocale = {
 };
 function formatRelative(token, _date, _baseDate, _options) {
   return formatRelativeLocale[token];
+}
+
+function buildLocalizeFn(args) {
+  return function (dirtyIndex, dirtyOptions) {
+    var options = dirtyOptions || {};
+    var context = options.context ? String(options.context) : 'standalone';
+    var valuesArray;
+
+    if (context === 'formatting' && args.formattingValues) {
+      var defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
+      var width = options.width ? String(options.width) : defaultWidth;
+      valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
+    } else {
+      var _defaultWidth = args.defaultWidth;
+
+      var _width = options.width ? String(options.width) : args.defaultWidth;
+
+      valuesArray = args.values[_width] || args.values[_defaultWidth];
+    }
+
+    var index = args.argumentCallback ? args.argumentCallback(dirtyIndex) : dirtyIndex;
+    return valuesArray[index];
+  };
 }
 
 var eraValues = {
@@ -743,6 +908,83 @@ var localize = {
   })
 };
 
+function buildMatchPatternFn(args) {
+  return function (dirtyString, dirtyOptions) {
+    var string = String(dirtyString);
+    var options = dirtyOptions || {};
+    var matchResult = string.match(args.matchPattern);
+
+    if (!matchResult) {
+      return null;
+    }
+
+    var matchedString = matchResult[0];
+    var parseResult = string.match(args.parsePattern);
+
+    if (!parseResult) {
+      return null;
+    }
+
+    var value = args.valueCallback ? args.valueCallback(parseResult[0]) : parseResult[0];
+    value = options.valueCallback ? options.valueCallback(value) : value;
+    return {
+      value: value,
+      rest: string.slice(matchedString.length)
+    };
+  };
+}
+
+function buildMatchFn(args) {
+  return function (dirtyString, dirtyOptions) {
+    var string = String(dirtyString);
+    var options = dirtyOptions || {};
+    var width = options.width;
+    var matchPattern = width && args.matchPatterns[width] || args.matchPatterns[args.defaultMatchWidth];
+    var matchResult = string.match(matchPattern);
+
+    if (!matchResult) {
+      return null;
+    }
+
+    var matchedString = matchResult[0];
+    var parsePatterns = width && args.parsePatterns[width] || args.parsePatterns[args.defaultParseWidth];
+    var value;
+
+    if (Object.prototype.toString.call(parsePatterns) === '[object Array]') {
+      value = findIndex(parsePatterns, function (pattern) {
+        return pattern.test(matchedString);
+      });
+    } else {
+      value = findKey(parsePatterns, function (pattern) {
+        return pattern.test(matchedString);
+      });
+    }
+
+    value = args.valueCallback ? args.valueCallback(value) : value;
+    value = options.valueCallback ? options.valueCallback(value) : value;
+    return {
+      value: value,
+      rest: string.slice(matchedString.length)
+    };
+  };
+}
+
+function findKey(object, predicate) {
+  for (var key in object) {
+    if (object.hasOwnProperty(key) && predicate(object[key])) {
+      return key;
+    }
+  }
+}
+
+function findIndex(array, predicate) {
+  for (var key = 0; key < array.length; key++) {
+    if (predicate(array[key])) {
+      return key;
+    }
+  }
+}
+
 var matchOrdinalNumberPattern = /^(\d+)(th|st|nd|rd)?/i;
 var parseOrdinalNumberPattern = /\d+/i;
 var matchEraPatterns = {
@@ -839,39 +1081,6 @@ var match = {
   })
 };
 
-var dateFormats = {
-  full: 'EEEE, MMMM do, y',
-  long: 'MMMM do, y',
-  medium: 'MMM d, y',
-  short: 'MM/dd/yyyy'
-};
-var timeFormats = {
-  full: 'h:mm:ss a zzzz',
-  long: 'h:mm:ss a z',
-  medium: 'h:mm:ss a',
-  short: 'h:mm a'
-};
-var dateTimeFormats = {
-  full: "{{date}} 'at' {{time}}",
-  long: "{{date}} 'at' {{time}}",
-  medium: '{{date}}, {{time}}',
-  short: '{{date}}, {{time}}'
-};
-var formatLong = {
-  date: buildFormatLongFn({
-    formats: dateFormats,
-    defaultWidth: 'full'
-  }),
-  time: buildFormatLongFn({
-    formats: timeFormats,
-    defaultWidth: 'full'
-  }),
-  dateTime: buildFormatLongFn({
-    formats: dateTimeFormats,
-    defaultWidth: 'full'
-  })
-};
-
 /**
  * @type {Locale}
  * @category Locales
@@ -896,6 +1105,295 @@ var locale = {
     firstWeekContainsDate: 1
   }
 };
+
+function assign(target, dirtyObject) {
+  if (target == null) {
+    throw new TypeError('assign requires that input parameter not be null or undefined');
+  }
+
+  dirtyObject = dirtyObject || {};
+
+  for (var property in dirtyObject) {
+    if (dirtyObject.hasOwnProperty(property)) {
+      target[property] = dirtyObject[property];
+    }
+  }
+
+  return target;
+}
+
+function cloneObject(dirtyObject) {
+  return assign({}, dirtyObject);
+}
+
+var MILLISECONDS_IN_MINUTE = 60000;
+
+function getDateMillisecondsPart(date) {
+  return date.getTime() % MILLISECONDS_IN_MINUTE;
+}
+/**
+ * Google Chrome as of 67.0.3396.87 introduced timezones with offset that includes seconds.
+ * They usually appear for dates that denote time before the timezones were introduced
+ * (e.g. for 'Europe/Prague' timezone the offset is GMT+00:57:44 before 1 October 1891
+ * and GMT+01:00:00 after that date)
+ *
+ * Date#getTimezoneOffset returns the offset in minutes and would return 57 for the example above,
+ * which would lead to incorrect calculations.
+ *
+ * This function returns the timezone offset in milliseconds that takes seconds in account.
+ */
+
+
+function getTimezoneOffsetInMilliseconds(dirtyDate) {
+  var date = new Date(dirtyDate.getTime());
+  var baseTimezoneOffset = Math.ceil(date.getTimezoneOffset());
+  date.setSeconds(0, 0);
+  var hasNegativeUTCOffset = baseTimezoneOffset > 0;
+  var millisecondsPartOfTimezoneOffset = hasNegativeUTCOffset ? (MILLISECONDS_IN_MINUTE + getDateMillisecondsPart(date)) % MILLISECONDS_IN_MINUTE : getDateMillisecondsPart(date);
+  return baseTimezoneOffset * MILLISECONDS_IN_MINUTE + millisecondsPartOfTimezoneOffset;
+}
+
+var MINUTES_IN_DAY = 1440;
+var MINUTES_IN_ALMOST_TWO_DAYS = 2520;
+var MINUTES_IN_MONTH = 43200;
+var MINUTES_IN_TWO_MONTHS = 86400;
+/**
+ * @name formatDistance
+ * @category Common Helpers
+ * @summary Return the distance between the given dates in words.
+ *
+ * @description
+ * Return the distance between the given dates in words.
+ *
+ * | Distance between dates                                            | Result              |
+ * |-------------------------------------------------------------------|---------------------|
+ * | 0 ... 30 secs                                                     | less than a minute  |
+ * | 30 secs ... 1 min 30 secs                                         | 1 minute            |
+ * | 1 min 30 secs ... 44 mins 30 secs                                 | [2..44] minutes     |
+ * | 44 mins ... 30 secs ... 89 mins 30 secs                           | about 1 hour        |
+ * | 89 mins 30 secs ... 23 hrs 59 mins 30 secs                        | about [2..24] hours |
+ * | 23 hrs 59 mins 30 secs ... 41 hrs 59 mins 30 secs                 | 1 day               |
+ * | 41 hrs 59 mins 30 secs ... 29 days 23 hrs 59 mins 30 secs         | [2..30] days        |
+ * | 29 days 23 hrs 59 mins 30 secs ... 44 days 23 hrs 59 mins 30 secs | about 1 month       |
+ * | 44 days 23 hrs 59 mins 30 secs ... 59 days 23 hrs 59 mins 30 secs | about 2 months      |
+ * | 59 days 23 hrs 59 mins 30 secs ... 1 yr                           | [2..12] months      |
+ * | 1 yr ... 1 yr 3 months                                            | about 1 year        |
+ * | 1 yr 3 months ... 1 yr 9 month s                                  | over 1 year         |
+ * | 1 yr 9 months ... 2 yrs                                           | almost 2 years      |
+ * | N yrs ... N yrs 3 months                                          | about N years       |
+ * | N yrs 3 months ... N yrs 9 months                                 | over N years        |
+ * | N yrs 9 months ... N+1 yrs                                        | almost N+1 years    |
+ *
+ * With `options.includeSeconds == true`:
+ * | Distance between dates | Result               |
+ * |------------------------|----------------------|
+ * | 0 secs ... 5 secs      | less than 5 seconds  |
+ * | 5 secs ... 10 secs     | less than 10 seconds |
+ * | 10 secs ... 20 secs    | less than 20 seconds |
+ * | 20 secs ... 40 secs    | half a minute        |
+ * | 40 secs ... 60 secs    | less than a minute   |
+ * | 60 secs ... 90 secs    | 1 minute             |
+ *
+ * ### v2.0.0 breaking changes:
+ *
+ * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+ *
+ * - The function was renamed from `distanceInWords ` to `formatDistance`
+ *   to make its name consistent with `format` and `formatRelative`.
+ *
+ * - The order of arguments is swapped to make the function
+ *   consistent with `differenceIn...` functions.
+ *
+ *   ```javascript
+ *   // Before v2.0.0
+ *
+ *   distanceInWords(
+ *     new Date(1986, 3, 4, 10, 32, 0),
+ *     new Date(1986, 3, 4, 11, 32, 0),
+ *     { addSuffix: true }
+ *   ) //=> 'in about 1 hour'
+ *
+ *   // v2.0.0 onward
+ *
+ *   formatDistance(
+ *     new Date(1986, 3, 4, 11, 32, 0),
+ *     new Date(1986, 3, 4, 10, 32, 0),
+ *     { addSuffix: true }
+ *   ) //=> 'in about 1 hour'
+ *   ```
+ *
+ * @param {Date|Number} date - the date
+ * @param {Date|Number} baseDate - the date to compare with
+ * @param {Object} [options] - an object with options.
+ * @param {Boolean} [options.includeSeconds=false] - distances less than a minute are more detailed
+ * @param {Boolean} [options.addSuffix=false] - result indicates if the second date is earlier or later than the first
+ * @param {Locale} [options.locale=defaultLocale] - the locale object. See [Locale]{@link https://date-fns.org/docs/Locale}
+ * @returns {String} the distance in words
+ * @throws {TypeError} 2 arguments required
+ * @throws {RangeError} `date` must not be Invalid Date
+ * @throws {RangeError} `baseDate` must not be Invalid Date
+ * @throws {RangeError} `options.locale` must contain `formatDistance` property
+ *
+ * @example
+ * // What is the distance between 2 July 2014 and 1 January 2015?
+ * var result = formatDistance(new Date(2014, 6, 2), new Date(2015, 0, 1))
+ * //=> '6 months'
+ *
+ * @example
+ * // What is the distance between 1 January 2015 00:00:15
+ * // and 1 January 2015 00:00:00, including seconds?
+ * var result = formatDistance(
+ *   new Date(2015, 0, 1, 0, 0, 15),
+ *   new Date(2015, 0, 1, 0, 0, 0),
+ *   { includeSeconds: true }
+ * )
+ * //=> 'less than 20 seconds'
+ *
+ * @example
+ * // What is the distance from 1 January 2016
+ * // to 1 January 2015, with a suffix?
+ * var result = formatDistance(new Date(2015, 0, 1), new Date(2016, 0, 1), {
+ *   addSuffix: true
+ * })
+ * //=> 'about 1 year ago'
+ *
+ * @example
+ * // What is the distance between 1 August 2016 and 1 January 2015 in Esperanto?
+ * import { eoLocale } from 'date-fns/locale/eo'
+ * var result = formatDistance(new Date(2016, 7, 1), new Date(2015, 0, 1), {
+ *   locale: eoLocale
+ * })
+ * //=> 'pli ol 1 jaro'
+ */
+
+function formatDistance$1(dirtyDate, dirtyBaseDate, dirtyOptions) {
+  requiredArgs(2, arguments);
+  var options = dirtyOptions || {};
+  var locale$1 = options.locale || locale;
+
+  if (!locale$1.formatDistance) {
+    throw new RangeError('locale must contain formatDistance property');
+  }
+
+  var comparison = compareAsc(dirtyDate, dirtyBaseDate);
+
+  if (isNaN(comparison)) {
+    throw new RangeError('Invalid time value');
+  }
+
+  var localizeOptions = cloneObject(options);
+  localizeOptions.addSuffix = Boolean(options.addSuffix);
+  localizeOptions.comparison = comparison;
+  var dateLeft;
+  var dateRight;
+
+  if (comparison > 0) {
+    dateLeft = toDate(dirtyBaseDate);
+    dateRight = toDate(dirtyDate);
+  } else {
+    dateLeft = toDate(dirtyDate);
+    dateRight = toDate(dirtyBaseDate);
+  }
+
+  var seconds = differenceInSeconds(dateRight, dateLeft);
+  var offsetInSeconds = (getTimezoneOffsetInMilliseconds(dateRight) - getTimezoneOffsetInMilliseconds(dateLeft)) / 1000;
+  var minutes = Math.round((seconds - offsetInSeconds) / 60);
+  var months; // 0 up to 2 mins
+
+  if (minutes < 2) {
+    if (options.includeSeconds) {
+      if (seconds < 5) {
+        return locale$1.formatDistance('lessThanXSeconds', 5, localizeOptions);
+      } else if (seconds < 10) {
+        return locale$1.formatDistance('lessThanXSeconds', 10, localizeOptions);
+      } else if (seconds < 20) {
+        return locale$1.formatDistance('lessThanXSeconds', 20, localizeOptions);
+      } else if (seconds < 40) {
+        return locale$1.formatDistance('halfAMinute', null, localizeOptions);
+      } else if (seconds < 60) {
+        return locale$1.formatDistance('lessThanXMinutes', 1, localizeOptions);
+      } else {
+        return locale$1.formatDistance('xMinutes', 1, localizeOptions);
+      }
+    } else {
+      if (minutes === 0) {
+        return locale$1.formatDistance('lessThanXMinutes', 1, localizeOptions);
+      } else {
+        return locale$1.formatDistance('xMinutes', minutes, localizeOptions);
+      }
+    } // 2 mins up to 0.75 hrs
+
+  } else if (minutes < 45) {
+    return locale$1.formatDistance('xMinutes', minutes, localizeOptions); // 0.75 hrs up to 1.5 hrs
+  } else if (minutes < 90) {
+    return locale$1.formatDistance('aboutXHours', 1, localizeOptions); // 1.5 hrs up to 24 hrs
+  } else if (minutes < MINUTES_IN_DAY) {
+    var hours = Math.round(minutes / 60);
+    return locale$1.formatDistance('aboutXHours', hours, localizeOptions); // 1 day up to 1.75 days
+  } else if (minutes < MINUTES_IN_ALMOST_TWO_DAYS) {
+    return locale$1.formatDistance('xDays', 1, localizeOptions); // 1.75 days up to 30 days
+  } else if (minutes < MINUTES_IN_MONTH) {
+    var days = Math.round(minutes / MINUTES_IN_DAY);
+    return locale$1.formatDistance('xDays', days, localizeOptions); // 1 month up to 2 months
+  } else if (minutes < MINUTES_IN_TWO_MONTHS) {
+    months = Math.round(minutes / MINUTES_IN_MONTH);
+    return locale$1.formatDistance('aboutXMonths', months, localizeOptions);
+  }
+
+  months = differenceInMonths(dateRight, dateLeft); // 2 months up to 12 months
+
+  if (months < 12) {
+    var nearestMonth = Math.round(minutes / MINUTES_IN_MONTH);
+    return locale$1.formatDistance('xMonths', nearestMonth, localizeOptions); // 1 year up to max Date
+  } else {
+    var monthsSinceStartOfYear = months % 12;
+    var years = Math.floor(months / 12); // N years up to 1 years 3 months
+
+    if (monthsSinceStartOfYear < 3) {
+      return locale$1.formatDistance('aboutXYears', years, localizeOptions); // N years 3 months up to N years 9 months
+    } else if (monthsSinceStartOfYear < 9) {
+      return locale$1.formatDistance('overXYears', years, localizeOptions); // N years 9 months up to N year 12 months
+    } else {
+      return locale$1.formatDistance('almostXYears', years + 1, localizeOptions);
+    }
+  }
+}
+
+function toInteger(dirtyNumber) {
+  if (dirtyNumber === null || dirtyNumber === true || dirtyNumber === false) {
+    return NaN;
+  }
+
+  var number = Number(dirtyNumber);
+
+  if (isNaN(number)) {
+    return number;
+  }
+
+  return number < 0 ? Math.ceil(number) : Math.floor(number);
+}
+
+// See issue: https://github.com/date-fns/date-fns/issues/376
+
+function startOfUTCWeek(dirtyDate, dirtyOptions) {
+  requiredArgs(1, arguments);
+  var options = dirtyOptions || {};
+  var locale = options.locale;
+  var localeWeekStartsOn = locale && locale.options && locale.options.weekStartsOn;
+  var defaultWeekStartsOn = localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
+  var weekStartsOn = options.weekStartsOn == null ? defaultWeekStartsOn : toInteger(options.weekStartsOn); // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
+
+  if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
+    throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
+  }
+
+  var date = toDate(dirtyDate);
+  var day = date.getUTCDay();
+  var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
+  date.setUTCDate(date.getUTCDate() - diff);
+  date.setUTCHours(0, 0, 0, 0);
+  return date;
+}
 
 var formatDistanceLocale$1 = {
   lessThanXSeconds: {
@@ -964,7 +1462,7 @@ var formatDistanceLocale$1 = {
     other: 'quase {{count}} anos'
   }
 };
-function formatDistance$1(token, count, options) {
+function formatDistance$2(token, count, options) {
   options = options || {};
   var result;
 
@@ -1260,7 +1758,7 @@ var match$1 = {
 
 var locale$1 = {
   code: 'pt',
-  formatDistance: formatDistance$1,
+  formatDistance: formatDistance$2,
   formatLong: formatLong$1,
   formatRelative: formatRelative$1,
   localize: localize$1,
@@ -1272,484 +1770,6 @@ var locale$1 = {
     firstWeekContainsDate: 4
   }
 };
-
-/**
- * @name compareAsc
- * @category Common Helpers
- * @summary Compare the two dates and return -1, 0 or 1.
- *
- * @description
- * Compare the two dates and return 1 if the first date is after the second,
- * -1 if the first date is before the second or 0 if dates are equal.
- *
- * ### v2.0.0 breaking changes:
- *
- * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
- *
- * @param {Date|Number} dateLeft - the first date to compare
- * @param {Date|Number} dateRight - the second date to compare
- * @returns {Number} the result of the comparison
- * @throws {TypeError} 2 arguments required
- *
- * @example
- * // Compare 11 February 1987 and 10 July 1989:
- * var result = compareAsc(new Date(1987, 1, 11), new Date(1989, 6, 10))
- * //=> -1
- *
- * @example
- * // Sort the array of dates:
- * var result = [
- *   new Date(1995, 6, 2),
- *   new Date(1987, 1, 11),
- *   new Date(1989, 6, 10)
- * ].sort(compareAsc)
- * //=> [
- * //   Wed Feb 11 1987 00:00:00,
- * //   Mon Jul 10 1989 00:00:00,
- * //   Sun Jul 02 1995 00:00:00
- * // ]
- */
-
-function compareAsc(dirtyDateLeft, dirtyDateRight) {
-  requiredArgs(2, arguments);
-  var dateLeft = toDate(dirtyDateLeft);
-  var dateRight = toDate(dirtyDateRight);
-  var diff = dateLeft.getTime() - dateRight.getTime();
-
-  if (diff < 0) {
-    return -1;
-  } else if (diff > 0) {
-    return 1; // Return 0 if diff is 0; return NaN if diff is NaN
-  } else {
-    return diff;
-  }
-}
-
-/**
- * @name differenceInCalendarMonths
- * @category Month Helpers
- * @summary Get the number of calendar months between the given dates.
- *
- * @description
- * Get the number of calendar months between the given dates.
- *
- * ### v2.0.0 breaking changes:
- *
- * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
- *
- * @param {Date|Number} dateLeft - the later date
- * @param {Date|Number} dateRight - the earlier date
- * @returns {Number} the number of calendar months
- * @throws {TypeError} 2 arguments required
- *
- * @example
- * // How many calendar months are between 31 January 2014 and 1 September 2014?
- * var result = differenceInCalendarMonths(
- *   new Date(2014, 8, 1),
- *   new Date(2014, 0, 31)
- * )
- * //=> 8
- */
-
-function differenceInCalendarMonths(dirtyDateLeft, dirtyDateRight) {
-  requiredArgs(2, arguments);
-  var dateLeft = toDate(dirtyDateLeft);
-  var dateRight = toDate(dirtyDateRight);
-  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear();
-  var monthDiff = dateLeft.getMonth() - dateRight.getMonth();
-  return yearDiff * 12 + monthDiff;
-}
-
-/**
- * @name differenceInMonths
- * @category Month Helpers
- * @summary Get the number of full months between the given dates.
- *
- * @description
- * Get the number of full months between the given dates.
- *
- * ### v2.0.0 breaking changes:
- *
- * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
- *
- * @param {Date|Number} dateLeft - the later date
- * @param {Date|Number} dateRight - the earlier date
- * @returns {Number} the number of full months
- * @throws {TypeError} 2 arguments required
- *
- * @example
- * // How many full months are between 31 January 2014 and 1 September 2014?
- * var result = differenceInMonths(new Date(2014, 8, 1), new Date(2014, 0, 31))
- * //=> 7
- */
-
-function differenceInMonths(dirtyDateLeft, dirtyDateRight) {
-  requiredArgs(2, arguments);
-  var dateLeft = toDate(dirtyDateLeft);
-  var dateRight = toDate(dirtyDateRight);
-  var sign = compareAsc(dateLeft, dateRight);
-  var difference = Math.abs(differenceInCalendarMonths(dateLeft, dateRight));
-  dateLeft.setMonth(dateLeft.getMonth() - sign * difference); // Math.abs(diff in full months - diff in calendar months) === 1 if last calendar month is not full
-  // If so, result must be decreased by 1 in absolute value
-
-  var isLastMonthNotFull = compareAsc(dateLeft, dateRight) === -sign;
-  var result = sign * (difference - isLastMonthNotFull); // Prevent negative zero
-
-  return result === 0 ? 0 : result;
-}
-
-/**
- * @name differenceInMilliseconds
- * @category Millisecond Helpers
- * @summary Get the number of milliseconds between the given dates.
- *
- * @description
- * Get the number of milliseconds between the given dates.
- *
- * ### v2.0.0 breaking changes:
- *
- * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
- *
- * @param {Date|Number} dateLeft - the later date
- * @param {Date|Number} dateRight - the earlier date
- * @returns {Number} the number of milliseconds
- * @throws {TypeError} 2 arguments required
- *
- * @example
- * // How many milliseconds are between
- * // 2 July 2014 12:30:20.600 and 2 July 2014 12:30:21.700?
- * var result = differenceInMilliseconds(
- *   new Date(2014, 6, 2, 12, 30, 21, 700),
- *   new Date(2014, 6, 2, 12, 30, 20, 600)
- * )
- * //=> 1100
- */
-
-function differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) {
-  requiredArgs(2, arguments);
-  var dateLeft = toDate(dirtyDateLeft);
-  var dateRight = toDate(dirtyDateRight);
-  return dateLeft.getTime() - dateRight.getTime();
-}
-
-/**
- * @name differenceInSeconds
- * @category Second Helpers
- * @summary Get the number of seconds between the given dates.
- *
- * @description
- * Get the number of seconds between the given dates.
- *
- * ### v2.0.0 breaking changes:
- *
- * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
- *
- * @param {Date|Number} dateLeft - the later date
- * @param {Date|Number} dateRight - the earlier date
- * @returns {Number} the number of seconds
- * @throws {TypeError} 2 arguments required
- *
- * @example
- * // How many seconds are between
- * // 2 July 2014 12:30:07.999 and 2 July 2014 12:30:20.000?
- * var result = differenceInSeconds(
- *   new Date(2014, 6, 2, 12, 30, 20, 0),
- *   new Date(2014, 6, 2, 12, 30, 7, 999)
- * )
- * //=> 12
- */
-
-function differenceInSeconds(dirtyDateLeft, dirtyDateRight) {
-  requiredArgs(2, arguments);
-  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / 1000;
-  return diff > 0 ? Math.floor(diff) : Math.ceil(diff);
-}
-
-function assign(target, dirtyObject) {
-  if (target == null) {
-    throw new TypeError('assign requires that input parameter not be null or undefined');
-  }
-
-  dirtyObject = dirtyObject || {};
-
-  for (var property in dirtyObject) {
-    if (dirtyObject.hasOwnProperty(property)) {
-      target[property] = dirtyObject[property];
-    }
-  }
-
-  return target;
-}
-
-function cloneObject(dirtyObject) {
-  return assign({}, dirtyObject);
-}
-
-var MILLISECONDS_IN_MINUTE = 60000;
-
-function getDateMillisecondsPart(date) {
-  return date.getTime() % MILLISECONDS_IN_MINUTE;
-}
-/**
- * Google Chrome as of 67.0.3396.87 introduced timezones with offset that includes seconds.
- * They usually appear for dates that denote time before the timezones were introduced
- * (e.g. for 'Europe/Prague' timezone the offset is GMT+00:57:44 before 1 October 1891
- * and GMT+01:00:00 after that date)
- *
- * Date#getTimezoneOffset returns the offset in minutes and would return 57 for the example above,
- * which would lead to incorrect calculations.
- *
- * This function returns the timezone offset in milliseconds that takes seconds in account.
- */
-
-
-function getTimezoneOffsetInMilliseconds(dirtyDate) {
-  var date = new Date(dirtyDate.getTime());
-  var baseTimezoneOffset = Math.ceil(date.getTimezoneOffset());
-  date.setSeconds(0, 0);
-  var hasNegativeUTCOffset = baseTimezoneOffset > 0;
-  var millisecondsPartOfTimezoneOffset = hasNegativeUTCOffset ? (MILLISECONDS_IN_MINUTE + getDateMillisecondsPart(date)) % MILLISECONDS_IN_MINUTE : getDateMillisecondsPart(date);
-  return baseTimezoneOffset * MILLISECONDS_IN_MINUTE + millisecondsPartOfTimezoneOffset;
-}
-
-var MINUTES_IN_DAY = 1440;
-var MINUTES_IN_ALMOST_TWO_DAYS = 2520;
-var MINUTES_IN_MONTH = 43200;
-var MINUTES_IN_TWO_MONTHS = 86400;
-/**
- * @name formatDistance
- * @category Common Helpers
- * @summary Return the distance between the given dates in words.
- *
- * @description
- * Return the distance between the given dates in words.
- *
- * | Distance between dates                                            | Result              |
- * |-------------------------------------------------------------------|---------------------|
- * | 0 ... 30 secs                                                     | less than a minute  |
- * | 30 secs ... 1 min 30 secs                                         | 1 minute            |
- * | 1 min 30 secs ... 44 mins 30 secs                                 | [2..44] minutes     |
- * | 44 mins ... 30 secs ... 89 mins 30 secs                           | about 1 hour        |
- * | 89 mins 30 secs ... 23 hrs 59 mins 30 secs                        | about [2..24] hours |
- * | 23 hrs 59 mins 30 secs ... 41 hrs 59 mins 30 secs                 | 1 day               |
- * | 41 hrs 59 mins 30 secs ... 29 days 23 hrs 59 mins 30 secs         | [2..30] days        |
- * | 29 days 23 hrs 59 mins 30 secs ... 44 days 23 hrs 59 mins 30 secs | about 1 month       |
- * | 44 days 23 hrs 59 mins 30 secs ... 59 days 23 hrs 59 mins 30 secs | about 2 months      |
- * | 59 days 23 hrs 59 mins 30 secs ... 1 yr                           | [2..12] months      |
- * | 1 yr ... 1 yr 3 months                                            | about 1 year        |
- * | 1 yr 3 months ... 1 yr 9 month s                                  | over 1 year         |
- * | 1 yr 9 months ... 2 yrs                                           | almost 2 years      |
- * | N yrs ... N yrs 3 months                                          | about N years       |
- * | N yrs 3 months ... N yrs 9 months                                 | over N years        |
- * | N yrs 9 months ... N+1 yrs                                        | almost N+1 years    |
- *
- * With `options.includeSeconds == true`:
- * | Distance between dates | Result               |
- * |------------------------|----------------------|
- * | 0 secs ... 5 secs      | less than 5 seconds  |
- * | 5 secs ... 10 secs     | less than 10 seconds |
- * | 10 secs ... 20 secs    | less than 20 seconds |
- * | 20 secs ... 40 secs    | half a minute        |
- * | 40 secs ... 60 secs    | less than a minute   |
- * | 60 secs ... 90 secs    | 1 minute             |
- *
- * ### v2.0.0 breaking changes:
- *
- * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
- *
- * - The function was renamed from `distanceInWords ` to `formatDistance`
- *   to make its name consistent with `format` and `formatRelative`.
- *
- * - The order of arguments is swapped to make the function
- *   consistent with `differenceIn...` functions.
- *
- *   ```javascript
- *   // Before v2.0.0
- *
- *   distanceInWords(
- *     new Date(1986, 3, 4, 10, 32, 0),
- *     new Date(1986, 3, 4, 11, 32, 0),
- *     { addSuffix: true }
- *   ) //=> 'in about 1 hour'
- *
- *   // v2.0.0 onward
- *
- *   formatDistance(
- *     new Date(1986, 3, 4, 11, 32, 0),
- *     new Date(1986, 3, 4, 10, 32, 0),
- *     { addSuffix: true }
- *   ) //=> 'in about 1 hour'
- *   ```
- *
- * @param {Date|Number} date - the date
- * @param {Date|Number} baseDate - the date to compare with
- * @param {Object} [options] - an object with options.
- * @param {Boolean} [options.includeSeconds=false] - distances less than a minute are more detailed
- * @param {Boolean} [options.addSuffix=false] - result indicates if the second date is earlier or later than the first
- * @param {Locale} [options.locale=defaultLocale] - the locale object. See [Locale]{@link https://date-fns.org/docs/Locale}
- * @returns {String} the distance in words
- * @throws {TypeError} 2 arguments required
- * @throws {RangeError} `date` must not be Invalid Date
- * @throws {RangeError} `baseDate` must not be Invalid Date
- * @throws {RangeError} `options.locale` must contain `formatDistance` property
- *
- * @example
- * // What is the distance between 2 July 2014 and 1 January 2015?
- * var result = formatDistance(new Date(2014, 6, 2), new Date(2015, 0, 1))
- * //=> '6 months'
- *
- * @example
- * // What is the distance between 1 January 2015 00:00:15
- * // and 1 January 2015 00:00:00, including seconds?
- * var result = formatDistance(
- *   new Date(2015, 0, 1, 0, 0, 15),
- *   new Date(2015, 0, 1, 0, 0, 0),
- *   { includeSeconds: true }
- * )
- * //=> 'less than 20 seconds'
- *
- * @example
- * // What is the distance from 1 January 2016
- * // to 1 January 2015, with a suffix?
- * var result = formatDistance(new Date(2015, 0, 1), new Date(2016, 0, 1), {
- *   addSuffix: true
- * })
- * //=> 'about 1 year ago'
- *
- * @example
- * // What is the distance between 1 August 2016 and 1 January 2015 in Esperanto?
- * import { eoLocale } from 'date-fns/locale/eo'
- * var result = formatDistance(new Date(2016, 7, 1), new Date(2015, 0, 1), {
- *   locale: eoLocale
- * })
- * //=> 'pli ol 1 jaro'
- */
-
-function formatDistance$2(dirtyDate, dirtyBaseDate, dirtyOptions) {
-  requiredArgs(2, arguments);
-  var options = dirtyOptions || {};
-  var locale$1 = options.locale || locale;
-
-  if (!locale$1.formatDistance) {
-    throw new RangeError('locale must contain formatDistance property');
-  }
-
-  var comparison = compareAsc(dirtyDate, dirtyBaseDate);
-
-  if (isNaN(comparison)) {
-    throw new RangeError('Invalid time value');
-  }
-
-  var localizeOptions = cloneObject(options);
-  localizeOptions.addSuffix = Boolean(options.addSuffix);
-  localizeOptions.comparison = comparison;
-  var dateLeft;
-  var dateRight;
-
-  if (comparison > 0) {
-    dateLeft = toDate(dirtyBaseDate);
-    dateRight = toDate(dirtyDate);
-  } else {
-    dateLeft = toDate(dirtyDate);
-    dateRight = toDate(dirtyBaseDate);
-  }
-
-  var seconds = differenceInSeconds(dateRight, dateLeft);
-  var offsetInSeconds = (getTimezoneOffsetInMilliseconds(dateRight) - getTimezoneOffsetInMilliseconds(dateLeft)) / 1000;
-  var minutes = Math.round((seconds - offsetInSeconds) / 60);
-  var months; // 0 up to 2 mins
-
-  if (minutes < 2) {
-    if (options.includeSeconds) {
-      if (seconds < 5) {
-        return locale$1.formatDistance('lessThanXSeconds', 5, localizeOptions);
-      } else if (seconds < 10) {
-        return locale$1.formatDistance('lessThanXSeconds', 10, localizeOptions);
-      } else if (seconds < 20) {
-        return locale$1.formatDistance('lessThanXSeconds', 20, localizeOptions);
-      } else if (seconds < 40) {
-        return locale$1.formatDistance('halfAMinute', null, localizeOptions);
-      } else if (seconds < 60) {
-        return locale$1.formatDistance('lessThanXMinutes', 1, localizeOptions);
-      } else {
-        return locale$1.formatDistance('xMinutes', 1, localizeOptions);
-      }
-    } else {
-      if (minutes === 0) {
-        return locale$1.formatDistance('lessThanXMinutes', 1, localizeOptions);
-      } else {
-        return locale$1.formatDistance('xMinutes', minutes, localizeOptions);
-      }
-    } // 2 mins up to 0.75 hrs
-
-  } else if (minutes < 45) {
-    return locale$1.formatDistance('xMinutes', minutes, localizeOptions); // 0.75 hrs up to 1.5 hrs
-  } else if (minutes < 90) {
-    return locale$1.formatDistance('aboutXHours', 1, localizeOptions); // 1.5 hrs up to 24 hrs
-  } else if (minutes < MINUTES_IN_DAY) {
-    var hours = Math.round(minutes / 60);
-    return locale$1.formatDistance('aboutXHours', hours, localizeOptions); // 1 day up to 1.75 days
-  } else if (minutes < MINUTES_IN_ALMOST_TWO_DAYS) {
-    return locale$1.formatDistance('xDays', 1, localizeOptions); // 1.75 days up to 30 days
-  } else if (minutes < MINUTES_IN_MONTH) {
-    var days = Math.round(minutes / MINUTES_IN_DAY);
-    return locale$1.formatDistance('xDays', days, localizeOptions); // 1 month up to 2 months
-  } else if (minutes < MINUTES_IN_TWO_MONTHS) {
-    months = Math.round(minutes / MINUTES_IN_MONTH);
-    return locale$1.formatDistance('aboutXMonths', months, localizeOptions);
-  }
-
-  months = differenceInMonths(dateRight, dateLeft); // 2 months up to 12 months
-
-  if (months < 12) {
-    var nearestMonth = Math.round(minutes / MINUTES_IN_MONTH);
-    return locale$1.formatDistance('xMonths', nearestMonth, localizeOptions); // 1 year up to max Date
-  } else {
-    var monthsSinceStartOfYear = months % 12;
-    var years = Math.floor(months / 12); // N years up to 1 years 3 months
-
-    if (monthsSinceStartOfYear < 3) {
-      return locale$1.formatDistance('aboutXYears', years, localizeOptions); // N years 3 months up to N years 9 months
-    } else if (monthsSinceStartOfYear < 9) {
-      return locale$1.formatDistance('overXYears', years, localizeOptions); // N years 9 months up to N year 12 months
-    } else {
-      return locale$1.formatDistance('almostXYears', years + 1, localizeOptions);
-    }
-  }
-}
-
-var MILLISECONDS_IN_HOUR = 3600000;
-/**
- * @name differenceInHours
- * @category Hour Helpers
- * @summary Get the number of hours between the given dates.
- *
- * @description
- * Get the number of hours between the given dates.
- *
- * ### v2.0.0 breaking changes:
- *
- * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
- *
- * @param {Date|Number} dateLeft - the later date
- * @param {Date|Number} dateRight - the earlier date
- * @returns {Number} the number of hours
- * @throws {TypeError} 2 arguments required
- *
- * @example
- * // How many hours are between 2 July 2014 06:50:00 and 2 July 2014 19:00:00?
- * var result = differenceInHours(
- *   new Date(2014, 6, 2, 19, 0),
- *   new Date(2014, 6, 2, 6, 50)
- * )
- * //=> 12
- */
-
-function differenceInHours(dirtyDateLeft, dirtyDateRight) {
-  requiredArgs(2, arguments);
-  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / MILLISECONDS_IN_HOUR;
-  return diff > 0 ? Math.floor(diff) : Math.ceil(diff);
-}
 
 /**
  * @name isValid
@@ -3494,7 +3514,7 @@ function cleanEscapedString(input) {
 
 var datePtBrFull = function datePtBrFull(date) {
   if (!date) return false;
-  var d = date.replace("T", " ");
+  var d = date.replace('T', ' ');
 
   var _y = d.split('-');
 
@@ -3505,12 +3525,12 @@ var datePtBrFull = function datePtBrFull(date) {
   var _date = new Date(_y[0], _y[1] - 1, _d[0], _t[0], _t[1]);
 
   if (!(_date instanceof Date)) return false;
-  return "".concat(format(_date, "dd/MM/yyyy"), " \xE0s ").concat(format(_date, "HH:mm"));
+  return "".concat(format(_date, 'dd/MM/yyyy'), " \xE0s ").concat(format(_date, 'HH:mm'));
 };
 
 var dateDistance = function dateDistance(date, limit) {
   if (!date) return false;
-  var d = date.replace("T", " ");
+  var d = date.replace('T', ' ');
 
   var _y = d.split('-');
 
@@ -3522,16 +3542,16 @@ var dateDistance = function dateDistance(date, limit) {
 
   var _date = new Date(_y[0], _y[1] - 1, _d[0], _t[0], _t[1]).getTime();
 
-  var distanteInWords = formatDistance$2(_now, _date, {
+  var distanteInWords = formatDistance$1(_now, _date, {
     locale: locale$1
   });
   var diffHours = differenceInHours(_now, _date, {
     locale: locale$1
   });
   if (diffHours > limit) return datePtBrFull(date);
-  var replaces = [["aproximadamente ", ""]];
+  var replaces = [['aproximadamente ', '']];
   var date_string = distanteInWords;
-  lodash.map(replaces, function (r, k) {
+  lodash.map(replaces, function (r) {
     date_string = date_string.replace(r[0], r[1]);
   });
   return "H\xE1 ".concat(date_string);
@@ -3541,6 +3561,8 @@ var utils = {
   dateDistance: dateDistance,
   datePtBrFull: datePtBrFull
 };
+
+var _PropTypes$shape;
 
 var Teaser = function Teaser(_ref) {
   var content = _ref.content,
@@ -3597,54 +3619,55 @@ var Teaser = function Teaser(_ref) {
   };
   if (!content['time-published']) return false;
   var dateValue = !datePublished && content['time-modifiedDate'] ? utils.dateDistance(content['time-modifiedDate'], 2880) : utils.datePtBrFull(content['time-published']);
-  dateValue = datePublished ? "Publicado em ".concat(dateValue) : dateValue.startsWith("Há") ? dateValue.replace("H\xE1", "Atualizado h\xE1") : "Atualizado em ".concat(dateValue);
-  var path_split = path.split(":8080");
+  dateValue = datePublished ? "Publicado em ".concat(dateValue) : dateValue.startsWith('Há') ? dateValue.replace('Há', 'Atualizado há') : "Atualizado em ".concat(dateValue);
+  var path_split = path.split(':8080');
   var url_rewrite = path_split.length > 1 ? "".concat(domain).concat(path_split[1]) : path;
 
   var TeaserImage = function TeaserImage() {
-    return /*#__PURE__*/React.createElement(Block, propsImage, /*#__PURE__*/React.createElement("a", {
+    return /*#__PURE__*/React__default['default'].createElement(Block, propsImage, /*#__PURE__*/React__default['default'].createElement("a", {
       className: "teaser-aria",
       href: url_rewrite,
       "aria-label": "Imagem da mat\xE9ria ".concat(name)
-    }, /*#__PURE__*/React.createElement(Image, {
+    }, /*#__PURE__*/React__default['default'].createElement(Image, {
       domain: domain,
       content: image,
       lazy: lazy
     })));
   };
 
-  return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement(Block, null, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsTeaser, /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block, propsContent, /*#__PURE__*/React__default['default'].createElement(Block, null, subject && /*#__PURE__*/React__default['default'].createElement(Block, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
     filled: hasSubjectFilled
-  }, subject))), /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
+  }, subject))), /*#__PURE__*/React__default['default'].createElement(Block, null, /*#__PURE__*/React__default['default'].createElement(Block, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
     className: "teaser-aria",
     href: url_rewrite,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
-  }, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
     custom: "teaser-title"
-  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React.createElement(Block, propsSubTitle, /*#__PURE__*/React.createElement(Typography, {
+  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React__default['default'].createElement(Block, propsSubTitle, /*#__PURE__*/React__default['default'].createElement(Typography, {
     custom: "teaser-subtitle"
-  }, subtitle))), /*#__PURE__*/React.createElement(Block, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Typography, {
+  }, subtitle))), /*#__PURE__*/React__default['default'].createElement(Block, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React__default['default'].createElement(Block, propsDate, /*#__PURE__*/React__default['default'].createElement(Typography, {
     custom: "teaser-datetime"
   }, dateValue)))));
 };
 
 Teaser.propTypes = {
-  content: PropTypes.shape(_defineProperty({
-    image: PropTypes.object,
-    name: PropTypes.string,
-    path: PropTypes.string,
-    subtitle: PropTypes.string,
-    subject: PropTypes.string
-  }, 'time-published', PropTypes.string)),
-  datePublished: PropTypes.bool,
-  domain: PropTypes.string,
-  hasImageTop: PropTypes.bool,
-  hasSubtitle: PropTypes.bool,
-  hasDate: PropTypes.bool,
-  hasSubjectFilled: PropTypes.bool,
-  status: PropTypes.shape({
-    loading: PropTypes.bool,
-    error: PropTypes.bool
+  content: PropTypes__default['default'].shape((_PropTypes$shape = {
+    image: PropTypes__default['default'].object,
+    name: PropTypes__default['default'].string,
+    path: PropTypes__default['default'].string,
+    subtitle: PropTypes__default['default'].string,
+    subject: PropTypes__default['default'].string
+  }, _defineProperty(_PropTypes$shape, 'time-published', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes__default['default'].string), _PropTypes$shape)),
+  datePublished: PropTypes__default['default'].bool,
+  domain: PropTypes__default['default'].string,
+  hasImageTop: PropTypes__default['default'].bool,
+  hasSubtitle: PropTypes__default['default'].bool,
+  hasDate: PropTypes__default['default'].bool,
+  hasSubjectFilled: PropTypes__default['default'].bool,
+  lazy: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].shape({
+    loading: PropTypes__default['default'].bool,
+    error: PropTypes__default['default'].bool
   })
 };
 Teaser.defaultProps = {
@@ -3652,22 +3675,6 @@ Teaser.defaultProps = {
   hasImageTop: false,
   hasSubtitle: false,
   hasDate: true
-};
-
-var SectionTitle = function SectionTitle(_ref) {
-  var custom = _ref.custom,
-      name = _ref.name;
-  return /*#__PURE__*/React.createElement(Block, {
-    custom: "section-title-block",
-    mb: "3"
-  }, /*#__PURE__*/React.createElement(Typography, {
-    custom: "section-title ".concat(custom)
-  }, name));
-};
-
-SectionTitle.propTypes = {
-  custom: PropTypes.string,
-  name: PropTypes.string
 };
 
 var Columnists = function Columnists(props) {
@@ -3684,10 +3691,10 @@ var Columnists = function Columnists(props) {
       mb: '3'
     }
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== "" && /*#__PURE__*/React.createElement(SectionTitle, {
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: title
-  }), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+  }), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
       key: key,
@@ -3698,10 +3705,10 @@ var Columnists = function Columnists(props) {
 };
 
 Columnists.propTypes = {
-  content: PropTypes.object,
-  domain: PropTypes.string,
-  lazy: PropTypes.func,
-  status: PropTypes.object
+  content: PropTypes__default['default'].object,
+  domain: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].object
 };
 
 var Featured = function Featured(props) {
@@ -3712,9 +3719,9 @@ var Featured = function Featured(props) {
   var items = content.items;
 
   if (items.length === 1) {
-    return /*#__PURE__*/React.createElement(Block, {
+    return /*#__PURE__*/React__default['default'].createElement(Block, {
       custom: "templates-featured one"
-    }, /*#__PURE__*/React.createElement(Teaser, {
+    }, /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: items[0],
       domain: domain,
       hasSubjectFilled: true,
@@ -3733,23 +3740,23 @@ var Featured = function Featured(props) {
         mb: '5'
       }
     };
-    return /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
+    return /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, /*#__PURE__*/React__default['default'].createElement(Block, {
       custom: "block-left"
-    }, /*#__PURE__*/React.createElement(Teaser, {
+    }, /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: items[0],
       domain: domain,
       hasSubjectFilled: true,
       hasSubtitle: true,
       lazy: lazy,
       status: status
-    })), /*#__PURE__*/React.createElement(Block, {
+    })), /*#__PURE__*/React__default['default'].createElement(Block, {
       custom: "block-right"
-    }, /*#__PURE__*/React.createElement(Teaser, {
+    }, /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: items[1],
       domain: domain,
       lazy: lazy,
       status: status
-    }), /*#__PURE__*/React.createElement(Teaser, {
+    }), /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: items[2],
       domain: domain,
       lazy: lazy,
@@ -3761,10 +3768,10 @@ var Featured = function Featured(props) {
 };
 
 Featured.propTypes = {
-  content: PropTypes.object,
-  domain: PropTypes.string,
-  lazy: PropTypes.func,
-  status: PropTypes.object
+  content: PropTypes__default['default'].object,
+  domain: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].object
 };
 
 var GridNews = function GridNews(props) {
@@ -3796,10 +3803,10 @@ var GridNews = function GridNews(props) {
     propsTemplate.custom = 'templates-newsgrid four';
   }
 
-  return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== "" && /*#__PURE__*/React.createElement(SectionTitle, {
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: title
-  }), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(items, function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+  }), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(items, function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       key: key,
       content: item,
       domain: domain,
@@ -3811,10 +3818,10 @@ var GridNews = function GridNews(props) {
 };
 
 GridNews.propTypes = {
-  content: PropTypes.object,
-  domain: PropTypes.string,
-  lazy: PropTypes.func,
-  status: PropTypes.object
+  content: PropTypes__default['default'].object,
+  domain: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].object
 };
 
 var MostReadItem = function MostReadItem(_ref) {
@@ -3845,25 +3852,25 @@ var MostReadItem = function MostReadItem(_ref) {
     align: 'middle'
   };
   var position = number + 1;
-  return /*#__PURE__*/React.createElement(Block, propsMostItem, /*#__PURE__*/React.createElement(Block, _extends({}, propsContent, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsMostItem, /*#__PURE__*/React__default['default'].createElement(Block, _extends({}, propsContent, {
     align: "row"
-  }), /*#__PURE__*/React.createElement(Block, _extends({}, propsNumber, {
+  }), /*#__PURE__*/React__default['default'].createElement(Block, _extends({}, propsNumber, {
     align: "row center middle"
-  }), position), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
+  }), position), /*#__PURE__*/React__default['default'].createElement(Block, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
     className: "teaser-aria",
     href: path,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
-  }, /*#__PURE__*/React.createElement(Typography, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
     custom: "teaser-title"
   }, name)))));
 };
 
 MostReadItem.propTypes = {
-  content: PropTypes.shape({
-    name: PropTypes.string,
-    path: PropTypes.string
+  content: PropTypes__default['default'].shape({
+    name: PropTypes__default['default'].string,
+    path: PropTypes__default['default'].string
   }),
-  number: PropTypes.number
+  number: PropTypes__default['default'].number
 };
 
 var MostRead = function MostRead(props) {
@@ -3876,8 +3883,8 @@ var MostRead = function MostRead(props) {
       align: 'row between'
     }
   };
-  return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content, function (item, key) {
-    return /*#__PURE__*/React.createElement(MostReadItem, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(content, function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(MostReadItem, {
       content: item,
       domain: domain,
       key: key,
@@ -3888,9 +3895,9 @@ var MostRead = function MostRead(props) {
 };
 
 MostRead.propTypes = {
-  content: PropTypes.array,
-  domain: PropTypes.string,
-  status: PropTypes.object
+  content: PropTypes__default['default'].array,
+  domain: PropTypes__default['default'].string,
+  status: PropTypes__default['default'].object
 };
 
 var Latest = function Latest(_ref) {
@@ -3915,10 +3922,10 @@ var Latest = function Latest(_ref) {
   var propsPageRight = {
     custom: 'page-right'
   };
-  return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, propsPageLeft, Title && /*#__PURE__*/React.createElement(Title, null), /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsContainer, /*#__PURE__*/React__default['default'].createElement(Block, propsPageLeft, Title && /*#__PURE__*/React__default['default'].createElement(Title, null), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "latest-news"
-  }, lodash.map(content["items-latest"], function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+  }, lodash.map(content['items-latest'], function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       datePublished: true,
       domain: domain,
@@ -3928,22 +3935,22 @@ var Latest = function Latest(_ref) {
       lazy: lazy,
       status: status
     });
-  })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, propsPageRight, /*#__PURE__*/React.createElement(SectionTitle, {
+  })), ReadMore && /*#__PURE__*/React__default['default'].createElement(ReadMore, null)), /*#__PURE__*/React__default['default'].createElement(Block, propsPageRight, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: "MAIS LIDAS"
-  }), /*#__PURE__*/React.createElement(MostRead, {
-    content: content["items-mostread"],
+  }), /*#__PURE__*/React__default['default'].createElement(MostRead, {
+    content: content['items-mostread'],
     status: status
   })));
 };
 
 Latest.propTypes = {
-  content: PropTypes.object,
-  lazy: PropTypes.func,
-  ReadMore: PropTypes.func,
-  Title: PropTypes.func,
-  status: PropTypes.shape({
-    error: PropTypes.bool,
-    loading: PropTypes.bool
+  content: PropTypes__default['default'].object,
+  lazy: PropTypes__default['default'].func,
+  ReadMore: PropTypes__default['default'].func,
+  Title: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].shape({
+    error: PropTypes__default['default'].bool,
+    loading: PropTypes__default['default'].bool
   })
 };
 
@@ -3958,11 +3965,11 @@ var Related = function Related(_ref) {
     align: 'col left',
     w: '100p'
   };
-  return /*#__PURE__*/React.createElement(Block, propsContainer, /*#__PURE__*/React.createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsContainer, /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "related-news",
     w: "100p"
   }, lodash.map(items, function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
       hasSubjectFilled: true,
@@ -3971,16 +3978,17 @@ var Related = function Related(_ref) {
       lazy: lazy,
       status: status
     });
-  })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null));
+  })), ReadMore && /*#__PURE__*/React__default['default'].createElement(ReadMore, null));
 };
 
 Related.propTypes = {
-  items: PropTypes.array,
-  lazy: PropTypes.func,
-  ReadMore: PropTypes.func,
-  status: PropTypes.shape({
-    error: PropTypes.bool,
-    loading: PropTypes.bool
+  domain: PropTypes__default['default'].string,
+  items: PropTypes__default['default'].array,
+  lazy: PropTypes__default['default'].func,
+  ReadMore: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].shape({
+    error: PropTypes__default['default'].bool,
+    loading: PropTypes__default['default'].bool
   })
 };
 
@@ -3997,53 +4005,53 @@ var Subjects = function Subjects(props) {
       align: 'row between'
     }
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== "" && /*#__PURE__*/React.createElement(SectionTitle, {
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: title
-  }), /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
-    custom: "col left ".concat(content["style-left"])
-  }, /*#__PURE__*/React.createElement(SectionTitle, {
-    name: content["title-left"]
+  }), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col left ".concat(content['style-left'])
+  }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
+    name: content['title-left']
   }), lodash.map(content['items-left'], function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
       lazy: lazy,
       key: key,
       status: status
     });
-  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, {
-    custom: "col center ".concat(content["style-center"])
-  }, /*#__PURE__*/React.createElement(SectionTitle, {
-    name: content["title-center"]
+  }), ReadMore && /*#__PURE__*/React__default['default'].createElement(ReadMore, null)), /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col center ".concat(content['style-center'])
+  }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
+    name: content['title-center']
   }), lodash.map(content['items-center'], function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
       lazy: lazy,
       key: key,
       status: status
     });
-  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, {
-    custom: "col right ".concat(content["style-right"])
-  }, /*#__PURE__*/React.createElement(SectionTitle, {
-    name: content["title-right"]
+  }), ReadMore && /*#__PURE__*/React__default['default'].createElement(ReadMore, null)), /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col right ".concat(content['style-right'])
+  }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
+    name: content['title-right']
   }), lodash.map(content['items-right'], function (item, key) {
-    return /*#__PURE__*/React.createElement(Teaser, {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
       lazy: lazy,
       key: key,
       status: status
     });
-  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null))));
+  }), ReadMore && /*#__PURE__*/React__default['default'].createElement(ReadMore, null))));
 };
 
 Subjects.propTypes = {
-  content: PropTypes.object,
-  domain: PropTypes.string,
-  lazy: PropTypes.func,
-  ReadMore: PropTypes.func,
-  status: PropTypes.object
+  content: PropTypes__default['default'].object,
+  domain: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  ReadMore: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].object
 };
 
 exports.Columnists = Columnists;
