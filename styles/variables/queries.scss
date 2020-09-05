@@ -1,15 +1,15 @@
-$q-xs: 360px;
-$q-sm: 560px;
-$q-md: 768px;
-$q-lg: 980px;
-$q-xl: 1120px;
+$xs: 360px !default;
+$sm: 460px !default;
+$md: 768px !default;
+$lg: 1016px !default;
+$xl: 1280px !default;
 
 $queries: (
-  '--xs' $q-xs,
-  '--sm' $q-sm,
-  '--md' $q-md, 
-  '--lg' $q-lg, 
-  '--xl' $q-xl
+  '--xs' $xs,
+  '--sm' $sm,
+  '--md' $md, 
+  '--lg' $lg, 
+  '--xl' $xl
 );
 $sides: (
   '' '', 

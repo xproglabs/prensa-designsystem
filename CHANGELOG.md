@@ -1,3 +1,12 @@
+# v1.3.4 (Mon Ago 31 2020)
+- Remove componente Grid
+- Remove tokens: 
+  $q-xs: 360px;
+  $q-sm: 560px;
+  $q-md: 768px;
+  $q-lg: 980px;
+  $q-xl: 1120px;
+
 # v1.3.3 (Mon Ago 31 2020)
 - Adiciona componente AdBlock
 - Adiciona componente Button
