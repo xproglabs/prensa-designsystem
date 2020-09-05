@@ -1,36 +1,42 @@
+@use './colors.scss' as *;
+
 $font-primary: 'Work Sans' !default;
 $font-secondary: 'Merriweather' !default;
 $font-tertiary: 'Arvo' !default;
 
+$article-title-fc: $color-neutral-2 !default;
 $article-title-fs-sm: 32px !default;
 $article-title-lh-sm: 34px !default;
 $article-title-fs-lg: 62px !default;
 $article-title-lh-lg: 66px !default;
 $article-title-ff: $font-primary !default;
 
-$article-title-intro-fc: #ffffff;
+$article-title-intro-fc: $color-neutral-2 !default;
 $article-title-intro-fs: 44px !default;
 $article-title-intro-lh: 48px !default;
 $article-title-intro-fs-lg: 62px !default;
 $article-title-intro-lh-lg: 66px !default;
 $article-title-intro-ff: $font-primary !default;
 
-$article-subtitle-intro-fc: #ffffff;
+$article-subtitle-fc: $color-neutral-4 !default;
 $article-subtitle-fs: 18px !default;
 $article-subtitle-lh: 26px !default;
 $article-subtitle-ff: $font-primary !default;
 $article-subtitle-fs-lg: 20px !default;
 $article-subtitle-lh-lg: 28px !default;
 
+$article-subtitle-intro-fc: $color-neutral-4 !default;
 $article-subtitle-intro-fs: 16px !default;
 $article-subtitle-intro-lh: 22px !default;
 $article-subtitle-intro-fs-lg: 20px !default;
 $article-subtitle-intro-lh-lg: 28px !default;
 $article-subtitle-intro-ff: $font-primary !default;
 
+$article-paragraph-fc: $color-neutral-2 !default;
 $article-paragraph-fs: 18px !default;
 $article-paragraph-lh: 42px !default;
 
+$article-tag-fc: $color-primary-2 !default;
 $article-tag-fs: 14px !default;
 $article-tag-lh: 26px !default;
 
@@ -39,7 +45,7 @@ $image-gallery-name-lh: 28px !default;
 $image-gallery-lead-fs: 16px !default;
 $image-gallery-lead-lh: 22px !default;
 
-
+$system-fc: $color-neutral-4 !default;
 $system-fs-sm: 14px !default;
 $system-lh: 18px !default;
 
