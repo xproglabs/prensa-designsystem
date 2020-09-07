@@ -53,12 +53,13 @@
   },
   "lint-staged": {
     "*.+(js|jsx)": [
-      "eslint --fix"
+      "eslint --fix",
+      "git add"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run icons && lint-staged && git add ."
+      "pre-commit": "npm run icons && lint-staged"
     }
   }
 }
