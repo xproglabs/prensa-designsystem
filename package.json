@@ -60,5 +60,8 @@
     "hooks": {
       "pre-commit": "npm run icons && lint-staged && git add ."
     }
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/@gbombassaro"
   }
 }
