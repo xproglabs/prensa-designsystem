@@ -43,7 +43,7 @@ const parseBody = (content) => {
           childImage && 
             childImage.attr && 
               childImage.attr['alt'] ?
-            childImage.attr['alt'].toString() : '';
+                childImage.attr['alt'].toString() : '';
 
         subtitle = subtitle && subtitle !== undefined && subtitle !== 'undefined' ? subtitle : 'Reprodução';
 
@@ -66,6 +66,10 @@ const parseBody = (content) => {
       
       if(attr['href'].indexOf('facebook.com') > -1) {
         tagItems.push({type: 'Facebook', value: attr['href']});
+        return true;
+        
+      } else if(attr['href'].indexOf('docs.google.com/forms') > -1) {
+        tagItems.push({type: 'GoogleForm', value: attr['href']});
         return true;
       
       } else if(attr['href'].indexOf('instagram.com') > -1) {
