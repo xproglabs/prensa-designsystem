@@ -52,6 +52,8 @@ const TextBody = ({AdComponent, adsblocks, content, domain, embeds, lazy}) => {
         return <RenderParagraph key={key} value={value} />;
       case 'Facebook':
         return embeds && embeds.Facebook && <embeds.Facebook key={key} value={value} />;
+      case 'GoogleForm': 
+        return embeds && embeds.GoogleForm && <embeds.GoogleForm key={key} value={value} />;
       case 'Image':
       case 'ImageLegacy':
         return <RenderImage key={key} value={value} />;

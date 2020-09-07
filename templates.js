@@ -3875,10 +3875,7 @@ var MostRead = function MostRead(props) {
       domain = props.domain,
       status = props.status;
   var propsTemplate = {
-    custom: 'templates-most-read',
-    lg: {
-      align: 'row between'
-    }
+    custom: 'templates-most-read'
   };
   return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content, function (item, key) {
     return /*#__PURE__*/React.createElement(MostReadItem, {

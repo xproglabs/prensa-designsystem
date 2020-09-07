@@ -1061,6 +1061,12 @@ var parseBody = function parseBody(content) {
           value: attr['href']
         });
         return true;
+      } else if (attr['href'].indexOf('docs.google.com/forms') > -1) {
+        tagItems.push({
+          type: 'GoogleForm',
+          value: attr['href']
+        });
+        return true;
       } else if (attr['href'].indexOf('instagram.com') > -1) {
         tagItems.push({
           type: 'Instagram',
@@ -1211,6 +1217,12 @@ var TextBody = function TextBody(_ref) {
 
       case 'Facebook':
         return embeds && embeds.Facebook && /*#__PURE__*/React__default.createElement(embeds.Facebook, {
+          key: key,
+          value: value
+        });
+
+      case 'GoogleForm':
+        return embeds && embeds.GoogleForm && /*#__PURE__*/React__default['default'].createElement(embeds.GoogleForm, {
           key: key,
           value: value
         });

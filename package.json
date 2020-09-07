@@ -1,6 +1,6 @@
 {
   "name": "xprog-ds",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "XPROG Design System",
   "main": "/",
   "author": "XPROG",
@@ -61,5 +61,8 @@
     "hooks": {
       "pre-commit": "npm run icons && lint-staged"
     }
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/@gbombassaro"
   }
 }
