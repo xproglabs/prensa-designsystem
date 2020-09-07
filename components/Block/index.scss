@@ -1,8 +1,6 @@
 @use '../../styles' as *;
 
-@include classes-simple((
-  'w-auto' 'width' 'auto',
-
+@include classes-align((
   'col' 'between' '' 'space-between',
   'col' 'bottom' '' 'flex-end',
   'col' 'center' 'center' '',
@@ -19,14 +17,25 @@
   'row' 'middle' 'center' '',
   'row' 'right' '' 'flex-end',
   'row' 'top' 'flex-start' '',
+));
+
+@include classes-wrap((
   'row' 'flex-wrap' 'wrap',
   'row' 'flex-wrap' 'nowrap',
+));
 
+@include classes-side((
   'm' 'margin' $space-unit,
   'p' 'padding' $space-unit,
+));
 
+@include classes-incremental((
   'h' 'height' $size-pixel,
   'w' 'width' $size-pixel,
+));
+
+@include classes-simple((
+  'w-auto' 'width' 'auto', 
 
   'cursor-default' 'cursor' 'default',
   'cursor-pointer' 'cursor' 'pointer',
