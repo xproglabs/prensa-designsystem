@@ -1,3 +1,18 @@
+# v1.3.5 (Mon Sep 7 2020)
+- Remove componente Grid
+- Altera posição de alguns includes
+- Altera valores da prop bg no Block
+- Altera prop color para fc no Block
+- Remove tokens: 
+  $q-xs: 360px;
+  $q-sm: 560px;
+  $q-md: 768px;
+  $q-lg: 980px;
+  $q-xl: 1120px;
+
+# v1.3.4 (Sun Sep 6 2020)
+- Adiciona embed do google Forms
+
 # v1.3.3 (Mon Ago 31 2020)
 - Adiciona componente AdBlock
 - Adiciona componente Button

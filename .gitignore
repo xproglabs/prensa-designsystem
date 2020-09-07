@@ -5,3 +5,7 @@
 *.lock
 
 package-lock.json
+
+index.js
+teasers.js
+templates.js

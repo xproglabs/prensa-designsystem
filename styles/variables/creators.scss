@@ -1,4 +1,5 @@
 @use './queries.scss' as *;
+@use './spaces.scss' as *;
 
 @mixin classes-align-render($list, $querie) {
   @each $item in $list {
