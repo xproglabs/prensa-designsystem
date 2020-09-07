@@ -1,4 +1,4 @@
-name: Build and commit
+name: Build commit and publish
 
 on:
   push:
@@ -35,6 +35,7 @@ jobs:
     - run: |
         git config --global user.name "Giovanni"
         git config --global user.email "giovanni@xproglabs.com"
+        git checkout -- .
         npm version patch
     - run: npm run build
   
