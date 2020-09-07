@@ -1,6 +1,6 @@
 {
   "name": "xprog-ds",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "XPROG Design System",
   "main": "/",
   "author": "XPROG",
@@ -63,6 +63,6 @@
     }
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/@gbombassaro"
+    "registry": "https://npm.pkg.github.com/@gbombassaro"
   }
 }
