@@ -27,7 +27,4 @@
     @include fs(14px);
     @include fw(bold);
   }
-  @media (min-width: $lg) {
-    flex-direction: column;
-  }
 }
