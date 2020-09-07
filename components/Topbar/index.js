@@ -8,8 +8,8 @@ const Topbar = ({content, functions}) => {
   return (
     <Block 
       align="row center"
-      bg="primary-1" 
-      color="white" 
+      bg="color-primary-1" 
+      fc="color-white" 
       custom="topbar" 
       w="100p">
       <Block 
@@ -34,7 +34,7 @@ const LeftMenuIcon = ({functions}) => {
     <Block 
       custom="menu-left-icon" 
       cursor="pointer"
-      fc="neutral-8" 
+      fc="color-neutral-8" 
       pl="4"
       onClick={functions.handleMenuClick}>
       MENU
