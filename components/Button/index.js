@@ -7,6 +7,7 @@ const Button = props => {
   const getClass = classnames({
     'ds-button': true,
     'disabled': props.disabled,
+    'fullWidth': props.fullWidth,
     [`${props.variant}`]: true,
     [`${props.color}`]: true,
     [`${props.className}`]: props.className,
@@ -29,6 +30,7 @@ Button.propTypes = {
   children: PropTypes.node,
   custom: PropTypes.string, 
   disabled: PropTypes.bool,
+  fullWidth: PropTypes.bool,
   onClick: PropTypes.func,
   variant: PropTypes.oneOf(['filled', 'outlined']),
   color: PropTypes.oneOf('primary', 'secondary'),

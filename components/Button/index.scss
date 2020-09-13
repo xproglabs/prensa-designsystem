@@ -11,8 +11,12 @@
   @include r(5px);
   @include m($space-size-1);
   @include px($space-size-2);
-  &.filled {
 
+  &.fullWidth {
+    @include w(calc(100% - 16px));
+  }
+
+  &.filled {
     &.primary {
       @include bg($color-primary-2);
       &:hover {
@@ -28,7 +32,6 @@
       //   @include bg($color-primary-1);
       // }
     }
-
     &.secondary {
       @include bg($color-secondary-2);
       &:hover {
