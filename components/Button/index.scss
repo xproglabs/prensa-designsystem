@@ -2,15 +2,16 @@
 
 .ds-button {
   border: unset;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
   cursor: pointer;
   @include h(48px);
   @include r(5px);
   @include m($space-size-1);
   @include px($space-size-2);
+
+  @include ff($font-primary);
+  @include fs(12px);
+  text-transform: uppercase;
+  color: white;
 
   &.fullWidth {
     @include w(calc(100% - 16px));
@@ -28,9 +29,6 @@
           to {@include bg($color-primary-3)}
         }
       }
-      // &:active {
-      //   @include bg($color-primary-1);
-      // }
     }
     &.secondary {
       @include bg($color-secondary-2);
@@ -43,15 +41,6 @@
           to {@include bg($color-secondary-3)}
         }
       }
-      // &:active {
-      //   animation-name: activeSecondary;
-      //   animation-duration: 0.1s;
-      //   animation-fill-mode: forwards;
-      //   @keyframes activeSecondary {
-      //     from {@include bg($color-secondary-3)}
-      //     to {@include bg($color-secondary-1)}
-      //   }
-      // }
     }
   }
 
