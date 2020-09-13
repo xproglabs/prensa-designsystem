@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Button from '../components/Button';
-import {sassWrapper} from '../utils/SassWrapper';
+import {sassWrapper} from '../../utils/SassWrapper';
+import Button from './index';
 
 export default {
   title: 'Button',
