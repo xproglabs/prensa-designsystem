@@ -4,7 +4,7 @@ import SocialMedias from '../components/SocialMedias';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Components | SocialMedias',
+  title: 'SocialMedias',
   component: SocialMedias,
   decorators: [sassWrapper]
 };

@@ -1,4 +1,3 @@
-import {withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import Image from '../components/Image';
@@ -7,9 +6,9 @@ import imageMockup from '../mockup/image.json';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Components | Image',
+  title: 'Image',
   component: Readme,
-  decorators: [withKnobs, sassWrapper]
+  decorators: [sassWrapper]
 };
 
 export const Readme = () => {

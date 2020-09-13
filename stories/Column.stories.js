@@ -1,4 +1,3 @@
-import {withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import Block from '../components/Block';
@@ -7,9 +6,9 @@ import pageheader from '../mockup/pageheader';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Components | Column Header',
+  title: 'Column Header',
   component: DefaultComponent,
-  decorators: [withKnobs, sassWrapper]
+  decorators: [sassWrapper]
 };
 
 export const DefaultComponent = () => {

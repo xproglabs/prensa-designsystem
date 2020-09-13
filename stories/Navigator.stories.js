@@ -1,4 +1,3 @@
-import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import SideMenuItems from '../components/Menus/SideItems';
@@ -8,9 +7,9 @@ import navigation from '../mockup/navigation';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Components | Navigator',
+  title: 'Navigator',
   component: Default,
-  decorators: [withKnobs, sassWrapper]
+  decorators: [sassWrapper]
 };
 
 export const Default = () => {
@@ -30,8 +29,8 @@ export const Default = () => {
       handleMenuClick: () => toggleSideMenu(!isSideMenuOpened)
     },
     status: {
-      loading: boolean('loading', false),
-      error: boolean('loading', false)
+      loading: false,
+      error: false
     }
   };
   const dataSideMenu = {

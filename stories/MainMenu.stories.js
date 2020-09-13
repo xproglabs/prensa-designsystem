@@ -1,4 +1,3 @@
-import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import SideMenuItems from '../components/Menus/SideItems';
@@ -8,9 +7,9 @@ import {sassWrapper} from '../utils/SassWrapper';
 
 
 export default {
-  title: 'Components | MainMenu',
+  title: 'MainMenu',
   component: MainMenu,
-  decorators: [withKnobs, sassWrapper]
+  decorators: [sassWrapper]
 };
 
 export const MainMenu = () => {
@@ -25,9 +24,9 @@ export const MainMenu = () => {
   const dataSideMenu = {
     children: <SideMenuItems {...menuLeftItemsProps} />,
     status: {
-      error: boolean('loading', false),
-      loading: boolean('loading', false),
-      opened: boolean('opened', true)
+      error: false,
+      loading: false,
+      opened: false
     }
   };
   return <SideMenu {...dataSideMenu} />;

@@ -1,13 +1,12 @@
-import {boolean, withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import Teaser from '../components/Teasers';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Components | Teaser',
+  title: 'Teaser',
   component: Teaser,
-  decorators: [withKnobs, sassWrapper]
+  decorators: [sassWrapper]
 };
 
 const teasermockup = {
@@ -28,8 +27,8 @@ const teasermockup = {
 
 export const Default = () => {
   const status = {
-    loading: boolean('loading', false),
-    error: boolean('loading', false)
+    loading: false,
+    error: false
   };
   return (
     <Teaser content={teasermockup} status={status} />

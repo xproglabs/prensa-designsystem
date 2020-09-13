@@ -4,7 +4,7 @@ import Typography from '../components/Typography';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Components | Typography',
+  title: 'Typography',
   component: Typography,
   decorators: [sassWrapper]
 };

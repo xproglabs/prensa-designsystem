@@ -6,7 +6,7 @@ import {parseBody} from '../components/Article/Utils';
 import article from '../mockup/article.json';
 
 export default {
-  title: 'Components | TextBody',
+  title: 'TextBody',
   component: Default
 };
 

@@ -4,7 +4,7 @@ import Subject from '../components/Subject';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Components | Subject',
+  title: 'Subject',
   component: Subject,
   decorators: [sassWrapper]
 };

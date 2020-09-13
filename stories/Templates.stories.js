@@ -1,4 +1,3 @@
-import {withKnobs} from '@storybook/addon-knobs';
 import {find} from 'lodash';
 import React from 'react';
 
@@ -11,9 +10,9 @@ import pagelist from '../mockup/pagelist.json';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Components | Templates',
+  title: 'Templates',
   component: Block,
-  decorators: [withKnobs, sassWrapper]
+  decorators: [sassWrapper]
 };
 
 export const Featured1 = () => {

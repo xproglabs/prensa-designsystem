@@ -1,4 +1,3 @@
-import {withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import Block from '../components/Block';
@@ -6,9 +5,9 @@ import SearchForm from '../components/Menus/SearchForm';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Components | Search',
+  title: 'Search',
   component: SearchForm,
-  decorators: [withKnobs, sassWrapper]
+  decorators: [sassWrapper]
 };
 
 export const Search = () => {
