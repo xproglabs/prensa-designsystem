@@ -4,33 +4,41 @@ import React from 'react';
 
 const Button = props => {
 
-  const style = classnames({
-    'button': true,
-    'bg-color-primary-1': props.style === 'primary' && !props.disabled,
-    'fc-color-white': props.style === 'primary' && !props.disabled,
-    'secondary': props.style === 'secondary' && !props.disabled,
-    'tertiary': props.style === 'tertiary' && !props.disabled,
+  const getClass = classnames({
+    'ds-button': true,
     'disabled': props.disabled,
-    [`${props.custom}`]: props.custom
+    [`${props.variant}`]: true,
+    [`${props.color}`]: true,
+    [`${props.className}`]: props.className,
   });
 
   return (
-    <button className={style} onClick={props.disabled ? null : props.onClick}>
+    <button
+      className={getClass}
+      disabled={props.disabled}
+      onClick={!props.disabled && props.onClick}
+      style={props.style}
+    >
       {props.children}
     </button>
   );
 };
 
 Button.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node,
   custom: PropTypes.string, 
-  style: PropTypes.string,
   disabled: PropTypes.bool,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  variant: PropTypes.oneOf(['filled', 'outlined']),
+  color: PropTypes.oneOf('primary', 'secondary'),
+  style: PropTypes.string,
 };
 
 Button.defaultProps = {
-  style: 'primary'
+  disabled: false,
+  variant: 'filled',
+  color: 'primary'
 };
 
 export default Button;

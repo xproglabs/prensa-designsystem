@@ -1,3 +1,5 @@
+@use './mixings.scss' as *; 
+
 //PRIMARY
 $color-primary-1: #30417D !default;
 $color-primary-2: #4881AF !default;
@@ -23,13 +25,182 @@ $color-neutral-10: #F2F2F2 !default;
 $color-neutral-11: #FAFAFA !default;
 $color-white: #FFFFFF !default;
 
+$color-ads: #FF5C00;
+
 //ALERT
-$color-alert-1: #439943 !default;
-$color-alert-2: #FF5648 !default;
+$color-success-1: #3C8D40 !default;
+$color-success-2: #50AE55 !default;
+$color-success-3: #83C686 !default;
+
+$color-error-1: #D13135 !default;
+$color-error-2: #F1453D !default;
+$color-error-3: #E37475 !default;
 
 //SUBJECTS
 $color-subject-black: #080808; 
 $color-subject-blue: #0975B7;
 $color-subject-green: #09B77B; 
 $color-subject-red: #AB001B; 
-$color-subject-yellow: #BFA525; 
+$color-subject-yellow: #BFA525;
+
+%background-colors {
+  &.color-primary-1 {
+    @include bg($color-primary-1);
+  }
+  &.color-primary-2 {
+    @include bg($color-primary-2);
+  }
+  &.color-primary-3 {
+    @include bg($color-primary-3);
+  }
+  &.color-secondary-1 {
+    @include bg($color-primary-3);
+  }
+  &.color-secondary-2 {
+    @include bg($color-primary-3);
+  }
+  &.color-secondary-3 {
+    @include bg($color-primary-3);
+  }
+  &.color-ads {
+    @include bg($color-ads);
+  }
+  &.color-black {
+    @include bg($color-black);
+  }
+  &.color-neutral-1 {
+    @include bg($color-neutral-1);
+  }
+  &.color-neutral-2 {
+    @include bg($color-neutral-2);
+  }
+  &.color-neutral-3 {
+    @include bg($color-neutral-3);
+  }
+  &.color-neutral-4 {
+    @include bg($color-neutral-4);
+  }
+  &.color-neutral-5 {
+    @include bg($color-neutral-5);
+  }
+  &.color-neutral-6 {
+    @include bg($color-neutral-6);
+  }
+  &.color-neutral-7 {
+    @include bg($color-neutral-7);
+  }
+  &.color-neutral-8 {
+    @include bg($color-neutral-8);
+  }
+  &.color-neutral-9 {
+    @include bg($color-neutral-9);
+  }
+  &.color-neutral-10 {
+    @include bg($color-neutral-10);
+  }
+  &.color-neutral-11 {
+    @include bg($color-neutral-11);
+  }
+  &.color-white {
+    @include bg($color-white);
+  }
+  &.color-success-1 {
+    @include bg($color-success-1);
+  }
+  &.color-success-2 {
+    @include bg($color-success-2);
+  }
+  &.color-success-3 {
+    @include bg($color-success-3);
+  }
+  &.color-error-1 {
+    @include bg($color-error-1);
+  }
+  &.color-error-2 {
+    @include bg($color-error-2);
+  }
+  &.color-error-3 {
+    @include bg($color-error-3);
+  }
+}
+
+%border-colors {
+  &.color-primary-1 {
+    border-color: $color-primary-1;
+  }
+  &.color-primary-2 {
+    border-color: $color-primary-2;
+  }
+  &.color-primary-3 {
+    border-color: $color-primary-3;
+  }
+  &.color-secondary-1 {
+    border-color: $color-primary-3;
+  }
+  &.color-secondary-2 {
+    border-color: $color-primary-3;
+  }
+  &.color-secondary-3 {
+    border-color: $color-primary-3;
+  }
+  &.color-ads {
+    border-color: $color-ads;
+  }
+  &.color-black {
+    border-color: $color-black;
+  }
+  &.color-neutral-1 {
+    border-color: $color-neutral-1;
+  }
+  &.color-neutral-2 {
+    border-color: $color-neutral-2;
+  }
+  &.color-neutral-3 {
+    border-color: $color-neutral-3;
+  }
+  &.color-neutral-4 {
+    border-color: $color-neutral-4;
+  }
+  &.color-neutral-5 {
+    border-color: $color-neutral-5;
+  }
+  &.color-neutral-6 {
+    border-color: $color-neutral-6;
+  }
+  &.color-neutral-7 {
+    border-color: $color-neutral-7;
+  }
+  &.color-neutral-8 {
+    border-color: $color-neutral-8;
+  }
+  &.color-neutral-9 {
+    border-color: $color-neutral-9;
+  }
+  &.color-neutral-10 {
+    border-color: $color-neutral-10;
+  }
+  &.color-neutral-11 {
+    border-color: $color-neutral-11;
+  }
+  &.color-white {
+    border-color: $color-white;
+  }
+  &.color-success-1 {
+    border-color: $color-success-1;
+  }
+  &.color-success-2 {
+    border-color: $color-success-2;
+  }
+  &.color-success-3 {
+    border-color: $color-success-3;
+  }
+  &.color-error-1 {
+    border-color: $color-error-1;
+  }
+  &.color-error-2 {
+    border-color: $color-error-2;
+  }
+  &.color-error-3 {
+    border-color: $color-error-3;
+  }
+}

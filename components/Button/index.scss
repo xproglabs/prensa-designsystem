@@ -1,34 +1,97 @@
 @use '../../styles' as *;
 
-.button {
-  @include b(unset, unset, unset);
-  @include ff($font-secondary);
-  @include fx(center, center);
-  @include fw(bold);
-  @include h(40px);
-  @include r(5px);
-  @include miw(120px);
-  @include px($space-size-2);
-  @include py(0px);
-  @include mt($space-size-2);
-  @extend %uppercase;
+.ds-button {
+  border: unset;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
   cursor: pointer;
-  &.primary {
-    @include bg($color-primary-1);
-    @include fc($color-white);
+  @include h(48px);
+  @include r(5px);
+  @include m($space-size-1);
+  @include px($space-size-2);
+  &.filled {
+
+    &.primary {
+      @include bg($color-primary-2);
+      &:hover {
+        animation-name: hoverPrimary;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        @keyframes hoverPrimary {
+          from {@include bg($color-primary-2)}
+          to {@include bg($color-primary-3)}
+        }
+      }
+      // &:active {
+      //   @include bg($color-primary-1);
+      // }
+    }
+
+    &.secondary {
+      @include bg($color-secondary-2);
+      &:hover {
+        animation-name: hoverSecondary;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        @keyframes hoverSecondary {
+          from {@include bg($color-secondary-2)}
+          to {@include bg($color-secondary-3)}
+        }
+      }
+      // &:active {
+      //   animation-name: activeSecondary;
+      //   animation-duration: 0.1s;
+      //   animation-fill-mode: forwards;
+      //   @keyframes activeSecondary {
+      //     from {@include bg($color-secondary-3)}
+      //     to {@include bg($color-secondary-1)}
+      //   }
+      // }
+    }
   }
-  &.secondary {
-    @include b(1px, solid, $color-neutral-1);
-    @include bg(unset);
-    @include fc($color-neutral-1);
-  }
-  &.tertiary {
-    @include bg(unset);
-    @include fc($color-neutral-6);
-  }
-  &.disabled {
-    @include bg($color-neutral-8);
-    @include fc($color-white);
-    cursor: unset;
+
+  &.outlined {
+    &.primary {
+      @include bg($color-white);
+      @include b(1px, solid, $color-neutral-9);
+      @include fc($color-primary-2);
+      &:hover {
+        animation-name: hoverOutlinedPrimary;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        @keyframes hoverOutlinedPrimary {
+          from {
+            @include bg($color-white);
+            @include fc($color-primary-2);
+          }
+          to {
+            @include bg($color-neutral-11);
+            @include fc($color-primary-1);
+          }
+        }
+      }
+    }
+    &.secondary {
+      @include bg($color-white);
+      @include b(1px, solid, $color-neutral-9);
+      @include fc($color-secondary-2);
+      &:hover {
+        animation-name: hoverOutlinedSecondary;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        @keyframes hoverOutlinedSecondary {
+          from {
+            @include bg($color-white);
+            @include fc($color-secondary-2);
+          }
+          to {
+            @include bg($color-neutral-11);
+            @include fc($color-secondary-1);
+          }
+        }
+      }
+    }
   }
 }

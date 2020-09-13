@@ -4,13 +4,18 @@ import Button from '../components/Button';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Button',
+  title: 'Components | Button',
   component: Button,
   decorators: [sassWrapper]
 };
 
 export const Primary = () => {
   return (
-    <Button>label</Button>
+    <div style={{padding: 8}}>
+      <Button color='primary' variant='filled'>Avançar</Button>
+      <Button color='secondary' variant='filled'>Avançar</Button>
+      <Button color='primary' variant='outlined'>Avançar</Button>
+      <Button color='secondary' variant='outlined'>Avançar</Button>
+    </div>
   );
 };

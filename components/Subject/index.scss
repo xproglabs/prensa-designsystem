@@ -4,10 +4,10 @@
   @include fc($color-primary-1);
   @include ff($font-secondary);
   @include w(max-content);
-}
-.filled {
-  @include fc($color-white);
-  @include px($space-size-1);
-  @include py(calc(#{$space-size-1} / 2));
-  @include r(5px);
+  &.filled {
+    @include fc($color-white);
+    @include px($space-size-1);
+    @include py(calc(#{$space-size-1} / 2));
+    @include r(5px);
+  }
 }
