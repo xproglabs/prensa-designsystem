@@ -26,9 +26,11 @@ const Button = props => {
 };
 
 Button.propTypes = {
+  /**
+   * Permite a estilização do componente
+   */
   className: PropTypes.string,
   children: PropTypes.node,
-  custom: PropTypes.string, 
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
   onClick: PropTypes.func,

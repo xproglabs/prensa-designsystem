@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Button from './index';
 
 export const Template = (args) => <Button {...args} />;
@@ -14,3 +14,10 @@ With `MDX` we can define a story for `Checkbox` right in the middle of our Markd
 <Story name="Primary" args={{children: 'Avançar', variant: 'filled'}} >
   {Template.bind({})}
 </Story>
+
+<br/>
+<br/>
+<br/>
+
+# Tabela de props
+<ArgsTable of={Button} />
