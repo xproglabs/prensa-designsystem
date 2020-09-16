@@ -4003,13 +4003,19 @@ var Subjects = function Subjects(props) {
       align: 'row between'
     }
   };
+  var pqueue_left = content['items-left-pqueue'];
+  var pqueue_center = content['items-center-pqueue'];
+  var pqueue_right = content['items-right-pqueue'];
+  var items_left = pqueue_left && pqueue_left.length > 0 ? pqueue_left : content['items-left'];
+  var items_center = pqueue_center && pqueue_center.length > 0 ? pqueue_center : content['items-center'];
+  var items_right = pqueue_right && pqueue_right.length > 0 ? pqueue_right : content['items-right'];
   return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: title
   }), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col left ".concat(content['style-left'])
   }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: content['title-left']
-  }), lodash.map(content['items-left'], function (item, key) {
+  }), lodash.map(items_left, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
@@ -4021,7 +4027,7 @@ var Subjects = function Subjects(props) {
     custom: "col center ".concat(content['style-center'])
   }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: content['title-center']
-  }), lodash.map(content['items-center'], function (item, key) {
+  }), lodash.map(items_center, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
@@ -4033,7 +4039,7 @@ var Subjects = function Subjects(props) {
     custom: "col right ".concat(content['style-right'])
   }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: content['title-right']
-  }), lodash.map(content['items-right'], function (item, key) {
+  }), lodash.map(items_right, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
