@@ -35,7 +35,7 @@ Button.propTypes = {
   fullWidth: PropTypes.bool,
   onClick: PropTypes.func,
   variant: PropTypes.oneOf(['filled', 'outlined']),
-  color: PropTypes.oneOf('primary', 'secondary'),
+  color: PropTypes.oneOf(['primary', 'secondary']),
   style: PropTypes.string,
 };
 
