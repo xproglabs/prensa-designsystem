@@ -4,87 +4,52 @@ import React from 'react';
 
 const Typography = props => {
 
+  Typography.defaultProps = {
+    color: 'primary-1',
+    size: 1,
+    weight: 'regular',
+  };
+  
+  Typography.propTypes = {
+    children: PropTypes.string,
+    className: PropTypes.string,
+    color: PropTypes.oneOf(['primary-1', 'primary-2', 'primary-3']),
+    variant: PropTypes.oneOf(['subject', 'newsTitle', 'subtitle', 'date']),
+    size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+    style: PropTypes.object,
+    weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  };
+
   const {
+    className,
     children,
-    custom,
+    color,
+    style,
+    variant,
     size,
-    tokenVariant
+    weight
   } = props;
 
-  const getTokenVariant = () => {
-    switch(tokenVariant) {
-      case 'article-title':
-        return 'article-title';
-      case 'article-title-intro':
-        return 'article-title-intro';
-      case 'article-subtitle':
-        return 'article-subtitle';
-      case 'article-subtitle-intro':
-        return 'article-subtitle-intro';
-      case 'article-paragraph':
-        return 'article-paragraph';
-      case 'article-tag':
-        return 'article-tag';
-      case 'title':
-        return `title-${size}`;
-      case 'subtitle':
-        return `subtitle-${size}`;
-      case 'paragraph':
-        return `paragraph-${size}`;
+  const getClassName = () => {
+    switch(variant) {
       case 'subject':
-        return `subject-${size}`;
-      case 'system':
-        return `system-${size}`;
-      case 'system-bold':
-        return `system-${size} bold`;
       default:
-        return '';
+        return `subject size${size} ${weight} color-${color}`;
     }
   };
 
   const classes = classnames({
-    'typography-root': true,
-    [getTokenVariant()]: true,
-    [`${custom}`]: custom,
+    'Prensa-Typography-root': true,
+    [getClassName()]: true,
+    [className]: className,
   });
 
-  switch(tokenVariant) {
-    case 'article-title':
-    case 'title':
-      return <h1 className={classes}>{children}</h1>;
-    case 'article-paragraph':
-      return <p className={classes} dangerouslySetInnerHTML={{__html: children}} />;
-    default:
-      return <span className={classes}>{children}</span>;
+  switch(variant) {
+    case 'subject':
+      return <span className={classes} style={style}>{children}</span>;
+    case 'newsTitle':
+      return <h1></h1>;
   }
-};
-
-Typography.defaultProps = {
-  weight: 'regular',
-  size: 'sm'
-};
-
-Typography.propTypes = {
-  /**
-   * Texto que será inserido na tela
-   */
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
-  /**
-   * Permite a passagem de class customizado para o componente
-   */
-  custom: PropTypes.string,
-  /**
-   * Modifica o tamanho da fonte de acordo com as guias do design
-   */
-  size: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
-  ]).isRequired,
-  tokenVariant: PropTypes.oneOf([
-    'article-title', 'article-title-intro', 'article-subtitle', 'article-subtitle-intro', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'
-  ])
 };
 
 export default Typography;

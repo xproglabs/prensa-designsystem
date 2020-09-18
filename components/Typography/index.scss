@@ -1,5 +1,38 @@
 @use '../../styles' as *;
 
+$font-size-1: 12px;
+$font-size-2: 14px;
+$font-size-3: 16px;
+
+.color-primary-1 {
+  color: $color-primary-1;
+}
+.color-primary-2 {
+  color: $color-primary-2;
+}
+.color-primary-3 {
+  color: $color-primary-3;
+}
+
+.Prensa-Typography-root {
+  &.subject {
+    @include ff($font-secondary);
+    &.size1 {
+      @include fs($font-size-1)
+    }
+    &.size2 {
+      @include fs($font-size-2)
+    }
+    &.size3 {
+      @include fs($font-size-3)
+    }
+
+    &.bold {
+      @include fw($bold);
+    }
+  }
+}
+
 .title-xs {
   @include fs(16px);
   @include lh(18px);
