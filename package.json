@@ -1,11 +1,11 @@
 {
-  "name": "xprog-ds",
+  "name": "prensa",
   "version": "1.3.5",
-  "description": "XPROG Design System",
+  "description": "Prensa Design System",
   "main": "/",
   "author": "XPROG",
   "license": "ISC",
-  "repository": "https://github.com/xproglabs/xprog-designsystem.git",
+  "repository": "https://github.com/xproglabs/prensa-designsystem.git",
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
