@@ -1,4 +1,4 @@
-name: Build and commit
+name: Publish docs
 
 on:
   push:
@@ -12,6 +12,7 @@ jobs:
       matrix:
         node-version: [14.x]
 
+    steps:
     - name: ssh to braza-server-nyc3-01
       uses: appleboy/ssh-action@master
       with:
@@ -32,7 +33,7 @@ jobs:
       with:
         status: ${{ job.status }}
         author_name: 'build-action'
-        text: Build xprog-ds ${{ job.status }}
+        text: Docs publish status is ${{ job.status }}
         fields: commit, message, author
       env:
         GITHUB_TOKEN: ${{ github.token }}
