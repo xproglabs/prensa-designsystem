@@ -1,0 +1,41 @@
+name: Publish docs
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - name: ssh to braza-server-nyc3-01
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DOCS_SERVER }}
+        username: ${{ secrets.SSHUSERNAME }}
+        password: ${{ secrets.SSHPASSWORD }}
+        script: |
+          cd /var/www/prensa-designsystem
+          git config user.name "Giovanni"
+          git config user.email "giovanni@xproglabs.com"
+          git checkout develop
+          git pull
+          npm run build-storybook
+          pm2 restart prensa-storybook
+
+    - name: Slack notifcation build
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        author_name: 'build-action'
+        text: Docs publish status is ${{ job.status }}
+        fields: commit, message, author
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+        SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+      if: ${{ always() }}
