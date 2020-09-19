@@ -1,8 +1,8 @@
-name: Build commit and publish
+name: Publishing NPM new version
 
 on:
   push:
-    branches: [ master ]
+    branches: [ production ]
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
         status: ${{ job.status }}
         author_name: 'build-action'
         icon_emoji: 'rocket'
-        text: Build na master iniciada
+        text: Build iniciada
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.slack }}
       
@@ -58,7 +58,7 @@ jobs:
       with:
         status: ${{ job.status }}
         author_name: 'build-action'
-        text: Build xprog-ds ${{ job.status }}
+        text: Build prensa ${{ job.status }}
         fields: commit, message, author
       env:
         GITHUB_TOKEN: ${{ github.token }}
