@@ -1,38 +1,90 @@
-import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
+import { ArgsTable, Meta } from '@storybook/addon-docs/blocks';
 import Button from './index';
+import CodeBlock from './CodeBlock'
 
 export const Template = (args) => <Button {...args} />;
 
+export const Space = props => {
+  const unit = 8;
+  const {size} = props;
+  return <div style={{marginTop: size * unit}} />
+};
+
 <Meta title="Components/Button" component={Button} />
 
-# Checkbox
+# Button
 
-With `MDX` we can define a story for `Checkbox` right in the middle of our Markdown documentation.
+<Space size={4} />
 
-<p>testando</p>
-
-<div style={{backgroundColor: 'red'}}>
-  qualquer coisa
-</div>
-
-> Testando
-## Testando 2
-### Testando 3
+<pre>
+  <CodeBlock>import Button from 'prensa/Button'</CodeBlock>
+</pre>
 
 
-## Testando 2
-### Testando 3
 
-<Story name="Primary" args={{children: 'Avançar', variant: 'filled'}} >
-  {Template.bind({})}
-</Story>
+<Space size={6} />
 
-<br/>
-<br/>
-<br/>
+### Variações
+O Button carrega duas variações de estilo, **Filled** e **Outlined**. Elas alteram a escolha dos tokens para o esquema de cores. 
 
-# Tabela de props
+<Button variant="filled">Avançar</Button>
+<Button variant="outlined">Avançar</Button>
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock children={`
+  <Button variant="filled">Avançar</Button>
+  <Button variant="outlined">Avançar</Button>
+  `}/>
+</pre>
+
+
+<Space size={6} />
+
+### Esquema de cores
+O componente possui um esquema de cores pré-definidas, construídas com base no tema do design-system. Usamos a prop `color` para a escolha entre `color="primary"` e `color="secondary"`.
+
+<Button variant="filled" color='primary'>Primário</Button>
+<Button variant="filled" color='secondary'>Secundário</Button>
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock children={`
+  <Button variant="filled" color="secondary">Avançar</Button>
+  <Button variant="outlined" color="secondary">Avançar</Button>
+  `}/>
+</pre>
+
+<Space size={6} />
+
+### Funcionalidades
+O componente pode receber uma prop chamada `onClick` que permite a passagem da ação do clique realizado pelo usuário. Também pode receber a prop `fullWidth` que faz com que o componente assuma o formato 100% para o estilo.
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock children={`
+  import Button from 'prensa/Button';
+
+  const handleClick = () => {
+    console.log('click')
+  }
+
+  const Component = props => {
+    return <Button variant="filled" color="secondary" onClick={handleClick()}>Avançar</Button>;
+  }
+  `}/>
+</pre>
+
+<Space size={10} />
+
+# API
 <ArgsTable of={Button} />
 
-`Testando uma prop`
-`$button-primary`
+
+
+<Space size={10} />
+
+# CSS API
