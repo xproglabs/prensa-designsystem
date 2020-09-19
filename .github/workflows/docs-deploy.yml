@@ -27,6 +27,7 @@ jobs:
           git pull
           npm run build-storybook
           pm2 restart prensa-storybook
+          exit
 
     - name: Slack success notifcation
       uses: 8398a7/action-slack@v3
