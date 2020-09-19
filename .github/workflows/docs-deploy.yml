@@ -2,7 +2,7 @@ name: Publish docs
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ production ]
 
 jobs:
   build:
@@ -28,14 +28,26 @@ jobs:
           npm run build-storybook
           pm2 restart prensa-storybook
 
-    - name: Slack notifcation build
+    - name: Slack success notifcation
       uses: 8398a7/action-slack@v3
       with:
         status: ${{ job.status }}
         author_name: 'build-action'
-        text: Docs publish status is ${{ job.status }}
-        fields: commit, message, author
+        text: Deploy docs.prensa realizado com sucesso
+        fields: commit
       env:
         GITHUB_TOKEN: ${{ github.token }}
         SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-      if: ${{ always() }}
+      if: ${{ success() }}
+      
+    - name: Slack error notifcation
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        author_name: 'build-action'
+        text: Erro no deploy docs.prensa
+        fields: commit
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+        SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+      if: ${{ failure() }}
