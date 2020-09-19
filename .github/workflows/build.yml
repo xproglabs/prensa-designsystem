@@ -22,6 +22,12 @@ jobs:
           
       - name: Create destination for compiled CSS
         run: mkdir -vp /tmp/xprog-designsystem/css
+      
+      - name: list directories
+        run: |
+          ls -l
+          cd node_modules/
+          ls -l
 
       - name: Compile SCSS Theme
         uses: gha-utilities/sass-build@v0.2.2
