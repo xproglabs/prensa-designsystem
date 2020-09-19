@@ -1,8 +1,19 @@
 @use './colors.scss' as *;
+@use './mixings.scss' as *; 
 
 $font-primary: 'Work Sans' !default;
 $font-secondary: 'Merriweather' !default;
 $font-tertiary: 'Arvo' !default;
+
+$font-size-1: 12px !default;
+$font-size-2: 14px !default;
+$font-size-3: 16px !default;
+$font-size-4: 18px !default;
+$font-size-5: 20px !default;
+$font-size-6: 22px !default;
+$font-size-7: 38px !default;
+$font-size-8: 42px !default;
+$font-size-9: 62px !default;
 
 $article-title-fc: $color-neutral-2 !default;
 $article-title-fs-sm: 32px !default;
@@ -62,3 +73,33 @@ $regular: 400;
 $medium: 500;
 $bold: 700;
 $italic: italic;
+
+%font-sizes {
+  &.size1 {
+    @include fs($font-size-1)
+  }
+  &.size2 {
+    @include fs($font-size-2)
+  }
+  &.size3 {
+    @include fs($font-size-3)
+  }
+  &.size4 {
+    @include fs($font-size-4)
+  }
+  &.size5 {
+    @include fs($font-size-5)
+  }
+  &.size6 {
+    @include fs($font-size-6)
+  }
+  &.size7 {
+    @include fs($font-size-7)
+  }
+  &.size8 {
+    @include fs($font-size-8)
+  }
+  &.size9 {
+    @include fs($font-size-9)
+  }
+}

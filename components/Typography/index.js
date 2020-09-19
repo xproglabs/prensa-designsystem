@@ -4,22 +4,6 @@ import React from 'react';
 
 const Typography = props => {
 
-  Typography.defaultProps = {
-    color: 'primary-1',
-    size: 1,
-    weight: 'regular',
-  };
-  
-  Typography.propTypes = {
-    children: PropTypes.string,
-    className: PropTypes.string,
-    color: PropTypes.oneOf(['primary-1', 'primary-2', 'primary-3']),
-    variant: PropTypes.oneOf(['subject', 'newsTitle', 'subtitle', 'date']),
-    size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
-    style: PropTypes.object,
-    weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-  };
-
   const {
     className,
     children,
@@ -53,3 +37,19 @@ const Typography = props => {
 };
 
 export default Typography;
+
+Typography.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular',
+};
+
+Typography.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(['primary-1', 'primary-2', 'primary-3']),
+  variant: PropTypes.oneOf(['subject', 'newsTitle', 'subtitle', 'date']),
+  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+};

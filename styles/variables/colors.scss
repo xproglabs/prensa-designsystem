@@ -43,6 +43,87 @@ $color-subject-green: #09B77B;
 $color-subject-red: #AB001B; 
 $color-subject-yellow: #BFA525;
 
+%colors {
+  &.color-primary-1 {
+    @include fc($color-primary-1);
+  }
+  &.color-primary-2 {
+    @include fc($color-primary-2);
+  }
+  &.color-primary-3 {
+    @include fc($color-primary-3);
+  }
+  &.color-secondary-1 {
+    @include fc($color-primary-3);
+  }
+  &.color-secondary-2 {
+    @include fc($color-primary-3);
+  }
+  &.color-secondary-3 {
+    @include fc($color-primary-3);
+  }
+  &.color-ads {
+    @include fc($color-ads);
+  }
+  &.color-black {
+    @include fc($color-black);
+  }
+  &.color-neutral-1 {
+    @include fc($color-neutral-1);
+  }
+  &.color-neutral-2 {
+    @include fc($color-neutral-2);
+  }
+  &.color-neutral-3 {
+    @include fc($color-neutral-3);
+  }
+  &.color-neutral-4 {
+    @include fc($color-neutral-4);
+  }
+  &.color-neutral-5 {
+    @include fc($color-neutral-5);
+  }
+  &.color-neutral-6 {
+    @include fc($color-neutral-6);
+  }
+  &.color-neutral-7 {
+    @include fc($color-neutral-7);
+  }
+  &.color-neutral-8 {
+    @include fc($color-neutral-8);
+  }
+  &.color-neutral-9 {
+    @include fc($color-neutral-9);
+  }
+  &.color-neutral-10 {
+    @include fc($color-neutral-10);
+  }
+  &.color-neutral-11 {
+    @include fc($color-neutral-11);
+  }
+  &.color-white {
+    @include fc($color-white);
+  }
+  &.color-success-1 {
+    @include fc($color-success-1);
+  }
+  &.color-success-2 {
+    @include fc($color-success-2);
+  }
+  &.color-success-3 {
+    @include fc($color-success-3);
+  }
+  &.color-error-1 {
+    @include fc($color-error-1);
+  }
+  &.color-error-2 {
+    @include fc($color-error-2);
+  }
+  &.color-error-3 {
+    @include fc($color-error-3);
+  }
+}
+
 %background-colors {
   &.color-primary-1 {
     @include bg($color-primary-1);
