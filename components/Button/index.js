@@ -5,11 +5,11 @@ import React from 'react';
 const Button = props => {
 
   const getClass = classnames({
-    'ds-button': true,
-    'disabled': props.disabled,
-    'fullWidth': props.fullWidth,
+    'Prensa-Button-root': true,
     [`${props.variant}`]: true,
     [`${props.color}`]: true,
+    'disabled': props.disabled,
+    'fullWidth': props.fullWidth,
     [`${props.className}`]: props.className,
   });
 
