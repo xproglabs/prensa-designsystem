@@ -74,32 +74,92 @@ $medium: 500;
 $bold: 700;
 $italic: italic;
 
-%font-sizes {
-  &.size1 {
-    @include fs($font-size-1)
-  }
-  &.size2 {
-    @include fs($font-size-2)
-  }
-  &.size3 {
-    @include fs($font-size-3)
-  }
-  &.size4 {
-    @include fs($font-size-4)
-  }
-  &.size5 {
-    @include fs($font-size-5)
-  }
-  &.size6 {
-    @include fs($font-size-6)
-  }
-  &.size7 {
-    @include fs($font-size-7)
-  }
-  &.size8 {
-    @include fs($font-size-8)
-  }
-  &.size9 {
-    @include fs($font-size-9)
-  }
-}
+//SUBJECT
+$font-subject-family: $font-secondary !default;
+$font-subject-size-1: 12px !default;
+$font-subject-size-2: 14px !default;
+$font-subject-size-3: 16px !default;
+$font-subject-lineheight-1: 14px !default;
+$font-subject-lineheight-2: 16px !default;
+$font-subject-lineheight-3: 18px !default;
+
+//NEWSTITLE
+$font-newstitle-family: $font-primary !default;
+$font-newstitle-size-1: 16px !default;
+$font-newstitle-size-2: 20px !default;
+$font-newstitle-size-3: 24px !default;
+$font-newstitle-size-4: 30px !default;
+$font-newstitle-size-5: 38px !default;
+$font-newstitle-size-6: 42px !default;
+$font-newstitle-size-7: 62px !default;
+$font-newstitle-lineheight-1: 18px !default;
+$font-newstitle-lineheight-2: 22px !default;
+$font-newstitle-lineheight-3: 28px !default;
+$font-newstitle-lineheight-4: 34px !default;
+$font-newstitle-lineheight-5: 34px !default;
+$font-newstitle-lineheight-6: 46px !default;
+$font-newstitle-lineheight-7: 64px !default;
+
+$font-subtitle-family: $font-primary;
+$font-subtitle-size-1: 18px !default;
+$font-subtitle-lineheight-1: 20px !default;
+
+$font-date-family: $font-primary;
+$font-date-size-1: 12px !default;
+$font-date-lineheight-1: 14px !default;
+
+$font-author-family: $font-primary;
+$font-author-size-1: 14px !default;
+$font-author-lineheight-1: 16px !default;
+
+$font-byline-family: $font-primary;
+$font-byline-size-1: 14px !default;
+$font-byline-lineheight-1: 16px !default;
+
+$font-paragraph-family: $font-primary;
+$font-paragraph-size-1: 20px !default;
+$font-paragraph-lineheight-1: 22px !default;
+
+$font-interTitle-family: $font-primary;
+$font-interTitle-size-1: 30px !default;
+$font-interTitle-lineheight-1: 32px !default;
+
+$font-citation-family: $font-primary;
+$font-citation-size-1: 32px !default;
+$font-citation-lineheight-1: 34px !default;
+
+$font-urlLink-family: $font-primary;
+$font-urlLink-size-1: 20px !default;
+$font-urlLink-lineheight-1: 22px !default;
+
+$font-tag-family: $font-primary;
+$font-tag-size-1: 14px !default;
+$font-tag-lineheight-1: 16px !default;
+
+$font-sectionTitle-family: $font-primary;
+$font-sectionTitle-size-1: 20px !default;
+$font-sectionTitle-lineheight-1: 22px !default;
+
+$font-editorialTitle-family: $font-primary;
+$font-editorialTitle-size-1: 20px !default;
+$font-editorialTitle-lineheight-1: 22px !default;
+
+$font-button-family: $font-primary;
+$font-button-size-1: 14px !default;
+$font-button-lineheight-1: 16px !default;
+
+$font-mostread-number-family: $font-primary;
+$font-mostread-number-size-1: 14px !default;
+$font-mostread-number-lineheight-1: 16px !default;
+
+$font-menuSide-title-family: $font-primary;
+$font-menuSide-title-size-1: 20px !default;
+$font-menuSide-title-lineheight-1: 22px !default;
+
+$font-menuSide-item-family: $font-primary;
+$font-menuSide-item-size-1: 16px !default;
+$font-menuSide-item-lineheight-1: 18px !default;
+
+$font-menuTop-item-family: $font-primary;
+$font-menuTop-item-size-1: 16px !default;
+$font-menuTop-item-lineheight-1: 18px !default;
