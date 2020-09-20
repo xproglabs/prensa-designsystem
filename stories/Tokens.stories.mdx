@@ -1,0 +1,134 @@
+import {Meta} from '@storybook/addon-docs/blocks';
+import Table from '../components/Button/CSSTable';
+
+<Meta title="Styleguide/Tokens" />
+
+# Tokens
+
+Uma lista de todos os tokens que estão incorporados no Prensa Design System.
+
+export const rows = [
+  {
+    id: '0',
+    token: '$font-subject-family',
+    value: '$font-secondary',
+  },
+  {
+    id: '1',
+    token: '$font-subject-size-1',
+    value: '12px',
+  },
+  {
+    id: '2',
+    token: '$font-subject-size-2',
+    value: '14px',
+  },
+  {
+    id: '3',
+    token: '$font-subject-size-3',
+    value: '16px'
+  },
+  {
+    id: '4',
+    token: '$font-subject-lineheight-1',
+    value: '14px'
+  },
+  {
+    id: '5',
+    token: '$font-subject-lineheight-2',
+    value: '16px'
+  },
+  {
+    id: '6',
+    token: '$font-subject-lineheight-3',
+    value: '18px'
+  },
+  {
+    id: '7',
+    token: '$font-newstitle-family',
+    value: '$font-primary',
+  },
+  {
+    id: '8',
+    token: '$font-newstitle-size-1',
+    value: '16px',
+  },
+  {
+    id: '9',
+    token: '$font-newstitle-size-2', 
+    value: '20px',
+  },
+  {
+    id: '10',
+    token: '$font-newstitle-size-3', 
+    value: '24px',
+  },
+  {
+    id: '11',
+    token: '$font-newstitle-size-4', 
+    value: '30px',
+  },
+  {
+    id: '12',
+    token: '$font-newstitle-size-5', 
+    value: '38px',
+  },
+  {
+    id: '13',
+    token: '$font-newstitle-size-6', 
+    value: '42px',
+  },
+  {
+    id: '14',
+    token: '$font-newstitle-size-7', 
+    value: '62px',
+  },
+  {
+    id: '15',
+    token: '$font-newstitle-lineheight-1', 
+    value: '18px',
+  },
+  {
+    id: '16',
+    token: '$font-newstitle-lineheight-2', 
+    value: '22px',
+  },
+  {
+    id: '17',
+    token: '$font-newstitle-lineheight-3', 
+    value: '28px',
+  },
+  {
+    id: '18',
+    token: '$font-newstitle-lineheight-4', 
+    value: '34px',
+  },
+  {
+    id: '19',
+    token: '$font-newstitle-lineheight-5', 
+    value: '34px',
+  },
+  {
+    id: '20',
+    token: '$font-newstitle-lineheight-6', 
+    value: '46px',
+  },
+  {
+    id: '21',
+    token: '$font-newstitle-lineheight-7', 
+    value: '64px',
+  },
+]
+
+export const headers = [
+  {
+    key: 'token',
+    header: 'Token'
+  },
+  {
+    key: 'value',
+    header: 'Valor'
+  }
+]
+
+<Table rows={rows} headers={headers} />
