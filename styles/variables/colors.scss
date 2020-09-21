@@ -27,6 +27,12 @@ $color-white: #FFFFFF !default;
 
 $color-ads: #FF5C00;
 
+$color-editorial-1: #0975B7;
+$color-editorial-2: #AB001B;
+$color-editorial-3: #BFA525;
+$color-editorial-4: #080808;
+$color-editorial-5: #09B77B;
+
 //ALERT
 $color-success-1: #3C8D40 !default;
 $color-success-2: #50AE55 !default;
@@ -61,6 +67,21 @@ $color-subject-yellow: #BFA525;
   }
   &.color-secondary-3 {
     @include fc($color-primary-3);
+  }
+  &.color-editorial-1 {
+    @include fc($color-editorial-1);
+  }
+  &.color-editorial-2 {
+    @include fc($color-editorial-2);
+  }
+  &.color-editorial-3 {
+    @include fc($color-editorial-3);
+  }
+  &.color-editorial-4 {
+    @include fc($color-editorial-4);
+  }
+  &.color-editorial-5 {
+    @include fc($color-editorial-5);
   }
   &.color-ads {
     @include fc($color-ads);
@@ -143,6 +164,21 @@ $color-subject-yellow: #BFA525;
   &.color-secondary-3 {
     @include bg($color-primary-3);
   }
+  &.color-editorial-1 {
+    @include bg($color-editorial-1);
+  }
+  &.color-editorial-2 {
+    @include bg($color-editorial-2);
+  }
+  &.color-editorial-3 {
+    @include bg($color-editorial-3);
+  }
+  &.color-editorial-4 {
+    @include bg($color-editorial-4);
+  }
+  &.color-editorial-5 {
+    @include bg($color-editorial-5);
+  }
   &.color-ads {
     @include bg($color-ads);
   }
@@ -223,6 +259,21 @@ $color-subject-yellow: #BFA525;
   }
   &.color-secondary-3 {
     border-color: $color-primary-3;
+  }
+  &.color-editorial-1 {
+    border-color: $color-editorial-1;
+  }
+  &.color-editorial-2 {
+    border-color: $color-editorial-2;
+  }
+  &.color-editorial-3 {
+    border-color: $color-editorial-3;
+  }
+  &.color-editorial-4 {
+    border-color: $color-editorial-4;
+  }
+  &.color-editorial-5 {
+    border-color: $color-editorial-5;
   }
   &.color-ads {
     border-color: $color-ads;
