@@ -39,6 +39,7 @@ const GridNews = props => {
             hasImageTop={true}
             lazy={lazy}
             status={status}
+            subjectSize={2}
           />
         )}
       </Block>

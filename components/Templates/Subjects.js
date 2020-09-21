@@ -17,19 +17,19 @@ const Subjects = props => {
         <Block custom={`col left ${content['style-left']}`}>
           <SectionTitle>{content['title-left']}</SectionTitle>
           {map(content['items-left'], (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} />)}
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} />)}
           {ReadMore && <ReadMore />}
         </Block>
         <Block custom={`col center ${content['style-center']}`}>
           <SectionTitle>{content['title-center']}</SectionTitle>
           {map(content['items-center'], (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} />)}
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} />)}
           {ReadMore && <ReadMore />}
         </Block>
         <Block custom={`col right ${content['style-right']}`}>
           <SectionTitle>{content['title-right']}</SectionTitle>
           {map(content['items-right'], (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} />)}
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} />)}
           {ReadMore && <ReadMore />}
         </Block>
       </Block>

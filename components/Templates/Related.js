@@ -18,7 +18,8 @@ const Related = ({items, domain, lazy, ReadMore, status}) => {
             hasImageTop={false}
             key={key} 
             lazy={lazy}
-            status={status} 
+            status={status}
+            subjectSize={2}
           />
         )}
       </Block>

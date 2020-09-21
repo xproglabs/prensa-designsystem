@@ -10,9 +10,9 @@ import colors from '../../styles/variables/colors.json';
 
 const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize}) => {
   const {image, name, path, subject, subtitle} = content;
-  const propsTeaser = {align: hasImageTop ? 'col' : 'row left',custom: 'teaser-default',mb: '2'};
+  const propsTeaser = {align: hasImageTop ? 'col' : 'row left', custom: 'teaser-default', mb: '2'};
   const propsImage = {align: 'row',custom: `teaser-image ${hasImageTop ? 'image-top' : 'image-left'}`};
-  const propsContent = {custom: 'teaser-content',align: 'col',mb: '3',ml: '2',mr: '2',mt: '3',w: '100p-4',};
+  const propsContent = {custom: 'teaser-content', align: 'col', mb: '3', ml: '2', mr: '2', mt: '3', w: '100p-4'};
   const propsSubTitle = {mb: '2',lg:{mb: '8'}}; 
   const propsDateContainer = {h: '100p', align: 'bottom'};
   const propsDate = {custom: 'teaser-date',w: '100p'};

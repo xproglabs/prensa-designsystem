@@ -15,7 +15,7 @@ const Columnists = props => {
       {title && title !== '' && <SectionTitle color={color}>{title}</SectionTitle>}
       <Block {...propsTemplate} > 
         {map(content['items'], (item, key) =>
-          <Teaser content={item} domain={domain} key={key} lazy={lazy} status={status} />)}
+          <Teaser content={item} domain={domain} key={key} lazy={lazy} status={status} subjectSize={2} />)}
       </Block>
     </>
   );

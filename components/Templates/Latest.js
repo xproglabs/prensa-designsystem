@@ -26,6 +26,7 @@ const Latest = ({content, domain, lazy, ReadMore, Title, status}) => {
               key={key}
               lazy={lazy}
               status={status}
+              subjectSize={2}
             />
           )}
         </Block>
