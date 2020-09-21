@@ -55,6 +55,7 @@
   "scripts": {
     "icons": "svgr -d icons/ icons/assets/",
     "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s build",
     "build": "rollup --config",
     "eslint": "eslint --ext js,jsx components/ stories/ utils/"
   },
