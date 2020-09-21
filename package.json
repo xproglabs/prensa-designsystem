@@ -57,7 +57,8 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s build",
     "build": "rollup --config",
-    "eslint": "eslint --ext js,jsx components/ stories/ utils/"
+    "eslint": "eslint --ext js,jsx components/ stories/ utils/",
+    "run-prod": "npx http-server /var/www/prensa-designsystem/storybook-static"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
