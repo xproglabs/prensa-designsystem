@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
-import SectionTitle from '../SectionTitle';
+import {SectionTitle} from '../Typography';
 import Teaser from '../Teasers';
 
 const Columnists = props => {
