@@ -1,13 +1,14 @@
 @use '../../styles' as *;
 
-.subject-root {
-  @include fc($color-primary-1);
+.Prensa-Subject-root {
   @include ff($font-secondary);
   @include w(max-content);
+  @extend %colors;
   &.filled {
     @include fc($color-white);
     @include px($space-size-1);
     @include py(calc(#{$space-size-1} / 2));
     @include r(5px);
+    @extend %background-colors;
   }
 }
