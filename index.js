@@ -549,8 +549,7 @@ var SearchForm = function SearchForm(_ref) {
     disabled: false,
     onClick: function onClick() {
       return handleSubmit();
-    },
-    style: "primary"
+    }
   }, "Buscar"));
 };
 

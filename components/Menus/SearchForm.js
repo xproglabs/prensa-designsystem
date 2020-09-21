@@ -21,7 +21,7 @@ const SearchForm = ({functions, state}) => {
   return (
     <Block align='right' custom={'search-form'}>
       <input {...fieldController}  />
-      <Button disabled={false} onClick={() => handleSubmit()} style="primary">Buscar</Button>
+      <Button disabled={false} onClick={() => handleSubmit()}>Buscar</Button>
     </Block>
   );
 };
