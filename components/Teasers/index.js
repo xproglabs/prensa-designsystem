@@ -6,8 +6,9 @@ import ImageBackground from '../Image/Background';
 import Subject from '../Subject';
 import Typography from '../Typography';
 import utils from '../Util';
+import colors from '../../styles/variables/colors.json';
 
-const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy}) => {
+const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize}) => {
   const {image, name, path, subject, subtitle} = content;
   const propsTeaser = {align: hasImageTop ? 'col' : 'row left',custom: 'teaser-default',mb: '2'};
   const propsImage = {align: 'row',custom: `teaser-image ${hasImageTop ? 'image-top' : 'image-left'}`};
@@ -51,7 +52,7 @@ const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, 
         <Block>
           {subject && 
             <Block {...propsSubject}>
-              <Subject filled={hasSubjectFilled}>{subject}</Subject>
+              <Subject size={subjectSize} color={subjectColor} filled={hasSubjectFilled}>{subject}</Subject>
             </Block>
           }
         </Block>
@@ -99,13 +100,17 @@ Teaser.propTypes = {
   status: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.bool
-  })
+  }),
+  subjectColor: PropTypes.oneOf(colors),
+  subjectSize: PropTypes.oneOf([1, 2, 3])
 };
 Teaser.defaultProps = {
   hasSubjectFilled: false,
   hasImageTop: false,
   hasSubtitle: false,
-  hasDate: true
+  hasDate: true,
+  subjectSize: 1,
+  subjectColor: 'primary-1'
 };
 
 export default Teaser;

@@ -8,7 +8,7 @@ import Teaser from '../Teasers';
 
 const GridNews = props => {
   const {content, domain, lazy, status} = props;
-  const {items, title} = content;
+  const {items, title, color} = content;
   
   const propsTemplate = {
     align: 'between', 
@@ -29,7 +29,7 @@ const GridNews = props => {
 
   return (
     <>
-      {title && title !== ''&& <SectionTitle name={title} />}
+      {title && title !== ''&& <SectionTitle color={color}>{title}</SectionTitle>}
       <Block {...propsTemplate}>
         {map(items, (item, key) =>
           <Teaser 
@@ -46,7 +46,11 @@ const GridNews = props => {
   );
 };
 GridNews.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.shape({
+    items: PropTypes.array,
+    title: PropTypes.string,
+    color: PropTypes.string,
+  }),
   domain: PropTypes.string,
   lazy: PropTypes.func,
   status: PropTypes.object
