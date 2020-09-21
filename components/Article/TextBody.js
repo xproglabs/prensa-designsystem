@@ -4,7 +4,7 @@ import React from 'react';
 
 import Block from '../Block';
 import Image from '../Image';
-import Paragraph from './Paragraph';
+import {Paragraph} from '../Typography'
 import {parseBody} from './Utils';
 
 const TextBody = ({AdComponent, adsblocks, content, domain, embeds, lazy}) => {
@@ -40,7 +40,7 @@ const TextBody = ({AdComponent, adsblocks, content, domain, embeds, lazy}) => {
     }
     return (
       <>
-        <Paragraph value={value} />
+        <Paragraph>{value}</Paragraph>
         {has_ads && <RenderAds />}
       </>
     );

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
-import Typography from '../Typography';
+import {MostReadNumber} from '../Typography';
 
 const MostReadItem = ({content, number}) => {
   const {name, path} = content;
@@ -36,7 +36,7 @@ const MostReadItem = ({content, number}) => {
         <Block {...propsNumber} align='row center middle'>{position}</Block>
         <Block {...propsTitle}>
           <a className='teaser-aria' href={path} aria-label={`Abrir matéria ${name}`}>
-            <Typography custom='teaser-title'>{name}</Typography>
+            <MostReadNumber custom='teaser-title'>{name}</MostReadNumber>
           </a>
         </Block>
       </Block>

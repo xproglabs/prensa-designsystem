@@ -4,7 +4,7 @@ import React from 'react';
 import Block from '../Block';
 import ImageBackground from '../Image/Background';
 import Subject from '../Subject';
-import Typography from '../Typography';
+import {NewsTitle, Subtitle, Date} from '../Typography';
 import utils from '../Util';
 import colors from '../../styles/variables/colors.json';
 
@@ -59,19 +59,19 @@ const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, 
         <Block>
           <Block {...propsTitle}>
             <a className='teaser-aria' href={url_rewrite} aria-label={`Abrir matéria ${name}`}>
-              <Typography custom='teaser-title'>{name}</Typography>
+              <NewsTitle custom='teaser-title'>{name}</NewsTitle>
             </a>
           </Block >
           {subtitle && hasSubtitle &&
             <Block {...propsSubTitle}>
-              <Typography custom='teaser-subtitle'>{subtitle}</Typography>
+              <Subtitle custom='teaser-subtitle'>{subtitle}</Subtitle>
             </Block>  
           }
         </Block>
         <Block {...propsDateContainer}>  
           {dateValue && hasDate &&
             <Block {...propsDate}>
-              <Typography custom='teaser-datetime'>{dateValue}</Typography>
+              <Date custom='teaser-datetime'>{dateValue}</Date>
             </Block>
           }
         </Block>  

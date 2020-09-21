@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
-import Typography from '../Typography';
+import {Tag} from '../Typography';
 
 
 const Tags = props => {
@@ -11,7 +11,7 @@ const Tags = props => {
 
   const renderTag = (tag, k) => (
     <div key={k} className='tag' onClick={() => onClick(tag)}>
-      <Typography tokenVariant='article-tag'>{tag}</Typography>
+      <Tag color='primary-1'>{tag}</Tag>
     </div>
   );
 
