@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
-import {SectionTitle} from '../Typography';
 import Teaser from '../Teasers';
+import {SectionTitle} from '../Typography';
 
 const GridNews = props => {
   const {content, domain, lazy, status} = props;
@@ -16,20 +16,25 @@ const GridNews = props => {
     mb: '6',
     md: {align: 'row', mb: '5'}
   };
+
+  let titleSize;
   
   if(items.length === 2) {
     propsTemplate.custom = 'templates-newsgrid two';
+    titleSize = 7;
   }
   if(items.length === 3) {
     propsTemplate.custom = 'templates-newsgrid three';
+    titleSize = 3;
   }
   if(items.length === 4) {
     propsTemplate.custom = 'templates-newsgrid four';
+    titleSize = 3;
   }
 
   return (
     <>
-      {title && title !== ''&& <SectionTitle color={color}>{title}</SectionTitle>}
+      {title && title !== '' && <SectionTitle color={color}>{title}</SectionTitle>}
       <Block {...propsTemplate}>
         {map(items, (item, key) =>
           <Teaser 
@@ -40,6 +45,10 @@ const GridNews = props => {
             lazy={lazy}
             status={status}
             subjectSize={2}
+            titleSize={titleSize}
+            titleColor='neutral-2'
+            subtitleColor='neutral-4'
+            dateColor='neutral-4'
           />
         )}
       </Block>
