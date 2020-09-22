@@ -3782,6 +3782,8 @@ var GridNews = function GridNews(props) {
       status = props.status;
   var items = content.items,
       title = content.title;
+  var items_pqueue = content['items-pqueue'];
+  var items_list = items_pqueue && items_pqueue.length > 0 ? items_pqueue : items;
   var propsTemplate = {
     align: 'between',
     custom: 'templates-newsgrid',
@@ -3792,21 +3794,21 @@ var GridNews = function GridNews(props) {
     }
   };
 
-  if (items.length === 2) {
+  if (items_list.length === 2) {
     propsTemplate.custom = 'templates-newsgrid two';
   }
 
-  if (items.length === 3) {
+  if (items_list.length === 3) {
     propsTemplate.custom = 'templates-newsgrid three';
   }
 
-  if (items.length === 4) {
+  if (items_list.length === 4) {
     propsTemplate.custom = 'templates-newsgrid four';
   }
 
   return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: title
-  }), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(items, function (item, key) {
+  }), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(items_list, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       key: key,
       content: item,
