@@ -1,6 +1,7 @@
 @use '../../styles' as *;
 
 .Prensa-Subject-root {
+  text-transform: uppercase;
   @include ff($font-secondary);
   @include w(max-content);
   @extend %colors;

@@ -18,6 +18,7 @@ const Featured = props => {
           lazy={lazy}
           status={status}
           subjectSize={2}
+          titleSize={6}
         />
       </Block>
     );
@@ -35,6 +36,10 @@ const Featured = props => {
             lazy={lazy}
             status={status}
             subjectSize={2}
+            titleSize={6}
+            titleColor='neutral-2'
+            subtitleColor='neutral-4'
+            dateColor='neutral-4'
           />
         </Block>
         <Block custom='block-right'>
@@ -44,6 +49,10 @@ const Featured = props => {
             lazy={lazy}
             status={status}
             subjectSize={2}
+            titleSize={3}
+            titleColor='neutral-2'
+            subtitleColor='neutral-4'
+            dateColor='neutral-4'
           />
           <Teaser 
             content={items[2]}
@@ -51,6 +60,10 @@ const Featured = props => {
             lazy={lazy}
             status={status}
             subjectSize={2}
+            titleSize={3}
+            titleColor='neutral-2'
+            subtitleColor='neutral-4'
+            dateColor='neutral-4'
           />
         </Block>
       </Block>

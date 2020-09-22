@@ -19,7 +19,7 @@ const Subject = props => {
 
   return (
     <div className={classes} style={style}>
-      <SubjectTypography size={size} color={filled ? 'color-white' : color} >{children}</SubjectTypography>
+      <SubjectTypography size={size} color={filled ? 'white' : color} >{children}</SubjectTypography>
     </div>
   );
 };

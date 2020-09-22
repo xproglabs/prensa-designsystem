@@ -8,7 +8,7 @@ import {NewsTitle, Subtitle, Date} from '../Typography';
 import utils from '../Util';
 import colors from '../../styles/variables/colors.json';
 
-const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize}) => {
+const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize, titleSize, subtitleSize, dateSize, titleColor, subtitleColor, dateColor}) => {
   const {image, name, path, subject, subtitle} = content;
   const propsTeaser = {align: hasImageTop ? 'col' : 'row left', custom: 'teaser-default', mb: '2'};
   const propsImage = {align: 'row',custom: `teaser-image ${hasImageTop ? 'image-top' : 'image-left'}`};
@@ -59,19 +59,19 @@ const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, 
         <Block>
           <Block {...propsTitle}>
             <a className='teaser-aria' href={url_rewrite} aria-label={`Abrir matéria ${name}`}>
-              <NewsTitle custom='teaser-title'>{name}</NewsTitle>
+              <NewsTitle size={titleSize} color={titleColor}>{name}</NewsTitle>
             </a>
           </Block >
           {subtitle && hasSubtitle &&
             <Block {...propsSubTitle}>
-              <Subtitle custom='teaser-subtitle'>{subtitle}</Subtitle>
+              <Subtitle size={subtitleSize} color={subtitleColor}>{subtitle}</Subtitle>
             </Block>  
           }
         </Block>
         <Block {...propsDateContainer}>  
           {dateValue && hasDate &&
             <Block {...propsDate}>
-              <Date custom='teaser-datetime'>{dateValue}</Date>
+              <Date size={dateSize} color={dateColor}>{dateValue}</Date>
             </Block>
           }
         </Block>  
@@ -102,7 +102,13 @@ Teaser.propTypes = {
     error: PropTypes.bool
   }),
   subjectColor: PropTypes.oneOf(colors),
-  subjectSize: PropTypes.oneOf([1, 2, 3])
+  subjectSize: PropTypes.oneOf([1, 2, 3]),
+  titleSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+  subtitleSize: PropTypes.oneOf([1]),
+  dateSize: PropTypes.oneOf([1]),
+  titleColor: PropTypes.oneOf(colors),
+  subtitleColor: PropTypes.oneOf(colors),
+  dateColor: PropTypes.oneOf(colors)
 };
 Teaser.defaultProps = {
   hasSubjectFilled: false,
