@@ -3806,6 +3806,10 @@ var GridNews = function GridNews(props) {
     propsTemplate.custom = 'templates-newsgrid four';
   }
 
+  if (items_list.length === 5) {
+    propsTemplate.custom = 'templates-newsgrid five';
+  }
+
   return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     name: title
   }), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(items_list, function (item, key) {

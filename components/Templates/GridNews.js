@@ -28,6 +28,9 @@ const GridNews = props => {
   if(items_list.length === 4) {
     propsTemplate.custom = 'templates-newsgrid four';
   }
+  if(items_list.length === 5) {
+    propsTemplate.custom = 'templates-newsgrid five';
+  }
 
   return (
     <>
