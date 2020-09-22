@@ -6,6 +6,7 @@
     @include fs($font-subject-size-1);
     @include lh($font-subject-lineheight-1);
     @include fw($font-subject-weight);
+    @include m(0px);
     @extend %colors;
   }
   &.size-2 {
@@ -13,6 +14,7 @@
     @include fs($font-subject-size-2);
     @include lh($font-subject-lineheight-2);
     @include fw($font-subject-weight);
+    @include m(0px);
     @extend %colors;
   }
   &.size-3 {
@@ -20,6 +22,7 @@
     @include fs($font-subject-size-3);
     @include lh($font-subject-lineheight-3);
     @include fw($font-subject-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -30,49 +33,126 @@
     @include fs($font-newstitle-size-1);
     @include lh($font-newstitle-lineheight-1);
     @include fw($font-newstitle-weight);
+    @include m(0px);
     @extend %colors;
+    &:hover {
+      animation-name: hoverAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      @keyframes hoverAnimation {
+        from {opacity: 1}
+        to {opacity: 0.8}
+      }
+    }
   }
   &.size-2 {
     @include ff($font-newstitle-family);
     @include fs($font-newstitle-size-2);
     @include lh($font-newstitle-lineheight-2);
     @include fw($font-newstitle-weight);
+    @include m(0px);
     @extend %colors;
+    &:hover {
+      animation-name: hoverAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      @keyframes hoverAnimation {
+        from {opacity: 1}
+        to {opacity: 0.8}
+      }
+    }
   }
   &.size-3 {
     @include ff($font-newstitle-family);
     @include fs($font-newstitle-size-3);
     @include lh($font-newstitle-lineheight-3);
     @include fw($font-newstitle-weight);
+    @include m(0px);
     @extend %colors;
+    &:hover {
+      animation-name: hoverAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      @keyframes hoverAnimation {
+        from {opacity: 1}
+        to {opacity: 0.8}
+      }
+    }
   }
   &.size-4 {
     @include ff($font-newstitle-family);
     @include fs($font-newstitle-size-4);
     @include lh($font-newstitle-lineheight-4);
     @include fw($font-newstitle-weight);
+    @include m(0px);
     @extend %colors;
+    &:hover {
+      animation-name: hoverAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      @keyframes hoverAnimation {
+        from {opacity: 1}
+        to {opacity: 0.8}
+      }
+    }
   }
   &.size-5 {
     @include ff($font-newstitle-family);
     @include fs($font-newstitle-size-5);
     @include lh($font-newstitle-lineheight-5);
     @include fw($font-newstitle-weight);
+    @include m(0px);
     @extend %colors;
+    &:hover {
+      animation-name: hoverAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      @keyframes hoverAnimation {
+        from {opacity: 1}
+        to {opacity: 0.8}
+      }
+    }
   }
   &.size-6 {
     @include ff($font-newstitle-family);
     @include fs($font-newstitle-size-6);
     @include lh($font-newstitle-lineheight-6);
     @include fw($font-newstitle-weight);
+    @include m(0px);
     @extend %colors;
+    animation-name: beforeHover;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    @keyframes beforeHover {
+      from {opacity: 0.8}
+      to {opacity: 1}
+    }
+    &:hover {
+      animation-name: hoverAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      @keyframes hoverAnimation {
+        from {opacity: 1}
+        to {opacity: 0.8}
+      }
+    }
   }
   &.size-7 {
     @include ff($font-newstitle-family);
     @include fs($font-newstitle-size-7);
     @include lh($font-newstitle-lineheight-7);
     @include fw($font-newstitle-weight);
+    @include m(0px);
     @extend %colors;
+    &:hover {
+      animation-name: hoverAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      @keyframes hoverAnimation {
+        from {opacity: 1}
+        to {opacity: 0.8}
+      }
+    }
   }
 }
 
@@ -82,6 +162,7 @@
     @include fs($font-subtitle-size-1);
     @include lh($font-subtitle-lineheight-1);
     @include fw($font-subtitle-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -92,6 +173,7 @@
     @include fs($font-date-size-1);
     @include lh($font-date-lineheight-1);
     @include fw($font-date-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -102,6 +184,7 @@
     @include fs($font-author-size-1);
     @include lh($font-author-lineheight-1);
     @include fw($font-author-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -112,6 +195,7 @@
     @include fs($font-byline-size-1);
     @include lh($font-byline-lineheight-1);
     @include fw($font-byline-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -122,6 +206,7 @@
     @include fs($font-paragraph-size-1);
     @include lh($font-paragraph-lineheight-1);
     @include fw($font-paragraph-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -132,6 +217,7 @@
     @include fs($font-interTitle-size-1);
     @include lh($font-interTitle-lineheight-1);
     @include fw($font-interTitle-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -142,6 +228,7 @@
     @include fs($font-citation-size-1);
     @include lh($font-citation-lineheight-1);
     @include fw($font-citation-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -152,6 +239,7 @@
     @include fs($font-urlLink-size-1);
     @include lh($font-urlLink-lineheight-1);
     @include fw($font-urlLink-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -162,6 +250,7 @@
     @include fs($font-tag-size-1);
     @include lh($font-tag-lineheight-1);
     @include fw($font-tag-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -172,6 +261,7 @@
     @include fs($font-sectionTitle-size-1);
     @include lh($font-sectionTitle-lineheight-1);
     @include fw($font-sectionTitle-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -182,6 +272,7 @@
     @include fs($font-editorialTitle-size-1);
     @include lh($font-editorialTitle-lineheight-1);
     @include fw($font-editorialTitle-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -192,6 +283,7 @@
     @include fs($font-button-size-1);
     @include lh($font-button-lineheight-1);
     @include fw($font-button-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -202,6 +294,7 @@
     @include fs($font-mostread-number-size-1);
     @include lh($font-mostread-number-lineheight-1);
     @include fw($font-mostread-number-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -212,6 +305,7 @@
     @include fs($font-menuSide-title-size-1);
     @include lh($font-menuSide-title-lineheight-1);
     @include fw($font-menuSide-title-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -222,6 +316,7 @@
     @include fs($font-menuSide-item-size-1);
     @include lh($font-menuSide-item-lineheight-1);
     @include fw($font-menuSide-item-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
@@ -232,6 +327,7 @@
     @include fs($font-menuTop-item-size-1);
     @include lh($font-menuTop-item-lineheight-1);
     @include fw($font-menuTop-item-weight);
+    @include m(0px);
     @extend %colors;
   }
 }
