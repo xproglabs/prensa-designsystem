@@ -27,6 +27,9 @@ const Latest = ({content, domain, lazy, ReadMore, Title, status}) => {
               lazy={lazy}
               status={status}
               subjectSize={2}
+              titleSize={3}
+              titleColor='neutral-2'
+              dateColor='neutral-4'
             />
           )}
         </Block>
