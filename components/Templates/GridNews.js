@@ -9,6 +9,8 @@ import {SectionTitle} from '../Typography';
 const GridNews = props => {
   const {content, domain, lazy, status} = props;
   const {items, title, color} = content;
+  let items_pqueue = content['items-pqueue'];
+  let items_list =  items_pqueue && items_pqueue.length > 0 ? items_pqueue : items;
   
   const propsTemplate = {
     align: 'between', 
@@ -19,24 +21,27 @@ const GridNews = props => {
 
   let titleSize;
   
-  if(items.length === 2) {
+  if(items_list.length === 2) {
     propsTemplate.custom = 'templates-newsgrid two';
     titleSize = 7;
   }
-  if(items.length === 3) {
+  if(items_list.length === 3) {
     propsTemplate.custom = 'templates-newsgrid three';
     titleSize = 3;
   }
-  if(items.length === 4) {
+  if(items_list.length === 4) {
     propsTemplate.custom = 'templates-newsgrid four';
     titleSize = 3;
+  }
+  if(items_list.length === 5) {
+    propsTemplate.custom = 'templates-newsgrid five';
   }
 
   return (
     <>
       {title && title !== '' && <SectionTitle color={color}>{title}</SectionTitle>}
       <Block {...propsTemplate}>
-        {map(items, (item, key) =>
+        {map(items_list, (item, key) =>
           <Teaser 
             key={key}
             content={item}
