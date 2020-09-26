@@ -5,7 +5,6 @@
   cursor: pointer;
   @include h(48px);
   @include r(5px);
-  @include m($space-size-1);
   @include px($space-size-2);
 
   @include ff($font-primary);
