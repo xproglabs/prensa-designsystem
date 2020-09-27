@@ -37,7 +37,7 @@ const Latest = ({content, domain, lazy, ReadMore, Title, status}) => {
       </Block>
       <Block {...propsPageRight}>
         <SectionTitle>MAIS LIDAS</SectionTitle>
-        <MostRead content={content['items-mostread']} status={status}/>
+        <MostRead content={content['items-mostread']} status={status} titleSize={2} titleColor='neutral-2' />
       </Block>
     </Block>
   );

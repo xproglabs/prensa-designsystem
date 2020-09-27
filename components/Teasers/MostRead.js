@@ -2,9 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
-import {MostReadNumber} from '../Typography';
+import {MostReadNumber, NewsTitle} from '../Typography';
+import colors from '../../styles/variables/colors.json'
 
-const MostReadItem = ({content, number}) => {
+const TeaserMostRead = ({content, number, titleSize, titleColor, numberColor}) => {
   const {name, path} = content;
   const propsMostItem = {
     align: 'row left',
@@ -33,10 +34,12 @@ const MostReadItem = ({content, number}) => {
   return (
     <Block {...propsMostItem}>
       <Block {...propsContent} align='row'>
-        <Block {...propsNumber} align='row center middle'>{position}</Block>
+        <Block {...propsNumber} align='row center middle'>
+          <MostReadNumber color={numberColor}>{position}</MostReadNumber>
+        </Block>
         <Block {...propsTitle}>
           <a className='teaser-aria' href={path} aria-label={`Abrir matéria ${name}`}>
-            <MostReadNumber custom='teaser-title'>{name}</MostReadNumber>
+            <NewsTitle color={titleColor} size={titleSize}>{name}</NewsTitle>
           </a>
         </Block>
       </Block>
@@ -44,12 +47,15 @@ const MostReadItem = ({content, number}) => {
   );
 };
 
-MostReadItem.propTypes = {
+TeaserMostRead.propTypes = {
   content: PropTypes.shape({
     name: PropTypes.string,
     path: PropTypes.string
   }),
   number: PropTypes.number,
+  titleSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+  titleColor: PropTypes.oneOf(colors),
+  numberColor: PropTypes.oneOf(colors)
 };
 
-export default MostReadItem;
+export default TeaserMostRead;
