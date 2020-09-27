@@ -10,23 +10,25 @@ const SectionTitle = props => {
     className,
     children,
     color,
+    gutter,
     style,
     size,
   } = props;
 
   const classes = classnames({
     'Typography-SectionTitle-root': true,
-    [`size-${size} color-${color}`]: true,
+    [`size-${size} color-${color} mb-${gutter}`]: true,
     [className]: className,
   });
 
-  return <span className={classes} style={style}>{children}</span>;
+  return <h1 className={classes} style={style}>{children}</h1>;
 };
 
 export default SectionTitle;
 
 SectionTitle.defaultProps = {
   color: 'primary-1',
+  gutter: 3,
   size: 1,
 };
 
@@ -34,6 +36,7 @@ SectionTitle.propTypes = {
   children: PropTypes.string,
   className: PropTypes.string,
   color: PropTypes.oneOf(colors),
+  gutter: PropTypes.oneOf([1]),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
 };

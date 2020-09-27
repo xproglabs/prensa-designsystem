@@ -264,6 +264,15 @@
     @include m(0px);
     @extend %colors;
   }
+  &.mb-1 {
+    @include mb($space-size-1);
+  }
+  &.mb-2 {
+    @include mb($space-size-2);
+  }
+  &.mb-3 {
+    @include mb($space-size-3);
+  }
 }
 
 .Typography-EditorialTitle-root {
