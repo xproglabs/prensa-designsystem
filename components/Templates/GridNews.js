@@ -23,7 +23,7 @@ const GridNews = props => {
   
   if(items_list.length === 2) {
     propsTemplate.custom = 'templates-newsgrid two';
-    titleSize = 7;
+    titleSize = 4;
   }
   if(items_list.length === 3) {
     propsTemplate.custom = 'templates-newsgrid three';
