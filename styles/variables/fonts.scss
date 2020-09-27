@@ -1,5 +1,4 @@
 @use './colors.scss' as *;
-@use './mixings.scss' as *; 
 
 $font-primary: 'Work Sans' !default;
 $font-secondary: 'Merriweather' !default;
@@ -96,67 +95,67 @@ $font-newstitle-lineheight-5: 34px !default;
 $font-newstitle-lineheight-6: 46px !default;
 $font-newstitle-lineheight-7: 64px !default;
 
-$font-subtitle-family: $font-secondary;
+$font-subtitle-family: $font-secondary !default;
 $font-subtitle-size-1: 18px !default;
 $font-subtitle-lineheight-1: 20px !default;
 
-$font-date-family: $font-secondary;
+$font-date-family: $font-secondary !default;
 $font-date-size-1: 12px !default;
 $font-date-lineheight-1: 14px !default;
 
-$font-author-family: $font-primary;
+$font-author-family: $font-primary !default;
 $font-author-size-1: 14px !default;
 $font-author-lineheight-1: 16px !default;
 
-$font-byline-family: $font-primary;
+$font-byline-family: $font-primary !default;
 $font-byline-size-1: 14px !default;
 $font-byline-lineheight-1: 16px !default;
 
-$font-paragraph-family: $font-primary;
+$font-paragraph-family: $font-primary !default;
 $font-paragraph-size-1: 20px !default;
 $font-paragraph-lineheight-1: 22px !default;
 
-$font-interTitle-family: $font-primary;
+$font-interTitle-family: $font-primary !default;
 $font-interTitle-size-1: 30px !default;
 $font-interTitle-lineheight-1: 32px !default;
 
-$font-citation-family: $font-primary;
+$font-citation-family: $font-primary !default;
 $font-citation-size-1: 32px !default;
 $font-citation-lineheight-1: 34px !default;
 
-$font-urlLink-family: $font-primary;
+$font-urlLink-family: $font-primary !default;
 $font-urlLink-size-1: 20px !default;
 $font-urlLink-lineheight-1: 22px !default;
 
-$font-tag-family: $font-primary;
+$font-tag-family: $font-primary !default;
 $font-tag-size-1: 14px !default;
 $font-tag-lineheight-1: 16px !default;
 
-$font-sectionTitle-family: $font-primary;
+$font-sectionTitle-family: $font-primary !default;
 $font-sectionTitle-size-1: 20px !default;
 $font-sectionTitle-lineheight-1: 22px !default;
 
-$font-editorialTitle-family: $font-primary;
+$font-editorialTitle-family: $font-primary !default;
 $font-editorialTitle-size-1: 20px !default;
 $font-editorialTitle-lineheight-1: 22px !default;
 
-$font-button-family: $font-primary;
+$font-button-family: $font-primary !default;
 $font-button-size-1: 14px !default;
 $font-button-lineheight-1: 16px !default;
 
-$font-mostread-number-family: $font-primary;
+$font-mostread-number-family: $font-primary !default;
 $font-mostread-number-size-1: 14px !default;
 $font-mostread-number-lineheight-1: 16px !default;
 
-$font-menuSide-title-family: $font-primary;
+$font-menuSide-title-family: $font-primary !default;
 $font-menuSide-title-size-1: 20px !default;
 $font-menuSide-title-lineheight-1: 22px !default;
 
-$font-menuSide-item-family: $font-primary;
+$font-menuSide-item-family: $font-primary !default;
 $font-menuSide-item-size-1: 16px !default;
 $font-menuSide-item-lineheight-1: 18px !default;
 
-$font-menuTop-item-family: $font-primary;
+$font-menuTop-item-family: $font-primary !default;
 $font-menuTop-item-size-1: 16px !default;
 $font-menuTop-item-lineheight-1: 18px !default;
 
