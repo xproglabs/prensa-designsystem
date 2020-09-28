@@ -18,7 +18,7 @@ const Featured = props => {
           lazy={lazy}
           status={status}
           subjectSize={2}
-          titleSize={6}
+          titleSize={4}
         />
       </Block>
     );
@@ -36,7 +36,7 @@ const Featured = props => {
             lazy={lazy}
             status={status}
             subjectSize={2}
-            titleSize={6}
+            titleSize={4}
             titleColor='neutral-2'
             subtitleColor='neutral-4'
             dateColor='neutral-4'

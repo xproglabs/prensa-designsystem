@@ -1,8 +1,5 @@
 @use '../../styles' as *;
 
-$subjects-1-teaser-title-height: 22px;
-$subjects-1-teaser-title-size: 18px;
-
 $subjects-1-teaser-image-height: 80px;
 $subjects-1-teaser-image-width: 80px;
 
@@ -20,66 +17,6 @@ $subjects-1-teaser-image-width: 80px;
     &.right {
       @include mb($space-size-6);
     }
-    &.black { 
-      .section-title,
-      .typography-root.subject-sm {
-        @include fc($color-subject-black); 
-      }
-      .button-read-more {
-        @include bg($color-white);
-        @include fc($color-subject-black); 
-      }
-    }
-    &.blue { 
-      .section-title,
-      .typography-root.subject-sm {
-        @include fc($color-subject-blue); 
-      }
-      .button-read-more {
-        @include bg($color-white);
-        @include fc($color-subject-blue); 
-      }
-    }
-    &.default { 
-      .section-title,
-      .typography-root.subject-sm {
-        @include fc($color-primary-1); 
-      }
-      .button-read-more {
-        @include bg($color-white);
-        @include fc($color-primary-1); 
-      }
-    }
-    &.green { 
-      .section-title,
-      .typography-root.subject-sm {
-        @include fc($color-subject-green); 
-      }
-      .button-read-more {
-        @include bg($color-white);
-        @include fc($color-subject-green); 
-      }
-    }
-    &.red { 
-      .section-title,
-      .typography-root.subject-sm {
-        @include fc($color-subject-red); 
-      }
-      .button-read-more {
-        @include bg($color-white);
-        @include fc($color-subject-red); 
-      }
-    }
-    &.yellow { 
-      .section-title,
-      .typography-root.subject-sm {
-        @include fc($color-subject-yellow); 
-      }
-      .button-read-more {
-        @include bg($color-white);
-        @include fc($color-subject-yellow); 
-      }
-    }
   }
   .teaser-default {
     @include mb($space-size-2);
@@ -90,8 +27,6 @@ $subjects-1-teaser-image-width: 80px;
     @include my(0px);
   }
   .teaser-title {
-    @include fs($subjects-1-teaser-title-size);
-    @include lh($subjects-1-teaser-title-height);
     @include mb($space-size-1);
   }
   .teaser-subject {

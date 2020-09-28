@@ -16,8 +16,9 @@
 @forward '../components/SocialMedias';
 @forward '../components/Tags';
 
-@forward '../components/Templates';
 @forward '../components/Templates/Subjects';
 @forward '../components/Templates/Columnists';
 @forward '../components/Templates/GridNews';
 @forward '../components/Templates/Related';
+@forward '../components/Templates/Latest';
+@forward '../components/Templates/Featured';

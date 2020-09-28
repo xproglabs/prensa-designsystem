@@ -13,7 +13,7 @@
   color: white;
 
   &.fullWidth {
-    @include w(calc(100% - 16px));
+    @include w(100%);
   }
 
   &.filled {
