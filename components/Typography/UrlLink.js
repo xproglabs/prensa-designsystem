@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import colors from '../../styles/variables/colors.json';
+import weight from '../../styles/variables/weight.json';
 
 const UrlLink = props => {
 
@@ -38,5 +39,5 @@ UrlLink.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };

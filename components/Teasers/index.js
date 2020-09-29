@@ -7,8 +7,9 @@ import Subject from '../Subject';
 import {NewsTitle, Subtitle, Date} from '../Typography';
 import utils from '../Util';
 import colors from '../../styles/variables/colors.json';
+import weight from '../../styles/variables/weight.json';
 
-const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize, titleSize, subtitleSize, dateSize, titleColor, subtitleColor, dateColor}) => {
+const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize, titleSize, subtitleSize, dateSize, titleColor, subtitleColor, dateColor, titleWeight, subtitleWeight, dateWeight}) => {
   const {image, name, path, subject, subtitle} = content;
   const propsTeaser = {align: hasImageTop ? 'col' : 'row left', custom: 'teaser-default', mb: '2'};
   const propsImage = {align: 'row',custom: `teaser-image ${hasImageTop ? 'image-top' : 'image-left'}`};
@@ -52,26 +53,26 @@ const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, 
         <Block>
           {subject && 
             <Block {...propsSubject}>
-              <Subject size={subjectSize} color={subjectColor} filled={hasSubjectFilled}>{subject}</Subject>
+              <Subject size={subjectSize} color={subjectColor} filled={hasSubjectFilled} weight='bold'>{subject}</Subject>
             </Block>
           }
         </Block>
         <Block>
           <Block {...propsTitle}>
             <a className='teaser-aria' href={url_rewrite} aria-label={`Abrir matéria ${name}`}>
-              <NewsTitle size={titleSize} color={titleColor}>{name}</NewsTitle>
+              <NewsTitle size={titleSize} color={titleColor} weight={titleWeight}>{name}</NewsTitle>
             </a>
           </Block >
           {subtitle && hasSubtitle &&
             <Block {...propsSubTitle}>
-              <Subtitle size={subtitleSize} color={subtitleColor}>{subtitle}</Subtitle>
+              <Subtitle size={subtitleSize} color={subtitleColor} weight={subtitleWeight}>{subtitle}</Subtitle>
             </Block>  
           }
         </Block>
         <Block {...propsDateContainer}>  
           {dateValue && hasDate &&
             <Block {...propsDate}>
-              <Date size={dateSize} color={dateColor}>{dateValue}</Date>
+              <Date size={dateSize} color={dateColor} weight={dateWeight}>{dateValue}</Date>
             </Block>
           }
         </Block>  
@@ -108,7 +109,10 @@ Teaser.propTypes = {
   dateSize: PropTypes.oneOf([1]),
   titleColor: PropTypes.oneOf(colors),
   subtitleColor: PropTypes.oneOf(colors),
-  dateColor: PropTypes.oneOf(colors)
+  dateColor: PropTypes.oneOf(colors),
+  titleWeight: PropTypes.oneOf(weight),
+  subtitleWeight: PropTypes.oneOf(weight),
+  dateWeight: PropTypes.oneOf(weight),
 };
 Teaser.defaultProps = {
   hasSubjectFilled: false,

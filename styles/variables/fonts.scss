@@ -176,3 +176,25 @@ $font-menuTop-item-family: $font-primary !default;
 $font-menuTop-item-size-1: 16px !default;
 $font-menuTop-item-lineheight-1: 18px !default;
 $font-menuTop-item-weight: $regular !default;
+
+%weight-family {
+  &.thin {
+    font-weight: 100;
+  }
+  &.light {
+    font-weight: 300;
+  }
+  &.regular {
+    font-weight: 400;
+  }
+  &.medium {
+    font-weight: 600;
+  }
+  &.bold {
+    font-weight: 700;
+  }
+  &.italic {
+    font-weight: 400;
+    font-style: italic;
+  }
+}

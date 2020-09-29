@@ -1,26 +1,29 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import {ButtonTypography} from '../Typography'
+import colors from '../../styles/variables/colors.json';
 
-const Button = props => {
+const Button = ({children, className, color, disabled, fontColor, fullWidth, onClick, style, variant}) => {
 
   const getClass = classnames({
     'Prensa-Button-root': true,
-    [`${props.variant}`]: true,
-    [`${props.color}`]: true,
-    'disabled': props.disabled,
-    'fullWidth': props.fullWidth,
-    [`${props.className}`]: props.className,
+    [`${variant} ${color}`]: true,
+    'disabled': disabled,
+    'fullWidth': fullWidth,
+    [`${className}`]: className,
   });
 
   return (
     <button
       className={getClass}
-      disabled={props.disabled}
-      onClick={!props.disabled && props.onClick}
-      style={props.style}
+      disabled={disabled}
+      onClick={!disabled && onClick}
+      style={style}
     >
-      {props.children}
+      <ButtonTypography color={fontColor}>
+        {children}
+      </ButtonTypography>
     </button>
   );
 };
@@ -36,13 +39,15 @@ Button.propTypes = {
   onClick: PropTypes.func,
   variant: PropTypes.oneOf(['filled', 'outlined']),
   color: PropTypes.oneOf(['primary', 'secondary']),
+  fontColor: PropTypes.oneOf(colors),
   style: PropTypes.string,
 };
 
 Button.defaultProps = {
   disabled: false,
   variant: 'filled',
-  color: 'primary'
+  color: 'primary',
+  fontColor: 'white'
 };
 
 export default Button;

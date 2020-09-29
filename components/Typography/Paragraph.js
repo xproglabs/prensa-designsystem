@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import colors from '../../styles/variables/colors.json';
+import weight from '../../styles/variables/weight.json';
 
 const Paragraph = props => {
 
@@ -12,11 +13,12 @@ const Paragraph = props => {
     color,
     style,
     size,
+    weight
   } = props;
 
   const classes = classnames({
     'Typography-Paragraph-root': true,
-    [`size-${size} color-${color}`]: true,
+    [`size-${size} ${weight} color-${color}`]: true,
     [className]: className,
   });
 
@@ -28,6 +30,7 @@ export default Paragraph;
 Paragraph.defaultProps = {
   color: 'black',
   size: 1,
+  weight: 'regular'
 };
 
 Paragraph.propTypes = {
@@ -36,4 +39,5 @@ Paragraph.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
+  weight: PropTypes.oneOf(weight)
 };

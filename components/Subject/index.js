@@ -6,7 +6,7 @@ import colors from '../../styles/variables/colors.json';
 import {SubjectTypography} from '../Typography';
 
 const Subject = props => {
-  const {children, color, className, style, size, filled} = props;
+  const {children, color, className, style, size, filled, weight} = props;
 
   if (!children) return null;
 
@@ -19,7 +19,7 @@ const Subject = props => {
 
   return (
     <div className={classes} style={style}>
-      <SubjectTypography size={size} color={filled ? 'white' : color} >{children}</SubjectTypography>
+      <SubjectTypography size={size} color={filled ? 'white' : color} weight={weight}>{children}</SubjectTypography>
     </div>
   );
 };
@@ -36,7 +36,8 @@ Subject.propTypes = {
   color: PropTypes.oneOf(colors),
   filled: PropTypes.bool,
   style: PropTypes.object,
-  size: PropTypes.oneOf([1, 2, 3])
+  size: PropTypes.oneOf([1, 2, 3]),
+  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
 };
 
 export default Subject;

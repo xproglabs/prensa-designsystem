@@ -1,5 +1,14 @@
 @use '../../styles' as *;
 
+@keyframes beforeHover {
+  from {opacity: 0.8}
+  to {opacity: 1}
+}
+@keyframes hoverAnimation {
+  from {opacity: 1}
+  to {opacity: 0.8}
+}
+
 .Typography-Subject-root {
   &.size-1 {
     @include ff($font-subject-family);
@@ -8,6 +17,7 @@
     @include fw($font-subject-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
   &.size-2 {
     @include ff($font-subject-family);
@@ -16,6 +26,7 @@
     @include fw($font-subject-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
   &.size-3 {
     @include ff($font-subject-family);
@@ -24,6 +35,7 @@
     @include fw($font-subject-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -35,13 +47,15 @@
     @include fw($font-newstitle-weight);
     @include m(0px);
     @extend %colors;
-    &:hover {
-      animation-name: hoverAnimation;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
       animation-duration: 0.3s;
       animation-fill-mode: forwards;
-      @keyframes hoverAnimation {
-        from {opacity: 1}
-        to {opacity: 0.8}
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
       }
     }
   }
@@ -52,13 +66,15 @@
     @include fw($font-newstitle-weight);
     @include m(0px);
     @extend %colors;
-    &:hover {
-      animation-name: hoverAnimation;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
       animation-duration: 0.3s;
       animation-fill-mode: forwards;
-      @keyframes hoverAnimation {
-        from {opacity: 1}
-        to {opacity: 0.8}
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
       }
     }
   }
@@ -69,13 +85,15 @@
     @include fw($font-newstitle-weight);
     @include m(0px);
     @extend %colors;
-    &:hover {
-      animation-name: hoverAnimation;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
       animation-duration: 0.3s;
       animation-fill-mode: forwards;
-      @keyframes hoverAnimation {
-        from {opacity: 1}
-        to {opacity: 0.8}
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
       }
     }
   }
@@ -86,13 +104,16 @@
     @include fw($font-newstitle-weight);
     @include m(0px);
     @extend %colors;
-    &:hover {
-      animation-name: hoverAnimation;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
       animation-duration: 0.3s;
       animation-fill-mode: forwards;
-      @keyframes hoverAnimation {
-        from {opacity: 1}
-        to {opacity: 0.8}
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+       
       }
     }
   }
@@ -103,13 +124,15 @@
     @include fw($font-newstitle-weight);
     @include m(0px);
     @extend %colors;
-    &:hover {
-      animation-name: hoverAnimation;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
       animation-duration: 0.3s;
       animation-fill-mode: forwards;
-      @keyframes hoverAnimation {
-        from {opacity: 1}
-        to {opacity: 0.8}
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
       }
     }
   }
@@ -120,20 +143,15 @@
     @include fw($font-newstitle-weight);
     @include m(0px);
     @extend %colors;
-    animation-name: beforeHover;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    @keyframes beforeHover {
-      from {opacity: 0.8}
-      to {opacity: 1}
-    }
-    &:hover {
-      animation-name: hoverAnimation;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
       animation-duration: 0.3s;
       animation-fill-mode: forwards;
-      @keyframes hoverAnimation {
-        from {opacity: 1}
-        to {opacity: 0.8}
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
       }
     }
   }
@@ -144,13 +162,15 @@
     @include fw($font-newstitle-weight);
     @include m(0px);
     @extend %colors;
-    &:hover {
-      animation-name: hoverAnimation;
+    @extend %weight-family;
+    .has-hover {
+      animation-name: beforeHover;
       animation-duration: 0.3s;
       animation-fill-mode: forwards;
-      @keyframes hoverAnimation {
-        from {opacity: 1}
-        to {opacity: 0.8}
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
       }
     }
   }
@@ -164,6 +184,7 @@
     @include fw($font-subtitle-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -175,6 +196,7 @@
     @include fw($font-date-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -186,6 +208,7 @@
     @include fw($font-author-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -197,6 +220,7 @@
     @include fw($font-byline-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -208,6 +232,7 @@
     @include fw($font-paragraph-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -219,6 +244,7 @@
     @include fw($font-interTitle-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -230,6 +256,7 @@
     @include fw($font-citation-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -241,6 +268,7 @@
     @include fw($font-urlLink-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -252,6 +280,7 @@
     @include fw($font-tag-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -263,6 +292,7 @@
     @include fw($font-sectionTitle-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
   &.mb-1 {
     @include mb($space-size-1);
@@ -283,6 +313,7 @@
     @include fw($font-editorialTitle-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -294,6 +325,7 @@
     @include fw($font-button-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -305,6 +337,7 @@
     @include fw($font-mostread-number-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -316,6 +349,7 @@
     @include fw($font-menuSide-title-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -327,6 +361,7 @@
     @include fw($font-menuSide-item-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }
 
@@ -338,5 +373,6 @@
     @include fw($font-menuTop-item-weight);
     @include m(0px);
     @extend %colors;
+    @extend %weight-family;
   }
 }

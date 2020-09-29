@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import colors from '../../styles/variables/colors.json';
+import weight from '../../styles/variables/weight.json';
 
 const SectionTitle = props => {
 
@@ -13,11 +14,12 @@ const SectionTitle = props => {
     gutter,
     style,
     size,
+    weight
   } = props;
 
   const classes = classnames({
     'Typography-SectionTitle-root': true,
-    [`size-${size} color-${color} mb-${gutter}`]: true,
+    [`size-${size} ${weight} color-${color} mb-${gutter}`]: true,
     [className]: className,
   });
 
@@ -30,6 +32,7 @@ SectionTitle.defaultProps = {
   color: 'primary-1',
   gutter: 3,
   size: 1,
+  weight: 'regular'
 };
 
 SectionTitle.propTypes = {
@@ -39,4 +42,5 @@ SectionTitle.propTypes = {
   gutter: PropTypes.oneOf([1]),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
+  weight: PropTypes.oneOf(weight)
 };
