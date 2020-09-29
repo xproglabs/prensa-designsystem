@@ -231,8 +231,18 @@
     @include lh($font-paragraph-lineheight-1);
     @include fw($font-paragraph-weight);
     @include m(0px);
+    @include w(100%);
     @extend %colors;
     @extend %weight-family;
+    &.sm {
+      @include mw($sm);
+    }
+    &.md {
+      @include mw($md);
+    }
+    &.lg {
+      @include mw($lg);
+    }
   }
 }
 
