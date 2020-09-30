@@ -243,6 +243,15 @@
     &.lg {
       @include mw($lg);
     }
+    &.gutter-1 {
+      @include mb($space-size-1);
+    }
+    &.gutter-2 {
+      @include mb($space-size-2);
+    }
+    &.gutter-3 {
+      @include mb($space-size-3);
+    }
   }
 }
 

@@ -10,6 +10,7 @@ const Paragraph = props => {
   const {
     className,
     color,
+    gutter,
     style,
     size,
     weight,
@@ -20,10 +21,11 @@ const Paragraph = props => {
   const classes = classnames({
     'Typography-Paragraph-root': true,
     [`size-${size} ${weight} color-${color} ${maxWidth}`]: true,
+    [`gutter-${gutter}`]: gutter,
     [className]: className,
   });
 
-  return <p className={classes} style={style} dangerouslySetInnerHTML={{__html: setInnerHtml}} />;
+  return <p className={classes} style={style} gutter={gutter} dangerouslySetInnerHTML={{__html: setInnerHtml}} />;
 };
 
 export default Paragraph;
@@ -38,6 +40,7 @@ Paragraph.defaultProps = {
 Paragraph.propTypes = {  
   className: PropTypes.string,
   color: PropTypes.oneOf(colors),
+  gutter: PropTypes.oneOf([1, 2, 3]),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
   weight: PropTypes.oneOf(weight),
