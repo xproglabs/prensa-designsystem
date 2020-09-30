@@ -27,26 +27,26 @@ const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
   const itemsRight =  pqueue_right && pqueue_right.length > 0 ? pqueue_right : content['items-right'];
   return (
     <>
-      {title && title !== ''&& <SectionTitle name={title} />}
+      {title && title !== ''&& <SectionTitle weight='bold' name={title} />}
       <Block {...propsTemplate}> 
         <Block custom='col left'>
-          <SectionTitle color={leftColor}>{titleLeft}</SectionTitle>
+          <SectionTitle weight='bold' color={leftColor}>{titleLeft}</SectionTitle>
           {map(itemsLeft, (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={leftColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' />
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={leftColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>
         <Block custom='col center'>
-          <SectionTitle color={centerColor}>{titleCenter}</SectionTitle>
+          <SectionTitle weight='bold' color={centerColor}>{titleCenter}</SectionTitle>
           {map(itemsCenter, (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={centerColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' />
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={centerColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>
         <Block custom='col right'>
-          <SectionTitle color={rightColor}>{titleRight}</SectionTitle>
+          <SectionTitle weight='bold' color={rightColor}>{titleRight}</SectionTitle>
           {map(itemsRight, (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={rightColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' />
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={rightColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>

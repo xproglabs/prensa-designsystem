@@ -12,10 +12,10 @@ const Columnists = props => {
   const propsTemplate = {custom: 'templates-columnists', mb: '6', lg: {align: 'row between wrap', mb: '3'}};
   return (
     <>
-      {title && title !== '' && <SectionTitle color={color}>{title}</SectionTitle>}
+      {title && title !== '' && <SectionTitle weight='bold' color={color}>{title}</SectionTitle>}
       <Block {...propsTemplate}> 
         {map(content['items'], (item, key) =>
-          <Teaser content={item} domain={domain} key={key} lazy={lazy} status={status} subjectSize={2} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' />
+          <Teaser content={item} domain={domain} key={key} lazy={lazy} status={status} subjectSize={2} titleSize={2} titleWeight='bold' titleColor='neutral-2' dateColor='neutral-4' />
         )}
       </Block>
     </>

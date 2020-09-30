@@ -11,7 +11,7 @@ const MostRead = ({content, domain, status, titleSize, titleColor, numberColor})
   return (
     <Block {...propsTemplate} > 
       {map(content, (item, key) =>
-        <TeaserMostRead content={item} domain={domain} key={key} status={status} number={key} titleSize={titleSize} titleColor={titleColor} numberColor={numberColor} />
+        <TeaserMostRead content={item} domain={domain} key={key} status={status} number={key} titleSize={titleSize} titleColor={titleColor} numberColor={numberColor} titleWeight='bold'/>
       )}
     </Block>
   );

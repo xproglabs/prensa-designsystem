@@ -20,6 +20,7 @@ const Related = ({items, domain, lazy, ReadMore, status}) => {
             lazy={lazy}
             status={status}
             subjectSize={2}
+            titleWeight='bold'
           />
         )}
       </Block>

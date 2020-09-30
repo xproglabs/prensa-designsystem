@@ -30,13 +30,14 @@ const Latest = ({content, domain, lazy, ReadMore, Title, status}) => {
               titleSize={3}
               titleColor='neutral-2'
               dateColor='neutral-4'
+              titleWeight='bold'
             />
           )}
         </Block>
         {ReadMore && <ReadMore />}
       </Block>
       <Block {...propsPageRight}>
-        <SectionTitle>MAIS LIDAS</SectionTitle>
+        <SectionTitle weight='bold' >MAIS LIDAS</SectionTitle>
         <MostRead content={content['items-mostread']} status={status} titleSize={2} titleColor='neutral-2' />
       </Block>
     </Block>

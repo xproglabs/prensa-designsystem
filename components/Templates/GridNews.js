@@ -39,7 +39,7 @@ const GridNews = props => {
 
   return (
     <>
-      {title && title !== '' && <SectionTitle color={color}>{title}</SectionTitle>}
+      {title && title !== '' && <SectionTitle weight='bold' color={color}>{title}</SectionTitle>}
       <Block {...propsTemplate}>
         {map(items_list, (item, key) =>
           <Teaser 
@@ -54,6 +54,7 @@ const GridNews = props => {
             titleColor='neutral-2'
             subtitleColor='neutral-4'
             dateColor='neutral-4'
+            titleWeight='bold'
           />
         )}
       </Block>

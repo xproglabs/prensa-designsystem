@@ -19,6 +19,7 @@ const Featured = props => {
           status={status}
           subjectSize={2}
           titleSize={4}
+          titleWeight='bold'
         />
       </Block>
     );
@@ -40,6 +41,7 @@ const Featured = props => {
             titleColor='neutral-2'
             subtitleColor='neutral-4'
             dateColor='neutral-4'
+            titleWeight='bold'
           />
         </Block>
         <Block custom='block-right'>
@@ -53,6 +55,7 @@ const Featured = props => {
             titleColor='neutral-2'
             subtitleColor='neutral-4'
             dateColor='neutral-4'
+            titleWeight='bold'
           />
           <Teaser 
             content={items[2]}
@@ -64,6 +67,7 @@ const Featured = props => {
             titleColor='neutral-2'
             subtitleColor='neutral-4'
             dateColor='neutral-4'
+            titleWeight='bold'
           />
         </Block>
       </Block>
