@@ -30,7 +30,7 @@ export default SectionTitle;
 
 SectionTitle.defaultProps = {
   color: 'primary-1',
-  gutter: 3,
+  gutter: 1,
   size: 1,
   weight: 'regular'
 };
