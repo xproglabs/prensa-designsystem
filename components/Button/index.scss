@@ -1,87 +1,83 @@
 @use '../../styles' as *;
 
-.Prensa-Button-root {
-  border: unset;
-  cursor: pointer;
-  @include h(48px);
-  @include r(5px);
-  @include px($space-size-2);
+%family-buttonSize {
+  &.size-1 {
+    @include h(32px);
+  }
+  &.size-2 {
+    @include h(40px);
+  }
+  &.size-3 {
+    @include h(48px);
+  }
+  &.size-4 {
+    @include h(56px);
+  }
+  &.size-5 {
+    @include h(64px);
+  }
+}
 
-  @include ff($font-primary);
-  @include fs(12px);
+%family-radius {
+  &.radius-false {
+    @include r(unset);
+  }
+  &.radius-default {
+    @include r(3px);
+  }
+  &.radius-alternative {
+    @include r(5px);
+  }
+}
+
+@keyframes buttonHover {
+  from {opacity: 100%;}
+  to {opacity: 80%;}
+}
+
+.Prensa-Button-root {
+  @include px($space-size-2);
+  @extend %family-buttonSize;
+  @extend %family-radius;
+  cursor: pointer;
+  border: unset;
   text-transform: uppercase;
-  color: white;
 
   &.fullWidth {
     @include w(100%);
   }
 
   &.filled {
-    &.primary {
-      @include bg($color-primary-2);
-      &:hover {
-        animation-name: hoverPrimary;
-        animation-duration: 0.3s;
-        animation-fill-mode: forwards;
-        @keyframes hoverPrimary {
-          from {@include bg($color-primary-2)}
-          to {@include bg($color-primary-3)}
-        }
-      }
+    @extend %family-background-colors;
+    &:hover {
+      animation-name: buttonHover;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
     }
-    &.secondary {
-      @include bg($color-secondary-2);
+    &:disabled {
+      @include bg($color-neutral-8);
+      cursor: unset;
       &:hover {
-        animation-name: hoverSecondary;
-        animation-duration: 0.3s;
-        animation-fill-mode: forwards;
-        @keyframes hoverSecondary {
-          from {@include bg($color-secondary-2)}
-          to {@include bg($color-secondary-3)}
-        }
+        animation-name: none;
       }
     }
   }
 
   &.outlined {
-    &.primary {
-      @include bg($color-white);
-      @include b(1px, solid, $color-neutral-9);
-      @include fc($color-primary-2);
-      &:hover {
-        animation-name: hoverOutlinedPrimary;
-        animation-duration: 0.3s;
-        animation-fill-mode: forwards;
-        @keyframes hoverOutlinedPrimary {
-          from {
-            @include bg($color-white);
-            @include fc($color-primary-2);
-          }
-          to {
-            @include bg($color-neutral-11);
-            @include fc($color-primary-1);
-          }
-        }
-      }
+    @include bg(transparent);
+    @extend %family-border-colors;
+    border-width: 1px;
+    border-style: solid;
+    &:hover {
+      animation-name: buttonHover;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
     }
-    &.secondary {
-      @include bg($color-white);
-      @include b(1px, solid, $color-neutral-9);
-      @include fc($color-secondary-2);
+    &:disabled {
+      border-color: $color-neutral-8;
+      cursor: unset;
       &:hover {
-        animation-name: hoverOutlinedSecondary;
-        animation-duration: 0.3s;
-        animation-fill-mode: forwards;
-        @keyframes hoverOutlinedSecondary {
-          from {
-            @include bg($color-white);
-            @include fc($color-secondary-2);
-          }
-          to {
-            @include bg($color-neutral-11);
-            @include fc($color-secondary-1);
-          }
-        }
+        animation-name: none;
       }
     }
   }

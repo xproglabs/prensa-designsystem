@@ -47,7 +47,7 @@ $color-subject-green: #09B77B;
 $color-subject-red: #AB001B; 
 $color-subject-yellow: #BFA525;
 
-%colors {
+%family-colors {
   &.color-primary-1 {
     color: $color-primary-1;
   }
@@ -143,7 +143,7 @@ $color-subject-yellow: #BFA525;
   }
 }
 
-%background-colors {
+%family-background-colors {
   &.color-primary-1 {
     background-color: $color-primary-1;
   }
@@ -239,7 +239,7 @@ $color-subject-yellow: #BFA525;
   }
 }
 
-%border-colors {
+%family-border-colors {
   &.color-primary-1 {
     border-color: $color-primary-1;
   }

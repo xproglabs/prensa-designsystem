@@ -26,10 +26,10 @@ export const Space = props => {
 <Space size={6} />
 
 ### Variações
-O Button carrega duas variações de estilo, **Filled** e **Outlined**. Elas alteram a escolha dos tokens para o esquema de cores. 
+O Button carrega duas variações de estilo, **Filled** e **Outlined**. Elas alteram a escolha da propriedade css para a estrutura do botão. Para filled, usamos background-color. Já outlined, usa border-color com backgorund transparente.
 
-<Button variant="filled">Avançar</Button>
-<Button variant="outlined">Avançar</Button>
+<Button variant="filled" style={{marginRight: 8}}>Avançar</Button>
+<Button variant="outlined" style={{marginRight: 8}}>Avançar</Button>
 
 <Space size={2} />
 
@@ -44,17 +44,53 @@ O Button carrega duas variações de estilo, **Filled** e **Outlined**. Elas alt
 <Space size={6} />
 
 ### Esquema de cores
-O componente possui um esquema de cores pré-definidas, construídas com base no tema do design-system. Usamos a prop `color` para a escolha entre `color="primary"` e `color="secondary"`.
+O componente possui acesso a toda a família de cores do design system. Usamos a prop `color` para a escolha, passando o nome da cor em forma de string, sem o prefixo color: `color="primary-1"`, `color="editorial-2"`.
 
-<Button variant="filled" color='primary'>Primário</Button>
-<Button variant="filled" color='secondary'>Secundário</Button>
+<Button variant="filled" color='primary-1' style={{marginRight: 8}}>Lorem</Button>
+<Button variant="filled" color='editorial-2' style={{marginRight: 8}}>Ipsum</Button>
 
 <Space size={2} />
 
 <pre>
   <CodeBlock children={`
-  <Button variant="filled" color="secondary">Avançar</Button>
-  <Button variant="outlined" color="secondary">Avançar</Button>
+  <Button variant="filled" color="primary-1">Avançar</Button>
+  <Button variant="outlined" color="editorial-2">Avançar</Button>
+  `}/>
+</pre>
+
+<Space size={6} />
+
+### Border radius
+O componente possui acesso a família de variações para o css border-radius. Podemos alternar entre um botão quadrado e dois níveis de radius. A props é `radius` e as opções são `false`, `default` e `alternative`.
+
+<Button variant="filled" color='primary-1' radius={false} style={{marginRight: 8}}>Lorem</Button>
+<Button variant="filled" color='primary-1' radius='default' style={{marginRight: 8}}>Lorem</Button>
+<Button variant="filled" color='primary-1' radius='alternative' style={{marginRight: 8}}>Lorem</Button>
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock children={`
+  <Button variant="filled" color="primary-1" radius={false}>Lorem</Button>
+  <Button variant="outlined" color="primary-1" radius='default'>Lorem</Button>
+  <Button variant="outlined" color="primary-1" radius='alternative'>Lorem</Button>
+  `}/>
+</pre>
+
+<Space size={6} />
+
+### Estados
+O componente possui dois estados: `disabled` e `hover`. Para acionar o disabled, deve-se utilizar a props `disabled={true}`. Já o hover aciona automaticamente ao passar o mouse sobre o botão. O estilo de ambos é sempre fixo.
+
+<Button variant="filled" color='primary-1' disabled={true} style={{marginRight: 8}}>Disabled</Button>
+<Button variant="outlined" color='primary-1' disabled={true} style={{marginRight: 8}}>Disabled</Button>
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock children={`
+  <Button variant="filled" color='primary-1' disabled={true}>Disabled</Button>
+  <Button variant="outlined" color='primary-1' disabled={true}>Disabled</Button>
   `}/>
 </pre>
 

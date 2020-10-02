@@ -4,12 +4,12 @@
   text-transform: uppercase;
   @include ff($font-secondary);
   @include w(max-content);
-  @extend %colors;
+  @extend %family-colors;
   &.filled {
     @include fc($color-white);
     @include px($space-size-1);
     @include py(calc(#{$space-size-1} / 2));
     @include r(5px);
-    @extend %background-colors;
+    @extend %family-background-colors;
   }
 }
