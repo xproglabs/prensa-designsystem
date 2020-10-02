@@ -12,5 +12,5 @@ export {default as SideMenuItems} from './Menus/SideItems';
 export {default as SocialMedias} from './SocialMedias';
 export {default as Topbar} from './Topbar';
 export {default as Subject} from './Subject';
-export {default as Tags} from './Tags';
+export {default as Tag} from './Tag';
 export {default as utils} from './Util';
