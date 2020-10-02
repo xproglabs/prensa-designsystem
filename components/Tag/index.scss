@@ -7,7 +7,7 @@
 
 .Prensa-Tag-root {
   @include w(max-content);
-  @include py($space-size-2);
+  @include py($space-size-1);
   @include px($space-size-2);
   @include mr($space-size-2);
   @include mb($space-size-2);
