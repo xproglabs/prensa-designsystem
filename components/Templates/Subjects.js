@@ -8,7 +8,7 @@ import {SectionTitle} from '../Typography';
 
 const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
   const {title} = content;
-  
+
   const leftColor = content['style-left'];
   const centerColor = content['style-center'];
   const rightColor = content['style-right'];
@@ -18,34 +18,36 @@ const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
   const titleRight = content['title-right'];
 
   const propsTemplate = {custom: 'templates-subjects', lg: {align: 'row between'}};
+  
   const pqueue_left = content['items-left-pqueue'];
   const pqueue_center = content['items-center-pqueue'];
   const pqueue_right = content['items-right-pqueue'];
 
-  const itemsLeft =  pqueue_left && pqueue_left.length > 0 ? pqueue_left : content['items-left'];
-  const itemsCenter =  pqueue_center && pqueue_center.length > 0 ? pqueue_center : content['items-center'];
-  const itemsRight =  pqueue_right && pqueue_right.length > 0 ? pqueue_right : content['items-right'];
+  const items_left =  pqueue_left && pqueue_left.length > 0 ? pqueue_left : content['items-left'];
+  const items_center =  pqueue_center && pqueue_center.length > 0 ? pqueue_center : content['items-center'];
+  const items_right =  pqueue_right && pqueue_right.length > 0 ? pqueue_right : content['items-right'];
+  
   return (
     <>
       {title && title !== ''&& <SectionTitle weight='bold' name={title} />}
       <Block {...propsTemplate}> 
         <Block custom='col left'>
           <SectionTitle weight='bold' color={leftColor}>{titleLeft}</SectionTitle>
-          {map(itemsLeft, (item, key) =>
+          {map(items_left, (item, key) =>
             <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={leftColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>
         <Block custom='col center'>
           <SectionTitle weight='bold' color={centerColor}>{titleCenter}</SectionTitle>
-          {map(itemsCenter, (item, key) =>
+          {map(items_center, (item, key) =>
             <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={centerColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>
         <Block custom='col right'>
           <SectionTitle weight='bold' color={rightColor}>{titleRight}</SectionTitle>
-          {map(itemsRight, (item, key) =>
+          {map(items_right, (item, key) =>
             <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={rightColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
