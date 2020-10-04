@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
-import {SectionTitle} from '../Typography';
 import Teaser from '../Teasers';
+import {SectionTitle} from '../Typography';
 import MostRead from './MostRead';
 
 const Latest = ({content, domain, lazy, ReadMore, Title, status}) => {
@@ -38,13 +38,14 @@ const Latest = ({content, domain, lazy, ReadMore, Title, status}) => {
       </Block>
       <Block {...propsPageRight}>
         <SectionTitle weight='bold' gutter={3}>MAIS LIDAS</SectionTitle>
-        <MostRead content={content['items-mostread']} status={status} titleSize={2} titleColor='neutral-2' />
+        <MostRead content={content['items-mostread']} status={status} titleSize={2} titleColor='neutral-2' titleWeight='bold' />
       </Block>
     </Block>
   );
 };
 Latest.propTypes = {
   content: PropTypes.object,
+  domain: PropTypes.string,
   lazy: PropTypes.func,
   ReadMore: PropTypes.func,
   Title: PropTypes.func,

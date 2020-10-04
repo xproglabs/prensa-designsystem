@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import colors from '../../styles/variables/colors.json';
+import weights from '../../styles/variables/weight.json';
 import Block from '../Block';
 import {MostReadNumber, NewsTitle} from '../Typography';
-import colors from '../../styles/variables/colors.json'
 
-const TeaserMostRead = ({content, number, titleSize, titleColor, numberColor}) => {
+const TeaserMostRead = ({content, number, titleSize, titleColor, titleWeight, numberColor}) => {
   const {name, path} = content;
   const propsMostItem = {
     align: 'row left',
@@ -35,11 +36,11 @@ const TeaserMostRead = ({content, number, titleSize, titleColor, numberColor}) =
     <Block {...propsMostItem}>
       <Block {...propsContent} align='row'>
         <Block {...propsNumber} align='row center middle'>
-          <MostReadNumber color={numberColor}>{position}</MostReadNumber>
+          <MostReadNumber color={numberColor} weight={titleWeight}>{position}</MostReadNumber>
         </Block>
         <Block {...propsTitle}>
           <a className='teaser-aria' href={path} aria-label={`Abrir matéria ${name}`}>
-            <NewsTitle color={titleColor} size={titleSize}>{name}</NewsTitle>
+            <NewsTitle color={titleColor} size={titleSize} weight={titleWeight}>{name}</NewsTitle>
           </a>
         </Block>
       </Block>
@@ -55,6 +56,7 @@ TeaserMostRead.propTypes = {
   number: PropTypes.number,
   titleSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
   titleColor: PropTypes.oneOf(colors),
+  titleWeight: PropTypes.oneOf(weights),
   numberColor: PropTypes.oneOf(colors)
 };
 

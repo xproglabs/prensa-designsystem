@@ -5,21 +5,12 @@ import React from 'react';
 import colors from '../../styles/variables/colors.json';
 import weight from '../../styles/variables/weight.json';
 
-const SectionTitle = props => {
-
-  const {
-    className,
-    children,
-    color,
-    gutter,
-    style,
-    size,
-    weight
-  } = props;
+const SectionTitle = ({className, children, color, gutter, style, size, uppercase, weight}) => {
 
   const classes = classnames({
     'Typography-SectionTitle-root': true,
     [`size-${size} ${weight} color-${color} mb-${gutter}`]: true,
+    'uppercase': uppercase,
     [className]: className,
   });
 
@@ -32,7 +23,8 @@ SectionTitle.defaultProps = {
   color: 'primary-1',
   gutter: 1,
   size: 1,
-  weight: 'regular'
+  weight: 'regular',
+  uppercase: true,
 };
 
 SectionTitle.propTypes = {
@@ -42,5 +34,6 @@ SectionTitle.propTypes = {
   gutter: PropTypes.oneOf([1, 2, 3]),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
+  uppercase: PropTypes.bool,
   weight: PropTypes.oneOf(weight)
 };

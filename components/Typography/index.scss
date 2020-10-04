@@ -322,6 +322,9 @@
   &.mb-3 {
     @include mb($space-size-3);
   }
+  &.uppercase {
+    text-transform: uppercase;
+  }
 }
 
 .Typography-EditorialTitle-root {
