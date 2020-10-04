@@ -20,6 +20,9 @@ const Related = ({items, domain, lazy, ReadMore, status}) => {
             lazy={lazy}
             status={status}
             subjectSize={2}
+            titleSize={3}
+            titleColor='neutral-2'
+            dateColor='neutral-2'
             titleWeight='bold'
           />
         )}
