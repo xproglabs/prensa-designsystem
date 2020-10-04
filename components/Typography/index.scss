@@ -225,6 +225,17 @@
 }
 
 .Typography-Paragraph-root {
+  a {
+    color: $color-primary-1;
+    animation-name: beforeHover;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    &:hover {
+      animation-name: hoverAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
+  }
   &.size-1 {
     @include ff($font-paragraph-family);
     @include fs($font-paragraph-size-1);
