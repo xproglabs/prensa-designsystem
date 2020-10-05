@@ -79,6 +79,35 @@ O componente possui acesso a família de variações para o css border-radius. P
 
 <Space size={6} />
 
+### Tamanhos
+O componente possui cinco tamanhos de altura. Para alterá-los basta usar a prop `size`.
+
+`size={1} | 32px`
+`size={2} | 40px`
+`size={3} | 48px`
+`size={4} | 56px`
+`size={5} | 64px`
+
+<Button variant="filled" color='primary-1' size={1} style={{marginRight: 8}}>Entrar</Button>
+<Button variant="filled" color='primary-1' size={2} style={{marginRight: 8}}>Entrar</Button>
+<Button variant="filled" color='primary-1' size={3} style={{marginRight: 8}}>Entrar</Button>
+<Button variant="filled" color='primary-1' size={4} style={{marginRight: 8}}>Entrar</Button>
+<Button variant="filled" color='primary-1' size={5} style={{marginRight: 8}}>Entrar</Button>
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock children={`
+  <Button variant="filled" color='primary-1' size={1}>Entrar</Button>
+  <Button variant="filled" color='primary-1' size={2}>Entrar</Button>
+  <Button variant="filled" color='primary-1' size={3}>Entrar</Button>
+  <Button variant="filled" color='primary-1' size={4}>Entrar</Button>
+  <Button variant="filled" color='primary-1' size={5}>Entrar</Button>
+  `}/>
+</pre>
+
+<Space size={6} />
+
 ### Estados
 O componente possui dois estados: `disabled` e `hover`. Para acionar o disabled, deve-se utilizar a props `disabled={true}`. Já o hover aciona automaticamente ao passar o mouse sobre o botão. O estilo de ambos é sempre fixo.
 
