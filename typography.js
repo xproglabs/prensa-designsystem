@@ -35,7 +35,7 @@ var colors = [
 	"editorial-3",
 	"editorial-4",
 	"editorial-5",
-	"black:",
+	"black",
 	"neutral-1",
 	"neutral-2",
 	"neutral-3",
@@ -47,7 +47,7 @@ var colors = [
 	"neutral-9",
 	"neutral-10",
 	"neutral-11",
-	"white:",
+	"white",
 	"ads",
 	"success-1",
 	"success-2",
@@ -55,6 +55,15 @@ var colors = [
 	"error-1",
 	"error-2",
 	"error-3"
+];
+
+var weight = [
+	"thin",
+	"light",
+	"regular",
+	"medium",
+	"bold",
+	"italic"
 ];
 
 var SubjectTypography = function SubjectTypography(props) {
@@ -85,7 +94,7 @@ SubjectTypography.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1, 2, 3]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var NewsTitle = function NewsTitle(props) {
@@ -96,10 +105,11 @@ var NewsTitle = function NewsTitle(props) {
       color = props.color,
       style = props.style,
       size = props.size,
-      weight = props.weight;
+      weight = props.weight,
+      disableHover = props.disableHover;
   var classes = classnames((_classnames = {
     'Typography-NewsTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, 'has-hover', !disableHover), _defineProperty(_classnames, className, className), _classnames));
   return /*#__PURE__*/React.createElement("h2", {
     className: classes,
     style: style
@@ -108,15 +118,17 @@ var NewsTitle = function NewsTitle(props) {
 NewsTitle.defaultProps = {
   color: 'primary-1',
   size: 1,
-  weight: 'regular'
+  weight: 'regular',
+  disableHover: false
 };
 NewsTitle.propTypes = {
   children: PropTypes.string,
   className: PropTypes.string,
   color: PropTypes.oneOf(colors),
+  disableHover: PropTypes.bool,
   size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var Subtitle = function Subtitle(props) {
@@ -147,7 +159,7 @@ Subtitle.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var Date = function Date(props) {
@@ -178,7 +190,7 @@ Date.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var Author = function Author(props) {
@@ -209,35 +221,47 @@ Author.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var Paragraph = function Paragraph(props) {
   var _classnames;
 
   var className = props.className,
-      children = props.children,
       color = props.color,
+      gutter = props.gutter,
       style = props.style,
-      size = props.size;
+      size = props.size,
+      weight = props.weight,
+      maxWidth = props.maxWidth,
+      setInnerHtml = props.setInnerHtml;
   var classes = classnames((_classnames = {
     'Typography-Paragraph-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color, " ").concat(maxWidth), true), _defineProperty(_classnames, "gutter-".concat(gutter), gutter), _defineProperty(_classnames, className, className), _classnames));
   return /*#__PURE__*/React.createElement("p", {
     className: classes,
-    style: style
-  }, children);
+    style: style,
+    gutter: gutter,
+    dangerouslySetInnerHTML: {
+      __html: setInnerHtml
+    }
+  });
 };
 Paragraph.defaultProps = {
   color: 'black',
-  size: 1
+  size: 1,
+  weight: 'regular',
+  maxWidth: 'md'
 };
 Paragraph.propTypes = {
-  children: PropTypes.string,
   className: PropTypes.string,
   color: PropTypes.oneOf(colors),
+  gutter: PropTypes.oneOf([1, 2, 3]),
   size: PropTypes.oneOf([1]),
-  style: PropTypes.object
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weight),
+  maxWidth: PropTypes.oneOf(['sm', 'md', 'lg']),
+  setInnerHtml: PropTypes.string
 };
 
 var Byline = function Byline(props) {
@@ -268,7 +292,7 @@ Byline.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var InterTitle = function InterTitle(props) {
@@ -299,7 +323,7 @@ InterTitle.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var Citation = function Citation(props) {
@@ -330,7 +354,7 @@ Citation.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var UrlLink = function UrlLink(props) {
@@ -361,7 +385,7 @@ UrlLink.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var TagTypography = function TagTypography(props) {
@@ -392,35 +416,44 @@ TagTypography.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
-var SectionTitle = function SectionTitle(props) {
+var SectionTitle = function SectionTitle(_ref) {
   var _classnames;
 
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size;
+  var className = _ref.className,
+      children = _ref.children,
+      color = _ref.color,
+      gutter = _ref.gutter,
+      style = _ref.style,
+      size = _ref.size,
+      uppercase = _ref.uppercase,
+      weight = _ref.weight;
   var classes = classnames((_classnames = {
     'Typography-SectionTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color, " mb-").concat(gutter), true), _defineProperty(_classnames, 'uppercase', uppercase), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("h1", {
     className: classes,
     style: style
   }, children);
 };
 SectionTitle.defaultProps = {
   color: 'primary-1',
-  size: 1
+  gutter: 1,
+  size: 1,
+  weight: 'regular',
+  uppercase: true
 };
 SectionTitle.propTypes = {
   children: PropTypes.string,
   className: PropTypes.string,
   color: PropTypes.oneOf(colors),
+  gutter: PropTypes.oneOf([1, 2, 3]),
   size: PropTypes.oneOf([1]),
-  style: PropTypes.object
+  style: PropTypes.object,
+  uppercase: PropTypes.bool,
+  weight: PropTypes.oneOf(weight)
 };
 
 var EditorialTitle = function EditorialTitle(props) {
@@ -451,7 +484,7 @@ EditorialTitle.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var ButtonTypography = function ButtonTypography(props) {
@@ -482,7 +515,7 @@ ButtonTypography.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var MostReadNumber = function MostReadNumber(props) {
@@ -513,7 +546,7 @@ MostReadNumber.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var MenuSideTitle = function MenuSideTitle(props) {
@@ -544,7 +577,7 @@ MenuSideTitle.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var MenuSideItem = function MenuSideItem(props) {
@@ -575,7 +608,7 @@ MenuSideItem.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 var MenuTopItem = function MenuTopItem(props) {
@@ -606,7 +639,7 @@ MenuTopItem.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  weight: PropTypes.oneOf(weight)
 };
 
 exports.Author = Author;
