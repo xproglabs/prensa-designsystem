@@ -2,7 +2,7 @@
 
 $topbar-height: 70px !default;
 
-.topbar {
+.Topbar-Prensa-root {
   @include h($topbar-height);
   .wrap {
     @include mw($xl);

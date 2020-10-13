@@ -1,60 +1,40 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import colors from '../../styles/variables/colors.json';
 import Block from '../Block';
 
-const Topbar = ({content, functions}) => {
-  const {LeftContent, CenterContent, RightContent} = content;
+const Topbar = ({content, theme}) => {
+
+  const {leftContent, centerContent, rightContent} = content;
+  const {color} = theme;
+
   return (
-    <Block 
-      align="row center"
-      bg="color-primary-1" 
-      fc="color-white" 
-      custom="topbar" 
-      w="100p">
-      <Block 
-        align="row middle between"
-        custom="wrap"
-        w="100p">
-        <Block custom="left">
-          {LeftContent && <LeftContent functions={functions} />}
-        </Block>
-        <Block>
-          {CenterContent && <CenterContent />}
-        </Block>
-        <Block custom="right">
-          {RightContent && <RightContent />}
-        </Block>
+    <Block align="row center" bg={`color-${color}`} fc="color-white" custom="Topbar-Prensa-root" w="100p">
+      <Block align="row middle between" custom="wrap" w="100p">
+        <Block custom="left">{leftContent && leftContent}</Block>
+        <Block>{centerContent && centerContent}</Block>
+        <Block custom="right">{rightContent && rightContent}</Block>
       </Block>
     </Block>
   );
 };
-const LeftMenuIcon = ({functions}) => {
-  return (
-    <Block 
-      custom="menu-left-icon" 
-      cursor="pointer"
-      fc="color-neutral-8" 
-      pl="4"
-      onClick={functions.handleMenuClick}>
-      MENU
-    </Block>
-  );
-};
-LeftMenuIcon.propTypes = {
-  functions: PropTypes.shape({
-    handleMenuClick: PropTypes.func
-  })
-};
+
 Topbar.propTypes = {
-  content: PropTypes.object.isRequired,
-  functions: PropTypes.shape({
-    handleMenuClick: PropTypes.func
+  content: PropTypes.shape({
+    leftContent: PropTypes.oneOf([PropTypes.object, PropTypes.array, PropTypes.node]),
+    centerContent: PropTypes.oneOf([PropTypes.object, PropTypes.array, PropTypes.node]),
+    rightContent: PropTypes.oneOf([PropTypes.object, PropTypes.array, PropTypes.node]),
+  }),
+  theme: PropTypes.shape({
+    color: PropTypes.oneOf(colors)
   })
 };
+
 Topbar.defaultProps = {
-  content: {
-    LeftContent: LeftMenuIcon
+  theme: {
+    color: 'primary-1'
   }
 };
+
 export default Topbar;
