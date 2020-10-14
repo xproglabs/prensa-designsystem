@@ -5,20 +5,21 @@ import React from 'react';
 import Block from '../Block';
 import Teaser from '../Teasers';
 import {SectionTitle} from '../Typography';
+import colors from '../../styles/variables/colors.json'
 
-const Columnists = props => {
-  const {content, domain, lazy, status} = props;
-  const {title, color} = content;
+const Columnists = ({content, domain, lazy, status, theme}) => {
+  const {title} = content;
+  const {color} = theme;
   const propsTemplate = {custom: 'templates-columnists', mb: '6', lg: {align: 'row between wrap', mb: '3'}};
   return (
-    <>
+    <React.Fragment>
       {title && title !== '' && <SectionTitle weight='bold' gutter={3} color={color}>{title}</SectionTitle>}
       <Block {...propsTemplate}> 
         {map(content['items'], (item, key) =>
-          <Teaser content={item} domain={domain} key={key} lazy={lazy} status={status} subjectSize={2} titleSize={2} titleWeight='bold' titleColor='neutral-2' dateColor='neutral-4' />
+          <Teaser content={item} domain={domain} key={key} lazy={lazy} status={status} subjectSize={2} titleSize={2} titleWeight='bold' titleColor='neutral-2' dateColor='neutral-4' subjectColor={color}/>
         )}
       </Block>
-    </>
+    </React.Fragment>
   );
 };
 Columnists.propTypes = {
@@ -29,6 +30,9 @@ Columnists.propTypes = {
   }),
   domain: PropTypes.string,
   lazy: PropTypes.func,
-  status: PropTypes.object
+  status: PropTypes.object,
+  theme: PropTypes.shape({
+    color: PropTypes.oneOf(colors)
+  })
 };
 export default Columnists;

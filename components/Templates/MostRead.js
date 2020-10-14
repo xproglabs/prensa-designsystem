@@ -7,12 +7,12 @@ import weights from '../../styles/variables/weight.json';
 import Block from '../Block';
 import TeaserMostRead from '../Teasers/MostRead';
 
-const MostRead = ({content, domain, status, titleSize, titleColor, titleWeight, numberColor}) => { 
+const MostRead = ({content, domain, status, titleSize, titleColor, titleWeight, numberColor, circleColor}) => { 
   const propsTemplate = {custom: 'templates-most-read'};
   return (
     <Block {...propsTemplate} > 
       {map(content, (item, key) =>
-        <TeaserMostRead content={item} domain={domain} key={key} status={status} number={key} titleSize={titleSize} titleColor={titleColor} titleWeight={titleWeight} numberColor={numberColor} />
+        <TeaserMostRead content={item} domain={domain} key={key} status={status} number={key} titleSize={titleSize} titleColor={titleColor} titleWeight={titleWeight} numberColor={numberColor} circleColor={circleColor} />
       )}
     </Block>
   );
@@ -24,6 +24,7 @@ MostRead.defaultProps = {
 
 MostRead.propTypes = {
   content: PropTypes.array,
+  circleColor: PropTypes.oneOf(colors),
   domain: PropTypes.string,
   status: PropTypes.object,
   titleSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),

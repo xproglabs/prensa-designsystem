@@ -5,10 +5,11 @@ import React from 'react';
 import Block from '../Block';
 import Teaser from '../Teasers';
 import {SectionTitle} from '../Typography';
+import colors from '../../styles/variables/colors.json'
 
-const GridNews = props => {
-  const {content, domain, lazy, status} = props;
-  const {items, title, color} = content;
+const GridNews = ({content, domain, lazy, status, theme}) => {
+  const {color} = theme;
+  const {items, title} = content;
   let items_pqueue = content['items-pqueue'];
   let items_list =  items_pqueue && items_pqueue.length > 0 ? items_pqueue : items;
   
@@ -38,7 +39,7 @@ const GridNews = props => {
   }
 
   return (
-    <>
+    <React.Fragment>
       {title && title !== '' && <SectionTitle weight='bold' gutter={3} color={color}>{title}</SectionTitle>}
       <Block {...propsTemplate}>
         {map(items_list, (item, key) =>
@@ -50,6 +51,7 @@ const GridNews = props => {
             lazy={lazy}
             status={status}
             subjectSize={2}
+            subjectColor={color}
             titleSize={titleSize}
             titleColor='neutral-2'
             subtitleColor='neutral-4'
@@ -58,7 +60,7 @@ const GridNews = props => {
           />
         )}
       </Block>
-    </>
+    </React.Fragment>
   );
 };
 GridNews.propTypes = {
@@ -69,6 +71,9 @@ GridNews.propTypes = {
   }),
   domain: PropTypes.string,
   lazy: PropTypes.func,
-  status: PropTypes.object
+  status: PropTypes.object,
+  theme: PropTypes.shape({
+    color: PropTypes.oneOf(colors)
+  })
 };
 export default GridNews;

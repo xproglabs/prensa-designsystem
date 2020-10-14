@@ -6,7 +6,7 @@ import weights from '../../styles/variables/weight.json';
 import Block from '../Block';
 import {MostReadNumber, NewsTitle} from '../Typography';
 
-const TeaserMostRead = ({content, number, titleSize, titleColor, titleWeight, numberColor}) => {
+const TeaserMostRead = ({content, number, titleSize, titleColor, titleWeight, numberColor, circleColor}) => {
   const {name, path} = content;
   const propsMostItem = {
     align: 'row left',
@@ -22,7 +22,8 @@ const TeaserMostRead = ({content, number, titleSize, titleColor, titleWeight, nu
     w: '100p-3'
   };
   const propsNumber = {
-    custom: 'most-read-number'
+    custom: 'most-read-number',
+    bg: `color-${circleColor}`
   };
   const propsTitle = {
     custom: 'most-read-title',
@@ -53,6 +54,7 @@ TeaserMostRead.propTypes = {
     name: PropTypes.string,
     path: PropTypes.string
   }),
+  circleColor: PropTypes.oneOf(colors),
   number: PropTypes.number,
   titleSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
   titleColor: PropTypes.oneOf(colors),
