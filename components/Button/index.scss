@@ -90,6 +90,7 @@
 
 .Prensa-Button-root {
   @include px($space-size-2);
+  @include miw(max-content);
   @extend %family-buttonSize;
   @extend %family-radius;
   cursor: pointer;
