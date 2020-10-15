@@ -19,11 +19,12 @@ const Button = ({children, className, color, disabled, fontColor, fullWidth, lef
   });
 
   const getFontColor = () => {
+    if (fontColor) return fontColor;
     if (variant === 'outlined') {
       if (disabled) return 'neutral-8';
       return color; 
     }
-    return fontColor;
+    return 'white';
   };
 
   return (
@@ -66,7 +67,6 @@ Button.defaultProps = {
   disabled: false,
   variant: 'filled',
   color: 'primary-1',
-  fontColor: 'white',
   radius: 'default',
   size: 1,
   weight: 'regular'
