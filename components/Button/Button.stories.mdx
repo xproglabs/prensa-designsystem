@@ -2,6 +2,8 @@ import { ArgsTable, Meta } from '@storybook/addon-docs/blocks';
 import Button from './index';
 import CodeBlock from './CodeBlock';
 import CSSTable from './CSSTable';
+import DownloadIcon from '../../icons/ArrowCircleDownBlack18Dp';
+import ArrowRightIcon from '../../icons/IcArrowForward';
 
 export const Template = (args) => <Button {...args} />;
 
@@ -18,7 +20,7 @@ export const Space = props => {
 <Space size={4} />
 
 <pre>
-  <CodeBlock>import Button from 'prensa/Button'</CodeBlock>
+  <CodeBlock>{`import {Button} from 'prensa'`}</CodeBlock>
 </pre>
 
 
@@ -132,7 +134,7 @@ O componente pode receber uma prop chamada `onClick` que permite a passagem da a
 
 <pre>
   <CodeBlock children={`
-  import Button from 'prensa/Button';
+  import {Button} from 'prensa';
 
   const handleClick = () => {
     console.log('click')
@@ -141,6 +143,28 @@ O componente pode receber uma prop chamada `onClick` que permite a passagem da a
   const Component = props => {
     return <Button variant="filled" color="secondary" onClick={handleClick()}>Avançar</Button>;
   }
+  `}/>
+</pre>
+
+<Space size={10} />
+
+### Botão com ícone
+O componente pode receber ícones do lado esquerdo ou direito através das props `leftIcon` e `rightIcon`, respectivamente. Para utilizá-las basta importar um ícone SVG como componente e passar o mesmo na props.
+
+<div style={{display: 'flex'}}>
+  <Button variant="filled" color='primary-1' leftIcon={<DownloadIcon />} style={{marginRight: 8}}>Com ícone</Button>
+  <Button variant="filled" color='primary-1' rightIcon={<ArrowRightIcon />} style={{marginRight: 8}}>Com ícone</Button>
+</div>
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock children={`
+  import {Button} from 'prensa';
+  import {ArrowCircleDownBlack18Dp as DownloadIcon, IcArrowForward as ArrowRightIcon} from 'prensa/icons';
+
+  <Button variant="filled" color='primary-1' leftIcon={<DownloadIcon />}>Com ícone</Button>
+  <Button variant="filled" color='primary-1' rightIcon={<ArrowRightIcon />}>Com ícone</Button>
   `}/>
 </pre>
 

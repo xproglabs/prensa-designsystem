@@ -6,13 +6,15 @@ import colors from '../../styles/variables/colors.json';
 import weights from '../../styles/variables/weight.json';
 import {ButtonTypography} from '../Typography';
 
-const Button = ({children, className, color, disabled, fontColor, fullWidth, onClick, radius, size, style, variant, weight}) => {
+const Button = ({children, className, color, disabled, fontColor, fullWidth, leftIcon, onClick, radius, rightIcon, size, style, variant, weight}) => {
 
   const getClass = classnames({
     'Prensa-Button-root': true,
     [`size-${size} ${variant} color-${color} radius-${radius}`]: true,
     'disabled': disabled,
     'fullWidth': fullWidth,
+    'has-leftIcon': leftIcon,
+    'has-rightIcon': rightIcon,
     [`${className}`]: className,
   });
 
@@ -32,7 +34,9 @@ const Button = ({children, className, color, disabled, fontColor, fullWidth, onC
       style={style}
     >
       <ButtonTypography color={getFontColor()} weight={weight}>
+        {leftIcon && leftIcon}
         {children}
+        {rightIcon && rightIcon}
       </ButtonTypography>
     </button>
   );
@@ -46,11 +50,13 @@ Button.propTypes = {
   children: PropTypes.node,
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
+  leftIcon: PropTypes.oneOfType([PropTypes.object, PropTypes.element]),
   onClick: PropTypes.func,
   variant: PropTypes.oneOf(['filled', 'outlined']),
   color: PropTypes.oneOf(colors),
   fontColor: PropTypes.oneOf(colors),
   radius: PropTypes.oneOf([false, 'default', 'alternative']),
+  rightIcon: PropTypes.oneOf([PropTypes.object, PropTypes.element]),
   size: PropTypes.oneOf([1, 2, 3, 4, 5]),
   style: PropTypes.object,
   weight: PropTypes.oneOf(weights)

@@ -3,18 +3,83 @@
 %family-buttonSize {
   &.size-1 {
     @include h(32px);
+    svg {
+      @include area(16px);
+    }
+    &.has-leftIcon {
+      svg {
+        @include mr(8px);
+      }
+    }
+    &.has-rightIcon {
+      svg {
+        @include ml(8px);
+      }
+    }
   }
   &.size-2 {
     @include h(40px);
+    svg {
+      @include area(16px);
+    }
+    &.has-leftIcon {
+      svg {
+        @include mr(8px);
+      }
+    }
+    &.has-rightIcon {
+      svg {
+        @include ml(8px);
+      }
+    }
   }
   &.size-3 {
     @include h(48px);
+    svg {
+      @include area(24px);
+    }
+    &.has-leftIcon {
+      svg {
+        @include mr(8px);
+      }
+    }
+    &.has-rightIcon {
+      svg {
+        @include ml(8px);
+      }
+    }
   }
   &.size-4 {
     @include h(56px);
+    svg {
+      @include area(24px);
+    }
+    &.has-leftIcon {
+      svg {
+        @include mr(8px);
+      }
+    }
+    &.has-rightIcon {
+      svg {
+        @include ml(8px);
+      }
+    }
   }
   &.size-5 {
     @include h(64px);
+    svg {
+      @include area(24px);
+    }
+    &.has-leftIcon {
+      svg {
+        @include mr(8px);
+      }
+    }
+    &.has-rightIcon {
+      svg {
+        @include ml(8px);
+      }
+    }
   }
 }
 

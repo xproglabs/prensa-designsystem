@@ -34,7 +34,7 @@ ButtonTypography.defaultProps = {
 };
 
 ButtonTypography.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.array]),
   className: PropTypes.string,
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),

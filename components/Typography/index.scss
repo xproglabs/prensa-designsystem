@@ -351,6 +351,7 @@
 }
 
 .Typography-Button-root {
+  @include fx(center, center);
   &.size-1 {
     @include ff($font-button-family);
     @include fs($font-button-size-1);
@@ -359,6 +360,7 @@
     @include m(0px);
     @extend %family-colors;
     @extend %weight-family;
+    @extend %family-svg-colors;
   }
 }
 

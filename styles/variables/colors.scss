@@ -334,3 +334,161 @@ $color-subject-yellow: #BFA525;
     border-color: $color-error-3;
   }
 }
+
+%family-svg-colors {
+  &.color-primary-1 {
+    svg {
+      fill: $color-primary-1;
+    } 
+  }
+  &.color-primary-2 {
+    svg {
+      fill: $color-primary-2;
+    } 
+  }
+  &.color-primary-3 {
+    svg {
+      fill: $color-primary-3;
+    } 
+  }
+  &.color-secondary-1 {
+    svg {
+      fill: $color-primary-3;
+    } 
+  }
+  &.color-secondary-2 {
+    svg {
+      fill: $color-primary-3;
+    } 
+  }
+  &.color-secondary-3 {
+    svg {
+      fill: $color-primary-3;
+    } 
+  }
+  &.color-editorial-1 {
+    svg {
+      fill: $color-editorial-1;
+    } 
+  }
+  &.color-editorial-2 {
+    svg {
+      fill: $color-editorial-2;
+    } 
+  }
+  &.color-editorial-3 {
+    svg {
+      fill: $color-editorial-3;
+    } 
+  }
+  &.color-editorial-4 {
+    svg {
+      fill: $color-editorial-4;
+    } 
+  }
+  &.color-editorial-5 {
+    svg {
+      fill: $color-editorial-5;
+    } 
+  }
+  &.color-ads {
+    svg {
+      fill: $color-ads;
+    }
+  }
+  &.color-black {
+    svg {
+      fill: $color-black;
+    }
+  }
+  &.color-neutral-1 {
+    svg {
+      fill: $color-neutral-1;
+    } 
+  }
+  &.color-neutral-2 {
+    svg {
+      fill: $color-neutral-2;
+    } 
+  }
+  &.color-neutral-3 {
+    svg {
+      fill: $color-neutral-3;
+    } 
+  }
+  &.color-neutral-4 {
+    svg {
+      fill: $color-neutral-4;
+    } 
+  }
+  &.color-neutral-5 {
+    svg {
+      fill: $color-neutral-5;
+    } 
+  }
+  &.color-neutral-6 {
+    svg {
+      fill: $color-neutral-6;
+    } 
+  }
+  &.color-neutral-7 {
+    svg {
+      fill: $color-neutral-7;
+    } 
+  }
+  &.color-neutral-8 {
+    svg {
+      fill: $color-neutral-8;
+    } 
+  }
+  &.color-neutral-9 {
+    svg {
+      fill: $color-neutral-9;
+    } 
+  }
+  &.color-neutral-10 {
+    svg {
+      fill: $color-neutral-10;
+    } 
+  }
+  &.color-neutral-11 {
+    svg {
+      fill: $color-neutral-11;
+    } 
+  }
+  &.color-white {
+    svg {
+      fill: $color-white;
+    }   
+  }
+  &.color-success-1 {
+    svg {
+      fill: $color-success-1;
+    } 
+  }
+  &.color-success-2 {
+    svg {
+      fill: $color-success-2;
+    } 
+  }
+  &.color-success-3 {
+    svg {
+      fill: $color-success-3;
+    } 
+  }
+  &.color-error-1 {
+    svg {
+      fill: $color-error-1;
+    } 
+  }
+  &.color-error-2 {
+    svg {
+      fill: $color-error-2;
+    } 
+  }
+  &.color-error-3 {
+    svg {
+      fill: $color-error-3;
+    } 
+  }
+}
