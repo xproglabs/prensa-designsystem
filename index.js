@@ -930,39 +930,6 @@ Subject.propTypes = {
 
 };
 
-var Tags = function Tags(props) {
-  var custom = props.custom,
-      content = props.content,
-      _onClick = props.onClick;
-
-  var renderTag = function renderTag(tag, k) {
-    return /*#__PURE__*/React__default['default'].createElement("div", {
-      key: k,
-      className: "tag",
-      onClick: function onClick() {
-        return _onClick(tag);
-      }
-    }, /*#__PURE__*/React__default['default'].createElement(Typography, {
-      tokenVariant: "article-tag"
-    }, tag));
-  };
-
-  var propsWrap = _objectSpread2({
-    align: 'row wrap',
-    w: '100p'
-  }, custom);
-
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsWrap, lodash.map(content, function (item, k) {
-    return renderTag(item, k);
-  }));
-};
-
-Tags.propTypes = {
-  custom: PropTypes__default['default'].string,
-  content: PropTypes__default['default'].array.isRequired,
-  onClick: PropTypes__default['default'].func.isRequired
-};
-
 function requiredArgs(required, args) {
   if (args.length < required) {
     throw new TypeError(required + ' argument' + (required > 1 ? 's' : '') + ' required, but only ' + args.length + ' present');
@@ -4211,6 +4178,154 @@ var utils = {
   datePtBrFull: datePtBrFull
 };
 
+var _PropTypes$shape;
+
+var Teaser = function Teaser(_ref) {
+  var content = _ref.content,
+      datePublished = _ref.datePublished,
+      domain = _ref.domain,
+      hasImageTop = _ref.hasImageTop,
+      hasSubjectFilled = _ref.hasSubjectFilled,
+      hasSubtitle = _ref.hasSubtitle,
+      hasDate = _ref.hasDate,
+      lazy = _ref.lazy;
+  var image = content.image,
+      name = content.name,
+      path = content.path,
+      subject = content.subject,
+      subtitle = content.subtitle;
+  var propsTeaser = {
+    align: hasImageTop ? 'col' : 'row left',
+    custom: 'teaser-default',
+    mb: '2'
+  };
+  var propsImage = {
+    align: 'row',
+    custom: "teaser-image ".concat(hasImageTop ? 'image-top' : 'image-left')
+  };
+  var propsContent = {
+    custom: 'teaser-content',
+    align: 'col',
+    mb: '3',
+    ml: '2',
+    mr: '2',
+    mt: '3',
+    w: '100p-4'
+  };
+  var propsSubTitle = {
+    mb: '2',
+    lg: {
+      mb: '8'
+    }
+  };
+  var propsDateContainer = {
+    h: '100p',
+    align: 'bottom'
+  };
+  var propsDate = {
+    custom: 'teaser-date',
+    w: '100p'
+  };
+  var propsSubject = {
+    custom: 'teaser-subject',
+    mb: '1'
+  };
+  var propsTitle = {
+    custom: 'teaser-title'
+  };
+  if (!content['time-published']) return false;
+  var dateValue = !datePublished && content['time-modifiedDate'] ? utils.dateDistance(content['time-modifiedDate'], 2880) : utils.datePtBrFull(content['time-published']);
+  dateValue = datePublished ? "Publicado em ".concat(dateValue) : dateValue.startsWith('Há') ? dateValue.replace('Há', 'Atualizado há') : "Atualizado em ".concat(dateValue);
+  var path_split = path.split(':8080');
+  var url_rewrite = path_split.length > 1 ? "".concat(domain).concat(path_split[1]) : path;
+
+  var TeaserImage = function TeaserImage() {
+    return /*#__PURE__*/React__default['default'].createElement(Block, propsImage, /*#__PURE__*/React__default['default'].createElement("a", {
+      className: "teaser-aria",
+      href: url_rewrite,
+      "aria-label": "Imagem da mat\xE9ria ".concat(name)
+    }, /*#__PURE__*/React__default['default'].createElement(Image, {
+      domain: domain,
+      content: image,
+      lazy: lazy
+    })));
+  };
+
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsTeaser, /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block, propsContent, /*#__PURE__*/React__default['default'].createElement(Block, null, subject && /*#__PURE__*/React__default['default'].createElement(Block, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
+    filled: hasSubjectFilled
+  }, subject))), /*#__PURE__*/React__default['default'].createElement(Block, null, /*#__PURE__*/React__default['default'].createElement(Block, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
+    className: "teaser-aria",
+    href: url_rewrite,
+    "aria-label": "Abrir mat\xE9ria ".concat(name)
+  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
+    custom: "teaser-title"
+  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React__default['default'].createElement(Block, propsSubTitle, /*#__PURE__*/React__default['default'].createElement(Typography, {
+    custom: "teaser-subtitle"
+  }, subtitle))), /*#__PURE__*/React__default['default'].createElement(Block, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React__default['default'].createElement(Block, propsDate, /*#__PURE__*/React__default['default'].createElement(Typography, {
+    custom: "teaser-datetime"
+  }, dateValue)))));
+};
+
+Teaser.propTypes = {
+  content: PropTypes__default['default'].shape((_PropTypes$shape = {
+    image: PropTypes__default['default'].object,
+    name: PropTypes__default['default'].string,
+    path: PropTypes__default['default'].string,
+    subtitle: PropTypes__default['default'].string,
+    subject: PropTypes__default['default'].string
+  }, _defineProperty(_PropTypes$shape, 'time-published', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes__default['default'].string), _PropTypes$shape)),
+  datePublished: PropTypes__default['default'].bool,
+  domain: PropTypes__default['default'].string,
+  hasImageTop: PropTypes__default['default'].bool,
+  hasSubtitle: PropTypes__default['default'].bool,
+  hasDate: PropTypes__default['default'].bool,
+  hasSubjectFilled: PropTypes__default['default'].bool,
+  lazy: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].shape({
+    loading: PropTypes__default['default'].bool,
+    error: PropTypes__default['default'].bool
+  })
+};
+Teaser.defaultProps = {
+  hasSubjectFilled: false,
+  hasImageTop: false,
+  hasSubtitle: false,
+  hasDate: true
+};
+
+var Tags = function Tags(props) {
+  var custom = props.custom,
+      content = props.content,
+      _onClick = props.onClick;
+
+  var renderTag = function renderTag(tag, k) {
+    return /*#__PURE__*/React__default['default'].createElement("div", {
+      key: k,
+      className: "tag",
+      onClick: function onClick() {
+        return _onClick(tag);
+      }
+    }, /*#__PURE__*/React__default['default'].createElement(Typography, {
+      tokenVariant: "article-tag"
+    }, tag));
+  };
+
+  var propsWrap = _objectSpread2({
+    align: 'row wrap',
+    w: '100p'
+  }, custom);
+
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsWrap, lodash.map(content, function (item, k) {
+    return renderTag(item, k);
+  }));
+};
+
+Tags.propTypes = {
+  custom: PropTypes__default['default'].string,
+  content: PropTypes__default['default'].array.isRequired,
+  onClick: PropTypes__default['default'].func.isRequired
+};
+
 exports.Block = Block;
 exports.Button = Button;
 exports.ColumnHeader = ColumnHeader;
@@ -4226,6 +4341,7 @@ exports.SideMenuItems = SideMenuItems;
 exports.SocialMedias = SocialMedias;
 exports.Subject = Subject;
 exports.Tags = Tags;
+exports.Teaser = Teaser;
 exports.Topbar = Topbar;
 exports.Typography = Typography;
 exports.utils = utils;
