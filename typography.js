@@ -2,11 +2,15 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+var classnames = require('classnames');
+var PropTypes = require('prop-types');
+var React = require('react');
 
-var classnames = _interopDefault(require('classnames'));
-var PropTypes = _interopDefault(require('prop-types'));
-var React = _interopDefault(require('react'));
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var classnames__default = /*#__PURE__*/_interopDefaultLegacy(classnames);
+var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -75,10 +79,10 @@ var SubjectTypography = function SubjectTypography(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-Subject-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React__default['default'].createElement("span", {
     className: classes,
     style: style
   }, children);
@@ -89,12 +93,12 @@ SubjectTypography.defaultProps = {
   weight: 'regular'
 };
 SubjectTypography.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1, 2, 3]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1, 2, 3]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var NewsTitle = function NewsTitle(props) {
@@ -107,10 +111,10 @@ var NewsTitle = function NewsTitle(props) {
       size = props.size,
       weight = props.weight,
       disableHover = props.disableHover;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-NewsTitle-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, 'has-hover', !disableHover), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("h2", {
+  return /*#__PURE__*/React__default['default'].createElement("h2", {
     className: classes,
     style: style
   }, children);
@@ -122,13 +126,13 @@ NewsTitle.defaultProps = {
   disableHover: false
 };
 NewsTitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  disableHover: PropTypes.bool,
-  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  disableHover: PropTypes__default['default'].bool,
+  size: PropTypes__default['default'].oneOf([1, 2, 3, 4, 5, 6, 7]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var Subtitle = function Subtitle(props) {
@@ -140,10 +144,10 @@ var Subtitle = function Subtitle(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-Subtitle-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("h3", {
+  return /*#__PURE__*/React__default['default'].createElement("h3", {
     className: classes,
     style: style
   }, children);
@@ -154,12 +158,12 @@ Subtitle.defaultProps = {
   weight: 'regular'
 };
 Subtitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var Date = function Date(props) {
@@ -171,10 +175,10 @@ var Date = function Date(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-Date-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React__default['default'].createElement("span", {
     className: classes,
     style: style
   }, children);
@@ -185,12 +189,12 @@ Date.defaultProps = {
   weight: 'regular'
 };
 Date.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var Author = function Author(props) {
@@ -202,10 +206,10 @@ var Author = function Author(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-Author-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React__default['default'].createElement("span", {
     className: classes,
     style: style
   }, children);
@@ -216,12 +220,12 @@ Author.defaultProps = {
   weight: 'regular'
 };
 Author.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var Paragraph = function Paragraph(props) {
@@ -235,10 +239,10 @@ var Paragraph = function Paragraph(props) {
       weight = props.weight,
       maxWidth = props.maxWidth,
       setInnerHtml = props.setInnerHtml;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-Paragraph-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color, " ").concat(maxWidth), true), _defineProperty(_classnames, "gutter-".concat(gutter), gutter), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/React__default['default'].createElement("p", {
     className: classes,
     style: style,
     gutter: gutter,
@@ -254,14 +258,14 @@ Paragraph.defaultProps = {
   maxWidth: 'md'
 };
 Paragraph.propTypes = {
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  gutter: PropTypes.oneOf([1, 2, 3]),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight),
-  maxWidth: PropTypes.oneOf(['sm', 'md', 'lg']),
-  setInnerHtml: PropTypes.string
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  gutter: PropTypes__default['default'].oneOf([1, 2, 3]),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight),
+  maxWidth: PropTypes__default['default'].oneOf(['sm', 'md', 'lg']),
+  setInnerHtml: PropTypes__default['default'].string
 };
 
 var Byline = function Byline(props) {
@@ -273,10 +277,10 @@ var Byline = function Byline(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-Byline-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React__default['default'].createElement("span", {
     className: classes,
     style: style
   }, children);
@@ -287,12 +291,12 @@ Byline.defaultProps = {
   weight: 'regular'
 };
 Byline.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var InterTitle = function InterTitle(props) {
@@ -304,10 +308,10 @@ var InterTitle = function InterTitle(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-InterTitle-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React__default['default'].createElement("span", {
     className: classes,
     style: style
   }, children);
@@ -318,12 +322,12 @@ InterTitle.defaultProps = {
   weight: 'regular'
 };
 InterTitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var Citation = function Citation(props) {
@@ -335,10 +339,10 @@ var Citation = function Citation(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-Citation-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React__default['default'].createElement("span", {
     className: classes,
     style: style
   }, children);
@@ -349,12 +353,12 @@ Citation.defaultProps = {
   weight: 'regular'
 };
 Citation.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var UrlLink = function UrlLink(props) {
@@ -366,10 +370,10 @@ var UrlLink = function UrlLink(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-UrlLink-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("a", {
+  return /*#__PURE__*/React__default['default'].createElement("a", {
     className: classes,
     style: style
   }, children);
@@ -380,12 +384,12 @@ UrlLink.defaultProps = {
   weight: 'regular'
 };
 UrlLink.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var TagTypography = function TagTypography(props) {
@@ -397,10 +401,10 @@ var TagTypography = function TagTypography(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-Tag-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/React__default['default'].createElement("p", {
     className: classes,
     style: style
   }, children);
@@ -411,12 +415,12 @@ TagTypography.defaultProps = {
   weight: 'regular'
 };
 TagTypography.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var SectionTitle = function SectionTitle(_ref) {
@@ -430,10 +434,10 @@ var SectionTitle = function SectionTitle(_ref) {
       size = _ref.size,
       uppercase = _ref.uppercase,
       weight = _ref.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-SectionTitle-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color, " mb-").concat(gutter), true), _defineProperty(_classnames, 'uppercase', uppercase), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("h1", {
+  return /*#__PURE__*/React__default['default'].createElement("h1", {
     className: classes,
     style: style
   }, children);
@@ -446,14 +450,14 @@ SectionTitle.defaultProps = {
   uppercase: true
 };
 SectionTitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  gutter: PropTypes.oneOf([1, 2, 3]),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  uppercase: PropTypes.bool,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  gutter: PropTypes__default['default'].oneOf([1, 2, 3]),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  uppercase: PropTypes__default['default'].bool,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var EditorialTitle = function EditorialTitle(props) {
@@ -465,10 +469,10 @@ var EditorialTitle = function EditorialTitle(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-EditorialTitle-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React__default['default'].createElement("span", {
     className: classes,
     style: style
   }, children);
@@ -479,12 +483,12 @@ EditorialTitle.defaultProps = {
   weight: 'regular'
 };
 EditorialTitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var ButtonTypography = function ButtonTypography(props) {
@@ -496,10 +500,10 @@ var ButtonTypography = function ButtonTypography(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-Button-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/React__default['default'].createElement("p", {
     className: classes,
     style: style
   }, children);
@@ -510,12 +514,12 @@ ButtonTypography.defaultProps = {
   weight: 'regular'
 };
 ButtonTypography.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var MostReadNumber = function MostReadNumber(props) {
@@ -527,10 +531,10 @@ var MostReadNumber = function MostReadNumber(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-MostReadNumber-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React__default['default'].createElement("span", {
     className: classes,
     style: style
   }, children);
@@ -541,12 +545,12 @@ MostReadNumber.defaultProps = {
   weight: 'regular'
 };
 MostReadNumber.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var MenuSideTitle = function MenuSideTitle(props) {
@@ -558,10 +562,10 @@ var MenuSideTitle = function MenuSideTitle(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-MenuSideTitle-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React__default['default'].createElement("span", {
     className: classes,
     style: style
   }, children);
@@ -572,12 +576,12 @@ MenuSideTitle.defaultProps = {
   weight: 'regular'
 };
 MenuSideTitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var MenuSideItem = function MenuSideItem(props) {
@@ -589,10 +593,10 @@ var MenuSideItem = function MenuSideItem(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-MenuSideItem-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React__default['default'].createElement("span", {
     className: classes,
     style: style
   }, children);
@@ -603,12 +607,12 @@ MenuSideItem.defaultProps = {
   weight: 'regular'
 };
 MenuSideItem.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 var MenuTopItem = function MenuTopItem(props) {
@@ -620,10 +624,10 @@ var MenuTopItem = function MenuTopItem(props) {
       style = props.style,
       size = props.size,
       weight = props.weight;
-  var classes = classnames((_classnames = {
+  var classes = classnames__default['default']((_classnames = {
     'Typography-MenuTopItem-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React__default['default'].createElement("span", {
     className: classes,
     style: style
   }, children);
@@ -634,12 +638,12 @@ MenuTopItem.defaultProps = {
   weight: 'regular'
 };
 MenuTopItem.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(weight)
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weight)
 };
 
 exports.Author = Author;
