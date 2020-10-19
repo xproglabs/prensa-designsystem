@@ -42,6 +42,45 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
+var colors = [
+	"primary-1",
+	"primary-2",
+	"primary-3",
+	"secondary-1",
+	"secondary-2",
+	"secondary-3",
+	"product-1",
+	"product-2",
+	"product-3",
+	"product-4",
+	"product-5",
+	"editorial-1",
+	"editorial-2",
+	"editorial-3",
+	"editorial-4",
+	"editorial-5",
+	"black",
+	"neutral-1",
+	"neutral-2",
+	"neutral-3",
+	"neutral-4",
+	"neutral-5",
+	"neutral-6",
+	"neutral-7",
+	"neutral-8",
+	"neutral-9",
+	"neutral-10",
+	"neutral-11",
+	"white",
+	"ads",
+	"success-1",
+	"success-2",
+	"success-3",
+	"error-1",
+	"error-2",
+	"error-3"
+];
+
 var Block = function Block(props) {
   var children = props.children,
       xs = props.xs,
@@ -77,11 +116,10 @@ var Block = function Block(props) {
 };
 
 var propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-var colorTokens = ['color-white', 'color-black', 'color-primary-1', 'color-primary-2', 'color-primary-3', 'color-secondary-1', 'color-secondary-2', 'color-secondary-3', 'color-neutral-1', 'color-neutral-2', 'color-neutral-3', 'color-neutral-4', 'color-neutral-5', 'color-neutral-6', 'color-neutral-7', 'color-neutral-8', 'color-neutral-9', 'color-neutral-10', 'color-neutral-11'];
 Block.propTypes = {
   align: PropTypes.string,
-  bg: PropTypes.oneOf(colorTokens),
-  fc: PropTypes.oneOf(colorTokens),
+  bg: PropTypes.oneOf(colors),
+  fc: PropTypes.oneOf(colors),
   cursor: PropTypes.string,
   m: PropTypes.oneOf([].concat(propTypesSizes)),
   mt: PropTypes.oneOf([].concat(propTypesSizes)),
@@ -103,593 +141,6 @@ Block.propTypes = {
   onClick: PropTypes.func,
   w: PropTypes.string,
   h: PropTypes.string
-};
-Block.defaultProps = {};
-
-var colors = [
-	"primary-1",
-	"primary-2",
-	"primary-3",
-	"secondary-1",
-	"secondary-2",
-	"secondary-3",
-	"editorial-1",
-	"editorial-2",
-	"editorial-3",
-	"editorial-4",
-	"editorial-5",
-	"black:",
-	"neutral-1",
-	"neutral-2",
-	"neutral-3",
-	"neutral-4",
-	"neutral-5",
-	"neutral-6",
-	"neutral-7",
-	"neutral-8",
-	"neutral-9",
-	"neutral-10",
-	"neutral-11",
-	"white:",
-	"ads",
-	"success-1",
-	"success-2",
-	"success-3",
-	"error-1",
-	"error-2",
-	"error-3"
-];
-
-var SubjectTypography = function SubjectTypography(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-Subject-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-SubjectTypography.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-SubjectTypography.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1, 2, 3]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var NewsTitle = function NewsTitle(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-NewsTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("h2", {
-    className: classes,
-    style: style
-  }, children);
-};
-NewsTitle.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-NewsTitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var Subtitle = function Subtitle(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-Subtitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("h3", {
-    className: classes,
-    style: style
-  }, children);
-};
-Subtitle.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-Subtitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var Date$1 = function Date(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-Date-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-Date$1.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-Date$1.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var Author = function Author(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-Author-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-Author.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-Author.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var Paragraph = function Paragraph(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size;
-  var classes = classnames((_classnames = {
-    'Typography-Paragraph-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("p", {
-    className: classes,
-    style: style
-  }, children);
-};
-Paragraph.defaultProps = {
-  color: 'black',
-  size: 1
-};
-Paragraph.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object
-};
-
-var Byline = function Byline(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-Byline-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-Byline.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-Byline.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var InterTitle = function InterTitle(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-InterTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-InterTitle.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-InterTitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var Citation = function Citation(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-Citation-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-Citation.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-Citation.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var UrlLink = function UrlLink(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-UrlLink-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("a", {
-    className: classes,
-    style: style
-  }, children);
-};
-UrlLink.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-UrlLink.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var TagTypography = function TagTypography(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-Tag-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("p", {
-    className: classes,
-    style: style
-  }, children);
-};
-TagTypography.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-TagTypography.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var SectionTitle = function SectionTitle(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size;
-  var classes = classnames((_classnames = {
-    'Typography-SectionTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-SectionTitle.defaultProps = {
-  color: 'primary-1',
-  size: 1
-};
-SectionTitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object
-};
-
-var EditorialTitle = function EditorialTitle(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-EditorialTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-EditorialTitle.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-EditorialTitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var ButtonTypography = function ButtonTypography(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-Button-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("p", {
-    className: classes,
-    style: style
-  }, children);
-};
-ButtonTypography.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-ButtonTypography.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var MostReadNumber = function MostReadNumber(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-MostReadNumber-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-MostReadNumber.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-MostReadNumber.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var MenuSideTitle = function MenuSideTitle(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-MenuSideTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-MenuSideTitle.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-MenuSideTitle.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var MenuSideItem = function MenuSideItem(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-MenuSideItem-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-MenuSideItem.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-MenuSideItem.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
-var MenuTopItem = function MenuTopItem(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames((_classnames = {
-    'Typography-MenuTopItem-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React.createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-MenuTopItem.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-MenuTopItem.propTypes = {
-  children: PropTypes.string,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([1]),
-  style: PropTypes.object,
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
 };
 
 var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
@@ -757,6 +208,591 @@ Image.defaultProps = {
   content: {}
 };
 
+var weights = [
+	"thin",
+	"light",
+	"regular",
+	"medium",
+	"bold",
+	"italic"
+];
+
+var SubjectTypography = function SubjectTypography(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-Subject-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+SubjectTypography.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+SubjectTypography.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1, 2, 3]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var NewsTitle = function NewsTitle(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight,
+      disableHover = props.disableHover;
+  var classes = classnames((_classnames = {
+    'Typography-NewsTitle-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, 'has-hover', !disableHover), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("h2", {
+    className: classes,
+    style: style
+  }, children);
+};
+NewsTitle.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular',
+  disableHover: false
+};
+NewsTitle.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  disableHover: PropTypes.bool,
+  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var Subtitle = function Subtitle(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-Subtitle-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("h3", {
+    className: classes,
+    style: style
+  }, children);
+};
+Subtitle.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+Subtitle.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var Date$1 = function Date(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-Date-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+Date$1.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+Date$1.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var Author = function Author(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-Author-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+Author.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+Author.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var Paragraph = function Paragraph(props) {
+  var _classnames;
+
+  var className = props.className,
+      color = props.color,
+      gutter = props.gutter,
+      style = props.style,
+      size = props.size,
+      weight = props.weight,
+      maxWidth = props.maxWidth,
+      setInnerHtml = props.setInnerHtml;
+  var classes = classnames((_classnames = {
+    'Typography-Paragraph-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color, " ").concat(maxWidth), true), _defineProperty(_classnames, "gutter-".concat(gutter), gutter), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("p", {
+    className: classes,
+    style: style,
+    gutter: gutter,
+    dangerouslySetInnerHTML: {
+      __html: setInnerHtml
+    }
+  });
+};
+Paragraph.defaultProps = {
+  color: 'black',
+  size: 1,
+  weight: 'regular',
+  maxWidth: 'md'
+};
+Paragraph.propTypes = {
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  gutter: PropTypes.oneOf([1, 2, 3]),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights),
+  maxWidth: PropTypes.oneOf(['sm', 'md', 'lg']),
+  setInnerHtml: PropTypes.string
+};
+
+var Byline = function Byline(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-Byline-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+Byline.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+Byline.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var InterTitle = function InterTitle(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-InterTitle-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+InterTitle.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+InterTitle.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var Citation = function Citation(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-Citation-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+Citation.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+Citation.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var UrlLink = function UrlLink(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-UrlLink-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("a", {
+    className: classes,
+    style: style
+  }, children);
+};
+UrlLink.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+UrlLink.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var TagTypography = function TagTypography(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-Tag-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("p", {
+    className: classes,
+    style: style
+  }, children);
+};
+TagTypography.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+TagTypography.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var SectionTitle = function SectionTitle(_ref) {
+  var _classnames;
+
+  var className = _ref.className,
+      children = _ref.children,
+      color = _ref.color,
+      gutter = _ref.gutter,
+      style = _ref.style,
+      size = _ref.size,
+      uppercase = _ref.uppercase,
+      weight = _ref.weight;
+  var classes = classnames((_classnames = {
+    'Typography-SectionTitle-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color, " mb-").concat(gutter), true), _defineProperty(_classnames, 'uppercase', uppercase), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("h1", {
+    className: classes,
+    style: style
+  }, children);
+};
+SectionTitle.defaultProps = {
+  color: 'primary-1',
+  gutter: 1,
+  size: 1,
+  weight: 'regular',
+  uppercase: true
+};
+SectionTitle.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  gutter: PropTypes.oneOf([1, 2, 3]),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  uppercase: PropTypes.bool,
+  weight: PropTypes.oneOf(weights)
+};
+
+var EditorialTitle = function EditorialTitle(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-EditorialTitle-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+EditorialTitle.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+EditorialTitle.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var ButtonTypography = function ButtonTypography(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-Button-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("p", {
+    className: classes,
+    style: style
+  }, children);
+};
+ButtonTypography.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+ButtonTypography.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.array]),
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var MostReadNumber = function MostReadNumber(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-MostReadNumber-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+MostReadNumber.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+MostReadNumber.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var MenuSideTitle = function MenuSideTitle(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-MenuSideTitle-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+MenuSideTitle.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+MenuSideTitle.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var MenuSideItem = function MenuSideItem(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-MenuSideItem-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+MenuSideItem.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+MenuSideItem.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
+var MenuTopItem = function MenuTopItem(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames((_classnames = {
+    'Typography-MenuTopItem-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React.createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+MenuTopItem.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+MenuTopItem.propTypes = {
+  children: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  size: PropTypes.oneOf([1]),
+  style: PropTypes.object,
+  weight: PropTypes.oneOf(weights)
+};
+
 var Subject = function Subject(props) {
   var _classnames;
 
@@ -765,7 +801,8 @@ var Subject = function Subject(props) {
       className = props.className,
       style = props.style,
       size = props.size,
-      filled = props.filled;
+      filled = props.filled,
+      weight = props.weight;
   if (!children) return null;
   var classes = classnames((_classnames = {
     'Prensa-Subject-root': true,
@@ -776,7 +813,8 @@ var Subject = function Subject(props) {
     style: style
   }, /*#__PURE__*/React.createElement(SubjectTypography, {
     size: size,
-    color: filled ? 'color-white' : color
+    color: filled ? 'white' : color,
+    weight: weight
   }, children));
 };
 
@@ -791,7 +829,8 @@ Subject.propTypes = {
   color: PropTypes.oneOf(colors),
   filled: PropTypes.bool,
   style: PropTypes.object,
-  size: PropTypes.oneOf([1, 2, 3])
+  size: PropTypes.oneOf([1, 2, 3]),
+  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
 };
 
 function requiredArgs(required, args) {
@@ -4054,7 +4093,16 @@ var Teaser = function Teaser(_ref) {
       hasDate = _ref.hasDate,
       lazy = _ref.lazy,
       subjectColor = _ref.subjectColor,
-      subjectSize = _ref.subjectSize;
+      subjectSize = _ref.subjectSize,
+      titleSize = _ref.titleSize,
+      subtitleSize = _ref.subtitleSize,
+      dateSize = _ref.dateSize,
+      titleColor = _ref.titleColor,
+      subtitleColor = _ref.subtitleColor,
+      dateColor = _ref.dateColor,
+      titleWeight = _ref.titleWeight,
+      subtitleWeight = _ref.subtitleWeight,
+      dateWeight = _ref.dateWeight;
   var image = content.image,
       name = content.name,
       path = content.path,
@@ -4120,17 +4168,24 @@ var Teaser = function Teaser(_ref) {
   return /*#__PURE__*/React.createElement(Block, propsTeaser, /*#__PURE__*/React.createElement(TeaserImage, null), /*#__PURE__*/React.createElement(Block, propsContent, /*#__PURE__*/React.createElement(Block, null, subject && /*#__PURE__*/React.createElement(Block, propsSubject, /*#__PURE__*/React.createElement(Subject, {
     size: subjectSize,
     color: subjectColor,
-    filled: hasSubjectFilled
+    filled: hasSubjectFilled,
+    weight: "bold"
   }, subject))), /*#__PURE__*/React.createElement(Block, null, /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
     href: url_rewrite,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
   }, /*#__PURE__*/React.createElement(NewsTitle, {
-    custom: "teaser-title"
+    size: titleSize,
+    color: titleColor,
+    weight: titleWeight
   }, name))), subtitle && hasSubtitle && /*#__PURE__*/React.createElement(Block, propsSubTitle, /*#__PURE__*/React.createElement(Subtitle, {
-    custom: "teaser-subtitle"
+    size: subtitleSize,
+    color: subtitleColor,
+    weight: subtitleWeight
   }, subtitle))), /*#__PURE__*/React.createElement(Block, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React.createElement(Block, propsDate, /*#__PURE__*/React.createElement(Date$1, {
-    custom: "teaser-datetime"
+    size: dateSize,
+    color: dateColor,
+    weight: dateWeight
   }, dateValue)))));
 };
 
@@ -4154,7 +4209,16 @@ Teaser.propTypes = {
     error: PropTypes.bool
   }),
   subjectColor: PropTypes.oneOf(colors),
-  subjectSize: PropTypes.oneOf([1, 2, 3])
+  subjectSize: PropTypes.oneOf([1, 2, 3]),
+  titleSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+  subtitleSize: PropTypes.oneOf([1]),
+  dateSize: PropTypes.oneOf([1]),
+  titleColor: PropTypes.oneOf(colors),
+  subtitleColor: PropTypes.oneOf(colors),
+  dateColor: PropTypes.oneOf(colors),
+  titleWeight: PropTypes.oneOf(weights),
+  subtitleWeight: PropTypes.oneOf(weights),
+  dateWeight: PropTypes.oneOf(weights)
 };
 Teaser.defaultProps = {
   hasSubjectFilled: false,
@@ -4165,13 +4229,14 @@ Teaser.defaultProps = {
   subjectColor: 'primary-1'
 };
 
-var Columnists = function Columnists(props) {
-  var content = props.content,
-      domain = props.domain,
-      lazy = props.lazy,
-      status = props.status;
-  var title = content.title,
-      color = content.color;
+var Columnists = function Columnists(_ref) {
+  var content = _ref.content,
+      domain = _ref.domain,
+      lazy = _ref.lazy,
+      status = _ref.status,
+      theme = _ref.theme;
+  var title = content.title;
+  var color = theme.color;
   var propsTemplate = {
     custom: 'templates-columnists',
     mb: '6',
@@ -4181,6 +4246,8 @@ var Columnists = function Columnists(props) {
     }
   };
   return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== '' && /*#__PURE__*/React.createElement(SectionTitle, {
+    weight: "bold",
+    gutter: 3,
     color: color
   }, title), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
@@ -4188,7 +4255,13 @@ var Columnists = function Columnists(props) {
       domain: domain,
       key: key,
       lazy: lazy,
-      status: status
+      status: status,
+      subjectSize: 2,
+      titleSize: 2,
+      titleWeight: "bold",
+      titleColor: "neutral-2",
+      dateColor: "neutral-4",
+      subjectColor: color
     });
   })));
 };
@@ -4196,18 +4269,24 @@ var Columnists = function Columnists(props) {
 Columnists.propTypes = {
   content: PropTypes.shape({
     title: PropTypes.string,
-    color: PropTypes.string
+    color: PropTypes.string,
+    items: PropTypes.array
   }),
   domain: PropTypes.string,
   lazy: PropTypes.func,
-  status: PropTypes.object
+  status: PropTypes.object,
+  theme: PropTypes.shape({
+    color: PropTypes.oneOf(colors)
+  })
 };
 
-var Featured = function Featured(props) {
-  var content = props.content,
-      domain = props.domain,
-      lazy = props.lazy,
-      status = props.status;
+var Featured = function Featured(_ref) {
+  var content = _ref.content,
+      domain = _ref.domain,
+      lazy = _ref.lazy,
+      status = _ref.status,
+      theme = _ref.theme;
+  var color = theme.color;
   var items = content.items;
 
   if (items.length === 1) {
@@ -4219,7 +4298,11 @@ var Featured = function Featured(props) {
       hasSubjectFilled: true,
       hasSubtitle: true,
       lazy: lazy,
-      status: status
+      status: status,
+      subjectSize: 2,
+      subjectColor: color,
+      titleSize: 4,
+      titleWeight: "bold"
     }));
   }
 
@@ -4240,19 +4323,40 @@ var Featured = function Featured(props) {
       hasSubjectFilled: true,
       hasSubtitle: true,
       lazy: lazy,
-      status: status
+      status: status,
+      subjectSize: 2,
+      subjectColor: color,
+      titleSize: 4,
+      titleColor: "neutral-2",
+      subtitleColor: "neutral-4",
+      dateColor: "neutral-4",
+      titleWeight: "bold"
     })), /*#__PURE__*/React.createElement(Block, {
       custom: "block-right"
     }, /*#__PURE__*/React.createElement(Teaser, {
       content: items[1],
       domain: domain,
       lazy: lazy,
-      status: status
+      status: status,
+      subjectSize: 2,
+      subjectColor: color,
+      titleSize: 3,
+      titleColor: "neutral-2",
+      subtitleColor: "neutral-4",
+      dateColor: "neutral-4",
+      titleWeight: "bold"
     }), /*#__PURE__*/React.createElement(Teaser, {
       content: items[2],
       domain: domain,
       lazy: lazy,
-      status: status
+      status: status,
+      subjectSize: 2,
+      subjectColor: color,
+      titleSize: 3,
+      titleColor: "neutral-2",
+      subtitleColor: "neutral-4",
+      dateColor: "neutral-4",
+      titleWeight: "bold"
     })));
   }
 
@@ -4263,17 +4367,23 @@ Featured.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
   lazy: PropTypes.func,
-  status: PropTypes.object
+  status: PropTypes.object,
+  theme: PropTypes.shape({
+    color: PropTypes.oneOf(colors)
+  })
 };
 
-var GridNews = function GridNews(props) {
-  var content = props.content,
-      domain = props.domain,
-      lazy = props.lazy,
-      status = props.status;
+var GridNews = function GridNews(_ref) {
+  var content = _ref.content,
+      domain = _ref.domain,
+      lazy = _ref.lazy,
+      status = _ref.status,
+      theme = _ref.theme;
+  var color = theme.color;
   var items = content.items,
-      title = content.title,
-      color = content.color;
+      title = content.title;
+  var items_pqueue = content['items-pqueue'];
+  var items_list = items_pqueue && items_pqueue.length > 0 ? items_pqueue : items;
   var propsTemplate = {
     align: 'between',
     custom: 'templates-newsgrid',
@@ -4283,29 +4393,46 @@ var GridNews = function GridNews(props) {
       mb: '5'
     }
   };
+  var titleSize;
 
-  if (items.length === 2) {
+  if (items_list.length === 2) {
     propsTemplate.custom = 'templates-newsgrid two';
+    titleSize = 3;
   }
 
-  if (items.length === 3) {
+  if (items_list.length === 3) {
     propsTemplate.custom = 'templates-newsgrid three';
+    titleSize = 3;
   }
 
-  if (items.length === 4) {
+  if (items_list.length === 4) {
     propsTemplate.custom = 'templates-newsgrid four';
+    titleSize = 3;
+  }
+
+  if (items_list.length === 5) {
+    propsTemplate.custom = 'templates-newsgrid five';
   }
 
   return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== '' && /*#__PURE__*/React.createElement(SectionTitle, {
+    weight: "bold",
+    gutter: 3,
     color: color
-  }, title), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(items, function (item, key) {
+  }, title), /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(items_list, function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       key: key,
       content: item,
       domain: domain,
       hasImageTop: true,
       lazy: lazy,
-      status: status
+      status: status,
+      subjectSize: 2,
+      subjectColor: color,
+      titleSize: titleSize,
+      titleColor: "neutral-2",
+      subtitleColor: "neutral-4",
+      dateColor: "neutral-4",
+      titleWeight: "bold"
     });
   })));
 };
@@ -4318,12 +4445,20 @@ GridNews.propTypes = {
   }),
   domain: PropTypes.string,
   lazy: PropTypes.func,
-  status: PropTypes.object
+  status: PropTypes.object,
+  theme: PropTypes.shape({
+    color: PropTypes.oneOf(colors)
+  })
 };
 
-var MostReadItem = function MostReadItem(_ref) {
+var TeaserMostRead = function TeaserMostRead(_ref) {
   var content = _ref.content,
-      number = _ref.number;
+      number = _ref.number,
+      titleSize = _ref.titleSize,
+      titleColor = _ref.titleColor,
+      titleWeight = _ref.titleWeight,
+      numberColor = _ref.numberColor,
+      circleColor = _ref.circleColor;
   var name = content.name,
       path = content.path;
   var propsMostItem = {
@@ -4340,7 +4475,8 @@ var MostReadItem = function MostReadItem(_ref) {
     w: '100p-3'
   };
   var propsNumber = {
-    custom: 'most-read-number'
+    custom: 'most-read-number',
+    bg: "color-".concat(circleColor)
   };
   var propsTitle = {
     custom: 'most-read-title',
@@ -4353,45 +4489,73 @@ var MostReadItem = function MostReadItem(_ref) {
     align: "row"
   }), /*#__PURE__*/React.createElement(Block, _extends({}, propsNumber, {
     align: "row center middle"
-  }), position), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
+  }), /*#__PURE__*/React.createElement(MostReadNumber, {
+    color: numberColor,
+    weight: titleWeight
+  }, position)), /*#__PURE__*/React.createElement(Block, propsTitle, /*#__PURE__*/React.createElement("a", {
     className: "teaser-aria",
     href: path,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
-  }, /*#__PURE__*/React.createElement(MostReadNumber, {
-    custom: "teaser-title"
+  }, /*#__PURE__*/React.createElement(NewsTitle, {
+    color: titleColor,
+    size: titleSize,
+    weight: titleWeight
   }, name)))));
 };
 
-MostReadItem.propTypes = {
+TeaserMostRead.propTypes = {
   content: PropTypes.shape({
     name: PropTypes.string,
     path: PropTypes.string
   }),
-  number: PropTypes.number
+  circleColor: PropTypes.oneOf(colors),
+  number: PropTypes.number,
+  titleSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+  titleColor: PropTypes.oneOf(colors),
+  titleWeight: PropTypes.oneOf(weights),
+  numberColor: PropTypes.oneOf(colors)
 };
 
-var MostRead = function MostRead(props) {
-  var content = props.content,
-      domain = props.domain,
-      status = props.status;
+var MostRead = function MostRead(_ref) {
+  var content = _ref.content,
+      domain = _ref.domain,
+      status = _ref.status,
+      titleSize = _ref.titleSize,
+      titleColor = _ref.titleColor,
+      titleWeight = _ref.titleWeight,
+      numberColor = _ref.numberColor,
+      circleColor = _ref.circleColor;
   var propsTemplate = {
     custom: 'templates-most-read'
   };
   return /*#__PURE__*/React.createElement(Block, propsTemplate, lodash.map(content, function (item, key) {
-    return /*#__PURE__*/React.createElement(MostReadItem, {
+    return /*#__PURE__*/React.createElement(TeaserMostRead, {
       content: item,
       domain: domain,
       key: key,
       status: status,
-      number: key
+      number: key,
+      titleSize: titleSize,
+      titleColor: titleColor,
+      titleWeight: titleWeight,
+      numberColor: numberColor,
+      circleColor: circleColor
     });
   }));
 };
 
+MostRead.defaultProps = {
+  numberColor: 'white'
+};
 MostRead.propTypes = {
   content: PropTypes.array,
+  circleColor: PropTypes.oneOf(colors),
   domain: PropTypes.string,
-  status: PropTypes.object
+  status: PropTypes.object,
+  titleSize: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7]),
+  titleColor: PropTypes.oneOf(colors),
+  titleWeight: PropTypes.oneOf(weights),
+  numberColor: PropTypes.oneOf(colors)
 };
 
 var Latest = function Latest(_ref) {
@@ -4400,7 +4564,9 @@ var Latest = function Latest(_ref) {
       lazy = _ref.lazy,
       ReadMore = _ref.ReadMore,
       Title = _ref.Title,
-      status = _ref.status;
+      status = _ref.status,
+      theme = _ref.theme;
+  var color = theme.color;
   var propsContainer = {
     custom: 'templates-latest-news',
     align: 'col left',
@@ -4427,22 +4593,40 @@ var Latest = function Latest(_ref) {
       hasImageTop: true,
       key: key,
       lazy: lazy,
-      status: status
+      status: status,
+      subjectSize: 2,
+      subjectColor: color,
+      titleSize: 3,
+      titleColor: "neutral-2",
+      dateColor: "neutral-4",
+      titleWeight: "bold"
     });
-  })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, propsPageRight, /*#__PURE__*/React.createElement(SectionTitle, null, "MAIS LIDAS"), /*#__PURE__*/React.createElement(MostRead, {
+  })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, propsPageRight, /*#__PURE__*/React.createElement(SectionTitle, {
+    weight: "bold",
+    gutter: 3,
+    color: color
+  }, "MAIS LIDAS"), /*#__PURE__*/React.createElement(MostRead, {
     content: content['items-mostread'],
-    status: status
+    status: status,
+    titleSize: 2,
+    titleColor: "neutral-2",
+    titleWeight: "bold",
+    circleColor: color
   })));
 };
 
 Latest.propTypes = {
   content: PropTypes.object,
+  domain: PropTypes.string,
   lazy: PropTypes.func,
   ReadMore: PropTypes.func,
   Title: PropTypes.func,
   status: PropTypes.shape({
     error: PropTypes.bool,
     loading: PropTypes.bool
+  }),
+  theme: PropTypes.shape({
+    color: PropTypes.oneOf(colors)
   })
 };
 
@@ -4451,7 +4635,9 @@ var Related = function Related(_ref) {
       domain = _ref.domain,
       lazy = _ref.lazy,
       ReadMore = _ref.ReadMore,
-      status = _ref.status;
+      status = _ref.status,
+      theme = _ref.theme;
+  var color = theme.color;
   var propsContainer = {
     custom: 'templates-related-news',
     align: 'col left',
@@ -4468,7 +4654,13 @@ var Related = function Related(_ref) {
       hasImageTop: false,
       key: key,
       lazy: lazy,
-      status: status
+      status: status,
+      subjectSize: 2,
+      subjectColor: color,
+      titleSize: 3,
+      titleColor: "neutral-2",
+      dateColor: "neutral-2",
+      titleWeight: "bold"
     });
   })), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null));
 };
@@ -4481,62 +4673,116 @@ Related.propTypes = {
   status: PropTypes.shape({
     error: PropTypes.bool,
     loading: PropTypes.bool
+  }),
+  theme: PropTypes.shape({
+    color: PropTypes.oneOf(colors)
   })
 };
 
-var Subjects = function Subjects(props) {
-  var content = props.content,
-      domain = props.domain,
-      lazy = props.lazy,
-      ReadMore = props.ReadMore,
-      status = props.status;
+var _PropTypes$shape$1;
+
+var Subjects = function Subjects(_ref) {
+  var content = _ref.content,
+      domain = _ref.domain,
+      lazy = _ref.lazy,
+      readMoreButton = _ref.readMoreButton,
+      status = _ref.status;
   var title = content.title;
+  var leftColor = content['style-left'];
+  var centerColor = content['style-center'];
+  var rightColor = content['style-right'];
+  var titleLeft = content['title-left'];
+  var titleCenter = content['title-center'];
+  var titleRight = content['title-right'];
   var propsTemplate = {
     custom: 'templates-subjects',
     lg: {
       align: 'row between'
     }
   };
+  var pqueue_left = content['items-left-pqueue'];
+  var pqueue_center = content['items-center-pqueue'];
+  var pqueue_right = content['items-right-pqueue'];
+  var items_left = pqueue_left && pqueue_left.length > 0 ? pqueue_left : content['items-left'];
+  var items_center = pqueue_center && pqueue_center.length > 0 ? pqueue_center : content['items-center'];
+  var items_right = pqueue_right && pqueue_right.length > 0 ? pqueue_right : content['items-right'];
   return /*#__PURE__*/React.createElement(React.Fragment, null, title && title !== '' && /*#__PURE__*/React.createElement(SectionTitle, {
+    weight: "bold",
+    gutter: 3,
     name: title
   }), /*#__PURE__*/React.createElement(Block, propsTemplate, /*#__PURE__*/React.createElement(Block, {
-    custom: "col left ".concat(content['style-left'])
-  }, /*#__PURE__*/React.createElement(SectionTitle, null, content['title-left']), lodash.map(content['items-left'], function (item, key) {
+    custom: "col left"
+  }, /*#__PURE__*/React.createElement(SectionTitle, {
+    weight: "bold",
+    gutter: 3,
+    color: leftColor
+  }, titleLeft), lodash.map(items_left, function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,
       lazy: lazy,
       key: key,
-      status: status
+      status: status,
+      subjectSize: 2,
+      subjectColor: leftColor,
+      titleSize: 2,
+      titleColor: "neutral-2",
+      dateColor: "neutral-4",
+      titleWeight: "bold"
     });
-  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, {
-    custom: "col center ".concat(content['style-center'])
-  }, /*#__PURE__*/React.createElement(SectionTitle, null, content['title-center']), lodash.map(content['items-center'], function (item, key) {
+  }), readMoreButton && readMoreButton), /*#__PURE__*/React.createElement(Block, {
+    custom: "col center"
+  }, /*#__PURE__*/React.createElement(SectionTitle, {
+    weight: "bold",
+    gutter: 3,
+    color: centerColor
+  }, titleCenter), lodash.map(items_center, function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,
       lazy: lazy,
       key: key,
-      status: status
+      status: status,
+      subjectSize: 2,
+      subjectColor: centerColor,
+      titleSize: 2,
+      titleColor: "neutral-2",
+      dateColor: "neutral-4",
+      titleWeight: "bold"
     });
-  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null)), /*#__PURE__*/React.createElement(Block, {
-    custom: "col right ".concat(content['style-right'])
-  }, /*#__PURE__*/React.createElement(SectionTitle, null, content['title-right']), lodash.map(content['items-right'], function (item, key) {
+  }), readMoreButton && readMoreButton), /*#__PURE__*/React.createElement(Block, {
+    custom: "col right"
+  }, /*#__PURE__*/React.createElement(SectionTitle, {
+    weight: "bold",
+    gutter: 3,
+    color: rightColor
+  }, titleRight), lodash.map(items_right, function (item, key) {
     return /*#__PURE__*/React.createElement(Teaser, {
       content: item,
       domain: domain,
       lazy: lazy,
       key: key,
-      status: status
+      status: status,
+      subjectSize: 2,
+      subjectColor: rightColor,
+      titleSize: 2,
+      titleColor: "neutral-2",
+      dateColor: "neutral-4",
+      titleWeight: "bold"
     });
-  }), ReadMore && /*#__PURE__*/React.createElement(ReadMore, null))));
+  }), readMoreButton && readMoreButton)));
 };
 
 Subjects.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.shape((_PropTypes$shape$1 = {
+    contentId: PropTypes.string,
+    name: PropTypes.string,
+    template: PropTypes.string,
+    title: PropTypes.string
+  }, _defineProperty(_PropTypes$shape$1, 'input-template', PropTypes.string), _defineProperty(_PropTypes$shape$1, 'items-center', PropTypes.object), _defineProperty(_PropTypes$shape$1, 'items-center-pqueue', PropTypes.object), _defineProperty(_PropTypes$shape$1, 'items-left', PropTypes.object), _defineProperty(_PropTypes$shape$1, 'items-left-pqueue', PropTypes.object), _defineProperty(_PropTypes$shape$1, 'items-right', PropTypes.object), _defineProperty(_PropTypes$shape$1, 'items-right-pqueue', PropTypes.object), _defineProperty(_PropTypes$shape$1, 'style-center', PropTypes.string), _defineProperty(_PropTypes$shape$1, 'style-left', PropTypes.string), _defineProperty(_PropTypes$shape$1, 'style-right', PropTypes.string), _defineProperty(_PropTypes$shape$1, 'title-center', PropTypes.string), _defineProperty(_PropTypes$shape$1, 'title-left', PropTypes.string), _defineProperty(_PropTypes$shape$1, 'title-right', PropTypes.string), _PropTypes$shape$1)),
   domain: PropTypes.string,
   lazy: PropTypes.func,
-  ReadMore: PropTypes.func,
+  readMoreButton: PropTypes.oneOf([PropTypes.object, PropTypes.element]),
   status: PropTypes.object
 };
 
