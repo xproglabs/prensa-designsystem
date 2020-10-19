@@ -10,7 +10,7 @@ const Topbar = ({content, theme}) => {
   const {color} = theme;
 
   return (
-    <Block align="row center" bg={`color-${color}`} fc="color-white" custom="Topbar-Prensa-root" w="100p">
+    <Block align="row center" bg={`${color}`} fc="white" custom="Topbar-Prensa-root" w="100p">
       <Block align="row middle between" custom="wrap" w="100p">
         <Block custom="left">{leftContent && leftContent}</Block>
         <Block>{centerContent && centerContent}</Block>
@@ -22,9 +22,9 @@ const Topbar = ({content, theme}) => {
 
 Topbar.propTypes = {
   content: PropTypes.shape({
-    leftContent: PropTypes.oneOf([PropTypes.object, PropTypes.array, PropTypes.node]),
-    centerContent: PropTypes.oneOf([PropTypes.object, PropTypes.array, PropTypes.node]),
-    rightContent: PropTypes.oneOf([PropTypes.object, PropTypes.array, PropTypes.node]),
+    leftContent: PropTypes.oneOf([PropTypes.func, PropTypes.object, PropTypes.array, PropTypes.node]),
+    centerContent: PropTypes.oneOf([PropTypes.func, PropTypes.object, PropTypes.array, PropTypes.node]),
+    rightContent: PropTypes.oneOf([PropTypes.func, PropTypes.object, PropTypes.array, PropTypes.node]),
   }),
   theme: PropTypes.shape({
     color: PropTypes.oneOf(colors)

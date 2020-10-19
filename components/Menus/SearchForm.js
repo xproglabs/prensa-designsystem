@@ -22,7 +22,7 @@ const SearchForm = ({functions, state, buttonSize, buttonWeight, buttonColor}) =
   };
   return (
     <Block align='right' custom={'search-form'}>
-      <Block mb={1} w='100p'>
+      <Block mb="1" w='100p'>
         <input {...fieldController}  />
       </Block>
       <Button disabled={false} size={buttonSize} weight={buttonWeight} color={buttonColor} onClick={() => handleSubmit()}>Buscar</Button>
