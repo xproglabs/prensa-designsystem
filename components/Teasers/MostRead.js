@@ -23,7 +23,7 @@ const TeaserMostRead = ({content, number, titleSize, titleColor, titleWeight, nu
   };
   const propsNumber = {
     custom: 'most-read-number',
-    bg: `color-${circleColor}`
+    bg: circleColor
   };
   const propsTitle = {
     custom: 'most-read-title',
