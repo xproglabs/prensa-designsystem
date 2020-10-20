@@ -6,6 +6,7 @@
 
 package-lock.json
 
-/index.js
-/teasers.js
-/templates.js
+index.js
+templates.js
+typography.js
+icons.js
