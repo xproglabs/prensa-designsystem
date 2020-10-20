@@ -5,8 +5,3 @@
 *.lock
 
 package-lock.json
-
-index.js
-templates.js
-typography.js
-icons.js
