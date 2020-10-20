@@ -1,10 +1,10 @@
-name: Build XPROG-DS
+name: Build Prensa on push
 # Este fluxo de trabalho é acionado em pushes para o repositório.
 on: [push]
 
 jobs:
   build-sass-theme:
-    name: Build SASS Theme
+    name: Build Prensa SCSS and JS
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source Git branch
@@ -22,12 +22,6 @@ jobs:
           
       - name: Create destination for compiled CSS
         run: mkdir -vp /tmp/xprog-designsystem/css
-      
-      - name: list directories
-        run: |
-          ls -l
-          cd node_modules/
-          ls -l
 
       - name: Compile SCSS Theme
         uses: gha-utilities/sass-build@v0.2.2
