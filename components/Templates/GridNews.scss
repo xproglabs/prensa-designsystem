@@ -1,14 +1,5 @@
 @use '../../styles' as *;
 
-$newsgrid-1-teaser-title-height: 28px;
-$newsgrid-1-teaser-title-size: 24px;
-
-$newsgrid-1-teaser-title-height--lg: 36px;
-$newsgrid-1-teaser-title-size--lg: 32px;
-
-$newsgrid-2-teaser-title-height: 28px;
-$newsgrid-2-teaser-title-size: 24px;
-
 $newsgrid-1-teaser-image-height: 246px;
 $newsgrid-1-teaser-image-height--lg: 296px;
 
@@ -16,14 +7,6 @@ $newsgrid-2-teaser-image-height: 164px;
 $newsgrid-2-teaser-image-height--lg: 140px;
 
 .templates-newsgrid {
-  .teaser-subject {
-    @include mb($space-size-1);
-  }
-  .teaser-title {
-    @include fs($newsgrid-1-teaser-title-size);
-    @include lh($newsgrid-1-teaser-title-height);
-    @include fw(700);
-  }
   &.two {
     .teaser-content {
       @include my($space-size-2);
@@ -99,13 +82,6 @@ $newsgrid-2-teaser-image-height--lg: 140px;
       
     }
     &.two {
-      .teaser-content {
-        .teaser-title {
-          @include fs($newsgrid-1-teaser-title-size--lg);
-          @include lh($newsgrid-1-teaser-title-height--lg);
-
-        }
-      }
       .teaser-image {
         &.image-top {
           .image-background {

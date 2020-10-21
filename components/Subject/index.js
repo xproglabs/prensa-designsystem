@@ -2,33 +2,42 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Typography from '../Typography';
+import colors from '../../styles/variables/colors.json';
+import {SubjectTypography} from '../Typography';
 
 const Subject = props => {
-  const {children, custom, filled} = props;
+  const {children, color, className, style, size, filled, weight} = props;
 
   if (!children) return null;
 
   const classes = classnames({
-    'subject-root': true,
-    'filled bg-color-primary-1': filled,
-    [`${custom}`]: custom
+    'Prensa-Subject-root': true,
+    'filled': filled,
+    [`color-${color}`]: true,
+    [`${className}`]: className
   });
 
   return (
-    <div className={classes}>
-      <Typography tokenVariant='subject'>{children}</Typography>
+    <div className={classes} style={style}>
+      <SubjectTypography size={size} color={filled ? 'white' : color} weight={weight}>{children}</SubjectTypography>
     </div>
   );
 };
 
+Subject.defaultProps = {
+  color: 'primary-1',
+  filled: false,
+  size: 1
+};
+
 Subject.propTypes = {
   children: PropTypes.string.isRequired,
-  custom: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
   filled: PropTypes.bool,
-  // size: PropTypes.oneOf([
-  //   'sm', 'md', 'lg'
-  // ])
+  style: PropTypes.object,
+  size: PropTypes.oneOf([1, 2, 3]),
+  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
 };
 
 export default Subject;

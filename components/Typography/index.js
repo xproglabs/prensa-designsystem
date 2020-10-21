@@ -1,90 +1,18 @@
-import classnames from 'classnames';
-import PropTypes from 'prop-types';
-import React from 'react';
-
-const Typography = props => {
-
-  const {
-    children,
-    custom,
-    size,
-    tokenVariant
-  } = props;
-
-  const getTokenVariant = () => {
-    switch(tokenVariant) {
-      case 'article-title':
-        return 'article-title';
-      case 'article-title-intro':
-        return 'article-title-intro';
-      case 'article-subtitle':
-        return 'article-subtitle';
-      case 'article-subtitle-intro':
-        return 'article-subtitle-intro';
-      case 'article-paragraph':
-        return 'article-paragraph';
-      case 'article-tag':
-        return 'article-tag';
-      case 'title':
-        return `title-${size}`;
-      case 'subtitle':
-        return `subtitle-${size}`;
-      case 'paragraph':
-        return `paragraph-${size}`;
-      case 'subject':
-        return `subject-${size}`;
-      case 'system':
-        return `system-${size}`;
-      case 'system-bold':
-        return `system-${size} bold`;
-      default:
-        return '';
-    }
-  };
-
-  const classes = classnames({
-    'typography-root': true,
-    [getTokenVariant()]: true,
-    [`${custom}`]: custom,
-  });
-
-  switch(tokenVariant) {
-    case 'article-title':
-    case 'title':
-      return <h1 className={classes}>{children}</h1>;
-    case 'article-paragraph':
-      return <p className={classes} dangerouslySetInnerHTML={{__html: children}} />;
-    default:
-      return <span className={classes}>{children}</span>;
-  }
-};
-
-Typography.defaultProps = {
-  weight: 'regular',
-  size: 'sm'
-};
-
-Typography.propTypes = {
-  /**
-   * Texto que será inserido na tela
-   */
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array
-  ]).isRequired,
-  /**
-   * Permite a passagem de class customizado para o componente
-   */
-  custom: PropTypes.string,
-  /**
-   * Modifica o tamanho da fonte de acordo com as guias do design
-   */
-  size: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl'
-  ]).isRequired,
-  tokenVariant: PropTypes.oneOf([
-    'article-title', 'article-title-intro', 'article-subtitle', 'article-subtitle-intro', 'article-paragraph', 'article-tag', 'title', 'subtitle', 'paragraph', 'paragraph-inner', 'subject', 'system', 'system-bold'
-  ])
-};
-
-export default Typography;
+export {default as SubjectTypography} from './Subject';
+export {default as NewsTitle} from './NewsTitle';
+export {default as Subtitle} from './Subtitle';
+export {default as Date} from './Date';
+export {default as Author} from './Author';
+export {default as Paragraph} from './Paragraph';
+export {default as Byline} from './Byline';
+export {default as InterTitle} from './InterTitle';
+export {default as Citation} from './Citation';
+export {default as UrlLink} from './UrlLink';
+export {default as TagTypography} from './Tag';
+export {default as SectionTitle} from './SectionTitle';
+export {default as EditorialTitle} from './EditorialTitle';
+export {default as ButtonTypography} from './Button';
+export {default as MostReadNumber} from './MostReadNumber';
+export {default as MenuSideTitle} from './MenuSideTitle';
+export {default as MenuSideItem} from './MenuSideItem';
+export {default as MenuTopItem} from './MenuTopItem';

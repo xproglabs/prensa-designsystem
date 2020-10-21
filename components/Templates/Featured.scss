@@ -1,0 +1,89 @@
+@use '../../styles' as *;
+
+.templates-featured {
+  .teaser-image {
+    display: none;
+  }
+  &.one {
+    .teaser-content {
+      @include mt($space-size-5);
+      @include mx($space-size-3);
+    }
+    .teaser-subject {
+      @include mb($space-size-3);
+    }
+    .teaser-title {
+      @include mb($space-size-5);
+    }
+  }
+  &.three {
+    .block-left {
+      .teaser-content {
+        @include mb($space-size-3);
+        @include mx($space-size-3);
+      }
+    }  
+    .block-right {
+      .teaser-content {
+        @include mb($space-size-2);
+      }
+    }
+  }
+  .block-left {
+    .teaser-content {
+      @include mt($space-size-5);
+      @media(min-width: $lg) {
+        justify-content: space-between;
+      }
+    }
+    .teaser-subject {
+      @include mb($space-size-3);
+    }
+    .teaser-title {
+      @include mb($space-size-2);
+    }
+  }
+  .block-right {
+    .teaser-subject {
+      @include mb($space-size-1);
+    }
+    .teaser-title {
+      @include mb($space-size-1);
+    }
+  }
+  @media(min-width: $md) {
+    &.three {
+      .block-left {
+        @include w(calc(100% / 3 * 2 - #{$space-size-2} + 6px));
+        .teaser-default {
+          @include mb(unset);
+        }
+      }
+      .block-right {
+        @include w(calc(100% / 3 - #{$space-size-2} - 2px));
+      }
+    }
+  }
+  @media(min-width: $lg) {
+    &.one {
+      .teaser-content {
+        @include m($space-size-5);
+        @include mb($space-size-8);
+      }
+      .teaser-subject {
+        @include mb($space-size-5);
+      }
+      .teaser-title {
+        @include mb($space-size-3);
+      }
+    }
+    .block-left {
+      .teaser-content {
+        @include m($space-size-5);
+      }
+      .teaser-subject {
+        @include mb($space-size-5);
+      }
+    }
+  }
+}

@@ -31,10 +31,10 @@
   &.invalid {
     input,
     textarea {
-      @include b(1px, solid, $color-alert-2);
+      @include b(1px, solid, $color-error-1);
     }
     .warning {
-      @include fc($color-alert-2);
+      @include fc($color-error-1);
       @include p(0px);
       display: block;
     }

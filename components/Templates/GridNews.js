@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
-import SectionTitle from '../SectionTitle';
 import Teaser from '../Teasers';
+import {SectionTitle} from '../Typography';
+import colors from '../../styles/variables/colors.json'
 
-const GridNews = props => {
-  const {content, domain, lazy, status} = props;
+const GridNews = ({content, domain, lazy, status, theme}) => {
+  const {color} = theme;
   const {items, title} = content;
+  let items_pqueue = content['items-pqueue'];
+  let items_list =  items_pqueue && items_pqueue.length > 0 ? items_pqueue : items;
   
   const propsTemplate = {
     align: 'between', 
@@ -16,22 +19,30 @@ const GridNews = props => {
     mb: '6',
     md: {align: 'row', mb: '5'}
   };
+
+  let titleSize;
   
-  if(items.length === 2) {
+  if(items_list.length === 2) {
     propsTemplate.custom = 'templates-newsgrid two';
+    titleSize = 3;
   }
-  if(items.length === 3) {
+  if(items_list.length === 3) {
     propsTemplate.custom = 'templates-newsgrid three';
+    titleSize = 3;
   }
-  if(items.length === 4) {
+  if(items_list.length === 4) {
     propsTemplate.custom = 'templates-newsgrid four';
+    titleSize = 3;
+  }
+  if(items_list.length === 5) {
+    propsTemplate.custom = 'templates-newsgrid five';
   }
 
   return (
-    <>
-      {title && title !== ''&& <SectionTitle name={title} />}
+    <React.Fragment>
+      {title && title !== '' && <SectionTitle weight='bold' gutter={3} color={color}>{title}</SectionTitle>}
       <Block {...propsTemplate}>
-        {map(items, (item, key) =>
+        {map(items_list, (item, key) =>
           <Teaser 
             key={key}
             content={item}
@@ -39,16 +50,30 @@ const GridNews = props => {
             hasImageTop={true}
             lazy={lazy}
             status={status}
+            subjectSize={2}
+            subjectColor={color}
+            titleSize={titleSize}
+            titleColor='neutral-2'
+            subtitleColor='neutral-4'
+            dateColor='neutral-4'
+            titleWeight='bold'
           />
         )}
       </Block>
-    </>
+    </React.Fragment>
   );
 };
 GridNews.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.shape({
+    items: PropTypes.array,
+    title: PropTypes.string,
+    color: PropTypes.string,
+  }),
   domain: PropTypes.string,
   lazy: PropTypes.func,
-  status: PropTypes.object
+  status: PropTypes.object,
+  theme: PropTypes.shape({
+    color: PropTypes.oneOf(colors)
+  })
 };
 export default GridNews;

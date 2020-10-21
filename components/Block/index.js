@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import colors from '../../styles/variables/colors.json'
 
 const Block = (props) => {
 
@@ -65,32 +66,11 @@ const Block = (props) => {
 };
 
 const propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-const colorTokens = [
-  'color-white',
-  'color-black',
-  'color-primary-1',
-  'color-primary-2',
-  'color-primary-3',
-  'color-secondary-1',
-  'color-secondary-2',
-  'color-secondary-3',
-  'color-neutral-1',
-  'color-neutral-2',
-  'color-neutral-3',
-  'color-neutral-4',
-  'color-neutral-5',
-  'color-neutral-6',
-  'color-neutral-7',
-  'color-neutral-8',
-  'color-neutral-9',
-  'color-neutral-10',
-  'color-neutral-11',
-];
 
 Block.propTypes = {
   align: PropTypes.string,
-  bg: PropTypes.oneOf(colorTokens),
-  fc: PropTypes.oneOf(colorTokens),
+  bg: PropTypes.oneOf(colors),
+  fc: PropTypes.oneOf(colors),
   cursor: PropTypes.string, 
   m: PropTypes.oneOf([
     ...propTypesSizes
@@ -137,7 +117,5 @@ Block.propTypes = {
   w: PropTypes.string,
   h: PropTypes.string,
 };
-
-Block.defaultProps = {};
 
 export default Block;

@@ -4,18 +4,13 @@ Prerequisites:
 - npm install sass (latest implementation dart-sass)
 - There is no need to use preprocessors like node-sass-chockidar. React team has built in the sass-loader in last updates.
 
-Use xprog-ds on your project:
-- npm install xprog-ds
-- Create index.scss file (here you can redefine tokens [@forward 'xprog-ds/styles']
-- Import xprog-ds router in your index.scss file [@forward 'xprog-ds/styles/router.scss']
+Use prensa on your project:
+- npm install prensa
+- Create index.scss file (here you can redefine tokens [@forward 'prensa/styles']
+- Import prensa router in your index.scss file [@forward 'prensa/styles/router.scss']
 - Create router.scss file (here goes all imports from your components [@forward 'path-to-component']
 - Import router.scss in your root index.js file (pages.js for next)
-- For every file SCSS you want to use the xprog-ds you must `@use 'path-to-your-index.scss' as *`; 
-
-<br>
-
-**Styleguide documentation:**
-- https://zeroheight.com/80cad880e
+- For every file SCSS you want to use the prensa you must `@use 'path-to-your-index.scss' as *`; 
 
 <br>
 
