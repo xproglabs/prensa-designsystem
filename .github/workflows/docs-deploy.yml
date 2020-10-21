@@ -23,7 +23,7 @@ jobs:
           cd /var/www/prensa-designsystem
           git config user.name "Giovanni"
           git config user.email "giovanni@xproglabs.com"
-          git checkout develop
+          git checkout production
           git pull
           npm run build-storybook
           pm2 restart prensa-storybook
