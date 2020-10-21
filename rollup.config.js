@@ -15,7 +15,7 @@ export default [
         globals: {
           react: 'React'
         },
-        name: 'xprog-ds'
+        name: 'prensa'
       }
     ],
     plugins: [ 
@@ -37,7 +37,7 @@ export default [
         globals: {
           react: 'React'
         },
-        name: 'xprog-ds/templates'
+        name: 'prensa/templates'
       }
     ],
     plugins: [ 
@@ -50,16 +50,16 @@ export default [
     ]
   },
   {
-    input: 'components/Teasers/index.js',
+    input: 'components/Typography/index.js',
     external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns'],
     output: [
       {
-        file: 'teasers.js',
+        file: 'typography.js',
         format: 'cjs',
         globals: {
           react: 'React'
         },
-        name: 'xprog-ds/teasers'
+        name: 'prensa/typography'
       }
     ],
     plugins: [ 
@@ -81,7 +81,7 @@ export default [
         globals: {
           react: 'React'
         },
-        name: 'xprog-ds/icons'
+        name: 'prensa/icons'
       }
     ],
     plugins: [ 

@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import colors from '../../styles/variables/colors.json';
+import weight from '../../styles/variables/weight.json';
 import Block from '../Block';
 import Button from '../Button';
 
-const SearchForm = ({functions, state}) => {
+const SearchForm = ({functions, state, buttonSize, buttonWeight, buttonColor}) => {
   const {fieldValue, setFieldValue} = state;
   const handleSubmit = () => {
     let string = fieldValue;
@@ -20,12 +22,17 @@ const SearchForm = ({functions, state}) => {
   };
   return (
     <Block align='right' custom={'search-form'}>
-      <input {...fieldController}  />
-      <Button disabled={false} onClick={() => handleSubmit()} style="primary">Buscar</Button>
+      <Block mb="1" w='100p'>
+        <input {...fieldController}  />
+      </Block>
+      <Button disabled={false} size={buttonSize} weight={buttonWeight} color={buttonColor} onClick={() => handleSubmit()}>Buscar</Button>
     </Block>
   );
 };
 SearchForm.propTypes = {
+  buttonSize: PropTypes.oneOf([1, 2, 3, 4, 5]),
+  buttonWeight: PropTypes.oneOf(weight),
+  buttonColor: PropTypes.oneOf(colors),
   content: PropTypes.object.isRequired,
   functions: PropTypes.shape({
     onSubmit: PropTypes.func

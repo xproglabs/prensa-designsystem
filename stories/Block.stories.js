@@ -1,16 +1,15 @@
-import {withKnobs} from '@storybook/addon-knobs';
 import React from 'react';
 
 import Block from '../components/Block';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Components | Block',
+  title: 'Block',
   component: Block,
-  decorators: [withKnobs, sassWrapper]
+  decorators: [sassWrapper]
 };
 
-export const Default = () => {
+export const Default = args => {
 
   const propsBlock = {
     align: 'col center between',
@@ -27,7 +26,7 @@ export const Default = () => {
   };
 
   return (
-    <Block {...propsBlock}>
+    <Block {...args} {...propsBlock}>
       <Block>teste</Block>
       <Block>teste</Block>
       <Block>teste</Block>

@@ -1,34 +1,138 @@
 @use '../../styles' as *;
 
-.button {
-  @include b(unset, unset, unset);
-  @include ff($font-secondary);
-  @include fx(center, center);
-  @include fw(bold);
-  @include h(40px);
-  @include r(5px);
-  @include miw(120px);
+%family-buttonSize {
+  &.size-1 {
+    @include h(32px);
+    svg {
+      @include area(16px);
+    }
+    &.has-leftIcon {
+      svg {
+        @include mr(8px);
+      }
+    }
+    &.has-rightIcon {
+      svg {
+        @include ml(8px);
+      }
+    }
+  }
+  &.size-2 {
+    @include h(40px);
+    svg {
+      @include area(16px);
+    }
+    &.has-leftIcon {
+      svg {
+        @include mr(8px);
+      }
+    }
+    &.has-rightIcon {
+      svg {
+        @include ml(8px);
+      }
+    }
+  }
+  &.size-3 {
+    @include h(48px);
+    svg {
+      @include area(24px);
+    }
+    &.has-leftIcon {
+      svg {
+        @include mr(8px);
+      }
+    }
+    &.has-rightIcon {
+      svg {
+        @include ml(8px);
+      }
+    }
+  }
+  &.size-4 {
+    @include h(56px);
+    svg {
+      @include area(24px);
+    }
+    &.has-leftIcon {
+      svg {
+        @include mr(8px);
+      }
+    }
+    &.has-rightIcon {
+      svg {
+        @include ml(8px);
+      }
+    }
+  }
+  &.size-5 {
+    @include h(64px);
+    svg {
+      @include area(24px);
+    }
+    &.has-leftIcon {
+      svg {
+        @include mr(8px);
+      }
+    }
+    &.has-rightIcon {
+      svg {
+        @include ml(8px);
+      }
+    }
+  }
+}
+
+@keyframes buttonHover {
+  from {opacity: 100%;}
+  to {opacity: 80%;}
+}
+
+.Prensa-Button-root {
   @include px($space-size-2);
-  @include py(0px);
-  @include mt($space-size-2);
-  @extend %uppercase;
+  @include miw(max-content);
+  @extend %family-buttonSize;
+  @extend %family-radius;
   cursor: pointer;
-  &.primary {
-    @include bg($color-primary-1);
-    @include fc($color-white);
+  border: unset;
+  text-transform: uppercase;
+
+  &.fullWidth {
+    @include w(100%);
   }
-  &.secondary {
-    @include b(1px, solid, $color-neutral-1);
-    @include bg(unset);
-    @include fc($color-neutral-1);
+
+  &.filled {
+    @extend %family-background-colors;
+    &:hover {
+      animation-name: buttonHover;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
+    &:disabled {
+      @include bg($color-neutral-8);
+      cursor: unset;
+      &:hover {
+        animation-name: none;
+      }
+    }
   }
-  &.tertiary {
-    @include bg(unset);
-    @include fc($color-neutral-6);
-  }
-  &.disabled {
-    @include bg($color-neutral-8);
-    @include fc($color-white);
-    cursor: unset;
+
+  &.outlined {
+    @include bg(transparent);
+    @extend %family-border-colors;
+    border-width: 1px;
+    border-style: solid;
+    &:hover {
+      animation-name: buttonHover;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
+    &:disabled {
+      border-color: $color-neutral-8;
+      cursor: unset;
+      &:hover {
+        animation-name: none;
+      }
+    }
   }
 }

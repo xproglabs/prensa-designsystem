@@ -4,7 +4,7 @@ import Subject from '../components/Subject';
 import {sassWrapper} from '../utils/SassWrapper';
 
 export default {
-  title: 'Components | Subject',
+  title: 'Subject',
   component: Subject,
   decorators: [sassWrapper]
 };
@@ -12,16 +12,16 @@ export default {
 export const Default = () => {
   return (
     <div style={{display: 'flex', flexDirection: 'column', padding: 40}}>
-      <Subject>
+      <Subject color='editorial-5'>
         The quick fox
       </Subject>
-    </div>
-  );
-};
-export const Filled = () => {
-  return (
-    <div style={{display: 'flex', flexDirection: 'column', padding: 40}}>
-      <Subject filled>
+      <Subject filled color='editorial-5'>
+        The quick fox
+      </Subject>
+      <Subject filled size={2} color='editorial-5'>
+        The quick fox
+      </Subject>
+      <Subject filled size={3} color='editorial-5'>
         The quick fox
       </Subject>
     </div>

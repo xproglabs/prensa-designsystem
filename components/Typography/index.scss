@@ -1,149 +1,413 @@
 @use '../../styles' as *;
 
-.title-xs {
-  @include fs(16px);
-  @include lh(18px);
-  @include ff($font-primary);
-  @extend %bold;
-  @include mt(0px);
-  @include mb($space-size-1);
+@keyframes beforeHover {
+  from {opacity: 0.8}
+  to {opacity: 1}
 }
-.title-sm {
-  @include fs(24px);
-  @include lh(26px);
-  @include ff($font-primary);
-  @include mb(8px);
-  @extend %bold;
-  @include mt(0px);
-  @include mb($space-size-1);
-}
-.title-md {
-  @include fs(32px);
-  @include lh(34px);
-  @include ff($font-primary);
-  @extend %bold;
-  @include mt(0px);
-  @include mb($space-size-1);
-}
-.title-lg {
-  @include fs(40px);
-  @include lh(42px);
-  @include ff($font-primary);
-  @extend %bold;
-  @include mt(0px);
-  @include mb($space-size-1);
-}
-.title-xl {
-  @include fs(48px);
-  @include lh(50px);
-  @include ff($font-primary);
-  @extend %bold;
-  @include mt(0px);
-  @include mb($space-size-1);
+@keyframes hoverAnimation {
+  from {opacity: 1}
+  to {opacity: 0.8}
 }
 
-.subtitle-sm {
-  @include fs(18px);
-  @include lh(24px);
-  @include ff($font-primary);
-  @extend %regular;
+.Typography-Subject-root {
+  &.size-1 {
+    @include ff($font-subject-family);
+    @include fs($font-subject-size-1);
+    @include lh($font-subject-lineheight-1);
+    @include fw($font-subject-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+  &.size-2 {
+    @include ff($font-subject-family);
+    @include fs($font-subject-size-2);
+    @include lh($font-subject-lineheight-2);
+    @include fw($font-subject-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+  &.size-3 {
+    @include ff($font-subject-family);
+    @include fs($font-subject-size-3);
+    @include lh($font-subject-lineheight-3);
+    @include fw($font-subject-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
 }
 
-.paragraph-sm {
-  @include fs(18px);
-  @include lh(42px);
-  @include ff($font-secondary);
-  @extend %regular;
+.Typography-NewsTitle-root {
+  &.size-1 {
+    @include ff($font-newstitle-family);
+    @include fs($font-newstitle-size-1);
+    @include lh($font-newstitle-lineheight-1);
+    @include fw($font-newstitle-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  &.size-2 {
+    @include ff($font-newstitle-family);
+    @include fs($font-newstitle-size-2);
+    @include lh($font-newstitle-lineheight-2);
+    @include fw($font-newstitle-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  &.size-3 {
+    @include ff($font-newstitle-family);
+    @include fs($font-newstitle-size-3);
+    @include lh($font-newstitle-lineheight-3);
+    @include fw($font-newstitle-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  &.size-4 {
+    @include ff($font-newstitle-family);
+    @include fs($font-newstitle-size-4);
+    @include lh($font-newstitle-lineheight-4);
+    @include fw($font-newstitle-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+       
+      }
+    }
+  }
+  &.size-5 {
+    @include ff($font-newstitle-family);
+    @include fs($font-newstitle-size-5);
+    @include lh($font-newstitle-lineheight-5);
+    @include fw($font-newstitle-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  &.size-6 {
+    @include ff($font-newstitle-family);
+    @include fs($font-newstitle-size-6);
+    @include lh($font-newstitle-lineheight-6);
+    @include fw($font-newstitle-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+    &.has-hover {
+      animation-name: beforeHover;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  &.size-7 {
+    @include ff($font-newstitle-family);
+    @include fs($font-newstitle-size-7);
+    @include lh($font-newstitle-lineheight-7);
+    @include fw($font-newstitle-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+    .has-hover {
+      animation-name: beforeHover;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      &:hover {
+        animation-name: hoverAnimation;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
 }
 
-.subject-sm {
-  @include fs(16px);
-  @include lh(18px);
-  @include ff($font-secondary);
-  @extend %bold;
-  @extend %uppercase;
+.Typography-Subtitle-root {
+  &.size-1 {
+    @include ff($font-subtitle-family);
+    @include fs($font-subtitle-size-1);
+    @include lh($font-subtitle-lineheight-1);
+    @include fw($font-subtitle-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
 }
 
-.article-title {
-  @include fs($article-title-fs-sm);
-  @include lh($article-title-lh-sm);
-  @include ff($article-title-ff);
-  @include fc($article-title-fc);
-  @extend %bold;
-  @include mt($space-size-3);
-  @include mb($space-size-2);
-  @media (min-width: $lg) {
-    @include fs($article-title-fs-lg);
-    @include lh($article-title-lh-lg);
+.Typography-Date-root {
+  &.size-1 {
+    @include ff($font-date-family);
+    @include fs($font-date-size-1);
+    @include lh($font-date-lineheight-1);
+    @include fw($font-date-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+}
+
+.Typography-Author-root {
+  &.size-1 {
+    @include ff($font-author-family);
+    @include fs($font-author-size-1);
+    @include lh($font-author-lineheight-1);
+    @include fw($font-author-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+}
+
+.Typography-Byline-root {
+  &.size-1 {
+    @include ff($font-byline-family);
+    @include fs($font-byline-size-1);
+    @include lh($font-byline-lineheight-1);
+    @include fw($font-byline-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+}
+
+.Typography-Paragraph-root {
+  a {
+    color: $color-primary-1;
+    animation-name: beforeHover;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    &:hover {
+      animation-name: hoverAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
+  }
+  &.size-1 {
+    @include ff($font-paragraph-family);
+    @include fs($font-paragraph-size-1);
+    @include lh($font-paragraph-lineheight-1);
+    @include fw($font-paragraph-weight);
+    @include m(0px);
+    @include w(100%);
+    @extend %family-colors;
+    @extend %weight-family;
+    &.sm {
+      @include mw($sm);
+    }
+    &.md {
+      @include mw($md);
+    }
+    &.lg {
+      @include mw($lg);
+    }
+    &.gutter-1 {
+      @include mb($space-size-1);
+    }
+    &.gutter-2 {
+      @include mb($space-size-2);
+    }
+    &.gutter-3 {
+      @include mb($space-size-3);
+    }
+  }
+}
+
+.Typography-InterTitle-root {
+  &.size-1 {
+    @include ff($font-interTitle-family);
+    @include fs($font-interTitle-size-1);
+    @include lh($font-interTitle-lineheight-1);
+    @include fw($font-interTitle-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+}
+
+.Typography-Citation-root {
+  &.size-1 {
+    @include ff($font-citation-family);
+    @include fs($font-citation-size-1);
+    @include lh($font-citation-lineheight-1);
+    @include fw($font-citation-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+}
+
+.Typography-UrlLink-root {
+  &.size-1 {
+    @include ff($font-urlLink-family);
+    @include fs($font-urlLink-size-1);
+    @include lh($font-urlLink-lineheight-1);
+    @include fw($font-urlLink-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+}
+
+.Typography-Tag-root {
+  &.size-1 {
+    @include ff($font-tag-family);
+    @include fs($font-tag-size-1);
+    @include lh($font-tag-lineheight-1);
+    @include fw($font-tag-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+}
+
+.Typography-SectionTitle-root {
+  &.size-1 {
+    @include ff($font-sectionTitle-family);
+    @include fs($font-sectionTitle-size-1);
+    @include lh($font-sectionTitle-lineheight-1);
+    @include fw($font-sectionTitle-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+  &.mb-1 {
+    @include mb($space-size-1);
+  }
+  &.mb-2 {
+    @include mb($space-size-2);
+  }
+  &.mb-3 {
     @include mb($space-size-3);
   }
-}
-
-.article-title-intro {
-  @include ff($article-title-intro-ff);
-  @include fc($article-title-intro-fc);
-  @include fs($article-title-intro-fs);
-  @include fw(bold);
-  @include lh($article-title-intro-lh);
-  @include mb($space-size-2);
-  @media (min-width: $lg) {
-    @include fs($article-title-intro-fs-lg);
-    @include lh($article-title-intro-lh-lg);
-  }  
-}
-
-.article-subtitle {
-  @include fs($article-subtitle-fs);
-  @include lh($article-subtitle-lh);
-  @include fc($color-neutral-4);
-  @include ff($font-primary);
-  @extend %regular;
-  @media (min-width: $lg) {
-    @include fs($article-subtitle-fs-lg);
-    @include lh($article-subtitle-lh-lg);
+  &.uppercase {
+    text-transform: uppercase;
   }
 }
 
-.article-subtitle-intro {
-  @include fc($article-subtitle-intro-fc);
-  @include ff($article-subtitle-intro-ff);
-  @include fs($article-subtitle-intro-fs);
-  @include lh($article-subtitle-intro-lh);
-  @include mb($space-size-7);
-  @media (min-width: $lg) {
-    @include fs($article-subtitle-intro-fs-lg);
-    @include lh($article-subtitle-intro-lh-lg);
-    @include mb($space-size-10);
+.Typography-EditorialTitle-root {
+  &.size-1 {
+    @include ff($font-editorialTitle-family);
+    @include fs($font-editorialTitle-size-1);
+    @include lh($font-editorialTitle-lineheight-1);
+    @include fw($font-editorialTitle-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
   }
 }
 
-.article-paragraph {
-  @include fs($article-paragraph-fs);
-  @include lh($article-paragraph-lh);
-  @include fc($article-paragraph-fc);
-  @include ff($font-secondary);
-  @include mb($article-paragraph-space);
-  @include w(100%);
-  @extend %regular;
+.Typography-Button-root {
+  @include fx(center, center);
+  &.size-1 {
+    @include ff($font-button-family);
+    @include fs($font-button-size-1);
+    @include lh($font-button-lineheight-1);
+    @include fw($font-button-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+    @extend %family-svg-colors;
+  }
 }
 
-.article-tag {
-  @include fs($article-tag-fs);
-  @include lh($article-tag-lh);
-  @include fc($article-tag-fc);
-  @include ff($font-primary);
-  @extend %bold;
-  @extend %uppercase;
-
+.Typography-MostReadNumber-root {
+  &.size-1 {
+    @include ff($font-mostread-number-family);
+    @include fs($font-mostread-number-size-1);
+    @include lh($font-mostread-number-lineheight-1);
+    @include fw($font-mostread-number-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
 }
 
-.system-sm {
-  @include fs($system-fs-sm);
-  @include lh($system-lh);
-  @include fc($system-fc);
-  @include ff($font-primary);
-  @extend %regular;
-  &.bold {
-    @extend %bold;
+.Typography-MenuSideTitle-root {
+  &.size-1 {
+    @include ff($font-menuSide-title-family);
+    @include fs($font-menuSide-title-size-1);
+    @include lh($font-menuSide-title-lineheight-1);
+    @include fw($font-menuSide-title-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+}
+
+.Typography-MenuSideItem-root {
+  &.size-1 {
+    @include ff($font-menuSide-item-family);
+    @include fs($font-menuSide-item-size-1);
+    @include lh($font-menuSide-item-lineheight-1);
+    @include fw($font-menuSide-item-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
+  }
+}
+
+.Typography-MenuTopItem-root {
+  &.size-1 {
+    @include ff($font-menuTop-item-family);
+    @include fs($font-menuTop-item-size-1);
+    @include lh($font-menuTop-item-lineheight-1);
+    @include fw($font-menuTop-item-weight);
+    @include m(0px);
+    @extend %family-colors;
+    @extend %weight-family;
   }
 }

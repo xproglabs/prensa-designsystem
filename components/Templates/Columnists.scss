@@ -1,11 +1,5 @@
 @use '../../styles' as *;
 
-$columnists-1-teaser-title-height: 22px;
-$columnists-1-teaser-title-size: 18px;
-
-$columnists-1-teaser-title-height--lg: 28px;
-$columnists-1-teaser-title-size--lg: 24px;
-
 $columnists-1-teaser-image-height: 80px;
 $columnists-1-teaser-image-width: 80px;
 
@@ -18,8 +12,6 @@ $columnists-1-teaser-image-width: 80px;
     @include my(0px);
   }
   .teaser-title {
-    @include fs($columnists-1-teaser-title-size);
-    @include lh($columnists-1-teaser-title-height);
     @include mb($space-size-1);
   }
   .teaser-subject {
@@ -38,10 +30,6 @@ $columnists-1-teaser-image-width: 80px;
     .teaser-default {
       @include pt($space-size-3);
       @include w(calc(calc(100% - calc(#{$space-size-10} * 2)) / 3));
-    }  
-    .teaser-title {
-      @include fs($columnists-1-teaser-title-size--lg);
-      @include lh($columnists-1-teaser-title-height--lg);
     }
   }
 }

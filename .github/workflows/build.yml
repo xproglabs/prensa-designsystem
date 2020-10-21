@@ -1,16 +1,24 @@
-name: Build XPROG-DS
+name: Build Prensa on push
 # Este fluxo de trabalho é acionado em pushes para o repositório.
 on: [push]
 
 jobs:
   build-sass-theme:
-    name: Build SASS Theme
+    name: Build Prensa SCSS and JS
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
           ref: ${{ github.ref }}
+          
+      - name: Set Node.js version ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: Install packages
+        run: npm install
           
       - name: Create destination for compiled CSS
         run: mkdir -vp /tmp/xprog-designsystem/css
@@ -20,6 +28,15 @@ jobs:
         with:
           source: styles/index.scss
           destination: /tmp/xprog-designsystem/css/theme.css
+
+      - name: Compile SCSS Files
+        uses: gha-utilities/sass-build@v0.2.2
+        with:
+          source: styles/router.scss
+          destination: /tmp/xprog-designsystem/css/router.css
+          
+      - name: Build
+        run: npm run build
           
       - name: Slack notifcation theme
         uses: 8398a7/action-slack@v3
@@ -28,69 +45,6 @@ jobs:
           author_name: ':small_blue_diamond: Build SCSS theme'
           icon_emoji: 'warning'
           text: Build SCSS theme ${{ job.status }}
-          fields: commit, message, author
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-        if: ${{ failure() }}
-        
-  build-sass-router:
-    name: Build SASS Router
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source Git branch
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
-          
-      - name: Create destination for compiled CSS
-        run: mkdir -vp /tmp/xprog-designsystem/css
-      - name: Compile SCSS Files
-        uses: gha-utilities/sass-build@v0.2.2
-        with:
-          source: styles/router.scss
-          destination: /tmp/xprog-designsystem/css/router.css
-
-      - name: Slack notifcation router
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          author_name: ':small_blue_diamond: Build SCSS router'
-          icon_emoji: 'warning'
-          text: Build SCSS router ${{ job.status }}
-          fields: commit, message, author
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-        if: ${{ failure() }}
-
-  build-js:
-    name: Build JS
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source Git branch
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
-
-      - name: Set Node.js version ${{ matrix.node_version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node_version }}
-
-      - name: Install packages
-        run: npm install
-
-      - name: Build
-        run: npm run build
-        
-      - name: Slack notifcation build
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          author_name: ':small_blue_diamond: Build components'
-          icon_emoji: 'warning'
-          text: Build components ${{ job.status }}
           fields: commit, message, author
         env:
           GITHUB_TOKEN: ${{ github.token }}
