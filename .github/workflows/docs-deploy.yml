@@ -25,6 +25,8 @@ jobs:
           git config user.email "giovanni@xproglabs.com"
           git checkout production
           git pull
+          rm -rf node_modules/
+          npm install
           npm run build-storybook
           pm2 restart prensa-storybook
           exit
