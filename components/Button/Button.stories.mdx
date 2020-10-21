@@ -1,7 +1,6 @@
 import { ArgsTable, Meta } from '@storybook/addon-docs/blocks';
 import Button from './index';
-import CodeBlock from './CodeBlock';
-import CSSTable from './CSSTable';
+import {CodeBlock} from 'prensa-docs';
 import DownloadIcon from '../../icons/ArrowCircleDownBlack18Dp';
 import ArrowRightIcon from '../../icons/IcArrowForward';
 
@@ -172,64 +171,3 @@ O componente pode receber ícones do lado esquerdo ou direito através das props
 
 # API
 <ArgsTable of={Button} />
-
-
-
-<Space size={10} />
-
-# CSS API
-
-export const rows = [
-  {
-    id: 'a',
-    class: '.Prensa-Button-root',
-    tokens: 'null',
-  },
-  {
-    id: 'b',
-    class: '&.disabled',
-    tokens: 'null',
-  },
-  {
-    id: 'c',
-    class: '&.fullWidth',
-    tokens: 'null',
-  },
-  {
-    id: 'd',
-    class: '&.filled',
-    tokens: 'null',
-  },
-  {
-    id: 'e',
-    class: '&.outlined',
-    tokens: 'null',
-  },
-  {
-    id: 'f',
-    class: '&.primary',
-    // tokens: [
-    //   <code>background-color: $color-primary-2</code>,
-    //   <code>background-color: $white</code>,
-    //   <code>:hover: $color-primary-3</code>,
-    // ],
-  },
-  {
-    id: 'g',
-    class: '&.secondary',
-    tokens: 'null',
-  },
-]
-
-export const headers = [
-  {
-    key: 'class',
-    header: 'ClassName',
-  },
-  {
-    key: 'tokens',
-    header: 'Tokens',
-  },
-]
-
-<CSSTable rows={rows} headers={headers} />
