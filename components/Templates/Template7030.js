@@ -16,33 +16,39 @@ const Template7030 = ({
   customTitle,
   customLeftTitle,
   customCenterTitle,
+  customRightTitle,
   leftActionButtonProps,
   centerActionButtonProps,
+  rightActionButtonProps,
   leftTeaserProps,
-  centerTeaserProps
+  centerTeaserProps,
+  rightTeaserProps
 }) => {
 
   const {
     title,
     titleLeft,
     titleCenter,
+    titleRight,
     styleLeft,
     styleCenter,
+    styleRight,
     leftContent,
     centerContent,
-    // rightContent,
+    rightContent,
     leftQueue,
     centerQueue,
-    // rightQueue,
+    rightQueue,
     leftColumnOptions,
-    centerColumnOptions
+    centerColumnOptions,
+    rightColumnOptions,
   } = content;
 
   const {color} = theme;
 
   const leftItems = leftQueue.length > 0 ? leftQueue : leftContent;
   const centerItems = centerQueue.length > 0 ? centerQueue : centerContent;
-  // const rightItems = rightQueue.length > 0 ? rightQueue : rightContent;
+  const rightItems = rightQueue.length > 0 ? rightQueue : rightContent;
 
   const renderBlockTitle = () => {
     if (!title) return null;
@@ -62,6 +68,12 @@ const Template7030 = ({
     return <SectionTitle weight='bold' gutter={3} color={styleCenter}>{titleCenter}</SectionTitle>;
   };
 
+  const renderRightTitle = () => {
+    if (!titleRight) return null;
+    if (customRightTitle) return React.cloneElement(customRightTitle, {children: title, color: styleRight});
+    return <SectionTitle weight='bold' gutter={3} color={styleRight}>Anúncios</SectionTitle>;
+  };
+
   const handleClick = (e, params) => {
     const {actionButtonPath} = params;
     if (actionButtonPath === '') return null;
@@ -69,24 +81,12 @@ const Template7030 = ({
     window.location.assign(actionButtonPath);
   };
 
-  const renderLeftActionButton = () => {
-    const {hasActionButton, actionButtonTitle} = leftColumnOptions;
+  const renderActionButton = (columnOptions, style, props) => {
+    const {hasActionButton, actionButtonTitle} = columnOptions;
     if (hasActionButton === 'false') return null;
     return (
       <Block>
-        <Button fullWidth onClick={e => handleClick(e, leftColumnOptions)} color={styleLeft} {...leftActionButtonProps}>
-          {actionButtonTitle}
-        </Button>
-      </Block>
-    );
-  };
-
-  const renderCenterActionButton = () => {
-    const {hasActionButton, actionButtonTitle} = centerColumnOptions;
-    if (hasActionButton === 'false') return null;
-    return (
-      <Block>
-        <Button fullWidth onClick={e => handleClick(e, centerColumnOptions)} color={styleCenter} {...centerActionButtonProps}>
+        <Button fullWidth onClick={e => handleClick(e, columnOptions)} color={style} {...props}>
           {actionButtonTitle}
         </Button>
       </Block>
@@ -109,7 +109,7 @@ const Template7030 = ({
               {...leftTeaserProps}
             />
           ))}
-          {renderLeftActionButton()}
+          {renderActionButton(leftColumnOptions, styleLeft, leftActionButtonProps)}
         </Block>
         <Block custom='col center'>
           {renderCenterTitle()}
@@ -123,14 +123,21 @@ const Template7030 = ({
               {...centerTeaserProps}
             />
           ))}
-          {renderCenterActionButton()}
+          {renderActionButton(centerColumnOptions, styleCenter, centerActionButtonProps)}
         </Block>
         <Block custom='col right'>
-          {/* <SectionTitle weight='bold' gutter={3} color={color}>Anúncios</SectionTitle> */}
-          {/* {map(rightItems, (item, key) => (
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={rightColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
-          ))} */}
-          {/* {readMoreButton && readMoreButton} */}
+          {renderRightTitle()}
+          {map(rightItems, (item, key) => (
+            <Teaser key={key}
+              content={item}
+              domain={domain}
+              lazy={lazy}
+              status={status}
+              subjectColor={styleRight}
+              {...rightTeaserProps}
+            />
+          ))}
+          {renderActionButton(rightColumnOptions, styleRight, rightActionButtonProps)}
         </Block>
       </Block>
     </React.Fragment>
@@ -141,12 +148,15 @@ Template7030.propTypes = {
   customTitle: PropTypes.element,
   customLeftTitle: PropTypes.element,
   customCenterTitle: PropTypes.element,
+  customRightTitle: PropTypes.element,
   content: PropTypes.shape({
     title: PropTypes.string,
     titleLeft: PropTypes.string,
     titleCenter: PropTypes.string,
+    titleRight: PropTypes.string,
     styleLeft: PropTypes.string,
     styleCenter: PropTypes.string,
+    styleRight: PropTypes.string,
     leftContent: PropTypes.array,
     centerContent: PropTypes.array,
     rightContent: PropTypes.array,
@@ -163,6 +173,11 @@ Template7030.propTypes = {
       actionButtonPath: PropTypes.string,
       actionButtonTitle: PropTypes.string
     }),
+    rightColumnOptions: PropTypes.shape({
+      hasActionButton: PropTypes.string,
+      actionButtonPath: PropTypes.string,
+      actionButtonTitle: PropTypes.string
+    }),
   }),
   domain: PropTypes.string,
   lazy: PropTypes.func,
@@ -172,8 +187,10 @@ Template7030.propTypes = {
   }),
   leftActionButtonProps: PropTypes.object,
   centerActionButtonProps: PropTypes.object,
+  rightActionButtonProps: PropTypes.object,
   leftTeaserProps: PropTypes.object,
-  centerTeaserProps: PropTypes.object
+  centerTeaserProps: PropTypes.object,
+  rightTeaserProps: PropTypes.object
 };
 
 export default Template7030;
