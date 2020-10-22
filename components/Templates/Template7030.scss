@@ -1,0 +1,41 @@
+@use '../../styles' as *;
+
+.Prensa-Templates-7030 {
+  .col {
+    @include mb($space-size-4);
+    &.right {
+      @include mb($space-size-6);
+    }
+  }
+  .teaser-default {
+    @include mb($space-size-2);
+    @include p($space-size-2);
+    @include pt($space-size-3)
+  }
+  .teaser-content {
+    @include my(0px);
+  }
+  .teaser-title {
+    @include mb($space-size-1);
+  }
+  .teaser-subject {
+    @include mb($space-size-1);
+  }
+  .teaser-image {
+    &.image-left {
+      .image-background {
+        @include mih(80px);
+        @include w(80px);
+      }
+    }
+  }
+  @media (min-width: $lg) {
+    .col {
+      @include w(calc(calc(100% - calc(#{$space-size-4} * 2)) / 3));
+      @include mb($space-size-5);
+      &.right {
+        @include mb($space-size-5);
+      }
+    }  
+  }
+}
