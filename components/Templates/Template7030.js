@@ -42,6 +42,9 @@ const Template7030 = ({
     leftColumnOptions,
     centerColumnOptions,
     rightColumnOptions,
+    customClassLeft,
+    customClassCenter,
+    customClassRight,
   } = content;
 
   const {color} = theme;
@@ -97,7 +100,7 @@ const Template7030 = ({
     <React.Fragment>
       {renderBlockTitle()}      
       <Block custom='Prensa-Templates-7030' lg={{align: 'row between'}}>
-        <Block custom='col left'>
+        <Block custom={`col left ${customClassLeft}`}>
           {renderLeftTitle()}
           {map(leftItems, (item, key) => (
             <Teaser key={key}
@@ -111,7 +114,7 @@ const Template7030 = ({
           ))}
           {renderActionButton(leftColumnOptions, styleLeft, leftActionButtonProps)}
         </Block>
-        <Block custom='col center'>
+        <Block custom={`col center ${customClassCenter}`}>
           {renderCenterTitle()}
           {map(centerItems, (item, key) => (
             <Teaser key={key}
@@ -125,7 +128,7 @@ const Template7030 = ({
           ))}
           {renderActionButton(centerColumnOptions, styleCenter, centerActionButtonProps)}
         </Block>
-        <Block custom='col right'>
+        <Block custom={`col right ${customClassRight}`}>
           {renderRightTitle()}
           {map(rightItems, (item, key) => (
             <Teaser key={key}
@@ -178,6 +181,9 @@ Template7030.propTypes = {
       actionButtonPath: PropTypes.string,
       actionButtonTitle: PropTypes.string
     }),
+    customClassLeft: PropTypes.string,
+    customClassCenter: PropTypes.string,
+    customClassRight: PropTypes.string,
   }),
   domain: PropTypes.string,
   lazy: PropTypes.func,
