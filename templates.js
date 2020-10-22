@@ -4783,11 +4783,286 @@ Subjects.propTypes = {
     name: PropTypes__default['default'].string,
     template: PropTypes__default['default'].string,
     title: PropTypes__default['default'].string
-  }, _defineProperty(_PropTypes$shape$1, 'input-template', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'items-center', PropTypes__default['default'].object), _defineProperty(_PropTypes$shape$1, 'items-center-pqueue', PropTypes__default['default'].object), _defineProperty(_PropTypes$shape$1, 'items-left', PropTypes__default['default'].object), _defineProperty(_PropTypes$shape$1, 'items-left-pqueue', PropTypes__default['default'].object), _defineProperty(_PropTypes$shape$1, 'items-right', PropTypes__default['default'].object), _defineProperty(_PropTypes$shape$1, 'items-right-pqueue', PropTypes__default['default'].object), _defineProperty(_PropTypes$shape$1, 'style-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-right', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-right', PropTypes__default['default'].string), _PropTypes$shape$1)),
+  }, _defineProperty(_PropTypes$shape$1, 'input-template', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'items-center', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-center-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-left', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-left-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-right', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-right-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'style-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-right', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-right', PropTypes__default['default'].string), _PropTypes$shape$1)),
   domain: PropTypes__default['default'].string,
   lazy: PropTypes__default['default'].func,
   readMoreButton: PropTypes__default['default'].oneOf([PropTypes__default['default'].object, PropTypes__default['default'].element]),
   status: PropTypes__default['default'].object
+};
+
+var Button = function Button(_ref) {
+  var _classnames;
+
+  var children = _ref.children,
+      className = _ref.className,
+      color = _ref.color,
+      disabled = _ref.disabled,
+      fontColor = _ref.fontColor,
+      fullWidth = _ref.fullWidth,
+      leftIcon = _ref.leftIcon,
+      onClick = _ref.onClick,
+      radius = _ref.radius,
+      rightIcon = _ref.rightIcon,
+      size = _ref.size,
+      style = _ref.style,
+      variant = _ref.variant,
+      weight = _ref.weight;
+  var getClass = classnames__default['default']((_classnames = {
+    'Prensa-Button-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(variant, " color-").concat(color, " radius-").concat(radius), true), _defineProperty(_classnames, 'disabled', disabled), _defineProperty(_classnames, 'fullWidth', fullWidth), _defineProperty(_classnames, 'has-leftIcon', leftIcon), _defineProperty(_classnames, 'has-rightIcon', rightIcon), _defineProperty(_classnames, "".concat(className), className), _classnames));
+
+  var getFontColor = function getFontColor() {
+    if (fontColor) return fontColor;
+
+    if (variant === 'outlined') {
+      if (disabled) return 'neutral-8';
+      return color;
+    }
+
+    return 'white';
+  };
+
+  return /*#__PURE__*/React__default['default'].createElement("button", {
+    className: getClass,
+    disabled: disabled,
+    onClick: !disabled && onClick,
+    style: style
+  }, /*#__PURE__*/React__default['default'].createElement(ButtonTypography, {
+    color: getFontColor(),
+    weight: weight
+  }, leftIcon && leftIcon, children, rightIcon && rightIcon));
+};
+
+Button.propTypes = {
+  /**
+   * Permite a estilização do componente
+   */
+  className: PropTypes__default['default'].string,
+  children: PropTypes__default['default'].node,
+  disabled: PropTypes__default['default'].bool,
+  fullWidth: PropTypes__default['default'].bool,
+  leftIcon: PropTypes__default['default'].oneOfType([PropTypes__default['default'].object, PropTypes__default['default'].element]),
+  onClick: PropTypes__default['default'].func,
+  variant: PropTypes__default['default'].oneOf(['filled', 'outlined']),
+  color: PropTypes__default['default'].oneOf(colors),
+  fontColor: PropTypes__default['default'].oneOf(colors),
+  radius: PropTypes__default['default'].oneOf([false, 'default', 'alternative']),
+  rightIcon: PropTypes__default['default'].oneOf([PropTypes__default['default'].object, PropTypes__default['default'].element]),
+  size: PropTypes__default['default'].oneOf([1, 2, 3, 4, 5]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+};
+Button.defaultProps = {
+  disabled: false,
+  variant: 'filled',
+  color: 'primary-1',
+  radius: 'default',
+  size: 1,
+  weight: 'regular'
+};
+
+var Template7030 = function Template7030(_ref) {
+  var content = _ref.content,
+      domain = _ref.domain,
+      lazy = _ref.lazy,
+      status = _ref.status,
+      theme = _ref.theme,
+      customTitle = _ref.customTitle,
+      customLeftTitle = _ref.customLeftTitle,
+      customCenterTitle = _ref.customCenterTitle,
+      customRightTitle = _ref.customRightTitle,
+      leftActionButtonProps = _ref.leftActionButtonProps,
+      centerActionButtonProps = _ref.centerActionButtonProps,
+      rightActionButtonProps = _ref.rightActionButtonProps,
+      leftTeaserProps = _ref.leftTeaserProps,
+      centerTeaserProps = _ref.centerTeaserProps,
+      rightTeaserProps = _ref.rightTeaserProps;
+  var title = content.title,
+      titleLeft = content.titleLeft,
+      titleCenter = content.titleCenter,
+      titleRight = content.titleRight,
+      styleLeft = content.styleLeft,
+      styleCenter = content.styleCenter,
+      styleRight = content.styleRight,
+      leftContent = content.leftContent,
+      centerContent = content.centerContent,
+      rightContent = content.rightContent,
+      leftQueue = content.leftQueue,
+      centerQueue = content.centerQueue,
+      rightQueue = content.rightQueue,
+      leftColumnOptions = content.leftColumnOptions,
+      centerColumnOptions = content.centerColumnOptions,
+      rightColumnOptions = content.rightColumnOptions,
+      customClassLeft = content.customClassLeft,
+      customClassCenter = content.customClassCenter,
+      customClassRight = content.customClassRight;
+  var color = theme.color;
+  var leftItems = leftQueue.length > 0 ? leftQueue : leftContent;
+  var centerItems = centerQueue.length > 0 ? centerQueue : centerContent;
+  var rightItems = rightQueue.length > 0 ? rightQueue : rightContent;
+
+  var renderBlockTitle = function renderBlockTitle() {
+    if (!title) return null;
+    if (customTitle) return /*#__PURE__*/React__default['default'].cloneElement(customTitle, {
+      children: title
+    });
+    return /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
+      weight: "bold",
+      gutter: 3,
+      color: color
+    }, title);
+  };
+
+  var renderLeftTitle = function renderLeftTitle() {
+    if (!titleLeft) return null;
+    if (customLeftTitle) return /*#__PURE__*/React__default['default'].cloneElement(customLeftTitle, {
+      children: title,
+      color: styleLeft
+    });
+    return /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
+      weight: "bold",
+      gutter: 3,
+      color: styleLeft
+    }, titleLeft);
+  };
+
+  var renderCenterTitle = function renderCenterTitle() {
+    if (!titleCenter) return null;
+    if (customCenterTitle) return /*#__PURE__*/React__default['default'].cloneElement(customCenterTitle, {
+      children: title,
+      color: styleCenter
+    });
+    return /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
+      weight: "bold",
+      gutter: 3,
+      color: styleCenter
+    }, titleCenter);
+  };
+
+  var renderRightTitle = function renderRightTitle() {
+    if (!titleRight) return null;
+    if (customRightTitle) return /*#__PURE__*/React__default['default'].cloneElement(customRightTitle, {
+      children: title,
+      color: styleRight
+    });
+    return /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
+      weight: "bold",
+      gutter: 3,
+      color: styleRight
+    }, "An\xFAncios");
+  };
+
+  var handleClick = function handleClick(e, params) {
+    var actionButtonPath = params.actionButtonPath;
+    if (actionButtonPath === '') return null;
+    e.preventDefault();
+    window.location.assign(actionButtonPath);
+  };
+
+  var renderActionButton = function renderActionButton(columnOptions, style, props) {
+    var hasActionButton = columnOptions.hasActionButton,
+        actionButtonTitle = columnOptions.actionButtonTitle;
+    if (hasActionButton === 'false') return null;
+    return /*#__PURE__*/React__default['default'].createElement(Block, null, /*#__PURE__*/React__default['default'].createElement(Button, _extends({
+      fullWidth: true,
+      onClick: function onClick(e) {
+        return handleClick(e, columnOptions);
+      },
+      color: style
+    }, props), actionButtonTitle));
+  };
+
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, renderBlockTitle(), /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "Prensa-Templates-7030",
+    lg: {
+      align: 'row between'
+    }
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col left ".concat(customClassLeft)
+  }, renderLeftTitle(), lodash.map(leftItems, function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
+      key: key,
+      content: item,
+      domain: domain,
+      lazy: lazy,
+      status: status,
+      subjectColor: styleLeft
+    }, leftTeaserProps));
+  }), renderActionButton(leftColumnOptions, styleLeft, leftActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col center ".concat(customClassCenter)
+  }, renderCenterTitle(), lodash.map(centerItems, function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
+      key: key,
+      content: item,
+      domain: domain,
+      lazy: lazy,
+      status: status,
+      subjectColor: styleCenter
+    }, centerTeaserProps));
+  }), renderActionButton(centerColumnOptions, styleCenter, centerActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col right ".concat(customClassRight)
+  }, renderRightTitle(), lodash.map(rightItems, function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
+      key: key,
+      content: item,
+      domain: domain,
+      lazy: lazy,
+      status: status,
+      subjectColor: styleRight
+    }, rightTeaserProps));
+  }), renderActionButton(rightColumnOptions, styleRight, rightActionButtonProps))));
+};
+
+Template7030.propTypes = {
+  customTitle: PropTypes__default['default'].element,
+  customLeftTitle: PropTypes__default['default'].element,
+  customCenterTitle: PropTypes__default['default'].element,
+  customRightTitle: PropTypes__default['default'].element,
+  content: PropTypes__default['default'].shape({
+    title: PropTypes__default['default'].string,
+    titleLeft: PropTypes__default['default'].string,
+    titleCenter: PropTypes__default['default'].string,
+    titleRight: PropTypes__default['default'].string,
+    styleLeft: PropTypes__default['default'].string,
+    styleCenter: PropTypes__default['default'].string,
+    styleRight: PropTypes__default['default'].string,
+    leftContent: PropTypes__default['default'].array,
+    centerContent: PropTypes__default['default'].array,
+    rightContent: PropTypes__default['default'].array,
+    leftQueue: PropTypes__default['default'].array,
+    centerQueue: PropTypes__default['default'].array,
+    rightQueue: PropTypes__default['default'].array,
+    leftColumnOptions: PropTypes__default['default'].shape({
+      hasActionButton: PropTypes__default['default'].string,
+      actionButtonPath: PropTypes__default['default'].string,
+      actionButtonTitle: PropTypes__default['default'].string
+    }),
+    centerColumnOptions: PropTypes__default['default'].shape({
+      hasActionButton: PropTypes__default['default'].string,
+      actionButtonPath: PropTypes__default['default'].string,
+      actionButtonTitle: PropTypes__default['default'].string
+    }),
+    rightColumnOptions: PropTypes__default['default'].shape({
+      hasActionButton: PropTypes__default['default'].string,
+      actionButtonPath: PropTypes__default['default'].string,
+      actionButtonTitle: PropTypes__default['default'].string
+    }),
+    customClassLeft: PropTypes__default['default'].string,
+    customClassCenter: PropTypes__default['default'].string,
+    customClassRight: PropTypes__default['default'].string
+  }),
+  domain: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  status: PropTypes__default['default'].object,
+  theme: PropTypes__default['default'].shape({
+    color: PropTypes__default['default'].string
+  }),
+  leftActionButtonProps: PropTypes__default['default'].object,
+  centerActionButtonProps: PropTypes__default['default'].object,
+  rightActionButtonProps: PropTypes__default['default'].object,
+  leftTeaserProps: PropTypes__default['default'].object,
+  centerTeaserProps: PropTypes__default['default'].object,
+  rightTeaserProps: PropTypes__default['default'].object
 };
 
 exports.Columnists = Columnists;
@@ -4797,3 +5072,4 @@ exports.Latest = Latest;
 exports.MostRead = MostRead;
 exports.Related = Related;
 exports.Subjects = Subjects;
+exports.Template7030 = Template7030;
