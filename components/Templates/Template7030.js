@@ -7,7 +7,21 @@ import Button from '../Button';
 import Teaser from '../Teasers';
 import {SectionTitle} from '../Typography';
 
-const Template7030 = ({customTitle, content, domain, lazy, status, theme, leftActionButtonProps, centerActionButtonProps}) => {
+const Template7030 = ({
+  content,
+  domain,
+  lazy,
+  status,
+  theme,
+  customTitle,
+  customLeftTitle,
+  customCenterTitle,
+  leftActionButtonProps,
+  centerActionButtonProps,
+  leftTeaserProps,
+  centerTeaserProps
+}) => {
+
   const {
     title,
     titleLeft,
@@ -32,8 +46,20 @@ const Template7030 = ({customTitle, content, domain, lazy, status, theme, leftAc
 
   const renderBlockTitle = () => {
     if (!title) return null;
-    if (customTitle) return customTitle;
+    if (customTitle) return React.cloneElement(customTitle, {children: title});
     return <SectionTitle weight='bold' gutter={3} color={color}>{title}</SectionTitle>;
+  };
+
+  const renderLeftTitle = () => {
+    if (!titleLeft) return null;
+    if (customLeftTitle) return React.cloneElement(customLeftTitle, {children: title, color: styleLeft});
+    return <SectionTitle weight='bold' gutter={3} color={styleLeft}>{titleLeft}</SectionTitle>;
+  };
+
+  const renderCenterTitle = () => {
+    if (!titleCenter) return null;
+    if (customCenterTitle) return React.cloneElement(customCenterTitle, {children: title, color: styleCenter});
+    return <SectionTitle weight='bold' gutter={3} color={styleCenter}>{titleCenter}</SectionTitle>;
   };
 
   const handleClick = (e, params) => {
@@ -69,19 +95,33 @@ const Template7030 = ({customTitle, content, domain, lazy, status, theme, leftAc
   
   return (
     <React.Fragment>
-      {renderBlockTitle()}
+      {renderBlockTitle()}      
       <Block custom='Prensa-Templates-7030' lg={{align: 'row between'}}>
         <Block custom='col left'>
-          <SectionTitle weight='bold' gutter={3} color={styleLeft}>{titleLeft}</SectionTitle>
+          {renderLeftTitle()}
           {map(leftItems, (item, key) => (
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={styleLeft} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
+            <Teaser key={key}
+              content={item}
+              domain={domain}
+              lazy={lazy}
+              status={status}
+              subjectColor={styleLeft}
+              {...leftTeaserProps}
+            />
           ))}
           {renderLeftActionButton()}
         </Block>
         <Block custom='col center'>
-          <SectionTitle weight='bold' gutter={3} color={styleCenter}>{titleCenter}</SectionTitle>
+          {renderCenterTitle()}
           {map(centerItems, (item, key) => (
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={styleCenter} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
+            <Teaser key={key}
+              content={item}
+              domain={domain}
+              lazy={lazy}
+              status={status}
+              subjectColor={styleCenter}
+              {...centerTeaserProps}
+            />
           ))}
           {renderCenterActionButton()}
         </Block>
@@ -98,7 +138,9 @@ const Template7030 = ({customTitle, content, domain, lazy, status, theme, leftAc
 };
 
 Template7030.propTypes = {
-  customTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.element]),
+  customTitle: PropTypes.element,
+  customLeftTitle: PropTypes.element,
+  customCenterTitle: PropTypes.element,
   content: PropTypes.shape({
     title: PropTypes.string,
     titleLeft: PropTypes.string,
@@ -129,7 +171,9 @@ Template7030.propTypes = {
     color: PropTypes.string
   }),
   leftActionButtonProps: PropTypes.object,
-  centerActionButtonProps: PropTypes.object
+  centerActionButtonProps: PropTypes.object,
+  leftTeaserProps: PropTypes.object,
+  centerTeaserProps: PropTypes.object
 };
 
 export default Template7030;
