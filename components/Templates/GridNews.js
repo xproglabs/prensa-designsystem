@@ -2,78 +2,87 @@ import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import colors from '../../styles/variables/colors.json';
 import Block from '../Block';
 import Teaser from '../Teasers';
 import {SectionTitle} from '../Typography';
-import colors from '../../styles/variables/colors.json'
 
-const GridNews = ({content, domain, lazy, status, theme}) => {
+const GridNews = ({
+  content,
+  domain,
+  lazy,
+  status,
+  theme,
+  customTitle,
+  teaserProps
+}) => {
+
   const {color} = theme;
   const {items, title} = content;
+  
   let items_pqueue = content['items-pqueue'];
   let items_list =  items_pqueue && items_pqueue.length > 0 ? items_pqueue : items;
+  let teaserAmount;
   
-  const propsTemplate = {
-    align: 'between', 
-    custom: 'templates-newsgrid', 
-    mb: '6',
-    md: {align: 'row', mb: '5'}
-  };
+  switch(items_list.length) {
+    case 2:
+      teaserAmount = 'two';
+      break;
+    case 3:
+      teaserAmount = 'three';
+      break;
+    case 4:
+      teaserAmount = 'four';
+      break;
+    case 5:
+      teaserAmount = 'five';
+      break;
+    default:
+      return null;
+  }
 
-  let titleSize;
-  
-  if(items_list.length === 2) {
-    propsTemplate.custom = 'templates-newsgrid two';
-    titleSize = 3;
-  }
-  if(items_list.length === 3) {
-    propsTemplate.custom = 'templates-newsgrid three';
-    titleSize = 3;
-  }
-  if(items_list.length === 4) {
-    propsTemplate.custom = 'templates-newsgrid four';
-    titleSize = 3;
-  }
-  if(items_list.length === 5) {
-    propsTemplate.custom = 'templates-newsgrid five';
-  }
+  const renderBlockTitle = () => {
+    if (!title) return null;
+    if (customTitle) return React.cloneElement(customTitle, {children: title, color: color});
+    return <SectionTitle weight='bold' gutter={3} color={color}>{title}</SectionTitle>;
+  };
 
   return (
     <React.Fragment>
-      {title && title !== '' && <SectionTitle weight='bold' gutter={3} color={color}>{title}</SectionTitle>}
-      <Block {...propsTemplate}>
+      {renderBlockTitle()}
+      <Block custom={`Prensa-Templates-Newsgrid ${teaserAmount}`} align='between' mb='6' md={{align: 'row', mb: '5'}}>
         {map(items_list, (item, key) =>
           <Teaser 
             key={key}
             content={item}
             domain={domain}
-            hasImageTop={true}
             lazy={lazy}
             status={status}
-            subjectSize={2}
             subjectColor={color}
-            titleSize={titleSize}
-            titleColor='neutral-2'
-            subtitleColor='neutral-4'
-            dateColor='neutral-4'
-            titleWeight='bold'
+            hasImageTop={true}
+            {...teaserProps}
           />
         )}
       </Block>
     </React.Fragment>
   );
 };
+
 GridNews.propTypes = {
   content: PropTypes.shape({
     items: PropTypes.array,
     title: PropTypes.string,
     color: PropTypes.string,
+    ['items-pqueue']: PropTypes.array
   }),
   domain: PropTypes.string,
   lazy: PropTypes.func,
   status: PropTypes.object,
   theme: PropTypes.shape({
     color: PropTypes.oneOf(colors)
-  })
+  }),
+  customTitle: PropTypes.element,
+  teaserProps: PropTypes.object,
 };
+
 export default GridNews;
