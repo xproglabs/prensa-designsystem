@@ -2,9 +2,11 @@
 - Refatora template Gridnews (Prensa-Templates-Gridnews)
 - Refatora template Featured (Prensa-Templates-Featured)
 - Refatora template Subjects (Prensa-Templates-Subjects)
+- Refatora template Latest (Prensa-Templates-LatestNews)
 - Adiciona props customizáveis para o teaser no Gridnews
 - Adiciona props customizáveis para o teaser no Featured
 - Adiciona props customizáveis para o teaser no Subjects
+- Adiciona props customizáveis para o teaser no LatestNews
 
 
 # v1.3.7
