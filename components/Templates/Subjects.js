@@ -52,19 +52,19 @@ const Subjects = ({
 
   const renderLeftTitle = () => {
     if (!titleLeft) return null;
-    if (customLeftTitle) return React.cloneElement(customLeftTitle, {children: title, color: leftColor});
+    if (customLeftTitle) return React.cloneElement(customLeftTitle, {children: titleLeft, color: leftColor});
     return <SectionTitle weight='bold' gutter={3} color={leftColor}>{titleLeft}</SectionTitle>;
   };
 
   const renderCenterTitle = () => {
     if (!titleCenter) return null;
-    if (customCenterTitle) return React.cloneElement(customCenterTitle, {children: title, color: centerColor});
+    if (customCenterTitle) return React.cloneElement(customCenterTitle, {children: titleCenter, color: centerColor});
     return <SectionTitle weight='bold' gutter={3} color={centerColor}>{titleCenter}</SectionTitle>;
   };
 
   const renderRightTitle = () => {
     if (!titleRight) return null;
-    if (customRightTitle) return React.cloneElement(customRightTitle, {children: title, color: rightColor});
+    if (customRightTitle) return React.cloneElement(customRightTitle, {children: titleRight, color: rightColor});
     return <SectionTitle weight='bold' gutter={3} color={rightColor}>{titleRight}</SectionTitle>;
   };
 
