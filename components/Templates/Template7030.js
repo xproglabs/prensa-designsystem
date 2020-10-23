@@ -88,11 +88,9 @@ const Template7030 = ({
     const {hasActionButton, actionButtonTitle} = columnOptions;
     if (hasActionButton === 'false') return null;
     return (
-      <Block>
-        <Button fullWidth onClick={e => handleClick(e, columnOptions)} color={style} {...props}>
-          {actionButtonTitle}
-        </Button>
-      </Block>
+      <Button fullWidth onClick={e => handleClick(e, columnOptions)} color={style} {...props}>
+        {actionButtonTitle}
+      </Button>
     );
   };
   
