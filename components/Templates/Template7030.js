@@ -55,7 +55,7 @@ const Template7030 = ({
 
   const renderBlockTitle = () => {
     if (!title) return null;
-    if (customTitle) return React.cloneElement(customTitle, {children: title});
+    if (customTitle) return React.cloneElement(customTitle, {children: title, color: color});
     return <SectionTitle weight='bold' gutter={3} color={color}>{title}</SectionTitle>;
   };
 
@@ -88,11 +88,9 @@ const Template7030 = ({
     const {hasActionButton, actionButtonTitle} = columnOptions;
     if (hasActionButton === 'false') return null;
     return (
-      <Block>
-        <Button fullWidth onClick={e => handleClick(e, columnOptions)} color={style} {...props}>
-          {actionButtonTitle}
-        </Button>
-      </Block>
+      <Button fullWidth onClick={e => handleClick(e, columnOptions)} color={style} {...props}>
+        {actionButtonTitle}
+      </Button>
     );
   };
   

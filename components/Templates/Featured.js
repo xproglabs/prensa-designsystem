@@ -1,85 +1,76 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import colors from '../../styles/variables/colors.json';
 import Block from '../Block';
 import Teaser from '../Teasers';
-import colors from '../../styles/variables/colors.json'
 
-const Featured = ({content, domain, lazy, status, theme}) => {
+const Featured = ({
+  content,
+  domain,
+  lazy,
+  status,
+  theme,
+  featuredTeaserProps,
+  rightTeaserOneProps,
+  rightTeaserTwoProps
+}) => {
+
   const {color} = theme;
   const {items} = content;
-  if (items.length === 1) {
-    return (
-      <Block custom='templates-featured one'>
-        <Teaser 
-          content={items[0]}
-          domain={domain}
-          hasSubjectFilled={true}
-          hasSubtitle={true}
-          lazy={lazy}
-          status={status}
-          subjectSize={2}
-          subjectColor={color}
-          titleSize={4}
-          titleWeight='bold'
-        />
-      </Block>
-    );
-  }
-  if (items.length === 3) {
-    const propsTemplate = {custom: 'templates-featured three', mb:'6', md: {align: 'row between', mb:'5'}};
-    return (
-      <Block {...propsTemplate}>
-        <Block custom='block-left'>
+
+  switch(items.length) {
+    case 1:
+      return (
+        <Block custom='Prensa-Templates-Featured one'>
           <Teaser 
             content={items[0]}
             domain={domain}
-            hasSubjectFilled={true}
-            hasSubtitle={true}
             lazy={lazy}
             status={status}
-            subjectSize={2}
             subjectColor={color}
-            titleSize={4}
-            titleColor='neutral-2'
-            subtitleColor='neutral-4'
-            dateColor='neutral-4'
-            titleWeight='bold'
+            {...featuredTeaserProps}
           />
         </Block>
-        <Block custom='block-right'>
-          <Teaser 
-            content={items[1]}
-            domain={domain}
-            lazy={lazy}
-            status={status}
-            subjectSize={2}
-            subjectColor={color}
-            titleSize={3}
-            titleColor='neutral-2'
-            subtitleColor='neutral-4'
-            dateColor='neutral-4'
-            titleWeight='bold'
-          />
-          <Teaser 
-            content={items[2]}
-            domain={domain}
-            lazy={lazy}
-            status={status}
-            subjectSize={2}
-            subjectColor={color}
-            titleSize={3}
-            titleColor='neutral-2'
-            subtitleColor='neutral-4'
-            dateColor='neutral-4'
-            titleWeight='bold'
-          />
+      );
+    case 3:
+      return (
+        <Block custom='Prensa-Templates-Featured three' mb='6' md={{align: 'row between', mb:'5'}}>
+          <Block custom='block-left'>
+            <Teaser 
+              content={items[0]}
+              domain={domain}
+              lazy={lazy}
+              status={status}
+              subjectColor={color}
+              {...featuredTeaserProps}
+            />
+          </Block>
+          <Block custom='block-right'>
+            <Teaser 
+              content={items[1]}
+              domain={domain}
+              lazy={lazy}
+              status={status}            
+              subjectColor={color}
+              {...rightTeaserOneProps}
+            />
+            <Teaser 
+              content={items[2]}
+              domain={domain}
+              lazy={lazy}
+              status={status}
+              subjectColor={color}
+              {...rightTeaserTwoProps}
+            />
+          </Block>
         </Block>
-      </Block>
-    );
+      );
+    default:
+      return null;
   }
-  return null;
 };
+
 Featured.propTypes = {
   content: PropTypes.object,
   domain: PropTypes.string,
@@ -87,6 +78,10 @@ Featured.propTypes = {
   status: PropTypes.object,
   theme: PropTypes.shape({
     color: PropTypes.oneOf(colors)
-  })
+  }),
+  featuredTeaserProps: PropTypes.object,
+  rightTeaserOneProps: PropTypes.object,
+  rightTeaserTwoProps: PropTypes.object,
 };
+
 export default Featured;

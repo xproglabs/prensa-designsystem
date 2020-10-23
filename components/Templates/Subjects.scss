@@ -3,25 +3,15 @@
 $subjects-1-teaser-image-height: 80px;
 $subjects-1-teaser-image-width: 80px;
 
-.templates-subjects {
+.Prensa-Templates-Subjects {
   .col {
     @include mb($space-size-4);
-    .button-read-more {
-      @include b(1px, solid, $color-neutral-9);
-      @include mb($space-size-2);
-      box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
-      &:hover {
-        opacity: 0.6;
-      }
-    }
     &.right {
       @include mb($space-size-6);
     }
   }
   .teaser-default {
     @include mb($space-size-2);
-    @include p($space-size-2);
-    @include pt($space-size-3)
   }
   .teaser-content {
     @include my(0px);

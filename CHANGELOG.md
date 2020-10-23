@@ -1,3 +1,20 @@
+# v1.3.8
+- Refatora template Gridnews (Prensa-Templates-Gridnews)
+- Refatora template Featured (Prensa-Templates-Featured)
+- Refatora template Subjects (Prensa-Templates-Subjects)
+- Refatora template Latest (Prensa-Templates-LatestNews)
+- Adiciona props customizáveis para o teaser no Gridnews
+- Adiciona props customizáveis para o teaser no Featured
+- Adiciona props customizáveis para o teaser no Subjects
+- Adiciona props customizáveis para o teaser no LatestNews
+
+
+# v1.3.7
+- Adiciona novo template 7030
+- Adiciona customização do componente SectionTitle no 7030
+- Adiciona props customizáveis para o teaser no 7030
+- Novo padrão de class para o nome dos templates (Prensa-Templates-...)
+
 # v1.3.5 (Mon Sep 7 2020)
 - Remove componente Grid
 - Altera posição de alguns includes

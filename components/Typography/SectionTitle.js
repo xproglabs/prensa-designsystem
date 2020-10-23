@@ -31,7 +31,7 @@ SectionTitle.propTypes = {
   children: PropTypes.string,
   className: PropTypes.string,
   color: PropTypes.oneOf(colors),
-  gutter: PropTypes.oneOf([1, 2, 3]),
+  gutter: PropTypes.oneOf([0, 1, 2, 3]),
   size: PropTypes.oneOf([1]),
   style: PropTypes.object,
   uppercase: PropTypes.bool,
