@@ -1,8 +1,10 @@
 # v1.3.8
 - Refatora template Gridnews (Prensa-Templates-Gridnews)
 - Refatora template Featured (Prensa-Templates-Featured)
+- Refatora template Subjects (Prensa-Templates-Subjects)
 - Adiciona props customizáveis para o teaser no Gridnews
 - Adiciona props customizáveis para o teaser no Featured
+- Adiciona props customizáveis para o teaser no Subjects
 
 
 # v1.3.7
