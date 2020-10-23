@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import colors from '../../styles/variables/colors.json';
+import weight from '../../styles/variables/weight.json';
 import Block from '../Block';
 import ImageBackground from '../Image/Background';
 import Subject from '../Subject';
 import {NewsTitle, Subtitle, Date} from '../Typography';
 import utils from '../Util';
-import colors from '../../styles/variables/colors.json';
-import weight from '../../styles/variables/weight.json';
 
-const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize, titleSize, subtitleSize, dateSize, titleColor, subtitleColor, dateColor, titleWeight, subtitleWeight, dateWeight}) => {
+const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize, subjectWeight, titleSize, subtitleSize, dateSize, titleColor, subtitleColor, dateColor, titleWeight, subtitleWeight, dateWeight}) => {
   const {image, name, path, subject, subtitle} = content;
   const propsTeaser = {align: hasImageTop ? 'col' : 'row left', custom: 'teaser-default', mb: '2'};
   const propsImage = {align: 'row',custom: `teaser-image ${hasImageTop ? 'image-top' : 'image-left'}`};
@@ -53,7 +53,7 @@ const Teaser = ({content, datePublished, domain, hasImageTop, hasSubjectFilled, 
         <Block>
           {subject && 
             <Block {...propsSubject}>
-              <Subject size={subjectSize} color={subjectColor} filled={hasSubjectFilled} weight='bold'>{subject}</Subject>
+              <Subject size={subjectSize} color={subjectColor} filled={hasSubjectFilled} weight={subjectWeight}>{subject}</Subject>
             </Block>
           }
         </Block>
@@ -89,7 +89,7 @@ Teaser.propTypes = {
     subtitle: PropTypes.string,
     subject: PropTypes.string,
     ['time-published']: PropTypes.string,
-    ['time-modified']: PropTypes.string,
+    ['time-modifiedDate']: PropTypes.string,
   }),
   datePublished: PropTypes.bool,
   domain: PropTypes.string,
@@ -113,6 +113,7 @@ Teaser.propTypes = {
   titleWeight: PropTypes.oneOf(weight),
   subtitleWeight: PropTypes.oneOf(weight),
   dateWeight: PropTypes.oneOf(weight),
+  subjectWeight: PropTypes.oneOf(weight),
 };
 Teaser.defaultProps = {
   hasSubjectFilled: false,
