@@ -458,7 +458,7 @@ SectionTitle.propTypes = {
   children: PropTypes__default['default'].string,
   className: PropTypes__default['default'].string,
   color: PropTypes__default['default'].oneOf(colors),
-  gutter: PropTypes__default['default'].oneOf([1, 2, 3]),
+  gutter: PropTypes__default['default'].oneOf([0, 1, 2, 3]),
   size: PropTypes__default['default'].oneOf([1]),
   style: PropTypes__default['default'].object,
   uppercase: PropTypes__default['default'].bool,

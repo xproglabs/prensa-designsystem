@@ -539,7 +539,7 @@ SectionTitle.propTypes = {
   children: PropTypes__default['default'].string,
   className: PropTypes__default['default'].string,
   color: PropTypes__default['default'].oneOf(colors),
-  gutter: PropTypes__default['default'].oneOf([1, 2, 3]),
+  gutter: PropTypes__default['default'].oneOf([0, 1, 2, 3]),
   size: PropTypes__default['default'].oneOf([1]),
   style: PropTypes__default['default'].object,
   uppercase: PropTypes__default['default'].bool,
@@ -4722,6 +4722,7 @@ var Teaser = function Teaser(_ref) {
       lazy = _ref.lazy,
       subjectColor = _ref.subjectColor,
       subjectSize = _ref.subjectSize,
+      subjectWeight = _ref.subjectWeight,
       titleSize = _ref.titleSize,
       subtitleSize = _ref.subtitleSize,
       dateSize = _ref.dateSize,
@@ -4797,7 +4798,7 @@ var Teaser = function Teaser(_ref) {
     size: subjectSize,
     color: subjectColor,
     filled: hasSubjectFilled,
-    weight: "bold"
+    weight: subjectWeight
   }, subject))), /*#__PURE__*/React__default['default'].createElement(Block, null, /*#__PURE__*/React__default['default'].createElement(Block, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
     className: "teaser-aria",
     href: url_rewrite,
@@ -4824,7 +4825,7 @@ Teaser.propTypes = {
     path: PropTypes__default['default'].string,
     subtitle: PropTypes__default['default'].string,
     subject: PropTypes__default['default'].string
-  }, _defineProperty(_PropTypes$shape, 'time-published', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape, 'time-modified', PropTypes__default['default'].string), _PropTypes$shape)),
+  }, _defineProperty(_PropTypes$shape, 'time-published', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape, 'time-modifiedDate', PropTypes__default['default'].string), _PropTypes$shape)),
   datePublished: PropTypes__default['default'].bool,
   domain: PropTypes__default['default'].string,
   hasImageTop: PropTypes__default['default'].bool,
@@ -4846,7 +4847,8 @@ Teaser.propTypes = {
   dateColor: PropTypes__default['default'].oneOf(colors),
   titleWeight: PropTypes__default['default'].oneOf(weights),
   subtitleWeight: PropTypes__default['default'].oneOf(weights),
-  dateWeight: PropTypes__default['default'].oneOf(weights)
+  dateWeight: PropTypes__default['default'].oneOf(weights),
+  subjectWeight: PropTypes__default['default'].oneOf(weights)
 };
 Teaser.defaultProps = {
   hasSubjectFilled: false,
