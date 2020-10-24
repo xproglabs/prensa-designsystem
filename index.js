@@ -631,7 +631,7 @@ MostReadNumber.defaultProps = {
   weight: 'regular'
 };
 MostReadNumber.propTypes = {
-  children: PropTypes__default['default'].string,
+  children: PropTypes__default['default'].number,
   className: PropTypes__default['default'].string,
   color: PropTypes__default['default'].oneOf(colors),
   size: PropTypes__default['default'].oneOf([1]),
@@ -4712,8 +4712,10 @@ var utils = {
 var _PropTypes$shape;
 
 var Teaser = function Teaser(_ref) {
-  var content = _ref.content,
+  var customClass = _ref.customClass,
+      content = _ref.content,
       datePublished = _ref.datePublished,
+      disableImage = _ref.disableImage,
       domain = _ref.domain,
       hasImageTop = _ref.hasImageTop,
       hasSubjectFilled = _ref.hasSubjectFilled,
@@ -4731,26 +4733,28 @@ var Teaser = function Teaser(_ref) {
       dateColor = _ref.dateColor,
       titleWeight = _ref.titleWeight,
       subtitleWeight = _ref.subtitleWeight,
-      dateWeight = _ref.dateWeight;
+      dateWeight = _ref.dateWeight,
+      isTeaserFeatured = _ref.isTeaserFeatured;
   var image = content.image,
       name = content.name,
       path = content.path,
       subject = content.subject,
       subtitle = content.subtitle;
+  var hasImage = image['image-path'];
   var propsTeaser = {
     align: hasImageTop ? 'col' : 'row left',
-    custom: 'teaser-default',
+    custom: "teaser-default ".concat(customClass ? customClass : ''),
     mb: '2'
   };
   var propsImage = {
     align: 'row',
-    custom: "teaser-image ".concat(hasImageTop ? 'image-top' : 'image-left')
+    custom: "teaser-image ".concat(!isTeaserFeatured ? hasImageTop ? 'image-top' : 'image-left' : 'image-featured')
   };
   var propsContent = {
     custom: 'teaser-content',
     align: 'col',
     mb: '3',
-    ml: '2',
+    ml: !hasImage ? '0' : '2',
     mr: '2',
     mt: '3',
     w: '100p-4'
@@ -4794,7 +4798,7 @@ var Teaser = function Teaser(_ref) {
     })));
   };
 
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsTeaser, /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block, propsContent, /*#__PURE__*/React__default['default'].createElement(Block, null, subject && /*#__PURE__*/React__default['default'].createElement(Block, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsTeaser, hasImage && !disableImage && /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block, propsContent, /*#__PURE__*/React__default['default'].createElement(Block, null, subject && /*#__PURE__*/React__default['default'].createElement(Block, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
     size: subjectSize,
     color: subjectColor,
     filled: hasSubjectFilled,
@@ -4819,6 +4823,7 @@ var Teaser = function Teaser(_ref) {
 };
 
 Teaser.propTypes = {
+  customClass: PropTypes__default['default'].string,
   content: PropTypes__default['default'].shape((_PropTypes$shape = {
     image: PropTypes__default['default'].object,
     name: PropTypes__default['default'].string,
@@ -4828,6 +4833,8 @@ Teaser.propTypes = {
   }, _defineProperty(_PropTypes$shape, 'time-published', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape, 'time-modifiedDate', PropTypes__default['default'].string), _PropTypes$shape)),
   datePublished: PropTypes__default['default'].bool,
   domain: PropTypes__default['default'].string,
+  disableImage: PropTypes__default['default'].bool,
+  isTeaserFeatured: PropTypes__default['default'].bool,
   hasImageTop: PropTypes__default['default'].bool,
   hasSubtitle: PropTypes__default['default'].bool,
   hasDate: PropTypes__default['default'].bool,
@@ -4856,7 +4863,8 @@ Teaser.defaultProps = {
   hasSubtitle: false,
   hasDate: true,
   subjectSize: 1,
-  subjectColor: 'primary-1'
+  subjectColor: 'primary-1',
+  disableImage: false
 };
 
 var Tag = function Tag(_ref) {

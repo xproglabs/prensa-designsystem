@@ -550,7 +550,7 @@ MostReadNumber.defaultProps = {
   weight: 'regular'
 };
 MostReadNumber.propTypes = {
-  children: PropTypes__default['default'].string,
+  children: PropTypes__default['default'].number,
   className: PropTypes__default['default'].string,
   color: PropTypes__default['default'].oneOf(colors),
   size: PropTypes__default['default'].oneOf([1]),
