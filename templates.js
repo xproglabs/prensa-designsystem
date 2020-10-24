@@ -4797,8 +4797,6 @@ var _PropTypes$shape$1;
 var Subjects = function Subjects(_ref) {
   var content = _ref.content,
       domain = _ref.domain,
-      lazy = _ref.lazy,
-      status = _ref.status,
       theme = _ref.theme,
       customTitle = _ref.customTitle,
       customLeftTitle = _ref.customLeftTitle,
@@ -4809,7 +4807,8 @@ var Subjects = function Subjects(_ref) {
       rightActionButtonProps = _ref.rightActionButtonProps,
       leftTeaserProps = _ref.leftTeaserProps,
       centerTeaserProps = _ref.centerTeaserProps,
-      rightTeaserProps = _ref.rightTeaserProps;
+      rightTeaserProps = _ref.rightTeaserProps,
+      RenderSlot = _ref.RenderSlot;
   var color = theme.color;
   var title = content.title,
       leftColumnOptions = content.leftColumnOptions,
@@ -4906,37 +4905,25 @@ var Subjects = function Subjects(_ref) {
     }
   }, /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col left"
-  }, renderLeftTitle(), lodash.map(items_left, function (item, key) {
-    return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
-      key: key,
-      content: item,
-      domain: domain,
-      lazy: lazy,
-      status: status,
-      subjectColor: leftColor
-    }, leftTeaserProps));
+  }, renderLeftTitle(), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
+    domain: domain,
+    items: items_left,
+    subjectColor: leftColor,
+    teaserProps: leftTeaserProps
   }), renderActionButton(leftColumnOptions, leftColor, leftActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col center"
-  }, renderCenterTitle(), lodash.map(items_center, function (item, key) {
-    return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
-      key: key,
-      content: item,
-      domain: domain,
-      lazy: lazy,
-      status: status,
-      subjectColor: centerColor
-    }, centerTeaserProps));
+  }, renderCenterTitle(), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
+    domain: domain,
+    items: items_center,
+    subjectColor: centerColor,
+    teaserProps: centerTeaserProps
   }), renderActionButton(centerColumnOptions, centerColor, centerActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col right"
-  }, renderRightTitle(), lodash.map(items_right, function (item, key) {
-    return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
-      key: key,
-      content: item,
-      domain: domain,
-      lazy: lazy,
-      status: status,
-      subjectColor: rightColor
-    }, rightTeaserProps));
+  }, renderRightTitle(), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
+    domain: domain,
+    items: items_right,
+    subjectColor: rightColor,
+    teaserProps: rightTeaserProps
   }), renderActionButton(rightColumnOptions, rightColor, rightActionButtonProps))));
 };
 
@@ -4965,7 +4952,8 @@ Subjects.propTypes = {
   rightActionButtonProps: PropTypes__default['default'].object,
   leftTeaserProps: PropTypes__default['default'].object,
   centerTeaserProps: PropTypes__default['default'].object,
-  rightTeaserProps: PropTypes__default['default'].object
+  rightTeaserProps: PropTypes__default['default'].object,
+  RenderSlot: PropTypes__default['default'].node
 };
 
 var Template7030 = function Template7030(_ref) {
