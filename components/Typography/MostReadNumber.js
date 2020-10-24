@@ -34,7 +34,7 @@ MostReadNumber.defaultProps = {
 };
 
 MostReadNumber.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.number,
   className: PropTypes.string,
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf([1]),

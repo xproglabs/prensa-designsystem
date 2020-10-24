@@ -6,7 +6,7 @@ $newsgrid-1-teaser-image-height--lg: 296px;
 $newsgrid-2-teaser-image-height: 164px;
 $newsgrid-2-teaser-image-height--lg: 140px;
 
-.Prensa-Templates-Gridnews {
+.Prensa-Templates-Newsgrid {
   &.two {
     .teaser-content {
       @include my($space-size-2);
