@@ -4835,7 +4835,7 @@ var Subjects = function Subjects(_ref) {
     return /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
       weight: "bold",
       gutter: 3,
-      color: color
+      color: leftColor
     }, title);
   };
 
@@ -4953,7 +4953,7 @@ Subjects.propTypes = {
   leftTeaserProps: PropTypes__default['default'].object,
   centerTeaserProps: PropTypes__default['default'].object,
   rightTeaserProps: PropTypes__default['default'].object,
-  RenderSlot: PropTypes__default['default'].node
+  RenderSlot: PropTypes__default['default'].func
 };
 
 var Template7030 = function Template7030(_ref) {

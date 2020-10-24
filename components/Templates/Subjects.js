@@ -8,7 +8,6 @@ import {SectionTitle} from '../Typography';
 const Subjects = ({
   content,
   domain,
-  theme,
   customTitle,
   customLeftTitle,
   customCenterTitle,
@@ -22,8 +21,6 @@ const Subjects = ({
   RenderSlot
 }) => {
 
-  const {color} = theme;
-  
   const {title, leftColumnOptions, centerColumnOptions, rightColumnOptions} = content;
   const leftColor = content['style-left'];
   const centerColor = content['style-center'];
@@ -44,7 +41,7 @@ const Subjects = ({
   const renderBlockTitle = () => {
     if (!title) return null;
     if (customTitle) return React.cloneElement(customTitle, {children: title});
-    return <SectionTitle weight='bold' gutter={3} color={color}>{title}</SectionTitle>;
+    return <SectionTitle weight='bold' gutter={3} color={leftColor}>{title}</SectionTitle>;
   };
 
   const renderLeftTitle = () => {
@@ -162,7 +159,7 @@ Subjects.propTypes = {
   leftTeaserProps: PropTypes.object,
   centerTeaserProps: PropTypes.object,
   rightTeaserProps: PropTypes.object,
-  RenderSlot: PropTypes.node
+  RenderSlot: PropTypes.func
 };
 
 export default Subjects;
