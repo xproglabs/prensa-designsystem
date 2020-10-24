@@ -1,17 +1,13 @@
-import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
 import Button from '../Button';
-import Teaser from '../Teasers';
 import {SectionTitle} from '../Typography';
 
 const Subjects = ({
   content,
   domain,
-  lazy,
-  status,
   theme,
   customTitle,
   customLeftTitle,
@@ -23,6 +19,7 @@ const Subjects = ({
   leftTeaserProps,
   centerTeaserProps,
   rightTeaserProps,
+  RenderSlot
 }) => {
 
   const {color} = theme;
@@ -84,54 +81,41 @@ const Subjects = ({
       </Button>
     );
   };
-  
   return (
     <React.Fragment>
       {renderBlockTitle()}
       <Block custom='Prensa-Templates-Subjects' lg={{align: 'row between'}}>
         <Block custom='col left'>
           {renderLeftTitle()}
-          {map(items_left, (item, key) => (
-            <Teaser 
-              key={key}
-              content={item}
+          {RenderSlot && 
+            <RenderSlot 
               domain={domain}
-              lazy={lazy}
-              status={status}
-              subjectColor={leftColor}
-              {...leftTeaserProps}
-            />
-          ))}
+              items={items_left} 
+              subjectColor={leftColor} 
+              teaserProps={leftTeaserProps} 
+            />}
           {renderActionButton(leftColumnOptions, leftColor, leftActionButtonProps)}
         </Block>
         <Block custom='col center'>
           {renderCenterTitle()}
-          {map(items_center, (item, key) => (
-            <Teaser 
-              key={key}
-              content={item}
+          {RenderSlot && 
+            <RenderSlot 
               domain={domain}
-              lazy={lazy}
-              status={status}
-              subjectColor={centerColor}
-              {...centerTeaserProps}
-            />
-          ))}
+              items={items_center} 
+              subjectColor={centerColor} 
+              teaserProps={centerTeaserProps} 
+            />}
           {renderActionButton(centerColumnOptions, centerColor, centerActionButtonProps)}
         </Block>
         <Block custom='col right'>
           {renderRightTitle()}
-          {map(items_right, (item, key) => (
-            <Teaser 
-              key={key}
-              content={item}
+          {RenderSlot && 
+            <RenderSlot 
               domain={domain}
-              lazy={lazy}
-              status={status}
-              subjectColor={rightColor}
-              {...rightTeaserProps}
-            />
-          ))}
+              items={items_right} 
+              subjectColor={rightColor} 
+              teaserProps={rightTeaserProps} 
+            />}
           {renderActionButton(rightColumnOptions, rightColor, rightActionButtonProps)}
         </Block>
       </Block>
@@ -178,6 +162,7 @@ Subjects.propTypes = {
   leftTeaserProps: PropTypes.object,
   centerTeaserProps: PropTypes.object,
   rightTeaserProps: PropTypes.object,
+  RenderSlot: PropTypes.node
 };
 
 export default Subjects;
