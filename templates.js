@@ -4797,7 +4797,6 @@ var _PropTypes$shape$1;
 var Subjects = function Subjects(_ref) {
   var content = _ref.content,
       domain = _ref.domain,
-      theme = _ref.theme,
       customTitle = _ref.customTitle,
       customLeftTitle = _ref.customLeftTitle,
       customCenterTitle = _ref.customCenterTitle,
@@ -4809,7 +4808,6 @@ var Subjects = function Subjects(_ref) {
       centerTeaserProps = _ref.centerTeaserProps,
       rightTeaserProps = _ref.rightTeaserProps,
       RenderSlot = _ref.RenderSlot;
-  var color = theme.color;
   var title = content.title,
       leftColumnOptions = content.leftColumnOptions,
       centerColumnOptions = content.centerColumnOptions,
@@ -4830,7 +4828,8 @@ var Subjects = function Subjects(_ref) {
   var renderBlockTitle = function renderBlockTitle() {
     if (!title) return null;
     if (customTitle) return /*#__PURE__*/React__default['default'].cloneElement(customTitle, {
-      children: title
+      children: title,
+      color: leftColor
     });
     return /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
       weight: "bold",

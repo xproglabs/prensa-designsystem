@@ -40,7 +40,7 @@ const Subjects = ({
 
   const renderBlockTitle = () => {
     if (!title) return null;
-    if (customTitle) return React.cloneElement(customTitle, {children: title});
+    if (customTitle) return React.cloneElement(customTitle, {children: title, color: leftColor});
     return <SectionTitle weight='bold' gutter={3} color={leftColor}>{title}</SectionTitle>;
   };
 
