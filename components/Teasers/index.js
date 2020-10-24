@@ -9,13 +9,13 @@ import Subject from '../Subject';
 import {NewsTitle, Subtitle, Date} from '../Typography';
 import utils from '../Util';
 
-const Teaser = ({customClass, content, datePublished, disableImage, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize, subjectWeight, titleSize, subtitleSize, dateSize, titleColor, subtitleColor, dateColor, titleWeight, subtitleWeight, dateWeight}) => {
+const Teaser = ({customClass, content, datePublished, disableImage, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize, subjectWeight, titleSize, subtitleSize, dateSize, titleColor, subtitleColor, dateColor, titleWeight, subtitleWeight, dateWeight, isTeaserFeatured}) => {
   const {image, name, path, subject, subtitle} = content;
 
   const hasImage = image['image-path'];
 
   const propsTeaser = {align: hasImageTop ? 'col' : 'row left', custom: `teaser-default ${customClass ? customClass : ''}`, mb: '2'};
-  const propsImage = {align: 'row',custom: `teaser-image ${hasImageTop ? 'image-top' : 'image-left'}`};
+  const propsImage = {align: 'row',custom: `teaser-image ${!isTeaserFeatured ? hasImageTop ? 'image-top' : 'image-left' : 'image-featured'}`};
   const propsContent = {custom: 'teaser-content', align: 'col', mb: '3', ml: !hasImage ? '0' : '2', mr: '2', mt: '3', w: '100p-4'};
   const propsSubTitle = {mb: '2',lg:{mb: '8'}}; 
   const propsDateContainer = {h: '100p', align: 'bottom'};
@@ -100,6 +100,7 @@ Teaser.propTypes = {
   datePublished: PropTypes.bool,
   domain: PropTypes.string,
   disableImage: PropTypes.bool,
+  isTeaserFeatured: PropTypes.bool,
   hasImageTop: PropTypes.bool,
   hasSubtitle: PropTypes.bool,
   hasDate: PropTypes.bool,
