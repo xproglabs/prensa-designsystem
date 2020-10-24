@@ -9,12 +9,12 @@ import Subject from '../Subject';
 import {NewsTitle, Subtitle, Date} from '../Typography';
 import utils from '../Util';
 
-const Teaser = ({customClass, content, datePublished, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize, subjectWeight, titleSize, subtitleSize, dateSize, titleColor, subtitleColor, dateColor, titleWeight, subtitleWeight, dateWeight}) => {
+const Teaser = ({customClass, content, datePublished, disableImage, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize, subjectWeight, titleSize, subtitleSize, dateSize, titleColor, subtitleColor, dateColor, titleWeight, subtitleWeight, dateWeight}) => {
   const {image, name, path, subject, subtitle} = content;
 
   const hasImage = image['image-path'];
 
-  const propsTeaser = {align: hasImageTop ? 'col' : 'row left', custom: `teaser-default ${customClass}`, mb: '2'};
+  const propsTeaser = {align: hasImageTop ? 'col' : 'row left', custom: `teaser-default ${customClass ? customClass : ''}`, mb: '2'};
   const propsImage = {align: 'row',custom: `teaser-image ${hasImageTop ? 'image-top' : 'image-left'}`};
   const propsContent = {custom: 'teaser-content', align: 'col', mb: '3', ml: !hasImage ? '0' : '2', mr: '2', mt: '3', w: '100p-4'};
   const propsSubTitle = {mb: '2',lg:{mb: '8'}}; 
@@ -51,7 +51,7 @@ const Teaser = ({customClass, content, datePublished, domain, hasImageTop, hasSu
   };
   return (
     <Block {...propsTeaser}>
-      {hasImage &&
+      {hasImage && !disableImage && 
         <TeaserImage />
       }
       <Block {...propsContent}>
@@ -99,6 +99,7 @@ Teaser.propTypes = {
   }),
   datePublished: PropTypes.bool,
   domain: PropTypes.string,
+  disableImage: PropTypes.bool,
   hasImageTop: PropTypes.bool,
   hasSubtitle: PropTypes.bool,
   hasDate: PropTypes.bool,
@@ -127,7 +128,8 @@ Teaser.defaultProps = {
   hasSubtitle: false,
   hasDate: true,
   subjectSize: 1,
-  subjectColor: 'primary-1'
+  subjectColor: 'primary-1',
+  disableImage: false,
 };
 
 export default Teaser;
