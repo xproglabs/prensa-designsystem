@@ -4116,7 +4116,7 @@ var Teaser = function Teaser(_ref) {
       path = content.path,
       subject = content.subject,
       subtitle = content.subtitle;
-  var hasImage = image['image-path'];
+  var hasImage = image['image-contentId'];
   var propsTeaser = {
     align: hasImageTop ? 'col' : 'row left',
     custom: "teaser-default ".concat(customClass ? customClass : ''),
