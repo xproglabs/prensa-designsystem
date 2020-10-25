@@ -29,6 +29,9 @@ const Subjects = ({
   const titleLeft = content['title-left'];
   const titleCenter = content['title-center'];
   const titleRight = content['title-right'];
+  const showTitleLeft = content['title-left-show'] && content['title-left-show'] == 'true';
+  const showTitleCenter = content['title-center-show'] && content['title-center-show'] == 'true';
+  const showTitleRight = content['title-right-show'] && content['title-right-show'] == 'true';
   
   const pqueue_left = content['items-left-pqueue'];
   const pqueue_center = content['items-center-pqueue'];
@@ -63,7 +66,9 @@ const Subjects = ({
     <React.Fragment>
       <Block custom='Prensa-Templates-Subjects' lg={{align: 'row between'}}>
         <Block custom='col left'>
-          {renderSectionTitle(customLeftTitle, leftColor, titleLeft)}
+          <Block custom='col-section'>
+            {showTitleLeft && renderSectionTitle(customLeftTitle, leftColor, titleLeft)}
+          </Block>
           {RenderSlot && 
             <RenderSlot 
               domain={domain}
@@ -74,7 +79,9 @@ const Subjects = ({
           {renderActionButton(leftColumnOptions, leftColor, leftActionButtonProps)}
         </Block>
         <Block custom='col center'>
-          {renderSectionTitle(customCenterTitle, centerColor, titleCenter)}
+          <Block custom='col-section'>
+            {showTitleCenter && renderSectionTitle(customCenterTitle, centerColor, titleCenter)}
+          </Block>
           {RenderSlot && 
             <RenderSlot 
               domain={domain}
@@ -85,7 +92,9 @@ const Subjects = ({
           {renderActionButton(centerColumnOptions, centerColor, centerActionButtonProps)}
         </Block>
         <Block custom='col right'>
-          {renderSectionTitle(customRightTitle, rightColor, titleRight)}
+          <Block custom='col-section'>
+            {showTitleRight && renderSectionTitle(customRightTitle, rightColor, titleRight)}
+          </Block>
           {RenderSlot && 
             <RenderSlot 
               domain={domain}
@@ -125,6 +134,9 @@ Subjects.propTypes = {
     ['title-left']: PropTypes.string,
     ['title-center']: PropTypes.string,
     ['title-right']: PropTypes.string,
+    ['title-left-show']: PropTypes.string,
+    ['title-center-show']: PropTypes.string,
+    ['title-right-show']: PropTypes.string,
   }),
   domain: PropTypes.string,
   lazy: PropTypes.func,

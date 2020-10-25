@@ -4817,6 +4817,9 @@ var Subjects = function Subjects(_ref) {
   var titleLeft = content['title-left'];
   var titleCenter = content['title-center'];
   var titleRight = content['title-right'];
+  var showTitleLeft = content['title-left-show'] && content['title-left-show'] == "true";
+  var showTitleCenter = content['title-center-show'] && content['title-center-show'] == "true";
+  var showTitleRight = content['title-right-show'] && content['title-right-show'] == "true";
   var pqueue_left = content['items-left-pqueue'];
   var pqueue_center = content['items-center-pqueue'];
   var pqueue_right = content['items-right-pqueue'];
@@ -4863,21 +4866,27 @@ var Subjects = function Subjects(_ref) {
     }
   }, /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col left"
-  }, renderSectionTitle(customLeftTitle, leftColor, titleLeft), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col-section"
+  }, showTitleLeft && renderSectionTitle(customLeftTitle, leftColor, titleLeft)), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
     domain: domain,
     items: items_left,
     subjectColor: leftColor,
     teaserProps: renderType(leftType)
   }), renderActionButton(leftColumnOptions, leftColor, leftActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col center"
-  }, renderSectionTitle(customCenterTitle, centerColor, titleCenter), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col-section"
+  }, showTitleCenter && renderSectionTitle(customCenterTitle, centerColor, titleCenter)), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
     domain: domain,
     items: items_center,
     subjectColor: centerColor,
     teaserProps: renderType(centerType)
   }), renderActionButton(centerColumnOptions, centerColor, centerActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col right"
-  }, renderSectionTitle(customRightTitle, rightColor, titleRight), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col-section"
+  }, showTitleRight && renderSectionTitle(customRightTitle, rightColor, titleRight)), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
     domain: domain,
     items: items_right,
     subjectColor: rightColor,
@@ -4894,7 +4903,7 @@ Subjects.propTypes = {
     leftColumnOptions: PropTypes__default['default'].object,
     centerColumnOptions: PropTypes__default['default'].object,
     rightColumnOptions: PropTypes__default['default'].object
-  }, _defineProperty(_PropTypes$shape$1, 'input-template', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'items-left', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-left-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-center', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-center-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-right', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-right-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'style-color-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-color-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-color-right', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-type-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-type-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-type-right', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-right', PropTypes__default['default'].string), _PropTypes$shape$1)),
+  }, _defineProperty(_PropTypes$shape$1, 'input-template', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'items-left', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-left-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-center', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-center-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-right', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-right-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'style-color-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-color-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-color-right', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-type-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-type-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-type-right', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-right', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-left-show', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-center-show', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-right-show', PropTypes__default['default'].string), _PropTypes$shape$1)),
   domain: PropTypes__default['default'].string,
   lazy: PropTypes__default['default'].func,
   status: PropTypes__default['default'].object,

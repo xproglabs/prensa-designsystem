@@ -6,6 +6,9 @@ $subjects-1-teaser-image-width: 80px;
 .Prensa-Templates-Subjects {
   .col {
     @include mb($space-size-4);
+    .col-section {
+      @include mih($space-size-6);
+    }
     &.right {
       @include mb($space-size-6);
     }
