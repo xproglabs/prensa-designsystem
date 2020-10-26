@@ -4322,7 +4322,7 @@ var Featured = function Featured(_ref) {
       return /*#__PURE__*/React__default['default'].createElement(Block, {
         custom: "Prensa-Templates-Featured three",
         mb: "6",
-        md: {
+        lg: {
           align: 'row between',
           mb: '5'
         }
@@ -4817,9 +4817,9 @@ var Subjects = function Subjects(_ref) {
   var titleLeft = content['title-left'];
   var titleCenter = content['title-center'];
   var titleRight = content['title-right'];
-  var showTitleLeft = content['title-left-show'] && content['title-left-show'] == "true";
-  var showTitleCenter = content['title-center-show'] && content['title-center-show'] == "true";
-  var showTitleRight = content['title-right-show'] && content['title-right-show'] == "true";
+  var showTitleLeft = content['title-left-show'] && content['title-left-show'] == 'true';
+  var showTitleCenter = content['title-center-show'] && content['title-center-show'] == 'true';
+  var showTitleRight = content['title-right-show'] && content['title-right-show'] == 'true';
   var pqueue_left = content['items-left-pqueue'];
   var pqueue_center = content['items-center-pqueue'];
   var pqueue_right = content['items-right-pqueue'];
