@@ -8,6 +8,14 @@ $latest-1-teaser-image-width: 280px;
   .teaser-content {
     @include mx($space-size-3);
   }
+  @media(min-width: $lg) {
+    .page-left {
+      @include w(calc(100% / 3 * 2 - #{$space-size-2} + 6px));
+    }
+    .page-right {
+      @include w(calc(100% / 3 - #{$space-size-2} - 2px));
+    }
+  }
   .list-news,
   .latest-news {
     .teaser-default {
@@ -25,13 +33,7 @@ $latest-1-teaser-image-width: 280px;
         }
       }
     }
-    @media(min-width: $lg) {
-      .page-left {
-        @include w(calc(100% / 3 * 2 - #{$space-size-2} + 6px));
-      }
-      .page-right {
-        @include w(calc(100% / 3 - #{$space-size-2} - 2px));
-      }
+    @media (min-width: $lg) {
       .teaser-default {
         flex-direction: row;
       }
