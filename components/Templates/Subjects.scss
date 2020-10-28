@@ -4,15 +4,6 @@ $subjects-1-teaser-image-height: 80px;
 $subjects-1-teaser-image-width: 80px;
 
 .Prensa-Templates-Subjects {
-  .col {
-    @include mb($space-size-4);
-    .col-section {
-      @include mih($space-size-6);
-    }
-    &.right {
-      @include mb($space-size-6);
-    }
-  }
   .teaser-default {
     @include mb($space-size-2);
   }
@@ -36,10 +27,6 @@ $subjects-1-teaser-image-width: 80px;
   @media (min-width: $lg) {
     .col {
       @include w(calc(calc(100% - calc(#{$space-size-4} * 2)) / 3));
-      @include mb($space-size-5);
-      &.right {
-        @include mb($space-size-5);
-      }
     }  
   }
 }

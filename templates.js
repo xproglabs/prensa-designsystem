@@ -4324,10 +4324,8 @@ var Featured = function Featured(_ref) {
     case 3:
       return /*#__PURE__*/React__default['default'].createElement(Block, {
         custom: "Prensa-Templates-Featured three",
-        mb: "6",
         lg: {
-          align: 'row between',
-          mb: '5'
+          align: 'row between'
         }
       }, /*#__PURE__*/React__default['default'].createElement(Block, {
         custom: "block-left"
@@ -4702,12 +4700,11 @@ var Latest = function Latest(_ref) {
     custom: "Prensa-Templates-LatestNews",
     align: "col left",
     w: "100p",
-    md: {
+    lg: {
       align: 'row between'
     }
   }, /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "page-left",
-    mb: "6"
+    custom: "page-left"
   }, renderBlockTitle(), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "latest-news"
   }, lodash.map(teasersContent, function (item, key) {
@@ -4864,8 +4861,12 @@ var Subjects = function Subjects(_ref) {
 
   return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "Prensa-Templates-Subjects",
+    mt: "2",
+    mb: "2",
     lg: {
-      align: 'row between'
+      align: 'row between',
+      mt: '2',
+      mb: '3'
     }
   }, /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col left"

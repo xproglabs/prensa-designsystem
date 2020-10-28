@@ -64,7 +64,7 @@ const Subjects = ({
   };
   return (
     <React.Fragment>
-      <Block custom='Prensa-Templates-Subjects' lg={{align: 'row between'}}>
+      <Block custom='Prensa-Templates-Subjects' mt="2" mb="2" lg={{align: 'row between', mt: '2', mb: '3'}}>
         <Block custom='col left'>
           <Block custom='col-section'>
             {showTitleLeft && renderSectionTitle(customLeftTitle, leftColor, titleLeft)}
