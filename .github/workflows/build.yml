@@ -24,6 +24,7 @@ jobs:
           git config pull.ff only
           
       - name: Git checkout and merge
+        run: |
           git checkout ${{github.ref}}
           git pull
           git branch temp
