@@ -21,7 +21,7 @@ jobs:
         run: |
           git config --global user.name "Giovanni"
           git config --global user.email "giovanni@xproglabs.com"
-          git branch
+          git checkout ${{ github.ref }}
           git fetch origin
           git pull
           git merge develop
