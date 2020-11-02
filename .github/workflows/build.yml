@@ -7,16 +7,16 @@ jobs:
     name: Build Prensa SCSS and JS
     runs-on: ubuntu-latest
     steps:
-      - name: Clone repo
-        run: git clone https://${{secrets.gitusername}}${{secrets.gitpassword}}@github.com/xproglabs/prensa-designsystem.git
-        
-      - name: Config git
-        run: |
-          git config --global user.name "gbombassaro"
-          git config --global user.email "giovanni.bombassaro@gmail.com"
+      - name: Set Node.js version ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
         
       - name: Fetch origin
-        run: git fetch origin
+        run: |
+          git config user.name "Giovanni"
+          git config user.email "giovanni@xproglabs.com"
+          git fetch origin
           
       - name: Checkout source Git branch
         uses: actions/checkout@v2
@@ -24,15 +24,16 @@ jobs:
           ref: ${{ github.ref }}
           
       - name: Pull modifications
-        run: git pull
+        run: |
+          git config user.name "Giovanni"
+          git config user.email "giovanni@xproglabs.com"
+          git pull
 
       - name: Try to merge develop
-        run: git merge develop
-          
-      - name: Set Node.js version ${{ matrix.node_version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node_version }}
+        run: |
+          git config user.name "Giovanni"
+          git config user.email "giovanni@xproglabs.com"
+          git merge develop
 
       - name: Install packages
         run: npm install
