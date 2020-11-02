@@ -18,21 +18,14 @@ jobs:
         with:
           ref: ${{ github.ref }}
         
-      - name: Git config
+      - name: Git config and merge
         run: |
           git config --global user.name "Giovanni"
           git config --global user.email "giovanni@xproglabs.com"
           git config pull.ff only
-          git branch
-          git status
-          
-      - name: Git checkout and merge
-        run: |
-          git fetch origin
           git checkout develop
-          git pull
-          git branch
-          git status
+          git branch temp
+          git merge ${GITHUB_REF##*/}
 
       - name: Install packages
         run: npm install
