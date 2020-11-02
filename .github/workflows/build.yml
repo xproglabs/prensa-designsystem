@@ -17,11 +17,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
         
-      - name: Fetch and check for conflicts
+      - name: Git config
         run: |
           git config --global user.name "Giovanni"
           git config --global user.email "giovanni@xproglabs.com"
           git config pull.ff only
+          
+      - name: Git checkout and merge
           git checkout ${{github.ref}}
           git pull
           git branch temp
