@@ -25,7 +25,7 @@ jobs:
           git fetch origin
           git checkout ${{github.ref}}
           git switch -c tempForMerge
-          git merge develop
+          git merge develop -m "Merge"
 
       - name: Install packages
         run: npm install
