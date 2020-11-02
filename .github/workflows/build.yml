@@ -23,9 +23,10 @@ jobs:
           git config --global user.email "giovanni@xproglabs.com"
           git config pull.ff only
           git fetch origin
+          git switch -c tempDevelop
           git checkout ${{github.ref}}
           git switch -c tempForMerge
-          git merge develop -m "Merge"
+          git merge tempDevelop -m "Merge"
 
       - name: Install packages
         run: npm install
