@@ -7,6 +7,14 @@ jobs:
     name: Build Prensa SCSS and JS
     runs-on: ubuntu-latest
     steps:
+      - name: Clone repo
+        run: gh repo clone xproglabs/prensa-designsystem
+        
+      - name: Config git
+        run: |
+          git config --global user.name "gbombassaro"
+          git config --global user.email "giovanni.bombassaro@gmail.com"
+        
       - name: Fetch origin
         run: git fetch origin
           
