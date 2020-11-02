@@ -22,10 +22,9 @@ jobs:
           git config --global user.name "Giovanni"
           git config --global user.email "giovanni@xproglabs.com"
           git config pull.ff only
-          git checkout develop
-          git pull develop
+          git pull
           git checkout ${{github.ref}}
-          git pull ${{github.ref}}
+          git pull
           git merge develop
 
       - name: Install packages
