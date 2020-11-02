@@ -4,30 +4,18 @@ on: [push]
 
 jobs:
   build-sass-theme:
-    name: Build Prensa and check for merge
+    name: Build Prensa SCSS and JS
     runs-on: ubuntu-latest
     steps:
-          
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-          
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
           ref: ${{ github.ref }}
-        
-      - name: Git config
-        run: |
-          git config --global user.name "Giovanni"
-          git config --global user.email "giovanni@xproglabs.com"
-          git config pull.ff only
-          git checkout develop
-          git branch temp
-
-      - name: Check for merge
-        run: git merge ${GITHUB_REF##*/} -m "merge"
+          
+      - name: Set Node.js version ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
 
       - name: Install packages
         run: npm install
