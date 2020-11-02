@@ -21,9 +21,11 @@ jobs:
         run: |
           git config --global user.name "Giovanni"
           git config --global user.email "giovanni@xproglabs.com"
-          git checkout ${{ github.ref }}
-          git fetch origin
-          git pull
+          git config pull.ff only
+          git checkout develop
+          git pull develop
+          git checkout ${{github.ref}}
+          git pull ${{github.ref}}
           git merge develop
 
       - name: Install packages
