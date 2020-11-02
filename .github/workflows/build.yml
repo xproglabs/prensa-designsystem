@@ -12,6 +12,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+          
+      - name: Checkout source Git branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
         
       - name: Git config
         run: |
@@ -21,14 +26,13 @@ jobs:
           git branch
           git status
           
-      - name: Checkout source Git branch
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
-          
       - name: Git checkout and merge
         run: |
+          git fetch origin
+          git checkout develop
+          git pull
           git branch
+          git status
 
       - name: Install packages
         run: npm install
