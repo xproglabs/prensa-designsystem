@@ -22,6 +22,8 @@ jobs:
           git config --global user.name "Giovanni"
           git config --global user.email "giovanni@xproglabs.com"
           git config pull.ff only
+          git branch
+          git status
           
       - name: Git checkout and merge
         run: |
