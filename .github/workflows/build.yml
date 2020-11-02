@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone repo
-        run: gh repo clone xproglabs/prensa-designsystem
+        run: git clone https://${{secrets.gitusername}}${{secrets.gitpassword}}@github.com/xproglabs/prensa-designsystem.git
         
       - name: Config git
         run: |
