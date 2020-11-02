@@ -7,10 +7,19 @@ jobs:
     name: Build Prensa SCSS and JS
     runs-on: ubuntu-latest
     steps:
+      - name: Fetch origin
+        run: git fetch origin
+          
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
           ref: ${{ github.ref }}
+          
+      - name: Pull modifications
+        run: git pull
+
+      - name: Try to merge develop
+        run: git merge develop
           
       - name: Set Node.js version ${{ matrix.node_version }}
         uses: actions/setup-node@v1
