@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build-sass-theme:
-    name: Build Prensa SCSS and JS
+    name: Build Prensa and check for merge
     runs-on: ubuntu-latest
     steps:
           
@@ -18,7 +18,7 @@ jobs:
         with:
           ref: ${{ github.ref }}
         
-      - name: Git config and merge
+      - name: Git config
         run: |
           git config --global user.name "Giovanni"
           git config --global user.email "giovanni@xproglabs.com"
