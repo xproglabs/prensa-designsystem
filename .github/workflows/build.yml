@@ -25,7 +25,9 @@ jobs:
           git config pull.ff only
           git checkout develop
           git branch temp
-          git merge ${GITHUB_REF##*/}
+
+      - name: Check for merge
+        run: git merge ${GITHUB_REF##*/} -m "merge"
 
       - name: Install packages
         run: npm install
