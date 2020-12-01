@@ -70,5 +70,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "dependencies": {}
+  "dependencies": {
+    "styled-components": "^5.2.1"
+  }
 }
