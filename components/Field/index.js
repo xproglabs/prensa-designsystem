@@ -2,8 +2,8 @@ import {get} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
+import {withTheme} from 'styled-components';
 
-import {colors} from '../../styles/theme';
 import colorProps from '../../styles/variables/colors.json';
 
 const parseNumberToString = (param) => {
@@ -18,9 +18,9 @@ const getFromProps = (props, param, defaultValue) => {
 
 const validateStyle = (props) => {
   const isValid = get(props, 'validation', true);
-  if (!isValid) return colors.error1;
+  if (!isValid) return props.theme.colors.error1;
   if (props.borderColor) return props.borderColor;
-  return colors.neutral9;
+  return props.theme.colors.neutral9;
 };
 
 const Container = styled.div`
@@ -32,8 +32,8 @@ const Container = styled.div`
 const StyledLabel = styled.label`
   font-size: 14px;
   font-weight: 400;
-  font-family: ${props => props.fontFamily ? props.fontFamily : 'Roboto'};
-  color: ${props => getFromProps(props, 'fontColor', '#707070')};
+  font-family: ${props => props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary};
+  color: ${props => getFromProps(props, 'fontColor', props.theme.colors.neutral5)};
   text-transform: capitalize;
 `;
 const StyledInput = styled.input`
@@ -48,18 +48,18 @@ const StyledInput = styled.input`
   border-radius: ${props => getFromProps(props, 'radius', 5)};
   font-size: 14px;
   font-weight: 400;
-  font-family: ${props => props.fontFamily ? props.fontFamily : 'Roboto'};
-  color: #333333;
+  font-family: ${props => props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary};
+  color: ${props => getFromProps(props, 'fontColor', props.theme.colors.neutral2)};
   &:focus {
-    outline-color: ${props => getFromProps(props, 'activeColor', colors.primary1)};
+    outline-color: ${props => getFromProps(props, 'activeColor', props.theme.colors.primary1)};
   }
 `;
 
 const ErrorMessage = styled.p`
   font-size: 14px;
   font-weight: 400;
-  font-family: ${props => props.fontFamily ? props.fontFamily : 'Roboto'};
-  color: ${colors.error1};
+  font-family: ${props => props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary};
+  color: ${props => props.theme.colors.error1};
   text-transform: capitalize;
   margin-top: 4px;
   margin-bottom: 0px;
@@ -79,6 +79,7 @@ const Field = ({
   fontFamily,
   activeColor,
   borderColor,
+  fontColor,
   validation,
   validationMessage
 }) => {
@@ -89,8 +90,8 @@ const Field = ({
 
   return (
     <Container marginTop={marginTop} marginRight={marginRight} marginBottom={marginBottom} marginLeft={marginLeft} validation={validation}>
-      <StyledLabel>{label}</StyledLabel>
-      <StyledInput type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} />
+      <StyledLabel fontColor={fontColor}>{label}</StyledLabel>
+      <StyledInput type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} />
       {validation === false && <ErrorMessage>{validationMessage}</ErrorMessage>}
     </Container>
   );
@@ -111,11 +112,12 @@ Field.propTypes = {
   fontFamily: PropTypes.string,
   //STYLE PROPS
   activeColor: PropTypes.oneOf(colorProps),
-  borderColor: PropTypes.oneOf(colorProps)
+  borderColor: PropTypes.oneOf(colorProps),
+  fontColor: PropTypes.oneOf(colorProps)
 };
 
 Field.defaultProps = {
   validation: true
 };
 
-export default Field;
+export default withTheme(Field);

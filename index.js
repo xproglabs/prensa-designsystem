@@ -986,45 +986,6 @@ var index = {
   Input: Input
 };
 
-var colors$1 = {
-  primary1: '#30417D',
-  primary2: '#4881AF',
-  primary3: '#9AC4FE',
-  secondary1: '#3D8A7C',
-  secondary2: '#1CC664',
-  secondary3: '#55E581',
-  black: '#000000',
-  neutral1: '#151515',
-  neutral2: '#333333',
-  neutral3: '#555555',
-  neutral4: '#666666',
-  neutral5: '#707070',
-  neutral6: '#999999',
-  neutral7: '#B5B5B5',
-  neutral8: '#D7D7D7',
-  neutral9: '#EAEAEA',
-  neutral10: '#F2F2F2',
-  neutral11: '#FAFAFA',
-  white: '#FFFFFF',
-  colorAds: '#FF5C00',
-  editorial1: '#0975B7',
-  editorial2: '#AB001B',
-  editorial3: '#BFA525',
-  editorial4: '#080808',
-  editorial5: '#09B77B',
-  product1: '#0975B7',
-  product2: '#AB001B',
-  product3: '#BFA525',
-  product4: '#080808',
-  product5: '#09B77B',
-  success1: '#3C8D40',
-  success2: '#50AE55',
-  success3: '#83C686',
-  error1: '#D13135',
-  error2: '#F1453D',
-  error3: '#E37475'
-};
-
 function _templateObject4() {
   var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  text-transform: capitalize;\n  margin-top: 4px;\n  margin-bottom: 0px;\n  height: 16px;\n"]);
 
@@ -1036,7 +997,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  width: calc(100% - 6px - 16px);\n  height: 40px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: ", ";\n  padding-left: 8px;\n  padding-right: 8px;\n  margin-top: 2px;\n  border-radius: ", ";\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: #333333;\n  &:focus {\n    outline-color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: calc(100% - 6px - 16px);\n  height: 40px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: ", ";\n  padding-left: 8px;\n  padding-right: 8px;\n  margin-top: 2px;\n  border-radius: ", ";\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  &:focus {\n    outline-color: ", ";\n  }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1077,9 +1038,9 @@ var getFromProps = function getFromProps(props, param, defaultValue) {
 
 var validateStyle = function validateStyle(props) {
   var isValid = lodash.get(props, 'validation', true);
-  if (!isValid) return colors$1.error1;
+  if (!isValid) return props.theme.colors.error1;
   if (props.borderColor) return props.borderColor;
-  return colors$1.neutral9;
+  return props.theme.colors.neutral9;
 };
 
 var Container = styled__default['default'].div(_templateObject(), function (props) {
@@ -1092,22 +1053,26 @@ var Container = styled__default['default'].div(_templateObject(), function (prop
   return getFromProps(props, 'marginRight', 0);
 });
 var StyledLabel = styled__default['default'].label(_templateObject2(), function (props) {
-  return props.fontFamily ? props.fontFamily : 'Roboto';
+  return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
 }, function (props) {
-  return getFromProps(props, 'fontColor', '#707070');
+  return getFromProps(props, 'fontColor', props.theme.colors.neutral5);
 });
 var StyledInput = styled__default['default'].input(_templateObject3(), function (props) {
   return validateStyle(props);
 }, function (props) {
   return getFromProps(props, 'radius', 5);
 }, function (props) {
-  return props.fontFamily ? props.fontFamily : 'Roboto';
+  return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
 }, function (props) {
-  return getFromProps(props, 'activeColor', colors$1.primary1);
+  return getFromProps(props, 'fontColor', props.theme.colors.neutral2);
+}, function (props) {
+  return getFromProps(props, 'activeColor', props.theme.colors.primary1);
 });
 var ErrorMessage = styled__default['default'].p(_templateObject4(), function (props) {
-  return props.fontFamily ? props.fontFamily : 'Roboto';
-}, colors$1.error1);
+  return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
+}, function (props) {
+  return props.theme.colors.error1;
+});
 
 var Field = function Field(_ref) {
   var marginTop = _ref.marginTop,
@@ -1122,6 +1087,7 @@ var Field = function Field(_ref) {
       fontFamily = _ref.fontFamily,
       activeColor = _ref.activeColor,
       borderColor = _ref.borderColor,
+      fontColor = _ref.fontColor,
       validation = _ref.validation,
       validationMessage = _ref.validationMessage;
 
@@ -1135,7 +1101,9 @@ var Field = function Field(_ref) {
     marginBottom: marginBottom,
     marginLeft: marginLeft,
     validation: validation
-  }, /*#__PURE__*/React__default['default'].createElement(StyledLabel, null, label), /*#__PURE__*/React__default['default'].createElement(StyledInput, {
+  }, /*#__PURE__*/React__default['default'].createElement(StyledLabel, {
+    fontColor: fontColor
+  }, label), /*#__PURE__*/React__default['default'].createElement(StyledInput, {
     type: type,
     value: value,
     onChange: handleChange,
@@ -1143,7 +1111,8 @@ var Field = function Field(_ref) {
     fontFamily: fontFamily,
     activeColor: activeColor,
     borderColor: borderColor,
-    validation: validation
+    validation: validation,
+    fontColor: fontColor
   }), validation === false && /*#__PURE__*/React__default['default'].createElement(ErrorMessage, null, validationMessage));
 };
 
@@ -1162,11 +1131,13 @@ Field.propTypes = {
   fontFamily: PropTypes__default['default'].string,
   //STYLE PROPS
   activeColor: PropTypes__default['default'].oneOf(colors),
-  borderColor: PropTypes__default['default'].oneOf(colors)
+  borderColor: PropTypes__default['default'].oneOf(colors),
+  fontColor: PropTypes__default['default'].oneOf(colors)
 };
 Field.defaultProps = {
   validation: true
 };
+var index$1 = styled.withTheme(Field);
 
 var Image$1 = function Image(_ref) {
   var content = _ref.content,
@@ -5108,7 +5079,7 @@ Tag.propTypes = {
 exports.Block = Block;
 exports.Button = Button;
 exports.ColumnHeader = ColumnHeader;
-exports.Field = Field;
+exports.Field = index$1;
 exports.Form = index;
 exports.Image = Image$1;
 exports.ImageBackground = Image;
