@@ -6,12 +6,14 @@ var classnames = require('classnames');
 var PropTypes = require('prop-types');
 var React = require('react');
 var lodash = require('lodash');
+var styled = require('styled-components');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var classnames__default = /*#__PURE__*/_interopDefaultLegacy(classnames);
 var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -44,6 +46,18 @@ function _extends() {
   };
 
   return _extends.apply(this, arguments);
+}
+
+function _taggedTemplateLiteral(strings, raw) {
+  if (!raw) {
+    raw = strings.slice(0);
+  }
+
+  return Object.freeze(Object.defineProperties(strings, {
+    raw: {
+      value: Object.freeze(raw)
+    }
+  }));
 }
 
 var colors = [
@@ -972,6 +986,188 @@ var index = {
   Input: Input
 };
 
+var colors$1 = {
+  primary1: '#30417D',
+  primary2: '#4881AF',
+  primary3: '#9AC4FE',
+  secondary1: '#3D8A7C',
+  secondary2: '#1CC664',
+  secondary3: '#55E581',
+  black: '#000000',
+  neutral1: '#151515',
+  neutral2: '#333333',
+  neutral3: '#555555',
+  neutral4: '#666666',
+  neutral5: '#707070',
+  neutral6: '#999999',
+  neutral7: '#B5B5B5',
+  neutral8: '#D7D7D7',
+  neutral9: '#EAEAEA',
+  neutral10: '#F2F2F2',
+  neutral11: '#FAFAFA',
+  white: '#FFFFFF',
+  colorAds: '#FF5C00',
+  editorial1: '#0975B7',
+  editorial2: '#AB001B',
+  editorial3: '#BFA525',
+  editorial4: '#080808',
+  editorial5: '#09B77B',
+  product1: '#0975B7',
+  product2: '#AB001B',
+  product3: '#BFA525',
+  product4: '#080808',
+  product5: '#09B77B',
+  success1: '#3C8D40',
+  success2: '#50AE55',
+  success3: '#83C686',
+  error1: '#D13135',
+  error2: '#F1453D',
+  error3: '#E37475'
+};
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  text-transform: capitalize;\n  margin-top: 4px;\n  margin-bottom: 0px;\n  height: 16px;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  width: calc(100% - 6px - 16px);\n  height: 40px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: ", ";\n  padding-left: 8px;\n  padding-right: 8px;\n  margin-top: 2px;\n  border-radius: ", ";\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: #333333;\n  &:focus {\n    outline-color: ", ";\n  }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  text-transform: capitalize;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  margin-top: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var parseNumberToString = function parseNumberToString(param) {
+  return "".concat(param, "px");
+};
+
+var getFromProps = function getFromProps(props, param, defaultValue) {
+  var defaultIsNumber = Number.isInteger(defaultValue);
+  var value = defaultIsNumber ? parseNumberToString(defaultValue) : defaultValue;
+  return lodash.get(props, param, value);
+};
+
+var validateStyle = function validateStyle(props) {
+  var isValid = lodash.get(props, 'validation', true);
+  if (!isValid) return colors$1.error1;
+  if (props.borderColor) return props.borderColor;
+  return colors$1.neutral9;
+};
+
+var Container = styled__default['default'].div(_templateObject(), function (props) {
+  return getFromProps(props, 'marginTop', 0);
+}, function (props) {
+  return getFromProps(props, 'marginBottom', props.validation === false ? 12 : 32);
+}, function (props) {
+  return getFromProps(props, 'marginLeft', 0);
+}, function (props) {
+  return getFromProps(props, 'marginRight', 0);
+});
+var StyledLabel = styled__default['default'].label(_templateObject2(), function (props) {
+  return props.fontFamily ? props.fontFamily : 'Roboto';
+}, function (props) {
+  return getFromProps(props, 'fontColor', '#707070');
+});
+var StyledInput = styled__default['default'].input(_templateObject3(), function (props) {
+  return validateStyle(props);
+}, function (props) {
+  return getFromProps(props, 'radius', 5);
+}, function (props) {
+  return props.fontFamily ? props.fontFamily : 'Roboto';
+}, function (props) {
+  return getFromProps(props, 'activeColor', colors$1.primary1);
+});
+var ErrorMessage = styled__default['default'].p(_templateObject4(), function (props) {
+  return props.fontFamily ? props.fontFamily : 'Roboto';
+}, colors$1.error1);
+
+var Field = function Field(_ref) {
+  var marginTop = _ref.marginTop,
+      marginRight = _ref.marginRight,
+      marginBottom = _ref.marginBottom,
+      marginLeft = _ref.marginLeft,
+      label = _ref.label,
+      radius = _ref.radius,
+      onChange = _ref.onChange,
+      type = _ref.type,
+      value = _ref.value,
+      fontFamily = _ref.fontFamily,
+      activeColor = _ref.activeColor,
+      borderColor = _ref.borderColor,
+      validation = _ref.validation,
+      validationMessage = _ref.validationMessage;
+
+  var handleChange = function handleChange(event) {
+    onChange(event.target.value);
+  };
+
+  return /*#__PURE__*/React__default['default'].createElement(Container, {
+    marginTop: marginTop,
+    marginRight: marginRight,
+    marginBottom: marginBottom,
+    marginLeft: marginLeft,
+    validation: validation
+  }, /*#__PURE__*/React__default['default'].createElement(StyledLabel, null, label), /*#__PURE__*/React__default['default'].createElement(StyledInput, {
+    type: type,
+    value: value,
+    onChange: handleChange,
+    radius: radius,
+    fontFamily: fontFamily,
+    activeColor: activeColor,
+    borderColor: borderColor,
+    validation: validation
+  }), validation === false && /*#__PURE__*/React__default['default'].createElement(ErrorMessage, null, validationMessage));
+};
+
+Field.propTypes = {
+  marginTop: PropTypes__default['default'].number,
+  marginRight: PropTypes__default['default'].number,
+  marginBottom: PropTypes__default['default'].number,
+  marginLeft: PropTypes__default['default'].number,
+  label: PropTypes__default['default'].string,
+  radius: PropTypes__default['default'].number,
+  onChange: PropTypes__default['default'].func,
+  type: PropTypes__default['default'].string,
+  value: PropTypes__default['default'].string,
+  validation: PropTypes__default['default'].oneOf([true, false]).isRequired,
+  validationMessage: PropTypes__default['default'].string.isRequired,
+  fontFamily: PropTypes__default['default'].string,
+  //STYLE PROPS
+  activeColor: PropTypes__default['default'].oneOf(colors),
+  borderColor: PropTypes__default['default'].oneOf(colors)
+};
+Field.defaultProps = {
+  validation: true
+};
+
 var Image$1 = function Image(_ref) {
   var content = _ref.content,
       custom = _ref.custom,
@@ -1030,6 +1226,7 @@ Image$1.defaultProps = {
 
 function SvgIcArrowBack(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
     height: 32,
     viewBox: "0 0 24 24",
     width: 32
@@ -1043,6 +1240,7 @@ function SvgIcArrowBack(props) {
 
 function SvgIcArrowForward(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
     height: 32,
     viewBox: "0 0 24 24",
     width: 32
@@ -1298,6 +1496,7 @@ SideMenu.defaultProps = {
 
 function SvgIcArrowMenu(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
     height: 24,
     width: 24
   }, props), /*#__PURE__*/React.createElement("path", {
@@ -4909,6 +5108,7 @@ Tag.propTypes = {
 exports.Block = Block;
 exports.Button = Button;
 exports.ColumnHeader = ColumnHeader;
+exports.Field = Field;
 exports.Form = index;
 exports.Image = Image$1;
 exports.ImageBackground = Image;
