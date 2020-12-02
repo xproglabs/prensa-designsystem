@@ -57,8 +57,8 @@ const Latest = ({
   };
 
   return (
-    <Block custom='Prensa-Templates-LatestNews' align='col left' w='100p' md={{align: 'row between'}}>
-      <Block custom='page-left' mb='6'>
+    <Block custom='Prensa-Templates-LatestNews' align='col left' w='100p' lg={{align: 'row between'}}>
+      <Block custom='page-left'>
         {renderBlockTitle()}
         <Block custom='latest-news'>
           {map(teasersContent, (item, key) => 
