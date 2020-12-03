@@ -60,7 +60,6 @@ const ErrorMessage = styled.p`
   font-weight: 400;
   font-family: ${props => props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary};
   color: ${props => props.theme.colors.error1};
-  text-transform: capitalize;
   margin-top: 4px;
   margin-bottom: 0px;
   height: 16px;

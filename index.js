@@ -987,7 +987,7 @@ var index = {
 };
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  text-transform: capitalize;\n  margin-top: 4px;\n  margin-bottom: 0px;\n  height: 16px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  margin-top: 4px;\n  margin-bottom: 0px;\n  height: 16px;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
