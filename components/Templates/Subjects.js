@@ -55,21 +55,21 @@ const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
         <Block custom='col left'>
           <SectionTitle weight='bold' gutter={3} color={parseColor(leftColor)}>{titleLeft}</SectionTitle>
           {map(items_left, (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={leftColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={parseColor(leftColor)} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>
         <Block custom='col center'>
           <SectionTitle weight='bold' gutter={3} color={parseColor(centerColor)}>{titleCenter}</SectionTitle>
           {map(items_center, (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={centerColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={parseColor(centerColor)} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>
         <Block custom='col right'>
           <SectionTitle weight='bold' gutter={3} color={parseColor(rightColor)}>{titleRight}</SectionTitle>
           {map(items_right, (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={rightColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={parseColor(rightColor)} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>
