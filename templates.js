@@ -4709,9 +4709,11 @@ var Subjects = function Subjects(_ref) {
   var pqueue_right = content['items-right-pqueue'];
   var items_left = pqueue_left && pqueue_left.length > 0 ? pqueue_left : content['items-left'];
   var items_center = pqueue_center && pqueue_center.length > 0 ? pqueue_center : content['items-center'];
-  var items_right = pqueue_right && pqueue_right.length > 0 ? pqueue_right : content['items-right'];
+  var items_right = pqueue_right && pqueue_right.length > 0 ? pqueue_right : content['items-right']; //PARSER FOR BACKEND DEPRECATED
 
   var parseColor = function parseColor(color) {
+    console.log('subjects', color);
+
     switch (color) {
       case 'yellow':
         return 'editorial-1';

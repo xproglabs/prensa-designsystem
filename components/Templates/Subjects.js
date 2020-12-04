@@ -27,7 +27,9 @@ const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
   const items_center =  pqueue_center && pqueue_center.length > 0 ? pqueue_center : content['items-center'];
   const items_right =  pqueue_right && pqueue_right.length > 0 ? pqueue_right : content['items-right'];
 
+  //PARSER FOR BACKEND DEPRECATED
   const parseColor = color => {
+    console.log('subjects', color);
     switch(color) {
       case 'yellow':
         return 'editorial-1';
