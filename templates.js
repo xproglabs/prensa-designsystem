@@ -4695,6 +4695,7 @@ var Subjects = function Subjects(_ref) {
   var leftColor = content['style-left'];
   var centerColor = content['style-center'];
   var rightColor = content['style-right'];
+  console.log('subjects', leftColor, centerColor, rightColor);
   var titleLeft = content['title-left'];
   var titleCenter = content['title-center'];
   var titleRight = content['title-right'];
@@ -4712,8 +4713,6 @@ var Subjects = function Subjects(_ref) {
   var items_right = pqueue_right && pqueue_right.length > 0 ? pqueue_right : content['items-right']; //PARSER FOR BACKEND DEPRECATED
 
   var parseColor = function parseColor(color) {
-    console.log('subjects', color);
-
     switch (color) {
       case 'yellow':
         return 'editorial-1';

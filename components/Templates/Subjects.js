@@ -12,6 +12,7 @@ const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
   const leftColor = content['style-left'];
   const centerColor = content['style-center'];
   const rightColor = content['style-right'];
+  console.log('subjects', leftColor, centerColor, rightColor);
 
   const titleLeft = content['title-left'];
   const titleCenter = content['title-center'];
@@ -29,7 +30,6 @@ const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
 
   //PARSER FOR BACKEND DEPRECATED
   const parseColor = color => {
-    console.log('subjects', color);
     switch(color) {
       case 'yellow':
         return 'editorial-1';
