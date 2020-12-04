@@ -4710,6 +4710,32 @@ var Subjects = function Subjects(_ref) {
   var items_left = pqueue_left && pqueue_left.length > 0 ? pqueue_left : content['items-left'];
   var items_center = pqueue_center && pqueue_center.length > 0 ? pqueue_center : content['items-center'];
   var items_right = pqueue_right && pqueue_right.length > 0 ? pqueue_right : content['items-right'];
+
+  var parseColor = function parseColor(color) {
+    switch (color) {
+      case 'yellow':
+        return 'editorial-1';
+
+      case 'blue':
+        return 'editorial-2';
+
+      case 'black':
+        return 'editorial-3';
+
+      case 'green':
+        return 'editorial-4';
+
+      case 'red':
+        return 'editorial-5';
+
+      case 'default':
+        return 'primary-1';
+
+      default:
+        return color;
+    }
+  };
+
   return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,
@@ -4719,7 +4745,7 @@ var Subjects = function Subjects(_ref) {
   }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,
-    color: leftColor
+    color: parseColor(leftColor)
   }, titleLeft), lodash.map(items_left, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
@@ -4739,7 +4765,7 @@ var Subjects = function Subjects(_ref) {
   }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,
-    color: centerColor
+    color: parseColor(centerColor)
   }, titleCenter), lodash.map(items_center, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
@@ -4759,7 +4785,7 @@ var Subjects = function Subjects(_ref) {
   }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,
-    color: rightColor
+    color: parseColor(rightColor)
   }, titleRight), lodash.map(items_right, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
