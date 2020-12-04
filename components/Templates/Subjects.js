@@ -26,27 +26,46 @@ const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
   const items_left =  pqueue_left && pqueue_left.length > 0 ? pqueue_left : content['items-left'];
   const items_center =  pqueue_center && pqueue_center.length > 0 ? pqueue_center : content['items-center'];
   const items_right =  pqueue_right && pqueue_right.length > 0 ? pqueue_right : content['items-right'];
+
+  const parseColor = color => {
+    switch(color) {
+      case 'yellow':
+        return 'editorial-1';
+      case 'blue':
+        return 'editorial-2';
+      case 'black':
+        return 'editorial-3';
+      case 'green':
+        return 'editorial-4';
+      case 'red':
+        return 'editorial-5';
+      case 'default':
+        return 'primary-1';
+      default:
+        return color;
+    }
+  };
   
   return (
     <>
       {title && title !== ''&& <SectionTitle weight='bold' gutter={3} name={title} />}
       <Block {...propsTemplate}> 
         <Block custom='col left'>
-          <SectionTitle weight='bold' gutter={3} color={leftColor}>{titleLeft}</SectionTitle>
+          <SectionTitle weight='bold' gutter={3} color={parseColor(leftColor)}>{titleLeft}</SectionTitle>
           {map(items_left, (item, key) =>
             <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={leftColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>
         <Block custom='col center'>
-          <SectionTitle weight='bold' gutter={3} color={centerColor}>{titleCenter}</SectionTitle>
+          <SectionTitle weight='bold' gutter={3} color={parseColor(centerColor)}>{titleCenter}</SectionTitle>
           {map(items_center, (item, key) =>
             <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={centerColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>
         <Block custom='col right'>
-          <SectionTitle weight='bold' gutter={3} color={rightColor}>{titleRight}</SectionTitle>
+          <SectionTitle weight='bold' gutter={3} color={parseColor(rightColor)}>{titleRight}</SectionTitle>
           {map(items_right, (item, key) =>
             <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={rightColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
