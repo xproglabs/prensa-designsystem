@@ -9,10 +9,6 @@ import {SectionTitle} from '../Typography';
 const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
   const {title} = content;
 
-  const leftColor = content['style-left'];
-  const centerColor = content['style-center'];
-  const rightColor = content['style-right'];
-
   const titleLeft = content['title-left'];
   const titleCenter = content['title-center'];
   const titleRight = content['title-right'];
@@ -47,30 +43,32 @@ const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
     }
   };
 
-  console.log('LEFT COLOR', leftColor, parseColor(leftColor));
+  const leftColor = parseColor(content['style-left']);
+  const centerColor = parseColor(content['style-center']);
+  const rightColor = parseColor(content['style-right']);
   
   return (
     <>
       {title && title !== ''&& <SectionTitle weight='bold' gutter={3} name={title} />}
       <Block {...propsTemplate}> 
         <Block custom='col left'>
-          <SectionTitle weight='bold' gutter={3} color={parseColor(leftColor)}>{titleLeft}</SectionTitle>
+          <SectionTitle weight='bold' gutter={3} color={leftColor}>{titleLeft}</SectionTitle>
           {map(items_left, (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={parseColor(leftColor)} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={leftColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>
         <Block custom='col center'>
-          <SectionTitle weight='bold' gutter={3} color={parseColor(centerColor)}>{titleCenter}</SectionTitle>
+          <SectionTitle weight='bold' gutter={3} color={centerColor}>{titleCenter}</SectionTitle>
           {map(items_center, (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={parseColor(centerColor)} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={centerColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>
         <Block custom='col right'>
-          <SectionTitle weight='bold' gutter={3} color={parseColor(rightColor)}>{titleRight}</SectionTitle>
+          <SectionTitle weight='bold' gutter={3} color={rightColor}>{titleRight}</SectionTitle>
           {map(items_right, (item, key) =>
-            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={parseColor(rightColor)} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
+            <Teaser content={item} domain={domain} lazy={lazy} key={key} status={status} subjectSize={2} subjectColor={rightColor} titleSize={2} titleColor='neutral-2' dateColor='neutral-4' titleWeight='bold'/>
           )}
           {readMoreButton && readMoreButton}
         </Block>

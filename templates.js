@@ -4692,9 +4692,6 @@ var Subjects = function Subjects(_ref) {
       readMoreButton = _ref.readMoreButton,
       status = _ref.status;
   var title = content.title;
-  var leftColor = content['style-left'];
-  var centerColor = content['style-center'];
-  var rightColor = content['style-right'];
   var titleLeft = content['title-left'];
   var titleCenter = content['title-center'];
   var titleRight = content['title-right'];
@@ -4736,7 +4733,9 @@ var Subjects = function Subjects(_ref) {
     }
   };
 
-  console.log("LEFT COLOR", leftColor, parseColor(leftColor));
+  var leftColor = parseColor(content['style-left']);
+  var centerColor = parseColor(content['style-center']);
+  var rightColor = parseColor(content['style-right']);
   return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,
@@ -4746,7 +4745,7 @@ var Subjects = function Subjects(_ref) {
   }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,
-    color: parseColor(leftColor)
+    color: leftColor
   }, titleLeft), lodash.map(items_left, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
@@ -4755,7 +4754,7 @@ var Subjects = function Subjects(_ref) {
       key: key,
       status: status,
       subjectSize: 2,
-      subjectColor: parseColor(leftColor),
+      subjectColor: leftColor,
       titleSize: 2,
       titleColor: "neutral-2",
       dateColor: "neutral-4",
@@ -4766,7 +4765,7 @@ var Subjects = function Subjects(_ref) {
   }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,
-    color: parseColor(centerColor)
+    color: centerColor
   }, titleCenter), lodash.map(items_center, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
@@ -4775,7 +4774,7 @@ var Subjects = function Subjects(_ref) {
       key: key,
       status: status,
       subjectSize: 2,
-      subjectColor: parseColor(centerColor),
+      subjectColor: centerColor,
       titleSize: 2,
       titleColor: "neutral-2",
       dateColor: "neutral-4",
@@ -4786,7 +4785,7 @@ var Subjects = function Subjects(_ref) {
   }, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,
-    color: parseColor(rightColor)
+    color: rightColor
   }, titleRight), lodash.map(items_right, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
@@ -4795,7 +4794,7 @@ var Subjects = function Subjects(_ref) {
       key: key,
       status: status,
       subjectSize: 2,
-      subjectColor: parseColor(rightColor),
+      subjectColor: rightColor,
       titleSize: 2,
       titleColor: "neutral-2",
       dateColor: "neutral-4",
