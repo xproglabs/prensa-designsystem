@@ -4695,7 +4695,6 @@ var Subjects = function Subjects(_ref) {
   var leftColor = content['style-left'];
   var centerColor = content['style-center'];
   var rightColor = content['style-right'];
-  console.log('subjects', leftColor, centerColor, rightColor);
   var titleLeft = content['title-left'];
   var titleCenter = content['title-center'];
   var titleRight = content['title-right'];

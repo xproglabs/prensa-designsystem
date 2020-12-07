@@ -12,7 +12,6 @@ const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
   const leftColor = content['style-left'];
   const centerColor = content['style-center'];
   const rightColor = content['style-right'];
-  console.log('subjects', leftColor, centerColor, rightColor);
 
   const titleLeft = content['title-left'];
   const titleCenter = content['title-center'];
