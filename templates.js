@@ -4736,6 +4736,7 @@ var Subjects = function Subjects(_ref) {
     }
   };
 
+  console.log("LEFT COLOR", leftColor, parseColor(leftColor));
   return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,

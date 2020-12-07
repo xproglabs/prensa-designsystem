@@ -46,6 +46,8 @@ const Subjects = ({content, domain, lazy, readMoreButton, status}) => {
         return color;
     }
   };
+
+  console.log('LEFT COLOR', leftColor, parseColor(leftColor));
   
   return (
     <>
