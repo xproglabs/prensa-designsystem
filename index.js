@@ -1103,7 +1103,9 @@ var Field = function Field(_ref) {
     validation: validation
   }, /*#__PURE__*/React__default['default'].createElement(StyledLabel, {
     fontColor: fontColor
-  }, label), /*#__PURE__*/React__default['default'].createElement(StyledInput, {
+  }, label), /*#__PURE__*/React__default['default'].createElement("div", {
+    className: "input-wrapper"
+  }, /*#__PURE__*/React__default['default'].createElement(StyledInput, {
     type: type,
     value: value,
     onChange: handleChange,
@@ -1113,7 +1115,7 @@ var Field = function Field(_ref) {
     borderColor: borderColor,
     validation: validation,
     fontColor: fontColor
-  }), validation === false && /*#__PURE__*/React__default['default'].createElement(ErrorMessage, null, validationMessage));
+  })), validation === false && /*#__PURE__*/React__default['default'].createElement(ErrorMessage, null, validationMessage));
 };
 
 Field.propTypes = {

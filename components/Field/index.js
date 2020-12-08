@@ -23,6 +23,13 @@ const validateStyle = (props) => {
   return props.theme.colors.neutral9;
 };
 
+const validateIcon = props => {
+  const isValid = get(props, 'validation', true);
+  if (!isValid) return props.theme.colors.error1;
+  if (props.iconColor) return props.iconColor;
+  return props.theme.colors.neutral5;
+};
+
 const Container = styled.div`
   margin-top: ${props => getFromProps(props, 'marginTop', 0)};
   margin-bottom: ${props => getFromProps(props, 'marginBottom', props.validation === false ? 12 : 32)};
@@ -36,22 +43,45 @@ const StyledLabel = styled.label`
   color: ${props => getFromProps(props, 'fontColor', props.theme.colors.neutral5)};
   text-transform: capitalize;
 `;
-const StyledInput = styled.input`
-  width: calc(100% - 6px - 16px);
+const InputContainer = styled.div`
+  width: calc(100% - 2px);
   height: 40px;
   border-width: 1px;
   border-style: solid;
   border-color: ${props => validateStyle(props)};
+  border-radius: ${props => getFromProps(props, 'radius', 5)};
+  display: flex;
+  align-items: center;
+  svg {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    fill: ${props => validateIcon(props)};
+    cursor: pointer;
+  }
+  &:focus-within {
+    border-color: ${props => getFromProps(props, 'activeColor', props.theme.colors.primary1)};
+    border-width: 2px;
+    width: calc(100% - 3px);
+    height: calc(40px - 2px);
+  }
+`;
+const StyledInput = styled.input`
+  width: calc(100% - 16px);
+  height: calc(100% - 2px);
   padding-left: 8px;
   padding-right: 8px;
-  margin-top: 2px;
-  border-radius: ${props => getFromProps(props, 'radius', 5)};
   font-size: 14px;
   font-weight: 400;
   font-family: ${props => props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary};
-  color: ${props => getFromProps(props, 'fontColor', props.theme.colors.neutral2)};
+  border-radius: ${props => getFromProps(props, 'radius', 5)};
+  border-color: unset;
+  border-width: unset;
+  border-style: unset;
   &:focus {
-    outline-color: ${props => getFromProps(props, 'activeColor', props.theme.colors.primary1)};
+    outline-color: unset;
+    outline-width: unset;
+    outline-style: none;
   }
 `;
 
@@ -70,6 +100,7 @@ const Field = ({
   marginRight,
   marginBottom,
   marginLeft,
+  icon,
   label,
   radius,
   onChange,
@@ -79,6 +110,7 @@ const Field = ({
   activeColor,
   borderColor,
   fontColor,
+  iconColor,
   validation,
   validationMessage
 }) => {
@@ -90,7 +122,10 @@ const Field = ({
   return (
     <Container marginTop={marginTop} marginRight={marginRight} marginBottom={marginBottom} marginLeft={marginLeft} validation={validation}>
       <StyledLabel fontColor={fontColor}>{label}</StyledLabel>
-      <StyledInput type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} />
+      <InputContainer radius={radius} activeColor={activeColor} validation={validation} borderColor={borderColor} iconColor={iconColor}>
+        <StyledInput type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} />
+        {icon && icon}
+      </InputContainer>
       {validation === false && <ErrorMessage>{validationMessage}</ErrorMessage>}
     </Container>
   );
@@ -101,6 +136,7 @@ Field.propTypes = {
   marginRight: PropTypes.number,
   marginBottom: PropTypes.number,
   marginLeft: PropTypes.number,
+  icon: PropTypes.element,
   label: PropTypes.string,
   radius: PropTypes.number,
   onChange: PropTypes.func,
@@ -112,7 +148,8 @@ Field.propTypes = {
   //STYLE PROPS
   activeColor: PropTypes.oneOf(colorProps),
   borderColor: PropTypes.oneOf(colorProps),
-  fontColor: PropTypes.oneOf(colorProps)
+  fontColor: PropTypes.oneOf(colorProps),
+  iconColor: PropTypes.oneOf(colorProps)
 };
 
 Field.defaultProps = {

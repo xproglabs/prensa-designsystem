@@ -1,7 +1,12 @@
 import {Meta} from '@storybook/addon-docs/blocks';
+import {ThemeProvider} from 'styled-components';
+import {theme} from '../../styles/theme';
 import Field from './index';
+import {IcSearch} from '../../icons';
 
 <Meta title="Components/Field" />
 
-<Field label="testando" validationMessage='Testando erro' validation={false} />
-<Field label="testando" />
+<ThemeProvider theme={theme}>
+  <Field label="testando" validationMessage='Testando erro' validation={false} icon={<IcSearch />} />
+  <Field label="testando" icon={<IcSearch />} />
+</ThemeProvider>
