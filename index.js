@@ -986,8 +986,18 @@ var index = {
   Input: Input
 };
 
-function _templateObject4() {
+function _templateObject5() {
   var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  margin-top: 4px;\n  margin-bottom: 0px;\n  height: 16px;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  height: calc(100% - 2px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -997,7 +1007,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  width: calc(100% - 6px - 16px);\n  height: 40px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: ", ";\n  padding-left: 8px;\n  padding-right: 8px;\n  margin-top: 2px;\n  border-radius: ", ";\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  &:focus {\n    outline-color: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: calc(100% - 2px);\n  height: 40px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: ", ";\n  border-radius: ", ";\n  display: flex;\n  align-items: center;\n  svg {\n    width: 32px;\n    height: 32px;\n    margin-right: 8px;\n    fill: ", ";\n    cursor: pointer;\n  }\n  &:focus-within {\n    border-color: ", ";\n    border-width: 2px;\n    width: calc(100% - 3px);\n    height: calc(40px - 2px);\n  }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1043,6 +1053,13 @@ var validateStyle = function validateStyle(props) {
   return props.theme.colors.neutral9;
 };
 
+var validateIcon = function validateIcon(props) {
+  var isValid = lodash.get(props, 'validation', true);
+  if (!isValid) return props.theme.colors.error1;
+  if (props.iconColor) return props.iconColor;
+  return props.theme.colors.neutral5;
+};
+
 var Container = styled__default['default'].div(_templateObject(), function (props) {
   return getFromProps(props, 'marginTop', 0);
 }, function (props) {
@@ -1057,18 +1074,21 @@ var StyledLabel = styled__default['default'].label(_templateObject2(), function 
 }, function (props) {
   return getFromProps(props, 'fontColor', props.theme.colors.neutral5);
 });
-var StyledInput = styled__default['default'].input(_templateObject3(), function (props) {
+var InputContainer = styled__default['default'].div(_templateObject3(), function (props) {
   return validateStyle(props);
 }, function (props) {
   return getFromProps(props, 'radius', 5);
 }, function (props) {
-  return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
-}, function (props) {
-  return getFromProps(props, 'fontColor', props.theme.colors.neutral2);
+  return validateIcon(props);
 }, function (props) {
   return getFromProps(props, 'activeColor', props.theme.colors.primary1);
 });
-var ErrorMessage = styled__default['default'].p(_templateObject4(), function (props) {
+var StyledInput = styled__default['default'].input(_templateObject4(), function (props) {
+  return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
+}, function (props) {
+  return getFromProps(props, 'radius', 5);
+});
+var ErrorMessage = styled__default['default'].p(_templateObject5(), function (props) {
   return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
 }, function (props) {
   return props.theme.colors.error1;
@@ -1079,20 +1099,30 @@ var Field = function Field(_ref) {
       marginRight = _ref.marginRight,
       marginBottom = _ref.marginBottom,
       marginLeft = _ref.marginLeft,
+      icon = _ref.icon,
       label = _ref.label,
       radius = _ref.radius,
       onChange = _ref.onChange,
+      onIconClick = _ref.onIconClick,
       type = _ref.type,
       value = _ref.value,
       fontFamily = _ref.fontFamily,
       activeColor = _ref.activeColor,
       borderColor = _ref.borderColor,
       fontColor = _ref.fontColor,
+      iconColor = _ref.iconColor,
       validation = _ref.validation,
       validationMessage = _ref.validationMessage;
 
   var handleChange = function handleChange(event) {
     onChange(event.target.value);
+  };
+
+  var getIconFromProps = function getIconFromProps() {
+    var iconHasOnClick = icon.props && icon.props.onClick ? icon.props.onClick : false;
+    return /*#__PURE__*/React__default['default'].cloneElement(icon, {
+      onClick: iconHasOnClick ? iconHasOnClick : onIconClick
+    });
   };
 
   return /*#__PURE__*/React__default['default'].createElement(Container, {
@@ -1103,8 +1133,12 @@ var Field = function Field(_ref) {
     validation: validation
   }, /*#__PURE__*/React__default['default'].createElement(StyledLabel, {
     fontColor: fontColor
-  }, label), /*#__PURE__*/React__default['default'].createElement("div", {
-    className: "input-wrapper"
+  }, label), /*#__PURE__*/React__default['default'].createElement(InputContainer, {
+    radius: radius,
+    activeColor: activeColor,
+    validation: validation,
+    borderColor: borderColor,
+    iconColor: iconColor
   }, /*#__PURE__*/React__default['default'].createElement(StyledInput, {
     type: type,
     value: value,
@@ -1115,7 +1149,7 @@ var Field = function Field(_ref) {
     borderColor: borderColor,
     validation: validation,
     fontColor: fontColor
-  })), validation === false && /*#__PURE__*/React__default['default'].createElement(ErrorMessage, null, validationMessage));
+  }), icon && getIconFromProps()), validation === false && /*#__PURE__*/React__default['default'].createElement(ErrorMessage, null, validationMessage));
 };
 
 Field.propTypes = {
@@ -1123,9 +1157,11 @@ Field.propTypes = {
   marginRight: PropTypes__default['default'].number,
   marginBottom: PropTypes__default['default'].number,
   marginLeft: PropTypes__default['default'].number,
+  icon: PropTypes__default['default'].element,
+  onIconClick: PropTypes__default['default'].func,
   label: PropTypes__default['default'].string,
   radius: PropTypes__default['default'].number,
-  onChange: PropTypes__default['default'].func,
+  onChange: PropTypes__default['default'].func.isRequired,
   type: PropTypes__default['default'].string,
   value: PropTypes__default['default'].string,
   validation: PropTypes__default['default'].oneOf([true, false]).isRequired,
@@ -1134,7 +1170,8 @@ Field.propTypes = {
   //STYLE PROPS
   activeColor: PropTypes__default['default'].oneOf(colors),
   borderColor: PropTypes__default['default'].oneOf(colors),
-  fontColor: PropTypes__default['default'].oneOf(colors)
+  fontColor: PropTypes__default['default'].oneOf(colors),
+  iconColor: PropTypes__default['default'].oneOf(colors)
 };
 Field.defaultProps = {
   validation: true

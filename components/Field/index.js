@@ -104,6 +104,7 @@ const Field = ({
   label,
   radius,
   onChange,
+  onIconClick,
   type,
   value,
   fontFamily,
@@ -119,12 +120,17 @@ const Field = ({
     onChange(event.target.value);
   };
 
+  const getIconFromProps = () => {
+    const iconHasOnClick = icon.props && icon.props.onClick ? icon.props.onClick : false;
+    return React.cloneElement(icon, {onClick: iconHasOnClick ? iconHasOnClick : onIconClick});
+  };
+
   return (
     <Container marginTop={marginTop} marginRight={marginRight} marginBottom={marginBottom} marginLeft={marginLeft} validation={validation}>
       <StyledLabel fontColor={fontColor}>{label}</StyledLabel>
       <InputContainer radius={radius} activeColor={activeColor} validation={validation} borderColor={borderColor} iconColor={iconColor}>
         <StyledInput type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} />
-        {icon && icon}
+        {icon && getIconFromProps()}
       </InputContainer>
       {validation === false && <ErrorMessage>{validationMessage}</ErrorMessage>}
     </Container>
@@ -137,9 +143,10 @@ Field.propTypes = {
   marginBottom: PropTypes.number,
   marginLeft: PropTypes.number,
   icon: PropTypes.element,
+  onIconClick: PropTypes.func,
   label: PropTypes.string,
   radius: PropTypes.number,
-  onChange: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
   type: PropTypes.string,
   value: PropTypes.string,
   validation: PropTypes.oneOf([true, false]).isRequired,
