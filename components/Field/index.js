@@ -138,24 +138,78 @@ const Field = ({
 };
 
 Field.propTypes = {
+  /**
+   * Corresponde a um margin-top
+   */
   marginTop: PropTypes.number,
+  /**
+   * Corresponde a um margin-right
+   */
   marginRight: PropTypes.number,
+  /**
+   * Corresponde a um margin-bottom
+   */
   marginBottom: PropTypes.number,
+  /**
+   * Corresponde a um margin-left
+   */
   marginLeft: PropTypes.number,
+  /**
+   * Possibilita adicionar um ícone à direita do Field
+   */
   icon: PropTypes.element,
+  /**
+   * Função executada ao clicar no ícone
+   */
   onIconClick: PropTypes.func,
+  /**
+   * Adiciona um label ao Field
+   */
   label: PropTypes.string,
+  /**
+   * Modifica o radius do Field
+   */
   radius: PropTypes.number,
+  /**
+   * Função executada ao modificar o valor do Field
+   */
   onChange: PropTypes.func.isRequired,
+  /**
+   * Props que recebe o type do Field (prop nativa do elemento)
+   */
   type: PropTypes.string,
+  /**
+   * Recebe o valor do Field (prop nativa do elemento)
+   */
   value: PropTypes.string,
+  /**
+   * Recebe o estado do componente (true para padrão e false para erro)
+   */
   validation: PropTypes.oneOf([true, false]).isRequired,
+  /**
+   * Recebe a mensagem de validação (renderizada quando validation = false)
+   */
   validationMessage: PropTypes.string.isRequired,
-  fontFamily: PropTypes.string,
   //STYLE PROPS
+  /**
+   * Altera a família da fonte do input (conectada ao theme)
+   */
+  fontFamily: PropTypes.string,
+  /**
+   * Altera a cor do Field quando estiver no estado ATIVO (focused) (conectada ao theme)
+   */
   activeColor: PropTypes.oneOf(colorProps),
+  /**
+   * Altera a cor da borda do Field (conectada ao theme)
+   */
   borderColor: PropTypes.oneOf(colorProps),
+  /**
+   * Altera a cor da fonte do Field (conectada ao theme)
+   */
   fontColor: PropTypes.oneOf(colorProps),
+  /**
+   * Altera a cor do ícone (caso ativo) (conectada ao theme)
+   */
   iconColor: PropTypes.oneOf(colorProps)
 };
 

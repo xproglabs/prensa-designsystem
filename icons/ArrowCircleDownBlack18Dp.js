@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 function SvgArrowCircleDownBlack18Dp(props) {
   return (
