@@ -1,8 +1,8 @@
-name: Publish docs
+name: Publish build and docs
 
 on:
   push:
-    branches: [ production ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -23,17 +23,29 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: |
+        echo "# Config"
         git config --global user.name "Giovanni"
         git config --global user.email "giovanni@xproglabs.com"
+        git config pull.ff only
+        echo "# Clear changed files"
         git checkout -- .
+        echo "# Fetching"
+        git fetch --unshallow
+        echo "# Pull master"
+        git pull
+        echo "# Checkout production"
+        git checkout production
+        echo "# Pull Production"
+        git pull
+        echo "# Merge master into production"
+        git merge master -m "Merge"
+        echo "# Up version"
         npm version patch
     - run: npm run build
   
     - name: Commit build
       run: |
-        git config --global user.name "Giovanni"
-        git config --global user.email "giovanni@xproglabs.com"
-
+        git branch
         git add .
         git commit -m "Build"
         git push --force
