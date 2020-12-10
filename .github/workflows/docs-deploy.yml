@@ -26,6 +26,7 @@ jobs:
         git config --global user.name "Giovanni"
         git config --global user.email "giovanni@xproglabs.com"
         git checkout -- .
+        npm version patch
     - run: npm run build
   
     - name: Commit build
