@@ -28,7 +28,7 @@ jobs:
         git checkout -- .
         git fetch
         git checkout production
-        git pull
+        git pull origin production --allow-unrelated-histories
         git merge master
         npm version patch
     - run: npm run build
