@@ -25,12 +25,11 @@ jobs:
     - run: |
         git config --global user.name "Giovanni"
         git config --global user.email "giovanni@xproglabs.com"
+        git config pull.ff only
         git checkout -- .
         git fetch
-        git checkout master
-        git pull
         git checkout production
-        git pull
+        git pull --allow-unrelated-histories
         git merge master
         npm version patch
     - run: npm run build
