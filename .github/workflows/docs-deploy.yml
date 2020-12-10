@@ -74,7 +74,7 @@ jobs:
           rm -rf yarn.lock
           git pull
           yarn
-          yarn run build-storybook
+          yarn build-storybook
           pm2 restart prensa-storybook
           exit
 
