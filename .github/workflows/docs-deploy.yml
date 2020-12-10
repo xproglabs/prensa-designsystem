@@ -26,16 +26,16 @@ jobs:
         git config --global user.name "Giovanni"
         git config --global user.email "giovanni@xproglabs.com"
         git checkout -- .
+        git fetch
+        git checkout production
+        git pull
+        git merge master
         npm version patch
     - run: npm run build
   
     - name: Commit build
       run: |
-        git config --global user.name "Giovanni"
-        git config --global user.email "giovanni@xproglabs.com"
-
-        git fetch
-        git checkout production
+        git branch
         git add .
         git commit -m "Build"
         git push --force
