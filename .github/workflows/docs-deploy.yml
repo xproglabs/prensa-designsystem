@@ -27,9 +27,10 @@ jobs:
         git config --global user.email "giovanni@xproglabs.com"
         git checkout -- .
         git fetch
-        git pull origin master --ff-only --allow-unrelated-histories
-        git pull origin production --ff-only --allow-unrelated-histories
+        git checkout master
+        git pull
         git checkout production
+        git pull
         git merge master
         npm version patch
     - run: npm run build
