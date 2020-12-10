@@ -23,15 +23,23 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: |
+        echo "# Config"
         git config --global user.name "Giovanni"
         git config --global user.email "giovanni@xproglabs.com"
         git config pull.ff only
+        echo "# Clear changed files"
         git checkout -- .
-        git fetch
-        git pull origin master --allow-unrelated-histories
+        echo "# Fetching"
+        git fetch --unshallow
+        echo "# Pull master"
+        git pull
+        echo "# Checkout production"
         git checkout production
-        git pull origin production --allow-unrelated-histories
-        git merge master
+        echo "# Pull Production"
+        git pull
+        echo "# Merge master into production"
+        git merge master -m "Merge"
+        echo "# Up version"
         npm version patch
     - run: npm run build
   
