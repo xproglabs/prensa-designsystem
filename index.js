@@ -768,7 +768,7 @@ var Button = function Button(_ref) {
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(variant, " color-").concat(color, " radius-").concat(radius), true), _defineProperty(_classnames, 'disabled', disabled), _defineProperty(_classnames, 'fullWidth', fullWidth), _defineProperty(_classnames, 'has-leftIcon', leftIcon), _defineProperty(_classnames, 'has-rightIcon', rightIcon), _defineProperty(_classnames, "".concat(className), className), _classnames));
 
   var getFontColor = function getFontColor() {
-    console.log('teste 2020222287878');
+    console.log('testando');
     if (fontColor) return fontColor;
 
     if (variant === 'outlined') {
@@ -1008,7 +1008,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  width: calc(100% - 2px);\n  height: 40px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: ", ";\n  border-radius: ", ";\n  display: flex;\n  align-items: center;\n  svg {\n    width: 32px;\n    height: 32px;\n    margin-right: 8px;\n    fill: ", ";\n    cursor: pointer;\n  }\n  &:focus-within {\n    border-color: ", ";\n    border-width: 2px;\n    width: calc(100% - 3px);\n    height: calc(40px - 2px);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  width: calc(100% - 2px);\n  height: 40px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: ", ";\n  border-radius: ", ";\n  display: flex;\n  align-items: center;\n  svg {\n    width: 32px;\n    height: 32px;\n    margin-right: 8px;\n    fill: ", ";\n    cursor: pointer;\n  }\n  &:focus-within {\n    border-color: ", ";\n    border-width: 2px;\n    width: calc(100% - 3px);\n    height: calc(40px - 2px);\n  }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1028,7 +1028,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  margin-top: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin-top: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1113,7 +1113,8 @@ var Field = function Field(_ref) {
       fontColor = _ref.fontColor,
       iconColor = _ref.iconColor,
       validation = _ref.validation,
-      validationMessage = _ref.validationMessage;
+      validationMessage = _ref.validationMessage,
+      placeholder = _ref.placeholder;
 
   var handleChange = function handleChange(event) {
     onChange(event.target.value);
@@ -1149,11 +1150,17 @@ var Field = function Field(_ref) {
     activeColor: activeColor,
     borderColor: borderColor,
     validation: validation,
-    fontColor: fontColor
+    fontColor: fontColor,
+    placeholder: placeholder
   }), icon && getIconFromProps()), validation === false && /*#__PURE__*/React__default['default'].createElement(ErrorMessage, null, validationMessage));
 };
 
 Field.propTypes = {
+  /**
+  *Corresponde ao placeholder
+  */
+  placeholder: PropTypes__default['default'].string,
+
   /**
    * Corresponde a um margin-top
    */
