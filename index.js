@@ -1153,24 +1153,95 @@ var Field = function Field(_ref) {
 };
 
 Field.propTypes = {
+  /**
+   * Corresponde a um margin-top
+   */
   marginTop: PropTypes__default['default'].number,
+
+  /**
+   * Corresponde a um margin-right
+   */
   marginRight: PropTypes__default['default'].number,
+
+  /**
+   * Corresponde a um margin-bottom
+   */
   marginBottom: PropTypes__default['default'].number,
+
+  /**
+   * Corresponde a um margin-left
+   */
   marginLeft: PropTypes__default['default'].number,
+
+  /**
+   * Possibilita adicionar um ícone à direita do Field
+   */
   icon: PropTypes__default['default'].element,
+
+  /**
+   * Função executada ao clicar no ícone
+   */
   onIconClick: PropTypes__default['default'].func,
+
+  /**
+   * Adiciona um label ao Field
+   */
   label: PropTypes__default['default'].string,
+
+  /**
+   * Modifica o radius do Field
+   */
   radius: PropTypes__default['default'].number,
+
+  /**
+   * Função executada ao modificar o valor do Field
+   */
   onChange: PropTypes__default['default'].func.isRequired,
+
+  /**
+   * Props que recebe o type do Field (prop nativa do elemento)
+   */
   type: PropTypes__default['default'].string,
+
+  /**
+   * Recebe o valor do Field (prop nativa do elemento)
+   */
   value: PropTypes__default['default'].string,
+
+  /**
+   * Recebe o estado do componente (true para padrão e false para erro)
+   */
   validation: PropTypes__default['default'].oneOf([true, false]).isRequired,
+
+  /**
+   * Recebe a mensagem de validação (renderizada quando validation = false)
+   */
   validationMessage: PropTypes__default['default'].string.isRequired,
-  fontFamily: PropTypes__default['default'].string,
   //STYLE PROPS
+
+  /**
+   * Altera a família da fonte do input (conectada ao theme)
+   */
+  fontFamily: PropTypes__default['default'].string,
+
+  /**
+   * Altera a cor do Field quando estiver no estado ATIVO (focused) (conectada ao theme)
+   */
   activeColor: PropTypes__default['default'].oneOf(colors),
+
+  /**
+   * Altera a cor da borda do Field (conectada ao theme)
+   */
   borderColor: PropTypes__default['default'].oneOf(colors),
+
+  /**
+   * Altera a cor da fonte do Field (conectada ao theme)
+   */
   fontColor: PropTypes__default['default'].oneOf(colors),
+
+  /**
+   * Altera a cor do ícone (caso ativo) (conectada ao theme)
+   */
   iconColor: PropTypes__default['default'].oneOf(colors)
 };
 Field.defaultProps = {
