@@ -83,7 +83,7 @@ $teaser-date-size: 12px !default;
   cursor: pointer;
 }
 .teaser-image {
-  @media (min-width: $md) {
+  @media (min-width: $lg) {
     &.image-left {
       .image-background {
         @include w(280px);

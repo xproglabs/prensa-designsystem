@@ -1,40 +1,37 @@
-import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
 import Block from '../Block';
 import Button from '../Button';
-import Teaser from '../Teasers';
 import {SectionTitle} from '../Typography';
 
 const Subjects = ({
   content,
   domain,
-  lazy,
-  status,
-  theme,
-  customTitle,
   customLeftTitle,
   customCenterTitle,
   customRightTitle,
   leftActionButtonProps,
   centerActionButtonProps,
   rightActionButtonProps,
-  leftTeaserProps,
-  centerTeaserProps,
-  rightTeaserProps,
+  RenderSlot,
+  renderType
 }) => {
 
-  const {color} = theme;
-  
-  const {title, leftColumnOptions, centerColumnOptions, rightColumnOptions} = content;
-  const leftColor = content['style-left'];
-  const centerColor = content['style-center'];
-  const rightColor = content['style-right'];
+  const {leftColumnOptions, centerColumnOptions, rightColumnOptions} = content;
+  const leftColor = content['style-color-left'];
+  const centerColor = content['style-color-center'];
+  const rightColor = content['style-color-right'];
+  const leftType = content['style-type-left'];
+  const centerType = content['style-type-center'];
+  const rightType = content['style-type-right'];
 
   const titleLeft = content['title-left'];
   const titleCenter = content['title-center'];
   const titleRight = content['title-right'];
+  const showTitleLeft = content['title-left-show'] && content['title-left-show'] == 'true';
+  const showTitleCenter = content['title-center-show'] && content['title-center-show'] == 'true';
+  const showTitleRight = content['title-right-show'] && content['title-right-show'] == 'true';
   
   const pqueue_left = content['items-left-pqueue'];
   const pqueue_center = content['items-center-pqueue'];
@@ -44,28 +41,9 @@ const Subjects = ({
   const items_center = pqueue_center.length > 0 ? pqueue_center : content['items-center'];
   const items_right = pqueue_right.length > 0 ? pqueue_right : content['items-right'];
 
-  const renderBlockTitle = () => {
-    if (!title) return null;
-    if (customTitle) return React.cloneElement(customTitle, {children: title});
-    return <SectionTitle weight='bold' gutter={3} color={color}>{title}</SectionTitle>;
-  };
-
-  const renderLeftTitle = () => {
-    if (!titleLeft) return null;
-    if (customLeftTitle) return React.cloneElement(customLeftTitle, {children: titleLeft, color: leftColor});
-    return <SectionTitle weight='bold' gutter={3} color={leftColor}>{titleLeft}</SectionTitle>;
-  };
-
-  const renderCenterTitle = () => {
-    if (!titleCenter) return null;
-    if (customCenterTitle) return React.cloneElement(customCenterTitle, {children: titleCenter, color: centerColor});
-    return <SectionTitle weight='bold' gutter={3} color={centerColor}>{titleCenter}</SectionTitle>;
-  };
-
-  const renderRightTitle = () => {
-    if (!titleRight) return null;
-    if (customRightTitle) return React.cloneElement(customRightTitle, {children: titleRight, color: rightColor});
-    return <SectionTitle weight='bold' gutter={3} color={rightColor}>{titleRight}</SectionTitle>;
+  const renderSectionTitle = (customComponent, customColor, customTitle) => {
+    if (customComponent) return React.cloneElement(customComponent, {children: customTitle, color: customColor});
+    return <SectionTitle weight='bold' gutter={3} color={rightColor}>{customTitle}</SectionTitle>;
   };
 
   const handleClick = (e, params) => {
@@ -84,54 +62,46 @@ const Subjects = ({
       </Button>
     );
   };
-  
   return (
     <React.Fragment>
-      {renderBlockTitle()}
-      <Block custom='Prensa-Templates-Subjects' lg={{align: 'row between'}}>
+      <Block custom='Prensa-Templates-Subjects' mt="2" mb="2" lg={{align: 'row between', mt: '2', mb: '3'}}>
         <Block custom='col left'>
-          {renderLeftTitle()}
-          {map(items_left, (item, key) => (
-            <Teaser 
-              key={key}
-              content={item}
+          <Block custom='col-section'>
+            {showTitleLeft && renderSectionTitle(customLeftTitle, leftColor, titleLeft)}
+          </Block>
+          {RenderSlot && 
+            <RenderSlot 
               domain={domain}
-              lazy={lazy}
-              status={status}
-              subjectColor={leftColor}
-              {...leftTeaserProps}
-            />
-          ))}
+              items={items_left} 
+              subjectColor={leftColor} 
+              teaserProps={renderType(leftType)}
+            />}
           {renderActionButton(leftColumnOptions, leftColor, leftActionButtonProps)}
         </Block>
         <Block custom='col center'>
-          {renderCenterTitle()}
-          {map(items_center, (item, key) => (
-            <Teaser 
-              key={key}
-              content={item}
+          <Block custom='col-section'>
+            {showTitleCenter && renderSectionTitle(customCenterTitle, centerColor, titleCenter)}
+          </Block>
+          {RenderSlot && 
+            <RenderSlot 
               domain={domain}
-              lazy={lazy}
-              status={status}
-              subjectColor={centerColor}
-              {...centerTeaserProps}
-            />
-          ))}
+              items={items_center} 
+              subjectColor={centerColor} 
+              teaserProps={renderType(centerType)}
+            />}
           {renderActionButton(centerColumnOptions, centerColor, centerActionButtonProps)}
         </Block>
         <Block custom='col right'>
-          {renderRightTitle()}
-          {map(items_right, (item, key) => (
-            <Teaser 
-              key={key}
-              content={item}
+          <Block custom='col-section'>
+            {showTitleRight && renderSectionTitle(customRightTitle, rightColor, titleRight)}
+          </Block>
+          {RenderSlot && 
+            <RenderSlot 
               domain={domain}
-              lazy={lazy}
-              status={status}
-              subjectColor={rightColor}
-              {...rightTeaserProps}
-            />
-          ))}
+              items={items_right} 
+              subjectColor={rightColor} 
+              teaserProps={renderType(rightType)}
+            />}
           {renderActionButton(rightColumnOptions, rightColor, rightActionButtonProps)}
         </Block>
       </Block>
@@ -155,12 +125,18 @@ Subjects.propTypes = {
     ['items-center-pqueue']: PropTypes.array,
     ['items-right']: PropTypes.array,
     ['items-right-pqueue']: PropTypes.array,
-    ['style-left']: PropTypes.string,
-    ['style-center']: PropTypes.string,
-    ['style-right']: PropTypes.string,
+    ['style-color-left']: PropTypes.string,
+    ['style-color-center']: PropTypes.string,
+    ['style-color-right']: PropTypes.string,
+    ['style-type-left']: PropTypes.string,
+    ['style-type-center']: PropTypes.string,
+    ['style-type-right']: PropTypes.string,
     ['title-left']: PropTypes.string,
     ['title-center']: PropTypes.string,
     ['title-right']: PropTypes.string,
+    ['title-left-show']: PropTypes.string,
+    ['title-center-show']: PropTypes.string,
+    ['title-right-show']: PropTypes.string,
   }),
   domain: PropTypes.string,
   lazy: PropTypes.func,
@@ -178,6 +154,8 @@ Subjects.propTypes = {
   leftTeaserProps: PropTypes.object,
   centerTeaserProps: PropTypes.object,
   rightTeaserProps: PropTypes.object,
+  RenderSlot: PropTypes.func,
+  renderType: PropTypes.func
 };
 
 export default Subjects;

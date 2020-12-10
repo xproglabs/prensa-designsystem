@@ -35,7 +35,7 @@ const Featured = ({
       );
     case 3:
       return (
-        <Block custom='Prensa-Templates-Featured three' mb='6' md={{align: 'row between', mb:'5'}}>
+        <Block custom='Prensa-Templates-Featured three' lg={{align: 'row between'}}>
           <Block custom='block-left'>
             <Teaser 
               content={items[0]}

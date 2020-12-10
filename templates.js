@@ -4116,7 +4116,7 @@ var Teaser = function Teaser(_ref) {
       path = content.path,
       subject = content.subject,
       subtitle = content.subtitle;
-  var hasImage = image['image-path'];
+  var hasImage = image['image-contentId'];
   var propsTeaser = {
     align: hasImageTop ? 'col' : 'row left',
     custom: "teaser-default ".concat(customClass ? customClass : ''),
@@ -4174,7 +4174,10 @@ var Teaser = function Teaser(_ref) {
     })));
   };
 
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsTeaser, hasImage && !disableImage && /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block, propsContent, /*#__PURE__*/React__default['default'].createElement(Block, null, subject && /*#__PURE__*/React__default['default'].createElement(Block, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsTeaser, hasImage && !disableImage && /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block, propsContent, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "top-content",
+    h: "100p"
+  }, /*#__PURE__*/React__default['default'].createElement(Block, null, subject && /*#__PURE__*/React__default['default'].createElement(Block, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
     size: subjectSize,
     color: subjectColor,
     filled: hasSubjectFilled,
@@ -4191,7 +4194,7 @@ var Teaser = function Teaser(_ref) {
     size: subtitleSize,
     color: subtitleColor,
     weight: subtitleWeight
-  }, subtitle))), /*#__PURE__*/React__default['default'].createElement(Block, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React__default['default'].createElement(Block, propsDate, /*#__PURE__*/React__default['default'].createElement(Date$1, {
+  }, subtitle)))), /*#__PURE__*/React__default['default'].createElement(Block, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React__default['default'].createElement(Block, propsDate, /*#__PURE__*/React__default['default'].createElement(Date$1, {
     size: dateSize,
     color: dateColor,
     weight: dateWeight
@@ -4321,10 +4324,8 @@ var Featured = function Featured(_ref) {
     case 3:
       return /*#__PURE__*/React__default['default'].createElement(Block, {
         custom: "Prensa-Templates-Featured three",
-        mb: "6",
-        md: {
-          align: 'row between',
-          mb: '5'
+        lg: {
+          align: 'row between'
         }
       }, /*#__PURE__*/React__default['default'].createElement(Block, {
         custom: "block-left"
@@ -4699,12 +4700,11 @@ var Latest = function Latest(_ref) {
     custom: "Prensa-Templates-LatestNews",
     align: "col left",
     w: "100p",
-    md: {
+    lg: {
       align: 'row between'
     }
   }, /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "page-left",
-    mb: "6"
+    custom: "page-left"
   }, renderBlockTitle(), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "latest-news"
   }, lodash.map(teasersContent, function (item, key) {
@@ -4797,30 +4797,29 @@ var _PropTypes$shape$1;
 var Subjects = function Subjects(_ref) {
   var content = _ref.content,
       domain = _ref.domain,
-      lazy = _ref.lazy,
-      status = _ref.status,
-      theme = _ref.theme,
-      customTitle = _ref.customTitle,
       customLeftTitle = _ref.customLeftTitle,
       customCenterTitle = _ref.customCenterTitle,
       customRightTitle = _ref.customRightTitle,
       leftActionButtonProps = _ref.leftActionButtonProps,
       centerActionButtonProps = _ref.centerActionButtonProps,
       rightActionButtonProps = _ref.rightActionButtonProps,
-      leftTeaserProps = _ref.leftTeaserProps,
-      centerTeaserProps = _ref.centerTeaserProps,
-      rightTeaserProps = _ref.rightTeaserProps;
-  var color = theme.color;
-  var title = content.title,
-      leftColumnOptions = content.leftColumnOptions,
+      RenderSlot = _ref.RenderSlot,
+      renderType = _ref.renderType;
+  var leftColumnOptions = content.leftColumnOptions,
       centerColumnOptions = content.centerColumnOptions,
       rightColumnOptions = content.rightColumnOptions;
-  var leftColor = content['style-left'];
-  var centerColor = content['style-center'];
-  var rightColor = content['style-right'];
+  var leftColor = content['style-color-left'];
+  var centerColor = content['style-color-center'];
+  var rightColor = content['style-color-right'];
+  var leftType = content['style-type-left'];
+  var centerType = content['style-type-center'];
+  var rightType = content['style-type-right'];
   var titleLeft = content['title-left'];
   var titleCenter = content['title-center'];
   var titleRight = content['title-right'];
+  var showTitleLeft = content['title-left-show'] && content['title-left-show'] == 'true';
+  var showTitleCenter = content['title-center-show'] && content['title-center-show'] == 'true';
+  var showTitleRight = content['title-right-show'] && content['title-right-show'] == 'true';
   var pqueue_left = content['items-left-pqueue'];
   var pqueue_center = content['items-center-pqueue'];
   var pqueue_right = content['items-right-pqueue'];
@@ -4828,55 +4827,16 @@ var Subjects = function Subjects(_ref) {
   var items_center = pqueue_center.length > 0 ? pqueue_center : content['items-center'];
   var items_right = pqueue_right.length > 0 ? pqueue_right : content['items-right'];
 
-  var renderBlockTitle = function renderBlockTitle() {
-    if (!title) return null;
-    if (customTitle) return /*#__PURE__*/React__default['default'].cloneElement(customTitle, {
-      children: title
-    });
-    return /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
-      weight: "bold",
-      gutter: 3,
-      color: color
-    }, title);
-  };
-
-  var renderLeftTitle = function renderLeftTitle() {
-    if (!titleLeft) return null;
-    if (customLeftTitle) return /*#__PURE__*/React__default['default'].cloneElement(customLeftTitle, {
-      children: titleLeft,
-      color: leftColor
-    });
-    return /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
-      weight: "bold",
-      gutter: 3,
-      color: leftColor
-    }, titleLeft);
-  };
-
-  var renderCenterTitle = function renderCenterTitle() {
-    if (!titleCenter) return null;
-    if (customCenterTitle) return /*#__PURE__*/React__default['default'].cloneElement(customCenterTitle, {
-      children: titleCenter,
-      color: centerColor
-    });
-    return /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
-      weight: "bold",
-      gutter: 3,
-      color: centerColor
-    }, titleCenter);
-  };
-
-  var renderRightTitle = function renderRightTitle() {
-    if (!titleRight) return null;
-    if (customRightTitle) return /*#__PURE__*/React__default['default'].cloneElement(customRightTitle, {
-      children: titleRight,
-      color: rightColor
+  var renderSectionTitle = function renderSectionTitle(customComponent, customColor, customTitle) {
+    if (customComponent) return /*#__PURE__*/React__default['default'].cloneElement(customComponent, {
+      children: customTitle,
+      color: customColor
     });
     return /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
       weight: "bold",
       gutter: 3,
       color: rightColor
-    }, titleRight);
+    }, customTitle);
   };
 
   var handleClick = function handleClick(e, params) {
@@ -4899,44 +4859,42 @@ var Subjects = function Subjects(_ref) {
     }, props), actionButtonTitle);
   };
 
-  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, renderBlockTitle(), /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "Prensa-Templates-Subjects",
+    mt: "2",
+    mb: "2",
     lg: {
-      align: 'row between'
+      align: 'row between',
+      mt: '2',
+      mb: '3'
     }
   }, /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col left"
-  }, renderLeftTitle(), lodash.map(items_left, function (item, key) {
-    return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
-      key: key,
-      content: item,
-      domain: domain,
-      lazy: lazy,
-      status: status,
-      subjectColor: leftColor
-    }, leftTeaserProps));
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col-section"
+  }, showTitleLeft && renderSectionTitle(customLeftTitle, leftColor, titleLeft)), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
+    domain: domain,
+    items: items_left,
+    subjectColor: leftColor,
+    teaserProps: renderType(leftType)
   }), renderActionButton(leftColumnOptions, leftColor, leftActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col center"
-  }, renderCenterTitle(), lodash.map(items_center, function (item, key) {
-    return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
-      key: key,
-      content: item,
-      domain: domain,
-      lazy: lazy,
-      status: status,
-      subjectColor: centerColor
-    }, centerTeaserProps));
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col-section"
+  }, showTitleCenter && renderSectionTitle(customCenterTitle, centerColor, titleCenter)), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
+    domain: domain,
+    items: items_center,
+    subjectColor: centerColor,
+    teaserProps: renderType(centerType)
   }), renderActionButton(centerColumnOptions, centerColor, centerActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
     custom: "col right"
-  }, renderRightTitle(), lodash.map(items_right, function (item, key) {
-    return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
-      key: key,
-      content: item,
-      domain: domain,
-      lazy: lazy,
-      status: status,
-      subjectColor: rightColor
-    }, rightTeaserProps));
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "col-section"
+  }, showTitleRight && renderSectionTitle(customRightTitle, rightColor, titleRight)), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
+    domain: domain,
+    items: items_right,
+    subjectColor: rightColor,
+    teaserProps: renderType(rightType)
   }), renderActionButton(rightColumnOptions, rightColor, rightActionButtonProps))));
 };
 
@@ -4949,7 +4907,7 @@ Subjects.propTypes = {
     leftColumnOptions: PropTypes__default['default'].object,
     centerColumnOptions: PropTypes__default['default'].object,
     rightColumnOptions: PropTypes__default['default'].object
-  }, _defineProperty(_PropTypes$shape$1, 'input-template', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'items-left', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-left-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-center', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-center-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-right', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-right-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'style-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-right', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-right', PropTypes__default['default'].string), _PropTypes$shape$1)),
+  }, _defineProperty(_PropTypes$shape$1, 'input-template', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'items-left', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-left-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-center', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-center-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-right', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'items-right-pqueue', PropTypes__default['default'].array), _defineProperty(_PropTypes$shape$1, 'style-color-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-color-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-color-right', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-type-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-type-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'style-type-right', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-left', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-center', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-right', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-left-show', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-center-show', PropTypes__default['default'].string), _defineProperty(_PropTypes$shape$1, 'title-right-show', PropTypes__default['default'].string), _PropTypes$shape$1)),
   domain: PropTypes__default['default'].string,
   lazy: PropTypes__default['default'].func,
   status: PropTypes__default['default'].object,
@@ -4965,7 +4923,9 @@ Subjects.propTypes = {
   rightActionButtonProps: PropTypes__default['default'].object,
   leftTeaserProps: PropTypes__default['default'].object,
   centerTeaserProps: PropTypes__default['default'].object,
-  rightTeaserProps: PropTypes__default['default'].object
+  rightTeaserProps: PropTypes__default['default'].object,
+  RenderSlot: PropTypes__default['default'].func,
+  renderType: PropTypes__default['default'].func
 };
 
 var Template7030 = function Template7030(_ref) {

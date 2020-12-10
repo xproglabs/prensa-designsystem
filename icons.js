@@ -24,6 +24,7 @@ function _extends() {
 
 function SvgArrowCircleDownBlack18Dp(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 24 24",
     width: 18,
     height: 18
@@ -37,6 +38,7 @@ function SvgArrowCircleDownBlack18Dp(props) {
 
 function SvgIcArrowBack(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
     height: 32,
     viewBox: "0 0 24 24",
     width: 32
@@ -50,6 +52,7 @@ function SvgIcArrowBack(props) {
 
 function SvgIcArrowForward(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
     height: 32,
     viewBox: "0 0 24 24",
     width: 32
@@ -63,6 +66,7 @@ function SvgIcArrowForward(props) {
 
 function SvgIcArrowMenu(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
     height: 24,
     width: 24
   }, props), /*#__PURE__*/React.createElement("path", {
@@ -73,7 +77,20 @@ function SvgIcArrowMenu(props) {
   }));
 }
 
+function SvgIcSearch(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24"
+  }, props), /*#__PURE__*/React.createElement("path", {
+    fill: "none",
+    d: "M0 0h24v24H0z"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M15.7 14.5h-.8l-.3-.3A6.7 6.7 0 104.4 5.4a6.8 6.8 0 00.7 9.5 6.7 6.7 0 008.8 0l.3.3v.8l5.2 5.2 1.5-1.5zm-6.2 0a4.7 4.7 0 114.7-4.7 4.7 4.7 0 01-4.7 4.7z"
+  }));
+}
+
 exports.ArrowCircleDownBlack18Dp = SvgArrowCircleDownBlack18Dp;
 exports.IcArrowBack = SvgIcArrowBack;
 exports.IcArrowForward = SvgIcArrowForward;
 exports.IcArrowMenu = SvgIcArrowMenu;
+exports.IcSearch = SvgIcSearch;
