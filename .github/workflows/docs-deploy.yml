@@ -63,7 +63,7 @@ jobs:
       if: ${{ always() }}
       
     - name: ssh to braza-server-nyc3-01
-      uses: fifsky/ssh-action@master
+      uses: garygrossgarten/github-action-ssh@release
       with:
         command: |
           cd /var/www/prensa-designsystem
@@ -76,8 +76,8 @@ jobs:
           pm2 restart prensa-storybook
           exit
         host: ${{ secrets.DOCS_SERVER }}
-        user: ${{ secrets.SSHUSERNAME }}
-        key: ${{ secrets.SSHPASSWORD }}
+        username: ${{ secrets.SSHUSERNAME }}
+        passphrase: ${{ secrets.SSHPASSWORD }}
 
     - name: Slack success notifcation
       uses: 8398a7/action-slack@v3
