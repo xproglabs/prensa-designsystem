@@ -11,9 +11,7 @@ import utils from '../Util';
 
 const Teaser = ({customClass, content, datePublished, disableImage, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize, subjectWeight, titleSize, subtitleSize, dateSize, titleColor, subtitleColor, dateColor, titleWeight, subtitleWeight, dateWeight, isTeaserFeatured}) => {
   const {image, name, path, subject, subtitle} = content;
-
-  const hasImage = image['image-path'];
-
+  const hasImage = image['image-contentId'];
   const propsTeaser = {align: hasImageTop ? 'col' : 'row left', custom: `teaser-default ${customClass ? customClass : ''}`, mb: '2'};
   const propsImage = {align: 'row',custom: `teaser-image ${!isTeaserFeatured ? hasImageTop ? 'image-top' : 'image-left' : 'image-featured'}`};
   const propsContent = {custom: 'teaser-content', align: 'col', mb: '3', ml: !hasImage ? '0' : '2', mr: '2', mt: '3', w: '100p-4'};
@@ -55,25 +53,27 @@ const Teaser = ({customClass, content, datePublished, disableImage, domain, hasI
         <TeaserImage />
       }
       <Block {...propsContent}>
-        <Block>
-          {subject && 
-            <Block {...propsSubject}>
-              <Subject size={subjectSize} color={subjectColor} filled={hasSubjectFilled} weight={subjectWeight}>{subject}</Subject>
-            </Block>
-          }
-        </Block>
-        <Block>
-          <Block {...propsTitle}>
-            <a className='teaser-aria' href={url_rewrite} aria-label={`Abrir matéria ${name}`}>
-              <NewsTitle size={titleSize} color={titleColor} weight={titleWeight}>{name}</NewsTitle>
-            </a>
-          </Block >
-          {subtitle && hasSubtitle &&
-            <Block {...propsSubTitle}>
-              <Subtitle size={subtitleSize} color={subtitleColor} weight={subtitleWeight}>{subtitle}</Subtitle>
-            </Block>  
-          }
-        </Block>
+        <Block custom="top-content" h="100p"> 
+          <Block>
+            {subject && 
+              <Block {...propsSubject}>
+                <Subject size={subjectSize} color={subjectColor} filled={hasSubjectFilled} weight={subjectWeight}>{subject}</Subject>
+              </Block>
+            }
+          </Block>
+          <Block>
+            <Block {...propsTitle}>
+              <a className='teaser-aria' href={url_rewrite} aria-label={`Abrir matéria ${name}`}>
+                <NewsTitle size={titleSize} color={titleColor} weight={titleWeight}>{name}</NewsTitle>
+              </a>
+            </Block >
+            {subtitle && hasSubtitle &&
+              <Block {...propsSubTitle}>
+                <Subtitle size={subtitleSize} color={subtitleColor} weight={subtitleWeight}>{subtitle}</Subtitle>
+              </Block>  
+            }
+          </Block>
+        </Block>  
         <Block {...propsDateContainer}>  
           {dateValue && hasDate &&
             <Block {...propsDate}>

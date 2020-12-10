@@ -51,19 +51,6 @@
       @include mb($space-size-1);
     }
   }
-  @media(min-width: $md) {
-    &.three {
-      .block-left {
-        @include w(calc(100% / 3 * 2 - #{$space-size-2} + 6px));
-        .teaser-default {
-          @include mb(unset);
-        }
-      }
-      .block-right {
-        @include w(calc(100% / 3 - #{$space-size-2} - 2px));
-      }
-    }
-  }
   @media(min-width: $lg) {
     &.one {
       .teaser-content {
@@ -75,6 +62,17 @@
       }
       .teaser-title {
         @include mb($space-size-3);
+      }
+    }
+    &.three {
+      .block-left {
+        @include w(calc(100% / 3 * 2 - #{$space-size-2} + 6px));
+        .teaser-default {
+          @include mb(unset);
+        }
+      }
+      .block-right {
+        @include w(calc(100% / 3 - #{$space-size-2} - 2px));
       }
     }
     .block-left {
