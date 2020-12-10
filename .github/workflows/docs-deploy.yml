@@ -38,7 +38,7 @@ jobs:
         echo "# Pull Production"
         git pull
         echo "# Merge master into production"
-        git merge master -m "Merge"
+        git merge master -m "Merge master into production for release"
         echo "# Up version"
         npm version patch
     - run: npm run build
