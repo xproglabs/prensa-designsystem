@@ -18,8 +18,7 @@ const Button = ({children, className, color, disabled, fontColor, fullWidth, lef
     [`${className}`]: className,
   });
 
-  const getFontColor = () => { 
-    console.log('testandoooo13012i302910');
+  const getFontColor = () => {     
     if (fontColor) return fontColor;
     if (variant === 'outlined') {
       if (disabled) return 'neutral-8';
