@@ -21,10 +21,6 @@ jobs:
         password: ${{ secrets.SSHPASSWORD }}
         script: |
           cd /var/www/prensa-designsystem
-          git config user.name "Giovanni"
-          git config user.email "giovanni@xproglabs.com"
-          git checkout production
-          git pull
           rm -rf node_modules/
           npm install
           npm run build-storybook
