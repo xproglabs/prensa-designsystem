@@ -34,6 +34,7 @@ jobs:
         git config --global user.name "Giovanni"
         git config --global user.email "giovanni@xproglabs.com"
 
+        git fetch
         git checkout production
         git add .
         git commit -m "Build"
