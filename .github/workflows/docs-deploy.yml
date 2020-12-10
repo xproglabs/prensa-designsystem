@@ -63,12 +63,9 @@ jobs:
       if: ${{ always() }}
       
     - name: ssh to braza-server-nyc3-01
-      uses: appleboy/ssh-action@master
+      uses: fifsky/ssh-action@master
       with:
-        host: ${{ secrets.DOCS_SERVER }}
-        username: ${{ secrets.SSHUSERNAME }}
-        password: ${{ secrets.SSHPASSWORD }}
-        script: |
+        command: |
           cd /var/www/prensa-designsystem
           rm -rf node_modules/
           rm -rf yarn.lock
@@ -78,6 +75,9 @@ jobs:
           yarn run build-storybook
           pm2 restart prensa-storybook
           exit
+        host: ${{ secrets.DOCS_SERVER }}
+        user: ${{ secrets.SSHUSERNAME }}
+        key: ${{ secrets.SSHPASSWORD }}
 
     - name: Slack success notifcation
       uses: 8398a7/action-slack@v3
