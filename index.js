@@ -768,6 +768,7 @@ var Button = function Button(_ref) {
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(variant, " color-").concat(color, " radius-").concat(radius), true), _defineProperty(_classnames, 'disabled', disabled), _defineProperty(_classnames, 'fullWidth', fullWidth), _defineProperty(_classnames, 'has-leftIcon', leftIcon), _defineProperty(_classnames, 'has-rightIcon', rightIcon), _defineProperty(_classnames, "".concat(className), className), _classnames));
 
   var getFontColor = function getFontColor() {
+    console.log('fontCOlor');
     if (fontColor) return fontColor;
 
     if (variant === 'outlined') {
