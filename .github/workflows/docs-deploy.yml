@@ -71,8 +71,9 @@ jobs:
         script: |
           cd /var/www/prensa-designsystem
           rm -rf node_modules/
-          npm install
-          npm run build-storybook
+          rm -rf yarn.lock
+          yarn
+          yarn run build-storybook
           pm2 restart prensa-storybook
           exit
 
