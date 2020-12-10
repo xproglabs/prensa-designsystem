@@ -75,7 +75,7 @@ jobs:
           rm -rf storybookbuild/
           git pull
           yarn
-          yarn build-storybook
+          yarn run build-storybook
           pm2 restart prensa-storybook
           exit
 
