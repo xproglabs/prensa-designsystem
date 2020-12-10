@@ -13,6 +13,43 @@ jobs:
         node-version: [14.x]
 
     steps:
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.deploy }}
+      
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: |
+        git config --global user.name "Giovanni"
+        git config --global user.email "giovanni@xproglabs.com"
+        git checkout -- .
+        npm version patch
+    - run: npm run build
+  
+    - name: Commit build
+      run: |
+        git config --global user.name "Giovanni"
+        git config --global user.email "giovanni@xproglabs.com"
+
+        git add .
+        git commit -m "Build"
+        git push --force
+
+    - name: Slack notifcation build
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        author_name: 'build-action'
+        text: Build prensa ${{ job.status }}
+        fields: commit, message, author
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+        SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+      if: ${{ always() }}
+      
     - name: ssh to braza-server-nyc3-01
       uses: appleboy/ssh-action@master
       with:
@@ -21,10 +58,6 @@ jobs:
         password: ${{ secrets.SSHPASSWORD }}
         script: |
           cd /var/www/prensa-designsystem
-          git config user.name "Giovanni"
-          git config user.email "giovanni@xproglabs.com"
-          git checkout production
-          git pull
           rm -rf node_modules/
           npm install
           npm run build-storybook
