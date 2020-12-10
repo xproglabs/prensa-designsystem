@@ -31,6 +31,7 @@ const validateIcon = props => {
 };
 
 const Container = styled.div`
+  width: 100%;
   margin-top: ${props => getFromProps(props, 'marginTop', 0)};
   margin-bottom: ${props => getFromProps(props, 'marginBottom', props.validation === false ? 12 : 32)};
   margin-left: ${props => getFromProps(props, 'marginLeft', 0)};
@@ -44,6 +45,7 @@ const StyledLabel = styled.label`
   text-transform: capitalize;
 `;
 const InputContainer = styled.div`
+  background-color: white;
   width: calc(100% - 2px);
   height: 40px;
   border-width: 1px;
@@ -113,7 +115,8 @@ const Field = ({
   fontColor,
   iconColor,
   validation,
-  validationMessage
+  validationMessage,
+  placeholder
 }) => {
 
   const handleChange = event => {
@@ -129,7 +132,7 @@ const Field = ({
     <Container marginTop={marginTop} marginRight={marginRight} marginBottom={marginBottom} marginLeft={marginLeft} validation={validation}>
       <StyledLabel fontColor={fontColor}>{label}</StyledLabel>
       <InputContainer radius={radius} activeColor={activeColor} validation={validation} borderColor={borderColor} iconColor={iconColor}>
-        <StyledInput type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} />
+        <StyledInput type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} placeholder={placeholder} />
         {icon && getIconFromProps()}
       </InputContainer>
       {validation === false && <ErrorMessage>{validationMessage}</ErrorMessage>}
@@ -138,6 +141,10 @@ const Field = ({
 };
 
 Field.propTypes = {
+  /**
+  *Corresponde ao placeholder
+  */
+  placeholder: PropTypes.string,
   /**
    * Corresponde a um margin-top
    */
