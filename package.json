@@ -48,7 +48,7 @@
   "scripts": {
     "icons": "svgr -d icons/ icons/assets/",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "yarn build-storybook -o ./storybookbuild",
+    "build-storybook": "build-storybook -o ./storybookbuild",
     "build": "rollup --config",
     "eslint": "eslint --ext js,jsx components/ stories/ utils/",
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild"

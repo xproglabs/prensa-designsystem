@@ -38,7 +38,7 @@ jobs:
         echo "# Pull Production"
         git pull
         echo "# Merge master into production"
-        git merge master -m "Merge"
+        git merge master -m "Merge master into production for release"
         echo "# Up version"
         npm version patch
     - run: npm run build
@@ -72,9 +72,10 @@ jobs:
           cd /var/www/prensa-designsystem
           rm -rf node_modules/
           rm -rf yarn.lock
+          rm -rf storybookbuild/
           git pull
           yarn
-          yarn run build-storybook
+          yarn build-storybook
           pm2 restart prensa-storybook
           exit
 
