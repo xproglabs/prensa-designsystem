@@ -1,8 +1,8 @@
-name: Publish docs
+name: Publish build and docs
 
 on:
   push:
-    branches: [ production ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -34,6 +34,7 @@ jobs:
         git config --global user.name "Giovanni"
         git config --global user.email "giovanni@xproglabs.com"
 
+        git checkout production
         git add .
         git commit -m "Build"
         git push --force
