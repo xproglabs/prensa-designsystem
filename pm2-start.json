@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "prensa-docs",
+      "script": "npm",
+      "args" : "run-prod"
+    }
+  ]
+}
