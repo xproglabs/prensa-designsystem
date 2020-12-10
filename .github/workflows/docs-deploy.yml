@@ -72,6 +72,7 @@ jobs:
           cd /var/www/prensa-designsystem
           rm -rf node_modules/
           rm -rf yarn.lock
+          git pull
           yarn
           yarn run build-storybook
           pm2 restart prensa-storybook
