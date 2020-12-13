@@ -42,7 +42,6 @@ const StyledLabel = styled.label`
   font-weight: 400;
   font-family: ${props => props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary};
   color: ${props => getFromProps(props, 'fontColor', props.theme.colors.neutral5)};
-  text-transform: capitalize;
 `;
 const InputContainer = styled.div`
   background-color: white;
@@ -128,9 +127,13 @@ const Field = ({
     return React.cloneElement(icon, {onClick: iconHasOnClick ? iconHasOnClick : onIconClick});
   };
 
+  const capitalizeFirstLetter = string => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   return (
     <Container marginTop={marginTop} marginRight={marginRight} marginBottom={marginBottom} marginLeft={marginLeft} validation={validation}>
-      <StyledLabel fontColor={fontColor}>{label}</StyledLabel>
+      <StyledLabel fontColor={fontColor}>{capitalizeFirstLetter(label)}</StyledLabel>
       <InputContainer radius={radius} activeColor={activeColor} validation={validation} borderColor={borderColor} iconColor={iconColor}>
         <StyledInput type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} placeholder={placeholder} />
         {icon && getIconFromProps()}
