@@ -45,7 +45,13 @@ const Button = ({
 
   const getChildren = () => {
     if (loading) return 'Carregando...';
-    return children;
+    return (
+      <React.Fragment>
+        {leftIcon && leftIcon}
+        {children}
+        {rightIcon && rightIcon}
+      </React.Fragment>
+    );
   };
 
   return (
@@ -56,9 +62,7 @@ const Button = ({
       style={style}
     >
       <ButtonTypography color={getFontColor()} weight={weight}>
-        {leftIcon && leftIcon}
         {getChildren()}
-        {rightIcon && rightIcon}
       </ButtonTypography>
     </button>
   );
