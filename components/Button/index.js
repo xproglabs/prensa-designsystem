@@ -70,7 +70,7 @@ const Button = ({
     <button
       className={getClass}
       disabled={disabled}
-      onClick={!disabled && onClick}
+      onClick={!disabled ? onClick : undefined}
       style={style}
     >
       <ButtonTypography color={getFontColor()} weight={weight}>
