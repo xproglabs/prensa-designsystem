@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import React, {useRef, useEffect} from 'react';
+import React, {useEffect} from 'react';
 
 import colors from '../../styles/variables/colors.json';
 import weights from '../../styles/variables/weight.json';
@@ -25,16 +25,15 @@ const Button = ({
   enterKey
 }) => {
 
-  const reference = useRef();
+  const handleKeyPress = event => {
+    if (event.keyCode === 13) enterKey();
+  };
 
   useEffect(() => {
-    const handleEvent = event => {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        enterKey();
-      }
+    enterKey && window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      enterKey && window.removeEventListener('keydown', handleKeyPress);
     };
-    reference.current.addEventListener('onEnterKey', handleEvent);
   });
 
   const getClass = classnames({
@@ -73,7 +72,6 @@ const Button = ({
       disabled={disabled}
       onClick={!disabled && onClick}
       style={style}
-      ref={reference}
     >
       <ButtonTypography color={getFontColor()} weight={weight}>
         {getChildren()}
