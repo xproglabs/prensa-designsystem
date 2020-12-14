@@ -4484,9 +4484,6 @@ var Button = function Button(_ref) {
     };
 
     reference.current.addEventListener('onEnterKey', handleEvent);
-    return function () {
-      return reference.removeEventListener('onEnterKey');
-    };
   });
   var getClass = classnames__default['default']((_classnames = {
     'Prensa-Button-root': true

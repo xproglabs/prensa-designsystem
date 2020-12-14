@@ -35,7 +35,6 @@ const Button = ({
       }
     };
     reference.current.addEventListener('onEnterKey', handleEvent);
-    return () => reference.removeEventListener('onEnterKey');
   });
 
   const getClass = classnames({
