@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 
 import colors from '../../styles/variables/colors.json';
 import weights from '../../styles/variables/weight.json';
@@ -21,8 +21,22 @@ const Button = ({
   style,
   variant,
   weight,
-  loading
+  loading,
+  enterKey
 }) => {
+
+  const reference = useRef();
+
+  useEffect(() => {
+    const handleEvent = event => {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        enterKey();
+      }
+    };
+    reference.current.addEventListener('onEnterKey', handleEvent);
+    return () => reference.removeEventListener('onEnterKey');
+  });
 
   const getClass = classnames({
     'Prensa-Button-root': true,
@@ -60,6 +74,7 @@ const Button = ({
       disabled={disabled}
       onClick={!disabled && onClick}
       style={style}
+      ref={reference}
     >
       <ButtonTypography color={getFontColor()} weight={weight}>
         {getChildren()}
@@ -87,6 +102,7 @@ Button.propTypes = {
   style: PropTypes.object,
   weight: PropTypes.oneOf(weights),
   loading: PropTypes.bool,
+  enterKey: PropTypes.func
 };
 
 Button.defaultProps = {

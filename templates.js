@@ -4471,13 +4471,28 @@ var Button = function Button(_ref) {
       size = _ref.size,
       style = _ref.style,
       variant = _ref.variant,
-      weight = _ref.weight;
+      weight = _ref.weight,
+      loading = _ref.loading,
+      enterKey = _ref.enterKey;
+  var reference = React.useRef();
+  React.useEffect(function () {
+    var handleEvent = function handleEvent(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        enterKey();
+      }
+    };
+
+    reference.current.addEventListener('onEnterKey', handleEvent);
+    return function () {
+      return reference.removeEventListener('onEnterKey');
+    };
+  });
   var getClass = classnames__default['default']((_classnames = {
     'Prensa-Button-root': true
   }, _defineProperty(_classnames, "size-".concat(size, " ").concat(variant, " color-").concat(color, " radius-").concat(radius), true), _defineProperty(_classnames, 'disabled', disabled), _defineProperty(_classnames, 'fullWidth', fullWidth), _defineProperty(_classnames, 'has-leftIcon', leftIcon), _defineProperty(_classnames, 'has-rightIcon', rightIcon), _defineProperty(_classnames, "".concat(className), className), _classnames));
 
   var getFontColor = function getFontColor() {
-    console.log('testando');
     if (fontColor) return fontColor;
 
     if (variant === 'outlined') {
@@ -4488,15 +4503,21 @@ var Button = function Button(_ref) {
     return 'white';
   };
 
+  var getChildren = function getChildren() {
+    if (loading) return 'Carregando...';
+    return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, leftIcon && leftIcon, children, rightIcon && rightIcon);
+  };
+
   return /*#__PURE__*/React__default['default'].createElement("button", {
     className: getClass,
     disabled: disabled,
     onClick: !disabled && onClick,
-    style: style
+    style: style,
+    ref: reference
   }, /*#__PURE__*/React__default['default'].createElement(ButtonTypography, {
     color: getFontColor(),
     weight: weight
-  }, leftIcon && leftIcon, children, rightIcon && rightIcon));
+  }, getChildren()));
 };
 
 Button.propTypes = {
@@ -4516,7 +4537,9 @@ Button.propTypes = {
   rightIcon: PropTypes__default['default'].oneOf([PropTypes__default['default'].object, PropTypes__default['default'].element]),
   size: PropTypes__default['default'].oneOf([1, 2, 3, 4, 5]),
   style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
+  weight: PropTypes__default['default'].oneOf(weights),
+  loading: PropTypes__default['default'].bool,
+  enterKey: PropTypes__default['default'].func
 };
 Button.defaultProps = {
   disabled: false,
@@ -4524,7 +4547,8 @@ Button.defaultProps = {
   color: 'primary-1',
   radius: 'default',
   size: 1,
-  weight: 'regular'
+  weight: 'regular',
+  loading: false
 };
 
 var TeaserMostRead = function TeaserMostRead(_ref) {
