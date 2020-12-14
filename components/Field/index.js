@@ -115,7 +115,8 @@ const Field = ({
   iconColor,
   validation,
   validationMessage,
-  placeholder
+  placeholder,
+  disabled
 }) => {
 
   const handleChange = event => {
@@ -135,7 +136,7 @@ const Field = ({
     <Container marginTop={marginTop} marginRight={marginRight} marginBottom={marginBottom} marginLeft={marginLeft} validation={validation}>
       {label && <StyledLabel fontColor={fontColor}>{capitalizeFirstLetter(label)}</StyledLabel>}
       <InputContainer radius={radius} activeColor={activeColor} validation={validation} borderColor={borderColor} iconColor={iconColor}>
-        <StyledInput type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} placeholder={placeholder} />
+        <StyledInput type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} placeholder={placeholder} disabled={disabled} />
         {icon && getIconFromProps()}
       </InputContainer>
       {validation === false && <ErrorMessage>{validationMessage}</ErrorMessage>}
@@ -145,8 +146,12 @@ const Field = ({
 
 Field.propTypes = {
   /**
-  *Corresponde ao placeholder
-  */
+   * Ativa/desativa o estado disabled do input
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Ativa ou desativa o uso do placeholder (recebe o texto)
+   */
   placeholder: PropTypes.string,
   /**
    * Corresponde a um margin-top
