@@ -1,12 +1,40 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import colors from '../../styles/variables/colors.json';
 import weights from '../../styles/variables/weight.json';
 import {ButtonTypography} from '../Typography';
 
-const Button = ({children, className, color, disabled, fontColor, fullWidth, leftIcon, onClick, radius, rightIcon, size, style, variant, weight}) => {
+const Button = ({
+  children,
+  className,
+  color,
+  disabled,
+  fontColor,
+  fullWidth,
+  leftIcon,
+  onClick,
+  radius,
+  rightIcon,
+  size,
+  style,
+  variant,
+  weight,
+  loading,
+  enterKey
+}) => {
+
+  const handleKeyPress = event => {
+    if (event.keyCode === 13) enterKey();
+  };
+
+  useEffect(() => {
+    enterKey && window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      enterKey && window.removeEventListener('keydown', handleKeyPress);
+    };
+  });
 
   const getClass = classnames({
     'Prensa-Button-root': true,
@@ -27,6 +55,17 @@ const Button = ({children, className, color, disabled, fontColor, fullWidth, lef
     return 'white';
   };
 
+  const getChildren = () => {
+    if (loading) return 'Carregando...';
+    return (
+      <React.Fragment>
+        {leftIcon && leftIcon}
+        {children}
+        {rightIcon && rightIcon}
+      </React.Fragment>
+    );
+  };
+
   return (
     <button
       className={getClass}
@@ -35,9 +74,7 @@ const Button = ({children, className, color, disabled, fontColor, fullWidth, lef
       style={style}
     >
       <ButtonTypography color={getFontColor()} weight={weight}>
-        {leftIcon && leftIcon}
-        {children}
-        {rightIcon && rightIcon}
+        {getChildren()}
       </ButtonTypography>
     </button>
   );
@@ -60,7 +97,9 @@ Button.propTypes = {
   rightIcon: PropTypes.oneOf([PropTypes.object, PropTypes.element]),
   size: PropTypes.oneOf([1, 2, 3, 4, 5]),
   style: PropTypes.object,
-  weight: PropTypes.oneOf(weights)
+  weight: PropTypes.oneOf(weights),
+  loading: PropTypes.bool,
+  enterKey: PropTypes.func
 };
 
 Button.defaultProps = {
@@ -69,7 +108,8 @@ Button.defaultProps = {
   color: 'primary-1',
   radius: 'default',
   size: 1,
-  weight: 'regular'
+  weight: 'regular',
+  loading: false
 };
 
 export default Button;
