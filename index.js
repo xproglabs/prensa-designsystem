@@ -799,7 +799,7 @@ var Button = function Button(_ref) {
   return /*#__PURE__*/React__default['default'].createElement("button", {
     className: getClass,
     disabled: disabled,
-    onClick: !disabled && onClick,
+    onClick: !disabled ? onClick : undefined,
     style: style
   }, /*#__PURE__*/React__default['default'].createElement(ButtonTypography, {
     color: getFontColor(),
@@ -1134,7 +1134,8 @@ var Field = function Field(_ref) {
       iconColor = _ref.iconColor,
       validation = _ref.validation,
       validationMessage = _ref.validationMessage,
-      placeholder = _ref.placeholder;
+      placeholder = _ref.placeholder,
+      disabled = _ref.disabled;
 
   var handleChange = function handleChange(event) {
     onChange(event.target.value);
@@ -1175,14 +1176,20 @@ var Field = function Field(_ref) {
     borderColor: borderColor,
     validation: validation,
     fontColor: fontColor,
-    placeholder: placeholder
+    placeholder: placeholder,
+    disabled: disabled
   }), icon && getIconFromProps()), validation === false && /*#__PURE__*/React__default['default'].createElement(ErrorMessage, null, validationMessage));
 };
 
 Field.propTypes = {
   /**
-  *Corresponde ao placeholder
-  */
+   * Ativa/desativa o estado disabled do input
+   */
+  disabled: PropTypes__default['default'].bool,
+
+  /**
+   * Ativa ou desativa o uso do placeholder (recebe o texto)
+   */
   placeholder: PropTypes__default['default'].string,
 
   /**

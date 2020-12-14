@@ -4508,7 +4508,7 @@ var Button = function Button(_ref) {
   return /*#__PURE__*/React__default['default'].createElement("button", {
     className: getClass,
     disabled: disabled,
-    onClick: !disabled && onClick,
+    onClick: !disabled ? onClick : undefined,
     style: style
   }, /*#__PURE__*/React__default['default'].createElement(ButtonTypography, {
     color: getFontColor(),
