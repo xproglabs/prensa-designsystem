@@ -1,3 +1,11 @@
+# v1.4.1
+- Adiciona loading no componente Button
+- Adiciona função para parse do label no Field
+- Adiciona listener para teclas no Button
+# v1.4.0
+- Adiciona styled-components no Prensa
+- Adiciona componente Field
+
 # v1.3.8
 - Refatora template Gridnews (Prensa-Templates-Gridnews)
 - Refatora template Featured (Prensa-Templates-Featured)
