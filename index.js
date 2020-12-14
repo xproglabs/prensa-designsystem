@@ -765,16 +765,16 @@ var Button = function Button(_ref) {
       weight = _ref.weight,
       loading = _ref.loading,
       enterKey = _ref.enterKey;
-  var reference = React.useRef();
-  React.useEffect(function () {
-    var handleEvent = function handleEvent(event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        enterKey();
-      }
-    };
 
-    reference.current.addEventListener('onEnterKey', handleEvent);
+  var handleKeyPress = function handleKeyPress(event) {
+    if (event.keyCode === 13) enterKey();
+  };
+
+  React.useEffect(function () {
+    enterKey && window.addEventListener('keydown', handleKeyPress);
+    return function () {
+      enterKey && window.removeEventListener('keydown', handleKeyPress);
+    };
   });
   var getClass = classnames__default['default']((_classnames = {
     'Prensa-Button-root': true
@@ -800,8 +800,7 @@ var Button = function Button(_ref) {
     className: getClass,
     disabled: disabled,
     onClick: !disabled && onClick,
-    style: style,
-    ref: reference
+    style: style
   }, /*#__PURE__*/React__default['default'].createElement(ButtonTypography, {
     color: getFontColor(),
     weight: weight
@@ -1158,7 +1157,7 @@ var Field = function Field(_ref) {
     marginBottom: marginBottom,
     marginLeft: marginLeft,
     validation: validation
-  }, /*#__PURE__*/React__default['default'].createElement(StyledLabel, {
+  }, label && /*#__PURE__*/React__default['default'].createElement(StyledLabel, {
     fontColor: fontColor
   }, capitalizeFirstLetter(label)), /*#__PURE__*/React__default['default'].createElement(InputContainer, {
     radius: radius,
