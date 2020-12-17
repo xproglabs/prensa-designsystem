@@ -7,7 +7,7 @@ import Block from '../Block';
 import ImageBackground from '../Image/Background';
 import Subject from '../Subject';
 import {NewsTitle, Subtitle, Date} from '../Typography';
-import utils from '../Util';
+import {dateDistance, datePtBrFull} from '../Util';
 
 const Teaser = ({customClass, content, datePublished, disableImage, domain, hasImageTop, hasSubjectFilled, hasSubtitle, hasDate, lazy, subjectColor, subjectSize, subjectWeight, titleSize, subtitleSize, dateSize, titleColor, subtitleColor, dateColor, titleWeight, subtitleWeight, dateWeight, isTeaserFeatured}) => {
   const {image, name, path, subject, subtitle} = content;
@@ -26,8 +26,8 @@ const Teaser = ({customClass, content, datePublished, disableImage, domain, hasI
 
   let dateValue = 
     !datePublished && content['time-modifiedDate'] ? 
-      utils.dateDistance(content['time-modifiedDate'], 2880) :
-      utils.datePtBrFull(content['time-published']);
+      dateDistance(content['time-modifiedDate'], 2880) :
+      datePtBrFull(content['time-published']);
   
   dateValue = datePublished ? 
     `Publicado em ${dateValue}` : 

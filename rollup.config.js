@@ -92,5 +92,27 @@ export default [
       resolve(),
       sass(),
     ]
-  }
+  },
+  {
+    input: 'components/Util/index.js',
+    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json'],
+    output: [
+      {
+        file: 'utils.js',
+        format: 'cjs',
+        globals: {
+          react: 'React'
+        },
+        name: 'prensa/utils'
+      }
+    ],
+    plugins: [ 
+      babel({
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
+      }),
+      json(),
+      resolve(),
+      sass(),
+    ]
+  },
 ];

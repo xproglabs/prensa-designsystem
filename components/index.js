@@ -15,4 +15,3 @@ export {default as Topbar} from './Topbar';
 export {default as Teaser} from './Teasers';
 export {default as Subject} from './Subject';
 export {default as Tag} from './Tag';
-export {default as utils} from './Util';
