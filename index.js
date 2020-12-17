@@ -1007,779 +1007,6 @@ var index = {
   Input: Input
 };
 
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  margin-top: 4px;\n  margin-bottom: 0px;\n  height: 16px;\n"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  height: calc(100% - 2px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  width: calc(100% - 2px);\n  height: 40px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: ", ";\n  border-radius: ", ";\n  display: flex;\n  align-items: center;\n  svg {\n    width: 32px;\n    height: 32px;\n    margin-right: 8px;\n    fill: ", ";\n    cursor: pointer;\n  }\n  &:focus-within {\n    border-color: ", ";\n    border-width: 2px;\n    width: calc(100% - 3px);\n    height: calc(40px - 2px);\n  }\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin-top: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-var parseNumberToString = function parseNumberToString(param) {
-  return "".concat(param, "px");
-};
-
-var getFromProps = function getFromProps(props, param, defaultValue) {
-  var defaultIsNumber = Number.isInteger(defaultValue);
-  var value = defaultIsNumber ? parseNumberToString(defaultValue) : defaultValue;
-  return lodash.get(props, param, value);
-};
-
-var validateStyle = function validateStyle(props) {
-  var isValid = lodash.get(props, 'validation', true);
-  if (!isValid) return props.theme.colors.error1;
-  if (props.borderColor) return props.borderColor;
-  return props.theme.colors.neutral9;
-};
-
-var validateIcon = function validateIcon(props) {
-  var isValid = lodash.get(props, 'validation', true);
-  if (!isValid) return props.theme.colors.error1;
-  if (props.iconColor) return props.iconColor;
-  return props.theme.colors.neutral5;
-};
-
-var Container = styled__default['default'].div(_templateObject(), function (props) {
-  return getFromProps(props, 'marginTop', 0);
-}, function (props) {
-  return getFromProps(props, 'marginBottom', props.validation === false ? 12 : 32);
-}, function (props) {
-  return getFromProps(props, 'marginLeft', 0);
-}, function (props) {
-  return getFromProps(props, 'marginRight', 0);
-});
-var StyledLabel = styled__default['default'].label(_templateObject2(), function (props) {
-  return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
-}, function (props) {
-  return getFromProps(props, 'fontColor', props.theme.colors.neutral5);
-});
-var InputContainer = styled__default['default'].div(_templateObject3(), function (props) {
-  return validateStyle(props);
-}, function (props) {
-  return getFromProps(props, 'radius', 5);
-}, function (props) {
-  return validateIcon(props);
-}, function (props) {
-  return getFromProps(props, 'activeColor', props.theme.colors.primary1);
-});
-var StyledInput = styled__default['default'].input(_templateObject4(), function (props) {
-  return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
-}, function (props) {
-  return getFromProps(props, 'radius', 5);
-});
-var ErrorMessage = styled__default['default'].p(_templateObject5(), function (props) {
-  return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
-}, function (props) {
-  return props.theme.colors.error1;
-});
-
-var Field = function Field(_ref) {
-  var marginTop = _ref.marginTop,
-      marginRight = _ref.marginRight,
-      marginBottom = _ref.marginBottom,
-      marginLeft = _ref.marginLeft,
-      icon = _ref.icon,
-      label = _ref.label,
-      radius = _ref.radius,
-      onChange = _ref.onChange,
-      onIconClick = _ref.onIconClick,
-      type = _ref.type,
-      value = _ref.value,
-      fontFamily = _ref.fontFamily,
-      activeColor = _ref.activeColor,
-      borderColor = _ref.borderColor,
-      fontColor = _ref.fontColor,
-      iconColor = _ref.iconColor,
-      validation = _ref.validation,
-      validationMessage = _ref.validationMessage,
-      placeholder = _ref.placeholder,
-      disabled = _ref.disabled;
-
-  var handleChange = function handleChange(event) {
-    onChange(event.target.value);
-  };
-
-  var getIconFromProps = function getIconFromProps() {
-    var iconHasOnClick = icon.props && icon.props.onClick ? icon.props.onClick : false;
-    return /*#__PURE__*/React__default['default'].cloneElement(icon, {
-      onClick: iconHasOnClick ? iconHasOnClick : onIconClick
-    });
-  };
-
-  var capitalizeFirstLetter = function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
-
-  return /*#__PURE__*/React__default['default'].createElement(Container, {
-    marginTop: marginTop,
-    marginRight: marginRight,
-    marginBottom: marginBottom,
-    marginLeft: marginLeft,
-    validation: validation
-  }, label && /*#__PURE__*/React__default['default'].createElement(StyledLabel, {
-    fontColor: fontColor
-  }, capitalizeFirstLetter(label)), /*#__PURE__*/React__default['default'].createElement(InputContainer, {
-    radius: radius,
-    activeColor: activeColor,
-    validation: validation,
-    borderColor: borderColor,
-    iconColor: iconColor
-  }, /*#__PURE__*/React__default['default'].createElement(StyledInput, {
-    type: type,
-    value: value,
-    onChange: handleChange,
-    radius: radius,
-    fontFamily: fontFamily,
-    activeColor: activeColor,
-    borderColor: borderColor,
-    validation: validation,
-    fontColor: fontColor,
-    placeholder: placeholder,
-    disabled: disabled
-  }), icon && getIconFromProps()), validation === false && /*#__PURE__*/React__default['default'].createElement(ErrorMessage, null, validationMessage));
-};
-
-Field.propTypes = {
-  /**
-   * Ativa/desativa o estado disabled do input
-   */
-  disabled: PropTypes__default['default'].bool,
-
-  /**
-   * Ativa ou desativa o uso do placeholder (recebe o texto)
-   */
-  placeholder: PropTypes__default['default'].string,
-
-  /**
-   * Corresponde a um margin-top
-   */
-  marginTop: PropTypes__default['default'].number,
-
-  /**
-   * Corresponde a um margin-right
-   */
-  marginRight: PropTypes__default['default'].number,
-
-  /**
-   * Corresponde a um margin-bottom
-   */
-  marginBottom: PropTypes__default['default'].number,
-
-  /**
-   * Corresponde a um margin-left
-   */
-  marginLeft: PropTypes__default['default'].number,
-
-  /**
-   * Possibilita adicionar um ícone à direita do Field
-   */
-  icon: PropTypes__default['default'].element,
-
-  /**
-   * Função executada ao clicar no ícone
-   */
-  onIconClick: PropTypes__default['default'].func,
-
-  /**
-   * Adiciona um label ao Field
-   */
-  label: PropTypes__default['default'].string,
-
-  /**
-   * Modifica o radius do Field
-   */
-  radius: PropTypes__default['default'].number,
-
-  /**
-   * Função executada ao modificar o valor do Field
-   */
-  onChange: PropTypes__default['default'].func.isRequired,
-
-  /**
-   * Props que recebe o type do Field (prop nativa do elemento)
-   */
-  type: PropTypes__default['default'].string,
-
-  /**
-   * Recebe o valor do Field (prop nativa do elemento)
-   */
-  value: PropTypes__default['default'].string,
-
-  /**
-   * Recebe o estado do componente (true para padrão e false para erro)
-   */
-  validation: PropTypes__default['default'].oneOf([true, false]).isRequired,
-
-  /**
-   * Recebe a mensagem de validação (renderizada quando validation = false)
-   */
-  validationMessage: PropTypes__default['default'].string.isRequired,
-  //STYLE PROPS
-
-  /**
-   * Altera a família da fonte do input (conectada ao theme)
-   */
-  fontFamily: PropTypes__default['default'].string,
-
-  /**
-   * Altera a cor do Field quando estiver no estado ATIVO (focused) (conectada ao theme)
-   */
-  activeColor: PropTypes__default['default'].oneOf(colors),
-
-  /**
-   * Altera a cor da borda do Field (conectada ao theme)
-   */
-  borderColor: PropTypes__default['default'].oneOf(colors),
-
-  /**
-   * Altera a cor da fonte do Field (conectada ao theme)
-   */
-  fontColor: PropTypes__default['default'].oneOf(colors),
-
-  /**
-   * Altera a cor do ícone (caso ativo) (conectada ao theme)
-   */
-  iconColor: PropTypes__default['default'].oneOf(colors)
-};
-Field.defaultProps = {
-  validation: true
-};
-var index$1 = styled.withTheme(Field);
-
-var Image$1 = function Image(_ref) {
-  var content = _ref.content,
-      custom = _ref.custom,
-      domain = _ref.domain,
-      lazy = _ref.lazy,
-      placeholder = _ref.placeholder;
-  var img_placeholder = placeholder || null;
-
-  if (content['image-contentId']) {
-    var policy_id = content['image-contentId'];
-    var derivative = '2x1';
-    var width = 1000;
-    content['image-path'] = pathToImage(derivative, domain, policy_id, width);
-    img_placeholder = img_placeholder || pathToImage(derivative, domain, policy_id, 10);
-  }
-
-  if (content['image-legacy']) {
-    content['image-path'] = content['image-legacy'];
-    content['image-subtitle'] = 'Imagem importada do sistema legado / Reprodução';
-    img_placeholder = '';
-  }
-
-  if (content['image-path']) {
-    var content_path = content['image-path'];
-
-    if (lazy) {
-      content_path = lazy(content_path, img_placeholder);
-    }
-
-    var byline = !content['image-byline'] || content['image-byline'] == 'undefined' ? null : content['image-byline'];
-    var caption_byline = content['image-subtitle'] ? "".concat(content['image-subtitle']).concat(byline ? " (".concat(byline, ")") : '') : "".concat(content['image-subtitle-original']).concat(byline ? " (".concat(byline, ")") : '');
-    return /*#__PURE__*/React__default['default'].createElement(Block, {
-      custom: "image-box ".concat(custom),
-      w: "100p"
-    }, /*#__PURE__*/React__default['default'].createElement("img", {
-      alt: caption_byline ? '$Legenda da imagem: {caption_byline}' : 'Legenda da imagem: Reprodução',
-      src: content_path
-    }), /*#__PURE__*/React__default['default'].createElement(Block, {
-      custom: "label"
-    }, caption_byline));
-  }
-
-  return /*#__PURE__*/React__default['default'].createElement("pre", null, "no-image");
-};
-
-Image$1.propTypes = {
-  content: PropTypes__default['default'].object.isRequired,
-  custom: PropTypes__default['default'].string,
-  domain: PropTypes__default['default'].string,
-  lazy: PropTypes__default['default'].func,
-  placeholder: PropTypes__default['default'].string
-};
-Image$1.defaultProps = {
-  content: {}
-};
-
-function SvgIcArrowBack(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    height: 32,
-    viewBox: "0 0 24 24",
-    width: 32
-  }, props), /*#__PURE__*/React.createElement("path", {
-    d: "M0 0h24v24H0z",
-    fill: "none"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
-  }));
-}
-
-function SvgIcArrowForward(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    height: 32,
-    viewBox: "0 0 24 24",
-    width: 32
-  }, props), /*#__PURE__*/React.createElement("path", {
-    d: "M0 0h24v24H0z",
-    fill: "none"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
-  }));
-}
-
-var RenderItem = function RenderItem(_ref) {
-  var linkurl = _ref.linkurl,
-      name = _ref.name,
-      lead = _ref.lead,
-      selected = _ref.selected,
-      on = _ref.on;
-  var propsGallerySelected = {
-    custom: 'gallery-selected',
-    w: '100p',
-    mb: '2'
-  };
-  var propsGalleryItem = {
-    custom: 'gallery-item',
-    mr: '2',
-    onClick: function onClick() {
-      return on({
-        linkurl: linkurl,
-        name: name,
-        lead: lead
-      });
-    }
-  };
-  var propsGallery = selected ? propsGallerySelected : propsGalleryItem;
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsGallery, /*#__PURE__*/React__default['default'].createElement("img", {
-    className: "image-file",
-    src: linkurl,
-    alt: "".concat(name)
-  }), /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "image-name"
-  }, name), /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "image-lead"
-  }, lead));
-};
-
-var ImageGallery = function ImageGallery(_ref2) {
-  var items = _ref2.items,
-      selected = _ref2.selected,
-      on = _ref2.on;
-  if (!items || items.length === 0) return false;
-  var item_selected = selected ? selected : items[0];
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "article-image-gallery",
-    w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
-    align: "row",
-    custom: "image-selected",
-    w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(RenderItem, _extends({}, item_selected, {
-    selected: true,
-    on: on
-  }))), items.length > 1 && /*#__PURE__*/React__default['default'].createElement(Block, {
-    align: "row",
-    custom: "box-list",
-    w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
-    align: "row center middle",
-    custom: "arrow-left"
-  }, /*#__PURE__*/React__default['default'].createElement(SvgIcArrowBack, null)), /*#__PURE__*/React__default['default'].createElement(Block, {
-    align: "row",
-    custom: "image-list",
-    w: "100p"
-  }, lodash.map(items, function (item, key) {
-    return /*#__PURE__*/React__default['default'].createElement(RenderItem, _extends({}, item, {
-      key: key,
-      on: on
-    }));
-  })), /*#__PURE__*/React__default['default'].createElement(Block, {
-    align: "row center middle",
-    custom: "arrow-right"
-  }, /*#__PURE__*/React__default['default'].createElement(SvgIcArrowForward, null))));
-};
-
-ImageGallery.propTypes = {
-  items: PropTypes__default['default'].array,
-  selected: PropTypes__default['default'].shape({
-    lead: PropTypes__default['default'].string,
-    linkUrl: PropTypes__default['default'].string,
-    name: PropTypes__default['default'].string
-  }),
-  on: PropTypes__default['default'].func
-};
-RenderItem.propTypes = {
-  linkurl: PropTypes__default['default'].string,
-  name: PropTypes__default['default'].string,
-  lead: PropTypes__default['default'].string,
-  selected: PropTypes__default['default'].bool,
-  on: PropTypes__default['default'].func.isRequired
-};
-ImageGallery.defaultProps = {
-  selected: false,
-  items: []
-};
-
-var SearchForm = function SearchForm(_ref) {
-  var functions = _ref.functions,
-      state = _ref.state,
-      buttonSize = _ref.buttonSize,
-      buttonWeight = _ref.buttonWeight,
-      buttonColor = _ref.buttonColor;
-  var fieldValue = state.fieldValue,
-      setFieldValue = state.setFieldValue;
-
-  var handleSubmit = function handleSubmit() {
-    var string = fieldValue;
-    string = string.normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z\s])/g, '');
-    functions.onSubmit(string);
-  };
-
-  var fieldController = {
-    type: 'text',
-    className: 'search-field',
-    placeholder: 'O que você está procurando?',
-    onChange: function onChange(event) {
-      return setFieldValue(event.target.value);
-    },
-    onKeyPress: function onKeyPress(event) {
-      return event.key === 'Enter' && handleSubmit();
-    }
-  };
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
-    align: "right",
-    custom: 'search-form'
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
-    mb: "1",
-    w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement("input", fieldController)), /*#__PURE__*/React__default['default'].createElement(Button, {
-    disabled: false,
-    size: buttonSize,
-    weight: buttonWeight,
-    color: buttonColor,
-    onClick: function onClick() {
-      return handleSubmit();
-    }
-  }, "Buscar"));
-};
-
-SearchForm.propTypes = {
-  buttonSize: PropTypes__default['default'].oneOf([1, 2, 3, 4, 5]),
-  buttonWeight: PropTypes__default['default'].oneOf(weights),
-  buttonColor: PropTypes__default['default'].oneOf(colors),
-  content: PropTypes__default['default'].object.isRequired,
-  functions: PropTypes__default['default'].shape({
-    onSubmit: PropTypes__default['default'].func
-  }),
-  state: PropTypes__default['default'].shape({
-    fieldValue: PropTypes__default['default'].string,
-    setFieldValue: PropTypes__default['default'].func
-  })
-};
-SearchForm.defaultProps = {
-  content: {},
-  functions: {
-    onSubmit: function onSubmit() {
-      return null;
-    }
-  },
-  state: {
-    fieldValue: '',
-    setFieldValue: function setFieldValue() {
-      return null;
-    }
-  }
-};
-
-var SearchMenu = function SearchMenu(_ref) {
-  var children = _ref.children,
-      functions = _ref.functions,
-      status = _ref.status;
-  var menuIsOpen = status.opened ? 'opened' : 'closed';
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "menu-modal ".concat(menuIsOpen)
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "menu-opacity",
-    onClick: functions.onCloseModal
-  }), /*#__PURE__*/React__default['default'].createElement(Block, {
-    bg: "neutral-10",
-    custom: "menu-right",
-    p: "4"
-  }, children && children));
-};
-
-SearchMenu.propTypes = {
-  children: PropTypes__default['default'].node,
-  content: PropTypes__default['default'].object.isRequired,
-  functions: PropTypes__default['default'].shape({
-    onCloseModal: PropTypes__default['default'].func
-  }),
-  status: PropTypes__default['default'].shape({
-    opened: PropTypes__default['default'].bool
-  })
-};
-SearchMenu.defaultProps = {
-  content: {},
-  functions: {
-    onCloseModal: function onCloseModal() {
-      return null;
-    }
-  },
-  status: {
-    opened: false
-  }
-};
-
-var SideMenu = function SideMenu(_ref) {
-  var children = _ref.children,
-      functions = _ref.functions,
-      status = _ref.status;
-  var menuIsOpen = status.opened ? 'opened' : 'closed';
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "menu-modal ".concat(menuIsOpen)
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "menu-opacity",
-    onClick: functions.onCloseModal
-  }), /*#__PURE__*/React__default['default'].createElement(Block, {
-    bg: "white",
-    custom: "menu-left",
-    p: "4"
-  }, children && children));
-};
-
-SideMenu.propTypes = {
-  children: PropTypes__default['default'].node,
-  content: PropTypes__default['default'].object.isRequired,
-  functions: PropTypes__default['default'].shape({
-    onCloseModal: PropTypes__default['default'].func
-  }),
-  status: PropTypes__default['default'].shape({
-    opened: PropTypes__default['default'].bool
-  })
-};
-SideMenu.defaultProps = {
-  content: {},
-  functions: {
-    onCloseModal: function onCloseModal() {
-      return null;
-    }
-  },
-  status: {
-    opened: false
-  }
-};
-
-function SvgIcArrowMenu(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    height: 24,
-    width: 24
-  }, props), /*#__PURE__*/React.createElement("path", {
-    d: "M0 0h24v24H0V0z",
-    fill: "none"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
-  }));
-}
-
-var SideMenuItems = function SideMenuItems(_ref) {
-  var content = _ref.content,
-      functions = _ref.functions;
-
-  var Item = function Item(_ref2) {
-    var item = _ref2.item;
-    var hasSubitems = item.subitems.length > 0;
-    return /*#__PURE__*/React__default['default'].createElement(Block, {
-      custom: "sidemenu-group",
-      mb: "3"
-    }, /*#__PURE__*/React__default['default'].createElement(Block, {
-      custom: "sidemenu-group-item",
-      pb: "2",
-      align: "row between middle",
-      onClick: function onClick() {
-        return functions.onMenuItem(item);
-      }
-    }, !hasSubitems ? /*#__PURE__*/React__default['default'].createElement("a", {
-      href: item.path
-    }, item.name) : /*#__PURE__*/React__default['default'].createElement("span", {
-      href: item.path
-    }, item.name), /*#__PURE__*/React__default['default'].createElement(SvgIcArrowMenu, null)));
-  };
-
-  Item.propTypes = {
-    item: PropTypes__default['default'].object
-  };
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "sidemenu-items"
-  }, lodash.map(content.items, function (item, key) {
-    return /*#__PURE__*/React__default['default'].createElement(Item, {
-      item: item,
-      key: key
-    });
-  }));
-};
-
-SideMenuItems.propTypes = {
-  content: PropTypes__default['default'].object,
-  functions: PropTypes__default['default'].shape({
-    onMenuItem: PropTypes__default['default'].func
-  })
-};
-SideMenuItems.defaultProps = {
-  content: {}
-};
-
-var SocialMedias = function SocialMedias(props) {
-  var content = props.content;
-  if (!content) return null;
-  var propsSocialMedia = {
-    align: 'row evenly'
-  };
-  var propsSocialCirlce = {
-    mr: '1',
-    custom: 'social-circle',
-    'md': {
-      mr: '0',
-      ml: '1'
-    }
-  };
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsSocialMedia, lodash.map(content, function (item, k) {
-    return /*#__PURE__*/React__default['default'].createElement("a", {
-      href: item.path,
-      key: k
-    }, /*#__PURE__*/React__default['default'].createElement(Block, propsSocialCirlce, item.icon));
-  }));
-};
-
-SocialMedias.propTypes = {
-  content: PropTypes__default['default'].array.isRequired
-};
-
-var Topbar = function Topbar(_ref) {
-  var content = _ref.content,
-      theme = _ref.theme;
-  var leftContent = content.leftContent,
-      centerContent = content.centerContent,
-      rightContent = content.rightContent;
-  var color = theme.color;
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
-    align: "row center",
-    bg: color,
-    fc: "white",
-    custom: "Topbar-Prensa-root",
-    w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
-    align: "row middle between",
-    custom: "wrap",
-    w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "left"
-  }, leftContent && leftContent), /*#__PURE__*/React__default['default'].createElement(Block, null, centerContent && centerContent), /*#__PURE__*/React__default['default'].createElement(Block, {
-    custom: "right"
-  }, rightContent && rightContent)));
-};
-
-Topbar.propTypes = {
-  content: PropTypes__default['default'].shape({
-    leftContent: PropTypes__default['default'].object,
-    centerContent: PropTypes__default['default'].object,
-    rightContent: PropTypes__default['default'].object
-  }),
-  theme: PropTypes__default['default'].shape({
-    color: PropTypes__default['default'].oneOf(colors)
-  })
-};
-Topbar.defaultProps = {
-  theme: {
-    color: 'primary-1'
-  }
-};
-
-var Subject = function Subject(props) {
-  var _classnames;
-
-  var children = props.children,
-      color = props.color,
-      className = props.className,
-      style = props.style,
-      size = props.size,
-      filled = props.filled,
-      weight = props.weight;
-  if (!children) return null;
-  var classes = classnames__default['default']((_classnames = {
-    'Prensa-Subject-root': true,
-    'filled': filled
-  }, _defineProperty(_classnames, "color-".concat(color), true), _defineProperty(_classnames, "".concat(className), className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("div", {
-    className: classes,
-    style: style
-  }, /*#__PURE__*/React__default['default'].createElement(SubjectTypography, {
-    size: size,
-    color: filled ? 'white' : color,
-    weight: weight
-  }, children));
-};
-
-Subject.defaultProps = {
-  color: 'primary-1',
-  filled: false,
-  size: 1
-};
-Subject.propTypes = {
-  children: PropTypes__default['default'].string.isRequired,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  filled: PropTypes__default['default'].bool,
-  style: PropTypes__default['default'].object,
-  size: PropTypes__default['default'].oneOf([1, 2, 3]),
-  weight: PropTypes__default['default'].oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
-};
-
 function requiredArgs(required, args) {
   if (args.length < required) {
     throw new TypeError(required + ' argument' + (required > 1 ? 's' : '') + ' required, but only ' + args.length + ' present');
@@ -5023,9 +4250,778 @@ var dateDistance = function dateDistance(date, limit) {
   return "H\xE1 ".concat(date_string);
 };
 
-var utils = {
-  dateDistance: dateDistance,
-  datePtBrFull: datePtBrFull
+var numberToString = function numberToString(param) {
+  return "".concat(param, "px");
+};
+
+var getFromProps = function getFromProps(props, param) {
+  var defaultValue = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  var defaultIsNumber = Number.isInteger(defaultValue);
+  var value = defaultIsNumber ? numberToString(defaultValue) : defaultValue;
+  return lodash.get(props, numberToString(param), value);
+};
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  margin-top: 4px;\n  margin-bottom: 0px;\n  height: 16px;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  height: calc(100% - 2px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  width: calc(100% - 2px);\n  height: 40px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: ", ";\n  border-radius: ", ";\n  display: flex;\n  align-items: center;\n  svg {\n    width: 32px;\n    height: 32px;\n    margin-right: 8px;\n    fill: ", ";\n    cursor: pointer;\n  }\n  &:focus-within {\n    border-color: ", ";\n    border-width: 2px;\n    width: calc(100% - 3px);\n    height: calc(40px - 2px);\n  }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin-top: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var validateStyle = function validateStyle(props) {
+  var isValid = lodash.get(props, 'validation', true);
+  if (!isValid) return props.theme.colors.error1;
+  if (props.borderColor) return props.borderColor;
+  return props.theme.colors.neutral9;
+};
+
+var validateIcon = function validateIcon(props) {
+  var isValid = lodash.get(props, 'validation', true);
+  if (!isValid) return props.theme.colors.error1;
+  if (props.iconColor) return props.iconColor;
+  return props.theme.colors.neutral5;
+};
+
+var Container = styled__default['default'].div(_templateObject(), function (props) {
+  return getFromProps(props, 'marginTop', 0);
+}, function (props) {
+  return getFromProps(props, 'marginBottom', props.validation === false ? 12 : 32);
+}, function (props) {
+  return getFromProps(props, 'marginLeft', 0);
+}, function (props) {
+  return getFromProps(props, 'marginRight', 0);
+});
+var StyledLabel = styled__default['default'].label(_templateObject2(), function (props) {
+  return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
+}, function (props) {
+  return getFromProps(props, 'fontColor', props.theme.colors.neutral5);
+});
+var InputContainer = styled__default['default'].div(_templateObject3(), function (props) {
+  return validateStyle(props);
+}, function (props) {
+  return getFromProps(props, 'radius', 5);
+}, function (props) {
+  return validateIcon(props);
+}, function (props) {
+  return getFromProps(props, 'activeColor', props.theme.colors.primary1);
+});
+var StyledInput = styled__default['default'].input(_templateObject4(), function (props) {
+  return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
+}, function (props) {
+  return getFromProps(props, 'radius', 5);
+});
+var ErrorMessage = styled__default['default'].p(_templateObject5(), function (props) {
+  return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
+}, function (props) {
+  return props.theme.colors.error1;
+});
+
+var Field = function Field(_ref) {
+  var marginTop = _ref.marginTop,
+      marginRight = _ref.marginRight,
+      marginBottom = _ref.marginBottom,
+      marginLeft = _ref.marginLeft,
+      icon = _ref.icon,
+      label = _ref.label,
+      radius = _ref.radius,
+      onChange = _ref.onChange,
+      onIconClick = _ref.onIconClick,
+      type = _ref.type,
+      value = _ref.value,
+      fontFamily = _ref.fontFamily,
+      activeColor = _ref.activeColor,
+      borderColor = _ref.borderColor,
+      fontColor = _ref.fontColor,
+      iconColor = _ref.iconColor,
+      validation = _ref.validation,
+      validationMessage = _ref.validationMessage,
+      placeholder = _ref.placeholder,
+      disabled = _ref.disabled;
+
+  var handleChange = function handleChange(event) {
+    onChange(event.target.value);
+  };
+
+  var getIconFromProps = function getIconFromProps() {
+    var iconHasOnClick = icon.props && icon.props.onClick ? icon.props.onClick : false;
+    return /*#__PURE__*/React__default['default'].cloneElement(icon, {
+      onClick: iconHasOnClick ? iconHasOnClick : onIconClick
+    });
+  };
+
+  var capitalizeFirstLetter = function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+  return /*#__PURE__*/React__default['default'].createElement(Container, {
+    marginTop: marginTop,
+    marginRight: marginRight,
+    marginBottom: marginBottom,
+    marginLeft: marginLeft,
+    validation: validation
+  }, label && /*#__PURE__*/React__default['default'].createElement(StyledLabel, {
+    fontColor: fontColor
+  }, capitalizeFirstLetter(label)), /*#__PURE__*/React__default['default'].createElement(InputContainer, {
+    radius: radius,
+    activeColor: activeColor,
+    validation: validation,
+    borderColor: borderColor,
+    iconColor: iconColor
+  }, /*#__PURE__*/React__default['default'].createElement(StyledInput, {
+    type: type,
+    value: value,
+    onChange: handleChange,
+    radius: radius,
+    fontFamily: fontFamily,
+    activeColor: activeColor,
+    borderColor: borderColor,
+    validation: validation,
+    fontColor: fontColor,
+    placeholder: placeholder,
+    disabled: disabled
+  }), icon && getIconFromProps()), validation === false && /*#__PURE__*/React__default['default'].createElement(ErrorMessage, null, validationMessage));
+};
+
+Field.propTypes = {
+  /**
+   * Ativa/desativa o estado disabled do input
+   */
+  disabled: PropTypes__default['default'].bool,
+
+  /**
+   * Ativa ou desativa o uso do placeholder (recebe o texto)
+   */
+  placeholder: PropTypes__default['default'].string,
+
+  /**
+   * Corresponde a um margin-top
+   */
+  marginTop: PropTypes__default['default'].number,
+
+  /**
+   * Corresponde a um margin-right
+   */
+  marginRight: PropTypes__default['default'].number,
+
+  /**
+   * Corresponde a um margin-bottom
+   */
+  marginBottom: PropTypes__default['default'].number,
+
+  /**
+   * Corresponde a um margin-left
+   */
+  marginLeft: PropTypes__default['default'].number,
+
+  /**
+   * Possibilita adicionar um ícone à direita do Field
+   */
+  icon: PropTypes__default['default'].element,
+
+  /**
+   * Função executada ao clicar no ícone
+   */
+  onIconClick: PropTypes__default['default'].func,
+
+  /**
+   * Adiciona um label ao Field
+   */
+  label: PropTypes__default['default'].string,
+
+  /**
+   * Modifica o radius do Field
+   */
+  radius: PropTypes__default['default'].number,
+
+  /**
+   * Função executada ao modificar o valor do Field
+   */
+  onChange: PropTypes__default['default'].func.isRequired,
+
+  /**
+   * Props que recebe o type do Field (prop nativa do elemento)
+   */
+  type: PropTypes__default['default'].string,
+
+  /**
+   * Recebe o valor do Field (prop nativa do elemento)
+   */
+  value: PropTypes__default['default'].string,
+
+  /**
+   * Recebe o estado do componente (true para padrão e false para erro)
+   */
+  validation: PropTypes__default['default'].oneOf([true, false]).isRequired,
+
+  /**
+   * Recebe a mensagem de validação (renderizada quando validation = false)
+   */
+  validationMessage: PropTypes__default['default'].string.isRequired,
+  //STYLE PROPS
+
+  /**
+   * Altera a família da fonte do input (conectada ao theme)
+   */
+  fontFamily: PropTypes__default['default'].string,
+
+  /**
+   * Altera a cor do Field quando estiver no estado ATIVO (focused) (conectada ao theme)
+   */
+  activeColor: PropTypes__default['default'].oneOf(colors),
+
+  /**
+   * Altera a cor da borda do Field (conectada ao theme)
+   */
+  borderColor: PropTypes__default['default'].oneOf(colors),
+
+  /**
+   * Altera a cor da fonte do Field (conectada ao theme)
+   */
+  fontColor: PropTypes__default['default'].oneOf(colors),
+
+  /**
+   * Altera a cor do ícone (caso ativo) (conectada ao theme)
+   */
+  iconColor: PropTypes__default['default'].oneOf(colors)
+};
+Field.defaultProps = {
+  validation: true
+};
+var index$1 = styled.withTheme(Field);
+
+var Image$1 = function Image(_ref) {
+  var content = _ref.content,
+      custom = _ref.custom,
+      domain = _ref.domain,
+      lazy = _ref.lazy,
+      placeholder = _ref.placeholder;
+  var img_placeholder = placeholder || null;
+
+  if (content['image-contentId']) {
+    var policy_id = content['image-contentId'];
+    var derivative = '2x1';
+    var width = 1000;
+    content['image-path'] = pathToImage(derivative, domain, policy_id, width);
+    img_placeholder = img_placeholder || pathToImage(derivative, domain, policy_id, 10);
+  }
+
+  if (content['image-legacy']) {
+    content['image-path'] = content['image-legacy'];
+    content['image-subtitle'] = 'Imagem importada do sistema legado / Reprodução';
+    img_placeholder = '';
+  }
+
+  if (content['image-path']) {
+    var content_path = content['image-path'];
+
+    if (lazy) {
+      content_path = lazy(content_path, img_placeholder);
+    }
+
+    var byline = !content['image-byline'] || content['image-byline'] == 'undefined' ? null : content['image-byline'];
+    var caption_byline = content['image-subtitle'] ? "".concat(content['image-subtitle']).concat(byline ? " (".concat(byline, ")") : '') : "".concat(content['image-subtitle-original']).concat(byline ? " (".concat(byline, ")") : '');
+    return /*#__PURE__*/React__default['default'].createElement(Block, {
+      custom: "image-box ".concat(custom),
+      w: "100p"
+    }, /*#__PURE__*/React__default['default'].createElement("img", {
+      alt: caption_byline ? '$Legenda da imagem: {caption_byline}' : 'Legenda da imagem: Reprodução',
+      src: content_path
+    }), /*#__PURE__*/React__default['default'].createElement(Block, {
+      custom: "label"
+    }, caption_byline));
+  }
+
+  return /*#__PURE__*/React__default['default'].createElement("pre", null, "no-image");
+};
+
+Image$1.propTypes = {
+  content: PropTypes__default['default'].object.isRequired,
+  custom: PropTypes__default['default'].string,
+  domain: PropTypes__default['default'].string,
+  lazy: PropTypes__default['default'].func,
+  placeholder: PropTypes__default['default'].string
+};
+Image$1.defaultProps = {
+  content: {}
+};
+
+function SvgIcArrowBack(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    height: 32,
+    viewBox: "0 0 24 24",
+    width: 32
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
+  }));
+}
+
+function SvgIcArrowForward(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    height: 32,
+    viewBox: "0 0 24 24",
+    width: 32
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
+  }));
+}
+
+var RenderItem = function RenderItem(_ref) {
+  var linkurl = _ref.linkurl,
+      name = _ref.name,
+      lead = _ref.lead,
+      selected = _ref.selected,
+      on = _ref.on;
+  var propsGallerySelected = {
+    custom: 'gallery-selected',
+    w: '100p',
+    mb: '2'
+  };
+  var propsGalleryItem = {
+    custom: 'gallery-item',
+    mr: '2',
+    onClick: function onClick() {
+      return on({
+        linkurl: linkurl,
+        name: name,
+        lead: lead
+      });
+    }
+  };
+  var propsGallery = selected ? propsGallerySelected : propsGalleryItem;
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsGallery, /*#__PURE__*/React__default['default'].createElement("img", {
+    className: "image-file",
+    src: linkurl,
+    alt: "".concat(name)
+  }), /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "image-name"
+  }, name), /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "image-lead"
+  }, lead));
+};
+
+var ImageGallery = function ImageGallery(_ref2) {
+  var items = _ref2.items,
+      selected = _ref2.selected,
+      on = _ref2.on;
+  if (!items || items.length === 0) return false;
+  var item_selected = selected ? selected : items[0];
+  return /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "article-image-gallery",
+    w: "100p"
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    align: "row",
+    custom: "image-selected",
+    w: "100p"
+  }, /*#__PURE__*/React__default['default'].createElement(RenderItem, _extends({}, item_selected, {
+    selected: true,
+    on: on
+  }))), items.length > 1 && /*#__PURE__*/React__default['default'].createElement(Block, {
+    align: "row",
+    custom: "box-list",
+    w: "100p"
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    align: "row center middle",
+    custom: "arrow-left"
+  }, /*#__PURE__*/React__default['default'].createElement(SvgIcArrowBack, null)), /*#__PURE__*/React__default['default'].createElement(Block, {
+    align: "row",
+    custom: "image-list",
+    w: "100p"
+  }, lodash.map(items, function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(RenderItem, _extends({}, item, {
+      key: key,
+      on: on
+    }));
+  })), /*#__PURE__*/React__default['default'].createElement(Block, {
+    align: "row center middle",
+    custom: "arrow-right"
+  }, /*#__PURE__*/React__default['default'].createElement(SvgIcArrowForward, null))));
+};
+
+ImageGallery.propTypes = {
+  items: PropTypes__default['default'].array,
+  selected: PropTypes__default['default'].shape({
+    lead: PropTypes__default['default'].string,
+    linkUrl: PropTypes__default['default'].string,
+    name: PropTypes__default['default'].string
+  }),
+  on: PropTypes__default['default'].func
+};
+RenderItem.propTypes = {
+  linkurl: PropTypes__default['default'].string,
+  name: PropTypes__default['default'].string,
+  lead: PropTypes__default['default'].string,
+  selected: PropTypes__default['default'].bool,
+  on: PropTypes__default['default'].func.isRequired
+};
+ImageGallery.defaultProps = {
+  selected: false,
+  items: []
+};
+
+var SearchForm = function SearchForm(_ref) {
+  var functions = _ref.functions,
+      state = _ref.state,
+      buttonSize = _ref.buttonSize,
+      buttonWeight = _ref.buttonWeight,
+      buttonColor = _ref.buttonColor;
+  var fieldValue = state.fieldValue,
+      setFieldValue = state.setFieldValue;
+
+  var handleSubmit = function handleSubmit() {
+    var string = fieldValue;
+    string = string.normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z\s])/g, '');
+    functions.onSubmit(string);
+  };
+
+  var fieldController = {
+    type: 'text',
+    className: 'search-field',
+    placeholder: 'O que você está procurando?',
+    onChange: function onChange(event) {
+      return setFieldValue(event.target.value);
+    },
+    onKeyPress: function onKeyPress(event) {
+      return event.key === 'Enter' && handleSubmit();
+    }
+  };
+  return /*#__PURE__*/React__default['default'].createElement(Block, {
+    align: "right",
+    custom: 'search-form'
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    mb: "1",
+    w: "100p"
+  }, /*#__PURE__*/React__default['default'].createElement("input", fieldController)), /*#__PURE__*/React__default['default'].createElement(Button, {
+    disabled: false,
+    size: buttonSize,
+    weight: buttonWeight,
+    color: buttonColor,
+    onClick: function onClick() {
+      return handleSubmit();
+    }
+  }, "Buscar"));
+};
+
+SearchForm.propTypes = {
+  buttonSize: PropTypes__default['default'].oneOf([1, 2, 3, 4, 5]),
+  buttonWeight: PropTypes__default['default'].oneOf(weights),
+  buttonColor: PropTypes__default['default'].oneOf(colors),
+  content: PropTypes__default['default'].object.isRequired,
+  functions: PropTypes__default['default'].shape({
+    onSubmit: PropTypes__default['default'].func
+  }),
+  state: PropTypes__default['default'].shape({
+    fieldValue: PropTypes__default['default'].string,
+    setFieldValue: PropTypes__default['default'].func
+  })
+};
+SearchForm.defaultProps = {
+  content: {},
+  functions: {
+    onSubmit: function onSubmit() {
+      return null;
+    }
+  },
+  state: {
+    fieldValue: '',
+    setFieldValue: function setFieldValue() {
+      return null;
+    }
+  }
+};
+
+var SearchMenu = function SearchMenu(_ref) {
+  var children = _ref.children,
+      functions = _ref.functions,
+      status = _ref.status;
+  var menuIsOpen = status.opened ? 'opened' : 'closed';
+  return /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "menu-modal ".concat(menuIsOpen)
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "menu-opacity",
+    onClick: functions.onCloseModal
+  }), /*#__PURE__*/React__default['default'].createElement(Block, {
+    bg: "neutral-10",
+    custom: "menu-right",
+    p: "4"
+  }, children && children));
+};
+
+SearchMenu.propTypes = {
+  children: PropTypes__default['default'].node,
+  content: PropTypes__default['default'].object.isRequired,
+  functions: PropTypes__default['default'].shape({
+    onCloseModal: PropTypes__default['default'].func
+  }),
+  status: PropTypes__default['default'].shape({
+    opened: PropTypes__default['default'].bool
+  })
+};
+SearchMenu.defaultProps = {
+  content: {},
+  functions: {
+    onCloseModal: function onCloseModal() {
+      return null;
+    }
+  },
+  status: {
+    opened: false
+  }
+};
+
+var SideMenu = function SideMenu(_ref) {
+  var children = _ref.children,
+      functions = _ref.functions,
+      status = _ref.status;
+  var menuIsOpen = status.opened ? 'opened' : 'closed';
+  return /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "menu-modal ".concat(menuIsOpen)
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "menu-opacity",
+    onClick: functions.onCloseModal
+  }), /*#__PURE__*/React__default['default'].createElement(Block, {
+    bg: "white",
+    custom: "menu-left",
+    p: "4"
+  }, children && children));
+};
+
+SideMenu.propTypes = {
+  children: PropTypes__default['default'].node,
+  content: PropTypes__default['default'].object.isRequired,
+  functions: PropTypes__default['default'].shape({
+    onCloseModal: PropTypes__default['default'].func
+  }),
+  status: PropTypes__default['default'].shape({
+    opened: PropTypes__default['default'].bool
+  })
+};
+SideMenu.defaultProps = {
+  content: {},
+  functions: {
+    onCloseModal: function onCloseModal() {
+      return null;
+    }
+  },
+  status: {
+    opened: false
+  }
+};
+
+function SvgIcArrowMenu(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    height: 24,
+    width: 24
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0V0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+  }));
+}
+
+var SideMenuItems = function SideMenuItems(_ref) {
+  var content = _ref.content,
+      functions = _ref.functions;
+
+  var Item = function Item(_ref2) {
+    var item = _ref2.item;
+    var hasSubitems = item.subitems.length > 0;
+    return /*#__PURE__*/React__default['default'].createElement(Block, {
+      custom: "sidemenu-group",
+      mb: "3"
+    }, /*#__PURE__*/React__default['default'].createElement(Block, {
+      custom: "sidemenu-group-item",
+      pb: "2",
+      align: "row between middle",
+      onClick: function onClick() {
+        return functions.onMenuItem(item);
+      }
+    }, !hasSubitems ? /*#__PURE__*/React__default['default'].createElement("a", {
+      href: item.path
+    }, item.name) : /*#__PURE__*/React__default['default'].createElement("span", {
+      href: item.path
+    }, item.name), /*#__PURE__*/React__default['default'].createElement(SvgIcArrowMenu, null)));
+  };
+
+  Item.propTypes = {
+    item: PropTypes__default['default'].object
+  };
+  return /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "sidemenu-items"
+  }, lodash.map(content.items, function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(Item, {
+      item: item,
+      key: key
+    });
+  }));
+};
+
+SideMenuItems.propTypes = {
+  content: PropTypes__default['default'].object,
+  functions: PropTypes__default['default'].shape({
+    onMenuItem: PropTypes__default['default'].func
+  })
+};
+SideMenuItems.defaultProps = {
+  content: {}
+};
+
+var SocialMedias = function SocialMedias(props) {
+  var content = props.content;
+  if (!content) return null;
+  var propsSocialMedia = {
+    align: 'row evenly'
+  };
+  var propsSocialCirlce = {
+    mr: '1',
+    custom: 'social-circle',
+    'md': {
+      mr: '0',
+      ml: '1'
+    }
+  };
+  return /*#__PURE__*/React__default['default'].createElement(Block, propsSocialMedia, lodash.map(content, function (item, k) {
+    return /*#__PURE__*/React__default['default'].createElement("a", {
+      href: item.path,
+      key: k
+    }, /*#__PURE__*/React__default['default'].createElement(Block, propsSocialCirlce, item.icon));
+  }));
+};
+
+SocialMedias.propTypes = {
+  content: PropTypes__default['default'].array.isRequired
+};
+
+var Topbar = function Topbar(_ref) {
+  var content = _ref.content,
+      theme = _ref.theme;
+  var leftContent = content.leftContent,
+      centerContent = content.centerContent,
+      rightContent = content.rightContent;
+  var color = theme.color;
+  return /*#__PURE__*/React__default['default'].createElement(Block, {
+    align: "row center",
+    bg: color,
+    fc: "white",
+    custom: "Topbar-Prensa-root",
+    w: "100p"
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    align: "row middle between",
+    custom: "wrap",
+    w: "100p"
+  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "left"
+  }, leftContent && leftContent), /*#__PURE__*/React__default['default'].createElement(Block, null, centerContent && centerContent), /*#__PURE__*/React__default['default'].createElement(Block, {
+    custom: "right"
+  }, rightContent && rightContent)));
+};
+
+Topbar.propTypes = {
+  content: PropTypes__default['default'].shape({
+    leftContent: PropTypes__default['default'].object,
+    centerContent: PropTypes__default['default'].object,
+    rightContent: PropTypes__default['default'].object
+  }),
+  theme: PropTypes__default['default'].shape({
+    color: PropTypes__default['default'].oneOf(colors)
+  })
+};
+Topbar.defaultProps = {
+  theme: {
+    color: 'primary-1'
+  }
+};
+
+var Subject = function Subject(props) {
+  var _classnames;
+
+  var children = props.children,
+      color = props.color,
+      className = props.className,
+      style = props.style,
+      size = props.size,
+      filled = props.filled,
+      weight = props.weight;
+  if (!children) return null;
+  var classes = classnames__default['default']((_classnames = {
+    'Prensa-Subject-root': true,
+    'filled': filled
+  }, _defineProperty(_classnames, "color-".concat(color), true), _defineProperty(_classnames, "".concat(className), className), _classnames));
+  return /*#__PURE__*/React__default['default'].createElement("div", {
+    className: classes,
+    style: style
+  }, /*#__PURE__*/React__default['default'].createElement(SubjectTypography, {
+    size: size,
+    color: filled ? 'white' : color,
+    weight: weight
+  }, children));
+};
+
+Subject.defaultProps = {
+  color: 'primary-1',
+  filled: false,
+  size: 1
+};
+Subject.propTypes = {
+  children: PropTypes__default['default'].string.isRequired,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  filled: PropTypes__default['default'].bool,
+  style: PropTypes__default['default'].object,
+  size: PropTypes__default['default'].oneOf([1, 2, 3]),
+  weight: PropTypes__default['default'].oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
 };
 
 var _PropTypes$shape;
@@ -5100,7 +5096,7 @@ var Teaser = function Teaser(_ref) {
     custom: 'teaser-title'
   };
   if (!content['time-published']) return false;
-  var dateValue = !datePublished && content['time-modifiedDate'] ? utils.dateDistance(content['time-modifiedDate'], 2880) : utils.datePtBrFull(content['time-published']);
+  var dateValue = !datePublished && content['time-modifiedDate'] ? dateDistance(content['time-modifiedDate'], 2880) : datePtBrFull(content['time-published']);
   dateValue = datePublished ? "Publicado em ".concat(dateValue) : dateValue.startsWith('Há') ? dateValue.replace('Há', 'Atualizado há') : "Atualizado em ".concat(dateValue);
   var path_split = path.split(':8080');
   var url_rewrite = path_split.length > 1 ? "".concat(domain).concat(path_split[1]) : path;
@@ -5242,4 +5238,3 @@ exports.Subject = Subject;
 exports.Tag = Tag;
 exports.Teaser = Teaser;
 exports.Topbar = Topbar;
-exports.utils = utils;
