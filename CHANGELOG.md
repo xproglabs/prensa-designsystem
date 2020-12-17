@@ -1,6 +1,6 @@
 # v1.4.2
 - Corrige funcionamento dos tamanhos de margin na função getFromProps
-- Adiciona componente RelatedContent
+- Export da pasta Util passou a ser import from prensa/utils
 # v1.4.1
 - Adiciona loading no componente Button
 - Adiciona função para parse do label no Field
