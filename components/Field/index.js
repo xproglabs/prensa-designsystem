@@ -5,16 +5,7 @@ import styled from 'styled-components';
 import {withTheme} from 'styled-components';
 
 import colorProps from '../../styles/variables/colors.json';
-
-const parseNumberToString = (param) => {
-  return `${param}px`;
-};
-
-const getFromProps = (props, param, defaultValue) => {
-  const defaultIsNumber = Number.isInteger(defaultValue);
-  const value = defaultIsNumber ? parseNumberToString(defaultValue) : defaultValue;
-  return get(props, param, value);
-};
+import {getFromProps} from '../Util';
 
 const validateStyle = (props) => {
   const isValid = get(props, 'validation', true);
