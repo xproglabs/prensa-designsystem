@@ -4240,7 +4240,7 @@ var Columnists = function Columnists(_ref) {
       status = _ref.status,
       theme = _ref.theme;
   var title = content.title;
-  var color = theme.color;
+  var activeColor = theme.activeColor;
   var propsTemplate = {
     custom: 'templates-columnists',
     mb: '6',
@@ -4252,7 +4252,7 @@ var Columnists = function Columnists(_ref) {
   return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,
-    color: color
+    color: activeColor
   }, title), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
@@ -4265,7 +4265,7 @@ var Columnists = function Columnists(_ref) {
       titleWeight: "bold",
       titleColor: "neutral-2",
       dateColor: "neutral-4",
-      subjectColor: color
+      subjectColor: activeColor
     });
   })));
 };
@@ -4280,7 +4280,7 @@ Columnists.propTypes = {
   lazy: PropTypes__default['default'].func,
   status: PropTypes__default['default'].object,
   theme: PropTypes__default['default'].shape({
-    color: PropTypes__default['default'].oneOf(colors)
+    activeColor: PropTypes__default['default'].oneOf(colors)
   })
 };
 
@@ -4290,7 +4290,7 @@ var Featured = function Featured(_ref) {
       lazy = _ref.lazy,
       status = _ref.status,
       theme = _ref.theme;
-  var color = theme.color;
+  var activeColor = theme.activeColor;
   var items = content.items;
 
   if (items.length === 1) {
@@ -4304,7 +4304,7 @@ var Featured = function Featured(_ref) {
       lazy: lazy,
       status: status,
       subjectSize: 2,
-      subjectColor: color,
+      subjectColor: activeColor,
       titleSize: 4,
       titleWeight: "bold"
     }));
@@ -4329,7 +4329,7 @@ var Featured = function Featured(_ref) {
       lazy: lazy,
       status: status,
       subjectSize: 2,
-      subjectColor: color,
+      subjectColor: activeColor,
       titleSize: 4,
       titleColor: "neutral-2",
       subtitleColor: "neutral-4",
@@ -4343,7 +4343,7 @@ var Featured = function Featured(_ref) {
       lazy: lazy,
       status: status,
       subjectSize: 2,
-      subjectColor: color,
+      subjectColor: activeColor,
       titleSize: 3,
       titleColor: "neutral-2",
       subtitleColor: "neutral-4",
@@ -4355,7 +4355,7 @@ var Featured = function Featured(_ref) {
       lazy: lazy,
       status: status,
       subjectSize: 2,
-      subjectColor: color,
+      subjectColor: activeColor,
       titleSize: 3,
       titleColor: "neutral-2",
       subtitleColor: "neutral-4",
@@ -4373,7 +4373,7 @@ Featured.propTypes = {
   lazy: PropTypes__default['default'].func,
   status: PropTypes__default['default'].object,
   theme: PropTypes__default['default'].shape({
-    color: PropTypes__default['default'].oneOf(colors)
+    activeColor: PropTypes__default['default'].oneOf(colors)
   })
 };
 
@@ -4383,7 +4383,7 @@ var GridNews = function GridNews(_ref) {
       lazy = _ref.lazy,
       status = _ref.status,
       theme = _ref.theme;
-  var color = theme.color;
+  var activeColor = theme.activeColor;
   var items = content.items,
       title = content.title;
   var items_pqueue = content['items-pqueue'];
@@ -4421,7 +4421,7 @@ var GridNews = function GridNews(_ref) {
   return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, title && title !== '' && /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,
-    color: color
+    color: activeColor
   }, title), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(items_list, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       key: key,
@@ -4431,7 +4431,7 @@ var GridNews = function GridNews(_ref) {
       lazy: lazy,
       status: status,
       subjectSize: 2,
-      subjectColor: color,
+      subjectColor: activeColor,
       titleSize: titleSize,
       titleColor: "neutral-2",
       subtitleColor: "neutral-4",
@@ -4451,7 +4451,7 @@ GridNews.propTypes = {
   lazy: PropTypes__default['default'].func,
   status: PropTypes__default['default'].object,
   theme: PropTypes__default['default'].shape({
-    color: PropTypes__default['default'].oneOf(colors)
+    activeColor: PropTypes__default['default'].oneOf(colors)
   })
 };
 
@@ -4570,7 +4570,7 @@ var Latest = function Latest(_ref) {
       Title = _ref.Title,
       status = _ref.status,
       theme = _ref.theme;
-  var color = theme.color;
+  var activeColor = theme.activeColor;
   var propsContainer = {
     custom: 'templates-latest-news',
     align: 'col left',
@@ -4599,7 +4599,7 @@ var Latest = function Latest(_ref) {
       lazy: lazy,
       status: status,
       subjectSize: 2,
-      subjectColor: color,
+      subjectColor: activeColor,
       titleSize: 3,
       titleColor: "neutral-2",
       dateColor: "neutral-4",
@@ -4608,14 +4608,14 @@ var Latest = function Latest(_ref) {
   })), ReadMore && /*#__PURE__*/React__default['default'].createElement(ReadMore, null)), /*#__PURE__*/React__default['default'].createElement(Block, propsPageRight, /*#__PURE__*/React__default['default'].createElement(SectionTitle, {
     weight: "bold",
     gutter: 3,
-    color: color
+    color: activeColor
   }, "MAIS LIDAS"), /*#__PURE__*/React__default['default'].createElement(MostRead, {
     content: content['items-mostread'],
     status: status,
     titleSize: 2,
     titleColor: "neutral-2",
     titleWeight: "bold",
-    circleColor: color
+    circleColor: activeColor
   })));
 };
 
@@ -4630,7 +4630,7 @@ Latest.propTypes = {
     loading: PropTypes__default['default'].bool
   }),
   theme: PropTypes__default['default'].shape({
-    color: PropTypes__default['default'].oneOf(colors)
+    activeColor: PropTypes__default['default'].oneOf(colors)
   })
 };
 
@@ -4641,7 +4641,7 @@ var Related = function Related(_ref) {
       ReadMore = _ref.ReadMore,
       status = _ref.status,
       theme = _ref.theme;
-  var color = theme.color;
+  var activeColor = theme.activeColor;
   var propsContainer = {
     custom: 'templates-related-news',
     align: 'col left',
@@ -4660,7 +4660,7 @@ var Related = function Related(_ref) {
       lazy: lazy,
       status: status,
       subjectSize: 2,
-      subjectColor: color,
+      subjectColor: activeColor,
       titleSize: 3,
       titleColor: "neutral-2",
       dateColor: "neutral-2",
@@ -4679,7 +4679,7 @@ Related.propTypes = {
     loading: PropTypes__default['default'].bool
   }),
   theme: PropTypes__default['default'].shape({
-    color: PropTypes__default['default'].oneOf(colors)
+    activeColor: PropTypes__default['default'].oneOf(colors)
   })
 };
 

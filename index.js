@@ -1390,10 +1390,10 @@ var Topbar = function Topbar(_ref) {
   var leftContent = content.leftContent,
       centerContent = content.centerContent,
       rightContent = content.rightContent;
-  var color = theme.color;
+  var activeColor = theme.activeColor;
   return /*#__PURE__*/React__default['default'].createElement(Block, {
     align: "row center",
-    bg: color,
+    bg: activeColor,
     fc: "white",
     custom: "Topbar-Prensa-root",
     w: "100p"
@@ -1415,12 +1415,12 @@ Topbar.propTypes = {
     rightContent: PropTypes__default['default'].object
   }),
   theme: PropTypes__default['default'].shape({
-    color: PropTypes__default['default'].oneOf(colors)
+    activeColor: PropTypes__default['default'].oneOf(colors)
   })
 };
 Topbar.defaultProps = {
   theme: {
-    color: 'primary-1'
+    activeColor: 'primary-1'
   }
 };
 
