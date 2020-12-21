@@ -7,10 +7,10 @@ import Block from '../Block';
 const Topbar = ({content, theme}) => {
 
   const {leftContent, centerContent, rightContent} = content;
-  const {color} = theme;
+  const {activeColor} = theme;
 
   return (
-    <Block align="row center" bg={color} fc="white" custom="Topbar-Prensa-root" w="100p">
+    <Block align="row center" bg={activeColor} fc="white" custom="Topbar-Prensa-root" w="100p">
       <Block align="row middle between" custom="wrap" w="100p">
         <Block custom="left">{leftContent && leftContent}</Block>
         <Block>{centerContent && centerContent}</Block>
@@ -27,13 +27,13 @@ Topbar.propTypes = {
     rightContent: PropTypes.object,
   }),
   theme: PropTypes.shape({
-    color: PropTypes.oneOf(colors)
+    activeColor: PropTypes.oneOf(colors)
   })
 };
 
 Topbar.defaultProps = {
   theme: {
-    color: 'primary-1'
+    activeColor: 'primary-1'
   }
 };
 

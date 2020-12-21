@@ -6,7 +6,7 @@ import Teaser from '../Teasers';
 import colors from '../../styles/variables/colors.json'
 
 const Featured = ({content, domain, lazy, status, theme}) => {
-  const {color} = theme;
+  const {activeColor} = theme;
   const {items} = content;
   if (items.length === 1) {
     return (
@@ -19,7 +19,7 @@ const Featured = ({content, domain, lazy, status, theme}) => {
           lazy={lazy}
           status={status}
           subjectSize={2}
-          subjectColor={color}
+          subjectColor={activeColor}
           titleSize={4}
           titleWeight='bold'
         />
@@ -39,7 +39,7 @@ const Featured = ({content, domain, lazy, status, theme}) => {
             lazy={lazy}
             status={status}
             subjectSize={2}
-            subjectColor={color}
+            subjectColor={activeColor}
             titleSize={4}
             titleColor='neutral-2'
             subtitleColor='neutral-4'
@@ -54,7 +54,7 @@ const Featured = ({content, domain, lazy, status, theme}) => {
             lazy={lazy}
             status={status}
             subjectSize={2}
-            subjectColor={color}
+            subjectColor={activeColor}
             titleSize={3}
             titleColor='neutral-2'
             subtitleColor='neutral-4'
@@ -67,7 +67,7 @@ const Featured = ({content, domain, lazy, status, theme}) => {
             lazy={lazy}
             status={status}
             subjectSize={2}
-            subjectColor={color}
+            subjectColor={activeColor}
             titleSize={3}
             titleColor='neutral-2'
             subtitleColor='neutral-4'
@@ -86,7 +86,7 @@ Featured.propTypes = {
   lazy: PropTypes.func,
   status: PropTypes.object,
   theme: PropTypes.shape({
-    color: PropTypes.oneOf(colors)
+    activeColor: PropTypes.oneOf(colors)
   })
 };
 export default Featured;

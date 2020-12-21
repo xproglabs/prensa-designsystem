@@ -9,14 +9,14 @@ import colors from '../../styles/variables/colors.json'
 
 const Columnists = ({content, domain, lazy, status, theme}) => {
   const {title} = content;
-  const {color} = theme;
+  const {activeColor} = theme;
   const propsTemplate = {custom: 'templates-columnists', mb: '6', lg: {align: 'row between wrap', mb: '3'}};
   return (
     <React.Fragment>
-      {title && title !== '' && <SectionTitle weight='bold' gutter={3} color={color}>{title}</SectionTitle>}
+      {title && title !== '' && <SectionTitle weight='bold' gutter={3} color={activeColor}>{title}</SectionTitle>}
       <Block {...propsTemplate}> 
         {map(content['items'], (item, key) =>
-          <Teaser content={item} domain={domain} key={key} lazy={lazy} status={status} subjectSize={2} titleSize={2} titleWeight='bold' titleColor='neutral-2' dateColor='neutral-4' subjectColor={color}/>
+          <Teaser content={item} domain={domain} key={key} lazy={lazy} status={status} subjectSize={2} titleSize={2} titleWeight='bold' titleColor='neutral-2' dateColor='neutral-4' subjectColor={activeColor}/>
         )}
       </Block>
     </React.Fragment>
@@ -32,7 +32,7 @@ Columnists.propTypes = {
   lazy: PropTypes.func,
   status: PropTypes.object,
   theme: PropTypes.shape({
-    color: PropTypes.oneOf(colors)
+    activeColor: PropTypes.oneOf(colors)
   })
 };
 export default Columnists;

@@ -7,7 +7,7 @@ import Teaser from '../Teasers';
 import colors from '../../styles/variables/colors.json'
 
 const Related = ({items, domain, lazy, ReadMore, status, theme}) => {
-  const {color} = theme;
+  const {activeColor} = theme;
   const propsContainer = {custom: 'templates-related-news', align: 'col left', w: '100p'};
   return (
     <Block {...propsContainer}>
@@ -22,7 +22,7 @@ const Related = ({items, domain, lazy, ReadMore, status, theme}) => {
             lazy={lazy}
             status={status}
             subjectSize={2}
-            subjectColor={color}
+            subjectColor={activeColor}
             titleSize={3}
             titleColor='neutral-2'
             dateColor='neutral-2'
@@ -45,7 +45,7 @@ Related.propTypes = {
     loading: PropTypes.bool
   }),
   theme: PropTypes.shape({
-    color: PropTypes.oneOf(colors)
+    activeColor: PropTypes.oneOf(colors)
   })
 };
 

@@ -8,7 +8,7 @@ import {SectionTitle} from '../Typography';
 import colors from '../../styles/variables/colors.json'
 
 const GridNews = ({content, domain, lazy, status, theme}) => {
-  const {color} = theme;
+  const {activeColor} = theme;
   const {items, title} = content;
   let items_pqueue = content['items-pqueue'];
   let items_list =  items_pqueue && items_pqueue.length > 0 ? items_pqueue : items;
@@ -40,7 +40,7 @@ const GridNews = ({content, domain, lazy, status, theme}) => {
 
   return (
     <React.Fragment>
-      {title && title !== '' && <SectionTitle weight='bold' gutter={3} color={color}>{title}</SectionTitle>}
+      {title && title !== '' && <SectionTitle weight='bold' gutter={3} color={activeColor}>{title}</SectionTitle>}
       <Block {...propsTemplate}>
         {map(items_list, (item, key) =>
           <Teaser 
@@ -51,7 +51,7 @@ const GridNews = ({content, domain, lazy, status, theme}) => {
             lazy={lazy}
             status={status}
             subjectSize={2}
-            subjectColor={color}
+            subjectColor={activeColor}
             titleSize={titleSize}
             titleColor='neutral-2'
             subtitleColor='neutral-4'
@@ -73,7 +73,7 @@ GridNews.propTypes = {
   lazy: PropTypes.func,
   status: PropTypes.object,
   theme: PropTypes.shape({
-    color: PropTypes.oneOf(colors)
+    activeColor: PropTypes.oneOf(colors)
   })
 };
 export default GridNews;

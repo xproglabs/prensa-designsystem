@@ -9,7 +9,7 @@ import MostRead from './MostRead';
 import colors from '../../styles/variables/colors.json'
 
 const Latest = ({content, domain, lazy, ReadMore, Title, status, theme}) => {
-  const {color} = theme;
+  const {activeColor} = theme;
   const propsContainer = {custom: 'templates-latest-news', align: 'col left', w: '100p', md: {align: 'row between'}};
   const propsPageLeft = {custom: 'page-left', mb: '6'};
   const propsPageRight = {custom: 'page-right'};
@@ -29,7 +29,7 @@ const Latest = ({content, domain, lazy, ReadMore, Title, status, theme}) => {
               lazy={lazy}
               status={status}
               subjectSize={2}
-              subjectColor={color}
+              subjectColor={activeColor}
               titleSize={3}
               titleColor='neutral-2'
               dateColor='neutral-4'
@@ -40,8 +40,8 @@ const Latest = ({content, domain, lazy, ReadMore, Title, status, theme}) => {
         {ReadMore && <ReadMore />}
       </Block>
       <Block {...propsPageRight}>
-        <SectionTitle weight='bold' gutter={3} color={color}>MAIS LIDAS</SectionTitle>
-        <MostRead content={content['items-mostread']} status={status} titleSize={2} titleColor='neutral-2' titleWeight='bold' circleColor={color} />
+        <SectionTitle weight='bold' gutter={3} color={activeColor}>MAIS LIDAS</SectionTitle>
+        <MostRead content={content['items-mostread']} status={status} titleSize={2} titleColor='neutral-2' titleWeight='bold' circleColor={activeColor} />
       </Block>
     </Block>
   );
@@ -57,7 +57,7 @@ Latest.propTypes = {
     loading: PropTypes.bool
   }),
   theme: PropTypes.shape({
-    color: PropTypes.oneOf(colors)
+    activeColor: PropTypes.oneOf(colors)
   })
 };
 export default Latest;
