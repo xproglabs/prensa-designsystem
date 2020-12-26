@@ -1,0 +1,205 @@
+import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
+import {ThemeProvider} from 'styled-components';
+import {Space, CodeBlock} from 'prensa-docs';
+
+import {theme} from '../../../styles/theme';
+import Block from './index';
+
+<!-- const default_bgcolor = 'rgba(1, 22, 39, 0.8)'; -->
+
+<Meta title="AMP/Block" />
+
+# Block
+
+<Space size={3} />
+
+Block é um componente baseado em uma `<div>` para entregar posicionamentos blocados na tela.
+
+<Space size={6} />
+
+### Como utilizar
+
+<Space size={3} />
+
+<pre>
+  <CodeBlock>{`import Block from 'prensa/amp'`}</CodeBlock>
+  <CodeBlock>{`<Block>children</Block>`}</CodeBlock>
+</pre>
+
+<Space size={6} />
+
+### Propriedades de alinhamento
+
+<Space size={3} />
+
+Utilize a propriedade `align` para alternar entre o flex `row` e `col`
+
+Utilize a propriedade `alignx` para definir a posição no eixo x
+
+Utilize a propriedade `aligny` para definir a posição no eixo y
+
+Utilize a propriedade `alignz` para definir o alinhamento interno
+
+<Space size={6} />
+
+### Exemplo 1: 
+
+`row left top`
+
+<pre>
+  <CodeBlock>{`<Block align='row' alignx='left' aligny='top'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<Block align='row' alignx='left' aligny='top' theme='demo'>
+  <span>item1</span>
+  <span>item2</span>
+  <span>item3</span>
+</Block>
+
+<Space size={6} />
+
+### Exemplo 2: 
+
+`col center middle`
+
+<pre>
+  <CodeBlock>{`<Block align='col' alignx='center' aligny='middle'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<Block align='col' alignx='center' aligny='middle' theme='demo'>
+  <span>item1</span>
+  <span>item2</span>
+  <span>item3</span>
+</Block>
+
+<Space size={6} />
+
+### Exemplo 3: 
+
+`col right bottom`
+
+<pre>
+  <CodeBlock>{`<Block align='col' alignx='right' aligny='bottom'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<Block align='col' alignx='right' aligny='bottom' theme='demo'>
+  <span>item1</span>
+  <span>item2</span>
+  <span>item3</span>
+</Block>
+
+<Space size={6} />
+
+### Exemplo 4: 
+
+`row evenly middle`
+
+<pre>
+  <CodeBlock>{`<Block align='row' alignx='evenly' aligny='middle'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<Block align='row' alignx='evenly' aligny='middle' theme='demo'>
+  <span>item1</span>
+  <span>item2</span>
+  <span>item3</span>
+</Block>
+
+<Space size={6} />
+
+### Exemplo 5: 
+
+`row between middle`
+
+<pre>
+  <CodeBlock>{`<Block align='row' alignx='between' aligny='middle'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<Block align='row' alignx='between' aligny='middle' theme='demo'>
+  <span>item1</span>
+  <span>item2</span>
+  <span>item3</span>
+</Block>
+
+<Space size={6} />
+
+### Exemplo 6: 
+
+`col left between`
+
+<pre>
+  <CodeBlock>{`<Block align='col' alignx='left' aligny='between'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<Block align='col' alignx='left' aligny='between' theme='demo'>
+  <span>item1</span>
+  <span>item2</span>
+  <span>item3</span>
+</Block>
+
+<Space size={6} />
+
+### Exemplo 7: 
+
+`col center evenly`
+
+<pre>
+  <CodeBlock>{`<Block align='col' alignx='center' aligny='evenly'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<Block align='col' alignx='center' aligny='evenly' theme='demo'>
+  <span>item1</span>
+  <span>item2</span>
+  <span>item3</span>
+</Block>
+
+<Space size={6} />
+
+### Custom styles
+
+Para adicionar estilos customizados utilize `custom`
+
+<pre>
+  <CodeBlock>{`<Block custom='
+    background-color: rgba(1, 22, 39, 0.8); 
+    color: rgba(255, 255, 255, 1);
+    span {
+      border: 1px solid rgba(55, 255, 255, 1);
+    }
+  '></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<Block 
+  custom={`
+    background-color: rgba(1, 22, 39, 0.8); 
+    color: rgba(255, 255, 255, 1);
+    span {
+      border: 1px solid rgba(55, 255, 255, 1);
+    }
+  `}
+  theme='demo'>
+  <span>item1</span>
+  <span>item2</span>
+  <span>item3</span>
+</Block>
+
+<Space size={6} />
+
+# API
+
+<ArgsTable of={Block} />
