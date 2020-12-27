@@ -1,0 +1,35 @@
+import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
+import {ThemeProvider} from 'styled-components';
+import {Space, CodeBlock} from 'prensa-docs';
+import {theme} from '../../../styles/theme';
+
+import Block from './index';
+
+<Meta title="Blocks/Fonts" />
+
+# Fonts
+
+<Space size={3} />
+
+Block é um componente baseado em uma `<div>` para entregar posicionamentos blocados na tela. 
+
+<Space size={6} />
+
+### Como utilizar
+
+<Space size={3} />
+
+<pre>
+  <CodeBlock>{`import Block from 'prensa/amp'`}</CodeBlock>
+  <CodeBlock>{`<Block typography='secondary'>children</Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block typography='secondary'>
+    <span>Teste1</span>
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />

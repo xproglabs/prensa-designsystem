@@ -1,4 +1,4 @@
-const parseAlign = ({align, alignx, aligny}) => {
+const parseAlign = (theme, {align, alignx, aligny}) => {
   let object = [];
   let ai = '';
   let di = 'flex';
@@ -83,34 +83,4 @@ const parseAlign = ({align, alignx, aligny}) => {
   return object.join('');
 };
 
-const parseCustom = (custom) => {
-  if(!custom)
-    return null;
-  let object = [];
-  object.push(`
-    ${custom}
-  `);
-  return object.join('');
-};
-
-const parseCustomDef = (theme) => {
-  let object = [];
-  switch (theme) {
-    case 'demo':
-      object.push(`
-        background-color: rgba(1, 22, 39, 0.2);
-        color: rgba(255, 55, 255, 1);
-        font-weight: bold;
-        height: 100px;
-        span { 
-          border: 1px solid rgba(255, 55, 255, 1);
-          font-size: 11px;
-          padding: 3px;
-          margin: 0px; 
-        }
-      `);
-  }
-  return object.join('');
-};
-
-export {parseAlign, parseCustom, parseCustomDef};
+export {parseAlign};

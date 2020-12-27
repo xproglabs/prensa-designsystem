@@ -1,0 +1,37 @@
+import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
+import {ThemeProvider} from 'styled-components';
+import {Space, CodeBlock} from 'prensa-docs';
+import {theme} from '../../../styles/theme';
+
+import Block from './index';
+
+<Meta title="Blocks/Colors" />
+
+# Colors
+
+<Space size={3} />
+
+Block é um componente baseado em uma `<div>` para entregar posicionamentos blocados na tela. 
+
+Pode ser utilizado propriedades de cores para background e fontes.
+
+<Space size={6} />
+
+### Como utilizar
+
+<Space size={3} />
+
+<pre>
+  <CodeBlock>{`import Block from 'prensa/amp'`}</CodeBlock>
+  <CodeBlock>{`<Block bgColor='primary2' fontColor='white'>children</Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block bgColor='primary2' fontColor='white'>
+    <span>Teste1</span>
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />

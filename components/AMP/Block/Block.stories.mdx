@@ -1,11 +1,11 @@
 import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
+import {ThemeProvider} from 'styled-components';
 import {Space, CodeBlock} from 'prensa-docs';
+import {theme} from '../../../styles/theme';
 
 import Block from './index';
 
-<!-- const default_bgcolor = 'rgba(1, 22, 39, 0.8)'; -->
-
-<Meta title="AMP/Block" />
+<Meta title="Blocks/Index" />
 
 # Block
 
@@ -48,11 +48,13 @@ Utilize a propriedade `aligny` para definir a posição no eixo y
 
 <Space size={3} />
 
-<Block align='row' alignx='left' aligny='top' customDef='demo'>
-  <span>item1</span>
-  <span>item2</span>
-  <span>item3</span>
-</Block>
+<ThemeProvider theme={theme}>
+  <Block align='row' alignx='left' aligny='top' customDef='demo'>
+    <span>item1</span>
+    <span>item2</span>
+    <span>item3</span>
+  </Block>
+</ThemeProvider>
 
 <Space size={6} />
 
@@ -66,11 +68,13 @@ Utilize a propriedade `aligny` para definir a posição no eixo y
 
 <Space size={3} />
 
-<Block align='col' alignx='center' aligny='middle' customDef='demo'>
-  <span>item1</span>
-  <span>item2</span>
-  <span>item3</span>
-</Block>
+<ThemeProvider theme={theme}>
+  <Block align='col' alignx='center' aligny='middle' customDef='demo'>
+    <span>item1</span>
+    <span>item2</span>
+    <span>item3</span>
+  </Block>
+</ThemeProvider>
 
 <Space size={6} />
 
@@ -84,11 +88,13 @@ Utilize a propriedade `aligny` para definir a posição no eixo y
 
 <Space size={3} />
 
-<Block align='col' alignx='right' aligny='bottom' customDef='demo'>
-  <span>item1</span>
-  <span>item2</span>
-  <span>item3</span>
-</Block>
+<ThemeProvider theme={theme}>
+  <Block align='col' alignx='right' aligny='bottom' customDef='demo'>
+    <span>item1</span>
+    <span>item2</span>
+    <span>item3</span>
+  </Block>
+</ThemeProvider>
 
 <Space size={6} />
 
@@ -102,11 +108,13 @@ Utilize a propriedade `aligny` para definir a posição no eixo y
 
 <Space size={3} />
 
-<Block align='row' alignx='evenly' aligny='middle' customDef='demo'>
-  <span>item1</span>
-  <span>item2</span>
-  <span>item3</span>
-</Block>
+<ThemeProvider theme={theme}>
+  <Block align='row' alignx='evenly' aligny='middle' customDef='demo'>
+    <span>item1</span>
+    <span>item2</span>
+    <span>item3</span>
+  </Block>
+</ThemeProvider>
 
 <Space size={6} />
 
@@ -120,11 +128,13 @@ Utilize a propriedade `aligny` para definir a posição no eixo y
 
 <Space size={3} />
 
-<Block align='row' alignx='between' aligny='middle' customDef='demo'>
-  <span>item1</span>
-  <span>item2</span>
-  <span>item3</span>
-</Block>
+<ThemeProvider theme={theme}>
+  <Block align='row' alignx='between' aligny='middle' customDef='demo'>
+    <span>item1</span>
+    <span>item2</span>
+    <span>item3</span>
+  </Block>
+</ThemeProvider>
 
 <Space size={6} />
 
@@ -138,11 +148,13 @@ Utilize a propriedade `aligny` para definir a posição no eixo y
 
 <Space size={3} />
 
-<Block align='col' alignx='left' aligny='between' customDef='demo'>
-  <span>item1</span>
-  <span>item2</span>
-  <span>item3</span>
-</Block>
+<ThemeProvider theme={theme}>
+  <Block align='col' alignx='left' aligny='between' customDef='demo'>
+    <span>item1</span>
+    <span>item2</span>
+    <span>item3</span>
+  </Block>
+</ThemeProvider>
 
 <Space size={6} />
 
@@ -156,11 +168,13 @@ Utilize a propriedade `aligny` para definir a posição no eixo y
 
 <Space size={3} />
 
-<Block align='col' alignx='center' aligny='evenly' customDef='demo'>
-  <span>item1</span>
-  <span>item2</span>
-  <span>item3</span>
-</Block>
+<ThemeProvider theme={theme}>
+  <Block align='col' alignx='center' aligny='evenly' customDef='demo'>
+    <span>item1</span>
+    <span>item2</span>
+    <span>item3</span>
+  </Block>
+</ThemeProvider>
 
 <Space size={6} />
 
@@ -180,21 +194,25 @@ Para adicionar estilos customizados utilize `custom`
 
 <Space size={3} />
 
-<Block 
-  custom={`
-    background-color: rgba(1, 22, 39, 0.8); 
-    color: rgba(255, 255, 255, 1);
-    span {
-      border: 1px solid rgba(55, 255, 255, 1);
-    }
-  `}
-  customDef='demo'>
-  <span>item1</span>
-  <span>item2</span>
-  <span>item3</span>
-</Block>
+<ThemeProvider theme={theme}>
+  <Block 
+    custom={`
+      background-color: rgba(1, 22, 39, 0.8); 
+      color: rgba(255, 255, 255, 1);
+      span {
+        border: 1px solid rgba(55, 255, 255, 1);
+      }
+    `}
+    customDef='demo'>
+    <span>item1</span>
+    <span>item2</span>
+    <span>item3</span>
+  </Block>
+</ThemeProvider>
 
 <Space size={6} />
+
+### Propriedades de font
 
 # API
 

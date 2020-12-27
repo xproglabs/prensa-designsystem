@@ -3,30 +3,32 @@ import React from 'react';
 import styled from 'styled-components';
 import {withTheme} from 'styled-components';
 
-import {parseAlign, parseCustom, parseCustomDef} from './parser';
-
 const Component = styled.div`
-  ${props => parseCustomDef(props.customDef)};
-  ${props => parseCustom(props.custom)};
-  ${props => parseAlign(props)};
+  ${props => props && props.theme.parseProps('', props.theme, props)};
+  ${props => props.xs && props.theme.parseProps('xs', props.theme, props.xs)};
+  ${props => props.sm && props.theme.parseProps('sm', props.theme, props.sm)};
+  ${props => props.md && props.theme.parseProps('md', props.theme, props.md)};
+  ${props => props.lg && props.theme.parseProps('lg', props.theme, props.lg)};
+  ${props => props.xl && props.theme.parseProps('xl', props.theme, props.xl)};
 `;
 
-const Blocks = ({
-  align,
-  alignx,
-  aligny,
-  children,
-  custom,
-  customDef
-}) => {
+const Blocks = props => {
   return (
     <Component
-      align={align}
-      alignx={alignx}
-      aligny={aligny}
-      custom={custom}
-      customDef={customDef}>
-      {children}
+      align={props.align}
+      alignx={props.alignx}
+      aligny={props.aligny}
+      bgColor={props.bgColor}
+      custom={props.custom}
+      customDef={props.customDef}
+      fontColor={props.fontColor}
+      xs={props.xs}
+      sm={props.sm}
+      md={props.md}
+      lg={props.lg}
+      xl={props.xl}
+      typography={props.typography}>
+      {props.children}
     </Component>
   );
 };
@@ -50,6 +52,10 @@ Blocks.propTypes = {
    */
   aligny: PropTypes.oneOf(['top', 'middle', 'bottom', 'evenly', 'between']),
   /**
+   * Define propriedade de background-color
+   */
+  bgColor: PropTypes.string,
+  /**
    * Define estilo customizado para o bloco
    */
   custom: PropTypes.string,
@@ -60,7 +66,23 @@ Blocks.propTypes = {
   /**
    * Renderiza os blocos filhos
    */
-  children: PropTypes.array
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  /**
+   * Define propriedade de color
+   */
+  fontColor: PropTypes.string,
+  /**
+   * Define propriedade de color
+   */
+  typography: PropTypes.oneOf(['primary', 'secondary']),
+  /**
+   * Propriedades responsivas
+   */
+  xs: PropTypes.object,
+  sm: PropTypes.object,
+  md: PropTypes.object,
+  lg: PropTypes.object,
+  xl: PropTypes.object
 };
 
 export default withTheme(Blocks);
