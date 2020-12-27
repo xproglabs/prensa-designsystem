@@ -1,8 +1,6 @@
 import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
-import {ThemeProvider} from 'styled-components';
 import {Space, CodeBlock} from 'prensa-docs';
 
-import {theme} from '../../../styles/theme';
 import Block from './index';
 
 <!-- const default_bgcolor = 'rgba(1, 22, 39, 0.8)'; -->
@@ -52,7 +50,7 @@ Utilize a propriedade `alignz` para definir o alinhamento interno
 
 <Space size={3} />
 
-<Block align='row' alignx='left' aligny='top' theme='demo'>
+<Block align='row' alignx='left' aligny='top' customDef='demo'>
   <span>item1</span>
   <span>item2</span>
   <span>item3</span>
@@ -70,7 +68,7 @@ Utilize a propriedade `alignz` para definir o alinhamento interno
 
 <Space size={3} />
 
-<Block align='col' alignx='center' aligny='middle' theme='demo'>
+<Block align='col' alignx='center' aligny='middle' customDef='demo'>
   <span>item1</span>
   <span>item2</span>
   <span>item3</span>
@@ -88,7 +86,7 @@ Utilize a propriedade `alignz` para definir o alinhamento interno
 
 <Space size={3} />
 
-<Block align='col' alignx='right' aligny='bottom' theme='demo'>
+<Block align='col' alignx='right' aligny='bottom' customDef='demo'>
   <span>item1</span>
   <span>item2</span>
   <span>item3</span>
@@ -106,7 +104,7 @@ Utilize a propriedade `alignz` para definir o alinhamento interno
 
 <Space size={3} />
 
-<Block align='row' alignx='evenly' aligny='middle' theme='demo'>
+<Block align='row' alignx='evenly' aligny='middle' customDef='demo'>
   <span>item1</span>
   <span>item2</span>
   <span>item3</span>
@@ -124,7 +122,7 @@ Utilize a propriedade `alignz` para definir o alinhamento interno
 
 <Space size={3} />
 
-<Block align='row' alignx='between' aligny='middle' theme='demo'>
+<Block align='row' alignx='between' aligny='middle' customDef='demo'>
   <span>item1</span>
   <span>item2</span>
   <span>item3</span>
@@ -142,7 +140,7 @@ Utilize a propriedade `alignz` para definir o alinhamento interno
 
 <Space size={3} />
 
-<Block align='col' alignx='left' aligny='between' theme='demo'>
+<Block align='col' alignx='left' aligny='between' customDef='demo'>
   <span>item1</span>
   <span>item2</span>
   <span>item3</span>
@@ -160,7 +158,7 @@ Utilize a propriedade `alignz` para definir o alinhamento interno
 
 <Space size={3} />
 
-<Block align='col' alignx='center' aligny='evenly' theme='demo'>
+<Block align='col' alignx='center' aligny='evenly' customDef='demo'>
   <span>item1</span>
   <span>item2</span>
   <span>item3</span>
@@ -192,7 +190,7 @@ Para adicionar estilos customizados utilize `custom`
       border: 1px solid rgba(55, 255, 255, 1);
     }
   `}
-  theme='demo'>
+  customDef='demo'>
   <span>item1</span>
   <span>item2</span>
   <span>item3</span>

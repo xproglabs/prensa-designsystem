@@ -1,12 +1,12 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 import {withTheme} from 'styled-components';
 
-import {parseAlign, parseCustom, parseTheme} from './parser'
+import {parseAlign, parseCustom, parseCustomDef} from './parser';
 
 const Component = styled.div`
-  ${props => parseTheme(props.theme)};
+  ${props => parseCustomDef(props.customDef)};
   ${props => parseCustom(props.custom)};
   ${props => parseAlign(props)};
 `;
@@ -17,7 +17,7 @@ const Blocks = ({
   aligny,
   children,
   custom,
-  theme
+  customDef
 }) => {
   return (
     <Component
@@ -25,7 +25,7 @@ const Blocks = ({
       alignx={alignx}
       aligny={aligny}
       custom={custom}
-      theme={theme}>
+      customDef={customDef}>
       {children}
     </Component>
   );
@@ -35,7 +35,7 @@ Blocks.defaultProps = {
   align: 'col',
   alignx: 'left',
   aligny: 'top',
-}
+};
 Blocks.propTypes = {
   /**
    * Configuração da orientação de posição
@@ -53,6 +53,10 @@ Blocks.propTypes = {
    * Define estilo customizado para o bloco
    */
   custom: PropTypes.string,
+  /**
+   * Seleciona estilo customizado para o bloco
+   */
+  customDef: PropTypes.string,
   /**
    * Renderiza os blocos filhos
    */

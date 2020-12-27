@@ -1,100 +1,100 @@
 const parseAlign = ({align, alignx, aligny}) => {
-  let object = []
-  let ai = ''
-  let di = 'flex'
-  let fd = ''
-  let jc = ''
+  let object = [];
+  let ai = '';
+  let di = 'flex';
+  let fd = '';
+  let jc = '';
   // check if is column
   if(align === 'col') {
-    fd = 'column'
+    fd = 'column';
     // x axys
     if(alignx === 'left') {
-      ai = 'flex-start'
+      ai = 'flex-start';
     }
     if(alignx === 'center') {
-      ai = 'center'
+      ai = 'center';
     }
     if(alignx === 'right') {
-      ai = 'flex-end'
+      ai = 'flex-end';
     }
     if(alignx === 'evenly') {
-      jc = 'space-evenly'
+      jc = 'space-evenly';
     }
     if(alignx === 'between') {
-      jc = 'space-between'
+      jc = 'space-between';
     }
     // y axis
     if(aligny === 'top') {
-      jc = 'flex-start'
+      jc = 'flex-start';
     }
     if(aligny === 'middle') {
-      jc = 'center'
+      jc = 'center';
     }
     if(aligny === 'bottom') {
-      jc = 'flex-end'
+      jc = 'flex-end';
     }
     if(aligny === 'evenly') {
-      jc = 'space-evenly'
+      jc = 'space-evenly';
     }
     if(aligny === 'between') {
-      jc = 'space-between'
+      jc = 'space-between';
     }
   }
   // check if is row
   if(align === 'row') {
-    fd = 'row'
+    fd = 'row';
     if(alignx === 'left') {
-      ai = 'flex-start'
+      ai = 'flex-start';
     }
     if(alignx === 'center') {
-      jc = 'center'
+      jc = 'center';
     }
     if(alignx === 'right') {
-      jc = 'flex-end'
+      jc = 'flex-end';
     }
     if(alignx === 'evenly') {
-      jc = 'space-evenly'
+      jc = 'space-evenly';
     }
     if(alignx === 'between') {
-      jc = 'space-between'
+      jc = 'space-between';
     }
     if(aligny === 'top') {
-      ai = 'flex-start'
+      ai = 'flex-start';
     }
     if(aligny === 'middle') {
-      ai = 'center'
+      ai = 'center';
     }
     if(aligny === 'bottom') {
-      ai = 'flex-end'
+      ai = 'flex-end';
     }
     if(aligny === 'evenly') {
-      jc = 'space-evenly'
+      jc = 'space-evenly';
     }
     if(aligny === 'between') {
-      jc = 'space-between'
+      jc = 'space-between';
     }
   }
   // define strings
-  ai !== "" && object.push(`align-items: ${ai};`)
-  di !== "" && object.push(`display: ${di};`)
-  fd !== "" && object.push(`flex-direction: ${fd};`)
-  jc !== "" && object.push(`justify-content: ${jc};`)
+  ai !== '' && object.push(`align-items: ${ai};`);
+  di !== '' && object.push(`display: ${di};`);
+  fd !== '' && object.push(`flex-direction: ${fd};`);
+  jc !== '' && object.push(`justify-content: ${jc};`);
   // end
-  return object.join('')
-}
+  return object.join('');
+};
 
 const parseCustom = (custom) => {
   if(!custom)
-    return null
-  let object = []
+    return null;
+  let object = [];
   object.push(`
     ${custom}
-  `)
-  return object.join('')
-}
+  `);
+  return object.join('');
+};
 
-const parseTheme = (theme) => {
-  let object = []
+const parseCustomDef = (theme) => {
+  let object = [];
   switch (theme) {
     case 'demo':
       object.push(`
@@ -108,9 +108,9 @@ const parseTheme = (theme) => {
           padding: 3px;
           margin: 0px; 
         }
-      `)
+      `);
   }
-  return object.join('')
-}
+  return object.join('');
+};
 
-export {parseAlign, parseCustom, parseTheme}
+export {parseAlign, parseCustom, parseCustomDef};
