@@ -22,6 +22,18 @@ const Block = props => {
       custom={props.custom}
       customDef={props.customDef}
       fontColor={props.fontColor}
+      py={props.py}
+      px={props.px}
+      pt={props.pt}
+      pr={props.pr}
+      pb={props.pb}
+      pl={props.pl}
+      my={props.my}
+      mx={props.mx}
+      mt={props.mt}
+      mr={props.mr}
+      mb={props.mb}
+      ml={props.ml}
       xs={props.xs}
       sm={props.sm}
       md={props.md}
@@ -66,11 +78,33 @@ Block.propTypes = {
   /**
    * Renderiza os blocos filhos
    */
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.string]),
   /**
    * Define propriedade de color
    */
   fontColor: PropTypes.string,
+  /**
+   * Define propriedade de padding
+   */
+  padding: PropTypes.string,
+  /**
+   * Define propriedade de padding
+   */
+  py: PropTypes.string,
+  px: PropTypes.string,
+  pt: PropTypes.string,
+  pr: PropTypes.string,
+  pb: PropTypes.string,
+  pl: PropTypes.string,
+  /**
+   * Define propriedade de margin
+   */
+  my: PropTypes.string,
+  mx: PropTypes.string,
+  mt: PropTypes.string,
+  mr: PropTypes.string,
+  mb: PropTypes.string,
+  ml: PropTypes.string,
   /**
    * Define propriedade de color
    */

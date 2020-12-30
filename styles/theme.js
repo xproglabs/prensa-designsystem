@@ -2,6 +2,8 @@ import {parseAlign} from './parsers/parseAlign';
 import {parseBgColor, parseFontColor} from './parsers/parseColors';
 import {parseCustom, parseCustomDef} from './parsers/parseCustom';
 import {parseFontFamily} from './parsers/parseFontFamily';
+import {parseMargin} from './parsers/parseMargin';
+import {parsePadding} from './parsers/parsePadding';
 import {parseProps} from './parsers/parseRender';
 
 export const theme = {
@@ -53,6 +55,8 @@ export const theme = {
   parseCustomDef,
   parseFontColor,
   parseFontFamily,
+  parseMargin,
+  parsePadding,
   parseProps, 
   queries: {
     xs: '360px', 

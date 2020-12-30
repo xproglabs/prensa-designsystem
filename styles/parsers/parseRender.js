@@ -6,6 +6,8 @@ const parserRender = (theme, props) => {
     ${theme.parseFontFamily(theme, props)}
     ${theme.parseCustomDef(theme, props)}
     ${theme.parseCustom(theme, props)}
+    ${theme.parseMargin(theme, props)}
+    ${theme.parsePadding(theme, props)}
   `;
 };
 

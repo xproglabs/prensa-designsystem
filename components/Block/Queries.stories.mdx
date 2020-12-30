@@ -15,13 +15,30 @@ Block é um componente baseado em uma `<div>` para entregar posicionamentos bloc
 
 <Space size={6} />
 
-### Como utilizar
+### Exemplos
 
 <Space size={3} />
 
 <pre>
-  <CodeBlock>{`import Block from 'prensa/amp'`}</CodeBlock>
-  <CodeBlock>{`<Block>children</Block>`}</CodeBlock>
+  <CodeBlock>{`<Block
+    {...{
+      alignx: 'center', 
+      aligny: 'middle', 
+      bgColor: 'primary3', 
+      fontColor: 'black'
+    }}
+    lg={{
+      align: 'col',
+      alignx: 'right', 
+      aligny: 'bottom', 
+      bgColor: 'primary1', 
+      custom: \`
+        span {
+          color: rgb(255,255,255);
+        }
+      \`,
+      fontColor: 'white'
+    }}>texto</Block>`}</CodeBlock>
 </pre>
 
 <Space size={3} />
@@ -42,7 +59,7 @@ Block é um componente baseado em uma `<div>` para entregar posicionamentos bloc
       bgColor: 'primary1', 
       custom: `
         span {
-          color: red;
+          color: rgb(255,255,255);
         }
       `,
       fontColor: 'white'
