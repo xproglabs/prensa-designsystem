@@ -1,0 +1,61 @@
+import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
+import {ThemeProvider} from 'styled-components';
+import {Space, CodeBlock} from 'prensa-docs';
+import {theme} from '../../styles/theme';
+
+import Block from './index';
+
+<Meta title="Block / Dimensions" />
+
+# Block / Dimensions
+
+<Space size={3} />
+
+Block é um componente baseado em uma `<div>` para entregar posicionamentos blocados na tela.
+
+<Space size={6} />
+
+### Propriedade para definir dimensões
+
+<Space size={3} />
+
+Utilize a propriedade `height` ou `width`
+
+<Space size={6} />
+
+### Exemplo 1
+
+`height: '50px'`
+
+`width: '50px'`
+
+<pre>
+  <CodeBlock>{`<Block width='50px'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    bgColor='primary2'
+    fontColor='white'
+    width='50px'>
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />
+
+### Exemplo 2
+
+<Space size={6} />
+
+### Exemplo 3
+
+<Space size={6} />
+
+### Exemplo 4
+
+<Space size={6} />
+
+### Exemplo 5

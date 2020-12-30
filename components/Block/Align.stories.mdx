@@ -15,26 +15,15 @@ Block é um componente baseado em uma `<div>` para entregar posicionamentos bloc
 
 <Space size={6} />
 
-### Como utilizar
-
-<Space size={3} />
-
-<pre>
-  <CodeBlock>{`import Block from 'prensa/amp'`}</CodeBlock>
-  <CodeBlock>{`<Block>children</Block>`}</CodeBlock>
-</pre>
-
-<Space size={6} />
-
 ### Propriedades de alinhamento
 
 <Space size={3} />
 
 Utilize a propriedade `align` para alternar entre o flex `row` e `col`
 
-Utilize a propriedade `alignx` para definir a posição no eixo x
+Utilize a propriedade `alignx` para definir a posição no eixo x podendo alternar entre `left`, `center`, `right`, `evenly` e `between`.
 
-Utilize a propriedade `aligny` para definir a posição no eixo y
+Utilize a propriedade `aligny` para definir a posição no eixo y podento alternar entre `top`, `middle`, `bottom`, `evenly` e `between`.
 
 <Space size={6} />
 
@@ -175,45 +164,3 @@ Utilize a propriedade `aligny` para definir a posição no eixo y
     <span>item3</span>
   </Block>
 </ThemeProvider>
-
-<Space size={6} />
-
-### Custom styles
-
-Para adicionar estilos customizados utilize `custom`
-
-<pre>
-  <CodeBlock>{`<Block custom='
-    background-color: rgba(1, 22, 39, 0.8); 
-    color: rgba(255, 255, 255, 1);
-    span {
-      border: 1px solid rgba(55, 255, 255, 1);
-    }
-  '></Block>`}</CodeBlock>
-</pre>
-
-<Space size={3} />
-
-<ThemeProvider theme={theme}>
-  <Block 
-    custom={`
-      background-color: rgba(1, 22, 39, 0.8); 
-      color: rgba(255, 255, 255, 1);
-      span {
-        border: 1px solid rgba(55, 255, 255, 1);
-      }
-    `}
-    customDef='demo'>
-    <span>item1</span>
-    <span>item2</span>
-    <span>item3</span>
-  </Block>
-</ThemeProvider>
-
-<Space size={6} />
-
-### Propriedades de font
-
-# API
-
-<ArgsTable of={Block} />
