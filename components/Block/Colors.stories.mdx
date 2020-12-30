@@ -1,17 +1,19 @@
 import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
 import {ThemeProvider} from 'styled-components';
 import {Space, CodeBlock} from 'prensa-docs';
-import {theme} from '../../../styles/theme';
+import {theme} from '../../styles/theme';
 
 import Block from './index';
 
-<Meta title="Blocks/Responsive" />
+<Meta title="Block/Colors" />
 
-# Responsive
+# Block / Colors
 
 <Space size={3} />
 
 Block é um componente baseado em uma `<div>` para entregar posicionamentos blocados na tela. 
+
+Pode ser utilizado propriedades de cores para background e fontes.
 
 <Space size={6} />
 
@@ -21,35 +23,14 @@ Block é um componente baseado em uma `<div>` para entregar posicionamentos bloc
 
 <pre>
   <CodeBlock>{`import Block from 'prensa/amp'`}</CodeBlock>
-  <CodeBlock>{`<Block>children</Block>`}</CodeBlock>
+  <CodeBlock>{`<Block bgColor='primary2' fontColor='white'>children</Block>`}</CodeBlock>
 </pre>
 
 <Space size={3} />
 
 <ThemeProvider theme={theme}>
-  <Block 
-    {...{
-      alignx: 'center', 
-      aligny: 'middle', 
-      bgColor: 'primary3', 
-      fontColor: 'black'
-    }}
-    customDef='demo' 
-    lg={{
-      align: 'col',
-      alignx: 'right', 
-      aligny: 'bottom', 
-      bgColor: 'primary1', 
-      custom: `
-        span {
-          color: red;
-        }
-      `,
-      fontColor: 'white'
-    }}>
+  <Block bgColor='primary2' fontColor='white'>
     <span>Teste1</span>
-    <span>Teste2</span>
-    <span>Teste3</span>
   </Block>
 </ThemeProvider>
 
