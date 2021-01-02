@@ -41,7 +41,8 @@ const Block = props => {
       md={props.md}
       lg={props.lg}
       xl={props.xl}
-      typography={props.typography}>
+      typography={props.typography}
+      onClick={props.onClick}>
       {props.children}
     </Component>
   );
@@ -119,7 +120,11 @@ Block.propTypes = {
   sm: PropTypes.object,
   md: PropTypes.object,
   lg: PropTypes.object,
-  xl: PropTypes.object
+  xl: PropTypes.object,
+  /**
+   * Propriedades de ações
+   */
+  onClick: PropTypes.func
 };
 
 export default withTheme(Block);

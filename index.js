@@ -111,7 +111,8 @@ var Block = function Block(props) {
     md: props.md,
     lg: props.lg,
     xl: props.xl,
-    typography: props.typography
+    typography: props.typography,
+    onClick: props.onClick
   }, props.children);
 };
 
@@ -199,7 +200,12 @@ Block.propTypes = {
   sm: PropTypes__default['default'].object,
   md: PropTypes__default['default'].object,
   lg: PropTypes__default['default'].object,
-  xl: PropTypes__default['default'].object
+  xl: PropTypes__default['default'].object,
+
+  /**
+   * Propriedades de ações
+   */
+  onClick: PropTypes__default['default'].func
 };
 var Block$1 = styled.withTheme(Block);
 

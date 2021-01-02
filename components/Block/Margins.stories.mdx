@@ -29,6 +29,7 @@ Utilize a propriedade `margin` para definir valor geral para o margin
 
 <pre>
   <CodeBlock>{`<Block 
+    onClick={() => console.log('oi')}
     bgColor='primary2'
     fontColor='white'
     mx={10}
@@ -41,6 +42,8 @@ Utilize a propriedade `margin` para definir valor geral para o margin
 
 <ThemeProvider theme={theme}>
   <Block 
+    onClick={() => console.log('oi')}
+    custom={`cursor: pointer;`}
     bgColor='primary2'
     fontColor='white'
     mx={10}
