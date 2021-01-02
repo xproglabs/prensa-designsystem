@@ -88,25 +88,21 @@ Block.propTypes = {
   /**
    * Define propriedade de padding
    */
-  padding: PropTypes.string,
-  /**
-   * Define propriedade de padding
-   */
-  py: PropTypes.string,
-  px: PropTypes.string,
-  pt: PropTypes.string,
-  pr: PropTypes.string,
-  pb: PropTypes.string,
-  pl: PropTypes.string,
+  py: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  px: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * Define propriedade de margin
    */
-  my: PropTypes.string,
-  mx: PropTypes.string,
-  mt: PropTypes.string,
-  mr: PropTypes.string,
-  mb: PropTypes.string,
-  ml: PropTypes.string,
+  my: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mx: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * Define propriedade de color
    */
@@ -114,8 +110,8 @@ Block.propTypes = {
   /**
    * Define propriedade de dimensões
    */
-  height: PropTypes.string,
-  width: PropTypes.string,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * Propriedades responsivas
    */

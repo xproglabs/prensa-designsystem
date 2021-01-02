@@ -164,27 +164,22 @@ Block.propTypes = {
   /**
    * Define propriedade de padding
    */
-  padding: PropTypes__default['default'].string,
-
-  /**
-   * Define propriedade de padding
-   */
-  py: PropTypes__default['default'].string,
-  px: PropTypes__default['default'].string,
-  pt: PropTypes__default['default'].string,
-  pr: PropTypes__default['default'].string,
-  pb: PropTypes__default['default'].string,
-  pl: PropTypes__default['default'].string,
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pt: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pr: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pl: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
 
   /**
    * Define propriedade de margin
    */
-  my: PropTypes__default['default'].string,
-  mx: PropTypes__default['default'].string,
-  mt: PropTypes__default['default'].string,
-  mr: PropTypes__default['default'].string,
-  mb: PropTypes__default['default'].string,
-  ml: PropTypes__default['default'].string,
+  my: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mx: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mt: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mr: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  ml: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
 
   /**
    * Define propriedade de color
@@ -194,8 +189,8 @@ Block.propTypes = {
   /**
    * Define propriedade de dimensões
    */
-  height: PropTypes__default['default'].string,
-  width: PropTypes__default['default'].string,
+  height: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  width: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
 
   /**
    * Propriedades responsivas
@@ -5418,8 +5413,9 @@ var parseDimension = function parseDimension(theme, _ref) {
   var height = _ref.height,
       width = _ref.width;
   var object = [];
-  height && object.push("height: ".concat(height, ";"));
-  width && object.push("width: ".concat(width, ";"));
+  var factor = 8;
+  isNaN(height) ? object.push("height: ".concat(height, ";")) : object.push("height: ".concat(factor * height, "px;"));
+  isNaN(width) ? object.push("width: ".concat(width, ";")) : object.push("width: ".concat(factor * width, "px;"));
   return object.join('');
 };
 
@@ -5438,12 +5434,13 @@ var parseMargin = function parseMargin(theme, _ref) {
       mb = _ref.mb,
       ml = _ref.ml;
   var object = [];
-  mx && object.push("margin-left: ".concat(mx, "; margin-right: ").concat(mx, ";"));
-  my && object.push("margin-top: ".concat(my, "; margin-bottom: ").concat(my, ";"));
-  mt && object.push("margin-top: ".concat(mt, ";"));
-  mr && object.push("margin-right: ".concat(mr, ";"));
-  mb && object.push("margin-bottom: ".concat(mb, ";"));
-  ml && object.push("margin-left: ".concat(ml, ";"));
+  var factor = 8;
+  isNaN(mx) ? object.push("margin-left: ".concat(mx, "; margin-right: ").concat(mx, ";")) : object.push("margin-left: ".concat(factor * mx, "px; margin-right: ").concat(factor * mx, "px;"));
+  isNaN(my) ? object.push("margin-top: ".concat(my, "; margin-bottom: ").concat(my, ";")) : object.push("margin-top: ".concat(factor * my, "px; margin-bottom: ").concat(factor * my, "px;"));
+  isNaN(mt) ? object.push("margin-top: ".concat(mt, ";")) : object.push("margin-top: ".concat(factor * mt, "px;"));
+  isNaN(mr) ? object.push("margin-right: ".concat(mr, ";")) : object.push("margin-right: ".concat(factor * mr, "px;"));
+  isNaN(mb) ? object.push("margin-bottom: ".concat(mb, ";")) : object.push("margin-bottom: ".concat(factor * mb, "px;"));
+  isNaN(ml) ? object.push("margin-left: ".concat(ml, ";")) : object.push("margin-left: ".concat(factor * ml, "px;"));
   return object.join('');
 };
 
@@ -5455,12 +5452,13 @@ var parsePadding = function parsePadding(theme, _ref) {
       pb = _ref.pb,
       pl = _ref.pl;
   var object = [];
-  px && object.push("padding-left: ".concat(px, "; padding-right: ").concat(px, ";"));
-  py && object.push("padding-top: ".concat(py, "; padding-bottom: ").concat(py, ";"));
-  pt && object.push("padding-top: ".concat(pt, ";"));
-  pr && object.push("padding-right: ".concat(pr, ";"));
-  pb && object.push("padding-bottom: ".concat(pb, ";"));
-  pl && object.push("padding-left: ".concat(pl, ";"));
+  var factor = 8;
+  isNaN(px) ? object.push("padding-left: ".concat(px, "; padding-right: ").concat(px, ";")) : object.push("padding-left: ".concat(factor * px, "px; padding-right: ").concat(factor * px, "px;"));
+  isNaN(py) ? object.push("padding-top: ".concat(py, "; padding-bottom: ").concat(py, ";")) : object.push("padding-top: ".concat(factor * py, "px; padding-bottom: ").concat(factor * py, "px;"));
+  isNaN(pt) ? object.push("padding-top: ".concat(pt, ";")) : object.push("padding-top: ".concat(factor * pt, "px;"));
+  isNaN(pr) ? object.push("padding-right: ".concat(pr, ";")) : object.push("padding-right: ".concat(factor * pr, "px;"));
+  isNaN(pb) ? object.push("padding-bottom: ".concat(pb, ";")) : object.push("padding-bottom: ".concat(factor * pb, "px;"));
+  isNaN(pl) ? object.push("padding-left: ".concat(pl, ";")) : object.push("padding-left: ".concat(factor * pl, "px;"));
   return object.join('');
 };
 

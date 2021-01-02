@@ -28,7 +28,13 @@ Utilize a propriedade `margin` para definir valor geral para o margin
 `margin: '10px'`
 
 <pre>
-  <CodeBlock>{`<Block margin='10px'></Block>`}</CodeBlock>
+  <CodeBlock>{`<Block 
+    bgColor='primary2'
+    fontColor='white'
+    mx={10}
+    py={5}
+    px='10px'
+    width='150px'></Block>`}</CodeBlock>
 </pre>
 
 <Space size={3} />
@@ -37,7 +43,10 @@ Utilize a propriedade `margin` para definir valor geral para o margin
   <Block 
     bgColor='primary2'
     fontColor='white'
-    margin='10px'>
+    mx={10}
+    py={5}
+    px='10px'
+    width={15}>
     Texto simples
   </Block>
 </ThemeProvider>

@@ -164,27 +164,22 @@ Block.propTypes = {
   /**
    * Define propriedade de padding
    */
-  padding: PropTypes__default['default'].string,
-
-  /**
-   * Define propriedade de padding
-   */
-  py: PropTypes__default['default'].string,
-  px: PropTypes__default['default'].string,
-  pt: PropTypes__default['default'].string,
-  pr: PropTypes__default['default'].string,
-  pb: PropTypes__default['default'].string,
-  pl: PropTypes__default['default'].string,
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pt: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pr: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pl: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
 
   /**
    * Define propriedade de margin
    */
-  my: PropTypes__default['default'].string,
-  mx: PropTypes__default['default'].string,
-  mt: PropTypes__default['default'].string,
-  mr: PropTypes__default['default'].string,
-  mb: PropTypes__default['default'].string,
-  ml: PropTypes__default['default'].string,
+  my: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mx: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mt: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mr: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  ml: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
 
   /**
    * Define propriedade de color
@@ -194,8 +189,8 @@ Block.propTypes = {
   /**
    * Define propriedade de dimensões
    */
-  height: PropTypes__default['default'].string,
-  width: PropTypes__default['default'].string,
+  height: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  width: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
 
   /**
    * Propriedades responsivas
