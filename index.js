@@ -5282,7 +5282,7 @@ var parseAlign = function parseAlign(theme, _ref) {
   var fd = '';
   var jc = ''; // check if is column
 
-  if (align.contains('column')) {
+  if (align.includes('column')) {
     fd = align; // x axys
 
     if (alignx === 'left') {
@@ -5328,7 +5328,7 @@ var parseAlign = function parseAlign(theme, _ref) {
   } // check if is row
 
 
-  if (align.contains('row')) {
+  if (align.includes('row')) {
     fd = align;
 
     if (alignx === 'left') {
