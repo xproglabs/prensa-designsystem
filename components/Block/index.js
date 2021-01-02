@@ -49,7 +49,7 @@ const Block = props => {
 };
 
 Block.defaultProps = {
-  align: 'col',
+  align: 'column',
   alignx: 'left',
   aligny: 'top',
 };
@@ -57,7 +57,7 @@ Block.propTypes = {
   /**
    * Configuração da orientação de posição
    */
-  align: PropTypes.oneOf(['col', 'row']),
+  align: PropTypes.oneOf(['column', 'column-reverse', 'row', 'row-reverse']),
   /**
    * Configuração da posição horizontal (eixo x)
    */

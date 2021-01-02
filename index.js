@@ -117,7 +117,7 @@ var Block = function Block(props) {
 };
 
 Block.defaultProps = {
-  align: 'col',
+  align: 'column',
   alignx: 'left',
   aligny: 'top'
 };
@@ -125,7 +125,7 @@ Block.propTypes = {
   /**
    * Configuração da orientação de posição
    */
-  align: PropTypes__default['default'].oneOf(['col', 'row']),
+  align: PropTypes__default['default'].oneOf(['column', 'column-reverse', 'row', 'row-reverse']),
 
   /**
    * Configuração da posição horizontal (eixo x)
@@ -5282,8 +5282,8 @@ var parseAlign = function parseAlign(theme, _ref) {
   var fd = '';
   var jc = ''; // check if is column
 
-  if (align === 'col') {
-    fd = 'column'; // x axys
+  if (align.contains('column')) {
+    fd = align; // x axys
 
     if (alignx === 'left') {
       ai = 'flex-start';
@@ -5328,8 +5328,8 @@ var parseAlign = function parseAlign(theme, _ref) {
   } // check if is row
 
 
-  if (align === 'row') {
-    fd = 'row';
+  if (align.contains('row')) {
+    fd = align;
 
     if (alignx === 'left') {
       ai = 'flex-start';
@@ -5441,12 +5441,12 @@ var parseMargin = function parseMargin(theme, _ref) {
       ml = _ref.ml;
   var object = [];
   var factor = 8;
-  isNaN(mx) ? object.push("margin-left: ".concat(mx, "; margin-right: ").concat(mx, ";")) : object.push("margin-left: ".concat(factor * mx, "px; margin-right: ").concat(factor * mx, "px;"));
-  isNaN(my) ? object.push("margin-top: ".concat(my, "; margin-bottom: ").concat(my, ";")) : object.push("margin-top: ".concat(factor * my, "px; margin-bottom: ").concat(factor * my, "px;"));
-  isNaN(mt) ? object.push("margin-top: ".concat(mt, ";")) : object.push("margin-top: ".concat(factor * mt, "px;"));
-  isNaN(mr) ? object.push("margin-right: ".concat(mr, ";")) : object.push("margin-right: ".concat(factor * mr, "px;"));
-  isNaN(mb) ? object.push("margin-bottom: ".concat(mb, ";")) : object.push("margin-bottom: ".concat(factor * mb, "px;"));
-  isNaN(ml) ? object.push("margin-left: ".concat(ml, ";")) : object.push("margin-left: ".concat(factor * ml, "px;"));
+  isNaN(mx) ? object.push("\n      margin-left: ".concat(mx, "; \n      margin-right: ").concat(mx, ";")) : mx && object.push("\n      margin-left: ".concat(factor * mx, "px; \n      margin-right: ").concat(factor * mx, "px;\n    "));
+  isNaN(my) ? object.push("\n      margin-top: ".concat(my, "; \n      margin-bottom: ").concat(my, ";")) : my && object.push("\n      margin-top: ".concat(factor * my, "px; \n      margin-bottom: ").concat(factor * my, "px;\n    "));
+  isNaN(mt) ? object.push("\n      margin-top: ".concat(mt, ";")) : mt && object.push("\n      margin-top: ".concat(factor * mt, "px;\n    "));
+  isNaN(mr) ? object.push("\n      margin-right: ".concat(mr, ";")) : mr && object.push("\n      margin-right: ".concat(factor * mr, "px;\n    "));
+  isNaN(mb) ? object.push("\n      margin-bottom: ".concat(mb, ";")) : mb && object.push("\n      margin-bottom: ".concat(factor * mb, "px;\n    "));
+  isNaN(ml) ? object.push("\n      margin-left: ".concat(ml, ";")) : ml && object.push("\n      margin-left: ".concat(factor * ml, "px;\n    "));
   return object.join('');
 };
 
@@ -5459,12 +5459,12 @@ var parsePadding = function parsePadding(theme, _ref) {
       pl = _ref.pl;
   var object = [];
   var factor = 8;
-  isNaN(px) ? object.push("padding-left: ".concat(px, "; padding-right: ").concat(px, ";")) : object.push("padding-left: ".concat(factor * px, "px; padding-right: ").concat(factor * px, "px;"));
-  isNaN(py) ? object.push("padding-top: ".concat(py, "; padding-bottom: ").concat(py, ";")) : object.push("padding-top: ".concat(factor * py, "px; padding-bottom: ").concat(factor * py, "px;"));
-  isNaN(pt) ? object.push("padding-top: ".concat(pt, ";")) : object.push("padding-top: ".concat(factor * pt, "px;"));
-  isNaN(pr) ? object.push("padding-right: ".concat(pr, ";")) : object.push("padding-right: ".concat(factor * pr, "px;"));
-  isNaN(pb) ? object.push("padding-bottom: ".concat(pb, ";")) : object.push("padding-bottom: ".concat(factor * pb, "px;"));
-  isNaN(pl) ? object.push("padding-left: ".concat(pl, ";")) : object.push("padding-left: ".concat(factor * pl, "px;"));
+  isNaN(px) ? object.push("\n      padding-left: ".concat(px, "; \n      padding-right: ").concat(px, ";\n    ")) : px && object.push("\n      padding-left: ".concat(factor * px, "px; \n      padding-right: ").concat(factor * px, "px\n    ;"));
+  isNaN(py) ? object.push("\n      padding-top: ".concat(py, "; \n      padding-bottom: ").concat(py, ";\n    ")) : py && object.push("\n      padding-top: ".concat(factor * py, "px; \n      padding-bottom: ").concat(factor * py, "px\n    ;"));
+  isNaN(pt) ? object.push("\n      padding-top: ".concat(pt, ";\n    ")) : pt && object.push("\n      padding-top: ".concat(factor * pt, "px\n    ;"));
+  isNaN(pr) ? object.push("\n      padding-right: ".concat(pr, ";\n    ")) : pr && object.push("\n      padding-right: ".concat(factor * pr, "px\n    ;"));
+  isNaN(pb) ? object.push("\n      padding-bottom: ".concat(pb, ";\n    ")) : pb && object.push("\n      padding-bottom: ".concat(factor * pb, "px\n    ;"));
+  isNaN(pl) ? object.push("\n      padding-left: ".concat(pl, ";\n    ")) : pl && object.push("\n      padding-left: ".concat(factor * pl, "px\n    ;"));
   return object.join('');
 };
 

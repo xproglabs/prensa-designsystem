@@ -5,8 +5,8 @@ const parseAlign = (theme, {align, alignx, aligny}) => {
   let fd = '';
   let jc = '';
   // check if is column
-  if(align === 'col') {
-    fd = 'column';
+  if(align.contains('column')) {
+    fd = align;
     // x axys
     if(alignx === 'left') {
       ai = 'flex-start';
@@ -41,8 +41,8 @@ const parseAlign = (theme, {align, alignx, aligny}) => {
     }
   }
   // check if is row
-  if(align === 'row') {
-    fd = 'row';
+  if(align.contains('row')) {
+    fd = align;
     if(alignx === 'left') {
       ai = 'flex-start';
     }
