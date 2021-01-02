@@ -92,6 +92,8 @@ var Block = function Block(props) {
     custom: props.custom,
     customDef: props.customDef,
     fontColor: props.fontColor,
+    height: props.height,
+    width: props.width,
     py: props.py,
     px: props.px,
     pt: props.pt,
@@ -188,6 +190,12 @@ Block.propTypes = {
    * Define propriedade de color
    */
   typography: PropTypes__default['default'].oneOf(['primary', 'secondary']),
+
+  /**
+   * Define propriedade de dimensões
+   */
+  height: PropTypes__default['default'].string,
+  width: PropTypes__default['default'].string,
 
   /**
    * Propriedades responsivas
@@ -5406,6 +5414,15 @@ var parseCustomDef = function parseCustomDef(theme, _ref2) {
   return object.join('');
 };
 
+var parseDimension = function parseDimension(theme, _ref) {
+  var height = _ref.height,
+      width = _ref.width;
+  var object = [];
+  height && object.push("height: ".concat(height, ";"));
+  width && object.push("width: ".concat(width, ";"));
+  return object.join('');
+};
+
 var parseFontFamily = function parseFontFamily(theme, _ref) {
   var typography = _ref.typography;
   var selected = theme.fonts[typography];
@@ -5448,7 +5465,7 @@ var parsePadding = function parsePadding(theme, _ref) {
 };
 
 var parserRender = function parserRender(theme, props) {
-  return "\n    ".concat(theme.parseAlign(theme, props), "\n    ").concat(theme.parseBgColor(theme, props), "\n    ").concat(theme.parseFontColor(theme, props), "\n    ").concat(theme.parseFontFamily(theme, props), "\n    ").concat(theme.parseCustomDef(theme, props), "\n    ").concat(theme.parseCustom(theme, props), "\n    ").concat(theme.parseMargin(theme, props), "\n    ").concat(theme.parsePadding(theme, props), "\n  ");
+  return "\n    ".concat(theme.parseAlign(theme, props), "\n    ").concat(theme.parseBgColor(theme, props), "\n    ").concat(theme.parseDimension(theme, props), "\n    ").concat(theme.parseFontColor(theme, props), "\n    ").concat(theme.parseFontFamily(theme, props), "\n    ").concat(theme.parseCustomDef(theme, props), "\n    ").concat(theme.parseCustom(theme, props), "\n    ").concat(theme.parseMargin(theme, props), "\n    ").concat(theme.parsePadding(theme, props), "\n  ");
 };
 
 var parseProps = function parseProps(media, theme, props) {
@@ -5520,6 +5537,7 @@ var theme = {
   parseBgColor: parseBgColor,
   parseCustom: parseCustom,
   parseCustomDef: parseCustomDef,
+  parseDimension: parseDimension,
   parseFontColor: parseFontColor,
   parseFontFamily: parseFontFamily,
   parseMargin: parseMargin,

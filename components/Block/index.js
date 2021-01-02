@@ -22,6 +22,8 @@ const Block = props => {
       custom={props.custom}
       customDef={props.customDef}
       fontColor={props.fontColor}
+      height={props.height}
+      width={props.width}
       py={props.py}
       px={props.px}
       pt={props.pt}
@@ -109,6 +111,11 @@ Block.propTypes = {
    * Define propriedade de color
    */
   typography: PropTypes.oneOf(['primary', 'secondary']),
+  /**
+   * Define propriedade de dimensões
+   */
+  height: PropTypes.string,
+  width: PropTypes.string,
   /**
    * Propriedades responsivas
    */

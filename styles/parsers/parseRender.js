@@ -2,6 +2,7 @@ const parserRender = (theme, props) => {
   return `
     ${theme.parseAlign(theme, props)}
     ${theme.parseBgColor(theme, props)}
+    ${theme.parseDimension(theme, props)}
     ${theme.parseFontColor(theme, props)}
     ${theme.parseFontFamily(theme, props)}
     ${theme.parseCustomDef(theme, props)}
