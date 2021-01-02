@@ -5439,7 +5439,7 @@ var parsePadding = function parsePadding(theme, _ref) {
       pl = _ref.pl;
   var object = [];
   px && object.push("padding-left: ".concat(px, "; padding-right: ").concat(px, ";"));
-  py && object.push("padding-top: ".concat(py, "; padding-bottop: ").concat(py, ";"));
+  py && object.push("padding-top: ".concat(py, "; padding-bottom: ").concat(py, ";"));
   pt && object.push("padding-top: ".concat(pt, ";"));
   pr && object.push("padding-right: ".concat(pr, ";"));
   pb && object.push("padding-bottom: ".concat(pb, ";"));
