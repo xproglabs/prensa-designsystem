@@ -57,58 +57,46 @@ Utilize a propriedade `custom` para escrever qualquer regra CSS.
 
 ### Exemplo 2
 
-`bgColor`
+`row center`
 
-`fontColor`
+`bgColor: primary1`
 
-`height: 50px;`
+`*color: rgba(255, 200, 155, 3);`
 
-`width: 50px;`
+`*padding: 20px`
+
+<pre>
+  <CodeBlock>{`<Block align= 'row' alignx='center' bgColor='primary1' custom='
+    color: rgba(255, 200, 155, 3);
+    padding: 20px;
+  '></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    bgColor='primary1'
+    align='row'
+    alignx='center'
+    custom={`
+      color: rgba(255, 200, 155, 3);
+      padding: 20px;
+    `}>
+    <span>item1</span>
+    <span>item2</span>
+    <span>item3</span>
+  </Block>
+</ThemeProvider>
 
 <Space size={6} />
 
 ### Exemplo 3
 
-`bgColor`
-
-`fontColor`
-
-`height: 50px;`
-
-`width: 50px;`
-
-`cursor: pointer`
-
 <Space size={6} />
 
 ### Exemplo 4
 
-`bgColor`
-
-`fontColor`
-
-`height: 50px;`
-
-`width: 50px;`
-
-`cursor: pointer`
-
-`border-radius: 5px`
-
 <Space size={6} />
 
 ### Exemplo 5
-
-`bgColor`
-
-`fontColor`
-
-`height: 50px;`
-
-`width: 50px;`
-
-`cursor: pointer`
-
-`border-radius: 5px`
-
-`hover behavior`
