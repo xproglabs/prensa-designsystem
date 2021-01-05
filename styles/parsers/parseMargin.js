@@ -1,8 +1,8 @@
 const parseMargin = (theme, {mx, my, mt, mr, mb, ml}) => {
   let object = [];
-  let factor = 8;
+  let factor = theme.factors.margin;
 
-  isNaN(mx) ?
+  mx !== undefined && isNaN(mx) ?
     object.push(`
       margin-left: ${mx}; 
       margin-right: ${mx};`
@@ -12,7 +12,7 @@ const parseMargin = (theme, {mx, my, mt, mr, mb, ml}) => {
       margin-right: ${factor * mx}px;
     `);
 
-  isNaN(my) ?
+  my !== undefined && isNaN(my) ?
     object.push(`
       margin-top: ${my}; 
       margin-bottom: ${my};`
@@ -22,7 +22,7 @@ const parseMargin = (theme, {mx, my, mt, mr, mb, ml}) => {
       margin-bottom: ${factor * my}px;
     `);
 
-  isNaN(mt) ?
+  mt !== undefined && isNaN(mt) ?
     object.push(`
       margin-top: ${mt};`
     ) :
@@ -30,7 +30,7 @@ const parseMargin = (theme, {mx, my, mt, mr, mb, ml}) => {
       margin-top: ${factor * mt}px;
     `);
 
-  isNaN(mr) ?
+  mr !== undefined && isNaN(mr) ?
     object.push(`
       margin-right: ${mr};`
     ) :
@@ -38,7 +38,7 @@ const parseMargin = (theme, {mx, my, mt, mr, mb, ml}) => {
       margin-right: ${factor * mr}px;
     `);
 
-  isNaN(mb) ?
+  mb !== undefined && isNaN(mb) ?
     object.push(`
       margin-bottom: ${mb};`
     ) :
@@ -46,7 +46,7 @@ const parseMargin = (theme, {mx, my, mt, mr, mb, ml}) => {
       margin-bottom: ${factor * mb}px;
     `);
 
-  isNaN(ml) ?
+  ml !== undefined && isNaN(ml) ?
     object.push(`
       margin-left: ${ml};`
     ) :

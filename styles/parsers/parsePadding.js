@@ -1,8 +1,8 @@
 const parsePadding = (theme, {px, py, pt, pr, pb, pl}) => {
   let object = [];
-  let factor = 8;
+  let factor = theme.factors.padding;
 
-  isNaN(px) ?
+  px !== undefined && isNaN(px) ?
     object.push(`
       padding-left: ${px}; 
       padding-right: ${px};
@@ -12,7 +12,7 @@ const parsePadding = (theme, {px, py, pt, pr, pb, pl}) => {
       padding-right: ${factor * px}px
     ;`);
 
-  isNaN(py) ?
+  py !== undefined && isNaN(py) ?
     object.push(`
       padding-top: ${py}; 
       padding-bottom: ${py};
@@ -22,7 +22,7 @@ const parsePadding = (theme, {px, py, pt, pr, pb, pl}) => {
       padding-bottom: ${factor * py}px
     ;`);
 
-  isNaN(pt) ?
+  pt !== undefined && isNaN(pt) ?
     object.push(`
       padding-top: ${pt};
     `) :
@@ -30,7 +30,7 @@ const parsePadding = (theme, {px, py, pt, pr, pb, pl}) => {
       padding-top: ${factor * pt}px
     ;`);
 
-  isNaN(pr) ?
+  pr !== undefined && isNaN(pr) ?
     object.push(`
       padding-right: ${pr};
     `) :
@@ -38,7 +38,7 @@ const parsePadding = (theme, {px, py, pt, pr, pb, pl}) => {
       padding-right: ${factor * pr}px
     ;`);
 
-  isNaN(pb) ?
+  pb !== undefined && isNaN(pb) ?
     object.push(`
       padding-bottom: ${pb};
     `) :
@@ -46,7 +46,7 @@ const parsePadding = (theme, {px, py, pt, pr, pb, pl}) => {
       padding-bottom: ${factor * pb}px
     ;`);
 
-  isNaN(pl) ?
+  pl !== undefined && isNaN(pl) ?
     object.push(`
       padding-left: ${pl};
     `) :

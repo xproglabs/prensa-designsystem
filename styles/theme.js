@@ -50,6 +50,11 @@ export const theme = {
     primary: 'PT Sans',
     secondary: 'Nunito Sans'
   },
+  factors: {
+    dimensions: 10,
+    padding: 8,
+    margin: 8,
+  },
   parseAlign,
   parseBgColor,
   parseCustom,
