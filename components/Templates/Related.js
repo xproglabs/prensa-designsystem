@@ -2,15 +2,15 @@ import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import colors from '../../styles/variables/colors.json';
 import Block from '../Block';
 import Teaser from '../Teasers';
-import colors from '../../styles/variables/colors.json'
 
 const Related = ({items, domain, lazy, ReadMore, status, theme}) => {
   const {activeColor} = theme;
   const propsContainer = {custom: 'templates-related-news', align: 'col left', w: '100p'};
   return (
-    <Block {...propsContainer}>
+    <Block {...propsContainer} id="block-relatedNews">
       <Block custom="related-news" w="100p">
         {map(items, (item, key) => 
           <Teaser 

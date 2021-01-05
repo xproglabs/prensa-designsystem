@@ -1,11 +1,12 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import colors from '../../styles/variables/colors.json'
+
+import colors from '../../styles/variables/colors.json';
 
 const Block = (props) => {
 
-  const {children, xs, sm, md, lg, xl, onClick} = props;
+  const {children, xs, sm, md, lg, xl, onClick, id} = props;
 
   const defProps = (prefix, props) => {
 
@@ -60,7 +61,8 @@ const Block = (props) => {
   const classProps = {
     className: classnames(dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block', 
     children, 
-    onClick
+    onClick,
+    id
   };
   return <div {...classProps}></div>;
 };
@@ -116,6 +118,7 @@ Block.propTypes = {
   onClick: PropTypes.func,
   w: PropTypes.string,
   h: PropTypes.string,
+  id: PropTypes.string
 };
 
 export default Block;
