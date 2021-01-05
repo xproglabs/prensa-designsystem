@@ -4,7 +4,7 @@ import React from 'react';
 
 const Block = (props) => {
 
-  const {children, xs, sm, md, lg, xl, onClick} = props;
+  const {children, xs, sm, md, lg, xl, onClick, id} = props;
 
   const defProps = (prefix, props) => {
 
@@ -59,7 +59,8 @@ const Block = (props) => {
   const classProps = {
     className: classnames(dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block', 
     children, 
-    onClick
+    onClick,
+    id
   };
   return <div {...classProps}></div>;
 };
@@ -136,6 +137,7 @@ Block.propTypes = {
   onClick: PropTypes.func,
   w: PropTypes.string,
   h: PropTypes.string,
+  id: PropTypes.string
 };
 
 Block.defaultProps = {};

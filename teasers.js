@@ -33,7 +33,8 @@ var Block = function Block(props) {
       md = props.md,
       lg = props.lg,
       xl = props.xl,
-      onClick = props.onClick;
+      onClick = props.onClick,
+      id = props.id;
 
   var defProps = function defProps(prefix, props) {
     var _classnames;
@@ -55,7 +56,8 @@ var Block = function Block(props) {
   var classProps = {
     className: classnames__default['default'](dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block',
     children: children,
-    onClick: onClick
+    onClick: onClick,
+    id: id
   };
   return /*#__PURE__*/React__default['default'].createElement("div", classProps);
 };
@@ -86,7 +88,8 @@ Block.propTypes = {
   custom: PropTypes__default['default'].string,
   onClick: PropTypes__default['default'].func,
   w: PropTypes__default['default'].string,
-  h: PropTypes__default['default'].string
+  h: PropTypes__default['default'].string,
+  id: PropTypes__default['default'].string
 };
 Block.defaultProps = {};
 
