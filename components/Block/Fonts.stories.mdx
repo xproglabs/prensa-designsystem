@@ -1,0 +1,76 @@
+import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
+import {ThemeProvider} from 'styled-components';
+import {Space, CodeBlock} from 'prensa-docs';
+import {theme} from '../../styles/theme';
+
+import Block from './index';
+
+<Meta title="Block / Fonts" />
+
+# Block / Fonts
+
+<Space size={3} />
+
+Block é um componente baseado em uma `<div>` para entregar posicionamentos blocados na tela.
+
+<Space size={6} />
+
+### Propriedade para font-family
+
+<Space size={3} />
+
+Utilize a propriedade `typography` para definir o font-family do componente.
+
+<Space size={6} />
+
+### Exemplo 1
+
+`typography: primary`
+
+<pre>
+  <CodeBlock>{`<Block typography='primary'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    bgColor='primary2'
+    fontColor='white'
+    typography='primary'
+    custom={`
+      padding: 10px;
+      span {
+        padding: 10px;
+      }
+    `}>
+    Texto 01 com typography primária aplicada.
+  </Block>
+</ThemeProvider>
+
+### Exemplo 2
+
+`typography: secondary`
+
+<pre>
+  <CodeBlock>{`<Block typography='secondary'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    bgColor='primary2'
+    fontColor='white'
+    typography='secondary'
+    custom={`
+      padding: 10px;
+      span {
+        padding: 10px;
+      }
+    `}>
+    Texto 01 com typography secundária aplicada.
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />
