@@ -1,3 +1,12 @@
+import {parseAlign} from './parsers/parseAlign';
+import {parseBgColor, parseFontColor} from './parsers/parseColors';
+import {parseCustom, parseCustomDef} from './parsers/parseCustom';
+import {parseDimension} from './parsers/parseDimension';
+import {parseFontFamily} from './parsers/parseFontFamily';
+import {parseMargin} from './parsers/parseMargin';
+import {parsePadding} from './parsers/parsePadding';
+import {parseProps} from './parsers/parseRender';
+
 export const theme = {
   colors: {
     primary1: '#063F8F',
@@ -38,7 +47,29 @@ export const theme = {
     error3: '#E37475',
   },
   fonts: {
-    fontPrimary: 'PT Sans',
-    fontSecondary: 'Nunito Sans'
+    primary: 'PT Sans',
+    secondary: 'Nunito Sans'
+  },
+  factors: {
+    dimensions: 10,
+    padding: 8,
+    margin: 8,
+  },
+  parseAlign,
+  parseBgColor,
+  parseCustom,
+  parseCustomDef,
+  parseDimension,
+  parseFontColor,
+  parseFontFamily,
+  parseMargin,
+  parsePadding,
+  parseProps, 
+  queries: {
+    xs: '360px', 
+    sm: '460px', 
+    md: '768px', 
+    lg: '1016px',
+    xl: '1280px'
   }
 };

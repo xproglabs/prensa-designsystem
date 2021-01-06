@@ -1,121 +1,130 @@
-import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import colors from '../../styles/variables/colors.json'
+import styled from 'styled-components';
+import {withTheme} from 'styled-components';
 
-const Block = (props) => {
+const Component = styled.div`
+  ${props => props && props.theme.parseProps('', props.theme, props)};
+  ${props => props.xs && props.theme.parseProps('xs', props.theme, props.xs)};
+  ${props => props.sm && props.theme.parseProps('sm', props.theme, props.sm)};
+  ${props => props.md && props.theme.parseProps('md', props.theme, props.md)};
+  ${props => props.lg && props.theme.parseProps('lg', props.theme, props.lg)};
+  ${props => props.xl && props.theme.parseProps('xl', props.theme, props.xl)};
+`;
 
-  const {children, xs, sm, md, lg, xl, onClick} = props;
-
-  const defProps = (prefix, props) => {
-
-    const checkAttr = (_props, name) => 
-      _props.align && 
-        _props.align.indexOf(name) > -1;
-    
-    const direction = 
-      props && 
-        props.align && 
-          (props.align.indexOf('row') > -1 ?
-            'row' : 'col');
-    
-    return classnames({
-      [`fx-col${prefix}`]: direction === 'col',
-      [`fx-row${prefix}`]: direction === 'row',
-      [`${direction}-between${prefix}`]: checkAttr(props, 'between'),
-      [`${direction}-bottom${prefix}`]: checkAttr(props, 'bottom'),
-      [`${direction}-center${prefix}`]: checkAttr(props, 'center'),
-      [`${direction}-evenly${prefix}`]: checkAttr(props, 'evenly'),
-      [`${direction}-left${prefix}`]: checkAttr(props, 'left'),
-      [`${direction}-middle${prefix}`]: checkAttr(props, 'middle'),
-      [`${direction}-right${prefix}`]: checkAttr(props, 'right'),
-      [`${direction}-top${prefix}`]: checkAttr(props, 'top'),
-      [`${direction}-wrap${prefix}`]: checkAttr(props, 'wrap'),
-      [`bg-${props.bg}${prefix}`]: props.bg,
-      [`cursor-${props.cursor}${prefix}`]: props.cursor,
-      [`fc-${props.fc}${prefix}`]: props.fc,
-      [`h-${props.h}${prefix}`]: props.h,
-      [`m-${props.m}${prefix}`]: props.m,
-      [`mt-${props.mt}${prefix}`]: props.mt,
-      [`mr-${props.mr}${prefix}`]: props.mr,
-      [`mb-${props.mb}${prefix}`]: props.mb,
-      [`ml-${props.ml}${prefix}`]: props.ml,
-      [`p-${props.p}${prefix}`]: props.p,
-      [`pt-${props.pt}${prefix}`]: props.pt,
-      [`pr-${props.pr}${prefix}`]: props.pr,
-      [`pb-${props.pb}${prefix}`]: props.pb,
-      [`pl-${props.pl}${prefix}`]: props.pl,
-      [`w-${props.w}${prefix}`]: props.w,
-      [`${props.custom}`]: props.custom,
-    });
-  };
-
-  const dProps = defProps('', props);
-  const xsProps = xs && defProps('--xs', xs);
-  const smProps = sm && defProps('--sm', sm);
-  const mdProps = md && defProps('--md', md);
-  const lgProps = lg && defProps('--lg', lg);
-  const xlProps = xl && defProps('--xl', xl);
-
-  const classProps = {
-    className: classnames(dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block', 
-    children, 
-    onClick
-  };
-  return <div {...classProps}></div>;
+const Block = props => {
+  return (
+    <Component
+      align={props.align}
+      alignx={props.alignx}
+      aligny={props.aligny}
+      bgColor={props.bgColor}
+      custom={props.custom}
+      customDef={props.customDef}
+      fontColor={props.fontColor}
+      height={props.height}
+      width={props.width}
+      py={props.py}
+      px={props.px}
+      pt={props.pt}
+      pr={props.pr}
+      pb={props.pb}
+      pl={props.pl}
+      my={props.my}
+      mx={props.mx}
+      mt={props.mt}
+      mr={props.mr}
+      mb={props.mb}
+      ml={props.ml}
+      xs={props.xs}
+      sm={props.sm}
+      md={props.md}
+      lg={props.lg}
+      xl={props.xl}
+      typography={props.typography}
+      onClick={props.onClick}>
+      {props.children}
+    </Component>
+  );
 };
 
-const propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-
+Block.defaultProps = {
+  align: 'column',
+  alignx: 'left',
+  aligny: 'top',
+};
 Block.propTypes = {
-  align: PropTypes.string,
-  bg: PropTypes.oneOf(colors),
-  fc: PropTypes.oneOf(colors),
-  cursor: PropTypes.string, 
-  m: PropTypes.oneOf([
-    ...propTypesSizes
-  ]), 
-  mt: PropTypes.oneOf([
-    ...propTypesSizes
-  ]), 
-  mr: PropTypes.oneOf([
-    ...propTypesSizes
-  ]), 
-  mb: PropTypes.oneOf([
-    ...propTypesSizes
-  ]), 
-  ml: PropTypes.oneOf([
-    ...propTypesSizes
-  ]), 
-  p: PropTypes.oneOf([
-    ...propTypesSizes
-  ]), 
-  pt: PropTypes.oneOf([
-    ...propTypesSizes
-  ]), 
-  pr: PropTypes.oneOf([
-    ...propTypesSizes
-  ]), 
-  pb: PropTypes.oneOf([
-    ...propTypesSizes
-  ]), 
-  pl: PropTypes.oneOf([
-    ...propTypesSizes
-  ]), 
+  /**
+   * Configuração da orientação de posição
+   */
+  align: PropTypes.oneOf(['column', 'column-reverse', 'row', 'row-reverse']),
+  /**
+   * Configuração da posição horizontal (eixo x)
+   */
+  alignx: PropTypes.oneOf(['left', 'center', 'right', 'evenly', 'between']),
+  /**
+   * Configuração da posição vertical (eixo y)
+   */
+  aligny: PropTypes.oneOf(['top', 'middle', 'bottom', 'evenly', 'between']),
+  /**
+   * Define propriedade de background-color
+   */
+  bgColor: PropTypes.string,
+  /**
+   * Define estilo customizado para o bloco
+   */
+  custom: PropTypes.string,
+  /**
+   * Seleciona estilo customizado para o bloco
+   */
+  customDef: PropTypes.string,
+  /**
+   * Renderiza os blocos filhos
+   */
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.string]),
+  /**
+   * Define propriedade de color
+   */
+  fontColor: PropTypes.string,
+  /**
+   * Define propriedade de padding
+   */
+  py: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  px: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /**
+   * Define propriedade de margin
+   */
+  my: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mx: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /**
+   * Define propriedade de color
+   */
+  typography: PropTypes.oneOf(['primary', 'secondary']),
+  /**
+   * Define propriedade de dimensões
+   */
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /**
+   * Propriedades responsivas
+   */
   xs: PropTypes.object,
   sm: PropTypes.object,
   md: PropTypes.object,
   lg: PropTypes.object,
   xl: PropTypes.object,
-  children: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object,
-    PropTypes.node
-  ]),
-  custom: PropTypes.string, 
-  onClick: PropTypes.func,
-  w: PropTypes.string,
-  h: PropTypes.string,
+  /**
+   * Propriedades de ações
+   */
+  onClick: PropTypes.func
 };
 
-export default Block;
+export default withTheme(Block);

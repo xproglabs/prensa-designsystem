@@ -2,18 +2,18 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var classnames = require('classnames');
 var PropTypes = require('prop-types');
 var React = require('react');
-var lodash = require('lodash');
 var styled = require('styled-components');
+var classnames = require('classnames');
+var lodash = require('lodash');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var classnames__default = /*#__PURE__*/_interopDefaultLegacy(classnames);
 var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
+var classnames__default = /*#__PURE__*/_interopDefaultLegacy(classnames);
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -60,6 +60,155 @@ function _taggedTemplateLiteral(strings, raw) {
   }));
 }
 
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Component = styled__default['default'].div(_templateObject(), function (props) {
+  return props && props.theme.parseProps('', props.theme, props);
+}, function (props) {
+  return props.xs && props.theme.parseProps('xs', props.theme, props.xs);
+}, function (props) {
+  return props.sm && props.theme.parseProps('sm', props.theme, props.sm);
+}, function (props) {
+  return props.md && props.theme.parseProps('md', props.theme, props.md);
+}, function (props) {
+  return props.lg && props.theme.parseProps('lg', props.theme, props.lg);
+}, function (props) {
+  return props.xl && props.theme.parseProps('xl', props.theme, props.xl);
+});
+
+var Block = function Block(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Component, {
+    align: props.align,
+    alignx: props.alignx,
+    aligny: props.aligny,
+    bgColor: props.bgColor,
+    custom: props.custom,
+    customDef: props.customDef,
+    fontColor: props.fontColor,
+    height: props.height,
+    width: props.width,
+    py: props.py,
+    px: props.px,
+    pt: props.pt,
+    pr: props.pr,
+    pb: props.pb,
+    pl: props.pl,
+    my: props.my,
+    mx: props.mx,
+    mt: props.mt,
+    mr: props.mr,
+    mb: props.mb,
+    ml: props.ml,
+    xs: props.xs,
+    sm: props.sm,
+    md: props.md,
+    lg: props.lg,
+    xl: props.xl,
+    typography: props.typography,
+    onClick: props.onClick
+  }, props.children);
+};
+
+Block.defaultProps = {
+  align: 'column',
+  alignx: 'left',
+  aligny: 'top'
+};
+Block.propTypes = {
+  /**
+   * Configuração da orientação de posição
+   */
+  align: PropTypes__default['default'].oneOf(['column', 'column-reverse', 'row', 'row-reverse']),
+
+  /**
+   * Configuração da posição horizontal (eixo x)
+   */
+  alignx: PropTypes__default['default'].oneOf(['left', 'center', 'right', 'evenly', 'between']),
+
+  /**
+   * Configuração da posição vertical (eixo y)
+   */
+  aligny: PropTypes__default['default'].oneOf(['top', 'middle', 'bottom', 'evenly', 'between']),
+
+  /**
+   * Define propriedade de background-color
+   */
+  bgColor: PropTypes__default['default'].string,
+
+  /**
+   * Define estilo customizado para o bloco
+   */
+  custom: PropTypes__default['default'].string,
+
+  /**
+   * Seleciona estilo customizado para o bloco
+   */
+  customDef: PropTypes__default['default'].string,
+
+  /**
+   * Renderiza os blocos filhos
+   */
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object, PropTypes__default['default'].string]),
+
+  /**
+   * Define propriedade de color
+   */
+  fontColor: PropTypes__default['default'].string,
+
+  /**
+   * Define propriedade de padding
+   */
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pt: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pr: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pl: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+
+  /**
+   * Define propriedade de margin
+   */
+  my: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mx: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mt: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mr: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  ml: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+
+  /**
+   * Define propriedade de color
+   */
+  typography: PropTypes__default['default'].oneOf(['primary', 'secondary']),
+
+  /**
+   * Define propriedade de dimensões
+   */
+  height: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  width: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+
+  /**
+   * Propriedades responsivas
+   */
+  xs: PropTypes__default['default'].object,
+  sm: PropTypes__default['default'].object,
+  md: PropTypes__default['default'].object,
+  lg: PropTypes__default['default'].object,
+  xl: PropTypes__default['default'].object,
+
+  /**
+   * Propriedades de ações
+   */
+  onClick: PropTypes__default['default'].func
+};
+var Block$1 = styled.withTheme(Block);
+
 var colors = [
 	"primary-1",
 	"primary-2",
@@ -98,68 +247,6 @@ var colors = [
 	"error-2",
 	"error-3"
 ];
-
-var Block = function Block(props) {
-  var children = props.children,
-      xs = props.xs,
-      sm = props.sm,
-      md = props.md,
-      lg = props.lg,
-      xl = props.xl,
-      onClick = props.onClick;
-
-  var defProps = function defProps(prefix, props) {
-    var _classnames;
-
-    var checkAttr = function checkAttr(_props, name) {
-      return _props.align && _props.align.indexOf(name) > -1;
-    };
-
-    var direction = props && props.align && (props.align.indexOf('row') > -1 ? 'row' : 'col');
-    return classnames__default['default']((_classnames = {}, _defineProperty(_classnames, "fx-col".concat(prefix), direction === 'col'), _defineProperty(_classnames, "fx-row".concat(prefix), direction === 'row'), _defineProperty(_classnames, "".concat(direction, "-between").concat(prefix), checkAttr(props, 'between')), _defineProperty(_classnames, "".concat(direction, "-bottom").concat(prefix), checkAttr(props, 'bottom')), _defineProperty(_classnames, "".concat(direction, "-center").concat(prefix), checkAttr(props, 'center')), _defineProperty(_classnames, "".concat(direction, "-evenly").concat(prefix), checkAttr(props, 'evenly')), _defineProperty(_classnames, "".concat(direction, "-left").concat(prefix), checkAttr(props, 'left')), _defineProperty(_classnames, "".concat(direction, "-middle").concat(prefix), checkAttr(props, 'middle')), _defineProperty(_classnames, "".concat(direction, "-right").concat(prefix), checkAttr(props, 'right')), _defineProperty(_classnames, "".concat(direction, "-top").concat(prefix), checkAttr(props, 'top')), _defineProperty(_classnames, "".concat(direction, "-wrap").concat(prefix), checkAttr(props, 'wrap')), _defineProperty(_classnames, "bg-".concat(props.bg).concat(prefix), props.bg), _defineProperty(_classnames, "cursor-".concat(props.cursor).concat(prefix), props.cursor), _defineProperty(_classnames, "fc-".concat(props.fc).concat(prefix), props.fc), _defineProperty(_classnames, "h-".concat(props.h).concat(prefix), props.h), _defineProperty(_classnames, "m-".concat(props.m).concat(prefix), props.m), _defineProperty(_classnames, "mt-".concat(props.mt).concat(prefix), props.mt), _defineProperty(_classnames, "mr-".concat(props.mr).concat(prefix), props.mr), _defineProperty(_classnames, "mb-".concat(props.mb).concat(prefix), props.mb), _defineProperty(_classnames, "ml-".concat(props.ml).concat(prefix), props.ml), _defineProperty(_classnames, "p-".concat(props.p).concat(prefix), props.p), _defineProperty(_classnames, "pt-".concat(props.pt).concat(prefix), props.pt), _defineProperty(_classnames, "pr-".concat(props.pr).concat(prefix), props.pr), _defineProperty(_classnames, "pb-".concat(props.pb).concat(prefix), props.pb), _defineProperty(_classnames, "pl-".concat(props.pl).concat(prefix), props.pl), _defineProperty(_classnames, "w-".concat(props.w).concat(prefix), props.w), _defineProperty(_classnames, "".concat(props.custom), props.custom), _classnames));
-  };
-
-  var dProps = defProps('', props);
-  var xsProps = xs && defProps('--xs', xs);
-  var smProps = sm && defProps('--sm', sm);
-  var mdProps = md && defProps('--md', md);
-  var lgProps = lg && defProps('--lg', lg);
-  var xlProps = xl && defProps('--xl', xl);
-  var classProps = {
-    className: classnames__default['default'](dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block',
-    children: children,
-    onClick: onClick
-  };
-  return /*#__PURE__*/React__default['default'].createElement("div", classProps);
-};
-
-var propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-Block.propTypes = {
-  align: PropTypes__default['default'].string,
-  bg: PropTypes__default['default'].oneOf(colors),
-  fc: PropTypes__default['default'].oneOf(colors),
-  cursor: PropTypes__default['default'].string,
-  m: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  mt: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  mr: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  mb: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  ml: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  p: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  pt: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  pr: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  pb: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  pl: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  xs: PropTypes__default['default'].object,
-  sm: PropTypes__default['default'].object,
-  md: PropTypes__default['default'].object,
-  lg: PropTypes__default['default'].object,
-  xl: PropTypes__default['default'].object,
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object, PropTypes__default['default'].node]),
-  custom: PropTypes__default['default'].string,
-  onClick: PropTypes__default['default'].func,
-  w: PropTypes__default['default'].string,
-  h: PropTypes__default['default'].string
-};
 
 var weights = [
 	"thin",
@@ -911,25 +998,25 @@ var ColumnHeader = function ColumnHeader(_ref) {
   var image = item['column-image'] && item['column-image']['image-contentId'] && item['column-image'];
   var column_name = item['column-name'];
   var column_description = item['column-desc'];
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "row",
     custom: "column-header",
     mb: "3",
     p: "3",
     w: "100p-6"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, null, /*#__PURE__*/React__default['default'].createElement("a", {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement("a", {
     className: "teaser-aria",
     href: path,
     "aria-label": "Imagem do colunista ".concat(column_name)
   }, /*#__PURE__*/React__default['default'].createElement(Image, {
     domain: domain,
     content: image
-  }))), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }))), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "middle",
     ml: "2"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "title"
-  }, column_name), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, column_name), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "subtitle"
   }, column_description)));
 };
@@ -4301,10 +4388,10 @@ function _templateObject2() {
   return data;
 }
 
-function _templateObject() {
+function _templateObject$1() {
   var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin-top: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n"]);
 
-  _templateObject = function _templateObject() {
+  _templateObject$1 = function _templateObject() {
     return data;
   };
 
@@ -4325,7 +4412,7 @@ var validateIcon = function validateIcon(props) {
   return props.theme.colors.neutral5;
 };
 
-var Container = styled__default['default'].div(_templateObject(), function (props) {
+var Container = styled__default['default'].div(_templateObject$1(), function (props) {
   return getFromProps(props, 'marginTop', 0);
 }, function (props) {
   return getFromProps(props, 'marginBottom', props.validation === false ? 12 : 32);
@@ -4563,13 +4650,13 @@ var Image$1 = function Image(_ref) {
 
     var byline = !content['image-byline'] || content['image-byline'] == 'undefined' ? null : content['image-byline'];
     var caption_byline = content['image-subtitle'] ? "".concat(content['image-subtitle']).concat(byline ? " (".concat(byline, ")") : '') : "".concat(content['image-subtitle-original']).concat(byline ? " (".concat(byline, ")") : '');
-    return /*#__PURE__*/React__default['default'].createElement(Block, {
+    return /*#__PURE__*/React__default['default'].createElement(Block$1, {
       custom: "image-box ".concat(custom),
       w: "100p"
     }, /*#__PURE__*/React__default['default'].createElement("img", {
       alt: caption_byline ? '$Legenda da imagem: {caption_byline}' : 'Legenda da imagem: Reprodução',
       src: content_path
-    }), /*#__PURE__*/React__default['default'].createElement(Block, {
+    }), /*#__PURE__*/React__default['default'].createElement(Block$1, {
       custom: "label"
     }, caption_byline));
   }
@@ -4639,13 +4726,13 @@ var RenderItem = function RenderItem(_ref) {
     }
   };
   var propsGallery = selected ? propsGallerySelected : propsGalleryItem;
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsGallery, /*#__PURE__*/React__default['default'].createElement("img", {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, propsGallery, /*#__PURE__*/React__default['default'].createElement("img", {
     className: "image-file",
     src: linkurl,
     alt: "".concat(name)
-  }), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "image-name"
-  }, name), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, name), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "image-lead"
   }, lead));
 };
@@ -4656,24 +4743,24 @@ var ImageGallery = function ImageGallery(_ref2) {
       on = _ref2.on;
   if (!items || items.length === 0) return false;
   var item_selected = selected ? selected : items[0];
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "article-image-gallery",
     w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "row",
     custom: "image-selected",
     w: "100p"
   }, /*#__PURE__*/React__default['default'].createElement(RenderItem, _extends({}, item_selected, {
     selected: true,
     on: on
-  }))), items.length > 1 && /*#__PURE__*/React__default['default'].createElement(Block, {
+  }))), items.length > 1 && /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "row",
     custom: "box-list",
     w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "row center middle",
     custom: "arrow-left"
-  }, /*#__PURE__*/React__default['default'].createElement(SvgIcArrowBack, null)), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(SvgIcArrowBack, null)), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "row",
     custom: "image-list",
     w: "100p"
@@ -4682,7 +4769,7 @@ var ImageGallery = function ImageGallery(_ref2) {
       key: key,
       on: on
     }));
-  })), /*#__PURE__*/React__default['default'].createElement(Block, {
+  })), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "row center middle",
     custom: "arrow-right"
   }, /*#__PURE__*/React__default['default'].createElement(SvgIcArrowForward, null))));
@@ -4735,10 +4822,10 @@ var SearchForm = function SearchForm(_ref) {
       return event.key === 'Enter' && handleSubmit();
     }
   };
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "right",
     custom: 'search-form'
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     mb: "1",
     w: "100p"
   }, /*#__PURE__*/React__default['default'].createElement("input", fieldController)), /*#__PURE__*/React__default['default'].createElement(Button, {
@@ -4785,12 +4872,12 @@ var SearchMenu = function SearchMenu(_ref) {
       functions = _ref.functions,
       status = _ref.status;
   var menuIsOpen = status.opened ? 'opened' : 'closed';
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "menu-modal ".concat(menuIsOpen)
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "menu-opacity",
     onClick: functions.onCloseModal
-  }), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     bg: "neutral-10",
     custom: "menu-right",
     p: "4"
@@ -4824,12 +4911,12 @@ var SideMenu = function SideMenu(_ref) {
       functions = _ref.functions,
       status = _ref.status;
   var menuIsOpen = status.opened ? 'opened' : 'closed';
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "menu-modal ".concat(menuIsOpen)
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "menu-opacity",
     onClick: functions.onCloseModal
-  }), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     bg: "white",
     custom: "menu-left",
     p: "4"
@@ -4878,10 +4965,10 @@ var SideMenuItems = function SideMenuItems(_ref) {
   var Item = function Item(_ref2) {
     var item = _ref2.item;
     var hasSubitems = item.subitems.length > 0;
-    return /*#__PURE__*/React__default['default'].createElement(Block, {
+    return /*#__PURE__*/React__default['default'].createElement(Block$1, {
       custom: "sidemenu-group",
       mb: "3"
-    }, /*#__PURE__*/React__default['default'].createElement(Block, {
+    }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
       custom: "sidemenu-group-item",
       pb: "2",
       align: "row between middle",
@@ -4898,7 +4985,7 @@ var SideMenuItems = function SideMenuItems(_ref) {
   Item.propTypes = {
     item: PropTypes__default['default'].object
   };
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "sidemenu-items"
   }, lodash.map(content.items, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Item, {
@@ -4932,11 +5019,11 @@ var SocialMedias = function SocialMedias(props) {
       ml: '1'
     }
   };
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsSocialMedia, lodash.map(content, function (item, k) {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, propsSocialMedia, lodash.map(content, function (item, k) {
     return /*#__PURE__*/React__default['default'].createElement("a", {
       href: item.path,
       key: k
-    }, /*#__PURE__*/React__default['default'].createElement(Block, propsSocialCirlce, item.icon));
+    }, /*#__PURE__*/React__default['default'].createElement(Block$1, propsSocialCirlce, item.icon));
   }));
 };
 
@@ -4951,19 +5038,19 @@ var Topbar = function Topbar(_ref) {
       centerContent = content.centerContent,
       rightContent = content.rightContent;
   var color = theme.color;
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "row center",
     bg: color,
     fc: "white",
     custom: "Topbar-Prensa-root",
     w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "row middle between",
     custom: "wrap",
     w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "left"
-  }, leftContent && leftContent), /*#__PURE__*/React__default['default'].createElement(Block, null, centerContent && centerContent), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, leftContent && leftContent), /*#__PURE__*/React__default['default'].createElement(Block$1, null, centerContent && centerContent), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "right"
   }, rightContent && rightContent)));
 };
@@ -5102,7 +5189,7 @@ var Teaser = function Teaser(_ref) {
   var url_rewrite = path_split.length > 1 ? "".concat(domain).concat(path_split[1]) : path;
 
   var TeaserImage = function TeaserImage() {
-    return /*#__PURE__*/React__default['default'].createElement(Block, propsImage, /*#__PURE__*/React__default['default'].createElement("a", {
+    return /*#__PURE__*/React__default['default'].createElement(Block$1, propsImage, /*#__PURE__*/React__default['default'].createElement("a", {
       className: "teaser-aria",
       href: url_rewrite,
       "aria-label": "Imagem da mat\xE9ria ".concat(name)
@@ -5113,15 +5200,15 @@ var Teaser = function Teaser(_ref) {
     })));
   };
 
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsTeaser, hasImage && !disableImage && /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block, propsContent, /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, propsTeaser, hasImage && !disableImage && /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block$1, propsContent, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "top-content",
     h: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, null, subject && /*#__PURE__*/React__default['default'].createElement(Block, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, null, subject && /*#__PURE__*/React__default['default'].createElement(Block$1, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
     size: subjectSize,
     color: subjectColor,
     filled: hasSubjectFilled,
     weight: subjectWeight
-  }, subject))), /*#__PURE__*/React__default['default'].createElement(Block, null, /*#__PURE__*/React__default['default'].createElement(Block, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
+  }, subject))), /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement(Block$1, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
     className: "teaser-aria",
     href: url_rewrite,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
@@ -5129,11 +5216,11 @@ var Teaser = function Teaser(_ref) {
     size: titleSize,
     color: titleColor,
     weight: titleWeight
-  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React__default['default'].createElement(Block, propsSubTitle, /*#__PURE__*/React__default['default'].createElement(Subtitle, {
+  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React__default['default'].createElement(Block$1, propsSubTitle, /*#__PURE__*/React__default['default'].createElement(Subtitle, {
     size: subtitleSize,
     color: subtitleColor,
     weight: subtitleWeight
-  }, subtitle)))), /*#__PURE__*/React__default['default'].createElement(Block, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React__default['default'].createElement(Block, propsDate, /*#__PURE__*/React__default['default'].createElement(Date$1, {
+  }, subtitle)))), /*#__PURE__*/React__default['default'].createElement(Block$1, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React__default['default'].createElement(Block$1, propsDate, /*#__PURE__*/React__default['default'].createElement(Date$1, {
     size: dateSize,
     color: dateColor,
     weight: dateWeight
@@ -5185,6 +5272,290 @@ Teaser.defaultProps = {
   disableImage: false
 };
 
+var parseAlign = function parseAlign(theme, _ref) {
+  var align = _ref.align,
+      alignx = _ref.alignx,
+      aligny = _ref.aligny;
+  var object = [];
+  var ai = '';
+  var di = 'flex';
+  var fd = '';
+  var jc = ''; // check if is column
+
+  if (align.includes('column')) {
+    fd = align; // x axys
+
+    if (alignx === 'left') {
+      ai = 'flex-start';
+    }
+
+    if (alignx === 'center') {
+      ai = 'center';
+    }
+
+    if (alignx === 'right') {
+      ai = 'flex-end';
+    }
+
+    if (alignx === 'evenly') {
+      jc = 'space-evenly';
+    }
+
+    if (alignx === 'between') {
+      jc = 'space-between';
+    } // y axis
+
+
+    if (aligny === 'top') {
+      jc = 'flex-start';
+    }
+
+    if (aligny === 'middle') {
+      jc = 'center';
+    }
+
+    if (aligny === 'bottom') {
+      jc = 'flex-end';
+    }
+
+    if (aligny === 'evenly') {
+      jc = 'space-evenly';
+    }
+
+    if (aligny === 'between') {
+      jc = 'space-between';
+    }
+  } // check if is row
+
+
+  if (align.includes('row')) {
+    fd = align;
+
+    if (alignx === 'left') {
+      ai = 'flex-start';
+    }
+
+    if (alignx === 'center') {
+      jc = 'center';
+    }
+
+    if (alignx === 'right') {
+      jc = 'flex-end';
+    }
+
+    if (alignx === 'evenly') {
+      jc = 'space-evenly';
+    }
+
+    if (alignx === 'between') {
+      jc = 'space-between';
+    }
+
+    if (aligny === 'top') {
+      ai = 'flex-start';
+    }
+
+    if (aligny === 'middle') {
+      ai = 'center';
+    }
+
+    if (aligny === 'bottom') {
+      ai = 'flex-end';
+    }
+
+    if (aligny === 'evenly') {
+      jc = 'space-evenly';
+    }
+
+    if (aligny === 'between') {
+      jc = 'space-between';
+    }
+  } // define strings
+
+
+  ai !== '' && object.push("align-items: ".concat(ai, ";"));
+   object.push("display: ".concat(di, ";"));
+  fd !== '' && object.push("flex-direction: ".concat(fd, ";"));
+  jc !== '' && object.push("justify-content: ".concat(jc, ";")); // end
+
+  return object.join('');
+};
+
+var parseBgColor = function parseBgColor(theme, _ref) {
+  var bgColor = _ref.bgColor;
+  var selected = theme.colors[bgColor];
+  if (!selected) return '';
+  return "background-color: ".concat(selected, ";");
+};
+
+var parseFontColor = function parseFontColor(theme, _ref2) {
+  var fontColor = _ref2.fontColor;
+  var selected = theme.colors[fontColor];
+  if (!selected) return '';
+  return "color: ".concat(selected, ";");
+};
+
+var parseCustom = function parseCustom(theme, _ref) {
+  var custom = _ref.custom;
+  if (!custom) return '';
+  var object = [];
+  object.push("\n    ".concat(custom, "\n  "));
+  return object.join('');
+};
+
+var parseCustomDef = function parseCustomDef(theme, _ref2) {
+  var customDef = _ref2.customDef;
+  var object = [];
+
+  switch (customDef) {
+    case 'demo':
+      object.push("\n        background-color: rgba(1, 22, 39, 0.2);\n        color: rgba(255, 55, 255, 1);\n        font-weight: bold;\n        height: 100px;\n        span { \n          border: 1px solid rgba(255, 55, 255, 1);\n          font-size: 11px;\n          padding: 3px;\n          margin: 0px; \n        }\n      ");
+  }
+
+  return object.join('');
+};
+
+var parseDimension = function parseDimension(theme, _ref) {
+  var height = _ref.height,
+      width = _ref.width;
+  var object = [];
+  var factor = 8;
+  isNaN(height) ? object.push("height: ".concat(height, ";")) : object.push("height: ".concat(factor * height, "px;"));
+  isNaN(width) ? object.push("width: ".concat(width, ";")) : object.push("width: ".concat(factor * width, "px;"));
+  return object.join('');
+};
+
+var parseFontFamily = function parseFontFamily(theme, _ref) {
+  var typography = _ref.typography;
+  var selected = theme.fonts[typography];
+  if (!selected) return '';
+  return "font-family: ".concat(selected, ";");
+};
+
+var parseMargin = function parseMargin(theme, _ref) {
+  var mx = _ref.mx,
+      my = _ref.my,
+      mt = _ref.mt,
+      mr = _ref.mr,
+      mb = _ref.mb,
+      ml = _ref.ml;
+  var object = [];
+  var factor = 8;
+  isNaN(mx) ? object.push("\n      margin-left: ".concat(mx, "; \n      margin-right: ").concat(mx, ";")) : mx && object.push("\n      margin-left: ".concat(factor * mx, "px; \n      margin-right: ").concat(factor * mx, "px;\n    "));
+  isNaN(my) ? object.push("\n      margin-top: ".concat(my, "; \n      margin-bottom: ").concat(my, ";")) : my && object.push("\n      margin-top: ".concat(factor * my, "px; \n      margin-bottom: ").concat(factor * my, "px;\n    "));
+  isNaN(mt) ? object.push("\n      margin-top: ".concat(mt, ";")) : mt && object.push("\n      margin-top: ".concat(factor * mt, "px;\n    "));
+  isNaN(mr) ? object.push("\n      margin-right: ".concat(mr, ";")) : mr && object.push("\n      margin-right: ".concat(factor * mr, "px;\n    "));
+  isNaN(mb) ? object.push("\n      margin-bottom: ".concat(mb, ";")) : mb && object.push("\n      margin-bottom: ".concat(factor * mb, "px;\n    "));
+  isNaN(ml) ? object.push("\n      margin-left: ".concat(ml, ";")) : ml && object.push("\n      margin-left: ".concat(factor * ml, "px;\n    "));
+  return object.join('');
+};
+
+var parsePadding = function parsePadding(theme, _ref) {
+  var px = _ref.px,
+      py = _ref.py,
+      pt = _ref.pt,
+      pr = _ref.pr,
+      pb = _ref.pb,
+      pl = _ref.pl;
+  var object = [];
+  var factor = 8;
+  isNaN(px) ? object.push("\n      padding-left: ".concat(px, "; \n      padding-right: ").concat(px, ";\n    ")) : px && object.push("\n      padding-left: ".concat(factor * px, "px; \n      padding-right: ").concat(factor * px, "px\n    ;"));
+  isNaN(py) ? object.push("\n      padding-top: ".concat(py, "; \n      padding-bottom: ").concat(py, ";\n    ")) : py && object.push("\n      padding-top: ".concat(factor * py, "px; \n      padding-bottom: ").concat(factor * py, "px\n    ;"));
+  isNaN(pt) ? object.push("\n      padding-top: ".concat(pt, ";\n    ")) : pt && object.push("\n      padding-top: ".concat(factor * pt, "px\n    ;"));
+  isNaN(pr) ? object.push("\n      padding-right: ".concat(pr, ";\n    ")) : pr && object.push("\n      padding-right: ".concat(factor * pr, "px\n    ;"));
+  isNaN(pb) ? object.push("\n      padding-bottom: ".concat(pb, ";\n    ")) : pb && object.push("\n      padding-bottom: ".concat(factor * pb, "px\n    ;"));
+  isNaN(pl) ? object.push("\n      padding-left: ".concat(pl, ";\n    ")) : pl && object.push("\n      padding-left: ".concat(factor * pl, "px\n    ;"));
+  return object.join('');
+};
+
+var parserRender = function parserRender(theme, props) {
+  return "\n    ".concat(theme.parseAlign(theme, props), "\n    ").concat(theme.parseBgColor(theme, props), "\n    ").concat(theme.parseDimension(theme, props), "\n    ").concat(theme.parseFontColor(theme, props), "\n    ").concat(theme.parseFontFamily(theme, props), "\n    ").concat(theme.parseCustomDef(theme, props), "\n    ").concat(theme.parseCustom(theme, props), "\n    ").concat(theme.parseMargin(theme, props), "\n    ").concat(theme.parsePadding(theme, props), "\n  ");
+};
+
+var parseProps = function parseProps(media, theme, props) {
+  switch (media) {
+    case 'xs':
+      return "@media (min-width: ".concat(theme.queries.xs, ") {\n        ").concat(parserRender(theme, props), "\n      }");
+
+    case 'sm':
+      return "@media (min-width: ".concat(theme.queries.sm, ") {\n        ").concat(parserRender(theme, props), "\n      }");
+
+    case 'md':
+      return "@media (min-width: ".concat(theme.queries.md, ") {\n        ").concat(parserRender(theme, props), "\n      }");
+
+    case 'lg':
+      return "@media (min-width: ".concat(theme.queries.lg, ") {\n        ").concat(parserRender(theme, props), "\n      }");
+
+    case 'xl':
+      return "@media (min-width: ".concat(theme.queries.xl, ") {\n        ").concat(parserRender(theme, props), "\n      }");
+
+    default:
+      return "".concat(parserRender(theme, props));
+  }
+};
+
+var theme = {
+  colors: {
+    primary1: '#063F8F',
+    primary2: '#446FAB',
+    primary3: '#829EC7',
+    secondary1: '#E5471A',
+    secondary2: '#EB7553',
+    secondary3: '#F2A28C',
+    black: '#000000',
+    neutral1: '#151515',
+    neutral2: '#333333',
+    neutral3: '#555555',
+    neutral4: '#666666',
+    neutral5: '#707070',
+    neutral6: '#999999',
+    neutral7: '#B5B5B5',
+    neutral8: '#D7D7D7',
+    neutral9: '#EAEAEA',
+    neutral10: '#F2F2F2',
+    neutral11: '#FAFAFA',
+    white: '#FFFFFF',
+    colorAds: '#5421C2',
+    editorial1: '#2C1D15',
+    editorial2: '#73B6D3',
+    editorial3: '#00A070',
+    editorial4: '#B455A0',
+    editorial5: '#F37042',
+    product1: '#0975B7',
+    product2: '#AB001B',
+    product3: '#BFA525',
+    product4: '#080808',
+    product5: '#09B77B',
+    success1: '#3C8D40',
+    success2: '#50AE55',
+    success3: '#83C686',
+    error1: '#D13135',
+    error2: '#F1453D',
+    error3: '#E37475'
+  },
+  fonts: {
+    primary: 'PT Sans',
+    secondary: 'Nunito Sans'
+  },
+  parseAlign: parseAlign,
+  parseBgColor: parseBgColor,
+  parseCustom: parseCustom,
+  parseCustomDef: parseCustomDef,
+  parseDimension: parseDimension,
+  parseFontColor: parseFontColor,
+  parseFontFamily: parseFontFamily,
+  parseMargin: parseMargin,
+  parsePadding: parsePadding,
+  parseProps: parseProps,
+  queries: {
+    xs: '360px',
+    sm: '460px',
+    md: '768px',
+    lg: '1016px',
+    xl: '1280px'
+  }
+};
+
 var Tag = function Tag(_ref) {
   var content = _ref.content,
       color = _ref.color,
@@ -5221,7 +5592,7 @@ Tag.propTypes = {
   weight: PropTypes__default['default'].oneOf(weights)
 };
 
-exports.Block = Block;
+exports.Block = Block$1;
 exports.Button = Button;
 exports.ColumnHeader = ColumnHeader;
 exports.Field = index$1;
@@ -5238,3 +5609,4 @@ exports.Subject = Subject;
 exports.Tag = Tag;
 exports.Teaser = Teaser;
 exports.Topbar = Topbar;
+exports.theme = theme;

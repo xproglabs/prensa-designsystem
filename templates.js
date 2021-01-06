@@ -5,12 +5,14 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var lodash = require('lodash');
 var PropTypes = require('prop-types');
 var React = require('react');
+var styled = require('styled-components');
 var classnames = require('classnames');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var classnames__default = /*#__PURE__*/_interopDefaultLegacy(classnames);
 
 function _defineProperty(obj, key, value) {
@@ -45,6 +47,167 @@ function _extends() {
 
   return _extends.apply(this, arguments);
 }
+
+function _taggedTemplateLiteral(strings, raw) {
+  if (!raw) {
+    raw = strings.slice(0);
+  }
+
+  return Object.freeze(Object.defineProperties(strings, {
+    raw: {
+      value: Object.freeze(raw)
+    }
+  }));
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Component = styled__default['default'].div(_templateObject(), function (props) {
+  return props && props.theme.parseProps('', props.theme, props);
+}, function (props) {
+  return props.xs && props.theme.parseProps('xs', props.theme, props.xs);
+}, function (props) {
+  return props.sm && props.theme.parseProps('sm', props.theme, props.sm);
+}, function (props) {
+  return props.md && props.theme.parseProps('md', props.theme, props.md);
+}, function (props) {
+  return props.lg && props.theme.parseProps('lg', props.theme, props.lg);
+}, function (props) {
+  return props.xl && props.theme.parseProps('xl', props.theme, props.xl);
+});
+
+var Block = function Block(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Component, {
+    align: props.align,
+    alignx: props.alignx,
+    aligny: props.aligny,
+    bgColor: props.bgColor,
+    custom: props.custom,
+    customDef: props.customDef,
+    fontColor: props.fontColor,
+    height: props.height,
+    width: props.width,
+    py: props.py,
+    px: props.px,
+    pt: props.pt,
+    pr: props.pr,
+    pb: props.pb,
+    pl: props.pl,
+    my: props.my,
+    mx: props.mx,
+    mt: props.mt,
+    mr: props.mr,
+    mb: props.mb,
+    ml: props.ml,
+    xs: props.xs,
+    sm: props.sm,
+    md: props.md,
+    lg: props.lg,
+    xl: props.xl,
+    typography: props.typography,
+    onClick: props.onClick
+  }, props.children);
+};
+
+Block.defaultProps = {
+  align: 'column',
+  alignx: 'left',
+  aligny: 'top'
+};
+Block.propTypes = {
+  /**
+   * Configuração da orientação de posição
+   */
+  align: PropTypes__default['default'].oneOf(['column', 'column-reverse', 'row', 'row-reverse']),
+
+  /**
+   * Configuração da posição horizontal (eixo x)
+   */
+  alignx: PropTypes__default['default'].oneOf(['left', 'center', 'right', 'evenly', 'between']),
+
+  /**
+   * Configuração da posição vertical (eixo y)
+   */
+  aligny: PropTypes__default['default'].oneOf(['top', 'middle', 'bottom', 'evenly', 'between']),
+
+  /**
+   * Define propriedade de background-color
+   */
+  bgColor: PropTypes__default['default'].string,
+
+  /**
+   * Define estilo customizado para o bloco
+   */
+  custom: PropTypes__default['default'].string,
+
+  /**
+   * Seleciona estilo customizado para o bloco
+   */
+  customDef: PropTypes__default['default'].string,
+
+  /**
+   * Renderiza os blocos filhos
+   */
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object, PropTypes__default['default'].string]),
+
+  /**
+   * Define propriedade de color
+   */
+  fontColor: PropTypes__default['default'].string,
+
+  /**
+   * Define propriedade de padding
+   */
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pt: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pr: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  pl: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+
+  /**
+   * Define propriedade de margin
+   */
+  my: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mx: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mt: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mr: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  mb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  ml: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+
+  /**
+   * Define propriedade de color
+   */
+  typography: PropTypes__default['default'].oneOf(['primary', 'secondary']),
+
+  /**
+   * Define propriedade de dimensões
+   */
+  height: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  width: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+
+  /**
+   * Propriedades responsivas
+   */
+  xs: PropTypes__default['default'].object,
+  sm: PropTypes__default['default'].object,
+  md: PropTypes__default['default'].object,
+  lg: PropTypes__default['default'].object,
+  xl: PropTypes__default['default'].object,
+
+  /**
+   * Propriedades de ações
+   */
+  onClick: PropTypes__default['default'].func
+};
+var Block$1 = styled.withTheme(Block);
 
 var colors = [
 	"primary-1",
@@ -84,68 +247,6 @@ var colors = [
 	"error-2",
 	"error-3"
 ];
-
-var Block = function Block(props) {
-  var children = props.children,
-      xs = props.xs,
-      sm = props.sm,
-      md = props.md,
-      lg = props.lg,
-      xl = props.xl,
-      onClick = props.onClick;
-
-  var defProps = function defProps(prefix, props) {
-    var _classnames;
-
-    var checkAttr = function checkAttr(_props, name) {
-      return _props.align && _props.align.indexOf(name) > -1;
-    };
-
-    var direction = props && props.align && (props.align.indexOf('row') > -1 ? 'row' : 'col');
-    return classnames__default['default']((_classnames = {}, _defineProperty(_classnames, "fx-col".concat(prefix), direction === 'col'), _defineProperty(_classnames, "fx-row".concat(prefix), direction === 'row'), _defineProperty(_classnames, "".concat(direction, "-between").concat(prefix), checkAttr(props, 'between')), _defineProperty(_classnames, "".concat(direction, "-bottom").concat(prefix), checkAttr(props, 'bottom')), _defineProperty(_classnames, "".concat(direction, "-center").concat(prefix), checkAttr(props, 'center')), _defineProperty(_classnames, "".concat(direction, "-evenly").concat(prefix), checkAttr(props, 'evenly')), _defineProperty(_classnames, "".concat(direction, "-left").concat(prefix), checkAttr(props, 'left')), _defineProperty(_classnames, "".concat(direction, "-middle").concat(prefix), checkAttr(props, 'middle')), _defineProperty(_classnames, "".concat(direction, "-right").concat(prefix), checkAttr(props, 'right')), _defineProperty(_classnames, "".concat(direction, "-top").concat(prefix), checkAttr(props, 'top')), _defineProperty(_classnames, "".concat(direction, "-wrap").concat(prefix), checkAttr(props, 'wrap')), _defineProperty(_classnames, "bg-".concat(props.bg).concat(prefix), props.bg), _defineProperty(_classnames, "cursor-".concat(props.cursor).concat(prefix), props.cursor), _defineProperty(_classnames, "fc-".concat(props.fc).concat(prefix), props.fc), _defineProperty(_classnames, "h-".concat(props.h).concat(prefix), props.h), _defineProperty(_classnames, "m-".concat(props.m).concat(prefix), props.m), _defineProperty(_classnames, "mt-".concat(props.mt).concat(prefix), props.mt), _defineProperty(_classnames, "mr-".concat(props.mr).concat(prefix), props.mr), _defineProperty(_classnames, "mb-".concat(props.mb).concat(prefix), props.mb), _defineProperty(_classnames, "ml-".concat(props.ml).concat(prefix), props.ml), _defineProperty(_classnames, "p-".concat(props.p).concat(prefix), props.p), _defineProperty(_classnames, "pt-".concat(props.pt).concat(prefix), props.pt), _defineProperty(_classnames, "pr-".concat(props.pr).concat(prefix), props.pr), _defineProperty(_classnames, "pb-".concat(props.pb).concat(prefix), props.pb), _defineProperty(_classnames, "pl-".concat(props.pl).concat(prefix), props.pl), _defineProperty(_classnames, "w-".concat(props.w).concat(prefix), props.w), _defineProperty(_classnames, "".concat(props.custom), props.custom), _classnames));
-  };
-
-  var dProps = defProps('', props);
-  var xsProps = xs && defProps('--xs', xs);
-  var smProps = sm && defProps('--sm', sm);
-  var mdProps = md && defProps('--md', md);
-  var lgProps = lg && defProps('--lg', lg);
-  var xlProps = xl && defProps('--xl', xl);
-  var classProps = {
-    className: classnames__default['default'](dProps, xsProps, smProps, mdProps, lgProps, xlProps) || 'block',
-    children: children,
-    onClick: onClick
-  };
-  return /*#__PURE__*/React__default['default'].createElement("div", classProps);
-};
-
-var propTypesSizes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-Block.propTypes = {
-  align: PropTypes__default['default'].string,
-  bg: PropTypes__default['default'].oneOf(colors),
-  fc: PropTypes__default['default'].oneOf(colors),
-  cursor: PropTypes__default['default'].string,
-  m: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  mt: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  mr: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  mb: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  ml: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  p: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  pt: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  pr: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  pb: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  pl: PropTypes__default['default'].oneOf([].concat(propTypesSizes)),
-  xs: PropTypes__default['default'].object,
-  sm: PropTypes__default['default'].object,
-  md: PropTypes__default['default'].object,
-  lg: PropTypes__default['default'].object,
-  xl: PropTypes__default['default'].object,
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object, PropTypes__default['default'].node]),
-  custom: PropTypes__default['default'].string,
-  onClick: PropTypes__default['default'].func,
-  w: PropTypes__default['default'].string,
-  h: PropTypes__default['default'].string
-};
 
 var weights = [
 	"thin",
@@ -4158,7 +4259,7 @@ var Teaser = function Teaser(_ref) {
   var url_rewrite = path_split.length > 1 ? "".concat(domain).concat(path_split[1]) : path;
 
   var TeaserImage = function TeaserImage() {
-    return /*#__PURE__*/React__default['default'].createElement(Block, propsImage, /*#__PURE__*/React__default['default'].createElement("a", {
+    return /*#__PURE__*/React__default['default'].createElement(Block$1, propsImage, /*#__PURE__*/React__default['default'].createElement("a", {
       className: "teaser-aria",
       href: url_rewrite,
       "aria-label": "Imagem da mat\xE9ria ".concat(name)
@@ -4169,15 +4270,15 @@ var Teaser = function Teaser(_ref) {
     })));
   };
 
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsTeaser, hasImage && !disableImage && /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block, propsContent, /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, propsTeaser, hasImage && !disableImage && /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block$1, propsContent, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "top-content",
     h: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, null, subject && /*#__PURE__*/React__default['default'].createElement(Block, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, null, subject && /*#__PURE__*/React__default['default'].createElement(Block$1, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
     size: subjectSize,
     color: subjectColor,
     filled: hasSubjectFilled,
     weight: subjectWeight
-  }, subject))), /*#__PURE__*/React__default['default'].createElement(Block, null, /*#__PURE__*/React__default['default'].createElement(Block, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
+  }, subject))), /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement(Block$1, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
     className: "teaser-aria",
     href: url_rewrite,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
@@ -4185,11 +4286,11 @@ var Teaser = function Teaser(_ref) {
     size: titleSize,
     color: titleColor,
     weight: titleWeight
-  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React__default['default'].createElement(Block, propsSubTitle, /*#__PURE__*/React__default['default'].createElement(Subtitle, {
+  }, name))), subtitle && hasSubtitle && /*#__PURE__*/React__default['default'].createElement(Block$1, propsSubTitle, /*#__PURE__*/React__default['default'].createElement(Subtitle, {
     size: subtitleSize,
     color: subtitleColor,
     weight: subtitleWeight
-  }, subtitle)))), /*#__PURE__*/React__default['default'].createElement(Block, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React__default['default'].createElement(Block, propsDate, /*#__PURE__*/React__default['default'].createElement(Date$1, {
+  }, subtitle)))), /*#__PURE__*/React__default['default'].createElement(Block$1, propsDateContainer, dateValue && hasDate && /*#__PURE__*/React__default['default'].createElement(Block$1, propsDate, /*#__PURE__*/React__default['default'].createElement(Date$1, {
     size: dateSize,
     color: dateColor,
     weight: dateWeight
@@ -4261,7 +4362,7 @@ var Columnists = function Columnists(_ref) {
     weight: "bold",
     gutter: 3,
     color: color
-  }, title), /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(content['items'], function (item, key) {
+  }, title), /*#__PURE__*/React__default['default'].createElement(Block$1, propsTemplate, lodash.map(content['items'], function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, {
       content: item,
       domain: domain,
@@ -4306,7 +4407,7 @@ var Featured = function Featured(_ref) {
 
   switch (items.length) {
     case 1:
-      return /*#__PURE__*/React__default['default'].createElement(Block, {
+      return /*#__PURE__*/React__default['default'].createElement(Block$1, {
         custom: "Prensa-Templates-Featured one"
       }, /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
         content: items[0],
@@ -4317,12 +4418,12 @@ var Featured = function Featured(_ref) {
       }, featuredTeaserProps)));
 
     case 3:
-      return /*#__PURE__*/React__default['default'].createElement(Block, {
+      return /*#__PURE__*/React__default['default'].createElement(Block$1, {
         custom: "Prensa-Templates-Featured three",
         lg: {
           align: 'row between'
         }
-      }, /*#__PURE__*/React__default['default'].createElement(Block, {
+      }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
         custom: "block-left"
       }, /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
         content: items[0],
@@ -4330,7 +4431,7 @@ var Featured = function Featured(_ref) {
         lazy: lazy,
         status: status,
         subjectColor: color
-      }, featuredTeaserProps))), /*#__PURE__*/React__default['default'].createElement(Block, {
+      }, featuredTeaserProps))), /*#__PURE__*/React__default['default'].createElement(Block$1, {
         custom: "block-right"
       }, /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
         content: items[1],
@@ -4413,7 +4514,7 @@ var GridNews = function GridNews(_ref) {
     }, title);
   };
 
-  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, renderBlockTitle(), /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, renderBlockTitle(), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "Prensa-Templates-Newsgrid ".concat(teaserAmount),
     align: "between",
     mb: "6",
@@ -4576,14 +4677,14 @@ var TeaserMostRead = function TeaserMostRead(_ref) {
     align: 'middle'
   };
   var position = number + 1;
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsMostItem, /*#__PURE__*/React__default['default'].createElement(Block, _extends({}, propsContent, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, propsMostItem, /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({}, propsContent, {
     align: "row"
-  }), /*#__PURE__*/React__default['default'].createElement(Block, _extends({}, propsNumber, {
+  }), /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({}, propsNumber, {
     align: "row center middle"
   }), /*#__PURE__*/React__default['default'].createElement(MostReadNumber, {
     color: numberColor,
     weight: titleWeight
-  }, position)), /*#__PURE__*/React__default['default'].createElement(Block, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
+  }, position)), /*#__PURE__*/React__default['default'].createElement(Block$1, propsTitle, /*#__PURE__*/React__default['default'].createElement("a", {
     className: "teaser-aria",
     href: path,
     "aria-label": "Abrir mat\xE9ria ".concat(name)
@@ -4619,7 +4720,7 @@ var MostRead = function MostRead(_ref) {
   var propsTemplate = {
     custom: 'templates-most-read'
   };
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsTemplate, lodash.map(content, function (item, key) {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, propsTemplate, lodash.map(content, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(TeaserMostRead, {
       content: item,
       domain: domain,
@@ -4712,16 +4813,16 @@ var Latest = function Latest(_ref) {
     }, props), actionButtonTitle);
   };
 
-  return /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "Prensa-Templates-LatestNews",
     align: "col left",
     w: "100p",
     lg: {
       align: 'row between'
     }
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "page-left"
-  }, renderBlockTitle(), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, renderBlockTitle(), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "latest-news"
   }, lodash.map(teasersContent, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
@@ -4732,7 +4833,7 @@ var Latest = function Latest(_ref) {
       status: status,
       subjectColor: color
     }, teaserProps));
-  })), renderActionButton(contentOptions, color, actionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
+  })), renderActionButton(contentOptions, color, actionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "page-right"
   }, renderMostReadBlockTitle(), /*#__PURE__*/React__default['default'].createElement(MostRead, _extends({
     content: mostReadContent,
@@ -4772,7 +4873,7 @@ var Related = function Related(_ref) {
     align: 'col left',
     w: '100p'
   };
-  return /*#__PURE__*/React__default['default'].createElement(Block, propsContainer, /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, propsContainer, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "related-news",
     w: "100p"
   }, lodash.map(items, function (item, key) {
@@ -4875,7 +4976,7 @@ var Subjects = function Subjects(_ref) {
     }, props), actionButtonTitle);
   };
 
-  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "Prensa-Templates-Subjects",
     mt: "2",
     mb: "2",
@@ -4884,27 +4985,27 @@ var Subjects = function Subjects(_ref) {
       mt: '2',
       mb: '3'
     }
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "col left"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "col-section"
   }, showTitleLeft && renderSectionTitle(customLeftTitle, leftColor, titleLeft)), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
     domain: domain,
     items: items_left,
     subjectColor: leftColor,
     teaserProps: renderType(leftType)
-  }), renderActionButton(leftColumnOptions, leftColor, leftActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }), renderActionButton(leftColumnOptions, leftColor, leftActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "col center"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "col-section"
   }, showTitleCenter && renderSectionTitle(customCenterTitle, centerColor, titleCenter)), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
     domain: domain,
     items: items_center,
     subjectColor: centerColor,
     teaserProps: renderType(centerType)
-  }), renderActionButton(centerColumnOptions, centerColor, centerActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }), renderActionButton(centerColumnOptions, centerColor, centerActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "col right"
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "col-section"
   }, showTitleRight && renderSectionTitle(customRightTitle, rightColor, titleRight)), RenderSlot && /*#__PURE__*/React__default['default'].createElement(RenderSlot, {
     domain: domain,
@@ -5056,12 +5157,12 @@ var Template7030 = function Template7030(_ref) {
     }, props), actionButtonTitle);
   };
 
-  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, renderBlockTitle(), /*#__PURE__*/React__default['default'].createElement(Block, {
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, renderBlockTitle(), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "Prensa-Templates-7030",
     lg: {
       align: 'row between'
     }
-  }, /*#__PURE__*/React__default['default'].createElement(Block, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "col left ".concat(customClassLeft)
   }, renderLeftTitle(), lodash.map(leftItems, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
@@ -5072,7 +5173,7 @@ var Template7030 = function Template7030(_ref) {
       status: status,
       subjectColor: styleLeft
     }, leftTeaserProps));
-  }), renderActionButton(leftColumnOptions, styleLeft, leftActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }), renderActionButton(leftColumnOptions, styleLeft, leftActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "col center ".concat(customClassCenter)
   }, renderCenterTitle(), lodash.map(centerItems, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
@@ -5083,7 +5184,7 @@ var Template7030 = function Template7030(_ref) {
       status: status,
       subjectColor: styleCenter
     }, centerTeaserProps));
-  }), renderActionButton(centerColumnOptions, styleCenter, centerActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block, {
+  }), renderActionButton(centerColumnOptions, styleCenter, centerActionButtonProps)), /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "col right ".concat(customClassRight)
   }, renderRightTitle(), lodash.map(rightItems, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Teaser, _extends({
