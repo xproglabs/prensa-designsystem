@@ -26,12 +26,14 @@ const OuterContainer = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
+  top: 0px;
 `;
 const Menu = styled.div`
   position: fixed;
   display: block;
   overflow-y: auto;
   z-index: 11;
+  top: 0px;
   ${props => parsePosition(props)};
   ${props => getWidthFromProps(props)};
   ${props => getHeightFromProps(props)};
