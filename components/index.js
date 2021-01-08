@@ -13,6 +13,6 @@ export {default as SideMenuItems} from './Menus/SideItems';
 export {default as SocialMedias} from './SocialMedias';
 export {default as Topbar} from './Topbar';
 export {default as Teaser} from './Teasers';
-export {theme} from '../styles/theme'
+export {theme} from '../styles/theme';
 export {default as Subject} from './Subject';
 export {default as Tag} from './Tag';
