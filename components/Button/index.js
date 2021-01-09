@@ -1,14 +1,68 @@
-import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, {useEffect} from 'react';
+import styled, {withTheme} from 'styled-components';
 
-import colors from '../../styles/variables/colors.json';
-import weights from '../../styles/variables/weight.json';
-import {ButtonTypography} from '../Typography';
+// import {ButtonTypography} from '../Typography';
+
+//Get button size (height)
+const getSize = props => {
+  const factor = props.theme.factors.margin;
+  const size = props.buttonSize;
+  if (isNaN(size)) return `height: ${size}`;
+  if (size < 4) return `height: ${factor * 4}px`;
+  return `height: ${factor * props.buttonSize}px`;
+};
+
+//Get button width variations from props
+const getWidth = props => {
+  if (props.fullWidth) return 'width: 100%;';
+  return 'width: max-content;';
+};
+
+//Get button variations from props (return style matching the variation)
+const getVariations = props => {
+  switch(props.buttonVariant) {
+    case 'outlined':
+      return `
+        background-color: transparent;
+        border-width: 1px;
+        border-style: solid;
+        border-color: ${props.theme.parseColorValue(props, 'buttonColor')};
+      `;
+    case 'ghost':
+      return `
+        background-color: transparent;
+      `;
+    case 'filled':
+    default: 
+      return `
+        background-color: ${props.theme.parseColorValue(props, 'buttonColor')};
+      `;
+  }
+};
+
+const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
+  text-transform: uppercase;
+  border: unset;
+  cursor: pointer;
+  svg {
+    fill: ${props => props.theme.parseColorValue(props, 'fontColor')};
+    width: 24px;
+    height: 24px;
+  }
+  ${props => props.theme.parsePadding(props.theme, props)};
+  ${props => props.theme.parseRadius(props, 'borderRadius')};
+  ${props => getVariations(props)};
+  ${props => getSize(props)};
+  ${props => getWidth(props)};
+`;
 
 const Button = ({
   children,
-  className,
   color,
   disabled,
   fontColor,
@@ -20,96 +74,68 @@ const Button = ({
   size,
   style,
   variant,
-  weight,
   loading,
-  enterKey
+  enterKey,
+  px
 }) => {
 
+  // Trigger to Handle enter keydown for forms
   const handleKeyPress = event => {
     if (event.keyCode === 13) enterKey();
   };
-
   useEffect(() => {
     enterKey && window.addEventListener('keydown', handleKeyPress);
-    return () => {
-      enterKey && window.removeEventListener('keydown', handleKeyPress);
-    };
+    return () => enterKey && window.removeEventListener('keydown', handleKeyPress);
   });
-
-  const getClass = classnames({
-    'Prensa-Button-root': true,
-    [`size-${size} ${variant} color-${color} radius-${radius}`]: true,
-    'disabled': disabled,
-    'fullWidth': fullWidth,
-    'has-leftIcon': leftIcon,
-    'has-rightIcon': rightIcon,
-    [`${className}`]: className,
-  });
-
-  const getFontColor = () => {     
-    if (fontColor) return fontColor;
-    if (variant === 'outlined') {
-      if (disabled) return 'neutral-8';
-      return color; 
-    }
-    return 'white';
-  };
-
-  const getChildren = () => {
-    if (loading) return 'Carregando...';
-    return (
-      <React.Fragment>
-        {leftIcon && leftIcon}
-        {children}
-        {rightIcon && rightIcon}
-      </React.Fragment>
-    );
-  };
 
   return (
-    <button
-      className={getClass}
+    <StyledButton
+      onClick={onClick}
+      px={px}
       disabled={disabled}
-      onClick={!disabled ? onClick : undefined}
+      buttonColor={color}      
+      fontColor={fontColor}
+      borderRadius={radius}
+      buttonVariant={variant}
+      buttonSize={size}
+      fullWidth={fullWidth}
       style={style}
     >
-      <ButtonTypography color={getFontColor()} weight={weight}>
-        {getChildren()}
-      </ButtonTypography>
-    </button>
+      {loading && 'Carregando...'}
+      {leftIcon && leftIcon}
+      {children}
+      {rightIcon && rightIcon}
+    </StyledButton>
   );
 };
 
 Button.propTypes = {
-  /**
-   * Permite a estilização do componente
-   */
-  className: PropTypes.string,
   children: PropTypes.node,
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
   leftIcon: PropTypes.oneOfType([PropTypes.object, PropTypes.element]),
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(['filled', 'outlined']),
-  color: PropTypes.oneOf(colors),
-  fontColor: PropTypes.oneOf(colors),
+  variant: PropTypes.oneOf(['filled', 'outlined', 'ghost']),
+  color: PropTypes.string,
+  fontColor: PropTypes.string,
   radius: PropTypes.oneOf([false, 'default', 'alternative']),
   rightIcon: PropTypes.oneOf([PropTypes.object, PropTypes.element]),
-  size: PropTypes.oneOf([1, 2, 3, 4, 5]),
+  size: PropTypes.number,
   style: PropTypes.object,
-  weight: PropTypes.oneOf(weights),
   loading: PropTypes.bool,
-  enterKey: PropTypes.func
+  enterKey: PropTypes.func,
+  px: PropTypes.number,
 };
 
 Button.defaultProps = {
+  px: 2,
   disabled: false,
   variant: 'filled',
-  color: 'primary-1',
+  color: 'primary1',
+  fontColor: 'white',
   radius: 'default',
-  size: 1,
-  weight: 'regular',
+  size: 4,
   loading: false
 };
 
-export default Button;
+export default withTheme(Button);

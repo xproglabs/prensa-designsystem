@@ -1,14 +1,16 @@
 import {parseAlign} from './parsers/parseAlign';
-import {parseBgColor, parseFontColor} from './parsers/parseColors';
+import {parseColorValue, parseBorderColor, parseBgColor, parseFontColor} from './parsers/parseColors';
 import {parseCustom, parseCustomDef} from './parsers/parseCustom';
 import {parseDimension} from './parsers/parseDimension';
 import {parseFontFamily} from './parsers/parseFontFamily';
 import {parseMargin} from './parsers/parseMargin';
 import {parsePadding} from './parsers/parsePadding';
+import {parseRadius} from './parsers/parseRadius';
 import {parseProps} from './parsers/parseRender';
 
 export const theme = {
   colors: {
+    activeColor: '#09B77B',
     primary1: '#063F8F',
     primary2: '#446FAB',
     primary3: '#829EC7',
@@ -57,6 +59,7 @@ export const theme = {
   },
   parseAlign,
   parseBgColor,
+  parseBorderColor,
   parseCustom,
   parseCustomDef,
   parseDimension,
@@ -64,12 +67,19 @@ export const theme = {
   parseFontFamily,
   parseMargin,
   parsePadding,
-  parseProps, 
+  parseProps,
+  parseRadius,
+  parseColorValue,
   queries: {
     xs: '360px', 
     sm: '460px', 
     md: '768px', 
     lg: '1016px',
     xl: '1280px'
+  },
+  radius: {
+    false: '0px',
+    default: '3px',
+    alternative: '5px'
   }
 };
