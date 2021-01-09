@@ -2,7 +2,17 @@ import PropTypes from 'prop-types';
 import React, {useEffect} from 'react';
 import styled, {withTheme} from 'styled-components';
 
-// import {ButtonTypography} from '../Typography';
+const parseFontColor = props => {
+  const {fontColor, buttonVariant, theme} = props;
+  if (fontColor) return theme.parseColorValue(props, 'fontColor');
+  if (buttonVariant === 'outlined' || buttonVariant === 'ghost') return theme.parseColorValue(props, 'buttonColor');
+  return theme.colors.white;
+};
+const parseFontFamily = props => {
+  const {inheritFontStyle, theme} = props;
+  if (inheritFontStyle) return 'inherit';
+  return `${theme.fonts.primary}`;
+};
 
 //Get button size (height)
 const getSize = props => {
@@ -50,9 +60,17 @@ const StyledButton = styled.button`
   border: unset;
   cursor: pointer;
   svg {
-    fill: ${props => props.theme.parseColorValue(props, 'fontColor')};
+    fill: ${props => parseFontColor(props)};
     width: 24px;
     height: 24px;
+  }
+  span {
+    margin-left: 8px;
+    margin-right: 8px;
+    color: ${props => parseFontColor(props)};
+    font-size: 14px;
+    font-weight: 400;
+    font-family: ${props => parseFontFamily(props)};
   }
   ${props => props.theme.parsePadding(props.theme, props)};
   ${props => props.theme.parseRadius(props, 'borderRadius')};
@@ -103,10 +121,20 @@ const Button = ({
     >
       {loading && 'Carregando...'}
       {leftIcon && leftIcon}
-      {children}
+      <span>{children}</span>
       {rightIcon && rightIcon}
     </StyledButton>
   );
+};
+
+Button.defaultProps = {
+  px: 2,
+  disabled: false,
+  variant: 'filled',
+  color: 'primary1',
+  radius: 'default',
+  size: 4,
+  loading: false
 };
 
 Button.propTypes = {
@@ -125,17 +153,6 @@ Button.propTypes = {
   loading: PropTypes.bool,
   enterKey: PropTypes.func,
   px: PropTypes.number,
-};
-
-Button.defaultProps = {
-  px: 2,
-  disabled: false,
-  variant: 'filled',
-  color: 'primary1',
-  fontColor: 'white',
-  radius: 'default',
-  size: 4,
-  loading: false
 };
 
 export default withTheme(Button);

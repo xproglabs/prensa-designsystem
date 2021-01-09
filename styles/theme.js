@@ -49,7 +49,7 @@ export const theme = {
     error3: '#E37475',
   },
   fonts: {
-    primary: 'PT Sans',
+    primary: 'Work Sans',
     secondary: 'Nunito Sans'
   },
   factors: {

@@ -24,8 +24,10 @@ export const Template = (args) => <Button {...args} />;
 O Button carrega duas variações de estilo, **Filled** e **Outlined**. Elas alteram a escolha da propriedade css para a estrutura do botão. Para filled, usamos background-color. Já outlined, usa border-color com backgorund transparente.
 
 <ThemeProvider theme={theme}>
-  <Button variant="filled" style={{marginRight: 8}}>Avançar</Button>
-  <Button variant="outlined" style={{marginRight: 8}}>Avançar</Button>
+  <div style={{display: 'flex'}}>
+    <Button variant="filled" style={{marginRight: 8}}>Avançar</Button>
+    <Button variant="outlined" style={{marginRight: 8}}>Avançar</Button>
+  </div>
 </ThemeProvider>
 
 <Space size={2} />
@@ -44,8 +46,10 @@ O Button carrega duas variações de estilo, **Filled** e **Outlined**. Elas alt
 O componente possui acesso a toda a família de cores do design system. Usamos a prop `color` para a escolha, passando o nome da cor em forma de string, sem o prefixo color: `color="primary1"`, `color="editorial2"`.
 
 <ThemeProvider theme={theme}>
-  <Button variant="filled" color='primary1' style={{marginRight: 8}}>Lorem</Button>
-  <Button variant="filled" color='editorial2' style={{marginRight: 8}}>Ipsum</Button>
+  <div style={{display: 'flex'}}>
+    <Button variant="filled" color='primary1' style={{marginRight: 8}}>Lorem</Button>
+    <Button variant="filled" color='editorial2' style={{marginRight: 8}}>Ipsum</Button>
+  </div>
 </ThemeProvider>
 
 <Space size={2} />
@@ -63,9 +67,11 @@ O componente possui acesso a toda a família de cores do design system. Usamos a
 O componente possui acesso a família de variações para o css border-radius. Podemos alternar entre um botão quadrado e dois níveis de radius. A props é `radius` e as opções são `false`, `default` e `alternative`.
 
 <ThemeProvider theme={theme}>
-  <Button variant="filled" color='primary1' radius={false} style={{marginRight: 8}}>Lorem</Button>
-  <Button variant="filled" color='primary1' radius='default' style={{marginRight: 8}}>Lorem</Button>
-  <Button variant="filled" color='primary1' radius='alternative' style={{marginRight: 8}}>Lorem</Button>
+  <div style={{display: 'flex'}}>
+    <Button variant="filled" color='primary1' radius={false} style={{marginRight: 8}}>Lorem</Button>
+    <Button variant="filled" color='primary1' radius='default' style={{marginRight: 8}}>Lorem</Button>
+    <Button variant="filled" color='primary1' radius='alternative' style={{marginRight: 8}}>Lorem</Button>
+  </div>
 </ThemeProvider>
 
 <Space size={2} />
@@ -90,11 +96,13 @@ O componente possui cinco tamanhos de altura. Para alterá-los basta usar a prop
 `size={5} | 64px`
 
 <ThemeProvider theme={theme}>
-  <Button variant="filled" color='primary1' size={1} style={{marginRight: 8}}>Entrar</Button>
-  <Button variant="filled" color='primary1' size={2} style={{marginRight: 8}}>Entrar</Button>
-  <Button variant="filled" color='primary1' size={3} style={{marginRight: 8}}>Entrar</Button>
-  <Button variant="filled" color='primary1' size={4} style={{marginRight: 8}}>Entrar</Button>
-  <Button variant="filled" color='primary1' size={5} style={{marginRight: 8}}>Entrar</Button>
+  <div style={{display: 'flex', alignItems: 'center'}}>
+    <Button variant="filled" color='primary1' size={1} style={{marginRight: 8}}>Entrar</Button>
+    <Button variant="filled" color='primary1' size={2} style={{marginRight: 8}}>Entrar</Button>
+    <Button variant="filled" color='primary1' size={3} style={{marginRight: 8}}>Entrar</Button>
+    <Button variant="filled" color='primary1' size={4} style={{marginRight: 8}}>Entrar</Button>
+    <Button variant="filled" color='primary1' size={5} style={{marginRight: 8}}>Entrar</Button>
+  </div>
 </ThemeProvider>
 
 <Space size={2} />
@@ -115,8 +123,10 @@ O componente possui cinco tamanhos de altura. Para alterá-los basta usar a prop
 O componente possui dois estados: `disabled` e `hover`. Para acionar o disabled, deve-se utilizar a props `disabled={true}`. Já o hover aciona automaticamente ao passar o mouse sobre o botão. O estilo de ambos é sempre fixo.
 
 <ThemeProvider theme={theme}>
-  <Button variant="filled" color='primary1' disabled={true} style={{marginRight: 8}}>Disabled</Button>
-  <Button variant="outlined" color='primary1' disabled={true} style={{marginRight: 8}}>Disabled</Button>
+  <div style={{display: 'flex'}}>
+    <Button variant="filled" color='primary1' disabled={true} style={{marginRight: 8}}>Disabled</Button>
+    <Button variant="outlined" color='primary1' disabled={true} style={{marginRight: 8}}>Disabled</Button>
+  </div>
 </ThemeProvider>
 
 <Space size={2} />
