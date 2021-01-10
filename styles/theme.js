@@ -1,5 +1,5 @@
 import {parseAlign} from './parsers/parseAlign';
-import {parseColorValue, parseBorderColor, parseBgColor, parseFontColor} from './parsers/parseColors';
+import {parseColorValue, parseBgColor, parseFontColor} from './parsers/parseColors';
 import {parseCustom, parseCustomDef} from './parsers/parseCustom';
 import {parseDimension} from './parsers/parseDimension';
 import {parseFontFamily} from './parsers/parseFontFamily';
@@ -59,7 +59,6 @@ export const theme = {
   },
   parseAlign,
   parseBgColor,
-  parseBorderColor,
   parseCustom,
   parseCustomDef,
   parseDimension,
