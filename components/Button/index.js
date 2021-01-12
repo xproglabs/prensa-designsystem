@@ -3,7 +3,8 @@ import React, {useEffect} from 'react';
 import styled, {withTheme} from 'styled-components';
 
 const parseFontColor = props => {
-  const {fontColor, buttonVariant, theme} = props;
+  const {fontColor, buttonVariant, disabled, theme} = props;
+  if (disabled && buttonVariant !== 'filled') return theme.colors.neutral8;
   if (fontColor) return theme.parseColorValue(props, 'fontColor');
   if (buttonVariant === 'outlined' || buttonVariant === 'ghost') return theme.parseColorValue(props, 'buttonColor');
   return theme.colors.white;
@@ -38,6 +39,13 @@ const getVariations = props => {
         border-width: 1px;
         border-style: solid;
         border-color: ${props.theme.parseColorValue(props, 'buttonColor')};
+        &:disabled {
+          border-color: ${props.theme.colors.neutral8};
+          cursor: unset;
+          &:hover {
+            animation-name: none;
+          }
+        }
       `;
     case 'ghost':
       return `
@@ -47,6 +55,13 @@ const getVariations = props => {
     default: 
       return `
         background-color: ${props.theme.parseColorValue(props, 'buttonColor')};
+        &:disabled {
+          background-color: ${props.theme.colors.neutral8};
+          cursor: unset;
+          &:hover {
+            animation-name: none;
+          }
+        }
       `;
   }
 };
@@ -71,6 +86,15 @@ const StyledButton = styled.button`
     font-size: 14px;
     font-weight: 400;
     font-family: ${props => parseFontFamily(props)};
+  }
+  &:hover {
+    animation-name: buttonHover;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes buttonHover {
+    from {opacity: 100%;}
+    to {opacity: 80%;}
   }
   ${props => props.theme.parsePadding(props.theme, props)};
   ${props => props.theme.parseRadius(props, 'borderRadius')};
