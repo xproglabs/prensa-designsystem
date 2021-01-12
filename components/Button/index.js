@@ -41,10 +41,6 @@ const getVariations = props => {
         border-color: ${props.theme.parseColorValue(props, 'buttonColor')};
         &:disabled {
           border-color: ${props.theme.colors.neutral8};
-          cursor: unset;
-          &:hover {
-            animation-name: none;
-          }
         }
       `;
     case 'ghost':
@@ -57,10 +53,6 @@ const getVariations = props => {
         background-color: ${props.theme.parseColorValue(props, 'buttonColor')};
         &:disabled {
           background-color: ${props.theme.colors.neutral8};
-          cursor: unset;
-          &:hover {
-            animation-name: none;
-          }
         }
       `;
   }
@@ -86,6 +78,12 @@ const StyledButton = styled.button`
     font-size: 14px;
     font-weight: 400;
     font-family: ${props => parseFontFamily(props)};
+  }
+  &:disabled {
+    cursor: unset;
+    &:hover {
+      animation-name: none;
+    }
   }
   &:hover {
     animation-name: buttonHover;
@@ -151,6 +149,69 @@ const Button = ({
   );
 };
 
+Button.propTypes = {
+  /**
+   * Corresponde ao texto escrito do botão
+   */
+  children: PropTypes.string.isRequired,
+  /**
+   * Altera a cor geral do componente
+   */
+  color: PropTypes.string,
+  /**
+   * Ativa/desativa o estado disabed nativo do elemento
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Permite a troca da cor da fonte para casos específicos
+   */
+  fontColor: PropTypes.string,
+  /**
+   * Ativa o estilo com largura máxima para o botão (cresce 100% do width disponível)
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * Permite a passagem de um componente SVG para ícone no lado esquerdo
+   */
+  leftIcon: PropTypes.element,
+  /**
+   * Lida com o evento de clique do botão
+   */
+  onClick: PropTypes.func,
+  /**
+   * Permite a escolha do token para border-radius
+   */
+  radius: PropTypes.oneOf([false, 'default', 'alternative']),
+  /**
+   * Permite a passagem de um ícone à direita
+   */
+  rightIcon: PropTypes.element,
+  /**
+   * Permite a escolha de um tamanho (height) para o botão
+   */
+  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Passagem de estilos customizados inline
+   */
+  style: PropTypes.object,
+  /**
+   * Permite a escolha de uma das variações de estrutura do componente
+   */
+  variant: PropTypes.oneOf(['filled', 'outlined', 'ghost']),
+  /**
+   * Ativa a informação "Carregando"
+   */
+  loading: PropTypes.bool,
+  /**
+   * Recebe o evento de clique na tecla enter | return através de uma função
+   */
+  enterKey: PropTypes.func,
+  /**
+   * Permite alterar o espacamento interno no botão
+   */
+  px: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
+
 Button.defaultProps = {
   px: 2,
   disabled: false,
@@ -159,24 +220,6 @@ Button.defaultProps = {
   radius: 'default',
   size: 4,
   loading: false
-};
-
-Button.propTypes = {
-  children: PropTypes.node,
-  disabled: PropTypes.bool,
-  fullWidth: PropTypes.bool,
-  leftIcon: PropTypes.oneOfType([PropTypes.object, PropTypes.element]),
-  onClick: PropTypes.func,
-  variant: PropTypes.oneOf(['filled', 'outlined', 'ghost']),
-  color: PropTypes.string,
-  fontColor: PropTypes.string,
-  radius: PropTypes.oneOf([false, 'default', 'alternative']),
-  rightIcon: PropTypes.oneOf([PropTypes.object, PropTypes.element]),
-  size: PropTypes.number,
-  style: PropTypes.object,
-  loading: PropTypes.bool,
-  enterKey: PropTypes.func,
-  px: PropTypes.number,
 };
 
 export default withTheme(Button);
