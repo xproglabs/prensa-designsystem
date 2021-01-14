@@ -3,72 +3,68 @@ import React from 'react';
 import styled from 'styled-components';
 import {withTheme} from 'styled-components';
 
-import IcArrow from '../../icons/IcArrowForward'
-
+import IcArrow from '../../icons/IcArrowForward';
 
 const Container = styled.div`
-  margin-bottom: 24px;
+  ${props => props.theme.parseMargin(props.theme, props)};
 `;
-const MenuItemContainer = styled.div`
-  font-size: 20px;
-  font-weight: 700;
-  cursor: pointer;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding-bottom: 16px;
+const InnerContainer = styled.a`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  a {
-    color: inherit;
-    text-decoration: none;
-    &:focus,
-    &:hover {
-      color: inherit;
-      text-decoration: none;
-    }
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  color: ${props => props.theme.colors.activeColor};
+  text-decoration: unset;
+  cursor: pointer;
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: ${props => props.theme.colors.activeColor};
   }
+  &:hover {
+    background-color: ${props => props.theme.colors.neutral10};
+    opacity: 0.8;
+  }
+  ${props => props.theme.parsePadding(props.theme, props)};
 `;
 
-const MenuItem = () => {
+const MenuItem = ({children, path, mb, px, py}) => {
   return (
-    <Container>
-      <MenuItemContainer>
-        <a>Economia</a>
+    <Container mb={mb}>
+      <InnerContainer href={path} px={px} py={py}>
+        {children ? children : <span>Content here</span>}
         <IcArrow />
-      </MenuItemContainer>
+      </InnerContainer>
     </Container>
-  )
+  );
 };
 
-// Button.propTypes = {
-//   /**
-//    * Permite a estilização do componente
-//    */
-//   className: PropTypes.string,
-//   children: PropTypes.node,
-//   disabled: PropTypes.bool,
-//   fullWidth: PropTypes.bool,
-//   leftIcon: PropTypes.oneOfType([PropTypes.object, PropTypes.element]),
-//   onClick: PropTypes.func,
-//   variant: PropTypes.oneOf(['filled', 'outlined']),
-//   color: PropTypes.oneOf(colors),
-//   fontColor: PropTypes.oneOf(colors),
-//   radius: PropTypes.oneOf([false, 'default', 'alternative']),
-//   rightIcon: PropTypes.oneOf([PropTypes.object, PropTypes.element]),
-//   size: PropTypes.oneOf([1, 2, 3, 4, 5]),
-//   style: PropTypes.object,
-//   weight: PropTypes.oneOf(weights)
-// };
+MenuItem.defaultProps = {
+  px: 1,
+  py: 1,
+};
 
-// Button.defaultProps = {
-//   disabled: false,
-//   variant: 'filled',
-//   color: 'primary-1',
-//   radius: 'default',
-//   size: 1,
-//   weight: 'regular'
-// };
-
-// export default Button;
+MenuItem.propTypes = {
+  /**
+   * Permite passagem de conteúdo para o componente
+   */
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+  /**
+   * Permite alterar o padding-x (horizontal) do container interno
+   */
+  px: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Permite alterar o padding-y (vertical) do container interno
+   */
+  py: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Permite adicionar margem abaixo do componente, no container externo
+   */
+  mb: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Realiza a navegação do usuário através do clique no componente
+   */
+  path: PropTypes.string.isRequired
+};
 
 export default withTheme(MenuItem);

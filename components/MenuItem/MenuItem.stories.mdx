@@ -1,12 +1,100 @@
 import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
+import {CodeBlock, Space} from 'prensa-docs';
 import {ThemeProvider} from 'styled-components';
-
 import {theme} from '../../styles/theme';
 
+import MenuItemDoc from './MenuItemDoc';
 import MenuItem from './index';
 
-<Meta title="Components/MenuItem" />
+<Meta title="SideMenu/Menu Item" />
+
+# Menu Item
+
+<Space size={4} />
+
+<pre>
+  <CodeBlock>{`import {MenuItem} from 'prensa'`}</CodeBlock>
+</pre>
+
+<Space size={2} />
+
+Menu Item é um componente construído para navegação do usuário.
+Ele é composto por um container externo e um container interno.
+Pode ser utilizado em conjunto com o componente SideMenu ou em contextos específicos.
+
+<Space size={6} />
 
 <ThemeProvider theme={theme}>
-  <MenuItem />
+  <MenuItemDoc />
 </ThemeProvider>
+
+<Space size={6} />
+
+### Como usar?
+
+Para utilizá-lo é necessario um `children` e um `path`. 
+A primeira prop é referente ao conteúdo do MenuItem e pode receber um conjunto de componentes como no exemplo abaixo.
+A segunda prop é o endereço para qual o usuário será levado ao clicar no componente.
+
+No exemplo abaixo foram criados dois trechos de código essenciais:
+
+> A. Um componente Typography estilizado para lidar com o estilo da fonte. Ele encapsula nosso valor (texto) e dá estilo a ele. Podemos criar um componente para contextos específicos ou utilizar outros já codificados.
+
+> B. Um conjunto de dados para simular um retorno da API. Esse conjunto é mapeado e o MenuItem é retornado dentro do map. Para cada entrada de dados, uma instância do MenuItem será renderizada. Isso simula o comportamento do SideMenu.
+
+### Como estilizar?
+
+A esttilização padrão do componente é pegar a propriedade de cor ativa, `theme.colors.activeColor`.
+Para o conteúdo (texto) a estilização fica a critério do contexto. No exemplo abaixo utilizamos color como `inherit` para manter a cor do texto igual ao ícone.
+
+Para margin e padding o componente utiliza duas props do conjunto de espaçamentos do Prensa. A prop `mb` é reponsável por `margin-bottom` no container externo. Já `px` e `py` são responsáveis por padding no container interno.
+
+<pre>
+  <CodeBlock>{`
+    import React from 'react'
+    import {MenuItem} from 'prensa'
+    import styled, {withTheme} from 'styled-components'
+
+    /*  Cria styled component para estilização do texto  */
+    const Typography = styled.span
+      font-size: 16px;
+      font-family: props => props.theme.fonts.primary;
+      font-weight: 700;
+      color: inherit;
+    
+    /*  Cria uma constante com dados dinâmicos (simula backend) */
+    const dados = [
+      {
+        title: 'Buscador Google',
+        path: 'https://google.com.br'
+      },
+      {
+        title: 'YouTube',
+        path: 'https://youtube.com.br'
+      },
+      {
+        title: 'Jump to Gmail',
+        path: 'https://gmail.com'
+      }
+    ]
+
+    const Component = () => {
+
+      /*  Realiza um map nos dados */
+      return dados.map((item, k) => {
+
+        /* Para cada entrada renderiza uma instância do componente */
+        return (
+          <MenuItem key={k} path={item.path}>
+            <Typography>{item.title}</Typography>
+          </MenuItem>
+        )
+      })
+    }
+  `}</CodeBlock>
+</pre>
+
+<Space size={6} />
+
+# API
+<ArgsTable of={MenuItem} />
