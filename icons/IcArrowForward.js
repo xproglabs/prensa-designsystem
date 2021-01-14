@@ -6,7 +6,7 @@ function SvgIcArrowForward(props) {
       xmlns="http://www.w3.org/2000/svg"
       height={32}
       viewBox="0 0 24 24"
-      width={32}
+      width={24}
       {...props}
     >
       <path d="M0 0h24v24H0z" fill="none" />
