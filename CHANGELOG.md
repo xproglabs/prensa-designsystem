@@ -7,6 +7,9 @@
 - Novo componente SideMenu
 - Refatora componente Button
 - Novo componente AMP/Button
+- Refatora componente MenuItem
+- Refatora componente Subject
+
 # v1.4.4
 - Adiciona componente Blocks styled-components
 - Documentação do Blocks
