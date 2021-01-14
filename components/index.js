@@ -7,6 +7,7 @@ export {default as Image} from './Image';
 export {default as ImageBackground} from './Image/Background';
 export {default as ImageGallery} from './ImageGallery';
 export {default as SideMenu} from './SideMenu';
+export {default as MenuItem} from './MenuItem';
 export {default as SocialMedias} from './SocialMedias';
 export {default as Topbar} from './Topbar';
 export {default as Teaser} from './Teasers';
