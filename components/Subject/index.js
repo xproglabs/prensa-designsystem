@@ -48,21 +48,43 @@ const Subject = ({children, color, radius, px, mb, style, transparent, weight}) 
 
 Subject.defaultProps = {
   px: 1,
-  mb: 3,
   radius: 'alternative',
   transparent: false,
   weight: 700
 };
 
 Subject.propTypes = {
+  /**
+   * Recebe o valor/texto escrito que será exibido no componente
+   */
   children: PropTypes.string.isRequired,
+  /**
+   * Recebe um token de cor
+   */
   color: PropTypes.string,
+  /**
+   * Ativa/desativa a variação transparente
+   */
   transparent: PropTypes.bool,
+  /**
+   * Prop que permite estilo customizado inline
+   */
   style: PropTypes.object,
+  /**
+   * Permite alterar a variação de border-radius para o componente
+   */
   radius: PropTypes.oneOf([false, 'default', 'alternative']),
-  theme: PropTypes.object,
+  /**
+   * Permite alterar o espaçamento interno horizontal do componente
+   */
   px: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /**
+   * Permite alterar a margem aplicada abaixo do componente
+   */
   mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /**
+   * Permite alterar o peso da fonte
+   */
   weight: PropTypes.oneOf([300, 400, 500, 600, 700])
 };
 
