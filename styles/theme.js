@@ -57,6 +57,18 @@ export const theme = {
     padding: 8,
     margin: 8,
   },
+  queries: {
+    xs: '360px', 
+    sm: '460px', 
+    md: '768px', 
+    lg: '1016px',
+    xl: '1280px'
+  },
+  radius: {
+    false: '0px',
+    default: '3px',
+    alternative: '5px'
+  },
   parseAlign,
   parseBgColor,
   parseCustom,
@@ -69,16 +81,4 @@ export const theme = {
   parseProps,
   parseRadius,
   parseColorValue,
-  queries: {
-    xs: '360px', 
-    sm: '460px', 
-    md: '768px', 
-    lg: '1016px',
-    xl: '1280px'
-  },
-  radius: {
-    false: '0px',
-    default: '3px',
-    alternative: '5px'
-  }
 };

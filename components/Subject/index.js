@@ -1,43 +1,51 @@
-import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled, {withTheme} from 'styled-components';
 
-import colors from '../../styles/variables/colors.json';
-import {SubjectTypography} from '../Typography';
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: 28px;
+  background-color: ${props => props.theme.parseColorValue(props, 'subjectColor')};
+  ${props => props.theme.parsePadding(props.theme, props)};
+  ${props => props.theme.parseMargin(props.theme, props)};
+  ${props => props.theme.parseRadius(props, 'borderRadius')};
+`;
+const SubjectTypography = styled.span`
+  font-family: ${props => props.theme.fonts.secondary};
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  color: white;
+  text-transform: uppercase;
+`;
 
-const Subject = props => {
-  const {children, color, className, style, size, filled, weight} = props;
-
+const Subject = ({children, color, radius, px, mb, style, theme}) => {
   if (!children) return null;
-
-  const classes = classnames({
-    'Prensa-Subject-root': true,
-    'filled': filled,
-    [`color-${color}`]: true,
-    [`${className}`]: className
-  });
-
   return (
-    <div className={classes} style={style}>
-      <SubjectTypography size={size} color={filled ? 'white' : color} weight={weight}>{children}</SubjectTypography>
-    </div>
+    <Container subjectColor={color} borderRadius={radius} px={px} mb={mb} style={style}>
+      <SubjectTypography theme={theme}>{children}</SubjectTypography>
+    </Container>
   );
 };
 
 Subject.defaultProps = {
-  color: 'primary-1',
-  filled: false,
-  size: 1
+  px: 1,
+  mb: 3,
+  radius: 'alternative'  
 };
 
 Subject.propTypes = {
   children: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
+  color: PropTypes.string,
   filled: PropTypes.bool,
   style: PropTypes.object,
-  size: PropTypes.oneOf([1, 2, 3]),
-  weight: PropTypes.oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  radius: PropTypes.oneOf([false, 'default', 'alternative']),
+  theme: PropTypes.object,
+  px: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
-export default Subject;
+export default withTheme(Subject);
