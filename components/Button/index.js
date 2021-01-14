@@ -101,6 +101,11 @@ const StyledButton = styled.button`
   ${props => getWidth(props)};
 `;
 
+const StyledAria = styled.a`
+  max-width: max-content;
+  text-decoration: unset;
+`;
+
 const Button = ({
   children,
   color,
@@ -116,7 +121,9 @@ const Button = ({
   variant,
   loading,
   enterKey,
-  px
+  px,
+  on,
+  path
 }) => {
 
   // Trigger to Handle enter keydown for forms
@@ -128,25 +135,30 @@ const Button = ({
     return () => enterKey && window.removeEventListener('keydown', handleKeyPress);
   });
 
-  return (
-    <StyledButton
-      onClick={onClick}
-      px={px}
-      disabled={disabled}
-      buttonColor={color}      
-      fontColor={fontColor}
-      borderRadius={radius}
-      buttonVariant={variant}
-      buttonSize={size}
-      fullWidth={fullWidth}
-      style={style}
-    >
-      {loading && 'Carregando...'}
-      {leftIcon && leftIcon}
-      <span>{children}</span>
-      {rightIcon && rightIcon}
-    </StyledButton>
-  );
+  const renderRoot = () => {
+    return (
+      <StyledButton
+        onClick={onClick}
+        px={px}
+        disabled={disabled}
+        buttonColor={color}      
+        fontColor={fontColor}
+        borderRadius={radius}
+        buttonVariant={variant}
+        buttonSize={size}
+        fullWidth={fullWidth}
+        style={style}
+        on={on}
+      >
+        {loading && 'Carregando...'}
+        {leftIcon && leftIcon}
+        <span>{children}</span>
+        {rightIcon && rightIcon}
+      </StyledButton>
+    );
+  };
+
+  return path ? <StyledAria href={path} target='_blank'>{renderRoot()}</StyledAria> : renderRoot();
 };
 
 Button.propTypes = {
@@ -209,7 +221,15 @@ Button.propTypes = {
   /**
    * Permite alterar o espacamento interno no botão
    */
-  px: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  px: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /**
+   * AMP :: Props equivalente a onClick, executa a ação do clique no AMP
+   */
+  on: PropTypes.string,
+  /**
+   * AMP :: Props equivalente a onClick, executa a ação de clique para links externos
+   */
+  path: PropTypes.string,
 };
 
 Button.defaultProps = {
