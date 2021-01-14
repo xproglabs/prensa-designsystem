@@ -114,27 +114,5 @@ export default [
       resolve(),
       sass(),
     ]
-  },
-  {
-    input: 'components/indexAMP.js',
-    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns', 'styled-components'],
-    output: [
-      {
-        file: 'amp.js',
-        format: 'cjs',
-        globals: {
-          react: 'React'
-        },
-        name: 'prensa/amp'
-      }
-    ],
-    plugins: [ 
-      babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
-      }),
-      json(),
-      resolve(),
-      sass(),
-    ]
-  },
+  }
 ];
