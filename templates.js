@@ -4328,6 +4328,16 @@ GridNews.propTypes = {
   teaserProps: PropTypes__default['default'].object
 };
 
+function _templateObject2$1() {
+  var data = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"]);
+
+  _templateObject2$1 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject$2() {
   var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  svg {\n    fill: ", ";\n    width: 24px;\n    height: 24px;\n  }\n  span {\n    margin-left: 8px;\n    margin-right: 8px;\n    color: ", ";\n    font-size: 14px;\n    font-weight: 400;\n    font-family: ", ";\n  }\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"]);
 
@@ -4403,6 +4413,7 @@ var StyledButton = styled__default['default'].button(_templateObject$2(), functi
 }, function (props) {
   return getWidth(props);
 });
+var StyledAria = styled__default['default'].a(_templateObject2$1());
 
 var Button = function Button(_ref) {
   var children = _ref.children,
@@ -4419,7 +4430,9 @@ var Button = function Button(_ref) {
       variant = _ref.variant,
       loading = _ref.loading,
       enterKey = _ref.enterKey,
-      px = _ref.px;
+      px = _ref.px,
+      on = _ref.on,
+      path = _ref.path;
 
   // Trigger to Handle enter keydown for forms
   var handleKeyPress = function handleKeyPress(event) {
@@ -4432,18 +4445,27 @@ var Button = function Button(_ref) {
       return enterKey && window.removeEventListener('keydown', handleKeyPress);
     };
   });
-  return /*#__PURE__*/React__default['default'].createElement(StyledButton, {
-    onClick: onClick,
-    px: px,
-    disabled: disabled,
-    buttonColor: color,
-    fontColor: fontColor,
-    borderRadius: radius,
-    buttonVariant: variant,
-    buttonSize: size,
-    fullWidth: fullWidth,
-    style: style
-  }, loading && 'Carregando...', leftIcon && leftIcon, /*#__PURE__*/React__default['default'].createElement("span", null, children), rightIcon && rightIcon);
+
+  var renderRoot = function renderRoot() {
+    return /*#__PURE__*/React__default['default'].createElement(StyledButton, {
+      onClick: onClick,
+      px: px,
+      disabled: disabled,
+      buttonColor: color,
+      fontColor: fontColor,
+      borderRadius: radius,
+      buttonVariant: variant,
+      buttonSize: size,
+      fullWidth: fullWidth,
+      style: style,
+      on: on
+    }, loading && 'Carregando...', leftIcon && leftIcon, /*#__PURE__*/React__default['default'].createElement("span", null, children), rightIcon && rightIcon);
+  };
+
+  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria, {
+    href: path,
+    target: "_blank"
+  }, renderRoot()) : renderRoot();
 };
 
 Button.propTypes = {
@@ -4520,7 +4542,17 @@ Button.propTypes = {
   /**
    * Permite alterar o espacamento interno no botão
    */
-  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number])
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+
+  /**
+   * AMP :: Props equivalente a onClick, executa a ação do clique no AMP
+   */
+  on: PropTypes__default['default'].string,
+
+  /**
+   * AMP :: Props equivalente a onClick, executa a ação de clique para links externos
+   */
+  path: PropTypes__default['default'].string
 };
 Button.defaultProps = {
   px: 2,

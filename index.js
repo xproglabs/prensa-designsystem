@@ -209,6 +209,16 @@ Block.propTypes = {
 };
 var Block$1 = styled.withTheme(Block);
 
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject$1() {
   var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  svg {\n    fill: ", ";\n    width: 24px;\n    height: 24px;\n  }\n  span {\n    margin-left: 8px;\n    margin-right: 8px;\n    color: ", ";\n    font-size: 14px;\n    font-weight: 400;\n    font-family: ", ";\n  }\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"]);
 
@@ -284,6 +294,7 @@ var StyledButton = styled__default['default'].button(_templateObject$1(), functi
 }, function (props) {
   return getWidth(props);
 });
+var StyledAria = styled__default['default'].a(_templateObject2());
 
 var Button = function Button(_ref) {
   var children = _ref.children,
@@ -300,7 +311,9 @@ var Button = function Button(_ref) {
       variant = _ref.variant,
       loading = _ref.loading,
       enterKey = _ref.enterKey,
-      px = _ref.px;
+      px = _ref.px,
+      on = _ref.on,
+      path = _ref.path;
 
   // Trigger to Handle enter keydown for forms
   var handleKeyPress = function handleKeyPress(event) {
@@ -313,18 +326,27 @@ var Button = function Button(_ref) {
       return enterKey && window.removeEventListener('keydown', handleKeyPress);
     };
   });
-  return /*#__PURE__*/React__default['default'].createElement(StyledButton, {
-    onClick: onClick,
-    px: px,
-    disabled: disabled,
-    buttonColor: color,
-    fontColor: fontColor,
-    borderRadius: radius,
-    buttonVariant: variant,
-    buttonSize: size,
-    fullWidth: fullWidth,
-    style: style
-  }, loading && 'Carregando...', leftIcon && leftIcon, /*#__PURE__*/React__default['default'].createElement("span", null, children), rightIcon && rightIcon);
+
+  var renderRoot = function renderRoot() {
+    return /*#__PURE__*/React__default['default'].createElement(StyledButton, {
+      onClick: onClick,
+      px: px,
+      disabled: disabled,
+      buttonColor: color,
+      fontColor: fontColor,
+      borderRadius: radius,
+      buttonVariant: variant,
+      buttonSize: size,
+      fullWidth: fullWidth,
+      style: style,
+      on: on
+    }, loading && 'Carregando...', leftIcon && leftIcon, /*#__PURE__*/React__default['default'].createElement("span", null, children), rightIcon && rightIcon);
+  };
+
+  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria, {
+    href: path,
+    target: "_blank"
+  }, renderRoot()) : renderRoot();
 };
 
 Button.propTypes = {
@@ -401,7 +423,17 @@ Button.propTypes = {
   /**
    * Permite alterar o espacamento interno no botão
    */
-  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number])
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+
+  /**
+   * AMP :: Props equivalente a onClick, executa a ação do clique no AMP
+   */
+  on: PropTypes__default['default'].string,
+
+  /**
+   * AMP :: Props equivalente a onClick, executa a ação de clique para links externos
+   */
+  path: PropTypes__default['default'].string
 };
 Button.defaultProps = {
   px: 2,
@@ -3906,10 +3938,10 @@ function _templateObject3() {
   return data;
 }
 
-function _templateObject2() {
+function _templateObject2$1() {
   var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n"]);
 
-  _templateObject2 = function _templateObject2() {
+  _templateObject2$1 = function _templateObject2() {
     return data;
   };
 
@@ -3949,7 +3981,7 @@ var Container = styled__default['default'].div(_templateObject$2(), function (pr
 }, function (props) {
   return getFromProps(props, 'marginRight', 0);
 });
-var StyledLabel = styled__default['default'].label(_templateObject2(), function (props) {
+var StyledLabel = styled__default['default'].label(_templateObject2$1(), function (props) {
   return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
 }, function (props) {
   return getFromProps(props, 'fontColor', props.theme.colors.neutral5);
@@ -4324,10 +4356,10 @@ ImageGallery.defaultProps = {
   items: []
 };
 
-function _templateObject2$1() {
+function _templateObject2$2() {
   var data = _taggedTemplateLiteral(["\n  position: fixed;\n  display: block;\n  overflow-y: auto;\n  z-index: 11;\n  top: 0px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"]);
 
-  _templateObject2$1 = function _templateObject2() {
+  _templateObject2$2 = function _templateObject2() {
     return data;
   };
 
@@ -4362,7 +4394,7 @@ var getHeightFromProps = function getHeightFromProps(_ref3) {
 };
 
 var OuterContainer = styled__default['default'].div(_templateObject$3());
-var Menu = styled__default['default'].div(_templateObject2$1(), function (props) {
+var Menu = styled__default['default'].div(_templateObject2$2(), function (props) {
   return parsePosition(props);
 }, function (props) {
   return getWidthFromProps(props);
@@ -4429,6 +4461,85 @@ SideMenu.propTypes = {
   bgColor: PropTypes__default['default'].string
 };
 var index$3 = styled.withTheme(SideMenu);
+
+function _templateObject2$3() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid rgba(0,0,0,0.1);\n  color: ", ";\n  text-decoration: unset;\n  cursor: pointer;\n  svg {\n    width: 24px;\n    height: 24px;\n    fill: ", ";\n  }\n  &:hover {\n    background-color: ", ";\n    opacity: 0.8;\n  }\n  ", ";\n"]);
+
+  _templateObject2$3 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$4() {
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+
+  _templateObject$4 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Container$1 = styled__default['default'].div(_templateObject$4(), function (props) {
+  return props.theme.parseMargin(props.theme, props);
+});
+var InnerContainer = styled__default['default'].a(_templateObject2$3(), function (props) {
+  return props.theme.colors.activeColor;
+}, function (props) {
+  return props.theme.colors.activeColor;
+}, function (props) {
+  return props.theme.colors.neutral10;
+}, function (props) {
+  return props.theme.parsePadding(props.theme, props);
+});
+
+var MenuItem = function MenuItem(_ref) {
+  var children = _ref.children,
+      path = _ref.path,
+      mb = _ref.mb,
+      px = _ref.px,
+      py = _ref.py;
+  return /*#__PURE__*/React__default['default'].createElement(Container$1, {
+    mb: mb
+  }, /*#__PURE__*/React__default['default'].createElement(InnerContainer, {
+    href: path,
+    px: px,
+    py: py
+  }, children ? children : /*#__PURE__*/React__default['default'].createElement("span", null, "Content here"), /*#__PURE__*/React__default['default'].createElement(SvgIcArrowForward, null)));
+};
+
+MenuItem.defaultProps = {
+  px: 1,
+  py: 1
+};
+MenuItem.propTypes = {
+  /**
+   * Permite passagem de conteúdo para o componente
+   */
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].object, PropTypes__default['default'].array]).isRequired,
+
+  /**
+   * Permite alterar o padding-x (horizontal) do container interno
+   */
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+
+  /**
+   * Permite alterar o padding-y (vertical) do container interno
+   */
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+
+  /**
+   * Permite adicionar margem abaixo do componente, no container externo
+   */
+  mb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+
+  /**
+   * Realiza a navegação do usuário através do clique no componente
+   */
+  path: PropTypes__default['default'].string.isRequired
+};
+var index$4 = styled.withTheme(MenuItem);
 
 var SocialMedias = function SocialMedias(props) {
   var content = props.content;
@@ -4505,20 +4616,20 @@ var weights = [
 	"italic"
 ];
 
-function _templateObject2$2() {
+function _templateObject2$4() {
   var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"]);
 
-  _templateObject2$2 = function _templateObject2() {
+  _templateObject2$4 = function _templateObject2() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject$4() {
+function _templateObject$5() {
   var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"]);
 
-  _templateObject$4 = function _templateObject() {
+  _templateObject$5 = function _templateObject() {
     return data;
   };
 
@@ -4535,7 +4646,7 @@ var parseBackgroundVariation = function parseBackgroundVariation(props) {
   return "background-color: ".concat(props.theme.parseColorValue(props, 'subjectColor'), ";");
 };
 
-var Container$1 = styled__default['default'].div(_templateObject$4(), function (props) {
+var Container$2 = styled__default['default'].div(_templateObject$5(), function (props) {
   return props.theme.parsePadding(props.theme, props);
 }, function (props) {
   return props.theme.parseMargin(props.theme, props);
@@ -4544,7 +4655,7 @@ var Container$1 = styled__default['default'].div(_templateObject$4(), function (
 }, function (props) {
   return parseBackgroundVariation(props);
 });
-var Typography = styled__default['default'].span(_templateObject2$2(), function (props) {
+var Typography = styled__default['default'].span(_templateObject2$4(), function (props) {
   return props.theme.fonts.secondary;
 }, function (props) {
   return props.fontWeight;
@@ -4562,7 +4673,7 @@ var Subject = function Subject(_ref) {
       transparent = _ref.transparent,
       weight = _ref.weight;
   if (!children) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container$1, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
     subjectColor: color,
     borderRadius: radius,
     px: px,
@@ -5395,6 +5506,7 @@ exports.Form = index$1;
 exports.Image = Image$1;
 exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;
+exports.MenuItem = index$4;
 exports.SideMenu = index$3;
 exports.SocialMedias = SocialMedias;
 exports.Subject = Subject$1;
