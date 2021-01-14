@@ -4,6 +4,9 @@
   export {default as SearchMenu} from './Menus/Search';
   export {default as SideMenu} from './Menus/SideMenu';
   export {default as SideMenuItems} from './Menus/SideItems';
+- Novo componente SideMenu
+- Refatora componente Button
+- Novo componente AMP/Button
 # v1.4.4
 - Adiciona componente Blocks styled-components
 - Documentação do Blocks
