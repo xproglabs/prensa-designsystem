@@ -27,7 +27,7 @@
     "indent": [1, 2, {"SwitchCase": 1}],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "no-console": ["warn"],
+    "no-console": ["error", { "allow": ["warn", "error"]}],
     "object-curly-spacing": [2, "never"],
     "import-helpers/order-imports": [
       "warn",

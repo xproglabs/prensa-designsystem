@@ -73,7 +73,7 @@ export default [
   },
   {
     input: 'icons/index.js',
-    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json'],
+    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns', 'styled-components'],
     output: [
       {
         file: 'icons.js',
@@ -95,7 +95,7 @@ export default [
   },
   {
     input: 'components/Util/index.js',
-    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json'],
+    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns', 'styled-components'],
     output: [
       {
         file: 'utils.js',
@@ -104,6 +104,28 @@ export default [
           react: 'React'
         },
         name: 'prensa/utils'
+      }
+    ],
+    plugins: [ 
+      babel({
+        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
+      }),
+      json(),
+      resolve(),
+      sass(),
+    ]
+  },
+  {
+    input: 'components/indexAMP.js',
+    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns', 'styled-components'],
+    output: [
+      {
+        file: 'amp.js',
+        format: 'cjs',
+        globals: {
+          react: 'React'
+        },
+        name: 'prensa/amp'
       }
     ],
     plugins: [ 
