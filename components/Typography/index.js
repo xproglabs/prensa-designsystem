@@ -11,7 +11,6 @@ export {default as UrlLink} from './UrlLink';
 export {default as TagTypography} from './Tag';
 export {default as SectionTitle} from './SectionTitle';
 export {default as EditorialTitle} from './EditorialTitle';
-export {default as ButtonTypography} from './Button';
 export {default as MostReadNumber} from './MostReadNumber';
 export {default as MenuSideTitle} from './MenuSideTitle';
 export {default as MenuSideItem} from './MenuSideItem';

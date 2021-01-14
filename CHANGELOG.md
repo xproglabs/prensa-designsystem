@@ -1,3 +1,20 @@
+# v1.4.5
+- Remove os exports de: 
+  export {default as SearchForm} from './Menus/SearchForm';
+  export {default as SearchMenu} from './Menus/Search';
+  export {default as SideMenu} from './Menus/SideMenu';
+  export {default as SideMenuItems} from './Menus/SideItems';
+- Novo componente SideMenu
+- Refatora componente Button
+- Novo componente AMP/Button
+- Refatora componente MenuItem
+- Refatora componente Subject
+
+# v1.4.4
+- Adiciona componente Blocks styled-components
+- Documentação do Blocks
+- Adiciona theme
+- Adiciona lógica de parseamento dos tokens dentro do theme
 # v1.4.2
 - Corrige funcionamento dos tamanhos de margin na função getFromProps
 - Export da pasta Util passou a ser import from prensa/utils
