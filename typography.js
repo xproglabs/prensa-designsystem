@@ -496,37 +496,6 @@ EditorialTitle.propTypes = {
   weight: PropTypes__default['default'].oneOf(weight)
 };
 
-var ButtonTypography = function ButtonTypography(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-Button-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("p", {
-    className: classes,
-    style: style
-  }, children);
-};
-ButtonTypography.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-ButtonTypography.propTypes = {
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].object, PropTypes__default['default'].array]),
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weight)
-};
-
 var MostReadNumber = function MostReadNumber(props) {
   var _classnames;
 
@@ -652,7 +621,6 @@ MenuTopItem.propTypes = {
 };
 
 exports.Author = Author;
-exports.ButtonTypography = ButtonTypography;
 exports.Byline = Byline;
 exports.Citation = Citation;
 exports.Date = Date;
