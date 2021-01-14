@@ -1,6 +1,6 @@
 {
   "name": "prensa",
-  "version": "1.4.0",
+  "version": "1.4.4",
   "description": "Prensa Design System",
   "main": "/",
   "author": "XPROG",
@@ -46,7 +46,6 @@
     "styled-components": "^5.2.1"
   },
   "scripts": {
-    "icons": "svgr -d icons/ icons/assets/",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -o ./storybookbuild",
     "build": "rollup --config",
@@ -61,7 +60,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run icons && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "publishConfig": {

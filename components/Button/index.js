@@ -1,75 +1,225 @@
-import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useEffect} from 'react';
+import styled, {withTheme} from 'styled-components';
 
-import colors from '../../styles/variables/colors.json';
-import weights from '../../styles/variables/weight.json';
-import {ButtonTypography} from '../Typography';
+const parseFontColor = props => {
+  const {fontColor, buttonVariant, disabled, theme} = props;
+  if (disabled && buttonVariant !== 'filled') return theme.colors.neutral8;
+  if (fontColor) return theme.parseColorValue(props, 'fontColor');
+  if (buttonVariant === 'outlined' || buttonVariant === 'ghost') return theme.parseColorValue(props, 'buttonColor');
+  return theme.colors.white;
+};
+const parseFontFamily = props => {
+  const {inheritFontStyle, theme} = props;
+  if (inheritFontStyle) return 'inherit';
+  return `${theme.fonts.primary}`;
+};
 
-const Button = ({children, className, color, disabled, fontColor, fullWidth, leftIcon, onClick, radius, rightIcon, size, style, variant, weight}) => {
+//Get button size (height)
+const getSize = props => {
+  const factor = props.theme.factors.margin;
+  const size = props.buttonSize;
+  if (isNaN(size)) return `height: ${size}`;
+  if (size < 4) return `height: ${factor * 4}px`;
+  return `height: ${factor * props.buttonSize}px`;
+};
 
-  const getClass = classnames({
-    'Prensa-Button-root': true,
-    [`size-${size} ${variant} color-${color} radius-${radius}`]: true,
-    'disabled': disabled,
-    'fullWidth': fullWidth,
-    'has-leftIcon': leftIcon,
-    'has-rightIcon': rightIcon,
-    [`${className}`]: className,
+//Get button width variations from props
+const getWidth = props => {
+  if (props.fullWidth) return 'width: 100%;';
+  return 'width: max-content;';
+};
+
+//Get button variations from props (return style matching the variation)
+const getVariations = props => {
+  switch(props.buttonVariant) {
+    case 'outlined':
+      return `
+        background-color: transparent;
+        border-width: 1px;
+        border-style: solid;
+        border-color: ${props.theme.parseColorValue(props, 'buttonColor')};
+        &:disabled {
+          border-color: ${props.theme.colors.neutral8};
+        }
+      `;
+    case 'ghost':
+      return `
+        background-color: transparent;
+      `;
+    case 'filled':
+    default: 
+      return `
+        background-color: ${props.theme.parseColorValue(props, 'buttonColor')};
+        &:disabled {
+          background-color: ${props.theme.colors.neutral8};
+        }
+      `;
+  }
+};
+
+const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
+  text-transform: uppercase;
+  border: unset;
+  cursor: pointer;
+  svg {
+    fill: ${props => parseFontColor(props)};
+    width: 24px;
+    height: 24px;
+  }
+  span {
+    margin-left: 8px;
+    margin-right: 8px;
+    color: ${props => parseFontColor(props)};
+    font-size: 14px;
+    font-weight: 400;
+    font-family: ${props => parseFontFamily(props)};
+  }
+  &:disabled {
+    cursor: unset;
+    &:hover {
+      animation-name: none;
+    }
+  }
+  &:hover {
+    animation-name: buttonHover;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes buttonHover {
+    from {opacity: 100%;}
+    to {opacity: 80%;}
+  }
+  ${props => props.theme.parsePadding(props.theme, props)};
+  ${props => props.theme.parseRadius(props, 'borderRadius')};
+  ${props => getVariations(props)};
+  ${props => getSize(props)};
+  ${props => getWidth(props)};
+`;
+
+const Button = ({
+  children,
+  color,
+  disabled,
+  fontColor,
+  fullWidth,
+  leftIcon,
+  onClick,
+  radius,
+  rightIcon,
+  size,
+  style,
+  variant,
+  loading,
+  enterKey,
+  px
+}) => {
+
+  // Trigger to Handle enter keydown for forms
+  const handleKeyPress = event => {
+    if (event.keyCode === 13) enterKey();
+  };
+  useEffect(() => {
+    enterKey && window.addEventListener('keydown', handleKeyPress);
+    return () => enterKey && window.removeEventListener('keydown', handleKeyPress);
   });
 
-  const getFontColor = () => {     
-    if (fontColor) return fontColor;
-    if (variant === 'outlined') {
-      if (disabled) return 'neutral-8';
-      return color; 
-    }
-    return 'white';
-  };
-
   return (
-    <button
-      className={getClass}
+    <StyledButton
+      onClick={onClick}
+      px={px}
       disabled={disabled}
-      onClick={!disabled && onClick}
+      buttonColor={color}      
+      fontColor={fontColor}
+      borderRadius={radius}
+      buttonVariant={variant}
+      buttonSize={size}
+      fullWidth={fullWidth}
       style={style}
     >
-      <ButtonTypography color={getFontColor()} weight={weight}>
-        {leftIcon && leftIcon}
-        {children}
-        {rightIcon && rightIcon}
-      </ButtonTypography>
-    </button>
+      {loading && 'Carregando...'}
+      {leftIcon && leftIcon}
+      <span>{children}</span>
+      {rightIcon && rightIcon}
+    </StyledButton>
   );
 };
 
 Button.propTypes = {
   /**
-   * Permite a estilização do componente
+   * Corresponde ao texto escrito do botão
    */
-  className: PropTypes.string,
-  children: PropTypes.node,
+  children: PropTypes.string.isRequired,
+  /**
+   * Altera a cor geral do componente
+   */
+  color: PropTypes.string,
+  /**
+   * Ativa/desativa o estado disabed nativo do elemento
+   */
   disabled: PropTypes.bool,
+  /**
+   * Permite a troca da cor da fonte para casos específicos
+   */
+  fontColor: PropTypes.string,
+  /**
+   * Ativa o estilo com largura máxima para o botão (cresce 100% do width disponível)
+   */
   fullWidth: PropTypes.bool,
-  leftIcon: PropTypes.oneOfType([PropTypes.object, PropTypes.element]),
+  /**
+   * Permite a passagem de um componente SVG para ícone no lado esquerdo
+   */
+  leftIcon: PropTypes.element,
+  /**
+   * Lida com o evento de clique do botão
+   */
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(['filled', 'outlined']),
-  color: PropTypes.oneOf(colors),
-  fontColor: PropTypes.oneOf(colors),
+  /**
+   * Permite a escolha do token para border-radius
+   */
   radius: PropTypes.oneOf([false, 'default', 'alternative']),
-  rightIcon: PropTypes.oneOf([PropTypes.object, PropTypes.element]),
-  size: PropTypes.oneOf([1, 2, 3, 4, 5]),
+  /**
+   * Permite a passagem de um ícone à direita
+   */
+  rightIcon: PropTypes.element,
+  /**
+   * Permite a escolha de um tamanho (height) para o botão
+   */
+  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Passagem de estilos customizados inline
+   */
   style: PropTypes.object,
-  weight: PropTypes.oneOf(weights)
+  /**
+   * Permite a escolha de uma das variações de estrutura do componente
+   */
+  variant: PropTypes.oneOf(['filled', 'outlined', 'ghost']),
+  /**
+   * Ativa a informação "Carregando"
+   */
+  loading: PropTypes.bool,
+  /**
+   * Recebe o evento de clique na tecla enter | return através de uma função
+   */
+  enterKey: PropTypes.func,
+  /**
+   * Permite alterar o espacamento interno no botão
+   */
+  px: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 Button.defaultProps = {
+  px: 2,
   disabled: false,
   variant: 'filled',
-  color: 'primary-1',
+  color: 'primary1',
   radius: 'default',
-  size: 1,
-  weight: 'regular'
+  size: 4,
+  loading: false
 };
 
-export default Button;
+export default withTheme(Button);

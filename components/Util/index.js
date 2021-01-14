@@ -1,6 +1,4 @@
-import dateDistance from './dateDistance';
-import datePtBrFull from './datePtBrFull';
-
-let utils = {dateDistance, datePtBrFull};
-
-export default utils;
+export {default as dateDistance} from './dateDistance';
+export {default as datePtBrFull} from './datePtBrFull';
+export {default as numberToString} from './numberToString';
+export {default as getFromProps} from './getFromProps';
