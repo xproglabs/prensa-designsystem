@@ -1,0 +1,58 @@
+import { ArgsTable, Meta } from '@storybook/addon-docs/blocks';
+import {CodeBlock, Space} from 'prensa-docs';
+import Subject from './index'
+import {ThemeProvider} from 'styled-components';
+import {theme} from '../../styles/theme';
+
+<Meta title="Components/Subject" component={Subject} />
+
+# Subject
+
+<Space size={4} />
+
+<pre>
+  <CodeBlock>{`import {Subject} from 'prensa'`}</CodeBlock>
+</pre>
+
+<Space size={6} />
+
+### Variações
+
+O componente Subject é composto por um estado padrão e uma variação na sua estrutura, chamada de `transparent`.
+
+<Space size={4} />
+
+> A. O estado padrão do componente
+
+<ThemeProvider theme={theme}>
+  <div style={{display: 'flex'}}>
+    <Subject>Chapéu</Subject>
+  </div>
+</ThemeProvider>
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock>{`<Subject>Chapéu</Subject>`}</CodeBlock>
+</pre>
+
+<Space size={4} />
+
+> B. Para ativar a variação basta passar a prop `transparent` na chamada do componente.
+
+<ThemeProvider theme={theme}>
+  <div style={{display: 'flex'}}>
+    <Subject transparent>Chapéu transparente</Subject>
+  </div>
+</ThemeProvider>
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock>{`<Subject transparent>Chapéu transparente</Subject>`}</CodeBlock>
+</pre>
+
+<Space size={10} />
+
+# API
+<ArgsTable of={Subject} />
