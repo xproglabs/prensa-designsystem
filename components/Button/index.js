@@ -30,7 +30,6 @@ const getWidth = props => {
   const size = props.buttonWidth;
   if (typeof size === 'string') return `width: ${size}`;
   if (size) return `width: ${factor * size}px`;
-  if (isNaN(size)) return `width: ${size}`;
   if (props.fullWidth) return 'width: 100%;';
   return 'width: max-content;';
 };
@@ -189,7 +188,7 @@ Button.propTypes = {
    */
   fullWidth: PropTypes.bool,
   /**
-   * Ativa o estilo com largura customizado em pixels
+   * Permite alterar a largura do componente (disponível a família de tamanhos em Number e String)
    */
   buttonWidth: PropTypes.bool,
   /**
