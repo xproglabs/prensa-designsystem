@@ -26,10 +26,13 @@ const getSize = props => {
 
 //Get button width variations from props
 const getWidth = props => {
+  const factor = props.theme.factors.margin;
+  const size = props.buttonWidth;
+  if (typeof size === 'string') return `width: ${size}`;
+  if (size) return `width: ${factor * size}px`;
   if (props.fullWidth) return 'width: 100%;';
   return 'width: max-content;';
 };
-
 //Get button variations from props (return style matching the variation)
 const getVariations = props => {
   switch(props.buttonVariant) {
@@ -111,6 +114,7 @@ const Button = ({
   color,
   disabled,
   fontColor,
+  buttonWidth,
   fullWidth,
   leftIcon,
   onClick,
@@ -146,6 +150,7 @@ const Button = ({
         borderRadius={radius}
         buttonVariant={variant}
         buttonSize={size}
+        buttonWidth={buttonWidth}
         fullWidth={fullWidth}
         style={style}
         on={on}
@@ -182,6 +187,10 @@ Button.propTypes = {
    * Ativa o estilo com largura máxima para o botão (cresce 100% do width disponível)
    */
   fullWidth: PropTypes.bool,
+  /**
+   * Permite alterar a largura do componente (disponível a família de tamanhos em Number e String)
+   */
+  buttonWidth: PropTypes.bool,
   /**
    * Permite a passagem de um componente SVG para ícone no lado esquerdo
    */
