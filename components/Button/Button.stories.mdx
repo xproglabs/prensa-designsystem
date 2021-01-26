@@ -131,13 +131,13 @@ Passando um **Number** para a props size a altura será equivalente ao valor `si
 
 Utilizando o valor de size **String** o retorno será exatamente a altura especificada em pixels.
 
-`size="42px" | 42px`
 `size={4} | 32px`
+`size="42px" | 42px`
 
 <ThemeProvider theme={theme}>
   <div style={{display: 'flex', alignItems: 'center'}}>
-    <Button variant="filled" color='primary1' size="42px" style={{marginRight: 8}}>Entrar</Button>
     <Button variant="filled" color='primary1' size={4} style={{marginRight: 8}}>Entrar</Button>
+    <Button variant="filled" color='primary1' size="42px" style={{marginRight: 8}}>Entrar</Button>
   </div>
 </ThemeProvider>
 
@@ -152,8 +152,9 @@ Utilizando o valor de size **String** o retorno será exatamente a altura especi
 
 <Space size={4} />
 
-É possível também utilizar a props `buttonWidth` parar definir a largura do componente, em formato **Number**. 
+É possível também utilizar a props `buttonWidth` parar definir a largura do componente, em formato **Number** ou **String**. 
 
+`buttonWidth={37.5}`
 `buttonWidth="300px"`
 
 <ThemeProvider theme={theme}>
