@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, {useEffect} from 'react';
-import styled, {withTheme} from 'styled-components';
+import styled, {withTheme, css} from 'styled-components';
 
 const parseFontColor = props => {
   const {fontColor, buttonVariant, disabled, theme} = props;
@@ -33,31 +33,35 @@ const getWidth = props => {
   if (props.fullWidth) return 'width: 100%;';
   return 'width: max-content;';
 };
+
 //Get button variations from props (return style matching the variation)
-const getVariations = props => {
+const getOutlinedCSS = css`
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${props => props.theme.parseColorValue(props, 'buttonColor')};
+  &:disabled {
+    border-color: ${props => props.theme.colors.neutral8};
+  }
+`;
+const getGhostCSS = css`
+  background-color: transparent;
+`;
+const getFilledCSS = css`
+  background-color: ${props => props.theme.parseColorValue(props, 'buttonColor')};
+  &:disabled {
+    background-color: ${props => props.theme.colors.neutral8};
+  }
+`;
+const parseVariation = props => {
   switch(props.buttonVariant) {
     case 'outlined':
-      return `
-        background-color: transparent;
-        border-width: 1px;
-        border-style: solid;
-        border-color: ${props.theme.parseColorValue(props, 'buttonColor')};
-        &:disabled {
-          border-color: ${props.theme.colors.neutral8};
-        }
-      `;
+      return getOutlinedCSS;
     case 'ghost':
-      return `
-        background-color: transparent;
-      `;
+      return getGhostCSS;
     case 'filled':
     default: 
-      return `
-        background-color: ${props.theme.parseColorValue(props, 'buttonColor')};
-        &:disabled {
-          background-color: ${props.theme.colors.neutral8};
-        }
-      `;
+      return getFilledCSS;
   }
 };
 
@@ -99,7 +103,7 @@ const StyledButton = styled.button`
   }
   ${props => props.theme.parsePadding(props.theme, props)};
   ${props => props.theme.parseRadius(props, 'borderRadius')};
-  ${props => getVariations(props)};
+  ${props => parseVariation(props)};
   ${props => getSize(props)};
   ${props => getWidth(props)};
 `;
