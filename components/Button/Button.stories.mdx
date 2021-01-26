@@ -127,9 +127,9 @@ O componente possui acesso a família de variações para o css border-radius. P
 ### Tamanhos
 O componente possui acesso as duas bibliotecas de tamanho do prensa, formato **Number** e **String**.
 
-Passando um **Number** para a props size o tamanho será equivalente ao valor `size * theme.factors.margin`.
+Passando um **Number** para a props size a altura será equivalente ao valor `size * theme.factors.margin`.
 
-Utilizando o valor de size **String** o retorno será exatamente o tamanho especificado em pixels.
+Utilizando o valor de size **String** o retorno será exatamente a altura especificada em pixels.
 
 `size="42px" | 42px`
 `size={4} | 32px`
@@ -147,6 +147,46 @@ Utilizando o valor de size **String** o retorno será exatamente o tamanho espec
   <CodeBlock children={`
   <Button variant="filled" color='primary1' size="42px">Entrar</Button>
   <Button variant="filled" color='primary1' size={4}>Entrar</Button>
+  `}/>
+</pre>
+
+<Space size={4} />
+
+É possível também utilizar a props `buttonWidth` parar definir a largura do componente, em formato **Number**. 
+
+`buttonWidth="300px"`
+
+<ThemeProvider theme={theme}>
+  <div style={{display: 'flex', alignItems: 'center'}}>
+    <Button variant="filled" color='primary1' size="42px" buttonWidth="300px">Entrar</Button>
+  </div>
+</ThemeProvider>
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock children={`
+  <Button variant="filled" color='primary1' size="42px" buttonWidth="300px">Entrar</Button>
+  `}/>
+</pre>
+
+<Space size={4} />
+
+Caso precise aplicar um botão que preencha todo o espaço (`width: 100%`), utilizar o **Bool** `fullWidth`.
+
+`fullWidth`
+
+<ThemeProvider theme={theme}>
+  <div style={{display: 'flex', alignItems: 'center'}}>
+    <Button variant="filled" color='primary1' size="42px" fullWidth>Entrar</Button>
+  </div>
+</ThemeProvider>
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock children={`
+  <Button variant="filled" color='primary1' size="42px" fullWidth>Entrar</Button>
   `}/>
 </pre>
 
@@ -176,7 +216,7 @@ O componente possui dois estados: `disabled` e `hover`. Para acionar o disabled,
 <Space size={6} />
 
 ### Funcionalidades
-O componente pode receber uma prop chamada `onClick` que permite a passagem da ação do clique realizado pelo usuário. Também pode receber a prop `fullWidth` que faz com que o componente assuma o formato 100% para o estilo.
+O componente pode receber uma prop chamada `onClick` que permite a passagem da ação do clique realizado pelo usuário.
 
 <Space size={2} />
 
