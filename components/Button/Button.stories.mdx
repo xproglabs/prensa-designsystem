@@ -270,5 +270,37 @@ O componente pode receber ícones do lado esquerdo ou direito através das props
 
 <Space size={10} />
 
+### Responsivo
+O componente possui em seu código a família de props para layout responsivo, basta usar a prop correspondente ao breakpoint desejado como no exemplo abaixo.
+
+Para renderizar o comportamento abaixo, reduza o seu navegador para um tamanho de tela menor que 1008px.
+
+**Atenção!**
+As props que estão disponíveis para o responsivo são apenas:
+`color`
+`variant`
+`radius`
+`size`
+`width`
+`removeText`
+
+<Space size={2} />
+
+<ThemeProvider theme={theme}>
+  <div style={{display: 'flex'}}>
+    <Button variant="filled" color="primary1" lg={{color: "editorial5"}} style={{marginRight: 8}}>Responsivo</Button>
+  </div>
+</ThemeProvider>
+
+<Space size={2} />
+
+<pre>
+  <CodeBlock children={`
+  <Button variant="filled" color="primary1" lg={{color: "editorial5"}}>Responsivo</Button>
+  `}/>
+</pre>
+
+<Space size={10} />
+
 # API
 <ArgsTable of={Button} />
