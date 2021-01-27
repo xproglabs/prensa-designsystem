@@ -56,9 +56,10 @@ const parseFontColor = (props, theme) => {
   return theme.colors.white;
 };
 const parseFontFamily = (props, theme) => {
-  const {inheritFontStyle} = props;
-  if (inheritFontStyle) return 'inherit';
-  return `${theme.fonts.primary}`;
+  const {inheritFontStyle, $fontFamily} = props;
+  const selected = theme.fonts[$fontFamily];
+  if (!$fontFamily || !selected || inheritFontStyle) return 'inherit';
+  return selected;
 };
 const parseTypography = (props, theme) => {
   return `

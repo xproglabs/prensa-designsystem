@@ -45,6 +45,7 @@ const Button = ({
   color,
   disabled,
   fontColor,
+  fontFamily,
   width,
   fullWidth,
   leftIcon,
@@ -134,6 +135,7 @@ const Button = ({
         $radius={radius}
         $size={size}
         $width={width}
+        $fontFamily={fontFamily}
         xs={getXsProps()}
         sm={getSmProps()}
         md={getMdProps()}
@@ -221,6 +223,10 @@ Button.propTypes = {
    */
   removeText: PropTypes.bool,
   /**
+   * Permite escolha de uma das propriedades do theme para font-family
+   */
+  fontFamily: PropTypes.string,
+  /**
    * AMP :: Props equivalente a onClick, executa a ação do clique no AMP
    */
   on: PropTypes.string,
@@ -277,7 +283,8 @@ Button.defaultProps = {
   color: 'primary1',
   radius: 'default',
   size: 4,
-  loading: false
+  loading: false,
+  fontFamily: 'primary'
 };
 
 export default withTheme(Button);
