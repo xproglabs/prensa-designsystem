@@ -102,11 +102,11 @@ Existem três formas de utilizar a prop color:
 <Space size={6} />
 
 ### Border radius
-O componente possui acesso a família de variações para o css border-radius. Podemos alternar entre um botão quadrado e dois níveis de radius. A props é `radius` e as opções são `false`, `default` e `alternative`.
+O componente possui acesso a família de variações para o css border-radius. Podemos alternar entre um botão quadrado e dois níveis de radius. A props é `radius` e as opções são `unset`, `default` e `alternative`.
 
 <ThemeProvider theme={theme}>
   <div style={{display: 'flex'}}>
-    <Button variant="filled" color='primary1' radius={false} style={{marginRight: 8}}>False</Button>
+    <Button variant="filled" color='primary1' radius='unset' style={{marginRight: 8}}>False</Button>
     <Button variant="filled" color='primary1' radius='default' style={{marginRight: 8}}>Default</Button>
     <Button variant="filled" color='primary1' radius='alternative' style={{marginRight: 8}}>Alternative</Button>
   </div>
@@ -116,7 +116,7 @@ O componente possui acesso a família de variações para o css border-radius. P
 
 <pre>
   <CodeBlock children={`
-  <Button variant="filled" color="primary1" radius={false}>False</Button>
+  <Button variant="filled" color="primary1" radius='unset'>False</Button>
   <Button variant="outlined" color="primary1" radius='default'>Default</Button>
   <Button variant="outlined" color="primary1" radius='alternative'>Alternative</Button>
   `}/>
@@ -152,14 +152,14 @@ Utilizando o valor de size **String** o retorno será exatamente a altura especi
 
 <Space size={4} />
 
-É possível também utilizar a props `buttonWidth` parar definir a largura do componente, em formato **Number** ou **String**. 
+É possível também utilizar a props `width` parar definir a largura do componente, em formato **Number** ou **String**. 
 
-`buttonWidth={37.5}`
-`buttonWidth="300px"`
+`width={37.5}`
+`width="300px"`
 
 <ThemeProvider theme={theme}>
   <div style={{display: 'flex', alignItems: 'center'}}>
-    <Button variant="filled" color='primary1' size="42px" buttonWidth="300px">Entrar</Button>
+    <Button variant="filled" color='primary1' size="42px" width="300px">Entrar</Button>
   </div>
 </ThemeProvider>
 
@@ -167,7 +167,7 @@ Utilizando o valor de size **String** o retorno será exatamente a altura especi
 
 <pre>
   <CodeBlock children={`
-  <Button variant="filled" color='primary1' size="42px" buttonWidth="300px">Entrar</Button>
+  <Button variant="filled" color='primary1' size="42px" width="300px">Entrar</Button>
   `}/>
 </pre>
 
