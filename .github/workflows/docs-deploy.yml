@@ -20,6 +20,7 @@ jobs:
           script: |
             cd /var/www/prensa-designsystem
             git pull
+            rm -rf node_modules
             yarn
             yarn run build-storybook
             pm2 restart 1
