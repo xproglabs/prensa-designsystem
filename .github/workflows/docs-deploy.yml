@@ -25,6 +25,9 @@ jobs:
           npm install
           npm run build-storybook
 
+      - name: List directories
+        run: ls -l
+
       - uses: actions/checkout@master
       - name: Copy build to server
         uses: appleboy/scp-action@master
