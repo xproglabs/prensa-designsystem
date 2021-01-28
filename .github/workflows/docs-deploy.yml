@@ -6,41 +6,23 @@ on:
 
 jobs:
   deploy:
-    name: "Deploy to NYC-braza"
+    name: "Deploy Prensa docs to NYC-braza"
     runs-on: ubuntu-latest
     steps:
-      - name: Configure SSH
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_KEY" > ~/.ssh/staging.key
-          chmod 600 ~/.ssh/staging.key
-          cat >>~/.ssh/config <<END
-          Host staging
-            HostName $SSH_HOST
-            User $SSH_USER
-            IdentityFile ~/.ssh/staging.key
-            StrictHostKeyChecking no
-          END
+      - name: Execute SSH commmands on remote server
+        uses: JimCronqvist/action-ssh@master
         env:
-          SSH_USER: ${{ secrets.SSHUSERNAME }}
-          SSH_KEY: ${{ secrets.SSH_PRIVATE }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-
-      - name: Navigate to prensa
-        run: ssh staging 'cd var/www/prensa-designsystem'
-
-      - name: Pull from origin
-        run: ssh staging 'git pull'
-        
-      - name: Install docs
-        run: ssh staging 'yarn'
-        
-      - name: Build docs
-        run: ssh staging 'yarn run build-storybook'
-
-      - name: Start the server
-        if: ${{ always() }}
-        run: ssh staging 'pm2 restart 1'
+          NAME: "Root"
+        with:
+          hosts: ${{ secrets.SSH_HOST }}
+          privateKey: ${{ secrets.SSH_PRIVATE }}
+          debug: false
+          command: |
+            cd var/www/prensa-designsystem
+            git pull
+            yarn
+            yarn run build-storybook
+            pm2 restart 1
 
       - name: Slack notifcation build success
         uses: 8398a7/action-slack@v3
