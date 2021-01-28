@@ -19,6 +19,12 @@ jobs:
       - name: Create var for package version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
+        
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
       
       - name: Install and Build Prensa
         run: |
@@ -26,7 +32,7 @@ jobs:
           npm run build
         
       - name: Publish package in NPM
-        run: npm publish --access public
+        run: npm publish — access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
           
