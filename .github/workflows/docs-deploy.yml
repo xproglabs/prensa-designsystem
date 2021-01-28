@@ -23,7 +23,7 @@ jobs:
       - name: Build storybook
         run: |
           npm install
-          npm run storybook-build
+          npm run build-storybook
 
       - uses: actions/checkout@master
       - name: Copy build to server
