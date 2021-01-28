@@ -49,15 +49,6 @@ jobs:
           script: |
             pm2 restart 1
 
-      - name: Version patch
-        run: |
-          git config --global user.name "Giovanni"
-          git config --global user.email "giovanni@xproglabs.com"
-          npm version patch
-          git add .
-          git commit -m "Version patch"
-          git push --force
-
       - name: Slack notifcation build success
         uses: 8398a7/action-slack@v3
         with:
