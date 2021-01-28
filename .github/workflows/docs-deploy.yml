@@ -20,20 +20,22 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           
-      - name: SSH to braza
-        uses: appleboy/ssh-action@master
+      - name: Build storybook
+        run: |
+          npm install
+          npm run storybook-build
+
+      - uses: actions/checkout@master
+      - name: Copy build to server
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSHUSERNAME }}
           password: ${{ secrets.SSHPASSWORD }}
           port: 22
-          script_stop: true
-          script: |
-            cd /var/www/prensa-designsystem
-            git pull
-            yarn
-            yarn run build-storybook
-            pm2 restart 1
+          rm: true
+          source: "./storybookbuild"
+          target: "/var/www/prensa-designsystem"
 
       - name: Slack notifcation build success
         uses: 8398a7/action-slack@v3
