@@ -1,3 +1,8 @@
+# v1.4.52
+- Adiciona queries no Button
+- Props buttonWidth passa a ser width
+- Valor de radius 0 passa a ser String unset
+- Adiciona props fontFamily no Button
 # v1.4.51
 - Fix nos buttons
 # v1.4.5

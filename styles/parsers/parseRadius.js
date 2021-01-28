@@ -1,8 +1,11 @@
 import {get} from 'lodash';
 
+import {theme} from '../theme';
+
 const parseRadius = (props, propName) => {
   const propValue = get(props, propName);
-  const selected = props.theme.radius[propValue];
+  if (!propValue) return '';
+  const selected = theme.radius[propValue];
   if (!selected) {
     console.error(`PRENSA :: Erro ao traduzir token "${propValue}" no parseRadius`);
     return '';
