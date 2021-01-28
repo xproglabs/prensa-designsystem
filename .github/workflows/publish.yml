@@ -20,8 +20,10 @@ jobs:
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
       
-      - name: Build Prensa
-        run: npm run build
+      - name: Install and Build Prensa
+        run: |
+          npm install
+          npm run build
         
       - name: Publish package in NPM
         run: npm publish --access public
