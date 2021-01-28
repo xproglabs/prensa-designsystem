@@ -1,63 +1,65 @@
-name: Publish build and docs
+name: Publish Docs
 
 on:
   push:
     branches: [ master ]
 
 jobs:
-  build:
+  deploy:
+    name: "Deploy to NYC-braza"
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-    - uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.deploy }}
-      
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: |
-        echo "# Config"
-        git config --global user.name "Giovanni"
-        git config --global user.email "giovanni@xproglabs.com"
-        git config pull.ff only
-        echo "# Clear changed files"
-        git checkout -- .
-        echo "# Fetching"
-        git fetch --unshallow
-        echo "# Pull master"
-        git pull
-        echo "# Checkout production"
-        git checkout production
-        echo "# Pull Production"
-        git pull
-        echo "# Merge master into production"
-        git merge master -m "Merge master into production for release"
-        echo "# Up version"
-        npm version patch
-    - run: npm run build
-  
-    - name: Commit build
-      run: |
-        git branch
-        git add .
-        git commit -m "Build"
-        git push --force
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/staging.key
+          chmod 600 ~/.ssh/staging.key
+          cat >>~/.ssh/config <<END
+          Host staging
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/staging.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.SSHUSERNAME }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
 
-    - name: Slack notifcation build
-      uses: 8398a7/action-slack@v3
-      with:
-        status: ${{ job.status }}
-        author_name: 'build-action'
-        text: Build prensa ${{ job.status }}
-        fields: commit, message, author
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-        SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-      if: ${{ always() }}
+      - name: Navigate to prensa
+        run: ssh staging 'cd var/www/prensa-designsystem'
+
+      - name: Pull from origin
+        run: ssh staging 'git pull'
+        
+      - name: Install docs
+        run: ssh staging 'yarn'
+        
+      - name: Build docs
+        run: ssh staging 'yarn run build-storybook'
+
+      - name: Start the server
+        if: ${{ always() }}
+        run: ssh staging 'pm2 restart 1'
+
+      - name: Slack notifcation build success
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          author_name: 'build-action'
+          text: Deploy da documentação realizado com sucesso.
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+        if: ${{ success() }}
+      
+      - name: Slack notifcation build error
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          author_name: 'build-action'
+          text: Erro ao realizar deploy da documentação.
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+        if: ${{ failure() }}
