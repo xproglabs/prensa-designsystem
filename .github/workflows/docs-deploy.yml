@@ -36,6 +36,16 @@ jobs:
           rm: true
           source: "./storybookbuild"
           target: "/var/www/prensa-designsystem"
+          
+      - name: SSH to braza
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          port: 22
+          script: |
+            pm2 restart 1
 
       - name: Slack notifcation build success
         uses: 8398a7/action-slack@v3
