@@ -65,7 +65,7 @@ export const theme = {
     xl: '1280px'
   },
   radius: {
-    false: '0px',
+    unset: '0px',
     default: '3px',
     alternative: '5px'
   },
