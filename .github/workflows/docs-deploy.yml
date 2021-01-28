@@ -51,6 +51,8 @@ jobs:
 
       - name: Version patch
         run: |
+          git config --global user.name "Giovanni"
+          git config --global user.email "giovanni@xproglabs.com"
           npm version patch
           git add .
           git commit -m "Version patch"
