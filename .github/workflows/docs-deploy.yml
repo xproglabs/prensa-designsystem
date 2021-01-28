@@ -6,21 +6,23 @@ on:
 
 jobs:
   deploy:
-    name: "Deploy Prensa docs to NYC-braza"
+    name: "Deploy Prensa docs to braza-server"
     runs-on: ubuntu-latest
     steps:
-      - name: Create SSH key
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_PRIVATE_KEY" > ./private.key
-          sudo chmod 600 ../private.key
-          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-          ssh -i $SSH_KEY_PATH root@$SSH_KNOWN_HOSTS
-        shell: bash
-        env:
-          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE}}
-          SSH_KNOWN_HOSTS: ${{secrets.SSH_HOST}}
-          SSH_KEY_PATH: ${{ github.workspace }}/private.key
+      - name: SSH to braza
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSHUSERNAME }}
+          password: ${{ secrets.SSHPASSWORD }}
+          port: 22
+          script_stop: true
+          script: |
+            cd var/www/prensa-designsystem
+            git pull
+            yarn
+            yarn run build-storybook
+            pm2 restart 1
 
       - name: Slack notifcation build success
         uses: 8398a7/action-slack@v3
