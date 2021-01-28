@@ -9,20 +9,18 @@ jobs:
     name: "Deploy Prensa docs to NYC-braza"
     runs-on: ubuntu-latest
     steps:
-      - name: Execute SSH commmands on remote server
-        uses: JimCronqvist/action-ssh@master
+      - name: Create SSH key
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ../private.key
+          sudo chmod 600 ../private.key
+          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh -i $SSH_KEY_PATH root@$SSH_KNOWN_HOSTS
+        shell: bash
         env:
-          NAME: "Root"
-        with:
-          hosts: ${{ secrets.SSH_HOST }}
-          privateKey: ${{ secrets.SSH_PRIVATE }}
-          debug: false
-          command: |
-            cd var/www/prensa-designsystem
-            git pull
-            yarn
-            yarn run build-storybook
-            pm2 restart 1
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE}}
+          SSH_KNOWN_HOSTS: ${{secrets.SSH_HOST}}
+          SSH_KEY_PATH: ${{ github.workspace }}/../private.key
 
       - name: Slack notifcation build success
         uses: 8398a7/action-slack@v3
