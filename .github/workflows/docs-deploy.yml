@@ -18,7 +18,7 @@ jobs:
           port: 22
           script_stop: true
           script: |
-            cd var/www/prensa-designsystem
+            cd /var/www/prensa-designsystem
             git pull
             yarn
             yarn run build-storybook
