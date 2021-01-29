@@ -1,4 +1,6 @@
-# v1.4.52
+# v1.4.54
+- Corrige comportamento incorreto das cores no Button
+# v1.4.53
 - Adiciona queries no Button
 - Props buttonWidth passa a ser width
 - Valor de radius 0 passa a ser String unset
