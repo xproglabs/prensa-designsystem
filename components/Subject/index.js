@@ -4,7 +4,7 @@ import styled, {withTheme} from 'styled-components';
 
 const parseColorVariation = props => {
   if (props.transparent === true) return `
-    color: ${props.theme.parseColorValue(props, 'subjectColor')};
+    color: ${props.theme.parseColorValue(props, props.theme, 'subjectColor')};
   `;
   return `
     color: ${props.theme.colors.white};
@@ -13,7 +13,7 @@ const parseColorVariation = props => {
 
 const parseBackgroundVariation = props => {
   if (props.transparent === true) return 'background-color: transparent;';
-  return `background-color: ${props.theme.parseColorValue(props, 'subjectColor')};`;
+  return `background-color: ${props.theme.parseColorValue(props, props.theme, 'subjectColor')};`;
 };
 
 const Container = styled.div`
