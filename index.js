@@ -5,8 +5,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var PropTypes = require('prop-types');
 var React = require('react');
 var styled = require('styled-components');
-var classnames = require('classnames');
 var lodash = require('lodash');
+var classnames = require('classnames');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -209,638 +209,103 @@ Block.propTypes = {
 };
 var Block$1 = styled.withTheme(Block);
 
-var colors = [
-	"primary-1",
-	"primary-2",
-	"primary-3",
-	"secondary-1",
-	"secondary-2",
-	"secondary-3",
-	"product-1",
-	"product-2",
-	"product-3",
-	"product-4",
-	"product-5",
-	"editorial-1",
-	"editorial-2",
-	"editorial-3",
-	"editorial-4",
-	"editorial-5",
-	"black",
-	"neutral-1",
-	"neutral-2",
-	"neutral-3",
-	"neutral-4",
-	"neutral-5",
-	"neutral-6",
-	"neutral-7",
-	"neutral-8",
-	"neutral-9",
-	"neutral-10",
-	"neutral-11",
-	"white",
-	"ads",
-	"success-1",
-	"success-2",
-	"success-3",
-	"error-1",
-	"error-2",
-	"error-3"
-];
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"]);
 
-var weights = [
-	"thin",
-	"light",
-	"regular",
-	"medium",
-	"bold",
-	"italic"
-];
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
 
-var SubjectTypography = function SubjectTypography(props) {
-  var _classnames;
+  return data;
+}
 
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-Subject-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-SubjectTypography.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-SubjectTypography.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1, 2, 3]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
+function _templateObject$1() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  svg {\n    fill: ", ";\n    width: 24px;\n    height: 24px;\n  }\n  span {\n    margin-left: 8px;\n    margin-right: 8px;\n    color: ", ";\n    font-size: 14px;\n    font-weight: 400;\n    font-family: ", ";\n  }\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"]);
+
+  _templateObject$1 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var parseFontColor = function parseFontColor(props) {
+  var fontColor = props.fontColor,
+      buttonVariant = props.buttonVariant,
+      disabled = props.disabled,
+      theme = props.theme;
+  if (disabled && buttonVariant !== 'filled') return theme.colors.neutral8;
+  if (fontColor) return theme.parseColorValue(props, 'fontColor');
+  if (buttonVariant === 'outlined' || buttonVariant === 'ghost') return theme.parseColorValue(props, 'buttonColor');
+  return theme.colors.white;
 };
 
-var NewsTitle = function NewsTitle(props) {
-  var _classnames;
+var parseFontFamily = function parseFontFamily(props) {
+  var inheritFontStyle = props.inheritFontStyle,
+      theme = props.theme;
+  if (inheritFontStyle) return 'inherit';
+  return "".concat(theme.fonts.primary);
+}; //Get button size (height)
 
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight,
-      disableHover = props.disableHover;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-NewsTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, 'has-hover', !disableHover), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("h2", {
-    className: classes,
-    style: style
-  }, children);
-};
-NewsTitle.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular',
-  disableHover: false
-};
-NewsTitle.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  disableHover: PropTypes__default['default'].bool,
-  size: PropTypes__default['default'].oneOf([1, 2, 3, 4, 5, 6, 7]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
 
-var Subtitle = function Subtitle(props) {
-  var _classnames;
+var getSize = function getSize(props) {
+  var factor = props.theme.factors.margin;
+  var size = props.buttonSize;
+  if (isNaN(size)) return "height: ".concat(size);
+  if (size < 4) return "height: ".concat(factor * 4, "px");
+  return "height: ".concat(factor * props.buttonSize, "px");
+}; //Get button width variations from props
 
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-Subtitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("h3", {
-    className: classes,
-    style: style
-  }, children);
-};
-Subtitle.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-Subtitle.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
+
+var getWidth = function getWidth(props) {
+  var factor = props.theme.factors.margin;
+  var size = props.buttonWidth;
+  if (typeof size === 'string') return "width: ".concat(size);
+  if (size) return "width: ".concat(factor * size, "px");
+  if (props.fullWidth) return 'width: 100%;';
+  return 'width: max-content;';
+}; //Get button variations from props (return style matching the variation)
+
+
+var getVariations = function getVariations(props) {
+  switch (props.buttonVariant) {
+    case 'outlined':
+      return "\n        background-color: transparent;\n        border-width: 1px;\n        border-style: solid;\n        border-color: ".concat(props.theme.parseColorValue(props, 'buttonColor'), ";\n        &:disabled {\n          border-color: ").concat(props.theme.colors.neutral8, ";\n        }\n      ");
+
+    case 'ghost':
+      return "\n        background-color: transparent;\n      ";
+
+    case 'filled':
+    default:
+      return "\n        background-color: ".concat(props.theme.parseColorValue(props, 'buttonColor'), ";\n        &:disabled {\n          background-color: ").concat(props.theme.colors.neutral8, ";\n        }\n      ");
+  }
 };
 
-var Date$1 = function Date(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-Date-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-Date$1.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-Date$1.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var Author = function Author(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-Author-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-Author.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-Author.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var Paragraph = function Paragraph(props) {
-  var _classnames;
-
-  var className = props.className,
-      color = props.color,
-      gutter = props.gutter,
-      style = props.style,
-      size = props.size,
-      weight = props.weight,
-      maxWidth = props.maxWidth,
-      setInnerHtml = props.setInnerHtml;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-Paragraph-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color, " ").concat(maxWidth), true), _defineProperty(_classnames, "gutter-".concat(gutter), gutter), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("p", {
-    className: classes,
-    style: style,
-    gutter: gutter,
-    dangerouslySetInnerHTML: {
-      __html: setInnerHtml
-    }
-  });
-};
-Paragraph.defaultProps = {
-  color: 'black',
-  size: 1,
-  weight: 'regular',
-  maxWidth: 'md'
-};
-Paragraph.propTypes = {
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  gutter: PropTypes__default['default'].oneOf([1, 2, 3]),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights),
-  maxWidth: PropTypes__default['default'].oneOf(['sm', 'md', 'lg']),
-  setInnerHtml: PropTypes__default['default'].string
-};
-
-var Byline = function Byline(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-Byline-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-Byline.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-Byline.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var InterTitle = function InterTitle(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-InterTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-InterTitle.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-InterTitle.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var Citation = function Citation(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-Citation-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-Citation.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-Citation.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var UrlLink = function UrlLink(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-UrlLink-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("a", {
-    className: classes,
-    style: style
-  }, children);
-};
-UrlLink.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-UrlLink.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var TagTypography = function TagTypography(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-Tag-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("p", {
-    className: classes,
-    style: style
-  }, children);
-};
-TagTypography.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-TagTypography.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var SectionTitle = function SectionTitle(_ref) {
-  var _classnames;
-
-  var className = _ref.className,
-      children = _ref.children,
-      color = _ref.color,
-      gutter = _ref.gutter,
-      style = _ref.style,
-      size = _ref.size,
-      uppercase = _ref.uppercase,
-      weight = _ref.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-SectionTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color, " mb-").concat(gutter), true), _defineProperty(_classnames, 'uppercase', uppercase), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("h1", {
-    className: classes,
-    style: style
-  }, children);
-};
-SectionTitle.defaultProps = {
-  color: 'primary-1',
-  gutter: 1,
-  size: 1,
-  weight: 'regular',
-  uppercase: true
-};
-SectionTitle.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  gutter: PropTypes__default['default'].oneOf([0, 1, 2, 3]),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  uppercase: PropTypes__default['default'].bool,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var EditorialTitle = function EditorialTitle(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-EditorialTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-EditorialTitle.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-EditorialTitle.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var ButtonTypography = function ButtonTypography(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-Button-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("p", {
-    className: classes,
-    style: style
-  }, children);
-};
-ButtonTypography.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-ButtonTypography.propTypes = {
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].object, PropTypes__default['default'].array]),
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var MostReadNumber = function MostReadNumber(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-MostReadNumber-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-MostReadNumber.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-MostReadNumber.propTypes = {
-  children: PropTypes__default['default'].number,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var MenuSideTitle = function MenuSideTitle(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-MenuSideTitle-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-MenuSideTitle.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-MenuSideTitle.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var MenuSideItem = function MenuSideItem(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-MenuSideItem-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-MenuSideItem.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-MenuSideItem.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
-
-var MenuTopItem = function MenuTopItem(props) {
-  var _classnames;
-
-  var className = props.className,
-      children = props.children,
-      color = props.color,
-      style = props.style,
-      size = props.size,
-      weight = props.weight;
-  var classes = classnames__default['default']((_classnames = {
-    'Typography-MenuTopItem-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("span", {
-    className: classes,
-    style: style
-  }, children);
-};
-MenuTopItem.defaultProps = {
-  color: 'primary-1',
-  size: 1,
-  weight: 'regular'
-};
-MenuTopItem.propTypes = {
-  children: PropTypes__default['default'].string,
-  className: PropTypes__default['default'].string,
-  color: PropTypes__default['default'].oneOf(colors),
-  size: PropTypes__default['default'].oneOf([1]),
-  style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights)
-};
+var StyledButton = styled__default['default'].button(_templateObject$1(), function (props) {
+  return parseFontColor(props);
+}, function (props) {
+  return parseFontColor(props);
+}, function (props) {
+  return parseFontFamily(props);
+}, function (props) {
+  return props.theme.parsePadding(props.theme, props);
+}, function (props) {
+  return props.theme.parseRadius(props, 'borderRadius');
+}, function (props) {
+  return getVariations(props);
+}, function (props) {
+  return getSize(props);
+}, function (props) {
+  return getWidth(props);
+});
+var StyledAria = styled__default['default'].a(_templateObject2());
 
 var Button = function Button(_ref) {
-  var _classnames;
-
   var children = _ref.children,
-      className = _ref.className,
       color = _ref.color,
       disabled = _ref.disabled,
       fontColor = _ref.fontColor,
+      buttonWidth = _ref.buttonWidth,
       fullWidth = _ref.fullWidth,
       leftIcon = _ref.leftIcon,
       onClick = _ref.onClick,
@@ -849,10 +314,13 @@ var Button = function Button(_ref) {
       size = _ref.size,
       style = _ref.style,
       variant = _ref.variant,
-      weight = _ref.weight,
       loading = _ref.loading,
-      enterKey = _ref.enterKey;
+      enterKey = _ref.enterKey,
+      px = _ref.px,
+      on = _ref.on,
+      path = _ref.path;
 
+  // Trigger to Handle enter keydown for forms
   var handleKeyPress = function handleKeyPress(event) {
     if (event.keyCode === 13) enterKey();
   };
@@ -860,70 +328,134 @@ var Button = function Button(_ref) {
   React.useEffect(function () {
     enterKey && window.addEventListener('keydown', handleKeyPress);
     return function () {
-      enterKey && window.removeEventListener('keydown', handleKeyPress);
+      return enterKey && window.removeEventListener('keydown', handleKeyPress);
     };
   });
-  var getClass = classnames__default['default']((_classnames = {
-    'Prensa-Button-root': true
-  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(variant, " color-").concat(color, " radius-").concat(radius), true), _defineProperty(_classnames, 'disabled', disabled), _defineProperty(_classnames, 'fullWidth', fullWidth), _defineProperty(_classnames, 'has-leftIcon', leftIcon), _defineProperty(_classnames, 'has-rightIcon', rightIcon), _defineProperty(_classnames, "".concat(className), className), _classnames));
 
-  var getFontColor = function getFontColor() {
-    if (fontColor) return fontColor;
-
-    if (variant === 'outlined') {
-      if (disabled) return 'neutral-8';
-      return color;
-    }
-
-    return 'white';
+  var renderRoot = function renderRoot() {
+    return /*#__PURE__*/React__default['default'].createElement(StyledButton, {
+      onClick: onClick,
+      px: px,
+      disabled: disabled,
+      buttonColor: color,
+      fontColor: fontColor,
+      borderRadius: radius,
+      buttonVariant: variant,
+      buttonSize: size,
+      buttonWidth: buttonWidth,
+      fullWidth: fullWidth,
+      style: style,
+      on: on
+    }, loading && 'Carregando...', leftIcon && leftIcon, /*#__PURE__*/React__default['default'].createElement("span", null, children), rightIcon && rightIcon);
   };
 
-  var getChildren = function getChildren() {
-    if (loading) return 'Carregando...';
-    return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, leftIcon && leftIcon, children, rightIcon && rightIcon);
-  };
-
-  return /*#__PURE__*/React__default['default'].createElement("button", {
-    className: getClass,
-    disabled: disabled,
-    onClick: !disabled ? onClick : undefined,
-    style: style
-  }, /*#__PURE__*/React__default['default'].createElement(ButtonTypography, {
-    color: getFontColor(),
-    weight: weight
-  }, getChildren()));
+  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria, {
+    href: path,
+    target: "_blank"
+  }, renderRoot()) : renderRoot();
 };
 
 Button.propTypes = {
   /**
-   * Permite a estilização do componente
+   * Corresponde ao texto escrito do botão
    */
-  className: PropTypes__default['default'].string,
-  children: PropTypes__default['default'].node,
+  children: PropTypes__default['default'].string.isRequired,
+
+  /**
+   * Altera a cor geral do componente
+   */
+  color: PropTypes__default['default'].string,
+
+  /**
+   * Ativa/desativa o estado disabed nativo do elemento
+   */
   disabled: PropTypes__default['default'].bool,
+
+  /**
+   * Permite a troca da cor da fonte para casos específicos
+   */
+  fontColor: PropTypes__default['default'].string,
+
+  /**
+   * Ativa o estilo com largura máxima para o botão (cresce 100% do width disponível)
+   */
   fullWidth: PropTypes__default['default'].bool,
-  leftIcon: PropTypes__default['default'].oneOfType([PropTypes__default['default'].object, PropTypes__default['default'].element]),
+
+  /**
+   * Permite alterar a largura do componente (disponível a família de tamanhos em Number e String)
+   */
+  buttonWidth: PropTypes__default['default'].bool,
+
+  /**
+   * Permite a passagem de um componente SVG para ícone no lado esquerdo
+   */
+  leftIcon: PropTypes__default['default'].element,
+
+  /**
+   * Lida com o evento de clique do botão
+   */
   onClick: PropTypes__default['default'].func,
-  variant: PropTypes__default['default'].oneOf(['filled', 'outlined']),
-  color: PropTypes__default['default'].oneOf(colors),
-  fontColor: PropTypes__default['default'].oneOf(colors),
+
+  /**
+   * Permite a escolha do token para border-radius
+   */
   radius: PropTypes__default['default'].oneOf([false, 'default', 'alternative']),
-  rightIcon: PropTypes__default['default'].oneOf([PropTypes__default['default'].object, PropTypes__default['default'].element]),
-  size: PropTypes__default['default'].oneOf([1, 2, 3, 4, 5]),
+
+  /**
+   * Permite a passagem de um ícone à direita
+   */
+  rightIcon: PropTypes__default['default'].element,
+
+  /**
+   * Permite a escolha de um tamanho (height) para o botão
+   */
+  size: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+
+  /**
+   * Passagem de estilos customizados inline
+   */
   style: PropTypes__default['default'].object,
-  weight: PropTypes__default['default'].oneOf(weights),
+
+  /**
+   * Permite a escolha de uma das variações de estrutura do componente
+   */
+  variant: PropTypes__default['default'].oneOf(['filled', 'outlined', 'ghost']),
+
+  /**
+   * Ativa a informação "Carregando"
+   */
   loading: PropTypes__default['default'].bool,
-  enterKey: PropTypes__default['default'].func
+
+  /**
+   * Recebe o evento de clique na tecla enter | return através de uma função
+   */
+  enterKey: PropTypes__default['default'].func,
+
+  /**
+   * Permite alterar o espacamento interno no botão
+   */
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+
+  /**
+   * AMP :: Props equivalente a onClick, executa a ação do clique no AMP
+   */
+  on: PropTypes__default['default'].string,
+
+  /**
+   * AMP :: Props equivalente a onClick, executa a ação de clique para links externos
+   */
+  path: PropTypes__default['default'].string
 };
 Button.defaultProps = {
+  px: 2,
   disabled: false,
   variant: 'filled',
-  color: 'primary-1',
+  color: 'primary1',
   radius: 'default',
-  size: 1,
-  weight: 'regular',
+  size: 4,
   loading: false
 };
+var index = styled.withTheme(Button);
 
 var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
   if (!policy_id) return null;
@@ -1090,9 +622,48 @@ Input.defaultProps = {
   invalid: false,
   type: 'text'
 };
-var index = {
+var index$1 = {
   Input: Input
 };
+
+var colors = [
+	"primary-1",
+	"primary-2",
+	"primary-3",
+	"secondary-1",
+	"secondary-2",
+	"secondary-3",
+	"product-1",
+	"product-2",
+	"product-3",
+	"product-4",
+	"product-5",
+	"editorial-1",
+	"editorial-2",
+	"editorial-3",
+	"editorial-4",
+	"editorial-5",
+	"black",
+	"neutral-1",
+	"neutral-2",
+	"neutral-3",
+	"neutral-4",
+	"neutral-5",
+	"neutral-6",
+	"neutral-7",
+	"neutral-8",
+	"neutral-9",
+	"neutral-10",
+	"neutral-11",
+	"white",
+	"ads",
+	"success-1",
+	"success-2",
+	"success-3",
+	"error-1",
+	"error-2",
+	"error-3"
+];
 
 function requiredArgs(required, args) {
   if (args.length < required) {
@@ -4378,20 +3949,20 @@ function _templateObject3() {
   return data;
 }
 
-function _templateObject2() {
+function _templateObject2$1() {
   var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n"]);
 
-  _templateObject2 = function _templateObject2() {
+  _templateObject2$1 = function _templateObject2() {
     return data;
   };
 
   return data;
 }
 
-function _templateObject$1() {
+function _templateObject$2() {
   var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin-top: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n"]);
 
-  _templateObject$1 = function _templateObject() {
+  _templateObject$2 = function _templateObject() {
     return data;
   };
 
@@ -4412,7 +3983,7 @@ var validateIcon = function validateIcon(props) {
   return props.theme.colors.neutral5;
 };
 
-var Container = styled__default['default'].div(_templateObject$1(), function (props) {
+var Container = styled__default['default'].div(_templateObject$2(), function (props) {
   return getFromProps(props, 'marginTop', 0);
 }, function (props) {
   return getFromProps(props, 'marginBottom', props.validation === false ? 12 : 32);
@@ -4421,7 +3992,7 @@ var Container = styled__default['default'].div(_templateObject$1(), function (pr
 }, function (props) {
   return getFromProps(props, 'marginRight', 0);
 });
-var StyledLabel = styled__default['default'].label(_templateObject2(), function (props) {
+var StyledLabel = styled__default['default'].label(_templateObject2$1(), function (props) {
   return props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary;
 }, function (props) {
   return getFromProps(props, 'fontColor', props.theme.colors.neutral5);
@@ -4617,7 +4188,7 @@ Field.propTypes = {
 Field.defaultProps = {
   validation: true
 };
-var index$1 = styled.withTheme(Field);
+var index$2 = styled.withTheme(Field);
 
 var Image$1 = function Image(_ref) {
   var content = _ref.content,
@@ -4694,7 +4265,7 @@ function SvgIcArrowForward(props) {
     xmlns: "http://www.w3.org/2000/svg",
     height: 32,
     viewBox: "0 0 24 24",
-    width: 32
+    width: 24
   }, props), /*#__PURE__*/React.createElement("path", {
     d: "M0 0h24v24H0z",
     fill: "none"
@@ -4796,214 +4367,190 @@ ImageGallery.defaultProps = {
   items: []
 };
 
-var SearchForm = function SearchForm(_ref) {
-  var functions = _ref.functions,
-      state = _ref.state,
-      buttonSize = _ref.buttonSize,
-      buttonWeight = _ref.buttonWeight,
-      buttonColor = _ref.buttonColor;
-  var fieldValue = state.fieldValue,
-      setFieldValue = state.setFieldValue;
+function _templateObject2$2() {
+  var data = _taggedTemplateLiteral(["\n  position: fixed;\n  display: block;\n  overflow-y: auto;\n  z-index: 11;\n  top: 0px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"]);
 
-  var handleSubmit = function handleSubmit() {
-    var string = fieldValue;
-    string = string.normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z\s])/g, '');
-    functions.onSubmit(string);
+  _templateObject2$2 = function _templateObject2() {
+    return data;
   };
 
-  var fieldController = {
-    type: 'text',
-    className: 'search-field',
-    placeholder: 'O que você está procurando?',
-    onChange: function onChange(event) {
-      return setFieldValue(event.target.value);
-    },
-    onKeyPress: function onKeyPress(event) {
-      return event.key === 'Enter' && handleSubmit();
-    }
-  };
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    align: "right",
-    custom: 'search-form'
-  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    mb: "1",
-    w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement("input", fieldController)), /*#__PURE__*/React__default['default'].createElement(Button, {
-    disabled: false,
-    size: buttonSize,
-    weight: buttonWeight,
-    color: buttonColor,
-    onClick: function onClick() {
-      return handleSubmit();
-    }
-  }, "Buscar"));
-};
-
-SearchForm.propTypes = {
-  buttonSize: PropTypes__default['default'].oneOf([1, 2, 3, 4, 5]),
-  buttonWeight: PropTypes__default['default'].oneOf(weights),
-  buttonColor: PropTypes__default['default'].oneOf(colors),
-  content: PropTypes__default['default'].object.isRequired,
-  functions: PropTypes__default['default'].shape({
-    onSubmit: PropTypes__default['default'].func
-  }),
-  state: PropTypes__default['default'].shape({
-    fieldValue: PropTypes__default['default'].string,
-    setFieldValue: PropTypes__default['default'].func
-  })
-};
-SearchForm.defaultProps = {
-  content: {},
-  functions: {
-    onSubmit: function onSubmit() {
-      return null;
-    }
-  },
-  state: {
-    fieldValue: '',
-    setFieldValue: function setFieldValue() {
-      return null;
-    }
-  }
-};
-
-var SearchMenu = function SearchMenu(_ref) {
-  var children = _ref.children,
-      functions = _ref.functions,
-      status = _ref.status;
-  var menuIsOpen = status.opened ? 'opened' : 'closed';
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "menu-modal ".concat(menuIsOpen)
-  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "menu-opacity",
-    onClick: functions.onCloseModal
-  }), /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    bg: "neutral-10",
-    custom: "menu-right",
-    p: "4"
-  }, children && children));
-};
-
-SearchMenu.propTypes = {
-  children: PropTypes__default['default'].node,
-  content: PropTypes__default['default'].object.isRequired,
-  functions: PropTypes__default['default'].shape({
-    onCloseModal: PropTypes__default['default'].func
-  }),
-  status: PropTypes__default['default'].shape({
-    opened: PropTypes__default['default'].bool
-  })
-};
-SearchMenu.defaultProps = {
-  content: {},
-  functions: {
-    onCloseModal: function onCloseModal() {
-      return null;
-    }
-  },
-  status: {
-    opened: false
-  }
-};
-
-var SideMenu = function SideMenu(_ref) {
-  var children = _ref.children,
-      functions = _ref.functions,
-      status = _ref.status;
-  var menuIsOpen = status.opened ? 'opened' : 'closed';
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "menu-modal ".concat(menuIsOpen)
-  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "menu-opacity",
-    onClick: functions.onCloseModal
-  }), /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    bg: "white",
-    custom: "menu-left",
-    p: "4"
-  }, children && children));
-};
-
-SideMenu.propTypes = {
-  children: PropTypes__default['default'].node,
-  content: PropTypes__default['default'].object.isRequired,
-  functions: PropTypes__default['default'].shape({
-    onCloseModal: PropTypes__default['default'].func
-  }),
-  status: PropTypes__default['default'].shape({
-    opened: PropTypes__default['default'].bool
-  })
-};
-SideMenu.defaultProps = {
-  content: {},
-  functions: {
-    onCloseModal: function onCloseModal() {
-      return null;
-    }
-  },
-  status: {
-    opened: false
-  }
-};
-
-function SvgIcArrowMenu(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    height: 24,
-    width: 24
-  }, props), /*#__PURE__*/React.createElement("path", {
-    d: "M0 0h24v24H0V0z",
-    fill: "none"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
-  }));
+  return data;
 }
 
-var SideMenuItems = function SideMenuItems(_ref) {
-  var content = _ref.content,
-      functions = _ref.functions;
+function _templateObject$3() {
+  var data = _taggedTemplateLiteral(["\n  position: fixed;\n  width: 100vw;\n  height: 100vh;\n  background-color: rgba(0, 0, 0, 0.5);\n  z-index: 10;\n  top: 0px;\n"]);
 
-  var Item = function Item(_ref2) {
-    var item = _ref2.item;
-    var hasSubitems = item.subitems.length > 0;
-    return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-      custom: "sidemenu-group",
-      mb: "3"
-    }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
-      custom: "sidemenu-group-item",
-      pb: "2",
-      align: "row between middle",
-      onClick: function onClick() {
-        return functions.onMenuItem(item);
-      }
-    }, !hasSubitems ? /*#__PURE__*/React__default['default'].createElement("a", {
-      href: item.path
-    }, item.name) : /*#__PURE__*/React__default['default'].createElement("span", {
-      href: item.path
-    }, item.name), /*#__PURE__*/React__default['default'].createElement(SvgIcArrowMenu, null)));
+  _templateObject$3 = function _templateObject() {
+    return data;
   };
 
-  Item.propTypes = {
-    item: PropTypes__default['default'].object
-  };
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "sidemenu-items"
-  }, lodash.map(content.items, function (item, key) {
-    return /*#__PURE__*/React__default['default'].createElement(Item, {
-      item: item,
-      key: key
-    });
-  }));
+  return data;
+}
+
+var parsePosition = function parsePosition(_ref) {
+  var menuAnchor = _ref.menuAnchor;
+  if (menuAnchor === 'left') return 'left: 0px;';
+  if (menuAnchor === 'right') return 'right: 0px;';
 };
 
-SideMenuItems.propTypes = {
-  content: PropTypes__default['default'].object,
-  functions: PropTypes__default['default'].shape({
-    onMenuItem: PropTypes__default['default'].func
-  })
+var getWidthFromProps = function getWidthFromProps(_ref2) {
+  var menuSize = _ref2.menuSize,
+      px = _ref2.px;
+  return "\n    max-width: calc(".concat(menuSize, " - ").concat(px, " - ").concat(px, ");\n    width: calc(").concat(menuSize, " - ").concat(px, " - ").concat(px, ");\n  ");
 };
-SideMenuItems.defaultProps = {
-  content: {}
+
+var getHeightFromProps = function getHeightFromProps(_ref3) {
+  var py = _ref3.py;
+  return "\n    height: calc(100% - ".concat(py, " - ").concat(py, ");\n  ");
 };
+
+var OuterContainer = styled__default['default'].div(_templateObject$3());
+var Menu = styled__default['default'].div(_templateObject2$2(), function (props) {
+  return parsePosition(props);
+}, function (props) {
+  return getWidthFromProps(props);
+}, function (props) {
+  return getHeightFromProps(props);
+}, function (props) {
+  return props.theme.parsePadding(props.theme, props);
+}, function (props) {
+  return props.theme.parseBgColor(props.theme, props);
+});
+
+var SideMenu = function SideMenu(props) {
+  var isOpen = props.isOpen,
+      onClose = props.onClose,
+      children = props.children;
+  if (!isOpen) return null;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement(OuterContainer, _extends({}, props, {
+    onClick: onClose
+  })), /*#__PURE__*/React__default['default'].createElement(Menu, props, children));
+};
+
+SideMenu.defaultProps = {
+  menuAnchor: 'left',
+  menuSize: '350px',
+  px: '24px',
+  py: '24px',
+  bgColor: 'neutral10'
+};
+SideMenu.propTypes = {
+  /**
+   * Permite passagem de conteúdo para o Menu Lateral
+   */
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+
+  /**
+   * Define a âncora onde o menu será renderizado (esquerda e direita da tela)
+   */
+  menuAnchor: PropTypes__default['default'].oneOf(['left', 'right']),
+
+  /**
+   * Define o tamanho do menu '[number]px'
+   */
+  menuSize: PropTypes__default['default'].string,
+
+  /**
+   * Controla a exibição ou não do Menu
+   */
+  isOpen: PropTypes__default['default'].bool.isRequired,
+
+  /**
+   * Controla a ação de fechamento do Menu
+   */
+  onClose: PropTypes__default['default'].func.isRequired,
+
+  /**
+   * Define as margens para o conteúdo
+   */
+  px: PropTypes__default['default'].string,
+  py: PropTypes__default['default'].string,
+
+  /**
+   * Define a cor de fundo do conteúdo
+   */
+  bgColor: PropTypes__default['default'].string
+};
+var index$3 = styled.withTheme(SideMenu);
+
+function _templateObject2$3() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-bottom: 1px solid rgba(0,0,0,0.1);\n  color: ", ";\n  text-decoration: unset;\n  cursor: pointer;\n  svg {\n    width: 24px;\n    height: 24px;\n    fill: ", ";\n  }\n  &:hover {\n    background-color: ", ";\n    opacity: 0.8;\n  }\n  ", ";\n"]);
+
+  _templateObject2$3 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$4() {
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
+
+  _templateObject$4 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Container$1 = styled__default['default'].div(_templateObject$4(), function (props) {
+  return props.theme.parseMargin(props.theme, props);
+});
+var InnerContainer = styled__default['default'].a(_templateObject2$3(), function (props) {
+  return props.theme.colors.activeColor;
+}, function (props) {
+  return props.theme.colors.activeColor;
+}, function (props) {
+  return props.theme.colors.neutral10;
+}, function (props) {
+  return props.theme.parsePadding(props.theme, props);
+});
+
+var MenuItem = function MenuItem(_ref) {
+  var children = _ref.children,
+      path = _ref.path,
+      mb = _ref.mb,
+      px = _ref.px,
+      py = _ref.py;
+  return /*#__PURE__*/React__default['default'].createElement(Container$1, {
+    mb: mb
+  }, /*#__PURE__*/React__default['default'].createElement(InnerContainer, {
+    href: path,
+    px: px,
+    py: py
+  }, children ? children : /*#__PURE__*/React__default['default'].createElement("span", null, "Content here"), /*#__PURE__*/React__default['default'].createElement(SvgIcArrowForward, null)));
+};
+
+MenuItem.defaultProps = {
+  px: 1,
+  py: 1
+};
+MenuItem.propTypes = {
+  /**
+   * Permite passagem de conteúdo para o componente
+   */
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].object, PropTypes__default['default'].array]).isRequired,
+
+  /**
+   * Permite alterar o padding-x (horizontal) do container interno
+   */
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+
+  /**
+   * Permite alterar o padding-y (vertical) do container interno
+   */
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+
+  /**
+   * Permite adicionar margem abaixo do componente, no container externo
+   */
+  mb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+
+  /**
+   * Realiza a navegação do usuário através do clique no componente
+   */
+  path: PropTypes__default['default'].string.isRequired
+};
+var index$4 = styled.withTheme(MenuItem);
 
 var SocialMedias = function SocialMedias(props) {
   var content = props.content;
@@ -5071,45 +4618,381 @@ Topbar.defaultProps = {
   }
 };
 
-var Subject = function Subject(props) {
-  var _classnames;
+var weights = [
+	"thin",
+	"light",
+	"regular",
+	"medium",
+	"bold",
+	"italic"
+];
 
-  var children = props.children,
-      color = props.color,
-      className = props.className,
-      style = props.style,
-      size = props.size,
-      filled = props.filled,
-      weight = props.weight;
+function _templateObject2$4() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"]);
+
+  _templateObject2$4 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject$5() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"]);
+
+  _templateObject$5 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+var parseColorVariation = function parseColorVariation(props) {
+  if (props.transparent === true) return "\n    color: ".concat(props.theme.parseColorValue(props, 'subjectColor'), ";\n  ");
+  return "\n    color: ".concat(props.theme.colors.white, ";\n  ");
+};
+
+var parseBackgroundVariation = function parseBackgroundVariation(props) {
+  if (props.transparent === true) return 'background-color: transparent;';
+  return "background-color: ".concat(props.theme.parseColorValue(props, 'subjectColor'), ";");
+};
+
+var Container$2 = styled__default['default'].div(_templateObject$5(), function (props) {
+  return props.theme.parsePadding(props.theme, props);
+}, function (props) {
+  return props.theme.parseMargin(props.theme, props);
+}, function (props) {
+  return props.theme.parseRadius(props, 'borderRadius');
+}, function (props) {
+  return parseBackgroundVariation(props);
+});
+var Typography = styled__default['default'].span(_templateObject2$4(), function (props) {
+  return props.theme.fonts.secondary;
+}, function (props) {
+  return props.fontWeight;
+}, function (props) {
+  return parseColorVariation(props);
+});
+
+var Subject = function Subject(_ref) {
+  var children = _ref.children,
+      color = _ref.color,
+      radius = _ref.radius,
+      px = _ref.px,
+      mb = _ref.mb,
+      style = _ref.style,
+      transparent = _ref.transparent,
+      weight = _ref.weight;
   if (!children) return null;
-  var classes = classnames__default['default']((_classnames = {
-    'Prensa-Subject-root': true,
-    'filled': filled
-  }, _defineProperty(_classnames, "color-".concat(color), true), _defineProperty(_classnames, "".concat(className), className), _classnames));
-  return /*#__PURE__*/React__default['default'].createElement("div", {
-    className: classes,
+  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+    subjectColor: color,
+    borderRadius: radius,
+    px: px,
+    mb: mb,
+    transparent: transparent,
     style: style
-  }, /*#__PURE__*/React__default['default'].createElement(SubjectTypography, {
-    size: size,
-    color: filled ? 'white' : color,
-    weight: weight
+  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
+    fontWeight: weight,
+    transparent: transparent
   }, children));
 };
 
 Subject.defaultProps = {
-  color: 'primary-1',
-  filled: false,
-  size: 1
+  px: 1,
+  radius: 'alternative',
+  transparent: false,
+  weight: 700
 };
 Subject.propTypes = {
+  /**
+   * Recebe o valor/texto escrito que será exibido no componente
+   */
   children: PropTypes__default['default'].string.isRequired,
+
+  /**
+   * Recebe um token de cor
+   */
+  color: PropTypes__default['default'].string,
+
+  /**
+   * Ativa/desativa a variação transparente
+   */
+  transparent: PropTypes__default['default'].bool,
+
+  /**
+   * Prop que permite estilo customizado inline
+   */
+  style: PropTypes__default['default'].object,
+
+  /**
+   * Permite alterar a variação de border-radius para o componente
+   */
+  radius: PropTypes__default['default'].oneOf([false, 'default', 'alternative']),
+
+  /**
+   * Permite alterar o espaçamento interno horizontal do componente
+   */
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+
+  /**
+   * Permite alterar a margem aplicada abaixo do componente
+   */
+  mb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+
+  /**
+   * Permite alterar o peso da fonte
+   */
+  weight: PropTypes__default['default'].oneOf([300, 400, 500, 600, 700])
+};
+var Subject$1 = styled.withTheme(Subject);
+
+({
+  children: PropTypes__default['default'].string,
   className: PropTypes__default['default'].string,
   color: PropTypes__default['default'].oneOf(colors),
-  filled: PropTypes__default['default'].bool,
-  style: PropTypes__default['default'].object,
   size: PropTypes__default['default'].oneOf([1, 2, 3]),
-  weight: PropTypes__default['default'].oneOf(['thin', 'light', 'regular', 'medium', 'bold', 'italic'])
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
+
+var NewsTitle = function NewsTitle(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight,
+      disableHover = props.disableHover;
+  var classes = classnames__default['default']((_classnames = {
+    'Typography-NewsTitle-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, 'has-hover', !disableHover), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React__default['default'].createElement("h2", {
+    className: classes,
+    style: style
+  }, children);
 };
+NewsTitle.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular',
+  disableHover: false
+};
+NewsTitle.propTypes = {
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  disableHover: PropTypes__default['default'].bool,
+  size: PropTypes__default['default'].oneOf([1, 2, 3, 4, 5, 6, 7]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+};
+
+var Subtitle = function Subtitle(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames__default['default']((_classnames = {
+    'Typography-Subtitle-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React__default['default'].createElement("h3", {
+    className: classes,
+    style: style
+  }, children);
+};
+Subtitle.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+Subtitle.propTypes = {
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+};
+
+var Date$1 = function Date(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames__default['default']((_classnames = {
+    'Typography-Date-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React__default['default'].createElement("span", {
+    className: classes,
+    style: style
+  }, children);
+};
+Date$1.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+Date$1.propTypes = {
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+};
+
+({
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
+
+({
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  gutter: PropTypes__default['default'].oneOf([1, 2, 3]),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights),
+  maxWidth: PropTypes__default['default'].oneOf(['sm', 'md', 'lg']),
+  setInnerHtml: PropTypes__default['default'].string
+});
+
+({
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
+
+({
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
+
+({
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
+
+({
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
+
+var TagTypography = function TagTypography(props) {
+  var _classnames;
+
+  var className = props.className,
+      children = props.children,
+      color = props.color,
+      style = props.style,
+      size = props.size,
+      weight = props.weight;
+  var classes = classnames__default['default']((_classnames = {
+    'Typography-Tag-root': true
+  }, _defineProperty(_classnames, "size-".concat(size, " ").concat(weight, " color-").concat(color), true), _defineProperty(_classnames, className, className), _classnames));
+  return /*#__PURE__*/React__default['default'].createElement("p", {
+    className: classes,
+    style: style
+  }, children);
+};
+TagTypography.defaultProps = {
+  color: 'primary-1',
+  size: 1,
+  weight: 'regular'
+};
+TagTypography.propTypes = {
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+};
+
+({
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  gutter: PropTypes__default['default'].oneOf([0, 1, 2, 3]),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  uppercase: PropTypes__default['default'].bool,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
+
+({
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
+
+({
+  children: PropTypes__default['default'].number,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
+
+({
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
+
+({
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
+
+({
+  children: PropTypes__default['default'].string,
+  className: PropTypes__default['default'].string,
+  color: PropTypes__default['default'].oneOf(colors),
+  size: PropTypes__default['default'].oneOf([1]),
+  style: PropTypes__default['default'].object,
+  weight: PropTypes__default['default'].oneOf(weights)
+});
 
 var _PropTypes$shape;
 
@@ -5203,7 +5086,7 @@ var Teaser = function Teaser(_ref) {
   return /*#__PURE__*/React__default['default'].createElement(Block$1, propsTeaser, hasImage && !disableImage && /*#__PURE__*/React__default['default'].createElement(TeaserImage, null), /*#__PURE__*/React__default['default'].createElement(Block$1, propsContent, /*#__PURE__*/React__default['default'].createElement(Block$1, {
     custom: "top-content",
     h: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block$1, null, subject && /*#__PURE__*/React__default['default'].createElement(Block$1, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject, {
+  }, /*#__PURE__*/React__default['default'].createElement(Block$1, null, subject && /*#__PURE__*/React__default['default'].createElement(Block$1, propsSubject, /*#__PURE__*/React__default['default'].createElement(Subject$1, {
     size: subjectSize,
     color: subjectColor,
     filled: hasSubjectFilled,
@@ -5388,11 +5271,20 @@ var parseBgColor = function parseBgColor(theme, _ref) {
   return "background-color: ".concat(selected, ";");
 };
 
-var parseFontColor = function parseFontColor(theme, _ref2) {
+var parseFontColor$1 = function parseFontColor(theme, _ref2) {
   var fontColor = _ref2.fontColor;
   var selected = theme.colors[fontColor];
   if (!selected) return '';
   return "color: ".concat(selected, ";");
+};
+
+var parseColorValue = function parseColorValue(props, propName) {
+  if (!propName) return console.error('PRENSA :: Não existe nome de prop para buscar no parseColor');
+  var propValue = lodash.get(props, propName, 'activeColor');
+  if (propValue.startsWith('#')) return propValue;
+  var parsedValue = props.theme.colors[propValue];
+  if (!parsedValue) return console.error("PRENSA :: N\xE3o existe valor correspondente para a prop de nome ".concat(propName, " passada na fun\xE7\xE3o parseColor"));
+  return parsedValue;
 };
 
 var parseCustom = function parseCustom(theme, _ref) {
@@ -5425,7 +5317,7 @@ var parseDimension = function parseDimension(theme, _ref) {
   return object.join('');
 };
 
-var parseFontFamily = function parseFontFamily(theme, _ref) {
+var parseFontFamily$1 = function parseFontFamily(theme, _ref) {
   var typography = _ref.typography;
   var selected = theme.fonts[typography];
   if (!selected) return '';
@@ -5468,6 +5360,18 @@ var parsePadding = function parsePadding(theme, _ref) {
   return object.join('');
 };
 
+var parseRadius = function parseRadius(props, propName) {
+  var propValue = lodash.get(props, propName);
+  var selected = props.theme.radius[propValue];
+
+  if (!selected) {
+    console.error("PRENSA :: Erro ao traduzir token \"".concat(propValue, "\" no parseRadius"));
+    return '';
+  }
+
+  return "border-radius: ".concat(selected);
+};
+
 var parserRender = function parserRender(theme, props) {
   return "\n    ".concat(theme.parseAlign(theme, props), "\n    ").concat(theme.parseBgColor(theme, props), "\n    ").concat(theme.parseDimension(theme, props), "\n    ").concat(theme.parseFontColor(theme, props), "\n    ").concat(theme.parseFontFamily(theme, props), "\n    ").concat(theme.parseCustomDef(theme, props), "\n    ").concat(theme.parseCustom(theme, props), "\n    ").concat(theme.parseMargin(theme, props), "\n    ").concat(theme.parsePadding(theme, props), "\n  ");
 };
@@ -5496,6 +5400,7 @@ var parseProps = function parseProps(media, theme, props) {
 
 var theme = {
   colors: {
+    activeColor: '#09B77B',
     primary1: '#063F8F',
     primary2: '#446FAB',
     primary3: '#829EC7',
@@ -5534,7 +5439,7 @@ var theme = {
     error3: '#E37475'
   },
   fonts: {
-    primary: 'PT Sans',
+    primary: 'Work Sans',
     secondary: 'Nunito Sans'
   },
   factors: {
@@ -5542,23 +5447,30 @@ var theme = {
     padding: 8,
     margin: 8
   },
-  parseAlign: parseAlign,
-  parseBgColor: parseBgColor,
-  parseCustom: parseCustom,
-  parseCustomDef: parseCustomDef,
-  parseDimension: parseDimension,
-  parseFontColor: parseFontColor,
-  parseFontFamily: parseFontFamily,
-  parseMargin: parseMargin,
-  parsePadding: parsePadding,
-  parseProps: parseProps,
   queries: {
     xs: '360px',
     sm: '460px',
     md: '768px',
     lg: '1016px',
     xl: '1280px'
-  }
+  },
+  radius: {
+    "false": '0px',
+    "default": '3px',
+    alternative: '5px'
+  },
+  parseAlign: parseAlign,
+  parseBgColor: parseBgColor,
+  parseCustom: parseCustom,
+  parseCustomDef: parseCustomDef,
+  parseDimension: parseDimension,
+  parseFontColor: parseFontColor$1,
+  parseFontFamily: parseFontFamily$1,
+  parseMargin: parseMargin,
+  parsePadding: parsePadding,
+  parseProps: parseProps,
+  parseRadius: parseRadius,
+  parseColorValue: parseColorValue
 };
 
 var Tag = function Tag(_ref) {
@@ -5598,19 +5510,17 @@ Tag.propTypes = {
 };
 
 exports.Block = Block$1;
-exports.Button = Button;
+exports.Button = index;
 exports.ColumnHeader = ColumnHeader;
-exports.Field = index$1;
-exports.Form = index;
+exports.Field = index$2;
+exports.Form = index$1;
 exports.Image = Image$1;
 exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;
-exports.SearchForm = SearchForm;
-exports.SearchMenu = SearchMenu;
-exports.SideMenu = SideMenu;
-exports.SideMenuItems = SideMenuItems;
+exports.MenuItem = index$4;
+exports.SideMenu = index$3;
 exports.SocialMedias = SocialMedias;
-exports.Subject = Subject;
+exports.Subject = Subject$1;
 exports.Tag = Tag;
 exports.Teaser = Teaser;
 exports.Topbar = Topbar;

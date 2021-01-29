@@ -19,33 +19,19 @@ jobs:
       - name: Create var for package version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@master
+        
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
       
-      - name: Build Prensa
-        run: npm run build
+      - name: Install and Build Prensa
+        run: |
+          npm install
+          npm run build
         
       - name: Publish package in NPM
-        run: npm publish --access public
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
-          
-      - name: Slack notifcation
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          author_name: 'Boot publish'
-          text: Versão ${{ steps.package-version.outputs.current-version}} publicada com sucesso.
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-        if: ${{ success() }}
-
-      - name: Slack notifcation failure
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          author_name: 'Boot publish'
-          text: Falha ao publicar nova versão do Prensa.
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-        if: ${{ failure() }}
