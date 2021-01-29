@@ -1,4 +1,4 @@
-# v1.4.53
+# v1.4.54
 - Corrige comportamento incorreto das cores no Button
 # v1.4.53
 - Adiciona queries no Button
