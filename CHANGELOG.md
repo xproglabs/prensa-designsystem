@@ -1,3 +1,5 @@
+# v1.4.56
+- Corrige inconsistência no SideMenu
 # v1.4.55
 - Corrige comportamento incorreto das cores no Button
 # v1.4.53
