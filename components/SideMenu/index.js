@@ -43,16 +43,14 @@ const Menu = styled.div`
 
 const SideMenu = props => {
 
-  const {isOpen, onClose, children} = props;
+  const {isOpen, onClose} = props;
 
   if (!isOpen) return null;
 
   return (
     <Block>
-      <OuterContainer {...props} onClick={onClose} />
-      <Menu {...props}>
-        {children}
-      </Menu>
+      <OuterContainer onClick={onClose} />
+      <Menu {...props} />
     </Block>
   );
 };
@@ -69,7 +67,7 @@ SideMenu.propTypes = {
   /**
    * Permite passagem de conteúdo para o Menu Lateral
    */
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]),
   /**
    * Define a âncora onde o menu será renderizado (esquerda e direita da tela)
    */
