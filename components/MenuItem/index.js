@@ -17,13 +17,13 @@ const InnerContainer = styled.a`
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  color: ${props => props.theme.colors.activeColor};
+  color: ${props => props.$color ? props.theme.parseColorValue(props, props.theme, '$color') : props.theme.colors.activeColor};
   text-decoration: unset;
   cursor: pointer;
   svg {
     width: 24px;
     height: 24px;
-    fill: ${props => props.theme.colors.activeColor};
+    fill: ${props => props.$color ? props.theme.parseColorValue(props, props.theme, '$color') : props.theme.colors.activeColor};
   }
   &:hover {
     background-color: ${props => props.theme.colors.neutral10};
@@ -33,10 +33,10 @@ const InnerContainer = styled.a`
   ${props => parseWidth(props)};
 `;
 
-const MenuItem = ({children, path, mb, px, py}) => {
+const MenuItem = ({children, path, mb, px, py, color}) => {
   return (
     <Block width='100%' mb={mb}>
-      <InnerContainer href={path} px={px} py={py}>
+      <InnerContainer $color={color} href={path} px={px} py={py}>
         {children ? children : <span>Content here</span>}
         <IcArrow />
       </InnerContainer>
@@ -69,7 +69,11 @@ MenuItem.propTypes = {
   /**
    * Realiza a navegação do usuário através do clique no componente
    */
-  path: PropTypes.string.isRequired
+  path: PropTypes.string.isRequired,
+  /**
+   * Permite customizar a cor do texto e ícone
+   */
+  color: PropTypes.string
 };
 
 export default withTheme(MenuItem);
