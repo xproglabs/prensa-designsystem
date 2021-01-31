@@ -1,3 +1,7 @@
+# v1.4.57
+- Remove parseAlign e parseRender do theme (ficarão somente no Block)
+- Altera ordem dos parâmetros nas funções de parse (props, theme)
+- Adiciona ifs para verificação dos valores nas funções de parse
 # v1.4.56
 - Corrige inconsistência no SideMenu
 # v1.4.55
