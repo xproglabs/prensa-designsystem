@@ -1,4 +1,8 @@
-const parsePadding = (theme, {px, py, pt, pr, pb, pl}) => {
+const parsePadding = (props, theme) => {
+
+  if (!props) return '';
+  const {px, py, pt, pr, pb, pl} = props;
+
   let object = [];
   let factor = theme.factors.padding;
 

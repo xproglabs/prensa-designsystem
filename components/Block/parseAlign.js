@@ -1,9 +1,14 @@
-const parseAlign = (theme, {align, alignx, aligny}) => {
+export const parseAlign = (props) => {
+
+  if (!props) return '';
+  const {align, alignx, aligny} = props;
+
   let object = [];
   let ai = '';
   let di = 'flex';
   let fd = '';
   let jc = '';
+  
   // check if is column
   if(align.includes('column')) {
     fd = align;
@@ -82,5 +87,3 @@ const parseAlign = (theme, {align, alignx, aligny}) => {
   // end
   return object.join('');
 };
-
-export {parseAlign};

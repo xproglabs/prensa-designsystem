@@ -1,16 +1,16 @@
 import {get} from 'lodash';
 
-const parseBgColor = (theme, {bgColor}) => {
-  const selected = theme.colors[bgColor];
-  if(!selected)
-    return '';
+const parseBgColor = (props, theme) => {
+  if (!props) return ''; 
+  const selected = theme.colors[props.bgColor];
+  if (!selected) return '';
   return `background-color: ${selected};`;
 };
 
-const parseFontColor = (theme, {fontColor}) => {
-  const selected = theme.colors[fontColor];
-  if(!selected)
-    return '';
+const parseFontColor = (props, theme) => {
+  if (!props) return '';
+  const selected = theme.colors[props.fontColor];
+  if (!selected) return '';
   return `color: ${selected};`;
 };
 

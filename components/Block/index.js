@@ -3,13 +3,15 @@ import React from 'react';
 import styled from 'styled-components';
 import {withTheme} from 'styled-components';
 
+import {parseProps} from './parseRender';
+
 const Component = styled.div`
-  ${props => props && props.theme.parseProps('', props.theme, props)};
-  ${props => props.xs && props.theme.parseProps('xs', props.theme, props.xs)};
-  ${props => props.sm && props.theme.parseProps('sm', props.theme, props.sm)};
-  ${props => props.md && props.theme.parseProps('md', props.theme, props.md)};
-  ${props => props.lg && props.theme.parseProps('lg', props.theme, props.lg)};
-  ${props => props.xl && props.theme.parseProps('xl', props.theme, props.xl)};
+  ${props => parseProps('', props)};
+  ${props => props.xs && parseProps('xs', props)};
+  ${props => props.sm && parseProps('sm', props)};
+  ${props => props.md && parseProps('md', props)};
+  ${props => props.lg && parseProps('lg', props)};
+  ${props => props.xl && parseProps('xl', props)};
 `;
 
 const Block = props => {
@@ -19,7 +21,6 @@ const Block = props => {
       alignx={props.alignx}
       aligny={props.aligny}
       bgColor={props.bgColor}
-      custom={props.custom}
       customDef={props.customDef}
       fontColor={props.fontColor}
       height={props.height}
@@ -42,7 +43,8 @@ const Block = props => {
       lg={props.lg}
       xl={props.xl}
       typography={props.typography}
-      onClick={props.onClick}>
+      onClick={props.onClick}
+      custom={props.custom}>
       {props.children}
     </Component>
   );

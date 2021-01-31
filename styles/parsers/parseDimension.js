@@ -1,4 +1,7 @@
-const parseDimension = (theme, {height, width}) => {
+const parseDimension = (props, theme) => {
+  if (!props) return '';
+
+  const {height, width} = props;
   let object = [];
   let factor = theme.factors.dimensions;
 
