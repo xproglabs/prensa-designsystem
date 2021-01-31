@@ -22,8 +22,8 @@ const Container = styled.div`
   justify-content: center;
   width: max-content;
   height: 28px;
-  ${props => props.theme.parsePadding(props.theme, props)};
-  ${props => props.theme.parseMargin(props.theme, props)};
+  ${props => props.theme.parsePadding(props, props.theme)};
+  ${props => props.theme.parseMargin(props, props.theme)};
   ${props => props.theme.parseRadius(props, 'borderRadius')};
   ${props => parseBackgroundVariation(props)};
 `;

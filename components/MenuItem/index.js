@@ -29,7 +29,7 @@ const InnerContainer = styled.a`
     background-color: ${props => props.theme.colors.neutral10};
     opacity: 0.8;
   }
-  ${props => props.theme.parsePadding(props.theme, props)};
+  ${props => props.theme.parsePadding(props, props.theme)};
   ${props => parseWidth(props)};
 `;
 

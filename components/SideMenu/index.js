@@ -37,8 +37,8 @@ const Menu = styled.div`
   ${props => parsePosition(props)};
   ${props => getWidthFromProps(props)};
   ${props => getHeightFromProps(props)};
-  ${props => props.theme.parsePadding(props.theme, props)};
-  ${props => props.theme.parseBgColor(props.theme, props)};
+  ${props => props.theme.parsePadding(props, props.theme)};
+  ${props => props.theme.parseBgColor(props, props.theme)};
 `;
 
 const SideMenu = props => {

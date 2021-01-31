@@ -105,7 +105,7 @@ const parseStyle = (props, theme) => {
     ${getWidth(props, theme)};
     ${parseRadius(props, '$radius')};
     ${parseRemoveText(props, theme)};
-    ${parsePadding(theme, props)};
+    ${parsePadding(props, theme)};
     ${parseIcon(props, theme)};
   `;
 };
