@@ -1,11 +1,12 @@
 //Get button size (height)
 const getSize = (props, theme) => {
-  const {$size} = props;
+  const {$size, iconSize} = props;
   if (!$size) return '';
   const factor = theme.factors.margin;
   const size = $size;
   if (isNaN(size)) return `height: ${size}`;
   if (size < 4) return `height: ${factor * 4}px`;
+  if (iconSize) return 'height: max-content';
   return `height: ${factor * $size}px`;
 };
 
@@ -87,8 +88,8 @@ const parseIcon = (props, theme) => {
   return `
     svg {
       fill: ${parseFontColor(props, theme)};
-      width: 24px;
-      height: 24px;
+      width: ${props.iconSize ? props.iconSize : '24px'};
+      height: ${props.iconSize ? props.iconSize : '24px'};
     }
   `;
 };

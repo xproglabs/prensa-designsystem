@@ -61,6 +61,7 @@ const Button = ({
   px,
   on,
   path,
+  iconSize,
   xs,
   sm,
   md,
@@ -85,6 +86,7 @@ const Button = ({
     $size: xs.size ? xs.size : size,
     $width: xs.width ? xs.width : width,
     removeText: xs.removeText ? xs.removeText : removeText,
+    iconSize: xs.iconSize ? xs.iconSize : iconSize,
   });
   const getSmProps = () => sm && ({
     $color: sm.color ? sm.color : color,
@@ -93,6 +95,7 @@ const Button = ({
     $size: sm.size ? sm.size : size,
     $width: sm.width ? sm.width : width,
     removeText: sm.removeText ? sm.removeText : removeText,
+    iconSize: sm.iconSize ? sm.iconSize : iconSize,
   });
   const getMdProps = () => md && ({
     $color: md.color ? md.color : color,
@@ -101,6 +104,7 @@ const Button = ({
     $size: md.size ? md.size : size,
     $width: md.width ? md.width : width,
     removeText: md.removeText ? md.removeText : removeText,
+    iconSize: md.iconSize ? md.iconSize : iconSize,
   });
   const getLgProps = () => lg && ({
     $color: lg.color ? lg.color : color,
@@ -109,6 +113,7 @@ const Button = ({
     $size: lg.size ? lg.size : size,
     $width: lg.width ? lg.width : width,
     removeText: lg.removeText ? lg.removeText : removeText,
+    iconSize: lg.iconSize ? lg.iconSize : iconSize,
   });
   const getXlProps = () => xl && ({
     $color: xl.color ? xl.color : color,
@@ -117,6 +122,7 @@ const Button = ({
     $size: xl.size ? xl.size : size,
     $width: xl.width ? xl.width : width,
     removeText: xl.removeText ? xl.removeText : removeText,
+    iconSize: xl.iconSize ? xl.iconSize : iconSize,
   });
 
   const renderRoot = () => {
@@ -130,6 +136,7 @@ const Button = ({
         disabled={disabled}
         fontColor={fontColor}
         removeText={removeText}
+        iconSize={iconSize}
         $color={color}   
         $variant={variant}
         $radius={radius}
@@ -144,7 +151,7 @@ const Button = ({
       >
         {loading && 'Carregando...'}
         {leftIcon && leftIcon}
-        <span>{children}</span>
+        {children && <span>{children}</span>}
         {rightIcon && rightIcon}
       </StyledButton>
     );
@@ -234,13 +241,18 @@ Button.propTypes = {
    * AMP :: Props equivalente a onClick, executa a ação de clique para links externos
    */
   path: PropTypes.string,
+  /**
+   * Permite aumentar ou diminuir o tamanho do ícone no interior do botão
+   */
+  iconSize: PropTypes.string,
   xs: PropTypes.shape({
     color: PropTypes.string,
     variant: PropTypes.oneOf(['filled', 'outlined', 'ghost']),
     radius: PropTypes.oneOf(['unset', 'default', 'alternative']),
     size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    removeText: PropTypes.bool
+    removeText: PropTypes.bool,
+    iconSize: PropTypes.string,
   }),
   sm: PropTypes.shape({
     color: PropTypes.string,
@@ -248,7 +260,8 @@ Button.propTypes = {
     radius: PropTypes.oneOf(['unset', 'default', 'alternative']),
     size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    removeText: PropTypes.bool
+    removeText: PropTypes.bool,
+    iconSize: PropTypes.string,
   }),
   md: PropTypes.shape({
     color: PropTypes.string,
@@ -256,7 +269,8 @@ Button.propTypes = {
     radius: PropTypes.oneOf(['unset', 'default', 'alternative']),
     size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    removeText: PropTypes.bool
+    removeText: PropTypes.bool,
+    iconSize: PropTypes.string,
   }),
   lg: PropTypes.shape({
     color: PropTypes.string,
@@ -264,7 +278,8 @@ Button.propTypes = {
     radius: PropTypes.oneOf(['unset', 'default', 'alternative']),
     size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    removeText: PropTypes.bool
+    removeText: PropTypes.bool,
+    iconSize: PropTypes.string,
   }),
   xl: PropTypes.shape({
     color: PropTypes.string,
@@ -272,7 +287,8 @@ Button.propTypes = {
     radius: PropTypes.oneOf(['unset', 'default', 'alternative']),
     size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    removeText: PropTypes.bool
+    removeText: PropTypes.bool,
+    iconSize: PropTypes.string,
   }),
 };
 
