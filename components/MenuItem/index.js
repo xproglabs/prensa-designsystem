@@ -6,6 +6,11 @@ import {withTheme} from 'styled-components';
 import IcArrow from '../../icons/IcArrowForward';
 import Block from '../Block';
 
+const parseWidth = ({px, theme}) => {
+  if (!px) return '';
+  if (typeof px === 'string') return `width: calc(100% - (${px} * 2))`;
+  else return `width: calc(100% - ${px * theme.factors.padding * 2}px)`;
+};
 
 const InnerContainer = styled.a`
   display: flex;
@@ -14,7 +19,6 @@ const InnerContainer = styled.a`
   border-bottom: 1px solid rgba(0,0,0,0.1);
   color: ${props => props.theme.colors.activeColor};
   text-decoration: unset;
-  width: 100%;
   cursor: pointer;
   svg {
     width: 24px;
@@ -26,6 +30,7 @@ const InnerContainer = styled.a`
     opacity: 0.8;
   }
   ${props => props.theme.parsePadding(props.theme, props)};
+  ${props => parseWidth(props)};
 `;
 
 const MenuItem = ({children, path, mb, px, py}) => {
