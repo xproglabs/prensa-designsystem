@@ -4,10 +4,9 @@ import styled from 'styled-components';
 import {withTheme} from 'styled-components';
 
 import IcArrow from '../../icons/IcArrowForward';
+import Block from '../Block';
 
-const Container = styled.div`
-  ${props => props.theme.parseMargin(props.theme, props)};
-`;
+
 const InnerContainer = styled.a`
   display: flex;
   align-items: center;
@@ -15,6 +14,7 @@ const InnerContainer = styled.a`
   border-bottom: 1px solid rgba(0,0,0,0.1);
   color: ${props => props.theme.colors.activeColor};
   text-decoration: unset;
+  width: 100%;
   cursor: pointer;
   svg {
     width: 24px;
@@ -30,12 +30,12 @@ const InnerContainer = styled.a`
 
 const MenuItem = ({children, path, mb, px, py}) => {
   return (
-    <Container mb={mb}>
+    <Block width='100%' mb={mb}>
       <InnerContainer href={path} px={px} py={py}>
         {children ? children : <span>Content here</span>}
         <IcArrow />
       </InnerContainer>
-    </Container>
+    </Block>
   );
 };
 

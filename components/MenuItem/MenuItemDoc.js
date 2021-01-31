@@ -26,13 +26,17 @@ const dados = [
 ];
 
 const MenuItemDoc = () => {
-  return dados.map((item, k) => {
-    return (
-      <MenuItem key={k} path={item.path}>
-        <Typography>{item.title}</Typography>
-      </MenuItem>
-    );
-  });
+  return (
+    <div style={{width: '100%'}}>
+      {dados.map((item, k) => {
+        return (
+          <MenuItem key={k} path={item.path}>
+            <Typography>{item.title}</Typography>
+          </MenuItem>
+        );
+      })}
+    </div>
+  );
 };
 
 export default withTheme(MenuItemDoc);
