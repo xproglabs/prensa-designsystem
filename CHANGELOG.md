@@ -2,6 +2,8 @@
 - Remove parseAlign e parseRender do theme (ficarão somente no Block)
 - Altera ordem dos parâmetros nas funções de parse (props, theme)
 - Adiciona ifs para verificação dos valores nas funções de parse
+- Troca função theme.parseColorValue para theme.parseColor
+- Adiciona mais um parâmetro na função parseColor [(props, theme, propName')]
 # v1.4.56
 - Corrige inconsistência no SideMenu
 # v1.4.55
