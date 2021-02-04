@@ -8,6 +8,7 @@
   > Nova props fullWidth (calcula automaticamente o width final caso exista padding)
   > Nova props fullHeight
   > Corrige erro das props repassadas para o elemento HTML
+  > Adiciona props itinerant props $width e $height
 # v1.4.56
 - Corrige inconsistência no SideMenu
 # v1.4.55
