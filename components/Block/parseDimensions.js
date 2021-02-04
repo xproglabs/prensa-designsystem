@@ -2,7 +2,7 @@ import {get} from 'lodash';
 
 export const parseWidth = (props, theme) => {
   const unit = theme.factors.padding;
-  const width = get(props, 'width', undefined);
+  const width = get(props, '$width', undefined);
   const fullWidth = get(props, 'fullWidth', undefined);
   const px = get(props, 'px', undefined);
   const pl = get(props, 'pl', undefined);
@@ -36,7 +36,7 @@ export const parseWidth = (props, theme) => {
 
 export const parseHeight = (props, theme) => {
   const unit = theme.factors.padding;
-  const height = get(props, 'height', undefined);
+  const height = get(props, '$height', undefined);
   const fullHeight = get(props, 'fullHeight', undefined);
   const py = get(props, 'py', undefined);
   const pt = get(props, 'pt', undefined);

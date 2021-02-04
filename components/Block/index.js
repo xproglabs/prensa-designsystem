@@ -15,6 +15,33 @@ const Component = styled.div`
 `;
 
 const Block = props => {
+
+  const getXsProps = () => props.xs && ({
+    ...props,
+    $width: props.xs.width ? props.xs.width : props.width,
+    $height: props.xs.height ? props.xs.height : props.height,
+  });
+  const getSmProps = () => props.sm && ({
+    ...props,
+    $width: props.sm.width ? props.sm.width : props.width,
+    $height: props.sm.height ? props.sm.height : props.height,
+  });
+  const getMdProps = () => props.md && ({
+    ...props,
+    $width: props.md.width ? props.md.width : props.width,
+    $height: props.md.height ? props.md.height : props.height,
+  });
+  const getLgProps = () => props.lg && ({
+    ...props,
+    $width: props.lg.width ? props.lg.width : props.width,
+    $height: props.lg.height ? props.lg.height : props.height,
+  });
+  const getXlProps = () => props.xl && ({
+    ...props,
+    $width: props.xl.width ? props.xl.width : props.width,
+    $height: props.xl.height ? props.xl.height : props.height,
+  });
+
   return (
     <Component
       align={props.align}
@@ -23,8 +50,6 @@ const Block = props => {
       bgColor={props.bgColor}
       customDef={props.customDef}
       fontColor={props.fontColor}
-      height={props.height}
-      width={props.width}
       py={props.py}
       px={props.px}
       pt={props.pt}
@@ -37,16 +62,18 @@ const Block = props => {
       mr={props.mr}
       mb={props.mb}
       ml={props.ml}
-      xs={props.xs}
-      sm={props.sm}
-      md={props.md}
-      lg={props.lg}
-      xl={props.xl}
       typography={props.typography}
       onClick={props.onClick}
       fullWidth={props.fullWidth}
       fullHeight={props.fullHeight}
-      custom={props.custom}>
+      custom={props.custom}
+      $width={props.width}
+      $height={props.height}
+      xs={getXsProps()}
+      sm={getSmProps()}
+      md={getMdProps()}
+      lg={getLgProps()}
+      xl={getXlProps()}>
       {props.children}
     </Component>
   );
