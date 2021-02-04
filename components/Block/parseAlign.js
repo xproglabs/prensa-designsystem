@@ -8,7 +8,7 @@ export const parseAlign = (props) => {
 
   let object = [];
   let alignItems = '';
-  let direction = 'flex';
+  let display = 'flex';
   let flexDirection = '';
   let justifyContent = '';
   
@@ -84,9 +84,10 @@ export const parseAlign = (props) => {
   }
   // define strings
   alignItems !== '' && object.push(`align-items: ${alignItems};`);
-  direction !== '' && object.push(`display: ${direction};`);
+  display !== '' && object.push(`display: ${display};`);
   flexDirection !== '' && object.push(`flex-direction: ${flexDirection};`);
   justifyContent !== '' && object.push(`justify-content: ${justifyContent};`);
+
   // end
   return object.join('');
 };

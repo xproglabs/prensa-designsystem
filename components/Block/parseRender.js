@@ -17,47 +17,39 @@ const parseStyle = (props, theme) => {
 };
 
 const parseProps = (media, props) => {
-  const xs = `
-    @media (min-width: ${props.theme.queries.xs}) {
-      ${parseStyle(props.xs, props.theme)}
-    }
-  `;
-  const sm = `
-    @media (min-width: ${props.theme.queries.sm}) {
-      ${parseStyle(props.sm, props.theme)}
-    }
-  `;
-  const md = `
-    @media (min-width: ${props.theme.queries.md}) {
-      ${parseStyle(props.md, props.theme)}
-    }
-  `;
-  const lg = `
-    @media (min-width: ${props.theme.queries.lg}) {
-      ${parseStyle(props.lg, props.theme)}
-    }
-  `;
-  const xl = `
-    @media (min-width: ${props.theme.queries.xl}) {
-      ${parseStyle(props.xl, props.theme)}
-    }
-  `;
-  const noQuery = `
-    ${parseStyle(props, props.theme)}
-  `;
   switch (media) {
     case 'xs':
-      return xs;
+      return `
+        @media (min-width: ${props.theme.queries.xs}) {
+          ${parseStyle(props.xs, props.theme)}
+        }
+      `;
     case 'sm':
-      return sm;
+      return `
+        @media (min-width: ${props.theme.queries.sm}) {
+          ${parseStyle(props.sm, props.theme)}
+        }
+      `;
     case 'md':
-      return md;
+      return `
+        @media (min-width: ${props.theme.queries.md}) {
+          ${parseStyle(props.md, props.theme)}
+        }
+      `;
     case 'lg':
-      return lg;
+      return `
+        @media (min-width: ${props.theme.queries.lg}) {
+          ${parseStyle(props.lg, props.theme)}
+        }
+      `;
     case 'xl':
-      return xl;
+      return `
+        @media (min-width: ${props.theme.queries.xl}) {
+          ${parseStyle(props.xl, props.theme)}
+        }
+      `;
     default:
-      return noQuery;
+      return `${parseStyle(props, props.theme)}`;
   }
 };
 
