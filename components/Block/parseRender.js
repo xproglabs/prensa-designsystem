@@ -1,24 +1,18 @@
 import {parseAlign} from './parseAlign';
-
-// const parseWidth = ({width, px}, theme) => {
-//   if (typeof width === 'string') {
-//     if (px) return `width: calc(100% )`
-//     if (width) return `width: ${width}`
-//     return `width: 100%`
-//   }
-// }
+import {parseWidth, parseHeight} from './parseDimensions';
 
 const parseStyle = (props, theme) => {
   return `
-    ${parseAlign(props, theme)}
-    ${theme.parseBgColor(props, theme)}
-    ${theme.parseDimension(props, theme)}
-    ${theme.parseFontColor(props, theme)}
-    ${theme.parseFontFamily(props, theme)}
-    ${theme.parseCustomDef(props, theme)}
-    ${theme.parseCustom(props, theme)}
-    ${theme.parseMargin(props, theme)}
-    ${theme.parsePadding(props, theme)}
+    ${parseAlign(props, theme)};
+    ${parseWidth(props, theme)};
+    ${parseHeight(props, theme)};
+    ${theme.parseBgColor(props, theme)};
+    ${theme.parseFontColor(props, theme)};
+    ${theme.parseFontFamily(props, theme)};
+    ${theme.parseCustomDef(props, theme)};
+    ${theme.parseCustom(props, theme)};
+    ${theme.parseMargin(props, theme)};
+    ${theme.parsePadding(props, theme)};
   `;
 };
 

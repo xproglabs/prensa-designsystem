@@ -44,6 +44,8 @@ const Block = props => {
       xl={props.xl}
       typography={props.typography}
       onClick={props.onClick}
+      fullWidth={props.fullWidth}
+      fullHeight={props.fullHeight}
       custom={props.custom}>
       {props.children}
     </Component>
@@ -55,6 +57,7 @@ Block.defaultProps = {
   alignx: 'left',
   aligny: 'top',
 };
+
 Block.propTypes = {
   /**
    * Configuração da orientação de posição
@@ -126,7 +129,15 @@ Block.propTypes = {
   /**
    * Propriedades de ações
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /**
+   * Faz o elemento crescer 100% e ocupar todo o espaço disponível para largura
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * Faz o elemento crescer 100% e ocupar todo o espaço disponível para altura
+   */
+  fullHeight: PropTypes.bool
 };
 
 export default withTheme(Block);
