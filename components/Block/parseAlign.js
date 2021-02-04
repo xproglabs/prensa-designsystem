@@ -1,89 +1,92 @@
+import {get} from 'lodash';
+
 export const parseAlign = (props) => {
 
-  if (!props) return '';
-  const {align, alignx, aligny} = props;
+  const align = get(props, 'align', undefined);
+  const alignx = get(props, 'alignx', undefined);
+  const aligny = get(props, 'aligny', undefined);
 
   let object = [];
-  let ai = '';
-  let di = 'flex';
-  let fd = '';
-  let jc = '';
+  let alignItems = '';
+  let direction = 'flex';
+  let flexDirection = '';
+  let justifyContent = '';
   
   // check if is column
-  if(align.includes('column')) {
-    fd = align;
+  if (align === 'column') {
+    flexDirection = align;
     // x axys
     if(alignx === 'left') {
-      ai = 'flex-start';
+      alignItems = 'flex-start';
     }
     if(alignx === 'center') {
-      ai = 'center';
+      alignItems = 'center';
     }
     if(alignx === 'right') {
-      ai = 'flex-end';
+      alignItems = 'flex-end';
     }
     if(alignx === 'evenly') {
-      jc = 'space-evenly';
+      justifyContent = 'space-evenly';
     }
     if(alignx === 'between') {
-      jc = 'space-between';
+      justifyContent = 'space-between';
     }
     // y axis
     if(aligny === 'top') {
-      jc = 'flex-start';
+      justifyContent = 'flex-start';
     }
     if(aligny === 'middle') {
-      jc = 'center';
+      justifyContent = 'center';
     }
     if(aligny === 'bottom') {
-      jc = 'flex-end';
+      justifyContent = 'flex-end';
     }
     if(aligny === 'evenly') {
-      jc = 'space-evenly';
+      justifyContent = 'space-evenly';
     }
     if(aligny === 'between') {
-      jc = 'space-between';
+      justifyContent = 'space-between';
     }
   }
   // check if is row
-  if(align.includes('row')) {
-    fd = align;
+  if (align === 'row') {
+    flexDirection = align;
     if(alignx === 'left') {
-      ai = 'flex-start';
+      alignItems = 'flex-start';
     }
     if(alignx === 'center') {
-      jc = 'center';
+      justifyContent = 'center';
     }
     if(alignx === 'right') {
-      jc = 'flex-end';
+      justifyContent = 'flex-end';
     }
     if(alignx === 'evenly') {
-      jc = 'space-evenly';
+      justifyContent = 'space-evenly';
     }
     if(alignx === 'between') {
-      jc = 'space-between';
+      justifyContent = 'space-between';
     }
     if(aligny === 'top') {
-      ai = 'flex-start';
+      alignItems = 'flex-start';
     }
     if(aligny === 'middle') {
-      ai = 'center';
+      alignItems = 'center';
     }
     if(aligny === 'bottom') {
-      ai = 'flex-end';
+      alignItems = 'flex-end';
     }
     if(aligny === 'evenly') {
-      jc = 'space-evenly';
+      justifyContent = 'space-evenly';
     }
     if(aligny === 'between') {
-      jc = 'space-between';
+      justifyContent = 'space-between';
     }
   }
   // define strings
-  ai !== '' && object.push(`align-items: ${ai};`);
-  di !== '' && object.push(`display: ${di};`);
-  fd !== '' && object.push(`flex-direction: ${fd};`);
-  jc !== '' && object.push(`justify-content: ${jc};`);
+  alignItems !== '' && object.push(`align-items: ${alignItems};`);
+  direction !== '' && object.push(`display: ${direction};`);
+  flexDirection !== '' && object.push(`flex-direction: ${flexDirection};`);
+  justifyContent !== '' && object.push(`justify-content: ${justifyContent};`);
   // end
   return object.join('');
 };

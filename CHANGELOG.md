@@ -4,6 +4,10 @@
 - Adiciona ifs para verificação dos valores nas funções de parse
 - Troca função theme.parseColorValue para theme.parseColor
 - Adiciona mais um parâmetro na função parseColor [(props, theme, propName')]
+- Refatora módulo dimension do componente Block
+  > Nova props fullWidth (calcula automaticamente o width final caso exista padding)
+  > Nova props fullHeight
+  > Corrige erro das props repassadas para o elemento HTML
 # v1.4.56
 - Corrige inconsistência no SideMenu
 # v1.4.55
