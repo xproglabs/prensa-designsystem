@@ -1,16 +1,14 @@
-const parseCustom = (theme, {custom}) => {
-  if(!custom)
-    return '';
+const parseCustom = (props) => {
+  if (!props || !props.custom) return '';
   let object = [];
-  object.push(`
-    ${custom}
-  `);
+  object.push(`${props.custom}`);
   return object.join('');
 };
 
-const parseCustomDef = (theme, {customDef}) => {
+const parseCustomDef = (props) => {
+  if (!props || !props.customDef) return '';
   let object = [];
-  switch (customDef) {
+  switch (props.customDef) {
     case 'demo':
       object.push(`
         background-color: rgba(1, 22, 39, 0.2);

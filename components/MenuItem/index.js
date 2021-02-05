@@ -17,19 +17,19 @@ const InnerContainer = styled.a`
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  color: ${props => props.$color ? props.theme.parseColorValue(props, props.theme, '$color') : props.theme.colors.activeColor};
+  color: ${props => props.$color ? props.theme.parseColor(props, props.theme, '$color') : props.theme.colors.activeColor};
   text-decoration: unset;
   cursor: pointer;
   svg {
     width: 24px;
     height: 24px;
-    fill: ${props => props.$color ? props.theme.parseColorValue(props, props.theme, '$color') : props.theme.colors.activeColor};
+    fill: ${props => props.$color ? props.theme.parseColor(props, props.theme, '$color') : props.theme.colors.activeColor};
   }
   &:hover {
     background-color: ${props => props.theme.colors.neutral10};
     opacity: 0.8;
   }
-  ${props => props.theme.parsePadding(props.theme, props)};
+  ${props => props.theme.parsePadding(props, props.theme)};
   ${props => parseWidth(props)};
 `;
 

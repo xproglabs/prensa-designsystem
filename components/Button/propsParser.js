@@ -26,7 +26,7 @@ const getOutlinedCSS = (props, theme) => `
   background-color: transparent;
   border-width: 1px;
   border-style: solid;
-  border-color: ${theme.parseColorValue(props, theme, '$color')};
+  border-color: ${theme.parseColor(props, theme, '$color')};
   &:disabled {
     border-color: ${theme.colors.neutral8};
   }
@@ -35,7 +35,7 @@ const getGhostCSS = () => `
   background-color: transparent;
 `;
 const getFilledCSS = (props, theme) =>`
-  background-color: ${theme.parseColorValue(props, theme, '$color')};
+  background-color: ${theme.parseColor(props, theme, '$color')};
   &:disabled {
     background-color: ${theme.colors.neutral8};
   }
@@ -52,8 +52,8 @@ const parseVariation = (props, theme) => {
 const parseFontColor = (props, theme) => {
   const {fontColor, $variant, disabled} = props;
   if (disabled && $variant !== 'filled') return theme.colors.neutral8;
-  if (fontColor) return theme.parseColorValue(props, theme, 'fontColor');
-  if ($variant === 'outlined' || $variant === 'ghost') return theme.parseColorValue(props, theme, '$color');
+  if (fontColor) return theme.parseColor(props, theme, 'fontColor');
+  if ($variant === 'outlined' || $variant === 'ghost') return theme.parseColor(props, theme, '$color');
   return theme.colors.white;
 };
 const parseFontFamily = (props, theme) => {
@@ -105,7 +105,7 @@ const parseStyle = (props, theme) => {
     ${getWidth(props, theme)};
     ${parseRadius(props, '$radius')};
     ${parseRemoveText(props, theme)};
-    ${parsePadding(theme, props)};
+    ${parsePadding(props, theme)};
     ${parseIcon(props, theme)};
   `;
 };

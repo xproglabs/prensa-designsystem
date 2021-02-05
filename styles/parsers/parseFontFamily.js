@@ -1,7 +1,7 @@
-const parseFontFamily = (theme, {typography}) => {
-  const selected = theme.fonts[typography];
-  if(!selected)
-    return '';
+const parseFontFamily = (props, theme) => {
+  if (!props) return '';
+  const selected = theme.fonts[props.typography];
+  if (!selected) return '';
   return `font-family: ${selected};`;
 };
 
