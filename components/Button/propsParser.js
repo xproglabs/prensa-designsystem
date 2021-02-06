@@ -63,23 +63,20 @@ const parseFontFamily = (props, theme) => {
   return selected;
 };
 const parseTypography = (props, theme) => {
-  return `
+  if (props.removeText === true) return `
     span {
+      display: none;
+    }
+  `;
+  else return `
+    span {
+      display: inline;
       margin-left: 8px;
       margin-right: 8px;
       color: ${parseFontColor(props, theme)};
       font-size: 14px;
       font-weight: 400;
       font-family: ${parseFontFamily(props, theme)};
-    }
-  `;
-};
-
-const parseRemoveText = (props) => {
-  if (!props.removeText) return '';
-  return `
-    span {
-      display: none;
     }
   `;
 };
@@ -103,55 +100,46 @@ const parseStyle = (props, theme) => {
     ${parseTypography(props, theme)};
     ${getSize(props, theme)};
     ${getWidth(props, theme)};
-    ${parseRadius(props, '$radius')};
-    ${parseRemoveText(props, theme)};
+    ${parseRadius(props, '$radius')};    
     ${parsePadding(props, theme)};
     ${parseIcon(props, theme)};
   `;
 };
 
 const parseProps = (media, props) => {
-  const xs = `
-    @media (min-width: ${props.theme.queries.xs}) {
-      ${parseStyle(props.xs, props.theme)}
-    }
-  `;
-  const sm = `
-    @media (min-width: ${props.theme.queries.sm}) {
-      ${parseStyle(props.sm, props.theme)}
-    }
-  `;
-  const md = `
-    @media (min-width: ${props.theme.queries.md}) {
-      ${parseStyle(props.md, props.theme)}
-    }
-  `;
-  const lg = `
-    @media (min-width: ${props.theme.queries.lg}) {
-      ${parseStyle(props.lg, props.theme)}
-    }
-  `;
-  const xl = `
-    @media (min-width: ${props.theme.queries.xl}) {
-      ${parseStyle(props.xl, props.theme)}
-    }
-  `;
-  const noQuery = `
-    ${parseStyle(props, props.theme)}
-  `;
   switch (media) {
     case 'xs':
-      return xs;
+      return `
+        @media (min-width: ${props.theme.queries.xs}) {
+          ${parseStyle(props.xs, props.theme)}
+        }
+      `;
     case 'sm':
-      return sm;
+      return `
+        @media (min-width: ${props.theme.queries.sm}) {
+          ${parseStyle(props.sm, props.theme)}
+        }
+      `;
     case 'md':
-      return md;
+      return `
+        @media (min-width: ${props.theme.queries.md}) {
+          ${parseStyle(props.md, props.theme)}
+        }
+      `;
     case 'lg':
-      return lg;
+      return `
+        @media (min-width: ${props.theme.queries.lg}) {
+          ${parseStyle(props.lg, props.theme)}
+        }
+      `;
     case 'xl':
-      return xl;
+      return `
+        @media (min-width: ${props.theme.queries.xl}) {
+          ${parseStyle(props.xl, props.theme)}
+        }
+      `;
     default:
-      return noQuery;
+      return `${parseStyle(props, props.theme)}`;
   }
 };
 

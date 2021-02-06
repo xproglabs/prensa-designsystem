@@ -1,6 +1,6 @@
-import differenceInHours from 'date-fns/differenceInHours';
-import formatDistance from 'date-fns/formatDistance';
-import {pt} from 'date-fns/locale';
+import {differenceInHours} from 'date-fns';
+import {formatDistance} from 'date-fns';
+import {ptBR} from 'date-fns/locale';
 import {map} from 'lodash';
 
 import datePtBrFull from './datePtBrFull';
@@ -15,8 +15,8 @@ const dateDistance = (date, limit) => {
   let _now = new Date().getTime();
   let _date = new Date(_y[0], _y[1] - 1, _d[0], _t[0], _t[1]).getTime();
 
-  const distanteInWords = formatDistance(_now, _date, {locale: pt});
-  const diffHours = differenceInHours(_now, _date, {locale: pt});
+  const distanteInWords = formatDistance(_now, _date, {locale: ptBR});
+  const diffHours = differenceInHours(_now, _date, {locale: ptBR});
 
   if(diffHours > limit)
     return datePtBrFull(date);

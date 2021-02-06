@@ -9,6 +9,12 @@
   > Nova props fullHeight
   > Corrige erro das props repassadas para o elemento HTML
   > Adiciona props itinerant props $width e $height
+- Ajustes finos no componente Button:
+  > Remover elemento span quando children não for string
+  > Refatora parseProps para melhor desempenho
+  > Permite usar py no Button
+  > Permite usar px e py nas queries do Button
+  > Corrige comportamento incorreto no removeText (leitura incorreta das props no getProps e estilo faltando display: inline no span)
 # v1.4.56
 - Corrige inconsistência no SideMenu
 # v1.4.55
