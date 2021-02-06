@@ -1,4 +1,8 @@
-const parseMargin = (theme, {mx, my, mt, mr, mb, ml}) => {
+const parseMargin = (props, theme) => {
+
+  if (!props) return '';
+  const {mx, my, mt, mr, mb, ml} = props;
+
   let object = [];
   let factor = theme.factors.margin;
 

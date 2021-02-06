@@ -1,12 +1,9 @@
-import {parseAlign} from './parsers/parseAlign';
-import {parseColorValue, parseBgColor, parseFontColor} from './parsers/parseColors';
+import {parseColor, parseBgColor, parseFontColor} from './parsers/parseColors';
 import {parseCustom, parseCustomDef} from './parsers/parseCustom';
-import {parseDimension} from './parsers/parseDimension';
 import {parseFontFamily} from './parsers/parseFontFamily';
 import {parseMargin} from './parsers/parseMargin';
 import {parsePadding} from './parsers/parsePadding';
 import {parseRadius} from './parsers/parseRadius';
-import {parseProps} from './parsers/parseRender';
 
 export const theme = {
   colors: {
@@ -69,16 +66,13 @@ export const theme = {
     default: '3px',
     alternative: '5px'
   },
-  parseAlign,
   parseBgColor,
   parseCustom,
   parseCustomDef,
-  parseDimension,
   parseFontColor,
   parseFontFamily,
   parseMargin,
   parsePadding,
-  parseProps,
   parseRadius,
-  parseColorValue,
+  parseColor,
 };

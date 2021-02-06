@@ -1,20 +1,20 @@
 import {get} from 'lodash';
 
-const parseBgColor = (theme, {bgColor}) => {
-  const selected = theme.colors[bgColor];
-  if(!selected)
-    return '';
+const parseBgColor = (props, theme) => {
+  if (!props || !props.bgColor) return ''; 
+  const selected = theme.colors[props.bgColor];
+  if (!selected) return '';
   return `background-color: ${selected};`;
 };
 
-const parseFontColor = (theme, {fontColor}) => {
-  const selected = theme.colors[fontColor];
-  if(!selected)
-    return '';
+const parseFontColor = (props, theme) => {
+  if (!props || !props.fontColor) return '';
+  const selected = theme.colors[props.fontColor];
+  if (!selected) return '';
   return `color: ${selected};`;
 };
 
-const parseColorValue = (props, theme, propName) => {
+const parseColor = (props, theme, propName) => {
   if (!propName) return console.error('PRENSA :: Não existe nome de prop para buscar no parseColor');
   const propValue = get(props, propName, 'activeColor');
   if (propValue.startsWith('#')) return propValue;
@@ -23,4 +23,4 @@ const parseColorValue = (props, theme, propName) => {
   return parsedValue;
 };
 
-export {parseColorValue, parseBgColor, parseFontColor};
+export {parseColor, parseBgColor, parseFontColor};

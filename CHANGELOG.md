@@ -1,3 +1,20 @@
+# v1.4.57
+- Remove parseAlign e parseRender do theme (ficarão somente no Block)
+- Altera ordem dos parâmetros nas funções de parse (props, theme)
+- Adiciona ifs para verificação dos valores nas funções de parse
+- Troca função theme.parseColorValue para theme.parseColor
+- Adiciona mais um parâmetro na função parseColor [(props, theme, propName')]
+- Refatora módulo dimension do componente Block
+  > Nova props fullWidth (calcula automaticamente o width final caso exista padding)
+  > Nova props fullHeight
+  > Corrige erro das props repassadas para o elemento HTML
+  > Adiciona props itinerant props $width e $height
+- Ajustes finos no componente Button:
+  > Remover elemento span quando children não for string
+  > Refatora parseProps para melhor desempenho
+  > Permite usar py no Button
+  > Permite usar px e py nas queries do Button
+  > Corrige comportamento incorreto no removeText (leitura incorreta das props no getProps e estilo faltando display: inline no span)
 # v1.4.56
 - Corrige inconsistência no SideMenu
 # v1.4.55

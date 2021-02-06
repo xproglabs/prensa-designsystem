@@ -118,3 +118,30 @@ Utilize a propriedade `height` ou `width`
 </ThemeProvider>
 
 <Space size={6} />
+
+### Exemplo 5
+
+`height: '20px'`
+
+`fullWidth: true`
+
+`px: 4`
+
+<pre>
+  <CodeBlock>{`<Block fullWidth px={4}></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    bgColor='primary2'
+    fontColor='white'
+    height='20px'
+    fullWidth
+    px={4}>
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />

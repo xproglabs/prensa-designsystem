@@ -1,11 +1,12 @@
 //Get button size (height)
 const getSize = (props, theme) => {
-  const {$size} = props;
+  const {$size, iconSize} = props;
   if (!$size) return '';
   const factor = theme.factors.margin;
   const size = $size;
   if (isNaN(size)) return `height: ${size}`;
   if (size < 4) return `height: ${factor * 4}px`;
+  if (iconSize) return 'height: max-content';
   return `height: ${factor * $size}px`;
 };
 
@@ -25,7 +26,7 @@ const getOutlinedCSS = (props, theme) => `
   background-color: transparent;
   border-width: 1px;
   border-style: solid;
-  border-color: ${theme.parseColorValue(props, theme, '$color')};
+  border-color: ${theme.parseColor(props, theme, '$color')};
   &:disabled {
     border-color: ${theme.colors.neutral8};
   }
@@ -34,7 +35,7 @@ const getGhostCSS = () => `
   background-color: transparent;
 `;
 const getFilledCSS = (props, theme) =>`
-  background-color: ${theme.parseColorValue(props, theme, '$color')};
+  background-color: ${theme.parseColor(props, theme, '$color')};
   &:disabled {
     background-color: ${theme.colors.neutral8};
   }
@@ -51,8 +52,8 @@ const parseVariation = (props, theme) => {
 const parseFontColor = (props, theme) => {
   const {fontColor, $variant, disabled} = props;
   if (disabled && $variant !== 'filled') return theme.colors.neutral8;
-  if (fontColor) return theme.parseColorValue(props, theme, 'fontColor');
-  if ($variant === 'outlined' || $variant === 'ghost') return theme.parseColorValue(props, theme, '$color');
+  if (fontColor) return theme.parseColor(props, theme, 'fontColor');
+  if ($variant === 'outlined' || $variant === 'ghost') return theme.parseColor(props, theme, '$color');
   return theme.colors.white;
 };
 const parseFontFamily = (props, theme) => {
@@ -62,8 +63,14 @@ const parseFontFamily = (props, theme) => {
   return selected;
 };
 const parseTypography = (props, theme) => {
-  return `
+  if (props.removeText === true) return `
     span {
+      display: none;
+    }
+  `;
+  else return `
+    span {
+      display: inline;
       margin-left: 8px;
       margin-right: 8px;
       color: ${parseFontColor(props, theme)};
@@ -74,21 +81,12 @@ const parseTypography = (props, theme) => {
   `;
 };
 
-const parseRemoveText = (props) => {
-  if (!props.removeText) return '';
-  return `
-    span {
-      display: none;
-    }
-  `;
-};
-
 const parseIcon = (props, theme) => {
   return `
     svg {
       fill: ${parseFontColor(props, theme)};
-      width: 24px;
-      height: 24px;
+      width: ${props.iconSize ? props.iconSize : '24px'};
+      height: ${props.iconSize ? props.iconSize : '24px'};
     }
   `;
 };
@@ -102,55 +100,46 @@ const parseStyle = (props, theme) => {
     ${parseTypography(props, theme)};
     ${getSize(props, theme)};
     ${getWidth(props, theme)};
-    ${parseRadius(props, '$radius')};
-    ${parseRemoveText(props, theme)};
-    ${parsePadding(theme, props)};
+    ${parseRadius(props, '$radius')};    
+    ${parsePadding(props, theme)};
     ${parseIcon(props, theme)};
   `;
 };
 
 const parseProps = (media, props) => {
-  const xs = `
-    @media (min-width: ${props.theme.queries.xs}) {
-      ${parseStyle(props.xs, props.theme)}
-    }
-  `;
-  const sm = `
-    @media (min-width: ${props.theme.queries.sm}) {
-      ${parseStyle(props.sm, props.theme)}
-    }
-  `;
-  const md = `
-    @media (min-width: ${props.theme.queries.md}) {
-      ${parseStyle(props.md, props.theme)}
-    }
-  `;
-  const lg = `
-    @media (min-width: ${props.theme.queries.lg}) {
-      ${parseStyle(props.lg, props.theme)}
-    }
-  `;
-  const xl = `
-    @media (min-width: ${props.theme.queries.xl}) {
-      ${parseStyle(props.xl, props.theme)}
-    }
-  `;
-  const noQuery = `
-    ${parseStyle(props, props.theme)}
-  `;
   switch (media) {
     case 'xs':
-      return xs;
+      return `
+        @media (min-width: ${props.theme.queries.xs}) {
+          ${parseStyle(props.xs, props.theme)}
+        }
+      `;
     case 'sm':
-      return sm;
+      return `
+        @media (min-width: ${props.theme.queries.sm}) {
+          ${parseStyle(props.sm, props.theme)}
+        }
+      `;
     case 'md':
-      return md;
+      return `
+        @media (min-width: ${props.theme.queries.md}) {
+          ${parseStyle(props.md, props.theme)}
+        }
+      `;
     case 'lg':
-      return lg;
+      return `
+        @media (min-width: ${props.theme.queries.lg}) {
+          ${parseStyle(props.lg, props.theme)}
+        }
+      `;
     case 'xl':
-      return xl;
+      return `
+        @media (min-width: ${props.theme.queries.xl}) {
+          ${parseStyle(props.xl, props.theme)}
+        }
+      `;
     default:
-      return noQuery;
+      return `${parseStyle(props, props.theme)}`;
   }
 };
 

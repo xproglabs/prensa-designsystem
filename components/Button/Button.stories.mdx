@@ -239,9 +239,11 @@ O componente pode receber uma prop chamada `onClick` que permite a passagem da a
 
 ### Botão com ícone
 O componente pode receber ícones do lado esquerdo ou direito através das props `leftIcon` e `rightIcon`, respectivamente. Para utilizá-las basta importar um ícone SVG como componente e passar o mesmo na props.
+Também pode assumir a função de um botão composto somente por um ícone. Para isso, é necessário somente passar o ícone, sem children como no primeiro exemplo.
 
 <ThemeProvider theme={theme}>
   <div style={{display: 'flex'}}>
+    <Button variant="ghost" color='primary1' leftIcon={<DownloadIcon />} iconSize='50px' style={{marginRight: 8}} />
     <Button variant="filled" color='primary1' leftIcon={<DownloadIcon />} style={{marginRight: 8}}>Com ícone</Button>
     <Button variant="filled" color='primary1' rightIcon={<ArrowRightIcon />} style={{marginRight: 8}}>Com ícone</Button>
     <Button fullWidth variant="ghost" color='primary1' rightIcon={<ArrowRightIcon />}>Com ícone variação ghost</Button>
@@ -254,7 +256,8 @@ O componente pode receber ícones do lado esquerdo ou direito através das props
   <CodeBlock children={`
   import {Button} from 'prensa';
   import {ArrowCircleDownBlack18Dp as DownloadIcon, IcArrowForward as ArrowRightIcon} from 'prensa/icons';
-
+  
+  <Button variant="ghost" color='primary1' leftIcon={<DownloadIcon />} iconSize='50px' />
   <Button variant="filled" color='primary1' leftIcon={<DownloadIcon />}>Com ícone</Button>
   <Button variant="filled" color='primary1' rightIcon={<ArrowRightIcon />}>Com ícone</Button>
   <Button 
@@ -282,6 +285,9 @@ As props que estão disponíveis para o responsivo são apenas:
 `size`
 `width`
 `removeText`
+`iconSize`
+`px`
+`py`
 
 <Space size={2} />
 

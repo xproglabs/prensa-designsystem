@@ -3,27 +3,53 @@ import React from 'react';
 import styled from 'styled-components';
 import {withTheme} from 'styled-components';
 
+import {parseProps} from './parseRender';
+
 const Component = styled.div`
-  ${props => props && props.theme.parseProps('', props.theme, props)};
-  ${props => props.xs && props.theme.parseProps('xs', props.theme, props.xs)};
-  ${props => props.sm && props.theme.parseProps('sm', props.theme, props.sm)};
-  ${props => props.md && props.theme.parseProps('md', props.theme, props.md)};
-  ${props => props.lg && props.theme.parseProps('lg', props.theme, props.lg)};
-  ${props => props.xl && props.theme.parseProps('xl', props.theme, props.xl)};
+  ${props => parseProps('', props)};
+  ${props => props.xs && parseProps('xs', props)};
+  ${props => props.sm && parseProps('sm', props)};
+  ${props => props.md && parseProps('md', props)};
+  ${props => props.lg && parseProps('lg', props)};
+  ${props => props.xl && parseProps('xl', props)};
 `;
 
 const Block = props => {
+
+  const getXsProps = () => props.xs && ({
+    ...props,
+    $width: props.xs.width ? props.xs.width : props.width,
+    $height: props.xs.height ? props.xs.height : props.height,
+  });
+  const getSmProps = () => props.sm && ({
+    ...props,
+    $width: props.sm.width ? props.sm.width : props.width,
+    $height: props.sm.height ? props.sm.height : props.height,
+  });
+  const getMdProps = () => props.md && ({
+    ...props,
+    $width: props.md.width ? props.md.width : props.width,
+    $height: props.md.height ? props.md.height : props.height,
+  });
+  const getLgProps = () => props.lg && ({
+    ...props,
+    $width: props.lg.width ? props.lg.width : props.width,
+    $height: props.lg.height ? props.lg.height : props.height,
+  });
+  const getXlProps = () => props.xl && ({
+    ...props,
+    $width: props.xl.width ? props.xl.width : props.width,
+    $height: props.xl.height ? props.xl.height : props.height,
+  });
+
   return (
     <Component
       align={props.align}
       alignx={props.alignx}
       aligny={props.aligny}
       bgColor={props.bgColor}
-      custom={props.custom}
       customDef={props.customDef}
       fontColor={props.fontColor}
-      height={props.height}
-      width={props.width}
       py={props.py}
       px={props.px}
       pt={props.pt}
@@ -36,13 +62,18 @@ const Block = props => {
       mr={props.mr}
       mb={props.mb}
       ml={props.ml}
-      xs={props.xs}
-      sm={props.sm}
-      md={props.md}
-      lg={props.lg}
-      xl={props.xl}
       typography={props.typography}
-      onClick={props.onClick}>
+      onClick={props.onClick}
+      fullWidth={props.fullWidth}
+      fullHeight={props.fullHeight}
+      custom={props.custom}
+      $width={props.width}
+      $height={props.height}
+      xs={getXsProps()}
+      sm={getSmProps()}
+      md={getMdProps()}
+      lg={getLgProps()}
+      xl={getXlProps()}>
       {props.children}
     </Component>
   );
@@ -53,6 +84,7 @@ Block.defaultProps = {
   alignx: 'left',
   aligny: 'top',
 };
+
 Block.propTypes = {
   /**
    * Configuração da orientação de posição
@@ -124,7 +156,15 @@ Block.propTypes = {
   /**
    * Propriedades de ações
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /**
+   * Faz o elemento crescer 100% e ocupar todo o espaço disponível para largura
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * Faz o elemento crescer 100% e ocupar todo o espaço disponível para altura
+   */
+  fullHeight: PropTypes.bool
 };
 
 export default withTheme(Block);
