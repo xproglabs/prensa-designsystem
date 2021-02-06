@@ -69,6 +69,9 @@ const Button = ({
   xl,
 }) => {
 
+  //check if children is string
+  const childrenIsString = typeof children === 'string';
+
   // Trigger to Handle enter keydown for forms
   const handleKeyPress = event => {
     if (event.keyCode === 13) enterKey();
@@ -151,7 +154,8 @@ const Button = ({
       >
         {loading && 'Carregando...'}
         {leftIcon && leftIcon}
-        {children && <span>{children}</span>}
+        {children && childrenIsString && <span>{children}</span>}
+        {children && !childrenIsString && children}
         {rightIcon && rightIcon}
       </StyledButton>
     );
@@ -164,7 +168,7 @@ Button.propTypes = {
   /**
    * Corresponde ao texto escrito do botão
    */
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   /**
    * Altera a cor geral do componente
    */
