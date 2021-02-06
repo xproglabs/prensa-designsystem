@@ -59,6 +59,7 @@ const Button = ({
   enterKey,
   removeText,
   px,
+  py,
   on,
   path,
   iconSize,
@@ -90,6 +91,8 @@ const Button = ({
     $width: xs.width ? xs.width : width,
     removeText: xs.removeText ? xs.removeText : removeText,
     iconSize: xs.iconSize ? xs.iconSize : iconSize,
+    px: xs.px ? xs.px : px,
+    py: xs.py ? xs.py : py,
   });
   const getSmProps = () => sm && ({
     $color: sm.color ? sm.color : color,
@@ -99,6 +102,8 @@ const Button = ({
     $width: sm.width ? sm.width : width,
     removeText: sm.removeText ? sm.removeText : removeText,
     iconSize: sm.iconSize ? sm.iconSize : iconSize,
+    px: sm.px ? sm.px : px,
+    py: sm.py ? sm.py : py,
   });
   const getMdProps = () => md && ({
     $color: md.color ? md.color : color,
@@ -108,6 +113,8 @@ const Button = ({
     $width: md.width ? md.width : width,
     removeText: md.removeText ? md.removeText : removeText,
     iconSize: md.iconSize ? md.iconSize : iconSize,
+    px: md.px ? md.px : px,
+    py: md.py ? md.py : py,
   });
   const getLgProps = () => lg && ({
     $color: lg.color ? lg.color : color,
@@ -117,6 +124,8 @@ const Button = ({
     $width: lg.width ? lg.width : width,
     removeText: lg.removeText ? lg.removeText : removeText,
     iconSize: lg.iconSize ? lg.iconSize : iconSize,
+    px: lg.px ? lg.px : px,
+    py: lg.py ? lg.py : py,
   });
   const getXlProps = () => xl && ({
     $color: xl.color ? xl.color : color,
@@ -126,6 +135,8 @@ const Button = ({
     $width: xl.width ? xl.width : width,
     removeText: xl.removeText ? xl.removeText : removeText,
     iconSize: xl.iconSize ? xl.iconSize : iconSize,
+    px: xl.px ? xl.px : px,
+    py: xl.py ? xl.py : py,
   });
 
   const renderRoot = () => {
@@ -133,6 +144,7 @@ const Button = ({
       <StyledButton
         on={on}
         px={px}
+        py={py}
         fullWidth={fullWidth}
         style={style}
         onClick={onClick}
@@ -226,9 +238,13 @@ Button.propTypes = {
    */
   enterKey: PropTypes.func,
   /**
-   * Permite alterar o espacamento interno no botão
+   * Permite alterar o espaçamento (x) interno no botão
    */
   px: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /**
+   * Permite alterar o espaçamento (y) interno no botão
+   */
+  py: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** 
    * Permite remover o texto do botão
    */
@@ -257,6 +273,8 @@ Button.propTypes = {
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     removeText: PropTypes.bool,
     iconSize: PropTypes.string,
+    px: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    py: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }),
   sm: PropTypes.shape({
     color: PropTypes.string,
@@ -266,6 +284,8 @@ Button.propTypes = {
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     removeText: PropTypes.bool,
     iconSize: PropTypes.string,
+    px: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    py: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }),
   md: PropTypes.shape({
     color: PropTypes.string,
@@ -275,6 +295,8 @@ Button.propTypes = {
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     removeText: PropTypes.bool,
     iconSize: PropTypes.string,
+    px: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    py: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }),
   lg: PropTypes.shape({
     color: PropTypes.string,
@@ -284,6 +306,8 @@ Button.propTypes = {
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     removeText: PropTypes.bool,
     iconSize: PropTypes.string,
+    px: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    py: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }),
   xl: PropTypes.shape({
     color: PropTypes.string,
@@ -293,6 +317,8 @@ Button.propTypes = {
     width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     removeText: PropTypes.bool,
     iconSize: PropTypes.string,
+    px: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    py: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }),
 };
 
