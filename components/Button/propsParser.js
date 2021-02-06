@@ -63,23 +63,20 @@ const parseFontFamily = (props, theme) => {
   return selected;
 };
 const parseTypography = (props, theme) => {
-  return `
+  if (props.removeText === true) return `
     span {
+      display: none;
+    }
+  `;
+  else return `
+    span {
+      display: inline;
       margin-left: 8px;
       margin-right: 8px;
       color: ${parseFontColor(props, theme)};
       font-size: 14px;
       font-weight: 400;
       font-family: ${parseFontFamily(props, theme)};
-    }
-  `;
-};
-
-const parseRemoveText = (props) => {
-  if (!props.removeText) return '';
-  return `
-    span {
-      display: none;
     }
   `;
 };
@@ -103,8 +100,7 @@ const parseStyle = (props, theme) => {
     ${parseTypography(props, theme)};
     ${getSize(props, theme)};
     ${getWidth(props, theme)};
-    ${parseRadius(props, '$radius')};
-    ${parseRemoveText(props, theme)};
+    ${parseRadius(props, '$radius')};    
     ${parsePadding(props, theme)};
     ${parseIcon(props, theme)};
   `;
