@@ -1,5 +1,5 @@
-import differenceInHours from 'date-fns/differenceInHours';
-import formatDistance from 'date-fns/formatDistance';
+import {differenceInHours} from 'date-fns';
+import {formatDistance} from 'date-fns';
 import {pt} from 'date-fns/locale';
 import {map} from 'lodash';
 
