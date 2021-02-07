@@ -1,52 +1,47 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
-import {withTheme} from 'styled-components';
+import styled, {withTheme} from 'styled-components';
 
 import IcArrow from '../../icons/IcArrowForward';
 import Block from '../Block';
 
-const parseWidth = ({px, theme}) => {
-  if (!px) return '';
-  if (typeof px === 'string') return `width: calc(100% - (${px} * 2))`;
-  else return `width: calc(100% - ${px * theme.factors.padding * 2}px)`;
-};
-
-const InnerContainer = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  color: ${props => props.$color ? props.theme.parseColor(props, props.theme, '$color') : props.theme.colors.activeColor};
-  text-decoration: unset;
-  cursor: pointer;
-  svg {
-    width: 24px;
-    height: 24px;
-    fill: ${props => props.$color ? props.theme.parseColor(props, props.theme, '$color') : props.theme.colors.activeColor};
-  }
-  &:hover {
-    background-color: ${props => props.theme.colors.neutral10};
-    opacity: 0.8;
-  }
-  ${props => props.theme.parsePadding(props, props.theme)};
-  ${props => parseWidth(props)};
+const StyledAria = styled.a`
+  text-decoration: none;
 `;
 
-const MenuItem = ({children, path, mb, px, py, color}) => {
-  return (
-    <Block width='100%' mb={mb}>
-      <InnerContainer $color={color} href={path} px={px} py={py}>
+const MenuItem = ({children, mb, px, py, color, on, onClick, path, theme}) => {
+
+  const customStyle = `
+    border-bottom: 1px solid rgba(0,0,0,0.1);    
+    cursor: pointer;
+    text-decoration: unset;
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: ${color ? theme.parseColor({color}, theme, 'color') : theme.colors.primary1};
+    }
+    &:hover {
+      background-color: ${theme.colors.neutral10};
+      opacity: 0.8;
+    }
+  `;
+
+  const renderContent = () => (
+    <Block on={!path ? on : null} onClick={!path ? onClick : null} width='100%' mb={mb}>
+      <Block fullWidth align='row' alignx='between' aligny='middle' fontColor={color} px={px} py={py} custom={customStyle}>
         {children ? children : <span>Content here</span>}
         <IcArrow />
-      </InnerContainer>
+      </Block>
     </Block>
   );
+
+  return path ? <StyledAria href={path}>{renderContent()}</StyledAria> : renderContent();
 };
 
 MenuItem.defaultProps = {
   px: 1,
   py: 1,
+  color: 'primary1'
 };
 
 MenuItem.propTypes = {
@@ -73,7 +68,16 @@ MenuItem.propTypes = {
   /**
    * Permite customizar a cor do texto e ícone
    */
-  color: PropTypes.string
+  color: PropTypes.string,
+  /**
+   * Prop que recebe o evento de clique para o AMP
+   */
+  on: PropTypes.string,
+  /**
+   * Prop que recebe o evento de clique para WEB
+   */
+  onClick: PropTypes.func,
+  theme: PropTypes.object,
 };
 
 export default withTheme(MenuItem);
