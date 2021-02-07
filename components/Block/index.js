@@ -67,7 +67,6 @@ const Block = props => {
       fullWidth={props.fullWidth}
       fullHeight={props.fullHeight}
       custom={props.custom}
-      on={props.on}
       $width={props.width}
       $height={props.height}
       xs={getXsProps()}
@@ -165,11 +164,7 @@ Block.propTypes = {
   /**
    * Faz o elemento crescer 100% e ocupar todo o espaço disponível para altura
    */
-  fullHeight: PropTypes.bool,
-  /**
-   * Prop especial para o binding do AMP
-   */
-  on: PropTypes.string,
+  fullHeight: PropTypes.bool
 };
 
 export default withTheme(Block);
