@@ -9,7 +9,7 @@ const StyledAria = styled.a`
   text-decoration: none;
 `;
 
-const MenuItem = ({children, mb, px, py, color, on, onClick, path, theme}) => {
+const MenuItem = ({children, mb, px, py, color, onClick, path, theme}) => {
 
   const customStyle = `
     border-bottom: 1px solid rgba(0,0,0,0.1);    
@@ -27,7 +27,7 @@ const MenuItem = ({children, mb, px, py, color, on, onClick, path, theme}) => {
   `;
 
   const renderContent = () => (
-    <Block on={!path ? on : null} onClick={!path ? onClick : null} width='100%' mb={mb}>
+    <Block onClick={!path ? onClick : null} width='100%' mb={mb}>
       <Block fullWidth align='row' alignx='between' aligny='middle' fontColor={color} px={px} py={py} custom={customStyle}>
         {children ? children : <span>Content here</span>}
         <IcArrow />
@@ -62,17 +62,13 @@ MenuItem.propTypes = {
    */
   mb: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /**
-   * Realiza a navegação do usuário através do clique no componente
+   * Realiza a navegação do usuário através de um href
    */
   path: PropTypes.string.isRequired,
   /**
    * Permite customizar a cor do texto e ícone
    */
   color: PropTypes.string,
-  /**
-   * Prop que recebe o evento de clique para o AMP
-   */
-  on: PropTypes.string,
   /**
    * Prop que recebe o evento de clique para WEB
    */
