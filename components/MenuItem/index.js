@@ -64,7 +64,7 @@ MenuItem.propTypes = {
   /**
    * Realiza a navegação do usuário através de um href
    */
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string,
   /**
    * Permite customizar a cor do texto e ícone
    */

@@ -180,7 +180,7 @@ Button.propTypes = {
   /**
    * Corresponde ao texto escrito do botão
    */
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /**
    * Altera a cor geral do componente
    */
