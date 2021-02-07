@@ -6,6 +6,7 @@ import IcArrow from '../../icons/IcArrowForward';
 import Block from '../Block';
 
 const StyledAria = styled.a`
+  width: 100%;
   text-decoration: none;
 `;
 
