@@ -57,10 +57,15 @@ const parseFontColor = (props, theme) => {
   return theme.colors.white;
 };
 const parseFontFamily = (props, theme) => {
-  const {inheritFontStyle, $fontFamily} = props;
+  const {$fontFamily} = props;
   const selected = theme.fonts[$fontFamily];
-  if (!$fontFamily || !selected || inheritFontStyle) return 'inherit';
+  if (!$fontFamily || !selected) return theme.fonts.primary;
   return selected;
+};
+const parseFontWeight = (props) => {
+  const {fontWeight} = props;
+  if (!fontWeight) return 400;
+  return fontWeight;
 };
 const parseTypography = (props, theme) => {
   if (props.removeText === true) return `
@@ -75,7 +80,7 @@ const parseTypography = (props, theme) => {
       margin-right: 8px;
       color: ${parseFontColor(props, theme)};
       font-size: 14px;
-      font-weight: 400;
+      font-weight: ${parseFontWeight(props, theme)};
       font-family: ${parseFontFamily(props, theme)};
     }
   `;
