@@ -1,56 +1,41 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled, {withTheme} from 'styled-components';
+import {withTheme} from 'styled-components';
 
 import Block from '../Block';
 
-const parsePosition = ({menuAnchor}) => {
-  if (menuAnchor === 'left') return 'left: 0px;';
-  if (menuAnchor === 'right') return 'right: 0px;';
-};
-const getWidthFromProps = ({menuSize, px}) => {
-  return `
-    max-width: calc(${menuSize} - ${px} - ${px});
-    width: calc(${menuSize} - ${px} - ${px});
-  `;
-};
-const getHeightFromProps = ({py}) => {
-  return `
-    height: calc(100% - ${py} - ${py});
-  `;
-};
-
-const OuterContainer = styled.div`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 10;
-  top: 0px;
-`;
-const Menu = styled.div`
-  position: fixed;
-  display: block;
-  overflow-y: auto;
-  z-index: 11;
-  top: 0px;
-  ${props => parsePosition(props)};
-  ${props => getWidthFromProps(props)};
-  ${props => getHeightFromProps(props)};
-  ${props => props.theme.parsePadding(props, props.theme)};
-  ${props => props.theme.parseBgColor(props, props.theme)};
-`;
-
 const SideMenu = props => {
 
-  const {isOpen, onClose} = props;
+  const {children, isOpen, onClose, menuSize, menuAnchor, px, py, bgColor} = props;
 
   if (!isOpen) return null;
 
+  const parsePosition = () => {
+    if (menuAnchor === 'left') return 'left: 0px;';
+    if (menuAnchor === 'right') return 'right: 0px;';
+  };
+
+  const menuCustomStyle = `
+    position: fixed;
+    display: block;
+    overflow-y: auto;
+    z-index: 11;
+    top: 0px;
+    ${parsePosition()};
+  `;
+  const outerContainerCustomStyle = `
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    top: 0px;
+  `;
+
   return (
     <Block>
-      <OuterContainer onClick={onClose} />
-      <Menu {...props} />
+      <Block width='100vw' height='100vh' onClick={onClose} custom={outerContainerCustomStyle} />
+      <Block width={menuSize} fullHeight px={px} py={py} bgColor={bgColor} custom={menuCustomStyle}>
+        {children}
+      </Block>
     </Block>
   );
 };
@@ -58,8 +43,8 @@ const SideMenu = props => {
 SideMenu.defaultProps = {
   menuAnchor: 'left',
   menuSize: '350px',
-  px: '24px',
-  py: '24px',
+  px: 4,
+  py: 4,
   bgColor: 'neutral10'
 };
 
