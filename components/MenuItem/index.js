@@ -6,6 +6,7 @@ import IcArrow from '../../icons/IcArrowForward';
 import Block from '../Block';
 
 const StyledAria = styled.a`
+  width: 100%;
   text-decoration: none;
 `;
 
@@ -64,7 +65,7 @@ MenuItem.propTypes = {
   /**
    * Realiza a navegação do usuário através de um href
    */
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string,
   /**
    * Permite customizar a cor do texto e ícone
    */
