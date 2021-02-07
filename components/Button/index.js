@@ -94,6 +94,7 @@ const Button = ({
     iconSize: xs.iconSize ? xs.iconSize : iconSize,
     px: xs.px ? xs.px : px,
     py: xs.py ? xs.py : py,
+    fontWeight: fontWeight
   });
   const getSmProps = () => sm && ({
     $color: sm.color ? sm.color : color,
@@ -105,6 +106,7 @@ const Button = ({
     iconSize: sm.iconSize ? sm.iconSize : iconSize,
     px: sm.px ? sm.px : px,
     py: sm.py ? sm.py : py,
+    fontWeight: fontWeight
   });
   const getMdProps = () => md && ({
     $color: md.color ? md.color : color,
@@ -116,6 +118,7 @@ const Button = ({
     iconSize: md.iconSize ? md.iconSize : iconSize,
     px: md.px ? md.px : px,
     py: md.py ? md.py : py,
+    fontWeight: fontWeight
   });
   const getLgProps = () => lg && ({
     $color: lg.color ? lg.color : color,
@@ -127,6 +130,7 @@ const Button = ({
     iconSize: lg.iconSize ? lg.iconSize : iconSize,
     px: lg.px ? lg.px : px,
     py: lg.py ? lg.py : py,
+    fontWeight: fontWeight
   });
   const getXlProps = () => xl && ({
     $color: xl.color ? xl.color : color,
@@ -138,6 +142,7 @@ const Button = ({
     iconSize: xl.iconSize ? xl.iconSize : iconSize,
     px: xl.px ? xl.px : px,
     py: xl.py ? xl.py : py,
+    fontWeight: fontWeight
   });
 
   const renderRoot = () => {
