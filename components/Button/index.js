@@ -46,6 +46,7 @@ const Button = ({
   disabled,
   fontColor,
   fontFamily,
+  fontWeight,
   width,
   fullWidth,
   leftIcon,
@@ -158,6 +159,7 @@ const Button = ({
         $size={size}
         $width={width}
         $fontFamily={fontFamily}
+        fontWeight={fontWeight}
         xs={getXsProps()}
         sm={getSmProps()}
         md={getMdProps()}
@@ -253,6 +255,10 @@ Button.propTypes = {
    * Permite escolha de uma das propriedades do theme para font-family
    */
   fontFamily: PropTypes.string,
+  /**
+   * Permite a escolha de um font-weight para o texto do botão
+   */
+  fontWeight: PropTypes.number,
   /**
    * AMP :: Props equivalente a onClick, executa a ação do clique no AMP
    */

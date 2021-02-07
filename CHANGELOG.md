@@ -1,3 +1,6 @@
+# v1.4.61
+- Ajustes finos em alguns parseProps
+- Adiciona prop fontWeight no Button
 # v1.4.57
 - Remove parseAlign e parseRender do theme (ficarão somente no Block)
 - Altera ordem dos parâmetros nas funções de parse (props, theme)
