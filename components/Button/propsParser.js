@@ -67,6 +67,11 @@ const parseFontWeight = (props) => {
   if (!fontWeight) return 400;
   return fontWeight;
 };
+const parseFontSize = (props) => {
+  const {fontSize} = props;
+  if (!fontSize) return 14;
+  return fontSize;
+};
 const parseTypography = (props, theme) => {
   if (props.removeText === true) return `
     span {
@@ -79,7 +84,7 @@ const parseTypography = (props, theme) => {
       margin-left: 8px;
       margin-right: 8px;
       color: ${parseFontColor(props, theme)};
-      font-size: 14px;
+      font-size: ${parseFontSize(props, theme)}px;
       font-weight: ${parseFontWeight(props, theme)};
       font-family: ${parseFontFamily(props, theme)};
     }

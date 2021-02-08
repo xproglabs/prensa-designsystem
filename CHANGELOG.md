@@ -1,3 +1,5 @@
+# v1.4.63
+- Adiciona prop fontSize no Button
 # v1.4.62
 - Corrige comportamento incorreto do fontWeight no Button (só funciona quando queries não são utilizadas)
 # v1.4.61

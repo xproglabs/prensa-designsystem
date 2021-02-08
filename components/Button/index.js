@@ -47,6 +47,7 @@ const Button = ({
   fontColor,
   fontFamily,
   fontWeight,
+  fontSize,
   width,
   fullWidth,
   leftIcon,
@@ -106,7 +107,8 @@ const Button = ({
     iconSize: sm.iconSize ? sm.iconSize : iconSize,
     px: sm.px ? sm.px : px,
     py: sm.py ? sm.py : py,
-    fontWeight: fontWeight
+    fontWeight: fontWeight,
+    fontSize: fontSize,
   });
   const getMdProps = () => md && ({
     $color: md.color ? md.color : color,
@@ -118,7 +120,8 @@ const Button = ({
     iconSize: md.iconSize ? md.iconSize : iconSize,
     px: md.px ? md.px : px,
     py: md.py ? md.py : py,
-    fontWeight: fontWeight
+    fontWeight: fontWeight,
+    fontSize: fontSize,
   });
   const getLgProps = () => lg && ({
     $color: lg.color ? lg.color : color,
@@ -130,7 +133,8 @@ const Button = ({
     iconSize: lg.iconSize ? lg.iconSize : iconSize,
     px: lg.px ? lg.px : px,
     py: lg.py ? lg.py : py,
-    fontWeight: fontWeight
+    fontWeight: fontWeight,
+    fontSize: fontSize,
   });
   const getXlProps = () => xl && ({
     $color: xl.color ? xl.color : color,
@@ -142,7 +146,8 @@ const Button = ({
     iconSize: xl.iconSize ? xl.iconSize : iconSize,
     px: xl.px ? xl.px : px,
     py: xl.py ? xl.py : py,
-    fontWeight: fontWeight
+    fontWeight: fontWeight,
+    fontSize: fontSize,
   });
 
   const renderRoot = () => {
@@ -165,6 +170,7 @@ const Button = ({
         $width={width}
         $fontFamily={fontFamily}
         fontWeight={fontWeight}
+        fontSize={fontSize}
         xs={getXsProps()}
         sm={getSmProps()}
         md={getMdProps()}
@@ -264,6 +270,10 @@ Button.propTypes = {
    * Permite a escolha de um font-weight para o texto do botão
    */
   fontWeight: PropTypes.number,
+  /**
+   * Permite alterar o tamanho da fonte interior do botão
+   */
+  fontSize: PropTypes.number,
   /**
    * AMP :: Props equivalente a onClick, executa a ação do clique no AMP
    */
