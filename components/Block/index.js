@@ -17,27 +17,27 @@ const Component = styled.div`
 const Block = props => {
 
   const getXsProps = () => props.xs && ({
-    ...props,
+    ...props.xs,
     $width: props.xs.width ? props.xs.width : props.width,
     $height: props.xs.height ? props.xs.height : props.height,
   });
   const getSmProps = () => props.sm && ({
-    ...props,
+    ...props.sm,
     $width: props.sm.width ? props.sm.width : props.width,
     $height: props.sm.height ? props.sm.height : props.height,
   });
   const getMdProps = () => props.md && ({
-    ...props,
+    ...props.md,
     $width: props.md.width ? props.md.width : props.width,
     $height: props.md.height ? props.md.height : props.height,
   });
   const getLgProps = () => props.lg && ({
-    ...props,
+    ...props.lg,
     $width: props.lg.width ? props.lg.width : props.width,
     $height: props.lg.height ? props.lg.height : props.height,
   });
   const getXlProps = () => props.xl && ({
-    ...props,
+    ...props.xl,
     $width: props.xl.width ? props.xl.width : props.width,
     $height: props.xl.height ? props.xl.height : props.height,
   });
