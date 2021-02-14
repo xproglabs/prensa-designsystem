@@ -1,8 +1,7 @@
 import {get} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
-import {withTheme} from 'styled-components';
+import styled, {withTheme} from 'styled-components';
 
 import colorProps from '../../styles/variables/colors.json';
 import {getFromProps} from '../Util';
@@ -23,10 +22,7 @@ const validateIcon = props => {
 
 const Container = styled.div`
   width: 100%;
-  margin-top: ${props => getFromProps(props, 'marginTop', 0)};
-  margin-bottom: ${props => getFromProps(props, 'marginBottom', props.validation === false ? 12 : 32)};
-  margin-left: ${props => getFromProps(props, 'marginLeft', 0)};
-  margin-right: ${props => getFromProps(props, 'marginRight', 0)};
+  ${props => props.theme.parseMargin(props, props.theme)};
 `;
 const StyledLabel = styled.label`
   font-size: 14px;
@@ -88,10 +84,10 @@ const ErrorMessage = styled.p`
 `;
 
 const Field = ({
-  marginTop,
-  marginRight,
-  marginBottom,
-  marginLeft,
+  mt,
+  mr,
+  mb,
+  ml,
   icon,
   label,
   radius,
@@ -107,7 +103,9 @@ const Field = ({
   validation,
   validationMessage,
   placeholder,
-  disabled
+  disabled,
+  on,
+  id
 }) => {
 
   const handleChange = event => {
@@ -124,10 +122,10 @@ const Field = ({
   };
 
   return (
-    <Container marginTop={marginTop} marginRight={marginRight} marginBottom={marginBottom} marginLeft={marginLeft} validation={validation}>
+    <Container mt={mt} mr={mr} mb={mb} ml={ml}>
       {label && <StyledLabel fontColor={fontColor}>{capitalizeFirstLetter(label)}</StyledLabel>}
       <InputContainer radius={radius} activeColor={activeColor} validation={validation} borderColor={borderColor} iconColor={iconColor}>
-        <StyledInput type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} placeholder={placeholder} disabled={disabled} />
+        <StyledInput id={id} on={on} type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} placeholder={placeholder} disabled={disabled} />
         {icon && getIconFromProps()}
       </InputContainer>
       {validation === false && <ErrorMessage>{validationMessage}</ErrorMessage>}
@@ -147,19 +145,19 @@ Field.propTypes = {
   /**
    * Corresponde a um margin-top
    */
-  marginTop: PropTypes.number,
+  mt: PropTypes.number,
   /**
    * Corresponde a um margin-right
    */
-  marginRight: PropTypes.number,
+  mr: PropTypes.number,
   /**
    * Corresponde a um margin-bottom
    */
-  marginBottom: PropTypes.number,
+  mb: PropTypes.number,
   /**
    * Corresponde a um margin-left
    */
-  marginLeft: PropTypes.number,
+  ml: PropTypes.number,
   /**
    * Possibilita adicionar um ícone à direita do Field
    */
@@ -195,7 +193,7 @@ Field.propTypes = {
   /**
    * Recebe a mensagem de validação (renderizada quando validation = false)
    */
-  validationMessage: PropTypes.string.isRequired,
+  validationMessage: PropTypes.string,
   //STYLE PROPS
   /**
    * Altera a família da fonte do input (conectada ao theme)
@@ -216,7 +214,15 @@ Field.propTypes = {
   /**
    * Altera a cor do ícone (caso ativo) (conectada ao theme)
    */
-  iconColor: PropTypes.oneOf(colorProps)
+  iconColor: PropTypes.oneOf(colorProps),
+  /**
+   * AMP: Permite ação de clique e manipulação do estado
+   */
+  on: PropTypes.string,
+  /**
+   * Permite assinalar um id para o elemento input raíz
+   */
+  id: PropTypes.string
 };
 
 Field.defaultProps = {

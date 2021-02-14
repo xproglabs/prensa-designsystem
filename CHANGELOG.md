@@ -1,3 +1,8 @@
+# v1.4.65
+- Adiciona props `on` e `id` no Field
+- Props marginTop, marginBottom, marginLeft, marginRight passam a ser mt, mb, ml e mr no Field
+# v1.4.64
+- Corrige comportamento incorreto nas props responsivas do Block
 # v1.4.63
 - Adiciona prop fontSize no Button
 # v1.4.62
