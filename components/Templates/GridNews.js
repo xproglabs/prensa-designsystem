@@ -8,7 +8,7 @@ import {SectionTitle} from '../Typography';
 import colors from '../../styles/variables/colors.json'
 
 const GridNews = ({content, domain, lazy, status, theme}) => {
-  const {activeColor} = theme;
+  const {activeColor} = theme.colors.deprecatedActiveColor;
   const {items, title} = content;
   let items_pqueue = content['items-pqueue'];
   let items_list =  items_pqueue && items_pqueue.length > 0 ? items_pqueue : items;

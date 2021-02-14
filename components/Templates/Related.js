@@ -7,7 +7,7 @@ import Teaser from '../Teasers';
 import colors from '../../styles/variables/colors.json'
 
 const Related = ({items, domain, lazy, ReadMore, status, theme}) => {
-  const {activeColor} = theme;
+  const {activeColor} = theme.colors.deprecatedActiveColor;
   const propsContainer = {custom: 'templates-related-news', align: 'col left', w: '100p'};
   return (
     <Block {...propsContainer}>
