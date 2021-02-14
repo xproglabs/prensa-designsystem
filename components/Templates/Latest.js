@@ -9,7 +9,7 @@ import MostRead from './MostRead';
 import colors from '../../styles/variables/colors.json'
 
 const Latest = ({content, domain, lazy, ReadMore, Title, status, theme}) => {
-  const {activeColor} = theme.colors.deprecatedActiveColor;
+  const activeColor = theme.colors.deprecatedActiveColor;
   const propsContainer = {custom: 'templates-latest-news', align: 'col left', w: '100p', md: {align: 'row between'}};
   const propsPageLeft = {custom: 'page-left', mb: '6'};
   const propsPageRight = {custom: 'page-right'};

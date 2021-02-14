@@ -9,7 +9,7 @@ import colors from '../../styles/variables/colors.json'
 
 const Columnists = ({content, domain, lazy, status, theme}) => {
   const {title} = content;
-  const {activeColor} = theme.colors.deprecatedActiveColor;
+  const activeColor = theme.colors.deprecatedActiveColor;
   const propsTemplate = {custom: 'templates-columnists', mb: '6', lg: {align: 'row between wrap', mb: '3'}};
   return (
     <React.Fragment>

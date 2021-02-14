@@ -6,7 +6,7 @@ import Teaser from '../Teasers';
 import colors from '../../styles/variables/colors.json'
 
 const Featured = ({content, domain, lazy, status, theme}) => {
-  const {activeColor} = theme.colors.deprecatedActiveColor;
+  const activeColor = theme.colors.deprecatedActiveColor;
   const {items} = content;
   if (items.length === 1) {
     return (
