@@ -3969,7 +3969,7 @@ var Columnists = function Columnists(_ref) {
       status = _ref.status,
       theme = _ref.theme;
   var title = content.title;
-  var activeColor = theme.colors.deprecatedActiveColor.activeColor;
+  var activeColor = theme.colors.deprecatedActiveColor;
   var propsTemplate = {
     custom: 'templates-columnists',
     mb: '6',
@@ -4019,7 +4019,7 @@ var Featured = function Featured(_ref) {
       lazy = _ref.lazy,
       status = _ref.status,
       theme = _ref.theme;
-  var activeColor = theme.colors.deprecatedActiveColor.activeColor;
+  var activeColor = theme.colors.deprecatedActiveColor;
   var items = content.items;
 
   if (items.length === 1) {
@@ -4112,7 +4112,7 @@ var GridNews = function GridNews(_ref) {
       lazy = _ref.lazy,
       status = _ref.status,
       theme = _ref.theme;
-  var activeColor = theme.colors.deprecatedActiveColor.activeColor;
+  var activeColor = theme.colors.deprecatedActiveColor;
   var items = content.items,
       title = content.title;
   var items_pqueue = content['items-pqueue'];
@@ -4299,7 +4299,7 @@ var Latest = function Latest(_ref) {
       Title = _ref.Title,
       status = _ref.status,
       theme = _ref.theme;
-  var activeColor = theme.colors.deprecatedActiveColor.activeColor;
+  var activeColor = theme.colors.deprecatedActiveColor;
   var propsContainer = {
     custom: 'templates-latest-news',
     align: 'col left',
@@ -4370,7 +4370,7 @@ var Related = function Related(_ref) {
       ReadMore = _ref.ReadMore,
       status = _ref.status,
       theme = _ref.theme;
-  var activeColor = theme.colors.deprecatedActiveColor.activeColor;
+  var activeColor = theme.colors.deprecatedActiveColor;
   var propsContainer = {
     custom: 'templates-related-news',
     align: 'col left',
