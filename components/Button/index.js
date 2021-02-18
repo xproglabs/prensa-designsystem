@@ -92,12 +92,13 @@ const Button = ({
     $radius: xs.radius ? xs.radius : radius,
     $size: xs.size ? xs.size : size,
     $width: xs.width ? xs.width : width,
+    $fontWeight: fontWeight,
+    $fontSize: fontSize,
+    $fontFamily: fontFamily,
     removeText: xs.removeText !== undefined ? xs.removeText : removeText,
     iconSize: xs.iconSize ? xs.iconSize : iconSize,
     px: xs.px ? xs.px : px,
     py: xs.py ? xs.py : py,
-    fontWeight: fontWeight,
-    fontSize: fontSize,
     custom: custom,
   });
   const getSmProps = () => sm && ({
@@ -106,12 +107,13 @@ const Button = ({
     $radius: sm.radius ? sm.radius : radius,
     $size: sm.size ? sm.size : size,
     $width: sm.width ? sm.width : width,
+    $fontWeight: fontWeight,
+    $fontSize: fontSize,
+    $fontFamily: fontFamily,
     removeText: sm.removeText !== 'undefined' ? sm.removeText : removeText,
     iconSize: sm.iconSize ? sm.iconSize : iconSize,
     px: sm.px ? sm.px : px,
     py: sm.py ? sm.py : py,
-    fontWeight: fontWeight,
-    fontSize: fontSize,
     custom: custom,
   });
   const getMdProps = () => md && ({
@@ -120,12 +122,13 @@ const Button = ({
     $radius: md.radius ? md.radius : radius,
     $size: md.size ? md.size : size,
     $width: md.width ? md.width : width,
+    $fontWeight: fontWeight,
+    $fontSize: fontSize,
+    $fontFamily: fontFamily,
     removeText: md.removeText !== undefined ? md.removeText : removeText,
     iconSize: md.iconSize ? md.iconSize : iconSize,
     px: md.px ? md.px : px,
     py: md.py ? md.py : py,
-    fontWeight: fontWeight,
-    fontSize: fontSize,
     custom: custom,
   });
   const getLgProps = () => lg && ({
@@ -134,12 +137,13 @@ const Button = ({
     $radius: lg.radius ? lg.radius : radius,
     $size: lg.size ? lg.size : size,
     $width: lg.width ? lg.width : width,
+    $fontWeight: fontWeight,
+    $fontSize: fontSize,
+    $fontFamily: fontFamily,
     removeText: lg.removeText !== undefined ? lg.removeText : removeText,
     iconSize: lg.iconSize ? lg.iconSize : iconSize,
     px: lg.px ? lg.px : px,
     py: lg.py ? lg.py : py,
-    fontWeight: fontWeight,
-    fontSize: fontSize,
     custom: custom,
   });
   const getXlProps = () => xl && ({
@@ -148,12 +152,13 @@ const Button = ({
     $radius: xl.radius ? xl.radius : radius,
     $size: xl.size ? xl.size : size,
     $width: xl.width ? xl.width : width,
+    $fontWeight: fontWeight,
+    $fontSize: fontSize,
+    $fontFamily: fontFamily,
     removeText: xl.removeText !== undefined ? xl.removeText : removeText,
     iconSize: xl.iconSize ? xl.iconSize : iconSize,
     px: xl.px ? xl.px : px,
     py: xl.py ? xl.py : py,
-    fontWeight: fontWeight,
-    fontSize: fontSize,
     custom: custom,
   });
 
@@ -176,8 +181,8 @@ const Button = ({
         $size={size}
         $width={width}
         $fontFamily={fontFamily}
-        fontWeight={fontWeight}
-        fontSize={fontSize}
+        $fontWeight={fontWeight}
+        $fontSize={fontSize}
         xs={getXsProps()}
         sm={getSmProps()}
         md={getMdProps()}
