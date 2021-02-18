@@ -10,7 +10,7 @@ const StyledAria = styled.a`
   text-decoration: none;
 `;
 
-const MenuItem = ({children, mb, px, py, color, onClick, path, theme}) => {
+const MenuItem = ({children, mb, px, py, color, onClick, path, theme, id}) => {
 
   const customStyle = `
     border-bottom: 1px solid rgba(0,0,0,0.1);    
@@ -28,7 +28,7 @@ const MenuItem = ({children, mb, px, py, color, onClick, path, theme}) => {
   `;
 
   const renderContent = () => (
-    <Block onClick={!path ? onClick : null} width='100%' mb={mb}>
+    <Block onClick={!path ? onClick : null} width='100%' mb={mb} id={id}>
       <Block fullWidth align='row' alignx='between' aligny='middle' fontColor={color} px={px} py={py} custom={customStyle}>
         {children ? children : <span>Content here</span>}
         <IcArrow />
@@ -75,6 +75,10 @@ MenuItem.propTypes = {
    */
   onClick: PropTypes.func,
   theme: PropTypes.object,
+  /**
+   * Permite passagem de id para componente raíz
+   */
+  id: PropTypes.string,
 };
 
 export default withTheme(MenuItem);
