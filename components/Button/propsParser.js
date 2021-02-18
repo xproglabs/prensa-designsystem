@@ -103,7 +103,7 @@ const parseIcon = (props, theme) => {
 
 //main function
 const parseStyle = (props, theme) => {
-  const {parsePadding, parseRadius} = theme;
+  const {parsePadding, parseRadius, parseCustom} = theme;
   if (!props) return '';
   return `
     ${parseVariation(props, theme)};
@@ -113,6 +113,7 @@ const parseStyle = (props, theme) => {
     ${parseRadius(props, '$radius')};    
     ${parsePadding(props, theme)};
     ${parseIcon(props, theme)};
+    ${parseCustom(props)};
   `;
 };
 

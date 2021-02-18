@@ -70,6 +70,7 @@ const Button = ({
   md,
   lg,
   xl,
+  custom,
 }) => {
 
   //check if children is string
@@ -95,7 +96,9 @@ const Button = ({
     iconSize: xs.iconSize ? xs.iconSize : iconSize,
     px: xs.px ? xs.px : px,
     py: xs.py ? xs.py : py,
-    fontWeight: fontWeight
+    fontWeight: fontWeight,
+    fontSize: fontSize,
+    custom: custom,
   });
   const getSmProps = () => sm && ({
     $color: sm.color ? sm.color : color,
@@ -109,6 +112,7 @@ const Button = ({
     py: sm.py ? sm.py : py,
     fontWeight: fontWeight,
     fontSize: fontSize,
+    custom: custom,
   });
   const getMdProps = () => md && ({
     $color: md.color ? md.color : color,
@@ -122,6 +126,7 @@ const Button = ({
     py: md.py ? md.py : py,
     fontWeight: fontWeight,
     fontSize: fontSize,
+    custom: custom,
   });
   const getLgProps = () => lg && ({
     $color: lg.color ? lg.color : color,
@@ -135,6 +140,7 @@ const Button = ({
     py: lg.py ? lg.py : py,
     fontWeight: fontWeight,
     fontSize: fontSize,
+    custom: custom,
   });
   const getXlProps = () => xl && ({
     $color: xl.color ? xl.color : color,
@@ -148,6 +154,7 @@ const Button = ({
     py: xl.py ? xl.py : py,
     fontWeight: fontWeight,
     fontSize: fontSize,
+    custom: custom,
   });
 
   const renderRoot = () => {
@@ -176,6 +183,7 @@ const Button = ({
         md={getMdProps()}
         lg={getLgProps()}
         xl={getXlProps()}
+        custom={custom}
       >
         {loading && 'Carregando...'}
         {leftIcon && leftIcon}
@@ -194,6 +202,10 @@ Button.propTypes = {
    * Corresponde ao texto escrito do botão
    */
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /**
+   * Permite estilos customizados no componente
+   */
+  custom: PropTypes.string,
   /**
    * Altera a cor geral do componente
    */

@@ -1,3 +1,6 @@
+# v1.4.67
+- Corrige comportamento incorreto na props fontFamily do Button
+- Adiciona props custom no Button
 # v1.4.66
 - DefaultProps de fontFamily passa a ser 'secondary' no componente Button
 # v1.4.65
