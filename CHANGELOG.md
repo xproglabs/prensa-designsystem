@@ -1,3 +1,5 @@
+# v1.4.66
+- DefaultProps de fontFamily passa a ser 'secondary' no componente Button
 # v1.4.65
 - Adiciona props `on` e `id` no Field
 - Props marginTop, marginBottom, marginLeft, marginRight passam a ser mt, mb, ml e mr no Field

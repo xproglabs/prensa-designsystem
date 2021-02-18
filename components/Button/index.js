@@ -351,7 +351,7 @@ Button.defaultProps = {
   radius: 'default',
   size: 4,
   loading: false,
-  fontFamily: 'primary'
+  fontFamily: 'secondary'
 };
 
 export default withTheme(Button);
