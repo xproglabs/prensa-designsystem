@@ -69,6 +69,7 @@ const Block = props => {
       custom={props.custom}
       $width={props.width}
       $height={props.height}
+      id={props.id}
       xs={getXsProps()}
       sm={getSmProps()}
       md={getMdProps()}
@@ -164,7 +165,11 @@ Block.propTypes = {
   /**
    * Faz o elemento crescer 100% e ocupar todo o espaço disponível para altura
    */
-  fullHeight: PropTypes.bool
+  fullHeight: PropTypes.bool,
+  /**
+   * Permite passagem de id para o componente raíz
+   */
+  id: PropTypes.string,
 };
 
 export default withTheme(Block);

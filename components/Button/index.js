@@ -71,6 +71,7 @@ const Button = ({
   lg,
   xl,
   custom,
+  id
 }) => {
 
   //check if children is string
@@ -189,6 +190,7 @@ const Button = ({
         lg={getLgProps()}
         xl={getXlProps()}
         custom={custom}
+        id={id}
       >
         {loading && 'Carregando...'}
         {leftIcon && leftIcon}
@@ -358,6 +360,10 @@ Button.propTypes = {
     px: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     py: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }),
+  /**
+   * Permite passagem de um id para o elemento raíz button
+   */
+  id: PropTypes.string,
 };
 
 Button.defaultProps = {

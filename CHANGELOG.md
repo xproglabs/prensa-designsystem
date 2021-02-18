@@ -1,3 +1,5 @@
+# v1.4.69
+- Adiciona props id no componente Button, Block e MenuItem
 # v1.4.68
 - Corrige itinerant props no Button
 - Corrige fontFamily
