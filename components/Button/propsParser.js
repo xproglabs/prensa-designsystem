@@ -63,14 +63,14 @@ const parseFontFamily = (props, theme) => {
   return selected;
 };
 const parseFontWeight = (props) => {
-  const {fontWeight} = props;
-  if (!fontWeight) return 400;
-  return fontWeight;
+  const {$fontWeight} = props;
+  if (!$fontWeight) return 400;
+  return $fontWeight;
 };
 const parseFontSize = (props) => {
-  const {fontSize} = props;
-  if (!fontSize) return 14;
-  return fontSize;
+  const {$fontSize} = props;
+  if (!$fontSize) return 14;
+  return $fontSize;
 };
 const parseTypography = (props, theme) => {
   if (props.removeText === true) return `

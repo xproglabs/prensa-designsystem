@@ -1,3 +1,6 @@
+# v1.4.68
+- Corrige itinerant props no Button
+- Corrige fontFamily
 # v1.4.67
 - Corrige comportamento incorreto na props fontFamily do Button
 - Adiciona props custom no Button
