@@ -6,7 +6,7 @@ import Block from '../Block';
 
 const SideMenu = props => {
 
-  const {children, isOpen, onClose, menuSize, menuAnchor, px, py, bgColor} = props;
+  const {children, isOpen, onClose, menuSize, menuAnchor, bgColor} = props;
 
   if (!isOpen) return null;
 
@@ -33,7 +33,7 @@ const SideMenu = props => {
   return (
     <Block>
       <Block width='100vw' height='100vh' onClick={onClose} custom={outerContainerCustomStyle} />
-      <Block width='100%' md={{width: menuSize}} fullHeight px={px} py={py} bgColor={bgColor} custom={menuCustomStyle}>
+      <Block width='100%' md={{width: menuSize}} fullHeight bgColor={bgColor} custom={menuCustomStyle}>
         {children}
       </Block>
     </Block>
@@ -69,11 +69,6 @@ SideMenu.propTypes = {
    * Controla a ação de fechamento do Menu
    */
   onClose: PropTypes.func.isRequired,
-  /**
-   * Define as margens para o conteúdo
-   */
-  px: PropTypes.string,
-  py: PropTypes.string,
   /**
    * Define a cor de fundo do conteúdo
    */
