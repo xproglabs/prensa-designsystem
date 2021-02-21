@@ -1,3 +1,5 @@
+# v1.4.72
+- Remove px e py do SideMenu
 # v1.4.71
 - Altera comportamento para SideMenu no mobile (abaixo de md o width é 100%)
 # v1.4.70
