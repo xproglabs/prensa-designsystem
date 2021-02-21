@@ -105,7 +105,8 @@ const Field = ({
   placeholder,
   disabled,
   on,
-  id
+  id,
+  name
 }) => {
 
   const handleChange = event => {
@@ -125,7 +126,22 @@ const Field = ({
     <Container mt={mt} mr={mr} mb={mb} ml={ml}>
       {label && <StyledLabel fontColor={fontColor}>{capitalizeFirstLetter(label)}</StyledLabel>}
       <InputContainer radius={radius} activeColor={activeColor} validation={validation} borderColor={borderColor} iconColor={iconColor}>
-        <StyledInput id={id} on={on} type={type} value={value} onChange={handleChange} radius={radius} fontFamily={fontFamily} activeColor={activeColor} borderColor={borderColor} validation={validation} fontColor={fontColor} placeholder={placeholder} disabled={disabled} />
+        <StyledInput
+          name={name}
+          id={id}
+          on={on}
+          type={type}
+          value={value}
+          onChange={handleChange}
+          radius={radius}
+          fontFamily={fontFamily}
+          activeColor={activeColor}
+          borderColor={borderColor}
+          validation={validation}
+          fontColor={fontColor}
+          placeholder={placeholder}
+          disabled={disabled}
+        />
         {icon && getIconFromProps()}
       </InputContainer>
       {validation === false && <ErrorMessage>{validationMessage}</ErrorMessage>}
@@ -179,6 +195,10 @@ Field.propTypes = {
    */
   onChange: PropTypes.func.isRequired,
   /**
+   * Permite assinalar um id para o elemento input raíz
+   */
+  id: PropTypes.string,
+  /**
    * Props que recebe o type do Field (prop nativa do elemento)
    */
   type: PropTypes.string,
@@ -186,6 +206,10 @@ Field.propTypes = {
    * Recebe o valor do Field (prop nativa do elemento)
    */
   value: PropTypes.string,
+  /**
+   * Prop para nomear o elemento HTML raíz
+   */
+  name: PropTypes.string,
   /**
    * Recebe o estado do componente (true para padrão e false para erro)
    */
@@ -218,11 +242,7 @@ Field.propTypes = {
   /**
    * AMP: Permite ação de clique e manipulação do estado
    */
-  on: PropTypes.string,
-  /**
-   * Permite assinalar um id para o elemento input raíz
-   */
-  id: PropTypes.string
+  on: PropTypes.string
 };
 
 Field.defaultProps = {

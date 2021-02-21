@@ -1,3 +1,7 @@
+# v1.4.70
+- Adiciona prop type no Button
+- Adiciona prop name no Field
+- Corrige itinerant props para o Subject
 # v1.4.69
 - Adiciona props id no componente Button, Block e MenuItem
 # v1.4.68
