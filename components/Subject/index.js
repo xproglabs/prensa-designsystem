@@ -31,7 +31,7 @@ const Typography = styled.span`
   font-size: 14px;
   text-transform: uppercase;
   font-family: ${props => props.theme.fonts.secondary};
-  font-weight: ${props => props.fontWeight};
+  font-weight: ${props => props.$fontWeight};
   ${props => parseColorVariation(props)};
 `;
 
@@ -39,7 +39,7 @@ const Subject = ({children, color, radius, px, mb, style, transparent, weight}) 
   if (!children) return null;
   return (
     <Container subjectColor={color} borderRadius={radius} px={px} mb={mb} transparent={transparent} style={style}>
-      <Typography fontWeight={weight} transparent={transparent}>
+      <Typography $fontWeight={weight} transparent={transparent}>
         {children}
       </Typography>
     </Container>
