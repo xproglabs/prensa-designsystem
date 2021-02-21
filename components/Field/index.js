@@ -61,7 +61,7 @@ const StyledInput = styled.input`
   padding-right: 8px;
   font-size: 14px;
   font-weight: 400;
-  font-family: ${props => props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary};
+  font-family: ${props => props.$fontFamily ? props.$fontFamily : props.theme.fonts.fontPrimary};
   border-radius: ${props => getFromProps(props, 'radius', 5)};
   border-color: unset;
   border-width: unset;
@@ -134,7 +134,7 @@ const Field = ({
           value={value}
           onChange={handleChange}
           radius={radius}
-          fontFamily={fontFamily}
+          $fontFamily={fontFamily}
           activeColor={activeColor}
           borderColor={borderColor}
           validation={validation}
