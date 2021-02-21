@@ -33,7 +33,7 @@ const SideMenu = props => {
   return (
     <Block>
       <Block width='100vw' height='100vh' onClick={onClose} custom={outerContainerCustomStyle} />
-      <Block width={menuSize} fullHeight px={px} py={py} bgColor={bgColor} custom={menuCustomStyle}>
+      <Block width='100%' md={{width: menuSize}} fullHeight px={px} py={py} bgColor={bgColor} custom={menuCustomStyle}>
         {children}
       </Block>
     </Block>
