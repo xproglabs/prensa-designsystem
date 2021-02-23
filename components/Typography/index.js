@@ -1,17 +1,41 @@
-export {default as SubjectTypography} from './Subject';
-export {default as NewsTitle} from './NewsTitle';
-export {default as Subtitle} from './Subtitle';
-export {default as Date} from './Date';
-export {default as Author} from './Author';
-export {default as Paragraph} from './Paragraph';
-export {default as Byline} from './Byline';
-export {default as InterTitle} from './InterTitle';
-export {default as Citation} from './Citation';
-export {default as UrlLink} from './UrlLink';
-export {default as TagTypography} from './Tag';
-export {default as SectionTitle} from './SectionTitle';
-export {default as EditorialTitle} from './EditorialTitle';
-export {default as MostReadNumber} from './MostReadNumber';
-export {default as MenuSideTitle} from './MenuSideTitle';
-export {default as MenuSideItem} from './MenuSideItem';
-export {default as MenuTopItem} from './MenuTopItem';
+import type, {ComponentType} from 'react'
+import styled, {css} from 'styled-components'
+
+type TypographyProps = {
+  element: string,
+}
+
+const renderComponent = props => {
+
+  console.log(props)
+
+  const styles = css`
+    font-size: ${fontSize};
+    font-family: ${fontFamily};
+    font-weight: ${fontWeight};
+  `
+
+  switch(element) {
+    case 'h1':
+      return styled.h1`${styles}`
+    case 'h2':
+      return styled.h2
+    case 'h3':
+      return styled.h3
+    case 'h4':
+      return styled.h4
+    case 'h5':
+      return styled.h5
+    case 'h6':
+      return styled.h6
+    case 'p':
+      return styled.p
+    case 'span':
+    default:
+      return styled.span
+  }
+}
+
+const Typography: ComponentType<TypographyProps> = renderComponent
+
+export default Typography;
