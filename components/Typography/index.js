@@ -1,41 +1,47 @@
-import type, {ComponentType} from 'react'
-import styled, {css} from 'styled-components'
+import PropTypes from 'prop-types';
+import React from 'react';
+import styled, {css} from 'styled-components';
 
-type TypographyProps = {
-  element: string,
-}
+import {parseFontFamily, parseSize} from './parsers';
 
-const renderComponent = props => {
+const DyanmicComponent = styled.div``;
 
-  console.log(props)
+const Typography = ({children, element, fontSize, fontFamily, fontWeight, lineHeight}) => {
 
   const styles = css`
-    font-size: ${fontSize};
-    font-family: ${fontFamily};
     font-weight: ${fontWeight};
-  `
+    font-family: ${parseFontFamily};
+    font-size: ${props => parseSize(props, 'fontSize')};
+    line-height: ${props => parseSize(props, 'lineHeight')};
+  `;
 
-  switch(element) {
-    case 'h1':
-      return styled.h1`${styles}`
-    case 'h2':
-      return styled.h2
-    case 'h3':
-      return styled.h3
-    case 'h4':
-      return styled.h4
-    case 'h5':
-      return styled.h5
-    case 'h6':
-      return styled.h6
-    case 'p':
-      return styled.p
-    case 'span':
-    default:
-      return styled.span
-  }
-}
+  const props = {
+    $fontWeight: fontWeight,
+    $fontSize: fontSize,
+    $fontFamily: fontFamily,
+    $lineHeight: lineHeight
+  };
 
-const Typography: ComponentType<TypographyProps> = renderComponent
+  const TypographyComponent = DyanmicComponent.withComponent(element);
+  const StyledTypography = styled(TypographyComponent)`${styles}`;
+  return <StyledTypography {...props}>{children}</StyledTypography>;
+};
+
+Typography.defaultProps = {
+  element: 'h1',
+  fontSize: 3,
+  fontFamily: 'primary',
+  fontWeight: 400,
+  lineHeight: 1.5
+};
+
+Typography.propTypes = {
+  children: PropTypes.node,
+  element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span']),
+  fontSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  lineHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  fontFamily: PropTypes.string,
+  fontWeight: PropTypes.number,
+};
 
 export default Typography;
