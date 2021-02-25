@@ -48,29 +48,7 @@ export default [
       resolve(),
       sass(),
     ]
-  },
-  {
-    input: 'components/Typography/index.js',
-    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns', 'styled-components'],
-    output: [
-      {
-        file: 'typography.js',
-        format: 'cjs',
-        globals: {
-          react: 'React'
-        },
-        name: 'prensa/typography'
-      }
-    ],
-    plugins: [ 
-      babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
-      }),
-      json(),
-      resolve(),
-      sass(),
-    ]
-  },
+  },  
   {
     input: 'icons/index.js',
     external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns', 'styled-components'],
