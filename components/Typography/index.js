@@ -2,28 +2,43 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled, {css} from 'styled-components';
 
+import DynamicComponent from '../DynamicComponent';
 import {parseFontFamily, parseSize} from './parsers';
 
-const DyanmicComponent = styled.div``;
-
-const Typography = ({children, element, fontSize, fontFamily, fontWeight, lineHeight}) => {
+const Typography = ({
+  children,
+  element,
+  fontSize,
+  fontFamily,
+  fontWeight,
+  lineHeight,
+  mt,
+  mb,
+  ml,
+  mr
+}) => {
 
   const styles = css`
     font-weight: ${fontWeight};
     font-family: ${parseFontFamily};
     font-size: ${props => parseSize(props, 'fontSize')};
     line-height: ${props => parseSize(props, 'lineHeight')};
+    ${props => props.theme.parseMargin(props, props.theme)};
   `;
 
   const props = {
     $fontWeight: fontWeight,
     $fontSize: fontSize,
     $fontFamily: fontFamily,
-    $lineHeight: lineHeight
+    $lineHeight: lineHeight,
+    mt,
+    mb,
+    ml,
+    mr
   };
 
-  const TypographyComponent = DyanmicComponent.withComponent(element);
-  const StyledTypography = styled(TypographyComponent)`${styles}`;
+  const StyledTypography = styled(DynamicComponent).attrs({element})`${styles}`;
+
   return <StyledTypography {...props}>{children}</StyledTypography>;
 };
 
@@ -32,7 +47,9 @@ Typography.defaultProps = {
   fontSize: 3,
   fontFamily: 'primary',
   fontWeight: 400,
-  lineHeight: 1.5
+  lineHeight: 1.5,
+  mt: 2,
+  mb: 2
 };
 
 Typography.propTypes = {
@@ -42,6 +59,16 @@ Typography.propTypes = {
   lineHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   fontFamily: PropTypes.string,
   fontWeight: PropTypes.number,
+  /**
+   * Define propriedade de margin
+   */
+  my: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mx: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  theme: PropTypes.object
 };
 
 export default Typography;
