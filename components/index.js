@@ -10,6 +10,5 @@ export {default as SideMenu} from './SideMenu';
 export {default as MenuItem} from './MenuItem';
 export {default as SocialMedias} from './SocialMedias';
 export {default as Topbar} from './Topbar';
-export {default as Teaser} from './Teasers';
 export {theme} from '../styles/theme';
 export {default as Subject} from './Subject';
