@@ -30,7 +30,8 @@ const Typography = ({
   md,
   lg,
   xl,
-  theme
+  theme,
+  custom
 }) => {
 
   const styles = css`
@@ -89,6 +90,7 @@ const Typography = ({
     $fontFamily: fontFamily,
     $lineHeight: lineHeight,
     children,
+    custom,
     mt,
     mb,
     ml,
@@ -133,10 +135,25 @@ Typography.defaultProps = {
 
 Typography.propTypes = {
   children: PropTypes.node,
+  /**
+   * Permite a escolha da tag de texto a ser utilizada
+   */
   element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span']),
+  /**
+   * Altera o valor da propriedade font-size no css
+   */
   fontSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Alterar o valor da propriedade line-height no css
+   */
   lineHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Alterar o valor da propriedade font-family no css
+   */
   fontFamily: PropTypes.string,
+  /**
+   * Alterar o valor da propriedade font-weight no css
+   */
   fontWeight: PropTypes.number,
   /**
    * Define propriedade de margin
@@ -155,7 +172,11 @@ Typography.propTypes = {
   md: PropTypes.object,
   lg: PropTypes.object,
   xl: PropTypes.object,
-  theme: PropTypes.object
+  theme: PropTypes.object,
+  /**
+   * Permite estilos customizados
+   */
+  custom: PropTypes.object
 };
 
 export default withTheme(Typography);
