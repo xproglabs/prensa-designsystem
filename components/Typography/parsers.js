@@ -22,6 +22,7 @@ const parseStyle = (props, theme) => {
     font-size: ${parseSize(props, 'fontSize')};
     line-height: ${parseSize(props, 'lineHeight')};
     ${theme.parseMargin(props, theme)};
+    ${theme.parseCustom(props)};
   `;
 };
 
