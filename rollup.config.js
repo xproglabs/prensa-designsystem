@@ -28,28 +28,6 @@ export default [
     ]
   },
   {
-    input: 'components/Templates/index.js',
-    external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns', 'styled-components'],
-    output: [
-      {
-        file: 'templates.js',
-        format: 'cjs',
-        globals: {
-          react: 'React'
-        },
-        name: 'prensa/templates'
-      }
-    ],
-    plugins: [ 
-      babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
-      }),
-      json(),
-      resolve(),
-      sass(),
-    ]
-  },  
-  {
     input: 'icons/index.js',
     external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns', 'styled-components'],
     output: [
