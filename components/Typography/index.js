@@ -1,9 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled, {css, withTheme} from 'styled-components';
+import {css, withTheme} from 'styled-components';
 
-import DynamicComponent from '../DynamicComponent';
 import {parseProps} from './parsers';
+import {
+  HeadingOne,
+  HeadingTwo,
+  HeadingThree,
+  HeadingFour,
+  HeadingFive,
+  HeadingSix,
+  Paragraph,
+  Span,
+} from './styled';
 
 const Typography = ({
   children,
@@ -79,6 +88,7 @@ const Typography = ({
     $fontSize: fontSize,
     $fontFamily: fontFamily,
     $lineHeight: lineHeight,
+    children,
     mt,
     mb,
     ml,
@@ -90,9 +100,25 @@ const Typography = ({
     xl: getXlProps(),
   };
 
-  const StyledTypography = styled(DynamicComponent).attrs({element})`${styles}`;
-
-  return <StyledTypography {...props}>{children}</StyledTypography>;
+  switch(element) {
+    case 'h1':
+      return <HeadingOne {...props} $style={styles} />;
+    case 'h2':
+      return <HeadingTwo {...props} $style={styles} />;
+    case 'h3':
+      return <HeadingThree {...props} $style={styles} />;
+    case 'h4':
+      return <HeadingFour {...props} $style={styles} />;
+    case 'h5':
+      return <HeadingFive {...props} $style={styles} />;
+    case 'h6':
+      return <HeadingSix {...props} $style={styles} />;
+    case 'p':
+      return <Paragraph {...props} $style={styles} />;
+    case 'span':
+    default:
+      return <Span {...props} $style={styles} />;
+  }
 };
 
 Typography.defaultProps = {
