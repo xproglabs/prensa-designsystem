@@ -22,6 +22,7 @@ const Typography = ({
   fontWeight,
   lineHeight,
   align,
+  transform,
   mt,
   mb,
   ml,
@@ -52,6 +53,7 @@ const Typography = ({
     $fontFamily: xs.fontFamily ? xs.fontFamily : fontFamily,
     $lineHeight: xs.lineHeight ? xs.lineHeight : lineHeight,
     align: xs.align ? xs.align : align,
+    transform: xs.transform ? xs.transform : transform,
   });
   const getSmProps = () => sm && ({
     ...sm,
@@ -61,6 +63,7 @@ const Typography = ({
     $fontFamily: sm.fontFamily ? sm.fontFamily : fontFamily,
     $lineHeight: sm.lineHeight ? sm.lineHeight : lineHeight,
     align: sm.align ? sm.align : align,
+    transform: sm.transform ? sm.transform : transform,
   });
   const getMdProps = () => md && ({
     ...md,
@@ -70,6 +73,7 @@ const Typography = ({
     $fontFamily: md.fontFamily ? md.fontFamily : fontFamily,
     $lineHeight: md.lineHeight ? md.lineHeight : lineHeight,
     align: md.align ? md.align : align,
+    transform: md.transform ? md.transform : transform,
   });
   const getLgProps = () => lg && ({
     ...lg,
@@ -79,6 +83,7 @@ const Typography = ({
     $fontFamily: lg.fontFamily ? lg.fontFamily : fontFamily,
     $lineHeight: lg.lineHeight ? lg.lineHeight : lineHeight,
     align: lg.align ? lg.align : align,
+    transform: lg.transform ? lg.transform : transform,
   });
   const getXlProps = () => xl && ({
     ...xl,
@@ -88,6 +93,7 @@ const Typography = ({
     $fontFamily: xl.fontFamily ? xl.fontFamily : fontFamily,
     $lineHeight: xl.lineHeight ? xl.lineHeight : lineHeight,
     align: xl.align ? xl.align : align,
+    transform: xl.transform ? xl.transform : transform,
   });
 
   const props = {
@@ -96,6 +102,7 @@ const Typography = ({
     $fontFamily: fontFamily,
     $lineHeight: lineHeight,
     align,
+    transform,
     custom,
     children,
     mt,
@@ -146,6 +153,10 @@ Typography.propTypes = {
    * Altera alinhamento do texto
    */
   align: PropTypes.oneOf(['left', 'center', 'right']),
+  /**
+   * Permite alterar o valor para css text-transform
+   */
+  transform: PropTypes.oneOf(['none', 'inherit', 'capitalize', 'uppercase', 'lowercase']),
   children: PropTypes.node,
   /**
    * Permite a escolha da tag de texto a ser utilizada
