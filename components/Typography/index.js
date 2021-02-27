@@ -21,6 +21,7 @@ const Typography = ({
   fontFamily,
   fontWeight,
   lineHeight,
+  align,
   mt,
   mb,
   ml,
@@ -50,6 +51,7 @@ const Typography = ({
     $fontSize: xs.fontSize ? xs.fontSize : fontSize,
     $fontFamily: xs.fontFamily ? xs.fontFamily : fontFamily,
     $lineHeight: xs.lineHeight ? xs.lineHeight : lineHeight,
+    align: xs.align ? xs.align : align,
   });
   const getSmProps = () => sm && ({
     ...sm,
@@ -58,6 +60,7 @@ const Typography = ({
     $fontSize: sm.fontSize ? sm.fontSize : fontSize,
     $fontFamily: sm.fontFamily ? sm.fontFamily : fontFamily,
     $lineHeight: sm.lineHeight ? sm.lineHeight : lineHeight,
+    align: sm.align ? sm.align : align,
   });
   const getMdProps = () => md && ({
     ...md,
@@ -66,6 +69,7 @@ const Typography = ({
     $fontSize: md.fontSize ? md.fontSize : fontSize,
     $fontFamily: md.fontFamily ? md.fontFamily : fontFamily,
     $lineHeight: md.lineHeight ? md.lineHeight : lineHeight,
+    align: md.align ? md.align : align,
   });
   const getLgProps = () => lg && ({
     ...lg,
@@ -74,6 +78,7 @@ const Typography = ({
     $fontSize: lg.fontSize ? lg.fontSize : fontSize,
     $fontFamily: lg.fontFamily ? lg.fontFamily : fontFamily,
     $lineHeight: lg.lineHeight ? lg.lineHeight : lineHeight,
+    align: lg.align ? lg.align : align,
   });
   const getXlProps = () => xl && ({
     ...xl,
@@ -82,6 +87,7 @@ const Typography = ({
     $fontSize: xl.fontSize ? xl.fontSize : fontSize,
     $fontFamily: xl.fontFamily ? xl.fontFamily : fontFamily,
     $lineHeight: xl.lineHeight ? xl.lineHeight : lineHeight,
+    align: xl.align ? xl.align : align,
   });
 
   const props = {
@@ -89,8 +95,9 @@ const Typography = ({
     $fontSize: fontSize,
     $fontFamily: fontFamily,
     $lineHeight: lineHeight,
-    children,
+    align,
     custom,
+    children,
     mt,
     mb,
     ml,
@@ -128,12 +135,17 @@ Typography.defaultProps = {
   fontSize: 3,
   fontFamily: 'primary',
   fontWeight: 400,
-  lineHeight: 1.5,
+  lineHeight: '100%',
   mt: 2,
-  mb: 2
+  mb: 2,
+  align: 'left'
 };
 
 Typography.propTypes = {
+  /**
+   * Altera alinhamento do texto
+   */
+  align: PropTypes.oneOf(['left', 'center', 'right']),
   children: PropTypes.node,
   /**
    * Permite a escolha da tag de texto a ser utilizada

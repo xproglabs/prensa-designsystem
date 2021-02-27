@@ -6,35 +6,6 @@ import Typography from './index'
 
 <Meta title="Components/Typography" />
 
-# Typography
-
-<Space size={4} />
-
-<pre>
-  <CodeBlock>{`import {Typography} from 'prensa'`}</CodeBlock>
-</pre>
-
-<Space size={6} />
-
-<pre>
-  <CodeBlock>{`
-  <Typography
-    element='h2'
-    mb={5}
-    fontSize={2}
-    md={{fontSize: 5,mb: 3}}
-  >
-    The quick brown fox
-  </Typography>
-  `}</CodeBlock>
-</pre>
-
 <ThemeProvider theme={theme}>
-  <Typography element='h2' mb={5} fontSize={2} md={{fontSize: 5, mb: 3}}>The quick brown fox</Typography>
+  <Typography element='h2' ml={5} mr={2} align='center' fontSize="150px" lineHeight="100%" md={{fontSize: '100px'}}>The quick brown fox</Typography>
 </ThemeProvider>
-
-<Space size={6} />
-
-
-# API
-<ArgsTable of={Typography} />
