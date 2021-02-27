@@ -52,8 +52,8 @@ const Typography = ({
     $fontSize: xs.fontSize ? xs.fontSize : fontSize,
     $fontFamily: xs.fontFamily ? xs.fontFamily : fontFamily,
     $lineHeight: xs.lineHeight ? xs.lineHeight : lineHeight,
+    $transform: xs.transform ? xs.transform : transform,
     align: xs.align ? xs.align : align,
-    transform: xs.transform ? xs.transform : transform,
   });
   const getSmProps = () => sm && ({
     ...sm,
@@ -62,8 +62,8 @@ const Typography = ({
     $fontSize: sm.fontSize ? sm.fontSize : fontSize,
     $fontFamily: sm.fontFamily ? sm.fontFamily : fontFamily,
     $lineHeight: sm.lineHeight ? sm.lineHeight : lineHeight,
+    $transform: sm.transform ? sm.transform : transform,
     align: sm.align ? sm.align : align,
-    transform: sm.transform ? sm.transform : transform,
   });
   const getMdProps = () => md && ({
     ...md,
@@ -72,8 +72,8 @@ const Typography = ({
     $fontSize: md.fontSize ? md.fontSize : fontSize,
     $fontFamily: md.fontFamily ? md.fontFamily : fontFamily,
     $lineHeight: md.lineHeight ? md.lineHeight : lineHeight,
+    $transform: md.transform ? md.transform : transform,
     align: md.align ? md.align : align,
-    transform: md.transform ? md.transform : transform,
   });
   const getLgProps = () => lg && ({
     ...lg,
@@ -82,8 +82,8 @@ const Typography = ({
     $fontSize: lg.fontSize ? lg.fontSize : fontSize,
     $fontFamily: lg.fontFamily ? lg.fontFamily : fontFamily,
     $lineHeight: lg.lineHeight ? lg.lineHeight : lineHeight,
+    $transform: lg.transform ? lg.transform : transform,
     align: lg.align ? lg.align : align,
-    transform: lg.transform ? lg.transform : transform,
   });
   const getXlProps = () => xl && ({
     ...xl,
@@ -92,8 +92,8 @@ const Typography = ({
     $fontSize: xl.fontSize ? xl.fontSize : fontSize,
     $fontFamily: xl.fontFamily ? xl.fontFamily : fontFamily,
     $lineHeight: xl.lineHeight ? xl.lineHeight : lineHeight,
+    $transform: xl.transform ? xl.transform : transform,
     align: xl.align ? xl.align : align,
-    transform: xl.transform ? xl.transform : transform,
   });
 
   const props = {
@@ -101,8 +101,8 @@ const Typography = ({
     $fontSize: fontSize,
     $fontFamily: fontFamily,
     $lineHeight: lineHeight,
+    $transform: transform,
     align,
-    transform,
     custom,
     children,
     mt,
