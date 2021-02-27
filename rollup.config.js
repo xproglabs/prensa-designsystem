@@ -1,6 +1,7 @@
 // rollup.config.js
 import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
+import analyze from 'rollup-plugin-analyzer';
 import babel from 'rollup-plugin-babel';
 import sass from 'rollup-plugin-sass';
 
@@ -25,6 +26,7 @@ export default [
       json(),
       resolve(),
       sass(),
+      analyze(),
     ]
   },
   {
@@ -47,6 +49,7 @@ export default [
       json(),
       resolve(),
       sass(),
+      analyze()
     ]
   },
   {
@@ -69,6 +72,7 @@ export default [
       json(),
       resolve(),
       sass(),
+      analyze()
     ]
   }
 ];
