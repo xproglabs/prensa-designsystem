@@ -1,4 +1,4 @@
-# v1.4.73
+# v1.4.75
 - Remove módulo Typography do DS
 - Remove componente Teaser
 - Adiciona componente Typography
