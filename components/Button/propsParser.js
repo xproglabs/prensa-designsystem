@@ -33,6 +33,9 @@ const getOutlinedCSS = (props, theme) => `
 `;
 const getGhostCSS = () => `
   background-color: transparent;
+  border-width: none;
+  border-style: none;
+  border-color: none;
 `;
 const getFilledCSS = (props, theme) =>`
   background-color: ${theme.parseColor(props, theme, '$color')};

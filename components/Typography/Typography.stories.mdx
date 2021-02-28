@@ -1,68 +1,11 @@
-import {
-  SubjectTypography,
-  NewsTitle,
-  Subtitle,
-  Date,
-  Author,
-  Paragraph,
-  Byline,
-  InterTitle,
-  Citation,
-  UrlLink,
-  TagTypography,
-  SectionTitle,
-  EditorialTitle,
-  MostReadNumber,
-  MenuSideTitle,
-  MenuSideItem,
-  MenuTopItem,
-} from './index';
 import { ArgsTable, Meta } from '@storybook/addon-docs/blocks';
+import {CodeBlock, Space} from 'prensa-docs';
+import {ThemeProvider} from 'styled-components';
+import {theme} from '../../styles/theme';
+import Typography from './index'
 
 <Meta title="Components/Typography" />
 
-# HelloWorld
-
-testando 12345
-
-<SubjectTypography color='primary-1'>Testando 12345</SubjectTypography>
-<SubjectTypography color='primary-2' size={2}>Testando 12345</SubjectTypography>
-<SubjectTypography color='primary-3' size={3}>Testando 12345</SubjectTypography>
-
-<NewsTitle color='primary-3' size={1}>Testando</NewsTitle>
-<NewsTitle color='primary-3' size={2}>Testando</NewsTitle>
-<NewsTitle color='success-1' size={3}>Testando</NewsTitle>
-<NewsTitle color='primary-3' size={4}>Testando</NewsTitle>
-<NewsTitle color='primary-2' size={5}>Testando</NewsTitle>
-<NewsTitle color='primary-3' size={6}>Testando</NewsTitle>
-<NewsTitle color='primary-3' size={7}>Testando</NewsTitle>
-
-<Subtitle color='neutral-4'>Subtitle</Subtitle>
-
-<Date color='neutral-4'>Date</Date>
-
-<Author color='neutral-4'>Author</Author>
-
-<Paragraph color='neutral-4'>Paragraph</Paragraph>
-
-<Byline color='neutral-4'>Byline</Byline>
-
-<InterTitle color='neutral-4'>InterTitle</InterTitle>
-
-<Citation color='neutral-4'>Testando 12345</Citation>
-
-<UrlLink color='neutral-4'>Testando 12345</UrlLink>
-
-<TagTypography color='neutral-4'>Testando 12345</TagTypography>
-
-<SectionTitle color='editorial-6'>Testando 12345</SectionTitle>
-
-<EditorialTitle color='neutral-4'>Testando 12345</EditorialTitle>
-
-<MostReadNumber color='neutral-4'>Testando 12345</MostReadNumber>
-
-<MenuSideTitle color='neutral-4'>Testando 12345</MenuSideTitle>
-
-<MenuSideItem color='neutral-4'>Testando 12345</MenuSideItem>
-
-<MenuTopItem color='neutral-4'>Testando 12345</MenuTopItem>
+<ThemeProvider theme={theme}>
+  <Typography element='h2' ml={5} mr={2} align='center' fontSize="150px" lineHeight="100%" transform='uppercase' md={{fontSize: '100px', transform: 'lowercase'}}>The quick brown fox</Typography>
+</ThemeProvider>

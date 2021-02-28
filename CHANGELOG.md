@@ -1,3 +1,8 @@
+# v1.4.75
+- Remove módulo Typography do DS
+- Remove componente Teaser
+- Adiciona componente Typography
+- Ajuste fino no responsivo da prop variant no Button
 # v1.4.72
 - Remove px e py do SideMenu
 # v1.4.71
