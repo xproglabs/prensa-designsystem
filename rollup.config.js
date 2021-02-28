@@ -6,10 +6,12 @@ import babel from 'rollup-plugin-babel';
 import external from 'rollup-plugin-peer-deps-external';
 import sass from 'rollup-plugin-sass';
 
+const notInBuild = 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets';
+const customResolveOptions = {moduleDirectory: 'node_modules'};
+
 export default [
   {
     input: 'components/index.js',
-    // external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns', 'styled-components'],
     output: [
       {
         file: 'index.js',
@@ -18,13 +20,9 @@ export default [
       }
     ],
     plugins: [ 
-      babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
-      }),
+      babel({exclude: notInBuild}),
       json(),
-      resolve({
-        customResolveOptions: {moduleDirectory: 'node_modules'}
-      }),
+      resolve({customResolveOptions}),
       sass(),
       analyze(),
       external(),
@@ -32,7 +30,6 @@ export default [
   },
   {
     input: 'icons/index.js',
-    // external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns', 'styled-components'],
     output: [
       {
         file: 'icons.js',
@@ -41,13 +38,9 @@ export default [
       }
     ],
     plugins: [ 
-      babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
-      }),
+      babel({exclude: notInBuild}),
       json(),
-      resolve({
-        customResolveOptions: {moduleDirectory: 'node_modules'}
-      }),
+      resolve({customResolveOptions}),
       sass(),
       analyze(),
       external()
@@ -55,7 +48,6 @@ export default [
   },
   {
     input: 'components/Util/index.js',
-    // external: ['react', 'prop-types', 'sass', 'lodash', 'classnames', 'html2json', 'date-fns', 'styled-components'],
     output: [
       {
         file: 'utils.js',
@@ -64,13 +56,9 @@ export default [
       }
     ],
     plugins: [ 
-      babel({
-        exclude: 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets',
-      }),
+      babel({exclude: notInBuild}),
       json(),
-      resolve({
-        customResolveOptions: {moduleDirectory: 'node_modules'}
-      }),
+      resolve({customResolveOptions}),
       sass(),
       analyze(),
       external()
