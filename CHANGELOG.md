@@ -1,3 +1,7 @@
+# v1.4.73
+- Remove módulo Typography do DS
+- Remove componente Teaser
+- Adiciona componente Typography
 # v1.4.72
 - Remove px e py do SideMenu
 # v1.4.71

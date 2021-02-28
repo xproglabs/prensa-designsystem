@@ -2,7 +2,10 @@ import { ArgsTable, Meta } from '@storybook/addon-docs/blocks';
 import {CodeBlock, Space} from 'prensa-docs';
 import {ThemeProvider} from 'styled-components';
 import {theme} from '../../styles/theme';
+import Typography from './index'
 
 <Meta title="Components/Typography" />
 
-# Teste
+<ThemeProvider theme={theme}>
+  <Typography element='h2' ml={5} mr={2} align='center' fontSize="150px" lineHeight="100%" transform='uppercase' md={{fontSize: '100px', transform: 'lowercase'}}>The quick brown fox</Typography>
+</ThemeProvider>
