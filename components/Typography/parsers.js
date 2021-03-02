@@ -23,6 +23,7 @@ const parseStyle = (props, theme) => {
     font-family: ${parseFontFamily(props)};
     font-size: ${parseSize(props, 'fontSize')};
     line-height: ${parseSize(props, 'lineHeight')};
+    color: ${theme.parseColor(props, theme, '$color')};
     ${theme.parseMargin(props, theme)};
     ${theme.parseCustom(props)};
   `;

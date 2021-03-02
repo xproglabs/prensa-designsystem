@@ -16,6 +16,7 @@ import {
 
 const Typography = ({
   children,
+  color,
   element,
   fontSize,
   fontFamily,
@@ -53,6 +54,7 @@ const Typography = ({
     $fontFamily: xs.fontFamily ? xs.fontFamily : fontFamily,
     $lineHeight: xs.lineHeight ? xs.lineHeight : lineHeight,
     $transform: xs.transform ? xs.transform : transform,
+    $color: xs.color ? xs.color : color,
     align: xs.align ? xs.align : align,
   });
   const getSmProps = () => sm && ({
@@ -63,6 +65,7 @@ const Typography = ({
     $fontFamily: sm.fontFamily ? sm.fontFamily : fontFamily,
     $lineHeight: sm.lineHeight ? sm.lineHeight : lineHeight,
     $transform: sm.transform ? sm.transform : transform,
+    $color: sm.color ? sm.color : color,
     align: sm.align ? sm.align : align,
   });
   const getMdProps = () => md && ({
@@ -73,6 +76,7 @@ const Typography = ({
     $fontFamily: md.fontFamily ? md.fontFamily : fontFamily,
     $lineHeight: md.lineHeight ? md.lineHeight : lineHeight,
     $transform: md.transform ? md.transform : transform,
+    $color: md.color ? md.color : color,
     align: md.align ? md.align : align,
   });
   const getLgProps = () => lg && ({
@@ -83,6 +87,7 @@ const Typography = ({
     $fontFamily: lg.fontFamily ? lg.fontFamily : fontFamily,
     $lineHeight: lg.lineHeight ? lg.lineHeight : lineHeight,
     $transform: lg.transform ? lg.transform : transform,
+    $color: lg.color ? lg.color : color,
     align: lg.align ? lg.align : align,
   });
   const getXlProps = () => xl && ({
@@ -93,6 +98,7 @@ const Typography = ({
     $fontFamily: xl.fontFamily ? xl.fontFamily : fontFamily,
     $lineHeight: xl.lineHeight ? xl.lineHeight : lineHeight,
     $transform: xl.transform ? xl.transform : transform,
+    $color: xl.color ? xl.color : color,
     align: xl.align ? xl.align : align,
   });
 
@@ -102,6 +108,7 @@ const Typography = ({
     $fontFamily: fontFamily,
     $lineHeight: lineHeight,
     $transform: transform,
+    $color: color,
     align,
     custom,
     children,
@@ -157,6 +164,10 @@ Typography.propTypes = {
    * Permite alterar o valor para css text-transform
    */
   transform: PropTypes.oneOf(['none', 'inherit', 'capitalize', 'uppercase', 'lowercase']),
+  /**
+   * Permite acessar as cores disponíveis no theme
+   */
+  color: PropTypes.string,
   children: PropTypes.node,
   /**
    * Permite a escolha da tag de texto a ser utilizada
