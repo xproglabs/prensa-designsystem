@@ -1,3 +1,5 @@
+# v1.4.76
+- Adiciona props de cor no Typography
 # v1.4.75
 - Remove módulo Typography do DS
 - Remove componente Teaser
