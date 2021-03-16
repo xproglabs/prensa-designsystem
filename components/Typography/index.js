@@ -150,8 +150,6 @@ Typography.defaultProps = {
   fontFamily: 'primary',
   fontWeight: 400,
   lineHeight: '100%',
-  mt: 2,
-  mb: 2,
   align: 'left'
 };
 
