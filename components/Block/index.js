@@ -44,6 +44,7 @@ const Block = props => {
 
   return (
     <Component
+      className={props.className}
       align={props.align}
       alignx={props.alignx}
       aligny={props.aligny}
@@ -87,6 +88,10 @@ Block.defaultProps = {
 };
 
 Block.propTypes = {
+  /**
+   * Permite passagem de um class para o elemento raíz (faz referência a prop do html)
+   */
+  className: PropTypes.string,
   /**
    * Configuração da orientação de posição
    */
