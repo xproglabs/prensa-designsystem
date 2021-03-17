@@ -1,3 +1,5 @@
+# v1.4.78
+- Adiciona prop className no Block
 # v1.4.77
 - Adiciona export do Typography no index
 # v1.4.76
