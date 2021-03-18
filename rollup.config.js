@@ -3,10 +3,12 @@ import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import analyze from 'rollup-plugin-analyzer';
 import babel from 'rollup-plugin-babel';
+import commonJs from 'rollup-plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
 import sass from 'rollup-plugin-sass';
 
 const notInBuild = 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets';
+const externalLibraries = 'node_modules/react-input-mask/**';
 const customResolveOptions = {moduleDirectory: 'node_modules'};
 
 export default [
@@ -23,6 +25,7 @@ export default [
       babel({exclude: notInBuild}),
       json(),
       resolve({customResolveOptions}),
+      commonJs({include: externalLibraries}),
       sass(),
       analyze(),
       external(),
