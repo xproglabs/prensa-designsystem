@@ -12,6 +12,7 @@ import {
   HeadingSix,
   Paragraph,
   Span,
+  Label
 } from './styled';
 
 const Typography = ({
@@ -138,6 +139,8 @@ const Typography = ({
       return <HeadingSix {...props} $style={styles} />;
     case 'p':
       return <Paragraph {...props} $style={styles} />;
+    case 'label':
+      return <Label {...props} $style={styles} />;
     case 'span':
     default:
       return <Span {...props} $style={styles} />;
@@ -150,7 +153,9 @@ Typography.defaultProps = {
   fontFamily: 'primary',
   fontWeight: 400,
   lineHeight: '100%',
-  align: 'left'
+  align: 'left',
+  mt: '0px',
+  mb: '0px'
 };
 
 Typography.propTypes = {
@@ -170,7 +175,7 @@ Typography.propTypes = {
   /**
    * Permite a escolha da tag de texto a ser utilizada
    */
-  element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span']),
+  element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label']),
   /**
    * Altera o valor da propriedade font-size no css
    */
