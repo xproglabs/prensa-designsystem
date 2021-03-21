@@ -17,20 +17,21 @@ import Field from './index';
 
 <Space size={6} />
 
-Um componente Field que contempla `<input>` e `<label>`. Ele aceita um ícone que é posicionado no interior do input, à direita. Também tem duas props para validação e mensagem de validação.
+O componente é composto por um `<label />`, `<input />` e uma mensagem de erro para validação de formulário. Ele aceita um ícone que é posicionado no interior do input, à direita.
+As props do componente são dividas em props de ação (onChange, value etc) e props que preenchem o styled-system (props de estilização).
 
 <Space size={6} />
 
 ### Estados e validação
 
-O componente trabalha com dois estados, o **padrão** e o **erro**. O padrão representa a visualização normal do field para o usuário. Já o erro representa um estado de valores inválidos.
+O componente trabalha com dois estados, o **succeso** e o **erro**. O sucesso representa a visualização normal do field para o usuário. Já o erro representa um estado de valores inválidos.
 
 <Space size={6} />
 
 <ThemeProvider theme={theme}>
   <div style={{display: 'flex', width: '100%'}}>
     <div style={{width: 'calc(50% - 10px)', marginRight: 10}}>
-      <Field label="Field com visualização normal"/>
+      <Field label="Field com visualização normal" />
     </div>
     <div style={{width: 'calc(50% - 10px)', marginRight: 10}}>
       <Field label="Field com visualização do estado de erro" validationMessage='Aqui podemos inserir uma mensagem para o usuário' validation={false} />
@@ -40,14 +41,12 @@ O componente trabalha com dois estados, o **padrão** e o **erro**. O padrão re
 
 <Space size={6} />
 
-A manipulação desses estados é feita através das props `validation` e `validationMessage`. Para a primeira, `true | false` e para a segunda uma string com a mensagem que deseja exibir no Field.
+A manipulação desses estados é feita através das props `validation` e `validationMessage`. Para a primeira, `true | false` e para a segunda uma `string` com a mensagem que deseja exibir no Field.
 
 <Space size={6} />
 
 <pre>
   <CodeBlock children={`
-  import {Field} from 'prensa';
-
   <Field label="Field com visualização normal" />
   <Field 
     label="Field com visualização do estado de erro"
@@ -59,19 +58,43 @@ A manipulação desses estados é feita através das props `validation` e `valid
 
 <Space size={10} />
 
+### Aplicação de máscara
+
+A aplicação da máscara é feita utilizando o pacote `react-input-mask`: https://www.npmjs.com/package/react-input-mask
+
+A bundle do pacote já está mesclada ao componente Field. Para utilizar basta passar um valor em `string` para a prop `mask` com a regra da máscara desejada.
+
+<ThemeProvider theme={theme}>
+  <Field label="The quick brown fox" mask="999.999.999-99" />
+</ThemeProvider>
+
+<pre>
+  <CodeBlock children={`<Field label="The quick brown fox" mask="999.999.999-99" />`} />
+</pre>
+
+<Space size={10} />
+
 ### Estilos e aplicação nas props
 
-O componente é conectado com o theme e seus valores padrão e também conta com um conjunto de props para manipulação do estilo manualmente.
+O componente é conectado ao styled-system do Prensa permitindo manipulações de estilo específicas.
 
-O ícone respeita o comportamento da validação do Field. Caso a validação seja negativa, o ícone também assume a cor da validação de erro.
+Para isso utilizamos as props listadas abaixo:
 
-A cor definida para o erro é `theme.colors.error1`.
+> **`styledLabel`** e **`styledMessage`** recebem: `{fontSize, fontWeight, fontFamily, color, mt, mr, mb, ml}`
 
-- **fontFamily:** theme.fonts.fontPrimary,
-- **activeColor:** theme.colors.primary1,
-- **borderColor:** theme.colors.neutral9,
-- **fontColor:** theme.colors.neutral5,
-- **iconColor:** theme.colors.neutral5
+> **`styledInput`** recebe: `{fontSize, fontWeight, fontFamily, color, radius}`
+
+> **`styledLabel`** recebe: `{mt, mr, mb, ml}`
+
+A cor padrão definida para o erro é `theme.colors.error1`.
+
+<ThemeProvider theme={theme}>
+  <Field label="The quick brown fox" styledLabel={{ fontWeight: 700 }} />
+</ThemeProvider>
+
+<pre>
+  <CodeBlock children={`<Field label="The quick brown fox" styledLabel={{ fontWeight: 700 }} />`} />
+</pre>
 
 <Space size={10} />
 
