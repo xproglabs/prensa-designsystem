@@ -1,3 +1,4 @@
+import {get} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import InputMask from 'react-input-mask';
@@ -14,9 +15,10 @@ const Field = props => {
   const {
     icon,
     label,
-    labelProps,
-    messageProps,
-    inputProps,    
+    styledLabel,
+    styledMessage,
+    styledInput,
+    styledField,
     onChange,
     onIconClick,
     type,
@@ -31,6 +33,43 @@ const Field = props => {
     mask
   } = props;
 
+  const styledLabelDefaultProps = {
+    fontSize: get(styledLabel, 'fontSize', '14px'),
+    fontWeight: get(styledLabel, 'fontWeight', 400),
+    fontFamily: get(styledLabel, 'fontFamily', 'secondary'),
+    color: get(styledLabel, 'color', 'neutral5'),
+    mt: get(styledLabel, 'mt', 0.5),
+    mr: get(styledLabel, 'mr', undefined),
+    mb: get(styledLabel, 'mb', 0.5),
+    ml: get(styledLabel, 'ml', undefined)
+  };
+
+  const styledMessageDefaultProps = {
+    fontSize: get(styledMessage, 'fontSize', '14px'),
+    fontWeight: get(styledMessage, 'fontWeight', 400),
+    fontFamily: get(styledMessage, 'fontFamily', 'secondary'),
+    color: get(styledMessage, 'color', 'neutral5'),
+    mt: get(styledMessage, 'mt', 0.5),
+    mr: get(styledMessage, 'mr', undefined),
+    mb: get(styledMessage, 'mb', 0.5),
+    ml: get(styledMessage, 'ml', undefined)
+  };
+
+  const styledInputDefaultProps = {
+    $fontSize: get(styledInput, 'fontSize', '14px'),
+    $fontWeight: get(styledInput, 'fontWeight', 400),
+    $fontFamily: get(styledInput, 'fontFamily', 'secondary'),
+    $color: get(styledInput, 'color', 'neutral5'),
+    $radius: get(styledInput, 'radius', 'default'),
+  };
+
+  const styledFieldDefaultProps = {
+    mt: get(styledField, 'mt', 0.5),
+    mr: get(styledField, 'mr', undefined),
+    mb: get(styledField, 'mb', 0.5),
+    ml: get(styledField, 'ml', undefined)
+  };
+
   const handleChange = event => {
     onChange(event.target.value);
   };
@@ -43,29 +82,18 @@ const Field = props => {
 
   const renderLabel = () => {
     if (!label) return null;
-    return <FieldLabel {...labelProps}>{label}</FieldLabel>;
+    return <FieldLabel {...styledLabelDefaultProps}>{label}</FieldLabel>;
   };
 
   const renderMessage = () => {
     if (validation === true) return null;
-    return <FieldMessage {...messageProps}>{validationMessage}</FieldMessage>;
-  };
-
-  const inputItinerantProps = {
-    $fontSize: inputProps.fontSize,
-    $fontWeight: inputProps.fontWeight,
-    $fontFamily: inputProps.fontFamily,
-    $color: inputProps.color,
-    $radius: inputProps.radius,
+    return <FieldMessage {...styledMessageDefaultProps}>{validationMessage}</FieldMessage>;
   };
 
   return (
-    <Block mt={props.mt} mr={props.mr} mb={props.mb} ml={props.ml} fullWidth>
+    <Block {...styledFieldDefaultProps} fullWidth>
       {renderLabel()}
-      <InputContainer
-        validation={validation}
-        {...inputItinerantProps}
-      >
+      <InputContainer validation={validation} {...styledInputDefaultProps}>
         <InputMask
           name={name}
           type={type}
@@ -77,7 +105,7 @@ const Field = props => {
           mask={mask}
           placeholder={placeholder}
           validation={validation}
-          {...inputItinerantProps}
+          {...styledInputDefaultProps}
         >
           {forwardedProps => <Input {...forwardedProps} />}
         </InputMask>
@@ -88,8 +116,15 @@ const Field = props => {
   );
 };
 
+Field.defaultProps = {
+  validation: true,
+};
+
 Field.propTypes = {
-  labelProps: PropTypes.shape({
+  /**
+   * Props de estilo para o Label do Field
+   */
+  styledLabel: PropTypes.shape({
     fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     fontWeight: PropTypes.number,
     fontFamily: PropTypes.oneOf(['primary', 'secondary']),
@@ -99,7 +134,10 @@ Field.propTypes = {
     mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   }),
-  messageProps: PropTypes.shape({
+  /**
+   * Props de estilo para a mensagem de erro
+   */
+  styledMessage: PropTypes.shape({
     fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     fontWeight: PropTypes.number,
     fontFamily: PropTypes.oneOf(['primary', 'secondary']),
@@ -109,12 +147,24 @@ Field.propTypes = {
     mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   }),
-  inputProps: PropTypes.shape({
+  /**
+   * Props de estilo para o elemento input HTML
+   */
+  styledInput: PropTypes.shape({
     fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     fontWeight: PropTypes.number,
     fontFamily: PropTypes.oneOf(['primary', 'secondary']),
     color: PropTypes.oneOf(colorProps),
     radius: PropTypes.oneOf(['unset', 'default', 'alternative'])
+  }),
+  /**
+   * Props de estilo para o componente React Field
+   */
+  styledField: PropTypes.shape({
+    mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   }),
   /**
    * Ativa/desativa o estado disabled do input
@@ -124,13 +174,6 @@ Field.propTypes = {
    * Ativa ou desativa o uso do placeholder (recebe o texto)
    */
   placeholder: PropTypes.string,
-  /**
-   * Permite aplicação de margin no componente
-   */
-  mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
    * Possibilita adicionar um ícone à direita do Field
    */
@@ -179,34 +222,6 @@ Field.propTypes = {
    * Permite a aplicação de uma máscara no input
    */
   mask: PropTypes.string,
-};
-
-Field.defaultProps = {
-  labelProps: {
-    fontSize: '14px',
-    fontWeight: 400,
-    fontFamily: 'secondary',
-    color: 'neutral5',
-    mb: 0.5
-  },
-  messageProps: {
-    fontSize: '14px',
-    fontWeight: 400,
-    fontFamily: 'secondary',
-    color: 'error1',
-    mt: 0.5,
-    mb: 0.5
-  },
-  inputProps: {
-    fontSize: '14px',
-    fontWeight: 400,
-    fontFamily: 'secondary',
-    color: 'neutral5',
-    radius: 'default',
-  },
-  validation: true,
-  mt: 0.5,
-  mb: 0.5
 };
 
 export default withTheme(Field);

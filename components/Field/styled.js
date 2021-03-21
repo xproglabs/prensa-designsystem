@@ -17,7 +17,7 @@ const handleColor = props => {
   const isValid = get(props, 'validation');
   const theme = get(props, 'theme.colors');
   const value = get(props, '$color');
-  //Fixed rule for false validation (apply color error1)
+  //Static rule for false validation (apply color error1)
   if (isValid === false) return theme.error1;
   return theme[value];
 };
@@ -26,7 +26,7 @@ const handleFocusedColor = props => {
   const isValid = get(props, 'validation');
   const theme = get(props, 'theme.colors');
   if (isValid === false) return theme.error1;
-  //Fixed rule to return activeSystemColor to label border
+  //Static rule to return activeSystemColor to label border
   return theme.activeColor;
 };
 
