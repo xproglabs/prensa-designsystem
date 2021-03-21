@@ -1,3 +1,5 @@
+# v1.4.79
+- Atualiza documentação do Field
 # v1.4.78
 - Adiciona prop className no Block
 - Remove espaçamentos padrão do componente Typography
