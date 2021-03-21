@@ -1,155 +1,171 @@
 import {get} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled, {withTheme} from 'styled-components';
+import InputMask from 'react-input-mask';
+import {withTheme} from 'styled-components';
 
 import colorProps from '../../styles/variables/colors.json';
-import {getFromProps} from '../Util';
+import Block from '../Block';
+import FieldLabel from './FieldLabel';
+import FieldMessage from './FieldMessage';
+import {Input, InputContainer} from './styled';
 
-const validateStyle = (props) => {
-  const isValid = get(props, 'validation', true);
-  if (!isValid) return props.theme.colors.error1;
-  if (props.borderColor) return props.borderColor;
-  return props.theme.colors.neutral9;
-};
+const Field = props => {
 
-const validateIcon = props => {
-  const isValid = get(props, 'validation', true);
-  if (!isValid) return props.theme.colors.error1;
-  if (props.iconColor) return props.iconColor;
-  return props.theme.colors.neutral5;
-};
+  const {
+    icon,
+    label,
+    styledLabel,
+    styledMessage,
+    styledInput,
+    styledField,
+    onChange,
+    onIconClick,
+    type,
+    value,
+    validation,
+    validationMessage,
+    placeholder,
+    disabled,
+    on,
+    id,
+    name,
+    mask
+  } = props;
 
-const Container = styled.div`
-  width: 100%;
-  ${props => props.theme.parseMargin(props, props.theme)};
-`;
-const StyledLabel = styled.label`
-  font-size: 14px;
-  font-weight: 400;
-  font-family: ${props => props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary};
-  color: ${props => getFromProps(props, 'fontColor', props.theme.colors.neutral5)};
-`;
-const InputContainer = styled.div`
-  background-color: white;
-  width: calc(100% - 2px);
-  height: 40px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${props => validateStyle(props)};
-  border-radius: ${props => getFromProps(props, 'radius', 5)};
-  display: flex;
-  align-items: center;
-  svg {
-    width: 32px;
-    height: 32px;
-    margin-right: 8px;
-    fill: ${props => validateIcon(props)};
-    cursor: pointer;
-  }
-  &:focus-within {
-    border-color: ${props => getFromProps(props, 'activeColor', props.theme.colors.primary1)};
-    border-width: 2px;
-    width: calc(100% - 3px);
-    height: calc(40px - 2px);
-  }
-`;
-const StyledInput = styled.input`
-  width: calc(100% - 16px);
-  height: calc(100% - 2px);
-  padding-left: 8px;
-  padding-right: 8px;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: ${props => props.$fontFamily ? props.$fontFamily : props.theme.fonts.fontPrimary};
-  border-radius: ${props => getFromProps(props, 'radius', 5)};
-  border-color: unset;
-  border-width: unset;
-  border-style: unset;
-  &:focus {
-    outline-color: unset;
-    outline-width: unset;
-    outline-style: none;
-  }
-`;
+  const styledLabelDefaultProps = {
+    fontSize: get(styledLabel, 'fontSize', '14px'),
+    fontWeight: get(styledLabel, 'fontWeight', 400),
+    fontFamily: get(styledLabel, 'fontFamily', 'secondary'),
+    color: get(styledLabel, 'color', 'neutral5'),
+    mt: get(styledLabel, 'mt', 0.5),
+    mr: get(styledLabel, 'mr', undefined),
+    mb: get(styledLabel, 'mb', 0.5),
+    ml: get(styledLabel, 'ml', undefined)
+  };
 
-const ErrorMessage = styled.p`
-  font-size: 14px;
-  font-weight: 400;
-  font-family: ${props => props.fontFamily ? props.fontFamily : props.theme.fonts.fontPrimary};
-  color: ${props => props.theme.colors.error1};
-  margin-top: 4px;
-  margin-bottom: 0px;
-  height: 16px;
-`;
+  const styledMessageDefaultProps = {
+    fontSize: get(styledMessage, 'fontSize', '14px'),
+    fontWeight: get(styledMessage, 'fontWeight', 400),
+    fontFamily: get(styledMessage, 'fontFamily', 'secondary'),
+    color: get(styledMessage, 'color', 'neutral5'),
+    mt: get(styledMessage, 'mt', 0.5),
+    mr: get(styledMessage, 'mr', undefined),
+    mb: get(styledMessage, 'mb', 0.5),
+    ml: get(styledMessage, 'ml', undefined)
+  };
 
-const Field = ({
-  mt,
-  mr,
-  mb,
-  ml,
-  icon,
-  label,
-  radius,
-  onChange,
-  onIconClick,
-  type,
-  value,
-  fontFamily,
-  activeColor,
-  borderColor,
-  fontColor,
-  iconColor,
-  validation,
-  validationMessage,
-  placeholder,
-  disabled,
-  on,
-  id,
-  name
-}) => {
+  const styledInputDefaultProps = {
+    $fontSize: get(styledInput, 'fontSize', '14px'),
+    $fontWeight: get(styledInput, 'fontWeight', 400),
+    $fontFamily: get(styledInput, 'fontFamily', 'secondary'),
+    $color: get(styledInput, 'color', 'neutral5'),
+    $radius: get(styledInput, 'radius', 'default'),
+  };
+
+  const styledFieldDefaultProps = {
+    mt: get(styledField, 'mt', 0.5),
+    mr: get(styledField, 'mr', undefined),
+    mb: get(styledField, 'mb', 0.5),
+    ml: get(styledField, 'ml', undefined)
+  };
 
   const handleChange = event => {
     onChange(event.target.value);
   };
 
-  const getIconFromProps = () => {
+  const renderIcon = () => {
+    if (!icon) return null;
     const iconHasOnClick = icon.props && icon.props.onClick ? icon.props.onClick : false;
     return React.cloneElement(icon, {onClick: iconHasOnClick ? iconHasOnClick : onIconClick});
   };
 
-  const capitalizeFirstLetter = string => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  const renderLabel = () => {
+    if (!label) return null;
+    return <FieldLabel {...styledLabelDefaultProps}>{label}</FieldLabel>;
+  };
+
+  const renderMessage = () => {
+    if (validation === true) return null;
+    return <FieldMessage {...styledMessageDefaultProps}>{validationMessage}</FieldMessage>;
   };
 
   return (
-    <Container mt={mt} mr={mr} mb={mb} ml={ml}>
-      {label && <StyledLabel fontColor={fontColor}>{capitalizeFirstLetter(label)}</StyledLabel>}
-      <InputContainer radius={radius} activeColor={activeColor} validation={validation} borderColor={borderColor} iconColor={iconColor}>
-        <StyledInput
+    <Block {...styledFieldDefaultProps} fullWidth>
+      {renderLabel()}
+      <InputContainer validation={validation} {...styledInputDefaultProps}>
+        <InputMask
           name={name}
-          id={id}
-          on={on}
           type={type}
+          id={id}
           value={value}
+          on={on}
           onChange={handleChange}
-          radius={radius}
-          $fontFamily={fontFamily}
-          activeColor={activeColor}
-          borderColor={borderColor}
-          validation={validation}
-          fontColor={fontColor}
-          placeholder={placeholder}
           disabled={disabled}
-        />
-        {icon && getIconFromProps()}
+          mask={mask}
+          placeholder={placeholder}
+          validation={validation}
+          {...styledInputDefaultProps}
+        >
+          {forwardedProps => <Input {...forwardedProps} />}
+        </InputMask>
+        {renderIcon()}
       </InputContainer>
-      {validation === false && <ErrorMessage>{validationMessage}</ErrorMessage>}
-    </Container>
+      {renderMessage()}
+    </Block>
   );
 };
 
+Field.defaultProps = {
+  validation: true,
+};
+
 Field.propTypes = {
+  /**
+   * Props de estilo para o Label do Field
+   */
+  styledLabel: PropTypes.shape({
+    fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    fontWeight: PropTypes.number,
+    fontFamily: PropTypes.oneOf(['primary', 'secondary']),
+    color: PropTypes.oneOf(colorProps),
+    mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }),
+  /**
+   * Props de estilo para a mensagem de erro
+   */
+  styledMessage: PropTypes.shape({
+    fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    fontWeight: PropTypes.number,
+    fontFamily: PropTypes.oneOf(['primary', 'secondary']),
+    color: PropTypes.oneOf(colorProps),
+    mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }),
+  /**
+   * Props de estilo para o elemento input HTML
+   */
+  styledInput: PropTypes.shape({
+    fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    fontWeight: PropTypes.number,
+    fontFamily: PropTypes.oneOf(['primary', 'secondary']),
+    color: PropTypes.oneOf(colorProps),
+    radius: PropTypes.oneOf(['unset', 'default', 'alternative'])
+  }),
+  /**
+   * Props de estilo para o componente React Field
+   */
+  styledField: PropTypes.shape({
+    mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }),
   /**
    * Ativa/desativa o estado disabled do input
    */
@@ -158,22 +174,6 @@ Field.propTypes = {
    * Ativa ou desativa o uso do placeholder (recebe o texto)
    */
   placeholder: PropTypes.string,
-  /**
-   * Corresponde a um margin-top
-   */
-  mt: PropTypes.number,
-  /**
-   * Corresponde a um margin-right
-   */
-  mr: PropTypes.number,
-  /**
-   * Corresponde a um margin-bottom
-   */
-  mb: PropTypes.number,
-  /**
-   * Corresponde a um margin-left
-   */
-  ml: PropTypes.number,
   /**
    * Possibilita adicionar um ícone à direita do Field
    */
@@ -187,11 +187,7 @@ Field.propTypes = {
    */
   label: PropTypes.string,
   /**
-   * Modifica o radius do Field
-   */
-  radius: PropTypes.number,
-  /**
-   * Função executada ao modificar o valor do Field
+   * Função disparada ao modificar o valor do Field
    */
   onChange: PropTypes.func.isRequired,
   /**
@@ -199,54 +195,33 @@ Field.propTypes = {
    */
   id: PropTypes.string,
   /**
-   * Props que recebe o type do Field (prop nativa do elemento)
+   * Props que recebe o type do Field (prop nativa HTML)
    */
   type: PropTypes.string,
   /**
-   * Recebe o valor do Field (prop nativa do elemento)
+   * Recebe o valor do Field (prop nativa do HTML)
    */
   value: PropTypes.string,
   /**
-   * Prop para nomear o elemento HTML raíz
+   * Prop para nomear o elemento HTML (prop nativa do HTML)
    */
   name: PropTypes.string,
   /**
    * Recebe o estado do componente (true para padrão e false para erro)
    */
-  validation: PropTypes.oneOf([true, false]).isRequired,
+  validation: PropTypes.oneOf([true, false]),
   /**
    * Recebe a mensagem de validação (renderizada quando validation = false)
    */
   validationMessage: PropTypes.string,
-  //STYLE PROPS
-  /**
-   * Altera a família da fonte do input (conectada ao theme)
-   */
-  fontFamily: PropTypes.string,
-  /**
-   * Altera a cor do Field quando estiver no estado ATIVO (focused) (conectada ao theme)
-   */
-  activeColor: PropTypes.oneOf(colorProps),
-  /**
-   * Altera a cor da borda do Field (conectada ao theme)
-   */
-  borderColor: PropTypes.oneOf(colorProps),
-  /**
-   * Altera a cor da fonte do Field (conectada ao theme)
-   */
-  fontColor: PropTypes.oneOf(colorProps),
-  /**
-   * Altera a cor do ícone (caso ativo) (conectada ao theme)
-   */
-  iconColor: PropTypes.oneOf(colorProps),
   /**
    * AMP: Permite ação de clique e manipulação do estado
    */
-  on: PropTypes.string
-};
-
-Field.defaultProps = {
-  validation: true
+  on: PropTypes.string,
+  /**
+   * Permite a aplicação de uma máscara no input
+   */
+  mask: PropTypes.string,
 };
 
 export default withTheme(Field);
