@@ -1,3 +1,6 @@
+# v1.4.83
+- Corrige onChange no Field
+- Adiciona react-input-mask@next como peer-dependency
 # v1.4.79
 - Atualiza documentação do Field
 # v1.4.78
