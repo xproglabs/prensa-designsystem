@@ -90,7 +90,7 @@ const Field = props => {
     return <FieldMessage {...styledMessageDefaultProps}>{validationMessage}</FieldMessage>;
   };
 
-  return (
+  return (    
     <Block {...styledFieldDefaultProps} fullWidth>
       {renderLabel()}
       <InputContainer validation={validation} {...styledInputDefaultProps}>
@@ -107,7 +107,7 @@ const Field = props => {
           validation={validation}
           {...styledInputDefaultProps}
         >
-          {forwardedProps => <Input {...forwardedProps} />}
+          <Input />
         </InputMask>
         {renderIcon()}
       </InputContainer>
@@ -118,6 +118,7 @@ const Field = props => {
 
 Field.defaultProps = {
   validation: true,
+  disabled: false,
 };
 
 Field.propTypes = {
