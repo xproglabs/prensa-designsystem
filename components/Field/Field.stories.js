@@ -13,7 +13,9 @@ export const Primary = () => {
   const [state, setState] = React.useState('');
   return (
     <ThemeProvider theme={theme}>
-      <Field placeholder="Digite alguma coisa" value={state} onChange={setState} />
+      <div style={{margin: 20}}>
+        <Field placeholder="Digite alguma coisa" value={state} onChange={setState} validation={false} validationMessage="Teste"/>
+      </div>
     </ThemeProvider>
   );
 };
