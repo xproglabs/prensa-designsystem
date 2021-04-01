@@ -13,12 +13,19 @@ const handleBorderRadius = props => {
   return theme[value];
 };
 
-const handleColor = props => {
+//TODO: Unificar as funções de getColor do theme
+const handleInputColor = props => {
   const isValid = get(props, 'validation');
   const theme = get(props, 'theme.colors');
   const value = get(props, '$color');
   //Static rule for false validation (apply color error1)
   if (isValid === false) return theme.error1;
+  return theme[value];
+};
+
+const handleColor = props => {
+  const theme = get(props, 'theme.colors');
+  const value = get(props, '$color');
   return theme[value];
 };
 
@@ -54,7 +61,7 @@ export const InputContainer = styled.div`
   background-color: white;
   width: 100%;
   height: 40px;
-  box-shadow: ${props => `0 0 0 1px ${handleColor(props)}`};
+  box-shadow: ${props => `0 0 0 1px ${handleInputColor(props)}`};
   display: flex;
   align-items: center;
   border-radius: ${handleBorderRadius};
