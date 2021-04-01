@@ -1,4 +1,4 @@
-# v1.4.85
+# v1.4.84
 - Adiciona props dangerouslySetInnerHTML no Block e Typography
 - Corrige layout da FieldMessage no Field
 # v1.4.83
