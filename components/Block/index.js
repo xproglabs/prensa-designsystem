@@ -75,8 +75,9 @@ const Block = props => {
       sm={getSmProps()}
       md={getMdProps()}
       lg={getLgProps()}
-      xl={getXlProps()}>
-      {props.children}
+      xl={getXlProps()}
+      dangerouslySetInnerHTML={{__html: props.dangerouslySetInnerHTML}}>
+      {!props.dangerouslySetInnerHTML && props.children}
     </Component>
   );
 };
@@ -88,10 +89,6 @@ Block.defaultProps = {
 };
 
 Block.propTypes = {
-  /**
-   * Permite passagem de um class para o elemento raíz (faz referência a prop do html)
-   */
-  className: PropTypes.string,
   /**
    * Configuração da orientação de posição
    */
@@ -120,6 +117,11 @@ Block.propTypes = {
    * Renderiza os blocos filhos
    */
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.string]),
+  /**
+   * Permite passagem de um class para o elemento raíz (faz referência a prop do html)
+   */
+  className: PropTypes.string,
+  dangerouslySetInnerHTML: PropTypes.any,
   /**
    * Define propriedade de color
    */

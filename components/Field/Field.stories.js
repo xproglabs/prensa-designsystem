@@ -10,13 +10,12 @@ export default {
 };
 
 export const Primary = () => {
+  const [state, setState] = React.useState('');
   return (
     <ThemeProvider theme={theme}>
-      <Field
-        value='Testando um valor dentro do input'
-        onChange={value => console.log(value)}
-        disabled={true}
-      />
+      <div style={{margin: 20}}>
+        <Field placeholder="Digite alguma coisa" value={state} onChange={setState} validation={false} validationMessage="Teste"/>
+      </div>
     </ThemeProvider>
   );
 };

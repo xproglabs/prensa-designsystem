@@ -48,7 +48,7 @@ const Field = props => {
     fontSize: get(styledMessage, 'fontSize', '14px'),
     fontWeight: get(styledMessage, 'fontWeight', 400),
     fontFamily: get(styledMessage, 'fontFamily', 'secondary'),
-    color: get(styledMessage, 'color', 'neutral5'),
+    color: get(styledMessage, 'color', 'error1'),
     mt: get(styledMessage, 'mt', 0.5),
     mr: get(styledMessage, 'mr', undefined),
     mb: get(styledMessage, 'mb', 0.5),
