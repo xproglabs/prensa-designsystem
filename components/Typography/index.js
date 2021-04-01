@@ -35,7 +35,8 @@ const Typography = ({
   lg,
   xl,
   theme,
-  custom
+  custom,
+  dangerouslySetInnerHTML
 }) => {
 
   const styles = css`
@@ -112,7 +113,7 @@ const Typography = ({
     $color: color,
     align,
     custom,
-    children,
+    children: !dangerouslySetInnerHTML ? undefined : children,
     mt,
     mb,
     ml,
@@ -122,6 +123,7 @@ const Typography = ({
     md: getMdProps(),
     lg: getLgProps(),
     xl: getXlProps(),
+    dangerouslySetInnerHTML: {__html: dangerouslySetInnerHTML}
   };
 
   switch(element) {
@@ -163,6 +165,7 @@ Typography.propTypes = {
    * Altera alinhamento do texto
    */
   align: PropTypes.oneOf(['left', 'center', 'right']),
+  dangerouslySetInnerHTML: PropTypes.any,
   /**
    * Permite alterar o valor para css text-transform
    */

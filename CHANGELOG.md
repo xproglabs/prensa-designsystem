@@ -1,3 +1,6 @@
+# v1.4.85
+- Adiciona props dangerouslySetInnerHTML no Block e Typography
+- Corrige layout da FieldMessage no Field
 # v1.4.83
 - Corrige onChange no Field
 - Adiciona react-input-mask@next como peer-dependency
