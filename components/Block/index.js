@@ -14,70 +14,105 @@ const Component = styled.div`
   ${props => props.xl && parseProps('xl', props)};
 `;
 
-const Block = props => {
+const Block = ({
+  children,
+  className,
+  align,
+  alignx,
+  aligny,
+  bgColor,
+  customDef,
+  fontColor,
+  py,
+  px,
+  pt,
+  pr,
+  pb,
+  pl,
+  my,
+  mx,
+  mt,
+  mr,
+  mb,
+  ml,
+  typography,
+  onClick,
+  fullWidth,
+  fullHeight,
+  custom,
+  width,
+  height,
+  id,
+  dangerouslySetInnerHTML,
+  xs,
+  sm,
+  md,
+  lg,
+  xl
+}) => {
 
-  const getXsProps = () => props.xs && ({
-    ...props.xs,
-    $width: props.xs.width ? props.xs.width : props.width,
-    $height: props.xs.height ? props.xs.height : props.height,
+  const getXsProps = () => xs && ({
+    ...xs,
+    $width: xs.width ? xs.width : width,
+    $height: xs.height ? xs.height : height,
   });
-  const getSmProps = () => props.sm && ({
-    ...props.sm,
-    $width: props.sm.width ? props.sm.width : props.width,
-    $height: props.sm.height ? props.sm.height : props.height,
+  const getSmProps = () => sm && ({
+    ...sm,
+    $width: sm.width ? sm.width : width,
+    $height: sm.height ? sm.height : height,
   });
-  const getMdProps = () => props.md && ({
-    ...props.md,
-    $width: props.md.width ? props.md.width : props.width,
-    $height: props.md.height ? props.md.height : props.height,
+  const getMdProps = () => md && ({
+    ...md,
+    $width: md.width ? md.width : width,
+    $height: md.height ? md.height : height,
   });
-  const getLgProps = () => props.lg && ({
-    ...props.lg,
-    $width: props.lg.width ? props.lg.width : props.width,
-    $height: props.lg.height ? props.lg.height : props.height,
+  const getLgProps = () => lg && ({
+    ...lg,
+    $width: lg.width ? lg.width : width,
+    $height: lg.height ? lg.height : height,
   });
-  const getXlProps = () => props.xl && ({
-    ...props.xl,
-    $width: props.xl.width ? props.xl.width : props.width,
-    $height: props.xl.height ? props.xl.height : props.height,
+  const getXlProps = () => xl && ({
+    ...xl,
+    $width: xl.width ? xl.width : width,
+    $height: xl.height ? xl.height : height,
   });
 
   return (
     <Component
-      className={props.className}
-      align={props.align}
-      alignx={props.alignx}
-      aligny={props.aligny}
-      bgColor={props.bgColor}
-      customDef={props.customDef}
-      fontColor={props.fontColor}
-      py={props.py}
-      px={props.px}
-      pt={props.pt}
-      pr={props.pr}
-      pb={props.pb}
-      pl={props.pl}
-      my={props.my}
-      mx={props.mx}
-      mt={props.mt}
-      mr={props.mr}
-      mb={props.mb}
-      ml={props.ml}
-      typography={props.typography}
-      onClick={props.onClick}
-      fullWidth={props.fullWidth}
-      fullHeight={props.fullHeight}
-      custom={props.custom}
-      $width={props.width}
-      $height={props.height}
-      id={props.id}
+      className={className}
+      align={align}
+      alignx={alignx}
+      aligny={aligny}
+      bgColor={bgColor}
+      customDef={customDef}
+      fontColor={fontColor}
+      py={py}
+      px={px}
+      pt={pt}
+      pr={pr}
+      pb={pb}
+      pl={pl}
+      my={my}
+      mx={mx}
+      mt={mt}
+      mr={mr}
+      mb={mb}
+      ml={ml}
+      typography={typography}
+      onClick={onClick}
+      fullWidth={fullWidth}
+      fullHeight={fullHeight}
+      custom={custom}
+      $width={width}
+      $height={height}
+      id={id}
       xs={getXsProps()}
       sm={getSmProps()}
       md={getMdProps()}
       lg={getLgProps()}
       xl={getXlProps()}
-      dangerouslySetInnerHTML={{__html: props.dangerouslySetInnerHTML}}>
-      {!props.dangerouslySetInnerHTML && props.children}
+      dangerouslySetInnerHTML={dangerouslySetInnerHTML ? {__html: dangerouslySetInnerHTML} : undefined}>
+      {dangerouslySetInnerHTML ? undefined : children}
     </Component>
   );
 };
