@@ -113,7 +113,7 @@ const Typography = ({
     $color: color,
     align,
     custom,
-    children: !dangerouslySetInnerHTML ? undefined : children,
+    children: dangerouslySetInnerHTML ? undefined : children,
     mt,
     mb,
     ml,
@@ -123,7 +123,7 @@ const Typography = ({
     md: getMdProps(),
     lg: getLgProps(),
     xl: getXlProps(),
-    dangerouslySetInnerHTML: {__html: dangerouslySetInnerHTML}
+    dangerouslySetInnerHTML: dangerouslySetInnerHTML ? {__html: dangerouslySetInnerHTML} : undefined
   };
 
   switch(element) {
@@ -157,7 +157,8 @@ Typography.defaultProps = {
   lineHeight: '100%',
   align: 'left',
   mt: '0px',
-  mb: '0px'
+  mb: '0px',
+  transform: 'none'
 };
 
 Typography.propTypes = {
