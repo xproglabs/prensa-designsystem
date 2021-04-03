@@ -157,7 +157,8 @@ Typography.defaultProps = {
   lineHeight: '100%',
   align: 'left',
   mt: '0px',
-  mb: '0px'
+  mb: '0px',
+  transform: 'none'
 };
 
 Typography.propTypes = {
