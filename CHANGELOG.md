@@ -1,3 +1,6 @@
+# v1.4.85
+- Ajuste na prop dangerouslySetInnerHTML do Block e Typography
+- Adiciona default prop para transform em Typography
 # v1.4.84
 - Adiciona props dangerouslySetInnerHTML no Block e Typography
 - Corrige layout da FieldMessage no Field
