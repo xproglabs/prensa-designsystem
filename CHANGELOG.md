@@ -1,3 +1,5 @@
+# v1.4.86
+- Ajuste nas peer-dependencies
 # v1.4.85
 - Ajuste na prop dangerouslySetInnerHTML do Block e Typography
 - Adiciona default prop para transform em Typography
