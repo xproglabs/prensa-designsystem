@@ -12,7 +12,8 @@ import {
   HeadingSix,
   Paragraph,
   Span,
-  Label
+  Label,
+  Cite
 } from './styled';
 
 const Typography = ({
@@ -23,7 +24,7 @@ const Typography = ({
   fontFamily,
   fontWeight,
   lineHeight,
-  align,
+  textAlign,
   transform,
   mt,
   mb,
@@ -57,7 +58,7 @@ const Typography = ({
     $lineHeight: xs.lineHeight ? xs.lineHeight : lineHeight,
     $transform: xs.transform ? xs.transform : transform,
     $color: xs.color ? xs.color : color,
-    align: xs.align ? xs.align : align,
+    textAlign: xs.textAlign ? xs.textAlign : textAlign,
   });
   const getSmProps = () => sm && ({
     ...sm,
@@ -68,7 +69,7 @@ const Typography = ({
     $lineHeight: sm.lineHeight ? sm.lineHeight : lineHeight,
     $transform: sm.transform ? sm.transform : transform,
     $color: sm.color ? sm.color : color,
-    align: sm.align ? sm.align : align,
+    textAlign: sm.textAlign ? sm.textAlign : textAlign,
   });
   const getMdProps = () => md && ({
     ...md,
@@ -79,7 +80,7 @@ const Typography = ({
     $lineHeight: md.lineHeight ? md.lineHeight : lineHeight,
     $transform: md.transform ? md.transform : transform,
     $color: md.color ? md.color : color,
-    align: md.align ? md.align : align,
+    textAlign: md.textAlign ? md.textAlign : textAlign,
   });
   const getLgProps = () => lg && ({
     ...lg,
@@ -90,7 +91,7 @@ const Typography = ({
     $lineHeight: lg.lineHeight ? lg.lineHeight : lineHeight,
     $transform: lg.transform ? lg.transform : transform,
     $color: lg.color ? lg.color : color,
-    align: lg.align ? lg.align : align,
+    textAlign: lg.textAlign ? lg.textAlign : textAlign,
   });
   const getXlProps = () => xl && ({
     ...xl,
@@ -101,7 +102,7 @@ const Typography = ({
     $lineHeight: xl.lineHeight ? xl.lineHeight : lineHeight,
     $transform: xl.transform ? xl.transform : transform,
     $color: xl.color ? xl.color : color,
-    align: xl.align ? xl.align : align,
+    textAlign: xl.textAlign ? xl.textAlign : textAlign,
   });
 
   const props = {
@@ -111,7 +112,7 @@ const Typography = ({
     $lineHeight: lineHeight,
     $transform: transform,
     $color: color,
-    align,
+    textAlign,
     custom,
     children: dangerouslySetInnerHTML ? undefined : children,
     mt,
@@ -143,6 +144,8 @@ const Typography = ({
       return <Paragraph {...props} $style={styles} />;
     case 'label':
       return <Label {...props} $style={styles} />;
+    case 'cite':
+      return <Cite {...props} $style={styles} />;
     case 'span':
     default:
       return <Span {...props} $style={styles} />;
@@ -155,7 +158,7 @@ Typography.defaultProps = {
   fontFamily: 'primary',
   fontWeight: 400,
   lineHeight: '100%',
-  align: 'left',
+  textAlign: 'left',
   mt: '0px',
   mb: '0px',
   transform: 'none'
@@ -165,7 +168,7 @@ Typography.propTypes = {
   /**
    * Altera alinhamento do texto
    */
-  align: PropTypes.oneOf(['left', 'center', 'right']),
+  textAlign: PropTypes.oneOf(['start', 'center', 'end']),
   dangerouslySetInnerHTML: PropTypes.any,
   /**
    * Permite alterar o valor para css text-transform
@@ -179,7 +182,7 @@ Typography.propTypes = {
   /**
    * Permite a escolha da tag de texto a ser utilizada
    */
-  element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label']),
+  element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label', 'cite']),
   /**
    * Altera o valor da propriedade font-size no css
    */

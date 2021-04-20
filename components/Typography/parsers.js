@@ -19,7 +19,7 @@ const parseStyle = (props, theme) => {
   return `
     font-weight: ${props.$fontWeight};
     text-transform: ${props.$transform};
-    text-align: ${props.align};
+    text-align: ${props.textAlign};
     font-family: ${parseFontFamily(props)};
     font-size: ${parseSize(props, 'fontSize')};
     line-height: ${parseSize(props, 'lineHeight')};
