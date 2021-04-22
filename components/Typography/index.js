@@ -30,6 +30,11 @@ const Typography = ({
   mb,
   ml,
   mr,
+  // px,
+  // py,
+  // pl,
+  // pr,
+  // p,
   xs,
   sm,
   md,
@@ -37,6 +42,8 @@ const Typography = ({
   xl,
   theme,
   custom,
+  width,
+  fullWidth,
   dangerouslySetInnerHTML
 }) => {
 
@@ -59,6 +66,8 @@ const Typography = ({
     $transform: xs.transform ? xs.transform : transform,
     $color: xs.color ? xs.color : color,
     textAlign: xs.textAlign ? xs.textAlign : textAlign,
+    $width: xs.width && xs.width,
+    fullWidth: xs.fullWidth && xs.fullWidth,
   });
   const getSmProps = () => sm && ({
     ...sm,
@@ -70,6 +79,8 @@ const Typography = ({
     $transform: sm.transform ? sm.transform : transform,
     $color: sm.color ? sm.color : color,
     textAlign: sm.textAlign ? sm.textAlign : textAlign,
+    $width: sm.width && sm.width,
+    fullWidth: sm.fullWidth && sm.fullWidth,
   });
   const getMdProps = () => md && ({
     ...md,
@@ -81,6 +92,8 @@ const Typography = ({
     $transform: md.transform ? md.transform : transform,
     $color: md.color ? md.color : color,
     textAlign: md.textAlign ? md.textAlign : textAlign,
+    $width: md.width && md.width,
+    fullWidth: md.fullWidth && md.fullWidth,
   });
   const getLgProps = () => lg && ({
     ...lg,
@@ -92,6 +105,8 @@ const Typography = ({
     $transform: lg.transform ? lg.transform : transform,
     $color: lg.color ? lg.color : color,
     textAlign: lg.textAlign ? lg.textAlign : textAlign,
+    $width: lg.width && lg.width,
+    fullWidth: lg.fullWidth && lg.fullWidth,
   });
   const getXlProps = () => xl && ({
     ...xl,
@@ -103,6 +118,8 @@ const Typography = ({
     $transform: xl.transform ? xl.transform : transform,
     $color: xl.color ? xl.color : color,
     textAlign: xl.textAlign ? xl.textAlign : textAlign,
+    $width: xl.width && xl.width,
+    fullWidth: xl.fullWidth && xl.fullWidth,
   });
 
   const props = {
@@ -112,6 +129,7 @@ const Typography = ({
     $lineHeight: lineHeight,
     $transform: transform,
     $color: color,
+    $width: width,
     textAlign,
     custom,
     children: dangerouslySetInnerHTML ? undefined : children,
@@ -119,6 +137,7 @@ const Typography = ({
     mb,
     ml,
     mr,
+    fullWidth,
     xs: getXsProps(),
     sm: getSmProps(),
     md: getMdProps(),
@@ -220,7 +239,9 @@ Typography.propTypes = {
   /**
    * Permite estilos customizados
    */
-  custom: PropTypes.object
+  custom: PropTypes.object,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  fullWidth: PropTypes.bool
 };
 
 export default withTheme(Typography);
