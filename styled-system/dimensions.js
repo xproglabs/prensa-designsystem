@@ -7,6 +7,8 @@ export const parseWidth = props => {
   const theme = get(props, 'theme', {});
   const unit = get(theme, 'factors.padding', 10);
   const width = get(props, '$width', undefined);
+  const maxWidth = get(props, 'maxWidth', undefined);
+  const minWidth = get(props, 'minWidth', undefined);
   const fullWidth = get(props, 'fullWidth', undefined);
   const px = get(props, 'px', undefined);
   const pl = get(props, 'pl', undefined);
@@ -15,7 +17,17 @@ export const parseWidth = props => {
   const ml = get(props, 'ml', undefined);
   const mr = get(props, 'mr', undefined);
 
-  if (fullWidth) {
+  if (maxWidth) {
+    if (typeof maxWidth === 'string') {
+      return `max-width: ${maxWidth}`;
+    }
+    return `max-width: ${maxWidth * unit}`;
+  } else if (minWidth) {
+    if (typeof minWidth === 'string') {
+      return `max-width: ${minWidth}`;
+    }
+    return `max-width: ${minWidth * unit}`;
+  } else if (fullWidth) {
     if (px) {
       if (typeof px === 'string') return `width: calc(100% - ${px} - ${px})`;
       return `width: calc(100% - ${px * unit}px - ${px * unit}px)`;

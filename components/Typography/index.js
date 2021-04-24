@@ -47,6 +47,8 @@ const Typography = ({
   custom,
   width,
   fullWidth,
+  maxWidth,
+  minWidth,
   dangerouslySetInnerHTML
 }) => {
 
@@ -149,6 +151,8 @@ const Typography = ({
     pb,
     pl,
     fullWidth,
+    maxWidth,
+    minWidth,
     xs: getXsProps(),
     sm: getSmProps(),
     md: getMdProps(),
@@ -247,6 +251,8 @@ Typography.propTypes = {
   pr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   pb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   pl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  maxWidth: PropTypes.number,
+  minWidth: PropTypes.number,
   /**
    * Propriedades responsivas
    */
