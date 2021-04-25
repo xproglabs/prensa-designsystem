@@ -1,3 +1,7 @@
+# v1.4.88
+- Adiciona parseFontSize no field
+- Adiciona prop placeholderColor no Field
+- Adiciona listener para a tecla enter no Field
 # v1.4.87
 - Adiciona testes unitários
 - Novas styled functions padding, dimensions e border
