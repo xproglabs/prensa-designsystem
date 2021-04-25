@@ -20,6 +20,12 @@ const handleBorderRadius = props => {
   return theme[value];
 };
 
+const handlePlaceholderColor = props => {
+  const theme = get(props, 'theme.colors');
+  const value = get(props, 'placeholderColor');
+  return theme[value];
+};
+
 //TODO: Unificar as funções de getColor do theme
 const handleInputColor = props => {
   const isValid = get(props, 'validation');
@@ -61,6 +67,9 @@ export const Input = styled.input`
     outline-color: unset;
     outline-width: unset;
     outline-style: none;
+  }
+  ::placeholder {
+    color: ${handlePlaceholderColor};
   }
 `;
 
