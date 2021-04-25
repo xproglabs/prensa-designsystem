@@ -1,3 +1,7 @@
+# v1.4.87
+- Adiciona testes unitários
+- Novas styled functions padding, dimensions e border
+- Adiciona dimensions, padding e border no Typography
 # v1.4.86
 - Ajuste nas peer-dependencies
 # v1.4.85
