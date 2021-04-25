@@ -1,6 +1,6 @@
 import {get} from 'lodash';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useEffect} from 'react';
 import InputMask from 'react-input-mask';
 import {withTheme} from 'styled-components';
 
@@ -31,8 +31,18 @@ const Field = props => {
     on,
     id,
     name,
-    mask
+    mask,
+    enterKey
   } = props;
+
+  // Trigger to Handle enter keydown for forms
+  const handleKeyPress = event => {
+    if (event.keyCode === 13) enterKey(id);
+  };
+  useEffect(() => {
+    enterKey && window.addEventListener('keydown', handleKeyPress);
+    return () => enterKey && window.removeEventListener('keydown', handleKeyPress);
+  });
 
   const styledLabelDefaultProps = {
     fontSize: get(styledLabel, 'fontSize', '14px'),
@@ -207,7 +217,7 @@ Field.propTypes = {
   /**
    * Permite assinalar um id para o elemento input raíz
    */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   /**
    * Props que recebe o type do Field (prop nativa HTML)
    */
@@ -236,6 +246,10 @@ Field.propTypes = {
    * Permite a aplicação de uma máscara no input
    */
   mask: PropTypes.string,
+  /**
+   * Permite manipular ação de clique na tecla Enter/Return (recebe como parâmetro callback o id do Field)
+   */
+  enterKey: PropTypes.func,
 };
 
 export default withTheme(Field);
