@@ -12,7 +12,8 @@ import {
   HeadingSix,
   Paragraph,
   Span,
-  Label
+  Label,
+  Cite
 } from './styled';
 
 const Typography = ({
@@ -23,12 +24,27 @@ const Typography = ({
   fontFamily,
   fontWeight,
   lineHeight,
-  align,
+  textAlign,
   transform,
+  mx,
+  my,
   mt,
   mb,
   ml,
   mr,
+  px,
+  py,
+  pt,
+  pb,
+  pl,
+  pr,
+  bt,
+  br,
+  bb,
+  bl,
+  b,
+  borderColor,
+  borderStyle,
   xs,
   sm,
   md,
@@ -36,6 +52,10 @@ const Typography = ({
   xl,
   theme,
   custom,
+  width,
+  fullWidth,
+  maxWidth,
+  minWidth,
   dangerouslySetInnerHTML
 }) => {
 
@@ -57,7 +77,9 @@ const Typography = ({
     $lineHeight: xs.lineHeight ? xs.lineHeight : lineHeight,
     $transform: xs.transform ? xs.transform : transform,
     $color: xs.color ? xs.color : color,
-    align: xs.align ? xs.align : align,
+    textAlign: xs.textAlign ? xs.textAlign : textAlign,
+    $width: xs.width && xs.width,
+    fullWidth: xs.fullWidth && xs.fullWidth,
   });
   const getSmProps = () => sm && ({
     ...sm,
@@ -68,7 +90,9 @@ const Typography = ({
     $lineHeight: sm.lineHeight ? sm.lineHeight : lineHeight,
     $transform: sm.transform ? sm.transform : transform,
     $color: sm.color ? sm.color : color,
-    align: sm.align ? sm.align : align,
+    textAlign: sm.textAlign ? sm.textAlign : textAlign,
+    $width: sm.width && sm.width,
+    fullWidth: sm.fullWidth && sm.fullWidth,
   });
   const getMdProps = () => md && ({
     ...md,
@@ -79,7 +103,9 @@ const Typography = ({
     $lineHeight: md.lineHeight ? md.lineHeight : lineHeight,
     $transform: md.transform ? md.transform : transform,
     $color: md.color ? md.color : color,
-    align: md.align ? md.align : align,
+    textAlign: md.textAlign ? md.textAlign : textAlign,
+    $width: md.width && md.width,
+    fullWidth: md.fullWidth && md.fullWidth,
   });
   const getLgProps = () => lg && ({
     ...lg,
@@ -90,7 +116,9 @@ const Typography = ({
     $lineHeight: lg.lineHeight ? lg.lineHeight : lineHeight,
     $transform: lg.transform ? lg.transform : transform,
     $color: lg.color ? lg.color : color,
-    align: lg.align ? lg.align : align,
+    textAlign: lg.textAlign ? lg.textAlign : textAlign,
+    $width: lg.width && lg.width,
+    fullWidth: lg.fullWidth && lg.fullWidth,
   });
   const getXlProps = () => xl && ({
     ...xl,
@@ -101,7 +129,9 @@ const Typography = ({
     $lineHeight: xl.lineHeight ? xl.lineHeight : lineHeight,
     $transform: xl.transform ? xl.transform : transform,
     $color: xl.color ? xl.color : color,
-    align: xl.align ? xl.align : align,
+    textAlign: xl.textAlign ? xl.textAlign : textAlign,
+    $width: xl.width && xl.width,
+    fullWidth: xl.fullWidth && xl.fullWidth,
   });
 
   const props = {
@@ -111,13 +141,32 @@ const Typography = ({
     $lineHeight: lineHeight,
     $transform: transform,
     $color: color,
-    align,
+    $width: width,
+    textAlign,
     custom,
     children: dangerouslySetInnerHTML ? undefined : children,
+    mx,
+    my,
     mt,
     mb,
     ml,
     mr,
+    px,
+    py,
+    pt,
+    pr,
+    pb,
+    pl,
+    bt,
+    br,
+    bb,
+    bl,
+    b,
+    borderColor,
+    borderStyle,
+    fullWidth,
+    maxWidth,
+    minWidth,
     xs: getXsProps(),
     sm: getSmProps(),
     md: getMdProps(),
@@ -143,6 +192,8 @@ const Typography = ({
       return <Paragraph {...props} $style={styles} />;
     case 'label':
       return <Label {...props} $style={styles} />;
+    case 'cite':
+      return <Cite {...props} $style={styles} />;
     case 'span':
     default:
       return <Span {...props} $style={styles} />;
@@ -155,7 +206,7 @@ Typography.defaultProps = {
   fontFamily: 'primary',
   fontWeight: 400,
   lineHeight: '100%',
-  align: 'left',
+  textAlign: 'left',
   mt: '0px',
   mb: '0px',
   transform: 'none'
@@ -165,7 +216,7 @@ Typography.propTypes = {
   /**
    * Altera alinhamento do texto
    */
-  align: PropTypes.oneOf(['left', 'center', 'right']),
+  textAlign: PropTypes.oneOf(['start', 'center', 'end']),
   dangerouslySetInnerHTML: PropTypes.any,
   /**
    * Permite alterar o valor para css text-transform
@@ -179,7 +230,7 @@ Typography.propTypes = {
   /**
    * Permite a escolha da tag de texto a ser utilizada
    */
-  element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label']),
+  element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label', 'cite']),
   /**
    * Altera o valor da propriedade font-size no css
    */
@@ -206,6 +257,17 @@ Typography.propTypes = {
   mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /**
+   * Define propriedade de padding
+   */
+  py: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  px: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  pl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  maxWidth: PropTypes.number,
+  minWidth: PropTypes.number,
+  /**
    * Propriedades responsivas
    */
   xs: PropTypes.object,
@@ -217,7 +279,16 @@ Typography.propTypes = {
   /**
    * Permite estilos customizados
    */
-  custom: PropTypes.object
+  custom: PropTypes.object,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  fullWidth: PropTypes.bool,
+  bt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  br: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  bb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  bl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  b: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  borderColor: PropTypes.string,
+  borderStyle: PropTypes.string,
 };
 
 export default withTheme(Typography);
