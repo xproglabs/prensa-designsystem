@@ -7,9 +7,22 @@ const handleFontFamily = props => {
   return theme[value];
 };
 
+const handleFontSize = props => {
+  const unit = get(props, 'theme.factors.dimensions', 10);
+  const value = get(props, '$fontSize');
+  if (typeof value === 'string') return value;
+  else return `${value * unit}px`;
+};
+
 const handleBorderRadius = props => {
   const theme = get(props, 'theme.radius');
   const value = get(props, '$radius');
+  return theme[value];
+};
+
+const handlePlaceholderColor = props => {
+  const theme = get(props, 'theme.colors');
+  const value = get(props, 'placeholderColor');
   return theme[value];
 };
 
@@ -42,7 +55,7 @@ export const Input = styled.input`
   height: calc(100% - 2px);
   padding-left: 8px;
   padding-right: 8px;
-  font-size: 14px;
+  font-size: ${handleFontSize};
   font-weight: 400;
   font-family: ${handleFontFamily};
   color: ${handleColor};
@@ -54,6 +67,9 @@ export const Input = styled.input`
     outline-color: unset;
     outline-width: unset;
     outline-style: none;
+  }
+  ::placeholder {
+    color: ${handlePlaceholderColor};
   }
 `;
 
