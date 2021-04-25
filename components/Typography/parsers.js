@@ -1,4 +1,7 @@
 import {get} from 'lodash';
+import {dimensions} from '../../styled-system/dimensions';
+import {padding} from '../../styled-system/padding';
+import {border} from '../../styled-system/border';
 
 const parseFontFamily = props => {
   const fonts = get(props, 'theme.fonts', {});
@@ -19,13 +22,16 @@ const parseStyle = (props, theme) => {
   return `
     font-weight: ${props.$fontWeight};
     text-transform: ${props.$transform};
-    text-align: ${props.align};
+    text-align: ${props.textAlign};
     font-family: ${parseFontFamily(props)};
     font-size: ${parseSize(props, 'fontSize')};
     line-height: ${parseSize(props, 'lineHeight')};
     color: ${theme.parseColor(props, theme, '$color')};
     ${theme.parseMargin(props, theme)};
     ${theme.parseCustom(props)};
+    ${dimensions(props)};
+    ${padding(props)};
+    ${border(props)};
   `;
 };
 

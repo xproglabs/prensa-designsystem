@@ -1,5 +1,6 @@
 import {get} from 'lodash';
 
+//ToDo: Deprecate parseDimensions
 export const parseWidth = (props, theme) => {
   const unit = theme.factors.padding;
   const width = get(props, '$width', undefined);
