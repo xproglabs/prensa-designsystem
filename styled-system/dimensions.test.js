@@ -6,6 +6,8 @@ const width = `width: ${stringValue};`;
 const maxWidth = `max-width: ${stringValue};`;
 const minWidth = `min-width: ${stringValue};`;
 
+//ToDo: unit testing for a html element
+
 //String check
 test('check-string-width', () => {
   expect(dimensions({$width: stringValue})).toBe(width);

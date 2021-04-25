@@ -1,5 +1,5 @@
-import {border} from './border';
 import {theme} from '../styles/theme';
+import {border} from './border';
 
 const stringValue = '1px';
 const numberValue = 1;
@@ -12,8 +12,10 @@ const bb = `border-bottom-color: ${color};border-bottom-style: ${style};border-b
 const bl = `border-left-color: ${color};border-left-style: ${style};border-left-width: ${stringValue};`;
 const b = `border-color: ${color};border-style: ${style};border-width: ${stringValue};`;
 
+//ToDo: unit testing for a html element
+
 //Check string
-test('check-bt', () => {
+test('check-bt-string', () => {
   expect(
     border({
       theme,
@@ -22,8 +24,8 @@ test('check-bt', () => {
       borderStyle: style
     })
   ).toBe(bt);
-})
-test('check-br', () => {
+});
+test('check-br-string', () => {
   expect(
     border({
       theme,
@@ -32,8 +34,8 @@ test('check-br', () => {
       borderStyle: style
     })
   ).toBe(br);
-})
-test('check-bb', () => {
+});
+test('check-bb-string', () => {
   expect(
     border({
       theme,
@@ -42,8 +44,8 @@ test('check-bb', () => {
       borderStyle: style
     })
   ).toBe(bb);
-})
-test('check-bl', () => {
+});
+test('check-bl-string', () => {
   expect(
     border({
       theme,
@@ -52,8 +54,8 @@ test('check-bl', () => {
       borderStyle: style
     })
   ).toBe(bl);
-})
-test('check-b', () => {
+});
+test('check-b-string', () => {
   expect(
     border({
       theme,
@@ -62,10 +64,24 @@ test('check-b', () => {
       borderStyle: style
     })
   ).toBe(b);
-})
+});
+// test('combine-props-string-check', () => {
+//   expect(
+//     border({
+//       theme,
+//       borderColor: colorToken,
+//       borderStyle: style,
+//       bt: stringValue,
+//       br: stringValue,
+//       bb: stringValue,
+//       bl: stringValue,
+//       b: stringValue,
+//     })
+//   ).toBe(`${borderColor}${borderStyle}${bt}${br}${bb}${bl}${b}`);
+// })
 
 //Check number
-test('check-bt', () => {
+test('check-bt-number', () => {
   expect(
     border({
       theme,
@@ -74,8 +90,8 @@ test('check-bt', () => {
       borderStyle: style
     })
   ).toBe(bt);
-})
-test('check-br', () => {
+});
+test('check-br-number', () => {
   expect(
     border({
       theme,
@@ -84,8 +100,8 @@ test('check-br', () => {
       borderStyle: style
     })
   ).toBe(br);
-})
-test('check-bb', () => {
+});
+test('check-bb-number', () => {
   expect(
     border({
       theme,
@@ -94,8 +110,8 @@ test('check-bb', () => {
       borderStyle: style
     })
   ).toBe(bb);
-})
-test('check-bl', () => {
+});
+test('check-bl-number', () => {
   expect(
     border({
       theme,
@@ -104,8 +120,8 @@ test('check-bl', () => {
       borderStyle: style
     })
   ).toBe(bl);
-})
-test('check-b', () => {
+});
+test('check-b-number', () => {
   expect(
     border({
       theme,
@@ -114,4 +130,18 @@ test('check-b', () => {
       borderStyle: style
     })
   ).toBe(b);
-})
+});
+// test('combine-props-number-check', () => {
+//   expect(
+//     border({
+//       theme,
+//       borderColor: colorToken,
+//       borderStyle: style,
+//       bt: numberValue,
+//       br: numberValue,
+//       bb: numberValue,
+//       bl: numberValue,
+//       b: numberValue,
+//     })
+//   ).toBe(`${borderColor}${borderStyle}${bt}${br}${bb}${bl}${b}`);
+// })

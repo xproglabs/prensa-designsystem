@@ -7,14 +7,19 @@ import Typography from './index'
 <Meta title="Components/Typography" />
 
 <ThemeProvider theme={theme}>
-  <Typography
-    fullWidth
+  <Typography    
     textAlign='center'
     color="primary1"
     element='p'
     fontSize="60px"
     lineHeight="100%"
     transform='uppercase'
+    px={4}
+    py={2}
+    bl="2px"
+    borderColor='activeColor'
+    borderStyle='solid'
+    maxWidth="250px"
     md={{fontSize: '100px', transform: 'lowercase', color: 'success1'}}
   >
     The quick brown fox

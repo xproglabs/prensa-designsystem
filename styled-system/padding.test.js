@@ -10,6 +10,8 @@ const pl = `padding-left: ${stringValue};`;
 const px = `${pl}${pr}`;
 const py = `${pt}${pb}`;
 
+//ToDo: unit testing for a html element
+
 //String check
 test('check-string-p', () => {
   expect(padding({p: stringValue})).toBe(p);
