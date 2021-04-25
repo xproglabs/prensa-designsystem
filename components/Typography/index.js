@@ -38,6 +38,13 @@ const Typography = ({
   pb,
   pl,
   pr,
+  bt,
+  br,
+  bb,
+  bl,
+  b,
+  borderColor,
+  borderStyle,
   xs,
   sm,
   md,
@@ -150,6 +157,13 @@ const Typography = ({
     pr,
     pb,
     pl,
+    bt,
+    br,
+    bb,
+    bl,
+    b,
+    borderColor,
+    borderStyle,
     fullWidth,
     maxWidth,
     minWidth,
@@ -267,7 +281,14 @@ Typography.propTypes = {
    */
   custom: PropTypes.object,
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  fullWidth: PropTypes.bool
+  fullWidth: PropTypes.bool,
+  bt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  br: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  bb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  bl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  b: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  borderColor: PropTypes.string,
+  borderStyle: PropTypes.string,
 };
 
 export default withTheme(Typography);

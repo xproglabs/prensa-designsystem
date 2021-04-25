@@ -1,6 +1,7 @@
 import {get} from 'lodash';
-import {parseWidth} from '../../styled-system/dimensions';
-import {parsePadding} from '../../styled-system/padding';
+import {dimensions} from '../../styled-system/dimensions';
+import {padding} from '../../styled-system/padding';
+import {border} from '../../styled-system/border';
 
 const parseFontFamily = props => {
   const fonts = get(props, 'theme.fonts', {});
@@ -28,8 +29,9 @@ const parseStyle = (props, theme) => {
     color: ${theme.parseColor(props, theme, '$color')};
     ${theme.parseMargin(props, theme)};
     ${theme.parseCustom(props)};
-    ${parseWidth(props)};
-    ${parsePadding(props)};
+    ${dimensions(props)};
+    ${padding(props)};
+    ${border(props)};
   `;
 };
 
