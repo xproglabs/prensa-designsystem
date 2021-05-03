@@ -1,6 +1,6 @@
 import {get} from 'lodash';
 import PropTypes from 'prop-types';
-import React, {useEffect} from 'react';
+import React from 'react';
 import InputMask from 'react-input-mask';
 import {withTheme} from 'styled-components';
 
@@ -32,17 +32,8 @@ const Field = props => {
     id,
     name,
     mask,
-    enterKey
+    onEnterKey
   } = props;
-
-  // Trigger to Handle enter keydown for forms
-  const handleKeyPress = event => {
-    if (event.keyCode === 13) enterKey(id);
-  };
-  useEffect(() => {
-    enterKey && window.addEventListener('keydown', handleKeyPress);
-    return () => enterKey && window.removeEventListener('keydown', handleKeyPress);
-  });
 
   const styledLabelDefaultProps = {
     fontSize: get(styledLabel, 'fontSize', '14px'),
@@ -107,6 +98,10 @@ const Field = props => {
     return <FieldMessage {...styledMessageDefaultProps}>{validationMessage}</FieldMessage>;
   };
 
+  const handleKeyPress = ({key}) => {
+    if (key === 'Enter') onEnterKey();
+  };
+
   return (    
     <Block {...styledFieldDefaultProps} fullWidth>
       {renderLabel()}
@@ -122,6 +117,7 @@ const Field = props => {
           mask={mask}
           placeholder={placeholder}
           validation={validation}
+          onKeyPress={handleKeyPress}
         >
           <Input {...styledRootDefaultProps} />
         </InputMask>
@@ -247,9 +243,9 @@ Field.propTypes = {
    */
   mask: PropTypes.string,
   /**
-   * Permite manipular ação de clique na tecla Enter/Return (recebe como parâmetro callback o id do Field)
+   * Função executada quando ocorrer o clique na tecla "Enter"
    */
-  enterKey: PropTypes.func,
+  onEnterKey: PropTypes.func,
 };
 
 export default withTheme(Field);
