@@ -243,7 +243,7 @@ Field.propTypes = {
    */
   mask: PropTypes.string,
   /**
-   * Permite manipular ação de clique na tecla Enter/Return (recebe como parâmetro callback o id do Field)
+   * Função executada quando ocorrer o clique na tecla "Enter"
    */
   onEnterKey: PropTypes.func,
 };
