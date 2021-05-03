@@ -1,3 +1,5 @@
+# v1.4.90
+- Permite execução da função onEnterKey mediante a presença de uma função na prop
 # v1.4.89
 - Corrige layout responsivo no Field
 - Remove listener no window e adiciona onKeyPress react para o clique na tecla enter em Field
