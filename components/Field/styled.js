@@ -52,7 +52,6 @@ const handleFocusedColor = props => {
 
 export const Input = styled.input`
   width: calc(100% - 16px);
-  height: calc(100% - 2px);
   padding-left: 8px;
   padding-right: 8px;
   font-size: ${handleFontSize};
