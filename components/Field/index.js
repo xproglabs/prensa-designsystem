@@ -99,7 +99,9 @@ const Field = props => {
   };
 
   const handleKeyPress = ({key}) => {
-    if (key === 'Enter') onEnterKey();
+    if (typeof onEnterKey === 'function') {
+      if (key === 'Enter') onEnterKey();
+    }
   };
 
   return (    
@@ -213,7 +215,7 @@ Field.propTypes = {
   /**
    * Permite assinalar um id para o elemento input raíz
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   /**
    * Props que recebe o type do Field (prop nativa HTML)
    */
