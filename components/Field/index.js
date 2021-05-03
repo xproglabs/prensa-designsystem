@@ -10,7 +10,7 @@ import FieldLabel from './FieldLabel';
 import FieldMessage from './FieldMessage';
 import {Input, InputContainer} from './styled';
 
-const Field = props => {
+const Field = React.forwardRef((props, ref) => {
 
   const {
     icon,
@@ -34,7 +34,7 @@ const Field = props => {
     mask,
     onEnterKey
   } = props;
-
+  
   const styledLabelDefaultProps = {
     fontSize: get(styledLabel, 'fontSize', '14px'),
     fontWeight: get(styledLabel, 'fontWeight', 400),
@@ -45,7 +45,7 @@ const Field = props => {
     mb: get(styledLabel, 'mb', 0.5),
     ml: get(styledLabel, 'ml', undefined)
   };
-
+  
   const styledMessageDefaultProps = {
     fontSize: get(styledMessage, 'fontSize', '14px'),
     fontWeight: get(styledMessage, 'fontWeight', 400),
@@ -56,12 +56,12 @@ const Field = props => {
     mb: get(styledMessage, 'mb', 0.5),
     ml: get(styledMessage, 'ml', undefined)
   };
-
+  
   const styledInputDefaultProps = {
     $color: get(styledInput, 'color', 'neutral5'),
     $radius: get(styledInput, 'radius', 'default'),
   };
-
+  
   const styledRootDefaultProps = {
     $fontSize: get(styledRoot, 'fontSize', '14px'),
     $fontWeight: get(styledRoot, 'fontWeight', 400),
@@ -70,40 +70,40 @@ const Field = props => {
     placeholderColor: get(styledRoot, 'placeholderColor'),
     $radius: get(styledInput, 'radius', 'default'),
   };
-
+  
   const styledFieldDefaultProps = {
     mt: get(styledField, 'mt', 0.5),
     mr: get(styledField, 'mr', undefined),
     mb: get(styledField, 'mb', 0.5),
     ml: get(styledField, 'ml', undefined)
   };
-
+  
   const handleChange = event => {
     onChange(event.target.value);
   };
-
+  
   const renderIcon = () => {
     if (!icon) return null;
     const iconHasOnClick = icon.props && icon.props.onClick ? icon.props.onClick : false;
     return React.cloneElement(icon, {onClick: iconHasOnClick ? iconHasOnClick : onIconClick});
   };
-
+  
   const renderLabel = () => {
     if (!label) return null;
     return <FieldLabel {...styledLabelDefaultProps}>{label}</FieldLabel>;
   };
-
+  
   const renderMessage = () => {
     if (validation === true) return null;
     return <FieldMessage {...styledMessageDefaultProps}>{validationMessage}</FieldMessage>;
   };
-
+  
   const handleKeyPress = ({key}) => {
     if (typeof onEnterKey === 'function') {
       if (key === 'Enter') onEnterKey();
     }
   };
-
+  
   return (    
     <Block {...styledFieldDefaultProps} fullWidth>
       {renderLabel()}
@@ -121,14 +121,14 @@ const Field = props => {
           validation={validation}
           onKeyPress={handleKeyPress}
         >
-          <Input {...styledRootDefaultProps} />
+          <Input ref={ref} {...styledRootDefaultProps} />
         </InputMask>
         {renderIcon()}
       </InputContainer>
       {renderMessage()}
     </Block>
   );
-};
+})
 
 Field.defaultProps = {
   validation: true,
