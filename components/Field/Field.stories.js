@@ -16,7 +16,14 @@ export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
       <div style={{margin: 20}}>
-        <Field placeholder="Digite alguma coisa" onEnterKey={() => setText('click enter key')} value={state} onChange={setState} validation={false} validationMessage="Teste"/>
+        <Field
+          mask='99/99/9999'
+          onEnterKey={() => setText('click enter key')}
+          value={state}
+          onChange={setState}
+          validation={false}
+          validationMessage="Teste"
+        />
         <pre>{text}</pre>
       </div>
     </ThemeProvider>
