@@ -50,6 +50,11 @@ const handleFocusedColor = props => {
   return theme.activeColor;
 };
 
+const handleSize = props => {
+  if (typeof props.size === 'string') return props.size;
+  return `${props.size}px`;
+};
+
 export const Input = styled.input`
   width: calc(100% - 16px);
   padding-left: 8px;
@@ -75,7 +80,7 @@ export const Input = styled.input`
 export const InputContainer = styled.div`
   background-color: white;
   width: 100%;
-  height: 40px;
+  height: ${handleSize};
   box-shadow: ${props => `0 0 0 1px ${handleInputColor(props)}`};
   display: flex;
   align-items: center;
