@@ -3,6 +3,7 @@
 .eslintignore
 .eslintrc.json
 .gitignore
+.rollup.config.js
 CHANGELOG.md
 /.github
 /.storybook
