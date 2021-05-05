@@ -32,7 +32,8 @@ const Field = props => {
     id,
     name,
     mask,
-    onEnterKey
+    onEnterKey,
+    size
   } = props;
 
   const styledLabelDefaultProps = {
@@ -60,6 +61,7 @@ const Field = props => {
   const styledInputDefaultProps = {
     $color: get(styledInput, 'color', 'neutral5'),
     $radius: get(styledInput, 'radius', 'default'),
+    size: size
   };
 
   const styledRootDefaultProps = {
@@ -133,6 +135,7 @@ const Field = props => {
 Field.defaultProps = {
   validation: true,
   disabled: false,
+  size: '40px'
 };
 
 Field.propTypes = {
@@ -248,6 +251,7 @@ Field.propTypes = {
    * Função executada quando ocorrer o clique na tecla "Enter"
    */
   onEnterKey: PropTypes.func,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 export default withTheme(Field);
