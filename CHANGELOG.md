@@ -1,3 +1,5 @@
+# v1.4.91
+- Permite prop size no Field
 # v1.4.90
 - Permite execução da função onEnterKey mediante a presença de uma função na prop
 # v1.4.89
