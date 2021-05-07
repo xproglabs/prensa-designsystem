@@ -1,5 +1,6 @@
-# v1.4.93
-- Permite prop size no Field
+# v1.5.4 
+- Breaking Change: Adiciona forwardRef no componente Field
+- Adiciona prop Size no componente Field
 # v1.4.90
 - Permite execução da função onEnterKey mediante a presença de uma função na prop
 # v1.4.89
