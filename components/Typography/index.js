@@ -206,7 +206,7 @@ Typography.defaultProps = {
   fontFamily: 'primary',
   fontWeight: 400,
   lineHeight: '100%',
-  textAlign: 'left',
+  textAlign: 'start',
   mt: '0px',
   mb: '0px',
   transform: 'none'
