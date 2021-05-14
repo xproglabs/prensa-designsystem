@@ -10,10 +10,69 @@ var InputMask = require('react-input-mask');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
+function _interopNamespace(e) {
+  if (e && e.__esModule) return e;
+  var n = Object.create(null);
+  if (e) {
+    Object.keys(e).forEach(function (k) {
+      if (k !== 'default') {
+        var d = Object.getOwnPropertyDescriptor(e, k);
+        Object.defineProperty(n, k, d.get ? d : {
+          enumerable: true,
+          get: function () {
+            return e[k];
+          }
+        });
+      }
+    });
+  }
+  n['default'] = e;
+  return Object.freeze(n);
+}
+
 var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var React__namespace = /*#__PURE__*/_interopNamespace(React);
 var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var InputMask__default = /*#__PURE__*/_interopDefaultLegacy(InputMask);
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+
+    if (enumerableOnly) {
+      symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    }
+
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -46,40 +105,6 @@ function _extends() {
   };
 
   return _extends.apply(this, arguments);
-}
-
-function ownKeys(object, enumerableOnly) {
-  var keys = Object.keys(object);
-
-  if (Object.getOwnPropertySymbols) {
-    var symbols = Object.getOwnPropertySymbols(object);
-    if (enumerableOnly) symbols = symbols.filter(function (sym) {
-      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-    });
-    keys.push.apply(keys, symbols);
-  }
-
-  return keys;
-}
-
-function _objectSpread2(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    if (i % 2) {
-      ownKeys(Object(source), true).forEach(function (key) {
-        _defineProperty(target, key, source[key]);
-      });
-    } else if (Object.getOwnPropertyDescriptors) {
-      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-      ownKeys(Object(source)).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
-    }
-  }
-
-  return target;
 }
 
 function _taggedTemplateLiteral(strings, raw) {
@@ -282,45 +307,45 @@ var parseHeight = function parseHeight(props, theme) {
   }
 };
 
-var parseStyle = function parseStyle(props, theme) {
+var parseStyle$2 = function parseStyle(props, theme) {
   return "\n    ".concat(parseAlign(props), ";\n    ").concat(parseWidth(props, theme), ";\n    ").concat(parseHeight(props, theme), ";\n    ").concat(theme.parseBgColor(props, theme), ";\n    ").concat(theme.parseFontColor(props, theme), ";\n    ").concat(theme.parseFontFamily(props, theme), ";\n    ").concat(theme.parseCustomDef(props, theme), ";\n    ").concat(theme.parseCustom(props, theme), ";\n    ").concat(theme.parseMargin(props, theme), ";\n    ").concat(theme.parsePadding(props, theme), ";\n  ");
 };
 
-var parseProps = function parseProps(media, props) {
+var parseProps$2 = function parseProps(media, props) {
   switch (media) {
     case 'xs':
-      return "\n        @media (min-width: ".concat(props.theme.queries.xs, ") {\n          ").concat(parseStyle(props.xs, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.xs, ") {\n          ").concat(parseStyle$2(props.xs, props.theme), "\n        }\n      ");
 
     case 'sm':
-      return "\n        @media (min-width: ".concat(props.theme.queries.sm, ") {\n          ").concat(parseStyle(props.sm, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.sm, ") {\n          ").concat(parseStyle$2(props.sm, props.theme), "\n        }\n      ");
 
     case 'md':
-      return "\n        @media (min-width: ".concat(props.theme.queries.md, ") {\n          ").concat(parseStyle(props.md, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.md, ") {\n          ").concat(parseStyle$2(props.md, props.theme), "\n        }\n      ");
 
     case 'lg':
-      return "\n        @media (min-width: ".concat(props.theme.queries.lg, ") {\n          ").concat(parseStyle(props.lg, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.lg, ") {\n          ").concat(parseStyle$2(props.lg, props.theme), "\n        }\n      ");
 
     case 'xl':
-      return "\n        @media (min-width: ".concat(props.theme.queries.xl, ") {\n          ").concat(parseStyle(props.xl, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.xl, ") {\n          ").concat(parseStyle$2(props.xl, props.theme), "\n        }\n      ");
 
     default:
-      return "".concat(parseStyle(props, props.theme));
+      return "".concat(parseStyle$2(props, props.theme));
   }
 };
 
-var _templateObject;
-var Component = styled__default['default'].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
-  return parseProps('', props);
+var _templateObject$5;
+var Component = styled__default['default'].div(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+  return parseProps$2('', props);
 }, function (props) {
-  return props.xs && parseProps('xs', props);
+  return props.xs && parseProps$2('xs', props);
 }, function (props) {
-  return props.sm && parseProps('sm', props);
+  return props.sm && parseProps$2('sm', props);
 }, function (props) {
-  return props.md && parseProps('md', props);
+  return props.md && parseProps$2('md', props);
 }, function (props) {
-  return props.lg && parseProps('lg', props);
+  return props.lg && parseProps$2('lg', props);
 }, function (props) {
-  return props.xl && parseProps('xl', props);
+  return props.xl && parseProps$2('xl', props);
 });
 
 var Block = function Block(_ref) {
@@ -593,7 +618,7 @@ var parseVariation = function parseVariation(props, theme) {
 }; //parse typography
 
 
-var parseFontColor = function parseFontColor(props, theme) {
+var parseFontColor$1 = function parseFontColor(props, theme) {
   var fontColor = props.fontColor,
       $variant = props.$variant,
       disabled = props.disabled;
@@ -603,7 +628,7 @@ var parseFontColor = function parseFontColor(props, theme) {
   return theme.colors.white;
 };
 
-var parseFontFamily = function parseFontFamily(props, theme) {
+var parseFontFamily$2 = function parseFontFamily(props, theme) {
   var $fontFamily = props.$fontFamily;
   var selected = theme.fonts[$fontFamily];
   if (!$fontFamily || !selected) return theme.fonts.primary;
@@ -623,11 +648,11 @@ var parseFontSize = function parseFontSize(props) {
 };
 
 var parseTypography = function parseTypography(props, theme) {
-  if (props.removeText === true) return "\n    span {\n      display: none;\n    }\n  ";else return "\n    span {\n      display: inline;\n      margin-left: 8px;\n      margin-right: 8px;\n      color: ".concat(parseFontColor(props, theme), ";\n      font-size: ").concat(parseFontSize(props), "px;\n      font-weight: ").concat(parseFontWeight(props), ";\n      font-family: ").concat(parseFontFamily(props, theme), ";\n    }\n  ");
+  if (props.removeText === true) return "\n    span {\n      display: none;\n    }\n  ";else return "\n    span {\n      display: inline;\n      margin-left: 8px;\n      margin-right: 8px;\n      color: ".concat(parseFontColor$1(props, theme), ";\n      font-size: ").concat(parseFontSize(props), "px;\n      font-weight: ").concat(parseFontWeight(props), ";\n      font-family: ").concat(parseFontFamily$2(props, theme), ";\n    }\n  ");
 };
 
 var parseIcon = function parseIcon(props, theme) {
-  return "\n    svg {\n      fill: ".concat(parseFontColor(props, theme), ";\n      width: ").concat(props.iconSize ? props.iconSize : '24px', ";\n      height: ").concat(props.iconSize ? props.iconSize : '24px', ";\n    }\n  ");
+  return "\n    svg {\n      fill: ".concat(parseFontColor$1(props, theme), ";\n      width: ").concat(props.iconSize ? props.iconSize : '24px', ";\n      height: ").concat(props.iconSize ? props.iconSize : '24px', ";\n    }\n  ");
 }; //main function
 
 
@@ -661,8 +686,8 @@ var parseProps$1 = function parseProps(media, props) {
   }
 };
 
-var _templateObject$1, _templateObject2;
-var StyledButton = styled__default['default'].button(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var _templateObject$4, _templateObject2$3;
+var StyledButton = styled__default['default'].button(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return parseProps$1('', props);
 }, function (props) {
   return props.xs && parseProps$1('xs', props);
@@ -675,7 +700,7 @@ var StyledButton = styled__default['default'].button(_templateObject$1 || (_temp
 }, function (props) {
   return props.xl && parseProps$1('xl', props);
 });
-var StyledAria = styled__default['default'].a(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"])));
+var StyledAria$1 = styled__default['default'].a(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"])));
 
 var Button = function Button(_ref) {
   var children = _ref.children,
@@ -845,7 +870,7 @@ var Button = function Button(_ref) {
     }, loading && 'Carregando...', leftIcon && leftIcon, children && childrenIsString && /*#__PURE__*/React__default['default'].createElement("span", null, children), children && !childrenIsString && children, rightIcon && rightIcon);
   };
 
-  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria, {
+  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria$1, {
     href: path,
     target: "_blank"
   }, renderRoot()) : renderRoot();
@@ -1052,7 +1077,7 @@ Button.defaultProps = {
   loading: false,
   fontFamily: 'secondary'
 };
-var index = styled.withTheme(Button);
+var Button$1 = styled.withTheme(Button);
 
 var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
   if (!policy_id) return null;
@@ -1065,7 +1090,7 @@ var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
   return path;
 };
 
-var Image = function Image(_ref) {
+var Image$1 = function Image(_ref) {
   var children = _ref.children,
       content = _ref.content,
       custom = _ref.custom,
@@ -1106,7 +1131,7 @@ var Image = function Image(_ref) {
   }, children && children);
 };
 
-Image.propTypes = {
+Image$1.propTypes = {
   children: PropTypes__default['default'].node,
   content: PropTypes__default['default'].object.isRequired,
   custom: PropTypes__default['default'].string,
@@ -1115,7 +1140,7 @@ Image.propTypes = {
   lazy: PropTypes__default['default'].func,
   placeholder: PropTypes__default['default'].string
 };
-Image.defaultProps = {
+Image$1.defaultProps = {
   content: {}
 };
 
@@ -1137,7 +1162,7 @@ var ColumnHeader = function ColumnHeader(_ref) {
     className: "teaser-aria",
     href: path,
     "aria-label": "Imagem do colunista ".concat(column_name)
-  }, /*#__PURE__*/React__default['default'].createElement(Image, {
+  }, /*#__PURE__*/React__default['default'].createElement(Image$1, {
     domain: domain,
     content: image
   }))), /*#__PURE__*/React__default['default'].createElement(Block$1, {
@@ -1158,110 +1183,177 @@ ColumnHeader.defaultProps = {
   item: []
 };
 
-var Input = function Input(_ref) {
-  var autoFocus = _ref.autoFocus,
-      disabled = _ref.disabled,
-      invalid = _ref.invalid,
-      label = _ref.label,
-      onEnter = _ref.onEnter,
-      setValue = _ref.setValue,
-      type = _ref.type,
-      value = _ref.value,
-      warning = _ref.warning;
-
-  var KeyDown = function KeyDown(_ref2) {
-    var key = _ref2.key;
-    return key === 'Enter' && onEnter && onEnter();
-  };
-
-  var Label = function Label() {
-    return /*#__PURE__*/React__default['default'].createElement("p", {
-      className: 'label'
-    }, label && label);
-  };
-
-  var Warning = function Warning() {
-    return /*#__PURE__*/React__default['default'].createElement("p", {
-      className: 'warning'
-    }, warning && invalid ? warning : ' ');
-  };
-
-  var props = {
-    autoFocus: autoFocus,
-    defaultValue: value,
-    disabled: disabled,
-    onChange: function onChange(_ref3) {
-      var target = _ref3.target;
-      return setValue(target.value);
-    },
-    onKeyDown: KeyDown,
-    type: type
-  };
-  return /*#__PURE__*/React__default['default'].createElement("div", {
-    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
-  }, /*#__PURE__*/React__default['default'].createElement(Label, null), type === 'textarea' && /*#__PURE__*/React__default['default'].createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React__default['default'].createElement("input", props), /*#__PURE__*/React__default['default'].createElement(Warning, null));
+var parseBgColor = function parseBgColor(props, theme) {
+  if (!props || !props.bgColor) return '';
+  var selected = theme.colors[props.bgColor];
+  if (!selected) return '';
+  return "background-color: ".concat(selected, ";");
 };
 
-Input.propTypes = {
-  autoFocus: PropTypes__default['default'].bool,
-  disabled: PropTypes__default['default'].bool,
-  invalid: PropTypes__default['default'].bool,
-  label: PropTypes__default['default'].string,
-  onEnter: PropTypes__default['default'].func,
-  setValue: PropTypes__default['default'].func.isRequired,
-  type: PropTypes__default['default'].string,
-  value: PropTypes__default['default'].string.isRequired,
-  warning: PropTypes__default['default'].string
-};
-Input.defaultProps = {
-  autofocus: false,
-  disabled: 'disabled',
-  invalid: false,
-  type: 'text'
-};
-var index$1 = {
-  Input: Input
+var parseFontColor = function parseFontColor(props, theme) {
+  if (!props || !props.fontColor) return '';
+  var selected = theme.colors[props.fontColor];
+  if (!selected) return '';
+  return "color: ".concat(selected, ";");
 };
 
-var colors = [
-	"activeColor",
-	"primary1",
-	"primary2",
-	"primary3",
-	"secondary1",
-	"secondary2",
-	"secondary3",
-	"product1",
-	"product2",
-	"product3",
-	"product4",
-	"product5",
-	"editorial1",
-	"editorial2",
-	"editorial3",
-	"editorial4",
-	"editorial5",
-	"black",
-	"neutral1",
-	"neutral2",
-	"neutral3",
-	"neutral4",
-	"neutral5",
-	"neutral6",
-	"neutral7",
-	"neutral8",
-	"neutral9",
-	"neutral10",
-	"neutral11",
-	"white",
-	"ads",
-	"success1",
-	"success2",
-	"success3",
-	"error1",
-	"error2",
-	"error3"
-];
+var parseColor = function parseColor(props, theme, propName) {
+  if (!propName) return console.error('PRENSA :: Não existe nome de prop para buscar no parseColor');
+  var propValue = lodash.get(props, propName, 'activeColor');
+  if (propValue.startsWith('#')) return propValue;
+  var parsedValue = theme.colors[propValue];
+  if (!parsedValue) return console.error("PRENSA :: N\xE3o existe valor correspondente para a prop de nome ".concat(propName, " passada na fun\xE7\xE3o parseColor"));
+  return parsedValue;
+};
+
+var parseCustom = function parseCustom(props) {
+  if (!props || !props.custom) return '';
+  var object = [];
+  object.push("".concat(props.custom));
+  return object.join('');
+};
+
+var parseCustomDef = function parseCustomDef(props) {
+  if (!props || !props.customDef) return '';
+  var object = [];
+
+  switch (props.customDef) {
+    case 'demo':
+      object.push("\n        background-color: rgba(1, 22, 39, 0.2);\n        color: rgba(255, 55, 255, 1);\n        font-weight: bold;\n        height: 100px;\n        span { \n          border: 1px solid rgba(255, 55, 255, 1);\n          font-size: 11px;\n          padding: 3px;\n          margin: 0px; \n        }\n      ");
+  }
+
+  return object.join('');
+};
+
+var parseFontFamily$1 = function parseFontFamily(props, theme) {
+  if (!props) return '';
+  var selected = theme.fonts[props.typography];
+  if (!selected) return '';
+  return "font-family: ".concat(selected, ";");
+};
+
+var parseMargin = function parseMargin(props, theme) {
+  if (!props) return '';
+  var mx = props.mx,
+      my = props.my,
+      mt = props.mt,
+      mr = props.mr,
+      mb = props.mb,
+      ml = props.ml;
+  var object = [];
+  var factor = theme.factors.margin;
+  mx !== undefined && isNaN(mx) ? object.push("\n      margin-left: ".concat(mx, "; \n      margin-right: ").concat(mx, ";")) : mx && object.push("\n      margin-left: ".concat(factor * mx, "px; \n      margin-right: ").concat(factor * mx, "px;\n    "));
+  my !== undefined && isNaN(my) ? object.push("\n      margin-top: ".concat(my, "; \n      margin-bottom: ").concat(my, ";")) : my && object.push("\n      margin-top: ".concat(factor * my, "px; \n      margin-bottom: ").concat(factor * my, "px;\n    "));
+  mt !== undefined && isNaN(mt) ? object.push("\n      margin-top: ".concat(mt, ";")) : mt && object.push("\n      margin-top: ".concat(factor * mt, "px;\n    "));
+  mr !== undefined && isNaN(mr) ? object.push("\n      margin-right: ".concat(mr, ";")) : mr && object.push("\n      margin-right: ".concat(factor * mr, "px;\n    "));
+  mb !== undefined && isNaN(mb) ? object.push("\n      margin-bottom: ".concat(mb, ";")) : mb && object.push("\n      margin-bottom: ".concat(factor * mb, "px;\n    "));
+  ml !== undefined && isNaN(ml) ? object.push("\n      margin-left: ".concat(ml, ";")) : ml && object.push("\n      margin-left: ".concat(factor * ml, "px;\n    "));
+  return object.join('');
+};
+
+var parsePadding = function parsePadding(props, theme) {
+  if (!props) return '';
+  var px = props.px,
+      py = props.py,
+      pt = props.pt,
+      pr = props.pr,
+      pb = props.pb,
+      pl = props.pl;
+  var object = [];
+  var factor = theme.factors.padding;
+  px !== undefined && isNaN(px) ? object.push("\n      padding-left: ".concat(px, "; \n      padding-right: ").concat(px, ";\n    ")) : px && object.push("\n      padding-left: ".concat(factor * px, "px; \n      padding-right: ").concat(factor * px, "px\n    ;"));
+  py !== undefined && isNaN(py) ? object.push("\n      padding-top: ".concat(py, "; \n      padding-bottom: ").concat(py, ";\n    ")) : py && object.push("\n      padding-top: ".concat(factor * py, "px; \n      padding-bottom: ").concat(factor * py, "px\n    ;"));
+  pt !== undefined && isNaN(pt) ? object.push("\n      padding-top: ".concat(pt, ";\n    ")) : pt && object.push("\n      padding-top: ".concat(factor * pt, "px\n    ;"));
+  pr !== undefined && isNaN(pr) ? object.push("\n      padding-right: ".concat(pr, ";\n    ")) : pr && object.push("\n      padding-right: ".concat(factor * pr, "px\n    ;"));
+  pb !== undefined && isNaN(pb) ? object.push("\n      padding-bottom: ".concat(pb, ";\n    ")) : pb && object.push("\n      padding-bottom: ".concat(factor * pb, "px\n    ;"));
+  pl !== undefined && isNaN(pl) ? object.push("\n      padding-left: ".concat(pl, ";\n    ")) : pl && object.push("\n      padding-left: ".concat(factor * pl, "px\n    ;"));
+  return object.join('');
+};
+
+var parseRadius = function parseRadius(props, propName) {
+  var propValue = lodash.get(props, propName);
+  if (!propValue) return '';
+  var selected = theme.radius[propValue];
+
+  if (!selected) {
+    console.error("PRENSA :: Erro ao traduzir token \"".concat(propValue, "\" no parseRadius"));
+    return '';
+  }
+
+  return "border-radius: ".concat(selected);
+};
+
+var theme = {
+  colors: {
+    activeColor: '#09B77B',
+    primary1: '#063F8F',
+    primary2: '#446FAB',
+    primary3: '#829EC7',
+    secondary1: '#E5471A',
+    secondary2: '#EB7553',
+    secondary3: '#F2A28C',
+    black: '#000000',
+    neutral1: '#151515',
+    neutral2: '#333333',
+    neutral3: '#555555',
+    neutral4: '#666666',
+    neutral5: '#707070',
+    neutral6: '#999999',
+    neutral7: '#B5B5B5',
+    neutral8: '#D7D7D7',
+    neutral9: '#EAEAEA',
+    neutral10: '#F2F2F2',
+    neutral11: '#FAFAFA',
+    white: '#FFFFFF',
+    colorAds: '#5421C2',
+    editorial1: '#2C1D15',
+    editorial2: '#73B6D3',
+    editorial3: '#00A070',
+    editorial4: '#B455A0',
+    editorial5: '#F37042',
+    product1: '#0975B7',
+    product2: '#AB001B',
+    product3: '#BFA525',
+    product4: '#080808',
+    product5: '#09B77B',
+    success1: '#3C8D40',
+    success2: '#50AE55',
+    success3: '#83C686',
+    error1: '#D13135',
+    error2: '#F1453D',
+    error3: '#E37475'
+  },
+  fonts: {
+    primary: 'Work Sans',
+    secondary: 'Nunito Sans'
+  },
+  factors: {
+    dimensions: 10,
+    padding: 8,
+    margin: 8
+  },
+  queries: {
+    xs: '360px',
+    sm: '460px',
+    md: '768px',
+    lg: '1016px',
+    xl: '1280px'
+  },
+  radius: {
+    unset: '0px',
+    "default": '3px',
+    alternative: '5px'
+  },
+  parseBgColor: parseBgColor,
+  parseCustom: parseCustom,
+  parseCustomDef: parseCustomDef,
+  parseFontColor: parseFontColor,
+  parseFontFamily: parseFontFamily$1,
+  parseMargin: parseMargin,
+  parsePadding: parsePadding,
+  parseRadius: parseRadius,
+  parseColor: parseColor
+};
 
 var dimensions = function dimensions(_ref) {
   var _ref$theme = _ref.theme,
@@ -1410,7 +1502,7 @@ var border = function border(_ref) {
   return object.join('');
 };
 
-var parseFontFamily$1 = function parseFontFamily(props) {
+var parseFontFamily = function parseFontFamily(props) {
   var fonts = lodash.get(props, 'theme.fonts', {});
   var propValue = lodash.get(props, '$fontFamily', '');
   var selected = lodash.get(fonts, propValue, '');
@@ -1425,37 +1517,37 @@ var parseSize = function parseSize(props, propName) {
   return propValue;
 };
 
-var parseStyle$2 = function parseStyle(props, theme) {
-  return "\n    font-weight: ".concat(props.$fontWeight, ";\n    text-transform: ").concat(props.$transform, ";\n    text-align: ").concat(props.textAlign, ";\n    font-family: ").concat(parseFontFamily$1(props), ";\n    font-size: ").concat(parseSize(props, 'fontSize'), ";\n    line-height: ").concat(parseSize(props, 'lineHeight'), ";\n    color: ").concat(theme.parseColor(props, theme, '$color'), ";\n    ").concat(theme.parseMargin(props, theme), ";\n    ").concat(theme.parseCustom(props), ";\n    ").concat(dimensions(props), ";\n    ").concat(padding(props), ";\n    ").concat(border(props), ";\n  ");
+var parseStyle = function parseStyle(props, theme) {
+  return "\n    font-weight: ".concat(props.$fontWeight, ";\n    text-transform: ").concat(props.$transform, ";\n    text-align: ").concat(props.textAlign, ";\n    font-family: ").concat(parseFontFamily(props), ";\n    font-size: ").concat(parseSize(props, 'fontSize'), ";\n    line-height: ").concat(parseSize(props, 'lineHeight'), ";\n    color: ").concat(theme.parseColor(props, theme, '$color'), ";\n    ").concat(theme.parseMargin(props, theme), ";\n    ").concat(theme.parseCustom(props), ";\n    ").concat(dimensions(props), ";\n    ").concat(padding(props), ";\n    ").concat(border(props), ";\n  ");
 };
 
-var parseProps$2 = function parseProps(media, props) {
+var parseProps = function parseProps(media, props) {
   switch (media) {
     case 'xs':
-      return "\n        @media (min-width: ".concat(props.theme.queries.xs, ") {\n          ").concat(parseStyle$2(props.xs, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.xs, ") {\n          ").concat(parseStyle(props.xs, props.theme), "\n        }\n      ");
 
     case 'sm':
-      return "\n        @media (min-width: ".concat(props.theme.queries.sm, ") {\n          ").concat(parseStyle$2(props.sm, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.sm, ") {\n          ").concat(parseStyle(props.sm, props.theme), "\n        }\n      ");
 
     case 'md':
-      return "\n        @media (min-width: ".concat(props.theme.queries.md, ") {\n          ").concat(parseStyle$2(props.md, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.md, ") {\n          ").concat(parseStyle(props.md, props.theme), "\n        }\n      ");
 
     case 'lg':
-      return "\n        @media (min-width: ".concat(props.theme.queries.lg, ") {\n          ").concat(parseStyle$2(props.lg, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.lg, ") {\n          ").concat(parseStyle(props.lg, props.theme), "\n        }\n      ");
 
     case 'xl':
-      return "\n        @media (min-width: ".concat(props.theme.queries.xl, ") {\n          ").concat(parseStyle$2(props.xl, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.xl, ") {\n          ").concat(parseStyle(props.xl, props.theme), "\n        }\n      ");
 
     default:
-      return "".concat(parseStyle$2(props, props.theme));
+      return "".concat(parseStyle(props, props.theme));
   }
 };
 
-var _templateObject$2, _templateObject2$1, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10;
-var HeadingOne = styled__default['default'].h1(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["", ""])), function (props) {
+var _templateObject$3, _templateObject2$2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10;
+var HeadingOne = styled__default['default'].h1(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
-var HeadingTwo = styled__default['default'].h2(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteral(["", ""])), function (props) {
+var HeadingTwo = styled__default['default'].h2(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
 var HeadingThree = styled__default['default'].h3(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["", ""])), function (props) {
@@ -1483,7 +1575,7 @@ var Cite = styled__default['default'].cite(_templateObject10 || (_templateObject
   return props.$style;
 });
 
-var Typography = function Typography(_ref) {
+var Typography$1 = function Typography(_ref) {
   var children = _ref.children,
       color = _ref.color,
       element = _ref.element,
@@ -1525,17 +1617,17 @@ var Typography = function Typography(_ref) {
       minWidth = _ref.minWidth,
       dangerouslySetInnerHTML = _ref.dangerouslySetInnerHTML;
   var styles = styled.css(["", ";", ";", ";", ";", ";", ";"], function (props) {
-    return parseProps$2('', props);
+    return parseProps('', props);
   }, function (props) {
-    return props.xs && parseProps$2('xs', props);
+    return props.xs && parseProps('xs', props);
   }, function (props) {
-    return props.sm && parseProps$2('sm', props);
+    return props.sm && parseProps('sm', props);
   }, function (props) {
-    return props.md && parseProps$2('md', props);
+    return props.md && parseProps('md', props);
   }, function (props) {
-    return props.lg && parseProps$2('lg', props);
+    return props.lg && parseProps('lg', props);
   }, function (props) {
-    return props.xl && parseProps$2('xl', props);
+    return props.xl && parseProps('xl', props);
   });
 
   var getXsProps = function getXsProps() {
@@ -1710,7 +1802,7 @@ var Typography = function Typography(_ref) {
   }
 };
 
-Typography.defaultProps = {
+Typography$1.defaultProps = {
   element: 'h1',
   fontSize: 3,
   fontFamily: 'primary',
@@ -1721,7 +1813,7 @@ Typography.defaultProps = {
   mb: '0px',
   transform: 'none'
 };
-Typography.propTypes = {
+Typography$1.propTypes = {
   /**
    * Altera alinhamento do texto
    */
@@ -1810,14 +1902,240 @@ Typography.propTypes = {
   borderColor: PropTypes__default['default'].string,
   borderStyle: PropTypes__default['default'].string
 };
-var Typography$1 = styled.withTheme(Typography);
+var Typography$2 = styled.withTheme(Typography$1);
+
+var Area = function Area(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    align: "row",
+    aligny: "middle",
+    alignx: "center",
+    bgColor: "neutral9",
+    width: "100%",
+    custom: "\n      position: fixed;\n      left: 0;\n      bottom: 0;\n      z-index: 10;\n    "
+  }, children);
+};
+Area.propTypes = {
+  children: PropTypes__default['default'].object
+};
+var ButtonSubmit = function ButtonSubmit(_ref2) {
+  var buttonAction = _ref2.buttonAction,
+      children = _ref2.children;
+  return /*#__PURE__*/React__default['default'].createElement(Button$1, {
+    align: "row",
+    aligny: "middle",
+    alignx: "center",
+    bgColor: "primary1",
+    onClick: buttonAction,
+    width: "100%",
+    sm: {
+      width: 'auto'
+    }
+  }, children);
+};
+ButtonSubmit.propTypes = {
+  buttonAction: PropTypes__default['default'].func,
+  children: PropTypes__default['default'].string
+};
+var Container$1 = function Container(_ref3) {
+  var children = _ref3.children;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    align: "column",
+    aligny: "middle",
+    alignx: "center",
+    py: 2,
+    px: 2,
+    width: "calc(100% - 32px)",
+    custom: "\n      min-height: calc(72px - 32px);\n      max-width: 1024px;\n    ",
+    sm: {
+      align: 'row',
+      aligny: 'middle',
+      alignx: 'center'
+    }
+  }, children);
+};
+Container$1.propTypes = {
+  children: PropTypes__default['default'].array
+};
+var Content = function Content(_ref4) {
+  var children = _ref4.children;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    align: "row",
+    aligny: "middle",
+    alignx: "center",
+    custom: "\n      a {\n        color: ".concat(theme.colors['primary3'], ";\n        cursor: pointer;\n        text-decoration: underline;\n      }\n    "),
+    width: "100%"
+  }, children);
+};
+Content.propTypes = {
+  children: PropTypes__default['default'].object
+};
+var Message = function Message(_ref5) {
+  var text = _ref5.text;
+  return /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+    color: "neutral2",
+    dangerouslySetInnerHTML: text,
+    element: "p",
+    fontFamily: "secondary",
+    fontSize: "12px",
+    fontWeight: 400,
+    lineHeight: "14px",
+    sm: {
+      mb: '0'
+    },
+    mb: 2,
+    mr: 2
+  });
+};
+Message.propTypes = {
+  text: PropTypes__default['default'].string
+};
+
+var Dialog = function Dialog(_ref) {
+  var buttonAction = _ref.buttonAction,
+      buttonText = _ref.buttonText,
+      message = _ref.message;
+  return /*#__PURE__*/React__default['default'].createElement(Area, null, /*#__PURE__*/React__default['default'].createElement(Container$1, null, /*#__PURE__*/React__default['default'].createElement(Content, null, /*#__PURE__*/React__default['default'].createElement(Message, {
+    text: message
+  }, message)), /*#__PURE__*/React__default['default'].createElement(ButtonSubmit, {
+    buttonAction: buttonAction
+  }, buttonText)));
+};
+Dialog.defaultProps = {
+  buttonAction: function buttonAction() {
+    return null;
+  },
+  buttonText: 'buttonText',
+  message: 'message'
+};
+Dialog.propTypes = {
+  /**
+   * Callback da ação principal
+   */
+  buttonAction: PropTypes__default['default'].func,
+
+  /**
+   * Nome da ação principal
+   */
+  buttonText: PropTypes__default['default'].string,
+
+  /**
+   * Mensagem principal
+   */
+  message: PropTypes__default['default'].string
+};
+
+var Input$1 = function Input(_ref) {
+  var autoFocus = _ref.autoFocus,
+      disabled = _ref.disabled,
+      invalid = _ref.invalid,
+      label = _ref.label,
+      onEnter = _ref.onEnter,
+      setValue = _ref.setValue,
+      type = _ref.type,
+      value = _ref.value,
+      warning = _ref.warning;
+
+  var KeyDown = function KeyDown(_ref2) {
+    var key = _ref2.key;
+    return key === 'Enter' && onEnter && onEnter();
+  };
+
+  var Label = function Label() {
+    return /*#__PURE__*/React__default['default'].createElement("p", {
+      className: 'label'
+    }, label && label);
+  };
+
+  var Warning = function Warning() {
+    return /*#__PURE__*/React__default['default'].createElement("p", {
+      className: 'warning'
+    }, warning && invalid ? warning : ' ');
+  };
+
+  var props = {
+    autoFocus: autoFocus,
+    defaultValue: value,
+    disabled: disabled,
+    onChange: function onChange(_ref3) {
+      var target = _ref3.target;
+      return setValue(target.value);
+    },
+    onKeyDown: KeyDown,
+    type: type
+  };
+  return /*#__PURE__*/React__default['default'].createElement("div", {
+    className: "form-field ".concat(invalid ? 'invalid' : '', " ").concat(type)
+  }, /*#__PURE__*/React__default['default'].createElement(Label, null), type === 'textarea' && /*#__PURE__*/React__default['default'].createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React__default['default'].createElement("input", props), /*#__PURE__*/React__default['default'].createElement(Warning, null));
+};
+
+Input$1.propTypes = {
+  autoFocus: PropTypes__default['default'].bool,
+  disabled: PropTypes__default['default'].bool,
+  invalid: PropTypes__default['default'].bool,
+  label: PropTypes__default['default'].string,
+  onEnter: PropTypes__default['default'].func,
+  setValue: PropTypes__default['default'].func.isRequired,
+  type: PropTypes__default['default'].string,
+  value: PropTypes__default['default'].string.isRequired,
+  warning: PropTypes__default['default'].string
+};
+Input$1.defaultProps = {
+  autofocus: false,
+  disabled: 'disabled',
+  invalid: false,
+  type: 'text'
+};
+var index$4 = {
+  Input: Input$1
+};
+
+var colors = [
+	"activeColor",
+	"primary1",
+	"primary2",
+	"primary3",
+	"secondary1",
+	"secondary2",
+	"secondary3",
+	"product1",
+	"product2",
+	"product3",
+	"product4",
+	"product5",
+	"editorial1",
+	"editorial2",
+	"editorial3",
+	"editorial4",
+	"editorial5",
+	"black",
+	"neutral1",
+	"neutral2",
+	"neutral3",
+	"neutral4",
+	"neutral5",
+	"neutral6",
+	"neutral7",
+	"neutral8",
+	"neutral9",
+	"neutral10",
+	"neutral11",
+	"white",
+	"ads",
+	"success1",
+	"success2",
+	"success3",
+	"error1",
+	"error2",
+	"error3"
+];
 
 var FieldLabel = function FieldLabel(props) {
   var capitalizeFirstLetter = function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({
+  return /*#__PURE__*/React__default['default'].createElement(Typography$2, _extends({
     element: "label"
   }, props), capitalizeFirstLetter(props.children));
 };
@@ -1827,7 +2145,7 @@ FieldLabel.propTypes = {
 };
 
 var FieldErrorMessage = function FieldErrorMessage(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({
+  return /*#__PURE__*/React__default['default'].createElement(Typography$2, _extends({
     element: "p"
   }, props), props.children);
 };
@@ -1836,7 +2154,7 @@ FieldErrorMessage.propTypes = {
   children: PropTypes__default['default'].string
 };
 
-var _templateObject$3, _templateObject2$2;
+var _templateObject$2, _templateObject2$1;
 
 var handleFontFamily = function handleFontFamily(props) {
   var theme = lodash.get(props, 'theme.fonts');
@@ -1886,8 +2204,13 @@ var handleFocusedColor = function handleFocusedColor(props) {
   return theme.activeColor;
 };
 
-var Input$1 = styled__default['default'].input(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: ", ";\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n  ::placeholder {\n    color: ", ";\n  }\n"])), handleFontSize, handleFontFamily, handleColor, handleBorderRadius, handlePlaceholderColor);
-var InputContainer = styled__default['default'].div(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  background-color: white;\n  width: 100%;\n  height: 40px;\n  box-shadow: ", ";\n  display: flex;\n  align-items: center;\n  border-radius: ", ";\n  &:focus-within {\n    box-shadow: ", ";\n  }\n"])), function (props) {
+var handleSize = function handleSize(props) {
+  if (typeof props.size === 'string') return props.size;
+  return "".concat(props.size, "px");
+};
+
+var Input = styled__default['default'].input(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: ", ";\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n  ::placeholder {\n    color: ", ";\n  }\n"])), handleFontSize, handleFontFamily, handleColor, handleBorderRadius, handlePlaceholderColor);
+var InputContainer = styled__default['default'].div(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteral(["\n  background-color: white;\n  width: 100%;\n  height: ", ";\n  box-shadow: ", ";\n  display: flex;\n  align-items: center;\n  border-radius: ", ";\n  &:focus-within {\n    box-shadow: ", ";\n  }\n"])), handleSize, function (props) {
   return "0 0 0 1px ".concat(handleInputColor(props));
 }, handleBorderRadius, function (props) {
   return "0 0 0 2px ".concat(handleFocusedColor(props));
@@ -1913,7 +2236,8 @@ var Field = /*#__PURE__*/React__default['default'].forwardRef(function (props, r
       id = props.id,
       name = props.name,
       mask = props.mask,
-      onEnterKey = props.onEnterKey;
+      onEnterKey = props.onEnterKey,
+      size = props.size;
   var styledLabelDefaultProps = {
     fontSize: lodash.get(styledLabel, 'fontSize', '14px'),
     fontWeight: lodash.get(styledLabel, 'fontWeight', 400),
@@ -1936,7 +2260,8 @@ var Field = /*#__PURE__*/React__default['default'].forwardRef(function (props, r
   };
   var styledInputDefaultProps = {
     $color: lodash.get(styledInput, 'color', 'neutral5'),
-    $radius: lodash.get(styledInput, 'radius', 'default')
+    $radius: lodash.get(styledInput, 'radius', 'default'),
+    size: size
   };
   var styledRootDefaultProps = {
     $fontSize: lodash.get(styledRoot, 'fontSize', '14px'),
@@ -1999,13 +2324,14 @@ var Field = /*#__PURE__*/React__default['default'].forwardRef(function (props, r
     placeholder: placeholder,
     validation: validation,
     onKeyPress: handleKeyPress
-  }, /*#__PURE__*/React__default['default'].createElement(Input$1, _extends({
+  }, /*#__PURE__*/React__default['default'].createElement(Input, _extends({
     ref: ref
   }, styledRootDefaultProps))), renderIcon()), renderMessage());
 });
 Field.defaultProps = {
   validation: true,
-  disabled: false
+  disabled: false,
+  size: '40px'
 };
 Field.propTypes = {
   /**
@@ -2138,11 +2464,12 @@ Field.propTypes = {
   /**
    * Função executada quando ocorrer o clique na tecla "Enter"
    */
-  onEnterKey: PropTypes__default['default'].func
+  onEnterKey: PropTypes__default['default'].func,
+  size: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number])
 };
-var index$2 = styled.withTheme(Field);
+var index$3 = styled.withTheme(Field);
 
-var Image$1 = function Image(_ref) {
+var Image = function Image(_ref) {
   var content = _ref.content,
       custom = _ref.custom,
       domain = _ref.domain,
@@ -2187,41 +2514,41 @@ var Image$1 = function Image(_ref) {
   return /*#__PURE__*/React__default['default'].createElement("pre", null, "no-image");
 };
 
-Image$1.propTypes = {
+Image.propTypes = {
   content: PropTypes__default['default'].object.isRequired,
   custom: PropTypes__default['default'].string,
   domain: PropTypes__default['default'].string,
   lazy: PropTypes__default['default'].func,
   placeholder: PropTypes__default['default'].string
 };
-Image$1.defaultProps = {
+Image.defaultProps = {
   content: {}
 };
 
 function SvgIcArrowBack(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
+  return /*#__PURE__*/React__namespace.createElement("svg", _extends({
     xmlns: "http://www.w3.org/2000/svg",
     height: 32,
     viewBox: "0 0 24 24",
     width: 32
-  }, props), /*#__PURE__*/React.createElement("path", {
+  }, props), /*#__PURE__*/React__namespace.createElement("path", {
     d: "M0 0h24v24H0z",
     fill: "none"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/React__namespace.createElement("path", {
     d: "M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
   }));
 }
 
 function SvgIcArrowForward(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
+  return /*#__PURE__*/React__namespace.createElement("svg", _extends({
     xmlns: "http://www.w3.org/2000/svg",
     height: 32,
     viewBox: "0 0 24 24",
     width: 24
-  }, props), /*#__PURE__*/React.createElement("path", {
+  }, props), /*#__PURE__*/React__namespace.createElement("path", {
     d: "M0 0h24v24H0z",
     fill: "none"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/React__namespace.createElement("path", {
     d: "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
   }));
 }
@@ -2389,10 +2716,10 @@ SideMenu.propTypes = {
    */
   bgColor: PropTypes__default['default'].string
 };
-var index$3 = styled.withTheme(SideMenu);
+var index$2 = styled.withTheme(SideMenu);
 
-var _templateObject$4;
-var StyledAria$1 = styled__default['default'].a(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  width: 100%;\n  text-decoration: none;\n"])));
+var _templateObject$1;
+var StyledAria = styled__default['default'].a(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  text-decoration: none;\n"])));
 
 var MenuItem = function MenuItem(_ref) {
   var children = _ref.children,
@@ -2426,7 +2753,7 @@ var MenuItem = function MenuItem(_ref) {
     }, children ? children : /*#__PURE__*/React__default['default'].createElement("span", null, "Content here"), /*#__PURE__*/React__default['default'].createElement(SvgIcArrowForward, null)));
   };
 
-  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria$1, {
+  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria, {
     href: path
   }, renderContent()) : renderContent();
 };
@@ -2478,7 +2805,7 @@ MenuItem.propTypes = {
    */
   id: PropTypes__default['default'].string
 };
-var index$4 = styled.withTheme(MenuItem);
+var index$1 = styled.withTheme(MenuItem);
 
 var SocialMedias = function SocialMedias(props) {
   var content = props.content;
@@ -2546,179 +2873,7 @@ Topbar.defaultProps = {
   }
 };
 
-var parseBgColor = function parseBgColor(props, theme) {
-  if (!props || !props.bgColor) return '';
-  var selected = theme.colors[props.bgColor];
-  if (!selected) return '';
-  return "background-color: ".concat(selected, ";");
-};
-
-var parseFontColor$1 = function parseFontColor(props, theme) {
-  if (!props || !props.fontColor) return '';
-  var selected = theme.colors[props.fontColor];
-  if (!selected) return '';
-  return "color: ".concat(selected, ";");
-};
-
-var parseColor = function parseColor(props, theme, propName) {
-  if (!propName) return console.error('PRENSA :: Não existe nome de prop para buscar no parseColor');
-  var propValue = lodash.get(props, propName, 'activeColor');
-  if (propValue.startsWith('#')) return propValue;
-  var parsedValue = theme.colors[propValue];
-  if (!parsedValue) return console.error("PRENSA :: N\xE3o existe valor correspondente para a prop de nome ".concat(propName, " passada na fun\xE7\xE3o parseColor"));
-  return parsedValue;
-};
-
-var parseCustom = function parseCustom(props) {
-  if (!props || !props.custom) return '';
-  var object = [];
-  object.push("".concat(props.custom));
-  return object.join('');
-};
-
-var parseCustomDef = function parseCustomDef(props) {
-  if (!props || !props.customDef) return '';
-  var object = [];
-
-  switch (props.customDef) {
-    case 'demo':
-      object.push("\n        background-color: rgba(1, 22, 39, 0.2);\n        color: rgba(255, 55, 255, 1);\n        font-weight: bold;\n        height: 100px;\n        span { \n          border: 1px solid rgba(255, 55, 255, 1);\n          font-size: 11px;\n          padding: 3px;\n          margin: 0px; \n        }\n      ");
-  }
-
-  return object.join('');
-};
-
-var parseFontFamily$2 = function parseFontFamily(props, theme) {
-  if (!props) return '';
-  var selected = theme.fonts[props.typography];
-  if (!selected) return '';
-  return "font-family: ".concat(selected, ";");
-};
-
-var parseMargin = function parseMargin(props, theme) {
-  if (!props) return '';
-  var mx = props.mx,
-      my = props.my,
-      mt = props.mt,
-      mr = props.mr,
-      mb = props.mb,
-      ml = props.ml;
-  var object = [];
-  var factor = theme.factors.margin;
-  mx !== undefined && isNaN(mx) ? object.push("\n      margin-left: ".concat(mx, "; \n      margin-right: ").concat(mx, ";")) : mx && object.push("\n      margin-left: ".concat(factor * mx, "px; \n      margin-right: ").concat(factor * mx, "px;\n    "));
-  my !== undefined && isNaN(my) ? object.push("\n      margin-top: ".concat(my, "; \n      margin-bottom: ").concat(my, ";")) : my && object.push("\n      margin-top: ".concat(factor * my, "px; \n      margin-bottom: ").concat(factor * my, "px;\n    "));
-  mt !== undefined && isNaN(mt) ? object.push("\n      margin-top: ".concat(mt, ";")) : mt && object.push("\n      margin-top: ".concat(factor * mt, "px;\n    "));
-  mr !== undefined && isNaN(mr) ? object.push("\n      margin-right: ".concat(mr, ";")) : mr && object.push("\n      margin-right: ".concat(factor * mr, "px;\n    "));
-  mb !== undefined && isNaN(mb) ? object.push("\n      margin-bottom: ".concat(mb, ";")) : mb && object.push("\n      margin-bottom: ".concat(factor * mb, "px;\n    "));
-  ml !== undefined && isNaN(ml) ? object.push("\n      margin-left: ".concat(ml, ";")) : ml && object.push("\n      margin-left: ".concat(factor * ml, "px;\n    "));
-  return object.join('');
-};
-
-var parsePadding = function parsePadding(props, theme) {
-  if (!props) return '';
-  var px = props.px,
-      py = props.py,
-      pt = props.pt,
-      pr = props.pr,
-      pb = props.pb,
-      pl = props.pl;
-  var object = [];
-  var factor = theme.factors.padding;
-  px !== undefined && isNaN(px) ? object.push("\n      padding-left: ".concat(px, "; \n      padding-right: ").concat(px, ";\n    ")) : px && object.push("\n      padding-left: ".concat(factor * px, "px; \n      padding-right: ").concat(factor * px, "px\n    ;"));
-  py !== undefined && isNaN(py) ? object.push("\n      padding-top: ".concat(py, "; \n      padding-bottom: ").concat(py, ";\n    ")) : py && object.push("\n      padding-top: ".concat(factor * py, "px; \n      padding-bottom: ").concat(factor * py, "px\n    ;"));
-  pt !== undefined && isNaN(pt) ? object.push("\n      padding-top: ".concat(pt, ";\n    ")) : pt && object.push("\n      padding-top: ".concat(factor * pt, "px\n    ;"));
-  pr !== undefined && isNaN(pr) ? object.push("\n      padding-right: ".concat(pr, ";\n    ")) : pr && object.push("\n      padding-right: ".concat(factor * pr, "px\n    ;"));
-  pb !== undefined && isNaN(pb) ? object.push("\n      padding-bottom: ".concat(pb, ";\n    ")) : pb && object.push("\n      padding-bottom: ".concat(factor * pb, "px\n    ;"));
-  pl !== undefined && isNaN(pl) ? object.push("\n      padding-left: ".concat(pl, ";\n    ")) : pl && object.push("\n      padding-left: ".concat(factor * pl, "px\n    ;"));
-  return object.join('');
-};
-
-var parseRadius = function parseRadius(props, propName) {
-  var propValue = lodash.get(props, propName);
-  if (!propValue) return '';
-  var selected = theme.radius[propValue];
-
-  if (!selected) {
-    console.error("PRENSA :: Erro ao traduzir token \"".concat(propValue, "\" no parseRadius"));
-    return '';
-  }
-
-  return "border-radius: ".concat(selected);
-};
-
-var theme = {
-  colors: {
-    activeColor: '#09B77B',
-    primary1: '#063F8F',
-    primary2: '#446FAB',
-    primary3: '#829EC7',
-    secondary1: '#E5471A',
-    secondary2: '#EB7553',
-    secondary3: '#F2A28C',
-    black: '#000000',
-    neutral1: '#151515',
-    neutral2: '#333333',
-    neutral3: '#555555',
-    neutral4: '#666666',
-    neutral5: '#707070',
-    neutral6: '#999999',
-    neutral7: '#B5B5B5',
-    neutral8: '#D7D7D7',
-    neutral9: '#EAEAEA',
-    neutral10: '#F2F2F2',
-    neutral11: '#FAFAFA',
-    white: '#FFFFFF',
-    colorAds: '#5421C2',
-    editorial1: '#2C1D15',
-    editorial2: '#73B6D3',
-    editorial3: '#00A070',
-    editorial4: '#B455A0',
-    editorial5: '#F37042',
-    product1: '#0975B7',
-    product2: '#AB001B',
-    product3: '#BFA525',
-    product4: '#080808',
-    product5: '#09B77B',
-    success1: '#3C8D40',
-    success2: '#50AE55',
-    success3: '#83C686',
-    error1: '#D13135',
-    error2: '#F1453D',
-    error3: '#E37475'
-  },
-  fonts: {
-    primary: 'Work Sans',
-    secondary: 'Nunito Sans'
-  },
-  factors: {
-    dimensions: 10,
-    padding: 8,
-    margin: 8
-  },
-  queries: {
-    xs: '360px',
-    sm: '460px',
-    md: '768px',
-    lg: '1016px',
-    xl: '1280px'
-  },
-  radius: {
-    unset: '0px',
-    "default": '3px',
-    alternative: '5px'
-  },
-  parseBgColor: parseBgColor,
-  parseCustom: parseCustom,
-  parseCustomDef: parseCustomDef,
-  parseFontColor: parseFontColor$1,
-  parseFontFamily: parseFontFamily$2,
-  parseMargin: parseMargin,
-  parsePadding: parsePadding,
-  parseRadius: parseRadius,
-  parseColor: parseColor
-};
-
-var _templateObject$5, _templateObject2$3;
+var _templateObject, _templateObject2;
 
 var parseColorVariation = function parseColorVariation(props) {
   if (props.transparent === true) return "\n    color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";\n  ");
@@ -2730,7 +2885,7 @@ var parseBackgroundVariation = function parseBackgroundVariation(props) {
   return "background-color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";");
 };
 
-var Container = styled__default['default'].div(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var Container = styled__default['default'].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return props.theme.parsePadding(props, props.theme);
 }, function (props) {
   return props.theme.parseMargin(props, props.theme);
@@ -2739,7 +2894,7 @@ var Container = styled__default['default'].div(_templateObject$5 || (_templateOb
 }, function (props) {
   return parseBackgroundVariation(props);
 });
-var Typography$2 = styled__default['default'].span(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
+var Typography = styled__default['default'].span(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
   return props.theme.fonts.secondary;
 }, function (props) {
   return props.$fontWeight;
@@ -2764,7 +2919,7 @@ var Subject = function Subject(_ref) {
     mb: mb,
     transparent: transparent,
     style: style
-  }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
     $fontWeight: weight,
     transparent: transparent
   }, children));
@@ -2817,20 +2972,21 @@ Subject.propTypes = {
    */
   weight: PropTypes__default['default'].oneOf([300, 400, 500, 600, 700])
 };
-var index$5 = styled.withTheme(Subject);
+var index = styled.withTheme(Subject);
 
 exports.Block = Block$1;
-exports.Button = index;
+exports.Button = Button$1;
 exports.ColumnHeader = ColumnHeader;
-exports.Field = index$2;
-exports.Form = index$1;
-exports.Image = Image$1;
-exports.ImageBackground = Image;
+exports.Dialog = Dialog;
+exports.Field = index$3;
+exports.Form = index$4;
+exports.Image = Image;
+exports.ImageBackground = Image$1;
 exports.ImageGallery = ImageGallery;
-exports.MenuItem = index$4;
-exports.SideMenu = index$3;
+exports.MenuItem = index$1;
+exports.SideMenu = index$2;
 exports.SocialMedias = SocialMedias;
-exports.Subject = index$5;
+exports.Subject = index;
 exports.Topbar = Topbar;
-exports.Typography = Typography$1;
+exports.Typography = Typography$2;
 exports.theme = theme;
