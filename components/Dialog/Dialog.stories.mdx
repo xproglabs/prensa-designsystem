@@ -1,0 +1,20 @@
+import { ArgsTable, Meta } from "@storybook/addon-docs/blocks";
+import { CodeBlock, Space } from "prensa-docs";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../../styles/theme";
+
+import Dialog from "./Dialog";
+import Typography from "../Typography";
+
+<Meta title="Components/Dialog" />
+
+<ThemeProvider theme={theme}>
+  <Dialog
+    {...{
+      buttonAction: () => console.log("null"),
+      buttonText: "Concordar",
+      message:
+        "Utilizamos cookies e tecnologias semelhantes de acordo com a nossa <a href='https://www.politica...' target='_blank'>Política de Privacidade</a> e, ao continuar navegando, você concorda com essas condições.",
+    }}
+  />
+</ThemeProvider>
