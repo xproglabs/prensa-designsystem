@@ -1,6 +1,7 @@
 export {default as Block} from './Block';
 export {default as Button} from './Button';
 export {default as ColumnHeader} from './Column/Header';
+export {default as Dialog} from './Dialog/Dialog';
 export {default as Form} from './Form';
 export {default as Field} from './Field';
 export {default as Image} from './Image';
