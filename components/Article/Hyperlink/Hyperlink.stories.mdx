@@ -1,12 +1,10 @@
 import { ArgsTable, Meta } from "@storybook/addon-docs/blocks";
 import { CodeBlock, Space } from "prensa-docs";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../../styles/theme";
+import { theme } from "../../../styles/theme";
 
-import Article from "./Article";
-
-<Meta title="Article/Index" />
+<Meta title="Article/Hyperlink" />
 
 <ThemeProvider theme={theme}>
-  <Article />
+  <pre>Hyperlink</pre>
 </ThemeProvider>
