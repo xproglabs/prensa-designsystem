@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import * as S from './Article.styled';
+import Subject from './Subject/Subject';
 import Subtitle from './Subtitle/Subtitle';
 import Title from './Title/Title';
 
@@ -11,6 +12,7 @@ const Article = ({
   return (
     <S.Container>
       <S.Content>
+        <Subject />
         <Title />
         <Subtitle />
       </S.Content>

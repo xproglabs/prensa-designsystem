@@ -15,7 +15,7 @@ export const Body = ({children}) =>
   }}>{children}</Block>;
 
 Body.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 export const Container = ({children}) => 
@@ -33,7 +33,7 @@ export const Container = ({children}) =>
   }}>{children}</Block>;
 
 Container.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 export const Content = ({children}) => 
@@ -43,7 +43,7 @@ export const Content = ({children}) =>
   }}>{children}</Block>;
 
 Content.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
   
 export const ContainerFeatured = ({children}) => 
@@ -58,7 +58,7 @@ export const ContainerFeatured = ({children}) =>
   }}>{children}</Block>;
 
 ContainerFeatured.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
   
 export const ContentFeatured = ({children}) => 
@@ -78,7 +78,7 @@ export const ContentFeatured = ({children}) =>
   }}>{children}</Block>;
 
 ContentFeatured.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 export const ContentImage = ({children}) => 
@@ -94,7 +94,7 @@ export const ContentImage = ({children}) =>
   }}>{children}</Block>;
 
 ContentImage.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 export const MaxW = ({children}) => 
@@ -110,5 +110,5 @@ export const MaxW = ({children}) =>
   }}>{children}</Block>;
 
 MaxW.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
