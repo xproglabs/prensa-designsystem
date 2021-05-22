@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import * as S from './Article.styled';
+import Subtitle from './Subtitle/Subtitle';
+import Title from './Title/Title';
 
 const Article = ({
   message
@@ -9,10 +11,12 @@ const Article = ({
   return (
     <S.Container>
       <S.Content>
-        <S.Message text={message}>
-          {message}
-        </S.Message>
+        <Title />
+        <Subtitle />
       </S.Content>
+      <S.Body>
+        <pre>{message}</pre>
+      </S.Body>
     </S.Container>
   );
 };
