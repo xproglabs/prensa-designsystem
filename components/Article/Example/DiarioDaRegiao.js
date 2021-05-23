@@ -4,12 +4,7 @@ import {ThemeProvider} from 'styled-components';
 import {theme as diariodaregiao} from '../../../styles/demo/diariodaregiao';
 import Article from '../Article';
 
-export default {
-  title: 'Article/DiarioDaRegiao',
-  component: Article,
-};
-
-export const ArticleDR = () => {
+const ArticleDR = () => {
   return (
     <ThemeProvider theme={diariodaregiao}>
       <Article
@@ -22,3 +17,5 @@ export const ArticleDR = () => {
     </ThemeProvider>
   );
 };
+
+export default ArticleDR;

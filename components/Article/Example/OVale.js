@@ -4,12 +4,7 @@ import {ThemeProvider} from 'styled-components';
 import {theme as ovale} from '../../../styles/demo/ovale';
 import Article from '../Article';
 
-export default {
-  title: 'Article/OVale',
-  component: Article,
-};
-
-export const ArticleOV = () => {
+const ArticleOV = () => {
   return (
     <ThemeProvider theme={ovale}>
       <Article 
@@ -21,3 +16,5 @@ export const ArticleOV = () => {
     </ThemeProvider>
   );
 };
+
+export default ArticleOV;

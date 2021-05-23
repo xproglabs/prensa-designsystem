@@ -4,12 +4,7 @@ import {ThemeProvider} from 'styled-components';
 import {theme as odiariodemogi} from '../../../styles/demo/odiariodemogi';
 import Article from '../Article';
 
-export default {
-  title: 'Article/ODiarioDeMogi',
-  component: Article,
-};
-
-export const ArticleOM = () => {
+const ArticleOM = () => {
   return (
     <ThemeProvider theme={odiariodemogi}>      
       <Article 
@@ -30,3 +25,5 @@ export const ArticleOM = () => {
     </ThemeProvider>
   );
 };
+
+export default ArticleOM;
