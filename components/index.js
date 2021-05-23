@@ -1,4 +1,4 @@
-export {default as Article} from './Article';
+export {default as Article} from './Article/Article';
 export {default as Block} from './Block';
 export {default as Button} from './Button';
 export {default as ColumnHeader} from './Column/Header';

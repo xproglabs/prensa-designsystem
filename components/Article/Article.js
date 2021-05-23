@@ -25,8 +25,6 @@ const Article = ({
   );
 };
 
-export default Article;
-
 Article.defaultProps = {
   message: 'message'
 };
@@ -37,3 +35,5 @@ Article.propTypes = {
    */
   message: PropTypes.string
 };
+
+export default Article;
