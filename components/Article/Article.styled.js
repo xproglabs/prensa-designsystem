@@ -28,6 +28,7 @@ export const Container = ({children}) =>
         max-width: 1008px;
       `
     }}
+    mt='2'
     width='100%'>
     {children}
   </Block>;

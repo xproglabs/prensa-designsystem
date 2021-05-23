@@ -6,24 +6,26 @@ import Typography from '../../Typography';
 
 const Subject = ({
   bgColor,
+  borderRadius,
   color,
+  mb,
+  px,
+  py,
+  transform,
   value
 }) => {
-  const propsSubject = {
-    bgColor,
-    custom: `
-      border-radius: 3px;
-    `,
-    mb: 1,
-    pb: '4px',
-    pt: '4px',
-    px: 2,
-    lg: {
-      mb: 2
-    }
-  };
   return (
-    <Block {...propsSubject}>
+    <Block 
+      bgColor={bgColor}
+      custom={`
+        border-radius: ${borderRadius};
+      `}
+      mb={mb[0]}
+      px={px}
+      py={py}
+      lg={{
+        mb: mb[1]
+      }}>
       <Typography 
         color={color}
         dangerouslySetInnerHTML={value}
@@ -32,6 +34,7 @@ const Subject = ({
         fontFamily='secondary'
         fontWeight={700}
         lineHeight='20px'
+        transform={transform}
       />
     </Block>
   );
@@ -39,22 +42,23 @@ const Subject = ({
 
 Subject.defaultProps = {
   bgColor: 'primary1',
+  borderRadius: '3px',
   color: 'white',
+  transform: 'none',
+  mb: ['1', '2'],
+  px: '2',
+  py: '4px',
   value: 'MÍDIA DIGITAL'
 };
 
 Subject.propTypes = {
-  /**
-   * Background do Subject
-   */
   bgColor: PropTypes.string,
-  /**
-   * Cor do Subject
-   */
+  borderRadius: PropTypes.string,
   color: PropTypes.string,
-  /**
-   * Valor (HTML)
-   */
+  mb: PropTypes.array,
+  px: PropTypes.string,
+  py: PropTypes.string,
+  transform: PropTypes.string,
   value: PropTypes.string
 };
 

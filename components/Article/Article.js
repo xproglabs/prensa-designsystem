@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import * as S from './Article.styled';
@@ -8,13 +9,17 @@ import TextBody from './TextBody/TextBody';
 import Title from './Title/Title';
 import TopImage from './TopImage/TopImage';
 
-const Article = () => {
+const Article = ({
+  subject,
+  subtitle,
+  title
+}) => {
   return (
     <S.Container>
       <S.Content>
-        <Subject />
-        <Title />
-        <Subtitle />
+        <Subject {...subject} />
+        <Title {...title} />
+        <Subtitle {...subtitle} />
         <Byline />
       </S.Content>
       <TopImage />
@@ -24,6 +29,10 @@ const Article = () => {
 };
 
 Article.defaultProps = {};
-Article.propTypes = {};
+Article.propTypes = {
+  subject: PropTypes.object,
+  subtitle: PropTypes.object,
+  title: PropTypes.object,
+};
 
 export default Article;
