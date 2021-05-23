@@ -4,110 +4,114 @@ import React from 'react';
 import Block from '../Block';
 
 export const Body = ({children}) => 
-  <Block {...{
-    px: 3,
-    width: 'calc(100% - 48px)',
-    lg: {
+  <Block
+    px='3'
+    lg={{
       align: 'column',
       alignx: 'center',
       width: '100%',
-    }
-  }}>{children}</Block>;
+    }}
+    width='calc(100% - 48px)'>
+    {children}
+  </Block>;
 
 Body.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 export const Container = ({children}) => 
-  <Block {...{
-    align: 'column',
-    alignx: 'center',
-    mt: '170px',
-    width: '100%',
-    lg: {
-      mt: '220px;',
+  <Block
+    align='column'
+    alignx='center'
+    lg={{
       custom: `
         max-width: 1008px;
       `
-    }
-  }}>{children}</Block>;
+    }}
+    width='100%'>
+    {children}
+  </Block>;
 
 Container.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 export const Content = ({children}) => 
-  <Block {...{
-    px: 2,
-    width: 'calc(100% - 32px)',
-  }}>{children}</Block>;
+  <Block
+    px='2'
+    width='calc(100% - 32px)'>
+    {children}
+  </Block>;
 
 Content.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
   
 export const ContainerFeatured = ({children}) => 
-  <Block {...{
-    align: 'column',
-    aligny: 'bottom',
-    alignx: 'center',
-    bgColor: 'neutral2',
-    mt: '140px',
-    mb: 4,
-    width: '100%'
-  }}>{children}</Block>;
+  <Block
+    align='column'
+    aligny='bottom'
+    alignx='center'
+    bgColor='neutral2'
+    mt='140px'
+    mb='4'
+    width='100%'>
+    {children}
+  </Block>;
 
 ContainerFeatured.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
   
 export const ContentFeatured = ({children}) => 
-  <Block {...{
-    alignx: 'left',
-    px: 2,
-    pt: '180px',
-    pb: 2,
-    width: 'calc(100% - 32px)',
-    custom: `
+  <Block
+    alignx='left'
+    custom={`
       max-width: 1008px;
       position: absolute;
-    `,
-    lg: {
+    `}
+    lg={{
       mb: 6
-    }
-  }}>{children}</Block>;
+    }}
+    px='2'
+    pb='2'
+    width='calc(100% - 32px)'>
+    {children}
+  </Block>;
 
 ContentFeatured.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 export const ContentImage = ({children}) => 
-  <Block {...{
-    width: '100%',
-    height: '420px',
-    custom: `
+  <Block
+    custom={`
       opacity: 0.5;
-    `,
-    lg: {
-      height: '520px',
-    }
-  }}>{children}</Block>;
+    `}
+    lg={{
+      height: '520px'
+    }}
+    height='420px'
+    width='100%'>
+    {children}
+  </Block>;
 
 ContentImage.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 export const MaxW = ({children}) => 
-  <Block {...{
-    px: 2,
-    width: 'calc(100% - 32px)',
-    custom: `
+  <Block
+    custom={`
       max-width: 1008px;
-    `,
-    lg: {
+    `}
+    lg={{
       px: '0px'
-    }
-  }}>{children}</Block>;
+    }}
+    px='2'
+    width='calc(100% - 32px)'>
+    {children}
+  </Block>;
 
 MaxW.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
