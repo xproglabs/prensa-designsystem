@@ -6,6 +6,7 @@ import Byline from './Byline/Byline';
 import Subject from './Subject/Subject';
 import Subtitle from './Subtitle/Subtitle';
 import Title from './Title/Title';
+import TopImage from './TopImage/TopImage';
 
 const Article = ({
   message
@@ -18,6 +19,7 @@ const Article = ({
         <Subtitle />
         <Byline />
       </S.Content>
+      <TopImage />
       <S.Body>
         <pre>{message}</pre>
       </S.Body>
