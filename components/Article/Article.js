@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import * as S from './Article.styled';
+import Byline from './Byline/Byline';
 import Subject from './Subject/Subject';
 import Subtitle from './Subtitle/Subtitle';
 import Title from './Title/Title';
@@ -15,6 +16,7 @@ const Article = ({
         <Subject />
         <Title />
         <Subtitle />
+        <Byline />
       </S.Content>
       <S.Body>
         <pre>{message}</pre>

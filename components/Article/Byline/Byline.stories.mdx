@@ -3,8 +3,15 @@ import { CodeBlock, Space } from "prensa-docs";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 
-<Meta title="Article/Author" />
+import * as S from "../Article.styled";
+import Byline from "./Byline";
+
+<Meta title="Article/Byline" />
 
 <ThemeProvider theme={theme}>
-  <pre>Author</pre>
+  <S.Container>
+    <S.Content>
+      <Byline />
+    </S.Content>
+  </S.Container>
 </ThemeProvider>
