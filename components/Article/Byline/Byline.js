@@ -32,8 +32,10 @@ const Byline = ({
 
 Byline.defaultProps = {
   author: {
+    color: 'neutral4',
+    fontFamily: 'primary',
     fontSize: ['14px', '14px'],
-    lineHeight: ['20px', '20px'],
+    lineHeight: ['16px', '16px'],
     value: 'Prensa Design System'
   },
   datetime: {

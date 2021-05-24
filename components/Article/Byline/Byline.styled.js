@@ -4,11 +4,17 @@ import React from 'react';
 import Block from '../../Block';
 import Typography from '../../Typography';
 
-export const Author = ({children, fontSize, lineHeight}) => 
+export const Author = ({
+  children,
+  color,
+  fontFamily,
+  fontSize,
+  lineHeight
+}) => 
   <Typography 
-    color='neutral2'
+    color={color}
     element='span'
-    fontFamily='secondary'
+    fontFamily={fontFamily}
     fontWeight={700}
     fontSize={fontSize[0]}
     lineHeight={lineHeight[0]}
@@ -25,6 +31,8 @@ Author.propTypes = {
     PropTypes.object, 
     PropTypes.string
   ]),
+  color: PropTypes.string,
+  fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
   lineHeight: PropTypes.array
 };

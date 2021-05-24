@@ -9,6 +9,13 @@ const ArticleOM = () => {
     <ThemeProvider theme={odiariodemogi}>      
       <Article
         byline={{
+          author: {
+            color: 'neutral4',
+            fontFamily: 'primary',
+            fontSize: ['14px', '14px'],
+            lineHeight: ['16px', '16px'],
+            value: 'O Diário'
+          },
           customContent: `
             border-left: 8px solid ${odiariodemogi.colors['primary1']};
             padding-left: 8px;
