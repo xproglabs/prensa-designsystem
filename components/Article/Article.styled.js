@@ -3,22 +3,6 @@ import React from 'react';
 
 import Block from '../Block';
 
-export const Body = ({children}) => 
-  <Block
-    px='3'
-    lg={{
-      align: 'column',
-      alignx: 'center',
-      width: '100%',
-    }}
-    width='calc(100% - 48px)'>
-    {children}
-  </Block>;
-
-Body.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
-};
-
 export const Container = ({children}) => 
   <Block
     align='column'
@@ -115,5 +99,19 @@ export const MaxW = ({children}) =>
   </Block>;
 
 MaxW.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+};
+
+export const Page = ({children}) => 
+  <Block
+    lg={{
+      align: 'column',
+      alignx: 'center'
+    }}
+    width='100%'>
+    {children}
+  </Block>;
+
+Page.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };

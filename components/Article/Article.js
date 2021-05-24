@@ -17,16 +17,18 @@ const Article = ({
   topimage
 }) => {
   return (
-    <S.Container>
-      <S.Content>
-        <Subject {...subject} />
-        <Title {...title} />
-        <Subtitle {...subtitle} />
-        <Byline {...byline} />
-      </S.Content>
-      <TopImage {...topimage} />
-      <TextBody />
-    </S.Container>
+    <S.Page>
+      <S.Container>
+        <S.Content>
+          <Subject {...subject} />
+          <Title {...title} />
+          <Subtitle {...subtitle} />
+          <Byline {...byline} />
+        </S.Content>
+        <TopImage {...topimage} />
+        <TextBody />
+      </S.Container>
+    </S.Page>
   );
 };
 
