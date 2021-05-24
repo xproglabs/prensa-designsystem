@@ -3,14 +3,15 @@ import React from 'react';
 
 import Block from '../Block';
 
-export const Container = ({children}) => 
+export const Container = ({
+  children,
+  maxWidth
+}) => 
   <Block
     align='column'
     alignx='center'
     lg={{
-      custom: `
-        max-width: 1008px;
-      `
+      custom: `max-width: ${maxWidth};`
     }}
     mt='2'
     width='100%'>
@@ -18,7 +19,8 @@ export const Container = ({children}) =>
   </Block>;
 
 Container.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  maxWidth: PropTypes.string
 };
 
 export const Content = ({children}) => 
@@ -85,10 +87,13 @@ ContentImage.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
-export const MaxW = ({children}) => 
+export const MaxW = ({
+  children, 
+  maxWidth
+}) => 
   <Block
     custom={`
-      max-width: 1008px;
+      max-width: ${maxWidth};
     `}
     lg={{
       px: '0px'
@@ -99,7 +104,8 @@ export const MaxW = ({children}) =>
   </Block>;
 
 MaxW.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  maxWidth: PropTypes.string
 };
 
 export const Page = ({children}) => 

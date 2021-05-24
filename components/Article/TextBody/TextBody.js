@@ -6,10 +6,11 @@ import Paragraph from '../Paragraph/Paragraph';
 import * as S from './TextBody.styled';
 
 const TextBody = ({
+  bodyWidth,
   value
 }) => {
   return (
-    <S.Body>
+    <S.Body bodyWidth={bodyWidth}>
       <Intertitle />
       <Paragraph />
       <Paragraph />
@@ -27,9 +28,7 @@ TextBody.defaultProps = {
 };
 
 TextBody.propTypes = {
-  /**
-   * Mensagem principal
-   */
+  bodyWidth: PropTypes.string,
   value: PropTypes.string
 };
 

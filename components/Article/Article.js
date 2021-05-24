@@ -10,7 +10,9 @@ import Title from './Title/Title';
 import TopImage from './TopImage/TopImage';
 
 const Article = ({
+  bodyWidth,
   byline,
+  maxWidth,
   subject,
   subtitle,
   title,
@@ -18,7 +20,7 @@ const Article = ({
 }) => {
   return (
     <S.Page>
-      <S.Container>
+      <S.Container maxWidth={maxWidth}>
         <S.Content>
           <Subject {...subject} />
           <Title {...title} />
@@ -26,15 +28,21 @@ const Article = ({
           <Byline {...byline} />
         </S.Content>
         <TopImage {...topimage} />
-        <TextBody />
+        <TextBody bodyWidth={bodyWidth} />
       </S.Container>
     </S.Page>
   );
 };
 
-Article.defaultProps = {};
+Article.defaultProps = {
+  bodyWidth: '768px',
+  maxWidth: '1016px'
+};
+
 Article.propTypes = {
+  bodyWidth: PropTypes.string,
   byline: PropTypes.object,
+  maxWidth: PropTypes.string,
   subject: PropTypes.object,
   subtitle: PropTypes.object,
   title: PropTypes.object,

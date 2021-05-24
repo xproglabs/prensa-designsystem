@@ -4,8 +4,14 @@ import React from 'react';
 import Block from '../../Block';
 import Typography from '../../Typography';
 
-export const Body = ({children}) => 
+export const Body = ({
+  bodyWidth,
+  children
+}) => 
   <Block
+    custom={`
+      max-width: ${bodyWidth};
+    `}
     lg={{
       align: 'column',
       alignx: 'center',
@@ -17,6 +23,7 @@ export const Body = ({children}) =>
   </Block>;
 
 Body.propTypes = {
+  bodyWidth: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
@@ -33,7 +40,7 @@ export const TextBody = ({color, children}) =>
     lg={{
       fontSize: '30px',
       lineHeight: '36px'
-    }} 
+    }}
   />;
 
 TextBody.propTypes = {
