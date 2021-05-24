@@ -18,10 +18,10 @@ const Byline = ({
             {author.value}
           </S.Author>
           <S.TimeEntry {...datetime}>
-            Publicado em: {datetime.time_published}
+            Publicado em {datetime.time_published}
           </S.TimeEntry>
           <S.TimeEntry {...datetime}>
-            Atualizado em: {datetime.time_modified}
+            Atualizado há {datetime.time_modified}
           </S.TimeEntry>
         </S.DateLine>
         <Medias {...medias} />
