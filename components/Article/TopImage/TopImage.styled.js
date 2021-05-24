@@ -4,20 +4,27 @@ import React from 'react';
 import Block from '../../Block';
 import Typography from '../../Typography';
 
-export const Box = ({children}) => 
+export const Box = ({
+  children,
+  mb
+}) => 
   <Block
     custom={`
       img {
         width: 100%;
       }
     `}
-    mb='2'
+    mb={mb[0]}
+    lg={{
+      mb: mb[1]
+    }}
     width='100%'>
     {children}
   </Block>;
 
 Box.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  mb: PropTypes.array
 };
 
 export const SubtitleBox = ({children}) => 
@@ -33,20 +40,26 @@ SubtitleBox.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
-export const Subtitle = ({children}) => 
+export const Subtitle = ({
+  children,
+  fontSize,
+  lineHeight
+}) => 
   <Typography 
     color='neutral4'
     dangerouslySetInnerHTML={children}
     element="p"
     fontFamily='secondary'
-    fontSize='18px'
-    lineHeight='22px'
+    fontSize={fontSize[0]}
+    lineHeight={lineHeight[0]}
     lg={{
-      fontSize: '14px',
-      lineHeight: '20px'
+      fontSize: fontSize[1],
+      lineHeight: lineHeight[1]
     }}
   />;
 
 Subtitle.propTypes = {
-  children: PropTypes.string
+  children: PropTypes.string,
+  fontSize: PropTypes.array,
+  lineHeight: PropTypes.array
 };

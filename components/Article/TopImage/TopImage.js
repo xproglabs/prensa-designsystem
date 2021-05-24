@@ -3,9 +3,17 @@ import React from 'react';
 
 import * as S from './TopImage.styled';
 
-const TopImage = ({amp, caption, value}) => {
+const TopImage = ({
+  amp,
+  caption,
+  image,
+  mb,
+  value
+}) => {
+  if(!image)
+    return null;
   return (
-    <S.Box>
+    <S.Box mb={mb}>
       {amp ? (
         <amp-img
           alt={caption}
@@ -24,24 +32,37 @@ const TopImage = ({amp, caption, value}) => {
           src={value}
         />
       )}
-      <S.SubtitleBox>
-        <S.Subtitle>
-          {caption}
-        </S.Subtitle>
-      </S.SubtitleBox>
+      {caption && caption.show && (
+        <S.SubtitleBox>
+          <S.Subtitle
+            fontSize={caption.fontSize}
+            lineHeight={caption.lineHeight}>
+            {caption.value}
+          </S.Subtitle>
+        </S.SubtitleBox>
+      )}
     </S.Box>
   );
 };
 
 TopImage.defaultProps = {
   amp: false,
-  caption: 'A legenda da imagem já deve vir com os seus respectivos créditos / Byline - Fotógrafo',
+  image: true,
+  caption: {
+    fontSize: ['14px', '14px'],
+    lineHeight: ['18px', '18px'],
+    show: true,
+    value: 'Legenda da Imagem'
+  },
+  mb: ['2', '2'],
   value: 'https://xprog.com.br/static/images/img-destak.jpg'
 };
 
 TopImage.propTypes = {
   amp: PropTypes.bool,
-  caption: PropTypes.string,
+  image: PropTypes.bool,
+  caption: PropTypes.object,
+  mb: PropTypes.array,
   value: PropTypes.string
 };
 
