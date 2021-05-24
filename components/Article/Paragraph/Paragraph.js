@@ -1,31 +1,59 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import * as S from './Paragraph.styled';
+import Block from '../../Block';
+import Typography from '../../Typography';
 
-const Paragraph = ({color, value}) => {
+const Paragraph = ({
+  color,
+  element,
+  fontFamily,
+  fontSize,
+  fontWeight,
+  lineHeight,
+  mb,
+  value
+}) => {
   return (
-    <S.Row>
-      <S.Paragraph color={color}>
-        {value}
-      </S.Paragraph>
-    </S.Row>
+    <Block width='100%'>
+      <Typography 
+        color={color}
+        dangerouslySetInnerHTML={value}
+        element={element}
+        fontFamily={fontFamily}
+        fontSize={fontSize[0]}
+        fontWeight={fontWeight}
+        lineHeight={lineHeight[0]}
+        lg={{
+          fontSize: fontSize[1],
+          lineHeight: lineHeight[1],
+          mb: mb[1]
+        }}
+        mb={mb[0]}
+      />
+    </Block>
   );
 };
 
 Paragraph.defaultProps = {
   color: 'neutral2',
-  value: 'A Agência de Transportes do Estado de São Paulo (Artesp) divulgou nota, no final da tarde deste sábado (22), mostrando uma série de benefícios que o projeto de concessão dos serviços públicos das rodovias do Lote Litoral Paulista poderá trazer para a região.&nbsp; No comunicado enviado a este jornal, <a href="https://odiariodemogi.net.br/cidades/carreata-termina-ap%C3%B3s-2-horas-de-protestos-contra-o-ped%C3%A1gio-1.15385">sete horas após a carreata de protesto contra os pedágios, realizada pela manhã</a>, a Artesp se vale de 309 palavras e 2.003 caracteres para expor suas razões, e cita uma única vez a palavra “pedágio”, para dizer ele não existirá “em viário municipal”, já que, segundo a agência, o “pedagiamento acontece apenas em rodovias estaduais”.'
+  element: 'p',
+  fontFamily: 'primary',
+  fontWeight: 400,
+  fontSize: ['18px', '30px'],
+  lineHeight: ['22px', '36px'],
+  mb: ['2', '3'],
+  value: 'Entre os familiares e amigos próximos, no sepultamento, estava o companehiro de infância, Mitiro Nagao, que destacou a boa vontade de Horii. "Só posso dizer que ele foi uma pessoa fantástica que contribuiu muito para a cidade. Era um grande empreendedor que só pensava em melhorar esse município. Era uma pessoa que enxergava para frente. ele gostava muito das pessoas, apesar de ser reservado. Se encontrasse uma pessoa que precisasse, ele realmente ajudava".'
 };
 
 Paragraph.propTypes = {
-  /**
-   * Cor do Título
-   */
   color: PropTypes.string,
-  /**
-   * Valor (HTML)
-   */
+  element: PropTypes.string,
+  fontFamily: PropTypes.number,
+  fontSize: PropTypes.array,
+  fontWeight: PropTypes.array,
+  lineHeight: PropTypes.array,
+  mb: PropTypes.array,
   value: PropTypes.string
 };
 

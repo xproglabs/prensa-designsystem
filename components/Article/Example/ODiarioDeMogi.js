@@ -28,6 +28,19 @@ const ArticleOM = () => {
             time_published: '21/05/2021 às 23:20',
           }
         }}
+        intertitle={{
+          fontFamily: 'secondary',
+          fontSize: ['20px', '20px'],
+          fontWeight: 700,
+          lineHeight: ['42px', '42px'],
+          mb: ['2', '3']
+        }}
+        paragraph={{
+          fontFamily: 'secondary',
+          fontSize: ['20px', '20px'],
+          lineHeight: ['42px', '42px'],
+          mb: ['1', '2']
+        }}
         subject={{
           mb: ['3', '3'],
           px: '1',
