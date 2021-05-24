@@ -10,9 +10,11 @@ import Title from './Title/Title';
 import TopImage from './TopImage/TopImage';
 
 const Article = ({
+  byline,
   subject,
   subtitle,
-  title
+  title,
+  topimage
 }) => {
   return (
     <S.Container>
@@ -20,9 +22,9 @@ const Article = ({
         <Subject {...subject} />
         <Title {...title} />
         <Subtitle {...subtitle} />
-        <Byline />
+        <Byline {...byline} />
       </S.Content>
-      <TopImage />
+      <TopImage {...topimage} />
       <TextBody />
     </S.Container>
   );
@@ -30,9 +32,11 @@ const Article = ({
 
 Article.defaultProps = {};
 Article.propTypes = {
+  byline: PropTypes.object,
   subject: PropTypes.object,
   subtitle: PropTypes.object,
   title: PropTypes.object,
+  topimage: PropTypes.object,
 };
 
 export default Article;

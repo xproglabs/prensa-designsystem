@@ -8,6 +8,8 @@ const Subject = ({
   bgColor,
   borderRadius,
   color,
+  fontSize,
+  lineHeight,
   mb,
   px,
   py,
@@ -30,10 +32,14 @@ const Subject = ({
         color={color}
         dangerouslySetInnerHTML={value}
         element='p'
-        fontSize='14px'
         fontFamily='secondary'
+        fontSize={fontSize[0]}
         fontWeight={700}
-        lineHeight='20px'
+        lineHeight={lineHeight[0]}
+        lg={{
+          fontSize: fontSize[1],
+          lineHeight: lineHeight[1]
+        }}
         transform={transform}
       />
     </Block>
@@ -44,6 +50,8 @@ Subject.defaultProps = {
   bgColor: 'primary1',
   borderRadius: '3px',
   color: 'white',
+  fontSize: ['14px', '14px'],
+  lineHeight: ['20px', '20px'],
   transform: 'none',
   mb: ['1', '2'],
   px: '2',
@@ -55,6 +63,8 @@ Subject.propTypes = {
   bgColor: PropTypes.string,
   borderRadius: PropTypes.string,
   color: PropTypes.string,
+  fontSize: PropTypes.array,
+  lineHeight: PropTypes.array,
   mb: PropTypes.array,
   px: PropTypes.string,
   py: PropTypes.string,

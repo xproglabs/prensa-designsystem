@@ -7,19 +7,39 @@ import Article from '../Article';
 const ArticleOM = () => {
   return (
     <ThemeProvider theme={odiariodemogi}>      
-      <Article 
+      <Article
+        byline={{
+          customContent: `
+            border-left: 8px solid ${odiariodemogi.colors['primary1']};
+            padding-left: 8px;
+          `,
+          datetime: {
+            color: 'neutral4',
+            fontSize: ['12px', '12px'],
+            lineHeight: ['16px', '16px'],
+            time_modified: '18 dias atrás',
+            time_published: '21/05/2021 às 23:20',
+          }
+        }}
         subject={{
-          transform: 'uppercase',
+          mb: ['3', '3'],
           px: '1',
+          transform: 'uppercase',
           value: 'O Diário de Mogi',
         }}
         subtitle={{
           color: 'neutral3',
+          mb: ['3', '3'],
           value: 'Felipe, que começou no União e nunca deixou de exaltar a cidade, também conquistou o primeiro título espanhol pelo  Atlético de Madrid. De quebra, o time terminou com a defesa menos vazada.'
         }}
         title={{
           color: 'neutral2',
           value: 'Felipe, de Mogi das Cruzes, é convocado por Tite para a Seleção'
+        }}
+        topimage={{
+          amp: false,
+          caption: 'O advogado detalha que direitos afetados pela instalação do pedágio na Mogi-Dutra e Mogi-Bertioga / Divulgação/ PMMC',
+          value: 'https://www.odiariodemogi.net.br/image/policy:1.15230.1621460050:1621460050/image.jpg?f=2x1&w=1000'
         }}
       />
     </ThemeProvider>

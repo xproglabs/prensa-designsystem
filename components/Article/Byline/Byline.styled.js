@@ -4,13 +4,18 @@ import React from 'react';
 import Block from '../../Block';
 import Typography from '../../Typography';
 
-export const Author = ({children}) => 
+export const Author = ({children, fontSize, lineHeight}) => 
   <Typography 
     color='neutral2'
+    element='span'
     fontFamily='secondary'
-    fontSize='14px'
     fontWeight={700}
-    mb='1'>
+    fontSize={fontSize[0]}
+    lineHeight={lineHeight[0]}
+    lg={{
+      fontSize: fontSize[1],
+      lineHeight: lineHeight[1]
+    }}>
     {children}
   </Typography>;
 
@@ -19,7 +24,9 @@ Author.propTypes = {
     PropTypes.array, 
     PropTypes.object, 
     PropTypes.string
-  ])
+  ]),
+  fontSize: PropTypes.array,
+  lineHeight: PropTypes.array
 };
 
 export const Container = ({children}) => 
@@ -38,9 +45,9 @@ Container.propTypes = {
 
 export const Content = ({children}) => 
   <Block
+    width='100%'
     align='column'
     mb={4}
-    width='100%'
     md={{
       align: 'row',
       aligny: 'between'
@@ -52,8 +59,9 @@ Content.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
-export const DateLine = ({children}) => 
+export const DateLine = ({children, custom}) => 
   <Block 
+    custom={custom}
     mb='2'
     md={{
       mb: '0px'
@@ -63,16 +71,27 @@ export const DateLine = ({children}) =>
   </Block>;
 
 DateLine.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  custom: PropTypes.string
 };
 
-export const TimeEntry = ({children}) => 
+export const TimeEntry = ({
+  children,
+  color,
+  fontSize,
+  lineHeight
+}) => 
   <Typography 
-    color='neutral2'
+    color={color}
+    element='span'
     fontFamily='secondary'
-    fontSize='12px'
     fontWeight={400}
-    mb='1'>
+    fontSize={fontSize[0]}
+    lineHeight={lineHeight[0]}
+    lg={{
+      fontSize: fontSize[1],
+      lineHeight: lineHeight[1]
+    }}>
     {children}
   </Typography>;
 
@@ -81,5 +100,8 @@ TimeEntry.propTypes = {
     PropTypes.array, 
     PropTypes.object, 
     PropTypes.string
-  ])
+  ]),
+  color: PropTypes.string,
+  fontSize: PropTypes.array,
+  lineHeight: PropTypes.array
 };

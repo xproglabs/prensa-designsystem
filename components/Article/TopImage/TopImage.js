@@ -41,13 +41,7 @@ TopImage.defaultProps = {
 
 TopImage.propTypes = {
   amp: PropTypes.bool,
-  /**
-   * Cor do Título
-   */
   caption: PropTypes.string,
-  /**
-   * Valor (HTML)
-   */
   value: PropTypes.string
 };
 

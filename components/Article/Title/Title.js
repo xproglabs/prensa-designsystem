@@ -6,24 +6,29 @@ import Typography from '../../Typography';
 
 const Title = ({
   color,
+  fontSize,
+  lineHeight,
+  mb,
   value
 }) => {
   return (
-    <Block width="100%">
+    <Block
+      width="100%"
+      mb={mb[0]}
+      lg={{
+        mb: mb[1]
+      }}>
       <Typography 
         color={color}
         dangerouslySetInnerHTML={value}
         element='h1'
-        fontSize='38px'
         fontFamily='primary'
+        fontSize={fontSize[0]}
         fontWeight={700}
-        lineHeight='42px'
-        mt='0px'
-        mb={2}
+        lineHeight={lineHeight[0]}
         lg={{
-          mb: 3,
-          fontSize: '56px',
-          lineHeight: '60px'
+          fontSize: fontSize[1],
+          lineHeight: lineHeight[1]
         }}>
       </Typography>
     </Block>
@@ -32,17 +37,17 @@ const Title = ({
 
 Title.defaultProps = {
   color: 'neutral2',
+  fontSize: ['38px', '56px'],
+  lineHeight: ['44px', '64px'],
+  mb: ['2', '3'],
   value: 'Atex Brasil e XPROG entregam produtos digitais acessados por milhões de internautas brasileiros'
 };
 
 Title.propTypes = {
-  /**
-   * Cor do Título
-   */
   color: PropTypes.string,
-  /**
-   * Valor (HTML)
-   */
+  fontSize: PropTypes.array,
+  lineHeight: PropTypes.array,
+  mb: PropTypes.array,
   value: PropTypes.string
 };
 

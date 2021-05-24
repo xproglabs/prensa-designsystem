@@ -23,9 +23,9 @@ Box.propTypes = {
 export const SubtitleBox = ({children}) => 
   <Block
     bgColor='neutral9'
-    px='3'
-    py='3'
-    width='calc(100% - 48px)'>
+    px='2'
+    py='2'
+    width='calc(100% - 32px)'>
     {children}
   </Block>;
 
@@ -44,7 +44,8 @@ export const Subtitle = ({children}) =>
     lg={{
       fontSize: '14px',
       lineHeight: '20px'
-    }} />;
+    }}
+  />;
 
 Subtitle.propTypes = {
   children: PropTypes.string

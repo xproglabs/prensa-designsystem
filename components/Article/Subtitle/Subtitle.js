@@ -6,24 +6,28 @@ import Typography from '../../Typography';
 
 const Subtitle = ({
   color,
+  fontSize,
+  lineHeight,
+  mb,
   value
 }) => {
   return (
-    <Block width="100%">
+    <Block 
+      mb={mb[0]}
+      lg={{
+        mb: mb[1]
+      }}
+      width="100%">
       <Typography 
         color={color}
         dangerouslySetInnerHTML={value}
         element='p'
-        fontSize='18px'
         fontFamily='secondary'
-        fontWeight={400}
-        lineHeight='26px'
-        mt='0px'
-        mb={3}
+        fontSize={fontSize[0]}
+        lineHeight={lineHeight[0]}
         lg={{
-          mb: 4,
-          fontSize: '18px',
-          lineHeight: '26px'
+          fontSize: fontSize[1],
+          lineHeight: lineHeight[1]
         }}>
       </Typography>
     </Block>
@@ -32,17 +36,17 @@ const Subtitle = ({
 
 Subtitle.defaultProps = {
   color: 'neutral3',
+  fontSize: ['18px', '18px'],
+  lineHeight: ['26px', '26px'],
+  mb: ['2', '2'],
   value: 'A XPROG presta serviços para a Atex Brasil fornecendo mão de obra qualificada e gestão da implantação de seus projetos digitais. Serviços que se consolidaram em uma parceria entre empresas, agregando valor à consultoria entregue aos clientes da Atex Brasil.'
 };
 
 Subtitle.propTypes = {
-  /**
-   * Cor do Subtitle
-   */
   color: PropTypes.string,
-  /**
-   * Valor (HTML)
-   */
+  fontSize: PropTypes.array,
+  lineHeight: PropTypes.array,
+  mb: PropTypes.array,
   value: PropTypes.string
 };
 
