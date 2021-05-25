@@ -9,13 +9,6 @@ const ArticleOM = () => {
     <ThemeProvider theme={odiariodemogi}>      
       <Article
         byline={{
-          author: {
-            color: 'neutral4',
-            fontFamily: 'primary',
-            fontSize: ['14px', '14px'],
-            lineHeight: ['16px', '16px'],
-            value: 'Da Redação'
-          },
           customContent: `
             border-left: 8px solid ${odiariodemogi.colors['primary1']};
             padding-left: 8px;
@@ -29,9 +22,7 @@ const ArticleOM = () => {
           }
         }}
         intertitle={{
-          fontFamily: 'secondary',
           fontSize: ['38px', '30px'],
-          fontWeight: 700,
           lineHeight: ['42px', '42px'],
           mb: ['5', '5'],
           value: 'Título interno da matéria'
@@ -48,12 +39,10 @@ const ArticleOM = () => {
           value: 'O Diário de Mogi',
         }}
         subtitle={{
-          color: 'neutral3',
           mb: ['5', '5'],
           value: 'Valor já foi pago ao município e deverá ajudar cerca de 120 mil pessoas.'
         }}
         title={{
-          color: 'neutral2',
           fontSize: ['38px', '62px'],
           lineHeight: ['42px', '66px'],
           mb: ['4', '3'],
