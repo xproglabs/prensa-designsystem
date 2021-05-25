@@ -8,10 +8,7 @@ const TopImage = ({
   caption,
   image,
   mb,
-  px,
-  py,
-  value,
-  width
+  value
 }) => {
   if(!image)
     return null;
@@ -36,7 +33,7 @@ const TopImage = ({
         />
       )}
       {caption && caption.show && (
-        <S.SubtitleBox px={px} py={py} width={width}>
+        <S.SubtitleBox>
           <S.Subtitle
             fontSize={caption.fontSize}
             lineHeight={caption.lineHeight}>
@@ -58,10 +55,7 @@ TopImage.defaultProps = {
     value: 'Legenda da Imagem'
   },
   mb: ['2', '2'],
-  px: ['3', '3'],
-  py: ['3', '3'],
   value: 'https://xprog.com.br/static/images/img-destak.jpg',
-  width: 'calc(100% - 48px)'
 };
 
 TopImage.propTypes = {
@@ -69,10 +63,7 @@ TopImage.propTypes = {
   image: PropTypes.bool,
   caption: PropTypes.object,
   mb: PropTypes.array,
-  px: PropTypes.array,
-  py: PropTypes.array,
   value: PropTypes.string,
-  width: PropTypes.array
 };
 
 export default TopImage;
