@@ -31,7 +31,7 @@ const Subject = ({
       <Typography 
         color={color}
         dangerouslySetInnerHTML={value}
-        element='p'
+        element='span'
         fontFamily='secondary'
         fontSize={fontSize[0]}
         fontWeight={700}

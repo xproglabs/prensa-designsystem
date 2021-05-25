@@ -14,7 +14,7 @@ const ArticleOM = () => {
             fontFamily: 'primary',
             fontSize: ['14px', '14px'],
             lineHeight: ['16px', '16px'],
-            value: 'O Diário'
+            value: 'Da Redação'
           },
           customContent: `
             border-left: 8px solid ${odiariodemogi.colors['primary1']};
@@ -22,7 +22,7 @@ const ArticleOM = () => {
           `,
           datetime: {
             color: 'neutral4',
-            fontSize: ['12px', '12px'],
+            fontSize: ['14px', '14px'],
             lineHeight: ['16px', '16px'],
             time_modified: '18 dias atrás',
             time_published: '21/05/2021 às 23:20',
@@ -30,10 +30,11 @@ const ArticleOM = () => {
         }}
         intertitle={{
           fontFamily: 'secondary',
-          fontSize: ['20px', '20px'],
+          fontSize: ['38px', '20px'],
           fontWeight: 700,
           lineHeight: ['42px', '42px'],
-          mb: ['2', '3']
+          mb: ['5', '3'],
+          value: 'Título interno da matéria'
         }}
         paragraph={{
           fontFamily: 'secondary',
@@ -43,18 +44,20 @@ const ArticleOM = () => {
         }}
         subject={{
           mb: ['3', '3'],
-          px: '1',
           transform: 'uppercase',
           value: 'O Diário de Mogi',
         }}
         subtitle={{
           color: 'neutral3',
-          mb: ['3', '3'],
-          value: 'Felipe, que começou no União e nunca deixou de exaltar a cidade, também conquistou o primeiro título espanhol pelo  Atlético de Madrid. De quebra, o time terminou com a defesa menos vazada.'
+          mb: ['5', '5'],
+          value: 'Valor já foi pago ao município e deverá ajudar cerca de 120 mil pessoas.'
         }}
         title={{
           color: 'neutral2',
-          value: 'Felipe, de Mogi das Cruzes, é convocado por Tite para a Seleção'
+          fontSize: ['38px', '62px'],
+          lineHeight: ['42px', '66px'],
+          mb: ['4', '3'],
+          value: 'Adiamento das eleições para 15 e 29 de novembro é aprovado no Senado'
         }}
         topimage={{
           amp: false,
