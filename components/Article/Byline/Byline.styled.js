@@ -59,6 +59,9 @@ export const Content = ({children}) =>
     md={{
       align: 'row',
       aligny: 'between'
+    }}
+    lg={{
+      mb: 5
     }}>
     {children}
   </Block>;
