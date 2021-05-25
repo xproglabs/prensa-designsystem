@@ -62,10 +62,13 @@ const ArticleOM = () => {
           caption: {
             fontSize: ['14px', '14px'],
             lineHeight: ['18px', '18px'],
+            px: ['3', '3'],
+            py: ['3', '3'],
             show: true,
-            value: 'O advogado detalha que direitos afetados pela instalação do pedágio na Mogi-Dutra e Mogi-Bertioga / Divulgação/ PMMC'
+            value: 'O advogado detalha que direitos afetados pela instalação do pedágio na Mogi-Dutra e Mogi-Bertioga / Divulgação/ PMMC',
+            width: 'calc(100% - 48px)'
           },
-          mb: ['2', '4'],
+          mb: ['5', '4'],
           value: 'https://www.odiariodemogi.net.br/image/policy:1.15230.1621460050:1621460050/image.jpg?f=2x1&w=1000'
         }}
       />

@@ -27,17 +27,29 @@ Box.propTypes = {
   mb: PropTypes.array
 };
 
-export const SubtitleBox = ({children}) => 
+export const SubtitleBox = ({
+  children,
+  px,
+  py,
+  width
+}) => 
   <Block
     bgColor='neutral9'
-    px='2'
-    py='2'
-    width='calc(100% - 32px)'>
+    px={px[0]}
+    py={py[0]}
+    width={width}
+    lg= {{
+      px: px[1],
+      py: px[1]
+    }}>
     {children}
   </Block>;
 
 SubtitleBox.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  px: PropTypes.array,
+  py: PropTypes.array,
+  width: PropTypes.array
 };
 
 export const Subtitle = ({
