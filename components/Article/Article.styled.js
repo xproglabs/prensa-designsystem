@@ -26,7 +26,11 @@ Container.propTypes = {
 export const Content = ({children}) => 
   <Block
     px='2'
-    width='calc(100% - 32px)'>
+    width='calc(100% - 32px)'
+    lg={{
+      px: '0px',
+      width: '100%'
+    }}>
     {children}
   </Block>;
 
