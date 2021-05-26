@@ -24,12 +24,12 @@ const Paragraph = ({
         fontSize={fontSize[0]}
         fontWeight={fontWeight}
         lineHeight={lineHeight[0]}
+        mb={mb[0]}
         lg={{
           fontSize: fontSize[1],
           lineHeight: lineHeight[1],
           mb: mb[1]
         }}
-        mb={mb[0]}
       />
     </Block>
   );
@@ -42,7 +42,7 @@ Paragraph.defaultProps = {
   fontWeight: 400,
   fontSize: ['18px', '30px'],
   lineHeight: ['22px', '36px'],
-  mb: ['2', '3'],
+  mb: ['7', '7'],
   value: 'Entre os familiares e amigos próximos, no sepultamento, estava o companehiro de infância, Mitiro Nagao, que destacou a boa vontade de Horii. "Só posso dizer que ele foi uma pessoa fantástica que contribuiu muito para a cidade. Era um grande empreendedor que só pensava em melhorar esse município. Era uma pessoa que enxergava para frente. ele gostava muito das pessoas, apesar de ser reservado. Se encontrasse uma pessoa que precisasse, ele realmente ajudava".'
 };
 

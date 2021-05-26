@@ -31,7 +31,6 @@ const ArticleOM = () => {
           fontFamily: 'secondary',
           fontSize: ['20px', '20px'],
           lineHeight: ['42px', '42px'],
-          mb: ['5', '5']
         }}
         subject={{
           mb: ['3', '3'],

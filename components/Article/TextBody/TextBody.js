@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Citation from '../Citation/Citation';
 import Intertitle from '../Intertitle/Intertitle';
 import Paragraph from '../Paragraph/Paragraph';
 import * as S from './TextBody.styled';
 
 const TextBody = ({
   bodyWidth,
+  citation,
   intertitle,
   paragraph,
   value
@@ -29,6 +31,9 @@ const TextBody = ({
       <Paragraph
         {...paragraph}
       />
+      <Citation
+        {...citation}
+      />
       <Paragraph
         {...paragraph}
       />
@@ -42,6 +47,7 @@ TextBody.defaultProps = {
 
 TextBody.propTypes = {
   bodyWidth: PropTypes.string,
+  citation: PropTypes.object,
   intertitle: PropTypes.object,
   paragraph: PropTypes.object,
   value: PropTypes.string

@@ -12,6 +12,7 @@ import TopImage from './TopImage/TopImage';
 const Article = ({
   bodyWidth,
   byline,
+  citation,
   intertitle,
   maxWidth,
   paragraph,
@@ -33,6 +34,7 @@ const Article = ({
         <TextBody
           bodyWidth={bodyWidth}
           intertitle={intertitle}
+          citation={citation}
           paragraph={paragraph}
         />
       </S.Container>
@@ -48,6 +50,7 @@ Article.defaultProps = {
 Article.propTypes = {
   bodyWidth: PropTypes.string,
   byline: PropTypes.object,
+  citation: PropTypes.object,
   intertitle: PropTypes.object,
   maxWidth: PropTypes.string,
   paragraph: PropTypes.string,

@@ -37,7 +37,6 @@ const ArticleDR = () => {
           fontFamily: 'secondary',
           fontSize: ['20px', '20px'],
           lineHeight: ['36px', '42px'],
-          mb: ['7', '7']
         }}
         topimage={{
           amp: false,
