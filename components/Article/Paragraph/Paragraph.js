@@ -42,7 +42,7 @@ Paragraph.defaultProps = {
   fontWeight: 400,
   fontSize: ['18px', '30px'],
   lineHeight: ['22px', '36px'],
-  mb: ['7', '7'],
+  mb: ['3', '3'],
   value: 'Entre os familiares e amigos próximos, no sepultamento, estava o companehiro de infância, Mitiro Nagao, que destacou a boa vontade de Horii. "Só posso dizer que ele foi uma pessoa fantástica que contribuiu muito para a cidade. Era um grande empreendedor que só pensava em melhorar esse município. Era uma pessoa que enxergava para frente. ele gostava muito das pessoas, apesar de ser reservado. Se encontrasse uma pessoa que precisasse, ele realmente ajudava".'
 };
 

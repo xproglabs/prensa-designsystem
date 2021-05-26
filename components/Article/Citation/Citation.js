@@ -39,8 +39,8 @@ Citation.defaultProps = {
   fontFamily: 'secondary',
   fontWeight: 700,
   fontSize: ['32px', '32px'],
-  lineHeight: ['42px', '42px'],
-  mb: ['7', '7'],
+  lineHeight: ['140%', '140%'],
+  mb: ['3', '3'],
   value: '“Uma das nossas prioridades no mandato é fortalecer o Sistema de Saúde. Oferecer uma infraestrutura digna para a população é um dever mínimo do estado.”'
 };
 

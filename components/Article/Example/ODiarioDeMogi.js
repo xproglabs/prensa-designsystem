@@ -23,14 +23,12 @@ const ArticleOM = () => {
         }}
         intertitle={{
           fontSize: ['38px', '30px'],
-          lineHeight: ['42px', '42px'],
-          mb: ['5', '5'],
           value: 'Título interno da matéria'
         }}
         paragraph={{
           fontFamily: 'secondary',
           fontSize: ['20px', '20px'],
-          lineHeight: ['42px', '42px'],
+          lineHeight: ['190%', '190%'],
         }}
         subject={{
           mb: ['3', '3'],
@@ -43,8 +41,7 @@ const ArticleOM = () => {
         }}
         title={{
           fontSize: ['38px', '62px'],
-          lineHeight: ['42px', '66px'],
-          mb: ['4', '3'],
+          mb: ['2', '2'],
           value: 'Adiamento das eleições para 15 e 29 de novembro é aprovado no Senado'
         }}
         topimage={{
@@ -52,7 +49,7 @@ const ArticleOM = () => {
           image: true,
           caption: {
             fontSize: ['14px', '14px'],
-            lineHeight: ['18px', '18px'],
+            lineHeight: ['130%', '130%'],
             px: ['3', '3'],
             py: ['3', '3'],
             show: true,

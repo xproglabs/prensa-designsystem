@@ -21,7 +21,8 @@ export const Author = ({
     lg={{
       fontSize: fontSize[1],
       lineHeight: lineHeight[1]
-    }}>
+    }}
+    mb='4px'>
     {children}
   </Typography>;
 

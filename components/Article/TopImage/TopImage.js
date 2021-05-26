@@ -50,7 +50,7 @@ TopImage.defaultProps = {
   image: true,
   caption: {
     fontSize: ['14px', '14px'],
-    lineHeight: ['18px', '18px'],
+    lineHeight: ['130%', '130%'],
     show: true,
     value: 'Legenda da Imagem'
   },

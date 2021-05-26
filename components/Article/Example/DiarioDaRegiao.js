@@ -9,9 +9,6 @@ const ArticleDR = () => {
     <ThemeProvider theme={diariodaregiao}>
       <Article
         intertitle={{
-          fontSize: ['32px', '32px'],
-          fontWeight: 700,
-          mb: ['5', '5'],
           value: 'Título'
         }}
         subject={{
@@ -22,14 +19,12 @@ const ArticleDR = () => {
           value: 'Diário da Região'
         }}
         subtitle={{
-          color: 'neutral3',
           mb: ['3', '4'],
           value: 'Valor já foi pago ao município e deverá ajudar cerca de 120 mil pessoas.'
         }}
         title={{
           color: 'neutral2',
           fontSize: ['38px', '62px'],
-          lineHeight: ['42px', '64px'],
           mb: ['2', '3'],
           value: 'Adiamento das eleições para 15 e 29 de novembro é aprovado no Senado'
         }}
@@ -42,8 +37,8 @@ const ArticleDR = () => {
           amp: false,
           image: true,
           caption: {
-            fontSize: ['18px', '14px'],
-            lineHeight: ['22px', '20px'],
+            fontSize: ['14px', '14px'],
+            lineHeight: ['130%', '130%'],
             px: ['3', '4'],
             py: ['3', '4'],
             show: true,

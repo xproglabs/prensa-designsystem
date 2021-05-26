@@ -30,6 +30,7 @@ const Intertitle = ({
           mb: mb[1]
         }}
         mb={mb[0]}
+        mt={3}
       />
     </Block>
   );
@@ -40,9 +41,9 @@ Intertitle.defaultProps = {
   element: 'h3',
   fontFamily: 'primary',
   fontWeight: 700,
-  fontSize: ['18px', '30px'],
-  lineHeight: ['22px', '36px'],
-  mb: ['2', '3'],
+  fontSize: ['32px', '32px'],
+  lineHeight: ['110%', '110%'],
+  mb: ['3', '3'],
   value: 'Assunto'
 };
 

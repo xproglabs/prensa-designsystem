@@ -38,7 +38,7 @@ const Title = ({
 Title.defaultProps = {
   color: 'neutral2',
   fontSize: ['38px', '56px'],
-  lineHeight: ['44px', '64px'],
+  lineHeight: ['110%', '110%'],
   mb: ['2', '3'],
   value: 'Atex Brasil e XPROG entregam produtos digitais acessados por milhões de internautas brasileiros'
 };

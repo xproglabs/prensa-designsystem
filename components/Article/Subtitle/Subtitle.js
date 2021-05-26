@@ -37,7 +37,7 @@ const Subtitle = ({
 Subtitle.defaultProps = {
   color: 'neutral3',
   fontSize: ['18px', '18px'],
-  lineHeight: ['26px', '26px'],
+  lineHeight: ['150%', '150%'],
   mb: ['2', '2'],
   value: 'A XPROG presta serviços para a Atex Brasil fornecendo mão de obra qualificada e gestão da implantação de seus projetos digitais. Serviços que se consolidaram em uma parceria entre empresas, agregando valor à consultoria entregue aos clientes da Atex Brasil.'
 };
