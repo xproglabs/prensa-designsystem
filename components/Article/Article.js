@@ -19,6 +19,7 @@ const Article = ({
   subject,
   subtitle,
   title,
+  tags,
   topimage
 }) => {
   return (
@@ -36,6 +37,7 @@ const Article = ({
           intertitle={intertitle}
           citation={citation}
           paragraph={paragraph}
+          tags={tags}
         />
       </S.Container>
     </S.Page>
@@ -56,6 +58,7 @@ Article.propTypes = {
   paragraph: PropTypes.string,
   subject: PropTypes.object,
   subtitle: PropTypes.object,
+  tags: PropTypes.object,
   title: PropTypes.object,
   topimage: PropTypes.object,
 };

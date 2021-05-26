@@ -4,6 +4,7 @@ import React from 'react';
 import Citation from '../Citation/Citation';
 import Intertitle from '../Intertitle/Intertitle';
 import Paragraph from '../Paragraph/Paragraph';
+import Tags from '../Tags/Tags';
 import * as S from './TextBody.styled';
 
 const TextBody = ({
@@ -11,6 +12,7 @@ const TextBody = ({
   citation,
   intertitle,
   paragraph,
+  tags,
   value
 }) => {
   return (
@@ -37,6 +39,9 @@ const TextBody = ({
       <Paragraph
         {...paragraph}
       />
+      <Tags
+        {...tags}
+      />
     </S.Body>
   );
 };
@@ -50,6 +55,7 @@ TextBody.propTypes = {
   citation: PropTypes.object,
   intertitle: PropTypes.object,
   paragraph: PropTypes.object,
+  tags: PropTypes.object,
   value: PropTypes.string
 };
 
