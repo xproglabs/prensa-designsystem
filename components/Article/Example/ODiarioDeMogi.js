@@ -37,7 +37,7 @@ const ArticleOM = () => {
         }}
         subtitle={{
           mb: ['5', '5'],
-          value: 'Valor já foi pago ao município e deverá ajudar cerca de 120 mil pessoas.'
+          value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra eleifend pellentesque. Suspendisse semper gravida fermentum. Integer pulvinar euismod hendrerit.'
         }}
         title={{
           fontSize: ['38px', '62px'],
@@ -50,11 +50,8 @@ const ArticleOM = () => {
           caption: {
             fontSize: ['14px', '14px'],
             lineHeight: ['130%', '130%'],
-            px: ['3', '3'],
-            py: ['3', '3'],
             show: true,
             value: 'O advogado detalha que direitos afetados pela instalação do pedágio na Mogi-Dutra e Mogi-Bertioga / Divulgação/ PMMC',
-            width: 'calc(100% - 48px)'
           },
           mb: ['5', '8'],
           value: 'https://www.odiariodemogi.net.br/image/policy:1.15230.1621460050:1621460050/image.jpg?f=2x1&w=1000'
