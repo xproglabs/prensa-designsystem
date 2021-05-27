@@ -8,6 +8,7 @@ const Subject = ({
   bgColor,
   borderRadius,
   color,
+  fontFamily,
   fontSize,
   lineHeight,
   mb,
@@ -32,7 +33,7 @@ const Subject = ({
         color={color}
         dangerouslySetInnerHTML={value}
         element='span'
-        fontFamily='secondary'
+        fontFamily={fontFamily}
         fontSize={fontSize[0]}
         fontWeight={700}
         lineHeight={lineHeight[0]}
@@ -50,6 +51,7 @@ Subject.defaultProps = {
   bgColor: 'primary1',
   borderRadius: '3px',
   color: 'white',
+  fontFamily: 'secondary',
   fontSize: ['14px', '14px'],
   lineHeight: ['20px', '20px'],
   transform: 'none',
@@ -63,6 +65,7 @@ Subject.propTypes = {
   bgColor: PropTypes.string,
   borderRadius: PropTypes.string,
   color: PropTypes.string,
+  fontFamily: PropTypes.array,
   fontSize: PropTypes.array,
   lineHeight: PropTypes.array,
   mb: PropTypes.array,
