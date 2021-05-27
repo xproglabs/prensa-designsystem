@@ -46,7 +46,7 @@ Subtitle.defaultProps = {
 
 Subtitle.propTypes = {
   color: PropTypes.string,
-  fontFamily: PropTypes.array,
+  fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
   lineHeight: PropTypes.array,
   mb: PropTypes.array,

@@ -33,7 +33,7 @@ Tags.defaultProps = {
 
 Tags.propTypes = {
   fontSize: PropTypes.array,
-  fontWeight: PropTypes.array,
+  fontWeight: PropTypes.number,
   value: PropTypes.string
 };
 

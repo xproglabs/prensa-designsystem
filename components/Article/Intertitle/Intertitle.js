@@ -40,8 +40,8 @@ Intertitle.defaultProps = {
   color: 'neutral2',
   element: 'h3',
   fontFamily: 'primary',
-  fontWeight: 700,
   fontSize: ['32px', '32px'],
+  fontWeight: 700,
   lineHeight: ['110%', '110%'],
   mb: ['3', '3'],
   value: 'Assunto'
@@ -50,9 +50,9 @@ Intertitle.defaultProps = {
 Intertitle.propTypes = {
   color: PropTypes.string,
   element: PropTypes.string,
-  fontFamily: PropTypes.number,
+  fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
-  fontWeight: PropTypes.array,
+  fontWeight: PropTypes.number,
   lineHeight: PropTypes.array,
   mb: PropTypes.array,
   value: PropTypes.string

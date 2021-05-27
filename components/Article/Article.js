@@ -55,7 +55,7 @@ Article.propTypes = {
   citation: PropTypes.object,
   intertitle: PropTypes.object,
   maxWidth: PropTypes.string,
-  paragraph: PropTypes.string,
+  paragraph: PropTypes.object,
   subject: PropTypes.object,
   subtitle: PropTypes.object,
   tags: PropTypes.object,

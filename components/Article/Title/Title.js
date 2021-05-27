@@ -48,7 +48,7 @@ Title.defaultProps = {
 Title.propTypes = {
   color: PropTypes.string,
   fontSize: PropTypes.array,
-  fontWeight: PropTypes.array,
+  fontWeight: PropTypes.number,
   lineHeight: PropTypes.array,
   mb: PropTypes.array,
   value: PropTypes.string

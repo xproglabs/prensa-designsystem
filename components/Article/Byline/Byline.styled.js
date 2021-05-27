@@ -115,7 +115,7 @@ TimeEntry.propTypes = {
     PropTypes.string
   ]),
   color: PropTypes.string,
-  fontFamily: PropTypes.array,
+  fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
   lineHeight: PropTypes.array
 };

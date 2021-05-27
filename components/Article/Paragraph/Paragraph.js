@@ -49,9 +49,9 @@ Paragraph.defaultProps = {
 Paragraph.propTypes = {
   color: PropTypes.string,
   element: PropTypes.string,
-  fontFamily: PropTypes.number,
+  fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
-  fontWeight: PropTypes.array,
+  fontWeight: PropTypes.number,
   lineHeight: PropTypes.array,
   mb: PropTypes.array,
   value: PropTypes.string

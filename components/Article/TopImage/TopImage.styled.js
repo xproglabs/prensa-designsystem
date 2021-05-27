@@ -71,7 +71,7 @@ export const Subtitle = ({
 
 Subtitle.propTypes = {
   children: PropTypes.string,
-  fontFamily: PropTypes.array,
+  fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
   lineHeight: PropTypes.array
 };
