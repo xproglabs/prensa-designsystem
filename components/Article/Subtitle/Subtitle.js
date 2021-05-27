@@ -6,6 +6,7 @@ import Typography from '../../Typography';
 
 const Subtitle = ({
   color,
+  fontFamily,
   fontSize,
   lineHeight,
   mb,
@@ -22,7 +23,7 @@ const Subtitle = ({
         color={color}
         dangerouslySetInnerHTML={value}
         element='p'
-        fontFamily='secondary'
+        fontFamily={fontFamily}
         fontSize={fontSize[0]}
         lineHeight={lineHeight[0]}
         lg={{
@@ -37,6 +38,7 @@ const Subtitle = ({
 Subtitle.defaultProps = {
   color: 'neutral3',
   fontSize: ['18px', '18px'],
+  fontFamily: 'secondary',
   lineHeight: ['150%', '150%'],
   mb: ['2', '2'],
   value: 'A XPROG presta serviços para a Atex Brasil fornecendo mão de obra qualificada e gestão da implantação de seus projetos digitais. Serviços que se consolidaram em uma parceria entre empresas, agregando valor à consultoria entregue aos clientes da Atex Brasil.'
@@ -44,6 +46,7 @@ Subtitle.defaultProps = {
 
 Subtitle.propTypes = {
   color: PropTypes.string,
+  fontFamily: PropTypes.array,
   fontSize: PropTypes.array,
   lineHeight: PropTypes.array,
   mb: PropTypes.array,
