@@ -40,6 +40,7 @@ Byline.defaultProps = {
   },
   datetime: {
     color: 'neutral2',
+    fontFamily: 'secondary',
     fontSize: ['12px', '12px'],
     lineHeight: ['16px', '16px'],
     time_modified: '18 dias atrás',

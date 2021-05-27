@@ -91,12 +91,13 @@ export const TimeEntry = ({
   children,
   color,
   fontSize,
+  fontFamily,
   lineHeight
 }) => 
   <Typography 
     color={color}
     element='span'
-    fontFamily='secondary'
+    fontFamily={fontFamily}
     fontWeight={400}
     fontSize={fontSize[0]}
     lineHeight={lineHeight[0]}
@@ -114,6 +115,7 @@ TimeEntry.propTypes = {
     PropTypes.string
   ]),
   color: PropTypes.string,
+  fontFamily: PropTypes.array,
   fontSize: PropTypes.array,
   lineHeight: PropTypes.array
 };

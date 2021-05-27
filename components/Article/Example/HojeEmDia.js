@@ -8,6 +8,23 @@ const ArticleHJD = () => {
   return (
     <ThemeProvider theme={hojeemdia}>
       <Article
+        byline={{
+          author: {
+            color: 'neutral2',
+            fontFamily: 'primary',
+            fontSize: ['14px', '14px'],
+            lineHeight: ['16px', '16px'],
+            value: 'Luiz Augusto Barros'
+          },
+          datetime: {
+            color: 'neutral4',
+            fontFamily: 'primary',
+            fontSize: ['12px', '12px'],
+            lineHeight: ['16px', '16px'],
+            time_modified: '18 dias atrás',
+            time_published: '21/05/2021 às 23:20'
+          },
+        }}
         intertitle={{
           value: 'Título',
           fontFamily: 'primary'
@@ -28,14 +45,14 @@ const ArticleHJD = () => {
         subtitle={{
           fontFamily: 'primary',
           mb: ['4', '4'],
-          value: 'Valor já foi pago ao município e deverá ajudar cerca de 120 mil pessoas.'
+          value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra eleifend pellentesque. Suspendisse semper gravida fermentum. Integer pulvinar euismod hendrerit.'
         }}
         title={{
           color: 'neutral2',
           fontSize: ['38px', '62px'],
           fontWeight: 800,
           mb: ['2', '3'],
-          value: 'Adiamento das eleições para 15 e 29 de novembro é aprovado no Senado'
+          value: 'Almost before we knew it, we had left the ground.'
         }}
         topimage={{
           amp: false,
