@@ -7,6 +7,7 @@ import Typography from '../../Typography';
 const Title = ({
   color,
   fontSize,
+  fontWeight,
   lineHeight,
   mb,
   value
@@ -24,7 +25,7 @@ const Title = ({
         element='h1'
         fontFamily='primary'
         fontSize={fontSize[0]}
-        fontWeight={700}
+        fontWeight={fontWeight}
         lineHeight={lineHeight[0]}
         lg={{
           fontSize: fontSize[1],
@@ -38,6 +39,7 @@ const Title = ({
 Title.defaultProps = {
   color: 'neutral2',
   fontSize: ['38px', '56px'],
+  fontWeight: 700,
   lineHeight: ['110%', '110%'],
   mb: ['2', '3'],
   value: 'Atex Brasil e XPROG entregam produtos digitais acessados por milhões de internautas brasileiros'
@@ -46,6 +48,7 @@ Title.defaultProps = {
 Title.propTypes = {
   color: PropTypes.string,
   fontSize: PropTypes.array,
+  fontWeight: PropTypes.array,
   lineHeight: PropTypes.array,
   mb: PropTypes.array,
   value: PropTypes.string
