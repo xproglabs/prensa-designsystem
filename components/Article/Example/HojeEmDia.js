@@ -58,8 +58,8 @@ const ArticleHJD = () => {
           amp: false,
           image: true,
           caption: {
-            fontSize: ['14px', '14px'],
             fontFamily: 'primary',
+            fontSize: ['14px', '14px'],
             lineHeight: ['130%', '130%'],
             show: true,
             value: 'O advogado detalha que direitos afetados pela instalação do pedágio na Mogi-Dutra e Mogi-Bertioga / Divulgação/ PMMC',

@@ -52,6 +52,7 @@ SubtitleBox.propTypes = {
 
 export const Subtitle = ({
   children,
+  fontFamily,
   fontSize,
   lineHeight
 }) => 
@@ -59,7 +60,7 @@ export const Subtitle = ({
     color='neutral4'
     dangerouslySetInnerHTML={children}
     element="p"
-    fontFamily='secondary'
+    fontFamily={fontFamily}
     fontSize={fontSize[0]}
     lineHeight={lineHeight[0]}
     lg={{
@@ -70,6 +71,7 @@ export const Subtitle = ({
 
 Subtitle.propTypes = {
   children: PropTypes.string,
+  fontFamily: PropTypes.array,
   fontSize: PropTypes.array,
   lineHeight: PropTypes.array
 };

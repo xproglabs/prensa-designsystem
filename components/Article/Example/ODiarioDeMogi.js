@@ -48,6 +48,7 @@ const ArticleOM = () => {
           amp: false,
           image: true,
           caption: {
+            fontFamily: 'secondary',
             fontSize: ['14px', '14px'],
             lineHeight: ['130%', '130%'],
             show: true,
