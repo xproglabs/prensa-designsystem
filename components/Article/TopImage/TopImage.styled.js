@@ -27,6 +27,26 @@ Box.propTypes = {
   mb: PropTypes.array
 };
 
+export const BoxFeatured = ({
+  children,
+  value
+}) => 
+  <Block
+    custom={`
+      background-image: url('${value}');
+      background-repeat: no-repeat;
+      background-size: cover;
+    `}
+    height='100%'
+    width='100%'>
+    {children}
+  </Block>;
+
+BoxFeatured.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  value: PropTypes.string
+};
+
 export const SubtitleBox = ({
   children,
 }) => 

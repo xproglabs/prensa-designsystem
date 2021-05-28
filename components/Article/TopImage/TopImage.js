@@ -3,9 +3,28 @@ import React from 'react';
 
 import * as S from './TopImage.styled';
 
+const Container = ({children, featured, mb, value}) => {
+  if(featured)
+    return (
+      <S.BoxFeatured mb={mb} value={value} />
+    );
+  return (
+    <S.Box mb={mb}>
+      {children}
+    </S.Box>
+  );
+};
+Container.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  featured: PropTypes.bool,
+  mb: PropTypes.string,
+  value: PropTypes.string
+};
+
 const TopImage = ({
   amp,
   caption,
+  featured,
   image,
   mb,
   value
@@ -13,7 +32,7 @@ const TopImage = ({
   if(!image)
     return null;
   return (
-    <S.Box mb={mb}>
+    <Container featured={featured} mb={mb} value={value}>
       {amp ? (
         <amp-img
           alt={caption}
@@ -23,14 +42,19 @@ const TopImage = ({
             display: 'inline-flex',
             width: '100%'
           }}
-          height='320px'
-          width='640px'
+          height='640px'
+          width='1280px'
         />
       ):(
-        <img
-          alt={caption}
-          src={value}
-        />
+        !featured && (
+          <img
+            alt={caption.value}
+            src={value}
+            style={{
+              width: '100%'
+            }}
+          />
+        )
       )}
       {caption && caption.show && (
         <S.SubtitleBox>
@@ -42,12 +66,13 @@ const TopImage = ({
           </S.Subtitle>
         </S.SubtitleBox>
       )}
-    </S.Box>
+    </Container>
   );
 };
 
 TopImage.defaultProps = {
   amp: false,
+  featured: false,
   image: true,
   caption: {
     fontFamily: 'secondary',
@@ -62,6 +87,7 @@ TopImage.defaultProps = {
 
 TopImage.propTypes = {
   amp: PropTypes.bool,
+  featured: PropTypes.bool,
   image: PropTypes.bool,
   caption: PropTypes.object,
   mb: PropTypes.array,
