@@ -573,7 +573,7 @@ Block.propTypes = {
 };
 var Block$1 = styled.withTheme(Block);
 
-var Container$4 = function Container(_ref) {
+var Container$5 = function Container(_ref) {
   var children = _ref.children,
       maxWidth = _ref.maxWidth;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
@@ -582,19 +582,18 @@ var Container$4 = function Container(_ref) {
     lg: {
       custom: "max-width: ".concat(maxWidth, ";")
     },
-    mt: "2",
     width: "100%"
   }, children);
 };
-Container$4.propTypes = {
+Container$5.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
   maxWidth: PropTypes__default['default'].string
 };
 var Content$2 = function Content(_ref2) {
   var children = _ref2.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    px: "2",
-    width: "calc(100% - 32px)",
+    px: "3",
+    width: "calc(100% - 48px)",
     lg: {
       px: '0px',
       width: '100%'
@@ -604,19 +603,61 @@ var Content$2 = function Content(_ref2) {
 Content$2.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
-({
+var ContainerFeatured = function ContainerFeatured(_ref3) {
+  var children = _ref3.children;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    align: "column",
+    aligny: "bottom",
+    alignx: "center",
+    bgColor: "neutral2",
+    mb: "4",
+    width: "100%"
+  }, children);
+};
+ContainerFeatured.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
-});
-({
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
-});
-({
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
-});
-({
+};
+var ContentFeatured = function ContentFeatured(_ref4) {
+  var children = _ref4.children,
+      maxWidth = _ref4.maxWidth;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    alignx: "left",
+    custom: "\n      max-width: ".concat(maxWidth, ";\n      position: absolute;\n    "),
+    px: "3",
+    pb: "2",
+    width: "calc(100% - 48px)"
+  }, children);
+};
+ContentFeatured.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
   maxWidth: PropTypes__default['default'].string
-});
+};
+var ContentImage = function ContentImage(_ref5) {
+  var children = _ref5.children;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    custom: "\n      opacity: 0.5;\n    ",
+    lg: {
+      height: '520px'
+    },
+    height: "420px",
+    width: "100%"
+  }, children);
+};
+ContentImage.propTypes = {
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
+};
+var MaxWidth = function MaxWidth(_ref6) {
+  var children = _ref6.children,
+      maxWidth = _ref6.maxWidth;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    custom: "\n      max-width: ".concat(maxWidth, ";\n    "),
+    width: "100%"
+  }, children);
+};
+MaxWidth.propTypes = {
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  maxWidth: PropTypes__default['default'].string
+};
 var Page = function Page(_ref7) {
   var children = _ref7.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
@@ -1473,7 +1514,7 @@ Author.propTypes = {
   fontSize: PropTypes__default['default'].array,
   lineHeight: PropTypes__default['default'].array
 };
-var Container$3 = function Container(_ref2) {
+var Container$4 = function Container(_ref2) {
   var children = _ref2.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     width: "100%",
@@ -1483,7 +1524,7 @@ var Container$3 = function Container(_ref2) {
     }
   }, children);
 };
-Container$3.propTypes = {
+Container$4.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 var Content$1 = function Content(_ref3) {
@@ -1552,7 +1593,7 @@ var Byline = function Byline(_ref) {
       customContent = _ref.customContent,
       datetime = _ref.datetime,
       medias = _ref.medias;
-  return /*#__PURE__*/React__default['default'].createElement(Container$3, null, /*#__PURE__*/React__default['default'].createElement(Content$1, null, /*#__PURE__*/React__default['default'].createElement(DateLine, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, null, /*#__PURE__*/React__default['default'].createElement(Content$1, null, /*#__PURE__*/React__default['default'].createElement(DateLine, {
     custom: customContent
   }, /*#__PURE__*/React__default['default'].createElement(Author, author, author.value), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Publicado em ", datetime.time_published), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Atualizado h\xE1 ", datetime.time_modified)), /*#__PURE__*/React__default['default'].createElement(Medias, medias)));
 };
@@ -1837,7 +1878,7 @@ Paragraph.propTypes = {
   value: PropTypes__default['default'].string
 };
 
-var Container$2 = function Container(_ref) {
+var Container$3 = function Container(_ref) {
   var children = _ref.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "column",
@@ -1848,7 +1889,7 @@ var Container$2 = function Container(_ref) {
     }
   }, children);
 };
-Container$2.propTypes = {
+Container$3.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 var Tag = function Tag(_ref2) {
@@ -1870,7 +1911,7 @@ var Tags = function Tags(_ref) {
   var fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
       items = _ref.items;
-  return /*#__PURE__*/React__default['default'].createElement(Container$2, null, lodash.map(items, function (item, key) {
+  return /*#__PURE__*/React__default['default'].createElement(Container$3, null, lodash.map(items, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Tag, {
       key: key
     }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
@@ -2177,11 +2218,10 @@ var TextBody = function TextBody(_ref) {
     // intervention_readmore = false;
     // intervention_status = false;
     if (value.length > 50) ;
-
-    return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(Paragraph, _extends({}, paragraph, {
+    return /*#__PURE__*/React__default['default'].createElement(Paragraph, _extends({}, paragraph, {
       key: key,
       value: value
-    })));
+    }));
   };
 
   var render_cite = function render_cite(key, value) {
@@ -2293,8 +2333,21 @@ Box.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
   mb: PropTypes__default['default'].array
 };
-var SubtitleBox = function SubtitleBox(_ref2) {
-  var children = _ref2.children;
+var BoxFeatured = function BoxFeatured(_ref2) {
+  var children = _ref2.children,
+      value = _ref2.value;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    custom: "\n      background-image: url('".concat(value, "');\n      background-repeat: no-repeat;\n      background-size: cover;\n    "),
+    height: "100%",
+    width: "100%"
+  }, children);
+};
+BoxFeatured.propTypes = {
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  value: PropTypes__default['default'].string
+};
+var SubtitleBox = function SubtitleBox(_ref3) {
+  var children = _ref3.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     bgColor: "neutral9",
     px: 3,
@@ -2313,11 +2366,11 @@ SubtitleBox.propTypes = {
   py: PropTypes__default['default'].array,
   width: PropTypes__default['default'].array
 };
-var Subtitle = function Subtitle(_ref3) {
-  var children = _ref3.children,
-      fontFamily = _ref3.fontFamily,
-      fontSize = _ref3.fontSize,
-      lineHeight = _ref3.lineHeight;
+var Subtitle = function Subtitle(_ref4) {
+  var children = _ref4.children,
+      fontFamily = _ref4.fontFamily,
+      fontSize = _ref4.fontSize,
+      lineHeight = _ref4.lineHeight;
   return /*#__PURE__*/React__default['default'].createElement(Typography$2, {
     color: "neutral4",
     dangerouslySetInnerHTML: children,
@@ -2338,15 +2391,45 @@ Subtitle.propTypes = {
   lineHeight: PropTypes__default['default'].array
 };
 
-var TopImage = function TopImage(_ref) {
-  var amp = _ref.amp,
-      caption = _ref.caption,
-      image = _ref.image,
+var Container$2 = function Container(_ref) {
+  var children = _ref.children,
+      featured = _ref.featured,
       mb = _ref.mb,
       value = _ref.value;
-  if (!image) return null;
+  if (featured) return /*#__PURE__*/React__default['default'].createElement(BoxFeatured, {
+    mb: mb[0],
+    lg: {
+      mb: mb[1]
+    },
+    value: value
+  });
   return /*#__PURE__*/React__default['default'].createElement(Box, {
-    mb: mb
+    mb: mb[0],
+    lg: {
+      mb: mb[1]
+    }
+  }, children);
+};
+
+Container$2.propTypes = {
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  featured: PropTypes__default['default'].bool,
+  mb: PropTypes__default['default'].array,
+  value: PropTypes__default['default'].string
+};
+
+var TopImage = function TopImage(_ref2) {
+  var amp = _ref2.amp,
+      caption = _ref2.caption,
+      featured = _ref2.featured,
+      image = _ref2.image,
+      mb = _ref2.mb,
+      value = _ref2.value;
+  if (!image) return null;
+  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+    featured: featured,
+    mb: mb,
+    value: value
   }, amp ? /*#__PURE__*/React__default['default'].createElement("amp-img", {
     alt: caption,
     src: value,
@@ -2355,11 +2438,14 @@ var TopImage = function TopImage(_ref) {
       display: 'inline-flex',
       width: '100%'
     },
-    height: "320px",
-    width: "640px"
-  }) : /*#__PURE__*/React__default['default'].createElement("img", {
-    alt: caption,
-    src: value
+    height: "640px",
+    width: "1280px"
+  }) : !featured && /*#__PURE__*/React__default['default'].createElement("img", {
+    alt: caption.value,
+    src: value,
+    style: {
+      width: '100%'
+    }
   }), caption && caption.show && /*#__PURE__*/React__default['default'].createElement(SubtitleBox, null, /*#__PURE__*/React__default['default'].createElement(Subtitle, {
     fontFamily: caption.fontFamily,
     fontSize: caption.fontSize,
@@ -2369,6 +2455,7 @@ var TopImage = function TopImage(_ref) {
 
 TopImage.defaultProps = {
   amp: false,
+  featured: false,
   image: true,
   caption: {
     fontFamily: 'secondary',
@@ -2382,6 +2469,7 @@ TopImage.defaultProps = {
 };
 TopImage.propTypes = {
   amp: PropTypes__default['default'].bool,
+  featured: PropTypes__default['default'].bool,
   image: PropTypes__default['default'].bool,
   caption: PropTypes__default['default'].object,
   mb: PropTypes__default['default'].array,
@@ -2392,8 +2480,9 @@ var Article = function Article(_ref) {
   var bodyWidth = _ref.bodyWidth,
       byline = _ref.byline,
       citation = _ref.citation,
+      featured = _ref.featured,
+      headWidth = _ref.headWidth,
       intertitle = _ref.intertitle,
-      maxWidth = _ref.maxWidth,
       paragraph = _ref.paragraph,
       subject = _ref.subject,
       subtitle = _ref.subtitle,
@@ -2401,28 +2490,35 @@ var Article = function Article(_ref) {
       tags = _ref.tags,
       textbody = _ref.textbody,
       topimage = _ref.topimage;
-  return /*#__PURE__*/React__default['default'].createElement(Page, null, /*#__PURE__*/React__default['default'].createElement(Container$4, {
-    maxWidth: maxWidth
-  }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$1, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline)), /*#__PURE__*/React__default['default'].createElement(TopImage, topimage), /*#__PURE__*/React__default['default'].createElement(TextBody, {
+  return /*#__PURE__*/React__default['default'].createElement(Page, null, /*#__PURE__*/React__default['default'].createElement(Container$5, null, featured && featured.enabled ? /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(ContainerFeatured, null, /*#__PURE__*/React__default['default'].createElement(ContentImage, null, /*#__PURE__*/React__default['default'].createElement(TopImage, topimage)), /*#__PURE__*/React__default['default'].createElement(ContentFeatured, {
+    maxWidth: headWidth
+  }, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$1, subtitle))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
+    maxWidth: headWidth
+  }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Byline, byline)))) : /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
+    maxWidth: headWidth
+  }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$1, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline), /*#__PURE__*/React__default['default'].createElement(TopImage, topimage))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
+    maxWidth: bodyWidth
+  }, /*#__PURE__*/React__default['default'].createElement(TextBody, {
     bodyWidth: bodyWidth,
     content: textbody,
     intertitle: intertitle,
     citation: citation,
     paragraph: paragraph,
     tags: tags
-  })));
+  }))));
 };
 
 Article.defaultProps = {
   bodyWidth: '768px',
-  maxWidth: '1016px'
+  headWidth: '1016px'
 };
 Article.propTypes = {
   bodyWidth: PropTypes__default['default'].string,
   byline: PropTypes__default['default'].object,
   citation: PropTypes__default['default'].object,
+  featured: PropTypes__default['default'].object,
+  headWidth: PropTypes__default['default'].string,
   intertitle: PropTypes__default['default'].object,
-  maxWidth: PropTypes__default['default'].string,
   paragraph: PropTypes__default['default'].object,
   subject: PropTypes__default['default'].object,
   subtitle: PropTypes__default['default'].object,
