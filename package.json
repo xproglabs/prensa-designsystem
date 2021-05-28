@@ -1,6 +1,6 @@
 {
   "name": "prensa",
-  "version": "1.5.5",
+  "version": "1.5.7",
   "description": "Prensa Design System",
   "main": "/",
   "author": "XPROG",
@@ -8,14 +8,14 @@
   "repository": "https://github.com/xproglabs/prensa-designsystem.git",
   "peerDependencies": {
     "date-fns": "2.x",
+    "html2json": "^1.0.2",
     "lodash": "^4.x",
     "prop-types": "^15.x",
-    "html2json": "^1.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-input-mask": "^3.0.0-alpha.2",
     "sass": "^1.26.10",
-    "styled-components": "^5.x",
-    "react-input-mask": "^3.0.0-alpha.2"
+    "styled-components": "^5.x"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
