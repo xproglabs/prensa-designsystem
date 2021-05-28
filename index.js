@@ -6,6 +6,7 @@ var PropTypes = require('prop-types');
 var React = require('react');
 var styled = require('styled-components');
 var lodash = require('lodash');
+var html2json = require('html2json');
 var InputMask = require('react-input-mask');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -1868,25 +1869,29 @@ Tag.propTypes = {
 var Tags = function Tags(_ref) {
   var fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
-      value = _ref.value;
-  return /*#__PURE__*/React__default['default'].createElement(Container$2, null, /*#__PURE__*/React__default['default'].createElement(Tag, null, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
-    color: "primary1",
-    element: "span",
-    fontFamily: "secondary",
-    fontSize: fontSize[0],
-    fontWeight: fontWeight
-  }, value)));
+      items = _ref.items;
+  return /*#__PURE__*/React__default['default'].createElement(Container$2, null, lodash.map(items, function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement(Tag, {
+      key: key
+    }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+      color: "primary1",
+      element: "span",
+      fontFamily: "secondary",
+      fontSize: fontSize[0],
+      fontWeight: fontWeight
+    }, item));
+  }));
 };
 
 Tags.defaultProps = {
   fontWeight: 700,
   fontSize: ['14px'],
-  value: 'NOME DA TAG'
+  items: []
 };
 Tags.propTypes = {
   fontSize: PropTypes__default['default'].array,
   fontWeight: PropTypes__default['default'].number,
-  value: PropTypes__default['default'].string
+  items: PropTypes__default['default'].array
 };
 
 var Body = function Body(_ref) {
@@ -1912,30 +1917,319 @@ Body.propTypes = {
   color: PropTypes__default['default'].string
 });
 
+var parse_content = function parse_content(content) {
+  var bodyItems = [];
+  var tagItems = [];
+
+  var renderChildValue = function renderChildValue(child) {
+    return child && child.length > 0 && child[0].text;
+  };
+
+  var switchNode = function switchNode(obj) {
+    var attr = obj.attr,
+        child = obj.child,
+        node = obj.node,
+        tag = obj.tag,
+        text = obj.text;
+
+    if (tag === 'p' || tag === 'br') {
+      tagItems.push({
+        'type': 'p',
+        'value': ''
+      });
+    }
+
+    if (tag === 'strong') {
+      tagItems.push({
+        'type': 'text',
+        'value': "<strong>".concat(renderChildValue(child), "</strong>")
+      });
+      return true;
+    }
+
+    if (tag === 'em') {
+      tagItems.push({
+        'type': 'text',
+        'value': "<em>".concat(renderChildValue(child), "</em>")
+      });
+      return true;
+    }
+
+    if (tag === 'cite') {
+      tagItems.push({
+        'type': 'cite',
+        'value': "".concat(renderChildValue(child))
+      });
+      return true;
+    }
+
+    if (tag === 'h2') {
+      tagItems.push({
+        'type': 'h2',
+        'value': "".concat(renderChildValue(child))
+      });
+      return true;
+    }
+
+    if (node === 'text') {
+      if (text && text !== '') {
+        tagItems.push({
+          'type': 'text',
+          'value': text
+        });
+      }
+    } // render image
+
+
+    if (tag === 'a' && attr["class"] && attr["class"] === 'p-smartembed') {
+      var childImage = lodash.find(child, {
+        tag: 'img'
+      });
+
+      if (childImage) {
+        var subtitle = childImage && childImage.attr && childImage.attr['alt'] ? childImage.attr['alt'].join(' ') : '';
+        subtitle = subtitle && subtitle !== undefined && subtitle !== 'undefined' ? subtitle : '';
+        var propsImage = {
+          'contentId': attr['data-onecms-id'].replace('policy:', ''),
+          'caption': subtitle,
+          'byline': ''
+        };
+        tagItems.push({
+          type: 'Image',
+          value: propsImage
+        });
+        return true;
+      } // embeds
+
+    } else if (tag === 'img' && attr && attr.src && attr.src.startsWith('/legacy/image')) {
+      // let source = attr.src.startsWith('/legacy/image')
+      // if(source) {
+      tagItems.push({
+        type: 'Image',
+        value: {
+          'image-legacy': attr.src
+        }
+      });
+      return true; // }
+    } else if (tag === 'a' && attr.href && !attr["class"] && attr.href !== '') {
+      if (attr['href'].indexOf('facebook.com') > -1) {
+        tagItems.push({
+          type: 'Facebook',
+          value: attr['href']
+        });
+        return true;
+      } else if (attr['href'].indexOf('docs.google.com/forms') > -1) {
+        tagItems.push({
+          type: 'GoogleForm',
+          value: attr['href']
+        });
+        return true;
+      } else if (attr['href'].indexOf('instagram.com') > -1) {
+        tagItems.push({
+          type: 'Instagram',
+          value: attr['href']
+        });
+        return true;
+      } else if (attr['href'].indexOf('twitter.com') > -1) {
+        tagItems.push({
+          type: 'Tweet',
+          value: attr['href']
+        });
+        return true;
+      } else if (attr['href'].indexOf('youtube.com') > -1) {
+        tagItems.push({
+          type: 'Youtube',
+          value: attr['href']
+        });
+        return true;
+      } else {
+        var child_string = renderChildValue(child) || attr.href;
+        tagItems.push({
+          'type': 'text',
+          'value': "<a href=\"".concat(attr.href, "\" target=\"_blank\">").concat(child_string, "</a>")
+        });
+        return true;
+      }
+    }
+
+    var child_len = child && child.length;
+
+    if (child && child_len > 0) {
+      lodash.map(child, function (item) {
+        switchNode(item);
+      });
+    }
+  }; // convert html
+
+
+  var parsed = content.replace(/(\r\n|\n|\r)/gm, '');
+  parsed = html2json.html2json(parsed);
+  var elements = lodash.filter(parsed.child, {
+    node: 'element'
+  });
+  elements = elements.size === 0 || {
+    type: 'p',
+    value: parsed
+  }; // parse elements
+
+  lodash.map(elements, function (item) {
+    return switchNode(item);
+  }); // render
+
+  var p_text = ''; // discard text empty
+
+  var discard_text = [' ', '&nbsp;'];
+
+  var add_text = function add_text(value) {
+    var invalid_text = discard_text.includes(value);
+    var is_valid = value && value !== '' && value !== ' ' && !invalid_text;
+
+    if (is_valid) {
+      bodyItems.push({
+        type: 'Paragraph',
+        value: value
+      });
+      p_text = '';
+    }
+
+    return is_valid;
+  };
+
+  lodash.map(tagItems, function (_ref) {
+    var type = _ref.type,
+        value = _ref.value;
+
+    if (type !== 'text') {
+      var _added = add_text(p_text);
+
+      if (_added) {
+        p_text = '';
+      }
+    }
+
+    switch (type) {
+      case 'cite':
+        if (value && value !== '') {
+          bodyItems.push({
+            type: 'Cite',
+            value: value
+          });
+        }
+
+        break;
+
+      case 'h2':
+        if (value && value !== '') {
+          bodyItems.push({
+            type: 'Intertitle',
+            value: value
+          });
+        }
+
+        break;
+
+      case 'p':
+        // insert if exist and clean
+        break;
+
+      case 'text':
+        p_text = "".concat(p_text).concat(value);
+        break;
+
+      default:
+        bodyItems.push({
+          type: type,
+          value: value
+        });
+        break;
+    }
+  });
+  var added = add_text(p_text);
+
+  if (added) {
+    p_text = '';
+  }
+
+  return bodyItems;
+};
+
 var TextBody = function TextBody(_ref) {
   var bodyWidth = _ref.bodyWidth,
       citation = _ref.citation,
+      content = _ref.content,
       intertitle = _ref.intertitle,
       paragraph = _ref.paragraph,
-      tags = _ref.tags,
-      value = _ref.value;
+      tags = _ref.tags;
+  if (!content) return null;
+  var body_items = parse_content(content);
+
+  var render_image = function render_image(key, value) {
+    if (!value) return null;
+    return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+      custom: "max-width: 726px;",
+      mb: 3,
+      key: key,
+      width: "100%"
+    });
+  };
+
+  var render_paragraph = function render_paragraph(key, value) {
+    // intervention_readmore = false;
+    // intervention_status = false;
+    if (value.length > 50) ;
+
+    return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(Paragraph, _extends({}, paragraph, {
+      key: key,
+      value: value
+    })));
+  };
+
+  var render_cite = function render_cite(key, value) {
+    return /*#__PURE__*/React__default['default'].createElement(Citation, _extends({}, citation, {
+      key: key,
+      value: value
+    }));
+  };
+
+  var render_intertitle = function render_intertitle(key, value) {
+    return /*#__PURE__*/React__default['default'].createElement(Intertitle, _extends({}, intertitle, {
+      key: key,
+      value: value
+    }));
+  };
+
   return /*#__PURE__*/React__default['default'].createElement(Body, {
     bodyWidth: bodyWidth
-  }, /*#__PURE__*/React__default['default'].createElement(Intertitle, intertitle), /*#__PURE__*/React__default['default'].createElement(Paragraph, paragraph), /*#__PURE__*/React__default['default'].createElement(Intertitle, intertitle), /*#__PURE__*/React__default['default'].createElement(Paragraph, _extends({}, paragraph, {
-    value: value
-  })), /*#__PURE__*/React__default['default'].createElement(Paragraph, paragraph), /*#__PURE__*/React__default['default'].createElement(Citation, citation), /*#__PURE__*/React__default['default'].createElement(Paragraph, paragraph), /*#__PURE__*/React__default['default'].createElement(Tags, tags));
+  }, lodash.map(body_items, function (_ref2, key) {
+    var type = _ref2.type,
+        value = _ref2.value;
+
+    switch (type) {
+      case 'Cite':
+        return render_cite(key, value);
+
+      case 'Image':
+        return render_image(key, value);
+
+      case 'Intertitle':
+        return render_intertitle(key, value);
+
+      case 'Paragraph':
+        return render_paragraph(key, value);
+
+      default:
+        return /*#__PURE__*/React__default['default'].createElement("pre", null, type);
+    }
+  }), /*#__PURE__*/React__default['default'].createElement(Tags, tags));
 };
 
-TextBody.defaultProps = {
-  value: 'Em março de 1937, a família foi parar na Fazenda São Martinho, em Ribeirão Preto, para o cultivo de café. Ficou por lá até janeiro  de 1940, quando Fumio, então com 6 anos, veio para Santo André, na região do ABC, onde ele aprendeu as primeiras letras.'
-};
 TextBody.propTypes = {
   bodyWidth: PropTypes__default['default'].string,
+  content: PropTypes__default['default'].string,
   citation: PropTypes__default['default'].object,
   intertitle: PropTypes__default['default'].object,
   paragraph: PropTypes__default['default'].object,
-  tags: PropTypes__default['default'].object,
-  value: PropTypes__default['default'].string
+  tags: PropTypes__default['default'].object
 };
 
 var Title = function Title(_ref) {
@@ -2105,11 +2399,13 @@ var Article = function Article(_ref) {
       subtitle = _ref.subtitle,
       title = _ref.title,
       tags = _ref.tags,
+      textbody = _ref.textbody,
       topimage = _ref.topimage;
   return /*#__PURE__*/React__default['default'].createElement(Page, null, /*#__PURE__*/React__default['default'].createElement(Container$4, {
     maxWidth: maxWidth
   }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$1, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline)), /*#__PURE__*/React__default['default'].createElement(TopImage, topimage), /*#__PURE__*/React__default['default'].createElement(TextBody, {
     bodyWidth: bodyWidth,
+    content: textbody,
     intertitle: intertitle,
     citation: citation,
     paragraph: paragraph,
@@ -2131,6 +2427,7 @@ Article.propTypes = {
   subject: PropTypes__default['default'].object,
   subtitle: PropTypes__default['default'].object,
   tags: PropTypes__default['default'].object,
+  textbody: PropTypes__default['default'].string,
   title: PropTypes__default['default'].object,
   topimage: PropTypes__default['default'].object
 };
