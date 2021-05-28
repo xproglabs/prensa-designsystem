@@ -6,10 +6,20 @@ import * as S from './TopImage.styled';
 const Container = ({children, featured, mb, value}) => {
   if(featured)
     return (
-      <S.BoxFeatured mb={mb} value={value} />
+      <S.BoxFeatured 
+        mb={mb[0]}
+        lg={{
+          mb: mb[1]
+        }}
+        value={value} 
+      />
     );
   return (
-    <S.Box mb={mb}>
+    <S.Box 
+      mb={mb[0]}
+      lg={{
+        mb: mb[1]
+      }}>
       {children}
     </S.Box>
   );
@@ -17,7 +27,7 @@ const Container = ({children, featured, mb, value}) => {
 Container.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   featured: PropTypes.bool,
-  mb: PropTypes.string,
+  mb: PropTypes.array,
   value: PropTypes.string
 };
 
