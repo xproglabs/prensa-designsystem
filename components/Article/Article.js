@@ -13,8 +13,9 @@ const Article = ({
   bodyWidth,
   byline,
   citation,
+  featured,
+  headWidth,
   intertitle,
-  maxWidth,
   paragraph,
   subject,
   subtitle,
@@ -25,22 +26,45 @@ const Article = ({
 }) => {
   return (
     <S.Page>
-      <S.Container maxWidth={maxWidth}>
-        <S.Content>
-          <Subject {...subject} />
-          <Title {...title} />
-          <Subtitle {...subtitle} />
-          <Byline {...byline} />
-        </S.Content>
-        <TopImage {...topimage} />
-        <TextBody
-          bodyWidth={bodyWidth}
-          content={textbody}
-          intertitle={intertitle}
-          citation={citation}
-          paragraph={paragraph}
-          tags={tags}
-        />
+      <S.Container>
+        {featured && featured.enabled ?
+          <>
+            <S.ContainerFeatured>
+              <S.ContentImage>
+                <TopImage {...topimage} />
+              </S.ContentImage>
+              <S.ContentFeatured maxWidth={headWidth}>
+                <Subject {...subject} />
+                <Title {...title} />
+                <Subtitle {...subtitle} />
+              </S.ContentFeatured>
+            </S.ContainerFeatured>
+            <S.MaxWidth maxWidth={headWidth}>
+              <S.Content>
+                <Byline {...byline} />
+              </S.Content>
+            </S.MaxWidth>
+          </> :
+          <S.MaxWidth maxWidth={headWidth}>
+            <S.Content>
+              <Subject {...subject} />
+              <Title {...title} />
+              <Subtitle {...subtitle} />
+              <Byline {...byline} />
+              <TopImage {...topimage} />
+            </S.Content>
+          </S.MaxWidth>
+        }
+        <S.MaxWidth maxWidth={bodyWidth}>
+          <TextBody
+            bodyWidth={bodyWidth}
+            content={textbody}
+            intertitle={intertitle}
+            citation={citation}
+            paragraph={paragraph}
+            tags={tags}
+          />
+        </S.MaxWidth>
       </S.Container>
     </S.Page>
   );
@@ -48,15 +72,16 @@ const Article = ({
 
 Article.defaultProps = {
   bodyWidth: '768px',
-  maxWidth: '1016px'
+  headWidth: '1016px'
 };
 
 Article.propTypes = {
   bodyWidth: PropTypes.string,
   byline: PropTypes.object,
   citation: PropTypes.object,
+  featured: PropTypes.object,
+  headWidth: PropTypes.string,
   intertitle: PropTypes.object,
-  maxWidth: PropTypes.string,
   paragraph: PropTypes.object,
   subject: PropTypes.object,
   subtitle: PropTypes.object,

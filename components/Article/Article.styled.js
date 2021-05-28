@@ -13,7 +13,6 @@ export const Container = ({
     lg={{
       custom: `max-width: ${maxWidth};`
     }}
-    mt='2'
     width='100%'>
     {children}
   </Block>;
@@ -25,8 +24,8 @@ Container.propTypes = {
 
 export const Content = ({children}) => 
   <Block
-    px='2'
-    width='calc(100% - 32px)'
+    px='3'
+    width='calc(100% - 48px)'
     lg={{
       px: '0px',
       width: '100%'
@@ -44,7 +43,6 @@ export const ContainerFeatured = ({children}) =>
     aligny='bottom'
     alignx='center'
     bgColor='neutral2'
-    mt='140px'
     mb='4'
     width='100%'>
     {children}
@@ -54,24 +52,22 @@ ContainerFeatured.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
   
-export const ContentFeatured = ({children}) => 
+export const ContentFeatured = ({children, maxWidth}) => 
   <Block
     alignx='left'
     custom={`
-      max-width: 1008px;
+      max-width: ${maxWidth};
       position: absolute;
     `}
-    lg={{
-      mb: 6
-    }}
-    px='2'
+    px='3'
     pb='2'
-    width='calc(100% - 32px)'>
+    width='calc(100% - 48px)'>
     {children}
   </Block>;
 
 ContentFeatured.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  maxWidth: PropTypes.string
 };
 
 export const ContentImage = ({children}) => 
@@ -91,7 +87,7 @@ ContentImage.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
-export const MaxW = ({
+export const MaxWidth = ({
   children, 
   maxWidth
 }) => 
@@ -99,15 +95,11 @@ export const MaxW = ({
     custom={`
       max-width: ${maxWidth};
     `}
-    lg={{
-      px: '0px'
-    }}
-    px='2'
-    width='calc(100% - 32px)'>
+    width='100%'>
     {children}
   </Block>;
 
-MaxW.propTypes = {
+MaxWidth.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   maxWidth: PropTypes.string
 };
