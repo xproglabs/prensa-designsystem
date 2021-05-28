@@ -50,14 +50,12 @@ const TextBody = ({
         }
       }
     }
+    {/* {intervention_readmore && 
+      <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
+    {intervention_status && 
+      <AdsPlaceholder />} */}
     return (
-      <>
-        <Paragraph {...paragraph} key={key} value={value} />
-        {/* {intervention_readmore && 
-          <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
-        {intervention_status && 
-          <AdsPlaceholder />} */}
-      </>
+      <Paragraph {...paragraph} key={key} value={value} />
     );
   };
   const render_cite = (key, value) =>
