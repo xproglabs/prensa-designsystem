@@ -51,8 +51,8 @@ const Article = ({
               <Title {...title} />
               <Subtitle {...subtitle} />
               <Byline {...byline} />
-              <TopImage {...topimage} />
             </S.Content>
+            <TopImage {...topimage} />
           </S.MaxWidth>
         }
         <S.MaxWidth maxWidth={bodyWidth}>

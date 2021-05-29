@@ -12,6 +12,7 @@ const Subject = ({
   fontSize,
   lineHeight,
   mb,
+  mt,
   px,
   py,
   transform,
@@ -24,10 +25,12 @@ const Subject = ({
         border-radius: ${borderRadius};
       `}
       mb={mb[0]}
+      mt={mt[0]}
       px={px}
       py={py}
       lg={{
-        mb: mb[1]
+        mb: mb[1],
+        mt: mt[1]
       }}>
       <Typography 
         color={color}
@@ -56,6 +59,7 @@ Subject.defaultProps = {
   lineHeight: ['20px', '20px'],
   transform: 'none',
   mb: ['1', '2'],
+  mt: ['2', '4'],
   px: '2',
   py: '4px',
   value: 'MÍDIA DIGITAL'
@@ -69,6 +73,7 @@ Subject.propTypes = {
   fontSize: PropTypes.array,
   lineHeight: PropTypes.array,
   mb: PropTypes.array,
+  mt: PropTypes.array,
   px: PropTypes.string,
   py: PropTypes.string,
   transform: PropTypes.string,
