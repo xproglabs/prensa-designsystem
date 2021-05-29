@@ -5,7 +5,7 @@ import {theme as diariodaregiao} from '../../../styles/demo/diariodaregiao';
 import Article from '../Article';
 
 const ArticleDR = () => {
-  const isFeatured = true;
+  const isFeatured = false;
   return (
     <ThemeProvider theme={diariodaregiao}>
       <Article
