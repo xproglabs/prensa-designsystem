@@ -1633,6 +1633,7 @@ var Subject$1 = function Subject(_ref) {
       fontSize = _ref.fontSize,
       lineHeight = _ref.lineHeight,
       mb = _ref.mb,
+      mt = _ref.mt,
       px = _ref.px,
       py = _ref.py,
       transform = _ref.transform,
@@ -1641,10 +1642,12 @@ var Subject$1 = function Subject(_ref) {
     bgColor: bgColor,
     custom: "\n        border-radius: ".concat(borderRadius, ";\n      "),
     mb: mb[0],
+    mt: mt[0],
     px: px,
     py: py,
     lg: {
-      mb: mb[1]
+      mb: mb[1],
+      mt: mt[1]
     }
   }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
     color: color,
@@ -1671,6 +1674,7 @@ Subject$1.defaultProps = {
   lineHeight: ['20px', '20px'],
   transform: 'none',
   mb: ['1', '2'],
+  mt: ['2', '4'],
   px: '2',
   py: '4px',
   value: 'MÍDIA DIGITAL'
@@ -1683,6 +1687,7 @@ Subject$1.propTypes = {
   fontSize: PropTypes__default['default'].array,
   lineHeight: PropTypes__default['default'].array,
   mb: PropTypes__default['default'].array,
+  mt: PropTypes__default['default'].array,
   px: PropTypes__default['default'].string,
   py: PropTypes__default['default'].string,
   transform: PropTypes__default['default'].string,
@@ -2496,7 +2501,7 @@ var Article = function Article(_ref) {
     maxWidth: headWidth
   }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Byline, byline)))) : /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: headWidth
-  }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$1, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline), /*#__PURE__*/React__default['default'].createElement(TopImage, topimage))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
+  }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$1, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline)), /*#__PURE__*/React__default['default'].createElement(TopImage, topimage)), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: bodyWidth
   }, /*#__PURE__*/React__default['default'].createElement(TextBody, {
     bodyWidth: bodyWidth,
