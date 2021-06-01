@@ -19,6 +19,10 @@ const parse_content = (content) => {
       tagItems.push({'type': 'text', 'value': `<strong>${renderChildValue(child)}</strong>`});
       return true;
     }
+    if(tag === 'u') {
+      tagItems.push({'type': 'text', 'value': `<u>${renderChildValue(child)}</u>`});
+      return true;
+    }
     if(tag === 'em') {
       tagItems.push({'type': 'text', 'value': `<em>${renderChildValue(child)}</em>`});
       return true;
@@ -37,10 +41,6 @@ const parse_content = (content) => {
     }
     if(tag === 'h4') {
       tagItems.push({'type': 'h4', 'value': `${renderChildValue(child)}`});
-      return true;
-    }
-    if(tag === 'u') {
-      tagItems.push({'type': 'u', 'value': `${renderChildValue(child)}`});
       return true;
     }
     if(node === 'text') {
