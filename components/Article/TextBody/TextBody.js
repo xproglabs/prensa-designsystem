@@ -1,6 +1,7 @@
-import {map} from 'lodash';
+import {get, map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
+import {withTheme} from 'styled-components';
 
 import Block from '../../Block';
 import Citation from '../Citation/Citation';
@@ -12,16 +13,18 @@ import Tags from '../Tags/Tags';
 import * as S from './TextBody.styled';
 import {parse_content} from './TextBodyParser';
 
-const TextBody = ({
-  bodyWidth,
-  citation,
-  content,
-  heading2,
-  heading3,
-  heading4,
-  paragraph,
-  tags
-}) => {
+const TextBody = (props) => {
+  const {
+    bodyWidth,
+    citation,
+    content,
+    heading2,
+    heading3,
+    heading4,
+    hyperlink,
+    paragraph,
+    tags
+  } = props;
   if (!content) return null;
   let readmore = [];
   let intervention_amount = 3;
@@ -62,8 +65,15 @@ const TextBody = ({
       <Paragraph {...paragraph} key={key} value={value} />
     );
   };
+
+  const get_hyperlink_color = (color = 'primary1') => 
+    get(props, `theme.colors.${color}`, '');
+  
   return (
-    <S.Body bodyWidth={bodyWidth}>
+    <S.Body
+      bodyWidth={bodyWidth}
+      hyperlinkColor={get_hyperlink_color(hyperlink)}
+    >
       {(
         map(body_items, ({type, value}, key) => {
           switch(type) {
@@ -122,8 +132,9 @@ TextBody.propTypes = {
   heading2: PropTypes.object,
   heading3: PropTypes.object,
   heading4: PropTypes.object,
+  hyperlink: PropTypes.string,
   paragraph: PropTypes.object,
   tags: PropTypes.object
 };
 
-export default TextBody;
+export default withTheme(TextBody);

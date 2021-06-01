@@ -24,6 +24,7 @@ const ArticleDR = () => {
           mb: ['3', '4'],
           value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra eleifend pellentesque. Suspendisse semper gravida fermentum. Integer pulvinar euismod hendrerit.'
         }}
+        hyperlink='primary3'
         title={{
           color: isFeatured ? 'white' : 'neutral2',
           fontSize: ['38px', '62px'],
