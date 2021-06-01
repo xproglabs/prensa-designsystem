@@ -15,7 +15,9 @@ const Article = ({
   citation,
   featured,
   headWidth,
-  intertitle,
+  heading2,
+  heading3,
+  heading4,
   paragraph,
   subject,
   subtitle,
@@ -59,7 +61,9 @@ const Article = ({
           <TextBody
             bodyWidth={bodyWidth}
             content={textbody}
-            intertitle={intertitle}
+            heading2={heading2}
+            heading3={heading3}
+            heading4={heading4}
             citation={citation}
             paragraph={paragraph}
             tags={tags}
@@ -81,7 +85,9 @@ Article.propTypes = {
   citation: PropTypes.object,
   featured: PropTypes.object,
   headWidth: PropTypes.string,
-  intertitle: PropTypes.object,
+  heading2: PropTypes.object,
+  heading3: PropTypes.object,
+  heading4: PropTypes.object,
   paragraph: PropTypes.object,
   subject: PropTypes.object,
   subtitle: PropTypes.object,

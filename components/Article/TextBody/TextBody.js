@@ -4,7 +4,9 @@ import React from 'react';
 
 import Block from '../../Block';
 import Citation from '../Citation/Citation';
-import Intertitle from '../Intertitle/Intertitle';
+import Heading2 from '../Headings/Heading2';
+import Heading3 from '../Headings/Heading3';
+import Heading4 from '../Headings/Heading4';
 import Paragraph from '../Paragraph/Paragraph';
 import Tags from '../Tags/Tags';
 import * as S from './TextBody.styled';
@@ -14,7 +16,9 @@ const TextBody = ({
   bodyWidth,
   citation,
   content,
-  intertitle,
+  heading2,
+  heading3,
+  heading4,
   paragraph,
   tags
 }) => {
@@ -58,23 +62,45 @@ const TextBody = ({
       <Paragraph {...paragraph} key={key} value={value} />
     );
   };
-  const render_cite = (key, value) =>
-    <Citation {...citation} key={key} value={value} />;
-
-  const render_intertitle = (key, value) =>
-    <Intertitle {...intertitle} key={key} value={value} />;
-
   return (
     <S.Body bodyWidth={bodyWidth}>
       {(
         map(body_items, ({type, value}, key) => {
           switch(type) {
             case 'Cite': 
-              return render_cite(key, value);
+              return (
+                <Citation
+                  {...citation}
+                  key={key}
+                  value={value}
+                />
+              );
             case 'Image': 
               return render_image(key, value);
-            case 'Intertitle': 
-              return render_intertitle(key, value);
+            case 'Heading2': 
+              return (
+                <Heading2
+                  {...heading2}
+                  key={key}
+                  value={value}
+                />
+              );
+            case 'Heading3': 
+              return (
+                <Heading3
+                  {...heading3}
+                  key={key}
+                  value={value}
+                />
+              );
+            case 'Heading4': 
+              return (
+                <Heading4
+                  {...heading4}
+                  key={key}
+                  value={value}
+                />
+              );
             case 'Paragraph': 
               return render_paragraph(key, value);
             default:
@@ -93,7 +119,9 @@ TextBody.propTypes = {
   bodyWidth: PropTypes.string,
   content: PropTypes.string,
   citation: PropTypes.object,
-  intertitle: PropTypes.object,
+  heading2: PropTypes.object,
+  heading3: PropTypes.object,
+  heading4: PropTypes.object,
   paragraph: PropTypes.object,
   tags: PropTypes.object
 };

@@ -31,6 +31,18 @@ const parse_content = (content) => {
       tagItems.push({'type': 'h2', 'value': `${renderChildValue(child)}`});
       return true;
     }
+    if(tag === 'h3') {
+      tagItems.push({'type': 'h3', 'value': `${renderChildValue(child)}`});
+      return true;
+    }
+    if(tag === 'h4') {
+      tagItems.push({'type': 'h4', 'value': `${renderChildValue(child)}`});
+      return true;
+    }
+    if(tag === 'u') {
+      tagItems.push({'type': 'u', 'value': `${renderChildValue(child)}`});
+      return true;
+    }
     if(node === 'text') {
       if(text && text !== '') {
         tagItems.push({'type': 'text', 'value': text});
@@ -134,7 +146,17 @@ const parse_content = (content) => {
         break;
       case 'h2':
         if(value && value !== '') {
-          bodyItems.push({type: 'Intertitle', value});
+          bodyItems.push({type: 'Heading2', value});
+        }
+        break;
+      case 'h3':
+        if(value && value !== '') {
+          bodyItems.push({type: 'Heading3', value});
+        }
+        break;
+      case 'h4':
+        if(value && value !== '') {
+          bodyItems.push({type: 'Heading4', value});
         }
         break;
       case 'p':
