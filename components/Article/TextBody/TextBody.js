@@ -113,8 +113,6 @@ const TextBody = (props) => {
               );
             case 'Paragraph': 
               return render_paragraph(key, value);
-            default:
-              return <pre>{type}</pre>;
           }
         })
       )}

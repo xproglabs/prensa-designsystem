@@ -7,7 +7,16 @@ const parse_content = (content) => {
   let tagItems = [];
 
   const renderChildValue = (child) => child && child.length > 0 && child[0].text;
-
+  const renderItemsFromList = (child) => {
+    const list_items = filter(child, {tag: 'li'});
+    const ul_content = [];
+    map(list_items, (it) => {
+      map(it.child, ({text}) => {
+        ul_content.push(`<li>${text}</li>`);
+      });
+    });
+    return ul_content.join('');
+  };
   const switchNode = (obj) => {
     
     const {attr, child, node, tag, text} = obj;
@@ -21,6 +30,18 @@ const parse_content = (content) => {
     }
     if(tag === 'u') {
       tagItems.push({'type': 'text', 'value': `<u>${renderChildValue(child)}</u>`});
+      return true;
+    }
+    if(tag === 'ul') {
+      tagItems.push({'type': 'text', 'value': `<ul>${renderItemsFromList(child)}</ul>`});
+      return true;
+    }
+    if(tag === 'ol') {
+      tagItems.push({'type': 'text', 'value': `<ol>${renderItemsFromList(child)}</ol>`});
+      return true;
+    }
+    if(tag === 'li') {
+      tagItems.push({'type': 'text', 'value': `<li>${renderChildValue(child)}</li>`});
       return true;
     }
     if(tag === 'em') {
@@ -75,31 +96,31 @@ const parse_content = (content) => {
       // }
     } else if(tag === 'a' && attr.href && !attr.class && attr.href !== '') {
       
-      if(attr['href'].indexOf('facebook.com') > -1) {
-        tagItems.push({type: 'Facebook', value: attr['href']});
-        return true;
+      // if(attr['href'].indexOf('facebook.com') > -1) {
+      //   tagItems.push({type: 'Facebook', value: attr['href']});
+      //   return true;
         
-      } else if(attr['href'].indexOf('docs.google.com/forms') > -1) {
-        tagItems.push({type: 'GoogleForm', value: attr['href']});
-        return true;
+      // } else if(attr['href'].indexOf('docs.google.com/forms') > -1) {
+      //   tagItems.push({type: 'GoogleForm', value: attr['href']});
+      //   return true;
       
-      } else if(attr['href'].indexOf('instagram.com') > -1) {
-        tagItems.push({type: 'Instagram', value: attr['href']});
-        return true;
+      // } else if(attr['href'].indexOf('instagram.com') > -1) {
+      //   tagItems.push({type: 'Instagram', value: attr['href']});
+      //   return true;
       
-      } else if(attr['href'].indexOf('twitter.com') > -1) {
-        tagItems.push({type: 'Tweet', value: attr['href']});
-        return true;
+      // } else if(attr['href'].indexOf('twitter.com') > -1) {
+      //   tagItems.push({type: 'Tweet', value: attr['href']});
+      //   return true;
         
-      } else if(attr['href'].indexOf('youtube.com') > -1) {
-        tagItems.push({type: 'Youtube', value: attr['href']});
-        return true;
+      // } else if(attr['href'].indexOf('youtube.com') > -1) {
+      //   tagItems.push({type: 'Youtube', value: attr['href']});
+      //   return true;
 
-      } else {
-        let child_string = renderChildValue(child) || attr.href;
-        tagItems.push({'type': 'text', 'value': `<a href="${attr.href}" target="_blank">${child_string}</a>`});
-        return true;
-      }
+      // } else {
+      let child_string = renderChildValue(child) || attr.href;
+      tagItems.push({'type': 'text', 'value': `<a href="${attr.href}" target="_blank">${child_string}</a>`});
+      return true;
+      // }
     }
     let child_len = child && child.length;
     if(child && child_len > 0) {
