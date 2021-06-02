@@ -105,26 +105,32 @@ const Field = React.forwardRef((props, ref) => {
       if (key === 'Enter') onEnterKey();
     }
   };
+
+  const inputProps = {
+    name: name,
+    type: type,
+    id: id,
+    value: value,
+    on: on,
+    onChange: handleChange,
+    disabled: disabled,
+    mask: mask,
+    placeholder: placeholder,
+    validation: validation,
+    onKeyPress: handleKeyPress,
+  }
   
   return (    
     <Block {...styledFieldDefaultProps} fullWidth>
       {renderLabel()}
       <InputContainer validation={validation} {...styledInputDefaultProps}>
-        <InputMask
-          name={name}
-          type={type}
-          id={id}
-          value={value}
-          on={on}
-          onChange={handleChange}
-          disabled={disabled}
-          mask={mask}
-          placeholder={placeholder}
-          validation={validation}
-          onKeyPress={handleKeyPress}
-        >
-          <Input ref={ref} {...styledRootDefaultProps} />
-        </InputMask>
+        {mask ? 
+          <InputMask {...inputProps}>
+            <Input ref={ref} {...styledRootDefaultProps} />
+          </InputMask>
+        :
+          <Input ref={ref} {...inputProps} {...styledRootDefaultProps} />
+        }
         {renderIcon()}
       </InputContainer>
       {renderMessage()}
