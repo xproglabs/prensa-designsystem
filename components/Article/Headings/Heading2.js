@@ -4,7 +4,7 @@ import React from 'react';
 import Block from '../../Block';
 import Typography from '../../Typography';
 
-const Intertitle = ({
+const Heading2 = ({
   color,
   element,
   fontFamily,
@@ -36,18 +36,18 @@ const Intertitle = ({
   );
 };
 
-Intertitle.defaultProps = {
+Heading2.defaultProps = {
   color: 'neutral2',
-  element: 'h3',
+  element: 'h2',
   fontFamily: 'primary',
   fontSize: ['32px', '32px'],
   fontWeight: 700,
   lineHeight: ['110%', '110%'],
   mb: ['3', '3'],
-  value: 'Assunto'
+  value: 'Heading 2'
 };
 
-Intertitle.propTypes = {
+Heading2.propTypes = {
   color: PropTypes.string,
   element: PropTypes.string,
   fontFamily: PropTypes.string,
@@ -58,4 +58,4 @@ Intertitle.propTypes = {
   value: PropTypes.string
 };
 
-export default Intertitle;
+export default Heading2;

@@ -7,7 +7,16 @@ const parse_content = (content) => {
   let tagItems = [];
 
   const renderChildValue = (child) => child && child.length > 0 && child[0].text;
-
+  const renderItemsFromList = (child) => {
+    const list_items = filter(child, {tag: 'li'});
+    const ul_content = [];
+    map(list_items, (it) => {
+      map(it.child, ({text}) => {
+        ul_content.push(`<li>${text}</li>`);
+      });
+    });
+    return ul_content.join('');
+  };
   const switchNode = (obj) => {
     
     const {attr, child, node, tag, text} = obj;
@@ -17,6 +26,22 @@ const parse_content = (content) => {
     }
     if(tag === 'strong') {
       tagItems.push({'type': 'text', 'value': `<strong>${renderChildValue(child)}</strong>`});
+      return true;
+    }
+    if(tag === 'u') {
+      tagItems.push({'type': 'text', 'value': `<u>${renderChildValue(child)}</u>`});
+      return true;
+    }
+    if(tag === 'ul') {
+      tagItems.push({'type': 'text', 'value': `<ul>${renderItemsFromList(child)}</ul>`});
+      return true;
+    }
+    if(tag === 'ol') {
+      tagItems.push({'type': 'text', 'value': `<ol>${renderItemsFromList(child)}</ol>`});
+      return true;
+    }
+    if(tag === 'li') {
+      tagItems.push({'type': 'text', 'value': `<li>${renderChildValue(child)}</li>`});
       return true;
     }
     if(tag === 'em') {
@@ -29,6 +54,14 @@ const parse_content = (content) => {
     }
     if(tag === 'h2') {
       tagItems.push({'type': 'h2', 'value': `${renderChildValue(child)}`});
+      return true;
+    }
+    if(tag === 'h3') {
+      tagItems.push({'type': 'h3', 'value': `${renderChildValue(child)}`});
+      return true;
+    }
+    if(tag === 'h4') {
+      tagItems.push({'type': 'h4', 'value': `${renderChildValue(child)}`});
       return true;
     }
     if(node === 'text') {
@@ -61,28 +94,26 @@ const parse_content = (content) => {
       tagItems.push({type: 'Image', value: {'image-legacy': attr.src}});
       return true;
       // }
-    } else if(tag === 'a' && attr.href && !attr.class && attr.href !== '') {
-      
-      if(attr['href'].indexOf('facebook.com') > -1) {
-        tagItems.push({type: 'Facebook', value: attr['href']});
+    } else if(attr && attr['data-oembed-url']) {
+      if(attr['data-oembed-url'].indexOf('youtu.be') > -1) {
+        tagItems.push({type: 'Youtube', value: attr['data-oembed-url']});
         return true;
-        
-      } else if(attr['href'].indexOf('docs.google.com/forms') > -1) {
-        tagItems.push({type: 'GoogleForm', value: attr['href']});
-        return true;
-      
-      } else if(attr['href'].indexOf('instagram.com') > -1) {
-        tagItems.push({type: 'Instagram', value: attr['href']});
-        return true;
-      
-      } else if(attr['href'].indexOf('twitter.com') > -1) {
-        tagItems.push({type: 'Tweet', value: attr['href']});
-        return true;
-        
-      } else if(attr['href'].indexOf('youtube.com') > -1) {
-        tagItems.push({type: 'Youtube', value: attr['href']});
-        return true;
-
+      }
+    } else if(tag === 'a') {
+      if(!attr.href) {
+        if(attr['name'].indexOf('facebook.com') > -1) {
+          tagItems.push({type: 'Facebook', value: attr['name']});
+          return true;
+        } else if(attr['name'].indexOf('instagram.com') > -1) {
+          tagItems.push({type: 'Instagram', value: attr['name']});
+          return true;
+        } else if(attr['name'].indexOf('twitter.com') > -1) {
+          tagItems.push({type: 'Tweet', value: attr['name']});
+          return true;
+        } else if(attr['name'].indexOf('youtube.com') > -1) {
+          tagItems.push({type: 'Youtube', value: attr['name']});
+          return true;
+        }
       } else {
         let child_string = renderChildValue(child) || attr.href;
         tagItems.push({'type': 'text', 'value': `<a href="${attr.href}" target="_blank">${child_string}</a>`});
@@ -134,7 +165,17 @@ const parse_content = (content) => {
         break;
       case 'h2':
         if(value && value !== '') {
-          bodyItems.push({type: 'Intertitle', value});
+          bodyItems.push({type: 'Heading2', value});
+        }
+        break;
+      case 'h3':
+        if(value && value !== '') {
+          bodyItems.push({type: 'Heading3', value});
+        }
+        break;
+      case 'h4':
+        if(value && value !== '') {
+          bodyItems.push({type: 'Heading4', value});
         }
         break;
       case 'p':
