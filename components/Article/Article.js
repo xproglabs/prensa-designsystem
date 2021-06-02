@@ -12,6 +12,7 @@ import TopImage from './TopImage/TopImage';
 
 const Article = (props) => {
   const {
+    amp,
     bodyWidth,
     byline,
     citation,
@@ -21,6 +22,7 @@ const Article = (props) => {
     heading3,
     heading4,
     hyperlink,
+    images,
     paragraph,
     subject,
     subtitle,
@@ -36,7 +38,7 @@ const Article = (props) => {
           <>
             <S.ContainerFeatured>
               <S.ContentImage>
-                <TopImage {...topimage} />
+                <TopImage amp={amp} {...topimage} />
               </S.ContentImage>
               <S.ContentFeatured maxWidth={headWidth}>
                 <Subject {...subject} />
@@ -57,11 +59,12 @@ const Article = (props) => {
               <Subtitle {...subtitle} />
               <Byline {...byline} />
             </S.Content>
-            <TopImage {...topimage} />
+            <TopImage amp={amp} {...topimage} />
           </S.MaxWidth>
         }
         <S.MaxWidth maxWidth={bodyWidth}>
           <TextBody
+            amp={amp}
             bodyWidth={bodyWidth}
             citation={citation}
             content={textbody}
@@ -69,6 +72,7 @@ const Article = (props) => {
             heading3={heading3}
             heading4={heading4}
             hyperlink={hyperlink}
+            images={images}
             paragraph={paragraph}
             tags={tags}
           />
@@ -79,11 +83,13 @@ const Article = (props) => {
 };
 
 Article.defaultProps = {
+  amp: false,
   bodyWidth: '768px',
   headWidth: '1016px'
 };
 
 Article.propTypes = {
+  amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
   byline: PropTypes.object,
   citation: PropTypes.object,
@@ -93,6 +99,7 @@ Article.propTypes = {
   heading3: PropTypes.object,
   heading4: PropTypes.object,
   hyperlink: PropTypes.string,
+  images: PropTypes.object,
   paragraph: PropTypes.object,
   subject: PropTypes.object,
   subtitle: PropTypes.object,

@@ -29,6 +29,7 @@ Box.propTypes = {
 
 export const BoxFeatured = ({
   children,
+  mb,
   value
 }) => 
   <Block
@@ -37,6 +38,10 @@ export const BoxFeatured = ({
       background-repeat: no-repeat;
       background-size: cover;
     `}
+    mb={mb[0]}
+    lg={{
+      mb: mb[1]
+    }}
     height='100%'
     width='100%'>
     {children}
@@ -44,6 +49,7 @@ export const BoxFeatured = ({
 
 BoxFeatured.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  mb: PropTypes.array,
   value: PropTypes.string
 };
 
