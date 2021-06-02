@@ -1,4 +1,4 @@
-import {get, map} from 'lodash';
+import {find, get, map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {withTheme} from 'styled-components';
@@ -10,6 +10,7 @@ import Heading3 from '../Headings/Heading3';
 import Heading4 from '../Headings/Heading4';
 import Paragraph from '../Paragraph/Paragraph';
 import Tags from '../Tags/Tags';
+import TopImage from '../TopImage/TopImage';
 import * as S from './TextBody.styled';
 import {parse_content} from './TextBodyParser';
 
@@ -22,6 +23,7 @@ const TextBody = (props) => {
     heading3,
     heading4,
     hyperlink,
+    images,
     paragraph,
     tags
   } = props;
@@ -36,9 +38,25 @@ const TextBody = (props) => {
   const render_image = (key, value) => {
     if(!value)
       return null;
+
+    const image_data = find(images.items, {contentId: value.contentId});
+    if(!image_data)
+      return null;
+    
     return (
-      <Block custom="max-width: 726px;" mb={3} key={key} width="100%">
-        {/* <Image image={[value]} /> */}
+      <Block mb={3} key={key} width="100%">
+        <TopImage
+          caption={{
+            fontFamily: 'secondary',
+            fontSize: ['14px', '14px'],
+            lineHeight: ['130%', '130%'],
+            show: true,
+            value: image_data.caption
+          }}
+          featured={false}
+          image={true}
+          value={image_data.value}
+        />
       </Block>
     );
   };
@@ -131,6 +149,7 @@ TextBody.propTypes = {
   heading3: PropTypes.object,
   heading4: PropTypes.object,
   hyperlink: PropTypes.string,
+  images: PropTypes.object,
   paragraph: PropTypes.object,
   tags: PropTypes.object
 };
