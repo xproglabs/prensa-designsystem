@@ -94,33 +94,31 @@ const parse_content = (content) => {
       tagItems.push({type: 'Image', value: {'image-legacy': attr.src}});
       return true;
       // }
-    } else if(tag === 'a' && attr.href && !attr.class && attr.href !== '') {
-      
-      // if(attr['href'].indexOf('facebook.com') > -1) {
-      //   tagItems.push({type: 'Facebook', value: attr['href']});
-      //   return true;
-        
-      // } else if(attr['href'].indexOf('docs.google.com/forms') > -1) {
-      //   tagItems.push({type: 'GoogleForm', value: attr['href']});
-      //   return true;
-      
-      // } else if(attr['href'].indexOf('instagram.com') > -1) {
-      //   tagItems.push({type: 'Instagram', value: attr['href']});
-      //   return true;
-      
-      // } else if(attr['href'].indexOf('twitter.com') > -1) {
-      //   tagItems.push({type: 'Tweet', value: attr['href']});
-      //   return true;
-        
-      // } else if(attr['href'].indexOf('youtube.com') > -1) {
-      //   tagItems.push({type: 'Youtube', value: attr['href']});
-      //   return true;
-
-      // } else {
-      let child_string = renderChildValue(child) || attr.href;
-      tagItems.push({'type': 'text', 'value': `<a href="${attr.href}" target="_blank">${child_string}</a>`});
-      return true;
-      // }
+    } else if(attr && attr['data-oembed-url']) {
+      if(attr['data-oembed-url'].indexOf('youtu.be') > -1) {
+        tagItems.push({type: 'Youtube', value: attr['data-oembed-url']});
+        return true;
+      }
+    } else if(tag === 'a') {
+      if(!attr.href) {
+        if(attr['name'].indexOf('facebook.com') > -1) {
+          tagItems.push({type: 'Facebook', value: attr['name']});
+          return true;
+        } else if(attr['name'].indexOf('instagram.com') > -1) {
+          tagItems.push({type: 'Instagram', value: attr['name']});
+          return true;
+        } else if(attr['name'].indexOf('twitter.com') > -1) {
+          tagItems.push({type: 'Tweet', value: attr['name']});
+          return true;
+        } else if(attr['name'].indexOf('youtube.com') > -1) {
+          tagItems.push({type: 'Youtube', value: attr['name']});
+          return true;
+        }
+      } else {
+        let child_string = renderChildValue(child) || attr.href;
+        tagItems.push({'type': 'text', 'value': `<a href="${attr.href}" target="_blank">${child_string}</a>`});
+        return true;
+      }
     }
     let child_len = child && child.length;
     if(child && child_len > 0) {

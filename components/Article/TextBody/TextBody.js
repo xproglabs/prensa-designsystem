@@ -5,6 +5,12 @@ import {withTheme} from 'styled-components';
 
 import Block from '../../Block';
 import Citation from '../Citation/Citation';
+import {
+  FacebookEmbed,
+  InstagramEmbed,
+  TwitterEmbed,
+  YoutubeEmbed
+} from '../Embeds/Embeds';
 import Heading2 from '../Headings/Heading2';
 import Heading3 from '../Headings/Heading3';
 import Heading4 from '../Headings/Heading4';
@@ -16,6 +22,7 @@ import {parse_content} from './TextBodyParser';
 
 const TextBody = (props) => {
   const {
+    amp,
     bodyWidth,
     citation,
     content,
@@ -103,6 +110,38 @@ const TextBody = (props) => {
                   value={value}
                 />
               );
+            case 'Facebook': 
+              return (
+                <FacebookEmbed
+                  amp={amp}
+                  key={key}
+                  value={value}
+                />
+              );
+            case 'Instagram': 
+              return (
+                <InstagramEmbed
+                  amp={amp}
+                  key={key}
+                  value={value}
+                />
+              );
+            case 'Twitter': 
+              return (
+                <TwitterEmbed
+                  amp={amp}
+                  key={key}
+                  value={value}
+                />
+              );
+            case 'Youtube': 
+              return (
+                <YoutubeEmbed
+                  amp={amp}
+                  key={key}
+                  value={value}
+                />
+              );
             case 'Image': 
               return render_image(key, value);
             case 'Heading2': 
@@ -142,6 +181,7 @@ const TextBody = (props) => {
 };
 
 TextBody.propTypes = {
+  amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
   content: PropTypes.string,
   citation: PropTypes.object,
