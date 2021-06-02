@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import {withTheme} from 'styled-components';
 
 import * as S from './Article.styled';
 import Byline from './Byline/Byline';
@@ -9,21 +10,25 @@ import TextBody from './TextBody/TextBody';
 import Title from './Title/Title';
 import TopImage from './TopImage/TopImage';
 
-const Article = ({
-  bodyWidth,
-  byline,
-  citation,
-  featured,
-  headWidth,
-  intertitle,
-  paragraph,
-  subject,
-  subtitle,
-  title,
-  tags,
-  textbody,
-  topimage
-}) => {
+const Article = (props) => {
+  const {
+    bodyWidth,
+    byline,
+    citation,
+    featured,
+    headWidth,
+    heading2,
+    heading3,
+    heading4,
+    hyperlink,
+    paragraph,
+    subject,
+    subtitle,
+    title,
+    tags,
+    textbody,
+    topimage
+  } = props;
   return (
     <S.Page>
       <S.Container>
@@ -58,9 +63,12 @@ const Article = ({
         <S.MaxWidth maxWidth={bodyWidth}>
           <TextBody
             bodyWidth={bodyWidth}
-            content={textbody}
-            intertitle={intertitle}
             citation={citation}
+            content={textbody}
+            heading2={heading2}
+            heading3={heading3}
+            heading4={heading4}
+            hyperlink={hyperlink}
             paragraph={paragraph}
             tags={tags}
           />
@@ -81,7 +89,10 @@ Article.propTypes = {
   citation: PropTypes.object,
   featured: PropTypes.object,
   headWidth: PropTypes.string,
-  intertitle: PropTypes.object,
+  heading2: PropTypes.object,
+  heading3: PropTypes.object,
+  heading4: PropTypes.object,
+  hyperlink: PropTypes.string,
   paragraph: PropTypes.object,
   subject: PropTypes.object,
   subtitle: PropTypes.object,
@@ -91,4 +102,4 @@ Article.propTypes = {
   topimage: PropTypes.object,
 };
 
-export default Article;
+export default withTheme(Article);

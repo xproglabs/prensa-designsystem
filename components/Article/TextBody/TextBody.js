@@ -1,23 +1,30 @@
-import {map} from 'lodash';
+import {get, map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
+import {withTheme} from 'styled-components';
 
 import Block from '../../Block';
 import Citation from '../Citation/Citation';
-import Intertitle from '../Intertitle/Intertitle';
+import Heading2 from '../Headings/Heading2';
+import Heading3 from '../Headings/Heading3';
+import Heading4 from '../Headings/Heading4';
 import Paragraph from '../Paragraph/Paragraph';
 import Tags from '../Tags/Tags';
 import * as S from './TextBody.styled';
 import {parse_content} from './TextBodyParser';
 
-const TextBody = ({
-  bodyWidth,
-  citation,
-  content,
-  intertitle,
-  paragraph,
-  tags
-}) => {
+const TextBody = (props) => {
+  const {
+    bodyWidth,
+    citation,
+    content,
+    heading2,
+    heading3,
+    heading4,
+    hyperlink,
+    paragraph,
+    tags
+  } = props;
   if (!content) return null;
   let readmore = [];
   let intervention_amount = 3;
@@ -58,23 +65,52 @@ const TextBody = ({
       <Paragraph {...paragraph} key={key} value={value} />
     );
   };
-  const render_cite = (key, value) =>
-    <Citation {...citation} key={key} value={value} />;
 
-  const render_intertitle = (key, value) =>
-    <Intertitle {...intertitle} key={key} value={value} />;
-
+  const get_hyperlink_color = (color = 'primary1') => 
+    get(props, `theme.colors.${color}`, '');
+  
   return (
-    <S.Body bodyWidth={bodyWidth}>
+    <S.Body
+      bodyWidth={bodyWidth}
+      hyperlinkColor={get_hyperlink_color(hyperlink)}
+    >
       {(
         map(body_items, ({type, value}, key) => {
           switch(type) {
             case 'Cite': 
-              return render_cite(key, value);
+              return (
+                <Citation
+                  {...citation}
+                  key={key}
+                  value={value}
+                />
+              );
             case 'Image': 
               return render_image(key, value);
-            case 'Intertitle': 
-              return render_intertitle(key, value);
+            case 'Heading2': 
+              return (
+                <Heading2
+                  {...heading2}
+                  key={key}
+                  value={value}
+                />
+              );
+            case 'Heading3': 
+              return (
+                <Heading3
+                  {...heading3}
+                  key={key}
+                  value={value}
+                />
+              );
+            case 'Heading4': 
+              return (
+                <Heading4
+                  {...heading4}
+                  key={key}
+                  value={value}
+                />
+              );
             case 'Paragraph': 
               return render_paragraph(key, value);
             default:
@@ -93,9 +129,12 @@ TextBody.propTypes = {
   bodyWidth: PropTypes.string,
   content: PropTypes.string,
   citation: PropTypes.object,
-  intertitle: PropTypes.object,
+  heading2: PropTypes.object,
+  heading3: PropTypes.object,
+  heading4: PropTypes.object,
+  hyperlink: PropTypes.string,
   paragraph: PropTypes.object,
   tags: PropTypes.object
 };
 
-export default TextBody;
+export default withTheme(TextBody);

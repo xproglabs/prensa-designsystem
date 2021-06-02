@@ -6,10 +6,12 @@ import Typography from '../../Typography';
 
 export const Body = ({
   bodyWidth,
-  children
-}) => 
-  <Block
+  children,
+  hyperlinkColor
+}) => {
+  return <Block
     custom={`
+      a { color: ${hyperlinkColor}; };
       max-width: ${bodyWidth};
     `}
     lg={{
@@ -21,10 +23,12 @@ export const Body = ({
     width='calc(100% - 48px)'>
     {children}
   </Block>;
+};
 
 Body.propTypes = {
   bodyWidth: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  hyperlinkColor: PropTypes.string
 };
 
 export const TextBody = ({color, children}) => 
