@@ -59,12 +59,14 @@ export default function Home() {
       </Head>
 
       <Main>
+        <H1>Videos Youtube</H1>
+        <YouTubeEmbed url={youtubeUrl} />
+        <YouTubeEmbed url={youtubeUrl} />
         <H1>Componente aqui</H1>
         <ImageGallery items={imageGallery} />
         <TwitterEmbed tweetId={tweetId} />
         <InstagramEmbed url={instagramUrl} />
         <FacebookEmbed url={facebookUrl} />
-        <YouTubeEmbed url={youtubeUrl} />
       </Main>
     </div>
   );
