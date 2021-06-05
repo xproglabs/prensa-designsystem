@@ -11,69 +11,10 @@ var InputMask = require('react-input-mask');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-function _interopNamespace(e) {
-  if (e && e.__esModule) return e;
-  var n = Object.create(null);
-  if (e) {
-    Object.keys(e).forEach(function (k) {
-      if (k !== 'default') {
-        var d = Object.getOwnPropertyDescriptor(e, k);
-        Object.defineProperty(n, k, d.get ? d : {
-          enumerable: true,
-          get: function () {
-            return e[k];
-          }
-        });
-      }
-    });
-  }
-  n['default'] = e;
-  return Object.freeze(n);
-}
-
 var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
-var React__namespace = /*#__PURE__*/_interopNamespace(React);
 var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 var InputMask__default = /*#__PURE__*/_interopDefaultLegacy(InputMask);
-
-function ownKeys(object, enumerableOnly) {
-  var keys = Object.keys(object);
-
-  if (Object.getOwnPropertySymbols) {
-    var symbols = Object.getOwnPropertySymbols(object);
-
-    if (enumerableOnly) {
-      symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-    }
-
-    keys.push.apply(keys, symbols);
-  }
-
-  return keys;
-}
-
-function _objectSpread2(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    if (i % 2) {
-      ownKeys(Object(source), true).forEach(function (key) {
-        _defineProperty(target, key, source[key]);
-      });
-    } else if (Object.getOwnPropertyDescriptors) {
-      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-      ownKeys(Object(source)).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
-    }
-  }
-
-  return target;
-}
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -106,6 +47,40 @@ function _extends() {
   };
 
   return _extends.apply(this, arguments);
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
 }
 
 function _taggedTemplateLiteral(strings, raw) {
@@ -308,45 +283,45 @@ var parseHeight = function parseHeight(props, theme) {
   }
 };
 
-var parseStyle$2 = function parseStyle(props, theme) {
+var parseStyle = function parseStyle(props, theme) {
   return "\n    ".concat(parseAlign(props), ";\n    ").concat(parseWidth(props, theme), ";\n    ").concat(parseHeight(props, theme), ";\n    ").concat(theme.parseBgColor(props, theme), ";\n    ").concat(theme.parseFontColor(props, theme), ";\n    ").concat(theme.parseFontFamily(props, theme), ";\n    ").concat(theme.parseCustomDef(props, theme), ";\n    ").concat(theme.parseCustom(props, theme), ";\n    ").concat(theme.parseMargin(props, theme), ";\n    ").concat(theme.parsePadding(props, theme), ";\n  ");
 };
 
-var parseProps$2 = function parseProps(media, props) {
+var parseProps = function parseProps(media, props) {
   switch (media) {
     case 'xs':
-      return "\n        @media (min-width: ".concat(props.theme.queries.xs, ") {\n          ").concat(parseStyle$2(props.xs, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.xs, ") {\n          ").concat(parseStyle(props.xs, props.theme), "\n        }\n      ");
 
     case 'sm':
-      return "\n        @media (min-width: ".concat(props.theme.queries.sm, ") {\n          ").concat(parseStyle$2(props.sm, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.sm, ") {\n          ").concat(parseStyle(props.sm, props.theme), "\n        }\n      ");
 
     case 'md':
-      return "\n        @media (min-width: ".concat(props.theme.queries.md, ") {\n          ").concat(parseStyle$2(props.md, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.md, ") {\n          ").concat(parseStyle(props.md, props.theme), "\n        }\n      ");
 
     case 'lg':
-      return "\n        @media (min-width: ".concat(props.theme.queries.lg, ") {\n          ").concat(parseStyle$2(props.lg, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.lg, ") {\n          ").concat(parseStyle(props.lg, props.theme), "\n        }\n      ");
 
     case 'xl':
-      return "\n        @media (min-width: ".concat(props.theme.queries.xl, ") {\n          ").concat(parseStyle$2(props.xl, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.xl, ") {\n          ").concat(parseStyle(props.xl, props.theme), "\n        }\n      ");
 
     default:
-      return "".concat(parseStyle$2(props, props.theme));
+      return "".concat(parseStyle(props, props.theme));
   }
 };
 
-var _templateObject$5;
-var Component = styled__default['default'].div(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
-  return parseProps$2('', props);
+var _templateObject;
+var Component = styled__default['default'].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+  return parseProps('', props);
 }, function (props) {
-  return props.xs && parseProps$2('xs', props);
+  return props.xs && parseProps('xs', props);
 }, function (props) {
-  return props.sm && parseProps$2('sm', props);
+  return props.sm && parseProps('sm', props);
 }, function (props) {
-  return props.md && parseProps$2('md', props);
+  return props.md && parseProps('md', props);
 }, function (props) {
-  return props.lg && parseProps$2('lg', props);
+  return props.lg && parseProps('lg', props);
 }, function (props) {
-  return props.xl && parseProps$2('xl', props);
+  return props.xl && parseProps('xl', props);
 });
 
 var Block = function Block(_ref) {
@@ -573,7 +548,7 @@ Block.propTypes = {
 };
 var Block$1 = styled.withTheme(Block);
 
-var Container$5 = function Container(_ref) {
+var Container = function Container(_ref) {
   var children = _ref.children,
       maxWidth = _ref.maxWidth;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
@@ -585,11 +560,11 @@ var Container$5 = function Container(_ref) {
     width: "100%"
   }, children);
 };
-Container$5.propTypes = {
+Container.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
   maxWidth: PropTypes__default['default'].string
 };
-var Content$2 = function Content(_ref2) {
+var Content = function Content(_ref2) {
   var children = _ref2.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     px: "3",
@@ -600,7 +575,7 @@ var Content$2 = function Content(_ref2) {
     }
   }, children);
 };
-Content$2.propTypes = {
+Content.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 var ContainerFeatured = function ContainerFeatured(_ref3) {
@@ -679,7 +654,7 @@ var parseBgColor = function parseBgColor(props, theme) {
   return "background-color: ".concat(selected, ";");
 };
 
-var parseFontColor$1 = function parseFontColor(props, theme) {
+var parseFontColor = function parseFontColor(props, theme) {
   if (!props || !props.fontColor) return '';
   var selected = theme.colors[props.fontColor];
   if (!selected) return '';
@@ -714,7 +689,7 @@ var parseCustomDef = function parseCustomDef(props) {
   return object.join('');
 };
 
-var parseFontFamily$2 = function parseFontFamily(props, theme) {
+var parseFontFamily = function parseFontFamily(props, theme) {
   if (!props) return '';
   var selected = theme.fonts[props.typography];
   if (!selected) return '';
@@ -836,8 +811,8 @@ var theme = {
   parseBgColor: parseBgColor,
   parseCustom: parseCustom,
   parseCustomDef: parseCustomDef,
-  parseFontColor: parseFontColor$1,
-  parseFontFamily: parseFontFamily$2,
+  parseFontColor: parseFontColor,
+  parseFontFamily: parseFontFamily,
   parseMargin: parseMargin,
   parsePadding: parsePadding,
   parseRadius: parseRadius,
@@ -1126,11 +1101,11 @@ var parseProps$1 = function parseProps(media, props) {
   }
 };
 
-var _templateObject$4, _templateObject2$3, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10;
-var HeadingOne = styled__default['default'].h1(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["", ""])), function (props) {
+var _templateObject$1, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10;
+var HeadingOne = styled__default['default'].h1(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
-var HeadingTwo = styled__default['default'].h2(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["", ""])), function (props) {
+var HeadingTwo = styled__default['default'].h2(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
 var HeadingThree = styled__default['default'].h3(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["", ""])), function (props) {
@@ -1145,7 +1120,7 @@ var HeadingFive = styled__default['default'].h5(_templateObject5 || (_templateOb
 var HeadingSix = styled__default['default'].h6(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
-var Paragraph$1 = styled__default['default'].p(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["", ""])), function (props) {
+var Paragraph = styled__default['default'].p(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
 var Span = styled__default['default'].span(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["", ""])), function (props) {
@@ -1158,7 +1133,7 @@ var Cite = styled__default['default'].cite(_templateObject10 || (_templateObject
   return props.$style;
 });
 
-var Typography$1 = function Typography(_ref) {
+var Typography = function Typography(_ref) {
   var children = _ref.children,
       color = _ref.color,
       element = _ref.element,
@@ -1363,7 +1338,7 @@ var Typography$1 = function Typography(_ref) {
       }));
 
     case 'p':
-      return /*#__PURE__*/React__default['default'].createElement(Paragraph$1, _extends({}, props, {
+      return /*#__PURE__*/React__default['default'].createElement(Paragraph, _extends({}, props, {
         $style: styles
       }));
 
@@ -1385,7 +1360,7 @@ var Typography$1 = function Typography(_ref) {
   }
 };
 
-Typography$1.defaultProps = {
+Typography.defaultProps = {
   element: 'h1',
   fontSize: 3,
   fontFamily: 'primary',
@@ -1396,7 +1371,7 @@ Typography$1.defaultProps = {
   mb: '0px',
   transform: 'none'
 };
-Typography$1.propTypes = {
+Typography.propTypes = {
   /**
    * Altera alinhamento do texto
    */
@@ -1485,7 +1460,7 @@ Typography$1.propTypes = {
   borderColor: PropTypes__default['default'].string,
   borderStyle: PropTypes__default['default'].string
 };
-var Typography$2 = styled.withTheme(Typography$1);
+var Typography$1 = styled.withTheme(Typography);
 
 var Author = function Author(_ref) {
   var children = _ref.children,
@@ -1493,7 +1468,7 @@ var Author = function Author(_ref) {
       fontFamily = _ref.fontFamily,
       fontSize = _ref.fontSize,
       lineHeight = _ref.lineHeight;
-  return /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  return /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
     element: "span",
     fontFamily: fontFamily,
@@ -1514,7 +1489,7 @@ Author.propTypes = {
   fontSize: PropTypes__default['default'].array,
   lineHeight: PropTypes__default['default'].array
 };
-var Container$4 = function Container(_ref2) {
+var Container$1 = function Container(_ref2) {
   var children = _ref2.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     width: "100%",
@@ -1524,7 +1499,7 @@ var Container$4 = function Container(_ref2) {
     }
   }, children);
 };
-Container$4.propTypes = {
+Container$1.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 var Content$1 = function Content(_ref3) {
@@ -1567,7 +1542,7 @@ var TimeEntry = function TimeEntry(_ref5) {
       fontSize = _ref5.fontSize,
       fontFamily = _ref5.fontFamily,
       lineHeight = _ref5.lineHeight;
-  return /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  return /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
     element: "span",
     fontFamily: fontFamily,
@@ -1593,7 +1568,7 @@ var Byline = function Byline(_ref) {
       customContent = _ref.customContent,
       datetime = _ref.datetime,
       medias = _ref.medias;
-  return /*#__PURE__*/React__default['default'].createElement(Container$4, null, /*#__PURE__*/React__default['default'].createElement(Content$1, null, /*#__PURE__*/React__default['default'].createElement(DateLine, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$1, null, /*#__PURE__*/React__default['default'].createElement(Content$1, null, /*#__PURE__*/React__default['default'].createElement(DateLine, {
     custom: customContent
   }, /*#__PURE__*/React__default['default'].createElement(Author, author, author.value), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Publicado em ", datetime.time_published), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Atualizado h\xE1 ", datetime.time_modified)), /*#__PURE__*/React__default['default'].createElement(Medias, medias)));
 };
@@ -1625,7 +1600,7 @@ Byline.propTypes = {
   medias: PropTypes__default['default'].object
 };
 
-var Subject$1 = function Subject(_ref) {
+var Subject = function Subject(_ref) {
   var bgColor = _ref.bgColor,
       borderRadius = _ref.borderRadius,
       color = _ref.color,
@@ -1649,7 +1624,7 @@ var Subject$1 = function Subject(_ref) {
       mb: mb[1],
       mt: mt[1]
     }
-  }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
     dangerouslySetInnerHTML: value,
     element: "span",
@@ -1665,7 +1640,7 @@ var Subject$1 = function Subject(_ref) {
   }));
 };
 
-Subject$1.defaultProps = {
+Subject.defaultProps = {
   bgColor: 'primary1',
   borderRadius: '3px',
   color: 'white',
@@ -1679,7 +1654,7 @@ Subject$1.defaultProps = {
   py: '4px',
   value: 'MÍDIA DIGITAL'
 };
-Subject$1.propTypes = {
+Subject.propTypes = {
   bgColor: PropTypes__default['default'].string,
   borderRadius: PropTypes__default['default'].string,
   color: PropTypes__default['default'].string,
@@ -1694,7 +1669,7 @@ Subject$1.propTypes = {
   value: PropTypes__default['default'].string
 };
 
-var Subtitle$1 = function Subtitle(_ref) {
+var Subtitle = function Subtitle(_ref) {
   var color = _ref.color,
       fontFamily = _ref.fontFamily,
       fontSize = _ref.fontSize,
@@ -1707,7 +1682,7 @@ var Subtitle$1 = function Subtitle(_ref) {
       mb: mb[1]
     },
     width: "100%"
-  }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
     dangerouslySetInnerHTML: value,
     element: "p",
@@ -1721,7 +1696,7 @@ var Subtitle$1 = function Subtitle(_ref) {
   }));
 };
 
-Subtitle$1.defaultProps = {
+Subtitle.defaultProps = {
   color: 'neutral3',
   fontSize: ['18px', '18px'],
   fontFamily: 'secondary',
@@ -1729,7 +1704,7 @@ Subtitle$1.defaultProps = {
   mb: ['2', '2'],
   value: 'A XPROG presta serviços para a Atex Brasil fornecendo mão de obra qualificada e gestão da implantação de seus projetos digitais. Serviços que se consolidaram em uma parceria entre empresas, agregando valor à consultoria entregue aos clientes da Atex Brasil.'
 };
-Subtitle$1.propTypes = {
+Subtitle.propTypes = {
   color: PropTypes__default['default'].string,
   fontFamily: PropTypes__default['default'].string,
   fontSize: PropTypes__default['default'].array,
@@ -1748,7 +1723,7 @@ var Citation = function Citation(_ref) {
       value = _ref.value;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     width: "100%"
-  }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
     dangerouslySetInnerHTML: value,
     element: "cite",
@@ -1784,109 +1759,146 @@ Citation.propTypes = {
   value: PropTypes__default['default'].string
 };
 
+var _templateObject$2;
+var Container$2 = styled__default['default'].div(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  width: 100%;\n  height: max-content;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
+  return props.theme.queries.md;
+}, function (props) {
+  return props.$width;
+}, function (props) {
+  return props.$height;
+});
+
 var FacebookEmbed = function FacebookEmbed(_ref) {
-  var amp = _ref.amp,
-      value = _ref.value;
-  if (!amp) return false;
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    width: "100%"
+  var url = _ref.url,
+      height = _ref.height,
+      width = _ref.width;
+
+  if (!url) {
+    console.error('FacebookEmbed LOGGER: missing url');
+    return null;
+  }
+
+  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+    $height: height,
+    $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-facebook", {
     "data-align-center": true,
-    "data-href": value,
+    "data-href": url,
     layout: "responsive",
     height: "310",
     width: "552"
   }));
 };
-FacebookEmbed.propTypes = {
-  amp: PropTypes__default['default'].bool,
-  value: PropTypes__default['default'].string
+FacebookEmbed.defaultProps = {
+  height: 'max-content',
+  width: '552px'
 };
-var InstagramEmbed = function InstagramEmbed(_ref2) {
-  var amp = _ref2.amp,
-      value = _ref2.value;
-  if (!amp) return false;
-  var parsedPrefix = value.split('instagram.com/p/');
+FacebookEmbed.propTypes = {
+  url: PropTypes__default['default'].string.isRequired,
+  height: PropTypes__default['default'].string,
+  width: PropTypes__default['default'].string
+};
+
+var InstagramEmbed = function InstagramEmbed(_ref) {
+  var url = _ref.url,
+      height = _ref.height,
+      width = _ref.width;
+
+  if (!url) {
+    console.error('InstagramEmbed LOGGER: missing url');
+    return null;
+  }
+
+  var parsedPrefix = url.split('instagram.com/p/');
   if (!parsedPrefix[1]) return null;
   var parsedSufix = parsedPrefix[1] && parsedPrefix[1].split('/');
   var dataShortcode = parsedSufix[0] ? parsedSufix[0] : parsedPrefix[1];
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    width: "100%"
+  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+    $height: height,
+    $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-instagram", {
     "data-captioned": true,
     "data-shortcode": dataShortcode,
     layout: "responsive",
-    height: "400",
-    width: "400"
+    height: "552",
+    width: "552"
   }));
 };
-InstagramEmbed.propTypes = {
-  amp: PropTypes__default['default'].bool,
-  value: PropTypes__default['default'].string
+InstagramEmbed.defaultProps = {
+  height: 'max-content',
+  width: '552px'
 };
-var TwitterEmbed = function TwitterEmbed(_ref3) {
-  var amp = _ref3.amp,
-      value = _ref3.value;
-  if (!amp) return false;
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    width: "100%"
+InstagramEmbed.propTypes = {
+  url: PropTypes__default['default'].string.isRequired,
+  height: PropTypes__default['default'].string,
+  width: PropTypes__default['default'].string
+};
+
+var TwitterEmbed = function TwitterEmbed(_ref) {
+  var tweetId = _ref.tweetId,
+      height = _ref.height,
+      width = _ref.width;
+
+  if (!tweetId) {
+    console.error('TwitterEmbed LOGGER: missing tweet id');
+    return null;
+  }
+
+  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+    $height: height,
+    $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-twitter", {
-    "data-tweetid": value,
+    "data-tweetid": tweetId,
     layout: "responsive",
     height: "472",
     width: "552"
   }));
 };
-TwitterEmbed.propTypes = {
-  amp: PropTypes__default['default'].bool,
-  value: PropTypes__default['default'].string
+TwitterEmbed.defaultProps = {
+  height: 'max-content',
+  width: '100%'
 };
-var YoutubeEmbed = function YoutubeEmbed(_ref4) {
-  var amp = _ref4.amp,
-      _ref4$height = _ref4.height,
-      height = _ref4$height === void 0 ? '270' : _ref4$height,
-      _ref4$width = _ref4.width,
-      width = _ref4$width === void 0 ? '552' : _ref4$width,
-      value = _ref4.value;
+TwitterEmbed.propTypes = {
+  tweetId: PropTypes__default['default'].string.isRequired,
+  height: PropTypes__default['default'].string,
+  width: PropTypes__default['default'].string
+};
 
-  var parseYoutubeLink = function parseYoutubeLink(url) {
-    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
-    var match = url.match(regExp);
-    return match && match[7].length == 11 ? match[7] : false;
-  };
+var parseYoutubeLink = function parseYoutubeLink(url) {
+  var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+  var match = url.match(regExp);
+  return match && match[7].length == 11 ? match[7] : false;
+};
 
-  var parsedValue = parseYoutubeLink(value);
+var YouTubeEmbed = function YouTubeEmbed(_ref) {
+  var url = _ref.url,
+      height = _ref.height,
+      width = _ref.width;
 
-  if (!amp) {
-    return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-      custom: "\n          overflow: hidden;\n          padding-bottom: 56.25%;\n          position: relative;\n          height: 0;\n          & > iframe {\n            left: 0;\n            top: 0;\n            height: 100%;\n            width: 100%;\n            position: absolute;\n          }\n        ",
-      mb: 3,
-      width: "100%"
-    }, /*#__PURE__*/React__default['default'].createElement("iframe", {
-      allowFullScreen: true,
-      allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-      frameBorder: "0",
-      height: "480",
-      src: "https://www.youtube.com/embed/".concat(parsedValue),
-      title: "Embedded youtube",
-      width: "853"
-    }));
+  if (!url) {
+    console.error('YouTubeEmbed LOGGER: missing url');
+    return null;
   }
 
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    width: "100%"
+  var parsedUrl = parseYoutubeLink(url);
+  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+    $height: height,
+    $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-youtube", {
-    "data-videoid": parsedValue,
+    "data-videoid": parsedUrl,
     height: height,
     layout: "responsive",
     width: width
   }));
 };
-YoutubeEmbed.propTypes = {
-  amp: PropTypes__default['default'].bool,
+YouTubeEmbed.defaultProps = {
+  height: '270px',
+  width: '552px'
+};
+YouTubeEmbed.propTypes = {
+  url: PropTypes__default['default'].string.isRequired,
   height: PropTypes__default['default'].string,
-  width: PropTypes__default['default'].string,
-  value: PropTypes__default['default'].string
+  width: PropTypes__default['default'].string
 };
 
 var Heading2 = function Heading2(_ref) {
@@ -1900,7 +1912,7 @@ var Heading2 = function Heading2(_ref) {
       value = _ref.value;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     width: "100%"
-  }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
     dangerouslySetInnerHTML: value,
     element: element,
@@ -1950,7 +1962,7 @@ var Heading3 = function Heading3(_ref) {
       value = _ref.value;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     width: "100%"
-  }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
     dangerouslySetInnerHTML: value,
     element: element,
@@ -2000,7 +2012,7 @@ var Heading4 = function Heading4(_ref) {
       value = _ref.value;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     width: "100%"
-  }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
     dangerouslySetInnerHTML: value,
     element: element,
@@ -2039,7 +2051,7 @@ Heading4.propTypes = {
   value: PropTypes__default['default'].string
 };
 
-var Paragraph = function Paragraph(_ref) {
+var Paragraph$1 = function Paragraph(_ref) {
   var color = _ref.color,
       element = _ref.element,
       fontFamily = _ref.fontFamily,
@@ -2050,7 +2062,7 @@ var Paragraph = function Paragraph(_ref) {
       value = _ref.value;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     width: "100%"
-  }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
     dangerouslySetInnerHTML: value,
     element: element,
@@ -2067,7 +2079,7 @@ var Paragraph = function Paragraph(_ref) {
   }));
 };
 
-Paragraph.defaultProps = {
+Paragraph$1.defaultProps = {
   color: 'neutral2',
   element: 'p',
   fontFamily: 'primary',
@@ -2077,7 +2089,7 @@ Paragraph.defaultProps = {
   mb: ['3', '3'],
   value: 'Entre os familiares e amigos próximos, no sepultamento, estava o companehiro de infância, Mitiro Nagao, que destacou a boa vontade de Horii. "Só posso dizer que ele foi uma pessoa fantástica que contribuiu muito para a cidade. Era um grande empreendedor que só pensava em melhorar esse município. Era uma pessoa que enxergava para frente. ele gostava muito das pessoas, apesar de ser reservado. Se encontrasse uma pessoa que precisasse, ele realmente ajudava".'
 };
-Paragraph.propTypes = {
+Paragraph$1.propTypes = {
   color: PropTypes__default['default'].string,
   element: PropTypes__default['default'].string,
   fontFamily: PropTypes__default['default'].string,
@@ -2124,7 +2136,7 @@ var Tags = function Tags(_ref) {
   return /*#__PURE__*/React__default['default'].createElement(Container$3, null, lodash.map(items, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Tag, {
       key: key
-    }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+    }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
       color: "primary1",
       element: "span",
       fontFamily: "secondary",
@@ -2200,12 +2212,12 @@ SubtitleBox.propTypes = {
   py: PropTypes__default['default'].array,
   width: PropTypes__default['default'].array
 };
-var Subtitle = function Subtitle(_ref4) {
+var Subtitle$1 = function Subtitle(_ref4) {
   var children = _ref4.children,
       fontFamily = _ref4.fontFamily,
       fontSize = _ref4.fontSize,
       lineHeight = _ref4.lineHeight;
-  return /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  return /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: "neutral4",
     dangerouslySetInnerHTML: children,
     element: "p",
@@ -2218,14 +2230,14 @@ var Subtitle = function Subtitle(_ref4) {
     }
   });
 };
-Subtitle.propTypes = {
+Subtitle$1.propTypes = {
   children: PropTypes__default['default'].string,
   fontFamily: PropTypes__default['default'].string,
   fontSize: PropTypes__default['default'].array,
   lineHeight: PropTypes__default['default'].array
 };
 
-var Container$2 = function Container(_ref) {
+var Container$4 = function Container(_ref) {
   var children = _ref.children,
       featured = _ref.featured,
       mb = _ref.mb,
@@ -2239,7 +2251,7 @@ var Container$2 = function Container(_ref) {
   }, children);
 };
 
-Container$2.propTypes = {
+Container$4.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
   featured: PropTypes__default['default'].bool,
   mb: PropTypes__default['default'].array,
@@ -2254,7 +2266,7 @@ var TopImage = function TopImage(_ref2) {
       mb = _ref2.mb,
       value = _ref2.value;
   if (!image) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     featured: featured,
     mb: mb,
     value: value
@@ -2274,7 +2286,7 @@ var TopImage = function TopImage(_ref2) {
     style: {
       width: '100%'
     }
-  }), caption && caption.show && /*#__PURE__*/React__default['default'].createElement(SubtitleBox, null, /*#__PURE__*/React__default['default'].createElement(Subtitle, {
+  }), caption && caption.show && /*#__PURE__*/React__default['default'].createElement(SubtitleBox, null, /*#__PURE__*/React__default['default'].createElement(Subtitle$1, {
     fontFamily: caption.fontFamily,
     fontSize: caption.fontSize,
     lineHeight: caption.lineHeight
@@ -2652,8 +2664,7 @@ var parse_content = function parse_content(content) {
 };
 
 var TextBody = function TextBody(props) {
-  var amp = props.amp,
-      bodyWidth = props.bodyWidth,
+  var bodyWidth = props.bodyWidth,
       citation = props.citation,
       content = props.content,
       heading2 = props.heading2,
@@ -2694,20 +2705,21 @@ var TextBody = function TextBody(props) {
     // intervention_readmore = false;
     // intervention_status = false;
     if (value.length > 50) ;
-    return /*#__PURE__*/React__default['default'].createElement(Paragraph, _extends({}, paragraph, {
+    return /*#__PURE__*/React__default['default'].createElement(Paragraph$1, _extends({}, paragraph, {
       key: key,
       value: value
     }));
   };
 
   var get_hyperlink_color = function get_hyperlink_color() {
-    var color = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'primary1';
-    return lodash.get(props, "theme.colors.".concat(color), '');
+    var color = 'primary1';
+    if (hyperlink) color = hyperlink;
+    return lodash.get(props, "theme.colors.".concat(color));
   };
 
   return /*#__PURE__*/React__default['default'].createElement(Body, {
     bodyWidth: bodyWidth,
-    hyperlinkColor: get_hyperlink_color(hyperlink)
+    hyperlinkColor: get_hyperlink_color()
   }, lodash.map(body_items, function (_ref, key) {
     var type = _ref.type,
         value = _ref.value;
@@ -2721,30 +2733,26 @@ var TextBody = function TextBody(props) {
 
       case 'Facebook':
         return /*#__PURE__*/React__default['default'].createElement(FacebookEmbed, {
-          amp: amp,
           key: key,
-          value: value
+          url: value
         });
 
       case 'Instagram':
         return /*#__PURE__*/React__default['default'].createElement(InstagramEmbed, {
-          amp: amp,
           key: key,
-          value: value
+          url: value
         });
 
       case 'Twitter':
         return /*#__PURE__*/React__default['default'].createElement(TwitterEmbed, {
-          amp: amp,
           key: key,
-          value: value
+          tweetId: value
         });
 
       case 'Youtube':
-        return /*#__PURE__*/React__default['default'].createElement(YoutubeEmbed, {
-          amp: amp,
+        return /*#__PURE__*/React__default['default'].createElement(YouTubeEmbed, {
           key: key,
-          value: value
+          url: value
         });
 
       case 'Image':
@@ -2770,6 +2778,9 @@ var TextBody = function TextBody(props) {
 
       case 'Paragraph':
         return render_paragraph(key, value);
+
+      default:
+        return /*#__PURE__*/React__default['default'].createElement("pre", null, "erro no parse do conte\xFAdo");
     }
   }), /*#__PURE__*/React__default['default'].createElement(Tags, tags));
 };
@@ -2802,7 +2813,7 @@ var Title = function Title(_ref) {
     lg: {
       mb: mb[1]
     }
-  }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
     dangerouslySetInnerHTML: value,
     element: "h1",
@@ -2853,15 +2864,15 @@ var Article = function Article(props) {
       tags = props.tags,
       textbody = props.textbody,
       topimage = props.topimage;
-  return /*#__PURE__*/React__default['default'].createElement(Page, null, /*#__PURE__*/React__default['default'].createElement(Container$5, null, featured && featured.enabled ? /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(ContainerFeatured, null, /*#__PURE__*/React__default['default'].createElement(ContentImage, null, /*#__PURE__*/React__default['default'].createElement(TopImage, _extends({
+  return /*#__PURE__*/React__default['default'].createElement(Page, null, /*#__PURE__*/React__default['default'].createElement(Container, null, featured && featured.enabled ? /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(ContainerFeatured, null, /*#__PURE__*/React__default['default'].createElement(ContentImage, null, /*#__PURE__*/React__default['default'].createElement(TopImage, _extends({
     amp: amp
   }, topimage))), /*#__PURE__*/React__default['default'].createElement(ContentFeatured, {
     maxWidth: headWidth
-  }, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$1, subtitle))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
+  }, /*#__PURE__*/React__default['default'].createElement(Subject, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle, subtitle))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: headWidth
-  }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Byline, byline)))) : /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
+  }, /*#__PURE__*/React__default['default'].createElement(Content, null, /*#__PURE__*/React__default['default'].createElement(Byline, byline)))) : /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: headWidth
-  }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$1, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline)), /*#__PURE__*/React__default['default'].createElement(TopImage, _extends({
+  }, /*#__PURE__*/React__default['default'].createElement(Content, null, /*#__PURE__*/React__default['default'].createElement(Subject, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline)), /*#__PURE__*/React__default['default'].createElement(TopImage, _extends({
     amp: amp
   }, topimage))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: bodyWidth
@@ -2953,7 +2964,7 @@ var parseVariation = function parseVariation(props, theme) {
 }; //parse typography
 
 
-var parseFontColor = function parseFontColor(props, theme) {
+var parseFontColor$1 = function parseFontColor(props, theme) {
   var fontColor = props.fontColor,
       $variant = props.$variant,
       disabled = props.disabled;
@@ -2963,7 +2974,7 @@ var parseFontColor = function parseFontColor(props, theme) {
   return theme.colors.white;
 };
 
-var parseFontFamily = function parseFontFamily(props, theme) {
+var parseFontFamily$2 = function parseFontFamily(props, theme) {
   var $fontFamily = props.$fontFamily;
   var selected = theme.fonts[$fontFamily];
   if (!$fontFamily || !selected) return theme.fonts.primary;
@@ -2983,15 +2994,15 @@ var parseFontSize = function parseFontSize(props) {
 };
 
 var parseTypography = function parseTypography(props, theme) {
-  if (props.removeText === true) return "\n    span {\n      display: none;\n    }\n  ";else return "\n    span {\n      display: inline;\n      margin-left: 8px;\n      margin-right: 8px;\n      color: ".concat(parseFontColor(props, theme), ";\n      font-size: ").concat(parseFontSize(props), "px;\n      font-weight: ").concat(parseFontWeight(props), ";\n      font-family: ").concat(parseFontFamily(props, theme), ";\n    }\n  ");
+  if (props.removeText === true) return "\n    span {\n      display: none;\n    }\n  ";else return "\n    span {\n      display: inline;\n      margin-left: 8px;\n      margin-right: 8px;\n      color: ".concat(parseFontColor$1(props, theme), ";\n      font-size: ").concat(parseFontSize(props), "px;\n      font-weight: ").concat(parseFontWeight(props), ";\n      font-family: ").concat(parseFontFamily$2(props, theme), ";\n    }\n  ");
 };
 
 var parseIcon = function parseIcon(props, theme) {
-  return "\n    svg {\n      fill: ".concat(parseFontColor(props, theme), ";\n      width: ").concat(props.iconSize ? props.iconSize : '24px', ";\n      height: ").concat(props.iconSize ? props.iconSize : '24px', ";\n    }\n  ");
+  return "\n    svg {\n      fill: ".concat(parseFontColor$1(props, theme), ";\n      width: ").concat(props.iconSize ? props.iconSize : '24px', ";\n      height: ").concat(props.iconSize ? props.iconSize : '24px', ";\n    }\n  ");
 }; //main function
 
 
-var parseStyle = function parseStyle(props, theme) {
+var parseStyle$2 = function parseStyle(props, theme) {
   var parsePadding = theme.parsePadding,
       parseRadius = theme.parseRadius,
       parseCustom = theme.parseCustom;
@@ -2999,43 +3010,43 @@ var parseStyle = function parseStyle(props, theme) {
   return "\n    ".concat(parseVariation(props, theme), ";\n    ").concat(parseTypography(props, theme), ";\n    ").concat(getSize(props, theme), ";\n    ").concat(getWidth(props, theme), ";\n    ").concat(parseRadius(props, '$radius'), ";    \n    ").concat(parsePadding(props, theme), ";\n    ").concat(parseIcon(props, theme), ";\n    ").concat(parseCustom(props), ";\n  ");
 };
 
-var parseProps = function parseProps(media, props) {
+var parseProps$2 = function parseProps(media, props) {
   switch (media) {
     case 'xs':
-      return "\n        @media (min-width: ".concat(props.theme.queries.xs, ") {\n          ").concat(parseStyle(props.xs, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.xs, ") {\n          ").concat(parseStyle$2(props.xs, props.theme), "\n        }\n      ");
 
     case 'sm':
-      return "\n        @media (min-width: ".concat(props.theme.queries.sm, ") {\n          ").concat(parseStyle(props.sm, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.sm, ") {\n          ").concat(parseStyle$2(props.sm, props.theme), "\n        }\n      ");
 
     case 'md':
-      return "\n        @media (min-width: ".concat(props.theme.queries.md, ") {\n          ").concat(parseStyle(props.md, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.md, ") {\n          ").concat(parseStyle$2(props.md, props.theme), "\n        }\n      ");
 
     case 'lg':
-      return "\n        @media (min-width: ".concat(props.theme.queries.lg, ") {\n          ").concat(parseStyle(props.lg, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.lg, ") {\n          ").concat(parseStyle$2(props.lg, props.theme), "\n        }\n      ");
 
     case 'xl':
-      return "\n        @media (min-width: ".concat(props.theme.queries.xl, ") {\n          ").concat(parseStyle(props.xl, props.theme), "\n        }\n      ");
+      return "\n        @media (min-width: ".concat(props.theme.queries.xl, ") {\n          ").concat(parseStyle$2(props.xl, props.theme), "\n        }\n      ");
 
     default:
-      return "".concat(parseStyle(props, props.theme));
+      return "".concat(parseStyle$2(props, props.theme));
   }
 };
 
-var _templateObject$3, _templateObject2$2;
+var _templateObject$3, _templateObject2$1;
 var StyledButton = styled__default['default'].button(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
-  return parseProps('', props);
+  return parseProps$2('', props);
 }, function (props) {
-  return props.xs && parseProps('xs', props);
+  return props.xs && parseProps$2('xs', props);
 }, function (props) {
-  return props.sm && parseProps('sm', props);
+  return props.sm && parseProps$2('sm', props);
 }, function (props) {
-  return props.md && parseProps('md', props);
+  return props.md && parseProps$2('md', props);
 }, function (props) {
-  return props.lg && parseProps('lg', props);
+  return props.lg && parseProps$2('lg', props);
 }, function (props) {
-  return props.xl && parseProps('xl', props);
+  return props.xl && parseProps$2('xl', props);
 });
-var StyledAria$1 = styled__default['default'].a(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"])));
+var StyledAria = styled__default['default'].a(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"])));
 
 var Button = function Button(_ref) {
   var children = _ref.children,
@@ -3205,7 +3216,7 @@ var Button = function Button(_ref) {
     }, loading && 'Carregando...', leftIcon && leftIcon, children && childrenIsString && /*#__PURE__*/React__default['default'].createElement("span", null, children), children && !childrenIsString && children, rightIcon && rightIcon);
   };
 
-  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria$1, {
+  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria, {
     href: path,
     target: "_blank"
   }, renderRoot()) : renderRoot();
@@ -3425,7 +3436,7 @@ var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
   return path;
 };
 
-var Image$1 = function Image(_ref) {
+var Image = function Image(_ref) {
   var children = _ref.children,
       content = _ref.content,
       custom = _ref.custom,
@@ -3466,7 +3477,7 @@ var Image$1 = function Image(_ref) {
   }, children && children);
 };
 
-Image$1.propTypes = {
+Image.propTypes = {
   children: PropTypes__default['default'].node,
   content: PropTypes__default['default'].object.isRequired,
   custom: PropTypes__default['default'].string,
@@ -3475,7 +3486,7 @@ Image$1.propTypes = {
   lazy: PropTypes__default['default'].func,
   placeholder: PropTypes__default['default'].string
 };
-Image$1.defaultProps = {
+Image.defaultProps = {
   content: {}
 };
 
@@ -3497,7 +3508,7 @@ var ColumnHeader = function ColumnHeader(_ref) {
     className: "teaser-aria",
     href: path,
     "aria-label": "Imagem do colunista ".concat(column_name)
-  }, /*#__PURE__*/React__default['default'].createElement(Image$1, {
+  }, /*#__PURE__*/React__default['default'].createElement(Image, {
     domain: domain,
     content: image
   }))), /*#__PURE__*/React__default['default'].createElement(Block$1, {
@@ -3551,7 +3562,7 @@ ButtonSubmit.propTypes = {
   buttonAction: PropTypes__default['default'].func,
   children: PropTypes__default['default'].string
 };
-var Container$1 = function Container(_ref3) {
+var Container$5 = function Container(_ref3) {
   var children = _ref3.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "column",
@@ -3568,10 +3579,10 @@ var Container$1 = function Container(_ref3) {
     }
   }, children);
 };
-Container$1.propTypes = {
+Container$5.propTypes = {
   children: PropTypes__default['default'].array
 };
-var Content = function Content(_ref4) {
+var Content$2 = function Content(_ref4) {
   var children = _ref4.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "row",
@@ -3581,12 +3592,12 @@ var Content = function Content(_ref4) {
     width: "100%"
   }, children);
 };
-Content.propTypes = {
+Content$2.propTypes = {
   children: PropTypes__default['default'].object
 };
 var Message = function Message(_ref5) {
   var text = _ref5.text;
-  return /*#__PURE__*/React__default['default'].createElement(Typography$2, {
+  return /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: "neutral2",
     dangerouslySetInnerHTML: text,
     element: "p",
@@ -3609,7 +3620,7 @@ var Dialog = function Dialog(_ref) {
   var buttonAction = _ref.buttonAction,
       buttonText = _ref.buttonText,
       message = _ref.message;
-  return /*#__PURE__*/React__default['default'].createElement(Area, null, /*#__PURE__*/React__default['default'].createElement(Container$1, null, /*#__PURE__*/React__default['default'].createElement(Content, null, /*#__PURE__*/React__default['default'].createElement(Message, {
+  return /*#__PURE__*/React__default['default'].createElement(Area, null, /*#__PURE__*/React__default['default'].createElement(Container$5, null, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Message, {
     text: message
   }, message)), /*#__PURE__*/React__default['default'].createElement(ButtonSubmit, {
     buttonAction: buttonAction
@@ -3639,7 +3650,7 @@ Dialog.propTypes = {
   message: PropTypes__default['default'].string
 };
 
-var Input$1 = function Input(_ref) {
+var Input = function Input(_ref) {
   var autoFocus = _ref.autoFocus,
       disabled = _ref.disabled,
       invalid = _ref.invalid,
@@ -3683,7 +3694,7 @@ var Input$1 = function Input(_ref) {
   }, /*#__PURE__*/React__default['default'].createElement(Label, null), type === 'textarea' && /*#__PURE__*/React__default['default'].createElement("textarea", props), type !== 'textarea' && /*#__PURE__*/React__default['default'].createElement("input", props), /*#__PURE__*/React__default['default'].createElement(Warning, null));
 };
 
-Input$1.propTypes = {
+Input.propTypes = {
   autoFocus: PropTypes__default['default'].bool,
   disabled: PropTypes__default['default'].bool,
   invalid: PropTypes__default['default'].bool,
@@ -3694,14 +3705,14 @@ Input$1.propTypes = {
   value: PropTypes__default['default'].string.isRequired,
   warning: PropTypes__default['default'].string
 };
-Input$1.defaultProps = {
+Input.defaultProps = {
   autofocus: false,
   disabled: 'disabled',
   invalid: false,
   type: 'text'
 };
-var index$4 = {
-  Input: Input$1
+var index = {
+  Input: Input
 };
 
 var colors = [
@@ -3749,7 +3760,7 @@ var FieldLabel = function FieldLabel(props) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  return /*#__PURE__*/React__default['default'].createElement(Typography$2, _extends({
+  return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({
     element: "label"
   }, props), capitalizeFirstLetter(props.children));
 };
@@ -3759,7 +3770,7 @@ FieldLabel.propTypes = {
 };
 
 var FieldErrorMessage = function FieldErrorMessage(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Typography$2, _extends({
+  return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({
     element: "p"
   }, props), props.children);
 };
@@ -3768,7 +3779,7 @@ FieldErrorMessage.propTypes = {
   children: PropTypes__default['default'].string
 };
 
-var _templateObject$2, _templateObject2$1;
+var _templateObject$4, _templateObject2$2;
 
 var handleFontFamily = function handleFontFamily(props) {
   var theme = lodash.get(props, 'theme.fonts');
@@ -3823,8 +3834,8 @@ var handleSize = function handleSize(props) {
   return "".concat(props.size, "px");
 };
 
-var Input = styled__default['default'].input(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: ", ";\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n  ::placeholder {\n    color: ", ";\n  }\n"])), handleFontSize, handleFontFamily, handleColor, handleBorderRadius, handlePlaceholderColor);
-var InputContainer = styled__default['default'].div(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteral(["\n  background-color: white;\n  width: 100%;\n  height: ", ";\n  box-shadow: ", ";\n  display: flex;\n  align-items: center;\n  border-radius: ", ";\n  &:focus-within {\n    box-shadow: ", ";\n  }\n"])), handleSize, function (props) {
+var Input$1 = styled__default['default'].input(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: ", ";\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n  ::placeholder {\n    color: ", ";\n  }\n"])), handleFontSize, handleFontFamily, handleColor, handleBorderRadius, handlePlaceholderColor);
+var InputContainer = styled__default['default'].div(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  background-color: white;\n  width: 100%;\n  height: ", ";\n  box-shadow: ", ";\n  display: flex;\n  align-items: center;\n  border-radius: ", ";\n  &:focus-within {\n    box-shadow: ", ";\n  }\n"])), handleSize, function (props) {
   return "0 0 0 1px ".concat(handleInputColor(props));
 }, handleBorderRadius, function (props) {
   return "0 0 0 2px ".concat(handleFocusedColor(props));
@@ -3939,9 +3950,9 @@ var Field = /*#__PURE__*/React__default['default'].forwardRef(function (props, r
     fullWidth: true
   }), renderLabel(), /*#__PURE__*/React__default['default'].createElement(InputContainer, _extends({
     validation: validation
-  }, styledInputDefaultProps), mask ? /*#__PURE__*/React__default['default'].createElement(InputMask__default['default'], inputProps, /*#__PURE__*/React__default['default'].createElement(Input, _extends({
+  }, styledInputDefaultProps), mask ? /*#__PURE__*/React__default['default'].createElement(InputMask__default['default'], inputProps, /*#__PURE__*/React__default['default'].createElement(Input$1, _extends({
     ref: ref
-  }, styledRootDefaultProps))) : /*#__PURE__*/React__default['default'].createElement(Input, _extends({
+  }, styledRootDefaultProps))) : /*#__PURE__*/React__default['default'].createElement(Input$1, _extends({
     ref: ref
   }, inputProps, styledRootDefaultProps)), renderIcon()), renderMessage());
 });
@@ -4084,9 +4095,9 @@ Field.propTypes = {
   onEnterKey: PropTypes__default['default'].func,
   size: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number])
 };
-var index$3 = styled.withTheme(Field);
+var index$1 = styled.withTheme(Field);
 
-var Image = function Image(_ref) {
+var Image$1 = function Image(_ref) {
   var content = _ref.content,
       custom = _ref.custom,
       domain = _ref.domain,
@@ -4131,41 +4142,41 @@ var Image = function Image(_ref) {
   return /*#__PURE__*/React__default['default'].createElement("pre", null, "no-image");
 };
 
-Image.propTypes = {
+Image$1.propTypes = {
   content: PropTypes__default['default'].object.isRequired,
   custom: PropTypes__default['default'].string,
   domain: PropTypes__default['default'].string,
   lazy: PropTypes__default['default'].func,
   placeholder: PropTypes__default['default'].string
 };
-Image.defaultProps = {
+Image$1.defaultProps = {
   content: {}
 };
 
 function SvgIcArrowBack(props) {
-  return /*#__PURE__*/React__namespace.createElement("svg", _extends({
+  return /*#__PURE__*/React.createElement("svg", _extends({
     xmlns: "http://www.w3.org/2000/svg",
     height: 32,
     viewBox: "0 0 24 24",
     width: 32
-  }, props), /*#__PURE__*/React__namespace.createElement("path", {
+  }, props), /*#__PURE__*/React.createElement("path", {
     d: "M0 0h24v24H0z",
     fill: "none"
-  }), /*#__PURE__*/React__namespace.createElement("path", {
+  }), /*#__PURE__*/React.createElement("path", {
     d: "M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
   }));
 }
 
 function SvgIcArrowForward(props) {
-  return /*#__PURE__*/React__namespace.createElement("svg", _extends({
+  return /*#__PURE__*/React.createElement("svg", _extends({
     xmlns: "http://www.w3.org/2000/svg",
     height: 32,
     viewBox: "0 0 24 24",
     width: 24
-  }, props), /*#__PURE__*/React__namespace.createElement("path", {
+  }, props), /*#__PURE__*/React.createElement("path", {
     d: "M0 0h24v24H0z",
     fill: "none"
-  }), /*#__PURE__*/React__namespace.createElement("path", {
+  }), /*#__PURE__*/React.createElement("path", {
     d: "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
   }));
 }
@@ -4335,8 +4346,8 @@ SideMenu.propTypes = {
 };
 var index$2 = styled.withTheme(SideMenu);
 
-var _templateObject$1;
-var StyledAria = styled__default['default'].a(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  text-decoration: none;\n"])));
+var _templateObject$5;
+var StyledAria$1 = styled__default['default'].a(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  width: 100%;\n  text-decoration: none;\n"])));
 
 var MenuItem = function MenuItem(_ref) {
   var children = _ref.children,
@@ -4370,7 +4381,7 @@ var MenuItem = function MenuItem(_ref) {
     }, children ? children : /*#__PURE__*/React__default['default'].createElement("span", null, "Content here"), /*#__PURE__*/React__default['default'].createElement(SvgIcArrowForward, null)));
   };
 
-  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria, {
+  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria$1, {
     href: path
   }, renderContent()) : renderContent();
 };
@@ -4422,7 +4433,7 @@ MenuItem.propTypes = {
    */
   id: PropTypes__default['default'].string
 };
-var index$1 = styled.withTheme(MenuItem);
+var index$3 = styled.withTheme(MenuItem);
 
 var SocialMedias = function SocialMedias(props) {
   var content = props.content;
@@ -4490,7 +4501,7 @@ Topbar.defaultProps = {
   }
 };
 
-var _templateObject, _templateObject2;
+var _templateObject$6, _templateObject2$3;
 
 var parseColorVariation = function parseColorVariation(props) {
   if (props.transparent === true) return "\n    color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";\n  ");
@@ -4502,7 +4513,7 @@ var parseBackgroundVariation = function parseBackgroundVariation(props) {
   return "background-color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";");
 };
 
-var Container = styled__default['default'].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var Container$6 = styled__default['default'].div(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return props.theme.parsePadding(props, props.theme);
 }, function (props) {
   return props.theme.parseMargin(props, props.theme);
@@ -4511,7 +4522,7 @@ var Container = styled__default['default'].div(_templateObject || (_templateObje
 }, function (props) {
   return parseBackgroundVariation(props);
 });
-var Typography = styled__default['default'].span(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
+var Typography$2 = styled__default['default'].span(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
   return props.theme.fonts.secondary;
 }, function (props) {
   return props.$fontWeight;
@@ -4519,7 +4530,7 @@ var Typography = styled__default['default'].span(_templateObject2 || (_templateO
   return parseColorVariation(props);
 });
 
-var Subject = function Subject(_ref) {
+var Subject$1 = function Subject(_ref) {
   var children = _ref.children,
       color = _ref.color,
       radius = _ref.radius,
@@ -4529,26 +4540,26 @@ var Subject = function Subject(_ref) {
       transparent = _ref.transparent,
       weight = _ref.weight;
   if (!children) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$6, {
     subjectColor: color,
     borderRadius: radius,
     px: px,
     mb: mb,
     transparent: transparent,
     style: style
-  }, /*#__PURE__*/React__default['default'].createElement(Typography, {
+  }, /*#__PURE__*/React__default['default'].createElement(Typography$2, {
     $fontWeight: weight,
     transparent: transparent
   }, children));
 };
 
-Subject.defaultProps = {
+Subject$1.defaultProps = {
   px: 1,
   radius: 'alternative',
   transparent: false,
   weight: 700
 };
-Subject.propTypes = {
+Subject$1.propTypes = {
   /**
    * Recebe o valor/texto escrito que será exibido no componente
    */
@@ -4589,22 +4600,22 @@ Subject.propTypes = {
    */
   weight: PropTypes__default['default'].oneOf([300, 400, 500, 600, 700])
 };
-var index = styled.withTheme(Subject);
+var index$4 = styled.withTheme(Subject$1);
 
 exports.Article = Article$1;
 exports.Block = Block$1;
 exports.Button = Button$1;
 exports.ColumnHeader = ColumnHeader;
 exports.Dialog = Dialog;
-exports.Field = index$3;
-exports.Form = index$4;
-exports.Image = Image;
-exports.ImageBackground = Image$1;
+exports.Field = index$1;
+exports.Form = index;
+exports.Image = Image$1;
+exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;
-exports.MenuItem = index$1;
+exports.MenuItem = index$3;
 exports.SideMenu = index$2;
 exports.SocialMedias = SocialMedias;
-exports.Subject = index;
+exports.Subject = index$4;
 exports.Topbar = Topbar;
-exports.Typography = Typography$2;
+exports.Typography = Typography$1;
 exports.theme = theme;
