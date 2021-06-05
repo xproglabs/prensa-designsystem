@@ -1713,6 +1713,270 @@ Subtitle.propTypes = {
   value: PropTypes__default['default'].string
 };
 
+var Box = function Box(_ref) {
+  var children = _ref.children,
+      mb = _ref.mb;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    custom: "\n      img {\n        width: 100%;\n      }\n    ",
+    mb: mb[0],
+    lg: {
+      mb: mb[1]
+    },
+    width: "100%"
+  }, children);
+};
+Box.propTypes = {
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  mb: PropTypes__default['default'].array
+};
+var BoxFeatured = function BoxFeatured(_ref2) {
+  var children = _ref2.children,
+      mb = _ref2.mb,
+      value = _ref2.value;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    custom: "\n      background-image: url('".concat(value, "');\n      background-repeat: no-repeat;\n      background-size: cover;\n    "),
+    mb: mb[0],
+    lg: {
+      mb: mb[1]
+    },
+    height: "100%",
+    width: "100%"
+  }, children);
+};
+BoxFeatured.propTypes = {
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  mb: PropTypes__default['default'].array,
+  value: PropTypes__default['default'].string
+};
+var SubtitleBox = function SubtitleBox(_ref3) {
+  var children = _ref3.children;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    bgColor: "neutral9",
+    px: 3,
+    py: 3,
+    width: "calc(100% - 48px)",
+    lg: {
+      px: 4,
+      py: 2,
+      width: 'calc(100% - 64px)'
+    }
+  }, children);
+};
+SubtitleBox.propTypes = {
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  px: PropTypes__default['default'].array,
+  py: PropTypes__default['default'].array,
+  width: PropTypes__default['default'].array
+};
+var Subtitle$1 = function Subtitle(_ref4) {
+  var children = _ref4.children,
+      fontFamily = _ref4.fontFamily,
+      fontSize = _ref4.fontSize,
+      lineHeight = _ref4.lineHeight;
+  return /*#__PURE__*/React__default['default'].createElement(Typography$1, {
+    color: "neutral4",
+    dangerouslySetInnerHTML: children,
+    element: "p",
+    fontFamily: fontFamily,
+    fontSize: fontSize[0],
+    lineHeight: lineHeight[0],
+    lg: {
+      fontSize: fontSize[1],
+      lineHeight: lineHeight[1]
+    }
+  });
+};
+Subtitle$1.propTypes = {
+  children: PropTypes__default['default'].string,
+  fontFamily: PropTypes__default['default'].string,
+  fontSize: PropTypes__default['default'].array,
+  lineHeight: PropTypes__default['default'].array
+};
+
+var Container$2 = function Container(_ref) {
+  var children = _ref.children,
+      featured = _ref.featured,
+      mb = _ref.mb,
+      value = _ref.value;
+  if (featured) return /*#__PURE__*/React__default['default'].createElement(BoxFeatured, {
+    mb: mb,
+    value: value
+  });
+  return /*#__PURE__*/React__default['default'].createElement(Box, {
+    mb: mb
+  }, children);
+};
+
+Container$2.propTypes = {
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  featured: PropTypes__default['default'].bool,
+  mb: PropTypes__default['default'].array,
+  value: PropTypes__default['default'].string
+};
+
+var TopImage = function TopImage(_ref2) {
+  var amp = _ref2.amp,
+      caption = _ref2.caption,
+      featured = _ref2.featured,
+      image = _ref2.image,
+      mb = _ref2.mb,
+      value = _ref2.value;
+  if (!image) return null;
+  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+    featured: featured,
+    mb: mb,
+    value: value
+  }, amp ? /*#__PURE__*/React__default['default'].createElement("amp-img", {
+    alt: caption,
+    src: value,
+    layout: "responsive",
+    style: {
+      display: 'inline-flex',
+      width: '100%'
+    },
+    height: "640px",
+    width: "1280px"
+  }) : !featured && /*#__PURE__*/React__default['default'].createElement("img", {
+    alt: caption.value,
+    src: value,
+    style: {
+      width: '100%'
+    }
+  }), caption && caption.show && /*#__PURE__*/React__default['default'].createElement(SubtitleBox, null, /*#__PURE__*/React__default['default'].createElement(Subtitle$1, {
+    fontFamily: caption.fontFamily,
+    fontSize: caption.fontSize,
+    lineHeight: caption.lineHeight
+  }, caption.value)));
+};
+
+TopImage.defaultProps = {
+  amp: false,
+  featured: false,
+  image: true,
+  caption: {
+    fontFamily: 'secondary',
+    fontSize: ['14px', '14px'],
+    lineHeight: ['130%', '130%'],
+    show: true,
+    value: 'Legenda da Imagem'
+  },
+  mb: ['2', '2'],
+  value: 'https://xprog.com.br/static/images/img-destak.jpg'
+};
+TopImage.propTypes = {
+  amp: PropTypes__default['default'].bool,
+  featured: PropTypes__default['default'].bool,
+  image: PropTypes__default['default'].bool,
+  caption: PropTypes__default['default'].object,
+  mb: PropTypes__default['default'].array,
+  value: PropTypes__default['default'].string
+};
+
+var _templateObject$2;
+var Container$3 = styled__default['default'].div(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  width: 100%;\n  height: max-content;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
+  return props.theme.queries.md;
+}, function (props) {
+  return props.$width;
+}, function (props) {
+  return props.$height;
+});
+
+var SubtitleBox$1 = function SubtitleBox(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    bgColor: "neutral9",
+    px: 3,
+    py: 3,
+    width: "calc(100% - 48px)",
+    lg: {
+      px: 4,
+      py: 2,
+      width: 'calc(100% - 64px)'
+    }
+  }, children);
+};
+
+SubtitleBox$1.propTypes = {
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  px: PropTypes__default['default'].array,
+  py: PropTypes__default['default'].array,
+  width: PropTypes__default['default'].array
+};
+
+var Subtitle$2 = function Subtitle(_ref2) {
+  var children = _ref2.children,
+      fontFamily = _ref2.fontFamily,
+      fontSize = _ref2.fontSize,
+      lineHeight = _ref2.lineHeight;
+  return /*#__PURE__*/React__default['default'].createElement(Typography$1, {
+    color: "neutral4",
+    dangerouslySetInnerHTML: children,
+    element: "p",
+    fontFamily: fontFamily,
+    fontSize: fontSize[0],
+    lineHeight: lineHeight[0],
+    lg: {
+      fontSize: fontSize[1],
+      lineHeight: lineHeight[1]
+    }
+  });
+};
+
+Subtitle$2.propTypes = {
+  children: PropTypes__default['default'].string,
+  fontFamily: PropTypes__default['default'].string,
+  fontSize: PropTypes__default['default'].array,
+  lineHeight: PropTypes__default['default'].array
+};
+
+var ImageGallery = function ImageGallery(_ref) {
+  var caption = _ref.caption,
+      items = _ref.items,
+      height = _ref.height,
+      width = _ref.width;
+  return /*#__PURE__*/React__default['default'].createElement(Container$3, {
+    $height: height,
+    $width: width
+  }, /*#__PURE__*/React__default['default'].createElement("amp-carousel", {
+    lightbox: true,
+    height: "420",
+    layout: "responsive",
+    type: "slides",
+    width: "720"
+  }, lodash.map(items, function (item, key) {
+    return /*#__PURE__*/React__default['default'].createElement("figure", {
+      key: key
+    }, /*#__PURE__*/React__default['default'].createElement(TopImage, {
+      caption: {
+        show: false
+      },
+      featured: false,
+      image: true,
+      mb: ['0', '0'],
+      value: item.value
+    }), /*#__PURE__*/React__default['default'].createElement("figcaption", null, /*#__PURE__*/React__default['default'].createElement(SubtitleBox$1, null, /*#__PURE__*/React__default['default'].createElement(Subtitle$2, {
+      fontFamily: caption.fontFamily,
+      fontSize: caption.fontSize,
+      lineHeight: caption.lineHeight
+    }, item.caption))));
+  })));
+};
+ImageGallery.defaultProps = {
+  caption: {
+    fontFamily: 'secondary',
+    fontSize: ['14px', '14px'],
+    lineHeight: ['130%', '130%']
+  },
+  height: '420px',
+  width: '720px'
+};
+ImageGallery.propTypes = {
+  caption: PropTypes__default['default'].object,
+  items: PropTypes__default['default'].array,
+  height: PropTypes__default['default'].string,
+  width: PropTypes__default['default'].string
+};
+
 var Citation = function Citation(_ref) {
   var color = _ref.color,
       fontFamily = _ref.fontFamily,
@@ -1759,8 +2023,8 @@ Citation.propTypes = {
   value: PropTypes__default['default'].string
 };
 
-var _templateObject$2;
-var Container$2 = styled__default['default'].div(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  width: 100%;\n  height: max-content;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
+var _templateObject$3;
+var Container$4 = styled__default['default'].div(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
   return props.theme.queries.md;
 }, function (props) {
   return props.$width;
@@ -1778,7 +2042,7 @@ var FacebookEmbed = function FacebookEmbed(_ref) {
     return null;
   }
 
-  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-facebook", {
@@ -1813,7 +2077,7 @@ var InstagramEmbed = function InstagramEmbed(_ref) {
   if (!parsedPrefix[1]) return null;
   var parsedSufix = parsedPrefix[1] && parsedPrefix[1].split('/');
   var dataShortcode = parsedSufix[0] ? parsedSufix[0] : parsedPrefix[1];
-  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-instagram", {
@@ -1844,7 +2108,7 @@ var TwitterEmbed = function TwitterEmbed(_ref) {
     return null;
   }
 
-  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-twitter", {
@@ -1881,7 +2145,7 @@ var YouTubeEmbed = function YouTubeEmbed(_ref) {
   }
 
   var parsedUrl = parseYoutubeLink(url);
-  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-youtube", {
@@ -1892,8 +2156,8 @@ var YouTubeEmbed = function YouTubeEmbed(_ref) {
   }));
 };
 YouTubeEmbed.defaultProps = {
-  height: '270px',
-  width: '552px'
+  height: '360px',
+  width: '720px'
 };
 YouTubeEmbed.propTypes = {
   url: PropTypes__default['default'].string.isRequired,
@@ -2100,7 +2364,7 @@ Paragraph$1.propTypes = {
   value: PropTypes__default['default'].string
 };
 
-var Container$3 = function Container(_ref) {
+var Container$5 = function Container(_ref) {
   var children = _ref.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "column",
@@ -2111,7 +2375,7 @@ var Container$3 = function Container(_ref) {
     }
   }, children);
 };
-Container$3.propTypes = {
+Container$5.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 var Tag = function Tag(_ref2) {
@@ -2133,7 +2397,7 @@ var Tags = function Tags(_ref) {
   var fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
       items = _ref.items;
-  return /*#__PURE__*/React__default['default'].createElement(Container$3, null, lodash.map(items, function (item, key) {
+  return /*#__PURE__*/React__default['default'].createElement(Container$5, null, lodash.map(items, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Tag, {
       key: key
     }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
@@ -2155,165 +2419,6 @@ Tags.propTypes = {
   fontSize: PropTypes__default['default'].array,
   fontWeight: PropTypes__default['default'].number,
   items: PropTypes__default['default'].array
-};
-
-var Box = function Box(_ref) {
-  var children = _ref.children,
-      mb = _ref.mb;
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "\n      img {\n        width: 100%;\n      }\n    ",
-    mb: mb[0],
-    lg: {
-      mb: mb[1]
-    },
-    width: "100%"
-  }, children);
-};
-Box.propTypes = {
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
-  mb: PropTypes__default['default'].array
-};
-var BoxFeatured = function BoxFeatured(_ref2) {
-  var children = _ref2.children,
-      mb = _ref2.mb,
-      value = _ref2.value;
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "\n      background-image: url('".concat(value, "');\n      background-repeat: no-repeat;\n      background-size: cover;\n    "),
-    mb: mb[0],
-    lg: {
-      mb: mb[1]
-    },
-    height: "100%",
-    width: "100%"
-  }, children);
-};
-BoxFeatured.propTypes = {
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
-  mb: PropTypes__default['default'].array,
-  value: PropTypes__default['default'].string
-};
-var SubtitleBox = function SubtitleBox(_ref3) {
-  var children = _ref3.children;
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    bgColor: "neutral9",
-    px: 3,
-    py: 3,
-    width: "calc(100% - 48px)",
-    lg: {
-      px: 4,
-      py: 2,
-      width: 'calc(100% - 64px)'
-    }
-  }, children);
-};
-SubtitleBox.propTypes = {
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
-  px: PropTypes__default['default'].array,
-  py: PropTypes__default['default'].array,
-  width: PropTypes__default['default'].array
-};
-var Subtitle$1 = function Subtitle(_ref4) {
-  var children = _ref4.children,
-      fontFamily = _ref4.fontFamily,
-      fontSize = _ref4.fontSize,
-      lineHeight = _ref4.lineHeight;
-  return /*#__PURE__*/React__default['default'].createElement(Typography$1, {
-    color: "neutral4",
-    dangerouslySetInnerHTML: children,
-    element: "p",
-    fontFamily: fontFamily,
-    fontSize: fontSize[0],
-    lineHeight: lineHeight[0],
-    lg: {
-      fontSize: fontSize[1],
-      lineHeight: lineHeight[1]
-    }
-  });
-};
-Subtitle$1.propTypes = {
-  children: PropTypes__default['default'].string,
-  fontFamily: PropTypes__default['default'].string,
-  fontSize: PropTypes__default['default'].array,
-  lineHeight: PropTypes__default['default'].array
-};
-
-var Container$4 = function Container(_ref) {
-  var children = _ref.children,
-      featured = _ref.featured,
-      mb = _ref.mb,
-      value = _ref.value;
-  if (featured) return /*#__PURE__*/React__default['default'].createElement(BoxFeatured, {
-    mb: mb,
-    value: value
-  });
-  return /*#__PURE__*/React__default['default'].createElement(Box, {
-    mb: mb
-  }, children);
-};
-
-Container$4.propTypes = {
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
-  featured: PropTypes__default['default'].bool,
-  mb: PropTypes__default['default'].array,
-  value: PropTypes__default['default'].string
-};
-
-var TopImage = function TopImage(_ref2) {
-  var amp = _ref2.amp,
-      caption = _ref2.caption,
-      featured = _ref2.featured,
-      image = _ref2.image,
-      mb = _ref2.mb,
-      value = _ref2.value;
-  if (!image) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
-    featured: featured,
-    mb: mb,
-    value: value
-  }, amp ? /*#__PURE__*/React__default['default'].createElement("amp-img", {
-    alt: caption,
-    src: value,
-    layout: "responsive",
-    style: {
-      display: 'inline-flex',
-      width: '100%'
-    },
-    height: "640px",
-    width: "1280px"
-  }) : !featured && /*#__PURE__*/React__default['default'].createElement("img", {
-    alt: caption.value,
-    src: value,
-    style: {
-      width: '100%'
-    }
-  }), caption && caption.show && /*#__PURE__*/React__default['default'].createElement(SubtitleBox, null, /*#__PURE__*/React__default['default'].createElement(Subtitle$1, {
-    fontFamily: caption.fontFamily,
-    fontSize: caption.fontSize,
-    lineHeight: caption.lineHeight
-  }, caption.value)));
-};
-
-TopImage.defaultProps = {
-  amp: false,
-  featured: false,
-  image: true,
-  caption: {
-    fontFamily: 'secondary',
-    fontSize: ['14px', '14px'],
-    lineHeight: ['130%', '130%'],
-    show: true,
-    value: 'Legenda da Imagem'
-  },
-  mb: ['2', '2'],
-  value: 'https://xprog.com.br/static/images/img-destak.jpg'
-};
-TopImage.propTypes = {
-  amp: PropTypes__default['default'].bool,
-  featured: PropTypes__default['default'].bool,
-  image: PropTypes__default['default'].bool,
-  caption: PropTypes__default['default'].object,
-  mb: PropTypes__default['default'].array,
-  value: PropTypes__default['default'].string
 };
 
 var Body = function Body(_ref) {
@@ -2667,6 +2772,7 @@ var TextBody = function TextBody(props) {
   var bodyWidth = props.bodyWidth,
       citation = props.citation,
       content = props.content,
+      gallery = props.gallery,
       heading2 = props.heading2,
       heading3 = props.heading3,
       heading4 = props.heading4,
@@ -2782,6 +2888,8 @@ var TextBody = function TextBody(props) {
       default:
         return /*#__PURE__*/React__default['default'].createElement("pre", null, "erro no parse do conte\xFAdo");
     }
+  }), gallery && gallery.length > 0 && /*#__PURE__*/React__default['default'].createElement(ImageGallery, {
+    items: gallery
   }), /*#__PURE__*/React__default['default'].createElement(Tags, tags));
 };
 
@@ -2790,6 +2898,7 @@ TextBody.propTypes = {
   bodyWidth: PropTypes__default['default'].string,
   content: PropTypes__default['default'].string,
   citation: PropTypes__default['default'].object,
+  gallery: PropTypes__default['default'].array,
   heading2: PropTypes__default['default'].object,
   heading3: PropTypes__default['default'].object,
   heading4: PropTypes__default['default'].object,
@@ -2851,6 +2960,7 @@ var Article = function Article(props) {
       byline = props.byline,
       citation = props.citation,
       featured = props.featured,
+      gallery = props.gallery,
       headWidth = props.headWidth,
       heading2 = props.heading2,
       heading3 = props.heading3,
@@ -2881,6 +2991,7 @@ var Article = function Article(props) {
     bodyWidth: bodyWidth,
     citation: citation,
     content: textbody,
+    gallery: gallery,
     heading2: heading2,
     heading3: heading3,
     heading4: heading4,
@@ -2902,6 +3013,7 @@ Article.propTypes = {
   byline: PropTypes__default['default'].object,
   citation: PropTypes__default['default'].object,
   featured: PropTypes__default['default'].object,
+  gallery: PropTypes__default['default'].array,
   headWidth: PropTypes__default['default'].string,
   heading2: PropTypes__default['default'].object,
   heading3: PropTypes__default['default'].object,
@@ -3032,8 +3144,8 @@ var parseProps$2 = function parseProps(media, props) {
   }
 };
 
-var _templateObject$3, _templateObject2$1;
-var StyledButton = styled__default['default'].button(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var _templateObject$4, _templateObject2$1;
+var StyledButton = styled__default['default'].button(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return parseProps$2('', props);
 }, function (props) {
   return props.xs && parseProps$2('xs', props);
@@ -3562,7 +3674,7 @@ ButtonSubmit.propTypes = {
   buttonAction: PropTypes__default['default'].func,
   children: PropTypes__default['default'].string
 };
-var Container$5 = function Container(_ref3) {
+var Container$6 = function Container(_ref3) {
   var children = _ref3.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "column",
@@ -3579,7 +3691,7 @@ var Container$5 = function Container(_ref3) {
     }
   }, children);
 };
-Container$5.propTypes = {
+Container$6.propTypes = {
   children: PropTypes__default['default'].array
 };
 var Content$2 = function Content(_ref4) {
@@ -3620,7 +3732,7 @@ var Dialog = function Dialog(_ref) {
   var buttonAction = _ref.buttonAction,
       buttonText = _ref.buttonText,
       message = _ref.message;
-  return /*#__PURE__*/React__default['default'].createElement(Area, null, /*#__PURE__*/React__default['default'].createElement(Container$5, null, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Message, {
+  return /*#__PURE__*/React__default['default'].createElement(Area, null, /*#__PURE__*/React__default['default'].createElement(Container$6, null, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Message, {
     text: message
   }, message)), /*#__PURE__*/React__default['default'].createElement(ButtonSubmit, {
     buttonAction: buttonAction
@@ -3779,7 +3891,7 @@ FieldErrorMessage.propTypes = {
   children: PropTypes__default['default'].string
 };
 
-var _templateObject$4, _templateObject2$2;
+var _templateObject$5, _templateObject2$2;
 
 var handleFontFamily = function handleFontFamily(props) {
   var theme = lodash.get(props, 'theme.fonts');
@@ -3834,7 +3946,7 @@ var handleSize = function handleSize(props) {
   return "".concat(props.size, "px");
 };
 
-var Input$1 = styled__default['default'].input(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: ", ";\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n  ::placeholder {\n    color: ", ";\n  }\n"])), handleFontSize, handleFontFamily, handleColor, handleBorderRadius, handlePlaceholderColor);
+var Input$1 = styled__default['default'].input(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: ", ";\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n  ::placeholder {\n    color: ", ";\n  }\n"])), handleFontSize, handleFontFamily, handleColor, handleBorderRadius, handlePlaceholderColor);
 var InputContainer = styled__default['default'].div(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  background-color: white;\n  width: 100%;\n  height: ", ";\n  box-shadow: ", ";\n  display: flex;\n  align-items: center;\n  border-radius: ", ";\n  &:focus-within {\n    box-shadow: ", ";\n  }\n"])), handleSize, function (props) {
   return "0 0 0 1px ".concat(handleInputColor(props));
 }, handleBorderRadius, function (props) {
@@ -4153,127 +4265,6 @@ Image$1.defaultProps = {
   content: {}
 };
 
-function SvgIcArrowBack(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    height: 32,
-    viewBox: "0 0 24 24",
-    width: 32
-  }, props), /*#__PURE__*/React.createElement("path", {
-    d: "M0 0h24v24H0z",
-    fill: "none"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
-  }));
-}
-
-function SvgIcArrowForward(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    height: 32,
-    viewBox: "0 0 24 24",
-    width: 24
-  }, props), /*#__PURE__*/React.createElement("path", {
-    d: "M0 0h24v24H0z",
-    fill: "none"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
-  }));
-}
-
-var RenderItem = function RenderItem(_ref) {
-  var linkurl = _ref.linkurl,
-      name = _ref.name,
-      lead = _ref.lead,
-      selected = _ref.selected,
-      on = _ref.on;
-  var propsGallerySelected = {
-    custom: 'gallery-selected',
-    w: '100p',
-    mb: '2'
-  };
-  var propsGalleryItem = {
-    custom: 'gallery-item',
-    mr: '2',
-    onClick: function onClick() {
-      return on({
-        linkurl: linkurl,
-        name: name,
-        lead: lead
-      });
-    }
-  };
-  var propsGallery = selected ? propsGallerySelected : propsGalleryItem;
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, propsGallery, /*#__PURE__*/React__default['default'].createElement("img", {
-    className: "image-file",
-    src: linkurl,
-    alt: "".concat(name)
-  }), /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "image-name"
-  }, name), /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "image-lead"
-  }, lead));
-};
-
-var ImageGallery = function ImageGallery(_ref2) {
-  var items = _ref2.items,
-      selected = _ref2.selected,
-      on = _ref2.on;
-  if (!items || items.length === 0) return false;
-  var item_selected = selected ? selected : items[0];
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "article-image-gallery",
-    w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    align: "row",
-    custom: "image-selected",
-    w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(RenderItem, _extends({}, item_selected, {
-    selected: true,
-    on: on
-  }))), items.length > 1 && /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    align: "row",
-    custom: "box-list",
-    w: "100p"
-  }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    align: "row center middle",
-    custom: "arrow-left"
-  }, /*#__PURE__*/React__default['default'].createElement(SvgIcArrowBack, null)), /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    align: "row",
-    custom: "image-list",
-    w: "100p"
-  }, lodash.map(items, function (item, key) {
-    return /*#__PURE__*/React__default['default'].createElement(RenderItem, _extends({}, item, {
-      key: key,
-      on: on
-    }));
-  })), /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    align: "row center middle",
-    custom: "arrow-right"
-  }, /*#__PURE__*/React__default['default'].createElement(SvgIcArrowForward, null))));
-};
-
-ImageGallery.propTypes = {
-  items: PropTypes__default['default'].array,
-  selected: PropTypes__default['default'].shape({
-    lead: PropTypes__default['default'].string,
-    linkUrl: PropTypes__default['default'].string,
-    name: PropTypes__default['default'].string
-  }),
-  on: PropTypes__default['default'].func
-};
-RenderItem.propTypes = {
-  linkurl: PropTypes__default['default'].string,
-  name: PropTypes__default['default'].string,
-  lead: PropTypes__default['default'].string,
-  selected: PropTypes__default['default'].bool,
-  on: PropTypes__default['default'].func.isRequired
-};
-ImageGallery.defaultProps = {
-  selected: false,
-  items: []
-};
-
 var SideMenu = function SideMenu(props) {
   var children = props.children,
       isOpen = props.isOpen,
@@ -4346,8 +4337,22 @@ SideMenu.propTypes = {
 };
 var index$2 = styled.withTheme(SideMenu);
 
-var _templateObject$5;
-var StyledAria$1 = styled__default['default'].a(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  width: 100%;\n  text-decoration: none;\n"])));
+function SvgIcArrowForward(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    height: 32,
+    viewBox: "0 0 24 24",
+    width: 24
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
+  }));
+}
+
+var _templateObject$6;
+var StyledAria$1 = styled__default['default'].a(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteral(["\n  width: 100%;\n  text-decoration: none;\n"])));
 
 var MenuItem = function MenuItem(_ref) {
   var children = _ref.children,
@@ -4501,7 +4506,7 @@ Topbar.defaultProps = {
   }
 };
 
-var _templateObject$6, _templateObject2$3;
+var _templateObject$7, _templateObject2$3;
 
 var parseColorVariation = function parseColorVariation(props) {
   if (props.transparent === true) return "\n    color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";\n  ");
@@ -4513,7 +4518,7 @@ var parseBackgroundVariation = function parseBackgroundVariation(props) {
   return "background-color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";");
 };
 
-var Container$6 = styled__default['default'].div(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var Container$7 = styled__default['default'].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return props.theme.parsePadding(props, props.theme);
 }, function (props) {
   return props.theme.parseMargin(props, props.theme);
@@ -4540,7 +4545,7 @@ var Subject$1 = function Subject(_ref) {
       transparent = _ref.transparent,
       weight = _ref.weight;
   if (!children) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container$6, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$7, {
     subjectColor: color,
     borderRadius: radius,
     px: px,
