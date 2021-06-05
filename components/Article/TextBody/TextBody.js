@@ -5,12 +5,10 @@ import {withTheme} from 'styled-components';
 
 import Block from '../../Block';
 import Citation from '../Citation/Citation';
-import {
-  FacebookEmbed,
-  InstagramEmbed,
-  TwitterEmbed,
-  YoutubeEmbed
-} from '../Embeds/Embeds';
+import FacebookEmbed from '../Embeds/Facebook';
+import InstagramEmbed from '../Embeds/Instagram';
+import TwitterEmbed from '../Embeds/Twitter';
+import YouTubeEmbed from '../Embeds/YouTube';
 import Heading2 from '../Headings/Heading2';
 import Heading3 from '../Headings/Heading3';
 import Heading4 from '../Headings/Heading4';
@@ -22,7 +20,6 @@ import {parse_content} from './TextBodyParser';
 
 const TextBody = (props) => {
   const {
-    amp,
     bodyWidth,
     citation,
     content,
@@ -34,21 +31,22 @@ const TextBody = (props) => {
     paragraph,
     tags
   } = props;
+  
   if (!content) return null;
+
   let readmore = [];
   let intervention_amount = 3;
   // let intervention_readmore = false;
   let intervention_readmore_inserted = false;
   // let intervention_status = false;
   let paragraph_length = 0;
-  const body_items = parse_content(content);
-  const render_image = (key, value) => {
-    if(!value)
-      return null;
 
+  const body_items = parse_content(content);
+
+  const render_image = (key, value) => {
+    if (!value) return null;
     const image_data = find(images.items, {contentId: value.contentId});
-    if(!image_data)
-      return null;
+    if (!image_data) return null;
     
     return (
       <Block mb={3} key={key} width="100%">
@@ -67,6 +65,7 @@ const TextBody = (props) => {
       </Block>
     );
   };
+
   const render_paragraph = (key, value) => {
     // intervention_readmore = false;
     // intervention_status = false;
@@ -86,96 +85,44 @@ const TextBody = (props) => {
       <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
     {intervention_status && 
       <AdsPlaceholder />} */}
-    return (
-      <Paragraph {...paragraph} key={key} value={value} />
-    );
+    return <Paragraph {...paragraph} key={key} value={value} />;
   };
 
-  const get_hyperlink_color = (color = 'primary1') => 
-    get(props, `theme.colors.${color}`, '');
+  const get_hyperlink_color = () => {
+    let color = 'primary1';
+    if (hyperlink) color = hyperlink;
+    return get(props, `theme.colors.${color}`);
+  };
   
   return (
-    <S.Body
-      bodyWidth={bodyWidth}
-      hyperlinkColor={get_hyperlink_color(hyperlink)}
-    >
-      {(
-        map(body_items, ({type, value}, key) => {
-          switch(type) {
-            case 'Cite': 
-              return (
-                <Citation
-                  {...citation}
-                  key={key}
-                  value={value}
-                />
-              );
-            case 'Facebook': 
-              return (
-                <FacebookEmbed
-                  amp={amp}
-                  key={key}
-                  value={value}
-                />
-              );
-            case 'Instagram': 
-              return (
-                <InstagramEmbed
-                  amp={amp}
-                  key={key}
-                  value={value}
-                />
-              );
-            case 'Twitter': 
-              return (
-                <TwitterEmbed
-                  amp={amp}
-                  key={key}
-                  value={value}
-                />
-              );
-            case 'Youtube': 
-              return (
-                <YoutubeEmbed
-                  amp={amp}
-                  key={key}
-                  value={value}
-                />
-              );
-            case 'Image': 
-              return render_image(key, value);
-            case 'Heading2': 
-              return (
-                <Heading2
-                  {...heading2}
-                  key={key}
-                  value={value}
-                />
-              );
-            case 'Heading3': 
-              return (
-                <Heading3
-                  {...heading3}
-                  key={key}
-                  value={value}
-                />
-              );
-            case 'Heading4': 
-              return (
-                <Heading4
-                  {...heading4}
-                  key={key}
-                  value={value}
-                />
-              );
-            case 'Paragraph': 
-              return render_paragraph(key, value);
-          }
-        })
-      )}
-      <Tags
-        {...tags}
-      />
+    <S.Body bodyWidth={bodyWidth} hyperlinkColor={get_hyperlink_color()}>
+      {map(body_items, ({type, value}, key) => {
+        switch(type) {
+          case 'Cite': 
+            return <Citation {...citation} key={key} value={value} />;
+          case 'Facebook': 
+            return <FacebookEmbed key={key} url={value} />;
+          case 'Instagram': 
+            return <InstagramEmbed key={key} url={value} />;            
+          case 'Twitter': 
+            return <TwitterEmbed key={key} tweetId={value} />;
+          case 'Youtube': 
+            return <YouTubeEmbed key={key} url={value} />;
+          case 'Image': 
+            return render_image(key, value);
+          case 'Heading2': 
+            return <Heading2 {...heading2} key={key} value={value} />;
+          case 'Heading3': 
+            return <Heading3 {...heading3} key={key} value={value} />;
+          case 'Heading4': 
+            return <Heading4 {...heading4} key={key} value={value} />;
+          case 'Paragraph': 
+            return render_paragraph(key, value);
+          default:
+            return <pre>erro no parse do conteúdo</pre>;
+        }
+      })}
+      <Tags {...tags} />
     </S.Body>
   );
 };

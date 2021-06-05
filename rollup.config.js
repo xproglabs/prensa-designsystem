@@ -6,7 +6,7 @@ import babel from 'rollup-plugin-babel';
 import external from 'rollup-plugin-peer-deps-external';
 import sass from 'rollup-plugin-sass';
 
-const notInBuild = 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets';
+const notInBuild = 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets, prensa-app/**';
 const customResolveOptions = {moduleDirectory: 'node_modules'};
 
 export default [
