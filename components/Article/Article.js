@@ -17,6 +17,7 @@ const Article = (props) => {
     byline,
     citation,
     featured,
+    gallery,
     headWidth,
     heading2,
     heading3,
@@ -68,6 +69,7 @@ const Article = (props) => {
             bodyWidth={bodyWidth}
             citation={citation}
             content={textbody}
+            gallery={gallery}
             heading2={heading2}
             heading3={heading3}
             heading4={heading4}
@@ -94,6 +96,7 @@ Article.propTypes = {
   byline: PropTypes.object,
   citation: PropTypes.object,
   featured: PropTypes.object,
+  gallery: PropTypes.array,
   headWidth: PropTypes.string,
   heading2: PropTypes.object,
   heading3: PropTypes.object,

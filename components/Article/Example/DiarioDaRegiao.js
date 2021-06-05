@@ -18,6 +18,23 @@ const ArticleDR = () => {
         featured={{
           enabled: isFeatured
         }}
+        gallery={[
+          {
+            caption: 'Mariane criou empresa com foco na economia sustentável (Fotos: Divulgação)',
+            contentId: '1.3658',
+            value: 'http://qa.diariodaregiao.com.br/image/policy:1.3658/image.jpg?f=2x1&w=1200'
+          },
+          {
+            caption: 'O cabeleireiro Douglas Negrett montou salão para valorizar estética negra (Guilherme Baffi 7/5/2021)',
+            contentId: '1.34636',
+            value: 'http://qa.diariodaregiao.com.br/image/policy:1.34636/image.jpg?f=2x1&w=1200'
+          },
+          {
+            caption: 'Isadora, filha da médica Luciana Casseb, com camiseta da marca ',
+            contentId: '1.34723',
+            value: 'http://qa.diariodaregiao.com.br/image/policy:1.34723/image.jpg?f=2x1&w=1200'
+          }
+        ]}
         images={{
           items: [
             {
