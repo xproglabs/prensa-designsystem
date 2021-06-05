@@ -1,6 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {Container} from './styled'
+import PropTypes from 'prop-types';
+import React from 'react';
+
+import {Container} from './styled';
 
 const parseYoutubeLink = url => {
   let regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -11,7 +12,7 @@ const parseYoutubeLink = url => {
 const YouTubeEmbed = ({url, height, width}) => {
 
   if (!url) {
-    console.error('YouTubeEmbed LOGGER: missing url')
+    console.error('YouTubeEmbed LOGGER: missing url');
     return null;
   }
 
@@ -29,14 +30,14 @@ export const youtube_amp_script = () => (
 );
 
 YouTubeEmbed.defaultProps = {
-  height: '270px',
-  width: '552px'
-}
+  height: '320px',
+  width: '720px'
+};
 
 YouTubeEmbed.propTypes = {
   url: PropTypes.string.isRequired,
   height: PropTypes.string,
   width: PropTypes.string,
-}
+};
 
-export default YouTubeEmbed
+export default YouTubeEmbed;
