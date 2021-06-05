@@ -30,8 +30,8 @@ export const youtube_amp_script = () => (
 );
 
 YouTubeEmbed.defaultProps = {
-  height: '270px',
-  width: '552px'
+  height: '360px',
+  width: '720px'
 };
 
 YouTubeEmbed.propTypes = {
