@@ -1,7 +1,9 @@
-import {Block, Typography} from 'prensa';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
+
+import Block from '../Block';
+import Typography from '../Typography';
 
 const Container = styled.div`
   width: 100%;

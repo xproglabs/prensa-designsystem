@@ -4,6 +4,7 @@ import React from 'react';
 import {withTheme} from 'styled-components';
 
 import Block from '../../Block';
+import ImageGallery from '../../ImageGallery';
 import Citation from '../Citation/Citation';
 import FacebookEmbed from '../Embeds/Facebook';
 import InstagramEmbed from '../Embeds/Instagram';
@@ -23,6 +24,7 @@ const TextBody = (props) => {
     bodyWidth,
     citation,
     content,
+    gallery,
     heading2,
     heading3,
     heading4,
@@ -122,6 +124,9 @@ const TextBody = (props) => {
             return <pre>erro no parse do conteúdo</pre>;
         }
       })}
+      {gallery && gallery.length > 0 && (
+        <ImageGallery items={gallery} />
+      )}
       <Tags {...tags} />
     </S.Body>
   );
@@ -132,6 +137,7 @@ TextBody.propTypes = {
   bodyWidth: PropTypes.string,
   content: PropTypes.string,
   citation: PropTypes.object,
+  gallery: PropTypes.array,
   heading2: PropTypes.object,
   heading3: PropTypes.object,
   heading4: PropTypes.object,

@@ -2,6 +2,7 @@ import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import TopImage from '../Article/TopImage/TopImage';
 import {Container, Subtitle, SubtitleBox} from './styled';
 
 const ImageGallery = ({caption, items, height, width}) => {
@@ -14,14 +15,13 @@ const ImageGallery = ({caption, items, height, width}) => {
         type="slides"
         width="720">
         {map(items, (item, key) => (
-          <figure>
-            <amp-img 
-              alt={item.caption}
-              src={item.value}
-              layout="responsive"
-              height="360"
-              key={key}
-              width="720"
+          <figure key={key}>
+            <TopImage
+              caption={{show: false}}
+              featured={false}
+              image={true}
+              mb={['0', '0']}
+              value={item.value}
             />
             <figcaption>    
               <SubtitleBox>
