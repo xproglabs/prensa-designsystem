@@ -1739,7 +1739,7 @@ Subtitle$2.propTypes = {
 };
 
 var _templateObject$5;
-var Container$5 = styled__default['default'].div(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  width: 100%;\n  height: max-content;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
+var Container$5 = styled__default['default'].div(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
   return props.theme.queries.md;
 }, function (props) {
   return props.$width;
@@ -1805,10 +1805,10 @@ var ImageGallery = function ImageGallery(_ref) {
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-carousel", {
     lightbox: true,
-    height: "500",
+    height: height,
     layout: "responsive",
     type: "slides",
-    width: "720"
+    width: width
   }, lodash.map(items, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement("figure", {
       style: {
@@ -1821,7 +1821,7 @@ var ImageGallery = function ImageGallery(_ref) {
       layout: "responsive",
       height: "360",
       key: key,
-      width: "720"
+      width: width
     }), /*#__PURE__*/React__default['default'].createElement("figcaption", null, /*#__PURE__*/React__default['default'].createElement(SubtitleBox$1, null, /*#__PURE__*/React__default['default'].createElement(Subtitle$1, {
       fontFamily: caption.fontFamily,
       fontSize: caption.fontSize,
@@ -1836,7 +1836,7 @@ ImageGallery.defaultProps = {
     lineHeight: ['130%', '130%']
   },
   height: '500px',
-  width: '720px'
+  width: '768px'
 };
 ImageGallery.propTypes = {
   caption: PropTypes__default['default'].object,
