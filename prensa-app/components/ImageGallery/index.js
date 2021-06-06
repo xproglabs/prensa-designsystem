@@ -2,36 +2,29 @@ import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {Container, Subtitle, SubtitleBox} from './styled';
+import {Container} from './styled';
 
-const ImageGallery = ({caption, items, height, width}) => {
+const ImageGallery = ({items, height, width}) => {
   return (
     <Container $height={height} $width={width}>
       <amp-carousel
-        lightbox={true}
-        height="720px"
+        height="500"
         layout="responsive"
         type="slides"
-        width="720px">
+        width="768">
         {map(items, (item, key) => (
           <figure style={{margin: '0'}} key={key}>
             <amp-img 
               alt={item.caption}
               src={item.value}
+              lightbox="caption"
               layout="responsive"
-              height="360px"
+              height="384"
               key={key}
-              width="720px"
+              width="768"
             />
             <figcaption>    
-              <SubtitleBox>
-                <Subtitle
-                  fontFamily={caption.fontFamily}
-                  fontSize={caption.fontSize}
-                  lineHeight={caption.lineHeight}>
-                  {item.caption}
-                </Subtitle>
-              </SubtitleBox>
+              {item.caption}
             </figcaption>
           </figure>
         ))}
