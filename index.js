@@ -1694,7 +1694,7 @@ Subject$1.propTypes = {
   value: PropTypes__default['default'].string
 };
 
-var Subtitle$2 = function Subtitle(_ref) {
+var Subtitle$1 = function Subtitle(_ref) {
   var color = _ref.color,
       fontFamily = _ref.fontFamily,
       fontSize = _ref.fontSize,
@@ -1721,7 +1721,7 @@ var Subtitle$2 = function Subtitle(_ref) {
   }));
 };
 
-Subtitle$2.defaultProps = {
+Subtitle$1.defaultProps = {
   color: 'neutral3',
   fontSize: ['18px', '18px'],
   fontFamily: 'secondary',
@@ -1729,7 +1729,7 @@ Subtitle$2.defaultProps = {
   mb: ['2', '2'],
   value: 'A XPROG presta serviços para a Atex Brasil fornecendo mão de obra qualificada e gestão da implantação de seus projetos digitais. Serviços que se consolidaram em uma parceria entre empresas, agregando valor à consultoria entregue aos clientes da Atex Brasil.'
 };
-Subtitle$2.propTypes = {
+Subtitle$1.propTypes = {
   color: PropTypes__default['default'].string,
   fontFamily: PropTypes__default['default'].string,
   fontSize: PropTypes__default['default'].array,
@@ -1747,57 +1747,22 @@ var Container$5 = styled__default['default'].div(_templateObject$5 || (_template
   return props.$height;
 });
 
-var SubtitleBox$1 = function SubtitleBox(_ref) {
-  var children = _ref.children;
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    bgColor: "neutral9",
-    px: 3,
-    py: 3,
-    width: "calc(100% - 48px)",
-    lg: {
-      px: 4,
-      py: 2,
-      width: 'calc(100% - 64px)'
-    }
-  }, children);
-};
-
-SubtitleBox$1.propTypes = {
+({
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
   px: PropTypes__default['default'].array,
   py: PropTypes__default['default'].array,
   width: PropTypes__default['default'].array
-};
+});
 
-var Subtitle$1 = function Subtitle(_ref2) {
-  var children = _ref2.children,
-      fontFamily = _ref2.fontFamily,
-      fontSize = _ref2.fontSize,
-      lineHeight = _ref2.lineHeight;
-  return /*#__PURE__*/React__default['default'].createElement(Typography$2, {
-    color: "neutral4",
-    dangerouslySetInnerHTML: children,
-    element: "p",
-    fontFamily: fontFamily,
-    fontSize: fontSize[0],
-    lineHeight: lineHeight[0],
-    lg: {
-      fontSize: fontSize[1],
-      lineHeight: lineHeight[1]
-    }
-  });
-};
-
-Subtitle$1.propTypes = {
+({
   children: PropTypes__default['default'].string,
   fontFamily: PropTypes__default['default'].string,
   fontSize: PropTypes__default['default'].array,
   lineHeight: PropTypes__default['default'].array
-};
+});
 
 var ImageGallery = function ImageGallery(_ref) {
-  var caption = _ref.caption,
-      items = _ref.items,
+  var items = _ref.items,
       height = _ref.height,
       width = _ref.width;
   return /*#__PURE__*/React__default['default'].createElement(Container$5, {
@@ -1805,10 +1770,10 @@ var ImageGallery = function ImageGallery(_ref) {
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-carousel", {
     lightbox: true,
-    height: height,
+    height: "500",
     layout: "responsive",
     type: "slides",
-    width: width
+    width: "768"
   }, lodash.map(items, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement("figure", {
       style: {
@@ -1819,14 +1784,10 @@ var ImageGallery = function ImageGallery(_ref) {
       alt: item.caption,
       src: item.value,
       layout: "responsive",
-      height: "360",
+      height: "384",
       key: key,
-      width: width
-    }), /*#__PURE__*/React__default['default'].createElement("figcaption", null, /*#__PURE__*/React__default['default'].createElement(SubtitleBox$1, null, /*#__PURE__*/React__default['default'].createElement(Subtitle$1, {
-      fontFamily: caption.fontFamily,
-      fontSize: caption.fontSize,
-      lineHeight: caption.lineHeight
-    }, item.caption))));
+      width: "768"
+    }), /*#__PURE__*/React__default['default'].createElement("figcaption", null, item.caption));
   })));
 };
 ImageGallery.defaultProps = {
@@ -3005,11 +2966,11 @@ var Article = function Article(props) {
     amp: amp
   }, topimage))), /*#__PURE__*/React__default['default'].createElement(ContentFeatured, {
     maxWidth: headWidth
-  }, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$2, subtitle))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
+  }, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$1, subtitle))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: headWidth
   }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Byline, byline)))) : /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: headWidth
-  }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$2, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline)), /*#__PURE__*/React__default['default'].createElement(TopImage, _extends({
+  }, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Subject$1, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle$1, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline)), /*#__PURE__*/React__default['default'].createElement(TopImage, _extends({
     amp: amp
   }, topimage))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: bodyWidth
