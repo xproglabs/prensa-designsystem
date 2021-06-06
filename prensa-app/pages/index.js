@@ -31,7 +31,7 @@ export default function Home() {
   const youtubeUrl = 'https://www.youtube.com/watch?v=qJzT_Ww8q9g';
   const imageGallery = [
     {
-      caption: 'Mariane criou empresa com foco na economia sustentável (Fotos: Divulgação)',
+      caption: 'Tadeu Moreno (médico), Luís Fernando de Barros (fisiologista), Galeano, Volpi, Pablo, Miranda, Igor Gomes, Arboleda, Bruno Alves, Hernanes, Léo, Shaylon, Alejandro Kohan (preparador físico), Gustavo Nepote (preparador de goleiros), Lucas Perri, Pedro Campos (preparador físico), Octavio Ohl (preparador de goleiros), Cristiano Alkinim (roupeiro, Juan Branda (auxiliar técnico), Hernán Crespo e Aílton Rodrigues (massagista); Liziero, Igor Vinícius, Reinaldo, Luan, Gabriel Sara, Rodrigo Nestor, Éder, Luciano, Joao Rojas, William, Paulinho e Orejuelar (Foto: Rubens Chiri / saopaulofc.net)',
       contentId: '1.3658',
       value: 'http://qa.diariodaregiao.com.br/image/policy:1.3658/image.jpg?f=2x1&w=1200'
     },
