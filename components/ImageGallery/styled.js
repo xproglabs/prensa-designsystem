@@ -6,8 +6,9 @@ import Block from '../Block';
 import Typography from '../Typography';
 
 const Container = styled.div`
-  width: 100%;
   height: max-content;
+  margin-bottom: 24px;
+  width: 100%;
   @media (min-width: ${props => props.theme.queries.md}) {
     width: ${props => props.$width};
     height: ${props => props.$height};

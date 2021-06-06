@@ -9,10 +9,10 @@ const ImageGallery = ({caption, items, height, width}) => {
     <Container $height={height} $width={width}>
       <amp-carousel
         lightbox={true}
-        height="500"
+        height={height}
         layout="responsive"
         type="slides"
-        width="720">
+        width={width}>
         {map(items, (item, key) => (
           <figure style={{margin: '0'}} key={key}>
             <amp-img 
@@ -21,7 +21,7 @@ const ImageGallery = ({caption, items, height, width}) => {
               layout="responsive"
               height="360"
               key={key}
-              width="720"
+              width={width}
             />
             <figcaption>    
               <SubtitleBox>
@@ -51,7 +51,7 @@ ImageGallery.defaultProps = {
     lineHeight: ['130%', '130%']
   },
   height: '500px',
-  width: '720px'
+  width: '768px'
 };
 
 ImageGallery.propTypes = {
