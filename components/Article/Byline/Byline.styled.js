@@ -57,13 +57,9 @@ export const Content = ({children}) =>
     width='100%'
     align='column'
     mb={4}
-    md={{
-      align: 'row',
-      aligny: 'between'
-    }}
-    lg={{
-      mb: 5
-    }}>
+    md={{align: 'row', aligny: 'middle'}}
+    lg={{mb: 5}}
+  >
     {children}
   </Block>;
 
