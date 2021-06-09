@@ -1,10 +1,10 @@
-import { ArgsTable, Meta } from '@storybook/addon-docs/blocks';
-import {CodeBlock, Space} from 'prensa-docs';
-import Button from './index';
-import DownloadIcon from '../../icons/ArrowCircleDownBlack18Dp';
-import ArrowRightIcon from '../../icons/IcArrowForward';
-import {ThemeProvider} from 'styled-components';
-import {theme} from '../../styles/theme';
+import { ArgsTable, Meta } from "@storybook/addon-docs/blocks";
+import { CodeBlock, Space } from "prensa-docs";
+import Button from "./index";
+import DownloadIcon from "../../icons/ArrowCircleDownBlack18Dp";
+import ArrowRightIcon from "../../icons/IcArrowForward";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const Template = (args) => <Button {...args} />;
 
@@ -15,36 +15,45 @@ export const Template = (args) => <Button {...args} />;
 <Space size={4} />
 
 <pre>
-  <CodeBlock>{`import {Button} from 'prensa'`}</CodeBlock>
+	<CodeBlock>{`import {Button} from 'prensa'`}</CodeBlock>
 </pre>
 
 <Space size={6} />
 
 ### Variações
+
 O Button carrega três variações de estilo, **filled**, **outlined** e **ghost**. Elas alteram a renderização da estrutura do botão para diferentes casos de uso. Para filled, usamos background-color. Já outlined, usa border-color com backgorund transparente. O ghost não utiliza bordas e tem um background transparente.
 
 <ThemeProvider theme={theme}>
-  <div style={{display: 'flex'}}>
-    <Button variant="filled" style={{marginRight: 8}}>Avançar</Button>
-    <Button variant="outlined" style={{marginRight: 8}}>Avançar</Button>
-    <Button variant="ghost" style={{marginRight: 8}}>Avançar</Button>
-  </div>
+	<div style={{ display: "flex" }}>
+		<Button variant="filled" style={{ marginRight: 8 }}>
+			Avançar
+		</Button>
+		<Button variant="outlined" style={{ marginRight: 8 }}>
+			Avançar
+		</Button>
+		<Button variant="ghost" style={{ marginRight: 8 }}>
+			Avançar
+		</Button>
+	</div>
 </ThemeProvider>
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`
+	<CodeBlock
+		children={`
   <Button variant="filled">Avançar</Button>
   <Button variant="outlined">Avançar</Button>
   <Button variant="ghost">Avançar</Button>
-  `}/>
+  `}
+	/>
 </pre>
-
 
 <Space size={6} />
 
 ### Esquema de cores
+
 O componente pode receber na sua prop `color` todos os tokens de cor existentes dentro do theme.
 
 Existem três formas de utilizar a prop color:
@@ -54,77 +63,116 @@ Existem três formas de utilizar a prop color:
 > A. Color receber o token de cor sem o prefixo color ou hífen: `color="editorial3"`
 
 <ThemeProvider theme={theme}>
-  <div style={{display: 'flex'}}>
-    <Button variant="filled" color='editorial3' style={{marginRight: 8}}>Token</Button>
-  </div>
+	<div style={{ display: "flex" }}>
+		<Button variant="filled" color="editorial3" style={{ marginRight: 8 }}>
+			Token
+		</Button>
+	</div>
 </ThemeProvider>
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`<Button variant="filled" color='editorial3'>Token</Button>`}/>
+	<CodeBlock
+		children={`<Button variant="filled" color='editorial3'>Token</Button>`}
+	/>
 </pre>
 
 <Space size={4} />
 
 > B. Color receber um valor do theme através das props: `props.theme.colors.primary1`
+
 <!-- (para funcionar fora do contexto do styled o componente HOC deve ser exportado com a função withTheme) -->
 
 <ThemeProvider theme={theme}>
-  <div style={{display: 'flex'}}>
-    <Button variant="filled" color='primary1' style={{marginRight: 8}}>Theme</Button>
-  </div>
+	<div style={{ display: "flex" }}>
+		<Button variant="filled" color="primary1" style={{ marginRight: 8 }}>
+			Theme
+		</Button>
+	</div>
 </ThemeProvider>
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`<Button variant="filled" color={props.theme.colors.primary1}>Theme</Button>`}/>
+	<CodeBlock
+		children={`<Button variant="filled" color={props.theme.colors.primary1}>Theme</Button>`}
+	/>
 </pre>
 
 <Space size={4} />
 
 > C. Color receber uma string com # no início: `color="#993399"`
+
 <!-- (para funcionar fora do contexto do styled o componente HOC deve ser exportado com a função withTheme) -->
 
 <ThemeProvider theme={theme}>
-  <div style={{display: 'flex'}}>
-    <Button variant="filled" color='#993399' style={{marginRight: 8}}>Hex Value</Button>
-  </div>
+	<div style={{ display: "flex" }}>
+		<Button variant="filled" color="#993399" style={{ marginRight: 8 }}>
+			Hex Value
+		</Button>
+	</div>
 </ThemeProvider>
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`<Button variant="filled" color="#993399">Hex Value</Button>`}/>
+	<CodeBlock
+		children={`<Button variant="filled" color="#993399">Hex Value</Button>`}
+	/>
 </pre>
 
 <Space size={6} />
 
 ### Border radius
+
 O componente possui acesso a família de variações para o css border-radius. Podemos alternar entre um botão quadrado e dois níveis de radius. A props é `radius` e as opções são `unset`, `default` e `alternative`.
 
 <ThemeProvider theme={theme}>
-  <div style={{display: 'flex'}}>
-    <Button variant="filled" color='primary1' radius='unset' style={{marginRight: 8}}>False</Button>
-    <Button variant="filled" color='primary1' radius='default' style={{marginRight: 8}}>Default</Button>
-    <Button variant="filled" color='primary1' radius='alternative' style={{marginRight: 8}}>Alternative</Button>
-  </div>
+	<div style={{ display: "flex" }}>
+		<Button
+			variant="filled"
+			color="primary1"
+			radius="unset"
+			style={{ marginRight: 8 }}
+		>
+			False
+		</Button>
+		<Button
+			variant="filled"
+			color="primary1"
+			radius="default"
+			style={{ marginRight: 8 }}
+		>
+			Default
+		</Button>
+		<Button
+			variant="filled"
+			color="primary1"
+			radius="alternative"
+			style={{ marginRight: 8 }}
+		>
+			Alternative
+		</Button>
+	</div>
 </ThemeProvider>
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`
+	<CodeBlock
+		children={`
   <Button variant="filled" color="primary1" radius='unset'>False</Button>
   <Button variant="outlined" color="primary1" radius='default'>Default</Button>
   <Button variant="outlined" color="primary1" radius='alternative'>Alternative</Button>
-  `}/>
+  `}
+	/>
 </pre>
 
 <Space size={6} />
 
 ### Tamanhos
+
 O componente possui acesso as duas bibliotecas de tamanho do prensa, formato **Number** e **String**.
 
 Passando um **Number** para a props size a altura será equivalente ao valor `size * theme.factors.margin`.
@@ -135,40 +183,60 @@ Utilizando o valor de size **String** o retorno será exatamente a altura especi
 `size="42px" | 42px`
 
 <ThemeProvider theme={theme}>
-  <div style={{display: 'flex', alignItems: 'center'}}>
-    <Button variant="filled" color='primary1' size={4} style={{marginRight: 8}}>Entrar</Button>
-    <Button variant="filled" color='primary1' size="42px" style={{marginRight: 8}}>Entrar</Button>
-  </div>
+	<div style={{ display: "flex", alignItems: "center" }}>
+		<Button
+			variant="filled"
+			color="primary1"
+			size={4}
+			style={{ marginRight: 8 }}
+		>
+			Entrar
+		</Button>
+		<Button
+			variant="filled"
+			color="primary1"
+			size="42px"
+			style={{ marginRight: 8 }}
+		>
+			Entrar
+		</Button>
+	</div>
 </ThemeProvider>
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`
+	<CodeBlock
+		children={`
   <Button variant="filled" color='primary1' size="42px">Entrar</Button>
   <Button variant="filled" color='primary1' size={4}>Entrar</Button>
-  `}/>
+  `}
+	/>
 </pre>
 
 <Space size={4} />
 
-É possível também utilizar a props `width` parar definir a largura do componente, em formato **Number** ou **String**. 
+É possível também utilizar a props `width` parar definir a largura do componente, em formato **Number** ou **String**.
 
 `width={37.5}`
 `width="300px"`
 
 <ThemeProvider theme={theme}>
-  <div style={{display: 'flex', alignItems: 'center'}}>
-    <Button variant="filled" color='primary1' size="42px" width="300px">Entrar</Button>
-  </div>
+	<div style={{ display: "flex", alignItems: "center" }}>
+		<Button variant="filled" color="primary1" size="42px" width="300px">
+			Entrar
+		</Button>
+	</div>
 </ThemeProvider>
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`
+	<CodeBlock
+		children={`
   <Button variant="filled" color='primary1' size="42px" width="300px">Entrar</Button>
-  `}/>
+  `}
+	/>
 </pre>
 
 <Space size={4} />
@@ -178,51 +246,81 @@ Caso precise aplicar um botão que preencha todo o espaço (`width: 100%`), util
 `fullWidth`
 
 <ThemeProvider theme={theme}>
-  <div style={{display: 'flex', alignItems: 'center'}}>
-    <Button variant="filled" color='primary1' size="42px" fullWidth>Entrar</Button>
-  </div>
+	<div style={{ display: "flex", alignItems: "center" }}>
+		<Button variant="filled" color="primary1" size="42px" fullWidth>
+			Entrar
+		</Button>
+	</div>
 </ThemeProvider>
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`
+	<CodeBlock
+		children={`
   <Button variant="filled" color='primary1' size="42px" fullWidth>Entrar</Button>
-  `}/>
+  `}
+	/>
 </pre>
 
 <Space size={6} />
 
 ### Estados
+
 O componente possui dois estados: `disabled` e `hover`. Para acionar o disabled, deve-se utilizar a props `disabled={true}`. Já o hover aciona automaticamente ao passar o mouse sobre o botão. O estilo de ambos é sempre fixo.
 
 <ThemeProvider theme={theme}>
-  <div style={{display: 'flex'}}>
-    <Button variant="filled" color='primary1' disabled={true} style={{marginRight: 8}}>Disabled</Button>
-    <Button variant="outlined" color='primary1' disabled={true} style={{marginRight: 8}}>Disabled</Button>
-    <Button variant="ghost" color='primary1' disabled={true} style={{marginRight: 8}}>Disabled</Button>
-  </div>
+	<div style={{ display: "flex" }}>
+		<Button
+			variant="filled"
+			color="primary1"
+			disabled={true}
+			style={{ marginRight: 8 }}
+		>
+			Disabled
+		</Button>
+		<Button
+			variant="outlined"
+			color="primary1"
+			disabled={true}
+			style={{ marginRight: 8 }}
+		>
+			Disabled
+		</Button>
+		<Button
+			variant="ghost"
+			color="primary1"
+			disabled={true}
+			style={{ marginRight: 8 }}
+		>
+			Disabled
+		</Button>
+	</div>
 </ThemeProvider>
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`
+	<CodeBlock
+		children={`
   <Button variant="filled" color='primary1' disabled={true}>Disabled</Button>
   <Button variant="outlined" color='primary1' disabled={true}>Disabled</Button>
   <Button variant="ghost" color='primary1' disabled={true}>Disabled</Button>
-  `}/>
+  `}
+	/>
 </pre>
 
 <Space size={6} />
 
 ### Funcionalidades
+
 O componente pode receber uma prop chamada `onClick` que permite a passagem da ação do clique realizado pelo usuário.
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`
+	<CodeBlock
+		children={`
   import {Button} from 'prensa';
 
   const handleClick = () => {
@@ -232,28 +330,58 @@ O componente pode receber uma prop chamada `onClick` que permite a passagem da a
   const Component = props => {
     return <Button variant="filled" color="secondary" onClick={handleClick()}>Avançar</Button>;
   }
-  `}/>
+  `}
+	/>
 </pre>
 
 <Space size={10} />
 
 ### Botão com ícone
+
 O componente pode receber ícones do lado esquerdo ou direito através das props `leftIcon` e `rightIcon`, respectivamente. Para utilizá-las basta importar um ícone SVG como componente e passar o mesmo na props.
 Também pode assumir a função de um botão composto somente por um ícone. Para isso, é necessário somente passar o ícone, sem children como no primeiro exemplo.
 
 <ThemeProvider theme={theme}>
-  <div style={{display: 'flex'}}>
-    <Button variant="ghost" color='primary1' leftIcon={<DownloadIcon />} iconSize='50px' style={{marginRight: 8}} />
-    <Button variant="filled" color='primary1' leftIcon={<DownloadIcon />} style={{marginRight: 8}}>Com ícone</Button>
-    <Button variant="filled" color='primary1' rightIcon={<ArrowRightIcon />} style={{marginRight: 8}}>Com ícone</Button>
-    <Button fullWidth variant="ghost" color='primary1' rightIcon={<ArrowRightIcon />}>Com ícone variação ghost</Button>
-  </div>
+	<div style={{ display: "flex" }}>
+		<Button
+			variant="ghost"
+			color="primary1"
+			leftIcon={<DownloadIcon />}
+			iconSize="50px"
+			style={{ marginRight: 8 }}
+		/>
+		<Button
+			variant="filled"
+			color="primary1"
+			leftIcon={<DownloadIcon />}
+			style={{ marginRight: 8 }}
+		>
+			Com ícone
+		</Button>
+		<Button
+			variant="filled"
+			color="primary1"
+			rightIcon={<ArrowRightIcon />}
+			style={{ marginRight: 8 }}
+		>
+			Com ícone
+		</Button>
+		<Button
+			fullWidth
+			variant="ghost"
+			color="primary1"
+			rightIcon={<ArrowRightIcon />}
+		>
+			Com ícone variação ghost
+		</Button>
+	</div>
 </ThemeProvider>
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`
+	<CodeBlock
+		children={`
   import {Button} from 'prensa';
   import {ArrowCircleDownBlack18Dp as DownloadIcon, IcArrowForward as ArrowRightIcon} from 'prensa/icons';
   
@@ -268,12 +396,14 @@ Também pode assumir a função de um botão composto somente por um ícone. Par
   >
     Com ícone variação ghost
   </Button>
-  `}/>
+  `}
+	/>
 </pre>
 
 <Space size={10} />
 
 ### Responsivo
+
 O componente possui em seu código a família de props para layout responsivo, basta usar a prop correspondente ao breakpoint desejado como no exemplo abaixo.
 Para renderizar o comportamento abaixo, reduza o seu navegador para um tamanho de tela menor que 1008px.
 
@@ -292,20 +422,61 @@ As props que estão disponíveis para o responsivo são apenas:
 <Space size={2} />
 
 <ThemeProvider theme={theme}>
-  <div style={{display: 'flex'}}>
-    <Button variant="filled" color="primary1" lg={{color: "editorial5"}} style={{marginRight: 8}}>Responsivo</Button>
-  </div>
+	<div style={{ display: "flex" }}>
+		<Button
+			variant="filled"
+			color="primary1"
+			lg={{ color: "editorial5" }}
+			style={{ marginRight: 8 }}
+		>
+			Responsivo
+		</Button>
+	</div>
 </ThemeProvider>
 
 <Space size={2} />
 
 <pre>
-  <CodeBlock children={`
+	<CodeBlock
+		children={`
   <Button variant="filled" color="primary1" lg={{color: "editorial5"}}>Responsivo</Button>
-  `}/>
+  `}
+	/>
+</pre>
+
+<Space size={10} />
+
+### Aria Label
+
+O atributo aria-label dá suporte à acessibilidade tornando visível para readers textos que não são exibidos na tela. No componente Button é definido pela prop `aria-label`
+
+<Space size={2} />
+
+<ThemeProvider theme={theme}>
+	<div style={{ display: "flex" }}>
+		<Button
+			ariaLabel="aria-label do botão"
+			variant="filled"
+			color="primary1"
+			style={{ marginRight: 8 }}
+		>
+			Aria Label
+		</Button>
+	</div>
+</ThemeProvider>
+
+<Space size={2} />
+
+<pre>
+	<CodeBlock
+		children={`
+  <Button aria-label="aria-label do botão" variant="filled" color="primary1" >Aria Label</Button>
+  `}
+	/>
 </pre>
 
 <Space size={10} />
 
 # API
+
 <ArgsTable of={Button} />
