@@ -19,6 +19,9 @@ const ArticleOM = () => {
             lineHeight: ['16px', '16px'],
             time_modified: '18 dias atrás',
             time_published: '21/05/2021 às 23:20',
+          },
+          medias: {
+            color: odiariodemogi.colors['primary1']
           }
         }}
         intertitle={{

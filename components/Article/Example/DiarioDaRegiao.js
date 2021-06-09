@@ -15,6 +15,26 @@ const ArticleDR = () => {
     <ThemeProvider theme={diariodaregiao}>
       <Article
         amp={false}
+        byline={{
+          author: {
+            color: 'neutral2',
+            fontFamily: 'primary',
+            fontSize: ['14px', '14px'],
+            lineHeight: ['16px', '16px'],
+            value: 'Luiz Augusto Barros'
+          },
+          datetime: {
+            color: 'neutral4',
+            fontFamily: 'primary',
+            fontSize: ['12px', '12px'],
+            lineHeight: ['16px', '16px'],
+            time_modified: '18 dias atrás',
+            time_published: '21/05/2021 às 23:20'
+          },
+          medias: {
+            color: diariodaregiao.colors['primary1']
+          }
+        }}
         featured={{
           enabled: isFeatured
         }}
