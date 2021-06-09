@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {theme} from '../../../styles/theme';
+// import {theme} from '../../../styles/theme';
 import Block from '../../Block';
 import SvgIcFacebook from './IcFacebook';
 import SvgIcTwitter from './IcTwitter';
@@ -14,22 +14,22 @@ const Medias = ({color}) => {
       aligny='middle'
       custom={`
         svg {
-          fill: ${theme.colors[color]};
+          fill: ${color};
           margin-right: 32px;
           g {
             fill: transparent;
           }
           path {
             &.face {
-              fill: ${theme.colors[color]};
+              fill: ${color};
             }
             &.twitter { 
-              fill: ${theme.colors[color]};
+              fill: ${color};
             }
           }
           &.whatsapp { 
             path {
-              fill: ${theme.colors[color]};
+              fill: ${color};
             }
           }
         }
@@ -52,7 +52,7 @@ const Medias = ({color}) => {
 };
 
 Medias.defaultProps = {
-  color: 'primary1'
+  color: '#999999'
 };
 
 Medias.propTypes = {

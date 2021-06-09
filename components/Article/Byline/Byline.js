@@ -47,7 +47,7 @@ Byline.defaultProps = {
     time_published: '21/05/2021 às 23:20'
   },
   medias: {
-    color: 'primary2'
+    color: '#999999'
   }
 };
 
