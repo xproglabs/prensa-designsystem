@@ -7,6 +7,7 @@ import * as S from './Tags.styled';
 
 const Tags = ({
   color,
+  fontFamily,
   fontSize,
   fontWeight,
   items
@@ -19,7 +20,7 @@ const Tags = ({
             <Typography 
               color={color}
               element='span'
-              fontFamily='secondary'
+              fontFamily={fontFamily}
               fontSize={fontSize[0]}
               fontWeight={fontWeight}>
               {item}
@@ -33,13 +34,15 @@ const Tags = ({
 
 Tags.defaultProps = {
   color: '#999999',
-  fontWeight: 700,
+  fontFamily: 'secondary',
   fontSize: ['14px'],
+  fontWeight: 700,
   items: []
 };
 
 Tags.propTypes = {
   color: PropTypes.string,
+  fontFamily: PropTypes.array,
   fontSize: PropTypes.array,
   fontWeight: PropTypes.number,
   items: PropTypes.array

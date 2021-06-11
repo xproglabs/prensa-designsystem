@@ -74,6 +74,11 @@ const ArticleDR = () => {
             }
           ]
         }}
+        paragraph={{
+          fontFamily: 'secondary',
+          fontSize: ['20px', '20px'],
+          lineHeight: ['36px', '42px'],
+        }}
         subject={{
           bgColor: 'primary1',
           color: 'white',
@@ -92,11 +97,6 @@ const ArticleDR = () => {
           fontSize: ['38px', '62px'],
           mb: ['2', '3'],
           value: 'Adiamento das eleições para 15 e 29 de novembro é aprovado no Senado'
-        }}
-        paragraph={{
-          fontFamily: 'secondary',
-          fontSize: ['20px', '20px'],
-          lineHeight: ['36px', '42px'],
         }}
         tags={{
           items: ['Tag1', 'Tag2']
