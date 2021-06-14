@@ -25,7 +25,8 @@ const Main = styled.main`
 export const config = {amp: true};
 
 export default function Home() {
-  const tweetId = '1242733524710387713';
+  // const tweetUrl = 'https://twitter.com/criptofacil/status/1401882624809897985'
+  const tweetUrl2 = 'https://twitter.com/criptofacil/status/1401882624809897985?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1401882624809897985%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps3A2F2Ftwitter.com2Fcriptofacil2Fstatus2F1401882624809897985widget%3DTweet';
   const instagramUrl = 'https://www.instagram.com/p/Bz4H4mahyOq';
   const facebookUrl = 'https://www.facebook.com/HugoGloss/posts/10158171335166146';
   const youtubeUrl = 'https://www.youtube.com/watch?v=qJzT_Ww8q9g';
@@ -64,7 +65,7 @@ export default function Home() {
         <YouTubeEmbed url={youtubeUrl} />
         <H1>Componente aqui</H1>
         <ImageGallery items={imageGallery} />
-        <TwitterEmbed tweetId={tweetId} />
+        <TwitterEmbed url={tweetUrl2} />
         <InstagramEmbed url={instagramUrl} />
         <FacebookEmbed url={facebookUrl} />
       </Main>

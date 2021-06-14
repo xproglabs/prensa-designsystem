@@ -1798,11 +1798,11 @@ InstagramEmbed.propTypes = {
 };
 
 var TwitterEmbed = function TwitterEmbed(_ref) {
-  var tweetId = _ref.tweetId,
+  var url = _ref.url,
       height = _ref.height,
       width = _ref.width;
 
-  if (!tweetId) {
+  if (!url) {
     console.error('TwitterEmbed LOGGER: missing tweet id');
     return null;
   }
@@ -1811,7 +1811,7 @@ var TwitterEmbed = function TwitterEmbed(_ref) {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-twitter", {
-    "data-tweetid": tweetId,
+    "data-tweetid": url,
     layout: "responsive",
     height: "472",
     width: "552"
@@ -1822,7 +1822,7 @@ TwitterEmbed.defaultProps = {
   width: '100%'
 };
 TwitterEmbed.propTypes = {
-  tweetId: PropTypes__default['default'].string.isRequired,
+  url: PropTypes__default['default'].string.isRequired,
   height: PropTypes__default['default'].string,
   width: PropTypes__default['default'].string
 };
@@ -2882,7 +2882,7 @@ var TextBody = function TextBody(props) {
       case 'Twitter':
         return /*#__PURE__*/React__default['default'].createElement(TwitterEmbed, {
           key: key,
-          tweetId: value
+          url: value
         });
 
       case 'Youtube':
