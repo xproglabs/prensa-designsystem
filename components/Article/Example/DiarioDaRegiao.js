@@ -95,6 +95,14 @@ const ArticleDR = () => {
           mb: ['5', '8'],
           value: 'http://qa.diariodaregiao.com.br/image/policy:1.3658/image.jpg?f=2x1&w=1200'
         }}
+        byline={{
+          medias: {
+            color: 'editorial5',
+            facebookUrl: 'https://www.facebook.com/',
+            twitterUrl: 'https://www.facebook.com/',
+            whatsappUrl: 'https://www.facebook.com/'
+          }
+        }}
       />
     </ThemeProvider>
   );

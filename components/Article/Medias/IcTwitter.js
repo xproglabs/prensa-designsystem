@@ -1,16 +1,26 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
-const SvgIcTwitter = () => {
+import {IconContainer} from './styled';
+
+const IcTwitter = ({color, height, width}) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-      <g id="Twitter" transform="translate(-375.445 -245.173)">
-        <g id="Grupo_1689" data-name="Grupo 1689" transform="translate(375.445 245.173)">
-          <path id="Caminho_299" data-name="Caminho 299" d="M407.445,261.174a16,16,0,1,1-16-16A16,16,0,0,1,407.445,261.174Z" transform="translate(-375.445 -245.173)" fill=""/>
-          <path id="Caminho_300" className="twitter" data-name="Caminho 300" d="M399.675,255.424a7.013,7.013,0,0,1-2.03.557,3.53,3.53,0,0,0,1.554-1.955,7.093,7.093,0,0,1-2.242.857,3.537,3.537,0,0,0-6.023,3.224,10.033,10.033,0,0,1-7.285-3.692,3.54,3.54,0,0,0,1.093,4.718,3.514,3.514,0,0,1-1.6-.442v.045a3.537,3.537,0,0,0,2.835,3.466,3.565,3.565,0,0,1-.931.124,3.517,3.517,0,0,1-.665-.064,3.535,3.535,0,0,0,3.3,2.454,7.088,7.088,0,0,1-4.389,1.513,7.187,7.187,0,0,1-.842-.049,10.05,10.05,0,0,0,15.472-8.468c0-.152,0-.305-.009-.457a7.213,7.213,0,0,0,1.761-1.83Z" transform="translate(-375.046 -244.684)" fill="#1769ac"/>
-        </g>
-      </g>
-    </svg>
+    <IconContainer xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" $color={color} $height={height} $width={width}>
+      <path d="M30,7.33a11.92,11.92,0,0,1-3.31.9A5.65,5.65,0,0,0,29.2,5.06a11.4,11.4,0,0,1-3.63,1.39,5.74,5.74,0,0,0-9.92,3.92,6.19,6.19,0,0,0,.13,1.31A16.23,16.23,0,0,1,4,5.68a5.82,5.82,0,0,0-.78,2.9,5.75,5.75,0,0,0,2.54,4.77,5.73,5.73,0,0,1-2.59-.71v.06a5.77,5.77,0,0,0,4.6,5.64,5.68,5.68,0,0,1-1.51.19,4.88,4.88,0,0,1-1.08-.1,5.78,5.78,0,0,0,5.36,4,11.5,11.5,0,0,1-7.11,2.45A10.54,10.54,0,0,1,2,24.79a16.13,16.13,0,0,0,8.8,2.57c10.55,0,16.32-8.74,16.32-16.31,0-.26,0-.5,0-.75A11.3,11.3,0,0,0,30,7.33Z"/>
+    </IconContainer>
   );
 };
 
-export default SvgIcTwitter;
+IcTwitter.defaultProps = {
+  width: '24',
+  height: '24',
+  color: 'primary1'
+};
+
+IcTwitter.propTypes = {
+  color: PropTypes.string,
+  height: PropTypes.string,
+  width: PropTypes.string
+};
+
+export default IcTwitter;

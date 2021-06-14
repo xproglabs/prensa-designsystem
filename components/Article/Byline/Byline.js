@@ -26,7 +26,7 @@ const Byline = ({
         </S.DateLine>
         <Medias {...medias} />
       </S.Content>
-    </S.Container>  
+    </S.Container>
   );
 };
 
