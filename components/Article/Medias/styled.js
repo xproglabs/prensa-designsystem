@@ -16,9 +16,12 @@ const IconContainer = styled.svg`
 `;
 
 const IconLink = styled.a`
-  width: max-content;
-  height: max-content;
   ${margin};
+  height: max-content;
+  width: max-content;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export {IconLink, IconContainer};
