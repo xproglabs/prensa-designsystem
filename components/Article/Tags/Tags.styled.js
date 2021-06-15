@@ -11,6 +11,9 @@ export const Container = ({children}) =>
     width='100%'
     lg={{
       align: 'row',
+      custom: `
+        flex-wrap: wrap;
+      `
     }}>
     {children}
   </Block>; 
