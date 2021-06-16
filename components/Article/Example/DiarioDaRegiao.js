@@ -32,7 +32,10 @@ const ArticleDR = () => {
             time_published: '21/05/2021 às 23:20'
           },
           medias: {
-            color: diariodaregiao.colors['primary1']
+            color: diariodaregiao.colors['primary1'],
+            facebookUrl: 'https://www.facebook.com/',
+            twitterUrl: 'https://www.facebook.com/',
+            whatsappUrl: 'https://www.facebook.com/'
           }
         }}
         featured={{

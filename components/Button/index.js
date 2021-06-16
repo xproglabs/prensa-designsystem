@@ -72,7 +72,8 @@ const Button = ({
   xl,
   custom,
   id,
-  type
+  type,
+  ariaLabel
 }) => {
 
   //check if children is string
@@ -193,6 +194,7 @@ const Button = ({
         custom={custom}
         id={id}
         type={type}
+        aria-label= {ariaLabel}
       >
         {loading && 'Carregando...'}
         {leftIcon && leftIcon}
@@ -370,6 +372,10 @@ Button.propTypes = {
    * Permite a definição da prop type HTML para o componente
    */
   type: PropTypes.string,
+  /**
+   * Permite a definição de um aria-label para suporte à acessibilidade
+   */
+  ariaLabel: PropTypes.string,
 };
 
 Button.defaultProps = {

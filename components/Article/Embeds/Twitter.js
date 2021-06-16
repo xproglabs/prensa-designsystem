@@ -3,16 +3,16 @@ import React from 'react';
 
 import {Container} from './styled';
 
-const TwitterEmbed = ({tweetId, height, width}) => {
+const TwitterEmbed = ({url, height, width}) => {
 
-  if (!tweetId) {
+  if (!url) {
     console.error('TwitterEmbed LOGGER: missing tweet id');
     return null;
   }
 
   return (
     <Container $height={height} $width={width}>
-      <amp-twitter data-tweetid={tweetId} layout='responsive' height='472' width='552' />
+      <amp-twitter data-tweetid={url} layout='responsive' height='472' width='552' />
     </Container>
   );
 };
@@ -31,7 +31,7 @@ TwitterEmbed.defaultProps = {
 };
 
 TwitterEmbed.propTypes = {
-  tweetId: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   height: PropTypes.string,
   width: PropTypes.string,
 };

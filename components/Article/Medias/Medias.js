@@ -1,52 +1,24 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-// import {theme} from '../../../styles/theme';
 import Block from '../../Block';
 import SvgIcFacebook from './IcFacebook';
 import SvgIcTwitter from './IcTwitter';
 import SvgIcWhats from './IcWhatsapp';
+import {IconLink} from './styled';
 
-const Medias = ({color}) => {
+const Medias = ({color, facebookUrl, twitterUrl, whatsappUrl}) => {
   return (
-    <Block
-      align='row'
-      aligny='middle'
-      custom={`
-        svg {
-          fill: ${color};
-          margin-right: 32px;
-          g {
-            fill: transparent;
-          }
-          path {
-            &.face {
-              fill: ${color};
-            }
-            &.twitter { 
-              fill: ${color};
-            }
-          }
-          &.whatsapp { 
-            path {
-              fill: ${color};
-            }
-          }
-        }
-      `}
-      md={{
-        mt: '1',
-        mb: '2'
-      }}>
-      <Block>
-        <SvgIcFacebook />
-      </Block>
-      <Block>
-        <SvgIcTwitter />
-      </Block>
-      <Block>
-        <SvgIcWhats />
-      </Block>
+    <Block align='row'>
+      <IconLink href={facebookUrl} target='_blank' mr={2}>
+        <SvgIcFacebook color={color} />
+      </IconLink>
+      <IconLink href={twitterUrl} target='_blank' mr={2}>
+        <SvgIcTwitter color={color} />
+      </IconLink>
+      <IconLink href={whatsappUrl} target='_blank'>
+        <SvgIcWhats color={color} />
+      </IconLink>
     </Block>
   );
 };
@@ -56,10 +28,10 @@ Medias.defaultProps = {
 };
 
 Medias.propTypes = {
-  /**
-   * Medias
-   */
-  color: PropTypes.string
+  color: PropTypes.string,
+  facebookUrl: PropTypes.string.isRequired,
+  twitterUrl: PropTypes.string.isRequired,
+  whatsappUrl: PropTypes.string.isRequired,
 };
 
 export default Medias;
