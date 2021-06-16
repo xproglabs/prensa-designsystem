@@ -34,11 +34,16 @@ const ArticleOV = () => {
           }
         }}
         citation={{
+          customCite: `
+            border-left: 8px solid ${ovale.colors['primary1']};
+          `,
           color: 'neutral2',
           fontFamily: 'primary',
           fontSize: ['24px', '24px'],
           lineHeight: ['160%', '160%'],
-          fontWeight: 700
+          pl: ['3', '4'],
+          fontWeight: 700,
+          width: 'calc(100% - 8px)'
         }}
         gallery={[
           {

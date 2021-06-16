@@ -34,10 +34,14 @@ const ArticleHJD = () => {
           }
         }}
         citation={{
+          customCite: `
+            border-left: 8px solid ${hojeemdia.colors['primary1']};
+          `,
           color: 'neutral5',
           fontFamily: 'primary',
           fontSize: ['20px', '20px'],
           lineHeight: ['160%', '160%'],
+          pl: ['2', '3'],
           fontWeight: 400
         }}
         gallery={[
