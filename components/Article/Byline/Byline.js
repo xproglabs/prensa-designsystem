@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Medias from '../Medias/Medias';
+import Share from '../Share';
 import * as S from './Byline.styled';
 
 const Byline = ({
@@ -24,7 +24,7 @@ const Byline = ({
             Atualizado há {datetime.time_modified}
           </S.TimeEntry>
         </S.DateLine>
-        <Medias {...medias} />
+        <Share {...medias} />
       </S.Content>
     </S.Container>
   );
