@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 import styled from 'styled-components';
 
+import Share from '../components/article-share';
 import FacebookEmbed, {facebook_amp_script} from '../components/embeds/Facebook';
 import InstagramEmbed, {instagram_amp_script} from '../components/embeds/Instagram';
 import TwitterEmbed, {twitter_amp_script} from '../components/embeds/Twitter';
@@ -60,6 +61,7 @@ export default function Home() {
       </Head>
 
       <Main>
+        <Share/>
         <H1>Videos Youtube</H1>
         <YouTubeEmbed url={youtubeUrl} />
         <YouTubeEmbed url={youtubeUrl} />
