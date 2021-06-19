@@ -106,7 +106,7 @@ const TextBody = (props) => {
             return <FacebookEmbed key={key} url={value} />;
           case 'Instagram': 
             return <InstagramEmbed key={key} url={value} />;            
-          case 'Twitter': 
+          case 'Tweet': 
             return <TwitterEmbed key={key} url={value} />;
           case 'Youtube': 
             return <YouTubeEmbed key={key} url={value} />;
