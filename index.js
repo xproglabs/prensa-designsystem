@@ -2897,6 +2897,7 @@ var Article = function Article(props) {
       byline = props.byline,
       citation = props.citation,
       featured = props.featured,
+      featuredByline = props.featuredByline,
       gallery = props.gallery,
       headWidth = props.headWidth,
       heading2 = props.heading2,
@@ -2917,7 +2918,7 @@ var Article = function Article(props) {
     maxWidth: headWidth
   }, /*#__PURE__*/React__default['default'].createElement(Subject, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle, subtitle))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: headWidth
-  }, /*#__PURE__*/React__default['default'].createElement(Content, null, /*#__PURE__*/React__default['default'].createElement(Byline, byline)))) : /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
+  }, /*#__PURE__*/React__default['default'].createElement(Content, null, /*#__PURE__*/React__default['default'].createElement(Byline, featuredByline)))) : /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: headWidth
   }, /*#__PURE__*/React__default['default'].createElement(Content, null, /*#__PURE__*/React__default['default'].createElement(Subject, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline)), /*#__PURE__*/React__default['default'].createElement(TopImage, _extends({
     amp: amp
@@ -2950,6 +2951,7 @@ Article.propTypes = {
   byline: PropTypes__default['default'].object,
   citation: PropTypes__default['default'].object,
   featured: PropTypes__default['default'].object,
+  featuredByline: PropTypes__default['default'].object,
   gallery: PropTypes__default['default'].array,
   headWidth: PropTypes__default['default'].string,
   heading2: PropTypes__default['default'].object,
