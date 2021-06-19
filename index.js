@@ -647,165 +647,71 @@ Page.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 
-var margin = function margin(_ref) {
-  var _ref$theme = _ref.theme,
-      theme = _ref$theme === void 0 ? {} : _ref$theme,
-      _ref$mx = _ref.mx,
-      mx = _ref$mx === void 0 ? '' : _ref$mx,
-      _ref$my = _ref.my,
-      my = _ref$my === void 0 ? '' : _ref$my,
-      _ref$mt = _ref.mt,
-      mt = _ref$mt === void 0 ? '' : _ref$mt,
-      _ref$mr = _ref.mr,
-      mr = _ref$mr === void 0 ? '' : _ref$mr,
-      _ref$mb = _ref.mb,
-      mb = _ref$mb === void 0 ? '' : _ref$mb,
-      _ref$ml = _ref.ml,
-      ml = _ref$ml === void 0 ? '' : _ref$ml,
-      _ref$m = _ref.m,
-      m = _ref$m === void 0 ? '' : _ref$m;
-  var unit = lodash.get(theme, 'factors.margin', 8);
-  var object = [];
-  mt !== undefined && isNaN(mt) ? object.push("margin-top: ".concat(mt, ";")) : mt && object.push("margin-top: ".concat(unit * mt, "px;"));
-  mr !== undefined && isNaN(mr) ? object.push("margin-right: ".concat(mr, ";")) : mr && object.push("margin-right: ".concat(unit * mr, "px;"));
-  mb !== undefined && isNaN(mb) ? object.push("margin-bottom: ".concat(mb, ";")) : mb && object.push("margin-bottom: ".concat(unit * mb, "px;"));
-  ml !== undefined && isNaN(ml) ? object.push("margin-left: ".concat(ml, ";")) : ml && object.push("margin-left: ".concat(unit * ml, "px;"));
-  mx !== undefined && isNaN(mx) ? object.push("margin-left: ".concat(mx, ";margin-right: ").concat(mx, ";")) : mx && object.push("margin-left: ".concat(unit * mx, "px;margin-right: ").concat(unit * mx, "px;"));
-  my !== undefined && isNaN(my) ? object.push("margin-top: ".concat(my, ";margin-bottom: ").concat(my, ";")) : my && object.push("margin-top: ".concat(unit * my, "px;margin-bottom: ").concat(unit * my, "px;"));
-  m !== undefined && isNaN(m) ? object.push("margin: ".concat(m, ";")) : m && object.push("margin: ".concat(m * unit, "px;"));
-  return object.join('');
-};
+var _templateObject$1;
+// const getColor = props => {
+//   const theme = get(props, 'theme.colors');
+//   const value = get(theme, props.$color);
+//   return value;
+// };
+// const IconContainer = styled.svg`
+//   width: ${props => props.$width}px;
+//   height: ${props => props.$height}px;
+//   fill: ${getColor};
+// `;
+// const IconLink = styled.a`
+//   ${margin};
+//   height: max-content;
+//   width: max-content;
+//   &:hover {
+//     opacity: 0.8;
+//   }
+// `;
 
-var _templateObject$1, _templateObject2;
-
-var getColor = function getColor(props) {
-  var theme = lodash.get(props, 'theme.colors');
-  var value = lodash.get(theme, props.$color);
-  return value;
-};
-
-var IconContainer = styled__default['default'].svg(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  width: ", "px;\n  height: ", "px;\n  fill: ", ";\n"])), function (props) {
-  return props.$width;
+var Container$1 = styled__default['default'].div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  amp-social-share[type=\"facebook\"] {\n    background-image: ", ";\n    background-color: transparent;\n    margin-right: 32px;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"twitter\"] {\n    background-image: ", ";\n    background-color: transparent;\n    margin-right: 32px;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"whatsapp\"] {\n    background-image: ", ";\n    background-color: transparent;\n    margin-right: 32px;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  @media (min-width: ", ") {\n    width: 50%;\n    justify-content: flex-end;\n  }\n"])), function (props) {
+  return "url(".concat(props.facebookPath, ")");
 }, function (props) {
-  return props.$height;
-}, getColor);
-var IconLink = styled__default['default'].a(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  ", ";\n  height: max-content;\n  width: max-content;\n  &:hover {\n    opacity: 0.8;\n  }\n"])), margin);
+  return "url(".concat(props.twitterPath, ")");
+}, function (props) {
+  return "url(".concat(props.whatsappPath, ")");
+}, function (props) {
+  return props.theme.queries.md;
+});
 
-var IcFaceboook = function IcFaceboook(_ref) {
-  var color = _ref.color,
-      height = _ref.height,
-      width = _ref.width;
-  return /*#__PURE__*/React__default['default'].createElement(IconContainer, {
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 32 32",
-    $color: color,
-    $height: height,
-    $width: width
-  }, /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M22.23,4.15H19.16c-3.45,0-5.69,2.29-5.69,5.83v2.69H10.38a.49.49,0,0,0-.48.48v3.9a.49.49,0,0,0,.48.49h3.09v9.83a.48.48,0,0,0,.49.48h4a.47.47,0,0,0,.48-.48V17.54h3.62a.49.49,0,0,0,.48-.49v-3.9a.49.49,0,0,0-.14-.34.48.48,0,0,0-.34-.14H18.47V10.39c0-1.1.26-1.65,1.69-1.65h2.07a.49.49,0,0,0,.49-.49V4.63A.49.49,0,0,0,22.23,4.15Z"
+var Share = function Share(_ref) {
+  var facebookPath = _ref.facebookPath,
+      fbappid = _ref.fbappid,
+      twitterPath = _ref.twitterPath,
+      whatsappPath = _ref.whatsappPath;
+  return /*#__PURE__*/React__default['default'].createElement(Container$1, {
+    facebookPath: facebookPath,
+    twitterPath: twitterPath,
+    whatsappPath: whatsappPath
+  }, /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+    type: "facebook",
+    width: "24",
+    height: "24",
+    "data-param-app_id": fbappid
+  }), /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+    type: "twitter",
+    width: "24",
+    height: "24"
+  }), /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+    type: "whatsapp",
+    width: "24",
+    height: "24"
   }));
 };
 
-IcFaceboook.defaultProps = {
-  width: '24',
-  height: '24',
-  color: 'primary1'
+Share.defaultProps = {
+  facebookPath: 'assets/facebook-product1.svg',
+  twitterPath: 'assets/twitter-product1.svg',
+  whatsappPath: 'assets/whatsapp-product1.svg'
 };
-IcFaceboook.propTypes = {
-  color: PropTypes__default['default'].string,
-  height: PropTypes__default['default'].string,
-  width: PropTypes__default['default'].string
-};
-
-var IcTwitter = function IcTwitter(_ref) {
-  var color = _ref.color,
-      height = _ref.height,
-      width = _ref.width;
-  return /*#__PURE__*/React__default['default'].createElement(IconContainer, {
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 32 32",
-    $color: color,
-    $height: height,
-    $width: width
-  }, /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M30,7.33a11.92,11.92,0,0,1-3.31.9A5.65,5.65,0,0,0,29.2,5.06a11.4,11.4,0,0,1-3.63,1.39,5.74,5.74,0,0,0-9.92,3.92,6.19,6.19,0,0,0,.13,1.31A16.23,16.23,0,0,1,4,5.68a5.82,5.82,0,0,0-.78,2.9,5.75,5.75,0,0,0,2.54,4.77,5.73,5.73,0,0,1-2.59-.71v.06a5.77,5.77,0,0,0,4.6,5.64,5.68,5.68,0,0,1-1.51.19,4.88,4.88,0,0,1-1.08-.1,5.78,5.78,0,0,0,5.36,4,11.5,11.5,0,0,1-7.11,2.45A10.54,10.54,0,0,1,2,24.79a16.13,16.13,0,0,0,8.8,2.57c10.55,0,16.32-8.74,16.32-16.31,0-.26,0-.5,0-.75A11.3,11.3,0,0,0,30,7.33Z"
-  }));
-};
-
-IcTwitter.defaultProps = {
-  width: '24',
-  height: '24',
-  color: 'primary1'
-};
-IcTwitter.propTypes = {
-  color: PropTypes__default['default'].string,
-  height: PropTypes__default['default'].string,
-  width: PropTypes__default['default'].string
-};
-
-var IcWhatsapp = function IcWhatsapp(_ref) {
-  var color = _ref.color,
-      height = _ref.height,
-      width = _ref.width;
-  return /*#__PURE__*/React__default['default'].createElement(IconContainer, {
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 32 32",
-    $color: color,
-    $height: height,
-    $width: width
-  }, /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M15.43,4.24A11.69,11.69,0,0,0,4.32,15.94a11.52,11.52,0,0,0,1.27,5.27l-1.24,6a.45.45,0,0,0,.55.53l5.9-1.39a11.57,11.57,0,0,0,5,1.21,11.68,11.68,0,1,0-.39-23.34Zm7,18.13A9.17,9.17,0,0,1,11.93,24.1l-.82-.41-3.62.86.76-3.7-.4-.79A9.15,9.15,0,0,1,22.47,9.44a9.05,9.05,0,0,1,2.68,6.46A9.16,9.16,0,0,1,22.47,22.37Z"
-  }), /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M21.67,18.44l-2.26-.65a.85.85,0,0,0-.84.22l-.55.56a.82.82,0,0,1-.9.19,11.88,11.88,0,0,1-3.89-3.44.82.82,0,0,1,.06-.91l.48-.62a.86.86,0,0,0,.11-.86l-1-2.15a.85.85,0,0,0-1.32-.31,3.83,3.83,0,0,0-1.47,2.25c-.16,1.58.52,3.58,3.09,6,3,2.78,5.35,3.14,6.89,2.77a3.87,3.87,0,0,0,2-1.77A.84.84,0,0,0,21.67,18.44Z"
-  }));
-};
-
-IcWhatsapp.defaultProps = {
-  width: '24',
-  height: '24',
-  color: 'primary1'
-};
-IcWhatsapp.propTypes = {
-  color: PropTypes__default['default'].string,
-  height: PropTypes__default['default'].string,
-  width: PropTypes__default['default'].string
-};
-
-var Medias = function Medias(_ref) {
-  var color = _ref.color,
-      facebookUrl = _ref.facebookUrl,
-      twitterUrl = _ref.twitterUrl,
-      whatsappUrl = _ref.whatsappUrl;
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    align: "row"
-  }, /*#__PURE__*/React__default['default'].createElement(IconLink, {
-    href: facebookUrl,
-    target: "_blank",
-    mr: 2
-  }, /*#__PURE__*/React__default['default'].createElement(IcFaceboook, {
-    color: color
-  })), /*#__PURE__*/React__default['default'].createElement(IconLink, {
-    href: twitterUrl,
-    target: "_blank",
-    mr: 2
-  }, /*#__PURE__*/React__default['default'].createElement(IcTwitter, {
-    color: color
-  })), /*#__PURE__*/React__default['default'].createElement(IconLink, {
-    href: whatsappUrl,
-    target: "_blank"
-  }, /*#__PURE__*/React__default['default'].createElement(IcWhatsapp, {
-    color: color
-  })));
-};
-
-Medias.defaultProps = {
-  color: 'primary1'
-};
-Medias.propTypes = {
-  color: PropTypes__default['default'].string,
-  facebookUrl: PropTypes__default['default'].string.isRequired,
-  twitterUrl: PropTypes__default['default'].string.isRequired,
-  whatsappUrl: PropTypes__default['default'].string.isRequired
+Share.propTypes = {
+  fbappid: PropTypes__default['default'].string.isRequired,
+  facebookPath: PropTypes__default['default'].string,
+  twitterPath: PropTypes__default['default'].string,
+  whatsappPath: PropTypes__default['default'].string
 };
 
 var dimensions = function dimensions(_ref) {
@@ -996,11 +902,11 @@ var parseProps$1 = function parseProps(media, props) {
   }
 };
 
-var _templateObject$2, _templateObject2$1, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10;
+var _templateObject$2, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10;
 var HeadingOne = styled__default['default'].h1(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
-var HeadingTwo = styled__default['default'].h2(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteral(["", ""])), function (props) {
+var HeadingTwo = styled__default['default'].h2(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
 var HeadingThree = styled__default['default'].h3(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["", ""])), function (props) {
@@ -1384,7 +1290,7 @@ Author.propTypes = {
   fontSize: PropTypes__default['default'].array,
   lineHeight: PropTypes__default['default'].array
 };
-var Container$1 = function Container(_ref2) {
+var Container$2 = function Container(_ref2) {
   var children = _ref2.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     width: "100%",
@@ -1394,7 +1300,7 @@ var Container$1 = function Container(_ref2) {
     }
   }, children);
 };
-Container$1.propTypes = {
+Container$2.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 var Content$1 = function Content(_ref3) {
@@ -1462,10 +1368,10 @@ var Byline = function Byline(_ref) {
   var author = _ref.author,
       customContent = _ref.customContent,
       datetime = _ref.datetime,
-      medias = _ref.medias;
-  return /*#__PURE__*/React__default['default'].createElement(Container$1, null, /*#__PURE__*/React__default['default'].createElement(Content$1, null, /*#__PURE__*/React__default['default'].createElement(DateLine, {
+      share = _ref.share;
+  return /*#__PURE__*/React__default['default'].createElement(Container$2, null, /*#__PURE__*/React__default['default'].createElement(Content$1, null, /*#__PURE__*/React__default['default'].createElement(DateLine, {
     custom: customContent
-  }, /*#__PURE__*/React__default['default'].createElement(Author, author, author.value), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Publicado em ", datetime.time_published), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Atualizado h\xE1 ", datetime.time_modified)), /*#__PURE__*/React__default['default'].createElement(Medias, medias)));
+  }, /*#__PURE__*/React__default['default'].createElement(Author, author, author.value), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Publicado em ", datetime.time_published), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Atualizado h\xE1 ", datetime.time_modified)), /*#__PURE__*/React__default['default'].createElement(Share, share)));
 };
 
 Byline.defaultProps = {
@@ -1492,7 +1398,8 @@ Byline.propTypes = {
   author: PropTypes__default['default'].object,
   customContent: PropTypes__default['default'].string,
   datetime: PropTypes__default['default'].object,
-  medias: PropTypes__default['default'].object
+  medias: PropTypes__default['default'].object,
+  share: PropTypes__default['default'].object
 };
 
 var Subject = function Subject(_ref) {
@@ -1609,7 +1516,7 @@ Subtitle.propTypes = {
 };
 
 var _templateObject$3;
-var Container$2 = styled__default['default'].div(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
+var Container$3 = styled__default['default'].div(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
   return props.theme.queries.md;
 }, function (props) {
   return props.$width;
@@ -1635,7 +1542,7 @@ var ImageGallery = function ImageGallery(_ref) {
   var items = _ref.items,
       height = _ref.height,
       width = _ref.width;
-  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$3, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-carousel", {
@@ -1723,7 +1630,7 @@ Citation.propTypes = {
 };
 
 var _templateObject$4;
-var Container$3 = styled__default['default'].div(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
+var Container$4 = styled__default['default'].div(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
   return props.theme.queries.md;
 }, function (props) {
   return props.$width;
@@ -1741,7 +1648,7 @@ var FacebookEmbed = function FacebookEmbed(_ref) {
     return null;
   }
 
-  return /*#__PURE__*/React__default['default'].createElement(Container$3, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-facebook", {
@@ -1776,7 +1683,7 @@ var InstagramEmbed = function InstagramEmbed(_ref) {
   if (!parsedPrefix[1]) return null;
   var parsedSufix = parsedPrefix[1] && parsedPrefix[1].split('/');
   var dataShortcode = parsedSufix[0] ? parsedSufix[0] : parsedPrefix[1];
-  return /*#__PURE__*/React__default['default'].createElement(Container$3, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-instagram", {
@@ -1807,7 +1714,7 @@ var TwitterEmbed = function TwitterEmbed(_ref) {
     return null;
   }
 
-  return /*#__PURE__*/React__default['default'].createElement(Container$3, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-twitter", {
@@ -1844,7 +1751,7 @@ var YouTubeEmbed = function YouTubeEmbed(_ref) {
   }
 
   var parsedUrl = parseYoutubeLink(url);
-  return /*#__PURE__*/React__default['default'].createElement(Container$3, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-youtube", {
@@ -2235,7 +2142,7 @@ var theme = {
   parseColor: parseColor
 };
 
-var Container$4 = function Container(_ref) {
+var Container$5 = function Container(_ref) {
   var children = _ref.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "column",
@@ -2246,7 +2153,7 @@ var Container$4 = function Container(_ref) {
     }
   }, children);
 };
-Container$4.propTypes = {
+Container$5.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 var Tag = function Tag(_ref2) {
@@ -2268,7 +2175,7 @@ var Tags = function Tags(_ref) {
   var fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
       items = _ref.items;
-  return /*#__PURE__*/React__default['default'].createElement(Container$4, null, lodash.map(items, function (item, key) {
+  return /*#__PURE__*/React__default['default'].createElement(Container$5, null, lodash.map(items, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Tag, {
       key: key
     }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
@@ -2372,7 +2279,7 @@ Subtitle$1.propTypes = {
   lineHeight: PropTypes__default['default'].array
 };
 
-var Container$5 = function Container(_ref) {
+var Container$6 = function Container(_ref) {
   var children = _ref.children,
       featured = _ref.featured,
       mb = _ref.mb,
@@ -2386,7 +2293,7 @@ var Container$5 = function Container(_ref) {
   }, children);
 };
 
-Container$5.propTypes = {
+Container$6.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
   featured: PropTypes__default['default'].bool,
   mb: PropTypes__default['default'].array,
@@ -2401,7 +2308,7 @@ var TopImage = function TopImage(_ref2) {
       mb = _ref2.mb,
       value = _ref2.value;
   if (!image) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container$5, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$6, {
     featured: featured,
     mb: mb,
     value: value
@@ -2879,7 +2786,7 @@ var TextBody = function TextBody(props) {
           url: value
         });
 
-      case 'Twitter':
+      case 'Tweet':
         return /*#__PURE__*/React__default['default'].createElement(TwitterEmbed, {
           key: key,
           url: value
@@ -3174,7 +3081,7 @@ var parseProps$2 = function parseProps(media, props) {
   }
 };
 
-var _templateObject$5, _templateObject2$2;
+var _templateObject$5, _templateObject2$1;
 var StyledButton = styled__default['default'].button(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return parseProps$2('', props);
 }, function (props) {
@@ -3188,7 +3095,7 @@ var StyledButton = styled__default['default'].button(_templateObject$5 || (_temp
 }, function (props) {
   return props.xl && parseProps$2('xl', props);
 });
-var StyledAria = styled__default['default'].a(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"])));
+var StyledAria = styled__default['default'].a(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"])));
 
 var Button = function Button(_ref) {
   var children = _ref.children,
@@ -3711,7 +3618,7 @@ ButtonSubmit.propTypes = {
   buttonAction: PropTypes__default['default'].func,
   children: PropTypes__default['default'].string
 };
-var Container$6 = function Container(_ref3) {
+var Container$7 = function Container(_ref3) {
   var children = _ref3.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "column",
@@ -3728,7 +3635,7 @@ var Container$6 = function Container(_ref3) {
     }
   }, children);
 };
-Container$6.propTypes = {
+Container$7.propTypes = {
   children: PropTypes__default['default'].array
 };
 var Content$2 = function Content(_ref4) {
@@ -3769,7 +3676,7 @@ var Dialog = function Dialog(_ref) {
   var buttonAction = _ref.buttonAction,
       buttonText = _ref.buttonText,
       message = _ref.message;
-  return /*#__PURE__*/React__default['default'].createElement(Area, null, /*#__PURE__*/React__default['default'].createElement(Container$6, null, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Message, {
+  return /*#__PURE__*/React__default['default'].createElement(Area, null, /*#__PURE__*/React__default['default'].createElement(Container$7, null, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Message, {
     text: message
   }, message)), /*#__PURE__*/React__default['default'].createElement(ButtonSubmit, {
     buttonAction: buttonAction
@@ -3928,7 +3835,7 @@ FieldErrorMessage.propTypes = {
   children: PropTypes__default['default'].string
 };
 
-var _templateObject$6, _templateObject2$3;
+var _templateObject$6, _templateObject2$2;
 
 var handleFontFamily = function handleFontFamily(props) {
   var theme = lodash.get(props, 'theme.fonts');
@@ -3984,7 +3891,7 @@ var handleSize = function handleSize(props) {
 };
 
 var Input$1 = styled__default['default'].input(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: ", ";\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n  ::placeholder {\n    color: ", ";\n  }\n"])), handleFontSize, handleFontFamily, handleColor, handleBorderRadius, handlePlaceholderColor);
-var InputContainer = styled__default['default'].div(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  background-color: white;\n  width: 100%;\n  height: ", ";\n  box-shadow: ", ";\n  display: flex;\n  align-items: center;\n  border-radius: ", ";\n  &:focus-within {\n    box-shadow: ", ";\n  }\n"])), handleSize, function (props) {
+var InputContainer = styled__default['default'].div(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  background-color: white;\n  width: 100%;\n  height: ", ";\n  box-shadow: ", ";\n  display: flex;\n  align-items: center;\n  border-radius: ", ";\n  &:focus-within {\n    box-shadow: ", ";\n  }\n"])), handleSize, function (props) {
   return "0 0 0 1px ".concat(handleInputColor(props));
 }, handleBorderRadius, function (props) {
   return "0 0 0 2px ".concat(handleFocusedColor(props));
@@ -4543,7 +4450,7 @@ Topbar.defaultProps = {
   }
 };
 
-var _templateObject$8, _templateObject2$4;
+var _templateObject$8, _templateObject2$3;
 
 var parseColorVariation = function parseColorVariation(props) {
   if (props.transparent === true) return "\n    color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";\n  ");
@@ -4555,7 +4462,7 @@ var parseBackgroundVariation = function parseBackgroundVariation(props) {
   return "background-color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";");
 };
 
-var Container$7 = styled__default['default'].div(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var Container$8 = styled__default['default'].div(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return props.theme.parsePadding(props, props.theme);
 }, function (props) {
   return props.theme.parseMargin(props, props.theme);
@@ -4564,7 +4471,7 @@ var Container$7 = styled__default['default'].div(_templateObject$8 || (_template
 }, function (props) {
   return parseBackgroundVariation(props);
 });
-var Typography$2 = styled__default['default'].span(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
+var Typography$2 = styled__default['default'].span(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
   return props.theme.fonts.secondary;
 }, function (props) {
   return props.$fontWeight;
@@ -4582,7 +4489,7 @@ var Subject$1 = function Subject(_ref) {
       transparent = _ref.transparent,
       weight = _ref.weight;
   if (!children) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container$7, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$8, {
     subjectColor: color,
     borderRadius: radius,
     px: px,
