@@ -17,6 +17,7 @@ const Article = (props) => {
     byline,
     citation,
     featured,
+    featuredByline,
     gallery,
     headWidth,
     heading2,
@@ -49,7 +50,7 @@ const Article = (props) => {
             </S.ContainerFeatured>
             <S.MaxWidth maxWidth={headWidth}>
               <S.Content>
-                <Byline {...byline} />
+                <Byline {...featuredByline} />
               </S.Content>
             </S.MaxWidth>
           </> :
@@ -96,6 +97,7 @@ Article.propTypes = {
   byline: PropTypes.object,
   citation: PropTypes.object,
   featured: PropTypes.object,
+  featuredByline: PropTypes.object,
   gallery: PropTypes.array,
   headWidth: PropTypes.string,
   heading2: PropTypes.object,
