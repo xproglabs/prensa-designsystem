@@ -9,7 +9,15 @@ import ExpandLessIcon from './assets/ExpandLess';
 import ExpandMoreIcon from './assets/ExpandMoreIcon';
 import {GroupSection, GroupTitleContainer, GroupContent, Hyperlink} from './styled';
 
-const MenuItem = ({content}) => {
+const groupTitleDefaultProps = {
+  color: 'neutral2',
+  element: 'h4',
+  lineHeight: '40px',
+  fontFamily: 'secondary',
+  fontSize: '20px',
+};
+
+const MenuItem = ({color, content, groupTitleProps}) => {
   
   // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
   // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
@@ -17,7 +25,11 @@ const MenuItem = ({content}) => {
   // 4. In this context the state trigger is everytime user click on MenuButton
   // 5. Subgroup is not displayed when it is rendered with class 'group-closed'
 
-  const {contentId, color, name, path, subitems} = content;
+  let itemColor = color;
+  if (color === 'unique' && content.color) itemColor = content.color;
+
+  const {contentId, name, path, subitems} = content;
+  
   const isGroup = subitems.length > 0;
   const stateId = `state${contentId.replace('.', '')}`;
   const initialState = `{ "${stateId}": { "status": true } }`;
@@ -27,19 +39,14 @@ const MenuItem = ({content}) => {
   const expandLessIconClass = `${stateId}.status ? 'visible' : 'hidden'`;
 
   const GroupTitle = () => (
-    <Typography 
-      color='neutral2'
-      element='h4' 
-      lineHeight='40px' 
-      fontFamily='secondary' 
-      fontSize='20px' >
+    <Typography {...groupTitleDefaultProps} {...groupTitleProps}>
       {name}
     </Typography>
   );
 
   const HyperlinkGroup = () => (
     <Hyperlink href={path}>
-      <GroupTitleContainer $color={color}>
+      <GroupTitleContainer $color={itemColor}>
         <GroupTitle/>
         <ChevronRightIcon/>
       </GroupTitleContainer>
@@ -48,7 +55,7 @@ const MenuItem = ({content}) => {
 
   const Group = () => (
     <div>
-      <GroupTitleContainer role='setMenuItemState' tabIndex='0' on={newState} $color={color}>
+      <GroupTitleContainer role='setMenuItemState' tabIndex='0' on={newState} $color={itemColor}>
         <GroupTitle/>
         <ExpandMoreIcon ampClass={expandMoreIconClass} />
         <ExpandLessIcon ampClass={expandLessIconClass} />
@@ -75,8 +82,15 @@ const MenuItem = ({content}) => {
   );
 };
 
+MenuItem.defaultProps = {
+  color: 'product1',
+  groupTitleProps: groupTitleDefaultProps
+};
+
 MenuItem.propTypes = {
-  content: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  color: PropTypes.string,
+  content: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  groupTitleProps: PropTypes.object,
 };
 
 export default MenuItem;

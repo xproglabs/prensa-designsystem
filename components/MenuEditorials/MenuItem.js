@@ -9,29 +9,35 @@ import ExpandLessIcon from './assets/ExpandLess';
 import ExpandMoreIcon from './assets/ExpandMoreIcon';
 import {GroupSection, GroupTitleContainer, GroupContent, Hyperlink} from './styled';
 
-const SideMenuItem = ({content}) => {
+const groupTitleDefaultProps = {
+  color: 'neutral2',
+  element: 'h4',
+  lineHeight: '40px',
+  fontFamily: 'secondary',
+  fontSize: '20px',
+};
+
+const MenuItem = ({color, content, groupTitle}) => {
   const [open, setOpenStatus] = useState(false);
-  const {contentId, color, name, path, subitems} = content;
+  const {contentId, name, path, subitems} = content;
   const isGroup = subitems.length > 0;
+
+  let itemColor = color;
+  if (color === 'unique' && content.color) itemColor = content.color;
 
   const handleItemClick = () => {
     setOpenStatus(!open);
   };
 
   const GroupTitle = () => (
-    <Typography 
-      color='neutral2'
-      element='h4' 
-      lineHeight='40px' 
-      fontFamily='secondary' 
-      fontSize='20px' >
+    <Typography {...groupTitleDefaultProps} {...groupTitle}>
       {name}
     </Typography>
   );
 
   const HyperlinkGroup = () => (
     <Hyperlink href={path}>
-      <GroupTitleContainer $color={color}>
+      <GroupTitleContainer $color={itemColor}>
         <GroupTitle/>
         <ChevronRightIcon/>
       </GroupTitleContainer>
@@ -40,7 +46,7 @@ const SideMenuItem = ({content}) => {
 
   const Group = () => (
     <div>
-      <GroupTitleContainer id={contentId} onClick={handleItemClick} $color={color}>
+      <GroupTitleContainer id={contentId} onClick={handleItemClick} $color={itemColor}>
         <GroupTitle/>
         {open ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
       </GroupTitleContainer>
@@ -65,8 +71,15 @@ const SideMenuItem = ({content}) => {
   );
 };
 
-SideMenuItem.propTypes = {
-  content: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+MenuItem.defaultProps = {
+  color: 'product1',
+  groupTitle: groupTitleDefaultProps
 };
 
-export default SideMenuItem;
+MenuItem.propTypes = {
+  color: PropTypes.string,
+  content: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  groupTitle: PropTypes.object,
+};
+
+export default MenuItem;
