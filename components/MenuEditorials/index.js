@@ -7,26 +7,28 @@ import Typography from '../Typography';
 import AmpMenuItem from './AmpMenuItem';
 import MenuItem from './MenuItem';
 
-const MenuEditorials = ({amp, items, title}) => {
+const titleDefaultProps = {
+  element: 'p',
+  color: 'neutral3',
+  fontFamily: 'secondary',
+  fontSize: '14px',
+  transform: 'uppercase',
+  mb: 3,
+};
+
+const MenuEditorials = ({amp, color, items, title, titleProps, groupTitleProps}) => {
   return (
     <Block px='20px' py='20px'>
       {title &&
-        <Typography
-          element='p'
-          color='neutral3'
-          fontFamily='secondary'
-          fontSize='14px'
-          transform='uppercase'
-          mb={3}
-        >
+        <Typography {...titleDefaultProps} {...titleProps}>
           {title}
         </Typography>
       }
       {items && 
         map(items, (item, key) => amp ? 
-          <AmpMenuItem content={item} key={key} />
+          <AmpMenuItem color={color} content={item} groupTitleProps={groupTitleProps} key={key} />
           :
-          <MenuItem content={item} key={key} />)
+          <MenuItem color={color} content={item} groupTitleProps={groupTitleProps} key={key} />)
       }
     </Block>
   );
@@ -34,8 +36,11 @@ const MenuEditorials = ({amp, items, title}) => {
 
 MenuEditorials.propTypes = {
   amp: PropTypes.bool,
+  color: PropTypes.string,
   items: PropTypes.array,
   title: PropTypes.string,
+  titleProps: PropTypes.object,
+  groupTitleProps: PropTypes.object,
 };
 
 export default MenuEditorials;
