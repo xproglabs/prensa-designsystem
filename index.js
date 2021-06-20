@@ -4209,77 +4209,52 @@ Image$1.defaultProps = {
   content: {}
 };
 
-var SideMenu = function SideMenu(props) {
+var _templateObject$7, _templateObject2$3;
+var Backdrop = styled__default['default'].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  background-color: rgba(0, 0, 0, 0.5);\n  height: 100vh;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100vw;\n  z-index: 10;\n"])));
+
+var parsePosition = function parsePosition(_ref) {
+  var menuAnchor = _ref.menuAnchor;
+  if (menuAnchor === 'left') return 'left: 0px;';
+  if (menuAnchor === 'right') return 'right: 0px;';
+};
+
+var Content$3 = styled__default['default'].div(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  width: 100%;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"])), parsePosition, padding, function (props) {
+  return props.theme.colors.white;
+}, function (props) {
+  return props.theme.queries.md;
+});
+
+var MenuContainer = function MenuContainer(props) {
   var children = props.children,
-      isOpen = props.isOpen,
-      onClose = props.onClose,
-      menuSize = props.menuSize,
+      close = props.close,
       menuAnchor = props.menuAnchor,
-      bgColor = props.bgColor;
-  if (!isOpen) return null;
-
-  var parsePosition = function parsePosition() {
-    if (menuAnchor === 'left') return 'left: 0px;';
-    if (menuAnchor === 'right') return 'right: 0px;';
-  };
-
-  var menuCustomStyle = "\n    position: fixed;\n    display: block;\n    overflow-y: auto;\n    z-index: 11;\n    top: 0px;\n    ".concat(parsePosition(), ";\n  ");
-  var outerContainerCustomStyle = "\n    position: fixed;\n    background-color: rgba(0, 0, 0, 0.5);\n    z-index: 10;\n    top: 0px;\n  ";
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    width: "100vw",
-    height: "100vh",
-    onClick: onClose,
-    custom: outerContainerCustomStyle
-  }), /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    width: "100%",
-    md: {
-      width: menuSize
-    },
-    fullHeight: true,
-    bgColor: bgColor,
-    custom: menuCustomStyle
+      open = props.open,
+      px = props.px,
+      py = props.py;
+  if (!open) return null;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement(Backdrop, {
+    onClick: close
+  }), /*#__PURE__*/React__default['default'].createElement(Content$3, {
+    px: px,
+    py: py,
+    menuAnchor: menuAnchor
   }, children));
 };
 
-SideMenu.defaultProps = {
+MenuContainer.defaultProps = {
   menuAnchor: 'left',
-  menuSize: '350px',
-  px: 4,
-  py: 4,
-  bgColor: 'neutral10'
+  px: 2,
+  py: 2
 };
-SideMenu.propTypes = {
-  /**
-   * Permite passagem de conteúdo para o Menu Lateral
-   */
+MenuContainer.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object, PropTypes__default['default'].node]),
-
-  /**
-   * Define a âncora onde o menu será renderizado (esquerda e direita da tela)
-   */
+  close: PropTypes__default['default'].func.isRequired,
   menuAnchor: PropTypes__default['default'].oneOf(['left', 'right']),
-
-  /**
-   * Define o tamanho do menu '[number]px'
-   */
-  menuSize: PropTypes__default['default'].string,
-
-  /**
-   * Controla a exibição ou não do Menu
-   */
-  isOpen: PropTypes__default['default'].bool.isRequired,
-
-  /**
-   * Controla a ação de fechamento do Menu
-   */
-  onClose: PropTypes__default['default'].func.isRequired,
-
-  /**
-   * Define a cor de fundo do conteúdo
-   */
-  bgColor: PropTypes__default['default'].string
+  open: PropTypes__default['default'].bool.isRequired,
+  px: PropTypes__default['default'].number,
+  py: PropTypes__default['default'].number
 };
-var index$2 = styled.withTheme(SideMenu);
+var index$2 = styled.withTheme(MenuContainer);
 
 function SvgIcArrowForward(props) {
   return /*#__PURE__*/React.createElement("svg", _extends({
@@ -4295,8 +4270,8 @@ function SvgIcArrowForward(props) {
   }));
 }
 
-var _templateObject$7;
-var StyledAria$1 = styled__default['default'].a(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  width: 100%;\n  text-decoration: none;\n"])));
+var _templateObject$8;
+var StyledAria$1 = styled__default['default'].a(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  width: 100%;\n  text-decoration: none;\n"])));
 
 var MenuItem = function MenuItem(_ref) {
   var children = _ref.children,
@@ -4450,7 +4425,7 @@ Topbar.defaultProps = {
   }
 };
 
-var _templateObject$8, _templateObject2$3;
+var _templateObject$9, _templateObject2$4;
 
 var parseColorVariation = function parseColorVariation(props) {
   if (props.transparent === true) return "\n    color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";\n  ");
@@ -4462,7 +4437,7 @@ var parseBackgroundVariation = function parseBackgroundVariation(props) {
   return "background-color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";");
 };
 
-var Container$8 = styled__default['default'].div(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var Container$8 = styled__default['default'].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return props.theme.parsePadding(props, props.theme);
 }, function (props) {
   return props.theme.parseMargin(props, props.theme);
@@ -4471,7 +4446,7 @@ var Container$8 = styled__default['default'].div(_templateObject$8 || (_template
 }, function (props) {
   return parseBackgroundVariation(props);
 });
-var Typography$2 = styled__default['default'].span(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
+var Typography$2 = styled__default['default'].span(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
   return props.theme.fonts.secondary;
 }, function (props) {
   return props.$fontWeight;
@@ -4561,8 +4536,8 @@ exports.Form = index;
 exports.Image = Image$1;
 exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;
+exports.MenuContainer = index$2;
 exports.MenuItem = index$3;
-exports.SideMenu = index$2;
 exports.SocialMedias = SocialMedias;
 exports.Subject = index$4;
 exports.Topbar = Topbar;
