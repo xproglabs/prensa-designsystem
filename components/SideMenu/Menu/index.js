@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {MenuContainer} from '../../MenuContainer';
+import MenuContainer from '../../MenuContainer';
 
 const Menu = ({children, close, open}) => {
   return (

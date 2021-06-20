@@ -8,7 +8,6 @@ var styled = require('styled-components');
 var lodash = require('lodash');
 var html2json = require('html2json');
 var InputMask = require('react-input-mask');
-var prensa = require('prensa');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -4303,13 +4302,13 @@ MenuContainer.defaultProps = {
 };
 MenuContainer.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object, PropTypes__default['default'].node]),
-  close: PropTypes__default['default'].func.isRequired,
+  close: PropTypes__default['default'].func,
   menuAnchor: PropTypes__default['default'].oneOf(['left', 'right']),
-  open: PropTypes__default['default'].bool.isRequired,
+  open: PropTypes__default['default'].bool,
   px: PropTypes__default['default'].number,
   py: PropTypes__default['default'].number
 };
-var index$2 = styled.withTheme(MenuContainer);
+var MenuContainer$1 = styled.withTheme(MenuContainer);
 
 var _templateObject$8, _templateObject2$4;
 var Container$8 = styled__default['default'].div(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  height: max-content;\n  width: max-content;\n"])));
@@ -4604,7 +4603,7 @@ var Menu = function Menu(_ref) {
   var children = _ref.children,
       close = _ref.close,
       open = _ref.open;
-  return /*#__PURE__*/React__default['default'].createElement(prensa.MenuContainer, {
+  return /*#__PURE__*/React__default['default'].createElement(MenuContainer$1, {
     open: open,
     close: close
   }, children);
@@ -4612,7 +4611,7 @@ var Menu = function Menu(_ref) {
 
 Menu.propTypes = {
   children: PropTypes__default['default'].node,
-  close: PropTypes__default['default'].string,
+  close: PropTypes__default['default'].func,
   open: PropTypes__default['default'].bool
 };
 
@@ -4786,7 +4785,7 @@ Subject$1.propTypes = {
    */
   weight: PropTypes__default['default'].oneOf([300, 400, 500, 600, 700])
 };
-var index$3 = styled.withTheme(Subject$1);
+var index$2 = styled.withTheme(Subject$1);
 
 exports.Article = Article$1;
 exports.Block = Block$1;
@@ -4798,11 +4797,11 @@ exports.Form = index;
 exports.Image = Image$1;
 exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;
-exports.MenuContainer = index$2;
+exports.MenuContainer = MenuContainer$1;
 exports.MenuEditorials = MenuEditorials;
 exports.SideMenu = SideMenu;
 exports.SocialMedias = SocialMedias;
-exports.Subject = index$3;
+exports.Subject = index$2;
 exports.Topbar = Topbar;
 exports.Typography = Typography$1;
 exports.theme = theme;
