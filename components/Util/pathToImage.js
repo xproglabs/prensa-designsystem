@@ -9,4 +9,14 @@ const pathToImage = (derivative, domain, policy_id, width) => {
   let path = `${r}/image/policy:${string}/image.jpg?f=${d}&w=${w}`;
   return path;
 };
-export {pathToImage};
+
+const getImagePath = (derivative, policy_id, width) => {
+  if (!policy_id) 
+    return null;
+  const w = width || 1000;
+  const d = derivative || '2x1';
+  const path = `/image/policy:${policy_id}/image.jpg?f=${d}&w=${w}`;
+  return path;
+};
+
+export {getImagePath, pathToImage};
