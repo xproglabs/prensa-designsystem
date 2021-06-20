@@ -23,8 +23,6 @@ const MenuContainer = props => {
 
 MenuContainer.defaultProps = {
   menuAnchor: 'left',
-  px: 2,
-  py: 2
 };
 
 MenuContainer.propTypes = {
