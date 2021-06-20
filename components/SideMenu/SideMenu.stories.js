@@ -27,7 +27,7 @@ export const Default = () => {
     <ThemeProvider theme={theme}>
       <div>
         <button onClick={handleOpen}>Abrir menu</button>
-        <SideMenu open={menu} close={handleClose}>
+        <SideMenu open={menu} close={handleClose} menuAnchor='right'>
           <MenuEditorials
             amp={false}
             items={dataMock}

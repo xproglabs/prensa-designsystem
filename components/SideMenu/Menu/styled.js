@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import {padding} from '../../styled-system/padding';
+import {padding} from '../../../styled-system/padding';
 
 const Backdrop = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
