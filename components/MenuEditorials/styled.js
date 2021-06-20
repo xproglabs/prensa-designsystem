@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
-export const Hyperlink = styled.a`
+const Hyperlink = styled.a`
   text-decoration: none;
   font-size: 16px;
   font-family: ${props => props.theme.fonts.secondary};
@@ -10,7 +10,7 @@ export const Hyperlink = styled.a`
   }
 `;
 
-export const HeaderContainer = styled.div`
+const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -20,7 +20,7 @@ export const HeaderContainer = styled.div`
   border-color: ${props => props.theme.colors.neutral9};
 `;
 
-export const GroupSection = styled.section`
+const GroupSection = styled.section`
   width: 100%;
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -37,10 +37,18 @@ export const GroupSection = styled.section`
     width: 340px;
   }
 `;
-export const GroupTitleContainer = styled.div`
-  border-left-width: 4px;
-  border-left-style: solid;
-  border-left-color: ${props => props.theme.colors[props.$color]};
+
+const getGroupBorder = ({removeBorders}) => {
+  if (removeBorders) return '';
+  return css`
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-left-color: ${props => props.theme.colors[props.$color]};
+  `;
+};
+
+const GroupTitleContainer = styled.div`
+  ${getGroupBorder}
   padding-left: 16px;
   cursor: pointer;
   display: flex;
@@ -48,6 +56,14 @@ export const GroupTitleContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const GroupContent = styled.div`
+const GroupContent = styled.div`
   margin-top: 8px;
 `;
+
+export {
+  GroupContent,
+  GroupSection,
+  GroupTitleContainer,
+  Hyperlink,
+  HeaderContainer,
+};
