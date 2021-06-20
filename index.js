@@ -4589,10 +4589,12 @@ var MenuEditorials = function MenuEditorials(_ref) {
       items = _ref.items,
       title = _ref.title,
       titleProps = _ref.titleProps,
-      groupTitleProps = _ref.groupTitleProps;
+      groupTitleProps = _ref.groupTitleProps,
+      px = _ref.px,
+      py = _ref.py;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    px: "20px",
-    py: "20px"
+    px: px,
+    py: py
   }, title && /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, titleDefaultProps, titleProps), title), items && lodash.map(items, function (item, key) {
     return amp ? /*#__PURE__*/React__default['default'].createElement(MenuItem, {
       color: color,
@@ -4608,13 +4610,19 @@ var MenuEditorials = function MenuEditorials(_ref) {
   }));
 };
 
+MenuEditorials.defaultProps = {
+  px: '20px',
+  py: '20px'
+};
 MenuEditorials.propTypes = {
   amp: PropTypes__default['default'].bool,
   color: PropTypes__default['default'].string,
   items: PropTypes__default['default'].array,
   title: PropTypes__default['default'].string,
   titleProps: PropTypes__default['default'].object,
-  groupTitleProps: PropTypes__default['default'].object
+  groupTitleProps: PropTypes__default['default'].object,
+  px: PropTypes__default['default'].string,
+  py: PropTypes__default['default'].string
 };
 
 var AmpMenu = function AmpMenu(_ref) {
