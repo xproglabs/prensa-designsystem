@@ -28,7 +28,14 @@ export const Default = () => {
       <div>
         <button onClick={handleOpen}>Abrir menu</button>
         <SideMenu open={menu} close={handleClose}>
-          <MenuEditorials amp={false} items={dataMock} title='teste' titleProps={{color: 'product1'}} groupTitleProps={{color: 'product2'}} />
+          <MenuEditorials
+            amp={false}
+            items={dataMock}
+            title='teste'
+            titleProps={{color: 'product1'}}
+            groupTitleProps={{color: 'product2'}}
+            color='primary1'
+          />
         </SideMenu>
       </div>
     </ThemeProvider>

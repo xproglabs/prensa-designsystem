@@ -16,7 +16,7 @@ const titleDefaultProps = {
   mb: 3,
 };
 
-const MenuEditorials = ({amp, items, title, titleProps, groupTitleProps}) => {
+const MenuEditorials = ({amp, color, items, title, titleProps, groupTitleProps}) => {
   return (
     <Block px='20px' py='20px'>
       {title &&
@@ -26,9 +26,9 @@ const MenuEditorials = ({amp, items, title, titleProps, groupTitleProps}) => {
       }
       {items && 
         map(items, (item, key) => amp ? 
-          <AmpMenuItem content={item} groupTitleProps={groupTitleProps} key={key} />
+          <AmpMenuItem color={color} content={item} groupTitleProps={groupTitleProps} key={key} />
           :
-          <MenuItem content={item} groupTitleProps={groupTitleProps} key={key} />)
+          <MenuItem color={color} content={item} groupTitleProps={groupTitleProps} key={key} />)
       }
     </Block>
   );
@@ -36,6 +36,7 @@ const MenuEditorials = ({amp, items, title, titleProps, groupTitleProps}) => {
 
 MenuEditorials.propTypes = {
   amp: PropTypes.bool,
+  color: PropTypes.string,
   items: PropTypes.array,
   title: PropTypes.string,
   titleProps: PropTypes.object,
