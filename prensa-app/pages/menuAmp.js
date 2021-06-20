@@ -1,32 +1,17 @@
 import {useAmp} from 'next/amp';
 import Head from 'next/head';
-import React, {useState} from 'react';
+import {MenuEditorials, SideMenu} from 'prensa';
+import React from 'react';
 
 import {Main} from '../components/Container';
-import SideMenu from '../components/SideMenu';
-import sideMenuMockedData from '../components/SideMenu/datamodel.json';
+import mockedData from '../sidemenu_datamodel.json';
 import styles from '../styles/Home.module.css';
 
 export const config = {amp: true};
 
 export default function Menu() {
 
-  const [menuState, setMenuState] = useState(false);
   const amp = useAmp();
-
-  const openMenu = () => {
-    setMenuState(true);
-  };
-
-  const closeMenu = () => {
-    setMenuState(false);
-  };
-
-  const buttonProps = {
-    children: 'Abrir menu',
-    on: amp ? 'tap:sideMenu.open,AMP.setState({})' : undefined,
-    onClick: amp ? undefined : openMenu,
-  };
 
   return (
     <div className={styles.container}>
@@ -39,14 +24,10 @@ export default function Menu() {
       </Head>
 
       <Main>
-        <button {...buttonProps} />
-        <SideMenu
-          id='sideMenu'
-          amp={amp}
-          content={sideMenuMockedData}
-          open={menuState}
-          close={closeMenu}
-        />
+        <button on="tap:sideMenu.open,AMP.setState({})">Abrir Menu</button>
+        <SideMenu id='sideMenu' amp={amp}>
+          <MenuEditorials amp={amp} items={mockedData} title='testando' />
+        </SideMenu>
       </Main>
     </div>
   );
