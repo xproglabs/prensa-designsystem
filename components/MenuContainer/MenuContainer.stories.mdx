@@ -1,5 +1,5 @@
 import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
-import SideMenu from './SideMenu'
+import SideMenu from './MenuContainer'
 import {ThemeProvider} from 'styled-components'
 import {theme} from '../../styles/theme'
 import {CodeBlock, Space} from 'prensa-docs';
@@ -11,7 +11,7 @@ import SideMenuComponent from './index'
 
 <Space size={4} />
 
-<CodeBlock>{`import {SideMenu} from 'prensa';`}</CodeBlock>
+<CodeBlock>{`import {MenuContainer} from 'prensa';`}</CodeBlock>
 
 <Space size={3} />
 
@@ -28,13 +28,13 @@ SideMenu é um esqueleto para a construção de menus laterais no front. Ele car
 <Space size={6} />
 
 ### Como usar?
-Para utilizar o componente, precisamos passar valor para a props `isOpen` e uma função para `onClose`.
+Para utilizar o componente, precisamos passar valor para a props `open` e uma função para `close`.
 No exemplo abaixo as funções `handleClick` e `handleClose` realizam as manipulações de estado para abrir | fechar o menu lateral.
 
 <pre>
   <CodeBlock>{`
     import React, {useState} from 'react';
-    import {SideMenu} from 'prensa';
+    import {MenuContainer} from 'prensa';
 
     const Component = () => {
 
@@ -57,9 +57,9 @@ No exemplo abaixo as funções `handleClick` e `handleClose` realizam as manipul
           <button onClick={() => handleClick()}>Abrir Menu</button>
 
           /* Componente Menu Lateral */
-          <SideMenuComponent isOpen={menu} onClose={handleClose}>
+          <MenuContainer open={menu} close={handleClose}>
             {...content}
-          </SideMenuComponent>
+          </MenuContainer>
         </div>
       )
     }
