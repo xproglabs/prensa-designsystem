@@ -2,8 +2,8 @@ import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {Block} from '../Block';
-import {Typography} from '../Typography';
+import Block from '../Block';
+import Typography from '../Typography';
 import AmpMenuItem from './AmpMenuItem';
 import MenuItem from './MenuItem';
 
