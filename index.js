@@ -4403,15 +4403,26 @@ var GroupTitleContainer = styled__default['default'].div(_templateObject4$1 || (
 });
 var GroupContent = styled__default['default'].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteral(["\n  margin-top: 8px;\n"])));
 
+var groupTitleDefaultProps = {
+  color: 'neutral2',
+  element: 'h4',
+  lineHeight: '40px',
+  fontFamily: 'secondary',
+  fontSize: '20px'
+};
+
 var MenuItem = function MenuItem(_ref) {
-  var content = _ref.content;
+  var color = _ref.color,
+      content = _ref.content,
+      groupTitleProps = _ref.groupTitleProps;
   // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
   // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
   // 3. To make state work it is necessary a user click to activate initialState. Before this the values submitted to client are the ones in HTML props
   // 4. In this context the state trigger is everytime user click on MenuButton
   // 5. Subgroup is not displayed when it is rendered with class 'group-closed'
+  var itemColor = color;
+  if (color === 'unique' && content.color) itemColor = content.color;
   var contentId = content.contentId,
-      color = content.color,
       name = content.name,
       path = content.path,
       subitems = content.subitems;
@@ -4424,20 +4435,14 @@ var MenuItem = function MenuItem(_ref) {
   var expandLessIconClass = "".concat(stateId, ".status ? 'visible' : 'hidden'");
 
   var GroupTitle = function GroupTitle() {
-    return /*#__PURE__*/React__default['default'].createElement(Typography$1, {
-      color: "neutral2",
-      element: "h4",
-      lineHeight: "40px",
-      fontFamily: "secondary",
-      fontSize: "20px"
-    }, name);
+    return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, groupTitleDefaultProps, groupTitleProps), name);
   };
 
   var HyperlinkGroup = function HyperlinkGroup() {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
-      $color: color
+      $color: itemColor
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, null)));
   };
 
@@ -4446,7 +4451,7 @@ var MenuItem = function MenuItem(_ref) {
       role: "setMenuItemState",
       tabIndex: "0",
       on: newState,
-      $color: color
+      $color: itemColor
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
       ampClass: expandMoreIconClass
     }), /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
@@ -4479,12 +4484,27 @@ var MenuItem = function MenuItem(_ref) {
   })), !isGroup ? /*#__PURE__*/React__default['default'].createElement(HyperlinkGroup, null) : /*#__PURE__*/React__default['default'].createElement(Group, null));
 };
 
+MenuItem.defaultProps = {
+  color: 'product1'
+};
 MenuItem.propTypes = {
-  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
+  color: PropTypes__default['default'].string,
+  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  groupTitleProps: PropTypes__default['default'].object
 };
 
-var SideMenuItem = function SideMenuItem(_ref) {
-  var content = _ref.content;
+var groupTitleDefaultProps$1 = {
+  color: 'neutral2',
+  element: 'h4',
+  lineHeight: '40px',
+  fontFamily: 'secondary',
+  fontSize: '20px'
+};
+
+var MenuItem$1 = function MenuItem(_ref) {
+  var color = _ref.color,
+      content = _ref.content,
+      groupTitleProps = _ref.groupTitleProps;
 
   var _useState = React.useState(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -4492,31 +4512,26 @@ var SideMenuItem = function SideMenuItem(_ref) {
       setOpenStatus = _useState2[1];
 
   var contentId = content.contentId,
-      color = content.color,
       name = content.name,
       path = content.path,
       subitems = content.subitems;
   var isGroup = subitems.length > 0;
+  var itemColor = color;
+  if (color === 'unique' && content.color) itemColor = content.color;
 
   var handleItemClick = function handleItemClick() {
     setOpenStatus(!open);
   };
 
   var GroupTitle = function GroupTitle() {
-    return /*#__PURE__*/React__default['default'].createElement(Typography$1, {
-      color: "neutral2",
-      element: "h4",
-      lineHeight: "40px",
-      fontFamily: "secondary",
-      fontSize: "20px"
-    }, name);
+    return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, groupTitleDefaultProps$1, groupTitleProps), name);
   };
 
   var HyperlinkGroup = function HyperlinkGroup() {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
-      $color: color
+      $color: itemColor
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, null)));
   };
 
@@ -4524,7 +4539,7 @@ var SideMenuItem = function SideMenuItem(_ref) {
     return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
       id: contentId,
       onClick: handleItemClick,
-      $color: color
+      $color: itemColor
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), open ? /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, null) : /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, null)), /*#__PURE__*/React__default['default'].createElement(GroupContent, null, open && lodash.map(subitems, function (_ref2, key) {
       var path = _ref2.path,
           name = _ref2.name;
@@ -4542,30 +4557,44 @@ var SideMenuItem = function SideMenuItem(_ref) {
   return /*#__PURE__*/React__default['default'].createElement(GroupSection, null, !isGroup ? /*#__PURE__*/React__default['default'].createElement(HyperlinkGroup, null) : /*#__PURE__*/React__default['default'].createElement(Group, null));
 };
 
-SideMenuItem.propTypes = {
-  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
+MenuItem$1.defaultProps = {
+  color: 'product1'
+};
+MenuItem$1.propTypes = {
+  color: PropTypes__default['default'].string,
+  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  groupTitleProps: PropTypes__default['default'].object
+};
+
+var titleDefaultProps = {
+  element: 'p',
+  color: 'neutral3',
+  fontFamily: 'secondary',
+  fontSize: '14px',
+  transform: 'uppercase',
+  mb: 3
 };
 
 var MenuEditorials = function MenuEditorials(_ref) {
   var amp = _ref.amp,
+      color = _ref.color,
       items = _ref.items,
-      title = _ref.title;
+      title = _ref.title,
+      titleProps = _ref.titleProps,
+      groupTitleProps = _ref.groupTitleProps;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     px: "20px",
     py: "20px"
-  }, title && /*#__PURE__*/React__default['default'].createElement(Typography$1, {
-    element: "p",
-    color: "neutral3",
-    fontFamily: "secondary",
-    fontSize: "14px",
-    transform: "uppercase",
-    mb: 3
-  }, title), items && lodash.map(items, function (item, key) {
+  }, title && /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, titleDefaultProps, titleProps), title), items && lodash.map(items, function (item, key) {
     return amp ? /*#__PURE__*/React__default['default'].createElement(MenuItem, {
+      color: color,
       content: item,
+      groupTitleProps: groupTitleProps,
       key: key
-    }) : /*#__PURE__*/React__default['default'].createElement(SideMenuItem, {
+    }) : /*#__PURE__*/React__default['default'].createElement(MenuItem$1, {
+      color: color,
       content: item,
+      groupTitleProps: groupTitleProps,
       key: key
     });
   }));
@@ -4573,8 +4602,11 @@ var MenuEditorials = function MenuEditorials(_ref) {
 
 MenuEditorials.propTypes = {
   amp: PropTypes__default['default'].bool,
+  color: PropTypes__default['default'].string,
   items: PropTypes__default['default'].array,
-  title: PropTypes__default['default'].string
+  title: PropTypes__default['default'].string,
+  titleProps: PropTypes__default['default'].object,
+  groupTitleProps: PropTypes__default['default'].object
 };
 
 var AmpMenu = function AmpMenu(_ref) {
