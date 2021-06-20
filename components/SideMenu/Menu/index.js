@@ -1,6 +1,7 @@
-import {MenuContainer} from 'prensa';
 import PropTypes from 'prop-types';
 import React from 'react';
+
+import {MenuContainer} from '../../MenuContainer';
 
 const Menu = ({children, close, open}) => {
   return (
@@ -12,7 +13,7 @@ const Menu = ({children, close, open}) => {
 
 Menu.propTypes = {
   children: PropTypes.node,
-  close: PropTypes.string,  
+  close: PropTypes.func,  
   open: PropTypes.bool,
 };
 

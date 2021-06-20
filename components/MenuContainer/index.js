@@ -27,9 +27,9 @@ MenuContainer.defaultProps = {
 
 MenuContainer.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.node]), 
-  close: PropTypes.func.isRequired,
+  close: PropTypes.func,
   menuAnchor: PropTypes.oneOf(['left', 'right']),
-  open: PropTypes.bool.isRequired,
+  open: PropTypes.bool,
   px: PropTypes.number,
   py: PropTypes.number
 };
