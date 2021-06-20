@@ -958,7 +958,7 @@ var parseProps$1 = function parseProps(media, props) {
   }
 };
 
-var _templateObject$2, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10;
+var _templateObject$2, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11;
 var HeadingOne = styled__default['default'].h1(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
@@ -987,6 +987,9 @@ var Label = styled__default['default'].label(_templateObject9 || (_templateObjec
   return props.$style;
 });
 var Cite = styled__default['default'].cite(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["", ""])), function (props) {
+  return props.$style;
+});
+var A = styled__default['default'].a(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
 
@@ -1206,6 +1209,11 @@ var Typography = function Typography(_ref) {
 
     case 'cite':
       return /*#__PURE__*/React__default['default'].createElement(Cite, _extends({}, props, {
+        $style: styles
+      }));
+
+    case 'a':
+      return /*#__PURE__*/React__default['default'].createElement(A, _extends({}, props, {
         $style: styles
       }));
 

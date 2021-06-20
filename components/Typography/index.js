@@ -13,7 +13,8 @@ import {
   Paragraph,
   Span,
   Label,
-  Cite
+  Cite,
+  A
 } from './styled';
 
 const Typography = ({
@@ -194,6 +195,8 @@ const Typography = ({
       return <Label {...props} $style={styles} />;
     case 'cite':
       return <Cite {...props} $style={styles} />;
+    case 'a':
+      return <A {...props} $style={styles} />;
     case 'span':
     default:
       return <Span {...props} $style={styles} />;
