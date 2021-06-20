@@ -17,7 +17,7 @@ const groupTitleDefaultProps = {
   fontSize: '20px',
 };
 
-const MenuItem = ({color, content, groupTitle}) => {
+const MenuItem = ({color, content, groupTitleProps}) => {
   const [open, setOpenStatus] = useState(false);
   const {contentId, name, path, subitems} = content;
   const isGroup = subitems.length > 0;
@@ -30,7 +30,7 @@ const MenuItem = ({color, content, groupTitle}) => {
   };
 
   const GroupTitle = () => (
-    <Typography {...groupTitleDefaultProps} {...groupTitle}>
+    <Typography {...groupTitleDefaultProps} {...groupTitleProps}>
       {name}
     </Typography>
   );
@@ -73,13 +73,12 @@ const MenuItem = ({color, content, groupTitle}) => {
 
 MenuItem.defaultProps = {
   color: 'product1',
-  groupTitle: groupTitleDefaultProps
 };
 
 MenuItem.propTypes = {
   color: PropTypes.string,
   content: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  groupTitle: PropTypes.object,
+  groupTitleProps: PropTypes.object,
 };
 
 export default MenuItem;

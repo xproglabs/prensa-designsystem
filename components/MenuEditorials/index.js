@@ -34,10 +34,6 @@ const MenuEditorials = ({amp, items, title, titleProps, groupTitleProps}) => {
   );
 };
 
-MenuEditorials.defaultProps = {
-  titleProps: titleDefaultProps,
-};
-
 MenuEditorials.propTypes = {
   amp: PropTypes.bool,
   items: PropTypes.array,

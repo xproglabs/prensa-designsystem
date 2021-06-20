@@ -84,7 +84,6 @@ const MenuItem = ({color, content, groupTitleProps}) => {
 
 MenuItem.defaultProps = {
   color: 'product1',
-  groupTitleProps: groupTitleDefaultProps
 };
 
 MenuItem.propTypes = {
