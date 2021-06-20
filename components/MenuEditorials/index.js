@@ -16,9 +16,9 @@ const titleDefaultProps = {
   mb: 3,
 };
 
-const MenuEditorials = ({amp, color, items, title, titleProps, groupTitleProps}) => {
+const MenuEditorials = ({amp, color, items, title, titleProps, groupTitleProps, px, py}) => {
   return (
-    <Block px='20px' py='20px'>
+    <Block px={px} py={py}>
       {title &&
         <Typography {...titleDefaultProps} {...titleProps}>
           {title}
@@ -34,6 +34,11 @@ const MenuEditorials = ({amp, color, items, title, titleProps, groupTitleProps})
   );
 };
 
+MenuEditorials.defaultProps = {
+  px: '20px',
+  py: '20px'
+};
+
 MenuEditorials.propTypes = {
   amp: PropTypes.bool,
   color: PropTypes.string,
@@ -41,6 +46,8 @@ MenuEditorials.propTypes = {
   title: PropTypes.string,
   titleProps: PropTypes.object,
   groupTitleProps: PropTypes.object,
+  px: PropTypes.string,
+  py: PropTypes.string,
 };
 
 export default MenuEditorials;
