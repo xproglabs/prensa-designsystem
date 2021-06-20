@@ -8,6 +8,7 @@ var styled = require('styled-components');
 var lodash = require('lodash');
 var html2json = require('html2json');
 var InputMask = require('react-input-mask');
+var prensa = require('prensa');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -93,6 +94,62 @@ function _taggedTemplateLiteral(strings, raw) {
       value: Object.freeze(raw)
     }
   }));
+}
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArrayLimit(arr, i) {
+  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
 var parseAlign = function parseAlign(props) {
@@ -4254,108 +4311,315 @@ MenuContainer.propTypes = {
 };
 var index$2 = styled.withTheme(MenuContainer);
 
-function SvgIcArrowForward(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    height: 32,
-    viewBox: "0 0 24 24",
-    width: 24
-  }, props), /*#__PURE__*/React.createElement("path", {
-    d: "M0 0h24v24H0z",
-    fill: "none"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
-  }));
-}
+var _templateObject$8, _templateObject2$4;
+var Container$8 = styled__default['default'].div(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  height: max-content;\n  width: max-content;\n"])));
+var Svg = styled__default['default'].svg(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  fill: ", ";\n  margin: ", ";\n"])), function (props) {
+  return props.theme.colors[props.color];
+}, function (props) {
+  return props.margin;
+});
 
-var _templateObject$8;
-var StyledAria$1 = styled__default['default'].a(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  width: 100%;\n  text-decoration: none;\n"])));
+var Icon = function Icon(_ref) {
+  var ampClass = _ref.ampClass,
+      children = _ref.children,
+      color = _ref.color,
+      height = _ref.height,
+      margin = _ref.margin,
+      viewBox = _ref.viewBox,
+      width = _ref.width;
+  return /*#__PURE__*/React__default['default'].createElement(Container$8, {
+    "data-amp-bind-class": ampClass
+  }, /*#__PURE__*/React__default['default'].createElement(Svg, {
+    xmlns: "http://www.w3.org/2000/svg",
+    color: color,
+    height: height,
+    margin: margin,
+    viewBox: viewBox,
+    width: width
+  }, children));
+};
+
+Icon.defaultProps = {
+  color: 'neutral3',
+  height: '24px',
+  margin: '8px',
+  viewBox: '0 0 24 24',
+  width: '24px'
+};
+Icon.propTypes = {
+  ampClass: PropTypes__default['default'].string,
+  children: PropTypes__default['default'].node,
+  color: PropTypes__default['default'].string,
+  height: PropTypes__default['default'].string,
+  margin: PropTypes__default['default'].string,
+  viewBox: PropTypes__default['default'].string,
+  width: PropTypes__default['default'].string
+};
+var Icon$1 = styled.withTheme(Icon);
+
+var ChevronRight = function ChevronRight(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Icon$1, props, /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M0 0h24v24H0V0z",
+    fill: "none"
+  }), /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"
+  }));
+};
+
+var ExpandLessIcon = function ExpandLessIcon(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Icon$1, props, /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M0 0h24v24H0V0z",
+    fill: "none"
+  }), /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z"
+  }));
+};
+
+var ExpandMoreIcon = function ExpandMoreIcon(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Icon$1, props, /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M24 24H0V0h24v24z",
+    fill: "none",
+    opacity: ".87"
+  }), /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"
+  }));
+};
+
+var _templateObject$9, _templateObject2$5, _templateObject3$1, _templateObject4$1, _templateObject5$1;
+var Hyperlink = styled__default['default'].a(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 16px;\n  font-family: ", ";\n  color: ", ";\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (props) {
+  return props.theme.fonts.secondary;
+}, function (props) {
+  return props.theme.colors.neutral5;
+});
+styled__default['default'].div(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  padding-bottom: 16px;\n  margin-bottom: 16px;\n  border-bottom: 1px solid;\n  border-color: ", ";\n"])), function (props) {
+  return props.theme.colors.neutral9;
+});
+var GroupSection = styled__default['default'].section(_templateObject3$1 || (_templateObject3$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  border-bottom-color: ", ";\n  padding-bottom: 8px;\n  margin-bottom: 8px;\n  .group-closed {\n    display: none;\n  }\n  .hidden {\n    display: none;\n  }\n  @media (min-width: ", ") {\n    width: 340px;\n  }\n"])), function (props) {
+  return props.theme.colors.neutral9;
+}, function (props) {
+  return props.theme.queries.md;
+});
+var GroupTitleContainer = styled__default['default'].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteral(["\n  border-left-width: 4px;\n  border-left-style: solid;\n  border-left-color: ", ";\n  padding-left: 16px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"])), function (props) {
+  return props.theme.colors[props.$color];
+});
+var GroupContent = styled__default['default'].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteral(["\n  margin-top: 8px;\n"])));
 
 var MenuItem = function MenuItem(_ref) {
-  var children = _ref.children,
-      mb = _ref.mb,
-      px = _ref.px,
-      py = _ref.py,
-      color = _ref.color,
-      onClick = _ref.onClick,
-      path = _ref.path,
-      theme = _ref.theme,
-      id = _ref.id;
-  var customStyle = "\n    border-bottom: 1px solid rgba(0,0,0,0.1);    \n    cursor: pointer;\n    text-decoration: unset;\n    svg {\n      width: 24px;\n      height: 24px;\n      fill: ".concat(color ? theme.parseColor({
-    color: color
-  }, theme, 'color') : theme.colors.primary1, ";\n    }\n    &:hover {\n      background-color: ").concat(theme.colors.neutral10, ";\n      opacity: 0.8;\n    }\n  ");
+  var content = _ref.content;
+  // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
+  // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
+  // 3. To make state work it is necessary a user click to activate initialState. Before this the values submitted to client are the ones in HTML props
+  // 4. In this context the state trigger is everytime user click on MenuButton
+  // 5. Subgroup is not displayed when it is rendered with class 'group-closed'
+  var contentId = content.contentId,
+      color = content.color,
+      name = content.name,
+      path = content.path,
+      subitems = content.subitems;
+  var isGroup = subitems.length > 0;
+  var stateId = "state".concat(contentId.replace('.', ''));
+  var initialState = "{ \"".concat(stateId, "\": { \"status\": true } }");
+  var newState = "tap:AMP.setState({ ".concat(stateId, ": {status: !").concat(stateId, ".status} })");
+  var contentClass = "".concat(stateId, ".status ? 'group-open' : 'group-closed'");
+  var expandMoreIconClass = "".concat(stateId, ".status ? 'hidden' : 'visible'");
+  var expandLessIconClass = "".concat(stateId, ".status ? 'visible' : 'hidden'");
 
-  var renderContent = function renderContent() {
-    return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-      onClick: !path ? onClick : null,
-      width: "100%",
-      mb: mb,
-      id: id
-    }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
-      fullWidth: true,
-      align: "row",
-      alignx: "between",
-      aligny: "middle",
-      fontColor: color,
-      px: px,
-      py: py,
-      custom: customStyle
-    }, children ? children : /*#__PURE__*/React__default['default'].createElement("span", null, "Content here"), /*#__PURE__*/React__default['default'].createElement(SvgIcArrowForward, null)));
+  var GroupTitle = function GroupTitle() {
+    return /*#__PURE__*/React__default['default'].createElement(Typography$1, {
+      color: "neutral2",
+      element: "h4",
+      lineHeight: "40px",
+      fontFamily: "secondary",
+      fontSize: "20px"
+    }, name);
   };
 
-  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria$1, {
-    href: path
-  }, renderContent()) : renderContent();
+  var HyperlinkGroup = function HyperlinkGroup() {
+    return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
+      href: path
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+      $color: color
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, null)));
+  };
+
+  var Group = function Group() {
+    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+      role: "setMenuItemState",
+      tabIndex: "0",
+      on: newState,
+      $color: color
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
+      ampClass: expandMoreIconClass
+    }), /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
+      ampClass: expandLessIconClass
+    })), /*#__PURE__*/React__default['default'].createElement(GroupContent, {
+      "data-amp-bind-class": contentClass
+    }, lodash.map(subitems, function (_ref2, key) {
+      var id = _ref2.id,
+          path = _ref2.path,
+          name = _ref2.name;
+      return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+        id: id,
+        ml: "20px",
+        mb: 2,
+        mt: 2,
+        key: key
+      }, /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
+        href: path
+      }, name));
+    })));
+  };
+
+  return /*#__PURE__*/React__default['default'].createElement(GroupSection, null, /*#__PURE__*/React__default['default'].createElement("amp-state", {
+    id: stateId
+  }, /*#__PURE__*/React__default['default'].createElement("script", {
+    type: "application/json",
+    dangerouslySetInnerHTML: {
+      __html: "".concat(JSON.stringify(initialState))
+    }
+  })), !isGroup ? /*#__PURE__*/React__default['default'].createElement(HyperlinkGroup, null) : /*#__PURE__*/React__default['default'].createElement(Group, null));
 };
 
-MenuItem.defaultProps = {
-  px: 1,
-  py: 1,
-  color: 'primary1'
-};
 MenuItem.propTypes = {
-  /**
-   * Permite passagem de conteúdo para o componente
-   */
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].object, PropTypes__default['default'].array]).isRequired,
-
-  /**
-   * Permite alterar o padding-x (horizontal) do container interno
-   */
-  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
-
-  /**
-   * Permite alterar o padding-y (vertical) do container interno
-   */
-  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
-
-  /**
-   * Permite adicionar margem abaixo do componente, no container externo
-   */
-  mb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
-
-  /**
-   * Realiza a navegação do usuário através de um href
-   */
-  path: PropTypes__default['default'].string,
-
-  /**
-   * Permite customizar a cor do texto e ícone
-   */
-  color: PropTypes__default['default'].string,
-
-  /**
-   * Prop que recebe o evento de clique para WEB
-   */
-  onClick: PropTypes__default['default'].func,
-  theme: PropTypes__default['default'].object,
-
-  /**
-   * Permite passagem de id para componente raíz
-   */
-  id: PropTypes__default['default'].string
+  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
-var index$3 = styled.withTheme(MenuItem);
+
+var SideMenuItem = function SideMenuItem(_ref) {
+  var content = _ref.content;
+
+  var _useState = React.useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      open = _useState2[0],
+      setOpenStatus = _useState2[1];
+
+  var contentId = content.contentId,
+      color = content.color,
+      name = content.name,
+      path = content.path,
+      subitems = content.subitems;
+  var isGroup = subitems.length > 0;
+
+  var handleItemClick = function handleItemClick() {
+    setOpenStatus(!open);
+  };
+
+  var GroupTitle = function GroupTitle() {
+    return /*#__PURE__*/React__default['default'].createElement(Typography$1, {
+      color: "neutral2",
+      element: "h4",
+      lineHeight: "40px",
+      fontFamily: "secondary",
+      fontSize: "20px"
+    }, name);
+  };
+
+  var HyperlinkGroup = function HyperlinkGroup() {
+    return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
+      href: path
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+      $color: color
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, null)));
+  };
+
+  var Group = function Group() {
+    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+      id: contentId,
+      onClick: handleItemClick,
+      $color: color
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), open ? /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, null) : /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, null)), /*#__PURE__*/React__default['default'].createElement(GroupContent, null, open && lodash.map(subitems, function (_ref2, key) {
+      var path = _ref2.path,
+          name = _ref2.name;
+      return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+        ml: "20px",
+        mb: 2,
+        mt: 2,
+        key: key
+      }, /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
+        href: path
+      }, name));
+    })));
+  };
+
+  return /*#__PURE__*/React__default['default'].createElement(GroupSection, null, !isGroup ? /*#__PURE__*/React__default['default'].createElement(HyperlinkGroup, null) : /*#__PURE__*/React__default['default'].createElement(Group, null));
+};
+
+SideMenuItem.propTypes = {
+  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
+};
+
+var MenuEditorials = function MenuEditorials(_ref) {
+  var amp = _ref.amp,
+      items = _ref.items,
+      title = _ref.title;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    px: "20px",
+    py: "20px"
+  }, title && /*#__PURE__*/React__default['default'].createElement(Typography$1, {
+    element: "p",
+    color: "neutral3",
+    fontFamily: "secondary",
+    fontSize: "14px",
+    transform: "uppercase",
+    mb: 3
+  }, title), items && lodash.map(items, function (item, key) {
+    return amp ? /*#__PURE__*/React__default['default'].createElement(MenuItem, {
+      content: item,
+      key: key
+    }) : /*#__PURE__*/React__default['default'].createElement(SideMenuItem, {
+      content: item,
+      key: key
+    });
+  }));
+};
+
+MenuEditorials.propTypes = {
+  amp: PropTypes__default['default'].bool,
+  items: PropTypes__default['default'].array,
+  title: PropTypes__default['default'].string
+};
+
+var AmpMenu = function AmpMenu(_ref) {
+  var children = _ref.children,
+      className = _ref.className,
+      id = _ref.id,
+      layout = _ref.layout;
+  return /*#__PURE__*/React__default['default'].createElement("amp-sidebar", {
+    className: className,
+    id: id,
+    layout: layout
+  }, children);
+};
+
+AmpMenu.defaultProps = {
+  layout: 'nodisplay'
+};
+AmpMenu.propTypes = {
+  children: PropTypes__default['default'].node,
+  className: PropTypes__default['default'].string,
+  id: PropTypes__default['default'].string,
+  layout: PropTypes__default['default'].string
+};
+
+var Menu = function Menu(_ref) {
+  var children = _ref.children,
+      close = _ref.close,
+      open = _ref.open;
+  return /*#__PURE__*/React__default['default'].createElement(prensa.MenuContainer, {
+    open: open,
+    close: close
+  }, children);
+};
+
+Menu.propTypes = {
+  children: PropTypes__default['default'].node,
+  close: PropTypes__default['default'].string,
+  open: PropTypes__default['default'].bool
+};
+
+var SideMenu = function SideMenu(props) {
+  var amp = props.amp;
+  if (amp) return /*#__PURE__*/React__default['default'].createElement(AmpMenu, props);else return /*#__PURE__*/React__default['default'].createElement(Menu, props);
+};
 
 var SocialMedias = function SocialMedias(props) {
   var content = props.content;
@@ -4423,7 +4687,7 @@ Topbar.defaultProps = {
   }
 };
 
-var _templateObject$9, _templateObject2$4;
+var _templateObject$a, _templateObject2$6;
 
 var parseColorVariation = function parseColorVariation(props) {
   if (props.transparent === true) return "\n    color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";\n  ");
@@ -4435,7 +4699,7 @@ var parseBackgroundVariation = function parseBackgroundVariation(props) {
   return "background-color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";");
 };
 
-var Container$8 = styled__default['default'].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var Container$9 = styled__default['default'].div(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return props.theme.parsePadding(props, props.theme);
 }, function (props) {
   return props.theme.parseMargin(props, props.theme);
@@ -4444,7 +4708,7 @@ var Container$8 = styled__default['default'].div(_templateObject$9 || (_template
 }, function (props) {
   return parseBackgroundVariation(props);
 });
-var Typography$2 = styled__default['default'].span(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
+var Typography$2 = styled__default['default'].span(_templateObject2$6 || (_templateObject2$6 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
   return props.theme.fonts.secondary;
 }, function (props) {
   return props.$fontWeight;
@@ -4462,7 +4726,7 @@ var Subject$1 = function Subject(_ref) {
       transparent = _ref.transparent,
       weight = _ref.weight;
   if (!children) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container$8, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$9, {
     subjectColor: color,
     borderRadius: radius,
     px: px,
@@ -4522,7 +4786,7 @@ Subject$1.propTypes = {
    */
   weight: PropTypes__default['default'].oneOf([300, 400, 500, 600, 700])
 };
-var index$4 = styled.withTheme(Subject$1);
+var index$3 = styled.withTheme(Subject$1);
 
 exports.Article = Article$1;
 exports.Block = Block$1;
@@ -4535,9 +4799,10 @@ exports.Image = Image$1;
 exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;
 exports.MenuContainer = index$2;
-exports.MenuItem = index$3;
+exports.MenuEditorials = MenuEditorials;
+exports.SideMenu = SideMenu;
 exports.SocialMedias = SocialMedias;
-exports.Subject = index$4;
+exports.Subject = index$3;
 exports.Topbar = Topbar;
 exports.Typography = Typography$1;
 exports.theme = theme;
