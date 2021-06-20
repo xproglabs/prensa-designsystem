@@ -6,9 +6,10 @@ import React from 'react';
 import MenuItem from './MenuItem';
 
 
-const Menu = ({content, close, open}) => {
+const Menu = ({content, close, footer, header, open}) => {
   return (
     <MenuContainer open={open} close={close}>
+      {header}
       <Block px='20px' py='20px'>
         <Typography
           element='p'
@@ -22,6 +23,7 @@ const Menu = ({content, close, open}) => {
         </Typography>
         {map(content, (item, key) => <MenuItem content={item} key={key} />)}
       </Block>
+      {footer}
     </MenuContainer>
   );
 };
@@ -29,6 +31,8 @@ const Menu = ({content, close, open}) => {
 Menu.propTypes = {
   content: PropTypes.string,
   close: PropTypes.string,
+  footer: PropTypes.node,
+  header: PropTypes.node,
   open: PropTypes.bool,
 };
 

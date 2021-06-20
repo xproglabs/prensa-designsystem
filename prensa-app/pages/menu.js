@@ -44,6 +44,8 @@ export default function Menu() {
           id='sideMenu'
           amp={amp}
           content={sideMenuMockedData}
+          footer={<pre>testando footer</pre>}
+          header={<pre>testando header</pre>}
           open={menuState}
           close={closeMenu}
         />
