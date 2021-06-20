@@ -4242,9 +4242,7 @@ var MenuContainer = function MenuContainer(props) {
 };
 
 MenuContainer.defaultProps = {
-  menuAnchor: 'left',
-  px: 2,
-  py: 2
+  menuAnchor: 'left'
 };
 MenuContainer.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object, PropTypes__default['default'].node]),
