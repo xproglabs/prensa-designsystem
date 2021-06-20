@@ -16,7 +16,7 @@ const SideMenu = () => {
 
   return (
     <React.Fragment>
-      <SideMenuComponent isOpen={menu} onClose={handleClose}>
+      <SideMenuComponent open={menu} close={handleClose}>
         <pre>testando 123</pre>
         <pre>teste 123</pre>
         <pre>dkoansodnao</pre>
