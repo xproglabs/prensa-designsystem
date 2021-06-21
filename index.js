@@ -4274,53 +4274,8 @@ Image$1.defaultProps = {
 };
 
 var _templateObject$7, _templateObject2$3;
-var Backdrop = styled__default['default'].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  background-color: rgba(0, 0, 0, 0.5);\n  height: 100vh;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100vw;\n  z-index: 10;\n"])));
-
-var parsePosition = function parsePosition(_ref) {
-  var menuAnchor = _ref.menuAnchor;
-  if (menuAnchor === 'left') return 'left: 0px;';
-  if (menuAnchor === 'right') return 'right: 0px;';
-};
-
-var Content$3 = styled__default['default'].div(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  width: 100%;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"])), parsePosition, padding, function (props) {
-  return props.theme.colors.white;
-}, function (props) {
-  return props.theme.queries.md;
-});
-
-var MenuContainer = function MenuContainer(props) {
-  var children = props.children,
-      close = props.close,
-      menuAnchor = props.menuAnchor,
-      open = props.open,
-      px = props.px,
-      py = props.py;
-  if (!open) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement(Backdrop, {
-    onClick: close
-  }), /*#__PURE__*/React__default['default'].createElement(Content$3, {
-    px: px,
-    py: py,
-    menuAnchor: menuAnchor
-  }, children));
-};
-
-MenuContainer.defaultProps = {
-  menuAnchor: 'left'
-};
-MenuContainer.propTypes = {
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object, PropTypes__default['default'].node]),
-  close: PropTypes__default['default'].func,
-  menuAnchor: PropTypes__default['default'].oneOf(['left', 'right']),
-  open: PropTypes__default['default'].bool,
-  px: PropTypes__default['default'].number,
-  py: PropTypes__default['default'].number
-};
-var MenuContainer$1 = styled.withTheme(MenuContainer);
-
-var _templateObject$8, _templateObject2$4;
-var Container$8 = styled__default['default'].div(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  height: max-content;\n  width: max-content;\n"])));
-var Svg = styled__default['default'].svg(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  fill: ", ";\n  margin: ", ";\n"])), function (props) {
+var Container$8 = styled__default['default'].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  height: max-content;\n  width: max-content;\n"])));
+var Svg = styled__default['default'].svg(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  fill: ", ";\n  margin: ", ";\n"])), function (props) {
   return props.theme.colors[props.color];
 }, function (props) {
   return props.margin;
@@ -4392,13 +4347,13 @@ var ExpandMoreIcon = function ExpandMoreIcon(props) {
   }));
 };
 
-var _templateObject$9, _templateObject2$5, _templateObject3$1, _templateObject4$1, _templateObject5$1;
-var Hyperlink = styled__default['default'].a(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 16px;\n  font-family: ", ";\n  color: ", ";\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (props) {
+var _templateObject$8, _templateObject2$4, _templateObject3$1, _templateObject4$1, _templateObject5$1;
+var Hyperlink = styled__default['default'].a(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 16px;\n  font-family: ", ";\n  color: ", ";\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (props) {
   return props.theme.fonts.secondary;
 }, function (props) {
   return props.theme.colors.neutral5;
 });
-styled__default['default'].div(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  padding-bottom: 16px;\n  margin-bottom: 16px;\n  border-bottom: 1px solid;\n  border-color: ", ";\n"])), function (props) {
+styled__default['default'].div(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  padding-bottom: 16px;\n  margin-bottom: 16px;\n  border-bottom: 1px solid;\n  border-color: ", ";\n"])), function (props) {
   return props.theme.colors.neutral9;
 });
 var GroupSection = styled__default['default'].section(_templateObject3$1 || (_templateObject3$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  border-bottom-color: ", ";\n  padding-bottom: 8px;\n  margin-bottom: 8px;\n  .group-closed {\n    display: none;\n  }\n  .hidden {\n    display: none;\n  }\n  @media (min-width: ", ") {\n    width: 340px;\n  }\n"])), function (props) {
@@ -4406,9 +4361,16 @@ var GroupSection = styled__default['default'].section(_templateObject3$1 || (_te
 }, function (props) {
   return props.theme.queries.md;
 });
-var GroupTitleContainer = styled__default['default'].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteral(["\n  border-left-width: 4px;\n  border-left-style: solid;\n  border-left-color: ", ";\n  padding-left: 16px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"])), function (props) {
-  return props.theme.colors[props.$color];
-});
+
+var getGroupBorder = function getGroupBorder(_ref) {
+  var removeBorders = _ref.removeBorders;
+  if (removeBorders) return '';
+  return styled.css(["border-left-width:4px;border-left-style:solid;border-left-color:", ";"], function (props) {
+    return props.theme.colors[props.$color];
+  });
+};
+
+var GroupTitleContainer = styled__default['default'].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteral(["\n  ", "\n  padding-left: 16px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"])), getGroupBorder);
 var GroupContent = styled__default['default'].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteral(["\n  margin-top: 8px;\n"])));
 
 var groupTitleDefaultProps = {
@@ -4422,7 +4384,8 @@ var groupTitleDefaultProps = {
 var MenuItem = function MenuItem(_ref) {
   var color = _ref.color,
       content = _ref.content,
-      groupTitleProps = _ref.groupTitleProps;
+      groupTitleProps = _ref.groupTitleProps,
+      removeBorders = _ref.removeBorders;
   // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
   // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
   // 3. To make state work it is necessary a user click to activate initialState. Before this the values submitted to client are the ones in HTML props
@@ -4450,12 +4413,14 @@ var MenuItem = function MenuItem(_ref) {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+      removeBorders: removeBorders,
       $color: itemColor
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, null)));
   };
 
   var Group = function Group() {
     return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+      removeBorders: removeBorders,
       role: "setMenuItemState",
       tabIndex: "0",
       on: newState,
@@ -4498,7 +4463,8 @@ MenuItem.defaultProps = {
 MenuItem.propTypes = {
   color: PropTypes__default['default'].string,
   content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
-  groupTitleProps: PropTypes__default['default'].object
+  groupTitleProps: PropTypes__default['default'].object,
+  removeBorders: PropTypes__default['default'].bool
 };
 
 var groupTitleDefaultProps$1 = {
@@ -4512,7 +4478,8 @@ var groupTitleDefaultProps$1 = {
 var MenuItem$1 = function MenuItem(_ref) {
   var color = _ref.color,
       content = _ref.content,
-      groupTitleProps = _ref.groupTitleProps;
+      groupTitleProps = _ref.groupTitleProps,
+      removeBorders = _ref.removeBorders;
 
   var _useState = React.useState(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -4539,6 +4506,7 @@ var MenuItem$1 = function MenuItem(_ref) {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+      removeBorders: removeBorders,
       $color: itemColor
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, null)));
   };
@@ -4547,6 +4515,7 @@ var MenuItem$1 = function MenuItem(_ref) {
     return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
       id: contentId,
       onClick: handleItemClick,
+      removeBorders: removeBorders,
       $color: itemColor
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), open ? /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, null) : /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, null)), /*#__PURE__*/React__default['default'].createElement(GroupContent, null, open && lodash.map(subitems, function (_ref2, key) {
       var path = _ref2.path,
@@ -4571,7 +4540,8 @@ MenuItem$1.defaultProps = {
 MenuItem$1.propTypes = {
   color: PropTypes__default['default'].string,
   content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
-  groupTitleProps: PropTypes__default['default'].object
+  groupTitleProps: PropTypes__default['default'].object,
+  removeBorders: PropTypes__default['default'].bool
 };
 
 var titleDefaultProps = {
@@ -4591,7 +4561,8 @@ var MenuEditorials = function MenuEditorials(_ref) {
       titleProps = _ref.titleProps,
       groupTitleProps = _ref.groupTitleProps,
       px = _ref.px,
-      py = _ref.py;
+      py = _ref.py,
+      removeBorders = _ref.removeBorders;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     px: px,
     py: py
@@ -4600,12 +4571,14 @@ var MenuEditorials = function MenuEditorials(_ref) {
       color: color,
       content: item,
       groupTitleProps: groupTitleProps,
-      key: key
+      key: key,
+      removeBorders: removeBorders
     }) : /*#__PURE__*/React__default['default'].createElement(MenuItem$1, {
       color: color,
       content: item,
       groupTitleProps: groupTitleProps,
-      key: key
+      key: key,
+      removeBorders: removeBorders
     });
   }));
 };
@@ -4622,50 +4595,94 @@ MenuEditorials.propTypes = {
   titleProps: PropTypes__default['default'].object,
   groupTitleProps: PropTypes__default['default'].object,
   px: PropTypes__default['default'].string,
-  py: PropTypes__default['default'].string
+  py: PropTypes__default['default'].string,
+  removeBorders: PropTypes__default['default'].bool
 };
 
+var _templateObject$9;
+var StyledContainer = styled__default['default'].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  .prensa-amp-sidemenu {\n    background-color: red;\n  }\n"])));
+
 var AmpMenu = function AmpMenu(_ref) {
-  var children = _ref.children,
-      className = _ref.className,
+  var backgroundColor = _ref.backgroundColor,
+      children = _ref.children,
       id = _ref.id,
-      layout = _ref.layout;
-  return /*#__PURE__*/React__default['default'].createElement("amp-sidebar", {
-    className: className,
+      layout = _ref.layout,
+      menuAnchor = _ref.menuAnchor;
+  return /*#__PURE__*/React__default['default'].createElement(StyledContainer, {
+    $backgroundColor: backgroundColor
+  }, /*#__PURE__*/React__default['default'].createElement("amp-sidebar", {
+    className: "prensa-amp-sidemenu",
     id: id,
-    layout: layout
-  }, children);
+    layout: layout,
+    side: menuAnchor
+  }, children));
 };
 
 AmpMenu.defaultProps = {
-  layout: 'nodisplay'
+  backgroundColor: 'white',
+  layout: 'nodisplay',
+  menuAnchor: 'left'
 };
 AmpMenu.propTypes = {
+  backgroundColor: PropTypes__default['default'].string,
   children: PropTypes__default['default'].node,
-  className: PropTypes__default['default'].string,
   id: PropTypes__default['default'].string,
-  layout: PropTypes__default['default'].string
+  layout: PropTypes__default['default'].string,
+  menuAnchor: PropTypes__default['default'].oneOf(['left', 'right'])
 };
+
+var _templateObject$a, _templateObject2$5;
+var Backdrop = styled__default['default'].div(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  background-color: rgba(0, 0, 0, 0.5);\n  height: 100vh;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100vw;\n  z-index: 10;\n"])));
+
+var parsePosition = function parsePosition(_ref) {
+  var menuAnchor = _ref.menuAnchor;
+  if (menuAnchor === 'left') return 'left: 0px;';
+  if (menuAnchor === 'right') return 'right: 0px;';
+};
+
+var Content$3 = styled__default['default'].div(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  width: 100%;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"])), parsePosition, padding, function (props) {
+  return props.theme.colors[props.$backgroundColor];
+}, function (props) {
+  return props.theme.queries.md;
+});
 
 var Menu = function Menu(_ref) {
-  var children = _ref.children,
+  var backgroundColor = _ref.backgroundColor,
+      children = _ref.children,
       close = _ref.close,
-      open = _ref.open;
-  return /*#__PURE__*/React__default['default'].createElement(MenuContainer$1, {
-    open: open,
-    close: close
-  }, children);
+      open = _ref.open,
+      menuAnchor = _ref.menuAnchor,
+      px = _ref.px,
+      py = _ref.py;
+  if (!open) return null;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement(Backdrop, {
+    onClick: close
+  }), /*#__PURE__*/React__default['default'].createElement(Content$3, {
+    $backgroundColor: backgroundColor,
+    px: px,
+    py: py,
+    menuAnchor: menuAnchor
+  }, children));
 };
 
+Menu.defaultProps = {
+  backgroundColor: 'white',
+  menuAnchor: 'left'
+};
 Menu.propTypes = {
+  backgroundColor: PropTypes__default['default'].string,
   children: PropTypes__default['default'].node,
   close: PropTypes__default['default'].func,
-  open: PropTypes__default['default'].bool
+  menuAnchor: PropTypes__default['default'].oneOf(['left', 'right']),
+  open: PropTypes__default['default'].bool,
+  px: PropTypes__default['default'].number,
+  py: PropTypes__default['default'].number
 };
+var Menu$1 = styled.withTheme(Menu);
 
 var SideMenu = function SideMenu(props) {
   var amp = props.amp;
-  if (amp) return /*#__PURE__*/React__default['default'].createElement(AmpMenu, props);else return /*#__PURE__*/React__default['default'].createElement(Menu, props);
+  if (amp) return /*#__PURE__*/React__default['default'].createElement(AmpMenu, props);else return /*#__PURE__*/React__default['default'].createElement(Menu$1, props);
 };
 
 var SocialMedias = function SocialMedias(props) {
@@ -4734,7 +4751,7 @@ Topbar.defaultProps = {
   }
 };
 
-var _templateObject$a, _templateObject2$6;
+var _templateObject$b, _templateObject2$6;
 
 var parseColorVariation = function parseColorVariation(props) {
   if (props.transparent === true) return "\n    color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";\n  ");
@@ -4746,7 +4763,7 @@ var parseBackgroundVariation = function parseBackgroundVariation(props) {
   return "background-color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";");
 };
 
-var Container$9 = styled__default['default'].div(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var Container$9 = styled__default['default'].div(_templateObject$b || (_templateObject$b = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return props.theme.parsePadding(props, props.theme);
 }, function (props) {
   return props.theme.parseMargin(props, props.theme);
@@ -4845,7 +4862,6 @@ exports.Form = index;
 exports.Image = Image$1;
 exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;
-exports.MenuContainer = MenuContainer$1;
 exports.MenuEditorials = MenuEditorials;
 exports.SideMenu = SideMenu;
 exports.SocialMedias = SocialMedias;
