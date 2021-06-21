@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
-  .prensa-amp-sidemenu {
-    background-color: red;
+  amp-sidebar {
+    background-color: ${props => props.theme.colors[props.$backgroundColor]};
   }
 `;
 
