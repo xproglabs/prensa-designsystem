@@ -4613,7 +4613,6 @@ var AmpMenu = function AmpMenu(_ref) {
   return /*#__PURE__*/React__default['default'].createElement(StyledContainer, {
     $backgroundColor: backgroundColor
   }, /*#__PURE__*/React__default['default'].createElement("amp-sidebar", {
-    className: "prensa-amp-sidemenu",
     id: id,
     layout: layout,
     side: menuAnchor
