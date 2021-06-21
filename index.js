@@ -4600,7 +4600,9 @@ MenuEditorials.propTypes = {
 };
 
 var _templateObject$9;
-var StyledContainer = styled__default['default'].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  .prensa-amp-sidemenu {\n    background-color: red;\n  }\n"])));
+var StyledContainer = styled__default['default'].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  amp-sidebar {\n    background-color: ", ";\n  }\n"])), function (props) {
+  return props.theme.colors[props.$backgroundColor];
+});
 
 var AmpMenu = function AmpMenu(_ref) {
   var backgroundColor = _ref.backgroundColor,
