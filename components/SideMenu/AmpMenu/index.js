@@ -6,7 +6,7 @@ import {StyledContainer} from './styled';
 const AmpMenu = ({backgroundColor, children, id, layout, menuAnchor}) => {
   return (
     <StyledContainer $backgroundColor={backgroundColor}>
-      <amp-sidebar className='prensa-amp-sidemenu' id={id} layout={layout} side={menuAnchor}>
+      <amp-sidebar id={id} layout={layout} side={menuAnchor}>
         {children}
       </amp-sidebar>
     </StyledContainer>
