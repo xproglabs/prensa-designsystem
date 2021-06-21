@@ -17,7 +17,7 @@ const groupTitleDefaultProps = {
   fontSize: '20px',
 };
 
-const MenuItem = ({color, content, groupTitleProps}) => {
+const MenuItem = ({color, content, groupTitleProps, removeBorders}) => {
   const [open, setOpenStatus] = useState(false);
   const {contentId, name, path, subitems} = content;
   const isGroup = subitems.length > 0;
@@ -37,7 +37,7 @@ const MenuItem = ({color, content, groupTitleProps}) => {
 
   const HyperlinkGroup = () => (
     <Hyperlink href={path}>
-      <GroupTitleContainer $color={itemColor}>
+      <GroupTitleContainer removeBorders={removeBorders} $color={itemColor}>
         <GroupTitle/>
         <ChevronRightIcon/>
       </GroupTitleContainer>
@@ -46,7 +46,7 @@ const MenuItem = ({color, content, groupTitleProps}) => {
 
   const Group = () => (
     <div>
-      <GroupTitleContainer id={contentId} onClick={handleItemClick} $color={itemColor}>
+      <GroupTitleContainer id={contentId} onClick={handleItemClick} removeBorders={removeBorders} $color={itemColor} >
         <GroupTitle/>
         {open ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
       </GroupTitleContainer>
@@ -79,6 +79,7 @@ MenuItem.propTypes = {
   color: PropTypes.string,
   content: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   groupTitleProps: PropTypes.object,
+  removeBorders: PropTypes.bool
 };
 
 export default MenuItem;

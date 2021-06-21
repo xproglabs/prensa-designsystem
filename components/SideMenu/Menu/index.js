@@ -1,20 +1,37 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import {withTheme} from 'styled-components';
 
-import MenuContainer from '../../MenuContainer';
+import Block from '../../Block';
+import {Backdrop, Content} from './styled';
 
-const Menu = ({children, close, open}) => {
+const Menu = ({backgroundColor, children, close, open, menuAnchor, px, py}) => {
+
+  if (!open) return null;
+
   return (
-    <MenuContainer open={open} close={close}>
-      {children}
-    </MenuContainer>
+    <Block>
+      <Backdrop onClick={close} />
+      <Content $backgroundColor={backgroundColor} px={px} py={py} menuAnchor={menuAnchor}>
+        {children}
+      </Content>
+    </Block>
   );
 };
 
-Menu.propTypes = {
-  children: PropTypes.node,
-  close: PropTypes.func,  
-  open: PropTypes.bool,
+Menu.defaultProps = {
+  backgroundColor: 'white',
+  menuAnchor: 'left'
 };
 
-export default Menu;
+Menu.propTypes = {
+  backgroundColor: PropTypes.string,
+  children: PropTypes.node,
+  close: PropTypes.func,
+  menuAnchor: PropTypes.oneOf(['left', 'right']),
+  open: PropTypes.bool,
+  px: PropTypes.number,
+  py: PropTypes.number
+};
+
+export default withTheme(Menu);

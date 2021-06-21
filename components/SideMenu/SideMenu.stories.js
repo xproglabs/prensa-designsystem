@@ -6,8 +6,6 @@ import MenuEditorials from '../MenuEditorials';
 import SideMenu from './index';
 import dataMock from './sidemenu_datamodel.json';
 
-
-
 export default {
   title: 'Menu Lateral',
   component: SideMenu,
@@ -27,7 +25,7 @@ export const Default = () => {
     <ThemeProvider theme={theme}>
       <div>
         <button onClick={handleOpen}>Abrir menu</button>
-        <SideMenu open={menu} close={handleClose}>
+        <SideMenu backgroundColor='primary1' open={menu} close={handleClose} menuAnchor='right'>
           <MenuEditorials
             amp={false}
             items={dataMock}

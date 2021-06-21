@@ -16,7 +16,7 @@ const titleDefaultProps = {
   mb: 3,
 };
 
-const MenuEditorials = ({amp, color, items, title, titleProps, groupTitleProps, px, py}) => {
+const MenuEditorials = ({amp, color, items, title, titleProps, groupTitleProps, px, py, removeBorders}) => {
   return (
     <Block px={px} py={py}>
       {title &&
@@ -26,9 +26,9 @@ const MenuEditorials = ({amp, color, items, title, titleProps, groupTitleProps, 
       }
       {items && 
         map(items, (item, key) => amp ? 
-          <AmpMenuItem color={color} content={item} groupTitleProps={groupTitleProps} key={key} />
+          <AmpMenuItem color={color} content={item} groupTitleProps={groupTitleProps} key={key} removeBorders={removeBorders} />
           :
-          <MenuItem color={color} content={item} groupTitleProps={groupTitleProps} key={key} />)
+          <MenuItem color={color} content={item} groupTitleProps={groupTitleProps} key={key} removeBorders={removeBorders} />)
       }
     </Block>
   );
@@ -48,6 +48,7 @@ MenuEditorials.propTypes = {
   groupTitleProps: PropTypes.object,
   px: PropTypes.string,
   py: PropTypes.string,
+  removeBorders: PropTypes.bool
 };
 
 export default MenuEditorials;

@@ -1,23 +1,30 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const AmpMenu = ({children, className, id, layout}) => {
+import {StyledContainer} from './styled';
+
+const AmpMenu = ({backgroundColor, children, id, layout, menuAnchor}) => {
   return (
-    <amp-sidebar className={className} id={id} layout={layout}>
-      {children}
-    </amp-sidebar>
+    <StyledContainer $backgroundColor={backgroundColor}>
+      <amp-sidebar className='prensa-amp-sidemenu' id={id} layout={layout} side={menuAnchor}>
+        {children}
+      </amp-sidebar>
+    </StyledContainer>
   );
 };
 
 AmpMenu.defaultProps = {
-  layout: 'nodisplay'
+  backgroundColor: 'white',
+  layout: 'nodisplay',
+  menuAnchor: 'left'
 };
 
 AmpMenu.propTypes = {
+  backgroundColor: PropTypes.string,
   children: PropTypes.node,
-  className: PropTypes.string,
   id: PropTypes.string,
   layout: PropTypes.string,
+  menuAnchor: PropTypes.oneOf(['left', 'right'])
 };
 
 export default AmpMenu;

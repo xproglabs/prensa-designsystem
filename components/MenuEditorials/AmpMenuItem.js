@@ -17,7 +17,7 @@ const groupTitleDefaultProps = {
   fontSize: '20px',
 };
 
-const MenuItem = ({color, content, groupTitleProps}) => {
+const MenuItem = ({color, content, groupTitleProps, removeBorders}) => {
   
   // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
   // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
@@ -46,7 +46,7 @@ const MenuItem = ({color, content, groupTitleProps}) => {
 
   const HyperlinkGroup = () => (
     <Hyperlink href={path}>
-      <GroupTitleContainer $color={itemColor}>
+      <GroupTitleContainer removeBorders={removeBorders} $color={itemColor}>
         <GroupTitle/>
         <ChevronRightIcon/>
       </GroupTitleContainer>
@@ -55,7 +55,7 @@ const MenuItem = ({color, content, groupTitleProps}) => {
 
   const Group = () => (
     <div>
-      <GroupTitleContainer role='setMenuItemState' tabIndex='0' on={newState} $color={itemColor}>
+      <GroupTitleContainer removeBorders={removeBorders} role='setMenuItemState' tabIndex='0' on={newState} $color={itemColor}>
         <GroupTitle/>
         <ExpandMoreIcon ampClass={expandMoreIconClass} />
         <ExpandLessIcon ampClass={expandLessIconClass} />
@@ -90,6 +90,7 @@ MenuItem.propTypes = {
   color: PropTypes.string,
   content: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   groupTitleProps: PropTypes.object,
+  removeBorders: PropTypes.bool
 };
 
 export default MenuItem;
