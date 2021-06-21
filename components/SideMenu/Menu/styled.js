@@ -20,7 +20,7 @@ const parsePosition = ({menuAnchor}) => {
 const Content = styled.div`
   ${parsePosition};
   ${padding};
-  background-color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors[props.$backgroundColor]};
   display: block;
   height: 100vh;
   overflow-y: auto;

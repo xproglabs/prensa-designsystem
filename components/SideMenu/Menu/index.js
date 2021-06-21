@@ -5,14 +5,14 @@ import {withTheme} from 'styled-components';
 import Block from '../../Block';
 import {Backdrop, Content} from './styled';
 
-const Menu = ({children, close, open, menuAnchor, px, py}) => {
+const Menu = ({backgroundColor, children, close, open, menuAnchor, px, py}) => {
 
   if (!open) return null;
 
   return (
     <Block>
       <Backdrop onClick={close} />
-      <Content px={px} py={py} menuAnchor={menuAnchor}>
+      <Content $backgroundColor={backgroundColor} px={px} py={py} menuAnchor={menuAnchor}>
         {children}
       </Content>
     </Block>
@@ -20,10 +20,12 @@ const Menu = ({children, close, open, menuAnchor, px, py}) => {
 };
 
 Menu.defaultProps = {
+  backgroundColor: 'white',
   menuAnchor: 'left'
 };
 
 Menu.propTypes = {
+  backgroundColor: PropTypes.string,
   children: PropTypes.node,
   close: PropTypes.func,
   menuAnchor: PropTypes.oneOf(['left', 'right']),
