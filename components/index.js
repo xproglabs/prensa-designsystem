@@ -5,6 +5,7 @@ export {default as ColumnHeader} from './Column/Header';
 export {default as Dialog} from './Dialog/Dialog';
 export {default as Form} from './Form';
 export {default as Field} from './Field';
+export {default as Icon} from './Icon';
 export {default as Image} from './Image';
 export {default as ImageBackground} from './Image/Background';
 export {default as ImageGallery} from './ImageGallery';

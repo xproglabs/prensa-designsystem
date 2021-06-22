@@ -21,7 +21,8 @@ const Menu = ({backgroundColor, children, close, open, menuAnchor, px, py, width
 
 Menu.defaultProps = {
   backgroundColor: 'white',
-  menuAnchor: 'left'
+  menuAnchor: 'left',
+  width: 'calc(100% - 48px)'
 };
 
 Menu.propTypes = {

@@ -11,9 +11,12 @@ const Svg = styled.svg`
   margin: ${props => props.margin};
 `;
 
-const Icon = ({ampClass, children, color, height, margin, viewBox, width}) => {
+const Icon = ({ampClass, amp, children, color, height, margin, viewBox, width}) => {
+  let iconAmpClass;
+  if (amp) iconAmpClass = ampClass;
+  let container_props = {'data-amp-bind-class': iconAmpClass};
   return (
-    <Container data-amp-bind-class={ampClass}>
+    <Container {...container_props}>
       <Svg xmlns="http://www.w3.org/2000/svg" color={color} height={height} margin={margin} viewBox={viewBox} width={width}>
         {children}
       </Svg>
@@ -31,6 +34,7 @@ Icon.defaultProps = {
 
 Icon.propTypes = {
   ampClass: PropTypes.string,
+  amp: PropTypes.bool,
   children: PropTypes.node,
   color: PropTypes.string,
   height: PropTypes.string,
