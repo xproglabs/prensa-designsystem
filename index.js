@@ -4942,7 +4942,7 @@ AmpMenu.propTypes = {
 };
 
 function _templateObject2$5() {
-  var data = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  width: 100%;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"]);
 
   _templateObject2$5 = function _templateObject2() {
     return data;
@@ -4968,7 +4968,7 @@ var parsePosition = function parsePosition(_ref) {
   if (menuAnchor === 'right') return 'right: 0px;';
 };
 
-var Content$3 = styled__default['default'].div(_templateObject2$5(), parsePosition, padding, function (props) {
+var Content$3 = styled__default['default'].div(_templateObject2$5(), dimensions, parsePosition, padding, function (props) {
   return props.theme.colors[props.$backgroundColor];
 }, function (props) {
   return props.theme.queries.md;
@@ -4991,14 +4991,15 @@ var Menu = function Menu(_ref) {
     px: px,
     py: py,
     menuAnchor: menuAnchor,
-    width: width
+    $width: width
   }, children));
 };
 
 Menu.defaultProps = {
   backgroundColor: 'white',
   menuAnchor: 'left',
-  width: 'calc(100% - 48px)'
+  width: 'calc(100% - 48px)',
+  px: '24px'
 };
 Menu.propTypes = {
   backgroundColor: PropTypes__default['default'].string,
