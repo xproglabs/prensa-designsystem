@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import {dimensions} from '../../../styled-system/dimensions';
 import {padding} from '../../../styled-system/padding';
 
 const Backdrop = styled.div`
@@ -18,6 +19,7 @@ const parsePosition = ({menuAnchor}) => {
 };
 
 const Content = styled.div`
+  ${dimensions};
   ${parsePosition};
   ${padding};
   background-color: ${props => props.theme.colors[props.$backgroundColor]};
@@ -26,7 +28,6 @@ const Content = styled.div`
   overflow-y: auto;
   position: fixed;
   top: 0px;
-  width: 100%;
   z-index: 11;
   @media (min-width: ${props => props.theme.queries.md}) {
     width: max-content;

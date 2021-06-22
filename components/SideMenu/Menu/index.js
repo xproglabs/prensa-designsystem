@@ -12,7 +12,7 @@ const Menu = ({backgroundColor, children, close, open, menuAnchor, px, py, width
   return (
     <Block>
       <Backdrop onClick={close} />
-      <Content $backgroundColor={backgroundColor} px={px} py={py} menuAnchor={menuAnchor} width={width}>
+      <Content $backgroundColor={backgroundColor} px={px} py={py} menuAnchor={menuAnchor} $width={width}>
         {children}
       </Content>
     </Block>
@@ -22,7 +22,8 @@ const Menu = ({backgroundColor, children, close, open, menuAnchor, px, py, width
 Menu.defaultProps = {
   backgroundColor: 'white',
   menuAnchor: 'left',
-  width: 'calc(100% - 48px)'
+  width: 'calc(100% - 48px)',
+  px: '24px'
 };
 
 Menu.propTypes = {
