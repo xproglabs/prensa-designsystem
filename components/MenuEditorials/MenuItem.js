@@ -11,13 +11,20 @@ import {GroupSection, GroupTitleContainer, GroupContent, Hyperlink} from './styl
 
 const groupTitleDefaultProps = {
   color: 'neutral2',
-  element: 'h4',
+  element: 'a',
   lineHeight: '40px',
   fontFamily: 'secondary',
   fontSize: '20px',
 };
 
-const MenuItem = ({color, content, groupTitleProps, removeBorders}) => {
+const subItemDefaultProps = {
+  color: 'neutral2',
+  element: 'a',
+  fontFamily: 'secondary',
+  fontSize: '16px'
+};
+
+const MenuItem = ({color, content, groupSubItemProps, groupTitleProps, pl, removeBorders}) => {
   const [open, setOpenStatus] = useState(false);
   const {contentId, name, path, subitems} = content;
   const isGroup = subitems.length > 0;
@@ -37,7 +44,7 @@ const MenuItem = ({color, content, groupTitleProps, removeBorders}) => {
 
   const HyperlinkGroup = () => (
     <Hyperlink href={path}>
-      <GroupTitleContainer removeBorders={removeBorders} $color={itemColor}>
+      <GroupTitleContainer $color={itemColor} pl={pl} removeBorders={removeBorders}>
         <GroupTitle />
         <ChevronRightIcon color={itemColor} />
       </GroupTitleContainer>
@@ -46,17 +53,17 @@ const MenuItem = ({color, content, groupTitleProps, removeBorders}) => {
 
   const Group = () => (
     <div>
-      <GroupTitleContainer id={contentId} onClick={handleItemClick} removeBorders={removeBorders} $color={itemColor} >
+      <GroupTitleContainer id={contentId} onClick={handleItemClick} pl={pl} removeBorders={removeBorders} $color={itemColor}>
         <GroupTitle/>
-        {open ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
+        {open ? <ExpandLessIcon color={itemColor}/> : <ExpandMoreIcon color={itemColor}/>}
       </GroupTitleContainer>
       <GroupContent>
         {open && 
-          map(subitems, ({path, name}, key) => (
+          map(subitems, ({name}, key) => (
             <Block ml='20px' mb={2} mt={2} key={key}>
-              <Hyperlink href={path}>
+              <Typography {...subItemDefaultProps} {...groupSubItemProps}>
                 {name}
-              </Hyperlink>
+              </Typography>  
             </Block>
           )
           )}
@@ -79,6 +86,8 @@ MenuItem.propTypes = {
   color: PropTypes.string,
   content: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   groupTitleProps: PropTypes.object,
+  groupSubItemProps: PropTypes.object,
+  pl: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   removeBorders: PropTypes.bool
 };
 

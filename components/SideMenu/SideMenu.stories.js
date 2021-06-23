@@ -25,13 +25,14 @@ export const Default = () => {
     <ThemeProvider theme={theme}>
       <div>
         <button onClick={handleOpen}>Abrir menu</button>
-        <SideMenu backgroundColor='primary1' open={menu} close={handleClose} menuAnchor='right'>
+        <SideMenu backgroundColor='neutral11' open={menu} close={handleClose} menuAnchor='right'>
           <MenuEditorials
             amp={false}
             items={dataMock}
             title='teste'
             titleProps={{color: 'product1'}}
-            groupTitleProps={{color: 'product2'}}
+            groupTitleProps={{color: 'product2', pl: '16px'}}
+            groupSubItemProps={{color: 'neutral2', fontSize: '20px'}}
             color='primary1'
           />
         </SideMenu>
