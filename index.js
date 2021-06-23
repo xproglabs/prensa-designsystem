@@ -4609,7 +4609,7 @@ function _templateObject5$1() {
 }
 
 function _templateObject4$1() {
-  var data = _taggedTemplateLiteral(["\n  ", "\n  padding-left: 16px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", "\n  ", ";\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"]);
 
   _templateObject4$1 = function _templateObject4() {
     return data;
@@ -4669,7 +4669,7 @@ var getGroupBorder = function getGroupBorder(_ref) {
   });
 };
 
-var GroupTitleContainer = styled__default['default'].div(_templateObject4$1(), getGroupBorder);
+var GroupTitleContainer = styled__default['default'].div(_templateObject4$1(), getGroupBorder, padding);
 var GroupContent = styled__default['default'].div(_templateObject5$1());
 
 var groupTitleDefaultProps = {
@@ -4768,16 +4768,24 @@ MenuItem.propTypes = {
 
 var groupTitleDefaultProps$1 = {
   color: 'neutral2',
-  element: 'h4',
+  element: 'a',
   lineHeight: '40px',
   fontFamily: 'secondary',
   fontSize: '20px'
+};
+var subItemDefaultProps = {
+  color: 'neutral2',
+  element: 'a',
+  fontFamily: 'secondary',
+  fontSize: '16px'
 };
 
 var MenuItem$1 = function MenuItem(_ref) {
   var color = _ref.color,
       content = _ref.content,
+      groupSubItemProps = _ref.groupSubItemProps,
       groupTitleProps = _ref.groupTitleProps,
+      pl = _ref.pl,
       removeBorders = _ref.removeBorders;
 
   var _useState = React.useState(false),
@@ -4805,8 +4813,9 @@ var MenuItem$1 = function MenuItem(_ref) {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
-      removeBorders: removeBorders,
-      $color: itemColor
+      $color: itemColor,
+      pl: pl,
+      removeBorders: removeBorders
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
       color: itemColor
     })));
@@ -4816,19 +4825,21 @@ var MenuItem$1 = function MenuItem(_ref) {
     return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
       id: contentId,
       onClick: handleItemClick,
+      pl: pl,
       removeBorders: removeBorders,
       $color: itemColor
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), open ? /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, null) : /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, null)), /*#__PURE__*/React__default['default'].createElement(GroupContent, null, open && lodash.map(subitems, function (_ref2, key) {
-      var path = _ref2.path,
-          name = _ref2.name;
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), open ? /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
+      color: itemColor
+    }) : /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
+      color: itemColor
+    })), /*#__PURE__*/React__default['default'].createElement(GroupContent, null, open && lodash.map(subitems, function (_ref2, key) {
+      var name = _ref2.name;
       return /*#__PURE__*/React__default['default'].createElement(Block$1, {
         ml: "20px",
         mb: 2,
         mt: 2,
         key: key
-      }, /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
-        href: path
-      }, name));
+      }, /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, subItemDefaultProps, groupSubItemProps), name));
     })));
   };
 
@@ -4842,6 +4853,8 @@ MenuItem$1.propTypes = {
   color: PropTypes__default['default'].string,
   content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
   groupTitleProps: PropTypes__default['default'].object,
+  groupSubItemProps: PropTypes__default['default'].object,
+  pl: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
   removeBorders: PropTypes__default['default'].bool
 };
 
@@ -4860,6 +4873,7 @@ var MenuEditorials = function MenuEditorials(_ref) {
       items = _ref.items,
       title = _ref.title,
       titleProps = _ref.titleProps,
+      groupSubItemProps = _ref.groupSubItemProps,
       groupTitleProps = _ref.groupTitleProps,
       px = _ref.px,
       py = _ref.py,
@@ -4872,12 +4886,14 @@ var MenuEditorials = function MenuEditorials(_ref) {
       color: color,
       content: item,
       groupTitleProps: groupTitleProps,
+      groupSubItemProps: groupSubItemProps,
       key: key,
       removeBorders: removeBorders
     }) : /*#__PURE__*/React__default['default'].createElement(MenuItem$1, {
       color: color,
       content: item,
       groupTitleProps: groupTitleProps,
+      groupSubItemProps: groupSubItemProps,
       key: key,
       removeBorders: removeBorders
     });
@@ -4895,8 +4911,9 @@ MenuEditorials.propTypes = {
   title: PropTypes__default['default'].string,
   titleProps: PropTypes__default['default'].object,
   groupTitleProps: PropTypes__default['default'].object,
-  px: PropTypes__default['default'].string,
-  py: PropTypes__default['default'].string,
+  groupSubItemProps: PropTypes__default['default'].object,
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
   removeBorders: PropTypes__default['default'].bool
 };
 
