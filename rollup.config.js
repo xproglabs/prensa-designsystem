@@ -63,5 +63,22 @@ export default [
       analyze(),
       external()
     ]
+  },
+  {
+    input: 'styled-system/index.js',
+    output: [
+      {
+        file: 'prensa_styled_system.js',
+        format: 'cjs',
+        name: 'prensa/styled-system'
+      }
+    ],
+    plugins: [ 
+      babel({exclude: notInBuild}),
+      json(),
+      resolve({customResolveOptions}),
+      analyze(),
+      external()
+    ]
   }
 ];
