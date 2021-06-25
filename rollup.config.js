@@ -68,7 +68,7 @@ export default [
     input: 'styled-system/index.js',
     output: [
       {
-        file: 'prensa_styled_system.js',
+        file: 'styled-system.js',
         format: 'cjs',
         name: 'prensa/styled-system'
       }
