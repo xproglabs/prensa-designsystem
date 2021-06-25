@@ -759,9 +759,9 @@ var Share = function Share(_ref) {
 };
 
 Share.defaultProps = {
-  facebookPath: 'assets/facebook-product1.svg',
-  twitterPath: 'assets/twitter-product1.svg',
-  whatsappPath: 'assets/whatsapp-product1.svg'
+  facebookPath: 'assets/facebook.svg',
+  twitterPath: 'assets/twitter.svg',
+  whatsappPath: 'assets/whatsapp.svg'
 };
 Share.propTypes = {
   fbappid: PropTypes__default['default'].string.isRequired,
