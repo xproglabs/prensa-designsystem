@@ -67,7 +67,8 @@
     "build": "rollup --config",
     "eslint": "eslint --ext js,jsx components/ stories/ utils/",
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
-    "test": "jest"
+    "test": "jest",
+    "upload-qa": "npm version patch && npm run build && git commit -m Build && git push && git push --tags && npm publish --tag qa"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
