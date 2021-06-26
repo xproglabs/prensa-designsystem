@@ -1,13 +1,13 @@
 import {map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
+import {ThemeProvider} from 'styled-components';
 
-import {theme as odiariodemogi} from '../../../styles/demo/odiariodemogi';
+import {theme as MogiTheme} from '../../../styles/demo/odiariodemogi';
 import Block from '../../Block';
 import datePtBrFull from '../../Util/datePtBrFull';
 import {pathToImage} from '../../Util/pathToImage';
 import Article from '../Article';
-import WithThemeProvider from '../WithThemeProvider';
 import article from './ODiarioDeMogi.json';
 
 const ArticleOM = () => {
@@ -118,7 +118,7 @@ const ArticleOM = () => {
       value: author
     },
     customContent: `
-      border-left: 8px solid ${odiariodemogi.colors['primary1']};
+      border-left: 8px solid ${MogiTheme.colors['primary1']};
       padding-left: 8px;
     `,
     datetime: {
@@ -182,7 +182,7 @@ const ArticleOM = () => {
 
   if(priority == '1') {
     return (
-      <WithThemeProvider theme={odiariodemogi}>
+      <ThemeProvider theme={MogiTheme}>
         <Block alignx='center' width='100%'>
           <div amp-access="NOT subscriber" amp-access-hide="true">
             <RenderArticle paywallNotSubscriber={true} />
@@ -192,15 +192,15 @@ const ArticleOM = () => {
             <RenderArticle />
           </div>
         </Block>
-      </WithThemeProvider>
+      </ThemeProvider>
     );
   }
   return (
-    <WithThemeProvider theme={odiariodemogi}>
+    <ThemeProvider theme={MogiTheme}>
       <Block alignx='center' width='100%'>
         <RenderArticle />
       </Block>
-    </WithThemeProvider>
+    </ThemeProvider>
   );
 };
 
