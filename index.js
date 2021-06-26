@@ -739,19 +739,19 @@ var Share = function Share(_ref) {
       twitterPath = _ref.twitterPath,
       whatsappPath = _ref.whatsappPath;
   return /*#__PURE__*/React__default['default'].createElement(Container$1, {
-    facebookPath: facebookPath,
+    facebookPath: fbappid ? facebookPath : null,
     twitterPath: twitterPath,
     whatsappPath: whatsappPath
-  }, /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+  }, fbappid && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
     type: "facebook",
     width: "24",
     height: "24",
     "data-param-app_id": fbappid
-  }), /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+  }), twitterPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
     type: "twitter",
     width: "24",
     height: "24"
-  }), /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+  }), whatsappPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
     type: "whatsapp",
     width: "24",
     height: "24"
@@ -764,7 +764,7 @@ Share.defaultProps = {
   whatsappPath: 'assets/whatsapp.svg'
 };
 Share.propTypes = {
-  fbappid: PropTypes__default['default'].string.isRequired,
+  fbappid: PropTypes__default['default'].string,
   facebookPath: PropTypes__default['default'].string,
   twitterPath: PropTypes__default['default'].string,
   whatsappPath: PropTypes__default['default'].string
