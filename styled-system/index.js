@@ -1,11 +1,5 @@
-import {border} from './border';
-import {dimensions} from './dimensions';
-import {margin} from './margin';
-import {padding} from './padding';
-
-export {
-  border,
-  dimensions,
-  margin,
-  padding
-};
+export {border} from './border';
+export {dimensions} from './dimensions';
+export {margin} from './margin';
+export {padding} from './padding';
+export {getColor} from './color';
