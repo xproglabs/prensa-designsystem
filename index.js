@@ -681,7 +681,7 @@ var MaxWidth = function MaxWidth(_ref6) {
   var children = _ref6.children,
       maxWidth = _ref6.maxWidth;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "\n      max-width: ".concat(maxWidth, ";\n    "),
+    custom: "max-width: ".concat(maxWidth, ";"),
     width: "100%"
   }, children);
 };
@@ -2444,10 +2444,11 @@ var Body = function Body(_ref) {
       children = _ref.children,
       hyperlinkColor = _ref.hyperlinkColor;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "\n      a { color: ".concat(hyperlinkColor, "; };\n      max-width: ").concat(bodyWidth, ";\n    "),
+    custom: "\n      a { color: ".concat(hyperlinkColor, "; }\n      max-width: ").concat(bodyWidth, ";\n    "),
     lg: {
       align: 'column',
       alignx: 'center',
+      px: '0px',
       width: '100%'
     },
     px: "3",
