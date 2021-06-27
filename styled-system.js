@@ -180,7 +180,17 @@ var padding = function padding(_ref) {
   return object.join('');
 };
 
+var getColor = function getColor(_ref) {
+  var _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme,
+      _ref$$color = _ref.$color,
+      $color = _ref$$color === void 0 ? '' : _ref$$color;
+  var value = lodash.get(theme.colors, $color, '');
+  return value;
+};
+
 exports.border = border;
 exports.dimensions = dimensions;
+exports.getColor = getColor;
 exports.margin = margin;
 exports.padding = padding;
