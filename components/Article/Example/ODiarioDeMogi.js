@@ -37,9 +37,11 @@ const ArticleOM = () => {
   // configura o topimage
   const isAmp = false; // useAmp();
   const isFeatured = false; // config.article_is_featured;
+
   const config = {
     header_color: 'primary1'
   };
+
   const topimage = {
     featured: isFeatured,
     image: true,
@@ -55,6 +57,7 @@ const ArticleOM = () => {
     mb: isFeatured ? ['0px', '0px'] : ['5', '8'],
     value: ''
   };
+
   // verifica se tem imagem
   if (images && images.length > 0) {
     const image_one = images[0];
@@ -65,6 +68,7 @@ const ArticleOM = () => {
     topimage.image = false;
   }
   let images_parsed = [];
+
   map(images, (img) => {
     let img_path = pathToImage('2x1', domain, img.contentId, 1200)
     let img_caption = `${img.caption} ${img.byline && `(${img.byline})`}`;
@@ -74,6 +78,7 @@ const ArticleOM = () => {
       value: img_path
     });
   });
+
   let gallery_parsed = [];
   map(gallery, (img) => {
     let img_path = pathToImage('2x1', domain, img.contentId, 1200)
@@ -84,14 +89,17 @@ const ArticleOM = () => {
       value: img_path
     });
   });
+
   const time_modified = timestamps ? datePtBrFull(timestamps.time_modified) : '';
   const time_published = timestamps ? datePtBrFull(timestamps.time_published) : '';
+
   let content_body = content;
   map(multimidia, (midia) => {
     if(midia.template == 'br.com.atex.plugins.youtube.it') {
       content_body = `${content_body}\n\n<p><a id="${midia.link}" name="${midia.link}">${midia.link}</a></p>`;
     }
   });
+
   map(texts, (text) => {
     let text_images = ''
     map(text.image, (im) => {
@@ -109,6 +117,7 @@ const ArticleOM = () => {
       ${text_images}\n\n
       ${text.content}`;
   });
+
   const byline = {
     author: {
       color: 'neutral4',
@@ -129,6 +138,7 @@ const ArticleOM = () => {
       time_published
     }
   };
+
   const intertitle = {
     fontSize: ['38px', '30px'],
     fontWeight: 700,
@@ -159,6 +169,7 @@ const ArticleOM = () => {
     fontSize: ['20px', '20px'],
     lineHeight: ['190%', '190%'],
   };
+
   const RenderArticle = ({paywallNotSubscriber}) => 
     <Article
       amp={isAmp}
@@ -175,10 +186,6 @@ const ArticleOM = () => {
       paragraph={props_paragraph}
       topimage={topimage}
     />;
-
-  RenderArticle.propTypes = {
-    paywallNotSubscriber: PropTypes.bool
-  };
 
   if(priority == '1') {
     return (
