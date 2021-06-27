@@ -57,8 +57,8 @@ const MenuItem = ({color, content, groupTitleProps, removeBorders}) => {
     <div>
       <GroupTitleContainer removeBorders={removeBorders} role='setMenuItemState' tabIndex='0' on={newState} $color={itemColor}>
         <GroupTitle/>
-        <ExpandMoreIcon ampClass={expandMoreIconClass} />
-        <ExpandLessIcon ampClass={expandLessIconClass} />
+        <ExpandMoreIcon data-amp-bind-class={expandMoreIconClass} />
+        <ExpandLessIcon data-amp-bind-class={expandLessIconClass} />
       </GroupTitleContainer>
       <GroupContent data-amp-bind-class={contentClass}>
         {map(subitems, ({id, path, name}, key) => (
