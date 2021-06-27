@@ -1,23 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styled, {withTheme} from 'styled-components';
 
-const Container = styled.div`
-  height: max-content;
-  width: max-content;
-`;
-const Svg = styled.svg`
-  fill: ${props => props.theme.colors[props.color]};
-  margin: ${props => props.margin};
-`;
+import {Container, Svg} from './styled';
 
-const Icon = ({ampClass, amp, children, color, height, margin, viewBox, width}) => {
-  let iconAmpClass;
-  if (amp) iconAmpClass = ampClass;
-  let container_props = {'data-amp-bind-class': iconAmpClass};
+const Icon = ({children, containerProps, color, height, viewBox, width, ...otherProps}) => {
   return (
-    <Container {...container_props}>
-      <Svg xmlns="http://www.w3.org/2000/svg" color={color} height={height} margin={margin} viewBox={viewBox} width={width}>
+    <Container {...containerProps}>
+      <Svg xmlns="http://www.w3.org/2000/svg" $color={color} height={height} viewBox={viewBox} width={width} {...otherProps}>
         {children}
       </Svg>
     </Container>
@@ -27,20 +16,20 @@ const Icon = ({ampClass, amp, children, color, height, margin, viewBox, width}) 
 Icon.defaultProps = {
   color: 'neutral3',
   height: '24px',
-  margin: '8px',
+  m: '8px',
   viewBox: '0 0 24 24',
   width: '24px',
 };
 
 Icon.propTypes = {
-  ampClass: PropTypes.string,
-  amp: PropTypes.bool,
   children: PropTypes.node,
+  containerProps: PropTypes.object,
   color: PropTypes.string,
   height: PropTypes.string,
-  margin: PropTypes.string,
+  m: PropTypes.string,
   viewBox: PropTypes.string,
   width: PropTypes.string,
+  otherProps: PropTypes.any
 };
 
-export default withTheme(Icon);
+export default Icon;
