@@ -62,7 +62,28 @@ var getFromProps = function getFromProps(props, param) {
   return lodash.get(props, numberToString(param), value);
 };
 
+var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
+  if (!policy_id) return null;
+  var w = width || 1000;
+  var r = domain || 'https://costanorte.com.br';
+  var d = derivative || '2x1';
+  var id = policy_id.split('.');
+  var string = id.length > 2 ? "".concat(policy_id, ":").concat(id[2]) : "".concat(policy_id);
+  var path = "".concat(r, "/image/policy:").concat(string, "/image.jpg?f=").concat(d, "&w=").concat(w);
+  return path;
+};
+
+var getImagePath = function getImagePath(derivative, policy_id, width) {
+  if (!policy_id) return null;
+  var w = width || 1000;
+  var d = derivative || '2x1';
+  var path = "/image/policy:".concat(policy_id, "/image.jpg?f=").concat(d, "&w=").concat(w);
+  return path;
+};
+
 exports.dateDistance = dateDistance;
 exports.datePtBrFull = datePtBrFull;
 exports.getFromProps = getFromProps;
+exports.getImagePath = getImagePath;
 exports.numberToString = numberToString;
+exports.pathToImage = pathToImage;

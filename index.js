@@ -83,6 +83,42 @@ function _objectSpread2(target) {
   return target;
 }
 
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
 function _taggedTemplateLiteral(strings, raw) {
   if (!raw) {
     raw = strings.slice(0);
@@ -689,7 +725,7 @@ var MaxWidth = function MaxWidth(_ref6) {
   var children = _ref6.children,
       maxWidth = _ref6.maxWidth;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "\n      max-width: ".concat(maxWidth, ";\n    "),
+    custom: "max-width: ".concat(maxWidth, ";"),
     width: "100%"
   }, children);
 };
@@ -740,6 +776,7 @@ function _templateObject$1() {
 // `;
 
 var Container$1 = styled__default['default'].div(_templateObject$1(), function (props) {
+
   return "url(".concat(props.facebookPath, ")");
 }, function (props) {
   return "url(".concat(props.twitterPath, ")");
@@ -755,19 +792,19 @@ var Share = function Share(_ref) {
       twitterPath = _ref.twitterPath,
       whatsappPath = _ref.whatsappPath;
   return /*#__PURE__*/React__default['default'].createElement(Container$1, {
-    facebookPath: facebookPath,
+    facebookPath: fbappid ? facebookPath : null,
     twitterPath: twitterPath,
     whatsappPath: whatsappPath
-  }, /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+  }, fbappid && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
     type: "facebook",
     width: "24",
     height: "24",
     "data-param-app_id": fbappid
-  }), /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+  }), twitterPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
     type: "twitter",
     width: "24",
     height: "24"
-  }), /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+  }), whatsappPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
     type: "whatsapp",
     width: "24",
     height: "24"
@@ -775,12 +812,12 @@ var Share = function Share(_ref) {
 };
 
 Share.defaultProps = {
-  facebookPath: 'assets/facebook-product1.svg',
-  twitterPath: 'assets/twitter-product1.svg',
-  whatsappPath: 'assets/whatsapp-product1.svg'
+  facebookPath: 'assets/facebook.svg',
+  twitterPath: 'assets/twitter.svg',
+  whatsappPath: 'assets/whatsapp.svg'
 };
 Share.propTypes = {
-  fbappid: PropTypes__default['default'].string.isRequired,
+  fbappid: PropTypes__default['default'].string,
   facebookPath: PropTypes__default['default'].string,
   twitterPath: PropTypes__default['default'].string,
   whatsappPath: PropTypes__default['default'].string
@@ -2618,10 +2655,11 @@ var Body = function Body(_ref) {
       children = _ref.children,
       hyperlinkColor = _ref.hyperlinkColor;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "\n      a { color: ".concat(hyperlinkColor, "; };\n      max-width: ").concat(bodyWidth, ";\n    "),
+    custom: "\n      a { color: ".concat(hyperlinkColor, "; }\n      max-width: ").concat(bodyWidth, ";\n    "),
     lg: {
       align: 'column',
       alignx: 'center',
+      px: '0px',
       width: '100%'
     },
     px: "3",
@@ -4462,74 +4500,41 @@ Field.propTypes = {
 };
 var index$1 = styled.withTheme(Field);
 
-function _templateObject2$3() {
-  var data = _taggedTemplateLiteral(["\n  fill: ", ";\n  margin: ", ";\n"]);
-
-  _templateObject2$3 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject$7() {
-  var data = _taggedTemplateLiteral(["\n  height: max-content;\n  width: max-content;\n"]);
-
-  _templateObject$7 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Container$8 = styled__default['default'].div(_templateObject$7());
-var Svg = styled__default['default'].svg(_templateObject2$3(), function (props) {
-  return props.theme.colors[props.color];
-}, function (props) {
-  return props.margin;
-});
-
 var Icon = function Icon(_ref) {
-  var ampClass = _ref.ampClass,
-      amp = _ref.amp,
-      children = _ref.children,
+  var children = _ref.children,
+      containerProps = _ref.containerProps,
       color = _ref.color,
       height = _ref.height,
-      margin = _ref.margin,
       viewBox = _ref.viewBox,
-      width = _ref.width;
-  var iconAmpClass;
-  if (amp) iconAmpClass = ampClass;
-  var container_props = {
-    'data-amp-bind-class': iconAmpClass
-  };
-  return /*#__PURE__*/React__default['default'].createElement(Container$8, container_props, /*#__PURE__*/React__default['default'].createElement(Svg, {
+      width = _ref.width,
+      otherProps = _objectWithoutProperties(_ref, ["children", "containerProps", "color", "height", "viewBox", "width"]);
+
+  return /*#__PURE__*/React__default['default'].createElement(Container$8, containerProps, /*#__PURE__*/React__default['default'].createElement(Svg, _extends({
     xmlns: "http://www.w3.org/2000/svg",
-    color: color,
+    $color: color,
     height: height,
-    margin: margin,
     viewBox: viewBox,
     width: width
-  }, children));
+  }, otherProps), children));
 };
 
 Icon.defaultProps = {
   color: 'neutral3',
   height: '24px',
-  margin: '8px',
+  m: '8px',
   viewBox: '0 0 24 24',
   width: '24px'
 };
 Icon.propTypes = {
-  ampClass: PropTypes__default['default'].string,
-  amp: PropTypes__default['default'].bool,
   children: PropTypes__default['default'].node,
+  containerProps: PropTypes__default['default'].object,
   color: PropTypes__default['default'].string,
   height: PropTypes__default['default'].string,
-  margin: PropTypes__default['default'].string,
+  m: PropTypes__default['default'].string,
   viewBox: PropTypes__default['default'].string,
-  width: PropTypes__default['default'].string
+  width: PropTypes__default['default'].string,
+  otherProps: PropTypes__default['default'].any
 };
-var Icon$1 = styled.withTheme(Icon);
 
 var Image$1 = function Image(_ref) {
   var content = _ref.content,
@@ -4588,7 +4593,7 @@ Image$1.defaultProps = {
 };
 
 var ChevronRight = function ChevronRight(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Icon$1, props, /*#__PURE__*/React__default['default'].createElement("path", {
+  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
     d: "M0 0h24v24H0V0z",
     fill: "none"
   }), /*#__PURE__*/React__default['default'].createElement("path", {
@@ -4597,7 +4602,7 @@ var ChevronRight = function ChevronRight(props) {
 };
 
 var ExpandLessIcon = function ExpandLessIcon(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Icon$1, props, /*#__PURE__*/React__default['default'].createElement("path", {
+  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
     d: "M0 0h24v24H0V0z",
     fill: "none"
   }), /*#__PURE__*/React__default['default'].createElement("path", {
@@ -4606,7 +4611,7 @@ var ExpandLessIcon = function ExpandLessIcon(props) {
 };
 
 var ExpandMoreIcon = function ExpandMoreIcon(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Icon$1, props, /*#__PURE__*/React__default['default'].createElement("path", {
+  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
     d: "M24 24H0V0h24v24z",
     fill: "none",
     opacity: ".87"
@@ -4742,9 +4747,9 @@ var MenuItem = function MenuItem(_ref) {
       on: newState,
       $color: itemColor
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
-      ampClass: expandMoreIconClass
+      "data-amp-bind-class": expandMoreIconClass
     }), /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
-      ampClass: expandLessIconClass
+      "data-amp-bind-class": expandLessIconClass
     })), /*#__PURE__*/React__default['default'].createElement(GroupContent, {
       "data-amp-bind-class": contentClass
     }, lodash.map(subitems, function (_ref2, key) {
@@ -5251,7 +5256,7 @@ exports.ColumnHeader = ColumnHeader;
 exports.Dialog = Dialog;
 exports.Field = index$1;
 exports.Form = index;
-exports.Icon = Icon$1;
+exports.Icon = Icon;
 exports.Image = Image$1;
 exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;

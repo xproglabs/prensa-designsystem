@@ -11,13 +11,14 @@ export const Body = ({
 }) => {
   return <Block
     custom={`
-      a { color: ${hyperlinkColor}; };
+      a { color: ${hyperlinkColor}; }
       max-width: ${bodyWidth};
     `}
     lg={{
       align: 'column',
       alignx: 'center',
-      width: '100%',
+      px: '0px',
+      width: '100%'
     }}
     px='3'
     width='calc(100% - 48px)'>
