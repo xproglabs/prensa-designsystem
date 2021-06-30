@@ -1,5 +1,7 @@
 import styled, {css} from 'styled-components';
 
+import {padding} from '../../styled-system/padding';
+
 const Hyperlink = styled.a`
   text-decoration: none;
   font-size: 16px;
@@ -49,7 +51,7 @@ const getGroupBorder = ({removeBorders}) => {
 
 const GroupTitleContainer = styled.div`
   ${getGroupBorder}
-  padding-left: 16px;
+  ${padding};
   cursor: pointer;
   display: flex;
   align-items: center;
