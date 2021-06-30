@@ -11,7 +11,7 @@ import {GroupSection, GroupTitleContainer, GroupContent, Hyperlink} from './styl
 
 const groupTitleDefaultProps = {
   color: 'neutral2',
-  element: 'a',
+  element: 'span',
   lineHeight: '40px',
   fontFamily: 'secondary',
   fontSize: '20px',
@@ -24,7 +24,7 @@ const subItemDefaultProps = {
   fontSize: '16px'
 };
 
-const MenuItem = ({color, content, groupSubItemProps, groupTitleProps, pl, removeBorders}) => {
+const MenuItem = ({color, content, groupSubItemProps, groupTitleProps, menuItemProps, removeBorders}) => {
   const [open, setOpenStatus] = useState(false);
   const {contentId, name, path, subitems} = content;
   const isGroup = subitems.length > 0;
@@ -44,7 +44,7 @@ const MenuItem = ({color, content, groupSubItemProps, groupTitleProps, pl, remov
 
   const HyperlinkGroup = () => (
     <Hyperlink href={path}>
-      <GroupTitleContainer $color={itemColor} pl={pl} removeBorders={removeBorders}>
+      <GroupTitleContainer $color={itemColor} menuItemProps={menuItemProps} removeBorders={removeBorders}>
         <GroupTitle />
         <ChevronRightIcon color={itemColor} />
       </GroupTitleContainer>
@@ -53,15 +53,15 @@ const MenuItem = ({color, content, groupSubItemProps, groupTitleProps, pl, remov
 
   const Group = () => (
     <div>
-      <GroupTitleContainer id={contentId} onClick={handleItemClick} pl={pl} removeBorders={removeBorders} $color={itemColor}>
+      <GroupTitleContainer id={contentId} onClick={handleItemClick} menuItemProps={menuItemProps} removeBorders={removeBorders} $color={itemColor}>
         <GroupTitle/>
         {open ? <ExpandLessIcon color={itemColor}/> : <ExpandMoreIcon color={itemColor}/>}
       </GroupTitleContainer>
       <GroupContent>
         {open && 
-          map(subitems, ({name}, key) => (
+          map(subitems, ({name, path}, key) => (
             <Block ml='20px' mb={2} mt={2} key={key}>
-              <Typography {...subItemDefaultProps} {...groupSubItemProps}>
+              <Typography href={path} {...subItemDefaultProps} {...groupSubItemProps}>
                 {name}
               </Typography>  
             </Block>
@@ -87,7 +87,7 @@ MenuItem.propTypes = {
   content: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   groupTitleProps: PropTypes.object,
   groupSubItemProps: PropTypes.object,
-  pl: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  menuItemProps: PropTypes.object,
   removeBorders: PropTypes.bool
 };
 

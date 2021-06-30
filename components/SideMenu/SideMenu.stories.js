@@ -33,6 +33,7 @@ export const Default = () => {
             titleProps={{color: 'product1'}}
             groupTitleProps={{color: 'product2', pl: '16px'}}
             groupSubItemProps={{color: 'neutral2', fontSize: '20px'}}
+            menuItemProps={{pl: '32px'}}
             color='primary1'
           />
         </SideMenu>
