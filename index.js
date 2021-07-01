@@ -1489,7 +1489,7 @@ Byline.defaultProps = {
     time_published: '21/05/2021 às 23:20'
   },
   medias: {
-    color: 'primary2'
+    color: '#999999'
   }
 };
 Byline.propTypes = {
@@ -1683,14 +1683,23 @@ ImageGallery.propTypes = {
 
 var Citation = function Citation(_ref) {
   var color = _ref.color,
+      customCite = _ref.customCite,
       fontFamily = _ref.fontFamily,
       fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
       lineHeight = _ref.lineHeight,
       mb = _ref.mb,
-      value = _ref.value;
+      pl = _ref.pl,
+      value = _ref.value,
+      width = _ref.width;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    width: "100%"
+    custom: customCite,
+    width: width,
+    align: "row",
+    mb: mb[0],
+    lg: {
+      mb: mb[1]
+    }
   }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
     dangerouslySetInnerHTML: value,
@@ -1699,11 +1708,11 @@ var Citation = function Citation(_ref) {
     fontSize: fontSize[0],
     fontWeight: fontWeight,
     lineHeight: lineHeight[0],
-    mb: mb[0],
+    pl: pl[0],
     lg: {
       fontSize: fontSize[1],
       lineHeight: lineHeight[1],
-      mb: mb[1]
+      pl: pl[1]
     }
   }));
 };
@@ -1715,16 +1724,21 @@ Citation.defaultProps = {
   fontSize: ['32px', '32px'],
   lineHeight: ['140%', '140%'],
   mb: ['3', '3'],
-  value: '“Uma das nossas prioridades no mandato é fortalecer o Sistema de Saúde. Oferecer uma infraestrutura digna para a população é um dever mínimo do estado.”'
+  pl: ['0px', '0px'],
+  value: '“Uma das nossas prioridades no mandato é fortalecer o Sistema de Saúde. Oferecer uma infraestrutura digna para a população é um dever mínimo do estado.”',
+  width: '100%'
 };
 Citation.propTypes = {
+  customCite: PropTypes__default['default'].string,
   color: PropTypes__default['default'].string,
   fontFamily: PropTypes__default['default'].string,
   fontSize: PropTypes__default['default'].array,
   fontWeight: PropTypes__default['default'].number,
   lineHeight: PropTypes__default['default'].array,
   mb: PropTypes__default['default'].array,
-  value: PropTypes__default['default'].string
+  pl: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].string]),
+  value: PropTypes__default['default'].string,
+  width: PropTypes__default['default'].string
 };
 
 var _templateObject$4;
@@ -2068,178 +2082,6 @@ Paragraph$1.propTypes = {
   value: PropTypes__default['default'].string
 };
 
-var parseBgColor = function parseBgColor(props, theme) {
-  if (!props || !props.bgColor) return '';
-  var selected = theme.colors[props.bgColor];
-  if (!selected) return '';
-  return "background-color: ".concat(selected, ";");
-};
-
-var parseFontColor = function parseFontColor(props, theme) {
-  if (!props || !props.fontColor) return '';
-  var selected = theme.colors[props.fontColor];
-  if (!selected) return '';
-  return "color: ".concat(selected, ";");
-};
-
-var parseColor = function parseColor(props, theme, propName) {
-  if (!propName) return console.error('PRENSA :: Não existe nome de prop para buscar no parseColor');
-  var propValue = lodash.get(props, propName, 'activeColor');
-  if (propValue.startsWith('#')) return propValue;
-  var parsedValue = theme.colors[propValue];
-  if (!parsedValue) return console.error("PRENSA :: N\xE3o existe valor correspondente para a prop de nome ".concat(propName, " passada na fun\xE7\xE3o parseColor"));
-  return parsedValue;
-};
-
-var parseCustom = function parseCustom(props) {
-  if (!props || !props.custom) return '';
-  var object = [];
-  object.push("".concat(props.custom));
-  return object.join('');
-};
-
-var parseCustomDef = function parseCustomDef(props) {
-  if (!props || !props.customDef) return '';
-  var object = [];
-
-  switch (props.customDef) {
-    case 'demo':
-      object.push("\n        background-color: rgba(1, 22, 39, 0.2);\n        color: rgba(255, 55, 255, 1);\n        font-weight: bold;\n        height: 100px;\n        span { \n          border: 1px solid rgba(255, 55, 255, 1);\n          font-size: 11px;\n          padding: 3px;\n          margin: 0px; \n        }\n      ");
-  }
-
-  return object.join('');
-};
-
-var parseFontFamily$1 = function parseFontFamily(props, theme) {
-  if (!props) return '';
-  var selected = theme.fonts[props.typography];
-  if (!selected) return '';
-  return "font-family: ".concat(selected, ";");
-};
-
-var parseMargin = function parseMargin(props, theme) {
-  if (!props) return '';
-  var mx = props.mx,
-      my = props.my,
-      mt = props.mt,
-      mr = props.mr,
-      mb = props.mb,
-      ml = props.ml;
-  var object = [];
-  var factor = theme.factors.margin;
-  mx !== undefined && isNaN(mx) ? object.push("\n      margin-left: ".concat(mx, "; \n      margin-right: ").concat(mx, ";")) : mx && object.push("\n      margin-left: ".concat(factor * mx, "px; \n      margin-right: ").concat(factor * mx, "px;\n    "));
-  my !== undefined && isNaN(my) ? object.push("\n      margin-top: ".concat(my, "; \n      margin-bottom: ").concat(my, ";")) : my && object.push("\n      margin-top: ".concat(factor * my, "px; \n      margin-bottom: ").concat(factor * my, "px;\n    "));
-  mt !== undefined && isNaN(mt) ? object.push("\n      margin-top: ".concat(mt, ";")) : mt && object.push("\n      margin-top: ".concat(factor * mt, "px;\n    "));
-  mr !== undefined && isNaN(mr) ? object.push("\n      margin-right: ".concat(mr, ";")) : mr && object.push("\n      margin-right: ".concat(factor * mr, "px;\n    "));
-  mb !== undefined && isNaN(mb) ? object.push("\n      margin-bottom: ".concat(mb, ";")) : mb && object.push("\n      margin-bottom: ".concat(factor * mb, "px;\n    "));
-  ml !== undefined && isNaN(ml) ? object.push("\n      margin-left: ".concat(ml, ";")) : ml && object.push("\n      margin-left: ".concat(factor * ml, "px;\n    "));
-  return object.join('');
-};
-
-var parsePadding = function parsePadding(props, theme) {
-  if (!props) return '';
-  var px = props.px,
-      py = props.py,
-      pt = props.pt,
-      pr = props.pr,
-      pb = props.pb,
-      pl = props.pl;
-  var object = [];
-  var factor = theme.factors.padding;
-  px !== undefined && isNaN(px) ? object.push("\n      padding-left: ".concat(px, "; \n      padding-right: ").concat(px, ";\n    ")) : px && object.push("\n      padding-left: ".concat(factor * px, "px; \n      padding-right: ").concat(factor * px, "px\n    ;"));
-  py !== undefined && isNaN(py) ? object.push("\n      padding-top: ".concat(py, "; \n      padding-bottom: ").concat(py, ";\n    ")) : py && object.push("\n      padding-top: ".concat(factor * py, "px; \n      padding-bottom: ").concat(factor * py, "px\n    ;"));
-  pt !== undefined && isNaN(pt) ? object.push("\n      padding-top: ".concat(pt, ";\n    ")) : pt && object.push("\n      padding-top: ".concat(factor * pt, "px\n    ;"));
-  pr !== undefined && isNaN(pr) ? object.push("\n      padding-right: ".concat(pr, ";\n    ")) : pr && object.push("\n      padding-right: ".concat(factor * pr, "px\n    ;"));
-  pb !== undefined && isNaN(pb) ? object.push("\n      padding-bottom: ".concat(pb, ";\n    ")) : pb && object.push("\n      padding-bottom: ".concat(factor * pb, "px\n    ;"));
-  pl !== undefined && isNaN(pl) ? object.push("\n      padding-left: ".concat(pl, ";\n    ")) : pl && object.push("\n      padding-left: ".concat(factor * pl, "px\n    ;"));
-  return object.join('');
-};
-
-var parseRadius = function parseRadius(props, propName) {
-  var propValue = lodash.get(props, propName);
-  if (!propValue) return '';
-  var selected = theme.radius[propValue];
-
-  if (!selected) {
-    console.error("PRENSA :: Erro ao traduzir token \"".concat(propValue, "\" no parseRadius"));
-    return '';
-  }
-
-  return "border-radius: ".concat(selected);
-};
-
-var theme = {
-  colors: {
-    activeColor: '#09B77B',
-    primary1: '#063F8F',
-    primary2: '#446FAB',
-    primary3: '#829EC7',
-    secondary1: '#E5471A',
-    secondary2: '#EB7553',
-    secondary3: '#F2A28C',
-    black: '#000000',
-    neutral1: '#151515',
-    neutral2: '#333333',
-    neutral3: '#555555',
-    neutral4: '#666666',
-    neutral5: '#707070',
-    neutral6: '#999999',
-    neutral7: '#B5B5B5',
-    neutral8: '#D7D7D7',
-    neutral9: '#EAEAEA',
-    neutral10: '#F2F2F2',
-    neutral11: '#FAFAFA',
-    white: '#FFFFFF',
-    colorAds: '#5421C2',
-    editorial1: '#2C1D15',
-    editorial2: '#73B6D3',
-    editorial3: '#00A070',
-    editorial4: '#B455A0',
-    editorial5: '#F37042',
-    product1: '#0975B7',
-    product2: '#AB001B',
-    product3: '#BFA525',
-    product4: '#080808',
-    product5: '#09B77B',
-    success1: '#3C8D40',
-    success2: '#50AE55',
-    success3: '#83C686',
-    error1: '#D13135',
-    error2: '#F1453D',
-    error3: '#E37475'
-  },
-  fonts: {
-    primary: 'Work Sans',
-    secondary: 'Nunito Sans'
-  },
-  factors: {
-    dimensions: 10,
-    padding: 8,
-    margin: 8
-  },
-  queries: {
-    xs: '360px',
-    sm: '460px',
-    md: '768px',
-    lg: '1016px',
-    xl: '1280px'
-  },
-  radius: {
-    unset: '0px',
-    "default": '3px',
-    alternative: '5px'
-  },
-  parseBgColor: parseBgColor,
-  parseCustom: parseCustom,
-  parseCustomDef: parseCustomDef,
-  parseFontColor: parseFontColor,
-  parseFontFamily: parseFontFamily$1,
-  parseMargin: parseMargin,
-  parsePadding: parsePadding,
-  parseRadius: parseRadius,
-  parseColor: parseColor
-};
-
 var Container$5 = function Container(_ref) {
   var children = _ref.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
@@ -2247,7 +2089,8 @@ var Container$5 = function Container(_ref) {
     mb: 5,
     width: "100%",
     lg: {
-      align: 'row'
+      align: 'row',
+      custom: "\n        flex-wrap: wrap;\n      "
     }
   }, children);
 };
@@ -2255,31 +2098,36 @@ Container$5.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 var Tag = function Tag(_ref2) {
-  var children = _ref2.children;
+  var children = _ref2.children,
+      color = _ref2.color;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "column",
     mr: 2,
     mb: 2,
     px: 2,
     py: 1,
-    custom: "border: 1px solid ".concat(theme.colors.primary1, ";border-radius: 3px;")
+    custom: "border: 1px solid ".concat(color, ";border-radius: 3px;")
   }, children);
 };
 Tag.propTypes = {
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  color: PropTypes__default['default'].string
 };
 
 var Tags = function Tags(_ref) {
-  var fontSize = _ref.fontSize,
+  var color = _ref.color,
+      fontFamily = _ref.fontFamily,
+      fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
       items = _ref.items;
   return /*#__PURE__*/React__default['default'].createElement(Container$5, null, lodash.map(items, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Tag, {
+      color: color,
       key: key
     }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
-      color: "primary1",
+      color: color,
       element: "span",
-      fontFamily: "secondary",
+      fontFamily: fontFamily,
       fontSize: fontSize[0],
       fontWeight: fontWeight
     }, item));
@@ -2287,11 +2135,15 @@ var Tags = function Tags(_ref) {
 };
 
 Tags.defaultProps = {
-  fontWeight: 700,
+  color: '#999999',
+  fontFamily: 'secondary',
   fontSize: ['14px'],
+  fontWeight: 700,
   items: []
 };
 Tags.propTypes = {
+  color: PropTypes__default['default'].string,
+  fontFamily: PropTypes__default['default'].array,
   fontSize: PropTypes__default['default'].array,
   fontWeight: PropTypes__default['default'].number,
   items: PropTypes__default['default'].array
@@ -3112,7 +2964,7 @@ var parseVariation = function parseVariation(props, theme) {
 }; //parse typography
 
 
-var parseFontColor$1 = function parseFontColor(props, theme) {
+var parseFontColor = function parseFontColor(props, theme) {
   var fontColor = props.fontColor,
       $variant = props.$variant,
       disabled = props.disabled;
@@ -3122,7 +2974,7 @@ var parseFontColor$1 = function parseFontColor(props, theme) {
   return theme.colors.white;
 };
 
-var parseFontFamily$2 = function parseFontFamily(props, theme) {
+var parseFontFamily$1 = function parseFontFamily(props, theme) {
   var $fontFamily = props.$fontFamily;
   var selected = theme.fonts[$fontFamily];
   if (!$fontFamily || !selected) return theme.fonts.primary;
@@ -3142,11 +2994,11 @@ var parseFontSize = function parseFontSize(props) {
 };
 
 var parseTypography = function parseTypography(props, theme) {
-  if (props.removeText === true) return "\n    span {\n      display: none;\n    }\n  ";else return "\n    span {\n      display: inline;\n      margin-left: 8px;\n      margin-right: 8px;\n      color: ".concat(parseFontColor$1(props, theme), ";\n      font-size: ").concat(parseFontSize(props), "px;\n      font-weight: ").concat(parseFontWeight(props), ";\n      font-family: ").concat(parseFontFamily$2(props, theme), ";\n    }\n  ");
+  if (props.removeText === true) return "\n    span {\n      display: none;\n    }\n  ";else return "\n    span {\n      display: inline;\n      margin-left: 8px;\n      margin-right: 8px;\n      color: ".concat(parseFontColor(props, theme), ";\n      font-size: ").concat(parseFontSize(props), "px;\n      font-weight: ").concat(parseFontWeight(props), ";\n      font-family: ").concat(parseFontFamily$1(props, theme), ";\n    }\n  ");
 };
 
 var parseIcon = function parseIcon(props, theme) {
-  return "\n    svg {\n      fill: ".concat(parseFontColor$1(props, theme), ";\n      width: ").concat(props.iconSize ? props.iconSize : '24px', ";\n      height: ").concat(props.iconSize ? props.iconSize : '24px', ";\n    }\n  ");
+  return "\n    svg {\n      fill: ".concat(parseFontColor(props, theme), ";\n      width: ").concat(props.iconSize ? props.iconSize : '24px', ";\n      height: ").concat(props.iconSize ? props.iconSize : '24px', ";\n    }\n  ");
 }; //main function
 
 
@@ -3682,6 +3534,178 @@ ColumnHeader.propTypes = {
 };
 ColumnHeader.defaultProps = {
   item: []
+};
+
+var parseBgColor = function parseBgColor(props, theme) {
+  if (!props || !props.bgColor) return '';
+  var selected = theme.colors[props.bgColor];
+  if (!selected) return '';
+  return "background-color: ".concat(selected, ";");
+};
+
+var parseFontColor$1 = function parseFontColor(props, theme) {
+  if (!props || !props.fontColor) return '';
+  var selected = theme.colors[props.fontColor];
+  if (!selected) return '';
+  return "color: ".concat(selected, ";");
+};
+
+var parseColor = function parseColor(props, theme, propName) {
+  if (!propName) return console.error('PRENSA :: Não existe nome de prop para buscar no parseColor');
+  var propValue = lodash.get(props, propName, 'activeColor');
+  if (propValue.startsWith('#')) return propValue;
+  var parsedValue = theme.colors[propValue];
+  if (!parsedValue) return console.error("PRENSA :: N\xE3o existe valor correspondente para a prop de nome ".concat(propName, " passada na fun\xE7\xE3o parseColor"));
+  return parsedValue;
+};
+
+var parseCustom = function parseCustom(props) {
+  if (!props || !props.custom) return '';
+  var object = [];
+  object.push("".concat(props.custom));
+  return object.join('');
+};
+
+var parseCustomDef = function parseCustomDef(props) {
+  if (!props || !props.customDef) return '';
+  var object = [];
+
+  switch (props.customDef) {
+    case 'demo':
+      object.push("\n        background-color: rgba(1, 22, 39, 0.2);\n        color: rgba(255, 55, 255, 1);\n        font-weight: bold;\n        height: 100px;\n        span { \n          border: 1px solid rgba(255, 55, 255, 1);\n          font-size: 11px;\n          padding: 3px;\n          margin: 0px; \n        }\n      ");
+  }
+
+  return object.join('');
+};
+
+var parseFontFamily$2 = function parseFontFamily(props, theme) {
+  if (!props) return '';
+  var selected = theme.fonts[props.typography];
+  if (!selected) return '';
+  return "font-family: ".concat(selected, ";");
+};
+
+var parseMargin = function parseMargin(props, theme) {
+  if (!props) return '';
+  var mx = props.mx,
+      my = props.my,
+      mt = props.mt,
+      mr = props.mr,
+      mb = props.mb,
+      ml = props.ml;
+  var object = [];
+  var factor = theme.factors.margin;
+  mx !== undefined && isNaN(mx) ? object.push("\n      margin-left: ".concat(mx, "; \n      margin-right: ").concat(mx, ";")) : mx && object.push("\n      margin-left: ".concat(factor * mx, "px; \n      margin-right: ").concat(factor * mx, "px;\n    "));
+  my !== undefined && isNaN(my) ? object.push("\n      margin-top: ".concat(my, "; \n      margin-bottom: ").concat(my, ";")) : my && object.push("\n      margin-top: ".concat(factor * my, "px; \n      margin-bottom: ").concat(factor * my, "px;\n    "));
+  mt !== undefined && isNaN(mt) ? object.push("\n      margin-top: ".concat(mt, ";")) : mt && object.push("\n      margin-top: ".concat(factor * mt, "px;\n    "));
+  mr !== undefined && isNaN(mr) ? object.push("\n      margin-right: ".concat(mr, ";")) : mr && object.push("\n      margin-right: ".concat(factor * mr, "px;\n    "));
+  mb !== undefined && isNaN(mb) ? object.push("\n      margin-bottom: ".concat(mb, ";")) : mb && object.push("\n      margin-bottom: ".concat(factor * mb, "px;\n    "));
+  ml !== undefined && isNaN(ml) ? object.push("\n      margin-left: ".concat(ml, ";")) : ml && object.push("\n      margin-left: ".concat(factor * ml, "px;\n    "));
+  return object.join('');
+};
+
+var parsePadding = function parsePadding(props, theme) {
+  if (!props) return '';
+  var px = props.px,
+      py = props.py,
+      pt = props.pt,
+      pr = props.pr,
+      pb = props.pb,
+      pl = props.pl;
+  var object = [];
+  var factor = theme.factors.padding;
+  px !== undefined && isNaN(px) ? object.push("\n      padding-left: ".concat(px, "; \n      padding-right: ").concat(px, ";\n    ")) : px && object.push("\n      padding-left: ".concat(factor * px, "px; \n      padding-right: ").concat(factor * px, "px\n    ;"));
+  py !== undefined && isNaN(py) ? object.push("\n      padding-top: ".concat(py, "; \n      padding-bottom: ").concat(py, ";\n    ")) : py && object.push("\n      padding-top: ".concat(factor * py, "px; \n      padding-bottom: ").concat(factor * py, "px\n    ;"));
+  pt !== undefined && isNaN(pt) ? object.push("\n      padding-top: ".concat(pt, ";\n    ")) : pt && object.push("\n      padding-top: ".concat(factor * pt, "px\n    ;"));
+  pr !== undefined && isNaN(pr) ? object.push("\n      padding-right: ".concat(pr, ";\n    ")) : pr && object.push("\n      padding-right: ".concat(factor * pr, "px\n    ;"));
+  pb !== undefined && isNaN(pb) ? object.push("\n      padding-bottom: ".concat(pb, ";\n    ")) : pb && object.push("\n      padding-bottom: ".concat(factor * pb, "px\n    ;"));
+  pl !== undefined && isNaN(pl) ? object.push("\n      padding-left: ".concat(pl, ";\n    ")) : pl && object.push("\n      padding-left: ".concat(factor * pl, "px\n    ;"));
+  return object.join('');
+};
+
+var parseRadius = function parseRadius(props, propName) {
+  var propValue = lodash.get(props, propName);
+  if (!propValue) return '';
+  var selected = theme.radius[propValue];
+
+  if (!selected) {
+    console.error("PRENSA :: Erro ao traduzir token \"".concat(propValue, "\" no parseRadius"));
+    return '';
+  }
+
+  return "border-radius: ".concat(selected);
+};
+
+var theme = {
+  colors: {
+    activeColor: '#09B77B',
+    primary1: '#063F8F',
+    primary2: '#446FAB',
+    primary3: '#829EC7',
+    secondary1: '#E5471A',
+    secondary2: '#EB7553',
+    secondary3: '#F2A28C',
+    black: '#000000',
+    neutral1: '#151515',
+    neutral2: '#333333',
+    neutral3: '#555555',
+    neutral4: '#666666',
+    neutral5: '#707070',
+    neutral6: '#999999',
+    neutral7: '#B5B5B5',
+    neutral8: '#D7D7D7',
+    neutral9: '#EAEAEA',
+    neutral10: '#F2F2F2',
+    neutral11: '#FAFAFA',
+    white: '#FFFFFF',
+    colorAds: '#5421C2',
+    editorial1: '#2C1D15',
+    editorial2: '#73B6D3',
+    editorial3: '#00A070',
+    editorial4: '#B455A0',
+    editorial5: '#F37042',
+    product1: '#0975B7',
+    product2: '#AB001B',
+    product3: '#BFA525',
+    product4: '#080808',
+    product5: '#09B77B',
+    success1: '#3C8D40',
+    success2: '#50AE55',
+    success3: '#83C686',
+    error1: '#D13135',
+    error2: '#F1453D',
+    error3: '#E37475'
+  },
+  fonts: {
+    primary: 'Work Sans',
+    secondary: 'Nunito Sans'
+  },
+  factors: {
+    dimensions: 10,
+    padding: 8,
+    margin: 8
+  },
+  queries: {
+    xs: '360px',
+    sm: '460px',
+    md: '768px',
+    lg: '1016px',
+    xl: '1280px'
+  },
+  radius: {
+    unset: '0px',
+    "default": '3px',
+    alternative: '5px'
+  },
+  parseBgColor: parseBgColor,
+  parseCustom: parseCustom,
+  parseCustomDef: parseCustomDef,
+  parseFontColor: parseFontColor$1,
+  parseFontFamily: parseFontFamily$2,
+  parseMargin: parseMargin,
+  parsePadding: parsePadding,
+  parseRadius: parseRadius,
+  parseColor: parseColor
 };
 
 var Area = function Area(_ref) {
