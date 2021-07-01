@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Medias from '../Medias/Medias';
+import Share from '../Share';
 import * as S from './Byline.styled';
 
 const Byline = ({
   author,
   customContent,
   datetime,
-  medias
+  share
 }) => {
   return (
     <S.Container>
@@ -24,7 +24,7 @@ const Byline = ({
             Atualizado há {datetime.time_modified}
           </S.TimeEntry>
         </S.DateLine>
-        <Medias {...medias} />
+        <Share {...share} />
       </S.Content>
     </S.Container>
   );
@@ -55,7 +55,8 @@ Byline.propTypes = {
   author: PropTypes.object,
   customContent: PropTypes.string,
   datetime: PropTypes.object,
-  medias: PropTypes.object
+  medias: PropTypes.object,
+  share: PropTypes.object
 };
 
 export default Byline;

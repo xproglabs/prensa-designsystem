@@ -13,7 +13,8 @@ export const Container = ({
     lg={{
       custom: `max-width: ${maxWidth};`
     }}
-    width='100%'>
+    width='100%'
+  >
     {children}
   </Block>;
 
@@ -91,11 +92,7 @@ export const MaxWidth = ({
   children, 
   maxWidth
 }) => 
-  <Block
-    custom={`
-      max-width: ${maxWidth};
-    `}
-    width='100%'>
+  <Block custom={`max-width: ${maxWidth};`} width='100%'>
     {children}
   </Block>;
 

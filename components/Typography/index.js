@@ -13,7 +13,8 @@ import {
   Paragraph,
   Span,
   Label,
-  Cite
+  Cite,
+  A
 } from './styled';
 
 const Typography = ({
@@ -23,6 +24,7 @@ const Typography = ({
   fontSize,
   fontFamily,
   fontWeight,
+  href,
   lineHeight,
   textAlign,
   transform,
@@ -56,7 +58,9 @@ const Typography = ({
   fullWidth,
   maxWidth,
   minWidth,
-  dangerouslySetInnerHTML
+  opacityOnHover,
+  target,
+  dangerouslySetInnerHTML,
 }) => {
 
   const styles = css`
@@ -142,6 +146,7 @@ const Typography = ({
     $transform: transform,
     $color: color,
     $width: width,
+    href: href ? href : undefined,
     textAlign,
     custom,
     children: dangerouslySetInnerHTML ? undefined : children,
@@ -167,6 +172,8 @@ const Typography = ({
     fullWidth,
     maxWidth,
     minWidth,
+    opacityOnHover,
+    target,
     xs: getXsProps(),
     sm: getSmProps(),
     md: getMdProps(),
@@ -194,6 +201,8 @@ const Typography = ({
       return <Label {...props} $style={styles} />;
     case 'cite':
       return <Cite {...props} $style={styles} />;
+    case 'a':
+      return <A {...props} $style={styles} />;
     case 'span':
     default:
       return <Span {...props} $style={styles} />;
@@ -235,6 +244,7 @@ Typography.propTypes = {
    * Altera o valor da propriedade font-size no css
    */
   fontSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  href: PropTypes.string,
   /**
    * Alterar o valor da propriedade line-height no css
    */
@@ -267,6 +277,7 @@ Typography.propTypes = {
   pl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   maxWidth: PropTypes.number,
   minWidth: PropTypes.number,
+  opacityOnHover: PropTypes.bool,
   /**
    * Propriedades responsivas
    */
@@ -276,6 +287,7 @@ Typography.propTypes = {
   lg: PropTypes.object,
   xl: PropTypes.object,
   theme: PropTypes.object,
+  target: PropTypes.string,
   /**
    * Permite estilos customizados
    */
@@ -289,6 +301,7 @@ Typography.propTypes = {
   b: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   borderColor: PropTypes.string,
   borderStyle: PropTypes.string,
+  opacityOnHover: PropTypes.bool
 };
 
 export default withTheme(Typography);

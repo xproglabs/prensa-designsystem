@@ -1,12 +1,15 @@
 import '../styles/globals.css'
-import {ThemeProvider} from 'styled-components'
+import {ThemeProvider, StyleSheetManager} from 'styled-components'
 import {theme} from 'prensa'
+import React from 'react'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <StyleSheetManager disableVendorPrefixes>
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </StyleSheetManager>
   )
 }
 

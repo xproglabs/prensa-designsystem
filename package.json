@@ -1,6 +1,6 @@
 {
   "name": "prensa",
-  "version": "1.5.19",
+  "version": "1.5.44",
   "description": "Prensa Design System",
   "main": "/",
   "author": "XPROG",
@@ -67,7 +67,8 @@
     "build": "rollup --config",
     "eslint": "eslint --ext js,jsx components/ stories/ utils/",
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
-    "test": "jest"
+    "test": "jest",
+    "update-prensa:qa": "npm version patch && npm run build && git add . &&  git commit -m Build && git push && git push --tags && npm publish --tag qa"
   },
   "lint-staged": {
     "*.+(js|jsx)": [

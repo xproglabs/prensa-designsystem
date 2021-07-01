@@ -83,6 +83,42 @@ function _objectSpread2(target) {
   return target;
 }
 
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
 function _taggedTemplateLiteral(strings, raw) {
   if (!raw) {
     raw = strings.slice(0);
@@ -93,6 +129,62 @@ function _taggedTemplateLiteral(strings, raw) {
       value: Object.freeze(raw)
     }
   }));
+}
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArrayLimit(arr, i) {
+  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
 var parseAlign = function parseAlign(props) {
@@ -625,7 +717,7 @@ var MaxWidth = function MaxWidth(_ref6) {
   var children = _ref6.children,
       maxWidth = _ref6.maxWidth;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "\n      max-width: ".concat(maxWidth, ";\n    "),
+    custom: "max-width: ".concat(maxWidth, ";"),
     width: "100%"
   }, children);
 };
@@ -647,165 +739,52 @@ Page.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 
-var margin = function margin(_ref) {
-  var _ref$theme = _ref.theme,
-      theme = _ref$theme === void 0 ? {} : _ref$theme,
-      _ref$mx = _ref.mx,
-      mx = _ref$mx === void 0 ? '' : _ref$mx,
-      _ref$my = _ref.my,
-      my = _ref$my === void 0 ? '' : _ref$my,
-      _ref$mt = _ref.mt,
-      mt = _ref$mt === void 0 ? '' : _ref$mt,
-      _ref$mr = _ref.mr,
-      mr = _ref$mr === void 0 ? '' : _ref$mr,
-      _ref$mb = _ref.mb,
-      mb = _ref$mb === void 0 ? '' : _ref$mb,
-      _ref$ml = _ref.ml,
-      ml = _ref$ml === void 0 ? '' : _ref$ml,
-      _ref$m = _ref.m,
-      m = _ref$m === void 0 ? '' : _ref$m;
-  var unit = lodash.get(theme, 'factors.margin', 8);
-  var object = [];
-  mt !== undefined && isNaN(mt) ? object.push("margin-top: ".concat(mt, ";")) : mt && object.push("margin-top: ".concat(unit * mt, "px;"));
-  mr !== undefined && isNaN(mr) ? object.push("margin-right: ".concat(mr, ";")) : mr && object.push("margin-right: ".concat(unit * mr, "px;"));
-  mb !== undefined && isNaN(mb) ? object.push("margin-bottom: ".concat(mb, ";")) : mb && object.push("margin-bottom: ".concat(unit * mb, "px;"));
-  ml !== undefined && isNaN(ml) ? object.push("margin-left: ".concat(ml, ";")) : ml && object.push("margin-left: ".concat(unit * ml, "px;"));
-  mx !== undefined && isNaN(mx) ? object.push("margin-left: ".concat(mx, ";margin-right: ").concat(mx, ";")) : mx && object.push("margin-left: ".concat(unit * mx, "px;margin-right: ").concat(unit * mx, "px;"));
-  my !== undefined && isNaN(my) ? object.push("margin-top: ".concat(my, ";margin-bottom: ").concat(my, ";")) : my && object.push("margin-top: ".concat(unit * my, "px;margin-bottom: ").concat(unit * my, "px;"));
-  m !== undefined && isNaN(m) ? object.push("margin: ".concat(m, ";")) : m && object.push("margin: ".concat(m * unit, "px;"));
-  return object.join('');
-};
-
-var _templateObject$1, _templateObject2;
-
-var getColor = function getColor(props) {
-  var theme = lodash.get(props, 'theme.colors');
-  var value = lodash.get(theme, props.$color);
-  return value;
-};
-
-var IconContainer = styled__default['default'].svg(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  width: ", "px;\n  height: ", "px;\n  fill: ", ";\n"])), function (props) {
-  return props.$width;
+var _templateObject$1;
+var Container$1 = styled__default['default'].div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  amp-social-share[type=\"facebook\"] {\n    background-image: ", ";\n    background-color: transparent;\n    margin-right: 32px;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"twitter\"] {\n    background-image: ", ";\n    background-color: transparent;\n    margin-right: 32px;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"whatsapp\"] {\n    background-image: ", ";\n    background-color: transparent;\n    margin-right: 32px;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  @media (min-width: ", ") {\n    width: 50%;\n    justify-content: flex-end;\n  }\n"])), function (props) {
+  return "url(".concat(props.facebookPath, ")");
 }, function (props) {
-  return props.$height;
-}, getColor);
-var IconLink = styled__default['default'].a(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  ", ";\n  height: max-content;\n  width: max-content;\n  &:hover {\n    opacity: 0.8;\n  }\n"])), margin);
+  return "url(".concat(props.twitterPath, ")");
+}, function (props) {
+  return "url(".concat(props.whatsappPath, ")");
+}, function (props) {
+  return props.theme.queries.md;
+});
 
-var IcFaceboook = function IcFaceboook(_ref) {
-  var color = _ref.color,
-      height = _ref.height,
-      width = _ref.width;
-  return /*#__PURE__*/React__default['default'].createElement(IconContainer, {
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 32 32",
-    $color: color,
-    $height: height,
-    $width: width
-  }, /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M22.23,4.15H19.16c-3.45,0-5.69,2.29-5.69,5.83v2.69H10.38a.49.49,0,0,0-.48.48v3.9a.49.49,0,0,0,.48.49h3.09v9.83a.48.48,0,0,0,.49.48h4a.47.47,0,0,0,.48-.48V17.54h3.62a.49.49,0,0,0,.48-.49v-3.9a.49.49,0,0,0-.14-.34.48.48,0,0,0-.34-.14H18.47V10.39c0-1.1.26-1.65,1.69-1.65h2.07a.49.49,0,0,0,.49-.49V4.63A.49.49,0,0,0,22.23,4.15Z"
+var Share = function Share(_ref) {
+  var facebookPath = _ref.facebookPath,
+      fbappid = _ref.fbappid,
+      twitterPath = _ref.twitterPath,
+      whatsappPath = _ref.whatsappPath;
+  return /*#__PURE__*/React__default['default'].createElement(Container$1, {
+    facebookPath: fbappid ? facebookPath : null,
+    twitterPath: twitterPath,
+    whatsappPath: whatsappPath
+  }, fbappid && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+    type: "facebook",
+    width: "24",
+    height: "24",
+    "data-param-app_id": fbappid
+  }), twitterPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+    type: "twitter",
+    width: "24",
+    height: "24"
+  }), whatsappPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+    type: "whatsapp",
+    width: "24",
+    height: "24"
   }));
 };
 
-IcFaceboook.defaultProps = {
-  width: '24',
-  height: '24',
-  color: 'primary1'
+Share.defaultProps = {
+  facebookPath: 'assets/facebook.svg',
+  twitterPath: 'assets/twitter.svg',
+  whatsappPath: 'assets/whatsapp.svg'
 };
-IcFaceboook.propTypes = {
-  color: PropTypes__default['default'].string,
-  height: PropTypes__default['default'].string,
-  width: PropTypes__default['default'].string
-};
-
-var IcTwitter = function IcTwitter(_ref) {
-  var color = _ref.color,
-      height = _ref.height,
-      width = _ref.width;
-  return /*#__PURE__*/React__default['default'].createElement(IconContainer, {
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 32 32",
-    $color: color,
-    $height: height,
-    $width: width
-  }, /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M30,7.33a11.92,11.92,0,0,1-3.31.9A5.65,5.65,0,0,0,29.2,5.06a11.4,11.4,0,0,1-3.63,1.39,5.74,5.74,0,0,0-9.92,3.92,6.19,6.19,0,0,0,.13,1.31A16.23,16.23,0,0,1,4,5.68a5.82,5.82,0,0,0-.78,2.9,5.75,5.75,0,0,0,2.54,4.77,5.73,5.73,0,0,1-2.59-.71v.06a5.77,5.77,0,0,0,4.6,5.64,5.68,5.68,0,0,1-1.51.19,4.88,4.88,0,0,1-1.08-.1,5.78,5.78,0,0,0,5.36,4,11.5,11.5,0,0,1-7.11,2.45A10.54,10.54,0,0,1,2,24.79a16.13,16.13,0,0,0,8.8,2.57c10.55,0,16.32-8.74,16.32-16.31,0-.26,0-.5,0-.75A11.3,11.3,0,0,0,30,7.33Z"
-  }));
-};
-
-IcTwitter.defaultProps = {
-  width: '24',
-  height: '24',
-  color: 'primary1'
-};
-IcTwitter.propTypes = {
-  color: PropTypes__default['default'].string,
-  height: PropTypes__default['default'].string,
-  width: PropTypes__default['default'].string
-};
-
-var IcWhatsapp = function IcWhatsapp(_ref) {
-  var color = _ref.color,
-      height = _ref.height,
-      width = _ref.width;
-  return /*#__PURE__*/React__default['default'].createElement(IconContainer, {
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 32 32",
-    $color: color,
-    $height: height,
-    $width: width
-  }, /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M15.43,4.24A11.69,11.69,0,0,0,4.32,15.94a11.52,11.52,0,0,0,1.27,5.27l-1.24,6a.45.45,0,0,0,.55.53l5.9-1.39a11.57,11.57,0,0,0,5,1.21,11.68,11.68,0,1,0-.39-23.34Zm7,18.13A9.17,9.17,0,0,1,11.93,24.1l-.82-.41-3.62.86.76-3.7-.4-.79A9.15,9.15,0,0,1,22.47,9.44a9.05,9.05,0,0,1,2.68,6.46A9.16,9.16,0,0,1,22.47,22.37Z"
-  }), /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M21.67,18.44l-2.26-.65a.85.85,0,0,0-.84.22l-.55.56a.82.82,0,0,1-.9.19,11.88,11.88,0,0,1-3.89-3.44.82.82,0,0,1,.06-.91l.48-.62a.86.86,0,0,0,.11-.86l-1-2.15a.85.85,0,0,0-1.32-.31,3.83,3.83,0,0,0-1.47,2.25c-.16,1.58.52,3.58,3.09,6,3,2.78,5.35,3.14,6.89,2.77a3.87,3.87,0,0,0,2-1.77A.84.84,0,0,0,21.67,18.44Z"
-  }));
-};
-
-IcWhatsapp.defaultProps = {
-  width: '24',
-  height: '24',
-  color: 'primary1'
-};
-IcWhatsapp.propTypes = {
-  color: PropTypes__default['default'].string,
-  height: PropTypes__default['default'].string,
-  width: PropTypes__default['default'].string
-};
-
-var Medias = function Medias(_ref) {
-  var color = _ref.color,
-      facebookUrl = _ref.facebookUrl,
-      twitterUrl = _ref.twitterUrl,
-      whatsappUrl = _ref.whatsappUrl;
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    align: "row"
-  }, /*#__PURE__*/React__default['default'].createElement(IconLink, {
-    href: facebookUrl,
-    target: "_blank",
-    mr: 2
-  }, /*#__PURE__*/React__default['default'].createElement(IcFaceboook, {
-    color: color
-  })), /*#__PURE__*/React__default['default'].createElement(IconLink, {
-    href: twitterUrl,
-    target: "_blank",
-    mr: 2
-  }, /*#__PURE__*/React__default['default'].createElement(IcTwitter, {
-    color: color
-  })), /*#__PURE__*/React__default['default'].createElement(IconLink, {
-    href: whatsappUrl,
-    target: "_blank"
-  }, /*#__PURE__*/React__default['default'].createElement(IcWhatsapp, {
-    color: color
-  })));
-};
-
-Medias.defaultProps = {
-  color: 'primary1'
-};
-Medias.propTypes = {
-  color: PropTypes__default['default'].string,
-  facebookUrl: PropTypes__default['default'].string.isRequired,
-  twitterUrl: PropTypes__default['default'].string.isRequired,
-  whatsappUrl: PropTypes__default['default'].string.isRequired
+Share.propTypes = {
+  fbappid: PropTypes__default['default'].string,
+  facebookPath: PropTypes__default['default'].string,
+  twitterPath: PropTypes__default['default'].string,
+  whatsappPath: PropTypes__default['default'].string
 };
 
 var dimensions = function dimensions(_ref) {
@@ -970,8 +949,16 @@ var parseSize = function parseSize(props, propName) {
   return propValue;
 };
 
+var handleHover = function handleHover(props) {
+  if (props.opacityOnHover) {
+    return styled.css(["&:hover{opacity:0.8;}"]);
+  } else {
+    return '';
+  }
+};
+
 var parseStyle$1 = function parseStyle(props, theme) {
-  return "\n    font-weight: ".concat(props.$fontWeight, ";\n    text-transform: ").concat(props.$transform, ";\n    text-align: ").concat(props.textAlign, ";\n    font-family: ").concat(parseFontFamily(props), ";\n    font-size: ").concat(parseSize(props, 'fontSize'), ";\n    line-height: ").concat(parseSize(props, 'lineHeight'), ";\n    color: ").concat(theme.parseColor(props, theme, '$color'), ";\n    ").concat(theme.parseMargin(props, theme), ";\n    ").concat(theme.parseCustom(props), ";\n    ").concat(dimensions(props), ";\n    ").concat(padding(props), ";\n    ").concat(border(props), ";\n  ");
+  return "\n    font-weight: ".concat(props.$fontWeight, ";\n    text-transform: ").concat(props.$transform, ";\n    text-align: ").concat(props.textAlign, ";\n    font-family: ").concat(parseFontFamily(props), ";\n    font-size: ").concat(parseSize(props, 'fontSize'), ";\n    line-height: ").concat(parseSize(props, 'lineHeight'), ";\n    color: ").concat(theme.parseColor(props, theme, '$color'), ";\n    text-decoration: unset;\n    ").concat(theme.parseMargin(props, theme), ";\n    ").concat(theme.parseCustom(props), ";\n    ").concat(dimensions(props), ";\n    ").concat(padding(props), ";\n    ").concat(border(props), ";\n    ").concat(handleHover(props), ";\n  ");
 };
 
 var parseProps$1 = function parseProps(media, props) {
@@ -996,11 +983,11 @@ var parseProps$1 = function parseProps(media, props) {
   }
 };
 
-var _templateObject$2, _templateObject2$1, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10;
+var _templateObject$2, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11;
 var HeadingOne = styled__default['default'].h1(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
-var HeadingTwo = styled__default['default'].h2(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteral(["", ""])), function (props) {
+var HeadingTwo = styled__default['default'].h2(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
 var HeadingThree = styled__default['default'].h3(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["", ""])), function (props) {
@@ -1027,6 +1014,9 @@ var Label = styled__default['default'].label(_templateObject9 || (_templateObjec
 var Cite = styled__default['default'].cite(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["", ""])), function (props) {
   return props.$style;
 });
+var A = styled__default['default'].a(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["", ""])), function (props) {
+  return props.$style;
+});
 
 var Typography = function Typography(_ref) {
   var children = _ref.children,
@@ -1035,6 +1025,7 @@ var Typography = function Typography(_ref) {
       fontSize = _ref.fontSize,
       fontFamily = _ref.fontFamily,
       fontWeight = _ref.fontWeight,
+      href = _ref.href,
       lineHeight = _ref.lineHeight,
       textAlign = _ref.textAlign,
       transform = _ref.transform,
@@ -1068,6 +1059,8 @@ var Typography = function Typography(_ref) {
       fullWidth = _ref.fullWidth,
       maxWidth = _ref.maxWidth,
       minWidth = _ref.minWidth,
+      opacityOnHover = _ref.opacityOnHover,
+      target = _ref.target,
       dangerouslySetInnerHTML = _ref.dangerouslySetInnerHTML;
   var styles = styled.css(["", ";", ";", ";", ";", ";", ";"], function (props) {
     return parseProps$1('', props);
@@ -1166,6 +1159,7 @@ var Typography = function Typography(_ref) {
     $transform: transform,
     $color: color,
     $width: width,
+    href: href ? href : undefined,
     textAlign: textAlign,
     custom: custom,
     children: dangerouslySetInnerHTML ? undefined : children,
@@ -1191,6 +1185,8 @@ var Typography = function Typography(_ref) {
     fullWidth: fullWidth,
     maxWidth: maxWidth,
     minWidth: minWidth,
+    opacityOnHover: opacityOnHover,
+    target: target,
     xs: getXsProps(),
     sm: getSmProps(),
     md: getMdProps(),
@@ -1247,6 +1243,11 @@ var Typography = function Typography(_ref) {
         $style: styles
       }));
 
+    case 'a':
+      return /*#__PURE__*/React__default['default'].createElement(A, _extends({}, props, {
+        $style: styles
+      }));
+
     case 'span':
     default:
       return /*#__PURE__*/React__default['default'].createElement(Span, _extends({}, props, {
@@ -1266,7 +1267,7 @@ Typography.defaultProps = {
   mb: '0px',
   transform: 'none'
 };
-Typography.propTypes = {
+Typography.propTypes = _defineProperty({
   /**
    * Altera alinhamento do texto
    */
@@ -1293,6 +1294,7 @@ Typography.propTypes = {
    * Altera o valor da propriedade font-size no css
    */
   fontSize: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+  href: PropTypes__default['default'].string,
 
   /**
    * Alterar o valor da propriedade line-height no css
@@ -1330,6 +1332,7 @@ Typography.propTypes = {
   pl: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
   maxWidth: PropTypes__default['default'].number,
   minWidth: PropTypes__default['default'].number,
+  opacityOnHover: PropTypes__default['default'].bool,
 
   /**
    * Propriedades responsivas
@@ -1340,6 +1343,7 @@ Typography.propTypes = {
   lg: PropTypes__default['default'].object,
   xl: PropTypes__default['default'].object,
   theme: PropTypes__default['default'].object,
+  target: PropTypes__default['default'].string,
 
   /**
    * Permite estilos customizados
@@ -1354,7 +1358,7 @@ Typography.propTypes = {
   b: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
   borderColor: PropTypes__default['default'].string,
   borderStyle: PropTypes__default['default'].string
-};
+}, "opacityOnHover", PropTypes__default['default'].bool);
 var Typography$1 = styled.withTheme(Typography);
 
 var Author = function Author(_ref) {
@@ -1384,7 +1388,7 @@ Author.propTypes = {
   fontSize: PropTypes__default['default'].array,
   lineHeight: PropTypes__default['default'].array
 };
-var Container$1 = function Container(_ref2) {
+var Container$2 = function Container(_ref2) {
   var children = _ref2.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     width: "100%",
@@ -1394,7 +1398,7 @@ var Container$1 = function Container(_ref2) {
     }
   }, children);
 };
-Container$1.propTypes = {
+Container$2.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 var Content$1 = function Content(_ref3) {
@@ -1462,10 +1466,10 @@ var Byline = function Byline(_ref) {
   var author = _ref.author,
       customContent = _ref.customContent,
       datetime = _ref.datetime,
-      medias = _ref.medias;
-  return /*#__PURE__*/React__default['default'].createElement(Container$1, null, /*#__PURE__*/React__default['default'].createElement(Content$1, null, /*#__PURE__*/React__default['default'].createElement(DateLine, {
+      share = _ref.share;
+  return /*#__PURE__*/React__default['default'].createElement(Container$2, null, /*#__PURE__*/React__default['default'].createElement(Content$1, null, /*#__PURE__*/React__default['default'].createElement(DateLine, {
     custom: customContent
-  }, /*#__PURE__*/React__default['default'].createElement(Author, author, author.value), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Publicado em ", datetime.time_published), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Atualizado h\xE1 ", datetime.time_modified)), /*#__PURE__*/React__default['default'].createElement(Medias, medias)));
+  }, /*#__PURE__*/React__default['default'].createElement(Author, author, author.value), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Publicado em ", datetime.time_published), /*#__PURE__*/React__default['default'].createElement(TimeEntry, datetime, "Atualizado h\xE1 ", datetime.time_modified)), /*#__PURE__*/React__default['default'].createElement(Share, share)));
 };
 
 Byline.defaultProps = {
@@ -1492,7 +1496,8 @@ Byline.propTypes = {
   author: PropTypes__default['default'].object,
   customContent: PropTypes__default['default'].string,
   datetime: PropTypes__default['default'].object,
-  medias: PropTypes__default['default'].object
+  medias: PropTypes__default['default'].object,
+  share: PropTypes__default['default'].object
 };
 
 var Subject = function Subject(_ref) {
@@ -1609,7 +1614,7 @@ Subtitle.propTypes = {
 };
 
 var _templateObject$3;
-var Container$2 = styled__default['default'].div(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
+var Container$3 = styled__default['default'].div(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
   return props.theme.queries.md;
 }, function (props) {
   return props.$width;
@@ -1635,7 +1640,7 @@ var ImageGallery = function ImageGallery(_ref) {
   var items = _ref.items,
       height = _ref.height,
       width = _ref.width;
-  return /*#__PURE__*/React__default['default'].createElement(Container$2, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$3, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-carousel", {
@@ -1723,7 +1728,7 @@ Citation.propTypes = {
 };
 
 var _templateObject$4;
-var Container$3 = styled__default['default'].div(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
+var Container$4 = styled__default['default'].div(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
   return props.theme.queries.md;
 }, function (props) {
   return props.$width;
@@ -1741,7 +1746,7 @@ var FacebookEmbed = function FacebookEmbed(_ref) {
     return null;
   }
 
-  return /*#__PURE__*/React__default['default'].createElement(Container$3, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-facebook", {
@@ -1776,7 +1781,7 @@ var InstagramEmbed = function InstagramEmbed(_ref) {
   if (!parsedPrefix[1]) return null;
   var parsedSufix = parsedPrefix[1] && parsedPrefix[1].split('/');
   var dataShortcode = parsedSufix[0] ? parsedSufix[0] : parsedPrefix[1];
-  return /*#__PURE__*/React__default['default'].createElement(Container$3, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-instagram", {
@@ -1807,7 +1812,7 @@ var TwitterEmbed = function TwitterEmbed(_ref) {
     return null;
   }
 
-  return /*#__PURE__*/React__default['default'].createElement(Container$3, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-twitter", {
@@ -1844,7 +1849,7 @@ var YouTubeEmbed = function YouTubeEmbed(_ref) {
   }
 
   var parsedUrl = parseYoutubeLink(url);
-  return /*#__PURE__*/React__default['default'].createElement(Container$3, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$4, {
     $height: height,
     $width: width
   }, /*#__PURE__*/React__default['default'].createElement("amp-youtube", {
@@ -2235,7 +2240,7 @@ var theme = {
   parseColor: parseColor
 };
 
-var Container$4 = function Container(_ref) {
+var Container$5 = function Container(_ref) {
   var children = _ref.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "column",
@@ -2246,7 +2251,7 @@ var Container$4 = function Container(_ref) {
     }
   }, children);
 };
-Container$4.propTypes = {
+Container$5.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 var Tag = function Tag(_ref2) {
@@ -2268,7 +2273,7 @@ var Tags = function Tags(_ref) {
   var fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
       items = _ref.items;
-  return /*#__PURE__*/React__default['default'].createElement(Container$4, null, lodash.map(items, function (item, key) {
+  return /*#__PURE__*/React__default['default'].createElement(Container$5, null, lodash.map(items, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Tag, {
       key: key
     }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
@@ -2372,7 +2377,7 @@ Subtitle$1.propTypes = {
   lineHeight: PropTypes__default['default'].array
 };
 
-var Container$5 = function Container(_ref) {
+var Container$6 = function Container(_ref) {
   var children = _ref.children,
       featured = _ref.featured,
       mb = _ref.mb,
@@ -2386,7 +2391,7 @@ var Container$5 = function Container(_ref) {
   }, children);
 };
 
-Container$5.propTypes = {
+Container$6.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
   featured: PropTypes__default['default'].bool,
   mb: PropTypes__default['default'].array,
@@ -2401,7 +2406,7 @@ var TopImage = function TopImage(_ref2) {
       mb = _ref2.mb,
       value = _ref2.value;
   if (!image) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container$5, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$6, {
     featured: featured,
     mb: mb,
     value: value
@@ -2456,10 +2461,11 @@ var Body = function Body(_ref) {
       children = _ref.children,
       hyperlinkColor = _ref.hyperlinkColor;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "\n      a { color: ".concat(hyperlinkColor, "; };\n      max-width: ").concat(bodyWidth, ";\n    "),
+    custom: "\n      a { color: ".concat(hyperlinkColor, "; }\n      max-width: ").concat(bodyWidth, ";\n    "),
     lg: {
       align: 'column',
       alignx: 'center',
+      px: '0px',
       width: '100%'
     },
     px: "3",
@@ -2879,7 +2885,7 @@ var TextBody = function TextBody(props) {
           url: value
         });
 
-      case 'Twitter':
+      case 'Tweet':
         return /*#__PURE__*/React__default['default'].createElement(TwitterEmbed, {
           key: key,
           url: value
@@ -3174,7 +3180,7 @@ var parseProps$2 = function parseProps(media, props) {
   }
 };
 
-var _templateObject$5, _templateObject2$2;
+var _templateObject$5, _templateObject2$1;
 var StyledButton = styled__default['default'].button(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return parseProps$2('', props);
 }, function (props) {
@@ -3188,7 +3194,7 @@ var StyledButton = styled__default['default'].button(_templateObject$5 || (_temp
 }, function (props) {
   return props.xl && parseProps$2('xl', props);
 });
-var StyledAria = styled__default['default'].a(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"])));
+var StyledAria = styled__default['default'].a(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"])));
 
 var Button = function Button(_ref) {
   var children = _ref.children,
@@ -3711,7 +3717,7 @@ ButtonSubmit.propTypes = {
   buttonAction: PropTypes__default['default'].func,
   children: PropTypes__default['default'].string
 };
-var Container$6 = function Container(_ref3) {
+var Container$7 = function Container(_ref3) {
   var children = _ref3.children;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "column",
@@ -3728,7 +3734,7 @@ var Container$6 = function Container(_ref3) {
     }
   }, children);
 };
-Container$6.propTypes = {
+Container$7.propTypes = {
   children: PropTypes__default['default'].array
 };
 var Content$2 = function Content(_ref4) {
@@ -3769,7 +3775,7 @@ var Dialog = function Dialog(_ref) {
   var buttonAction = _ref.buttonAction,
       buttonText = _ref.buttonText,
       message = _ref.message;
-  return /*#__PURE__*/React__default['default'].createElement(Area, null, /*#__PURE__*/React__default['default'].createElement(Container$6, null, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Message, {
+  return /*#__PURE__*/React__default['default'].createElement(Area, null, /*#__PURE__*/React__default['default'].createElement(Container$7, null, /*#__PURE__*/React__default['default'].createElement(Content$2, null, /*#__PURE__*/React__default['default'].createElement(Message, {
     text: message
   }, message)), /*#__PURE__*/React__default['default'].createElement(ButtonSubmit, {
     buttonAction: buttonAction
@@ -3928,7 +3934,7 @@ FieldErrorMessage.propTypes = {
   children: PropTypes__default['default'].string
 };
 
-var _templateObject$6, _templateObject2$3;
+var _templateObject$6, _templateObject2$2;
 
 var handleFontFamily = function handleFontFamily(props) {
   var theme = lodash.get(props, 'theme.fonts');
@@ -3984,7 +3990,7 @@ var handleSize = function handleSize(props) {
 };
 
 var Input$1 = styled__default['default'].input(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: ", ";\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n  ::placeholder {\n    color: ", ";\n  }\n"])), handleFontSize, handleFontFamily, handleColor, handleBorderRadius, handlePlaceholderColor);
-var InputContainer = styled__default['default'].div(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  background-color: white;\n  width: 100%;\n  height: ", ";\n  box-shadow: ", ";\n  display: flex;\n  align-items: center;\n  border-radius: ", ";\n  &:focus-within {\n    box-shadow: ", ";\n  }\n"])), handleSize, function (props) {
+var InputContainer = styled__default['default'].div(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  background-color: white;\n  width: 100%;\n  height: ", ";\n  box-shadow: ", ";\n  display: flex;\n  align-items: center;\n  border-radius: ", ";\n  &:focus-within {\n    box-shadow: ", ";\n  }\n"])), handleSize, function (props) {
   return "0 0 0 1px ".concat(handleInputColor(props));
 }, handleBorderRadius, function (props) {
   return "0 0 0 2px ".concat(handleFocusedColor(props));
@@ -4246,6 +4252,84 @@ Field.propTypes = {
 };
 var index$1 = styled.withTheme(Field);
 
+var getColor = function getColor(_ref) {
+  var _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme,
+      _ref$$color = _ref.$color,
+      $color = _ref$$color === void 0 ? '' : _ref$$color;
+  var value = lodash.get(theme.colors, $color, '');
+  return value;
+};
+
+var margin = function margin(_ref) {
+  var _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme,
+      _ref$mx = _ref.mx,
+      mx = _ref$mx === void 0 ? '' : _ref$mx,
+      _ref$my = _ref.my,
+      my = _ref$my === void 0 ? '' : _ref$my,
+      _ref$mt = _ref.mt,
+      mt = _ref$mt === void 0 ? '' : _ref$mt,
+      _ref$mr = _ref.mr,
+      mr = _ref$mr === void 0 ? '' : _ref$mr,
+      _ref$mb = _ref.mb,
+      mb = _ref$mb === void 0 ? '' : _ref$mb,
+      _ref$ml = _ref.ml,
+      ml = _ref$ml === void 0 ? '' : _ref$ml,
+      _ref$m = _ref.m,
+      m = _ref$m === void 0 ? '' : _ref$m;
+  var unit = lodash.get(theme, 'factors.margin', 8);
+  var object = [];
+  mt !== undefined && isNaN(mt) ? object.push("margin-top: ".concat(mt, ";")) : mt && object.push("margin-top: ".concat(unit * mt, "px;"));
+  mr !== undefined && isNaN(mr) ? object.push("margin-right: ".concat(mr, ";")) : mr && object.push("margin-right: ".concat(unit * mr, "px;"));
+  mb !== undefined && isNaN(mb) ? object.push("margin-bottom: ".concat(mb, ";")) : mb && object.push("margin-bottom: ".concat(unit * mb, "px;"));
+  ml !== undefined && isNaN(ml) ? object.push("margin-left: ".concat(ml, ";")) : ml && object.push("margin-left: ".concat(unit * ml, "px;"));
+  mx !== undefined && isNaN(mx) ? object.push("margin-left: ".concat(mx, ";margin-right: ").concat(mx, ";")) : mx && object.push("margin-left: ".concat(unit * mx, "px;margin-right: ").concat(unit * mx, "px;"));
+  my !== undefined && isNaN(my) ? object.push("margin-top: ".concat(my, ";margin-bottom: ").concat(my, ";")) : my && object.push("margin-top: ".concat(unit * my, "px;margin-bottom: ").concat(unit * my, "px;"));
+  m !== undefined && isNaN(m) ? object.push("margin: ".concat(m, ";")) : m && object.push("margin: ".concat(m * unit, "px;"));
+  return object.join('');
+};
+
+var _templateObject$7, _templateObject2$3;
+var Container$8 = styled__default['default'].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  height: max-content;\n  width: max-content;\n"])));
+var Svg = styled__default['default'].svg(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  ", ";\n  fill: ", ";\n"])), margin, getColor);
+
+var Icon = function Icon(_ref) {
+  var children = _ref.children,
+      containerProps = _ref.containerProps,
+      color = _ref.color,
+      height = _ref.height,
+      viewBox = _ref.viewBox,
+      width = _ref.width,
+      otherProps = _objectWithoutProperties(_ref, ["children", "containerProps", "color", "height", "viewBox", "width"]);
+
+  return /*#__PURE__*/React__default['default'].createElement(Container$8, containerProps, /*#__PURE__*/React__default['default'].createElement(Svg, _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    $color: color,
+    height: height,
+    viewBox: viewBox,
+    width: width
+  }, otherProps), children));
+};
+
+Icon.defaultProps = {
+  color: 'neutral3',
+  height: '24px',
+  m: '8px',
+  viewBox: '0 0 24 24',
+  width: '24px'
+};
+Icon.propTypes = {
+  children: PropTypes__default['default'].node,
+  containerProps: PropTypes__default['default'].object,
+  color: PropTypes__default['default'].string,
+  height: PropTypes__default['default'].string,
+  m: PropTypes__default['default'].string,
+  viewBox: PropTypes__default['default'].string,
+  width: PropTypes__default['default'].string,
+  otherProps: PropTypes__default['default'].any
+};
+
 var Image$1 = function Image(_ref) {
   var content = _ref.content,
       custom = _ref.custom,
@@ -4302,180 +4386,403 @@ Image$1.defaultProps = {
   content: {}
 };
 
-var SideMenu = function SideMenu(props) {
-  var children = props.children,
-      isOpen = props.isOpen,
-      onClose = props.onClose,
-      menuSize = props.menuSize,
-      menuAnchor = props.menuAnchor,
-      bgColor = props.bgColor;
-  if (!isOpen) return null;
-
-  var parsePosition = function parsePosition() {
-    if (menuAnchor === 'left') return 'left: 0px;';
-    if (menuAnchor === 'right') return 'right: 0px;';
-  };
-
-  var menuCustomStyle = "\n    position: fixed;\n    display: block;\n    overflow-y: auto;\n    z-index: 11;\n    top: 0px;\n    ".concat(parsePosition(), ";\n  ");
-  var outerContainerCustomStyle = "\n    position: fixed;\n    background-color: rgba(0, 0, 0, 0.5);\n    z-index: 10;\n    top: 0px;\n  ";
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    width: "100vw",
-    height: "100vh",
-    onClick: onClose,
-    custom: outerContainerCustomStyle
-  }), /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    width: "100%",
-    md: {
-      width: menuSize
-    },
-    fullHeight: true,
-    bgColor: bgColor,
-    custom: menuCustomStyle
-  }, children));
-};
-
-SideMenu.defaultProps = {
-  menuAnchor: 'left',
-  menuSize: '350px',
-  px: 4,
-  py: 4,
-  bgColor: 'neutral10'
-};
-SideMenu.propTypes = {
-  /**
-   * Permite passagem de conteúdo para o Menu Lateral
-   */
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object, PropTypes__default['default'].node]),
-
-  /**
-   * Define a âncora onde o menu será renderizado (esquerda e direita da tela)
-   */
-  menuAnchor: PropTypes__default['default'].oneOf(['left', 'right']),
-
-  /**
-   * Define o tamanho do menu '[number]px'
-   */
-  menuSize: PropTypes__default['default'].string,
-
-  /**
-   * Controla a exibição ou não do Menu
-   */
-  isOpen: PropTypes__default['default'].bool.isRequired,
-
-  /**
-   * Controla a ação de fechamento do Menu
-   */
-  onClose: PropTypes__default['default'].func.isRequired,
-
-  /**
-   * Define a cor de fundo do conteúdo
-   */
-  bgColor: PropTypes__default['default'].string
-};
-var index$2 = styled.withTheme(SideMenu);
-
-function SvgIcArrowForward(props) {
-  return /*#__PURE__*/React.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    height: 32,
-    viewBox: "0 0 24 24",
-    width: 24
-  }, props), /*#__PURE__*/React.createElement("path", {
-    d: "M0 0h24v24H0z",
+var ChevronRight = function ChevronRight(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M0 0h24v24H0V0z",
     fill: "none"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"
+  }), /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"
   }));
-}
+};
 
-var _templateObject$7;
-var StyledAria$1 = styled__default['default'].a(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  width: 100%;\n  text-decoration: none;\n"])));
+var ExpandLessIcon = function ExpandLessIcon(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M0 0h24v24H0V0z",
+    fill: "none"
+  }), /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z"
+  }));
+};
+
+var ExpandMoreIcon = function ExpandMoreIcon(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M24 24H0V0h24v24z",
+    fill: "none",
+    opacity: ".87"
+  }), /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"
+  }));
+};
+
+var _templateObject$8, _templateObject2$4, _templateObject3$1, _templateObject4$1, _templateObject5$1;
+var Hyperlink = styled__default['default'].a(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 16px;\n  font-family: ", ";\n  color: ", ";\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (props) {
+  return props.theme.fonts.secondary;
+}, function (props) {
+  return props.theme.colors.neutral5;
+});
+styled__default['default'].div(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  padding-bottom: 16px;\n  margin-bottom: 16px;\n  border-bottom: 1px solid;\n  border-color: ", ";\n"])), function (props) {
+  return props.theme.colors.neutral9;
+});
+var GroupSection = styled__default['default'].section(_templateObject3$1 || (_templateObject3$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  border-bottom-color: ", ";\n  padding-bottom: 8px;\n  margin-bottom: 8px;\n  .group-closed {\n    display: none;\n  }\n  .hidden {\n    display: none;\n  }\n  @media (min-width: ", ") {\n    width: 340px;\n  }\n"])), function (props) {
+  return props.theme.colors.neutral9;
+}, function (props) {
+  return props.theme.queries.md;
+});
+
+var getGroupBorder = function getGroupBorder(_ref) {
+  var removeBorders = _ref.removeBorders;
+  if (removeBorders) return '';
+  return styled.css(["border-left-width:4px;border-left-style:solid;border-left-color:", ";"], function (props) {
+    return props.theme.colors[props.$color];
+  });
+};
+
+var GroupTitleContainer = styled__default['default'].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteral(["\n  ", "\n  ", ";\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"])), getGroupBorder, padding);
+var GroupContent = styled__default['default'].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteral(["\n  margin-top: 8px;\n"])));
+
+var groupTitleDefaultProps = {
+  color: 'neutral2',
+  element: 'h4',
+  lineHeight: '40px',
+  fontFamily: 'secondary',
+  fontSize: '20px'
+};
 
 var MenuItem = function MenuItem(_ref) {
-  var children = _ref.children,
-      mb = _ref.mb,
-      px = _ref.px,
-      py = _ref.py,
-      color = _ref.color,
-      onClick = _ref.onClick,
-      path = _ref.path,
-      theme = _ref.theme,
-      id = _ref.id;
-  var customStyle = "\n    border-bottom: 1px solid rgba(0,0,0,0.1);    \n    cursor: pointer;\n    text-decoration: unset;\n    svg {\n      width: 24px;\n      height: 24px;\n      fill: ".concat(color ? theme.parseColor({
-    color: color
-  }, theme, 'color') : theme.colors.primary1, ";\n    }\n    &:hover {\n      background-color: ").concat(theme.colors.neutral10, ";\n      opacity: 0.8;\n    }\n  ");
+  var color = _ref.color,
+      content = _ref.content,
+      groupTitleProps = _ref.groupTitleProps,
+      removeBorders = _ref.removeBorders;
+  // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
+  // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
+  // 3. To make state work it is necessary a user click to activate initialState. Before this the values submitted to client are the ones in HTML props
+  // 4. In this context the state trigger is everytime user click on MenuButton
+  // 5. Subgroup is not displayed when it is rendered with class 'group-closed'
+  var itemColor = color;
+  if (color === 'unique' && content.color) itemColor = content.color;
+  var contentId = content.contentId,
+      name = content.name,
+      path = content.path,
+      subitems = content.subitems;
+  var isGroup = subitems.length > 0;
+  var stateId = "state".concat(contentId.replace('.', ''));
+  var initialState = "{ \"".concat(stateId, "\": { \"status\": true } }");
+  var newState = "tap:AMP.setState({ ".concat(stateId, ": {status: !").concat(stateId, ".status} })");
+  var contentClass = "".concat(stateId, ".status ? 'group-open' : 'group-closed'");
+  var expandMoreIconClass = "".concat(stateId, ".status ? 'hidden' : 'visible'");
+  var expandLessIconClass = "".concat(stateId, ".status ? 'visible' : 'hidden'");
 
-  var renderContent = function renderContent() {
-    return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-      onClick: !path ? onClick : null,
-      width: "100%",
-      mb: mb,
-      id: id
-    }, /*#__PURE__*/React__default['default'].createElement(Block$1, {
-      fullWidth: true,
-      align: "row",
-      alignx: "between",
-      aligny: "middle",
-      fontColor: color,
-      px: px,
-      py: py,
-      custom: customStyle
-    }, children ? children : /*#__PURE__*/React__default['default'].createElement("span", null, "Content here"), /*#__PURE__*/React__default['default'].createElement(SvgIcArrowForward, null)));
+  var GroupTitle = function GroupTitle() {
+    return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, groupTitleDefaultProps, groupTitleProps), name);
   };
 
-  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria$1, {
-    href: path
-  }, renderContent()) : renderContent();
+  var HyperlinkGroup = function HyperlinkGroup() {
+    return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
+      href: path
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+      removeBorders: removeBorders,
+      $color: itemColor
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, null)));
+  };
+
+  var Group = function Group() {
+    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+      removeBorders: removeBorders,
+      role: "setMenuItemState",
+      tabIndex: "0",
+      on: newState,
+      $color: itemColor
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
+      "data-amp-bind-class": expandMoreIconClass
+    }), /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
+      "data-amp-bind-class": expandLessIconClass
+    })), /*#__PURE__*/React__default['default'].createElement(GroupContent, {
+      "data-amp-bind-class": contentClass
+    }, lodash.map(subitems, function (_ref2, key) {
+      var id = _ref2.id,
+          path = _ref2.path,
+          name = _ref2.name;
+      return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+        id: id,
+        ml: "20px",
+        mb: 2,
+        mt: 2,
+        key: key
+      }, /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
+        href: path
+      }, name));
+    })));
+  };
+
+  return /*#__PURE__*/React__default['default'].createElement(GroupSection, null, /*#__PURE__*/React__default['default'].createElement("amp-state", {
+    id: stateId
+  }, /*#__PURE__*/React__default['default'].createElement("script", {
+    type: "application/json",
+    dangerouslySetInnerHTML: {
+      __html: "".concat(JSON.stringify(initialState))
+    }
+  })), !isGroup ? /*#__PURE__*/React__default['default'].createElement(HyperlinkGroup, null) : /*#__PURE__*/React__default['default'].createElement(Group, null));
 };
 
 MenuItem.defaultProps = {
-  px: 1,
-  py: 1,
-  color: 'primary1'
+  color: 'product1'
 };
 MenuItem.propTypes = {
-  /**
-   * Permite passagem de conteúdo para o componente
-   */
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].object, PropTypes__default['default'].array]).isRequired,
-
-  /**
-   * Permite alterar o padding-x (horizontal) do container interno
-   */
-  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
-
-  /**
-   * Permite alterar o padding-y (vertical) do container interno
-   */
-  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
-
-  /**
-   * Permite adicionar margem abaixo do componente, no container externo
-   */
-  mb: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
-
-  /**
-   * Realiza a navegação do usuário através de um href
-   */
-  path: PropTypes__default['default'].string,
-
-  /**
-   * Permite customizar a cor do texto e ícone
-   */
   color: PropTypes__default['default'].string,
-
-  /**
-   * Prop que recebe o evento de clique para WEB
-   */
-  onClick: PropTypes__default['default'].func,
-  theme: PropTypes__default['default'].object,
-
-  /**
-   * Permite passagem de id para componente raíz
-   */
-  id: PropTypes__default['default'].string
+  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  groupTitleProps: PropTypes__default['default'].object,
+  removeBorders: PropTypes__default['default'].bool
 };
-var index$3 = styled.withTheme(MenuItem);
+
+var groupTitleDefaultProps$1 = {
+  color: 'neutral2',
+  element: 'span',
+  lineHeight: '40px',
+  fontFamily: 'secondary',
+  fontSize: '20px'
+};
+var subItemDefaultProps = {
+  color: 'neutral2',
+  element: 'a',
+  fontFamily: 'secondary',
+  fontSize: '16px'
+};
+
+var MenuItem$1 = function MenuItem(_ref) {
+  var color = _ref.color,
+      content = _ref.content,
+      groupSubItemProps = _ref.groupSubItemProps,
+      groupTitleProps = _ref.groupTitleProps,
+      menuItemProps = _ref.menuItemProps,
+      removeBorders = _ref.removeBorders;
+
+  var _useState = React.useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      open = _useState2[0],
+      setOpenStatus = _useState2[1];
+
+  var contentId = content.contentId,
+      name = content.name,
+      path = content.path,
+      subitems = content.subitems;
+  var isGroup = subitems.length > 0;
+  var itemColor = color;
+  if (color === 'unique' && content.color) itemColor = content.color;
+
+  var handleItemClick = function handleItemClick() {
+    setOpenStatus(!open);
+  };
+
+  var GroupTitle = function GroupTitle() {
+    return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, groupTitleDefaultProps$1, groupTitleProps), name);
+  };
+
+  var HyperlinkGroup = function HyperlinkGroup() {
+    return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
+      href: path
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+      $color: itemColor,
+      menuItemProps: menuItemProps,
+      removeBorders: removeBorders
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
+      color: itemColor
+    })));
+  };
+
+  var Group = function Group() {
+    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+      id: contentId,
+      onClick: handleItemClick,
+      menuItemProps: menuItemProps,
+      removeBorders: removeBorders,
+      $color: itemColor
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), open ? /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
+      color: itemColor
+    }) : /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
+      color: itemColor
+    })), /*#__PURE__*/React__default['default'].createElement(GroupContent, null, open && lodash.map(subitems, function (_ref2, key) {
+      var name = _ref2.name,
+          path = _ref2.path;
+      return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+        ml: "20px",
+        mb: 2,
+        mt: 2,
+        key: key
+      }, /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({
+        href: path
+      }, subItemDefaultProps, groupSubItemProps), name));
+    })));
+  };
+
+  return /*#__PURE__*/React__default['default'].createElement(GroupSection, null, !isGroup ? /*#__PURE__*/React__default['default'].createElement(HyperlinkGroup, null) : /*#__PURE__*/React__default['default'].createElement(Group, null));
+};
+
+MenuItem$1.defaultProps = {
+  color: 'product1'
+};
+MenuItem$1.propTypes = {
+  color: PropTypes__default['default'].string,
+  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  groupTitleProps: PropTypes__default['default'].object,
+  groupSubItemProps: PropTypes__default['default'].object,
+  menuItemProps: PropTypes__default['default'].object,
+  removeBorders: PropTypes__default['default'].bool
+};
+
+var titleDefaultProps = {
+  element: 'p',
+  color: 'neutral3',
+  fontFamily: 'secondary',
+  fontSize: '14px',
+  transform: 'uppercase',
+  mb: 3
+};
+
+var MenuEditorials = function MenuEditorials(_ref) {
+  var amp = _ref.amp,
+      color = _ref.color,
+      items = _ref.items,
+      title = _ref.title,
+      titleProps = _ref.titleProps,
+      groupSubItemProps = _ref.groupSubItemProps,
+      groupTitleProps = _ref.groupTitleProps,
+      menuItemProps = _ref.menuItemProps,
+      px = _ref.px,
+      py = _ref.py,
+      removeBorders = _ref.removeBorders;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    px: px,
+    py: py
+  }, title && /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, titleDefaultProps, titleProps), title), items && lodash.map(items, function (item, key) {
+    return amp ? /*#__PURE__*/React__default['default'].createElement(MenuItem, {
+      color: color,
+      content: item,
+      groupTitleProps: groupTitleProps,
+      groupSubItemProps: groupSubItemProps,
+      menuItemProps: menuItemProps,
+      key: key,
+      removeBorders: removeBorders
+    }) : /*#__PURE__*/React__default['default'].createElement(MenuItem$1, {
+      color: color,
+      content: item,
+      groupTitleProps: groupTitleProps,
+      groupSubItemProps: groupSubItemProps,
+      menuItemProps: menuItemProps,
+      key: key,
+      removeBorders: removeBorders
+    });
+  }));
+};
+
+MenuEditorials.defaultProps = {
+  px: '20px',
+  py: '20px'
+};
+MenuEditorials.propTypes = {
+  amp: PropTypes__default['default'].bool,
+  color: PropTypes__default['default'].string,
+  items: PropTypes__default['default'].array,
+  title: PropTypes__default['default'].string,
+  titleProps: PropTypes__default['default'].object,
+  groupTitleProps: PropTypes__default['default'].object,
+  groupSubItemProps: PropTypes__default['default'].object,
+  menuItemProps: PropTypes__default['default'].object,
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+  removeBorders: PropTypes__default['default'].bool
+};
+
+var _templateObject$9;
+var StyledContainer = styled__default['default'].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  amp-sidebar {\n    background-color: ", ";\n  }\n"])), function (props) {
+  return props.theme.colors[props.$backgroundColor];
+});
+
+var AmpMenu = function AmpMenu(_ref) {
+  var backgroundColor = _ref.backgroundColor,
+      children = _ref.children,
+      id = _ref.id,
+      layout = _ref.layout,
+      menuAnchor = _ref.menuAnchor;
+  return /*#__PURE__*/React__default['default'].createElement(StyledContainer, {
+    $backgroundColor: backgroundColor
+  }, /*#__PURE__*/React__default['default'].createElement("amp-sidebar", {
+    id: id,
+    layout: layout,
+    side: menuAnchor
+  }, children));
+};
+
+AmpMenu.defaultProps = {
+  backgroundColor: 'white',
+  layout: 'nodisplay',
+  menuAnchor: 'left'
+};
+AmpMenu.propTypes = {
+  backgroundColor: PropTypes__default['default'].string,
+  children: PropTypes__default['default'].node,
+  id: PropTypes__default['default'].string,
+  layout: PropTypes__default['default'].string,
+  menuAnchor: PropTypes__default['default'].oneOf(['left', 'right'])
+};
+
+var _templateObject$a, _templateObject2$5;
+var Backdrop = styled__default['default'].div(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  background-color: rgba(0, 0, 0, 0.5);\n  height: 100vh;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100vw;\n  z-index: 10;\n"])));
+
+var parsePosition = function parsePosition(_ref) {
+  var menuAnchor = _ref.menuAnchor;
+  if (menuAnchor === 'left') return 'left: 0px;';
+  if (menuAnchor === 'right') return 'right: 0px;';
+};
+
+var Content$3 = styled__default['default'].div(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"])), dimensions, parsePosition, padding, function (props) {
+  return props.theme.colors[props.$backgroundColor];
+}, function (props) {
+  return props.theme.queries.md;
+});
+
+var Menu = function Menu(_ref) {
+  var backgroundColor = _ref.backgroundColor,
+      children = _ref.children,
+      close = _ref.close,
+      open = _ref.open,
+      menuAnchor = _ref.menuAnchor,
+      px = _ref.px,
+      py = _ref.py,
+      width = _ref.width;
+  if (!open) return null;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement(Backdrop, {
+    onClick: close
+  }), /*#__PURE__*/React__default['default'].createElement(Content$3, {
+    $backgroundColor: backgroundColor,
+    px: px,
+    py: py,
+    menuAnchor: menuAnchor,
+    $width: width
+  }, children));
+};
+
+Menu.defaultProps = {
+  backgroundColor: 'white',
+  menuAnchor: 'left',
+  width: 'calc(100% - 48px)',
+  px: '24px'
+};
+Menu.propTypes = {
+  backgroundColor: PropTypes__default['default'].string,
+  children: PropTypes__default['default'].node,
+  close: PropTypes__default['default'].func,
+  menuAnchor: PropTypes__default['default'].oneOf(['left', 'right']),
+  open: PropTypes__default['default'].bool,
+  px: PropTypes__default['default'].number,
+  py: PropTypes__default['default'].number,
+  width: PropTypes__default['default'].string
+};
+var Menu$1 = styled.withTheme(Menu);
+
+var SideMenu = function SideMenu(props) {
+  var amp = props.amp;
+  if (amp) return /*#__PURE__*/React__default['default'].createElement(AmpMenu, props);else return /*#__PURE__*/React__default['default'].createElement(Menu$1, props);
+};
 
 var SocialMedias = function SocialMedias(props) {
   var content = props.content;
@@ -4543,7 +4850,7 @@ Topbar.defaultProps = {
   }
 };
 
-var _templateObject$8, _templateObject2$4;
+var _templateObject$b, _templateObject2$6;
 
 var parseColorVariation = function parseColorVariation(props) {
   if (props.transparent === true) return "\n    color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";\n  ");
@@ -4555,7 +4862,7 @@ var parseBackgroundVariation = function parseBackgroundVariation(props) {
   return "background-color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";");
 };
 
-var Container$7 = styled__default['default'].div(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var Container$9 = styled__default['default'].div(_templateObject$b || (_templateObject$b = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return props.theme.parsePadding(props, props.theme);
 }, function (props) {
   return props.theme.parseMargin(props, props.theme);
@@ -4564,7 +4871,7 @@ var Container$7 = styled__default['default'].div(_templateObject$8 || (_template
 }, function (props) {
   return parseBackgroundVariation(props);
 });
-var Typography$2 = styled__default['default'].span(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
+var Typography$2 = styled__default['default'].span(_templateObject2$6 || (_templateObject2$6 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
   return props.theme.fonts.secondary;
 }, function (props) {
   return props.$fontWeight;
@@ -4582,7 +4889,7 @@ var Subject$1 = function Subject(_ref) {
       transparent = _ref.transparent,
       weight = _ref.weight;
   if (!children) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container$7, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$9, {
     subjectColor: color,
     borderRadius: radius,
     px: px,
@@ -4642,7 +4949,7 @@ Subject$1.propTypes = {
    */
   weight: PropTypes__default['default'].oneOf([300, 400, 500, 600, 700])
 };
-var index$4 = styled.withTheme(Subject$1);
+var index$2 = styled.withTheme(Subject$1);
 
 exports.Article = Article$1;
 exports.Block = Block$1;
@@ -4651,13 +4958,14 @@ exports.ColumnHeader = ColumnHeader;
 exports.Dialog = Dialog;
 exports.Field = index$1;
 exports.Form = index;
+exports.Icon = Icon;
 exports.Image = Image$1;
 exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;
-exports.MenuItem = index$3;
-exports.SideMenu = index$2;
+exports.MenuEditorials = MenuEditorials;
+exports.SideMenu = SideMenu;
 exports.SocialMedias = SocialMedias;
-exports.Subject = index$4;
+exports.Subject = index$2;
 exports.Topbar = Topbar;
 exports.Typography = Typography$1;
 exports.theme = theme;

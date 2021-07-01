@@ -10,3 +10,4 @@ export const Paragraph = styled.p`${props => props.$style}`;
 export const Span = styled.span`${props => props.$style}`;
 export const Label = styled.label`${props => props.$style}`;
 export const Cite = styled.cite`${props => props.$style}`;
+export const A = styled.a`${props => props.$style}`;
