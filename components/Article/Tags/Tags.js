@@ -6,6 +6,8 @@ import Typography from '../../Typography';
 import * as S from './Tags.styled';
 
 const Tags = ({
+  color,
+  fontFamily,
   fontSize,
   fontWeight,
   items
@@ -14,11 +16,11 @@ const Tags = ({
     <S.Container>
       {(map(items, (item, key) => {
         return (
-          <S.Tag key={key}>
+          <S.Tag color={color} key={key}>
             <Typography 
-              color='primary1'
+              color={color}
               element='span'
-              fontFamily='secondary'
+              fontFamily={fontFamily}
               fontSize={fontSize[0]}
               fontWeight={fontWeight}>
               {item}
@@ -31,12 +33,16 @@ const Tags = ({
 };
 
 Tags.defaultProps = {
-  fontWeight: 700,
+  color: '#999999',
+  fontFamily: 'secondary',
   fontSize: ['14px'],
+  fontWeight: 700,
   items: []
 };
 
 Tags.propTypes = {
+  color: PropTypes.string,
+  fontFamily: PropTypes.array,
   fontSize: PropTypes.array,
   fontWeight: PropTypes.number,
   items: PropTypes.array

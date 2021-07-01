@@ -15,6 +15,29 @@ const ArticleDR = () => {
     <ThemeProvider theme={diariodaregiao}>
       <Article
         amp={false}
+        byline={{
+          author: {
+            color: 'neutral2',
+            fontFamily: 'primary',
+            fontSize: ['14px', '14px'],
+            lineHeight: ['16px', '16px'],
+            value: 'Luiz Augusto Barros'
+          },
+          datetime: {
+            color: 'neutral4',
+            fontFamily: 'primary',
+            fontSize: ['12px', '12px'],
+            lineHeight: ['16px', '16px'],
+            time_modified: '18 dias atrás',
+            time_published: '21/05/2021 às 23:20'
+          },
+          medias: {
+            color: diariodaregiao.colors['primary1'],
+            facebookUrl: 'https://www.facebook.com/',
+            twitterUrl: 'https://www.facebook.com/',
+            whatsappUrl: 'https://www.facebook.com/'
+          }
+        }}
         featured={{
           enabled: isFeatured
         }}
@@ -54,6 +77,11 @@ const ArticleDR = () => {
             }
           ]
         }}
+        paragraph={{
+          fontFamily: 'secondary',
+          fontSize: ['20px', '20px'],
+          lineHeight: ['36px', '42px'],
+        }}
         subject={{
           bgColor: 'primary1',
           color: 'white',
@@ -73,11 +101,6 @@ const ArticleDR = () => {
           mb: ['2', '3'],
           value: 'Adiamento das eleições para 15 e 29 de novembro é aprovado no Senado'
         }}
-        paragraph={{
-          fontFamily: 'secondary',
-          fontSize: ['20px', '20px'],
-          lineHeight: ['36px', '42px'],
-        }}
         tags={{
           items: ['Tag1', 'Tag2']
         }}
@@ -92,16 +115,8 @@ const ArticleDR = () => {
             show: !isFeatured,
             value: 'O advogado detalha que direitos afetados pela instalação do pedágio na Mogi-Dutra e Mogi-Bertioga / Divulgação/ PMMC',
           },
-          mb: ['5', '8'],
+          mb: isFeatured ? ['0', '0'] : ['5', '8'],
           value: 'http://qa.diariodaregiao.com.br/image/policy:1.3658/image.jpg?f=2x1&w=1200'
-        }}
-        byline={{
-          medias: {
-            color: 'editorial5',
-            facebookUrl: 'https://www.facebook.com/',
-            twitterUrl: 'https://www.facebook.com/',
-            whatsappUrl: 'https://www.facebook.com/'
-          }
         }}
       />
     </ThemeProvider>

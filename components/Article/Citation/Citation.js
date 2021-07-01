@@ -6,15 +6,23 @@ import Typography from '../../Typography';
 
 const Citation = ({
   color,
+  customCite,
   fontFamily,
   fontSize,
   fontWeight,
   lineHeight,
   mb,
-  value
+  pl,
+  value,
+  width
 }) => {
   return (
-    <Block width='100%'>
+    <Block 
+      custom={customCite}
+      width={width} 
+      align='row' 
+      mb={mb[0]}
+      lg={{mb: mb[1]}}>
       <Typography 
         color={color}
         dangerouslySetInnerHTML={value}
@@ -23,11 +31,11 @@ const Citation = ({
         fontSize={fontSize[0]}
         fontWeight={fontWeight}
         lineHeight={lineHeight[0]}
-        mb={mb[0]}
+        pl={pl[0]}
         lg={{
           fontSize: fontSize[1],
           lineHeight: lineHeight[1],
-          mb: mb[1]
+          pl: pl[1]
         }}
       />
     </Block>
@@ -41,17 +49,22 @@ Citation.defaultProps = {
   fontSize: ['32px', '32px'],
   lineHeight: ['140%', '140%'],
   mb: ['3', '3'],
-  value: '“Uma das nossas prioridades no mandato é fortalecer o Sistema de Saúde. Oferecer uma infraestrutura digna para a população é um dever mínimo do estado.”'
+  pl: ['0px', '0px'],
+  value: '“Uma das nossas prioridades no mandato é fortalecer o Sistema de Saúde. Oferecer uma infraestrutura digna para a população é um dever mínimo do estado.”',
+  width: '100%'
 };
 
 Citation.propTypes = {
+  customCite: PropTypes.string,
   color: PropTypes.string,
   fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
   fontWeight: PropTypes.number,
   lineHeight: PropTypes.array,
   mb: PropTypes.array,
-  value: PropTypes.string
+  pl: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+  value: PropTypes.string,
+  width: PropTypes.string
 };
 
 export default Citation;
