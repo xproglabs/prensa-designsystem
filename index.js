@@ -3081,7 +3081,9 @@ var Button = function Button(_ref) {
       custom = _ref.custom,
       id = _ref.id,
       type = _ref.type,
-      ariaLabel = _ref.ariaLabel;
+      ariaLabel = _ref.ariaLabel,
+      otherProps = _objectWithoutProperties(_ref, ["children", "color", "disabled", "fontColor", "fontFamily", "fontWeight", "fontSize", "width", "fullWidth", "leftIcon", "onClick", "radius", "rightIcon", "size", "style", "variant", "loading", "enterKey", "removeText", "px", "py", "on", "path", "iconSize", "xs", "sm", "md", "lg", "xl", "custom", "id", "type", "ariaLabel"]);
+
   //check if children is string
   var childrenIsString = typeof children === 'string'; // Trigger to Handle enter keydown for forms
 
@@ -3187,7 +3189,7 @@ var Button = function Button(_ref) {
   };
 
   var renderRoot = function renderRoot() {
-    return /*#__PURE__*/React__default['default'].createElement(StyledButton, {
+    return /*#__PURE__*/React__default['default'].createElement(StyledButton, _extends({
       on: on,
       px: px,
       py: py,
@@ -3215,13 +3217,12 @@ var Button = function Button(_ref) {
       id: id,
       type: type,
       "aria-label": ariaLabel
-    }, loading && 'Carregando...', leftIcon && leftIcon, children && childrenIsString && /*#__PURE__*/React__default['default'].createElement("span", null, children), children && !childrenIsString && children, rightIcon && rightIcon);
+    }, otherProps), loading && 'Carregando...', leftIcon && leftIcon, children && childrenIsString && /*#__PURE__*/React__default['default'].createElement("span", null, children), children && !childrenIsString && children, rightIcon && rightIcon);
   };
 
-  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria, {
-    href: path,
-    target: "_blank"
-  }, renderRoot()) : renderRoot();
+  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria, _extends({
+    href: path
+  }, otherProps), renderRoot()) : renderRoot();
 };
 
 Button.propTypes = {
