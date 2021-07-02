@@ -73,7 +73,8 @@ const Button = ({
   custom,
   id,
   type,
-  ariaLabel
+  ariaLabel,
+  ...otherProps
 }) => {
 
   //check if children is string
@@ -195,6 +196,7 @@ const Button = ({
         id={id}
         type={type}
         aria-label= {ariaLabel}
+        {...otherProps}
       >
         {loading && 'Carregando...'}
         {leftIcon && leftIcon}
@@ -205,7 +207,7 @@ const Button = ({
     );
   };
 
-  return path ? <StyledAria href={path} target='_blank'>{renderRoot()}</StyledAria> : renderRoot();
+  return path ? <StyledAria href={path} {...otherProps}>{renderRoot()}</StyledAria> : renderRoot();
 };
 
 Button.propTypes = {
