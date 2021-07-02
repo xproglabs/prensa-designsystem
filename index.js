@@ -3188,7 +3188,7 @@ var Button = function Button(_ref) {
     };
   };
 
-  var renderRoot = function renderRoot() {
+  var renderRoot = function renderRoot(rootComponentOtherProps) {
     return /*#__PURE__*/React__default['default'].createElement(StyledButton, _extends({
       on: on,
       px: px,
@@ -3217,12 +3217,12 @@ var Button = function Button(_ref) {
       id: id,
       type: type,
       "aria-label": ariaLabel
-    }, otherProps), loading && 'Carregando...', leftIcon && leftIcon, children && childrenIsString && /*#__PURE__*/React__default['default'].createElement("span", null, children), children && !childrenIsString && children, rightIcon && rightIcon);
+    }, rootComponentOtherProps), loading && 'Carregando...', leftIcon && leftIcon, children && childrenIsString && /*#__PURE__*/React__default['default'].createElement("span", null, children), children && !childrenIsString && children, rightIcon && rightIcon);
   };
 
   return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria, _extends({
     href: path
-  }, otherProps), renderRoot()) : renderRoot();
+  }, otherProps), renderRoot()) : renderRoot(otherProps);
 };
 
 Button.propTypes = {
