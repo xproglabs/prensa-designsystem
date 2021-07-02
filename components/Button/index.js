@@ -166,7 +166,7 @@ const Button = ({
     custom: custom,
   });
 
-  const renderRoot = () => {
+  const renderRoot = (rootComponentOtherProps) => {
     return (
       <StyledButton
         on={on}
@@ -196,7 +196,7 @@ const Button = ({
         id={id}
         type={type}
         aria-label= {ariaLabel}
-        {...otherProps}
+        {...rootComponentOtherProps}
       >
         {loading && 'Carregando...'}
         {leftIcon && leftIcon}
@@ -207,7 +207,7 @@ const Button = ({
     );
   };
 
-  return path ? <StyledAria href={path} {...otherProps}>{renderRoot()}</StyledAria> : renderRoot();
+  return path ? <StyledAria href={path} {...otherProps}>{renderRoot()}</StyledAria> : renderRoot(otherProps);
 };
 
 Button.propTypes = {
