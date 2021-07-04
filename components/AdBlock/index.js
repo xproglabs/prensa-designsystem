@@ -3,7 +3,6 @@ import React from 'react';
 import {withTheme} from 'styled-components';
 
 import {Block} from '../Block';
-import {DesktopContainer, MobileContainer} from './styled';
 
 const parseWidth = param => {
   try {
@@ -13,7 +12,7 @@ const parseWidth = param => {
   }
 };
 
-const AdBlock = ({amp, content, type}) => {  
+const AdBlock = ({amp, content, containerProps, itemProps, type}) => {  
 
   if (!content) return null;
 
@@ -40,20 +39,29 @@ const AdBlock = ({amp, content, type}) => {
   const desktopHeight = object_desktop.size[1];
   const desktopWidth = object_desktop.size[0];
 
+  const mobileItemCustomStyle = `
+    min-height: ${mobileHeight}px;
+    min-width: ${mobileWidth}px;
+  `;
+  const desktopItemCustomStyle = `
+    min-height: ${desktopHeight}px;
+    min-width: ${desktopWidth}px;
+  `;
+
   return (
-    <Block alignx='center'>
-      <MobileContainer minHeight={mobileHeight} minWidth={mobileWidth}>
+    <Block alignx='center' {...containerProps}>
+      <Block {...itemProps} custom={mobileItemCustomStyle}>
         {amp === true ?
           <amp-ad data-slot={object_mobile.name} height={mobileHeight} width={mobileWidth} type={type} />
           : <div id={object_mobile.code} />
         }
-      </MobileContainer>
-      <DesktopContainer minHeight={desktopHeight} minWidth={desktopWidth}>
+      </Block>
+      <Block {...itemProps} custom={desktopItemCustomStyle}>
         {amp === true ? 
           <amp-ad data-slot={object_desktop.name} height={desktopHeight} width={desktopWidth} type={type} />
           : <div id={object_desktop.code} />
         }
-      </DesktopContainer>
+      </Block>
     </Block>
   );
 };
@@ -61,6 +69,8 @@ const AdBlock = ({amp, content, type}) => {
 AdBlock.propTypes = {
   amp: PropTypes.bool,
   content: PropTypes.object,
+  containerProps: PropTypes.object,
+  itemProps: PropTypes.object,
   type: PropTypes.string
 };
 
