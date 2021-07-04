@@ -39,12 +39,14 @@ const TextBody = (props) => {
   
   if (!content) return null;
 
+  const {content: adsContent, interventionAmount = 3} = ads;
+
   let readmore = [];
-  let intervention_amount = 3;
-  // let intervention_readmore = false;
+  let intervention_amount = interventionAmount;
   let intervention_readmore_inserted = false;
   let intervention_status = false;
   let paragraph_length = 0;
+  // let intervention_readmore = false;
 
   const body_items = parse_content(content);
 
@@ -73,7 +75,7 @@ const TextBody = (props) => {
 
   const render_paragraph = (key, value) => {
     // intervention_readmore = false;
-    // intervention_status = false;
+    intervention_status = false;
     if(value.length > 50) {
       paragraph_length++;
       if (paragraph_length === intervention_amount) {
@@ -82,12 +84,12 @@ const TextBody = (props) => {
           // intervention_readmore = true;
           intervention_readmore_inserted = true;
         } else {
-          // intervention_status = true;
+          intervention_status = true;
         }
       }
     }
     // {intervention_readmore && <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
-    {intervention_status && <AdBlock amp={amp} content={ads} />;}
+    {intervention_status && <AdBlock amp={amp} content={adsContent} />;}
     return <Paragraph {...paragraph} key={key} value={value} />;
   };
 
@@ -134,7 +136,10 @@ const TextBody = (props) => {
 };
 
 TextBody.propTypes = {
-  ads: PropTypes.object,
+  ads: PropTypes.shape({
+    content: PropTypes.object,
+    interventionAmount: PropTypes.number
+  }),
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
   content: PropTypes.string,
