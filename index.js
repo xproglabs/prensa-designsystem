@@ -1613,6 +1613,81 @@ Subtitle.propTypes = {
   value: PropTypes__default['default'].string
 };
 
+var parseWidth$1 = function parseWidth(param) {
+  try {
+    return JSON.parse(param);
+  } catch (e) {
+    return [300, 20];
+  }
+};
+
+var AdBlock = function AdBlock(_ref) {
+  var amp = _ref.amp,
+      content = _ref.content,
+      containerProps = _ref.containerProps,
+      itemProps = _ref.itemProps,
+      type = _ref.type;
+  if (!content) return null;
+  var object_mobile = {
+    code: content['gpt-mobile-code'],
+    name: content['gpt-mobile-name'],
+    size: parseWidth$1(content['gpt-mobile-size'])
+  };
+  var object_desktop = {
+    code: content['gpt-desktop-code'],
+    name: content['gpt-desktop-name'],
+    size: parseWidth$1(content['gpt-desktop-size'])
+  };
+
+  if (content['gpt-mobile-status'] === 'true') {
+    global.adsToMobile.push(object_mobile);
+  }
+
+  if (content['gpt-desktop-status'] === 'true') {
+    global.adsToDesktop.push(object_desktop);
+  }
+
+  var mobileHeight = object_mobile.size[1];
+  var mobileWidth = object_mobile.size[0];
+  var desktopHeight = object_desktop.size[1];
+  var desktopWidth = object_desktop.size[0];
+  var mobileItemCustomStyle = "\n    min-height: ".concat(mobileHeight, "px;\n    min-width: ").concat(mobileWidth, "px;\n  ");
+  var desktopItemCustomStyle = "\n    min-height: ".concat(desktopHeight, "px;\n    min-width: ").concat(desktopWidth, "px;\n  ");
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({
+    alignx: "center"
+  }, containerProps), /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({}, itemProps, {
+    custom: mobileItemCustomStyle
+  }), amp === true ? /*#__PURE__*/React__default['default'].createElement("amp-ad", {
+    "data-slot": object_mobile.name,
+    height: mobileHeight,
+    width: mobileWidth,
+    type: type
+  }) : /*#__PURE__*/React__default['default'].createElement("div", {
+    id: object_mobile.code
+  })), /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({}, itemProps, {
+    custom: desktopItemCustomStyle
+  }), amp === true ? /*#__PURE__*/React__default['default'].createElement("amp-ad", {
+    "data-slot": object_desktop.name,
+    height: desktopHeight,
+    width: desktopWidth,
+    type: type
+  }) : /*#__PURE__*/React__default['default'].createElement("div", {
+    id: object_desktop.code
+  })));
+};
+
+AdBlock.propTypes = {
+  amp: PropTypes__default['default'].bool,
+  content: PropTypes__default['default'].object,
+  containerProps: PropTypes__default['default'].object,
+  itemProps: PropTypes__default['default'].object,
+  type: PropTypes__default['default'].string
+};
+AdBlock.defaultProps = {
+  type: 'doubleclick'
+};
+styled.withTheme(AdBlock);
+
 var _templateObject$3;
 var Container$3 = styled__default['default'].div(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
   return props.theme.queries.md;
@@ -2657,7 +2732,9 @@ var parse_content = function parse_content(content) {
 };
 
 var TextBody = function TextBody(props) {
-  var bodyWidth = props.bodyWidth,
+  var ads = props.ads;
+      props.amp;
+      var bodyWidth = props.bodyWidth,
       citation = props.citation,
       content = props.content,
       gallery = props.gallery,
@@ -2669,6 +2746,9 @@ var TextBody = function TextBody(props) {
       paragraph = props.paragraph,
       tags = props.tags;
   if (!content) return null;
+  ads.content;
+      ads.interventionAmount;
+
   var body_items = parse_content(content);
 
   var render_image = function render_image(key, value) {
@@ -2696,9 +2776,8 @@ var TextBody = function TextBody(props) {
   };
 
   var render_paragraph = function render_paragraph(key, value) {
-    // intervention_readmore = false;
-    // intervention_status = false;
-    if (value.length > 50) ;
+
+    if (value.length > 50) ; // {intervention_readmore && <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
     return /*#__PURE__*/React__default['default'].createElement(Paragraph$1, _extends({}, paragraph, {
       key: key,
       value: value
@@ -2782,6 +2861,10 @@ var TextBody = function TextBody(props) {
 };
 
 TextBody.propTypes = {
+  ads: PropTypes__default['default'].shape({
+    content: PropTypes__default['default'].object,
+    interventionAmount: PropTypes__default['default'].number
+  }),
   amp: PropTypes__default['default'].bool,
   bodyWidth: PropTypes__default['default'].string,
   content: PropTypes__default['default'].string,
