@@ -9,6 +9,7 @@ import datePtBrFull from '../../Util/datePtBrFull';
 import {pathToImage} from '../../Util/pathToImage';
 import Article from '../Article';
 import article from './ODiarioDeMogi.json';
+import mockAds from '../TextBody/mockAds.json';
 
 const dummyImage = (contentId) => `<p><a class="p-smartembed" data-attr-f="3x2" data-attr-q="0.3" data-attr-w="400" data-onecms-id="policy:${contentId}" data-onecms-type="image" href="javascript:window.parent.actionEventData({$contentId:'${contentId}', $action:'view', $target:'work'})" polopoly:contentid="policy:${contentId}"><img src="/image/policy:${contentId}/gui_3224.jpg?f=3x2&amp;w=400&amp;q=0.3" /></a></p>\r\n\r\n`;
 const dummyTweet = () => '<p><a id="https://twitter.com/UOL/status/1399821735231426566" name="https://twitter.com/UOL/status/1399821735231426566">https://twitter.com/UOL/status/1399821735231426566</a></p>';
@@ -177,6 +178,11 @@ const ArticleOM = () => {
 
   const RenderArticle = ({paywallNotSubscriber}) => 
     <Article
+      ads={{
+        body: {
+          content: mockAds
+        }
+      }}
       amp={isAmp}
       byline={byline}
       featured={{enabled: isFeatured}}

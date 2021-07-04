@@ -39,13 +39,14 @@ const TextBody = (props) => {
   
   if (!content) return null;
 
-  const {content: adsContent, interventionAmount = 3} = ads;
-
+  const adsBody = get(ads, 'content', {});
+  
   let readmore = [];
-  let intervention_amount = interventionAmount;
+  let intervention_amount = get(ads, 'interventionAmount', 3);
   let intervention_readmore_inserted = false;
   let intervention_status = false;
   let paragraph_length = 0;
+  let ad_counter = 0;
   // let intervention_readmore = false;
 
   const body_items = parse_content(content);
@@ -74,23 +75,34 @@ const TextBody = (props) => {
   };
 
   const render_paragraph = (key, value) => {
+
     // intervention_readmore = false;
     intervention_status = false;
-    if(value.length > 50) {
+
+    if (value.length > 50) {
       paragraph_length++;
       if (paragraph_length === intervention_amount) {
         paragraph_length = 0;
-        if(!intervention_readmore_inserted && readmore.length > 0) {
+        if (!intervention_readmore_inserted && readmore.length > 0) {
           // intervention_readmore = true;
           intervention_readmore_inserted = true;
         } else {
-          intervention_status = true;
+          ad_counter++;
+          if (ad_counter > adsBody.length) {
+            intervention_status = false;
+          } else {
+            intervention_status = true;
+          }
         }
       }
     }
     // {intervention_readmore && <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
-    {intervention_status && <AdBlock amp={amp} content={adsContent} />;}
-    return <Paragraph {...paragraph} key={key} value={value} />;
+    return (
+      <React.Fragment>
+        <Paragraph {...paragraph} key={key} value={value} />
+        {intervention_status && <AdBlock amp={amp} content={adsBody[ad_counter - 1]} />}
+      </React.Fragment>
+    );
   };
 
   const get_hyperlink_color = () => {

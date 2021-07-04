@@ -1,7 +1,9 @@
+import {get} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {withTheme} from 'styled-components';
 
+import {getColor} from '../../styled-system/color';
 import Block from '../Block';
 
 const parseWidth = param => {
@@ -12,9 +14,10 @@ const parseWidth = param => {
   }
 };
 
-const AdBlock = ({amp, content, containerProps, itemProps, type}) => {  
+const AdBlock = ({amp, content, containerProps, itemProps, theme, type}) => {  
 
   if (!content) return null;
+  const $color = get(itemProps, 'color', 'neutral10');
 
   let object_mobile = {
     code: content['gpt-mobile-code'], 
@@ -28,10 +31,14 @@ const AdBlock = ({amp, content, containerProps, itemProps, type}) => {
   };
 
   if (content['gpt-mobile-status'] === 'true') {
-    global.adsToMobile.push(object_mobile);
+    if (global.adsToMobile) {
+      global.adsToMobile.push(object_mobile);
+    }
   }
   if (content['gpt-desktop-status'] === 'true') {
-    global.adsToDesktop.push(object_desktop);
+    if (global.adsToDesktop) {
+      global.adsToDesktop.push(object_desktop);
+    }
   }
 
   const mobileHeight = object_mobile.size[1];
@@ -40,23 +47,31 @@ const AdBlock = ({amp, content, containerProps, itemProps, type}) => {
   const desktopWidth = object_desktop.size[0];
 
   const mobileItemCustomStyle = `
+    background-color: ${getColor({theme, $color})};
     min-height: ${mobileHeight}px;
     min-width: ${mobileWidth}px;
+    @media (min-width: ${theme.queries.lg}) {
+      display: none;
+    }
   `;
   const desktopItemCustomStyle = `
+    background-color: ${getColor({theme, $color})};
     min-height: ${desktopHeight}px;
     min-width: ${desktopWidth}px;
+    @media (max-width: ${theme.queries.lg}) {
+      display: none;
+    }
   `;
 
   return (
-    <Block alignx='center' {...containerProps}>
-      <Block {...itemProps} custom={mobileItemCustomStyle}>
+    <Block alignx='center' width='100%' mb={3} {...containerProps}>
+      <Block align='row' alignx='center' aligny='middle' {...itemProps} custom={mobileItemCustomStyle}>
         {amp === true ?
           <amp-ad data-slot={object_mobile.name} height={mobileHeight} width={mobileWidth} type={type} />
           : <div id={object_mobile.code} />
         }
       </Block>
-      <Block {...itemProps} custom={desktopItemCustomStyle}>
+      <Block align='row' alignx='center' aligny='middle' {...itemProps} custom={desktopItemCustomStyle}>
         {amp === true ? 
           <amp-ad data-slot={object_desktop.name} height={desktopHeight} width={desktopWidth} type={type} />
           : <div id={object_desktop.code} />
@@ -71,6 +86,7 @@ AdBlock.propTypes = {
   content: PropTypes.object,
   containerProps: PropTypes.object,
   itemProps: PropTypes.object,
+  theme: PropTypes.object,
   type: PropTypes.string
 };
 
