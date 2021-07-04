@@ -97,10 +97,11 @@ const TextBody = (props) => {
       }
     }
     // {intervention_readmore && <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
+    const ad_data_key = ad_counter - 1;
     return (
       <React.Fragment>
         <Paragraph {...paragraph} key={key} value={value} />
-        {intervention_status && <AdBlock amp={amp} content={adsBody[ad_counter - 1]} />}
+        {intervention_status && <AdBlock amp={amp} content={adsBody[ad_data_key]} />}
       </React.Fragment>
     );
   };
