@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {withTheme} from 'styled-components';
 
+import AdBlock from '../../AdBlock';
 import Block from '../../Block';
 import ImageGallery from '../../ImageGallery';
 import Citation from '../Citation/Citation';
@@ -21,6 +22,8 @@ import {parse_content} from './TextBodyParser';
 
 const TextBody = (props) => {
   const {
+    ads,
+    amp,
     bodyWidth,
     citation,
     content,
@@ -40,7 +43,7 @@ const TextBody = (props) => {
   let intervention_amount = 3;
   // let intervention_readmore = false;
   let intervention_readmore_inserted = false;
-  // let intervention_status = false;
+  let intervention_status = false;
   let paragraph_length = 0;
 
   const body_items = parse_content(content);
@@ -83,10 +86,8 @@ const TextBody = (props) => {
         }
       }
     }
-    {/* {intervention_readmore && 
-      <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
-    {intervention_status && 
-      <AdsPlaceholder />} */}
+    // {intervention_readmore && <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
+    {intervention_status && <AdBlock amp={amp} content={ads} />;}
     return <Paragraph {...paragraph} key={key} value={value} />;
   };
 
@@ -133,6 +134,7 @@ const TextBody = (props) => {
 };
 
 TextBody.propTypes = {
+  ads: PropTypes.object,
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
   content: PropTypes.string,
