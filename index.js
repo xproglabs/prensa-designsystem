@@ -2926,7 +2926,8 @@ Title.propTypes = {
 };
 
 var Article = function Article(props) {
-  var amp = props.amp,
+  var ads = props.ads,
+      amp = props.amp,
       bodyWidth = props.bodyWidth,
       byline = props.byline,
       citation = props.citation,
@@ -2945,6 +2946,7 @@ var Article = function Article(props) {
       tags = props.tags,
       textbody = props.textbody,
       topimage = props.topimage;
+  var adsBody = ads.body;
   return /*#__PURE__*/React__default['default'].createElement(Page, null, /*#__PURE__*/React__default['default'].createElement(Container, null, featured && featured.enabled ? /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(ContainerFeatured, null, /*#__PURE__*/React__default['default'].createElement(ContentImage, null, /*#__PURE__*/React__default['default'].createElement(TopImage, _extends({
     amp: amp
   }, topimage))), /*#__PURE__*/React__default['default'].createElement(ContentFeatured, {
@@ -2958,6 +2960,7 @@ var Article = function Article(props) {
   }, topimage))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: bodyWidth
   }, /*#__PURE__*/React__default['default'].createElement(TextBody$1, {
+    ads: adsBody,
     amp: amp,
     bodyWidth: bodyWidth,
     citation: citation,
@@ -2979,6 +2982,12 @@ Article.defaultProps = {
   headWidth: '1016px'
 };
 Article.propTypes = {
+  ads: PropTypes__default['default'].shape({
+    body: PropTypes__default['default'].shape({
+      content: PropTypes__default['default'].object,
+      interventionAmount: PropTypes__default['default'].number
+    })
+  }),
   amp: PropTypes__default['default'].bool,
   bodyWidth: PropTypes__default['default'].string,
   byline: PropTypes__default['default'].object,
