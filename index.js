@@ -1613,6 +1613,15 @@ Subtitle.propTypes = {
   value: PropTypes__default['default'].string
 };
 
+var getColor = function getColor(_ref) {
+  var _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme,
+      _ref$$color = _ref.$color,
+      $color = _ref$$color === void 0 ? '' : _ref$$color;
+  var value = lodash.get(theme.colors, $color, '');
+  return value;
+};
+
 var parseWidth$1 = function parseWidth(param) {
   try {
     return JSON.parse(param);
@@ -1626,8 +1635,10 @@ var AdBlock = function AdBlock(_ref) {
       content = _ref.content,
       containerProps = _ref.containerProps,
       itemProps = _ref.itemProps,
+      theme = _ref.theme,
       type = _ref.type;
   if (!content) return null;
+  var $color = lodash.get(itemProps, 'color', 'neutral10');
   var object_mobile = {
     code: content['gpt-mobile-code'],
     name: content['gpt-mobile-name'],
@@ -1640,22 +1651,38 @@ var AdBlock = function AdBlock(_ref) {
   };
 
   if (content['gpt-mobile-status'] === 'true') {
-    global.adsToMobile.push(object_mobile);
+    if (global.adsToMobile) {
+      global.adsToMobile.push(object_mobile);
+    }
   }
 
   if (content['gpt-desktop-status'] === 'true') {
-    global.adsToDesktop.push(object_desktop);
+    if (global.adsToDesktop) {
+      global.adsToDesktop.push(object_desktop);
+    }
   }
 
   var mobileHeight = object_mobile.size[1];
   var mobileWidth = object_mobile.size[0];
   var desktopHeight = object_desktop.size[1];
   var desktopWidth = object_desktop.size[0];
-  var mobileItemCustomStyle = "\n    min-height: ".concat(mobileHeight, "px;\n    min-width: ").concat(mobileWidth, "px;\n  ");
-  var desktopItemCustomStyle = "\n    min-height: ".concat(desktopHeight, "px;\n    min-width: ").concat(desktopWidth, "px;\n  ");
+  var mobileItemCustomStyle = "\n    background-color: ".concat(getColor({
+    theme: theme,
+    $color: $color
+  }), ";\n    min-height: ").concat(mobileHeight, "px;\n    min-width: ").concat(mobileWidth, "px;\n    @media (min-width: ").concat(theme.queries.lg, ") {\n      display: none;\n    }\n  ");
+  var desktopItemCustomStyle = "\n    background-color: ".concat(getColor({
+    theme: theme,
+    $color: $color
+  }), ";\n    min-height: ").concat(desktopHeight, "px;\n    min-width: ").concat(desktopWidth, "px;\n    @media (max-width: ").concat(theme.queries.lg, ") {\n      display: none;\n    }\n  ");
   return /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({
-    alignx: "center"
-  }, containerProps), /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({}, itemProps, {
+    alignx: "center",
+    width: "100%",
+    mb: 3
+  }, containerProps), /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({
+    align: "row",
+    alignx: "center",
+    aligny: "middle"
+  }, itemProps, {
     custom: mobileItemCustomStyle
   }), amp === true ? /*#__PURE__*/React__default['default'].createElement("amp-ad", {
     "data-slot": object_mobile.name,
@@ -1664,7 +1691,11 @@ var AdBlock = function AdBlock(_ref) {
     type: type
   }) : /*#__PURE__*/React__default['default'].createElement("div", {
     id: object_mobile.code
-  })), /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({}, itemProps, {
+  })), /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({
+    align: "row",
+    alignx: "center",
+    aligny: "middle"
+  }, itemProps, {
     custom: desktopItemCustomStyle
   }), amp === true ? /*#__PURE__*/React__default['default'].createElement("amp-ad", {
     "data-slot": object_desktop.name,
@@ -1681,12 +1712,13 @@ AdBlock.propTypes = {
   content: PropTypes__default['default'].object,
   containerProps: PropTypes__default['default'].object,
   itemProps: PropTypes__default['default'].object,
+  theme: PropTypes__default['default'].object,
   type: PropTypes__default['default'].string
 };
 AdBlock.defaultProps = {
   type: 'doubleclick'
 };
-styled.withTheme(AdBlock);
+var AdBlock$1 = styled.withTheme(AdBlock);
 
 var _templateObject$3;
 var Container$3 = styled__default['default'].div(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
@@ -2732,9 +2764,9 @@ var parse_content = function parse_content(content) {
 };
 
 var TextBody = function TextBody(props) {
-  var ads = props.ads;
-      props.amp;
-      var bodyWidth = props.bodyWidth,
+  var ads = props.ads,
+      amp = props.amp,
+      bodyWidth = props.bodyWidth,
       citation = props.citation,
       content = props.content,
       gallery = props.gallery,
@@ -2746,8 +2778,13 @@ var TextBody = function TextBody(props) {
       paragraph = props.paragraph,
       tags = props.tags;
   if (!content) return null;
-  ads.content;
-      ads.interventionAmount;
+  var adsBody = lodash.get(ads, 'content', {});
+  var readmore = [];
+  var intervention_amount = lodash.get(ads, 'interventionAmount', 3);
+  var intervention_readmore_inserted = false;
+  var intervention_status = false;
+  var paragraph_length = 0;
+  var ad_counter = 0; // let intervention_readmore = false;
 
   var body_items = parse_content(content);
 
@@ -2776,11 +2813,37 @@ var TextBody = function TextBody(props) {
   };
 
   var render_paragraph = function render_paragraph(key, value) {
+    // intervention_readmore = false;
+    intervention_status = false;
 
-    if (value.length > 50) ; // {intervention_readmore && <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
-    return /*#__PURE__*/React__default['default'].createElement(Paragraph$1, _extends({}, paragraph, {
+    if (value.length > 50) {
+      paragraph_length++;
+
+      if (paragraph_length === intervention_amount) {
+        paragraph_length = 0;
+
+        if (!intervention_readmore_inserted && readmore.length > 0) {
+          // intervention_readmore = true;
+          intervention_readmore_inserted = true;
+        } else {
+          ad_counter++;
+
+          if (ad_counter > adsBody.length) {
+            intervention_status = false;
+          } else {
+            intervention_status = true;
+          }
+        }
+      }
+    } // {intervention_readmore && <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
+
+
+    return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(Paragraph$1, _extends({}, paragraph, {
       key: key,
       value: value
+    })), intervention_status && /*#__PURE__*/React__default['default'].createElement(AdBlock$1, {
+      amp: amp,
+      content: adsBody[ad_counter - 1]
     }));
   };
 
@@ -4368,15 +4431,6 @@ Field.propTypes = {
   size: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number])
 };
 var index$1 = styled.withTheme(Field);
-
-var getColor = function getColor(_ref) {
-  var _ref$theme = _ref.theme,
-      theme = _ref$theme === void 0 ? {} : _ref$theme,
-      _ref$$color = _ref.$color,
-      $color = _ref$$color === void 0 ? '' : _ref$$color;
-  var value = lodash.get(theme.colors, $color, '');
-  return value;
-};
 
 var margin = function margin(_ref) {
   var _ref$theme = _ref.theme,
