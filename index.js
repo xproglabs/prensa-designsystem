@@ -2838,12 +2838,13 @@ var TextBody = function TextBody(props) {
     } // {intervention_readmore && <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
 
 
+    var ad_data_key = ad_counter - 1;
     return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(Paragraph$1, _extends({}, paragraph, {
       key: key,
       value: value
     })), intervention_status && /*#__PURE__*/React__default['default'].createElement(AdBlock$1, {
       amp: amp,
-      content: adsBody[ad_counter - 1]
+      content: adsBody[ad_data_key]
     }));
   };
 
