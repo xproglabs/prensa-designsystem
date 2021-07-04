@@ -2,10 +2,10 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+var lodash = require('lodash');
 var PropTypes = require('prop-types');
 var React = require('react');
 var styled = require('styled-components');
-var lodash = require('lodash');
 var html2json = require('html2json');
 var InputMask = require('react-input-mask');
 
@@ -2946,7 +2946,7 @@ var Article = function Article(props) {
       tags = props.tags,
       textbody = props.textbody,
       topimage = props.topimage;
-  var adsBody = ads.body;
+  var adsBody = lodash.get(ads, 'body', {});
   return /*#__PURE__*/React__default['default'].createElement(Page, null, /*#__PURE__*/React__default['default'].createElement(Container, null, featured && featured.enabled ? /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(ContainerFeatured, null, /*#__PURE__*/React__default['default'].createElement(ContentImage, null, /*#__PURE__*/React__default['default'].createElement(TopImage, _extends({
     amp: amp
   }, topimage))), /*#__PURE__*/React__default['default'].createElement(ContentFeatured, {
