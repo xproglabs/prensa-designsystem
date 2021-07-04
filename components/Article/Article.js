@@ -11,7 +11,9 @@ import Title from './Title/Title';
 import TopImage from './TopImage/TopImage';
 
 const Article = (props) => {
+
   const {
+    ads,
     amp,
     bodyWidth,
     byline,
@@ -32,6 +34,9 @@ const Article = (props) => {
     textbody,
     topimage
   } = props;
+
+  const {body: adsBody} = ads;
+
   return (
     <S.Page>
       <S.Container>
@@ -65,6 +70,7 @@ const Article = (props) => {
         }
         <S.MaxWidth maxWidth={bodyWidth}>
           <TextBody
+            ads={adsBody}
             amp={amp}
             bodyWidth={bodyWidth}
             citation={citation}
@@ -91,6 +97,12 @@ Article.defaultProps = {
 };
 
 Article.propTypes = {
+  ads: PropTypes.shape({
+    body: PropTypes.shape({
+      content: PropTypes.object,
+      interventionAmount: PropTypes.number
+    }),
+  }),
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
   byline: PropTypes.object,
