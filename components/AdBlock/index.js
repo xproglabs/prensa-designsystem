@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {withTheme} from 'styled-components';
 
-import {Block} from '../Block';
+import Block from '../Block';
 
 const parseWidth = param => {
   try {
