@@ -4614,16 +4614,24 @@ var GroupContent = styled__default['default'].div(_templateObject5$1 || (_templa
 
 var groupTitleDefaultProps = {
   color: 'neutral2',
-  element: 'h4',
+  element: 'span',
   lineHeight: '40px',
   fontFamily: 'secondary',
   fontSize: '20px'
+};
+var subItemDefaultProps = {
+  color: 'neutral2',
+  element: 'a',
+  fontFamily: 'secondary',
+  fontSize: '16px'
 };
 
 var MenuItem = function MenuItem(_ref) {
   var color = _ref.color,
       content = _ref.content,
+      groupSubItemProps = _ref.groupSubItemProps,
       groupTitleProps = _ref.groupTitleProps,
+      menuItemProps = _ref.menuItemProps,
       removeBorders = _ref.removeBorders;
   // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
   // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
@@ -4651,20 +4659,20 @@ var MenuItem = function MenuItem(_ref) {
   var HyperlinkGroup = function HyperlinkGroup() {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({}, menuItemProps, {
       removeBorders: removeBorders,
       $color: itemColor
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, null)));
+    }), /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, null)));
   };
 
   var Group = function Group() {
-    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
+    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({}, menuItemProps, {
       removeBorders: removeBorders,
       role: "setMenuItemState",
       tabIndex: "0",
       on: newState,
       $color: itemColor
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
+    }), /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
       "data-amp-bind-class": expandMoreIconClass
     }), /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
       "data-amp-bind-class": expandLessIconClass
@@ -4680,9 +4688,9 @@ var MenuItem = function MenuItem(_ref) {
         mb: 2,
         mt: 2,
         key: key
-      }, /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
+      }, /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({
         href: path
-      }, name));
+      }, subItemDefaultProps, groupSubItemProps), name));
     })));
   };
 
@@ -4702,7 +4710,9 @@ MenuItem.defaultProps = {
 MenuItem.propTypes = {
   color: PropTypes__default['default'].string,
   content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  groupSubItemProps: PropTypes__default['default'].object,
   groupTitleProps: PropTypes__default['default'].object,
+  menuItemProps: PropTypes__default['default'].object,
   removeBorders: PropTypes__default['default'].bool
 };
 
@@ -4713,7 +4723,7 @@ var groupTitleDefaultProps$1 = {
   fontFamily: 'secondary',
   fontSize: '20px'
 };
-var subItemDefaultProps = {
+var subItemDefaultProps$1 = {
   color: 'neutral2',
   element: 'a',
   fontFamily: 'secondary',
@@ -4752,23 +4762,23 @@ var MenuItem$1 = function MenuItem(_ref) {
   var HyperlinkGroup = function HyperlinkGroup() {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
-      $color: itemColor,
-      menuItemProps: menuItemProps,
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
+      $color: itemColor
+    }, menuItemProps, {
       removeBorders: removeBorders
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
+    }), /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
       color: itemColor
     })));
   };
 
   var Group = function Group() {
-    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
-      id: contentId,
+    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
+      id: contentId
+    }, menuItemProps, {
       onClick: handleItemClick,
-      menuItemProps: menuItemProps,
       removeBorders: removeBorders,
       $color: itemColor
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), open ? /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
+    }), /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), open ? /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
       color: itemColor
     }) : /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
       color: itemColor
@@ -4782,7 +4792,7 @@ var MenuItem$1 = function MenuItem(_ref) {
         key: key
       }, /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({
         href: path
-      }, subItemDefaultProps, groupSubItemProps), name));
+      }, subItemDefaultProps$1, groupSubItemProps), name));
     })));
   };
 
@@ -4795,8 +4805,8 @@ MenuItem$1.defaultProps = {
 MenuItem$1.propTypes = {
   color: PropTypes__default['default'].string,
   content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
-  groupTitleProps: PropTypes__default['default'].object,
   groupSubItemProps: PropTypes__default['default'].object,
+  groupTitleProps: PropTypes__default['default'].object,
   menuItemProps: PropTypes__default['default'].object,
   removeBorders: PropTypes__default['default'].bool
 };
