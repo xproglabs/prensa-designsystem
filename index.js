@@ -2778,7 +2778,7 @@ var TextBody = function TextBody(props) {
       paragraph = props.paragraph,
       tags = props.tags;
   if (!content) return null;
-  var adsBody = lodash.get(ads, 'content', {});
+  var adsContent = lodash.get(ads, 'content', {});
   var readmore = [];
   var intervention_amount = lodash.get(ads, 'interventionAmount', 3);
   var intervention_readmore_inserted = false;
@@ -2828,7 +2828,7 @@ var TextBody = function TextBody(props) {
         } else {
           ad_counter++;
 
-          if (ad_counter > adsBody.length) {
+          if (ad_counter > adsContent.length) {
             intervention_status = false;
           } else {
             intervention_status = true;
@@ -2844,7 +2844,7 @@ var TextBody = function TextBody(props) {
       value: value
     })), intervention_status && /*#__PURE__*/React__default['default'].createElement(AdBlock$1, {
       amp: amp,
-      content: adsBody[ad_data_key]
+      content: adsContent[ad_data_key]
     }));
   };
 
@@ -4846,10 +4846,6 @@ var MenuEditorials = function MenuEditorials(_ref) {
   }));
 };
 
-MenuEditorials.defaultProps = {
-  px: '20px',
-  py: '20px'
-};
 MenuEditorials.propTypes = {
   amp: PropTypes__default['default'].bool,
   color: PropTypes__default['default'].string,
@@ -4864,8 +4860,9 @@ MenuEditorials.propTypes = {
   removeBorders: PropTypes__default['default'].bool
 };
 
-var _templateObject$9;
-var StyledContainer = styled__default['default'].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  amp-sidebar {\n    background-color: ", ";\n  }\n"])), function (props) {
+var _templateObject$9, _templateObject2$5;
+var Content$3 = styled__default['default'].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  ", "\n"])), padding);
+var StyledContainer = styled__default['default'].div(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteral(["\n  amp-sidebar {\n    background-color: ", ";\n  }\n"])), function (props) {
   return props.theme.colors[props.$backgroundColor];
 });
 
@@ -4874,14 +4871,19 @@ var AmpMenu = function AmpMenu(_ref) {
       children = _ref.children,
       id = _ref.id,
       layout = _ref.layout,
-      menuAnchor = _ref.menuAnchor;
+      menuAnchor = _ref.menuAnchor,
+      px = _ref.px,
+      py = _ref.py;
   return /*#__PURE__*/React__default['default'].createElement(StyledContainer, {
     $backgroundColor: backgroundColor
   }, /*#__PURE__*/React__default['default'].createElement("amp-sidebar", {
     id: id,
     layout: layout,
     side: menuAnchor
-  }, children));
+  }, /*#__PURE__*/React__default['default'].createElement(Content$3, {
+    px: px,
+    py: py
+  }, children)));
 };
 
 AmpMenu.defaultProps = {
@@ -4894,10 +4896,12 @@ AmpMenu.propTypes = {
   children: PropTypes__default['default'].node,
   id: PropTypes__default['default'].string,
   layout: PropTypes__default['default'].string,
-  menuAnchor: PropTypes__default['default'].oneOf(['left', 'right'])
+  menuAnchor: PropTypes__default['default'].oneOf(['left', 'right']),
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string])
 };
 
-var _templateObject$a, _templateObject2$5;
+var _templateObject$a, _templateObject2$6;
 var Backdrop = styled__default['default'].div(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  background-color: rgba(0, 0, 0, 0.5);\n  height: 100vh;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100vw;\n  z-index: 10;\n"])));
 
 var parsePosition = function parsePosition(_ref) {
@@ -4906,7 +4910,7 @@ var parsePosition = function parsePosition(_ref) {
   if (menuAnchor === 'right') return 'right: 0px;';
 };
 
-var Content$3 = styled__default['default'].div(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"])), dimensions, parsePosition, padding, function (props) {
+var Content$4 = styled__default['default'].div(_templateObject2$6 || (_templateObject2$6 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"])), dimensions, parsePosition, padding, function (props) {
   return props.theme.colors[props.$backgroundColor];
 }, function (props) {
   return props.theme.queries.md;
@@ -4924,7 +4928,7 @@ var Menu = function Menu(_ref) {
   if (!open) return null;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement(Backdrop, {
     onClick: close
-  }), /*#__PURE__*/React__default['default'].createElement(Content$3, {
+  }), /*#__PURE__*/React__default['default'].createElement(Content$4, {
     $backgroundColor: backgroundColor,
     px: px,
     py: py,
@@ -4936,8 +4940,7 @@ var Menu = function Menu(_ref) {
 Menu.defaultProps = {
   backgroundColor: 'white',
   menuAnchor: 'left',
-  width: 'calc(100% - 48px)',
-  px: '24px'
+  width: 'max-content'
 };
 Menu.propTypes = {
   backgroundColor: PropTypes__default['default'].string,
@@ -4945,8 +4948,8 @@ Menu.propTypes = {
   close: PropTypes__default['default'].func,
   menuAnchor: PropTypes__default['default'].oneOf(['left', 'right']),
   open: PropTypes__default['default'].bool,
-  px: PropTypes__default['default'].number,
-  py: PropTypes__default['default'].number,
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
   width: PropTypes__default['default'].string
 };
 var Menu$1 = styled.withTheme(Menu);
@@ -5022,7 +5025,7 @@ Topbar.defaultProps = {
   }
 };
 
-var _templateObject$b, _templateObject2$6;
+var _templateObject$b, _templateObject2$7;
 
 var parseColorVariation = function parseColorVariation(props) {
   if (props.transparent === true) return "\n    color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";\n  ");
@@ -5043,7 +5046,7 @@ var Container$9 = styled__default['default'].div(_templateObject$b || (_template
 }, function (props) {
   return parseBackgroundVariation(props);
 });
-var Typography$2 = styled__default['default'].span(_templateObject2$6 || (_templateObject2$6 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
+var Typography$2 = styled__default['default'].span(_templateObject2$7 || (_templateObject2$7 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
   return props.theme.fonts.secondary;
 }, function (props) {
   return props.$fontWeight;
