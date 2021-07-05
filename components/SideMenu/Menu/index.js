@@ -22,8 +22,7 @@ const Menu = ({backgroundColor, children, close, open, menuAnchor, px, py, width
 Menu.defaultProps = {
   backgroundColor: 'white',
   menuAnchor: 'left',
-  width: 'calc(100% - 48px)',
-  px: '24px'
+  width: 'max-content',
 };
 
 Menu.propTypes = {
@@ -32,8 +31,8 @@ Menu.propTypes = {
   close: PropTypes.func,
   menuAnchor: PropTypes.oneOf(['left', 'right']),
   open: PropTypes.bool,
-  px: PropTypes.number,
-  py: PropTypes.number,
+  px: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  py: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   width: PropTypes.string
 };
 

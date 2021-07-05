@@ -34,11 +34,6 @@ const MenuEditorials = ({amp, color, items, title, titleProps, groupSubItemProps
   );
 };
 
-MenuEditorials.defaultProps = {
-  px: '20px',
-  py: '20px'
-};
-
 MenuEditorials.propTypes = {
   amp: PropTypes.bool,
   color: PropTypes.string,
