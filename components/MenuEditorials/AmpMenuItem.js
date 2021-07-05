@@ -11,13 +11,20 @@ import {GroupSection, GroupTitleContainer, GroupContent, Hyperlink} from './styl
 
 const groupTitleDefaultProps = {
   color: 'neutral2',
-  element: 'h4',
+  element: 'span',
   lineHeight: '40px',
   fontFamily: 'secondary',
   fontSize: '20px',
 };
 
-const MenuItem = ({color, content, groupTitleProps, removeBorders}) => {
+const subItemDefaultProps = {
+  color: 'neutral2',
+  element: 'a',
+  fontFamily: 'secondary',
+  fontSize: '16px'
+};
+
+const MenuItem = ({color, content, groupSubItemProps, groupTitleProps, menuItemProps, removeBorders}) => {
   
   // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
   // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
@@ -46,7 +53,7 @@ const MenuItem = ({color, content, groupTitleProps, removeBorders}) => {
 
   const HyperlinkGroup = () => (
     <Hyperlink href={path}>
-      <GroupTitleContainer removeBorders={removeBorders} $color={itemColor}>
+      <GroupTitleContainer {...menuItemProps} removeBorders={removeBorders} $color={itemColor}>
         <GroupTitle/>
         <ChevronRightIcon/>
       </GroupTitleContainer>
@@ -55,7 +62,7 @@ const MenuItem = ({color, content, groupTitleProps, removeBorders}) => {
 
   const Group = () => (
     <div>
-      <GroupTitleContainer removeBorders={removeBorders} role='setMenuItemState' tabIndex='0' on={newState} $color={itemColor}>
+      <GroupTitleContainer {...menuItemProps} removeBorders={removeBorders} role='setMenuItemState' tabIndex='0' on={newState} $color={itemColor}>
         <GroupTitle/>
         <ExpandMoreIcon data-amp-bind-class={expandMoreIconClass} />
         <ExpandLessIcon data-amp-bind-class={expandLessIconClass} />
@@ -63,9 +70,9 @@ const MenuItem = ({color, content, groupTitleProps, removeBorders}) => {
       <GroupContent data-amp-bind-class={contentClass}>
         {map(subitems, ({id, path, name}, key) => (
           <Block id={id} ml='20px' mb={2} mt={2} key={key}>
-            <Hyperlink href={path}>
+            <Typography href={path} {...subItemDefaultProps} {...groupSubItemProps}>
               {name}
-            </Hyperlink>
+            </Typography>
           </Block>
         ))}
       </GroupContent>
@@ -89,7 +96,9 @@ MenuItem.defaultProps = {
 MenuItem.propTypes = {
   color: PropTypes.string,
   content: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  groupSubItemProps: PropTypes.object,
   groupTitleProps: PropTypes.object,
+  menuItemProps: PropTypes.object,
   removeBorders: PropTypes.bool
 };
 
