@@ -4463,7 +4463,7 @@ var margin = function margin(_ref) {
 };
 
 var _templateObject$7;
-var Svg = styled__default['default'].svg(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  ", ";\n  fill: ", ";\n"])), margin, getColor);
+var Svg = styled__default['default'].svg(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  ", ";\n  path {\n    fill: ", ";\n  }\n"])), margin, getColor);
 
 var Icon = function Icon(_ref) {
   var children = _ref.children,
@@ -4493,7 +4493,7 @@ Icon.propTypes = {
   children: PropTypes__default['default'].node,
   color: PropTypes__default['default'].string,
   height: PropTypes__default['default'].string,
-  m: PropTypes__default['default'].string,
+  m: PropTypes__default['default'].oneOf([PropTypes__default['default'].string, PropTypes__default['default'].number]),
   viewBox: PropTypes__default['default'].string,
   width: PropTypes__default['default'].string,
   otherProps: PropTypes__default['default'].any
