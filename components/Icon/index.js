@@ -23,7 +23,7 @@ Icon.propTypes = {
   children: PropTypes.node,
   color: PropTypes.string,
   height: PropTypes.string,
-  m: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+  m: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   viewBox: PropTypes.string,
   width: PropTypes.string,
   otherProps: PropTypes.any
