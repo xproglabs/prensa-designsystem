@@ -1267,7 +1267,7 @@ Typography.defaultProps = {
   mb: '0px',
   transform: 'none'
 };
-Typography.propTypes = _defineProperty({
+Typography.propTypes = {
   /**
    * Altera alinhamento do texto
    */
@@ -1288,7 +1288,7 @@ Typography.propTypes = _defineProperty({
   /**
    * Permite a escolha da tag de texto a ser utilizada
    */
-  element: PropTypes__default['default'].oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label', 'cite']),
+  element: PropTypes__default['default'].oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label', 'cite', 'a']),
 
   /**
    * Altera o valor da propriedade font-size no css
@@ -1358,7 +1358,7 @@ Typography.propTypes = _defineProperty({
   b: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
   borderColor: PropTypes__default['default'].string,
   borderStyle: PropTypes__default['default'].string
-}, "opacityOnHover", PropTypes__default['default'].bool);
+};
 var Typography$1 = styled.withTheme(Typography);
 
 var Author = function Author(_ref) {
@@ -4493,7 +4493,7 @@ Icon.propTypes = {
   children: PropTypes__default['default'].node,
   color: PropTypes__default['default'].string,
   height: PropTypes__default['default'].string,
-  m: PropTypes__default['default'].oneOf([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  m: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
   viewBox: PropTypes__default['default'].string,
   width: PropTypes__default['default'].string,
   otherProps: PropTypes__default['default'].any
