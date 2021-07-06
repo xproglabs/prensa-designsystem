@@ -4462,26 +4462,24 @@ var margin = function margin(_ref) {
   return object.join('');
 };
 
-var _templateObject$7, _templateObject2$3;
-var Container$8 = styled__default['default'].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  height: max-content;\n  width: max-content;\n"])));
-var Svg = styled__default['default'].svg(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  ", ";\n  fill: ", ";\n"])), margin, getColor);
+var _templateObject$7;
+var Svg = styled__default['default'].svg(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  ", ";\n  fill: ", ";\n"])), margin, getColor);
 
 var Icon = function Icon(_ref) {
   var children = _ref.children,
-      containerProps = _ref.containerProps,
       color = _ref.color,
       height = _ref.height,
       viewBox = _ref.viewBox,
       width = _ref.width,
-      otherProps = _objectWithoutProperties(_ref, ["children", "containerProps", "color", "height", "viewBox", "width"]);
+      otherProps = _objectWithoutProperties(_ref, ["children", "color", "height", "viewBox", "width"]);
 
-  return /*#__PURE__*/React__default['default'].createElement(Container$8, containerProps, /*#__PURE__*/React__default['default'].createElement(Svg, _extends({
+  return /*#__PURE__*/React__default['default'].createElement(Svg, _extends({
     xmlns: "http://www.w3.org/2000/svg",
     $color: color,
     height: height,
     viewBox: viewBox,
     width: width
-  }, otherProps), children));
+  }, otherProps), children);
 };
 
 Icon.defaultProps = {
@@ -4493,7 +4491,6 @@ Icon.defaultProps = {
 };
 Icon.propTypes = {
   children: PropTypes__default['default'].node,
-  containerProps: PropTypes__default['default'].object,
   color: PropTypes__default['default'].string,
   height: PropTypes__default['default'].string,
   m: PropTypes__default['default'].string,
@@ -4586,13 +4583,13 @@ var ExpandMoreIcon = function ExpandMoreIcon(props) {
   }));
 };
 
-var _templateObject$8, _templateObject2$4, _templateObject3$1, _templateObject4$1, _templateObject5$1;
+var _templateObject$8, _templateObject2$3, _templateObject3$1, _templateObject4$1, _templateObject5$1;
 var Hyperlink = styled__default['default'].a(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 16px;\n  font-family: ", ";\n  color: ", ";\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (props) {
   return props.theme.fonts.secondary;
 }, function (props) {
   return props.theme.colors.neutral5;
 });
-styled__default['default'].div(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  padding-bottom: 16px;\n  margin-bottom: 16px;\n  border-bottom: 1px solid;\n  border-color: ", ";\n"])), function (props) {
+styled__default['default'].div(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  padding-bottom: 16px;\n  margin-bottom: 16px;\n  border-bottom: 1px solid;\n  border-color: ", ";\n"])), function (props) {
   return props.theme.colors.neutral9;
 });
 var GroupSection = styled__default['default'].section(_templateObject3$1 || (_templateObject3$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  border-bottom-color: ", ";\n  padding-bottom: 8px;\n  margin-bottom: 8px;\n  .group-closed {\n    display: none;\n  }\n  .hidden {\n    display: none;\n  }\n  @media (min-width: ", ") {\n    width: 340px;\n  }\n"])), function (props) {
@@ -4870,9 +4867,9 @@ MenuEditorials.propTypes = {
   removeBorders: PropTypes__default['default'].bool
 };
 
-var _templateObject$9, _templateObject2$5;
+var _templateObject$9, _templateObject2$4;
 var Content$3 = styled__default['default'].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  ", "\n"])), padding);
-var StyledContainer = styled__default['default'].div(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteral(["\n  amp-sidebar {\n    background-color: ", ";\n  }\n"])), function (props) {
+var StyledContainer = styled__default['default'].div(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  amp-sidebar {\n    background-color: ", ";\n  }\n"])), function (props) {
   return props.theme.colors[props.$backgroundColor];
 });
 
@@ -4911,7 +4908,7 @@ AmpMenu.propTypes = {
   py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string])
 };
 
-var _templateObject$a, _templateObject2$6;
+var _templateObject$a, _templateObject2$5;
 var Backdrop = styled__default['default'].div(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  background-color: rgba(0, 0, 0, 0.5);\n  height: 100vh;\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100vw;\n  z-index: 10;\n"])));
 
 var parsePosition = function parsePosition(_ref) {
@@ -4920,7 +4917,7 @@ var parsePosition = function parsePosition(_ref) {
   if (menuAnchor === 'right') return 'right: 0px;';
 };
 
-var Content$4 = styled__default['default'].div(_templateObject2$6 || (_templateObject2$6 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"])), dimensions, parsePosition, padding, function (props) {
+var Content$4 = styled__default['default'].div(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"])), dimensions, parsePosition, padding, function (props) {
   return props.theme.colors[props.$backgroundColor];
 }, function (props) {
   return props.theme.queries.md;
@@ -5035,7 +5032,7 @@ Topbar.defaultProps = {
   }
 };
 
-var _templateObject$b, _templateObject2$7;
+var _templateObject$b, _templateObject2$6;
 
 var parseColorVariation = function parseColorVariation(props) {
   if (props.transparent === true) return "\n    color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";\n  ");
@@ -5047,7 +5044,7 @@ var parseBackgroundVariation = function parseBackgroundVariation(props) {
   return "background-color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";");
 };
 
-var Container$9 = styled__default['default'].div(_templateObject$b || (_templateObject$b = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var Container$8 = styled__default['default'].div(_templateObject$b || (_templateObject$b = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return props.theme.parsePadding(props, props.theme);
 }, function (props) {
   return props.theme.parseMargin(props, props.theme);
@@ -5056,7 +5053,7 @@ var Container$9 = styled__default['default'].div(_templateObject$b || (_template
 }, function (props) {
   return parseBackgroundVariation(props);
 });
-var Typography$2 = styled__default['default'].span(_templateObject2$7 || (_templateObject2$7 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
+var Typography$2 = styled__default['default'].span(_templateObject2$6 || (_templateObject2$6 = _taggedTemplateLiteral(["\n  font-size: 14px;\n  text-transform: uppercase;\n  font-family: ", ";\n  font-weight: ", ";\n  ", ";\n"])), function (props) {
   return props.theme.fonts.secondary;
 }, function (props) {
   return props.$fontWeight;
@@ -5074,7 +5071,7 @@ var Subject$1 = function Subject(_ref) {
       transparent = _ref.transparent,
       weight = _ref.weight;
   if (!children) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container$9, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$8, {
     subjectColor: color,
     borderRadius: radius,
     px: px,
