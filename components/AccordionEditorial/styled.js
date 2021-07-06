@@ -1,6 +1,7 @@
-import {getColor, padding} from 'prensa/styled-system';
 import styled, {css} from 'styled-components';
 
+import {getColor} from '../../styled-system/color';
+import {padding} from '../../styled-system/margin';
 import {CONFIGS} from './consts';
 
 const Hyperlink = styled.a`
