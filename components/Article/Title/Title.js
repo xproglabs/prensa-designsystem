@@ -42,7 +42,6 @@ Title.defaultProps = {
   fontWeight: 700,
   lineHeight: ['110%', '110%'],
   mb: ['2', '3'],
-  value: 'Atex Brasil e XPROG entregam produtos digitais acessados por milhões de internautas brasileiros'
 };
 
 Title.propTypes = {
