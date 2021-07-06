@@ -1,15 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import {Container, Svg} from './styled';
+import {Svg} from './styled';
 
-const Icon = ({children, containerProps, color, height, viewBox, width, ...otherProps}) => {
+const Icon = ({children, color, height, viewBox, width, ...otherProps}) => {
   return (
-    <Container {...containerProps}>
-      <Svg xmlns="http://www.w3.org/2000/svg" $color={color} height={height} viewBox={viewBox} width={width} {...otherProps}>
-        {children}
-      </Svg>
-    </Container>
+    <Svg xmlns="http://www.w3.org/2000/svg" $color={color} height={height} viewBox={viewBox} width={width} {...otherProps}>
+      {children}
+    </Svg>
   );
 };
 
@@ -23,7 +21,6 @@ Icon.defaultProps = {
 
 Icon.propTypes = {
   children: PropTypes.node,
-  containerProps: PropTypes.object,
   color: PropTypes.string,
   height: PropTypes.string,
   m: PropTypes.string,

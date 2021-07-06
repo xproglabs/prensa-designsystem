@@ -25,7 +25,7 @@ export default function Menu() {
 
       <Main>
         <button on="tap:sideMenu.open,AMP.setState({})">Abrir Menu</button>
-        <SideMenu backgroundColor='black' id='sideMenu' amp={amp}>
+        <SideMenu backgroundColor='white' id='sideMenu' amp={amp}>
           <MenuEditorials amp={amp} items={mockedData} title='testando' />
         </SideMenu>
       </Main>
