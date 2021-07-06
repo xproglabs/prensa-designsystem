@@ -5,7 +5,9 @@ import {margin} from '../../styled-system/margin';
 
 const Svg = styled.svg`
   ${margin};
-  fill: ${getColor};
+  path {
+    fill: ${getColor};
+  }
 `;
 
 export {Svg};
