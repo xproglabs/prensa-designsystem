@@ -1,8 +1,9 @@
 import {map} from 'lodash';
-import {Block, Typography} from 'prensa';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Block from '../Block';
+import Typography from '../Typography';
 import AmpGroup from './AmpGroup';
 import Group from './Group';
 

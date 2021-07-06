@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {ThemeProvider} from 'styled-components';
 
 import {theme} from '../../styles/theme';
-import MenuEditorials from '../MenuEditorials';
+import Accordion from '../AccordionEditorial';
 import SideMenu from './index';
 import dataMock from './sidemenu_datamodel.json';
 
@@ -26,7 +26,7 @@ export const Default = () => {
       <div>
         <button onClick={handleOpen}>Abrir menu</button>
         <SideMenu backgroundColor='neutral11' open={menu} close={handleClose} menuAnchor='right'>
-          <MenuEditorials
+          <Accordion
             amp={false}
             items={dataMock}
             title='teste'
