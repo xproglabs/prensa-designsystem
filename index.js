@@ -3394,9 +3394,9 @@ var AccordionEditorial = function AccordionEditorial(_ref) {
       items = _ref.items,
       title = _ref.title,
       titleProps = _ref.titleProps,
+      groupItemProps = _ref.groupItemProps,
       groupSubItemProps = _ref.groupSubItemProps,
       groupTitleProps = _ref.groupTitleProps,
-      menuItemProps = _ref.menuItemProps,
       px = _ref.px,
       py = _ref.py,
       removeBorders = _ref.removeBorders;
@@ -3409,7 +3409,7 @@ var AccordionEditorial = function AccordionEditorial(_ref) {
       content: item,
       groupTitleProps: groupTitleProps,
       groupSubItemProps: groupSubItemProps,
-      menuItemProps: menuItemProps,
+      groupItemProps: groupItemProps,
       key: key,
       removeBorders: removeBorders
     }) : /*#__PURE__*/React__default['default'].createElement(MenuItem$1, {
@@ -3417,7 +3417,7 @@ var AccordionEditorial = function AccordionEditorial(_ref) {
       content: item,
       groupTitleProps: groupTitleProps,
       groupSubItemProps: groupSubItemProps,
-      menuItemProps: menuItemProps,
+      groupItemProps: groupItemProps,
       key: key,
       removeBorders: removeBorders
     });
@@ -3432,7 +3432,7 @@ AccordionEditorial.propTypes = {
   titleProps: PropTypes__default['default'].object,
   groupTitleProps: PropTypes__default['default'].object,
   groupSubItemProps: PropTypes__default['default'].object,
-  menuItemProps: PropTypes__default['default'].object,
+  groupItemProps: PropTypes__default['default'].object,
   px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
   py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
   removeBorders: PropTypes__default['default'].bool
