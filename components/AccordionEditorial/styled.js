@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 
 import {getColor} from '../../styled-system/color';
-import {padding} from '../../styled-system/margin';
+import {padding} from '../../styled-system/padding';
 import {CONFIGS} from './consts';
 
 const Hyperlink = styled.a`
