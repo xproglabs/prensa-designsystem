@@ -4463,7 +4463,7 @@ var margin = function margin(_ref) {
 };
 
 var _templateObject$7;
-var Svg = styled__default['default'].svg(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  ", ";\n  path {\n    fill: ", ";\n  }\n"])), margin, getColor);
+var Svg = styled__default['default'].svg(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  ", ";\n  fill: ", ";\n"])), margin, getColor);
 
 var Icon = function Icon(_ref) {
   var children = _ref.children,
