@@ -16,7 +16,7 @@ const titleDefaultProps = {
   mb: 3,
 };
 
-const AccordionEditorial = ({amp, color, items, title, titleProps, groupSubItemProps, groupTitleProps, menuItemProps, px, py, removeBorders}) => {
+const AccordionEditorial = ({amp, color, items, title, titleProps, groupItemProps, groupSubItemProps, groupTitleProps, px, py, removeBorders}) => {
   return (
     <Block px={px} py={py}>
       {title &&
@@ -26,9 +26,9 @@ const AccordionEditorial = ({amp, color, items, title, titleProps, groupSubItemP
       }
       {items && 
         map(items, (item, key) => amp ? 
-          <AmpGroup color={color} content={item} groupTitleProps={groupTitleProps} groupSubItemProps={groupSubItemProps} menuItemProps={menuItemProps} key={key} removeBorders={removeBorders} />
+          <AmpGroup color={color} content={item} groupTitleProps={groupTitleProps} groupSubItemProps={groupSubItemProps} groupItemProps={groupItemProps} key={key} removeBorders={removeBorders} />
           :
-          <Group color={color} content={item} groupTitleProps={groupTitleProps} groupSubItemProps={groupSubItemProps} menuItemProps={menuItemProps} key={key} removeBorders={removeBorders} />)
+          <Group color={color} content={item} groupTitleProps={groupTitleProps} groupSubItemProps={groupSubItemProps} groupItemProps={groupItemProps} key={key} removeBorders={removeBorders} />)
       }
     </Block>
   );
@@ -42,7 +42,7 @@ AccordionEditorial.propTypes = {
   titleProps: PropTypes.object,
   groupTitleProps: PropTypes.object,
   groupSubItemProps: PropTypes.object,
-  menuItemProps: PropTypes.object,
+  groupItemProps: PropTypes.object,
   px: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   py: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   removeBorders: PropTypes.bool,
