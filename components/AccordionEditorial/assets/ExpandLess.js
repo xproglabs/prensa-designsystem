@@ -1,5 +1,6 @@
-import {Icon} from 'prensa';
 import React from 'react';
+
+import Icon from '../../Icon';
 
 
 const ExpandLessIcon = props => {
