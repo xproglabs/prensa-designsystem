@@ -3,7 +3,7 @@ import {ThemeProvider} from 'styled-components';
 
 import {IcMenu} from '../../icons/IcMenu';
 import {theme} from '../../styles/theme';
-import ChevronRight from '../MenuEditorials/assets/ChevronRight';
+import ChevronRight from '../AccordionEditorial/assets/ChevronRight';
 
 export default {
   title: 'Icons',

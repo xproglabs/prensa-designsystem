@@ -1,8 +1,9 @@
 import {useAmp} from 'next/amp';
 import Head from 'next/head';
-import {MenuEditorials, SideMenu} from 'prensa';
+import {SideMenu} from 'prensa';
 import React from 'react';
 
+import AccordionEditorial from '../components/AccordionEditorial';
 import {Main} from '../components/Container';
 import mockedData from '../sidemenu_datamodel.json';
 import styles from '../styles/Home.module.css';
@@ -25,8 +26,8 @@ export default function Menu() {
 
       <Main>
         <button on="tap:sideMenu.open,AMP.setState({})">Abrir Menu</button>
-        <SideMenu backgroundColor='black' id='sideMenu' amp={amp}>
-          <MenuEditorials amp={amp} items={mockedData} title='testando' />
+        <SideMenu backgroundColor='white' id='sideMenu' amp={amp}>
+          <AccordionEditorial amp={amp} items={mockedData} title='testando' />
         </SideMenu>
       </Main>
     </div>

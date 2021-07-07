@@ -1,11 +1,10 @@
 import {map} from 'lodash';
+import {Block, Typography} from 'prensa';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Block from '../Block';
-import Typography from '../Typography';
-import AmpMenuItem from './AmpMenuItem';
-import MenuItem from './MenuItem';
+import AmpGroup from './AmpGroup';
+import Group from './Group';
 
 const titleDefaultProps = {
   element: 'p',
@@ -16,7 +15,7 @@ const titleDefaultProps = {
   mb: 3,
 };
 
-const MenuEditorials = ({amp, color, items, title, titleProps, groupSubItemProps, groupTitleProps, menuItemProps, px, py, removeBorders}) => {
+const AccordionEditorial = ({amp, color, items, title, titleProps, groupSubItemProps, groupTitleProps, menuItemProps, px, py, removeBorders}) => {
   return (
     <Block px={px} py={py}>
       {title &&
@@ -26,20 +25,15 @@ const MenuEditorials = ({amp, color, items, title, titleProps, groupSubItemProps
       }
       {items && 
         map(items, (item, key) => amp ? 
-          <AmpMenuItem color={color} content={item} groupTitleProps={groupTitleProps} groupSubItemProps={groupSubItemProps} menuItemProps={menuItemProps} key={key} removeBorders={removeBorders} />
+          <AmpGroup color={color} content={item} groupTitleProps={groupTitleProps} groupSubItemProps={groupSubItemProps} menuItemProps={menuItemProps} key={key} removeBorders={removeBorders} />
           :
-          <MenuItem color={color} content={item} groupTitleProps={groupTitleProps} groupSubItemProps={groupSubItemProps} menuItemProps={menuItemProps} key={key} removeBorders={removeBorders} />)
+          <Group color={color} content={item} groupTitleProps={groupTitleProps} groupSubItemProps={groupSubItemProps} menuItemProps={menuItemProps} key={key} removeBorders={removeBorders} />)
       }
     </Block>
   );
 };
 
-MenuEditorials.defaultProps = {
-  px: '20px',
-  py: '20px'
-};
-
-MenuEditorials.propTypes = {
+AccordionEditorial.propTypes = {
   amp: PropTypes.bool,
   color: PropTypes.string,
   items: PropTypes.array,
@@ -53,4 +47,4 @@ MenuEditorials.propTypes = {
   removeBorders: PropTypes.bool,
 };
 
-export default MenuEditorials;
+export default AccordionEditorial;

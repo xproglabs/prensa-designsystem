@@ -1,6 +1,8 @@
 import styled, {css} from 'styled-components';
 
+import {getColor} from '../../styled-system/color';
 import {padding} from '../../styled-system/padding';
+import {CONFIGS} from './consts';
 
 const Hyperlink = styled.a`
   text-decoration: none;
@@ -49,13 +51,18 @@ const getGroupBorder = ({removeBorders}) => {
   `;
 };
 
+
 const GroupTitleContainer = styled.div`
-  ${getGroupBorder}
+  ${getGroupBorder};
   ${padding};
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .${CONFIGS.GROUP_ICON_CLASS} {
+    margin: 8px;
+    fill: ${props => getColor({...props, $color: props.iconColor})};
+  }
 `;
 
 const GroupContent = styled.div`

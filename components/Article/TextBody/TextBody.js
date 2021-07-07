@@ -39,7 +39,7 @@ const TextBody = (props) => {
   
   if (!content) return null;
 
-  const adsBody = get(ads, 'content', {});
+  const adsContent = get(ads, 'content', {});
   
   let readmore = [];
   let intervention_amount = get(ads, 'interventionAmount', 3);
@@ -88,7 +88,7 @@ const TextBody = (props) => {
           intervention_readmore_inserted = true;
         } else {
           ad_counter++;
-          if (ad_counter > adsBody.length) {
+          if (ad_counter > adsContent.length) {
             intervention_status = false;
           } else {
             intervention_status = true;
@@ -101,7 +101,7 @@ const TextBody = (props) => {
     return (
       <React.Fragment>
         <Paragraph {...paragraph} key={key} value={value} />
-        {intervention_status && <AdBlock amp={amp} content={adsBody[ad_data_key]} />}
+        {intervention_status && <AdBlock amp={amp} content={adsContent[ad_data_key]} />}
       </React.Fragment>
     );
   };

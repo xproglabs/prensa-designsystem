@@ -1267,7 +1267,7 @@ Typography.defaultProps = {
   mb: '0px',
   transform: 'none'
 };
-Typography.propTypes = _defineProperty({
+Typography.propTypes = {
   /**
    * Altera alinhamento do texto
    */
@@ -1288,7 +1288,7 @@ Typography.propTypes = _defineProperty({
   /**
    * Permite a escolha da tag de texto a ser utilizada
    */
-  element: PropTypes__default['default'].oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label', 'cite']),
+  element: PropTypes__default['default'].oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label', 'cite', 'a']),
 
   /**
    * Altera o valor da propriedade font-size no css
@@ -1358,7 +1358,7 @@ Typography.propTypes = _defineProperty({
   b: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
   borderColor: PropTypes__default['default'].string,
   borderStyle: PropTypes__default['default'].string
-}, "opacityOnHover", PropTypes__default['default'].bool);
+};
 var Typography$1 = styled.withTheme(Typography);
 
 var Author = function Author(_ref) {
@@ -2778,7 +2778,7 @@ var TextBody = function TextBody(props) {
       paragraph = props.paragraph,
       tags = props.tags;
   if (!content) return null;
-  var adsBody = lodash.get(ads, 'content', {});
+  var adsContent = lodash.get(ads, 'content', {});
   var readmore = [];
   var intervention_amount = lodash.get(ads, 'interventionAmount', 3);
   var intervention_readmore_inserted = false;
@@ -2828,7 +2828,7 @@ var TextBody = function TextBody(props) {
         } else {
           ad_counter++;
 
-          if (ad_counter > adsBody.length) {
+          if (ad_counter > adsContent.length) {
             intervention_status = false;
           } else {
             intervention_status = true;
@@ -2844,7 +2844,7 @@ var TextBody = function TextBody(props) {
       value: value
     })), intervention_status && /*#__PURE__*/React__default['default'].createElement(AdBlock$1, {
       amp: amp,
-      content: adsBody[ad_data_key]
+      content: adsContent[ad_data_key]
     }));
   };
 
@@ -3074,6 +3074,370 @@ Article.propTypes = {
 };
 var Article$1 = styled.withTheme(Article);
 
+var margin = function margin(_ref) {
+  var _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme,
+      _ref$mx = _ref.mx,
+      mx = _ref$mx === void 0 ? '' : _ref$mx,
+      _ref$my = _ref.my,
+      my = _ref$my === void 0 ? '' : _ref$my,
+      _ref$mt = _ref.mt,
+      mt = _ref$mt === void 0 ? '' : _ref$mt,
+      _ref$mr = _ref.mr,
+      mr = _ref$mr === void 0 ? '' : _ref$mr,
+      _ref$mb = _ref.mb,
+      mb = _ref$mb === void 0 ? '' : _ref$mb,
+      _ref$ml = _ref.ml,
+      ml = _ref$ml === void 0 ? '' : _ref$ml,
+      _ref$m = _ref.m,
+      m = _ref$m === void 0 ? '' : _ref$m;
+  var unit = lodash.get(theme, 'factors.margin', 8);
+  var object = [];
+  mt !== undefined && isNaN(mt) ? object.push("margin-top: ".concat(mt, ";")) : mt && object.push("margin-top: ".concat(unit * mt, "px;"));
+  mr !== undefined && isNaN(mr) ? object.push("margin-right: ".concat(mr, ";")) : mr && object.push("margin-right: ".concat(unit * mr, "px;"));
+  mb !== undefined && isNaN(mb) ? object.push("margin-bottom: ".concat(mb, ";")) : mb && object.push("margin-bottom: ".concat(unit * mb, "px;"));
+  ml !== undefined && isNaN(ml) ? object.push("margin-left: ".concat(ml, ";")) : ml && object.push("margin-left: ".concat(unit * ml, "px;"));
+  mx !== undefined && isNaN(mx) ? object.push("margin-left: ".concat(mx, ";margin-right: ").concat(mx, ";")) : mx && object.push("margin-left: ".concat(unit * mx, "px;margin-right: ").concat(unit * mx, "px;"));
+  my !== undefined && isNaN(my) ? object.push("margin-top: ".concat(my, ";margin-bottom: ").concat(my, ";")) : my && object.push("margin-top: ".concat(unit * my, "px;margin-bottom: ").concat(unit * my, "px;"));
+  m !== undefined && isNaN(m) ? object.push("margin: ".concat(m, ";")) : m && object.push("margin: ".concat(m * unit, "px;"));
+  return object.join('');
+};
+
+var _templateObject$5;
+var Svg = styled__default['default'].svg(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  ", ";\n  fill: ", ";\n"])), margin, getColor);
+
+var Icon = function Icon(_ref) {
+  var children = _ref.children,
+      color = _ref.color,
+      height = _ref.height,
+      viewBox = _ref.viewBox,
+      width = _ref.width,
+      otherProps = _objectWithoutProperties(_ref, ["children", "color", "height", "viewBox", "width"]);
+
+  return /*#__PURE__*/React__default['default'].createElement(Svg, _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    $color: color,
+    height: height,
+    viewBox: viewBox,
+    width: width
+  }, otherProps), children);
+};
+
+Icon.defaultProps = {
+  color: 'neutral3',
+  height: '24px',
+  m: '8px',
+  viewBox: '0 0 24 24',
+  width: '24px'
+};
+Icon.propTypes = {
+  children: PropTypes__default['default'].node,
+  color: PropTypes__default['default'].string,
+  height: PropTypes__default['default'].string,
+  m: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  viewBox: PropTypes__default['default'].string,
+  width: PropTypes__default['default'].string,
+  otherProps: PropTypes__default['default'].any
+};
+
+var ChevronRight = function ChevronRight(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"
+  }));
+};
+
+var ExpandLessIcon = function ExpandLessIcon(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z"
+  }));
+};
+
+var ExpandMoreIcon = function ExpandMoreIcon(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
+    d: "M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"
+  }));
+};
+
+var CONFIGS = {
+  GROUP_ICON_CLASS: 'accordion-editorial-amp',
+  GROUP_TITLE_DEFAULT_PROPS: {
+    color: 'neutral2',
+    element: 'span',
+    lineHeight: '40px',
+    fontFamily: 'secondary',
+    fontSize: '20px'
+  },
+  GROUP_SUBITEM_DEFAULT_PROPS: {
+    color: 'neutral2',
+    element: 'a',
+    fontFamily: 'secondary',
+    fontSize: '16px'
+  }
+};
+
+var _templateObject$6, _templateObject2$1, _templateObject3$1, _templateObject4$1, _templateObject5$1;
+var Hyperlink = styled__default['default'].a(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 16px;\n  font-family: ", ";\n  color: ", ";\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (props) {
+  return props.theme.fonts.secondary;
+}, function (props) {
+  return props.theme.colors.neutral5;
+});
+styled__default['default'].div(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  padding-bottom: 16px;\n  margin-bottom: 16px;\n  border-bottom: 1px solid;\n  border-color: ", ";\n"])), function (props) {
+  return props.theme.colors.neutral9;
+});
+var GroupSection = styled__default['default'].section(_templateObject3$1 || (_templateObject3$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  border-bottom-color: ", ";\n  padding-bottom: 8px;\n  margin-bottom: 8px;\n  .group-closed {\n    display: none;\n  }\n  .hidden {\n    display: none;\n  }\n  @media (min-width: ", ") {\n    width: 340px;\n  }\n"])), function (props) {
+  return props.theme.colors.neutral9;
+}, function (props) {
+  return props.theme.queries.md;
+});
+
+var getGroupBorder = function getGroupBorder(_ref) {
+  var removeBorders = _ref.removeBorders;
+  if (removeBorders) return '';
+  return styled.css(["border-left-width:4px;border-left-style:solid;border-left-color:", ";"], function (props) {
+    return props.theme.colors[props.$color];
+  });
+};
+
+var GroupTitleContainer = styled__default['default'].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  .", " {\n    margin: 8px;\n    fill: ", ";\n  }\n"])), getGroupBorder, padding, CONFIGS.GROUP_ICON_CLASS, function (props) {
+  return getColor(_objectSpread2(_objectSpread2({}, props), {}, {
+    $color: props.iconColor
+  }));
+});
+var GroupContent = styled__default['default'].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteral(["\n  margin-top: 8px;\n"])));
+
+var MenuItem = function MenuItem(_ref) {
+  var color = _ref.color,
+      content = _ref.content,
+      groupItemProps = _ref.groupItemProps,
+      groupSubItemProps = _ref.groupSubItemProps,
+      groupTitleProps = _ref.groupTitleProps,
+      removeBorders = _ref.removeBorders;
+  // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
+  // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
+  // 3. To make state work it is necessary a user click to activate initialState. Before this the values submitted to client are the ones in HTML props
+  // 4. In this context the state trigger is everytime user click on MenuButton
+  // 5. Subgroup is not displayed when it is rendered with class 'group-closed'
+  var itemColor = color;
+  if (color === 'unique' && content.color) itemColor = content.color;
+  var contentId = content.contentId,
+      name = content.name,
+      path = content.path,
+      subitems = content.subitems;
+  var isGroup = subitems.length > 0;
+  var stateId = "state".concat(contentId.replace('.', ''));
+  var initialState = "{ \"".concat(stateId, "\": { \"status\": true } }");
+  var newState = "tap:AMP.setState({ ".concat(stateId, ": {status: !").concat(stateId, ".status} })");
+  var contentClass = "".concat(stateId, ".status ? 'group-open' : 'group-closed'");
+  var expandMoreIconClass = "".concat(stateId, ".status ? \"").concat(CONFIGS.GROUP_ICON_CLASS, " hidden\" : \"").concat(CONFIGS.GROUP_ICON_CLASS, " visible\"");
+  var expandLessIconClass = "".concat(stateId, ".status ? \"").concat(CONFIGS.GROUP_ICON_CLASS, " visible\" : \"").concat(CONFIGS.GROUP_ICON_CLASS, " hidden\"");
+  var iconColor = lodash.get(groupItemProps, 'iconColor', 'neutral3');
+
+  var GroupTitle = function GroupTitle() {
+    return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, CONFIGS.GROUP_TITLE_DEFAULT_PROPS, groupTitleProps), name);
+  };
+
+  var HyperlinkGroup = function HyperlinkGroup() {
+    return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
+      href: path
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
+      removeBorders: removeBorders,
+      $color: itemColor
+    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
+      $color: iconColor
+    })));
+  };
+
+  var Group = function Group() {
+    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
+      iconColor: iconColor,
+      removeBorders: removeBorders,
+      role: "setMenuItemState",
+      tabIndex: "0",
+      on: newState,
+      $color: itemColor
+    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
+      "data-amp-bind-class": expandMoreIconClass
+    }), /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
+      "data-amp-bind-class": expandLessIconClass
+    })), /*#__PURE__*/React__default['default'].createElement(GroupContent, {
+      "data-amp-bind-class": contentClass
+    }, lodash.map(subitems, function (_ref2, key) {
+      var id = _ref2.id,
+          path = _ref2.path,
+          name = _ref2.name;
+      return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+        id: id,
+        ml: "20px",
+        mb: 2,
+        mt: 2,
+        key: key
+      }, /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS, {
+        href: path
+      }, groupSubItemProps), name));
+    })));
+  };
+
+  return /*#__PURE__*/React__default['default'].createElement(GroupSection, null, /*#__PURE__*/React__default['default'].createElement("amp-state", {
+    id: stateId
+  }, /*#__PURE__*/React__default['default'].createElement("script", {
+    type: "application/json",
+    dangerouslySetInnerHTML: {
+      __html: "".concat(JSON.stringify(initialState))
+    }
+  })), !isGroup ? /*#__PURE__*/React__default['default'].createElement(HyperlinkGroup, null) : /*#__PURE__*/React__default['default'].createElement(Group, null));
+};
+
+MenuItem.defaultProps = {
+  color: 'product1'
+};
+MenuItem.propTypes = {
+  color: PropTypes__default['default'].string,
+  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  groupSubItemProps: PropTypes__default['default'].object,
+  groupTitleProps: PropTypes__default['default'].object,
+  groupItemProps: PropTypes__default['default'].object,
+  removeBorders: PropTypes__default['default'].bool
+};
+
+var MenuItem$1 = function MenuItem(_ref) {
+  var color = _ref.color,
+      content = _ref.content,
+      groupItemProps = _ref.groupItemProps,
+      groupSubItemProps = _ref.groupSubItemProps,
+      groupTitleProps = _ref.groupTitleProps,
+      removeBorders = _ref.removeBorders;
+
+  var _useState = React.useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      open = _useState2[0],
+      setOpenStatus = _useState2[1];
+
+  var contentId = content.contentId,
+      name = content.name,
+      path = content.path,
+      subitems = content.subitems;
+  var isGroup = subitems.length > 0;
+  var iconColor = lodash.get(groupItemProps, 'iconColor', 'neutral3');
+  var itemColor = color;
+  if (color === 'unique' && content.color) itemColor = content.color;
+
+  var handleItemClick = function handleItemClick() {
+    setOpenStatus(!open);
+  };
+
+  var GroupTitle = function GroupTitle() {
+    return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, CONFIGS.GROUP_TITLE_DEFAULT_PROPS, groupTitleProps), name);
+  };
+
+  var HyperlinkGroup = function HyperlinkGroup() {
+    return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
+      href: path
+    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
+      $color: itemColor,
+      removeBorders: removeBorders
+    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
+      color: iconColor
+    })));
+  };
+
+  var Group = function Group() {
+    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
+      id: contentId,
+      onClick: handleItemClick,
+      removeBorders: removeBorders,
+      $color: itemColor
+    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), open ? /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
+      color: iconColor
+    }) : /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
+      color: iconColor
+    })), /*#__PURE__*/React__default['default'].createElement(GroupContent, null, open && lodash.map(subitems, function (_ref2, key) {
+      var name = _ref2.name,
+          path = _ref2.path;
+      return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+        ml: "20px",
+        mb: 2,
+        mt: 2,
+        key: key
+      }, /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS, {
+        href: path
+      }, groupSubItemProps), name));
+    })));
+  };
+
+  return /*#__PURE__*/React__default['default'].createElement(GroupSection, null, !isGroup ? /*#__PURE__*/React__default['default'].createElement(HyperlinkGroup, null) : /*#__PURE__*/React__default['default'].createElement(Group, null));
+};
+
+MenuItem$1.defaultProps = {
+  color: 'product1'
+};
+MenuItem$1.propTypes = {
+  color: PropTypes__default['default'].string,
+  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  groupSubItemProps: PropTypes__default['default'].object,
+  groupTitleProps: PropTypes__default['default'].object,
+  groupItemProps: PropTypes__default['default'].object,
+  removeBorders: PropTypes__default['default'].bool
+};
+
+var titleDefaultProps = {
+  element: 'p',
+  color: 'neutral3',
+  fontFamily: 'secondary',
+  fontSize: '14px',
+  transform: 'uppercase',
+  mb: 3
+};
+
+var AccordionEditorial = function AccordionEditorial(_ref) {
+  var amp = _ref.amp,
+      color = _ref.color,
+      items = _ref.items,
+      title = _ref.title,
+      titleProps = _ref.titleProps,
+      groupItemProps = _ref.groupItemProps,
+      groupSubItemProps = _ref.groupSubItemProps,
+      groupTitleProps = _ref.groupTitleProps,
+      px = _ref.px,
+      py = _ref.py,
+      removeBorders = _ref.removeBorders;
+  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    px: px,
+    py: py
+  }, title && /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, titleDefaultProps, titleProps), title), items && lodash.map(items, function (item, key) {
+    return amp ? /*#__PURE__*/React__default['default'].createElement(MenuItem, {
+      color: color,
+      content: item,
+      groupTitleProps: groupTitleProps,
+      groupSubItemProps: groupSubItemProps,
+      groupItemProps: groupItemProps,
+      key: key,
+      removeBorders: removeBorders
+    }) : /*#__PURE__*/React__default['default'].createElement(MenuItem$1, {
+      color: color,
+      content: item,
+      groupTitleProps: groupTitleProps,
+      groupSubItemProps: groupSubItemProps,
+      groupItemProps: groupItemProps,
+      key: key,
+      removeBorders: removeBorders
+    });
+  }));
+};
+
+AccordionEditorial.propTypes = {
+  amp: PropTypes__default['default'].bool,
+  color: PropTypes__default['default'].string,
+  items: PropTypes__default['default'].array,
+  title: PropTypes__default['default'].string,
+  titleProps: PropTypes__default['default'].object,
+  groupTitleProps: PropTypes__default['default'].object,
+  groupSubItemProps: PropTypes__default['default'].object,
+  groupItemProps: PropTypes__default['default'].object,
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+  removeBorders: PropTypes__default['default'].bool
+};
+
 //Get button size (height)
 var getSize = function getSize(props, theme) {
   var $size = props.$size,
@@ -3188,8 +3552,8 @@ var parseProps$2 = function parseProps(media, props) {
   }
 };
 
-var _templateObject$5, _templateObject2$1;
-var StyledButton = styled__default['default'].button(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var _templateObject$7, _templateObject2$2;
+var StyledButton = styled__default['default'].button(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return parseProps$2('', props);
 }, function (props) {
   return props.xs && parseProps$2('xs', props);
@@ -3202,7 +3566,7 @@ var StyledButton = styled__default['default'].button(_templateObject$5 || (_temp
 }, function (props) {
   return props.xl && parseProps$2('xl', props);
 });
-var StyledAria = styled__default['default'].a(_templateObject2$1 || (_templateObject2$1 = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"])));
+var StyledAria = styled__default['default'].a(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"])));
 
 var Button = function Button(_ref) {
   var children = _ref.children,
@@ -4115,7 +4479,7 @@ FieldErrorMessage.propTypes = {
   children: PropTypes__default['default'].string
 };
 
-var _templateObject$6, _templateObject2$2;
+var _templateObject$8, _templateObject2$3;
 
 var handleFontFamily = function handleFontFamily(props) {
   var theme = lodash.get(props, 'theme.fonts');
@@ -4170,8 +4534,8 @@ var handleSize = function handleSize(props) {
   return "".concat(props.size, "px");
 };
 
-var Input$1 = styled__default['default'].input(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: ", ";\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n  ::placeholder {\n    color: ", ";\n  }\n"])), handleFontSize, handleFontFamily, handleColor, handleBorderRadius, handlePlaceholderColor);
-var InputContainer = styled__default['default'].div(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  background-color: white;\n  width: 100%;\n  height: ", ";\n  box-shadow: ", ";\n  display: flex;\n  align-items: center;\n  border-radius: ", ";\n  &:focus-within {\n    box-shadow: ", ";\n  }\n"])), handleSize, function (props) {
+var Input$1 = styled__default['default'].input(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  width: calc(100% - 16px);\n  padding-left: 8px;\n  padding-right: 8px;\n  font-size: ", ";\n  font-weight: 400;\n  font-family: ", ";\n  color: ", ";\n  border-radius: ", ";\n  border-color: unset;\n  border-width: unset;\n  border-style: unset;\n  &:focus {\n    outline-color: unset;\n    outline-width: unset;\n    outline-style: none;\n  }\n  ::placeholder {\n    color: ", ";\n  }\n"])), handleFontSize, handleFontFamily, handleColor, handleBorderRadius, handlePlaceholderColor);
+var InputContainer = styled__default['default'].div(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  background-color: white;\n  width: 100%;\n  height: ", ";\n  box-shadow: ", ";\n  display: flex;\n  align-items: center;\n  border-radius: ", ";\n  &:focus-within {\n    box-shadow: ", ";\n  }\n"])), handleSize, function (props) {
   return "0 0 0 1px ".concat(handleInputColor(props));
 }, handleBorderRadius, function (props) {
   return "0 0 0 2px ".concat(handleFocusedColor(props));
@@ -4433,75 +4797,6 @@ Field.propTypes = {
 };
 var index$1 = styled.withTheme(Field);
 
-var margin = function margin(_ref) {
-  var _ref$theme = _ref.theme,
-      theme = _ref$theme === void 0 ? {} : _ref$theme,
-      _ref$mx = _ref.mx,
-      mx = _ref$mx === void 0 ? '' : _ref$mx,
-      _ref$my = _ref.my,
-      my = _ref$my === void 0 ? '' : _ref$my,
-      _ref$mt = _ref.mt,
-      mt = _ref$mt === void 0 ? '' : _ref$mt,
-      _ref$mr = _ref.mr,
-      mr = _ref$mr === void 0 ? '' : _ref$mr,
-      _ref$mb = _ref.mb,
-      mb = _ref$mb === void 0 ? '' : _ref$mb,
-      _ref$ml = _ref.ml,
-      ml = _ref$ml === void 0 ? '' : _ref$ml,
-      _ref$m = _ref.m,
-      m = _ref$m === void 0 ? '' : _ref$m;
-  var unit = lodash.get(theme, 'factors.margin', 8);
-  var object = [];
-  mt !== undefined && isNaN(mt) ? object.push("margin-top: ".concat(mt, ";")) : mt && object.push("margin-top: ".concat(unit * mt, "px;"));
-  mr !== undefined && isNaN(mr) ? object.push("margin-right: ".concat(mr, ";")) : mr && object.push("margin-right: ".concat(unit * mr, "px;"));
-  mb !== undefined && isNaN(mb) ? object.push("margin-bottom: ".concat(mb, ";")) : mb && object.push("margin-bottom: ".concat(unit * mb, "px;"));
-  ml !== undefined && isNaN(ml) ? object.push("margin-left: ".concat(ml, ";")) : ml && object.push("margin-left: ".concat(unit * ml, "px;"));
-  mx !== undefined && isNaN(mx) ? object.push("margin-left: ".concat(mx, ";margin-right: ").concat(mx, ";")) : mx && object.push("margin-left: ".concat(unit * mx, "px;margin-right: ").concat(unit * mx, "px;"));
-  my !== undefined && isNaN(my) ? object.push("margin-top: ".concat(my, ";margin-bottom: ").concat(my, ";")) : my && object.push("margin-top: ".concat(unit * my, "px;margin-bottom: ").concat(unit * my, "px;"));
-  m !== undefined && isNaN(m) ? object.push("margin: ".concat(m, ";")) : m && object.push("margin: ".concat(m * unit, "px;"));
-  return object.join('');
-};
-
-var _templateObject$7, _templateObject2$3;
-var Container$8 = styled__default['default'].div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  height: max-content;\n  width: max-content;\n"])));
-var Svg = styled__default['default'].svg(_templateObject2$3 || (_templateObject2$3 = _taggedTemplateLiteral(["\n  ", ";\n  fill: ", ";\n"])), margin, getColor);
-
-var Icon = function Icon(_ref) {
-  var children = _ref.children,
-      containerProps = _ref.containerProps,
-      color = _ref.color,
-      height = _ref.height,
-      viewBox = _ref.viewBox,
-      width = _ref.width,
-      otherProps = _objectWithoutProperties(_ref, ["children", "containerProps", "color", "height", "viewBox", "width"]);
-
-  return /*#__PURE__*/React__default['default'].createElement(Container$8, containerProps, /*#__PURE__*/React__default['default'].createElement(Svg, _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    $color: color,
-    height: height,
-    viewBox: viewBox,
-    width: width
-  }, otherProps), children));
-};
-
-Icon.defaultProps = {
-  color: 'neutral3',
-  height: '24px',
-  m: '8px',
-  viewBox: '0 0 24 24',
-  width: '24px'
-};
-Icon.propTypes = {
-  children: PropTypes__default['default'].node,
-  containerProps: PropTypes__default['default'].object,
-  color: PropTypes__default['default'].string,
-  height: PropTypes__default['default'].string,
-  m: PropTypes__default['default'].string,
-  viewBox: PropTypes__default['default'].string,
-  width: PropTypes__default['default'].string,
-  otherProps: PropTypes__default['default'].any
-};
-
 var Image$1 = function Image(_ref) {
   var content = _ref.content,
       custom = _ref.custom,
@@ -4558,314 +4853,9 @@ Image$1.defaultProps = {
   content: {}
 };
 
-var ChevronRight = function ChevronRight(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M0 0h24v24H0V0z",
-    fill: "none"
-  }), /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"
-  }));
-};
-
-var ExpandLessIcon = function ExpandLessIcon(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M0 0h24v24H0V0z",
-    fill: "none"
-  }), /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z"
-  }));
-};
-
-var ExpandMoreIcon = function ExpandMoreIcon(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Icon, props, /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M24 24H0V0h24v24z",
-    fill: "none",
-    opacity: ".87"
-  }), /*#__PURE__*/React__default['default'].createElement("path", {
-    d: "M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"
-  }));
-};
-
-var _templateObject$8, _templateObject2$4, _templateObject3$1, _templateObject4$1, _templateObject5$1;
-var Hyperlink = styled__default['default'].a(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  text-decoration: none;\n  font-size: 16px;\n  font-family: ", ";\n  color: ", ";\n  &:hover {\n    opacity: 0.8;\n  }\n"])), function (props) {
-  return props.theme.fonts.secondary;
-}, function (props) {
-  return props.theme.colors.neutral5;
-});
-styled__default['default'].div(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  padding-bottom: 16px;\n  margin-bottom: 16px;\n  border-bottom: 1px solid;\n  border-color: ", ";\n"])), function (props) {
-  return props.theme.colors.neutral9;
-});
-var GroupSection = styled__default['default'].section(_templateObject3$1 || (_templateObject3$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  border-bottom-color: ", ";\n  padding-bottom: 8px;\n  margin-bottom: 8px;\n  .group-closed {\n    display: none;\n  }\n  .hidden {\n    display: none;\n  }\n  @media (min-width: ", ") {\n    width: 340px;\n  }\n"])), function (props) {
-  return props.theme.colors.neutral9;
-}, function (props) {
-  return props.theme.queries.md;
-});
-
-var getGroupBorder = function getGroupBorder(_ref) {
-  var removeBorders = _ref.removeBorders;
-  if (removeBorders) return '';
-  return styled.css(["border-left-width:4px;border-left-style:solid;border-left-color:", ";"], function (props) {
-    return props.theme.colors[props.$color];
-  });
-};
-
-var GroupTitleContainer = styled__default['default'].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteral(["\n  ", "\n  ", ";\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"])), getGroupBorder, padding);
-var GroupContent = styled__default['default'].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteral(["\n  margin-top: 8px;\n"])));
-
-var groupTitleDefaultProps = {
-  color: 'neutral2',
-  element: 'h4',
-  lineHeight: '40px',
-  fontFamily: 'secondary',
-  fontSize: '20px'
-};
-
-var MenuItem = function MenuItem(_ref) {
-  var color = _ref.color,
-      content = _ref.content,
-      groupTitleProps = _ref.groupTitleProps,
-      removeBorders = _ref.removeBorders;
-  // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
-  // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
-  // 3. To make state work it is necessary a user click to activate initialState. Before this the values submitted to client are the ones in HTML props
-  // 4. In this context the state trigger is everytime user click on MenuButton
-  // 5. Subgroup is not displayed when it is rendered with class 'group-closed'
-  var itemColor = color;
-  if (color === 'unique' && content.color) itemColor = content.color;
-  var contentId = content.contentId,
-      name = content.name,
-      path = content.path,
-      subitems = content.subitems;
-  var isGroup = subitems.length > 0;
-  var stateId = "state".concat(contentId.replace('.', ''));
-  var initialState = "{ \"".concat(stateId, "\": { \"status\": true } }");
-  var newState = "tap:AMP.setState({ ".concat(stateId, ": {status: !").concat(stateId, ".status} })");
-  var contentClass = "".concat(stateId, ".status ? 'group-open' : 'group-closed'");
-  var expandMoreIconClass = "".concat(stateId, ".status ? 'hidden' : 'visible'");
-  var expandLessIconClass = "".concat(stateId, ".status ? 'visible' : 'hidden'");
-
-  var GroupTitle = function GroupTitle() {
-    return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, groupTitleDefaultProps, groupTitleProps), name);
-  };
-
-  var HyperlinkGroup = function HyperlinkGroup() {
-    return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
-      href: path
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
-      removeBorders: removeBorders,
-      $color: itemColor
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, null)));
-  };
-
-  var Group = function Group() {
-    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
-      removeBorders: removeBorders,
-      role: "setMenuItemState",
-      tabIndex: "0",
-      on: newState,
-      $color: itemColor
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
-      "data-amp-bind-class": expandMoreIconClass
-    }), /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
-      "data-amp-bind-class": expandLessIconClass
-    })), /*#__PURE__*/React__default['default'].createElement(GroupContent, {
-      "data-amp-bind-class": contentClass
-    }, lodash.map(subitems, function (_ref2, key) {
-      var id = _ref2.id,
-          path = _ref2.path,
-          name = _ref2.name;
-      return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-        id: id,
-        ml: "20px",
-        mb: 2,
-        mt: 2,
-        key: key
-      }, /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
-        href: path
-      }, name));
-    })));
-  };
-
-  return /*#__PURE__*/React__default['default'].createElement(GroupSection, null, /*#__PURE__*/React__default['default'].createElement("amp-state", {
-    id: stateId
-  }, /*#__PURE__*/React__default['default'].createElement("script", {
-    type: "application/json",
-    dangerouslySetInnerHTML: {
-      __html: "".concat(JSON.stringify(initialState))
-    }
-  })), !isGroup ? /*#__PURE__*/React__default['default'].createElement(HyperlinkGroup, null) : /*#__PURE__*/React__default['default'].createElement(Group, null));
-};
-
-MenuItem.defaultProps = {
-  color: 'product1'
-};
-MenuItem.propTypes = {
-  color: PropTypes__default['default'].string,
-  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
-  groupTitleProps: PropTypes__default['default'].object,
-  removeBorders: PropTypes__default['default'].bool
-};
-
-var groupTitleDefaultProps$1 = {
-  color: 'neutral2',
-  element: 'span',
-  lineHeight: '40px',
-  fontFamily: 'secondary',
-  fontSize: '20px'
-};
-var subItemDefaultProps = {
-  color: 'neutral2',
-  element: 'a',
-  fontFamily: 'secondary',
-  fontSize: '16px'
-};
-
-var MenuItem$1 = function MenuItem(_ref) {
-  var color = _ref.color,
-      content = _ref.content,
-      groupSubItemProps = _ref.groupSubItemProps,
-      groupTitleProps = _ref.groupTitleProps,
-      menuItemProps = _ref.menuItemProps,
-      removeBorders = _ref.removeBorders;
-
-  var _useState = React.useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      open = _useState2[0],
-      setOpenStatus = _useState2[1];
-
-  var contentId = content.contentId,
-      name = content.name,
-      path = content.path,
-      subitems = content.subitems;
-  var isGroup = subitems.length > 0;
-  var itemColor = color;
-  if (color === 'unique' && content.color) itemColor = content.color;
-
-  var handleItemClick = function handleItemClick() {
-    setOpenStatus(!open);
-  };
-
-  var GroupTitle = function GroupTitle() {
-    return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, groupTitleDefaultProps$1, groupTitleProps), name);
-  };
-
-  var HyperlinkGroup = function HyperlinkGroup() {
-    return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
-      href: path
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
-      $color: itemColor,
-      menuItemProps: menuItemProps,
-      removeBorders: removeBorders
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
-      color: itemColor
-    })));
-  };
-
-  var Group = function Group() {
-    return /*#__PURE__*/React__default['default'].createElement("div", null, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, {
-      id: contentId,
-      onClick: handleItemClick,
-      menuItemProps: menuItemProps,
-      removeBorders: removeBorders,
-      $color: itemColor
-    }, /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), open ? /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
-      color: itemColor
-    }) : /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
-      color: itemColor
-    })), /*#__PURE__*/React__default['default'].createElement(GroupContent, null, open && lodash.map(subitems, function (_ref2, key) {
-      var name = _ref2.name,
-          path = _ref2.path;
-      return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-        ml: "20px",
-        mb: 2,
-        mt: 2,
-        key: key
-      }, /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({
-        href: path
-      }, subItemDefaultProps, groupSubItemProps), name));
-    })));
-  };
-
-  return /*#__PURE__*/React__default['default'].createElement(GroupSection, null, !isGroup ? /*#__PURE__*/React__default['default'].createElement(HyperlinkGroup, null) : /*#__PURE__*/React__default['default'].createElement(Group, null));
-};
-
-MenuItem$1.defaultProps = {
-  color: 'product1'
-};
-MenuItem$1.propTypes = {
-  color: PropTypes__default['default'].string,
-  content: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
-  groupTitleProps: PropTypes__default['default'].object,
-  groupSubItemProps: PropTypes__default['default'].object,
-  menuItemProps: PropTypes__default['default'].object,
-  removeBorders: PropTypes__default['default'].bool
-};
-
-var titleDefaultProps = {
-  element: 'p',
-  color: 'neutral3',
-  fontFamily: 'secondary',
-  fontSize: '14px',
-  transform: 'uppercase',
-  mb: 3
-};
-
-var MenuEditorials = function MenuEditorials(_ref) {
-  var amp = _ref.amp,
-      color = _ref.color,
-      items = _ref.items,
-      title = _ref.title,
-      titleProps = _ref.titleProps,
-      groupSubItemProps = _ref.groupSubItemProps,
-      groupTitleProps = _ref.groupTitleProps,
-      menuItemProps = _ref.menuItemProps,
-      px = _ref.px,
-      py = _ref.py,
-      removeBorders = _ref.removeBorders;
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    px: px,
-    py: py
-  }, title && /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, titleDefaultProps, titleProps), title), items && lodash.map(items, function (item, key) {
-    return amp ? /*#__PURE__*/React__default['default'].createElement(MenuItem, {
-      color: color,
-      content: item,
-      groupTitleProps: groupTitleProps,
-      groupSubItemProps: groupSubItemProps,
-      menuItemProps: menuItemProps,
-      key: key,
-      removeBorders: removeBorders
-    }) : /*#__PURE__*/React__default['default'].createElement(MenuItem$1, {
-      color: color,
-      content: item,
-      groupTitleProps: groupTitleProps,
-      groupSubItemProps: groupSubItemProps,
-      menuItemProps: menuItemProps,
-      key: key,
-      removeBorders: removeBorders
-    });
-  }));
-};
-
-MenuEditorials.defaultProps = {
-  px: '20px',
-  py: '20px'
-};
-MenuEditorials.propTypes = {
-  amp: PropTypes__default['default'].bool,
-  color: PropTypes__default['default'].string,
-  items: PropTypes__default['default'].array,
-  title: PropTypes__default['default'].string,
-  titleProps: PropTypes__default['default'].object,
-  groupTitleProps: PropTypes__default['default'].object,
-  groupSubItemProps: PropTypes__default['default'].object,
-  menuItemProps: PropTypes__default['default'].object,
-  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
-  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
-  removeBorders: PropTypes__default['default'].bool
-};
-
-var _templateObject$9;
-var StyledContainer = styled__default['default'].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  amp-sidebar {\n    background-color: ", ";\n  }\n"])), function (props) {
+var _templateObject$9, _templateObject2$4;
+var Content$3 = styled__default['default'].div(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  ", "\n"])), padding);
+var StyledContainer = styled__default['default'].div(_templateObject2$4 || (_templateObject2$4 = _taggedTemplateLiteral(["\n  amp-sidebar {\n    background-color: ", ";\n  }\n"])), function (props) {
   return props.theme.colors[props.$backgroundColor];
 });
 
@@ -4874,14 +4864,19 @@ var AmpMenu = function AmpMenu(_ref) {
       children = _ref.children,
       id = _ref.id,
       layout = _ref.layout,
-      menuAnchor = _ref.menuAnchor;
+      menuAnchor = _ref.menuAnchor,
+      px = _ref.px,
+      py = _ref.py;
   return /*#__PURE__*/React__default['default'].createElement(StyledContainer, {
     $backgroundColor: backgroundColor
   }, /*#__PURE__*/React__default['default'].createElement("amp-sidebar", {
     id: id,
     layout: layout,
     side: menuAnchor
-  }, children));
+  }, /*#__PURE__*/React__default['default'].createElement(Content$3, {
+    px: px,
+    py: py
+  }, children)));
 };
 
 AmpMenu.defaultProps = {
@@ -4894,7 +4889,9 @@ AmpMenu.propTypes = {
   children: PropTypes__default['default'].node,
   id: PropTypes__default['default'].string,
   layout: PropTypes__default['default'].string,
-  menuAnchor: PropTypes__default['default'].oneOf(['left', 'right'])
+  menuAnchor: PropTypes__default['default'].oneOf(['left', 'right']),
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string])
 };
 
 var _templateObject$a, _templateObject2$5;
@@ -4906,7 +4903,7 @@ var parsePosition = function parsePosition(_ref) {
   if (menuAnchor === 'right') return 'right: 0px;';
 };
 
-var Content$3 = styled__default['default'].div(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"])), dimensions, parsePosition, padding, function (props) {
+var Content$4 = styled__default['default'].div(_templateObject2$5 || (_templateObject2$5 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  ", ";\n  background-color: ", ";\n  display: block;\n  height: 100vh;\n  overflow-y: auto;\n  position: fixed;\n  top: 0px;\n  z-index: 11;\n  @media (min-width: ", ") {\n    width: max-content;\n  }\n"])), dimensions, parsePosition, padding, function (props) {
   return props.theme.colors[props.$backgroundColor];
 }, function (props) {
   return props.theme.queries.md;
@@ -4924,7 +4921,7 @@ var Menu = function Menu(_ref) {
   if (!open) return null;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, null, /*#__PURE__*/React__default['default'].createElement(Backdrop, {
     onClick: close
-  }), /*#__PURE__*/React__default['default'].createElement(Content$3, {
+  }), /*#__PURE__*/React__default['default'].createElement(Content$4, {
     $backgroundColor: backgroundColor,
     px: px,
     py: py,
@@ -4936,8 +4933,7 @@ var Menu = function Menu(_ref) {
 Menu.defaultProps = {
   backgroundColor: 'white',
   menuAnchor: 'left',
-  width: 'calc(100% - 48px)',
-  px: '24px'
+  width: 'max-content'
 };
 Menu.propTypes = {
   backgroundColor: PropTypes__default['default'].string,
@@ -4945,8 +4941,8 @@ Menu.propTypes = {
   close: PropTypes__default['default'].func,
   menuAnchor: PropTypes__default['default'].oneOf(['left', 'right']),
   open: PropTypes__default['default'].bool,
-  px: PropTypes__default['default'].number,
-  py: PropTypes__default['default'].number,
+  px: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
+  py: PropTypes__default['default'].oneOfType([PropTypes__default['default'].number, PropTypes__default['default'].string]),
   width: PropTypes__default['default'].string
 };
 var Menu$1 = styled.withTheme(Menu);
@@ -5034,7 +5030,7 @@ var parseBackgroundVariation = function parseBackgroundVariation(props) {
   return "background-color: ".concat(props.theme.parseColor(props, props.theme, 'subjectColor'), ";");
 };
 
-var Container$9 = styled__default['default'].div(_templateObject$b || (_templateObject$b = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
+var Container$8 = styled__default['default'].div(_templateObject$b || (_templateObject$b = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: max-content;\n  height: 28px;\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
   return props.theme.parsePadding(props, props.theme);
 }, function (props) {
   return props.theme.parseMargin(props, props.theme);
@@ -5061,7 +5057,7 @@ var Subject$1 = function Subject(_ref) {
       transparent = _ref.transparent,
       weight = _ref.weight;
   if (!children) return null;
-  return /*#__PURE__*/React__default['default'].createElement(Container$9, {
+  return /*#__PURE__*/React__default['default'].createElement(Container$8, {
     subjectColor: color,
     borderRadius: radius,
     px: px,
@@ -5123,6 +5119,7 @@ Subject$1.propTypes = {
 };
 var index$2 = styled.withTheme(Subject$1);
 
+exports.AccordionEditorial = AccordionEditorial;
 exports.Article = Article$1;
 exports.Block = Block$1;
 exports.Button = Button$1;
@@ -5134,7 +5131,6 @@ exports.Icon = Icon;
 exports.Image = Image$1;
 exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;
-exports.MenuEditorials = MenuEditorials;
 exports.SideMenu = SideMenu;
 exports.SocialMedias = SocialMedias;
 exports.Subject = index$2;

@@ -1,4 +1,5 @@
 export {default as Article} from './Article/Article';
+export {default as AccordionEditorial} from './AccordionEditorial';
 export {default as Block} from './Block';
 export {default as Button} from './Button';
 export {default as ColumnHeader} from './Column/Header';
@@ -9,7 +10,6 @@ export {default as Icon} from './Icon';
 export {default as Image} from './Image';
 export {default as ImageBackground} from './Image/Background';
 export {default as ImageGallery} from './ImageGallery';
-export {default as MenuEditorials} from './MenuEditorials';
 export {default as SideMenu} from './SideMenu';
 export {default as SocialMedias} from './SocialMedias';
 export {default as Topbar} from './Topbar';
