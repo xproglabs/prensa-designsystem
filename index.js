@@ -3205,6 +3205,10 @@ var GroupTitleContainer = styled__default['default'].div(_templateObject4$1 || (
 });
 var GroupContent = styled__default['default'].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteral(["\n  margin-top: 8px;\n"])));
 
+var GroupTitle = function GroupTitle(props) {
+  return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, CONFIGS.GROUP_TITLE_DEFAULT_PROPS, props), props.name);
+};
+
 var MenuItem = function MenuItem(_ref) {
   var color = _ref.color,
       content = _ref.content,
@@ -3222,7 +3226,8 @@ var MenuItem = function MenuItem(_ref) {
   var contentId = content.contentId,
       name = content.name,
       path = content.path,
-      subitems = content.subitems;
+      subitems = content.subitems,
+      target = content.target;
   var isGroup = subitems.length > 0;
   var stateId = "state".concat(contentId.replace('.', ''));
   var initialState = "{ \"".concat(stateId, "\": { \"status\": true } }");
@@ -3232,17 +3237,16 @@ var MenuItem = function MenuItem(_ref) {
   var expandLessIconClass = "".concat(stateId, ".status ? \"").concat(CONFIGS.GROUP_ICON_CLASS, " visible\" : \"").concat(CONFIGS.GROUP_ICON_CLASS, " hidden\"");
   var iconColor = lodash.get(groupItemProps, 'iconColor', 'neutral3');
 
-  var GroupTitle = function GroupTitle() {
-    return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, CONFIGS.GROUP_TITLE_DEFAULT_PROPS, groupTitleProps), name);
-  };
-
   var HyperlinkGroup = function HyperlinkGroup() {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
       removeBorders: removeBorders,
       $color: itemColor
-    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
+    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, _extends({
+      target: target,
+      name: name
+    }, groupTitleProps)), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
       $color: iconColor
     })));
   };
@@ -3255,7 +3259,9 @@ var MenuItem = function MenuItem(_ref) {
       tabIndex: "0",
       on: newState,
       $color: itemColor
-    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, null), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
+    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, _extends({
+      name: name
+    }, groupTitleProps)), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
       "data-amp-bind-class": expandMoreIconClass
     }), /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
       "data-amp-bind-class": expandLessIconClass
@@ -3287,6 +3293,9 @@ var MenuItem = function MenuItem(_ref) {
   })), !isGroup ? /*#__PURE__*/React__default['default'].createElement(HyperlinkGroup, null) : /*#__PURE__*/React__default['default'].createElement(Group, null));
 };
 
+GroupTitle.propTypes = {
+  name: PropTypes__default['default'].string
+};
 MenuItem.defaultProps = {
   color: 'product1'
 };
