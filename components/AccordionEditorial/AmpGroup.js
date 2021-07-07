@@ -10,6 +10,12 @@ import ExpandMoreIcon from './assets/ExpandMoreIcon';
 import {CONFIGS} from './consts';
 import {GroupSection, GroupTitleContainer, GroupContent, Hyperlink} from './styled';
 
+const GroupTitle = (props) => (
+  <Typography {...CONFIGS.GROUP_TITLE_DEFAULT_PROPS} {...props}>
+    {props.name}
+  </Typography>
+);
+
 const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitleProps, removeBorders}) => {
   
   // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
@@ -21,7 +27,7 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
   let itemColor = color;
   if (color === 'unique' && content.color) itemColor = content.color;
 
-  const {contentId, name, path, subitems} = content;
+  const {contentId, name, path, subitems, target} = content;
   
   const isGroup = subitems.length > 0;
   const stateId = `state${contentId.replace('.', '')}`;
@@ -32,16 +38,10 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
   const expandLessIconClass = `${stateId}.status ? "${CONFIGS.GROUP_ICON_CLASS} visible" : "${CONFIGS.GROUP_ICON_CLASS} hidden"`;
   const iconColor = get(groupItemProps, 'iconColor', 'neutral3');
 
-  const GroupTitle = () => (
-    <Typography {...CONFIGS.GROUP_TITLE_DEFAULT_PROPS} {...groupTitleProps}>
-      {name}
-    </Typography>
-  );
-
   const HyperlinkGroup = () => (
     <Hyperlink href={path}>
       <GroupTitleContainer removeBorders={removeBorders} $color={itemColor} {...groupItemProps}>
-        <GroupTitle/>
+        <GroupTitle target={target} name={name} {...groupTitleProps}/>
         <ChevronRightIcon $color={iconColor} />
       </GroupTitleContainer>
     </Hyperlink>
@@ -50,7 +50,7 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
   const Group = () => (
     <div>
       <GroupTitleContainer iconColor={iconColor} removeBorders={removeBorders} role='setMenuItemState' tabIndex='0' on={newState} $color={itemColor} {...groupItemProps}>
-        <GroupTitle/>
+        <GroupTitle name={name} {...groupTitleProps} />
         <ExpandMoreIcon data-amp-bind-class={expandMoreIconClass} />
         <ExpandLessIcon data-amp-bind-class={expandLessIconClass} />
       </GroupTitleContainer>
@@ -74,6 +74,10 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
       {!isGroup ? <HyperlinkGroup/> : <Group/>}
     </GroupSection>
   );
+};
+
+GroupTitle.propTypes = {
+  name: PropTypes.string
 };
 
 MenuItem.defaultProps = {
