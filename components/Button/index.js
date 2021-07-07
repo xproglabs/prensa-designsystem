@@ -36,7 +36,7 @@ const StyledButton = styled.button`
 `;
 
 const StyledAria = styled.a`
-  max-width: max-content;
+  max-width: 100%;
   text-decoration: unset;
 `;
 
