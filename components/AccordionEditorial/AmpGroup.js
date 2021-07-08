@@ -39,9 +39,9 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
   const iconColor = get(groupItemProps, 'iconColor', 'neutral3');
 
   const HyperlinkGroup = () => (
-    <Hyperlink href={path}>
+    <Hyperlink href={path} target={target}>
       <GroupTitleContainer removeBorders={removeBorders} $color={itemColor} {...groupItemProps}>
-        <GroupTitle target={target} name={name} {...groupTitleProps}/>
+        <GroupTitle name={name} {...groupTitleProps}/>
         <ChevronRightIcon $color={iconColor} />
       </GroupTitleContainer>
     </Hyperlink>
