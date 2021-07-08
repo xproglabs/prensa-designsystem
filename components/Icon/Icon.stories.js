@@ -12,7 +12,7 @@ export default {
 
 export const Default = () => (
   <ThemeProvider theme={theme}>
-    <IcMenu/>
+    <IcMenu ml='20px'/>
     <ChevronRight/>
     <IcMenu width='32' height='32' color='primary1' />
     <ChevronRight width='32' height='32' color='editorial4' />

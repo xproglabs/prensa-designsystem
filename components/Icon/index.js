@@ -14,7 +14,6 @@ const Icon = ({children, color, height, viewBox, width, ...otherProps}) => {
 Icon.defaultProps = {
   color: 'neutral3',
   height: '24px',
-  m: '8px',
   viewBox: '0 0 24 24',
   width: '24px',
 };
@@ -23,7 +22,6 @@ Icon.propTypes = {
   children: PropTypes.node,
   color: PropTypes.string,
   height: PropTypes.string,
-  m: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   viewBox: PropTypes.string,
   width: PropTypes.string,
   otherProps: PropTypes.any
