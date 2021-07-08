@@ -3126,7 +3126,6 @@ var Icon = function Icon(_ref) {
 Icon.defaultProps = {
   color: 'neutral3',
   height: '24px',
-  m: '8px',
   viewBox: '0 0 24 24',
   width: '24px'
 };
@@ -3134,7 +3133,6 @@ Icon.propTypes = {
   children: PropTypes__default['default'].node,
   color: PropTypes__default['default'].string,
   height: PropTypes__default['default'].string,
-  m: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
   viewBox: PropTypes__default['default'].string,
   width: PropTypes__default['default'].string,
   otherProps: PropTypes__default['default'].any
