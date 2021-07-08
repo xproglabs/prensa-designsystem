@@ -1604,7 +1604,7 @@ Subtitle.defaultProps = {
   fontSize: ['18px', '18px'],
   fontFamily: 'secondary',
   lineHeight: ['150%', '150%'],
-  mb: ['2', '2'],
+  mb: ['2', '2']
 };
 Subtitle.propTypes = {
   color: PropTypes__default['default'].string,
@@ -2252,7 +2252,7 @@ Tags.defaultProps = {
 };
 Tags.propTypes = {
   color: PropTypes__default['default'].string,
-  fontFamily: PropTypes__default['default'].array,
+  fontFamily: PropTypes__default['default'].string,
   fontSize: PropTypes__default['default'].array,
   fontWeight: PropTypes__default['default'].number,
   items: PropTypes__default['default'].array
@@ -2979,7 +2979,7 @@ Title.defaultProps = {
   fontSize: ['38px', '56px'],
   fontWeight: 700,
   lineHeight: ['110%', '110%'],
-  mb: ['2', '3'],
+  mb: ['2', '3']
 };
 Title.propTypes = {
   color: PropTypes__default['default'].string,
@@ -3462,11 +3462,11 @@ var getSize = function getSize(props, theme) {
 
 var getWidth = function getWidth(props, theme) {
   var $width = props.$width;
+  if (props.fullWidth) return 'width: 100%;';
   if (!$width) return '';
   var factor = theme.factors.margin;
   if (typeof $width === 'string') return "width: ".concat($width);
   if ($width) return "width: ".concat(factor * $width, "px");
-  if (props.fullWidth) return 'width: 100%;';
   return 'width: max-content;';
 }; //Get button variations from props (return style matching the variation)
 
@@ -3574,43 +3574,50 @@ var StyledButton = styled__default['default'].button(_templateObject$7 || (_temp
 }, function (props) {
   return props.xl && parseProps$2('xl', props);
 });
-var StyledAria = styled__default['default'].a(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  max-width: max-content;\n  text-decoration: unset;\n"])));
 
-var Button = function Button(_ref) {
-  var children = _ref.children,
-      color = _ref.color,
-      disabled = _ref.disabled,
-      fontColor = _ref.fontColor,
-      fontFamily = _ref.fontFamily,
-      fontWeight = _ref.fontWeight,
-      fontSize = _ref.fontSize,
-      width = _ref.width,
-      fullWidth = _ref.fullWidth,
-      leftIcon = _ref.leftIcon,
-      onClick = _ref.onClick,
-      radius = _ref.radius,
-      rightIcon = _ref.rightIcon,
-      size = _ref.size,
-      style = _ref.style,
-      variant = _ref.variant,
-      loading = _ref.loading,
-      enterKey = _ref.enterKey,
-      removeText = _ref.removeText,
-      px = _ref.px,
-      py = _ref.py,
-      on = _ref.on,
-      path = _ref.path,
-      iconSize = _ref.iconSize,
-      xs = _ref.xs,
-      sm = _ref.sm,
-      md = _ref.md,
-      lg = _ref.lg,
-      xl = _ref.xl,
-      custom = _ref.custom,
-      id = _ref.id,
-      type = _ref.type,
-      ariaLabel = _ref.ariaLabel,
-      otherProps = _objectWithoutProperties(_ref, ["children", "color", "disabled", "fontColor", "fontFamily", "fontWeight", "fontSize", "width", "fullWidth", "leftIcon", "onClick", "radius", "rightIcon", "size", "style", "variant", "loading", "enterKey", "removeText", "px", "py", "on", "path", "iconSize", "xs", "sm", "md", "lg", "xl", "custom", "id", "type", "ariaLabel"]);
+var getWidthRule = function getWidthRule(_ref) {
+  var fullWidth = _ref.fullWidth;
+  if (fullWidth) return '100%';
+  return 'max-content';
+};
+
+var StyledAria = styled__default['default'].a(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  width: ", ";\n  text-decoration: unset;\n"])), getWidthRule);
+
+var Button = function Button(_ref2) {
+  var children = _ref2.children,
+      color = _ref2.color,
+      disabled = _ref2.disabled,
+      fontColor = _ref2.fontColor,
+      fontFamily = _ref2.fontFamily,
+      fontWeight = _ref2.fontWeight,
+      fontSize = _ref2.fontSize,
+      width = _ref2.width,
+      fullWidth = _ref2.fullWidth,
+      leftIcon = _ref2.leftIcon,
+      onClick = _ref2.onClick,
+      radius = _ref2.radius,
+      rightIcon = _ref2.rightIcon,
+      size = _ref2.size,
+      style = _ref2.style,
+      variant = _ref2.variant,
+      loading = _ref2.loading,
+      enterKey = _ref2.enterKey,
+      removeText = _ref2.removeText,
+      px = _ref2.px,
+      py = _ref2.py,
+      on = _ref2.on,
+      path = _ref2.path,
+      iconSize = _ref2.iconSize,
+      xs = _ref2.xs,
+      sm = _ref2.sm,
+      md = _ref2.md,
+      lg = _ref2.lg,
+      xl = _ref2.xl,
+      custom = _ref2.custom,
+      id = _ref2.id,
+      type = _ref2.type,
+      ariaLabel = _ref2.ariaLabel,
+      otherProps = _objectWithoutProperties(_ref2, ["children", "color", "disabled", "fontColor", "fontFamily", "fontWeight", "fontSize", "width", "fullWidth", "leftIcon", "onClick", "radius", "rightIcon", "size", "style", "variant", "loading", "enterKey", "removeText", "px", "py", "on", "path", "iconSize", "xs", "sm", "md", "lg", "xl", "custom", "id", "type", "ariaLabel"]);
 
   //check if children is string
   var childrenIsString = typeof children === 'string'; // Trigger to Handle enter keydown for forms
