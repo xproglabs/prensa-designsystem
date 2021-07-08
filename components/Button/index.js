@@ -35,8 +35,13 @@ const StyledButton = styled.button`
   ${props => props.xl && parseProps('xl', props)};
 `;
 
+const getWidthRule = ({fullWidth}) => {
+  if (fullWidth) return '100%';
+  return 'max-content';
+};
+
 const StyledAria = styled.a`
-  max-width: max-content;
+  width: ${getWidthRule};
   text-decoration: unset;
 `;
 

@@ -42,7 +42,7 @@ Tags.defaultProps = {
 
 Tags.propTypes = {
   color: PropTypes.string,
-  fontFamily: PropTypes.array,
+  fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
   fontWeight: PropTypes.number,
   items: PropTypes.array
