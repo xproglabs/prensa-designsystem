@@ -1,3 +1,4 @@
+import {get} from 'lodash';
 import PropTypes from 'prop-types';
 import React, {useEffect} from 'react';
 import styled, {withTheme} from 'styled-components';
@@ -35,8 +36,9 @@ const StyledButton = styled.button`
   ${props => props.xl && parseProps('xl', props)};
 `;
 
-const getWidthRule = ({fullWidth}) => {
-  if (fullWidth) return '100%';
+const getWidthRule = (props) => {
+  const isButtonFullWidth = get(props, 'children.props.fullWidth', false);
+  if (isButtonFullWidth) return '100%';
   return 'max-content';
 };
 
@@ -171,7 +173,7 @@ const Button = ({
     custom: custom,
   });
 
-  const renderRoot = (rootComponentOtherProps) => {
+  const renderRoot = () => {
     return (
       <StyledButton
         on={on}
@@ -201,7 +203,7 @@ const Button = ({
         id={id}
         type={type}
         aria-label= {ariaLabel}
-        {...rootComponentOtherProps}
+        {...otherProps}
       >
         {loading && 'Carregando...'}
         {leftIcon && leftIcon}
@@ -211,8 +213,8 @@ const Button = ({
       </StyledButton>
     );
   };
-
-  return path ? <StyledAria href={path} {...otherProps}>{renderRoot()}</StyledAria> : renderRoot(otherProps);
+  
+  return path ? <StyledAria href={path} {...otherProps}>{renderRoot()}</StyledAria> : renderRoot();
 };
 
 Button.propTypes = {
