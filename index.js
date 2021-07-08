@@ -3237,12 +3237,12 @@ var MenuItem = function MenuItem(_ref) {
 
   var HyperlinkGroup = function HyperlinkGroup() {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
-      href: path
+      href: path,
+      target: target
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
       removeBorders: removeBorders,
       $color: itemColor
     }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, _extends({
-      target: target,
       name: name
     }, groupTitleProps)), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
       $color: iconColor
