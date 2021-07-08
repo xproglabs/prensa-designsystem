@@ -13,11 +13,11 @@ const getSize = (props, theme) => {
 //Get button width variations from props
 const getWidth = (props, theme) => {
   const {$width} = props;
+  if (props.fullWidth) return 'width: 100%;';
   if (!$width) return '';
   const factor = theme.factors.margin;
   if (typeof $width === 'string') return `width: ${$width}`;
   if ($width) return `width: ${factor * $width}px`;
-  if (props.fullWidth) return 'width: 100%;';
   return 'width: max-content;';
 };
 
