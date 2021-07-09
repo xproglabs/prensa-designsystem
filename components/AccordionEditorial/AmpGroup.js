@@ -36,10 +36,11 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
   const contentClass = `${stateId}.status ? 'group-open' : 'group-closed'`;
   const expandMoreIconClass = `${stateId}.status ? "${CONFIGS.GROUP_ICON_CLASS} hidden" : "${CONFIGS.GROUP_ICON_CLASS} visible"`;
   const expandLessIconClass = `${stateId}.status ? "${CONFIGS.GROUP_ICON_CLASS} visible" : "${CONFIGS.GROUP_ICON_CLASS} hidden"`;
-  const iconColor = get(groupItemProps, 'iconColor', 'neutral3');
 
+  const iconColor = get(groupItemProps, 'iconColor', 'neutral3');
+  const hyperlinkId = get(groupItemProps, 'id', undefined);
   const HyperlinkGroup = () => (
-    <Hyperlink href={path} target={target}>
+    <Hyperlink href={path} target={target} id={hyperlinkId}>
       <GroupTitleContainer removeBorders={removeBorders} $color={itemColor} {...groupItemProps}>
         <GroupTitle name={name} {...groupTitleProps}/>
         <ChevronRightIcon $color={iconColor} />
