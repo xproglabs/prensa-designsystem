@@ -39,7 +39,7 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
 
   const iconColor = get(groupItemProps, 'iconColor', 'neutral3');
   const HyperlinkGroup = () => (
-    <Hyperlink href={path} id={path} target={target}>
+    <Hyperlink href={path} id={contentId} target={target}>
       <GroupTitleContainer removeBorders={removeBorders} $color={itemColor} {...groupItemProps}>
         <GroupTitle name={name} {...groupTitleProps}/>
         <ChevronRightIcon $color={iconColor} />
@@ -55,9 +55,9 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
         <ExpandLessIcon data-amp-bind-class={expandLessIconClass} />
       </GroupTitleContainer>
       <GroupContent data-amp-bind-class={contentClass}>
-        {map(subitems, ({path, name}, key) => (
+        {map(subitems, ({contentId, path, name}, key) => (
           <Block ml='20px' mb={2} mt={2} key={key}>
-            <Typography id={path} {...CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS} href={path} {...groupSubItemProps}>
+            <Typography id={contentId} {...CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS} href={path} {...groupSubItemProps}>
               {name}
             </Typography>
           </Block>
