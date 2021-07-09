@@ -3208,10 +3208,6 @@ var GroupTitle = function GroupTitle(props) {
   return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, CONFIGS.GROUP_TITLE_DEFAULT_PROPS, props), props.name);
 };
 
-var parseContentId = function parseContentId(value) {
-  return lodash.replace(value, '.', '');
-};
-
 var MenuItem = function MenuItem(_ref) {
   var color = _ref.color,
       content = _ref.content,
@@ -3231,19 +3227,21 @@ var MenuItem = function MenuItem(_ref) {
       path = content.path,
       subitems = content.subitems,
       target = content.target;
+  var parsedContentId = lodash.replace(contentId, '.', '');
   var isGroup = subitems.length > 0;
-  var stateId = "state".concat(contentId.replace('.', ''));
+  var stateId = "state".concat(parsedContentId);
   var initialState = "{ \"".concat(stateId, "\": { \"status\": true } }");
   var newState = "tap:AMP.setState({ ".concat(stateId, ": {status: !").concat(stateId, ".status} })");
   var contentClass = "".concat(stateId, ".status ? 'group-open' : 'group-closed'");
   var expandMoreIconClass = "".concat(stateId, ".status ? \"").concat(CONFIGS.GROUP_ICON_CLASS, " hidden\" : \"").concat(CONFIGS.GROUP_ICON_CLASS, " visible\"");
   var expandLessIconClass = "".concat(stateId, ".status ? \"").concat(CONFIGS.GROUP_ICON_CLASS, " visible\" : \"").concat(CONFIGS.GROUP_ICON_CLASS, " hidden\"");
   var iconColor = lodash.get(groupItemProps, 'iconColor', 'neutral3');
+  var itemId = "accordion-item-".concat(parsedContentId);
 
   var HyperlinkGroup = function HyperlinkGroup() {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path,
-      id: parseContentId(contentId),
+      id: itemId,
       target: target
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
       removeBorders: removeBorders,
@@ -3281,7 +3279,7 @@ var MenuItem = function MenuItem(_ref) {
         mt: 2,
         key: key
       }, /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({
-        id: parseContentId(contentId)
+        id: "accordion-item-".concat(lodash.replace(contentId, '.', ''))
       }, CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS, {
         href: path
       }, groupSubItemProps), name));
