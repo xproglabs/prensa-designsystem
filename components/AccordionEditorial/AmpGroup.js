@@ -16,10 +16,6 @@ const GroupTitle = (props) => (
   </Typography>
 );
 
-const parseContentId = value => {
-  return replace(value, '.', '');
-};
-
 const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitleProps, removeBorders}) => {
   
   // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
@@ -32,9 +28,11 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
   if (color === 'unique' && content.color) itemColor = content.color;
 
   const {contentId, name, path, subitems, target} = content;
+
+  const parsedContentId = replace(contentId, '.', '');
   
   const isGroup = subitems.length > 0;
-  const stateId = `state${contentId.replace('.', '')}`;
+  const stateId = `state${parsedContentId}`;
   const initialState = `{ "${stateId}": { "status": true } }`;
   const newState = `tap:AMP.setState({ ${stateId}: {status: !${stateId}.status} })`;
   const contentClass = `${stateId}.status ? 'group-open' : 'group-closed'`;
@@ -42,8 +40,9 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
   const expandLessIconClass = `${stateId}.status ? "${CONFIGS.GROUP_ICON_CLASS} visible" : "${CONFIGS.GROUP_ICON_CLASS} hidden"`;
 
   const iconColor = get(groupItemProps, 'iconColor', 'neutral3');
+  const itemId = `accordion-item-${parsedContentId}`;
   const HyperlinkGroup = () => (
-    <Hyperlink href={path} id={parseContentId(contentId)} target={target}>
+    <Hyperlink href={path} id={itemId} target={target}>
       <GroupTitleContainer removeBorders={removeBorders} $color={itemColor} {...groupItemProps}>
         <GroupTitle name={name} {...groupTitleProps}/>
         <ChevronRightIcon $color={iconColor} />
@@ -61,7 +60,7 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
       <GroupContent data-amp-bind-class={contentClass}>
         {map(subitems, ({contentId, path, name}, key) => (
           <Block ml='20px' mb={2} mt={2} key={key}>
-            <Typography id={parseContentId(contentId)} {...CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS} href={path} {...groupSubItemProps}>
+            <Typography id={`accordion-item-${replace(contentId, '.', '')}`} {...CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS} href={path} {...groupSubItemProps}>
               {name}
             </Typography>
           </Block>
