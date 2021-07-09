@@ -3239,7 +3239,7 @@ var MenuItem = function MenuItem(_ref) {
   var HyperlinkGroup = function HyperlinkGroup() {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path,
-      id: path,
+      id: contentId,
       target: target
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
       removeBorders: removeBorders,
@@ -3268,7 +3268,8 @@ var MenuItem = function MenuItem(_ref) {
     })), /*#__PURE__*/React__default['default'].createElement(GroupContent, {
       "data-amp-bind-class": contentClass
     }, lodash.map(subitems, function (_ref2, key) {
-      var path = _ref2.path,
+      var contentId = _ref2.contentId,
+          path = _ref2.path,
           name = _ref2.name;
       return /*#__PURE__*/React__default['default'].createElement(Block$1, {
         ml: "20px",
@@ -3276,7 +3277,7 @@ var MenuItem = function MenuItem(_ref) {
         mt: 2,
         key: key
       }, /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({
-        id: path
+        id: contentId
       }, CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS, {
         href: path
       }, groupSubItemProps), name));
