@@ -1,4 +1,4 @@
-import {map, get} from 'lodash';
+import {map, get, replace} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -15,6 +15,10 @@ const GroupTitle = (props) => (
     {props.name}
   </Typography>
 );
+
+const parseContentId = value => {
+  return replace(value, '.', '');
+};
 
 const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitleProps, removeBorders}) => {
   
@@ -39,7 +43,7 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
 
   const iconColor = get(groupItemProps, 'iconColor', 'neutral3');
   const HyperlinkGroup = () => (
-    <Hyperlink href={path} id={contentId} target={target}>
+    <Hyperlink href={path} id={parseContentId(contentId)} target={target}>
       <GroupTitleContainer removeBorders={removeBorders} $color={itemColor} {...groupItemProps}>
         <GroupTitle name={name} {...groupTitleProps}/>
         <ChevronRightIcon $color={iconColor} />
@@ -57,7 +61,7 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
       <GroupContent data-amp-bind-class={contentClass}>
         {map(subitems, ({contentId, path, name}, key) => (
           <Block ml='20px' mb={2} mt={2} key={key}>
-            <Typography id={contentId} {...CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS} href={path} {...groupSubItemProps}>
+            <Typography id={parseContentId(contentId)} {...CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS} href={path} {...groupSubItemProps}>
               {name}
             </Typography>
           </Block>
