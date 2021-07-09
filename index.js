@@ -3208,6 +3208,10 @@ var GroupTitle = function GroupTitle(props) {
   return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, CONFIGS.GROUP_TITLE_DEFAULT_PROPS, props), props.name);
 };
 
+var parseContentId = function parseContentId(value) {
+  return lodash.replace(value, '.', '');
+};
+
 var MenuItem = function MenuItem(_ref) {
   var color = _ref.color,
       content = _ref.content,
@@ -3239,7 +3243,7 @@ var MenuItem = function MenuItem(_ref) {
   var HyperlinkGroup = function HyperlinkGroup() {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path,
-      id: contentId,
+      id: parseContentId(contentId),
       target: target
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
       removeBorders: removeBorders,
@@ -3277,7 +3281,7 @@ var MenuItem = function MenuItem(_ref) {
         mt: 2,
         key: key
       }, /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({
-        id: contentId
+        id: parseContentId(contentId)
       }, CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS, {
         href: path
       }, groupSubItemProps), name));
