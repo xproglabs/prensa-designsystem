@@ -56,9 +56,9 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
         <ExpandLessIcon data-amp-bind-class={expandLessIconClass} />
       </GroupTitleContainer>
       <GroupContent data-amp-bind-class={contentClass}>
-        {map(subitems, ({id, path, name}, key) => (
-          <Block id={id} ml='20px' mb={2} mt={2} key={key}>
-            <Typography {...CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS} href={path} {...groupSubItemProps}>
+        {map(subitems, ({path, name}, key) => (
+          <Block ml='20px' mb={2} mt={2} key={key}>
+            <Typography id={path} {...CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS} href={path} {...groupSubItemProps}>
               {name}
             </Typography>
           </Block>
