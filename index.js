@@ -3235,13 +3235,12 @@ var MenuItem = function MenuItem(_ref) {
   var expandMoreIconClass = "".concat(stateId, ".status ? \"").concat(CONFIGS.GROUP_ICON_CLASS, " hidden\" : \"").concat(CONFIGS.GROUP_ICON_CLASS, " visible\"");
   var expandLessIconClass = "".concat(stateId, ".status ? \"").concat(CONFIGS.GROUP_ICON_CLASS, " visible\" : \"").concat(CONFIGS.GROUP_ICON_CLASS, " hidden\"");
   var iconColor = lodash.get(groupItemProps, 'iconColor', 'neutral3');
-  var hyperlinkId = lodash.get(groupItemProps, 'id', undefined);
 
   var HyperlinkGroup = function HyperlinkGroup() {
     return /*#__PURE__*/React__default['default'].createElement(Hyperlink, {
       href: path,
-      target: target,
-      id: hyperlinkId
+      id: path,
+      target: target
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
       removeBorders: removeBorders,
       $color: itemColor
