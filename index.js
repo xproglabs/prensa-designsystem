@@ -1064,7 +1064,9 @@ var Typography = function Typography(_ref) {
       minWidth = _ref.minWidth,
       opacityOnHover = _ref.opacityOnHover,
       target = _ref.target,
-      dangerouslySetInnerHTML = _ref.dangerouslySetInnerHTML;
+      dangerouslySetInnerHTML = _ref.dangerouslySetInnerHTML,
+      otherProps = _objectWithoutProperties(_ref, ["children", "color", "element", "fontSize", "fontFamily", "fontWeight", "href", "lineHeight", "textAlign", "transform", "mx", "my", "mt", "mb", "ml", "mr", "px", "py", "pt", "pb", "pl", "pr", "bt", "br", "bb", "bl", "b", "borderColor", "borderStyle", "xs", "sm", "md", "lg", "xl", "theme", "custom", "width", "fullWidth", "maxWidth", "minWidth", "opacityOnHover", "target", "dangerouslySetInnerHTML"]);
+
   var styles = styled.css(["", ";", ";", ";", ";", ";", ";"], function (props) {
     return parseProps$1('', props);
   }, function (props) {
@@ -1154,7 +1156,7 @@ var Typography = function Typography(_ref) {
     });
   };
 
-  var props = {
+  var props = _objectSpread2({
     $fontWeight: fontWeight,
     $fontSize: fontSize,
     $fontFamily: fontFamily,
@@ -1198,7 +1200,7 @@ var Typography = function Typography(_ref) {
     dangerouslySetInnerHTML: dangerouslySetInnerHTML ? {
       __html: dangerouslySetInnerHTML
     } : undefined
-  };
+  }, otherProps);
 
   switch (element) {
     case 'h1':
