@@ -61,6 +61,7 @@ const Typography = ({
   opacityOnHover,
   target,
   dangerouslySetInnerHTML,
+  ...otherProps
 }) => {
 
   const styles = css`
@@ -179,7 +180,8 @@ const Typography = ({
     md: getMdProps(),
     lg: getLgProps(),
     xl: getXlProps(),
-    dangerouslySetInnerHTML: dangerouslySetInnerHTML ? {__html: dangerouslySetInnerHTML} : undefined
+    dangerouslySetInnerHTML: dangerouslySetInnerHTML ? {__html: dangerouslySetInnerHTML} : undefined,
+    ...otherProps
   };
 
   switch(element) {
