@@ -11,7 +11,10 @@ export const Body = ({
 }) => {
   return <Block
     custom={`
-      a { color: ${hyperlinkColor}; }
+      a {
+        color: ${hyperlinkColor};
+        word-break: break-all;
+      }
       max-width: ${bodyWidth};
     `}
     lg={{
