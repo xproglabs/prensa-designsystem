@@ -6,6 +6,7 @@ export {default as DiarioDaRegiao} from './DiarioDaRegiao';
 export {default as ODiarioDeMogi} from './ODiarioDeMogi';
 export {default as OVale} from './OVale';
 export {default as HojeEmDia} from './HojeEmDia';
+import AdPlaceholder from '../../AdBlock/placeholder';
 import Article from '../Article';
 
 export default {
@@ -17,6 +18,7 @@ export const ArticleDefault = () => {
   return (
     <ThemeProvider theme={theme}>
       <Article
+        AdPlaceholder={AdPlaceholder}
         subject={{
           bgColor: 'neutral3',
           color: 'white',

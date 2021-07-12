@@ -15,6 +15,7 @@ const Article = (props) => {
 
   const {
     ads,
+    AdPlaceholder,
     amp,
     bodyWidth,
     byline,
@@ -72,6 +73,7 @@ const Article = (props) => {
         <S.MaxWidth maxWidth={bodyWidth}>
           <TextBody
             ads={adsBody}
+            AdPlaceholder={AdPlaceholder}
             amp={amp}
             bodyWidth={bodyWidth}
             citation={citation}
@@ -104,6 +106,7 @@ Article.propTypes = {
       interventionAmount: PropTypes.number
     }),
   }),
+  AdPlaceholder: PropTypes.func,
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
   byline: PropTypes.object,
