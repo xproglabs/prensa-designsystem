@@ -1617,113 +1617,6 @@ Subtitle.propTypes = {
   value: PropTypes__default['default'].string
 };
 
-var getColor = function getColor(_ref) {
-  var _ref$theme = _ref.theme,
-      theme = _ref$theme === void 0 ? {} : _ref$theme,
-      _ref$$color = _ref.$color,
-      $color = _ref$$color === void 0 ? '' : _ref$$color;
-  var value = lodash.get(theme.colors, $color, '');
-  return value;
-};
-
-var parseWidth$1 = function parseWidth(param) {
-  try {
-    return JSON.parse(param);
-  } catch (e) {
-    return [300, 20];
-  }
-};
-
-var AdBlock = function AdBlock(_ref) {
-  var amp = _ref.amp,
-      content = _ref.content,
-      containerProps = _ref.containerProps,
-      itemProps = _ref.itemProps,
-      theme = _ref.theme,
-      type = _ref.type;
-  if (!content) return null;
-  var $color = lodash.get(itemProps, 'color', 'neutral10');
-  var object_mobile = {
-    code: content['gpt-mobile-code'],
-    name: content['gpt-mobile-name'],
-    size: parseWidth$1(content['gpt-mobile-size'])
-  };
-  var object_desktop = {
-    code: content['gpt-desktop-code'],
-    name: content['gpt-desktop-name'],
-    size: parseWidth$1(content['gpt-desktop-size'])
-  };
-
-  if (content['gpt-mobile-status'] === 'true') {
-    if (global.adsToMobile) {
-      global.adsToMobile.push(object_mobile);
-    }
-  }
-
-  if (content['gpt-desktop-status'] === 'true') {
-    if (global.adsToDesktop) {
-      global.adsToDesktop.push(object_desktop);
-    }
-  }
-
-  var mobileHeight = object_mobile.size[1];
-  var mobileWidth = object_mobile.size[0];
-  var desktopHeight = object_desktop.size[1];
-  var desktopWidth = object_desktop.size[0];
-  var mobileItemCustomStyle = "\n    background-color: ".concat(getColor({
-    theme: theme,
-    $color: $color
-  }), ";\n    min-height: ").concat(mobileHeight, "px;\n    min-width: ").concat(mobileWidth, "px;\n    @media (min-width: ").concat(theme.queries.lg, ") {\n      display: none;\n    }\n  ");
-  var desktopItemCustomStyle = "\n    background-color: ".concat(getColor({
-    theme: theme,
-    $color: $color
-  }), ";\n    min-height: ").concat(desktopHeight, "px;\n    min-width: ").concat(desktopWidth, "px;\n    @media (max-width: ").concat(theme.queries.lg, ") {\n      display: none;\n    }\n  ");
-  return /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({
-    alignx: "center",
-    width: "100%",
-    mb: 3
-  }, containerProps), /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({
-    align: "row",
-    alignx: "center",
-    aligny: "middle"
-  }, itemProps, {
-    custom: mobileItemCustomStyle
-  }), amp === true ? /*#__PURE__*/React__default['default'].createElement("amp-ad", {
-    "data-slot": object_mobile.name,
-    height: mobileHeight,
-    width: mobileWidth,
-    type: type
-  }) : /*#__PURE__*/React__default['default'].createElement("div", {
-    id: object_mobile.code
-  })), /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({
-    align: "row",
-    alignx: "center",
-    aligny: "middle"
-  }, itemProps, {
-    custom: desktopItemCustomStyle
-  }), amp === true ? /*#__PURE__*/React__default['default'].createElement("amp-ad", {
-    "data-slot": object_desktop.name,
-    height: desktopHeight,
-    width: desktopWidth,
-    type: type
-  }) : /*#__PURE__*/React__default['default'].createElement("div", {
-    id: object_desktop.code
-  })));
-};
-
-AdBlock.propTypes = {
-  amp: PropTypes__default['default'].bool,
-  content: PropTypes__default['default'].object,
-  containerProps: PropTypes__default['default'].object,
-  itemProps: PropTypes__default['default'].object,
-  theme: PropTypes__default['default'].object,
-  type: PropTypes__default['default'].string
-};
-AdBlock.defaultProps = {
-  type: 'doubleclick'
-};
-var AdBlock$1 = styled.withTheme(AdBlock);
-
 var _templateObject$3;
 var Container$3 = styled__default['default'].div(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  height: max-content;\n  margin-bottom: 24px;\n  width: 100%;\n  @media (min-width: ", ") {\n    width: ", ";\n    height: ", ";\n  }\n"])), function (props) {
   return props.theme.queries.md;
@@ -2769,6 +2662,7 @@ var parse_content = function parse_content(content) {
 
 var TextBody = function TextBody(props) {
   var ads = props.ads,
+      AdPlaceholder = props.AdPlaceholder,
       amp = props.amp,
       bodyWidth = props.bodyWidth,
       citation = props.citation,
@@ -2790,9 +2684,13 @@ var TextBody = function TextBody(props) {
   var paragraph_length = 0;
   var ad_counter = 0; // let intervention_readmore = false;
 
+  var AdBlock = function AdBlock(props) {
+    return AdPlaceholder(props);
+  };
+
   var body_items = parse_content(content);
 
-  var render_image = function render_image(key, value) {
+  var render_image = function render_image(value) {
     if (!value) return null;
     var image_data = lodash.find(images.items, {
       contentId: value.contentId
@@ -2800,7 +2698,6 @@ var TextBody = function TextBody(props) {
     if (!image_data) return null;
     return /*#__PURE__*/React__default['default'].createElement(Block$1, {
       mb: 3,
-      key: key,
       width: "100%"
     }, /*#__PURE__*/React__default['default'].createElement(TopImage, {
       caption: {
@@ -2816,7 +2713,7 @@ var TextBody = function TextBody(props) {
     }));
   };
 
-  var render_paragraph = function render_paragraph(key, value) {
+  var render_paragraph = function render_paragraph(value) {
     // intervention_readmore = false;
     intervention_status = false;
 
@@ -2844,9 +2741,8 @@ var TextBody = function TextBody(props) {
 
     var ad_data_key = ad_counter - 1;
     return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(Paragraph$1, _extends({}, paragraph, {
-      key: key,
       value: value
-    })), intervention_status && /*#__PURE__*/React__default['default'].createElement(AdBlock$1, {
+    })), intervention_status && /*#__PURE__*/React__default['default'].createElement(AdBlock, {
       amp: amp,
       content: adsContent[ad_data_key]
     }));
@@ -2858,71 +2754,68 @@ var TextBody = function TextBody(props) {
     return lodash.get(props, "theme.colors.".concat(color));
   };
 
+  var switch_component = function switch_component(type, value) {
+    switch (type) {
+      case 'Cite':
+        return /*#__PURE__*/React__default['default'].createElement(Citation, _extends({}, citation, {
+          value: value
+        }));
+
+      case 'Facebook':
+        return /*#__PURE__*/React__default['default'].createElement(FacebookEmbed, {
+          url: value
+        });
+
+      case 'Instagram':
+        return /*#__PURE__*/React__default['default'].createElement(InstagramEmbed, {
+          url: value
+        });
+
+      case 'Tweet':
+        return /*#__PURE__*/React__default['default'].createElement(TwitterEmbed, {
+          url: value
+        });
+
+      case 'Youtube':
+        return /*#__PURE__*/React__default['default'].createElement(YouTubeEmbed, {
+          url: value
+        });
+
+      case 'Image':
+        return render_image(value);
+
+      case 'Heading2':
+        return /*#__PURE__*/React__default['default'].createElement(Heading2, _extends({}, heading2, {
+          value: value
+        }));
+
+      case 'Heading3':
+        return /*#__PURE__*/React__default['default'].createElement(Heading3, _extends({}, heading3, {
+          value: value
+        }));
+
+      case 'Heading4':
+        return /*#__PURE__*/React__default['default'].createElement(Heading4, _extends({}, heading4, {
+          value: value
+        }));
+
+      case 'Paragraph':
+        return render_paragraph(value);
+
+      default:
+        return /*#__PURE__*/React__default['default'].createElement("pre", null, "erro no parse do conte\xFAdo");
+    }
+  };
+
   return /*#__PURE__*/React__default['default'].createElement(Body, {
     bodyWidth: bodyWidth,
     hyperlinkColor: get_hyperlink_color()
   }, lodash.map(body_items, function (_ref, key) {
     var type = _ref.type,
         value = _ref.value;
-
-    switch (type) {
-      case 'Cite':
-        return /*#__PURE__*/React__default['default'].createElement(Citation, _extends({}, citation, {
-          key: key,
-          value: value
-        }));
-
-      case 'Facebook':
-        return /*#__PURE__*/React__default['default'].createElement(FacebookEmbed, {
-          key: key,
-          url: value
-        });
-
-      case 'Instagram':
-        return /*#__PURE__*/React__default['default'].createElement(InstagramEmbed, {
-          key: key,
-          url: value
-        });
-
-      case 'Tweet':
-        return /*#__PURE__*/React__default['default'].createElement(TwitterEmbed, {
-          key: key,
-          url: value
-        });
-
-      case 'Youtube':
-        return /*#__PURE__*/React__default['default'].createElement(YouTubeEmbed, {
-          key: key,
-          url: value
-        });
-
-      case 'Image':
-        return render_image(key, value);
-
-      case 'Heading2':
-        return /*#__PURE__*/React__default['default'].createElement(Heading2, _extends({}, heading2, {
-          key: key,
-          value: value
-        }));
-
-      case 'Heading3':
-        return /*#__PURE__*/React__default['default'].createElement(Heading3, _extends({}, heading3, {
-          key: key,
-          value: value
-        }));
-
-      case 'Heading4':
-        return /*#__PURE__*/React__default['default'].createElement(Heading4, _extends({}, heading4, {
-          key: key,
-          value: value
-        }));
-
-      case 'Paragraph':
-        return render_paragraph(key, value);
-
-      default:
-        return /*#__PURE__*/React__default['default'].createElement("pre", null, "erro no parse do conte\xFAdo");
-    }
+    return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, {
+      key: key
+    }, switch_component(type, value));
   }), gallery && gallery.length > 0 && /*#__PURE__*/React__default['default'].createElement(ImageGallery, {
     items: gallery
   }), /*#__PURE__*/React__default['default'].createElement(Tags, tags));
@@ -2933,6 +2826,7 @@ TextBody.propTypes = {
     content: PropTypes__default['default'].object,
     interventionAmount: PropTypes__default['default'].number
   }),
+  AdPlaceholder: PropTypes__default['default'].func,
   amp: PropTypes__default['default'].bool,
   bodyWidth: PropTypes__default['default'].string,
   content: PropTypes__default['default'].string,
@@ -2994,6 +2888,7 @@ Title.propTypes = {
 
 var Article = function Article(props) {
   var ads = props.ads,
+      AdPlaceholder = props.AdPlaceholder,
       amp = props.amp,
       bodyWidth = props.bodyWidth,
       byline = props.byline,
@@ -3028,6 +2923,7 @@ var Article = function Article(props) {
     maxWidth: bodyWidth
   }, /*#__PURE__*/React__default['default'].createElement(TextBody$1, {
     ads: adsBody,
+    AdPlaceholder: AdPlaceholder,
     amp: amp,
     bodyWidth: bodyWidth,
     citation: citation,
@@ -3055,6 +2951,7 @@ Article.propTypes = {
       interventionAmount: PropTypes__default['default'].number
     })
   }),
+  AdPlaceholder: PropTypes__default['default'].func,
   amp: PropTypes__default['default'].bool,
   bodyWidth: PropTypes__default['default'].string,
   byline: PropTypes__default['default'].object,
@@ -3076,6 +2973,15 @@ Article.propTypes = {
   topimage: PropTypes__default['default'].object
 };
 var Article$1 = styled.withTheme(Article);
+
+var getColor = function getColor(_ref) {
+  var _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme,
+      _ref$$color = _ref.$color,
+      $color = _ref$$color === void 0 ? '' : _ref$$color;
+  var value = lodash.get(theme.colors, $color, '');
+  return value;
+};
 
 var margin = function margin(_ref) {
   var _ref$theme = _ref.theme,
