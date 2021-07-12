@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {withTheme} from 'styled-components';
 
-import AdBlock from '../../AdBlock';
 import Block from '../../Block';
 import ImageGallery from '../../ImageGallery';
 import Citation from '../Citation/Citation';
@@ -23,6 +22,7 @@ import {parse_content} from './TextBodyParser';
 const TextBody = (props) => {
   const {
     ads,
+    AdPlaceholder,
     amp,
     bodyWidth,
     citation,
@@ -49,15 +49,16 @@ const TextBody = (props) => {
   let ad_counter = 0;
   // let intervention_readmore = false;
 
+  const AdBlock = (props) => AdPlaceholder(props);
   const body_items = parse_content(content);
 
-  const render_image = (key, value) => {
+  const render_image = (value) => {
     if (!value) return null;
     const image_data = find(images.items, {contentId: value.contentId});
     if (!image_data) return null;
     
     return (
-      <Block mb={3} key={key} width="100%">
+      <Block mb={3} width="100%">
         <TopImage
           caption={{
             fontFamily: 'secondary',
@@ -74,11 +75,9 @@ const TextBody = (props) => {
     );
   };
 
-  const render_paragraph = (key, value) => {
-
+  const render_paragraph = (value) => {
     // intervention_readmore = false;
     intervention_status = false;
-
     if (value.length > 50) {
       paragraph_length++;
       if (paragraph_length === intervention_amount) {
@@ -100,7 +99,7 @@ const TextBody = (props) => {
     const ad_data_key = ad_counter - 1;
     return (
       <React.Fragment>
-        <Paragraph {...paragraph} key={key} value={value} />
+        <Paragraph {...paragraph} value={value} />
         {intervention_status && <AdBlock amp={amp} content={adsContent[ad_data_key]} />}
       </React.Fragment>
     );
@@ -111,34 +110,42 @@ const TextBody = (props) => {
     if (hyperlink) color = hyperlink;
     return get(props, `theme.colors.${color}`);
   };
+
+  const switch_component = (type, value) => {
+    switch(type) {
+      case 'Cite': 
+        return <Citation {...citation} value={value} />;
+      case 'Facebook': 
+        return <FacebookEmbed url={value} />;
+      case 'Instagram': 
+        return <InstagramEmbed url={value} />;            
+      case 'Tweet': 
+        return <TwitterEmbed url={value} />;
+      case 'Youtube': 
+        return <YouTubeEmbed url={value} />;
+      case 'Image': 
+        return render_image(value);
+      case 'Heading2': 
+        return <Heading2 {...heading2} value={value} />;
+      case 'Heading3': 
+        return <Heading3 {...heading3} value={value} />;
+      case 'Heading4': 
+        return <Heading4 {...heading4} value={value} />;
+      case 'Paragraph': 
+        return render_paragraph(value);
+      default:
+        return <pre>erro no parse do conteúdo</pre>;
+    }
+  };
   
   return (
     <S.Body bodyWidth={bodyWidth} hyperlinkColor={get_hyperlink_color()}>
       {map(body_items, ({type, value}, key) => {
-        switch(type) {
-          case 'Cite': 
-            return <Citation {...citation} key={key} value={value} />;
-          case 'Facebook': 
-            return <FacebookEmbed key={key} url={value} />;
-          case 'Instagram': 
-            return <InstagramEmbed key={key} url={value} />;            
-          case 'Tweet': 
-            return <TwitterEmbed key={key} url={value} />;
-          case 'Youtube': 
-            return <YouTubeEmbed key={key} url={value} />;
-          case 'Image': 
-            return render_image(key, value);
-          case 'Heading2': 
-            return <Heading2 {...heading2} key={key} value={value} />;
-          case 'Heading3': 
-            return <Heading3 {...heading3} key={key} value={value} />;
-          case 'Heading4': 
-            return <Heading4 {...heading4} key={key} value={value} />;
-          case 'Paragraph': 
-            return render_paragraph(key, value);
-          default:
-            return <pre>erro no parse do conteúdo</pre>;
-        }
+        return (
+          <React.Fragment key={key}>
+            {switch_component(type, value)}
+          </React.Fragment>
+        );
       })}
       {gallery && gallery.length > 0 && (
         <ImageGallery items={gallery} />
@@ -153,6 +160,7 @@ TextBody.propTypes = {
     content: PropTypes.object,
     interventionAmount: PropTypes.number
   }),
+  AdPlaceholder: PropTypes.func,
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
   content: PropTypes.string,
