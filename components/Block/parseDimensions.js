@@ -1,39 +1,39 @@
 import {get} from 'lodash';
 
 //ToDo: Deprecate parseDimensions
-export const parseWidth = (props, theme) => {
-  const unit = theme.factors.padding;
-  const width = get(props, '$width', undefined);
-  const fullWidth = get(props, 'fullWidth', undefined);
-  const px = get(props, 'px', undefined);
-  const pl = get(props, 'pl', undefined);
-  const pr = get(props, 'pr', undefined);
-  if (fullWidth) {
-    if (px) {
-      if (typeof px === 'string') return `width: calc(100% - ${px} - ${px})`;
-      return `width: calc(100% - ${px * unit}px - ${px * unit}px)`;
-    }
-    if (pl && pr) {
-      if (typeof pl === 'string' && typeof pr === 'string') return `width: calc(100% - ${pl} - ${pr})`;
-      return `width: calc(100% - ${pl * unit}px - ${pr * unit}px)`;
-    }
-    if (pl) {
-      if (typeof pl === 'string') return `width: calc(100% - ${pl})`;
-      return `width: calc(100% - ${pl * unit}px)`;
-    }
-    if (pr) {
-      if (typeof pr === 'string') return `width: calc(100% - ${pr})`;
-      return `width: calc(100% - ${pr * unit}px)`;
-    }
-    return 'width: 100%';
-  } else if (!width) {
-    return '';
-  } else if (typeof width === 'string') {
-    return `width: ${width}`;
-  } else {
-    return `width: ${width * theme.factors.dimensions}px`;
-  }
-};
+// export const parseWidth = (props, theme) => {
+//   const unit = theme.factors.padding;
+//   const width = get(props, '$width', undefined);
+//   const fullWidth = get(props, 'fullWidth', undefined);
+//   const px = get(props, 'px', undefined);
+//   const pl = get(props, 'pl', undefined);
+//   const pr = get(props, 'pr', undefined);
+//   if (fullWidth) {
+//     if (px) {
+//       if (typeof px === 'string') return `width: calc(100% - ${px} - ${px})`;
+//       return `width: calc(100% - ${px * unit}px - ${px * unit}px)`;
+//     }
+//     if (pl && pr) {
+//       if (typeof pl === 'string' && typeof pr === 'string') return `width: calc(100% - ${pl} - ${pr})`;
+//       return `width: calc(100% - ${pl * unit}px - ${pr * unit}px)`;
+//     }
+//     if (pl) {
+//       if (typeof pl === 'string') return `width: calc(100% - ${pl})`;
+//       return `width: calc(100% - ${pl * unit}px)`;
+//     }
+//     if (pr) {
+//       if (typeof pr === 'string') return `width: calc(100% - ${pr})`;
+//       return `width: calc(100% - ${pr * unit}px)`;
+//     }
+//     return 'width: 100%';
+//   } else if (!width) {
+//     return '';
+//   } else if (typeof width === 'string') {
+//     return `width: ${width}`;
+//   } else {
+//     return `width: ${width * theme.factors.dimensions}px`;
+//   }
+// };
 
 export const parseHeight = (props, theme) => {
   const unit = theme.factors.padding;
