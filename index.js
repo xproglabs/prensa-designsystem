@@ -1698,8 +1698,10 @@ var Citation = function Citation(_ref) {
       mb = _ref.mb,
       pl = _ref.pl,
       value = _ref.value,
+      maxWidth = _ref.maxWidth,
       width = _ref.width;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    maxWidth: maxWidth,
     custom: customCite,
     width: width,
     align: "row",
@@ -1742,6 +1744,7 @@ Citation.propTypes = {
   fontSize: PropTypes__default['default'].array,
   fontWeight: PropTypes__default['default'].number,
   lineHeight: PropTypes__default['default'].array,
+  maxWidth: PropTypes__default['default'].string,
   mb: PropTypes__default['default'].array,
   pl: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].string]),
   value: PropTypes__default['default'].string,
@@ -1897,9 +1900,11 @@ var Heading2 = function Heading2(_ref) {
       fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
       lineHeight = _ref.lineHeight,
+      maxWidth = _ref.maxWidth,
       mb = _ref.mb,
       value = _ref.value;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    maxWidth: maxWidth,
     width: "100%"
   }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
@@ -1936,6 +1941,7 @@ Heading2.propTypes = {
   fontSize: PropTypes__default['default'].array,
   fontWeight: PropTypes__default['default'].number,
   lineHeight: PropTypes__default['default'].array,
+  maxWidth: PropTypes__default['default'].string,
   mb: PropTypes__default['default'].array,
   value: PropTypes__default['default'].string
 };
@@ -1947,9 +1953,11 @@ var Heading3 = function Heading3(_ref) {
       fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
       lineHeight = _ref.lineHeight,
+      maxWidth = _ref.maxWidth,
       mb = _ref.mb,
       value = _ref.value;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    maxWidth: maxWidth,
     width: "100%"
   }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
@@ -1986,6 +1994,7 @@ Heading3.propTypes = {
   fontSize: PropTypes__default['default'].array,
   fontWeight: PropTypes__default['default'].number,
   lineHeight: PropTypes__default['default'].array,
+  maxWidth: PropTypes__default['default'].string,
   mb: PropTypes__default['default'].array,
   value: PropTypes__default['default'].string
 };
@@ -1997,9 +2006,11 @@ var Heading4 = function Heading4(_ref) {
       fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
       lineHeight = _ref.lineHeight,
+      maxWidth = _ref.maxWidth,
       mb = _ref.mb,
       value = _ref.value;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    maxWidth: maxWidth,
     width: "100%"
   }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
@@ -2036,6 +2047,7 @@ Heading4.propTypes = {
   fontSize: PropTypes__default['default'].array,
   fontWeight: PropTypes__default['default'].number,
   lineHeight: PropTypes__default['default'].array,
+  maxWidth: PropTypes__default['default'].string,
   mb: PropTypes__default['default'].array,
   value: PropTypes__default['default'].string
 };
@@ -2047,9 +2059,11 @@ var Paragraph$1 = function Paragraph(_ref) {
       fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
       lineHeight = _ref.lineHeight,
+      maxWidth = _ref.maxWidth,
       mb = _ref.mb,
       value = _ref.value;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
+    maxWidth: maxWidth,
     width: "100%"
   }, /*#__PURE__*/React__default['default'].createElement(Typography$1, {
     color: color,
@@ -2085,15 +2099,18 @@ Paragraph$1.propTypes = {
   fontSize: PropTypes__default['default'].array,
   fontWeight: PropTypes__default['default'].number,
   lineHeight: PropTypes__default['default'].array,
+  maxWidth: PropTypes__default['default'].string,
   mb: PropTypes__default['default'].array,
   value: PropTypes__default['default'].string
 };
 
 var Container$5 = function Container(_ref) {
-  var children = _ref.children;
+  var children = _ref.children,
+      maxWidth = _ref.maxWidth;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
     align: "column",
     mb: 5,
+    maxWidth: maxWidth,
     width: "100%",
     lg: {
       align: 'row',
@@ -2102,7 +2119,8 @@ var Container$5 = function Container(_ref) {
   }, children);
 };
 Container$5.propTypes = {
-  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
+  children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object]),
+  maxWidth: PropTypes__default['default'].string
 };
 var Tag = function Tag(_ref2) {
   var children = _ref2.children,
@@ -2126,8 +2144,11 @@ var Tags = function Tags(_ref) {
       fontFamily = _ref.fontFamily,
       fontSize = _ref.fontSize,
       fontWeight = _ref.fontWeight,
-      items = _ref.items;
-  return /*#__PURE__*/React__default['default'].createElement(Container$5, null, lodash.map(items, function (item, key) {
+      items = _ref.items,
+      maxWidth = _ref.maxWidth;
+  return /*#__PURE__*/React__default['default'].createElement(Container$5, {
+    maxWidth: maxWidth
+  }, lodash.map(items, function (item, key) {
     return /*#__PURE__*/React__default['default'].createElement(Tag, {
       color: color,
       key: key
@@ -2153,7 +2174,8 @@ Tags.propTypes = {
   fontFamily: PropTypes__default['default'].string,
   fontSize: PropTypes__default['default'].array,
   fontWeight: PropTypes__default['default'].number,
-  items: PropTypes__default['default'].array
+  items: PropTypes__default['default'].array,
+  maxWidth: PropTypes__default['default'].string
 };
 
 var Box = function Box(_ref) {
@@ -2701,6 +2723,7 @@ var TextBody = function TextBody(props) {
     if (!image_data) return null;
     return /*#__PURE__*/React__default['default'].createElement(Block$1, {
       mb: 3,
+      maxWidth: bodyWidth,
       width: "100%"
     }, /*#__PURE__*/React__default['default'].createElement(TopImage, {
       caption: {
@@ -2744,6 +2767,7 @@ var TextBody = function TextBody(props) {
 
     var ad_data_key = ad_counter - 1;
     return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(Paragraph$1, _extends({}, paragraph, {
+      maxWidth: bodyWidth,
       value: value
     })), intervention_status && /*#__PURE__*/React__default['default'].createElement(AdBlock, {
       amp: amp,
@@ -2761,26 +2785,31 @@ var TextBody = function TextBody(props) {
     switch (type) {
       case 'Cite':
         return /*#__PURE__*/React__default['default'].createElement(Citation, _extends({}, citation, {
+          maxWidth: bodyWidth,
           value: value
         }));
 
       case 'Facebook':
         return /*#__PURE__*/React__default['default'].createElement(FacebookEmbed, {
+          maxWidth: bodyWidth,
           url: value
         });
 
       case 'Instagram':
         return /*#__PURE__*/React__default['default'].createElement(InstagramEmbed, {
+          maxWidth: bodyWidth,
           url: value
         });
 
       case 'Tweet':
         return /*#__PURE__*/React__default['default'].createElement(TwitterEmbed, {
+          maxWidth: bodyWidth,
           url: value
         });
 
       case 'Youtube':
         return /*#__PURE__*/React__default['default'].createElement(YouTubeEmbed, {
+          maxWidth: bodyWidth,
           url: value
         });
 
@@ -2789,16 +2818,19 @@ var TextBody = function TextBody(props) {
 
       case 'Heading2':
         return /*#__PURE__*/React__default['default'].createElement(Heading2, _extends({}, heading2, {
+          maxWidth: bodyWidth,
           value: value
         }));
 
       case 'Heading3':
         return /*#__PURE__*/React__default['default'].createElement(Heading3, _extends({}, heading3, {
+          maxWidth: bodyWidth,
           value: value
         }));
 
       case 'Heading4':
         return /*#__PURE__*/React__default['default'].createElement(Heading4, _extends({}, heading4, {
+          maxWidth: bodyWidth,
           value: value
         }));
 
@@ -2811,7 +2843,6 @@ var TextBody = function TextBody(props) {
   };
 
   return /*#__PURE__*/React__default['default'].createElement(Body, {
-    bodyWidth: bodyWidth,
     hyperlinkColor: get_hyperlink_color()
   }, lodash.map(body_items, function (_ref, key) {
     var type = _ref.type,
@@ -2821,7 +2852,9 @@ var TextBody = function TextBody(props) {
     }, switch_component(type, value));
   }), gallery && gallery.length > 0 && /*#__PURE__*/React__default['default'].createElement(ImageGallery, {
     items: gallery
-  }), /*#__PURE__*/React__default['default'].createElement(Tags, tags));
+  }), /*#__PURE__*/React__default['default'].createElement(Tags, _extends({}, tags, {
+    maxWidth: bodyWidth
+  })));
 };
 
 TextBody.propTypes = {
@@ -2922,9 +2955,7 @@ var Article = function Article(props) {
     maxWidth: headWidth
   }, /*#__PURE__*/React__default['default'].createElement(Content, null, /*#__PURE__*/React__default['default'].createElement(Subject, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline)), /*#__PURE__*/React__default['default'].createElement(TopImage, _extends({
     amp: amp
-  }, topimage))), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
-    maxWidth: bodyWidth
-  }, /*#__PURE__*/React__default['default'].createElement(TextBody$1, {
+  }, topimage))), /*#__PURE__*/React__default['default'].createElement(TextBody$1, {
     ads: adsBody,
     AdPlaceholder: AdPlaceholder,
     amp: amp,
@@ -2939,7 +2970,7 @@ var Article = function Article(props) {
     images: images,
     paragraph: paragraph,
     tags: tags
-  }))));
+  })));
 };
 
 Article.defaultProps = {
