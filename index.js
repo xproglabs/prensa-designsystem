@@ -2317,7 +2317,7 @@ var Body = function Body(_ref) {
       children = _ref.children,
       hyperlinkColor = _ref.hyperlinkColor;
   return /*#__PURE__*/React__default['default'].createElement(Block$1, {
-    custom: "\n      a { color: ".concat(hyperlinkColor, "; }\n      max-width: ").concat(bodyWidth, ";\n    "),
+    custom: "\n      a {\n        color: ".concat(hyperlinkColor, ";\n        word-break: break-all;\n      }\n      max-width: ").concat(bodyWidth, ";\n    "),
     lg: {
       align: 'column',
       alignx: 'center',
