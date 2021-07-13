@@ -187,6 +187,45 @@ function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
+var dimensions = function dimensions(_ref) {
+  var _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme,
+      _ref$$width = _ref.$width,
+      $width = _ref$$width === void 0 ? '' : _ref$$width,
+      _ref$maxWidth = _ref.maxWidth,
+      maxWidth = _ref$maxWidth === void 0 ? '' : _ref$maxWidth,
+      _ref$minWidth = _ref.minWidth,
+      minWidth = _ref$minWidth === void 0 ? '' : _ref$minWidth;
+  var unit = lodash.get(theme, 'factors.dimensions', 10);
+  var object = [];
+
+  if (maxWidth) {
+    if (typeof maxWidth === 'string') {
+      object.push("max-width: ".concat(maxWidth, ";"));
+    } else {
+      object.push("max-width: ".concat(maxWidth * unit, "px;"));
+    }
+  }
+
+  if (minWidth) {
+    if (typeof minWidth === 'string') {
+      object.push("min-width: ".concat(minWidth, ";"));
+    } else {
+      object.push("min-width: ".concat(minWidth * unit, "px;"));
+    }
+  }
+
+  if ($width) {
+    if (typeof $width === 'string') {
+      object.push("width: ".concat($width, ";"));
+    } else {
+      object.push("width: ".concat($width * unit, "px;"));
+    }
+  }
+
+  return object.join('');
+};
+
 var parseAlign = function parseAlign(props) {
   var align = lodash.get(props, 'align', undefined);
   var alignx = lodash.get(props, 'alignx', undefined);
@@ -296,44 +335,40 @@ var parseAlign = function parseAlign(props) {
   return object.join('');
 };
 
-var parseWidth = function parseWidth(props, theme) {
-  var unit = theme.factors.padding;
-  var width = lodash.get(props, '$width', undefined);
-  var fullWidth = lodash.get(props, 'fullWidth', undefined);
-  var px = lodash.get(props, 'px', undefined);
-  var pl = lodash.get(props, 'pl', undefined);
-  var pr = lodash.get(props, 'pr', undefined);
+// export const parseWidth = (props, theme) => {
+//   const unit = theme.factors.padding;
+//   const width = get(props, '$width', undefined);
+//   const fullWidth = get(props, 'fullWidth', undefined);
+//   const px = get(props, 'px', undefined);
+//   const pl = get(props, 'pl', undefined);
+//   const pr = get(props, 'pr', undefined);
+//   if (fullWidth) {
+//     if (px) {
+//       if (typeof px === 'string') return `width: calc(100% - ${px} - ${px})`;
+//       return `width: calc(100% - ${px * unit}px - ${px * unit}px)`;
+//     }
+//     if (pl && pr) {
+//       if (typeof pl === 'string' && typeof pr === 'string') return `width: calc(100% - ${pl} - ${pr})`;
+//       return `width: calc(100% - ${pl * unit}px - ${pr * unit}px)`;
+//     }
+//     if (pl) {
+//       if (typeof pl === 'string') return `width: calc(100% - ${pl})`;
+//       return `width: calc(100% - ${pl * unit}px)`;
+//     }
+//     if (pr) {
+//       if (typeof pr === 'string') return `width: calc(100% - ${pr})`;
+//       return `width: calc(100% - ${pr * unit}px)`;
+//     }
+//     return 'width: 100%';
+//   } else if (!width) {
+//     return '';
+//   } else if (typeof width === 'string') {
+//     return `width: ${width}`;
+//   } else {
+//     return `width: ${width * theme.factors.dimensions}px`;
+//   }
+// };
 
-  if (fullWidth) {
-    if (px) {
-      if (typeof px === 'string') return "width: calc(100% - ".concat(px, " - ").concat(px, ")");
-      return "width: calc(100% - ".concat(px * unit, "px - ").concat(px * unit, "px)");
-    }
-
-    if (pl && pr) {
-      if (typeof pl === 'string' && typeof pr === 'string') return "width: calc(100% - ".concat(pl, " - ").concat(pr, ")");
-      return "width: calc(100% - ".concat(pl * unit, "px - ").concat(pr * unit, "px)");
-    }
-
-    if (pl) {
-      if (typeof pl === 'string') return "width: calc(100% - ".concat(pl, ")");
-      return "width: calc(100% - ".concat(pl * unit, "px)");
-    }
-
-    if (pr) {
-      if (typeof pr === 'string') return "width: calc(100% - ".concat(pr, ")");
-      return "width: calc(100% - ".concat(pr * unit, "px)");
-    }
-
-    return 'width: 100%';
-  } else if (!width) {
-    return '';
-  } else if (typeof width === 'string') {
-    return "width: ".concat(width);
-  } else {
-    return "width: ".concat(width * theme.factors.dimensions, "px");
-  }
-};
 var parseHeight = function parseHeight(props, theme) {
   var unit = theme.factors.padding;
   var height = lodash.get(props, '$height', undefined);
@@ -376,7 +411,9 @@ var parseHeight = function parseHeight(props, theme) {
 };
 
 var parseStyle = function parseStyle(props, theme) {
-  return "\n    ".concat(parseAlign(props), ";\n    ").concat(parseWidth(props, theme), ";\n    ").concat(parseHeight(props, theme), ";\n    ").concat(theme.parseBgColor(props, theme), ";\n    ").concat(theme.parseFontColor(props, theme), ";\n    ").concat(theme.parseFontFamily(props, theme), ";\n    ").concat(theme.parseCustomDef(props, theme), ";\n    ").concat(theme.parseCustom(props, theme), ";\n    ").concat(theme.parseMargin(props, theme), ";\n    ").concat(theme.parsePadding(props, theme), ";\n  ");
+  return "\n    ".concat(dimensions(_objectSpread2(_objectSpread2({}, props), {}, {
+    theme: theme
+  })), ";\n    ").concat(parseAlign(props), ";\n    ").concat(parseHeight(props, theme), ";\n    ").concat(theme.parseBgColor(props, theme), ";\n    ").concat(theme.parseFontColor(props, theme), ";\n    ").concat(theme.parseFontFamily(props, theme), ";\n    ").concat(theme.parseCustomDef(props, theme), ";\n    ").concat(theme.parseCustom(props, theme), ";\n    ").concat(theme.parseMargin(props, theme), ";\n    ").concat(theme.parsePadding(props, theme), ";\n  ");
 };
 
 var parseProps = function parseProps(media, props) {
@@ -439,7 +476,6 @@ var Block = function Block(_ref) {
       ml = _ref.ml,
       typography = _ref.typography,
       onClick = _ref.onClick,
-      fullWidth = _ref.fullWidth,
       fullHeight = _ref.fullHeight,
       custom = _ref.custom,
       width = _ref.width,
@@ -450,7 +486,9 @@ var Block = function Block(_ref) {
       sm = _ref.sm,
       md = _ref.md,
       lg = _ref.lg,
-      xl = _ref.xl;
+      xl = _ref.xl,
+      maxWidth = _ref.maxWidth,
+      minWidth = _ref.minWidth;
 
   var getXsProps = function getXsProps() {
     return xs && _objectSpread2(_objectSpread2({}, xs), {}, {
@@ -508,12 +546,14 @@ var Block = function Block(_ref) {
     mb: mb,
     ml: ml,
     typography: typography,
-    onClick: onClick,
-    fullWidth: fullWidth,
+    onClick: onClick // fullWidth={fullWidth}
+    ,
     fullHeight: fullHeight,
     custom: custom,
     $width: width,
     $height: height,
+    maxWidth: maxWidth,
+    minWidth: minWidth,
     id: id,
     xs: getXsProps(),
     sm: getSmProps(),
@@ -636,7 +676,9 @@ Block.propTypes = {
   /**
    * Permite passagem de id para o componente raíz
    */
-  id: PropTypes__default['default'].string
+  id: PropTypes__default['default'].string,
+  maxWidth: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
+  minWidth: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number])
 };
 var Block$1 = styled.withTheme(Block);
 
@@ -788,45 +830,6 @@ Share.propTypes = {
   size: PropTypes__default['default'].string,
   twitterPath: PropTypes__default['default'].string,
   whatsappPath: PropTypes__default['default'].string
-};
-
-var dimensions = function dimensions(_ref) {
-  var _ref$theme = _ref.theme,
-      theme = _ref$theme === void 0 ? {} : _ref$theme,
-      _ref$$width = _ref.$width,
-      $width = _ref$$width === void 0 ? '' : _ref$$width,
-      _ref$maxWidth = _ref.maxWidth,
-      maxWidth = _ref$maxWidth === void 0 ? '' : _ref$maxWidth,
-      _ref$minWidth = _ref.minWidth,
-      minWidth = _ref$minWidth === void 0 ? '' : _ref$minWidth;
-  var unit = lodash.get(theme, 'factors.dimensions', 10);
-  var object = [];
-
-  if (maxWidth) {
-    if (typeof maxWidth === 'string') {
-      object.push("max-width: ".concat(maxWidth, ";"));
-    } else {
-      object.push("max-width: ".concat(maxWidth * unit, "px;"));
-    }
-  }
-
-  if (minWidth) {
-    if (typeof minWidth === 'string') {
-      object.push("min-width: ".concat(minWidth, ";"));
-    } else {
-      object.push("min-width: ".concat(minWidth * unit, "px;"));
-    }
-  }
-
-  if ($width) {
-    if (typeof $width === 'string') {
-      object.push("width: ".concat($width, ";"));
-    } else {
-      object.push("width: ".concat($width * unit, "px;"));
-    }
-  }
-
-  return object.join('');
 };
 
 var padding = function padding(_ref) {
