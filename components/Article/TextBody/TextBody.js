@@ -58,7 +58,7 @@ const TextBody = (props) => {
     if (!image_data) return null;
     
     return (
-      <Block mb={3} width="100%">
+      <Block mb={3} maxWidth={bodyWidth} width="100%">
         <TopImage
           caption={{
             fontFamily: 'secondary',
@@ -99,7 +99,7 @@ const TextBody = (props) => {
     const ad_data_key = ad_counter - 1;
     return (
       <React.Fragment>
-        <Paragraph {...paragraph} value={value} />
+        <Paragraph {...paragraph} maxWidth={bodyWidth} value={value} />
         {intervention_status && <AdBlock amp={amp} content={adsContent[ad_data_key]} />}
       </React.Fragment>
     );
@@ -114,23 +114,23 @@ const TextBody = (props) => {
   const switch_component = (type, value) => {
     switch(type) {
       case 'Cite': 
-        return <Citation {...citation} value={value} />;
+        return <Citation {...citation} maxWidth={bodyWidth} value={value} />;
       case 'Facebook': 
-        return <FacebookEmbed url={value} />;
+        return <FacebookEmbed maxWidth={bodyWidth} url={value} />;
       case 'Instagram': 
-        return <InstagramEmbed url={value} />;            
+        return <InstagramEmbed maxWidth={bodyWidth} url={value} />;            
       case 'Tweet': 
-        return <TwitterEmbed url={value} />;
+        return <TwitterEmbed maxWidth={bodyWidth} url={value} />;
       case 'Youtube': 
-        return <YouTubeEmbed url={value} />;
+        return <YouTubeEmbed maxWidth={bodyWidth} url={value} />;
       case 'Image': 
         return render_image(value);
       case 'Heading2': 
-        return <Heading2 {...heading2} value={value} />;
+        return <Heading2 {...heading2} maxWidth={bodyWidth} value={value} />;
       case 'Heading3': 
-        return <Heading3 {...heading3} value={value} />;
+        return <Heading3 {...heading3} maxWidth={bodyWidth} value={value} />;
       case 'Heading4': 
-        return <Heading4 {...heading4} value={value} />;
+        return <Heading4 {...heading4} maxWidth={bodyWidth} value={value} />;
       case 'Paragraph': 
         return render_paragraph(value);
       default:
@@ -139,7 +139,7 @@ const TextBody = (props) => {
   };
   
   return (
-    <S.Body bodyWidth={bodyWidth} hyperlinkColor={get_hyperlink_color()}>
+    <S.Body hyperlinkColor={get_hyperlink_color()}>
       {map(body_items, ({type, value}, key) => {
         return (
           <React.Fragment key={key}>
@@ -150,7 +150,7 @@ const TextBody = (props) => {
       {gallery && gallery.length > 0 && (
         <ImageGallery items={gallery} />
       )}
-      <Tags {...tags} />
+      <Tags {...tags} maxWidth={bodyWidth} />
     </S.Body>
   );
 };

@@ -14,10 +14,12 @@ const Citation = ({
   mb,
   pl,
   value,
+  maxWidth,
   width
 }) => {
   return (
     <Block 
+      maxWidth={maxWidth}
       custom={customCite}
       width={width} 
       align='row' 
@@ -61,6 +63,7 @@ Citation.propTypes = {
   fontSize: PropTypes.array,
   fontWeight: PropTypes.number,
   lineHeight: PropTypes.array,
+  maxWidth: PropTypes.string,
   mb: PropTypes.array,
   pl: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   value: PropTypes.string,
