@@ -37,7 +37,7 @@ const Block = ({
   ml,
   typography,
   onClick,
-  fullWidth,
+  // fullWidth,
   fullHeight,
   custom,
   width,
@@ -48,7 +48,9 @@ const Block = ({
   sm,
   md,
   lg,
-  xl
+  xl,
+  maxWidth,
+  minWidth
 }) => {
 
   const getXsProps = () => xs && ({
@@ -100,11 +102,13 @@ const Block = ({
       ml={ml}
       typography={typography}
       onClick={onClick}
-      fullWidth={fullWidth}
+      // fullWidth={fullWidth}
       fullHeight={fullHeight}
       custom={custom}
       $width={width}
       $height={height}
+      maxWidth={maxWidth}
+      minWidth={minWidth}
       id={id}
       xs={getXsProps()}
       sm={getSmProps()}
@@ -212,6 +216,8 @@ Block.propTypes = {
    * Permite passagem de id para o componente raíz
    */
   id: PropTypes.string,
+  maxWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  minWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 export default withTheme(Block);
