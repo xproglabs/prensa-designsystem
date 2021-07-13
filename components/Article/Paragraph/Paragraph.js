@@ -11,11 +11,12 @@ const Paragraph = ({
   fontSize,
   fontWeight,
   lineHeight,
+  maxWidth,
   mb,
   value
 }) => {
   return (
-    <Block width='100%'>
+    <Block maxWidth={maxWidth} width='100%'>
       <Typography 
         color={color}
         dangerouslySetInnerHTML={value}
@@ -53,6 +54,7 @@ Paragraph.propTypes = {
   fontSize: PropTypes.array,
   fontWeight: PropTypes.number,
   lineHeight: PropTypes.array,
+  maxWidth: PropTypes.string,
   mb: PropTypes.array,
   value: PropTypes.string
 };

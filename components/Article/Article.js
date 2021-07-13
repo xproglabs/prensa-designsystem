@@ -70,24 +70,22 @@ const Article = (props) => {
             <TopImage amp={amp} {...topimage} />
           </S.MaxWidth>
         }
-        <S.MaxWidth maxWidth={bodyWidth}>
-          <TextBody
-            ads={adsBody}
-            AdPlaceholder={AdPlaceholder}
-            amp={amp}
-            bodyWidth={bodyWidth}
-            citation={citation}
-            content={textbody}
-            gallery={gallery}
-            heading2={heading2}
-            heading3={heading3}
-            heading4={heading4}
-            hyperlink={hyperlink}
-            images={images}
-            paragraph={paragraph}
-            tags={tags}
-          />
-        </S.MaxWidth>
+        <TextBody
+          ads={adsBody}
+          AdPlaceholder={AdPlaceholder}
+          amp={amp}
+          bodyWidth={bodyWidth}
+          citation={citation}
+          content={textbody}
+          gallery={gallery}
+          heading2={heading2}
+          heading3={heading3}
+          heading4={heading4}
+          hyperlink={hyperlink}
+          images={images}
+          paragraph={paragraph}
+          tags={tags}
+        />
       </S.Container>
     </S.Page>
   );

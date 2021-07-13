@@ -2,6 +2,7 @@ import React from 'react';
 import {ThemeProvider} from 'styled-components';
 
 import {theme as diariodaregiao} from '../../../styles/demo/diariodaregiao';
+import AdPlaceholder from '../../AdBlock/placeholder';
 import Article from '../Article';
 
 const dummyImage = (contentId) => `<p><a class="p-smartembed" data-attr-f="3x2" data-attr-q="0.3" data-attr-w="400" data-onecms-id="policy:${contentId}" data-onecms-type="image" href="javascript:window.parent.actionEventData({$contentId:'${contentId}', $action:'view', $target:'work'})" polopoly:contentid="policy:${contentId}"><img src="/image/policy:${contentId}/gui_3224.jpg?f=3x2&amp;w=400&amp;q=0.3" /></a></p>\r\n\r\n`;
@@ -15,6 +16,8 @@ const ArticleDR = () => {
     <ThemeProvider theme={diariodaregiao}>
       <Article
         amp={false}
+        AdPlaceholder={AdPlaceholder}
+        bodyWidth='768px'
         byline={{
           author: {
             color: 'neutral2',

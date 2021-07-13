@@ -4,10 +4,11 @@ import React from 'react';
 // import {theme} from '../../../styles/theme';
 import Block from '../../Block';
 
-export const Container = ({children}) => 
+export const Container = ({children, maxWidth}) => 
   <Block 
     align='column'
     mb={5}
+    maxWidth={maxWidth}
     width='100%'
     lg={{
       align: 'row',
@@ -19,7 +20,8 @@ export const Container = ({children}) =>
   </Block>; 
 
 Container.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  maxWidth: PropTypes.string
 };
 
 export const Tag = ({children, color}) =>

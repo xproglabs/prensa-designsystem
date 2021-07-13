@@ -10,10 +10,11 @@ const Tags = ({
   fontFamily,
   fontSize,
   fontWeight,
-  items
+  items,
+  maxWidth
 }) => {
   return (
-    <S.Container>
+    <S.Container maxWidth={maxWidth}>
       {(map(items, (item, key) => {
         return (
           <S.Tag color={color} key={key}>
@@ -45,7 +46,8 @@ Tags.propTypes = {
   fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
   fontWeight: PropTypes.number,
-  items: PropTypes.array
+  items: PropTypes.array,
+  maxWidth: PropTypes.string,
 };
 
 export default Tags;

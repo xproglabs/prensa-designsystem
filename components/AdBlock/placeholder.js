@@ -13,7 +13,7 @@ const AdPlaceholder = () => {
     mx: 3,
     width: 'calc(100% - 48px)',
     custom: `
-      max-width: 980px;
+      max-width: 1080px;
     `,
   };
   return (
