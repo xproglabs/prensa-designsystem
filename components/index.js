@@ -1,4 +1,5 @@
 export {default as Article} from './Article/Article';
+export {default as ArticleShare} from './Article/Share';
 export {default as AccordionEditorial} from './AccordionEditorial';
 export {default as Block} from './Block';
 export {default as Button} from './Button';
