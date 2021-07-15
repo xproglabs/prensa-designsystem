@@ -5094,6 +5094,7 @@ exports.ImageBackground = Image;
 exports.ImageGallery = ImageGallery;
 exports.SideMenu = SideMenu;
 exports.SocialMedias = SocialMedias;
+exports.SocialShare = Share;
 exports.Subject = index$2;
 exports.Topbar = Topbar;
 exports.Typography = Typography$1;
