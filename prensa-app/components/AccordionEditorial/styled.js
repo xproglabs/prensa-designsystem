@@ -59,7 +59,6 @@ const GroupTitleContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   .${CONFIGS.GROUP_ICON_CLASS} {
-    margin: 8px;
     fill: ${props => getColor({...props, $color: props.iconColor})};
   }
 `;
