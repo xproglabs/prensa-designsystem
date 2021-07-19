@@ -3139,7 +3139,7 @@ var getGroupBorder = function getGroupBorder(_ref) {
   });
 };
 
-var GroupTitleContainer = styled__default['default'].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  .", " {\n    margin: 8px;\n    fill: ", ";\n  }\n"])), getGroupBorder, padding, CONFIGS.GROUP_ICON_CLASS, function (props) {
+var GroupTitleContainer = styled__default['default'].div(_templateObject4$1 || (_templateObject4$1 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  .", " {\n    fill: ", ";\n  }\n"])), getGroupBorder, padding, CONFIGS.GROUP_ICON_CLASS, function (props) {
   return getColor(_objectSpread2(_objectSpread2({}, props), {}, {
     $color: props.iconColor
   }));
