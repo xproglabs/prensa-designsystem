@@ -36,12 +36,21 @@ const parseTextDecoration = ({textDecoration}) => {
   if (!textDecoration) return '';
   return `text-decoration: ${textDecoration};`;
 };
+const parseTextTransform = ({$transform}) => {
+  if (!$transform) return '';
+  return `text-transform: ${$transform};`;
+};
+const parseTextAlign = ({textAlign}) => {
+  if (!textAlign) return '';
+  return `text-align: ${textAlign};`;
+};
+const parseFontWeight = ({$fontWeight}) => {
+  if (!$fontWeight) return '';
+  return `font-weight: ${$fontWeight};`;
+};
 
 const parseStyle = (props, theme) => {
   return `
-    font-weight: ${props.$fontWeight};
-    text-transform: ${props.$transform};
-    text-align: ${props.textAlign};
     font-family: ${parseFontFamily(props)};
     font-size: ${parseSize(props, 'fontSize')};
     line-height: ${parseSize(props, 'lineHeight')};
@@ -53,6 +62,9 @@ const parseStyle = (props, theme) => {
     ${border(props)};
     ${handleHover(props)};
     ${parseTextDecoration(props)};
+    ${parseTextTransform(props)};
+    ${parseTextAlign(props)};
+    ${parseFontWeight(props)};
   `;
 };
 

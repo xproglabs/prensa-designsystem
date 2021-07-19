@@ -215,12 +215,7 @@ Typography.defaultProps = {
   element: 'h1',
   fontSize: 3,
   fontFamily: 'primary',
-  fontWeight: 400,
-  lineHeight: '100%',
-  textAlign: 'start',
-  mt: '0px',
-  mb: '0px',
-  transform: 'none'
+  lineHeight: '100%'
 };
 
 Typography.propTypes = {
