@@ -1,8 +1,9 @@
 import {get} from 'lodash';
+import {css} from 'styled-components';
+
+import {border} from '../../styled-system/border';
 import {dimensions} from '../../styled-system/dimensions';
 import {padding} from '../../styled-system/padding';
-import {border} from '../../styled-system/border';
-import {css} from 'styled-components';
 
 const parseFontFamily = props => {
   const fonts = get(props, 'theme.fonts', {});
@@ -25,11 +26,16 @@ const handleHover = props => {
       &:hover {
         opacity: 0.8;
       }
-    `
+    `;
   } else {
-    return ''
+    return '';
   }
-}
+};
+
+const parseTextDecoration = ({textDecoration}) => {
+  if (!textDecoration) return '';
+  return `text-decoration: ${textDecoration};`;
+};
 
 const parseStyle = (props, theme) => {
   return `
@@ -40,13 +46,13 @@ const parseStyle = (props, theme) => {
     font-size: ${parseSize(props, 'fontSize')};
     line-height: ${parseSize(props, 'lineHeight')};
     color: ${theme.parseColor(props, theme, '$color')};
-    text-decoration: unset;
     ${theme.parseMargin(props, theme)};
     ${theme.parseCustom(props)};
     ${dimensions(props)};
     ${padding(props)};
     ${border(props)};
     ${handleHover(props)};
+    ${parseTextDecoration(props)};
   `;
 };
 
