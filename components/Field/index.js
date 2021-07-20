@@ -77,7 +77,8 @@ const Field = React.forwardRef((props, ref) => {
     mt: get(styledField, 'mt', 0.5),
     mr: get(styledField, 'mr', undefined),
     mb: get(styledField, 'mb', 0.5),
-    ml: get(styledField, 'ml', undefined)
+    ml: get(styledField, 'ml', undefined),
+    width: get(styledField, 'width', undefined)
   };
   
   const handleChange = event => {
@@ -196,6 +197,7 @@ Field.propTypes = {
     mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    width: PropTypes.oneOfType([PropTypes.string]),
   }),
   /**
    * Ativa/desativa o estado disabled do input
