@@ -77,7 +77,7 @@ const Field = React.forwardRef((props, ref) => {
     mt: get(styledField, 'mt', 0.5),
     mr: get(styledField, 'mr', undefined),
     mb: get(styledField, 'mb', 0.5),
-    ml: get(styledField, 'ml', undefined)
+    ml: get(styledField, 'ml', undefined),
   };
   
   const handleChange = event => {
@@ -121,7 +121,7 @@ const Field = React.forwardRef((props, ref) => {
   }
   
   return (    
-    <Block {...styledFieldDefaultProps} fullWidth>
+    <Block {...styledFieldDefaultProps} width='100%'>
       {renderLabel()}
       <InputContainer validation={validation} {...styledInputDefaultProps}>
         {mask ? 
