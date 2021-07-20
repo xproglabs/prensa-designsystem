@@ -1,8 +1,10 @@
 import {get} from 'lodash';
-import {dimensions} from '../../styled-system/dimensions';
-import {padding} from '../../styled-system/padding';
-import {border} from '../../styled-system/border';
 import {css} from 'styled-components';
+
+import {border} from '../../styled-system/border';
+import {dimensions} from '../../styled-system/dimensions';
+import {margin} from '../../styled-system/margin';
+import {padding} from '../../styled-system/padding';
 
 const parseFontFamily = props => {
   const fonts = get(props, 'theme.fonts', {});
@@ -25,28 +27,45 @@ const handleHover = props => {
       &:hover {
         opacity: 0.8;
       }
-    `
+    `;
   } else {
-    return ''
+    return '';
   }
-}
+};
+
+const parseTextDecoration = ({textDecoration}) => {
+  if (!textDecoration) return '';
+  return `text-decoration: ${textDecoration};`;
+};
+const parseTextTransform = ({$transform}) => {
+  if (!$transform) return '';
+  return `text-transform: ${$transform};`;
+};
+const parseTextAlign = ({textAlign}) => {
+  if (!textAlign) return '';
+  return `text-align: ${textAlign};`;
+};
+const parseFontWeight = ({$fontWeight}) => {
+  if (!$fontWeight) return '';
+  return `font-weight: ${$fontWeight};`;
+};
 
 const parseStyle = (props, theme) => {
   return `
-    font-weight: ${props.$fontWeight};
-    text-transform: ${props.$transform};
-    text-align: ${props.textAlign};
     font-family: ${parseFontFamily(props)};
     font-size: ${parseSize(props, 'fontSize')};
     line-height: ${parseSize(props, 'lineHeight')};
     color: ${theme.parseColor(props, theme, '$color')};
-    text-decoration: unset;
-    ${theme.parseMargin(props, theme)};
     ${theme.parseCustom(props)};
     ${dimensions(props)};
     ${padding(props)};
+    ${margin(props)};
     ${border(props)};
     ${handleHover(props)};
+    ${parseTextDecoration(props)};
+    ${parseTextTransform(props)};
+    ${parseTextAlign(props)};
+    ${parseFontWeight(props)};
   `;
 };
 

@@ -832,35 +832,6 @@ Share.propTypes = {
   whatsappPath: PropTypes__default['default'].string
 };
 
-var padding = function padding(_ref) {
-  var _ref$theme = _ref.theme,
-      theme = _ref$theme === void 0 ? {} : _ref$theme,
-      _ref$px = _ref.px,
-      px = _ref$px === void 0 ? '' : _ref$px,
-      _ref$py = _ref.py,
-      py = _ref$py === void 0 ? '' : _ref$py,
-      _ref$pt = _ref.pt,
-      pt = _ref$pt === void 0 ? '' : _ref$pt,
-      _ref$pr = _ref.pr,
-      pr = _ref$pr === void 0 ? '' : _ref$pr,
-      _ref$pb = _ref.pb,
-      pb = _ref$pb === void 0 ? '' : _ref$pb,
-      _ref$pl = _ref.pl,
-      pl = _ref$pl === void 0 ? '' : _ref$pl,
-      _ref$p = _ref.p,
-      p = _ref$p === void 0 ? '' : _ref$p;
-  var unit = lodash.get(theme, 'factors.padding', 8);
-  var object = [];
-  pt !== undefined && isNaN(pt) ? object.push("padding-top: ".concat(pt, ";")) : pt && object.push("padding-top: ".concat(unit * pt, "px;"));
-  pr !== undefined && isNaN(pr) ? object.push("padding-right: ".concat(pr, ";")) : pr && object.push("padding-right: ".concat(unit * pr, "px;"));
-  pb !== undefined && isNaN(pb) ? object.push("padding-bottom: ".concat(pb, ";")) : pb && object.push("padding-bottom: ".concat(unit * pb, "px;"));
-  pl !== undefined && isNaN(pl) ? object.push("padding-left: ".concat(pl, ";")) : pl && object.push("padding-left: ".concat(unit * pl, "px;"));
-  px !== undefined && isNaN(px) ? object.push("padding-left: ".concat(px, ";padding-right: ").concat(px, ";")) : px && object.push("padding-left: ".concat(unit * px, "px;padding-right: ").concat(unit * px, "px;"));
-  py !== undefined && isNaN(py) ? object.push("padding-top: ".concat(py, ";padding-bottom: ").concat(py, ";")) : py && object.push("padding-top: ".concat(unit * py, "px;padding-bottom: ").concat(unit * py, "px;"));
-  p !== undefined && isNaN(p) ? object.push("padding: ".concat(p, ";")) : p && object.push("padding: ".concat(p * unit, "px;"));
-  return object.join('');
-};
-
 var border = function border(_ref) {
   var _ref$theme = _ref.theme,
       theme = _ref$theme === void 0 ? {} : _ref$theme,
@@ -940,6 +911,64 @@ var border = function border(_ref) {
   return object.join('');
 };
 
+var margin = function margin(_ref) {
+  var _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme,
+      _ref$mx = _ref.mx,
+      mx = _ref$mx === void 0 ? '' : _ref$mx,
+      _ref$my = _ref.my,
+      my = _ref$my === void 0 ? '' : _ref$my,
+      _ref$mt = _ref.mt,
+      mt = _ref$mt === void 0 ? '' : _ref$mt,
+      _ref$mr = _ref.mr,
+      mr = _ref$mr === void 0 ? '' : _ref$mr,
+      _ref$mb = _ref.mb,
+      mb = _ref$mb === void 0 ? '' : _ref$mb,
+      _ref$ml = _ref.ml,
+      ml = _ref$ml === void 0 ? '' : _ref$ml,
+      _ref$m = _ref.m,
+      m = _ref$m === void 0 ? '' : _ref$m;
+  var unit = lodash.get(theme, 'factors.margin', 8);
+  var object = [];
+  mt !== undefined && isNaN(mt) ? object.push("margin-top: ".concat(mt, ";")) : mt && object.push("margin-top: ".concat(unit * mt, "px;"));
+  mr !== undefined && isNaN(mr) ? object.push("margin-right: ".concat(mr, ";")) : mr && object.push("margin-right: ".concat(unit * mr, "px;"));
+  mb !== undefined && isNaN(mb) ? object.push("margin-bottom: ".concat(mb, ";")) : mb && object.push("margin-bottom: ".concat(unit * mb, "px;"));
+  ml !== undefined && isNaN(ml) ? object.push("margin-left: ".concat(ml, ";")) : ml && object.push("margin-left: ".concat(unit * ml, "px;"));
+  mx !== undefined && isNaN(mx) ? object.push("margin-left: ".concat(mx, ";margin-right: ").concat(mx, ";")) : mx && object.push("margin-left: ".concat(unit * mx, "px;margin-right: ").concat(unit * mx, "px;"));
+  my !== undefined && isNaN(my) ? object.push("margin-top: ".concat(my, ";margin-bottom: ").concat(my, ";")) : my && object.push("margin-top: ".concat(unit * my, "px;margin-bottom: ").concat(unit * my, "px;"));
+  m !== undefined && isNaN(m) ? object.push("margin: ".concat(m, ";")) : m && object.push("margin: ".concat(m * unit, "px;"));
+  return object.join('');
+};
+
+var padding = function padding(_ref) {
+  var _ref$theme = _ref.theme,
+      theme = _ref$theme === void 0 ? {} : _ref$theme,
+      _ref$px = _ref.px,
+      px = _ref$px === void 0 ? '' : _ref$px,
+      _ref$py = _ref.py,
+      py = _ref$py === void 0 ? '' : _ref$py,
+      _ref$pt = _ref.pt,
+      pt = _ref$pt === void 0 ? '' : _ref$pt,
+      _ref$pr = _ref.pr,
+      pr = _ref$pr === void 0 ? '' : _ref$pr,
+      _ref$pb = _ref.pb,
+      pb = _ref$pb === void 0 ? '' : _ref$pb,
+      _ref$pl = _ref.pl,
+      pl = _ref$pl === void 0 ? '' : _ref$pl,
+      _ref$p = _ref.p,
+      p = _ref$p === void 0 ? '' : _ref$p;
+  var unit = lodash.get(theme, 'factors.padding', 8);
+  var object = [];
+  pt !== undefined && isNaN(pt) ? object.push("padding-top: ".concat(pt, ";")) : pt && object.push("padding-top: ".concat(unit * pt, "px;"));
+  pr !== undefined && isNaN(pr) ? object.push("padding-right: ".concat(pr, ";")) : pr && object.push("padding-right: ".concat(unit * pr, "px;"));
+  pb !== undefined && isNaN(pb) ? object.push("padding-bottom: ".concat(pb, ";")) : pb && object.push("padding-bottom: ".concat(unit * pb, "px;"));
+  pl !== undefined && isNaN(pl) ? object.push("padding-left: ".concat(pl, ";")) : pl && object.push("padding-left: ".concat(unit * pl, "px;"));
+  px !== undefined && isNaN(px) ? object.push("padding-left: ".concat(px, ";padding-right: ").concat(px, ";")) : px && object.push("padding-left: ".concat(unit * px, "px;padding-right: ").concat(unit * px, "px;"));
+  py !== undefined && isNaN(py) ? object.push("padding-top: ".concat(py, ";padding-bottom: ").concat(py, ";")) : py && object.push("padding-top: ".concat(unit * py, "px;padding-bottom: ").concat(unit * py, "px;"));
+  p !== undefined && isNaN(p) ? object.push("padding: ".concat(p, ";")) : p && object.push("padding: ".concat(p * unit, "px;"));
+  return object.join('');
+};
+
 var parseFontFamily = function parseFontFamily(props) {
   var fonts = lodash.get(props, 'theme.fonts', {});
   var propValue = lodash.get(props, '$fontFamily', '');
@@ -963,8 +992,32 @@ var handleHover = function handleHover(props) {
   }
 };
 
+var parseTextDecoration = function parseTextDecoration(_ref) {
+  var textDecoration = _ref.textDecoration;
+  if (!textDecoration) return '';
+  return "text-decoration: ".concat(textDecoration, ";");
+};
+
+var parseTextTransform = function parseTextTransform(_ref2) {
+  var $transform = _ref2.$transform;
+  if (!$transform) return '';
+  return "text-transform: ".concat($transform, ";");
+};
+
+var parseTextAlign = function parseTextAlign(_ref3) {
+  var textAlign = _ref3.textAlign;
+  if (!textAlign) return '';
+  return "text-align: ".concat(textAlign, ";");
+};
+
+var parseFontWeight = function parseFontWeight(_ref4) {
+  var $fontWeight = _ref4.$fontWeight;
+  if (!$fontWeight) return '';
+  return "font-weight: ".concat($fontWeight, ";");
+};
+
 var parseStyle$1 = function parseStyle(props, theme) {
-  return "\n    font-weight: ".concat(props.$fontWeight, ";\n    text-transform: ").concat(props.$transform, ";\n    text-align: ").concat(props.textAlign, ";\n    font-family: ").concat(parseFontFamily(props), ";\n    font-size: ").concat(parseSize(props, 'fontSize'), ";\n    line-height: ").concat(parseSize(props, 'lineHeight'), ";\n    color: ").concat(theme.parseColor(props, theme, '$color'), ";\n    text-decoration: unset;\n    ").concat(theme.parseMargin(props, theme), ";\n    ").concat(theme.parseCustom(props), ";\n    ").concat(dimensions(props), ";\n    ").concat(padding(props), ";\n    ").concat(border(props), ";\n    ").concat(handleHover(props), ";\n  ");
+  return "\n    font-family: ".concat(parseFontFamily(props), ";\n    font-size: ").concat(parseSize(props, 'fontSize'), ";\n    line-height: ").concat(parseSize(props, 'lineHeight'), ";\n    color: ").concat(theme.parseColor(props, theme, '$color'), ";\n    ").concat(theme.parseCustom(props), ";\n    ").concat(dimensions(props), ";\n    ").concat(padding(props), ";\n    ").concat(margin(props), ";\n    ").concat(border(props), ";\n    ").concat(handleHover(props), ";\n    ").concat(parseTextDecoration(props), ";\n    ").concat(parseTextTransform(props), ";\n    ").concat(parseTextAlign(props), ";\n    ").concat(parseFontWeight(props), ";\n  ");
 };
 
 var parseProps$1 = function parseProps(media, props) {
@@ -1268,12 +1321,9 @@ Typography.defaultProps = {
   element: 'h1',
   fontSize: 3,
   fontFamily: 'primary',
-  fontWeight: 400,
   lineHeight: '100%',
-  textAlign: 'start',
   mt: '0px',
-  mb: '0px',
-  transform: 'none'
+  mb: '0px'
 };
 Typography.propTypes = {
   /**
@@ -3017,35 +3067,6 @@ var getColor = function getColor(_ref) {
   return value;
 };
 
-var margin = function margin(_ref) {
-  var _ref$theme = _ref.theme,
-      theme = _ref$theme === void 0 ? {} : _ref$theme,
-      _ref$mx = _ref.mx,
-      mx = _ref$mx === void 0 ? '' : _ref$mx,
-      _ref$my = _ref.my,
-      my = _ref$my === void 0 ? '' : _ref$my,
-      _ref$mt = _ref.mt,
-      mt = _ref$mt === void 0 ? '' : _ref$mt,
-      _ref$mr = _ref.mr,
-      mr = _ref$mr === void 0 ? '' : _ref$mr,
-      _ref$mb = _ref.mb,
-      mb = _ref$mb === void 0 ? '' : _ref$mb,
-      _ref$ml = _ref.ml,
-      ml = _ref$ml === void 0 ? '' : _ref$ml,
-      _ref$m = _ref.m,
-      m = _ref$m === void 0 ? '' : _ref$m;
-  var unit = lodash.get(theme, 'factors.margin', 8);
-  var object = [];
-  mt !== undefined && isNaN(mt) ? object.push("margin-top: ".concat(mt, ";")) : mt && object.push("margin-top: ".concat(unit * mt, "px;"));
-  mr !== undefined && isNaN(mr) ? object.push("margin-right: ".concat(mr, ";")) : mr && object.push("margin-right: ".concat(unit * mr, "px;"));
-  mb !== undefined && isNaN(mb) ? object.push("margin-bottom: ".concat(mb, ";")) : mb && object.push("margin-bottom: ".concat(unit * mb, "px;"));
-  ml !== undefined && isNaN(ml) ? object.push("margin-left: ".concat(ml, ";")) : ml && object.push("margin-left: ".concat(unit * ml, "px;"));
-  mx !== undefined && isNaN(mx) ? object.push("margin-left: ".concat(mx, ";margin-right: ").concat(mx, ";")) : mx && object.push("margin-left: ".concat(unit * mx, "px;margin-right: ").concat(unit * mx, "px;"));
-  my !== undefined && isNaN(my) ? object.push("margin-top: ".concat(my, ";margin-bottom: ").concat(my, ";")) : my && object.push("margin-top: ".concat(unit * my, "px;margin-bottom: ").concat(unit * my, "px;"));
-  m !== undefined && isNaN(m) ? object.push("margin: ".concat(m, ";")) : m && object.push("margin: ".concat(m * unit, "px;"));
-  return object.join('');
-};
-
 var _templateObject$5;
 var Svg = styled__default['default'].svg(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  ", ";\n  fill: ", ";\n"])), margin, getColor);
 
@@ -3455,7 +3476,7 @@ var parseFontFamily$1 = function parseFontFamily(props, theme) {
   return selected;
 };
 
-var parseFontWeight = function parseFontWeight(props) {
+var parseFontWeight$1 = function parseFontWeight(props) {
   var $fontWeight = props.$fontWeight;
   if (!$fontWeight) return 400;
   return $fontWeight;
@@ -3468,7 +3489,7 @@ var parseFontSize = function parseFontSize(props) {
 };
 
 var parseTypography = function parseTypography(props, theme) {
-  if (props.removeText === true) return "\n    span {\n      display: none;\n    }\n  ";else return "\n    span {\n      display: inline;\n      margin-left: 8px;\n      margin-right: 8px;\n      color: ".concat(parseFontColor(props, theme), ";\n      font-size: ").concat(parseFontSize(props), "px;\n      font-weight: ").concat(parseFontWeight(props), ";\n      font-family: ").concat(parseFontFamily$1(props, theme), ";\n    }\n  ");
+  if (props.removeText === true) return "\n    span {\n      display: none;\n    }\n  ";else return "\n    span {\n      display: inline;\n      margin-left: 8px;\n      margin-right: 8px;\n      color: ".concat(parseFontColor(props, theme), ";\n      font-size: ").concat(parseFontSize(props), "px;\n      font-weight: ").concat(parseFontWeight$1(props), ";\n      font-family: ").concat(parseFontFamily$1(props, theme), ";\n    }\n  ");
 };
 
 var parseIcon = function parseIcon(props, theme) {
