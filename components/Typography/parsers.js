@@ -3,6 +3,7 @@ import {css} from 'styled-components';
 
 import {border} from '../../styled-system/border';
 import {dimensions} from '../../styled-system/dimensions';
+import {margin} from '../../styled-system/margin';
 import {padding} from '../../styled-system/padding';
 
 const parseFontFamily = props => {
@@ -55,10 +56,10 @@ const parseStyle = (props, theme) => {
     font-size: ${parseSize(props, 'fontSize')};
     line-height: ${parseSize(props, 'lineHeight')};
     color: ${theme.parseColor(props, theme, '$color')};
-    ${theme.parseMargin(props, theme)};
     ${theme.parseCustom(props)};
     ${dimensions(props)};
     ${padding(props)};
+    ${margin(props)};
     ${border(props)};
     ${handleHover(props)};
     ${parseTextDecoration(props)};

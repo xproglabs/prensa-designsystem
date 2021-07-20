@@ -215,7 +215,9 @@ Typography.defaultProps = {
   element: 'h1',
   fontSize: 3,
   fontFamily: 'primary',
-  lineHeight: '100%'
+  lineHeight: '100%',
+  mt: '0px',
+  mb: '0px'
 };
 
 Typography.propTypes = {
