@@ -4629,7 +4629,7 @@ var Field = /*#__PURE__*/React__default['default'].forwardRef(function (props, r
     onKeyPress: handleKeyPress
   };
   return /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({}, styledFieldDefaultProps, {
-    fullWidth: true
+    width: "100%"
   }), renderLabel(), /*#__PURE__*/React__default['default'].createElement(InputContainer, _extends({
     validation: validation
   }, styledInputDefaultProps), mask ? /*#__PURE__*/React__default['default'].createElement(InputMask__default['default'], inputProps, /*#__PURE__*/React__default['default'].createElement(Input$1, _extends({
