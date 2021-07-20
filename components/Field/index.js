@@ -78,7 +78,6 @@ const Field = React.forwardRef((props, ref) => {
     mr: get(styledField, 'mr', undefined),
     mb: get(styledField, 'mb', 0.5),
     ml: get(styledField, 'ml', undefined),
-    width: get(styledField, 'width', undefined)
   };
   
   const handleChange = event => {
@@ -122,7 +121,7 @@ const Field = React.forwardRef((props, ref) => {
   }
   
   return (    
-    <Block {...styledFieldDefaultProps} fullWidth>
+    <Block {...styledFieldDefaultProps} width='100%'>
       {renderLabel()}
       <InputContainer validation={validation} {...styledInputDefaultProps}>
         {mask ? 
@@ -197,7 +196,6 @@ Field.propTypes = {
     mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ml: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    width: PropTypes.oneOfType([PropTypes.string]),
   }),
   /**
    * Ativa/desativa o estado disabled do input
