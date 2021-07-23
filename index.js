@@ -3186,7 +3186,6 @@ var MenuItem = function MenuItem(_ref) {
   var itemColor = color;
   if (color === 'unique' && content.color) itemColor = content.color;
   var contentId = content.contentId,
-      name = content.name,
       path = content.path,
       subitems = content.subitems,
       target = content.target;
@@ -3209,9 +3208,7 @@ var MenuItem = function MenuItem(_ref) {
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
       removeBorders: removeBorders,
       $color: itemColor
-    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, _extends({
-      name: name
-    }, groupTitleProps)), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
+    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, groupTitleProps), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
       $color: iconColor
     })));
   };
@@ -3224,9 +3221,7 @@ var MenuItem = function MenuItem(_ref) {
       tabIndex: "0",
       on: newState,
       $color: itemColor
-    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, _extends({
-      name: name
-    }, groupTitleProps)), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
+    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, groupTitleProps), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
       "data-amp-bind-class": expandMoreIconClass
     }), /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
       "data-amp-bind-class": expandLessIconClass
