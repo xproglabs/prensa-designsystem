@@ -3167,17 +3167,20 @@ var GroupTitleContainer = styled__default['default'].div(_templateObject4$1 || (
 });
 var GroupContent = styled__default['default'].div(_templateObject5$1 || (_templateObject5$1 = _taggedTemplateLiteral(["\n  margin-top: 8px;\n"])));
 
-var GroupTitle = function GroupTitle(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, CONFIGS.GROUP_TITLE_DEFAULT_PROPS, props), props.name);
+var GroupTitle = function GroupTitle(_ref) {
+  var name = _ref.name,
+      otherProps = _objectWithoutProperties(_ref, ["name"]);
+
+  return /*#__PURE__*/React__default['default'].createElement(Typography$1, _extends({}, CONFIGS.GROUP_TITLE_DEFAULT_PROPS, otherProps), name);
 };
 
-var MenuItem = function MenuItem(_ref) {
-  var color = _ref.color,
-      content = _ref.content,
-      groupItemProps = _ref.groupItemProps,
-      groupSubItemProps = _ref.groupSubItemProps,
-      groupTitleProps = _ref.groupTitleProps,
-      removeBorders = _ref.removeBorders;
+var MenuItem = function MenuItem(_ref2) {
+  var color = _ref2.color,
+      content = _ref2.content,
+      groupItemProps = _ref2.groupItemProps,
+      groupSubItemProps = _ref2.groupSubItemProps,
+      groupTitleProps = _ref2.groupTitleProps,
+      removeBorders = _ref2.removeBorders;
   // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
   // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
   // 3. To make state work it is necessary a user click to activate initialState. Before this the values submitted to client are the ones in HTML props
@@ -3186,6 +3189,7 @@ var MenuItem = function MenuItem(_ref) {
   var itemColor = color;
   if (color === 'unique' && content.color) itemColor = content.color;
   var contentId = content.contentId,
+      name = content.name,
       path = content.path,
       subitems = content.subitems,
       target = content.target;
@@ -3208,7 +3212,9 @@ var MenuItem = function MenuItem(_ref) {
     }, /*#__PURE__*/React__default['default'].createElement(GroupTitleContainer, _extends({
       removeBorders: removeBorders,
       $color: itemColor
-    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, groupTitleProps), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
+    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, _extends({
+      name: name
+    }, groupTitleProps)), /*#__PURE__*/React__default['default'].createElement(ChevronRight, {
       $color: iconColor
     })));
   };
@@ -3221,16 +3227,18 @@ var MenuItem = function MenuItem(_ref) {
       tabIndex: "0",
       on: newState,
       $color: itemColor
-    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, groupTitleProps), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
+    }, groupItemProps), /*#__PURE__*/React__default['default'].createElement(GroupTitle, _extends({
+      name: name
+    }, groupTitleProps)), /*#__PURE__*/React__default['default'].createElement(ExpandMoreIcon, {
       "data-amp-bind-class": expandMoreIconClass
     }), /*#__PURE__*/React__default['default'].createElement(ExpandLessIcon, {
       "data-amp-bind-class": expandLessIconClass
     })), /*#__PURE__*/React__default['default'].createElement(GroupContent, {
       "data-amp-bind-class": contentClass
-    }, lodash.map(subitems, function (_ref2, key) {
-      var contentId = _ref2.contentId,
-          path = _ref2.path,
-          name = _ref2.name;
+    }, lodash.map(subitems, function (_ref3, key) {
+      var contentId = _ref3.contentId,
+          path = _ref3.path,
+          name = _ref3.name;
       return /*#__PURE__*/React__default['default'].createElement(Block$1, {
         ml: "20px",
         mb: 2,
