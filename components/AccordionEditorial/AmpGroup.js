@@ -27,7 +27,7 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
   let itemColor = color;
   if (color === 'unique' && content.color) itemColor = content.color;
 
-  const {contentId, name, path, subitems, target} = content;
+  const {contentId, path, subitems, target} = content;
 
   const parsedContentId = replace(contentId, '.', '');
   
@@ -44,7 +44,7 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
   const HyperlinkGroup = () => (
     <Hyperlink href={path} id={itemId} target={target}>
       <GroupTitleContainer removeBorders={removeBorders} $color={itemColor} {...groupItemProps}>
-        <GroupTitle name={name} {...groupTitleProps}/>
+        <GroupTitle {...groupTitleProps}/>
         <ChevronRightIcon $color={iconColor} />
       </GroupTitleContainer>
     </Hyperlink>
@@ -53,7 +53,7 @@ const MenuItem = ({color, content, groupItemProps, groupSubItemProps, groupTitle
   const Group = () => (
     <div>
       <GroupTitleContainer iconColor={iconColor} removeBorders={removeBorders} role='setMenuItemState' tabIndex='0' on={newState} $color={itemColor} {...groupItemProps}>
-        <GroupTitle name={name} {...groupTitleProps} />
+        <GroupTitle {...groupTitleProps} />
         <ExpandMoreIcon data-amp-bind-class={expandMoreIconClass} />
         <ExpandLessIcon data-amp-bind-class={expandLessIconClass} />
       </GroupTitleContainer>
