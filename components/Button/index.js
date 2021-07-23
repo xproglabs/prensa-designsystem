@@ -1,51 +1,8 @@
-import {get} from 'lodash';
 import PropTypes from 'prop-types';
 import React, {useEffect} from 'react';
-import styled, {withTheme} from 'styled-components';
+import {withTheme} from 'styled-components';
 
-import {parseProps} from './propsParser';
-
-const StyledButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: max-content;
-  text-transform: uppercase;
-  border: unset;
-  cursor: pointer;
-  &:disabled {
-    cursor: unset;
-    &:hover {
-      animation-name: none;
-    }
-  }
-  &:hover {
-    animation-name: buttonHover;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-  }
-  @keyframes buttonHover {
-    from {opacity: 100%;}
-    to {opacity: 80%;}
-  }
-  ${props => parseProps('', props)};
-  ${props => props.xs && parseProps('xs', props)};
-  ${props => props.sm && parseProps('sm', props)};
-  ${props => props.md && parseProps('md', props)};
-  ${props => props.lg && parseProps('lg', props)};
-  ${props => props.xl && parseProps('xl', props)};
-`;
-
-const getWidthRule = (props) => {
-  const isButtonFullWidth = get(props, 'children.props.fullWidth', false);
-  if (isButtonFullWidth) return '100%';
-  return 'max-content';
-};
-
-const StyledAria = styled.a`
-  width: ${getWidthRule};
-  text-decoration: unset;
-`;
+import * as S from './styled';
 
 const Button = ({
   children,
@@ -173,48 +130,58 @@ const Button = ({
     custom: custom,
   });
 
-  const renderRoot = () => {
-    return (
-      <StyledButton
-        on={on}
-        px={px}
-        py={py}
-        fullWidth={fullWidth}
-        style={style}
-        onClick={onClick}
-        disabled={disabled}
-        fontColor={fontColor}
-        removeText={removeText}
-        iconSize={iconSize}
-        $color={color}   
-        $variant={variant}
-        $radius={radius}
-        $size={size}
-        $width={width}
-        $fontFamily={fontFamily}
-        $fontWeight={fontWeight}
-        $fontSize={fontSize}
-        xs={getXsProps()}
-        sm={getSmProps()}
-        md={getMdProps()}
-        lg={getLgProps()}
-        xl={getXlProps()}
-        custom={custom}
-        id={id}
-        type={type}
-        aria-label= {ariaLabel}
-        {...otherProps}
-      >
-        {loading && 'Carregando...'}
-        {leftIcon && leftIcon}
-        {children && childrenIsString && <span>{children}</span>}
-        {children && !childrenIsString && children}
-        {rightIcon && rightIcon}
-      </StyledButton>
-    );
+  const buttonProps = {
+    on: on,
+    px: px,
+    py: py,
+    fullWidth: fullWidth,
+    style: style,
+    onClick: onClick,
+    disabled: disabled,
+    fontColor: fontColor,
+    removeText: removeText,
+    iconSize: iconSize,
+    $color: color,
+    $variant: variant,
+    $radius: radius,
+    $size: size,
+    $width: width,
+    $fontFamily: fontFamily,
+    $fontWeight: fontWeight,
+    $fontSize: fontSize,
+    xs: getXsProps(),
+    sm: getSmProps(),
+    md: getMdProps(),
+    lg: getLgProps(),
+    xl: getXlProps(),
+    custom: custom,
+    id: id,
+    type: type,
+    'aria-label': ariaLabel,
+    ...otherProps
   };
+
+  const renderButton = () => (
+    <S.Button {...buttonProps}>
+      {loading && 'Carregando...'}
+      {leftIcon && leftIcon}
+      {children && childrenIsString && <span>{children}</span>}
+      {children && !childrenIsString && children}
+      {rightIcon && rightIcon}
+    </S.Button>
+  );
+
+  const renderLink = () => (
+    <S.Link href={path} {...buttonProps} {...otherProps}>
+      {loading && 'Carregando...'}
+      {leftIcon && leftIcon}
+      {children && childrenIsString && <span>{children}</span>}
+      {children && !childrenIsString && children}
+      {rightIcon && rightIcon}
+    </S.Link>
+  );
   
-  return path ? <StyledAria href={path} {...otherProps}>{renderRoot()}</StyledAria> : renderRoot();
+  return path ? renderLink() : renderButton();
 };
 
 Button.propTypes = {
