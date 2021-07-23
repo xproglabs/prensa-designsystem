@@ -3531,29 +3531,35 @@ var parseProps$2 = function parseProps(media, props) {
 };
 
 var _templateObject$7, _templateObject2$2;
-var StyledButton = styled__default['default'].button(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  &:disabled {\n    cursor: unset;\n    &:hover {\n      animation-name: none;\n    }\n  }\n  &:hover {\n    animation-name: buttonHover;\n    animation-duration: 0.3s;\n    animation-fill-mode: forwards;\n  }\n  @keyframes buttonHover {\n    from {opacity: 100%;}\n    to {opacity: 80%;}\n  }\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
-  return parseProps$2('', props);
-}, function (props) {
-  return props.xs && parseProps$2('xs', props);
-}, function (props) {
-  return props.sm && parseProps$2('sm', props);
-}, function (props) {
-  return props.md && parseProps$2('md', props);
-}, function (props) {
-  return props.lg && parseProps$2('lg', props);
-}, function (props) {
-  return props.xl && parseProps$2('xl', props);
-});
 
-var getWidthRule = function getWidthRule(props) {
-  var isButtonFullWidth = lodash.get(props, 'children.props.fullWidth', false);
-  if (isButtonFullWidth) return '100%';
-  return 'max-content';
+var getDisabledStyle = function getDisabledStyle() {
+  return styled.css(["&:disabled{cursor:unset;&:hover{animation-name:none;}}"]);
 };
 
-var StyledAria = styled__default['default'].a(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  width: ", ";\n  text-decoration: unset;\n"])), getWidthRule);
+var getHoverStyle = function getHoverStyle() {
+  return styled.css(["@keyframes buttonHover{from{opacity:100%;}to{opacity:80%;}}&:hover{animation-name:buttonHover;animation-duration:0.3s;animation-fill-mode:forwards;}"]);
+};
 
-var Button = function Button(_ref) {
+var getParsePropsValue = function getParsePropsValue() {
+  return styled.css(["", ";", ";", ";", ";", ";", ";"], function (props) {
+    return parseProps$2('', props);
+  }, function (props) {
+    return props.xs && parseProps$2('xs', props);
+  }, function (props) {
+    return props.sm && parseProps$2('sm', props);
+  }, function (props) {
+    return props.md && parseProps$2('md', props);
+  }, function (props) {
+    return props.lg && parseProps$2('lg', props);
+  }, function (props) {
+    return props.xl && parseProps$2('xl', props);
+  });
+};
+
+var Button = styled__default['default'].button(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  ", "\n  ", "\n  ", "\n"])), getDisabledStyle, getHoverStyle, getParsePropsValue);
+var Link = styled__default['default'].a(_templateObject2$2 || (_templateObject2$2 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-width: max-content;\n  text-transform: uppercase;\n  border: unset;\n  cursor: pointer;\n  ", "\n  ", "\n  ", "\n"])), getDisabledStyle, getHoverStyle, getParsePropsValue);
+
+var Button$1 = function Button$1(_ref) {
   var children = _ref.children,
       color = _ref.color,
       disabled = _ref.disabled,
@@ -3693,44 +3699,50 @@ var Button = function Button(_ref) {
     };
   };
 
-  var renderRoot = function renderRoot() {
-    return /*#__PURE__*/React__default['default'].createElement(StyledButton, _extends({
-      on: on,
-      px: px,
-      py: py,
-      fullWidth: fullWidth,
-      style: style,
-      onClick: onClick,
-      disabled: disabled,
-      fontColor: fontColor,
-      removeText: removeText,
-      iconSize: iconSize,
-      $color: color,
-      $variant: variant,
-      $radius: radius,
-      $size: size,
-      $width: width,
-      $fontFamily: fontFamily,
-      $fontWeight: fontWeight,
-      $fontSize: fontSize,
-      xs: getXsProps(),
-      sm: getSmProps(),
-      md: getMdProps(),
-      lg: getLgProps(),
-      xl: getXlProps(),
-      custom: custom,
-      id: id,
-      type: type,
-      "aria-label": ariaLabel
-    }, otherProps), loading && 'Carregando...', leftIcon && leftIcon, children && childrenIsString && /*#__PURE__*/React__default['default'].createElement("span", null, children), children && !childrenIsString && children, rightIcon && rightIcon);
+  var buttonProps = _objectSpread2({
+    on: on,
+    px: px,
+    py: py,
+    fullWidth: fullWidth,
+    style: style,
+    onClick: onClick,
+    disabled: disabled,
+    fontColor: fontColor,
+    removeText: removeText,
+    iconSize: iconSize,
+    $color: color,
+    $variant: variant,
+    $radius: radius,
+    $size: size,
+    $width: width,
+    $fontFamily: fontFamily,
+    $fontWeight: fontWeight,
+    $fontSize: fontSize,
+    xs: getXsProps(),
+    sm: getSmProps(),
+    md: getMdProps(),
+    lg: getLgProps(),
+    xl: getXlProps(),
+    custom: custom,
+    id: id,
+    type: type,
+    'aria-label': ariaLabel
+  }, otherProps);
+
+  var renderButton = function renderButton() {
+    return /*#__PURE__*/React__default['default'].createElement(Button, buttonProps, loading && 'Carregando...', leftIcon && leftIcon, children && childrenIsString && /*#__PURE__*/React__default['default'].createElement("span", null, children), children && !childrenIsString && children, rightIcon && rightIcon);
   };
 
-  return path ? /*#__PURE__*/React__default['default'].createElement(StyledAria, _extends({
-    href: path
-  }, otherProps), renderRoot()) : renderRoot();
+  var renderLink = function renderLink() {
+    return /*#__PURE__*/React__default['default'].createElement(Link, _extends({
+      href: path
+    }, buttonProps, otherProps), loading && 'Carregando...', leftIcon && leftIcon, children && childrenIsString && /*#__PURE__*/React__default['default'].createElement("span", null, children), children && !childrenIsString && children, rightIcon && rightIcon);
+  };
+
+  return path ? renderLink() : renderButton();
 };
 
-Button.propTypes = {
+Button$1.propTypes = {
   /**
    * Corresponde ao texto escrito do botão
    */
@@ -3926,7 +3938,7 @@ Button.propTypes = {
    */
   ariaLabel: PropTypes__default['default'].string
 };
-Button.defaultProps = {
+Button$1.defaultProps = {
   px: 2,
   disabled: false,
   variant: 'filled',
@@ -3936,7 +3948,7 @@ Button.defaultProps = {
   loading: false,
   fontFamily: 'secondary'
 };
-var Button$1 = styled.withTheme(Button);
+var Button$2 = styled.withTheme(Button$1);
 
 var pathToImage = function pathToImage(derivative, domain, policy_id, width) {
   if (!policy_id) return null;
@@ -4231,7 +4243,7 @@ Area.propTypes = {
 var ButtonSubmit = function ButtonSubmit(_ref2) {
   var buttonAction = _ref2.buttonAction,
       children = _ref2.children;
-  return /*#__PURE__*/React__default['default'].createElement(Button$1, {
+  return /*#__PURE__*/React__default['default'].createElement(Button$2, {
     align: "row",
     aligny: "middle",
     alignx: "center",
@@ -5107,7 +5119,7 @@ var index$2 = styled.withTheme(Subject$1);
 exports.AccordionEditorial = AccordionEditorial;
 exports.Article = Article$1;
 exports.Block = Block$1;
-exports.Button = Button$1;
+exports.Button = Button$2;
 exports.ColumnHeader = ColumnHeader;
 exports.Dialog = Dialog;
 exports.Field = index$1;
