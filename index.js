@@ -796,32 +796,29 @@ var Share = function Share(_ref) {
   var fbappid = _ref.fbappid,
       size = _ref.size,
       facebookPath = _ref.facebookPath,
-      facebookUrl = _ref.facebookUrl,
+      facebookProps = _ref.facebookProps,
       twitterPath = _ref.twitterPath,
-      twitterUrl = _ref.twitterUrl,
+      twitterProps = _ref.twitterProps,
       whatsappPath = _ref.whatsappPath,
-      whatsappUrl = _ref.whatsappUrl;
+      whatsappProps = _ref.whatsappProps;
   return /*#__PURE__*/React__default['default'].createElement(Container$1, {
     facebookPath: fbappid ? facebookPath : null,
     twitterPath: twitterPath,
     whatsappPath: whatsappPath
-  }, fbappid && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+  }, fbappid && /*#__PURE__*/React__default['default'].createElement("amp-social-share", _extends({
     type: "facebook",
     width: size,
     height: size,
-    "data-param-app_id": fbappid,
-    "data-param-url": facebookUrl
-  }), twitterPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+    "data-param-app_id": fbappid
+  }, facebookProps)), twitterPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", _extends({
     type: "twitter",
     width: size,
-    height: size,
-    "data-param-url": twitterUrl
-  }), whatsappPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
+    height: size
+  }, twitterProps)), whatsappPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", _extends({
     type: "whatsapp",
     width: size,
-    height: size,
-    "data-param-url": whatsappUrl
-  }));
+    height: size
+  }, whatsappProps)));
 };
 
 Share.defaultProps = {
@@ -834,11 +831,11 @@ Share.propTypes = {
   fbappid: PropTypes__default['default'].string,
   size: PropTypes__default['default'].string,
   facebookPath: PropTypes__default['default'].string,
-  facebookUrl: PropTypes__default['default'].string,
+  facebookProps: PropTypes__default['default'].object,
   twitterPath: PropTypes__default['default'].string,
-  twitterUrl: PropTypes__default['default'].string,
+  twitterProps: PropTypes__default['default'].object,
   whatsappPath: PropTypes__default['default'].string,
-  whatsappUrl: PropTypes__default['default'].string
+  whatsappProps: PropTypes__default['default'].object
 };
 
 var border = function border(_ref) {
