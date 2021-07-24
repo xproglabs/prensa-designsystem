@@ -4,9 +4,15 @@ import React from 'react';
 import * as S from './styled';
 
 const Share = props => {
-  const {fbappid, size, facebookPath, facebookProps, twitterPath, twitterProps, whatsappPath, whatsappProps} = props;
+  const {fbappid, size, facebookPath, facebookProps, twitterPath, twitterProps, whatsappPath, whatsappProps, ...otherProps} = props;
   return (
-    <S.Container facebookPath={fbappid ? facebookPath : null} {...props}>
+    <S.Container
+      facebookPath={fbappid ? facebookPath : null}
+      twitterPath={twitterPath}
+      whatsappPath={whatsappPath}
+      $size={size}
+      {...otherProps}
+    >
       {fbappid && <amp-social-share type='facebook' width={size} height={size} data-param-app_id={fbappid} {...facebookProps} />}
       {twitterPath && <amp-social-share type='twitter' width={size} height={size} {...twitterProps} />}
       {whatsappPath && <amp-social-share type='whatsapp' width={size} height={size} {...whatsappProps} />}

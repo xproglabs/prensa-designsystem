@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 import {margin} from '../../../styled-system/margin';
 
-const getMinWidthValue = ({size}) => {
-  if (!size) return '';
-  return `min-width: ${size}px`;
+const getMinWidthValue = ({$size}) => {
+  if (!$size) return '';
+  return `min-width: ${$size}px`;
 };
 
 const Container = styled.div`
