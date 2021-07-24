@@ -813,9 +813,9 @@ var margin = function margin(_ref) {
 var _templateObject$1;
 
 var getMinWidthValue = function getMinWidthValue(_ref) {
-  var size = _ref.size;
-  if (!size) return '';
-  return "min-width: ".concat(size, "px");
+  var $size = _ref.$size;
+  if (!$size) return '';
+  return "min-width: ".concat($size, "px");
 };
 
 var Container$1 = styled__default['default'].div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  amp-social-share[type=\"facebook\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"twitter\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"whatsapp\"] {\n    ", ";\n    background-image: ", ";\n    background-color: transparent; \n    &:hover {\n      opacity: 80%;\n    }\n  }\n  @media (min-width: ", ") {\n    width: 50%;\n    justify-content: flex-end;\n  }\n"])), getMinWidthValue, margin, function (props) {
@@ -836,10 +836,15 @@ var Share = function Share(props) {
       twitterPath = props.twitterPath,
       twitterProps = props.twitterProps,
       whatsappPath = props.whatsappPath,
-      whatsappProps = props.whatsappProps;
+      whatsappProps = props.whatsappProps,
+      otherProps = _objectWithoutProperties(props, ["fbappid", "size", "facebookPath", "facebookProps", "twitterPath", "twitterProps", "whatsappPath", "whatsappProps"]);
+
   return /*#__PURE__*/React__default['default'].createElement(Container$1, _extends({
-    facebookPath: fbappid ? facebookPath : null
-  }, props), fbappid && /*#__PURE__*/React__default['default'].createElement("amp-social-share", _extends({
+    facebookPath: fbappid ? facebookPath : null,
+    twitterPath: twitterPath,
+    whatsappPath: whatsappPath,
+    $size: size
+  }, otherProps), fbappid && /*#__PURE__*/React__default['default'].createElement("amp-social-share", _extends({
     type: "facebook",
     width: size,
     height: size,
