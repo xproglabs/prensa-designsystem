@@ -1,22 +1,24 @@
 import styled from 'styled-components';
 
+import {margin} from '../../../styled-system/margin';
+
 const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   amp-social-share[type="facebook"] {
+    ${margin};
     background-image: ${props => `url(${props.facebookPath})`};
     background-color: transparent;
-    margin-right: 32px;
     &:hover {
       opacity: 80%;
     }
   }
   amp-social-share[type="twitter"] {
+    ${margin};
     background-image: ${props => `url(${props.twitterPath})`};
     background-color: transparent;
-    margin-right: 32px;
     &:hover {
       opacity: 80%;
     }
