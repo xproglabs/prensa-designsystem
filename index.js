@@ -811,11 +811,18 @@ var margin = function margin(_ref) {
 };
 
 var _templateObject$1;
-var Container$1 = styled__default['default'].div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  amp-social-share[type=\"facebook\"] {\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"twitter\"] {\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"whatsapp\"] {\n    background-image: ", ";\n    background-color: transparent; \n    &:hover {\n      opacity: 80%;\n    }\n  }\n  @media (min-width: ", ") {\n    width: 50%;\n    justify-content: flex-end;\n  }\n"])), margin, function (props) {
+
+var getMinWidthValue = function getMinWidthValue(_ref) {
+  var size = _ref.size;
+  if (!size) return '';
+  return "min-width: ".concat(size, "px");
+};
+
+var Container$1 = styled__default['default'].div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  amp-social-share[type=\"facebook\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"twitter\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"whatsapp\"] {\n    ", ";\n    background-image: ", ";\n    background-color: transparent; \n    &:hover {\n      opacity: 80%;\n    }\n  }\n  @media (min-width: ", ") {\n    width: 50%;\n    justify-content: flex-end;\n  }\n"])), getMinWidthValue, margin, function (props) {
   return "url(".concat(props.facebookPath, ")");
-}, margin, function (props) {
+}, getMinWidthValue, margin, function (props) {
   return "url(".concat(props.twitterPath, ")");
-}, function (props) {
+}, getMinWidthValue, function (props) {
   return "url(".concat(props.whatsappPath, ")");
 }, function (props) {
   return props.theme.queries.md;
