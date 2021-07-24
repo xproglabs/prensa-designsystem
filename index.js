@@ -793,11 +793,14 @@ var Container$1 = styled__default['default'].div(_templateObject$1 || (_template
 });
 
 var Share = function Share(_ref) {
-  var facebookPath = _ref.facebookPath,
-      fbappid = _ref.fbappid,
+  var fbappid = _ref.fbappid,
+      size = _ref.size,
+      facebookPath = _ref.facebookPath,
+      facebookUrl = _ref.facebookUrl,
       twitterPath = _ref.twitterPath,
+      twitterUrl = _ref.twitterUrl,
       whatsappPath = _ref.whatsappPath,
-      size = _ref.size;
+      whatsappUrl = _ref.whatsappUrl;
   return /*#__PURE__*/React__default['default'].createElement(Container$1, {
     facebookPath: fbappid ? facebookPath : null,
     twitterPath: twitterPath,
@@ -806,15 +809,18 @@ var Share = function Share(_ref) {
     type: "facebook",
     width: size,
     height: size,
-    "data-param-app_id": fbappid
+    "data-param-app_id": fbappid,
+    "data-param-url": facebookUrl
   }), twitterPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
     type: "twitter",
     width: size,
-    height: size
+    height: size,
+    "data-param-url": twitterUrl
   }), whatsappPath && /*#__PURE__*/React__default['default'].createElement("amp-social-share", {
     type: "whatsapp",
     width: size,
-    height: size
+    height: size,
+    "data-param-url": whatsappUrl
   }));
 };
 
@@ -826,10 +832,13 @@ Share.defaultProps = {
 };
 Share.propTypes = {
   fbappid: PropTypes__default['default'].string,
-  facebookPath: PropTypes__default['default'].string,
   size: PropTypes__default['default'].string,
+  facebookPath: PropTypes__default['default'].string,
+  facebookUrl: PropTypes__default['default'].string,
   twitterPath: PropTypes__default['default'].string,
-  whatsappPath: PropTypes__default['default'].string
+  twitterUrl: PropTypes__default['default'].string,
+  whatsappPath: PropTypes__default['default'].string,
+  whatsappUrl: PropTypes__default['default'].string
 };
 
 var border = function border(_ref) {
