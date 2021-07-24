@@ -23,8 +23,7 @@ const Container = styled.div`
   }
   amp-social-share[type="whatsapp"] {
     background-image: ${props => `url(${props.whatsappPath})`};
-    background-color: transparent;
-    margin-right: 32px;
+    background-color: transparent; 
     &:hover {
       opacity: 80%;
     }
