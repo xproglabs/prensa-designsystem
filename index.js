@@ -781,6 +781,115 @@ Page.propTypes = {
   children: PropTypes__default['default'].oneOfType([PropTypes__default['default'].array, PropTypes__default['default'].object])
 };
 
+var align = function align(props) {
+  var align = lodash.get(props, 'align', undefined);
+  var alignx = lodash.get(props, 'alignx', undefined);
+  var aligny = lodash.get(props, 'aligny', undefined);
+  var object = [];
+  var alignItems = '';
+  var display = 'flex';
+  var flexDirection = '';
+  var justifyContent = ''; // check if is column
+
+  if (align === 'column') {
+    flexDirection = align; // x axys
+
+    if (alignx === 'left') {
+      alignItems = 'flex-start';
+    }
+
+    if (alignx === 'center') {
+      alignItems = 'center';
+    }
+
+    if (alignx === 'right') {
+      alignItems = 'flex-end';
+    }
+
+    if (alignx === 'evenly') {
+      justifyContent = 'space-evenly';
+    }
+
+    if (alignx === 'between') {
+      justifyContent = 'space-between';
+    } // y axis
+
+
+    if (aligny === 'top') {
+      justifyContent = 'flex-start';
+    }
+
+    if (aligny === 'middle') {
+      justifyContent = 'center';
+    }
+
+    if (aligny === 'bottom') {
+      justifyContent = 'flex-end';
+    }
+
+    if (aligny === 'evenly') {
+      justifyContent = 'space-evenly';
+    }
+
+    if (aligny === 'between') {
+      justifyContent = 'space-between';
+    }
+  } // check if is row
+
+
+  if (align === 'row') {
+    flexDirection = align;
+
+    if (alignx === 'left') {
+      alignItems = 'flex-start';
+    }
+
+    if (alignx === 'center') {
+      justifyContent = 'center';
+    }
+
+    if (alignx === 'right') {
+      justifyContent = 'flex-end';
+    }
+
+    if (alignx === 'evenly') {
+      justifyContent = 'space-evenly';
+    }
+
+    if (alignx === 'between') {
+      justifyContent = 'space-between';
+    }
+
+    if (aligny === 'top') {
+      alignItems = 'flex-start';
+    }
+
+    if (aligny === 'middle') {
+      alignItems = 'center';
+    }
+
+    if (aligny === 'bottom') {
+      alignItems = 'flex-end';
+    }
+
+    if (aligny === 'evenly') {
+      justifyContent = 'space-evenly';
+    }
+
+    if (aligny === 'between') {
+      justifyContent = 'space-between';
+    }
+  } // define strings
+
+
+  alignItems !== '' && object.push("align-items: ".concat(alignItems, ";"));
+  object.push("display: ".concat(display, ";"));
+  flexDirection !== '' && object.push("flex-direction: ".concat(flexDirection, ";"));
+  justifyContent !== '' && object.push("justify-content: ".concat(justifyContent, ";")); // end
+
+  return object.join('');
+};
+
 var margin = function margin(_ref) {
   var _ref$theme = _ref.theme,
       theme = _ref$theme === void 0 ? {} : _ref$theme,
@@ -818,7 +927,7 @@ var getMinWidthValue = function getMinWidthValue(_ref) {
   return "min-width: ".concat($size, "px");
 };
 
-var Container$1 = styled__default['default'].div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  amp-social-share[type=\"facebook\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"twitter\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"whatsapp\"] {\n    ", ";\n    background-image: ", ";\n    background-color: transparent; \n    &:hover {\n      opacity: 80%;\n    }\n  }\n  @media (min-width: ", ") {\n    width: 50%;\n    justify-content: flex-end;\n  }\n"])), getMinWidthValue, margin, function (props) {
+var Container$1 = styled__default['default'].div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  ", ";\n  width: 100%;\n  amp-social-share[type=\"facebook\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"twitter\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"whatsapp\"] {\n    ", ";\n    background-image: ", ";\n    background-color: transparent; \n    &:hover {\n      opacity: 80%;\n    }\n  }\n  @media (min-width: ", ") {\n    width: 50%;\n    justify-content: flex-end;\n  }\n"])), align, getMinWidthValue, margin, function (props) {
   return "url(".concat(props.facebookPath, ")");
 }, getMinWidthValue, margin, function (props) {
   return "url(".concat(props.twitterPath, ")");
@@ -861,6 +970,7 @@ var Share = function Share(props) {
 };
 
 Share.defaultProps = {
+  align: 'row',
   facebookPath: 'assets/facebook.svg',
   size: '24',
   twitterPath: 'assets/twitter.svg',
