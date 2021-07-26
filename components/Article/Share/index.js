@@ -31,6 +31,7 @@ Share.defaultProps = {
 Share.propTypes = {
   fbappid: PropTypes.string,
   size: PropTypes.string,
+  itemProps: PropTypes.object,
   facebookPath: PropTypes.string,
   facebookProps: PropTypes.object,
   twitterPath: PropTypes.string,

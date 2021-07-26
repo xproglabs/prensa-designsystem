@@ -8,12 +8,17 @@ const getMinWidthValue = ({$size}) => {
   return `min-width: ${$size}px`;
 };
 
+const getItemMarginStyle = ({theme, itemProps}) => {
+  return margin({theme, ...itemProps});
+};
+
 const Container = styled.div`
   ${align};
+  ${margin};
   width: 100%;
   amp-social-share[type="facebook"] {
     ${getMinWidthValue};
-    ${margin};
+    ${getItemMarginStyle};
     background-image: ${props => `url(${props.facebookPath})`};
     background-color: transparent;
     &:hover {
@@ -22,7 +27,7 @@ const Container = styled.div`
   }
   amp-social-share[type="twitter"] {
     ${getMinWidthValue};
-    ${margin};
+    ${getItemMarginStyle};
     background-image: ${props => `url(${props.twitterPath})`};
     background-color: transparent;
     &:hover {
