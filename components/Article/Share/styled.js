@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import {align} from '../../../styled-system/align';
 import {margin} from '../../../styled-system/margin';
 
 const getMinWidthValue = ({$size}) => {
@@ -8,10 +9,8 @@ const getMinWidthValue = ({$size}) => {
 };
 
 const Container = styled.div`
+  ${align};
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   amp-social-share[type="facebook"] {
     ${getMinWidthValue};
     ${margin};

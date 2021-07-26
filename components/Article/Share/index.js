@@ -21,6 +21,7 @@ const Share = props => {
 };
 
 Share.defaultProps = {
+  align: 'row',
   facebookPath: 'assets/facebook.svg',
   size: '24',
   twitterPath: 'assets/twitter.svg',
