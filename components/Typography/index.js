@@ -290,7 +290,7 @@ Typography.propTypes = {
   /**
    * Permite estilos customizados
    */
-  custom: PropTypes.object,
+  custom: PropTypes.string,
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   fullWidth: PropTypes.bool,
   bt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
