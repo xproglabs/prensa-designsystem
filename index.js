@@ -1422,7 +1422,7 @@ Typography.propTypes = {
   /**
    * Permite estilos customizados
    */
-  custom: PropTypes__default['default'].object,
+  custom: PropTypes__default['default'].string,
   width: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
   fullWidth: PropTypes__default['default'].bool,
   bt: PropTypes__default['default'].oneOfType([PropTypes__default['default'].string, PropTypes__default['default'].number]),
