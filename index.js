@@ -927,9 +927,17 @@ var getMinWidthValue = function getMinWidthValue(_ref) {
   return "min-width: ".concat($size, "px");
 };
 
-var Container$1 = styled__default['default'].div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  ", ";\n  width: 100%;\n  amp-social-share[type=\"facebook\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"twitter\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"whatsapp\"] {\n    ", ";\n    background-image: ", ";\n    background-color: transparent; \n    &:hover {\n      opacity: 80%;\n    }\n  }\n  @media (min-width: ", ") {\n    width: 50%;\n    justify-content: flex-end;\n  }\n"])), align, getMinWidthValue, margin, function (props) {
+var getItemMarginStyle = function getItemMarginStyle(_ref2) {
+  var theme = _ref2.theme,
+      itemProps = _ref2.itemProps;
+  return margin(_objectSpread2({
+    theme: theme
+  }, itemProps));
+};
+
+var Container$1 = styled__default['default'].div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  ", ";\n  ", ";\n  width: 100%;\n  amp-social-share[type=\"facebook\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"twitter\"] {\n    ", ";\n    ", ";\n    background-image: ", ";\n    background-color: transparent;\n    &:hover {\n      opacity: 80%;\n    }\n  }\n  amp-social-share[type=\"whatsapp\"] {\n    ", ";\n    background-image: ", ";\n    background-color: transparent; \n    &:hover {\n      opacity: 80%;\n    }\n  }\n  @media (min-width: ", ") {\n    width: 50%;\n    justify-content: flex-end;\n  }\n"])), align, margin, getMinWidthValue, getItemMarginStyle, function (props) {
   return "url(".concat(props.facebookPath, ")");
-}, getMinWidthValue, margin, function (props) {
+}, getMinWidthValue, getItemMarginStyle, function (props) {
   return "url(".concat(props.twitterPath, ")");
 }, getMinWidthValue, function (props) {
   return "url(".concat(props.whatsappPath, ")");
@@ -979,6 +987,7 @@ Share.defaultProps = {
 Share.propTypes = {
   fbappid: PropTypes__default['default'].string,
   size: PropTypes__default['default'].string,
+  itemProps: PropTypes__default['default'].object,
   facebookPath: PropTypes__default['default'].string,
   facebookProps: PropTypes__default['default'].object,
   twitterPath: PropTypes__default['default'].string,
