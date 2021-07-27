@@ -17,3 +17,4 @@ export {default as Topbar} from './Topbar';
 export {theme} from '../styles/theme';
 export {default as Subject} from './Subject';
 export {default as Typography} from './Typography';
+export * as Embeds from './Article/Embeds';
