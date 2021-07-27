@@ -63,7 +63,6 @@ const Article = (props) => {
                 <Byline {...byline} />
               </S.Content>
             </S.MaxWidth>
-            <AdBlock amp={amp} content={adsTopImage} />
           </React.Fragment>
           :
           <React.Fragment>
@@ -74,6 +73,9 @@ const Article = (props) => {
                 <Subtitle {...subtitle} />
                 <Byline {...byline} />
               </S.Content>
+            </S.MaxWidth>
+            <AdBlock amp={amp} content={adsTopImage} />
+            <S.MaxWidth maxWidth={headWidth}>
               <TopImage amp={amp} {...topimage} />
             </S.MaxWidth>
             <AdBlock amp={amp} content={adsTopBody} />
