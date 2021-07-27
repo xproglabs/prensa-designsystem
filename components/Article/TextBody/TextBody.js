@@ -22,7 +22,6 @@ import {parse_content} from './TextBodyParser';
 const TextBody = (props) => {
   const {
     ads,
-    AdPlaceholder,
     amp,
     bodyWidth,
     citation,
@@ -40,7 +39,8 @@ const TextBody = (props) => {
   if (!content) return null;
 
   const adsContent = get(ads, 'content', {});
-  
+  const adsRender = get(ads, 'render', {});
+
   let readmore = [];
   let intervention_amount = get(ads, 'interventionAmount', 3);
   let intervention_readmore_inserted = false;
@@ -48,10 +48,8 @@ const TextBody = (props) => {
   let paragraph_length = 0;
   let ad_counter = 0;
   // let intervention_readmore = false;
-
-  const AdBlock = (props) => AdPlaceholder(props);
   const body_items = parse_content(content);
-
+  
   const render_image = (value) => {
     if (!value) return null;
     const image_data = find(images.items, {contentId: value.contentId});
@@ -99,8 +97,13 @@ const TextBody = (props) => {
     const ad_data_key = ad_counter - 1;
     return (
       <React.Fragment>
-        <Paragraph {...paragraph} maxWidth={bodyWidth} value={value} />
-        {intervention_status && <AdBlock amp={amp} content={adsContent[ad_data_key]} />}
+        <Paragraph
+          {...paragraph}
+          maxWidth={bodyWidth}
+          value={value}
+        />
+        {intervention_status && 
+          adsRender({amp, content: adsContent[ad_data_key]})}
       </React.Fragment>
     );
   };

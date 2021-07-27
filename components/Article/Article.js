@@ -12,10 +12,8 @@ import Title from './Title/Title';
 import TopImage from './TopImage/TopImage';
 
 const Article = (props) => {
-
   const {
     ads,
-    AdPlaceholder,
     amp,
     bodyWidth,
     byline,
@@ -36,14 +34,15 @@ const Article = (props) => {
     textbody,
     topimage
   } = props;
-
-  const adsBody = get(ads, 'body', {});
-
+  // prepare article slots
+  const adsBody = get(ads, 'articleBody', {});
+  const adsTopImage = get(ads, 'topImageRender', {});
+  const adsTopBody = get(ads, 'topBodyRender', {});
   return (
     <S.Page>
       <S.Container>
         {featured && featured.enabled ?
-          <>
+          <React.Fragment>
             <S.ContainerFeatured>
               <S.ContentImage>
                 <TopImage amp={amp} {...topimage} />
@@ -59,20 +58,27 @@ const Article = (props) => {
                 <Byline {...byline} />
               </S.Content>
             </S.MaxWidth>
-          </> :
-          <S.MaxWidth maxWidth={headWidth}>
-            <S.Content>
-              <Subject {...subject} />
-              <Title {...title} />
-              <Subtitle {...subtitle} />
-              <Byline {...byline} />
-            </S.Content>
-            <TopImage amp={amp} {...topimage} />
-          </S.MaxWidth>
+            {adsTopImage}
+          </React.Fragment>
+          :
+          <React.Fragment>
+            <S.MaxWidth maxWidth={headWidth}>
+              <S.Content>
+                <Subject {...subject} />
+                <Title {...title} />
+                <Subtitle {...subtitle} />
+                <Byline {...byline} />
+              </S.Content>
+            </S.MaxWidth>
+            {adsTopImage}
+            <S.MaxWidth maxWidth={headWidth}>
+              <TopImage amp={amp} {...topimage} />
+            </S.MaxWidth>
+            {adsTopBody}
+          </React.Fragment>
         }
         <TextBody
           ads={adsBody}
-          AdPlaceholder={AdPlaceholder}
           amp={amp}
           bodyWidth={bodyWidth}
           citation={citation}
@@ -103,6 +109,8 @@ Article.propTypes = {
       content: PropTypes.object,
       interventionAmount: PropTypes.number
     }),
+    topImage: PropTypes.object,
+    topBody: PropTypes.object
   }),
   AdPlaceholder: PropTypes.func,
   amp: PropTypes.bool,
