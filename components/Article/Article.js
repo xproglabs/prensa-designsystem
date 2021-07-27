@@ -38,6 +38,8 @@ const Article = (props) => {
   } = props;
 
   const adsBody = get(ads, 'body', {});
+  const adsTopImage = get(ads, 'topImage', {});
+  const adsTopBody = get(ads, 'topBody', {});
 
   return (
     <S.Page>
@@ -59,7 +61,8 @@ const Article = (props) => {
                 <Byline {...byline} />
               </S.Content>
             </S.MaxWidth>
-          </> :
+          </>
+          :
           <S.MaxWidth maxWidth={headWidth}>
             <S.Content>
               <Subject {...subject} />
@@ -103,6 +106,8 @@ Article.propTypes = {
       content: PropTypes.object,
       interventionAmount: PropTypes.number
     }),
+    topImage: PropTypes.object,
+    topBody: PropTypes.object
   }),
   AdPlaceholder: PropTypes.func,
   amp: PropTypes.bool,
