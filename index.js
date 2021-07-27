@@ -5251,12 +5251,21 @@ Subject$1.propTypes = {
 };
 var index$2 = styled.withTheme(Subject$1);
 
+var index$3 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  Facebok: FacebookEmbed,
+  Twitter: TwitterEmbed,
+  Instagram: InstagramEmbed,
+  YouTube: YouTubeEmbed
+});
+
 exports.AccordionEditorial = AccordionEditorial;
 exports.Article = Article$1;
 exports.Block = Block$1;
 exports.Button = Button$2;
 exports.ColumnHeader = ColumnHeader;
 exports.Dialog = Dialog;
+exports.Embeds = index$3;
 exports.Field = index$1;
 exports.Form = index;
 exports.Icon = Icon;
