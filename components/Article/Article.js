@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {withTheme} from 'styled-components';
 
+import AdBlock from '../AdBlock';
 import * as S from './Article.styled';
 import Byline from './Byline/Byline';
 import Subject from './Subject/Subject';
@@ -36,8 +37,6 @@ const Article = (props) => {
     textbody,
     topimage
   } = props;
-
-  const AdBlock = props => AdPlaceholder(props);
 
   const adsBody = get(ads, 'body', {});
   const adsTopImage = get(ads, 'topImage', {});
