@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {withTheme} from 'styled-components';
 
-import AdBlock from '../AdBlock';
 import * as S from './Article.styled';
 import Byline from './Byline/Byline';
 import Subject from './Subject/Subject';
@@ -13,10 +12,8 @@ import Title from './Title/Title';
 import TopImage from './TopImage/TopImage';
 
 const Article = (props) => {
-
   const {
     ads,
-    AdPlaceholder,
     amp,
     bodyWidth,
     byline,
@@ -37,11 +34,10 @@ const Article = (props) => {
     textbody,
     topimage
   } = props;
-
-  const adsBody = get(ads, 'body', {});
-  const adsTopImage = get(ads, 'topImage', {});
-  const adsTopBody = get(ads, 'topBody', {});
-
+  // prepare article slots
+  const adsBody = get(ads, 'articleBody', {});
+  const adsTopImage = get(ads, 'topImageRender', {});
+  const adsTopBody = get(ads, 'topBodyRender', {});
   return (
     <S.Page>
       <S.Container>
@@ -62,7 +58,7 @@ const Article = (props) => {
                 <Byline {...byline} />
               </S.Content>
             </S.MaxWidth>
-            <AdBlock amp={amp} content={adsTopImage} />
+            {adsTopImage}
           </React.Fragment>
           :
           <React.Fragment>
@@ -74,16 +70,15 @@ const Article = (props) => {
                 <Byline {...byline} />
               </S.Content>
             </S.MaxWidth>
-            <AdBlock amp={amp} content={adsTopImage} />
+            {adsTopImage}
             <S.MaxWidth maxWidth={headWidth}>
               <TopImage amp={amp} {...topimage} />
             </S.MaxWidth>
-            <AdBlock amp={amp} content={adsTopBody} />
+            {adsTopBody}
           </React.Fragment>
         }
         <TextBody
           ads={adsBody}
-          AdPlaceholder={AdPlaceholder}
           amp={amp}
           bodyWidth={bodyWidth}
           citation={citation}
