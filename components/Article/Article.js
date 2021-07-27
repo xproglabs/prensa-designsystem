@@ -37,6 +37,8 @@ const Article = (props) => {
     topimage
   } = props;
 
+  const AdBlock = props => AdPlaceholder(props);
+
   const adsBody = get(ads, 'body', {});
   const adsTopImage = get(ads, 'topImage', {});
   const adsTopBody = get(ads, 'topBody', {});
@@ -45,7 +47,7 @@ const Article = (props) => {
     <S.Page>
       <S.Container>
         {featured && featured.enabled ?
-          <>
+          <React.Fragment>
             <S.ContainerFeatured>
               <S.ContentImage>
                 <TopImage amp={amp} {...topimage} />
@@ -61,17 +63,21 @@ const Article = (props) => {
                 <Byline {...byline} />
               </S.Content>
             </S.MaxWidth>
-          </>
+            <AdBlock amp={amp} content={adsTopImage} />
+          </React.Fragment>
           :
-          <S.MaxWidth maxWidth={headWidth}>
-            <S.Content>
-              <Subject {...subject} />
-              <Title {...title} />
-              <Subtitle {...subtitle} />
-              <Byline {...byline} />
-            </S.Content>
-            <TopImage amp={amp} {...topimage} />
-          </S.MaxWidth>
+          <React.Fragment>
+            <S.MaxWidth maxWidth={headWidth}>
+              <S.Content>
+                <Subject {...subject} />
+                <Title {...title} />
+                <Subtitle {...subtitle} />
+                <Byline {...byline} />
+              </S.Content>
+              <TopImage amp={amp} {...topimage} />
+            </S.MaxWidth>
+            <AdBlock amp={amp} content={adsTopBody} />
+          </React.Fragment>
         }
         <TextBody
           ads={adsBody}
