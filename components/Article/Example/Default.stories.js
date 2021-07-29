@@ -6,8 +6,8 @@ export {default as DiarioDaRegiao} from './DiarioDaRegiao';
 export {default as ODiarioDeMogi} from './ODiarioDeMogi';
 export {default as OVale} from './OVale';
 export {default as HojeEmDia} from './HojeEmDia';
-import AdPlaceholder from '../../AdBlock/placeholder';
 import Article from '../Article';
+import adsMock from '../TextBody/mockAds.json';
 
 export default {
   title: 'Article/Example',
@@ -15,10 +15,22 @@ export default {
 };
 
 export const ArticleDefault = () => {
+
+  const ads = {
+    body: {
+      content: adsMock,
+      render: <pre id='teste' name='teste'>testando elemento</pre>,
+      interventionAmount: 2
+    },
+    topImage: <pre id='teste' name='teste'>testando elemento</pre>,
+    topBody: <pre id='teste' name='teste'>testando elemento</pre>
+  };
+
+
   return (
     <ThemeProvider theme={theme}>
       <Article
-        AdPlaceholder={AdPlaceholder}
+        ads={ads}
         subject={{
           bgColor: 'neutral3',
           color: 'white',

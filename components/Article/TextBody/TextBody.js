@@ -37,9 +37,9 @@ const TextBody = (props) => {
   } = props;
   
   if (!content) return null;
-
-  const adsContent = get(ads, 'content', {});
-  const adsRender = get(ads, 'render', {});
+  
+  const adsContent = get(ads, 'content', []);
+  const adsRender = get(ads, 'render');
 
   let readmore = [];
   let intervention_amount = get(ads, 'interventionAmount', 3);
@@ -95,6 +95,7 @@ const TextBody = (props) => {
     }
     // {intervention_readmore && <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
     const ad_data_key = ad_counter - 1;
+    const ad_content = adsContent[ad_data_key];
     return (
       <React.Fragment>
         <Paragraph
@@ -102,8 +103,7 @@ const TextBody = (props) => {
           maxWidth={bodyWidth}
           value={value}
         />
-        {intervention_status && 
-          adsRender({amp, content: adsContent[ad_data_key]})}
+        {adsRender && intervention_status && React.cloneElement(adsRender, {amp: amp, content: ad_content})}
       </React.Fragment>
     );
   };
@@ -159,10 +159,7 @@ const TextBody = (props) => {
 };
 
 TextBody.propTypes = {
-  ads: PropTypes.shape({
-    content: PropTypes.object,
-    interventionAmount: PropTypes.number
-  }),
+  ads: PropTypes.object,
   AdPlaceholder: PropTypes.func,
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
