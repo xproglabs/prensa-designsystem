@@ -34,10 +34,12 @@ const Article = (props) => {
     textbody,
     topimage
   } = props;
+
   // prepare article slots
-  const adsBody = get(ads, 'articleBody', {});
-  const adsTopImage = get(ads, 'topImageRender', {});
-  const adsTopBody = get(ads, 'topBodyRender', {});
+  const adsBody = get(ads, 'body', {});
+  const adTopImage = get(ads, 'topImage', false);
+  const adTopBody = get(ads, 'topBody', false);
+
   return (
     <S.Page>
       <S.Container>
@@ -58,7 +60,7 @@ const Article = (props) => {
                 <Byline {...byline} />
               </S.Content>
             </S.MaxWidth>
-            {adsTopImage}
+            {adTopImage && React.cloneElement(adTopImage)}
           </React.Fragment>
           :
           <React.Fragment>
@@ -70,11 +72,11 @@ const Article = (props) => {
                 <Byline {...byline} />
               </S.Content>
             </S.MaxWidth>
-            {adsTopImage}
+            {adTopImage && React.cloneElement(adTopImage)}
             <S.MaxWidth maxWidth={headWidth}>
               <TopImage amp={amp} {...topimage} />
             </S.MaxWidth>
-            {adsTopBody}
+            {adTopBody && React.cloneElement(adTopBody)}
           </React.Fragment>
         }
         <TextBody
@@ -107,12 +109,12 @@ Article.propTypes = {
   ads: PropTypes.shape({
     body: PropTypes.shape({
       content: PropTypes.object,
+      render: PropTypes.node,
       interventionAmount: PropTypes.number
     }),
-    topImage: PropTypes.object,
-    topBody: PropTypes.object
+    topImage: PropTypes.node,
+    topBody: PropTypes.node
   }),
-  AdPlaceholder: PropTypes.func,
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
   byline: PropTypes.object,
