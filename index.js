@@ -1147,17 +1147,16 @@ var Share$1 = function Share(props) {
       whatsappProps = props.whatsappProps,
       otherProps = _objectWithoutProperties(props, ["itemProps", "facebookProps", "twitterProps", "whatsappProps"]);
 
-  var url = lodash.get(location, 'href');
   return /*#__PURE__*/React__default['default'].createElement(Block$1, _extends({
     align: "row",
     width: "100%",
     alignx: "right"
   }, otherProps), /*#__PURE__*/React__default['default'].createElement(FacebookShareButton, _extends({
-    url: url
+    url: location.href
   }, itemDefaultProps, itemProps, facebookProps), /*#__PURE__*/React__default['default'].createElement(IcFaceboook, null)), /*#__PURE__*/React__default['default'].createElement(TwitterShareButton, _extends({
-    url: url
+    url: location.href
   }, itemDefaultProps, itemProps, twitterProps), /*#__PURE__*/React__default['default'].createElement(IcTwitter, null)), /*#__PURE__*/React__default['default'].createElement(WhatsappShareButton, _extends({
-    url: url
+    url: location.href
   }, itemDefaultProps, itemProps, whatsappProps), /*#__PURE__*/React__default['default'].createElement(IcWhatsapp, null)));
 };
 
