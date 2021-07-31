@@ -4,7 +4,7 @@ import React from 'react';
 import {FacebookShareButton as Facebook, TwitterShareButton as Twitter, WhatsappShareButton as Whatsapp} from 'react-share';
 import styled, {css} from 'styled-components';
 
-import {margin} from '../../../styled-system';
+import {margin} from '../../../styled-system/margin';
 import Block from '../../Block';
 import FacebookIcon from './IcFacebook';
 import TwitterIcon from './IcTwitter';
