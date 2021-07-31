@@ -1,4 +1,3 @@
-import {get} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {FacebookShareButton as Facebook, TwitterShareButton as Twitter, WhatsappShareButton as Whatsapp} from 'react-share';
@@ -48,16 +47,15 @@ const itemDefaultProps = {
 
 const Share = props => {
   const {itemProps, facebookProps, twitterProps, whatsappProps, ...otherProps} = props;
-  const url = get(location, 'href');
   return (
     <Block align='row' width='100%' alignx='right' {...otherProps}>
-      <FacebookShareButton url={url} {...itemDefaultProps} {...itemProps} {...facebookProps}>
+      <FacebookShareButton url={location.href} {...itemDefaultProps} {...itemProps} {...facebookProps}>
         <FacebookIcon/>
       </FacebookShareButton>
-      <TwitterShareButton url={url} {...itemDefaultProps} {...itemProps} {...twitterProps}>
+      <TwitterShareButton url={location.href} {...itemDefaultProps} {...itemProps} {...twitterProps}>
         <TwitterIcon/>
       </TwitterShareButton>
-      <WhatsappShareButton url={url} {...itemDefaultProps} {...itemProps} {...whatsappProps}>
+      <WhatsappShareButton url={location.href} {...itemDefaultProps} {...itemProps} {...whatsappProps}>
         <WhatsappIcon/>
       </WhatsappShareButton>
     </Block>
