@@ -3320,7 +3320,9 @@ var Article = function Article(props) {
     amp: amp
   }, byline)))), adTopImage && /*#__PURE__*/React__default['default'].cloneElement(adTopImage)) : /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: headWidth
-  }, /*#__PURE__*/React__default['default'].createElement(Content, null, /*#__PURE__*/React__default['default'].createElement(Subject, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, byline))), adTopImage && /*#__PURE__*/React__default['default'].cloneElement(adTopImage), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
+  }, /*#__PURE__*/React__default['default'].createElement(Content, null, /*#__PURE__*/React__default['default'].createElement(Subject, subject), /*#__PURE__*/React__default['default'].createElement(Title, title), /*#__PURE__*/React__default['default'].createElement(Subtitle, subtitle), /*#__PURE__*/React__default['default'].createElement(Byline, _extends({
+    amp: amp
+  }, byline)))), adTopImage && /*#__PURE__*/React__default['default'].cloneElement(adTopImage), /*#__PURE__*/React__default['default'].createElement(MaxWidth, {
     maxWidth: headWidth
   }, /*#__PURE__*/React__default['default'].createElement(TopImage, _extends({
     amp: amp
