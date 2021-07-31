@@ -57,7 +57,7 @@ const Article = (props) => {
             </S.ContainerFeatured>
             <S.MaxWidth maxWidth={headWidth}>
               <S.Content>
-                <Byline {...byline} />
+                <Byline amp={amp} {...byline} />
               </S.Content>
             </S.MaxWidth>
             {adTopImage && React.cloneElement(adTopImage)}

@@ -15,7 +15,8 @@
     "react-dom": "^17.0.1",
     "react-input-mask": "^3.0.0-alpha.2",
     "sass": "^1.26.10",
-    "styled-components": "^5.x"
+    "styled-components": "^5.x",
+    "react-share": "4.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
@@ -83,5 +84,8 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "react-share": "^4.4.0"
   }
 }
