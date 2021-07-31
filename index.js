@@ -1151,13 +1151,7 @@ var Share$1 = function Share(props) {
     align: "row",
     width: "100%",
     alignx: "right"
-  }, otherProps), /*#__PURE__*/React__default['default'].createElement(FacebookShareButton, _extends({
-    url: location.href
-  }, itemDefaultProps, itemProps, facebookProps), /*#__PURE__*/React__default['default'].createElement(IcFaceboook, null)), /*#__PURE__*/React__default['default'].createElement(TwitterShareButton, _extends({
-    url: location.href
-  }, itemDefaultProps, itemProps, twitterProps), /*#__PURE__*/React__default['default'].createElement(IcTwitter, null)), /*#__PURE__*/React__default['default'].createElement(WhatsappShareButton, _extends({
-    url: location.href
-  }, itemDefaultProps, itemProps, whatsappProps), /*#__PURE__*/React__default['default'].createElement(IcWhatsapp, null)));
+  }, otherProps), /*#__PURE__*/React__default['default'].createElement(FacebookShareButton, _extends({}, itemDefaultProps, itemProps, facebookProps), /*#__PURE__*/React__default['default'].createElement(IcFaceboook, null)), /*#__PURE__*/React__default['default'].createElement(TwitterShareButton, _extends({}, itemDefaultProps, itemProps, twitterProps), /*#__PURE__*/React__default['default'].createElement(IcTwitter, null)), /*#__PURE__*/React__default['default'].createElement(WhatsappShareButton, _extends({}, itemDefaultProps, itemProps, whatsappProps), /*#__PURE__*/React__default['default'].createElement(IcWhatsapp, null)));
 };
 
 Share$1.defaultProps = {
