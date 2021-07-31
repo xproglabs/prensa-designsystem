@@ -69,7 +69,7 @@ const Article = (props) => {
                 <Subject {...subject} />
                 <Title {...title} />
                 <Subtitle {...subtitle} />
-                <Byline {...byline} />
+                <Byline amp={amp} {...byline} />
               </S.Content>
             </S.MaxWidth>
             {adTopImage && React.cloneElement(adTopImage)}
