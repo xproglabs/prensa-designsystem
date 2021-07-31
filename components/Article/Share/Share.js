@@ -9,7 +9,6 @@ import FacebookIcon from './IcFacebook';
 import TwitterIcon from './IcTwitter';
 import WhatsappIcon from './IcWhatsapp';
 
-
 const getShareButtonSize = ({size}) => {
   return `${size}px`;
 };
@@ -49,13 +48,13 @@ const Share = props => {
   const {itemProps, facebookProps, twitterProps, whatsappProps, ...otherProps} = props;
   return (
     <Block align='row' width='100%' alignx='right' {...otherProps}>
-      <FacebookShareButton url={location.href} {...itemDefaultProps} {...itemProps} {...facebookProps}>
+      <FacebookShareButton {...itemDefaultProps} {...itemProps} {...facebookProps}>
         <FacebookIcon/>
       </FacebookShareButton>
-      <TwitterShareButton url={location.href} {...itemDefaultProps} {...itemProps} {...twitterProps}>
+      <TwitterShareButton {...itemDefaultProps} {...itemProps} {...twitterProps}>
         <TwitterIcon/>
       </TwitterShareButton>
-      <WhatsappShareButton url={location.href} {...itemDefaultProps} {...itemProps} {...whatsappProps}>
+      <WhatsappShareButton {...itemDefaultProps} {...itemProps} {...whatsappProps}>
         <WhatsappIcon/>
       </WhatsappShareButton>
     </Block>
