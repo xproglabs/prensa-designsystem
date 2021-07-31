@@ -5,6 +5,7 @@ import Share from '../Share';
 import * as S from './Byline.styled';
 
 const Byline = ({
+  amp,
   author,
   customContent,
   datetime,
@@ -24,7 +25,7 @@ const Byline = ({
             Atualizado há {datetime.time_modified}
           </S.TimeEntry>
         </S.DateLine>
-        <Share {...share} />
+        <Share amp={amp} {...share} />
       </S.Content>
     </S.Container>
   );
@@ -52,6 +53,7 @@ Byline.defaultProps = {
 };
 
 Byline.propTypes = {
+  amp: PropTypes.bool,
   author: PropTypes.object,
   customContent: PropTypes.string,
   datetime: PropTypes.object,
