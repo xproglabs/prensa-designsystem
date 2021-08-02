@@ -1,3 +1,4 @@
+import {get} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -25,11 +26,15 @@ const TopImage = ({
 }) => {
   if(!image)
     return null;
+  const caption_value = get(caption, 'value', '');
+  const fontFamily = get(caption, 'fontFamily', '');
+  const fontSize = get(caption, 'fontSize', '');
+  const lineHeight = get(caption, 'lineHeight', '');
   return (
     <Container featured={featured} mb={mb} value={value}>
       {amp ? (
         <amp-img
-          alt={caption}
+          alt={caption_value}
           src={value}
           layout='responsive'
           style={{
@@ -42,7 +47,7 @@ const TopImage = ({
       ):(
         !featured && (
           <img
-            alt={caption.value}
+            alt={caption_value}
             src={value}
             style={{
               width: '100%'
@@ -53,10 +58,10 @@ const TopImage = ({
       {caption && caption.show && (
         <S.SubtitleBox>
           <S.Subtitle
-            fontFamily={caption.fontFamily}
-            fontSize={caption.fontSize}
-            lineHeight={caption.lineHeight}>
-            {caption.value}
+            fontFamily={fontFamily}
+            fontSize={fontSize}
+            lineHeight={lineHeight}>
+            {caption_value}
           </S.Subtitle>
         </S.SubtitleBox>
       )}
