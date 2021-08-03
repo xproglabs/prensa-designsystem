@@ -2656,12 +2656,16 @@ var TopImage = function TopImage(_ref2) {
       mb = _ref2.mb,
       value = _ref2.value;
   if (!image) return null;
+  var caption_value = lodash.get(caption, 'value', '');
+  var fontFamily = lodash.get(caption, 'fontFamily', '');
+  var fontSize = lodash.get(caption, 'fontSize', '');
+  var lineHeight = lodash.get(caption, 'lineHeight', '');
   return /*#__PURE__*/React__default['default'].createElement(Container$6, {
     featured: featured,
     mb: mb,
     value: value
   }, amp ? /*#__PURE__*/React__default['default'].createElement("amp-img", {
-    alt: caption,
+    alt: caption_value,
     src: value,
     layout: "responsive",
     style: {
@@ -2671,16 +2675,16 @@ var TopImage = function TopImage(_ref2) {
     height: "640px",
     width: "1280px"
   }) : !featured && /*#__PURE__*/React__default['default'].createElement("img", {
-    alt: caption.value,
+    alt: caption_value,
     src: value,
     style: {
       width: '100%'
     }
   }), caption && caption.show && /*#__PURE__*/React__default['default'].createElement(SubtitleBox, null, /*#__PURE__*/React__default['default'].createElement(Subtitle$1, {
-    fontFamily: caption.fontFamily,
-    fontSize: caption.fontSize,
-    lineHeight: caption.lineHeight
-  }, caption.value)));
+    fontFamily: fontFamily,
+    fontSize: fontSize,
+    lineHeight: lineHeight
+  }, caption_value)));
 };
 
 TopImage.defaultProps = {
