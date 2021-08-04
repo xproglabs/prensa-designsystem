@@ -53,7 +53,7 @@ const TextBody = (props) => {
   const render_image = (value) => {
     if (!value) return null;
     const parsed_contentId = value.contentId.split('.');
-    const parsed_policy = `${get(x, '[0]')}.${get(x, '[1]')}`;
+    const parsed_policy = `${get(parsed_contentId, '[0]')}.${get(parsed_contentId, '[1]')}`;
     const image_data = find(images.items, {contentId: parsed_policy});
     if (!image_data) return null;
     return (
