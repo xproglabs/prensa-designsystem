@@ -3086,10 +3086,14 @@ var TextBody = function TextBody(props) {
 
   var render_image = function render_image(value) {
     if (!value) return null;
-    var parsed_contentId = value.contentId.split('.');
-    var parsed_policy = "".concat(lodash.get(parsed_contentId, '[0]'), ".").concat(lodash.get(parsed_contentId, '[1]'));
-    var image_data = lodash.find(images.items, {
-      contentId: parsed_policy
+    var image_items = lodash.get(images, 'items', []);
+    var image_data = undefined;
+    lodash.map(image_items, function (item) {
+      var item_value = lodash.get(item, 'contentId', '');
+
+      if (item_value.indexOf(value.contentId) > -1) {
+        image_data = item;
+      }
     });
     if (!image_data) return null;
     return /*#__PURE__*/React__default['default'].createElement(Block$1, {
