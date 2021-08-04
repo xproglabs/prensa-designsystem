@@ -3101,6 +3101,7 @@ var TextBody = function TextBody(props) {
       maxWidth: bodyWidth,
       width: "100%"
     }, /*#__PURE__*/React__default['default'].createElement(TopImage, {
+      amp: amp,
       caption: {
         fontFamily: 'secondary',
         fontSize: ['14px', '14px'],
