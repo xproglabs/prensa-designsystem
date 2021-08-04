@@ -64,6 +64,7 @@ const TextBody = (props) => {
     return (
       <Block mb={3} maxWidth={bodyWidth} width="100%">
         <TopImage
+          amp={amp}
           caption={{
             fontFamily: 'secondary',
             fontSize: ['14px', '14px'],
