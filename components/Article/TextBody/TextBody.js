@@ -1,4 +1,4 @@
-import {find, get, map} from 'lodash';
+import {get, map} from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {withTheme} from 'styled-components';
@@ -52,7 +52,14 @@ const TextBody = (props) => {
   
   const render_image = (value) => {
     if (!value) return null;
-    const image_data = find(images.items, {contentId: value.contentId});
+    const image_items = get(images, 'items', []);
+    let image_data = undefined;
+    map(image_items, (item) => {
+      const item_value = get(item, 'contentId', '');
+      if(item_value.indexOf(value.contentId) > -1) {
+        image_data = item;
+      }
+    });
     if (!image_data) return null;
     return (
       <Block mb={3} maxWidth={bodyWidth} width="100%">
