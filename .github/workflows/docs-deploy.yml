@@ -1,72 +1,72 @@
-name: Publish Docs
+# name: Publish Docs
 
-on:
-  push:
-    branches: [ master ]
+# on:
+#   push:
+#     branches: [ master ]
 
-jobs:
-  deploy:
-    name: "Deploy Prensa docs to braza-server"
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     name: "Deploy Prensa docs to braza-server"
+#     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+#     strategy:
+#       matrix:
+#         node-version: [12.x]
 
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Use Node.js ${{ matrix.node-version }}
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: ${{ matrix.node-version }}
           
-      - name: Build storybook
-        run: |
-          npm install
-          npm run build-storybook
+#       - name: Build storybook
+#         run: |
+#           npm install
+#           npm run build-storybook
 
-      - name: List directories
-        run: ls -l
+#       - name: List directories
+#         run: ls -l
 
-      - name: Copy build to server
-        uses: garygrossgarten/github-action-scp@release
-        with:
-          local: storybookbuild
-          remote: /var/www/prensa-designsystem/storybookbuild
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSHUSERNAME }}
-          password: ${{ secrets.SSHPASSWORD }}
-          rmRemote: true
-          dotfiles: true
+#       - name: Copy build to server
+#         uses: garygrossgarten/github-action-scp@release
+#         with:
+#           local: storybookbuild
+#           remote: /var/www/prensa-designsystem/storybookbuild
+#           host: ${{ secrets.SSH_HOST }}
+#           username: ${{ secrets.SSHUSERNAME }}
+#           password: ${{ secrets.SSHPASSWORD }}
+#           rmRemote: true
+#           dotfiles: true
           
-      - name: SSH to braza
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSHUSERNAME }}
-          password: ${{ secrets.SSHPASSWORD }}
-          port: 22
-          script: |
-            pm2 restart 1
+#       - name: SSH to braza
+#         uses: appleboy/ssh-action@master
+#         with:
+#           host: ${{ secrets.SSH_HOST }}
+#           username: ${{ secrets.SSHUSERNAME }}
+#           password: ${{ secrets.SSHPASSWORD }}
+#           port: 22
+#           script: |
+#             pm2 restart 1
 
-      - name: Slack notifcation build success
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          author_name: 'build-action'
-          text: Deploy da documentação realizado com sucesso.
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-        if: ${{ success() }}
+#       - name: Slack notifcation build success
+#         uses: 8398a7/action-slack@v3
+#         with:
+#           status: ${{ job.status }}
+#           author_name: 'build-action'
+#           text: Deploy da documentação realizado com sucesso.
+#         env:
+#           GITHUB_TOKEN: ${{ github.token }}
+#           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+#         if: ${{ success() }}
       
-      - name: Slack notifcation build error
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          author_name: 'build-action'
-          text: Erro ao realizar deploy da documentação.
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-        if: ${{ failure() }}
+#       - name: Slack notifcation build error
+#         uses: 8398a7/action-slack@v3
+#         with:
+#           status: ${{ job.status }}
+#           author_name: 'build-action'
+#           text: Erro ao realizar deploy da documentação.
+#         env:
+#           GITHUB_TOKEN: ${{ github.token }}
+#           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+#         if: ${{ failure() }}
