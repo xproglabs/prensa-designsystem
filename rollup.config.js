@@ -36,12 +36,12 @@ export default [
     input: 'src/icons.ts',
     output: [
       {
-        file: 'dist/icons.js',
+        file: 'icons.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: 'dist/icons.esm.js',
+        file: 'icons.esm.js',
         format: 'es',
         sourcemap: true
       }
@@ -59,12 +59,12 @@ export default [
     input: 'src/styled-system.ts',
     output: [
       {
-        file: 'dist/styled-system.js',
+        file: 'styled-system.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: 'dist/styled-system.esm.js',
+        file: 'styled-system.esm.js',
         format: 'es',
         sourcemap: true
       }
@@ -82,12 +82,12 @@ export default [
     input: 'src/utils.ts',
     output: [
       {
-        file: 'dist/utils.js',
+        file: 'utils.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: 'dist/utils.esm.js',
+        file: 'utils.esm.js',
         format: 'es',
         sourcemap: true
       }
