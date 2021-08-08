@@ -4,12 +4,27 @@
   "description": "Prensa Design System",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "files": [
-    "dist"
-  ],
   "author": "XPROG",
   "license": "ISC",
   "repository": "https://github.com/xproglabs/prensa-designsystem.git",
+  "files": [
+    "dist/icons.esm.js",
+    "dist/icons.esm.map",
+    "dist/icons.js",
+    "dist/icons.js.map",
+    "dist/index.esm.js",
+    "dist/index.esm.map",
+    "dist/index.js",
+    "dist/index.js.map",
+    "dist/styled-system.esm.js",
+    "dist/styled-system.esm.map",
+    "dist/styled-system.js",
+    "dist/styled-system.js.map",
+    "dist/utils.esm.js",
+    "dist/utils.esm.map",
+    "dist/utils.js",
+    "dist/utils.js.map"
+  ],
   "peerDependencies": {
     "date-fns": "2.x",
     "html2json": "^1.0.2",
