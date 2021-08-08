@@ -1,0 +1,6 @@
+export { align } from './styled-system/align'
+export { border } from './styled-system/border'
+export { dimensions } from './styled-system/dimensions'
+export { margin } from './styled-system/margin'
+export { padding } from './styled-system/padding'
+export { getColor } from './styled-system/color'

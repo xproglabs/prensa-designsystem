@@ -6,7 +6,10 @@
     "jest": true
   },
   "parser": "babel-eslint",
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -15,7 +18,11 @@
     "ecmaVersion": 6,
     "sourceType": "module"
   },
-  "plugins": ["react", "eslint-plugin-import-helpers", "jest"],
+  "plugins": [
+    "react",
+    "eslint-plugin-import-helpers",
+    "jest"
+  ],
   "globals": {
     "process": true,
     "module": true
@@ -26,18 +33,65 @@
     }
   },
   "rules": {
-    "indent": [1, 2, {"SwitchCase": 1}],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "no-console": ["error", { "allow": ["warn", "error"]}],
-    "object-curly-spacing": [2, "never"],
-    "react/no-danger-with-children": ["warn"],
+    "react/display-name": "warn",
+    "react/no-danger-with-children": "off",
+    "indent": [
+      1,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "react/prop-types": 0,
+    "semi": [
+      "error",
+      "never"
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "info"
+        ]
+      }
+    ],
+    "object-curly-spacing": [
+      2,
+      "always"
+    ],
+    "react/no-unescaped-entities": [
+      "warn"
+    ],
     "import-helpers/order-imports": [
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": ["module", ["parent", "sibling", "index"]],
-        "alphabetize": {"order": "asc", "ignoreCase": true}
+        "groups": [
+          "module",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
       }
     ]
   }

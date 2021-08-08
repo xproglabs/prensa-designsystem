@@ -1,84 +1,104 @@
 // rollup.config.js
-import json from '@rollup/plugin-json';
-import resolve from '@rollup/plugin-node-resolve';
-import analyze from 'rollup-plugin-analyzer';
-import babel from 'rollup-plugin-babel';
-import external from 'rollup-plugin-peer-deps-external';
-import sass from 'rollup-plugin-sass';
+import commonjs from '@rollup/plugin-commonjs'
+import resolve from '@rollup/plugin-node-resolve'
+import analyze from 'rollup-plugin-analyzer'
+import babel from 'rollup-plugin-babel'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import typescript from 'rollup-plugin-typescript2'
 
-const notInBuild = 'example/**, node_modules/**, stories/**, .github/**, .storybook/**, mockup/**, utils/**, icons/assets, prensa-app/**';
-const customResolveOptions = {moduleDirectory: 'node_modules'};
+import pkg from './package.json'
 
 export default [
   {
-    input: 'components/index.js',
+    input: 'src/index.ts',
     output: [
       {
-        file: 'index.js',
+        file: pkg.main,
         format: 'cjs',
-        name: 'prensa'
+        sourcemap: true
+      },
+      {
+        file: pkg.module,
+        format: 'es',
+        sourcemap: true
       }
     ],
-    plugins: [ 
-      babel({exclude: notInBuild}),
-      json(),
-      resolve({customResolveOptions}),
-      sass(),
+    plugins: [
       analyze(),
-      external(),
+      babel(),
+      commonjs(),
+      peerDepsExternal(),
+      resolve(),
+      typescript({ useTsconfigDeclarationDir: true })
     ]
   },
   {
-    input: 'icons/index.js',
+    input: 'src/icons.ts',
     output: [
       {
         file: 'icons.js',
         format: 'cjs',
-        name: 'prensa/icons'
-      }
-    ],
-    plugins: [ 
-      babel({exclude: notInBuild}),
-      json(),
-      resolve({customResolveOptions}),
-      sass(),
-      analyze(),
-      external()
-    ]
-  },
-  {
-    input: 'components/Util/index.js',
-    output: [
+        sourcemap: true
+      },
       {
-        file: 'utils.js',
-        format: 'cjs',
-        name: 'prensa/utils'
+        file: 'icons.esm.js',
+        format: 'es',
+        sourcemap: true
       }
     ],
-    plugins: [ 
-      babel({exclude: notInBuild}),
-      json(),
-      resolve({customResolveOptions}),
-      sass(),
+    plugins: [
       analyze(),
-      external()
+      babel(),
+      commonjs(),
+      peerDepsExternal(),
+      resolve(),
+      typescript({ useTsconfigDeclarationDir: true })
     ]
   },
   {
-    input: 'styled-system/index.js',
+    input: 'src/styled-system.ts',
     output: [
       {
         file: 'styled-system.js',
         format: 'cjs',
-        name: 'prensa/styled-system'
+        sourcemap: true
+      },
+      {
+        file: 'styled-system.esm.js',
+        format: 'es',
+        sourcemap: true
       }
     ],
-    plugins: [ 
-      babel({exclude: notInBuild}),
-      json(),
-      resolve({customResolveOptions}),
+    plugins: [
       analyze(),
-      external()
+      babel(),
+      commonjs(),
+      peerDepsExternal(),
+      resolve(),
+      typescript({ useTsconfigDeclarationDir: true })
     ]
-  }
-];
+  },
+  {
+    input: 'src/utils.ts',
+    output: [
+      {
+        file: 'utils.js',
+        format: 'cjs',
+        sourcemap: true
+      },
+      {
+        file: 'utils.esm.js',
+        format: 'es',
+        sourcemap: true
+      }
+    ],
+    plugins: [
+      analyze(),
+      babel(),
+      commonjs(),
+      peerDepsExternal(),
+      resolve(),
+      typescript({ useTsconfigDeclarationDir: true })
+    ]
+  },
+]
