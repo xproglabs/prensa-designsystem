@@ -4,6 +4,115 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var lodash = require('lodash');
 
+var align = function align(props) {
+  var align = lodash.get(props, 'align', undefined);
+  var alignx = lodash.get(props, 'alignx', undefined);
+  var aligny = lodash.get(props, 'aligny', undefined);
+  var object = [];
+  var alignItems = '';
+  var display = 'flex';
+  var flexDirection = '';
+  var justifyContent = ''; // check if is column
+
+  if (align === 'column') {
+    flexDirection = align; // x axys
+
+    if (alignx === 'left') {
+      alignItems = 'flex-start';
+    }
+
+    if (alignx === 'center') {
+      alignItems = 'center';
+    }
+
+    if (alignx === 'right') {
+      alignItems = 'flex-end';
+    }
+
+    if (alignx === 'evenly') {
+      justifyContent = 'space-evenly';
+    }
+
+    if (alignx === 'between') {
+      justifyContent = 'space-between';
+    } // y axis
+
+
+    if (aligny === 'top') {
+      justifyContent = 'flex-start';
+    }
+
+    if (aligny === 'middle') {
+      justifyContent = 'center';
+    }
+
+    if (aligny === 'bottom') {
+      justifyContent = 'flex-end';
+    }
+
+    if (aligny === 'evenly') {
+      justifyContent = 'space-evenly';
+    }
+
+    if (aligny === 'between') {
+      justifyContent = 'space-between';
+    }
+  } // check if is row
+
+
+  if (align === 'row') {
+    flexDirection = align;
+
+    if (alignx === 'left') {
+      alignItems = 'flex-start';
+    }
+
+    if (alignx === 'center') {
+      justifyContent = 'center';
+    }
+
+    if (alignx === 'right') {
+      justifyContent = 'flex-end';
+    }
+
+    if (alignx === 'evenly') {
+      justifyContent = 'space-evenly';
+    }
+
+    if (alignx === 'between') {
+      justifyContent = 'space-between';
+    }
+
+    if (aligny === 'top') {
+      alignItems = 'flex-start';
+    }
+
+    if (aligny === 'middle') {
+      alignItems = 'center';
+    }
+
+    if (aligny === 'bottom') {
+      alignItems = 'flex-end';
+    }
+
+    if (aligny === 'evenly') {
+      justifyContent = 'space-evenly';
+    }
+
+    if (aligny === 'between') {
+      justifyContent = 'space-between';
+    }
+  } // define strings
+
+
+  alignItems !== '' && object.push("align-items: ".concat(alignItems, ";"));
+  object.push("display: ".concat(display, ";"));
+  flexDirection !== '' && object.push("flex-direction: ".concat(flexDirection, ";"));
+  justifyContent !== '' && object.push("justify-content: ".concat(justifyContent, ";")); // end
+
+  return object.join('');
+};
+
 var border = function border(_ref) {
   var _ref$theme = _ref.theme,
       theme = _ref$theme === void 0 ? {} : _ref$theme,
@@ -189,6 +298,7 @@ var getColor = function getColor(_ref) {
   return value;
 };
 
+exports.align = align;
 exports.border = border;
 exports.dimensions = dimensions;
 exports.getColor = getColor;
