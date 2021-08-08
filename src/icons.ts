@@ -1,1 +1,5 @@
-export * from './icons'
+export { default as ArrowCircleDownBlack18Dp } from './icons/ArrowCircleDownBlack18Dp'
+export { default as IcArrowBack } from './icons/IcArrowBack'
+export { default as IcArrowForward } from './icons/IcArrowForward'
+export { default as IcArrowMenu } from './icons/IcArrowMenu'
+export { default as IcSearch } from './icons/IcSearch'
