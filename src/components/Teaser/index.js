@@ -2,7 +2,7 @@ import { get } from 'lodash'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import { Block } from '../Block'
+import Block from '../Block'
 import AmpImage from '../Image'
 import { path_absolute } from '../Image/pathAbsolute'
 import { dateDistance } from '../Util'

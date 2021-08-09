@@ -1,6 +1,5 @@
 // rollup.config.js
 import commonjs from '@rollup/plugin-commonjs'
-import json_resolver from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve'
 import analyze from 'rollup-plugin-analyzer'
 import babel from 'rollup-plugin-babel'
@@ -28,7 +27,6 @@ export default [
       analyze(),
       babel(),
       commonjs(),
-      json_resolver(),
       peerDepsExternal(),
       resolve(),
       typescript({ useTsconfigDeclarationDir: true })
@@ -52,7 +50,6 @@ export default [
       analyze(),
       babel(),
       commonjs(),
-      json_resolver(),
       peerDepsExternal(),
       resolve(),
       typescript({ useTsconfigDeclarationDir: true })
@@ -76,7 +73,6 @@ export default [
       analyze(),
       babel(),
       commonjs(),
-      json_resolver(),
       peerDepsExternal(),
       resolve(),
       typescript({ useTsconfigDeclarationDir: true })
@@ -100,7 +96,6 @@ export default [
       analyze(),
       babel(),
       commonjs(),
-      json_resolver(),
       peerDepsExternal(),
       resolve(),
       typescript({ useTsconfigDeclarationDir: true })
@@ -124,7 +119,6 @@ export default [
       analyze(),
       babel(),
       commonjs(),
-      json_resolver(),
       peerDepsExternal(),
       resolve(),
       typescript({ useTsconfigDeclarationDir: true })
