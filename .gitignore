@@ -1,7 +1,9 @@
 /node_modules
 /prensa-app/.next
 /prensa-app/node_modules
+/prensa-app/*.lock
 .env
+*.lock
 
 package-lock.json
 .DS_Store
