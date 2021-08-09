@@ -1,0 +1,69 @@
+{
+  "content": {
+    "contentId": "7.147",
+    "input-template": "br.com.atex.plugins.blocks.it",
+    "name": "Destaque TOPO",
+    "link_url": "",
+    "title": "",
+    "template": "template-featured",
+    "items": [
+      {
+        "class": "",
+        "color": "",
+        "contentId": "7.149",
+        "keyid": "$keyid",
+        "image": {
+          "byline": "Freepik",
+          "caption": "Entrevista de emprego em inglês",
+          "contentId": "1.701",
+          "subtitle": ""
+        },
+        "name": "Projeto de Lei que busca reabilitar homens violentos é aprovado",
+        "path": "/cidades/exigencia-de-ingles-na-contratac-o-demanda-preparac-o-dos-candidatos-1.700",
+        "subject": "TAPA NA CARA DA VIOLÊNCIA",
+        "subtitle": "Deputada autora do PL afirma que dispositivo é preventivo e busca reabilitar potenciais agressores de mulheres",
+        "time_formatted": "16/06/2021 - 17:40",
+        "time_published": "2021-06-16 23:07:35",
+        "time_modifiedDate": "2021-08-05 0:00:42"
+      },
+      {
+        "class": "",
+        "color": "",
+        "contentId": "7.150",
+        "keyid": "$keyid",
+        "image": {
+          "byline": "Setpar",
+          "caption": "Doação feita pela Setpar ",
+          "contentId": "1.710",
+          "subtitle": ""
+        },
+        "name": "Kitnet de veraneio é 'depenada' e não sobram nem talheres, em Praia Grande (SP)",
+        "path": "/agencias/rio-preto-sp-registra-queda-de-55-na-arrecadac-o-de-alimentos-no-mes-de-maio-1.716",
+        "subject": "CASA DEPENADA",
+        "subtitle": "Meliantes realizaram uma \"mudança\" no local, esvaziando a casa do dia para a noite",
+        "time_formatted": "16/06/2021 - 17:43",
+        "time_published": "2021-06-16 23:07:51",
+        "time_modifiedDate": "2021-08-01 18:23:38"
+      },
+      {
+        "class": "",
+        "color": "",
+        "contentId": "7.148",
+        "keyid": "$keyid",
+        "image": {
+          "byline": "Freepik",
+          "caption": "Assessor de Investimentos e Cliente",
+          "contentId": "1.721",
+          "subtitle": ""
+        },
+        "name": "Polícia Federal investiga desvio de faturamento em empresa de São José dos Campos",
+        "path": "/agencias/especialistas-indicam-uma-revoluc-o-no-mercado-de-investimentos-brasileiros-1.720",
+        "subject": "FRAUDE EM SJC",
+        "subtitle": "Empresa local é acusada de se esquivar do pagamento de R$ 70 milhões em dívidas fiscais",
+        "time_formatted": "16/06/2021 - 17:53",
+        "time_published": "2021-06-16 23:07:57",
+        "time_modifiedDate": "2021-08-07 19:15:06"
+      }
+    ]
+  }
+}
