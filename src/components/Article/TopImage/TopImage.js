@@ -29,6 +29,7 @@ const TopImage = ({
       url={value}
       height='640'
       width='1280'
+      mb='0px'
     />
   )
 
