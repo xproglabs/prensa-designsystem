@@ -1,6 +1,6 @@
 /node_modules
 /prensa-app/.next
-/prensa-app/.node_modules
+/prensa-app/node_modules
 .env
 
 package-lock.json
