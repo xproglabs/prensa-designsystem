@@ -8,6 +8,7 @@ const RenderSlot = ({
   color,
   column_items,
   column_padding,
+  domain,
   image_circle,
   // image_options,
   layout,
@@ -23,6 +24,7 @@ const RenderSlot = ({
     >
       <Teaser
         color={color}
+        domain={domain}
         image_circle={image_circle}
         // image_options={image_options}
         item={item}
