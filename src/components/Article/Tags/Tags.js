@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Typography from '../../Typography'
+import { AnchorTag } from '../Tags/Anchor'
 import * as S from './Tags.styled'
 
 const Tags = ({
@@ -18,14 +19,16 @@ const Tags = ({
       {(map(items, (item, key) => {
         return (
           <S.Tag color={color} key={key}>
-            <Typography 
-              color={color}
-              element='span'
-              fontFamily={fontFamily}
-              fontSize={fontSize[0]}
-              fontWeight={fontWeight}>
-              {item}
-            </Typography>
+            <AnchorTag href={`/?term=${item}`}>
+              <Typography 
+                color={color}
+                element='span'
+                fontFamily={fontFamily}
+                fontSize={fontSize[0]}
+                fontWeight={fontWeight}>
+                {item}
+              </Typography>
+            </AnchorTag>   
           </S.Tag>
         )
       }))}

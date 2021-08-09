@@ -29,8 +29,6 @@ export const Tag = ({ children, color }) =>
     align='column'
     mr={2}
     mb={2}
-    px={2}
-    py={1}
     custom={`border: 1px solid ${color};border-radius: 3px;`}>
     {children}
   </Block> 
