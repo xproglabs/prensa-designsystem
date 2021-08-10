@@ -9,7 +9,7 @@ const parseYoutubeLink = url => {
   return (match && match[7].length == 11) ? match[7] : false
 }
 
-const YouTubeEmbed = ({ url, height, width }) => {
+const YouTubeEmbed = ({ url, height, mb, width }) => {
 
   if (!url) {
     console.error('YouTubeEmbed LOGGER: missing url')
@@ -19,7 +19,7 @@ const YouTubeEmbed = ({ url, height, width }) => {
   const parsedUrl = parseYoutubeLink(url)
 
   return (
-    <Container $height={height} $width={width}>
+    <Container $height={height} $width={width} mb={mb}>
       <amp-youtube data-videoid={parsedUrl} height={height} layout='responsive' width={width} />
     </Container>
   )
@@ -31,6 +31,7 @@ export const youtube_amp_script = () => (
 
 YouTubeEmbed.defaultProps = {
   height: '360px',
+  mb: 3,
   width: '720px'
 }
 

@@ -1,8 +1,9 @@
+import { margin } from 'prensa/styled-system'
 import styled from 'styled-components'
 
 const Container = styled.div`
+  ${margin};
   height: max-content;
-  margin-bottom: 24px;
   width: 100%;
   @media (min-width: ${props => props.theme.queries.md}) {
     width: ${props => props.$width};

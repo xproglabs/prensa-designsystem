@@ -47,7 +47,7 @@ const Article = (props) => {
           <React.Fragment>
             <S.ContainerFeatured>
               <S.ContentImage>
-                <TopImage amp={amp} {...topimage} />
+                <TopImage {...topimage} />
               </S.ContentImage>
               <S.ContentFeatured maxWidth={headWidth}>
                 <Subject {...subject} />
