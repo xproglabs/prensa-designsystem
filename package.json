@@ -1,6 +1,6 @@
 {
   "name": "prensa",
-  "version": "1.5.120",
+  "version": "1.5.123",
   "description": "Prensa Design System",
   "main": "index.js",
   "module": "index.esm.js",
@@ -77,8 +77,8 @@
     "eslint": "eslint --ext js,jsx src/ ",
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
     "test": "jest",
-    "update-prensa:qa": "npm version patch && npm run build && git add . &&  git commit -m Build && git push && git push --tags && npm publish --tag qa",
-    "update-prensa:ts": "npm version patch && npm run build && git add . &&  git commit -m Build && git push && git push --tags && npm publish --tag ts"
+    "update-prensa:qa": "npm version patch && npm run build && git push --tags && npm publish --tag qa",
+    "update-prensa:ts": "npm version patch && npm run build && git push --tags && npm publish --tag ts"
   },
   "lint-staged": {
     "*.+(js|jsx)": [

@@ -2,65 +2,70 @@ import { get } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import YoutubeMedia from '../Embeds/YouTube'
 import * as S from './TopImage.styled'
 
 const Container = ({ children, featured, mb, value }) => {
-  if(featured)
-    return <S.BoxFeatured mb={mb} value={value} />
+  if (featured) return <S.BoxFeatured mb={mb} value={value} />
   return <S.Box mb={mb}>{children}</S.Box>
-}
-Container.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  featured: PropTypes.bool,
-  mb: PropTypes.array,
-  value: PropTypes.string
 }
 
 const TopImage = ({
-  amp,
   caption,
   featured,
   image,
   mb,
-  value
+  value,
+  type
 }) => {
-  if(!image)
-    return null
+  if (!image) return null
   const caption_value = get(caption, 'value', '')
   const fontFamily = get(caption, 'fontFamily', '')
   const fontSize = get(caption, 'fontSize', '')
   const lineHeight = get(caption, 'lineHeight', '')
+
+  const Video = () => (
+    <YoutubeMedia
+      url={value}
+      height='640'
+      width='1280'
+      mb='0px'
+    />
+  )
+
+  const Image = () => (
+    <amp-img
+      alt={caption_value}
+      src={value}
+      layout='responsive'
+      style={{
+        display: 'inline-flex',
+        width: '100%'
+      }}
+      height='640px'
+      width='1280px'
+    />
+  )
+
+  const RenderMedia = () => {
+    switch (type) {
+      case 'video':
+        return <Video/>
+      default:
+        return <Image/>
+    }
+  }
+
   return (
     <Container featured={featured} mb={mb} value={value}>
-      {amp ? (
-        <amp-img
-          alt={caption_value}
-          src={value}
-          layout='responsive'
-          style={{
-            display: 'inline-flex',
-            width: '100%'
-          }}
-          height='640px'
-          width='1280px'
-        />
-      ):(
-        !featured && (
-          <img
-            alt={caption_value}
-            src={value}
-            style={{
-              width: '100%'
-            }}
-          />
-        )
-      )}
+      <RenderMedia/>
       {caption && caption.show && (
         <S.SubtitleBox>
           <S.Subtitle
             fontFamily={fontFamily}
             fontSize={fontSize}
-            lineHeight={lineHeight}>
+            lineHeight={lineHeight}
+          >
             {caption_value}
           </S.Subtitle>
         </S.SubtitleBox>
@@ -69,8 +74,14 @@ const TopImage = ({
   )
 }
 
+Container.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  featured: PropTypes.bool,
+  mb: PropTypes.array,
+  value: PropTypes.string
+}
+
 TopImage.defaultProps = {
-  amp: false,
   featured: false,
   image: true,
   caption: {
@@ -91,6 +102,7 @@ TopImage.propTypes = {
   caption: PropTypes.object,
   mb: PropTypes.array,
   value: PropTypes.string,
+  type: PropTypes.oneOf(['image', 'video'])
 }
 
 export default TopImage
