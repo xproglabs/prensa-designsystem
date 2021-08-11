@@ -3,7 +3,7 @@ import React from 'react'
 
 import Block from '../Block'
 import AmpImage from '../Image'
-import { path_absolute } from '../Image/pathAbsolute'
+import { path_absolute } from '../Image/utils'
 import * as S from './styled'
 
 const RenderImage = ({ domain, image_circle, item, item_path, layout }) => {
