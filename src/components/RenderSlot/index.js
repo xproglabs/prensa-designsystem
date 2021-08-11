@@ -12,8 +12,9 @@ const RenderSlot = ({
   image_circle,
   // image_options,
   layout,
-  number_enabled,
-  slot
+  has_number,
+  slot,
+  type
 }) => {
   const column_width = `calc(calc(100% - calc(${column_padding} * 16px)) / ${column_items})`
 
@@ -31,7 +32,8 @@ const RenderSlot = ({
         key={key}
         layout={layout}
         number={key}
-        number_enabled={number_enabled}
+        has_number={has_number}
+        type={type}
       />
     </Block>
   ))
