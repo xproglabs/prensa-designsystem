@@ -1,0 +1,16 @@
+import { ArgsTable, Meta } from "@storybook/addon-docs/blocks";
+import { CodeBlock, Space } from "prensa-docs";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../../../styles/theme";
+
+import Heading2 from "./Heading2";
+import Heading3 from "./Heading3";
+import Heading4 from "./Heading4";
+
+<Meta title="Article/Headings" />
+
+<ThemeProvider theme={theme}>
+  <Heading2 />
+  <Heading3 />
+  <Heading4 />
+</ThemeProvider>

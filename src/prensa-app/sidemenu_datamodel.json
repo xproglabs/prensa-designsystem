@@ -1,0 +1,35 @@
+[
+  {
+    "contentId": "2.639",
+    "input-template": "p.siteengine.Page",
+    "path": "http://localhost:8080/noticias",
+    "link": "",
+    "name": "Notícias",
+    "subitems": [
+      {
+        "contentId": "2.628",
+        "input-template": "p.siteengine.Page",
+        "path": "http://localhost:8080/brasil",
+        "link": "",
+        "name": "Brasil",
+        "subitems": []
+      },
+      {
+        "contentId": "1.184",
+        "input-template": "br.com.atex.plugins.menu-tag.it",
+        "name": "Subitem Externo",
+        "path": "https://www.google.com.br",
+        "subitems": [],
+        "window": "true"
+      }
+    ]
+  },
+  {
+    "contentId": "1.183",
+    "input-template": "br.com.atex.plugins.menu-tag.it",
+    "name": "Item com link externo",
+    "path": "http://www.odiariodemogi.net.br/educacao",
+    "subitems": [],
+    "window": "true"
+  }
+]

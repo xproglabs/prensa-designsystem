@@ -4,13 +4,7 @@
 .eslintrc.json
 .gitignore
 .rollup.config.js
-CHANGELOG.md
+tsconfig.json
 /.github
 /.storybook
-/components
-/icons
-/mockup
-/public
-/stories
-/styled-system
-/utils
+/src
