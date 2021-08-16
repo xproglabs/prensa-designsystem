@@ -1,5 +1,6 @@
-import { margin } from 'prensa/styled-system'
 import styled from 'styled-components'
+
+import { margin } from '../../../styled-system'
 
 const Container = styled.div`
   ${margin};

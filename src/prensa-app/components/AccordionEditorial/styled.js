@@ -1,6 +1,6 @@
-import { getColor, padding } from 'prensa/styled-system'
 import styled, { css } from 'styled-components'
 
+import { getColor, padding } from '../../../styled-system'
 import { CONFIGS } from './consts'
 
 const Hyperlink = styled.a`
