@@ -25,7 +25,9 @@ const Tags = ({
                 element='span'
                 fontFamily={fontFamily}
                 fontSize={fontSize[0]}
-                fontWeight={fontWeight}>
+                fontWeight={fontWeight}
+                custom='white-space: nowrap;'
+              >
                 {item}
               </Typography>
             </AnchorTag>   
