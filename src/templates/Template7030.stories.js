@@ -1,94 +1,43 @@
-// import React from 'react';
-// import Template from './Template7030'
-// import data from './Template7030.json'
-// import {get} from 'lodash'
+import { get } from 'lodash'
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
 
-// export default {
-//   title: 'Templates/7030',
-//   component: Template
-// };
+import { TEASER_FEATURED, TEASER_FEATURED_RELATED } from '../components/Teaser/configs'
+import { theme } from '../styles/theme'
+import Template from './Template7030'
+import { data } from './Template7030.data'
 
-// const FEATURED_LAYOUT = {
-//   featured: {
-//     box: {
-//       aligny: ['top', 'between'],
-//       height: ['auto', '366px'],
-//       pb: [3, 3],
-//       pt: [3, 3],
-//     },
-//     box_wrap: {
-//       aligny: ['top', 'between'],
-//       height: ['auto', '366px']
-//     },
-//     datetime_enabled: true,
-//     image: {
-//       enabled: false,
-//       mb: [0, 0]
-//     },
-//     title: {
-//       enabled: true,
-//       font_size: ['32px', '44px'],
-//       line_height: ['36px', '48px']
-//     },
-//     subject: subject_filled,
-//     subtitle: {
-//       color: 'neutral3',
-//       enabled: true,
-//       font_size: ['18px', '18px'],
-//       line_height: ['26px', '26px']
-//     },
-//   }
-// }
 
-// const FEATURED_RELATED_LAYOUT = {
-//   featured_related: {
-//     box: {
-//       pb: [3, 3],
-//       pt: [3, 3]
-//     },
-//     box_wrap: {
-//       aligny: ['top', 'top'],
-//       height: ['auto', 'auto']
-//     },
-//     datetime_enabled: true,
-//     image: {
-//       enabled: false,
-//       mb: [0, 0]
-//     },
-//     title: {
-//       enabled: true,
-//       font_size: ['24px', '24px'],
-//       line_height: ['28px', '28px']
-//     },
-//     subject: subject_default,
-//     subtitle: {
-//       enabled: false
-//     }
-//   }
-// }
 
-// export const DefaultComponent = () => {
+export default {
+  title: 'Templates',
+  component: Template
+}
 
-//   const items = get(data, 'content.items')
-//   if (items.length < 3) return <pre>sem conteudo</pre>
+export const DefaultComponent = () => {
 
-//   const slot70_items = [ items[0] ]
-//   const slot30_items = [ items[1], items[2] ]
+  const items = data
+  if (items && items.length < 3) return <pre>sem conteudo</pre>
 
-//   return (
-//     <Template
-//       slot70={{
-//         column_items: 1,
-//         column_padding: '0px',
-//         layout: FEATURED_LAYOUT.featured,
-//         slot: slot70_items,
-//       }}
-//       slot30={{
-//         column_items: 1,
-//         column_padding: 0,
-//         layout: FEATURED_RELATED_LAYOUT.featured_related,
-//         slot: slot30_items
-//       }}
-//     />
-//   );
-// };
+  const slot70_items = [ items[0] ]
+  const slot30_items = [ items[1], items[2] ]
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Template
+        slot70={{
+          column_items: 1,
+          column_padding: '0px',
+          layout: TEASER_FEATURED,
+          slot: slot70_items,
+        }}
+        slot30={{
+          column_items: 1,
+          column_padding: 0,
+          layout: TEASER_FEATURED_RELATED,
+          slot: slot30_items
+        }}
+      />
+    </ThemeProvider>
+  )
+}
