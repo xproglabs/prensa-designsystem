@@ -1,6 +1,6 @@
 {
   "name": "prensa",
-  "version": "1.5.126",
+  "version": "1.6.2",
   "description": "Prensa Design System",
   "main": "index.js",
   "module": "index.esm.js",
@@ -8,16 +8,14 @@
   "license": "ISC",
   "repository": "https://github.com/xproglabs/prensa-designsystem.git",
   "peerDependencies": {
-    "date-fns": "2.x",
-    "html2json": "^1.0.2",
-    "lodash": "^4.x",
-    "prop-types": "^15.x",
+    "date-fns": ">=2.15.0",
+    "html2json": ">=1.0.2",
+    "lodash": ">=4.17.19",
+    "prop-types": ">=15.7.2",
     "react": ">=17.0.1",
     "react-dom": ">=17.0.1",
-    "react-input-mask": "^3.0.0-alpha.2",
-    "sass": "^1.26.10",
-    "styled-components": "^5.x",
-    "react-share": "4.4.0"
+    "react-input-mask": "3.0.0-alpha.2",
+    "styled-components": ">=5.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
@@ -78,7 +76,8 @@
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
     "test": "jest",
     "update-prensa:qa": "npm version patch && npm run build && git push --tags && npm publish --tag qa",
-    "update-prensa:ts": "npm version patch && npm run build && git push --tags && npm publish --tag ts"
+    "update-prensa:ts": "npm version patch && npm run build && git push --tags && npm publish --tag ts",
+    "update-prensa": "npm version patch && npm run build && git push --tags && npm publish"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
