@@ -30,19 +30,40 @@ const Teaser = ({
   const box_pt = get(layout, 'box.pt', [3, 3])
   const box_mb = get(layout, 'box.mb', [2, 2])
   const box_height = get(layout, 'box.height', ['auto', 'auto', 'auto'])
+  const content_overlap = get(layout, 'box_wrap.content_overlap', false)
   const wrap_align = get(layout, 'box_wrap.align', ['column', 'column'])
   const wrap_aligny = get(layout, 'box_wrap.aligny', ['top', 'top'])
   const wrap_height = get(layout, 'box_wrap.height', ['auto', 'auto'])
+  const wrap_mb = get(layout, 'box_wrap.mb', [0, 0])
   const wrap_mt = get(layout, 'box_wrap.mt', [0, 0])
   const wrap_width = get(layout, 'box_wrap.width', ['100%', '100%'])
 
-  const RenderContent = () => {
-    if (type === 'fullImage') return null
-    return (
+  return (
+    <S.Box
+      box_align={box_align}
+      box_aligny={box_aligny}
+      box_height={box_height}
+      box_pb={box_pb}
+      box_pt={box_pt}
+      box_mb={box_mb}
+    >
+      <RenderImage
+        domain={domain}
+        image_circle={image_circle}
+        item={item}
+        item_path={item_path}
+        layout={layout}
+      />
+      <RenderNumber
+        number={number}
+        has_number={has_number}
+      />
       <S.ContentWrap
+        content_overlap={content_overlap}
         wrap_align={wrap_align}
         wrap_aligny={wrap_aligny}
         wrap_height={wrap_height}
+        wrap_mb={wrap_mb}
         wrap_mt={wrap_mt}
         wrap_width={wrap_width}
       >
@@ -71,30 +92,6 @@ const Teaser = ({
           />
         </S.Content>
       </S.ContentWrap>
-    )
-  }
-
-  return (
-    <S.Box
-      box_align={box_align}
-      box_aligny={box_aligny}
-      box_height={box_height}
-      box_pb={box_pb}
-      box_pt={box_pt}
-      box_mb={box_mb}
-    >
-      <RenderImage
-        domain={domain}
-        image_circle={image_circle}
-        item={item}
-        item_path={item_path}
-        layout={layout}
-      />
-      <RenderNumber
-        number={number}
-        has_number={has_number}
-      />
-      <RenderContent />
     </S.Box>
   )
 }

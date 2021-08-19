@@ -70,31 +70,47 @@ const Content = ({ children }) => (
 
 const ContentWrap = ({
   children,
+  content_overlap=false,
   wrap_align=['column', 'column'],
   wrap_aligny,
   wrap_height,
   wrap_mt=[0, 0],
+  wrap_mb=[0, 0],
   wrap_width=['100%', '100%']
-}) => (
-  <Block
-    align={wrap_align[0]}
-    alignx='center'
-    aligny={wrap_aligny[0]}
-    height={wrap_height[0]}
-    mt={wrap_mt[0]}
-    width={wrap_width[0]}
-    lg={{
-      align: wrap_align[1],
-      alignx: 'center',
-      aligny: wrap_aligny[1],
-      height: wrap_height[1],
-      mt: wrap_mt[1],
-      width: wrap_width[1],
-    }}
-  >
-    {children}
-  </Block>
-)
+}) => {
+
+  const content_overlap_style = `
+    z-index: 10;
+  `
+  const custom_style = `
+    ${content_overlap ? content_overlap_style : ''}
+  `
+
+  return (
+    <Block
+      align={wrap_align[0]}
+      alignx='center'
+      aligny={wrap_aligny[0]}
+      custom={custom_style}
+      height={wrap_height[0]}
+      mt={wrap_mt[0]}
+      mb={wrap_mb[0]}
+      width={wrap_width[0]}
+      lg={{
+        align: wrap_align[1],
+        alignx: 'center',
+        aligny: wrap_aligny[1],
+        custom: custom_style,
+        height: wrap_height[1],
+        mt: wrap_mt[1],
+        mb: wrap_mb[1],
+        width: wrap_width[1],
+      }}
+    >
+      {children}
+    </Block>
+  )
+}
 
 const Datetime = ({ children }) => (
   <Typography
@@ -161,82 +177,86 @@ const Subject = ({
   font_size,
   line_height,
   mb=[2, 2]
-}) => (
-  <Block 
-    align='row'
-    alignx='between'
-    bgColor={bg_color}
-    custom='border-radius: 3px;'
-    lg={{
-      mb: mb[1]
-    }}
-    px={bg_color !== 'white' ? 1 : 0}
-    py={bg_color !== 'white' ? 0.5 : 0}
-    mb={mb[0]}
-  >
-    <Typography
-      color={color}
-      element='h3'
-      fontFamily='secondary'
-      fontSize={font_size[0]}
-      fontWeight={700}
-      lineHeight={line_height[0]}
+}) => {
+  return (
+    <Block 
+      align='row'
+      alignx='between'
+      bgColor={bg_color}
+      custom='border-radius: 3px;'
       lg={{
-        fontSize: font_size[1],
-        lineHeight: line_height[1],
+        mb: mb[1]
       }}
-      transform='uppercase'
-    >
-      {children}
-    </Typography> 
-  </Block>
-)
+      px={bg_color !== 'white' ? 1 : 0}
+      py={bg_color !== 'white' ? 0.5 : 0}
+      mb={mb[0]}>
+      <Typography
+        color={color}
+        element='h2'
+        fontFamily='secondary'
+        fontSize={font_size[0]}
+        fontWeight={700}
+        lineHeight={line_height[0]}
+        lg={{
+          fontSize: font_size[1],
+          lineHeight: line_height[1],
+        }}
+        transform='uppercase'>
+        {children}
+      </Typography> 
+    </Block>
+  )
+}
 
 const Subtitle = ({
   children,
   color,
   font_size,
   line_height
-}) => (
-  <Typography
-    color={color}
-    element='h3'
-    fontFamily='secondary'
-    fontSize={font_size[0]}
-    fontWeight={300}
-    lineHeight={line_height[0]}
-    lg={{
-      fontSize: font_size[1],
-      lineHeight: line_height[1]
-    }}
-    mb={2}
-  >
-    {children}
-  </Typography> 
-)
+}) => {
+  return (
+    <Typography
+      color={color}
+      element='h2'
+      fontFamily='secondary'
+      fontSize={font_size[0]}
+      fontWeight={300}
+      lineHeight={line_height[0]}
+      lg={{
+        fontSize: font_size[1],
+        lineHeight: line_height[1]
+      }}
+      mb={2}>
+      {children}
+    </Typography> 
+  )
+}
 
 const Title = ({
   children,
+  color='neutral2',
+  element='h2',
   font_size,
   line_height,
   mb=[2, 2]
-}) => (
-  <Typography
-    color='neutral2'
-    element='h2'
-    fontFamily='primary'
-    fontSize={font_size[0]}
-    fontWeight={700}
-    lineHeight={line_height[0]}
-    lg={{
-      fontSize: font_size[1],
-      lineHeight: line_height[1],
-      mb: mb[1]
-    }}
-    mb={mb[0]}
-  >
-    {children}
-  </Typography> 
-)
+}) => {
+  return (
+    <Typography
+      color={color}
+      element={element}
+      fontFamily='primary'
+      fontSize={font_size[0]}
+      fontWeight={700}
+      lineHeight={line_height[0]}
+      lg={{
+        fontSize: font_size[1],
+        lineHeight: line_height[1],
+        mb: mb[1]
+      }}
+      mb={mb[0]}>
+      {children}
+    </Typography> 
+  )
+}
 
 export { Box, Content, ContentWrap, Datetime, Image, Number, Subject, Subtitle, Title }
