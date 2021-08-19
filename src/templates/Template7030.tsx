@@ -2,8 +2,6 @@ import React from 'react'
 import Block from '../components/Block'
 import RenderSlot from '../components/RenderSlot'
 
-type TeaserTypes = 'fullImage'
-
 type SlotProps = {
   color: string; 
   column_items: number;
@@ -12,7 +10,6 @@ type SlotProps = {
   layout: object;
   has_number: boolean;
   slot: Array<any>;
-  type: TeaserTypes;
 }
 
 interface Props {
@@ -58,4 +55,4 @@ const Template7030 = ({ slot70, slot30 } : Props) => {
   )
 }
 
-export default Template7030;
+export {Template7030};
