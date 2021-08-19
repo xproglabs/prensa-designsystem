@@ -30,9 +30,3 @@ package-lock.json
 /utils.esm.js
 /utils.esm.js.map
 /utils.js.map
-
-/templates.js
-/templates.d.ts
-/templates.esm.js
-/templates.esm.js.map
-/templates.js.map
