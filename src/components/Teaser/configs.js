@@ -1,18 +1,18 @@
-const SECTION_DEFAULT = {
+export const SECTION_DEFAULT = {
   color: 'primary1',
   enabled: true,
   font_size: ['20px', '20px'],
   line_height: ['24px', '24px'],
   mb: [2, 2]
 }
-const SUBJECT_DEFAULT = {
+export const SUBJECT_DEFAULT = {
   bg_color: 'white',
   color: 'primary1',
   enabled: true,
   font_size: ['14px', '14px'],
   line_height: ['16px', '16px']
 }
-const SUBJECT_FILLED = {
+export const SUBJECT_FILLED = {
   bg_color: 'primary1',
   color: 'white',
   enabled: true,

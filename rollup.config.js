@@ -79,29 +79,6 @@ export default [
     ]
   },
   {
-    input: 'src/templates.ts',
-    output: [
-      {
-        file: 'templates.js',
-        format: 'cjs',
-        sourcemap: true
-      },
-      {
-        file: 'templates.esm.js',
-        format: 'es',
-        sourcemap: true
-      }
-    ],
-    plugins: [
-      analyze(),
-      babel(),
-      commonjs(),
-      peerDepsExternal(),
-      resolve(),
-      typescript({ useTsconfigDeclarationDir: true })
-    ]
-  },
-  {
     input: 'src/utils.ts',
     output: [
       {
