@@ -2,8 +2,8 @@ import React from 'react'
 import Block from '../Block'
 import RenderSlot from '../RenderSlot'
 
-type SlotProps = {
-  color: string; 
+export type SlotProps = {
+  color: string;
   column_items: number;
   column_padding: string;
   image_circle: boolean;
@@ -17,7 +17,7 @@ interface Props {
   slot30: SlotProps;
 }
 
-const Template7030 = ({ slot70, slot30 } : Props) => {
+const Template7030 = ({ slot70, slot30 }: Props) => {
   return (
     <Block
       align="column"
@@ -55,4 +55,4 @@ const Template7030 = ({ slot70, slot30 } : Props) => {
   )
 }
 
-export {Template7030};
+export { Template7030 };

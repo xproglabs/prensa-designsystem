@@ -1,18 +1,18 @@
-export const SECTION_DEFAULT = {
+const SECTION_DEFAULT = {
   color: 'primary1',
   enabled: true,
   font_size: ['20px', '20px'],
   line_height: ['24px', '24px'],
   mb: [2, 2]
 }
-export const SUBJECT_DEFAULT = {
+const SUBJECT_DEFAULT = {
   bg_color: 'white',
   color: 'primary1',
   enabled: true,
   font_size: ['14px', '14px'],
   line_height: ['16px', '16px']
 }
-export const SUBJECT_FILLED = {
+const SUBJECT_FILLED = {
   bg_color: 'primary1',
   color: 'white',
   enabled: true,
@@ -20,7 +20,19 @@ export const SUBJECT_FILLED = {
   line_height: ['18px', '18px']
 }
 
-export const TEASER_FEATURED = {
+export interface TeaserProps {
+  box: object;
+  box_wrap: object;
+  carousel?: object;
+  datetime_enabled: boolean;
+  image: object;
+  title: object;
+  section?: object;
+  subject: object;
+  subtitle: object;
+}
+
+export const TEASER_FEATURED: TeaserProps = {
   box: {
     aligny: ['top', 'between'],
     height: ['auto', '366px'],
@@ -51,7 +63,7 @@ export const TEASER_FEATURED = {
   }
 }
 
-export const TEASER_IMAGE_FEATURED = {
+export const TEASER_IMAGE_FEATURED: TeaserProps = {
   box: {
     aligny: ['bottom', 'bottom'],
     height: ['366px', '366px'],
@@ -85,7 +97,7 @@ export const TEASER_IMAGE_FEATURED = {
   }
 }
 
-export const TEASER_FEATURED_RELATED = {
+export const TEASER_FEATURED_RELATED: TeaserProps = {
   box: {
     pb: [3, 3],
     pt: [3, 3]
@@ -110,7 +122,7 @@ export const TEASER_FEATURED_RELATED = {
   }
 }
 
-export const TEASER_IMAGE_TOP = {
+export const TEASER_IMAGE_TOP: TeaserProps = {
   box: {
     pb: [3, 3],
     pt: [0, 0]
@@ -139,7 +151,7 @@ export const TEASER_IMAGE_TOP = {
   }
 }
 
-export const TEASER_IMAGE_CAROUSEL = {
+export const TEASER_IMAGE_CAROUSEL: TeaserProps = {
   box: {
     pb: [3, 3],
     pt: [0, 0],
@@ -172,7 +184,7 @@ export const TEASER_IMAGE_CAROUSEL = {
   }
 }
 
-export const TEASER_IMAGE_TWO = {
+export const TEASER_IMAGE_TWO: TeaserProps = {
   box: {
     pb: [3, 3],
     pt: [0, 0],
@@ -202,7 +214,7 @@ export const TEASER_IMAGE_TWO = {
   }
 }
 
-export const TEASER_IMAGE_THREE = {
+export const TEASER_IMAGE_THREE: TeaserProps = {
   box: {
     pb: [3, 3],
     pt: [0, 0]
@@ -231,7 +243,7 @@ export const TEASER_IMAGE_THREE = {
   }
 }
 
-export const TEASER_IMAGE_FOUR = {
+export const TEASER_IMAGE_FOUR: TeaserProps = {
   box: {
     pb: [3, 3],
     pt: [0, 0],
@@ -261,7 +273,7 @@ export const TEASER_IMAGE_FOUR = {
   }
 }
 
-export const TEASER_LEFTIMAGE_SMALL = {
+export const TEASER_LEFTIMAGE_SMALL: TeaserProps = {
   box: {
     align: ['row', 'row'],
     aligny: ['top', 'top'],
@@ -299,7 +311,7 @@ export const TEASER_LEFTIMAGE_SMALL = {
   }
 }
 
-export const TEASER_LEFTIMAGE_LARGE = {
+export const TEASER_LEFTIMAGE_LARGE: TeaserProps = {
   box: {
     align: ['column', 'row'],
     aligny: ['top', 'top'],
@@ -343,7 +355,7 @@ export const TEASER_LEFTIMAGE_LARGE = {
   }
 }
 
-export const TEASER_MOSTREAD = {
+export const TEASER_MOSTREAD: TeaserProps = {
   box: {
     align: ['row', 'row'],
     aligny: ['top', 'top'],

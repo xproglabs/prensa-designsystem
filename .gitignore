@@ -25,6 +25,12 @@ package-lock.json
 /styled-system.esm.js.map
 /styled-system.js.map
 
+/teasers.js
+/teasers.d.ts
+/teasers.esm.js
+/teasers.esm.js.map
+/teasers.js.map
+
 /utils.js
 /utils.d.ts
 /utils.esm.js
