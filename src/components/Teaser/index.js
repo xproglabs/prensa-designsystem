@@ -17,8 +17,7 @@ const Teaser = ({
   item,
   layout,
   number,
-  has_number,
-  type
+  has_number
 }) => {
   // main props
   const item_path = get(item, 'path', '')
