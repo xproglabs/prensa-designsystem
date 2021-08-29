@@ -5,11 +5,11 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from '../styles/theme'
 import Container from '../templates/Container'
 import { SectionTitle } from './styled'
-import { Template33 as _Template33 } from './Template33'
+import { Template33 as Template } from './Template33'
 import { data } from './Template33.data'
 
 export default {
-  title: 'Template33',
+  title: 'Templates',
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
@@ -69,7 +69,7 @@ export const Template33 = () => {
           {title}
         </SectionTitle>
       }
-      <_Template33
+      <Template
         slotLeft={{
           color: color_left,
           column_items: 1,

@@ -79,29 +79,6 @@ export default [
     ]
   },
   {
-    input: 'src/teasers/index.ts',
-    output: [
-      {
-        file: 'teasers.js',
-        format: 'cjs',
-        sourcemap: true
-      },
-      {
-        file: 'teasers.esm.js',
-        format: 'es',
-        sourcemap: true
-      }
-    ],
-    plugins: [
-      analyze(),
-      babel(),
-      commonjs(),
-      peerDepsExternal(),
-      resolve(),
-      typescript({ useTsconfigDeclarationDir: true })
-    ]
-  },
-  {
     input: 'src/templates/index.ts',
     output: [
       {
