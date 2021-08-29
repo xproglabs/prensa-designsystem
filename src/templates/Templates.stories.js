@@ -1,8 +1,8 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { theme } from '../../styles/theme'
-import { TEASER_FEATURED, TEASER_FEATURED_RELATED, TEASER_IMAGE_FEATURED } from '../Teaser/configs'
+import { theme } from '../styles/theme'
+import { TEASER_FEATURED, TEASER_FEATURED_RELATED, TEASER_IMAGE_FEATURED } from '../teasers'
 import { Template7030 } from './Template7030'
 import { data } from './Template7030.data'
 

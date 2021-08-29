@@ -1,6 +1,6 @@
 import React from 'react'
-import Block from '../Block'
-import RenderSlot from '../RenderSlot'
+import Block from '../components/Block'
+import RenderSlot from '../components/RenderSlot'
 
 export type SlotProps = {
   color: string;

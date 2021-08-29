@@ -31,6 +31,12 @@ package-lock.json
 /teasers.esm.js.map
 /teasers.js.map
 
+/templates.js
+/templates.d.ts
+/templates.esm.js
+/templates.esm.js.map
+/templates.js.map
+
 /utils.js
 /utils.d.ts
 /utils.esm.js
