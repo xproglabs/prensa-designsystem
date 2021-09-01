@@ -7,14 +7,13 @@ import * as S from './Byline.styled'
 const Byline = ({
   amp,
   author,
-  customContent,
   datetime,
   share
 }) => {
   return (
     <S.Container>
       <S.Content>
-        <S.DateLine custom={customContent}>
+        <S.DateLine>
           <S.Author {...author}>
             {author.value}
           </S.Author>
@@ -55,7 +54,6 @@ Byline.defaultProps = {
 Byline.propTypes = {
   amp: PropTypes.bool,
   author: PropTypes.object,
-  customContent: PropTypes.string,
   datetime: PropTypes.object,
   medias: PropTypes.object,
   share: PropTypes.object
