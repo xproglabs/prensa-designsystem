@@ -116,7 +116,7 @@ const parse_content = (content) => {
         }
       } else {
         let child_string = renderChildValue(child) || attr.href
-        tagItems.push({ 'type': 'text', 'value': `<a href="${attr.href}" target="_blank">${child_string}</a>` })
+        tagItems.push({ 'type': 'text', 'value': `<a href="${attr.href}" target="_blank" rel="noreferrer">${child_string}</a>` })
         return true
       }
     }
