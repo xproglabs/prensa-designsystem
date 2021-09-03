@@ -14,6 +14,7 @@ import Heading2 from '../Headings/Heading2'
 import Heading3 from '../Headings/Heading3'
 import Heading4 from '../Headings/Heading4'
 import Paragraph from '../Paragraph/Paragraph'
+import SectionTitle from '../SectionTitle'
 import Tags from '../Tags/Tags'
 import TopImage from '../TopImage/TopImage'
 import * as S from './TextBody.styled'
@@ -33,6 +34,7 @@ const TextBody = (props) => {
     hyperlink,
     images,
     paragraph,
+    section_title,
     tags
   } = props
   
@@ -160,6 +162,7 @@ const TextBody = (props) => {
       {gallery && gallery.length > 0 && (
         <ImageGallery items={gallery} />
       )}
+      <SectionTitle {...section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
       <Tags {...tags} maxWidth={bodyWidth} />
     </S.Body>
   )
@@ -179,6 +182,7 @@ TextBody.propTypes = {
   hyperlink: PropTypes.string,
   images: PropTypes.object,
   paragraph: PropTypes.object,
+  section_title: PropTypes.object,
   tags: PropTypes.object
 }
 

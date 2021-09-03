@@ -8,13 +8,11 @@
 package-lock.json
 .DS_Store
 
-icons.js
 icons.d.ts
 icons.esm.js
 icons.esm.js.map
 icons.js.map
 
-index.js
 index.d.ts
 index.esm.js
 index.esm.js.map

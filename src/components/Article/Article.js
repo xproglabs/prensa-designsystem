@@ -27,6 +27,7 @@ const Article = (props) => {
     hyperlink,
     images,
     paragraph,
+    section_title,
     subject,
     subtitle,
     title,
@@ -92,6 +93,7 @@ const Article = (props) => {
           hyperlink={hyperlink}
           images={images}
           paragraph={paragraph}
+          section_title={section_title}
           tags={tags}
         />
       </S.Container>
@@ -128,6 +130,7 @@ Article.propTypes = {
   hyperlink: PropTypes.string,
   images: PropTypes.object,
   paragraph: PropTypes.object,
+  section_title: PropTypes.object,
   subject: PropTypes.object,
   subtitle: PropTypes.object,
   tags: PropTypes.object,
