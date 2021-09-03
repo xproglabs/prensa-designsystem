@@ -10,6 +10,7 @@ const Subject = ({
   color,
   fontFamily,
   fontSize,
+  fontWeight,
   lineHeight,
   mb,
   mt,
@@ -38,7 +39,7 @@ const Subject = ({
         element='span'
         fontFamily={fontFamily}
         fontSize={fontSize[0]}
-        fontWeight={700}
+        fontWeight={fontWeight}
         lineHeight={lineHeight[0]}
         lg={{
           fontSize: fontSize[1],
@@ -56,6 +57,7 @@ Subject.defaultProps = {
   color: 'white',
   fontFamily: 'secondary',
   fontSize: ['14px', '14px'],
+  fontWeight: 700,
   lineHeight: ['20px', '20px'],
   transform: 'none',
   mb: ['1', '2'],
@@ -71,6 +73,7 @@ Subject.propTypes = {
   color: PropTypes.string,
   fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
+  fontWeight: PropTypes.number,
   lineHeight: PropTypes.array,
   mb: PropTypes.array,
   mt: PropTypes.array,
