@@ -10,7 +10,7 @@ import {
   TEASER_LEFTIMAGE_LARGE,
   TEASER_LEFTIMAGE_SMALL,
   TEASER_MOSTREAD
-} from '../teasers'
+} from './layouts/teasers'
 import { parseColor, parseBgColor, parseFontColor } from './parsers/parseColors'
 import { parseCustom, parseCustomDef } from './parsers/parseCustom'
 import { parseFontFamily } from './parsers/parseFontFamily'

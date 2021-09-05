@@ -56,6 +56,29 @@ export default [
     ]
   },
   {
+    input: 'src/styles/layouts/index.ts',
+    output: [
+      {
+        file: 'layouts.js',
+        format: 'cjs',
+        sourcemap: true
+      },
+      {
+        file: 'layouts.esm.js',
+        format: 'es',
+        sourcemap: true
+      }
+    ],
+    plugins: [
+      analyze(),
+      babel(),
+      commonjs(),
+      peerDepsExternal(),
+      resolve(),
+      typescript({ useTsconfigDeclarationDir: true })
+    ]
+  },
+  {
     input: 'src/styled-system.ts',
     output: [
       {

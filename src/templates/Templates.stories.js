@@ -1,8 +1,8 @@
+import { get } from 'lodash'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { theme } from '../styles/theme'
-import { TEASER_FEATURED, TEASER_FEATURED_RELATED, TEASER_IMAGE_FEATURED } from '../teasers'
 import { Template7030 } from './Template7030'
 import { data } from './Template7030.data'
 
@@ -20,6 +20,7 @@ export default {
 export const Template_7030 = () => {
 
   const items = data
+  const layout = get(theme, 'teasers', {})
   if (items && items.length < 3) return <pre>sem conteudo</pre>
 
   const slot70_items = [ items[0] ]
@@ -30,13 +31,13 @@ export const Template_7030 = () => {
       slot70={{
         column_items: 1,
         column_padding: '0px',
-        layout: TEASER_FEATURED,
+        layout: layout.featured,
         slot: slot70_items,
       }}
       slot30={{
         column_items: 1,
         column_padding: 0,
-        layout: TEASER_FEATURED_RELATED,
+        layout: layout.featured_related,
         slot: slot30_items
       }}
     />
@@ -46,6 +47,7 @@ export const Template_7030 = () => {
 export const Template_7030_Image = () => {
 
   const items = data
+  const layout = get(theme, 'teasers', {})
   if (items && items.length < 3) return <pre>sem conteudo</pre>
 
   const slot70_items = [ items[0] ]
@@ -56,13 +58,13 @@ export const Template_7030_Image = () => {
       slot70={{
         column_items: 1,
         column_padding: '0px',
-        layout: TEASER_IMAGE_FEATURED,
+        layout: layout.image_featured,
         slot: slot70_items,
       }}
       slot30={{
         column_items: 1,
         column_padding: 0,
-        layout: TEASER_FEATURED_RELATED,
+        layout: layout.featured_related,
         slot: slot30_items
       }}
     />
