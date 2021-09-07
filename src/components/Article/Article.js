@@ -108,7 +108,7 @@ Article.defaultProps = {
 Article.propTypes = {
   ads: PropTypes.shape({
     body: PropTypes.shape({
-      content: PropTypes.object,
+      content: PropTypes.array,
       render: PropTypes.node,
       interventionAmount: PropTypes.number
     }),
