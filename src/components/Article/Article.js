@@ -60,7 +60,7 @@ const Article = (props) => {
                 <Byline amp={amp} {...byline} />
               </S.Content>
             </S.MaxWidth>
-            {adTopImage && React.cloneElement(adTopImage)}
+            {adTopBody && React.cloneElement(adTopBody)}
           </React.Fragment>
           :
           <React.Fragment>
