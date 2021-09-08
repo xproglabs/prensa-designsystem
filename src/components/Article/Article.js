@@ -60,7 +60,7 @@ const Article = (props) => {
                 <Byline amp={amp} {...byline} />
               </S.Content>
             </S.MaxWidth>
-            {adTopImage && React.cloneElement(adTopImage)}
+            {adTopBody && React.cloneElement(adTopBody)}
           </React.Fragment>
           :
           <React.Fragment>
@@ -108,7 +108,7 @@ Article.defaultProps = {
 Article.propTypes = {
   ads: PropTypes.shape({
     body: PropTypes.shape({
-      content: PropTypes.object,
+      content: PropTypes.array,
       render: PropTypes.node,
       interventionAmount: PropTypes.number
     }),
