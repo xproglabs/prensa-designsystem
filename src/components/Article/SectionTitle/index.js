@@ -14,13 +14,11 @@ const SectionTitle = ({
   lineHeight,
   maxWidth,
   mb,
-  value
 }) => {
   return (
     <Block maxWidth={maxWidth} width='100%'>
       <Typography 
         color={color}
-        dangerouslySetInnerHTML={value}
         element={element}
         fontFamily={fontFamily}
         fontSize={fontSize[0]}
@@ -46,8 +44,7 @@ SectionTitle.defaultProps = {
   fontSize: ['20px', '20px'],
   fontWeight: 700,
   lineHeight: ['120%', '120%'],
-  mb: ['2', '2'],
-  value: 'Assuntos'
+  mb: [2, 2],
 }
 
 SectionTitle.propTypes = {
@@ -59,7 +56,6 @@ SectionTitle.propTypes = {
   lineHeight: PropTypes.array,
   maxWidth: PropTypes.string,
   mb: PropTypes.array,
-  value: PropTypes.string
 }
 
 export default SectionTitle
