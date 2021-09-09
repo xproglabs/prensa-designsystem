@@ -76,7 +76,7 @@ export const DateLine = ({ children, mb }) =>
   </Block>
 
 DateLine.defaultProps = {
-  mb: ['4', '4'],
+  mb: [4, 4]
 }  
 
 DateLine.propTypes = {
