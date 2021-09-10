@@ -71,7 +71,7 @@ export const DateLine = ({ children, mb }) =>
     lg={{
       mb: mb[1]
     }}
-    width='calc(100% - 76px)'>
+    width='100%'>
     {children}
   </Block>
 
