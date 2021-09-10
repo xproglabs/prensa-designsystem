@@ -4,7 +4,8 @@ import React from 'react'
 import Block from '../../Block'
 import Typography from '../../Typography'
 
-const Heading3 = ({
+const SectionTitle = ({
+  children,
   color,
   element,
   fontFamily,
@@ -13,13 +14,11 @@ const Heading3 = ({
   lineHeight,
   maxWidth,
   mb,
-  value
 }) => {
   return (
     <Block maxWidth={maxWidth} width='100%'>
       <Typography 
         color={color}
-        dangerouslySetInnerHTML={value}
         element={element}
         fontFamily={fontFamily}
         fontSize={fontSize[0]}
@@ -31,24 +30,24 @@ const Heading3 = ({
           mb: mb[1]
         }}
         mb={mb[0]}
-        mt={3}
-      />
+        mt={3}>
+        {children} 
+      </Typography>
     </Block>
   )
 }
 
-Heading3.defaultProps = {
+SectionTitle.defaultProps = {
   color: 'neutral2',
-  element: 'h3',
+  element: 'h2',
   fontFamily: 'primary',
-  fontSize: ['24px', '24px'],
+  fontSize: ['20px', '20px'],
   fontWeight: 700,
-  lineHeight: ['110%', '110%'],
+  lineHeight: ['120%', '120%'],
   mb: [2, 2],
-  value: 'Heading 3'
 }
 
-Heading3.propTypes = {
+SectionTitle.propTypes = {
   color: PropTypes.string,
   element: PropTypes.string,
   fontFamily: PropTypes.string,
@@ -57,7 +56,6 @@ Heading3.propTypes = {
   lineHeight: PropTypes.array,
   maxWidth: PropTypes.string,
   mb: PropTypes.array,
-  value: PropTypes.string
 }
 
-export default Heading3
+export default SectionTitle

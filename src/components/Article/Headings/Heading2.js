@@ -44,7 +44,7 @@ Heading2.defaultProps = {
   fontSize: ['32px', '32px'],
   fontWeight: 700,
   lineHeight: ['110%', '110%'],
-  mb: ['3', '3'],
+  mb: [3, 3],
   value: 'Heading 2'
 }
 

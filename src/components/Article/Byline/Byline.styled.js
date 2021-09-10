@@ -56,9 +56,7 @@ export const Content = ({ children }) =>
   <Block
     width='100%'
     align='column'
-    mb={4}
     md={{ align: 'row', aligny: 'middle' }}
-    lg={{ mb: 5 }}
   >
     {children}
   </Block>
@@ -67,20 +65,23 @@ Content.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
 
-export const DateLine = ({ children, custom }) => 
+export const DateLine = ({ children, mb }) => 
   <Block 
-    custom={custom}
-    mb='2'
-    md={{
-      mb: '0px'
+    mb={mb[0]}
+    lg={{
+      mb: mb[1]
     }}
     width='calc(100% - 76px)'>
     {children}
   </Block>
 
+DateLine.defaultProps = {
+  mb: [4, 4]
+}  
+
 DateLine.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  custom: PropTypes.string
+  mb: PropTypes.array,
 }
 
 export const TimeEntry = ({

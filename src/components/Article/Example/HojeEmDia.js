@@ -89,6 +89,7 @@ const ArticleHJD = () => {
           bgColor: 'primary1',
           color: 'white',
           fontFamily: 'primary',
+          fontWeight: 900,
           mb: ['2', '3'],
           transform: 'uppercase',
           value: 'HOJE EM DIA'
