@@ -1,6 +1,6 @@
 {
   "name": "prensa",
-  "version": "1.6.2",
+  "version": "1.6.7",
   "description": "Prensa Design System",
   "main": "index.js",
   "module": "index.esm.js",
@@ -25,6 +25,7 @@
     "@babel/preset-react": "^7.10.4",
     "@mdx-js/react": "^1.6.18",
     "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^7.1.3",
     "@storybook/addon-docs": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
@@ -74,7 +75,6 @@
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
     "test": "jest",
     "update-prensa:qa": "npm version patch && npm run build && git push --tags && npm publish --tag qa",
-    "update-prensa:ts": "npm version patch && npm run build && git push --tags && npm publish --tag ts",
     "update-prensa": "npm version patch && npm run build && git push --tags && npm publish"
   },
   "lint-staged": {
