@@ -1,6 +1,6 @@
 import React from 'react'
 import Block from '../components/Block'
-import RenderSlot from '../components/RenderSlot'
+import RenderSlot, {RenderSlotProps} from '../components/RenderSlot'
 import Carousel from '../components/Carousel'
 
 type ResponsiveHeight = [string, string]
@@ -13,29 +13,38 @@ type CarouselProps = {
 
 interface Template100Props {
   carousel: CarouselProps;
-  slot100: object;
+  slot100: RenderSlotProps;
 }
 
 const Template100 = ({ carousel, slot100 }: Template100Props) => {
+
+  const renderContent = () => {
+    if (carousel.enabled === true) {
+      return (
+        <Carousel {...carousel}>
+          <RenderSlot {...slot100} />
+        </Carousel>
+      )
+    } else {
+      return (
+        <RenderSlot {...slot100} />
+      )
+    }
+  }
+
   return (
     <Block
-      align="column"
-      alignx="center"
-      aligny="top"
+      align='column'
+      alignx='center'
+      aligny='top'
       lg={{
         align: 'row',
         alignx: 'between',
         aligny: 'top'
       }}
-      width="100%">
-      {
-        carousel.enabled == true ?
-          <Carousel {...carousel}>
-            <RenderSlot {...slot100} />
-          </Carousel>
-          :
-          <RenderSlot {...slot100} />
-      }
+      width='100%'
+    >
+      {renderContent()}
     </Block>
   )
 }
