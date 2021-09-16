@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
+import { GridRelated } from '../Grids/GridRelated'
 import * as S from './Article.styled'
 import Byline from './Byline/Byline'
 import Subject from './Subject/Subject'
@@ -27,6 +28,7 @@ const Article = (props) => {
     hyperlink,
     images,
     paragraph,
+    relatedContent,
     section_title,
     subject,
     subtitle,
@@ -40,6 +42,9 @@ const Article = (props) => {
   const adsBody = get(ads, 'body', {})
   const adTopImage = get(ads, 'topImage', false)
   const adTopBody = get(ads, 'topBody', false)
+
+  // related content
+  const related_content_bottom = get(relatedContent, 'bottom', {})
 
   return (
     <S.Page>
@@ -96,6 +101,7 @@ const Article = (props) => {
           section_title={section_title}
           tags={tags}
         />
+        <GridRelated {...related_content_bottom} />
       </S.Container>
     </S.Page>
   )
@@ -130,6 +136,17 @@ Article.propTypes = {
   hyperlink: PropTypes.string,
   images: PropTypes.object,
   paragraph: PropTypes.object,
+  relatedContent: PropTypes.shape({
+    body: PropTypes.shape({
+      enabled: PropTypes.bool,
+      component: PropTypes.node
+    }),
+    bottom: PropTypes.shape({
+      enabled: PropTypes.bool,
+      slotProps: PropTypes.object,
+      maxWidth: PropTypes.string
+    })
+  }),
   section_title: PropTypes.object,
   subject: PropTypes.object,
   subtitle: PropTypes.object,

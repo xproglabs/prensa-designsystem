@@ -2,18 +2,19 @@ import React from 'react'
 import Block from '../../Block'
 import RenderSlot, { RenderSlotProps } from '../../RenderSlot'
 
-type GridRelatedProps = {
-  slotProps: RenderSlotProps;
+type GridRelatedProps = RenderSlotProps & {
+  enabled: boolean;
   /**
    * @description maxWidth expects a value using string with px maxWidth="768px"
    */
   maxWidth: string;
 }
 
-const GridRelated = ({ slotProps, maxWidth }: GridRelatedProps) => {
+const GridRelated = ({ enabled, maxWidth, ...otherProps }: GridRelatedProps) => {
+  if (!enabled) return null
   return (
     <Block maxWidth={maxWidth}>
-      <RenderSlot {...slotProps} />
+      <RenderSlot {...otherProps} />
     </Block>
   )
 }
