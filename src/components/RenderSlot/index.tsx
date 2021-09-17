@@ -33,6 +33,7 @@ const RenderSlot = ({
     <React.Fragment>
       {map(slot, (item, key: number) => (
         <Block
+          key={key}
           width="100%"
           lg={{ width: column_width }}
         >
@@ -42,7 +43,6 @@ const RenderSlot = ({
             image_circle={image_circle}
             // image_options={image_options}
             item={item}
-            key={key}
             layout={layout}
             number={key}
             has_number={has_number}

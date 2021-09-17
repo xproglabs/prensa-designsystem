@@ -23,12 +23,10 @@ export const GridRelated = () => {
   
   return (
     <GridRelatedComponent
-      slotProps={{
-        column_items: 1,
-        column_padding: 0,
-        layout: selected_layout,
-        slot: items_left
-      }}
+      column_items={1}
+      column_padding={0}
+      layout={selected_layout}
+      slot={items_left}
     />
   )
 }
