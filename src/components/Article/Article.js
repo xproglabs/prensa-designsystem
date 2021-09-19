@@ -44,6 +44,7 @@ const Article = (props) => {
   const adTopBody = get(ads, 'topBody', false)
 
   // related content
+  const related_content_body = get(relatedContent, 'body', {})
   const related_content_bottom = get(relatedContent, 'bottom', {})
 
   return (
@@ -98,10 +99,13 @@ const Article = (props) => {
           hyperlink={hyperlink}
           images={images}
           paragraph={paragraph}
+          related_content_intervention={related_content_body}
           section_title={section_title}
           tags={tags}
         />
-        <GridRelated {...related_content_bottom} />
+        <GridRelated
+          {...related_content_bottom}
+        />
       </S.Container>
     </S.Page>
   )
@@ -117,6 +121,7 @@ Article.propTypes = {
   ads: PropTypes.shape({
     body: PropTypes.shape({
       content: PropTypes.array,
+      enabled: PropTypes.bool,
       render: PropTypes.node,
       interventionAmount: PropTypes.number
     }),
