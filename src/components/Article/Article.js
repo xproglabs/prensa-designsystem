@@ -148,7 +148,14 @@ Article.propTypes = {
     }),
     bottom: PropTypes.shape({
       enabled: PropTypes.bool,
-      slotProps: PropTypes.object,
+      color: PropTypes.string,
+      column_items: PropTypes.number,
+      column_padding: PropTypes.string,
+      domain: PropTypes.string,
+      image_circle: PropTypes.bool, 
+      layout: PropTypes.string,
+      has_number: PropTypes.bool,
+      slot: PropTypes.array,
       maxWidth: PropTypes.string
     })
   }),
