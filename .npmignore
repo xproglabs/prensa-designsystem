@@ -1,10 +1,8 @@
 .babelrc
-.env
-.eslintignore
 .eslintrc.json
 .gitignore
-.rollup.config.js
+.github
+.storybook
+rollup.config.js
 tsconfig.json
-/.github
-/.storybook
 /src
