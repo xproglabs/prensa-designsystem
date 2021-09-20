@@ -21,7 +21,6 @@ const RenderSlot = ({
   column_padding,
   domain,
   image_circle,
-  // image_options,
   layout,
   has_number,
   slot
