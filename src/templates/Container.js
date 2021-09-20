@@ -6,6 +6,7 @@ import Block from '../components/Block'
 const TemplatesContainer = ({
   children,
   mb = [0, 0],
+  mt = [0, 0],
   theme
 }) => {
   return (
@@ -14,11 +15,14 @@ const TemplatesContainer = ({
       alignx='center'
       width='100%'>
       <Block
-        lg={{ mb: mb[1] }}
+        lg={{
+          mb: mb[1],
+          mt: mt[1]
+        }}
         maxWidth={theme.queries.xl}
         mb={mb[0]}
-        width='calc(100% - 32px)'
-      >
+        mt={mt[0]}
+        width='calc(100% - 32px)'>
         {children}
       </Block>
     </Block>
