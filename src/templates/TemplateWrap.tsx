@@ -1,6 +1,7 @@
 import React from 'react'
-import RenderSlot, {RenderSlotProps} from '../components/RenderSlot'
+
 import Block from '../components/Block'
+import RenderSlot, { RenderSlotProps } from '../components/RenderSlot'
 
 interface TemplateWrapProps {
   slotItems: RenderSlotProps;
@@ -25,4 +26,4 @@ const TemplateWrap = ({ slotItems }: TemplateWrapProps) => {
   )
 }
 
-export {TemplateWrap}
+export { TemplateWrap }

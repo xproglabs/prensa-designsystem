@@ -10,12 +10,17 @@ const TemplatesContainer = ({
 }) => {
   return (
     <Block
-      lg={{ mb: mb[1] }}
-      maxWidth={theme.queries.xl}
-      mb={mb[0]}
-      width='calc(100% - 32px)'
-    >
-      {children}
+      align='column'
+      alignx='center'
+      width='100%'>
+      <Block
+        lg={{ mb: mb[1] }}
+        maxWidth={theme.queries.xl}
+        mb={mb[0]}
+        width='calc(100% - 32px)'
+      >
+        {children}
+      </Block>
     </Block>
   )
 }
