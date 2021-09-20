@@ -42,7 +42,7 @@ const TextBody = (props) => {
   if (!content) return null
   
   const adsContent = get(ads, 'content', [])
-  const adsRender = get(ads, 'render', false)
+  const adsRender = get(ads, 'render', null)
 
   let readmore = []
   let intervention_amount = get(ads, 'interventionAmount', 3)
