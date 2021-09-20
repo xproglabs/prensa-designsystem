@@ -40,7 +40,6 @@ const RenderSlot = ({
             color={color}
             domain={domain}
             image_circle={image_circle}
-            // image_options={image_options}
             item={item}
             layout={layout}
             number={key}
