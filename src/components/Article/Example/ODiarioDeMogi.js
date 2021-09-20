@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
+import { data } from '../../../mockup/template'
 import { theme as MogiTheme } from '../../../styles/demo/odiariodemogi'
 import Block from '../../Block'
 import datePtBrFull from '../../Util/datePtBrFull'
@@ -175,6 +176,15 @@ const ArticleOM = () => {
     fontSize: ['20px', '20px'],
     lineHeight: ['190%', '190%'],
   }
+  const related_content = {
+    bottom: {
+      enabled: true,
+      column_items: 1,
+      column_padding: 0,
+      layout: MogiTheme.teasers.image_large_left,
+      slot: data.items_left
+    }
+  }
 
   const RenderArticle = ({ paywallNotSubscriber }) => 
     <Article
@@ -196,6 +206,7 @@ const ArticleOM = () => {
       title={props_title}
       paragraph={props_paragraph}
       topimage={topimage}
+      relatedContent={related_content}
     />
 
   if(priority == '1') {

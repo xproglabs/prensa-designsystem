@@ -1,3 +1,18 @@
+import {
+  TEASER_FEATURED,
+  TEASER_FEATURED_RELATED,
+  TEASER_IMAGE_CAROUSEL,
+  TEASER_IMAGE_FEATURED,
+  TEASER_IMAGE_FOUR,
+  TEASER_IMAGE_THREE,
+  TEASER_IMAGE_TOP,
+  TEASER_IMAGE_TWO,
+  TEASER_LEFTIMAGE_LARGE,
+  TEASER_LEFTIMAGE_SMALL,
+  TEASER_MOSTREAD
+} from './layouts/teasers'
+
+//TODO: Move to styled-system
 import { parseColor, parseBgColor, parseFontColor } from './parsers/parseColors'
 import { parseCustom, parseCustomDef } from './parsers/parseCustom'
 import { parseFontFamily } from './parsers/parseFontFamily'
@@ -65,6 +80,19 @@ export const theme = {
     unset: '0px',
     default: '3px',
     alternative: '5px'
+  },
+  teasers: {
+    featured: TEASER_FEATURED,
+    featured_related: TEASER_FEATURED_RELATED,
+    image_carousel: TEASER_IMAGE_CAROUSEL,
+    image_featured: TEASER_IMAGE_FEATURED,
+    image_four: TEASER_IMAGE_FOUR,
+    image_three: TEASER_IMAGE_THREE,
+    image_top: TEASER_IMAGE_TOP,
+    image_two: TEASER_IMAGE_TWO,
+    image_large_left: TEASER_LEFTIMAGE_LARGE,
+    image_small_left: TEASER_LEFTIMAGE_SMALL,
+    mostread: TEASER_MOSTREAD
   },
   parseBgColor,
   parseCustom,

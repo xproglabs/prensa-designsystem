@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
+import { GridRelated } from '../Grids/GridRelated'
 import * as S from './Article.styled'
 import Byline from './Byline/Byline'
 import Subject from './Subject/Subject'
@@ -27,6 +28,8 @@ const Article = (props) => {
     hyperlink,
     images,
     paragraph,
+    relatedContent,
+    section_title,
     subject,
     subtitle,
     title,
@@ -39,6 +42,10 @@ const Article = (props) => {
   const adsBody = get(ads, 'body', {})
   const adTopImage = get(ads, 'topImage', false)
   const adTopBody = get(ads, 'topBody', false)
+
+  // related content
+  const related_content_body = get(relatedContent, 'body', {})
+  const related_content_bottom = get(relatedContent, 'bottom', {})
 
   return (
     <S.Page>
@@ -60,7 +67,7 @@ const Article = (props) => {
                 <Byline amp={amp} {...byline} />
               </S.Content>
             </S.MaxWidth>
-            {adTopImage && React.cloneElement(adTopImage)}
+            {adTopBody && React.cloneElement(adTopBody)}
           </React.Fragment>
           :
           <React.Fragment>
@@ -92,7 +99,12 @@ const Article = (props) => {
           hyperlink={hyperlink}
           images={images}
           paragraph={paragraph}
+          related_content_intervention={related_content_body}
+          section_title={section_title}
           tags={tags}
+        />
+        <GridRelated
+          {...related_content_bottom}
         />
       </S.Container>
     </S.Page>
@@ -108,7 +120,8 @@ Article.defaultProps = {
 Article.propTypes = {
   ads: PropTypes.shape({
     body: PropTypes.shape({
-      content: PropTypes.object,
+      content: PropTypes.array,
+      enabled: PropTypes.bool,
       render: PropTypes.node,
       interventionAmount: PropTypes.number
     }),
@@ -128,6 +141,25 @@ Article.propTypes = {
   hyperlink: PropTypes.string,
   images: PropTypes.object,
   paragraph: PropTypes.object,
+  relatedContent: PropTypes.shape({
+    body: PropTypes.shape({
+      enabled: PropTypes.bool,
+      component: PropTypes.node
+    }),
+    bottom: PropTypes.shape({
+      enabled: PropTypes.bool,
+      color: PropTypes.string,
+      column_items: PropTypes.number,
+      column_padding: PropTypes.string,
+      domain: PropTypes.string,
+      image_circle: PropTypes.bool, 
+      layout: PropTypes.string,
+      has_number: PropTypes.bool,
+      slot: PropTypes.array,
+      maxWidth: PropTypes.string
+    })
+  }),
+  section_title: PropTypes.object,
   subject: PropTypes.object,
   subtitle: PropTypes.object,
   tags: PropTypes.object,

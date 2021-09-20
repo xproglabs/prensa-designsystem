@@ -25,7 +25,7 @@ Container.propTypes = {
 
 export const Content = ({ children }) => 
   <Block
-    px='3'
+    px={3}
     width='calc(100% - 48px)'
     lg={{
       px: '0px',
@@ -44,7 +44,7 @@ export const ContainerFeatured = ({ children }) =>
     aligny='bottom'
     alignx='center'
     bgColor='neutral2'
-    mb='4'
+    mb={4}
     width='100%'>
     {children}
   </Block>
@@ -60,8 +60,8 @@ export const ContentFeatured = ({ children, maxWidth }) =>
       max-width: ${maxWidth};
       position: absolute;
     `}
-    px='3'
-    pb='2'
+    px={3}
+    pb={2}
     width='calc(100% - 48px)'>
     {children}
   </Block>

@@ -3,31 +3,42 @@
 /prensa-app/node_modules
 /prensa-app/*.lock
 .env
-*.lock
 
 package-lock.json
 .DS_Store
 
-icons.js
-icons.d.ts
-icons.esm.js
-icons.esm.js.map
-icons.js.map
+/icons.js
+/icons.d.ts
+/icons.esm.js
+/icons.esm.js.map
+/icons.js.map
 
-index.js
-index.d.ts
-index.esm.js
-index.esm.js.map
-index.js.map
+/index.js
+/index.d.ts
+/index.esm.js
+/index.esm.js.map
+/index.js.map
 
-styled-system.js
-styled-system.d.ts
-styled-system.esm.js
-styled-system.esm.js.map
-styled-system.js.map
+/styled-system.js
+/styled-system.d.ts
+/styled-system.esm.js
+/styled-system.esm.js.map
+/styled-system.js.map
 
-utils.js
-utils.d.ts
-utils.esm.js
-utils.esm.js.map
-utils.js.map
+/layouts.js
+/layouts.d.ts
+/layouts.esm.js
+/layouts.esm.js.map
+/layouts.js.map
+
+/templates.js
+/templates.d.ts
+/templates.esm.js
+/templates.esm.js.map
+/templates.js.map
+
+/utils.js
+/utils.d.ts
+/utils.esm.js
+/utils.esm.js.map
+/utils.js.map

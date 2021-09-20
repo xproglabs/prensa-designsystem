@@ -91,7 +91,7 @@ TopImage.defaultProps = {
     show: true,
     value: 'Legenda da Imagem'
   },
-  mb: ['2', '2'],
+  mb: [2, 2],
   value: 'https://xprog.com.br/static/images/img-destak.jpg',
 }
 

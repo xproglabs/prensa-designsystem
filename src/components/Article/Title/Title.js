@@ -41,7 +41,7 @@ Title.defaultProps = {
   fontSize: ['38px', '56px'],
   fontWeight: 700,
   lineHeight: ['110%', '110%'],
-  mb: ['2', '3'],
+  mb: [2, 3],
 }
 
 Title.propTypes = {

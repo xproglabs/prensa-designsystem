@@ -40,7 +40,7 @@ Subtitle.defaultProps = {
   fontSize: ['18px', '18px'],
   fontFamily: 'secondary',
   lineHeight: ['150%', '150%'],
-  mb: ['2', '2'],
+  mb: [2, 2],
 }
 
 Subtitle.propTypes = {
