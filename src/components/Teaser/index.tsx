@@ -20,7 +20,6 @@ export type TeaserProps = {
 }
 
 const Teaser = (props: TeaserProps) => {
-
   const {
     color,
     domain,
@@ -30,10 +29,9 @@ const Teaser = (props: TeaserProps) => {
     number,
     has_number
   } = props
-
   // main props
-  const item_path = get(item, 'path', '')
-  const item_title = get(item, 'name', '')
+  const item_path = get(item, 'url', false) || get(item, 'path', '')
+  const item_title = get(item, 'ti', false) || get(item, 'name', '')
 
   const box_align = get(layout, 'box.align', ['column', 'column'])
   const box_aligny = get(layout, 'box.aligny', ['top', 'top'])
@@ -76,8 +74,7 @@ const Teaser = (props: TeaserProps) => {
         wrap_height={wrap_height}
         wrap_mb={wrap_mb}
         wrap_mt={wrap_mt}
-        wrap_width={wrap_width}
-      >
+        wrap_width={wrap_width}>
         <S.Content>
           <RenderSubject
             color={color}

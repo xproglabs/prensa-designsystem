@@ -34,8 +34,7 @@ const RenderSlot = ({
         <Block
           key={key}
           width="100%"
-          lg={{ width: column_width }}
-        >
+          lg={{ width: column_width }}>
           <Teaser
             color={color}
             domain={domain}
