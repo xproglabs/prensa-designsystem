@@ -1,6 +1,5 @@
 import { get } from 'lodash'
 import React from 'react'
-import { withTheme } from 'styled-components'
 
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
@@ -10,15 +9,28 @@ import { RenderSubtitle } from './RenderSubtitle'
 import { RenderTitle } from './RenderTitle'
 import * as S from './styled'
 
-const Teaser = ({
-  color,
-  domain,
-  image_circle = false,
-  item,
-  layout,
-  number,
-  has_number
-}) => {
+export type TeaserProps = {
+  color: string;
+  domain: string;
+  image_circle?: boolean;
+  item: object;
+  layout: object;
+  number?: number;
+  has_number?: boolean;
+}
+
+const Teaser = (props: TeaserProps) => {
+
+  const {
+    color,
+    domain,
+    image_circle = false,
+    item,
+    layout,
+    number,
+    has_number
+  } = props
+
   // main props
   const item_path = get(item, 'path', '')
   const item_title = get(item, 'name', '')
@@ -95,4 +107,4 @@ const Teaser = ({
   )
 }
 
-export default withTheme(Teaser)
+export default Teaser

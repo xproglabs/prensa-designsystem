@@ -33,6 +33,7 @@ const TextBody = (props) => {
     heading4,
     hyperlink,
     images,
+    related_content_intervention,
     paragraph,
     section_title,
     tags
@@ -41,7 +42,7 @@ const TextBody = (props) => {
   if (!content) return null
   
   const adsContent = get(ads, 'content', [])
-  const adsRender = get(ads, 'render')
+  const adsRender = get(ads, 'render', null)
 
   let readmore = []
   let intervention_amount = get(ads, 'interventionAmount', 3)
@@ -103,8 +104,25 @@ const TextBody = (props) => {
       }
     }
     // {intervention_readmore && <ArticleReadMore config={config} item={readmore} cache={readmorecache} />}
+
     const ad_data_key = ad_counter - 1
     const ad_content = adsContent[ad_data_key]
+    const has_ad_intervention = get(ads, 'enabled', false)
+    const has_relatedc_intervention = get(related_content_intervention, 'enabled', false)
+    const relatedc_component = get(related_content_intervention, 'component', null)
+
+    const render_intervention = () => {
+      if (has_relatedc_intervention && relatedc_component && ad_counter === 0) {
+        return React.cloneElement(relatedc_component)
+      }
+      if (has_ad_intervention && intervention_status) {
+        return React.cloneElement(adsRender, {
+          amp: amp,
+          content: ad_content
+        })
+      }
+    }
+
     return (
       <React.Fragment>
         <Paragraph
@@ -112,7 +130,7 @@ const TextBody = (props) => {
           maxWidth={bodyWidth}
           value={value}
         />
-        {adsRender && intervention_status && React.cloneElement(adsRender, { amp: amp, content: ad_content })}
+        {render_intervention()}
       </React.Fragment>
     )
   }
@@ -169,7 +187,12 @@ const TextBody = (props) => {
 }
 
 TextBody.propTypes = {
-  ads: PropTypes.object,
+  ads: PropTypes.shape({
+    content: PropTypes.array,
+    enabled: PropTypes.bool,
+    render: PropTypes.node,
+    interventionAmount: PropTypes.number
+  }),
   AdPlaceholder: PropTypes.func,
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
@@ -182,6 +205,10 @@ TextBody.propTypes = {
   hyperlink: PropTypes.string,
   images: PropTypes.object,
   paragraph: PropTypes.object,
+  related_content_insertion: PropTypes.shape({
+    enabled: PropTypes.bool,
+    component: PropTypes.node
+  }),
   section_title: PropTypes.object,
   tags: PropTypes.object
 }

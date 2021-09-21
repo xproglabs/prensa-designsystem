@@ -1,8 +1,8 @@
 import React from 'react'
 import Block from '../components/Block'
-import RenderSlot from '../components/RenderSlot'
+import RenderSlot, {RenderSlotProps} from '../components/RenderSlot'
 
-type SlotProps = {
+type SlotProps = RenderSlotProps & {
   section_title: () => void;
 }
 

@@ -6,6 +6,7 @@ export type SlotProps = {
   color: string;
   column_items: number;
   column_padding: string;
+  domain: string;
   image_circle: boolean;
   layout: object;
   has_number: boolean;

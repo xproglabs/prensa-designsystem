@@ -11,6 +11,8 @@ import {
   TEASER_LEFTIMAGE_SMALL,
   TEASER_MOSTREAD
 } from './layouts/teasers'
+
+//TODO: Move to styled-system
 import { parseColor, parseBgColor, parseFontColor } from './parsers/parseColors'
 import { parseCustom, parseCustomDef } from './parsers/parseCustom'
 import { parseFontFamily } from './parsers/parseFontFamily'
