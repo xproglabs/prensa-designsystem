@@ -36,12 +36,12 @@ export default [
     input: 'src/icons.ts',
     output: [
       {
-        file: 'icons.js',
+        file: 'components/icons.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: 'icons.esm.js',
+        file: 'components/icons.esm.js',
         format: 'es',
         sourcemap: true
       }
@@ -59,12 +59,12 @@ export default [
     input: 'src/styles/layouts/index.ts',
     output: [
       {
-        file: 'layouts.js',
+        file: 'components/layouts.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: 'layouts.esm.js',
+        file: 'components/layouts.esm.js',
         format: 'es',
         sourcemap: true
       }
@@ -82,12 +82,12 @@ export default [
     input: 'src/styled-system.ts',
     output: [
       {
-        file: 'styled-system.js',
+        file: 'components/styled-system.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: 'styled-system.esm.js',
+        file: 'components/styled-system.esm.js',
         format: 'es',
         sourcemap: true
       }
@@ -105,12 +105,12 @@ export default [
     input: 'src/templates/index.ts',
     output: [
       {
-        file: 'templates.js',
+        file: 'components/templates.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: 'templates.esm.js',
+        file: 'components/templates.esm.js',
         format: 'es',
         sourcemap: true
       }
@@ -128,12 +128,12 @@ export default [
     input: 'src/utils.ts',
     output: [
       {
-        file: 'utils.js',
+        file: 'components/utils.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: 'utils.esm.js',
+        file: 'components/utils.esm.js',
         format: 'es',
         sourcemap: true
       }
