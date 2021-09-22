@@ -2,10 +2,10 @@ import { get } from 'lodash'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
+import PageBlock from '../components/PageBlocks'
 import PAGEBLOCK_DATA from '../mockup/hojeemdia/7.127.json'
 import { theme } from '../styles/demo/hojeemdia'
 import Container from '../templates/Container'
-import { PageBlock } from '../templates/PageBlock'
 
 export default {
   title: 'Examples',
