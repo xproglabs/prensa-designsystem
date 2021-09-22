@@ -18,10 +18,9 @@ const SwitchTemplate = (props) => {
     case TEMPLATES_LIST['33']:
       return <Templates.Template33 {...props} />
   }
-  return null
+  return <Templates.Template100 {...props} />
 }
 const parseBlockLayout = (template, teasers) => {
-  console.log('teasers', template, teasers)
   switch(template) {
     case 'default':
       return teasers.featured_related
