@@ -3,7 +3,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { theme } from '../styles/theme'
-import Container from '../templates/Container'
+import TemplateContainer from '../templates/TemplateContainer'
 import { SectionTitle } from './styled'
 import { Template33 as Template } from './Template33'
 import { data } from './Template33.data'
@@ -60,7 +60,7 @@ export const Template33 = () => {
   )
 
   return (
-    <Container
+    <TemplateContainer
       mb={[2, 2]}
       theme={theme}
     >
@@ -107,6 +107,6 @@ export const Template33 = () => {
           slot: items_right
         }}
       />
-    </Container>
+    </TemplateContainer>
   )
 }

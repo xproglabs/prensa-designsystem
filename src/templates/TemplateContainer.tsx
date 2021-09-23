@@ -3,7 +3,7 @@ import { withTheme } from 'styled-components'
 
 import Block from '../components/Block'
 
-const TemplatesContainer = ({
+const TemplateContainer = ({
   children,
   mb = [0, 0],
   mt = [0, 0],
@@ -29,4 +29,4 @@ const TemplatesContainer = ({
   )
 }
 
-export default withTheme(TemplatesContainer)
+export default withTheme(TemplateContainer)
