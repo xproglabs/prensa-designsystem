@@ -3,9 +3,11 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import PageBlock from '../components/PageBlocks'
-import PAGEBLOCK_DATA from '../mockup/hojeemdia/7.127.json'
+import DATA_7030 from '../mockup/hojeemdia/7.172.json'
+import DATA_LINE1 from '../mockup/hojeemdia/7.186.json'
+import DATA_LINE2 from '../mockup/hojeemdia/7.204.json'
 import { theme } from '../styles/demo/hojeemdia'
-import Container from '../templates/Container'
+import TemplateContainer from '../templates/TemplateContainer'
 
 export default {
   title: 'Examples',
@@ -19,16 +21,13 @@ export default {
 }
 
 export const HojeEmDiaHome = () => {
-  const teasers = get(theme, 'teasers', {})
   return (
-    <Container
+    <TemplateContainer
       mb={[2, 2]}
-      mt={[2, 2]}
-      theme={theme}>
+      mt={[2, 2]}>
       <PageBlock
-        content={PAGEBLOCK_DATA}
-        teasers={teasers}
+        {...DATA_LINE1}
       />
-    </Container>
+    </TemplateContainer>
   )
 }

@@ -31,7 +31,7 @@ const Teaser = (props: TeaserProps) => {
   } = props
   // main props
   const item_path = get(item, 'url', false) || get(item, 'path', '')
-  const item_title = get(item, 'ti', false) || get(item, 'name', '')
+  const item_title = get(item, 'name', '')
 
   const box_align = get(layout, 'box.align', ['column', 'column'])
   const box_aligny = get(layout, 'box.aligny', ['top', 'top'])

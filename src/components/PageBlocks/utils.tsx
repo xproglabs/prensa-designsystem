@@ -1,4 +1,5 @@
 import { get } from 'lodash'
+import React from 'react'
 
 import * as Templates from '../../templates'
 
@@ -34,7 +35,7 @@ export const SwitchTemplate = (props) => {
     '100': 'template100',
     '7030': 'template7030',
     '50': 'template50',
-    '33': 'template33'
+    '33': 'template30'
   }
   switch(props.template) {
     case TEMPLATES_LIST['100']:
@@ -42,7 +43,7 @@ export const SwitchTemplate = (props) => {
     case TEMPLATES_LIST['7030']:
       return <Templates.Template7030 {...props} />
     case TEMPLATES_LIST['33']:
-      return <Templates.Template33 {...props} />
+      return <Templates.Template7030 {...props} />
   }
   return <Templates.Template100 {...props} />
 }
