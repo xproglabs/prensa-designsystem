@@ -30,6 +30,7 @@ type BoxWrap = {
 
 type Image = {
   dimensions: [string, string];
+  enabled: boolean;
   height: [number, number];
   width: [number, number];
   box: [string, string];
@@ -37,10 +38,39 @@ type Image = {
   ml: [number, number];
 }
 
+type Subject = {
+  bg_color: string;
+  color: string;
+  font_size: [string, string];
+  enabled: boolean;
+  line_height: [string, string];
+  mb: [number, number];
+}
+
+type Subtitle = {
+  color: string;
+  font_size: [string, string];
+  enabled: boolean;
+  line_height: [string, string];
+}
+
+type Title = {
+  color: string;
+  element: string;
+  enabled: boolean;
+  font_size: [string, string];
+  line_height: [string, string];
+  mb: [number, number];
+}
+
 export type LayoutProps = {
   box?: BoxTypes;
   box_wrap?: BoxWrap;
   image?: Image;
+  datetime_enabled?: boolean;
+  subject?: Subject;
+  subtitle?: Subtitle;
+  title?: Title;
 }
 
 export type TeaserProps = {
