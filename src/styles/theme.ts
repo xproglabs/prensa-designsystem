@@ -9,8 +9,9 @@ import {
   TEASER_IMAGE_TWO,
   TEASER_LEFTIMAGE_LARGE,
   TEASER_LEFTIMAGE_SMALL,
-  TEASER_MOSTREAD
+  TEASER_MOSTREAD,
 } from './layouts/teasers'
+import {LayoutProps} from '../components/Teaser'
 
 //TODO: Move to styled-system
 import { parseColor, parseBgColor, parseFontColor } from './parsers/parseColors'
@@ -20,20 +21,34 @@ import { parseMargin } from './parsers/parseMargin'
 import { parsePadding } from './parsers/parsePadding'
 import { parseRadius } from './parsers/parseRadius'
 
-export type ThemeProps = {
+export type TeaserTypes = {
+  featured: LayoutProps, 
+  featured_related: LayoutProps, 
+  image_carousel: LayoutProps, 
+  image_featured: LayoutProps, 
+  image_four: LayoutProps, 
+  image_three: LayoutProps, 
+  image_top: LayoutProps, 
+  image_two: LayoutProps, 
+  image_large_left: LayoutProps, 
+  image_small_left: LayoutProps, 
+  mostread: LayoutProps
+}
+
+export type ThemeTypes = {
   colors?: object;
   fonts?: object;
   factors?: object;
   queries?: object;
   radius?: object;
-  teasers?: object;
+  teasers?: TeaserTypes;
 }
 
 /**
  * load_theme function docs
  * @param {object} data - An object that defines/overrides properties in theme
  */
-export function load_theme(data: ThemeProps) {
+export function load_theme(data: ThemeTypes) {
   return {
     colors: {
       activeColor: '#09B77B',

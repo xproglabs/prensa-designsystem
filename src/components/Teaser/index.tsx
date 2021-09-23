@@ -9,12 +9,46 @@ import { RenderSubtitle } from './RenderSubtitle'
 import { RenderTitle } from './RenderTitle'
 import * as S from './styled'
 
+type BoxTypes = {
+  align: [string, string];
+  aligny: [string, string];
+  pb: [number, number];
+  pt: [number, number];
+  mb: [number, number];
+  height: [string, string, string];
+}
+
+type BoxWrap = {
+  content_overlap: boolean;
+  align: [string, string];
+  aligny: [string, string]; 
+  height: [string, string];
+  mb: [number, number];
+  mt: [number, number];
+  width: [string, string];
+}
+
+type Image = {
+  dimensions: [string, string];
+  height: [number, number];
+  width: [number, number];
+  box: [string, string];
+  mb: [number, number];
+  ml: [number, number];
+}
+
+export type LayoutProps = {
+  box?: BoxTypes;
+  box_wrap?: BoxWrap;
+  image?: Image;
+}
+
 export type TeaserProps = {
   color: string;
   domain: string;
   image_circle?: boolean;
   item: object;
-  layout: object;
+  layout?: LayoutProps;
   number?: number;
   has_number?: boolean;
 }
