@@ -20,13 +20,13 @@ import { parseMargin } from './parsers/parseMargin'
 import { parsePadding } from './parsers/parsePadding'
 import { parseRadius } from './parsers/parseRadius'
 
-type ThemeProps = {
-  colors: object;
-  fonts: object;
-  factors: object;
-  queries: object;
-  radius: object;
-  teasers: object;
+export type ThemeProps = {
+  colors?: object;
+  fonts?: object;
+  factors?: object;
+  queries?: object;
+  radius?: object;
+  teasers?: object;
 }
 
 /**
@@ -120,3 +120,5 @@ export function load_theme(data: ThemeProps) {
     ...data
   }
 }
+
+export const theme = load_theme({});
