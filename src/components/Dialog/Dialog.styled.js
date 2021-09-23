@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { theme } from '../../styles/theme'
+import { theme } from '../../styles/theme.ts'
 import Block from '../Block'
 import Button from '../Button'
 import Typography from '../Typography'
