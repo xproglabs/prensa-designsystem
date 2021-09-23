@@ -1,14 +1,14 @@
 {
   "cid": "7.172",
-  "nme": "Destaque principais",
-  "tpl": "template7030",
-  "b1": {
-    "co": "",
-    "ic": " IconNoticias",
-    "li": "",
-    "n1": 4,
-    "n2": 0,
-    "l1": [
+  "name": "Destaque principais",
+  "type": "template7030",
+  "slot1": {
+    "color": "",
+    "icon": " IconNoticias",
+    "link": "",
+    "len1": 4,
+    "len2": 0,
+    "list1": [
       {
         "cid": "7.176",
         "img": {
@@ -17,12 +17,12 @@
           "cid": "1.188",
           "sub": ""
         },
-        "ti": "Palestra reúne prefeitos e vereadores",
-        "url": "/palestra-reune-prefeitos-e-vereadores-1.186",
-        "sbj": "Geral",
-        "sbt": "",
-        "pub": "2021-09-12 2:15:16",
-        "upd": "2021-09-20 0:12:46"
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.186",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "update": "2021-09-20 0:12:46"
       },
       {
         "cid": "7.177",
@@ -32,12 +32,12 @@
           "cid": "1.188",
           "sub": ""
         },
-        "ti": "Palestra reúne prefeitos e vereadores",
-        "url": "/palestra-reune-prefeitos-e-vereadores-1.186",
-        "sbj": "Geral",
-        "sbt": "",
-        "pub": "2021-09-12 2:15:16",
-        "upd": "2021-09-20 0:12:46"
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.186",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "update": "2021-09-20 0:12:46"
       },
       {
         "cid": "7.178",
@@ -47,12 +47,12 @@
           "cid": "1.188",
           "sub": ""
         },
-        "ti": "Palestra reúne prefeitos e vereadores",
-        "url": "/palestra-reune-prefeitos-e-vereadores-1.186",
-        "sbj": "Geral",
-        "sbt": "",
-        "pub": "2021-09-12 2:15:16",
-        "upd": "2021-09-20 0:12:46"
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.186",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "update": "2021-09-20 0:12:46"
       },
       {
         "cid": "7.179",
@@ -62,25 +62,25 @@
           "cid": "1.188",
           "sub": ""
         },
-        "ti": "Palestra reúne prefeitos e vereadores",
-        "url": "/palestra-reune-prefeitos-e-vereadores-1.186",
-        "sbj": "Geral",
-        "sbt": "",
-        "pub": "2021-09-12 2:15:16",
-        "upd": "2021-09-20 0:12:46"
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.186",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "update": "2021-09-20 0:12:46"
       }
     ],
-    "l2": [],
-    "te": "default",
-    "ti": "Destaques"
+    "list2": [],
+    "title": "Destaques",
+    "type": "default"
   },
-  "b2": {
-    "co": "",
-    "ic": "",
-    "li": "",
-    "n1": 1,
-    "n2": 0,
-    "l1": [
+  "slot2": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
       {
         "cid": "7.180",
         "img": {
@@ -89,27 +89,27 @@
           "cid": "1.188",
           "sub": ""
         },
-        "ti": "Palestra reúne prefeitos e vereadores",
-        "url": "/palestra-reune-prefeitos-e-vereadores-1.186",
-        "sbj": "Geral",
-        "sbt": "",
-        "pub": "2021-09-12 2:15:16",
-        "upd": "2021-09-20 0:12:46"
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.186",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "update": "2021-09-20 0:12:46"
       }
     ],
-    "l2": [],
-    "te": "featured",
-    "ti": ""
+    "list2": [],
+    "title": "featured",
+    "type": ""
   },
-  "b3": {
-    "co": "",
-    "ic": "",
-    "li": "",
-    "n1": 0,
-    "n2": 0,
-    "l1": [],
-    "l2": [],
-    "te": "",
-    "ti": ""
+  "slot3": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 0,
+    "len2": 0,
+    "list1": [],
+    "list2": [],
+    "title": "",
+    "type": ""
   }
 }

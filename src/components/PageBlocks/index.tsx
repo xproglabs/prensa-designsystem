@@ -11,18 +11,6 @@ import {
   SwitchTemplate
 } from './utils'
 
-// export interface PageBlockContentProps {
-//   cid: string;
-//   box_wrap: object;
-//   carousel?: object;
-//   datetime_enabled: boolean;
-//   image: object;
-//   title: object;
-//   section?: object;
-//   subject: object;
-//   subtitle: object;
-// }
-
 export interface SlotBlockProps {
   color: string;
   icon: string;
@@ -42,6 +30,7 @@ export interface PageBlockProps {
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;
   slot3: SlotBlockProps;
+  theme: object;
 }
 
 const PageBlock = ({
@@ -53,17 +42,8 @@ const PageBlock = ({
   slot3,
   theme
 }: PageBlockProps) => {
-  // debug  
   const { teasers } = theme
-  console.log(`[PRENSA] PageBlock ${cid} ${name} ${type}`)
-  // const block1 = get(content, 'slot1', false)
-  // const block2 = get(content, 'slot2', false)
-  // const block3 = get(content, 'slot3', false)
-  // const block1Props = parseBlockProps(block1, teasers)
-  // const block2Props = parseBlockProps(block2, teasers)
-  // const block3Props = parseBlockProps(block3, teasers)
-  console.log('slot1.list1', slot1.list1)
-  console.log('teasers', teasers)
+  // console.log(`[PRENSA] PageBlock ${cid} ${name} ${type}`)
   const switchTemplateProps = {
     template: type,
     slot70: {

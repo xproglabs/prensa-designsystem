@@ -25,9 +25,8 @@ export const HojeEmDiaHome = () => {
     <TemplateContainer
       mb={[2, 2]}
       mt={[2, 2]}>
-      <PageBlock
-        {...DATA_LINE1}
-      />
+      <PageBlock {...DATA_7030} />
+      <PageBlock {...DATA_LINE1} />
     </TemplateContainer>
   )
 }

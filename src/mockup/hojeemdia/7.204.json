@@ -1,14 +1,14 @@
 {
   "cid": "7.204",
-  "nme": "Bloco de Assuntos 2",
-  "tpl": "template30",
-  "b1": {
-    "co": "",
-    "ic": "",
-    "li": "",
-    "n1": 1,
-    "n2": 0,
-    "l1": [
+  "name": "Bloco de Assuntos 2",
+  "type": "template100",
+  "slot1": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
       {
         "cid": "7.205",
         "img": {
@@ -17,25 +17,25 @@
           "cid": "1.188",
           "sub": ""
         },
-        "ti": "Palestra reúne prefeitos e vereadores",
-        "url": "/palestra-reune-prefeitos-e-vereadores-1.186",
-        "sbj": "Geral",
-        "sbt": "",
-        "pub": "2021-09-12 2:15:16",
-        "upd": "2021-09-20 0:12:46"
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.186",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "update": "2021-09-20 0:12:46"
       }
     ],
-    "l2": [],
-    "te": "default",
-    "ti": ""
+    "list2": [],
+    "title": "",
+    "type": "default"
   },
-  "b2": {
-    "co": "",
-    "ic": "",
-    "li": "",
-    "n1": 1,
-    "n2": 0,
-    "l1": [
+  "slot2": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
       {
         "cid": "7.206",
         "img": {
@@ -44,25 +44,25 @@
           "cid": "1.188",
           "sub": ""
         },
-        "ti": "Palestra reúne prefeitos e vereadores",
-        "url": "/palestra-reune-prefeitos-e-vereadores-1.186",
-        "sbj": "Geral",
-        "sbt": "",
-        "pub": "2021-09-12 2:15:16",
-        "upd": "2021-09-20 0:12:46"
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.186",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "update": "2021-09-20 0:12:46"
       }
     ],
-    "l2": [],
-    "te": "",
-    "ti": ""
+    "list2": [],
+    "title": "",
+    "type": ""
   },
-  "b3": {
-    "co": "",
-    "ic": "",
-    "li": "",
-    "n1": 1,
-    "n2": 0,
-    "l1": [
+  "slot3": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
       {
         "cid": "7.207",
         "img": {
@@ -71,16 +71,16 @@
           "cid": "1.188",
           "sub": ""
         },
-        "ti": "Palestra reúne prefeitos e vereadores",
-        "url": "/palestra-reune-prefeitos-e-vereadores-1.186",
-        "sbj": "Geral",
-        "sbt": "",
-        "pub": "2021-09-12 2:15:16",
-        "upd": "2021-09-20 0:12:46"
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.186",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "update": "2021-09-20 0:12:46"
       }
     ],
-    "l2": [],
-    "te": "",
-    "ti": ""
+    "list2": [],
+    "title": "",
+    "type": ""
   }
 }
