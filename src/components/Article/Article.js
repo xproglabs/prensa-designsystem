@@ -154,7 +154,6 @@ Article.propTypes = {
       domain: PropTypes.string,
       image_circle: PropTypes.bool, 
       layout: PropTypes.string,
-      has_number: PropTypes.bool,
       slot: PropTypes.array,
       maxWidth: PropTypes.string
     })
