@@ -7,9 +7,12 @@ import { path_absolute } from '../Image/utils'
 import * as S from './styled'
 
 const RenderImage = ({ domain, image_circle, item, item_path, layout }) => {
-  const image_enabled = get(layout, 'image.enabled', false)
+
   const image_object = get(item, 'image', false)
-  const image_contentid = get(image_object, 'contentId', false)
+  const image_enabled = get(layout, 'image.enabled', false)
+
+  let image_contentid = get(image_object, 'contentId', false)
+  image_contentid = image_contentid || get(image_object, 'cid', false)
 
   if (!image_contentid || !image_enabled) {
     return false

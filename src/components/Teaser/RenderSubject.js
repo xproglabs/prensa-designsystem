@@ -8,7 +8,7 @@ const RenderSubject = ({ color, item, layout }) => {
     return false
 
   const subject_enabled = get(layout, 'subject.enabled', false)
-  const subject_value = get(item, 'sbj', false) || get(item, 'subject', '')
+  const subject_value = get(item, 'subject', '')
 
   if (!subject_value || !subject_enabled) {
     return false
