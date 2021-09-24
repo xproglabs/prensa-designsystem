@@ -1,3 +1,4 @@
+import { LayoutProps } from '../components/Teaser/types'
 import {
   TEASER_FEATURED,
   TEASER_FEATURED_RELATED,
@@ -11,8 +12,7 @@ import {
   TEASER_LEFTIMAGE_SMALL,
   TEASER_MOSTREAD,
 } from './layouts/teasers'
-import {LayoutProps} from '../components/Teaser'
-
+import { TEMPLATES_DEFAULT } from './layouts/templates'
 //TODO: Move to styled-system
 import { parseColor, parseBgColor, parseFontColor } from './parsers/parseColors'
 import { parseCustom, parseCustomDef } from './parsers/parseCustom'
@@ -34,7 +34,6 @@ export type TeaserTypes = {
   image_small_left: LayoutProps, 
   mostread: LayoutProps
 }
-
 export type ThemeTypes = {
   colors?: object;
   fonts?: object;
@@ -43,7 +42,6 @@ export type ThemeTypes = {
   radius?: object;
   teasers?: TeaserTypes;
 }
-
 /**
  * CreateTheme function docs
  * @param {object} data - An object that defines/overrides properties in theme
@@ -123,6 +121,9 @@ export function CreateTheme(data: ThemeTypes) {
       image_small_left: TEASER_LEFTIMAGE_SMALL,
       mostread: TEASER_MOSTREAD
     },
+    templates: {
+      default: TEMPLATES_DEFAULT
+    },
     parseBgColor,
     parseCustom,
     parseCustomDef,
@@ -136,4 +137,4 @@ export function CreateTheme(data: ThemeTypes) {
   }
 }
 
-export const theme = CreateTheme({});
+export const theme = CreateTheme({})

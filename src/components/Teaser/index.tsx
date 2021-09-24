@@ -1,5 +1,5 @@
 import { get } from 'lodash'
-import React, {cloneElement, ReactElement} from 'react'
+import React, { cloneElement, ReactElement } from 'react'
 
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
@@ -8,90 +8,6 @@ import { RenderSubtitle } from './RenderSubtitle'
 import { RenderTitle } from './RenderTitle'
 import * as S from './styled'
 import { TeaserProps } from './types'
-
-type BoxTypes = {
-  align: [string, string];
-  aligny: [string, string];
-  pb: [number, number];
-  pt: [number, number];
-  mb: [number, number];
-  height: [string, string, string];
-}
-
-type BoxWrap = {
-  content_overlap: boolean;
-  align: [string, string];
-  aligny: [string, string]; 
-  height: [string, string];
-  mb: [number, number];
-  mt: [number, number];
-  width: [string, string];
-}
-
-type Image = {
-  dimensions: [string, string];
-  enabled: boolean;
-  height: [number, number];
-  width: [number, number];
-  box: [string, string];
-  mb: [number, number];
-  ml: [number, number];
-}
-
-type Subject = {
-  bg_color: string;
-  color: string;
-  font_size: [string, string];
-  enabled: boolean;
-  line_height: [string, string];
-  mb: [number, number];
-}
-
-type Subtitle = {
-  color: string;
-  font_size: [string, string];
-  enabled: boolean;
-  line_height: [string, string];
-}
-
-type Title = {
-  color: string;
-  element: string;
-  enabled: boolean;
-  font_size: [string, string];
-  line_height: [string, string];
-  mb: [number, number];
-}
-
-export type LayoutProps = {
-  box?: BoxTypes;
-  box_wrap?: BoxWrap;
-  image?: Image;
-  datetime_enabled?: boolean;
-  subject?: Subject;
-  subtitle?: Subtitle;
-  title?: Title;
-}
-
-export type TeaserProps = {
-  color: string;
-  domain: string;
-  image_circle?: boolean;
-  item: object;
-  layout?: LayoutProps;
-  /**
-   * Render_space function
-   * @param component Expects a ReactElement
-   * @returns a React cloneElement hook for rendering the component passed as a prop
-   */
-  spaceLeft?: ReactElement;
-  /**
-   * Render_space function
-   * @param component Expects a ReactElement
-   * @returns a React cloneElement hook for rendering the component passed as a prop
-   */
-  spaceRight?: ReactElement;
-}
 
 const Teaser = (props: TeaserProps) => {
   const {
@@ -119,7 +35,6 @@ const Teaser = (props: TeaserProps) => {
   const wrap_mb = get(layout, 'box_wrap.mb', [0, 0])
   const wrap_mt = get(layout, 'box_wrap.mt', [0, 0])
   const wrap_width = get(layout, 'box_wrap.width', ['100%', '100%'])
-
   /**
    * Render_space function
    * @param component Expects a ReactElement
@@ -129,7 +44,6 @@ const Teaser = (props: TeaserProps) => {
     if (!component) return null
     return cloneElement(component)
   }
-
   return (
     <S.Box
       box_align={box_align}
@@ -146,7 +60,7 @@ const Teaser = (props: TeaserProps) => {
         item_path={item_path}
         layout={layout}
       />
-     {render_space(spaceLeft)}
+      {render_space(spaceLeft)}
       <S.ContentWrap
         content_overlap={content_overlap}
         wrap_align={wrap_align}

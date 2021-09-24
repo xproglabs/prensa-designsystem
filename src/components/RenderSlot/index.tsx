@@ -2,7 +2,8 @@ import { map } from 'lodash'
 import React from 'react'
 
 import Block from '../Block'
-import Teaser, {TeaserProps} from '../Teaser'
+import Teaser from '../Teaser'
+import { TeaserProps } from '../Teaser/types'
 
 export type RenderSlotProps = TeaserProps & {
   column_items: number;
