@@ -6,7 +6,6 @@ import RenderSlot, { RenderSlotProps } from '../components/RenderSlot'
 interface TemplateWrapProps {
   slotItems: RenderSlotProps;
 }
-
 const TemplateWrap = ({ slotItems }: TemplateWrapProps) => {
   return (
     <Block
@@ -19,8 +18,7 @@ const TemplateWrap = ({ slotItems }: TemplateWrapProps) => {
         aligny: 'top',
         custom: 'flex-wrap: wrap;'
       }}
-      width="100%"
-    >
+      width="100%">
       <RenderSlot {...slotItems} />
     </Block>
   )

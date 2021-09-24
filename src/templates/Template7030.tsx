@@ -30,16 +30,14 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         alignx: 'between',
         aligny: 'top'
       }}
-      width="100%"
-    >
+      width="100%">
       <Block
         align="column"
         alignx="center"
         lg={{
           width: 'calc(calc(calc(100% - 8px) / 3) * 2)'
         }}
-        width="100%"
-      >
+        width="100%">
         <RenderSlot {...slot70} />
       </Block>
       <Block
@@ -49,12 +47,11 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         lg={{
           width: 'calc(calc(100% - 32px) / 3)'
         }}
-        width="100%"
-      >
+        width="100%">
         <RenderSlot {...slot30} />
       </Block>
     </Block>
   )
 }
 
-export { Template7030 };
+export { Template7030 }

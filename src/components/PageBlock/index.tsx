@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
@@ -8,10 +7,6 @@ import {
   Template33,
   TemplateWrap
 } from '../../templates'
-import {
-  TEMPLATES_INDEX,
-  TEMPLATES_LIST
-} from '../../templates/consts'
 import {
   PageBlockProps
 } from './types'
@@ -27,7 +22,7 @@ const PageBlock = ({
 }: PageBlockProps) => {
   const { teasers } = theme
   // console.log(`[PRENSA] PageBlock ${cid} ${name} ${type}`)
-  if(type === TEMPLATES_INDEX['100']) {
+  if(type === 'template100') {
     return (
       <Template100
         template={type}
@@ -38,7 +33,7 @@ const PageBlock = ({
       />
     )
   }
-  if(type === TEMPLATES_INDEX['70']) {
+  if(type === 'template7030') {
     return (
       <Template7030
         template={type}
@@ -53,7 +48,7 @@ const PageBlock = ({
       />
     )
   }
-  if(type === TEMPLATES_INDEX['33']) {
+  if(type === 'template30') {
     return (
       <Template33
         template={type}
@@ -81,20 +76,6 @@ const PageBlock = ({
       }}
     />
   )
-}
-PageBlock.propTypes = {
-  /**
-   * Contentid (cid) identifica o código único do bloco de página
-   */
-  cid: PropTypes.string,
-  /**
-   * Nome (name) identifica internamente o bloco de página
-   */
-  name: PropTypes.string,
-  /**
-   * Nome (name) identifica internamente o bloco de página
-   */
-  type: PropTypes.oneOf(TEMPLATES_LIST)
 }
 
 export default withTheme(PageBlock)

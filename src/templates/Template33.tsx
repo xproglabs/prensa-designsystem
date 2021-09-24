@@ -1,31 +1,35 @@
 import React from 'react'
+
 import Block from '../components/Block'
-import RenderSlot, {RenderSlotProps} from '../components/RenderSlot'
+import RenderSlot, { RenderSlotProps } from '../components/RenderSlot'
 
 type SlotProps = RenderSlotProps & {
   section_title: () => void;
 }
-
 interface Template33Props {
   slotLeft: SlotProps;
   slotCenter: SlotProps;
   slotRight: SlotProps;
 }
-
 const Column = ({ children }) => (
   <Block
     align="column"
     alignx="left"
     aligny="top"
     mb={2}
-    lg={{ mb: 0, width: 'calc(calc(100% - 32px) / 3)' }}
-    width="100%"
-  >
+    lg={{
+      mb: 0,
+      width: 'calc(calc(100% - 32px) / 3)'
+    }}
+    width="100%">
     {children}
   </Block>
 )
-
-const Template33 = ({ slotLeft, slotCenter, slotRight }: Template33Props) => {
+const Template33 = ({
+  slotLeft,
+  slotCenter,
+  slotRight
+}: Template33Props) => {
   return (
     <Block
       align="column"
@@ -36,8 +40,7 @@ const Template33 = ({ slotLeft, slotCenter, slotRight }: Template33Props) => {
         alignx: 'between',
         aligny: 'top'
       }}
-      width="100%"
-    >
+      width="100%">
       <Column>
         {slotLeft.section_title}
         <RenderSlot {...slotLeft} />
@@ -54,4 +57,4 @@ const Template33 = ({ slotLeft, slotCenter, slotRight }: Template33Props) => {
   )
 }
 
-export { Template33 };
+export { Template33 }
