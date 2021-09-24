@@ -147,29 +147,6 @@ const Image = ({
   )
 }
 
-const Number = ({ children }) => (
-  <Block
-    align='column'
-    alignx='center'
-    aligny='middle'
-    bgColor='primary1'
-    custom='border-radius: 20px;'
-    height='40px'
-    width='40px'
-  >
-    <Typography
-      color='white'
-      element='span'
-      fontFamily='primary'
-      fontSize='14px'
-      fontWeight={700}
-      lineHeight='18px'
-    >
-      {children}
-    </Typography>
-  </Block>
-)
-
 const Subject = ({
   children,
   bg_color,
@@ -259,4 +236,4 @@ const Title = ({
   )
 }
 
-export { Box, Content, ContentWrap, Datetime, Image, Number, Subject, Subtitle, Title }
+export { Box, Content, ContentWrap, Datetime, Image, Subject, Subtitle, Title }
