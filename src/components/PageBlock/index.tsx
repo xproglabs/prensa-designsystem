@@ -30,7 +30,7 @@ export interface PageBlockProps {
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;
   slot3: SlotBlockProps;
-  theme: object;
+  theme: any;
 }
 
 const PageBlock = ({

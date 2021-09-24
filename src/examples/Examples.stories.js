@@ -2,7 +2,7 @@ import { get } from 'lodash'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import PageBlock from '../components/PageBlocks'
+import PageBlock from '../components/PageBlock'
 import DATA_7030 from '../mockup/hojeemdia/7.172.json'
 import DATA_LINE1 from '../mockup/hojeemdia/7.186.json'
 import DATA_LINE2 from '../mockup/hojeemdia/7.204.json'
