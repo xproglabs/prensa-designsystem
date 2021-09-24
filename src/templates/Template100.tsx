@@ -19,7 +19,7 @@ interface Template100Props {
 const Template100 = ({ carousel, slot100 }: Template100Props) => {
 
   const renderContent = () => {
-    if (carousel.enabled === true) {
+    if (carousel && carousel.enabled === true) {
       return (
         <Carousel {...carousel}>
           <RenderSlot {...slot100} />
