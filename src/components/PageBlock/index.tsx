@@ -1,37 +1,20 @@
-import { get } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
 import {
+  Template100,
+  Template7030,
+  Template33,
+  TemplateWrap
+} from '../../templates'
+import {
+  TEMPLATES_INDEX,
   TEMPLATES_LIST
 } from '../../templates/consts'
 import {
-  parseBlockProps,
-  SwitchTemplate
-} from './utils'
-
-export interface SlotBlockProps {
-  color: string;
-  icon: string;
-  link: string;
-  len1: number;
-  len2: number;
-  list1: object;
-  list2: object;
-  title: string;
-  type: string;
-}
-
-export interface PageBlockProps {
-  cid: string;
-  name: string;
-  type: typeof TEMPLATES_LIST;
-  slot1: SlotBlockProps;
-  slot2: SlotBlockProps;
-  slot3: SlotBlockProps;
-  theme: any;
-}
+  PageBlockProps
+} from './types'
 
 const PageBlock = ({
   cid,
@@ -44,26 +27,61 @@ const PageBlock = ({
 }: PageBlockProps) => {
   const { teasers } = theme
   // console.log(`[PRENSA] PageBlock ${cid} ${name} ${type}`)
-  const switchTemplateProps = {
-    template: type,
-    slot70: {
-      layout: teasers.image_large_left,
-      template: 'default',
-      slot: slot1.list1
-    },
-    slot30: {
-      layout: teasers.image_large_left,
-      template: 'default',
-      slot: slot2.list1
-    }
+  if(type === TEMPLATES_INDEX['100']) {
+    return (
+      <Template100
+        template={type}
+        slot100={{
+          layout: teasers.image_large_left,
+          slot: slot1.list1
+        }}
+      />
+    )
+  }
+  if(type === TEMPLATES_INDEX['70']) {
+    return (
+      <Template7030
+        template={type}
+        slot70={{
+          layout: teasers,
+          slot: slot1.list1
+        }}
+        slot30={{
+          layout: teasers.image_large_left,
+          slot: slot2.list1
+        }}
+      />
+    )
+  }
+  if(type === TEMPLATES_INDEX['33']) {
+    return (
+      <Template33
+        template={type}
+        slotLeft={{
+          layout: teasers.image_large_left,
+          slot: slot1.list1
+        }}
+        slotCenter={{
+          layout: teasers.image_large_left,
+          slot: slot2.list1
+        }}
+        slotRight={{
+          layout: teasers.image_large_left,
+          slot: slot3.list1
+        }}
+      />
+    )
   }
   return (
-    <SwitchTemplate {...switchTemplateProps}>
-      <pre>{name}</pre>
-    </SwitchTemplate>
+    <TemplateWrap
+      template={type}
+      slotItems={{
+        layout: teasers.image_large_left,
+        slot: slot1.list1
+      }}
+    />
   )
 }
-
 PageBlock.propTypes = {
   /**
    * Contentid (cid) identifica o código único do bloco de página
@@ -77,10 +95,6 @@ PageBlock.propTypes = {
    * Nome (name) identifica internamente o bloco de página
    */
   type: PropTypes.oneOf(TEMPLATES_LIST)
-  /**
-   * Slot1 identifica o primeiro slot de página
-   */
-
 }
 
 export default withTheme(PageBlock)
