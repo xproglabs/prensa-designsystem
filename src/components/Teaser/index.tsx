@@ -8,16 +8,7 @@ import { RenderSubject } from './RenderSubject'
 import { RenderSubtitle } from './RenderSubtitle'
 import { RenderTitle } from './RenderTitle'
 import * as S from './styled'
-
-export type TeaserProps = {
-  color: string;
-  domain: string;
-  image_circle?: boolean;
-  item: object;
-  layout: object;
-  number?: number;
-  has_number?: boolean;
-}
+import { TeaserProps } from './types'
 
 const Teaser = (props: TeaserProps) => {
   const {
