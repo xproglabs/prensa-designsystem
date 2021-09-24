@@ -32,13 +32,13 @@ export const ContentError = ({ children }) =>
 
 export const Message = ({ text  }) =>
   <Typography
-    dangerouslySetInnerHTML={text}
-    {...MESSAGE}>
+    {...MESSAGE}
+    dangerouslySetInnerHTML={text}>
   </Typography>
 
 export const PageTitle = ({ color, text }) =>
   <Typography
+    {...PAGE_TITLE}
     color={color}
-    dangerouslySetInnerHTML={text}
-    {...PAGE_TITLE}>
+    dangerouslySetInnerHTML={text}>
   </Typography>

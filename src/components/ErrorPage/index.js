@@ -8,18 +8,15 @@ const ErrorPage = ({
   color,
   message,
   title
-}) =>{
+}) => {
   return(
     <S.ContainerError>
       <S.ContentError>
         <S.PageTitle 
-          color = {color}
-          text={title} >
-          {title}
+          color={color}
+          text={title}>
         </S.PageTitle>
-        <S.Message text={message}>
-          {message}
-        </S.Message>
+        <S.Message text={message}/>
         <S.ButtonGoBack
           buttonAction={buttonAction}
           color={color}>
