@@ -11,7 +11,7 @@ import {
   TEASER_LEFTIMAGE_SMALL,
   TEASER_MOSTREAD
 } from './layouts/teasers'
-
+import { TEMPLATES_DEFAULT } from './layouts/templates'
 //TODO: Move to styled-system
 import { parseColor, parseBgColor, parseFontColor } from './parsers/parseColors'
 import { parseCustom, parseCustomDef } from './parsers/parseCustom'
@@ -93,6 +93,9 @@ export const theme = {
     image_large_left: TEASER_LEFTIMAGE_LARGE,
     image_small_left: TEASER_LEFTIMAGE_SMALL,
     mostread: TEASER_MOSTREAD
+  },
+  templates: {
+    default: TEMPLATES_DEFAULT
   },
   parseBgColor,
   parseCustom,

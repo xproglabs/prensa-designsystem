@@ -20,8 +20,9 @@ const PageBlock = ({
   slot3,
   theme
 }: PageBlockProps) => {
-  const { teasers } = theme
-  // console.log(`[PRENSA] PageBlock ${cid} ${name} ${type}`)
+  const { teasers, templates } = theme
+  console.log(`[PRENSA] PageBlock ${cid} ${name} ${type}`)
+  console.log('templates.default', templates)
   if(type === 'template100') {
     return (
       <Template100
