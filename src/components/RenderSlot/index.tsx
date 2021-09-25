@@ -18,6 +18,8 @@ const RenderSlot = ({
   image_circle,
   layout,
   slot,
+  spaceA,
+  spaceB
 }: RenderSlotProps) => {
   
   const column_width = `calc(calc(100% - calc(${column_padding} * 16px)) / ${column_items})`
@@ -36,6 +38,8 @@ const RenderSlot = ({
             image_circle={image_circle}
             item={item}
             layout={layout}
+            spaceA={spaceA}
+            spaceB={spaceB}
           />
         </Block>
       ))}

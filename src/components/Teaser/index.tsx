@@ -79,17 +79,13 @@ export type TeaserProps = {
   item: object;
   layout?: LayoutProps;
   /**
-   * Render_space function
-   * @param component Expects a ReactElement
-   * @returns a React cloneElement hook for rendering the component passed as a prop
+   * @description spaceA prop expects a element or React Component to be rendered before teaser content
    */
-  spaceLeft?: ReactElement;
+  spaceA?: ReactElement;
   /**
-   * Render_space function
-   * @param component Expects a ReactElement
-   * @returns a React cloneElement hook for rendering the component passed as a prop
+   * @description spaceB prop expects a element or React Component to be rendered after teaser content
    */
-  spaceRight?: ReactElement;
+  spaceB?: ReactElement;
 }
 
 const Teaser = (props: TeaserProps) => {
@@ -100,8 +96,8 @@ const Teaser = (props: TeaserProps) => {
     image_circle = false,
     item,
     layout,
-    spaceLeft,
-    spaceRight
+    spaceA,
+    spaceB
   } = props
 
   // main props
@@ -148,7 +144,7 @@ const Teaser = (props: TeaserProps) => {
         item_path={item_path}
         layout={layout}
       />
-     {render_space(spaceLeft)}
+     {render_space(spaceA)}
       <S.ContentWrap
         content_overlap={content_overlap}
         wrap_align={wrap_align}
@@ -183,7 +179,7 @@ const Teaser = (props: TeaserProps) => {
           />
         </S.Content>
       </S.ContentWrap>
-      {render_space(spaceRight)}
+      {render_space(spaceB)}
     </S.Box>
   )
 }
