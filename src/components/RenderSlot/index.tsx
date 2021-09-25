@@ -2,16 +2,11 @@ import { map } from 'lodash'
 import React from 'react'
 
 import Block from '../Block'
-import Teaser from '../Teaser'
+import Teaser, {TeaserProps} from '../Teaser'
 
-export type RenderSlotProps = {
-  color: string;
+export type RenderSlotProps = TeaserProps & {
   column_items: number;
   column_padding: string;
-  domain: string;
-  image_circle?: boolean;
-  layout: object;
-  has_number: boolean;
   slot: Array<any>;
 }
 
@@ -22,8 +17,9 @@ const RenderSlot = ({
   domain,
   image_circle,
   layout,
-  has_number,
-  slot
+  slot,
+  spaceA,
+  spaceB
 }: RenderSlotProps) => {
   
   const column_width = `calc(calc(100% - calc(${column_padding} * 16px)) / ${column_items})`
@@ -42,8 +38,8 @@ const RenderSlot = ({
             image_circle={image_circle}
             item={item}
             layout={layout}
-            number={key}
-            has_number={has_number}
+            spaceA={spaceA}
+            spaceB={spaceB}
           />
         </Block>
       ))}
