@@ -114,7 +114,7 @@
     ],
     "list2": [],
     "title": "",
-    "type": ""
+    "type": "default"
   },
   "slot3": {
     "color": "",
@@ -171,6 +171,6 @@
     ],
     "list2": [],
     "title": "",
-    "type": ""
+    "type": "default"
   }
 }
