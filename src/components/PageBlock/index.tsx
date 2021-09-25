@@ -1,3 +1,4 @@
+import { get } from 'lodash'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
@@ -10,6 +11,9 @@ import {
 import {
   PageBlockProps
 } from './types'
+import {
+  selectLayoutFromTemplate
+} from './utils'
 
 const PageBlock = ({
   cid,
@@ -21,48 +25,77 @@ const PageBlock = ({
   theme
 }: PageBlockProps) => {
   const { teasers, templates } = theme
-  console.log(`[PRENSA] PageBlock ${cid} ${name} ${type}`)
-  console.log('templates.default', templates)
+  // console.log(`[PRENSA] PageBlock ${cid} ${name} ${type}`)
   if(type === 'template100') {
+    const slot100 = selectLayoutFromTemplate({
+      block: 'slot100',
+      slot: slot1,
+      templates
+    })
     return (
       <Template100
         template={type}
         slot100={{
-          layout: teasers.image_large_left,
+          layouts: slot100,
           slot: slot1.list1
         }}
       />
     )
   }
   if(type === 'template7030') {
+    const slot70 = selectLayoutFromTemplate({
+      block: 'slot70',
+      slot: slot1,
+      templates
+    })
+    const slot30 = selectLayoutFromTemplate({
+      block: 'slot30',
+      slot: slot2,
+      templates
+    })
     return (
       <Template7030
         template={type}
         slot70={{
-          layout: teasers,
+          layouts: slot70,
           slot: slot1.list1
         }}
         slot30={{
-          layout: teasers.image_large_left,
+          layouts: slot30,
           slot: slot2.list1
         }}
       />
     )
   }
   if(type === 'template30') {
+    const slotLeft = selectLayoutFromTemplate({
+      block: 'slotLeft',
+      slot: slot1,
+      templates
+    })
+    const slotCenter = selectLayoutFromTemplate({
+      block: 'slotCenter',
+      slot: slot2,
+      templates
+    })
+    const slotRight = selectLayoutFromTemplate({
+      block: 'slotRight',
+      slot: slot3,
+      templates
+    })
     return (
       <Template33
         template={type}
         slotLeft={{
-          layout: teasers.image_large_left,
+          layouts: slotLeft,
           slot: slot1.list1
         }}
         slotCenter={{
-          layout: teasers.image_large_left,
+          layouts: slotCenter,
           slot: slot2.list1
         }}
         slotRight={{
-          layout: teasers.image_large_left,
+          layouts: slotRight,
           slot: slot3.list1
         }}
       />
