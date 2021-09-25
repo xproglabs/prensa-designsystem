@@ -68,18 +68,14 @@ export type TeaserProps = {
   color?: string;
   domain?: string;
   image_circle?: boolean;
-  item: object;
+  item: Object;
   layout?: LayoutProps;
   /**
-   * Render_space function
-   * @param component Expects a ReactElement
-   * @returns a React cloneElement hook for rendering the component passed as a prop
+   * @description spaceA prop expects a element or React Component to be rendered before teaser content
    */
-  spaceLeft?: ReactElement;
+  spaceA?: ReactElement;
   /**
-   * Render_space function
-   * @param component Expects a ReactElement
-   * @returns a React cloneElement hook for rendering the component passed as a prop
+   * @description spaceB prop expects a element or React Component to be rendered after teaser content
    */
-  spaceRight?: ReactElement;
+  spaceB?: ReactElement;
 }

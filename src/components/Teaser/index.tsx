@@ -16,8 +16,8 @@ const Teaser = (props: TeaserProps) => {
     image_circle = false,
     item,
     layout,
-    spaceLeft,
-    spaceRight
+    spaceA,
+    spaceB
   } = props
   // main props
   const item_path = get(item, 'url', false) || get(item, 'path', '')
@@ -51,8 +51,7 @@ const Teaser = (props: TeaserProps) => {
       box_height={box_height}
       box_pb={box_pb}
       box_pt={box_pt}
-      box_mb={box_mb}
-    >
+      box_mb={box_mb}>
       <RenderImage
         domain={domain}
         image_circle={image_circle}
@@ -60,7 +59,7 @@ const Teaser = (props: TeaserProps) => {
         item_path={item_path}
         layout={layout}
       />
-      {render_space(spaceLeft)}
+      {render_space(spaceA)}
       <S.ContentWrap
         content_overlap={content_overlap}
         wrap_align={wrap_align}
@@ -94,7 +93,7 @@ const Teaser = (props: TeaserProps) => {
           />
         </S.Content>
       </S.ContentWrap>
-      {render_space(spaceRight)}
+      {render_space(spaceB)}
     </S.Box>
   )
 }

@@ -15,6 +15,8 @@ const RenderSlot = ({
   layout,
   layouts,
   slot,
+  spaceA,
+  spaceB,
   theme
 }: RenderSlotProps) => {
   const { teasers } = theme
@@ -38,6 +40,8 @@ const RenderSlot = ({
               image_circle={image_circle}
               item={item}
               layout={teaser_layout}
+              spaceA={spaceA}
+              spaceB={spaceB}
             />
           </Block>
         )
