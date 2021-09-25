@@ -107,7 +107,7 @@ TopImage.propTypes = {
   caption: PropTypes.object,
   mb: PropTypes.array,
   value: PropTypes.string,
-  width: PropTypes.width,
+  width: PropTypes.string,
   type: PropTypes.oneOf(['image', 'video'])
 }
 
