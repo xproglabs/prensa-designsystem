@@ -1,67 +1,71 @@
 import { ReactElement } from 'react'
 
+type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
+
 type BoxTypes = {
-  align: [string, string];
-  aligny: [string, string];
-  pb: [number, number];
-  pt: [number, number];
-  mb: [number, number];
-  height: [string, string, string];
+  align?: [string, string];
+  aligny?: [string, string];
+  height?: [string, string] | [string, string, string];
+  pb?: SpacingType;
+  pt?: SpacingType;
+  mb?: SpacingType;
 }
 
 type BoxWrap = {
-  content_overlap: boolean;
-  align: [string, string];
-  aligny: [string, string]; 
-  height: [string, string];
-  mb: [number, number];
-  mt: [number, number];
-  width: [string, string];
+  content_overlap?: boolean;
+  align?: [string, string];
+  aligny?: [string, string]; 
+  height?: [string, string];
+  mb?: SpacingType;
+  mt?: SpacingType;
+  width?: [string, string];
 }
 
 type Image = {
-  dimensions: [string, string];
-  enabled: boolean;
-  height: [number, number];
-  width: [number, number];
-  box: [string, string];
-  mb: [number, number];
-  ml: [number, number];
+  dimension?: [string, string];
+  enabled?: boolean;
+  height?: [string, string];
+  width?: [string, string];
+  box?: [string, string];
+  mb?: SpacingType;
+  ml?: SpacingType;
 }
 
 type Subject = {
-  bg_color: string;
-  color: string;
-  font_size: [string, string];
-  enabled: boolean;
-  line_height: [string, string];
-  mb: [number, number];
+  bg_color?: string;
+  color?: string;
+  enabled?: boolean;
+  font_size?: [string, string];
+  line_height?: [string, string];
+  mb?: SpacingType;
 }
 
 type Subtitle = {
-  color: string;
-  font_size: [string, string];
-  enabled: boolean;
-  line_height: [string, string];
+  color?: string;
+  font_size?: [string, string];
+  enabled?: boolean;
+  line_height?: [string, string];
 }
 
 type Title = {
-  color: string;
-  element: string;
-  enabled: boolean;
-  font_size: [string, string];
-  line_height: [string, string];
-  mb: [number, number];
+  color?: string;
+  element?: string;
+  enabled?: boolean;
+  font_size?: [string, string];
+  line_height?: [string, string];
+  mb?: SpacingType;
 }
 
 export type LayoutProps = {
-  box?: BoxTypes;
-  box_wrap?: BoxWrap;
-  image?: Image;
-  datetime_enabled?: boolean;
+  box: BoxTypes;
+  box_wrap: BoxWrap;
+  carousel?: Object;
+  datetime_enabled: boolean;  
+  image: Image;
+  section?: Object;
   subject?: Subject;
-  subtitle?: Subtitle;
-  title?: Title;
+  subtitle: Subtitle;
+  title: Title;
 }
 
 export type TeaserProps = {
