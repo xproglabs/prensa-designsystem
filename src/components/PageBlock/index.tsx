@@ -34,8 +34,9 @@ const PageBlock = ({
     })
     return (
       <Template100
-        template={type}
         slot100={{
+          column_items: slot1.len1,
+          column_padding: '0px',
           layouts: slot100,
           slot: slot1.list1
         }}
@@ -55,12 +56,15 @@ const PageBlock = ({
     })
     return (
       <Template7030
-        template={type}
         slot70={{
+          column_items: slot1.len1,
+          column_padding: '0px',
           layouts: slot70,
           slot: slot1.list1
         }}
         slot30={{
+          column_items: slot2.len1,
+          column_padding: '0px',
           layouts: slot30,
           slot: slot2.list1
         }}
@@ -85,27 +89,38 @@ const PageBlock = ({
     })
     return (
       <Template33
-        template={type}
         slotLeft={{
+          column_items: slot1.len1,
+          column_padding: '0px',
           layouts: slotLeft,
           slot: slot1.list1
         }}
         slotCenter={{
+          column_items: slot2.len1,
+          column_padding: '0px',
           layouts: slotCenter,
           slot: slot2.list1
         }}
         slotRight={{
+          column_items: slot3.len1,
+          column_padding: '0px',
           layouts: slotRight,
           slot: slot3.list1
         }}
       />
     )
   }
+  const slot100 = selectLayoutFromTemplate({
+    block: 'slot100',
+    slot: slot1,
+    templates
+  })
   return (
     <TemplateWrap
-      template={type}
       slotItems={{
-        layout: teasers.image_large_left,
+        column_items: slot1.len1,
+        column_padding: '0px',
+        layouts: slot100,
         slot: slot1.list1
       }}
     />

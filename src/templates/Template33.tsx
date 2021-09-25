@@ -1,10 +1,11 @@
 import React from 'react'
 
 import Block from '../components/Block'
-import RenderSlot, { RenderSlotProps } from '../components/RenderSlot'
+import RenderSlot from '../components/RenderSlot'
+import { RenderSlotProps } from '../components/RenderSlot/types'
 
 type SlotProps = RenderSlotProps & {
-  section_title: () => void;
+  section_title?: () => void;
 }
 interface Template33Props {
   slotLeft: SlotProps;

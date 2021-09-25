@@ -65,8 +65,8 @@ export type LayoutProps = {
 }
 
 export type TeaserProps = {
-  color: string;
-  domain: string;
+  color?: string;
+  domain?: string;
   image_circle?: boolean;
   item: object;
   layout?: LayoutProps;

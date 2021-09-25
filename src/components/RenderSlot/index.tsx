@@ -4,15 +4,7 @@ import { withTheme } from 'styled-components'
 
 import Block from '../Block'
 import Teaser from '../Teaser'
-import { TeaserProps } from '../Teaser/types'
-
-export type RenderSlotProps = TeaserProps & {
-  column_items: number;
-  column_padding: string;
-  layouts: Array<string>;
-  slot: Array<any>;
-  theme: any;
-}
+import { RenderSlotProps } from './types'
 
 const RenderSlot = ({
   color,
