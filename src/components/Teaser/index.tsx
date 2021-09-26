@@ -17,6 +17,7 @@ const Teaser = (props: TeaserProps) => {
     image_circle = false,
     item,
     layout,
+    related,
     spaceA,
     spaceB
   } = props
@@ -87,8 +88,9 @@ const Teaser = (props: TeaserProps) => {
             layout={layout}
           />
           <RenderRelated
-            item={item}
+            color={color}
             layout={layout}
+            {...related}
           />
         </S.Content>
         <S.Content>

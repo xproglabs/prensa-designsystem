@@ -1,12 +1,15 @@
 export const TEMPLATES_FEATURED = {
   slot100: {
+    related: {
+      enabled: true
+    },
     slot: 'slot1.list1',
     layout: {
-      0: ['image_large_left'],
-      1: ['image_large_left'],
-      2: ['image_large_left', 'mostread'],
-      3: ['image_large_left', 'mostread', 'mostread'],
-      4: ['image_large_left', 'mostread', 'mostread', 'mostread'],
+      0: ['featured_related'],
+      1: ['featured_related'],
+      2: ['featured_related', 'hide'],
+      3: ['featured_related', 'hide', 'hide'],
+      4: ['featured_related', 'hide', 'hide', 'hide'],
     }
   }
 }

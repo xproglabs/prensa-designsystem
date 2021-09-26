@@ -5,6 +5,7 @@ import { withTheme } from 'styled-components'
 import Block from '../Block'
 import Teaser from '../Teaser'
 import { RenderSlotProps } from './types'
+import { parseTeaserProps } from './utils'
 
 const RenderSlot = ({
   color,
@@ -24,24 +25,22 @@ const RenderSlot = ({
   return (
     <React.Fragment>
       {map(slot, (item, key: number) => {
-        // select layout from pageblocks
-        let teaser_layout = layout
-        if(layouts && layouts[key]) {
-          teaser_layout = teasers[layouts[key]]
-        }
+        let teaser_props = parseTeaserProps(key, layout, layouts, slot, teasers)
+        if(!teaser_props)
+          return null
         return (
           <Block
             key={key}
-            width="100%"
+            width='100%'
             lg={{ width: column_width }}>
             <Teaser
               color={color}
               domain={domain}
               image_circle={image_circle}
               item={item}
-              layout={teaser_layout}
               spaceA={spaceA}
               spaceB={spaceB}
+              {...teaser_props}
             />
           </Block>
         )

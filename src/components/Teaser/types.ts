@@ -74,6 +74,7 @@ export type TeaserProps = {
   image_circle?: boolean;
   item: Object;
   layout?: LayoutProps;
+  related?: Object;
   /**
    * @description spaceA prop expects a element or React Component to be rendered before teaser content
    */

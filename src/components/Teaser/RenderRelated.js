@@ -3,7 +3,8 @@ import React from 'react'
 
 import * as S from './styled'
 
-const RenderRelated = ({ color, item, layout }) => {
+const RenderRelated = ({ color, item, items, layout }) => {
+  console.log('render.related', items)
   if(!item)
     return false
 
