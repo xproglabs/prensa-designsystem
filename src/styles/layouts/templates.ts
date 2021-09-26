@@ -1,15 +1,3 @@
-export interface TemplateProps {
-  box: Object;
-  box_wrap: Object;
-  carousel?: Object;
-  datetime_enabled: boolean;
-  image: Object;
-  title: Object;
-  section?: Object;
-  subject: Object;
-  subtitle: Object;
-}
-
 export const TEMPLATES_FEATURED = {
   slot100: {
     slot: 'slot1.list1',
