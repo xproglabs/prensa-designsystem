@@ -1,3 +1,77 @@
+# v1.7.0
+- Novas props "spaceA" e "spaceB" no Teaser 
+- Permite altura e largura parametrizada no article topimage 
+- Implement new CreateTheme function 
+- Feat/improve build 
+- Feat/grid related 
+- Ajustes no DateLine do Article 
+- Adiciona Templates e Teasers no prensa 
+- Ajustes no Article 
+- Pack de correções no Article 
+- Versão 1.6.0
+- Remove componente SocialShare web + peerDependecy "react-share"
+- Article top medias
+- cria Anchor para as Tags no Article
+- Otimiza motor de build para aceitar typescript
+- Corrige inconsistência nas páginas de matéria 
+- Corrige imagem no corpo do texto 
+- Corrige a legenda no topimage 
+- Novo componente SocialShare para web 
+- Fix nos ads TextBody, TopImage e TopBody 
+- Adiciona novos blocos de anúncio no Article - TopImage e TopBody 
+- Splitta props do SocialShare em itemProps e props do container 
+- Separa props do SocialShare em itemProps e props default do container 
+- Disponibiliza "align" no styled-system e conecta styled do SocialShare com a função align 
+- Ativa itinerantProp na prop size no Article/Share 
+- Adiciona min-width nos ícones para evitar quebra nos fronts
+- Aplica margin styled function no Article/Share
+- Remove margin-right no último ícone em Article/Share
+- Altera props específicas por um spread para permitir maior customização
+- Adiciona props "url" para permitir compartilhamento com link fixo no SocialShare(Article/Share)
+- Otimização na arquitetura do componente Button
+- Remove prop name nos títulos do AccordionEditorial
+- Realiza otimizações no Typography para um menor CSS final
+- Corrige inconsistência de layout no container do Field
+- remove margin no svg do AccordionEditorial no arquivo correto
+- remove margin no svg do AccordionEditorial
+- Permite importar o Article/Share na raíz do prensa como SocialShare
+- Redefine o maxWidth dos elementos do textbody
+- Aplica novo parse de dimensões no Block
+- Corrige inconsistência no estilo de links no corpo do texto
+- Parametriza o componente de anuncio no textbody
+- Corrige comportamento incorreto na prop fullWidth do Button
+- Ajustes no Article e no Button 
+- Refatora componente MenuEditorials para AccordionEditorial
+- Otimiza componente AdBlock 
+- Revert "Ajustes no sideMenu (branche com nova origin)"
+- Revisão nas props do componente Icon
+- Adiciona função getColor ao styled-system
+- Adiciona métodos getImagePath e pathToImage na build Utils
+- Fix/amp body enrich (O MOGI)
+- Altera props default no Article/Share 
+- Altera props default para o componente Share do Article
+- Ajustes no sideMenu (branche com nova origin) 
+- Configura BUILD para o styled-system do prensa
+- Ajustes no SideMenu (items)
+- Ajustes no Typography para compatibilidade de <a>
+- Ajustes no componente SideMenu e MenuEditorials
+- Adiciona tag a no Typography
+- Adiciona possibilidade de customizar estilos no MenuEditorials
+- Novo componente SideMenu e MenuEditorials
+- Ajusta id para embed Tweet no parseBody
+- Novo componente Share AMP no módulo Article
+- Fix/article colors 
+- Altera nome da prop tweetId para url no embed do Twitter
+- Feat/aria label button 
+- Atualiza componente Medias no Article [Medias v0.1] [styled-system: margin v0.1] 
+- Adiciona galeria de imagem no formato amp 
+- Ajusta o estilo do embed do vídeo do youtube 
+- Adiciona embeds no corpo da matéria AMP
+- Habilitar os headings H2, H3 e o H4 no TextBody
+- (WIP) Desenvolver módulo Article com suporte ao Amp 
+- Criar um componente Dialog para servir ao banner LGPD 
+- Adiciona forwardRef no componente Field
+- Ajustes no layout responsivo e prop onEnterKey 
 # v1.5.4 
 - Breaking Change: Adiciona forwardRef no componente Field
 - Adiciona prop Size no componente Field
