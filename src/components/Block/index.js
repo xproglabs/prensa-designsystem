@@ -5,6 +5,15 @@ import { withTheme } from 'styled-components'
 
 import { parseProps } from './parseRender'
 
+const Component = styled.div`
+  ${props => parseProps('', props)};
+  ${props => props.xs && parseProps('xs', props)};
+  ${props => props.sm && parseProps('sm', props)};
+  ${props => props.md && parseProps('md', props)};
+  ${props => props.lg && parseProps('lg', props)};
+  ${props => props.xl && parseProps('xl', props)};
+`
+
 const Block = ({
   children,
   className,
