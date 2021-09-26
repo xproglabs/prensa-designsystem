@@ -15,14 +15,11 @@ jobs:
       with:
         node-version: ${{ matrix.node_version }}
     
-    - name: Install packages
-      run: npm install
-          
-    - name: Build
-      run: npm run build
-      
-    - name: Lint
-      run: npm run eslint
+    - name: Install dependencies, build and lint
+      run: | 
+        npm install
+        npm run build
+        npm run eslint
           
     - name: Slack notifcation
       uses: 8398a7/action-slack@v3
