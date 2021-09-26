@@ -1,4 +1,4 @@
-# v1.7.0
+# v1.6.10
 - Novas props "spaceA" e "spaceB" no Teaser 
 - Permite altura e largura parametrizada no article topimage 
 - Implement new CreateTheme function 
