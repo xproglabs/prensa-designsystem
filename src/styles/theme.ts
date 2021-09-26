@@ -1,4 +1,4 @@
-import { LayoutProps } from '../components/Teaser'
+import { LayoutProps } from '../components/Teaser/types'
 import { merge } from 'lodash'
 import { default_theme } from './default'
 

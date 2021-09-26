@@ -62,6 +62,7 @@ export type LayoutProps = {
   carousel?: Object;
   datetime_enabled?: boolean;  
   image?: Image;
+  related?: Object;
   section?: Object;
   subject?: Subject;
   subtitle?: Subtitle;
