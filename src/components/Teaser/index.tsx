@@ -87,16 +87,18 @@ const Teaser = (props: TeaserProps) => {
             item={item}
             layout={layout}
           />
-          <RenderRelated
-            color={color}
-            layout={layout}
-            {...related}
-          />
         </S.Content>
         <S.Content>
           <RenderDatetime
             item={item}
             layout={layout}
+          />
+        </S.Content>
+        <S.Content>
+          <RenderRelated
+            color={color}
+            layout={layout}
+            {...related}
           />
         </S.Content>
       </S.ContentWrap>

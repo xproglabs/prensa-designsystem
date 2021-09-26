@@ -106,6 +106,9 @@ export const TEASER_FEATURED_RELATED: LayoutProps = {
     font_size: ['24px', '24px'],
     line_height: ['28px', '28px']
   },
+  related: {
+    enabled: true
+  },
   subject: SUBJECT_DEFAULT,
   subtitle: {
     enabled: false
