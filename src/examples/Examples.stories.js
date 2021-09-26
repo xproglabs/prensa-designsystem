@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import PageBlock from '../components/PageBlock'
 import DATA_HOME_100 from '../mockup/hojeemdia/7.172.json'
 import DATA_HOME_7030 from '../mockup/hojeemdia/7.173.json'
+import DATA_HOME_FEAT from '../mockup/hojeemdia/7.174.json'
 import DATA_HOME_30 from '../mockup/hojeemdia/7.204.json'
 import { theme } from '../styles/demo/hojeemdia'
 import TemplateContainer from '../templates/TemplateContainer'
@@ -44,6 +45,15 @@ export const Home30 = () => {
       mb={[2, 2]}
       mt={[2, 2]}>
       <PageBlock {...DATA_HOME_30} />
+    </TemplateContainer>
+  )
+}
+export const HomeFeatured = () => {
+  return (
+    <TemplateContainer
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock {...DATA_HOME_FEAT} />
     </TemplateContainer>
   )
 }

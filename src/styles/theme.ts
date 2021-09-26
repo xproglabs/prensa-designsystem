@@ -12,7 +12,10 @@ import {
   TEASER_LEFTIMAGE_SMALL,
   TEASER_MOSTREAD,
 } from './layouts/teasers'
-import { TEMPLATES_DEFAULT } from './layouts/templates'
+import {
+  TEMPLATES_DEFAULT,
+  TEMPLATES_FEATURED
+} from './layouts/templates'
 //TODO: Move to styled-system
 import { parseColor, parseBgColor, parseFontColor } from './parsers/parseColors'
 import { parseCustom, parseCustomDef } from './parsers/parseCustom'
@@ -122,7 +125,8 @@ export function CreateTheme(data: ThemeTypes) {
       mostread: TEASER_MOSTREAD
     },
     templates: {
-      default: TEMPLATES_DEFAULT
+      default: TEMPLATES_DEFAULT,
+      featured: TEMPLATES_FEATURED
     },
     parseBgColor,
     parseCustom,

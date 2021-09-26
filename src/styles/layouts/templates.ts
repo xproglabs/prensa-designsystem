@@ -12,7 +12,14 @@ export interface TemplateProps {
 
 export const TEMPLATES_FEATURED = {
   slot100: {
-    slot: 'slot1.list1'
+    slot: 'slot1.list1',
+    layout: {
+      0: ['image_large_left'],
+      1: ['image_large_left'],
+      2: ['image_large_left', 'mostread'],
+      3: ['image_large_left', 'mostread', 'mostread'],
+      4: ['image_large_left', 'mostread', 'mostread', 'mostread'],
+    }
   }
 }
 
