@@ -3,6 +3,7 @@ import React, { cloneElement, ReactElement } from 'react'
 
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
+import { RenderRelated } from './RenderRelated'
 import { RenderSubject } from './RenderSubject'
 import { RenderSubtitle } from './RenderSubtitle'
 import { RenderTitle } from './RenderTitle'
@@ -82,6 +83,10 @@ const Teaser = (props: TeaserProps) => {
             layout={layout}
           />
           <RenderSubtitle
+            item={item}
+            layout={layout}
+          />
+          <RenderRelated
             item={item}
             layout={layout}
           />
