@@ -102,29 +102,6 @@ export default [
     ]
   },
   {
-    input: 'src/templates/index.ts',
-    output: [
-      {
-        file: 'components/templates.js',
-        format: 'cjs',
-        sourcemap: true
-      },
-      {
-        file: 'components/templates.esm.js',
-        format: 'es',
-        sourcemap: true
-      }
-    ],
-    plugins: [
-      analyze(),
-      babel(),
-      commonjs(),
-      peerDepsExternal(),
-      resolve(),
-      typescript({ useTsconfigDeclarationDir: true })
-    ]
-  },
-  {
     input: 'src/utils.ts',
     output: [
       {

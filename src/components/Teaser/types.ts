@@ -57,22 +57,28 @@ type Title = {
 }
 
 export type LayoutProps = {
-  box: BoxTypes;
-  box_wrap: BoxWrap;
+  box?: BoxTypes;
+  box_wrap?: BoxWrap;
   carousel?: Object;
-  datetime_enabled: boolean;  
-  image: Image;
+  datetime_enabled?: boolean;  
+  image?: Image;
   section?: Object;
   subject?: Subject;
-  subtitle: Subtitle;
-  title: Title;
+  subtitle?: Subtitle;
+  title?: Title;
 }
 
 export type TeaserProps = {
   color?: string;
   domain?: string;
   image_circle?: boolean;
+  /**
+   * @description expects an object with teaser data
+   */
   item: Object;
+  /**
+   * @description expects an object with layout configuration for teaser
+   */
   layout?: LayoutProps;
   related?: Object;
   /**

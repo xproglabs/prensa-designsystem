@@ -1,7 +1,7 @@
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import Block from '../components/Block'
+import Block from '../Block'
 
 const TemplateContainer = ({
   children,
