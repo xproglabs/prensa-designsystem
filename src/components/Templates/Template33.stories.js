@@ -2,11 +2,11 @@ import { get } from 'lodash'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { theme } from '../styles/theme'
-import TemplateContainer from '../templates/TemplateContainer'
+import { theme } from '../../styles/theme'
 import { SectionTitle } from './styled'
 import { Template33 as Template } from './Template33'
 import { data } from './Template33.data'
+import TemplateContainer from './TemplateContainer'
 
 export default {
   title: 'Templates',

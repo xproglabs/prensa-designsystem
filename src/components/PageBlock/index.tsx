@@ -7,7 +7,7 @@ import {
   Template7030,
   Template33,
   TemplateWrap
-} from '../../templates'
+} from '../Templates'
 import {
   PageBlockProps
 } from './types'

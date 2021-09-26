@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Block from '../components/Block'
-import RenderSlot from '../components/RenderSlot'
-import { RenderSlotProps } from '../components/RenderSlot/types'
+import Block from '../Block'
+import RenderSlot from '../RenderSlot'
+import { RenderSlotProps } from '../RenderSlot/types'
 
 interface Props {
   slot70: RenderSlotProps;
