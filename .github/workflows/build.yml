@@ -20,6 +20,9 @@ jobs:
           
     - name: Build
       run: npm run build
+      
+    - name: Lint
+      run: npm run eslint
           
     - name: Slack notifcation
       uses: 8398a7/action-slack@v3
