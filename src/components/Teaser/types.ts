@@ -1,5 +1,7 @@
 import { ReactElement } from 'react'
 
+import { RelatedRenderProps } from './RelatedTypes'
+
 type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
 type BoxTypes = {
@@ -81,7 +83,7 @@ export type TeaserProps = {
    * @description expects an object with layout configuration for teaser
    */
   layout?: LayoutProps;
-  related?: Object;
+  related?: RelatedRenderProps;
   /**
    * @description spaceA prop expects a element or React Component to be rendered before teaser content
    */
