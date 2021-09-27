@@ -1,10 +1,13 @@
+import { get } from 'lodash'
+
 export const parseTeaserProps = (key, layout, layouts, slot, teasers) => {
   // select layout from pageblocks
   let related_props = {}
   let teaser_layout = layout
-  if(layouts && layouts[key]) {
+  let layout_selected = get(layouts, `[${key}]`, false)
+  if (layouts && layout_selected) {
     // handle featured related props
-    if(layouts[key] === 'featured_related') {
+    if (layout_selected === 'featured_related') {
       const related_list = slot
       related_list.shift()
       related_props = {
@@ -13,10 +16,10 @@ export const parseTeaserProps = (key, layout, layouts, slot, teasers) => {
       }
     }
     // check if teaser is hide (featured related scenario)
-    if(layouts[key] === 'hide') {
+    if (layout_selected === 'hide') {
       return null
     }
-    teaser_layout = teasers[layouts[key]]
+    teaser_layout = teasers[layout_selected]
   }
   return {
     layout: teaser_layout,
