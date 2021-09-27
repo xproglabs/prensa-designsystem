@@ -14,7 +14,7 @@ type BoxTypes = {
 type BoxWrap = {
   content_overlap?: boolean;
   align?: [string, string];
-  aligny?: [string, string]; 
+  aligny?: [string, string];
   height?: [string, string];
   mb?: SpacingType;
   mt?: SpacingType;
@@ -60,7 +60,7 @@ export type LayoutProps = {
   box?: BoxTypes;
   box_wrap?: BoxWrap;
   carousel?: Object;
-  datetime_enabled?: boolean;  
+  datetime_enabled?: boolean;
   image?: Image;
   related?: Object;
   section?: Object;
@@ -91,3 +91,4 @@ export type TeaserProps = {
    */
   spaceB?: ReactElement;
 }
+

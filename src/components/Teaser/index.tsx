@@ -1,9 +1,9 @@
 import { get } from 'lodash'
 import React, { cloneElement, ReactElement } from 'react'
 
+import RelatedRender from './RelatedRender'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
-import { RenderRelated } from './RenderRelated'
 import { RenderSubject } from './RenderSubject'
 import { RenderSubtitle } from './RenderSubtitle'
 import { RenderTitle } from './RenderTitle'
@@ -95,7 +95,7 @@ const Teaser = (props: TeaserProps) => {
           />
         </S.Content>
         <S.Content>
-          <RenderRelated
+          <RelatedRender
             color={color}
             layout={layout}
             {...related}

@@ -1,15 +1,20 @@
 import { get, map } from 'lodash'
 import React from 'react'
 
-import * as S from './styled'
+import RelatedStyled from './RelatedStyled'
+import { RelatedRenderProps } from './RelatedTypes'
 
-const RenderRelated = ({ color, items, layout }) => {
+const Related = ({
+  color,
+  items,
+  layout
+}: RelatedRenderProps) => {
   const font_color = color ? color : get(layout, 'related.color', 'primary1')
   const font_size = get(layout, 'related.font_size', ['14px', '14px'])
   const line_height = get(layout, 'related.line_height', ['16px', '16px'])
   const mb = get(layout, 'related.mb', [2, 2])
   return (
-    <S.Related
+    <RelatedStyled
       color={font_color}
       font_size={font_size}
       line_height={line_height}
@@ -21,8 +26,8 @@ const RenderRelated = ({ color, items, layout }) => {
           </p>
         )
       }))}
-    </S.Related>
+    </RelatedStyled>
   )
 }
 
-export { RenderRelated }
+export default Related
