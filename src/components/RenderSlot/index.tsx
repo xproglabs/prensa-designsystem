@@ -40,7 +40,8 @@ const RenderSlot = ({
               item={item}
               spaceA={spaceA}
               spaceB={spaceB}
-              {...teaser_props}
+              layout={teaser_props.layout}
+              related={teaser_props.related}
             />
           </Block>
         )

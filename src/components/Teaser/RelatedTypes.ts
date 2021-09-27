@@ -13,7 +13,8 @@ export interface RelatedProps {
 }
 
 export interface RelatedRenderProps {
-  color: string;
+  color?: string;
+  enabled?: boolean;
   items?: Array<RelatedItemProps>;
-  layout: LayoutProps;
+  layout?: LayoutProps;
 }
