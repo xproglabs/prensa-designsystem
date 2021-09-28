@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { theme } from '../../styles/theme'
-import { ErrorPage } from './index'
+import { ErrorPage } from './index.tsx'
 
 export default {
   title: 'ErrorPage',
@@ -12,14 +12,7 @@ export default {
 export const Default = () => {
   return(
     <ThemeProvider theme={theme}>
-      <ErrorPage
-        {...{
-          buttonText: 'Voltar',
-          message: 'Página não encontrada',
-          title: 'Ops!',
-          color: 'black'
-        }}
-      />
+      <ErrorPage/>
     </ThemeProvider>
   )
 }

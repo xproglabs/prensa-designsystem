@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { PageTitleProps, ButtonProps, MessageProps } from './types'
 import Block from '../Block'
 import Button from '../Button'
 import Typography from '../Typography'
@@ -10,7 +10,10 @@ import {
   MESSAGE, 
   PAGE_TITLE } from './consts'
 
-export const ButtonGoBack = ({ buttonAction, children, color }) =>
+export const ButtonGoBack = ({ 
+  buttonAction, 
+  children, 
+  color }: ButtonProps) =>
   <Button
     {...BUTTON_GO_BACK}
     color={color}
@@ -30,15 +33,20 @@ export const ContentError = ({ children }) =>
     {children}
   </Block>
 
-export const Message = ({ text  }) =>
+export const Message = ({ text }: MessageProps) =>
   <Typography
     {...MESSAGE}
     dangerouslySetInnerHTML={text}>
   </Typography>
 
-export const PageTitle = ({ color, text }) =>
+export const PageTitle = ({ 
+  children,
+  color, 
+  text 
+}: PageTitleProps) =>
   <Typography
     {...PAGE_TITLE}
     color={color}
     dangerouslySetInnerHTML={text}>
+    {children}
   </Typography>
