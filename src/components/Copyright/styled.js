@@ -1,6 +1,6 @@
-import { Block } from 'prensa'
 import React from 'react'
 
+import Block from '../Block'
 import { 
   CONTAINER_ATEX, 
   CONTAINER_BOTTOM, 

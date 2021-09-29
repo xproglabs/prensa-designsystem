@@ -1,13 +1,18 @@
-import LogoAtex from 'assets/LogoAtex'
-import LogoXprog from 'assets/LogoXprog'
-import { map } from 'lodash'
 import React from 'react'
-import { withTheme } from 'styled-components'
 
-import * as S from '../styled'
-import TextItem from './item'
+import LogoAtex from '../../icons/LogoAtex'
+import LogoXprog from '../../icons/LogoXprog'
+import TextItem from './Item'
+import { CopyrightProps } from './types'
 
-const Copyright = ({ color, text }) => {
+import * as S from './styled'
+
+const Copyright = ({ 
+  color, 
+  text, 
+  textXprog, 
+  textAtex 
+} : CopyrightProps ) => {
   return (
     <S.ContainerCopyright>
       <S.ContainerCopyrightItems>
@@ -15,13 +20,13 @@ const Copyright = ({ color, text }) => {
       </S.ContainerCopyrightItems>    
       <S.ContainerCompanies>
         <S.ContainerXprog>
-          <TextItem text={text} />
+          <TextItem color={color} text={textXprog} />
           <a href='https://xprog.com.br' target='_blank' rel='noreferrer' aria-label='Marca da Xprog'>
             <LogoXprog />
           </a>  
         </S.ContainerXprog>
         <S.ContainerAtex>
-          <TextItem color={color} text={text}></TextItem>
+          <TextItem color={color} text={textAtex}></TextItem>
           <a href='https://www.atex.com' target='_blank' rel='noreferrer' aria-label='Marca da Atex'>
             <LogoAtex />
           </a>  
@@ -30,4 +35,4 @@ const Copyright = ({ color, text }) => {
     </S.ContainerCopyright>  
   )
 }
-export default withTheme(Copyright)
+export default Copyright

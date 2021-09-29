@@ -23,9 +23,6 @@ const CONTAINER_COPYRIGHT = {
   py: 5,
   px: 2,
   width: 'calc(100% - 32px)',
-  custom: `
-    max-width: 1280px;
-  `,
   lg: {
     align: 'row',
     alignx: 'between',
@@ -34,7 +31,7 @@ const CONTAINER_COPYRIGHT = {
 }
 
 const CONTAINER_COPYRIGHT_ITEMS = {
-  alignx: 'left',
+  alignx: 'center',
   mb: 3,
   lg: {
     mb: '0px'
