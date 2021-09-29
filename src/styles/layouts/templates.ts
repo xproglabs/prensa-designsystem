@@ -21,7 +21,7 @@ export const TEMPLATES_DEFAULT = {
       0: ['image_large_left'],
       1: ['image_large_left'],
       2: ['image_large_left', 'related'],
-      3: ['image_two', 'image_two', 'mostread'],
+      3: ['image_two', 'image_two', 'featured'],
       4: ['image_two', 'image_two', 'mostread', 'mostread'],
     }
   },

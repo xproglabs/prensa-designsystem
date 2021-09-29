@@ -1,5 +1,9 @@
 import { LayoutProps } from './types'
 
+export interface RelatedAreaProps {
+  children: any;
+}
+
 export interface RelatedItemProps {
   name: string;
 }
@@ -9,6 +13,7 @@ export interface RelatedProps {
   color: string;
   font_size: Array<String>;
   line_height: Array<String>;
+  item_path: String;
   mb: Array<String>;
 }
 

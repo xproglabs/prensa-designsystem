@@ -73,17 +73,17 @@ const PageBlock = ({
   }
   if(type === 'template30') {
     const slotLeft = selectLayoutFromTemplate({
-      block: 'slotLeft',
+      block: 'slot30',
       slot: slot1,
       templates
     })
     const slotCenter = selectLayoutFromTemplate({
-      block: 'slotCenter',
+      block: 'slot30',
       slot: slot2,
       templates
     })
     const slotRight = selectLayoutFromTemplate({
-      block: 'slotRight',
+      block: 'slot30',
       slot: slot3,
       templates
     })

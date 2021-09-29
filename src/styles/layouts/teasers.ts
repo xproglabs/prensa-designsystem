@@ -33,7 +33,7 @@ export const TEASER_FEATURED: LayoutProps = {
     aligny: ['top', 'between'],
     height: ['auto', '366px']
   },
-  datetime_enabled: true,
+  datetime_enabled: false,
   image: {
     enabled: false,
     mb: [0, 0]
@@ -96,7 +96,7 @@ export const TEASER_FEATURED_RELATED: LayoutProps = {
     aligny: ['top', 'top'],
     height: ['auto', 'auto']
   },
-  datetime_enabled: true,
+  datetime_enabled: false,
   image: {
     enabled: false,
     mb: [0, 0]
