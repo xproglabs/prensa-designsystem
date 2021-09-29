@@ -47,6 +47,18 @@ export const Template100 = () => {
     querie: theme.queries.lg
   }
 
+  const Component = data => (
+    <pre
+      style={{
+        minWidth: '50px',
+        minHeight: '50px',
+        backgroundColor: 'blue'
+      }}
+    >
+      {data.children}
+    </pre>  
+  )
+
   return (
     <Container
       mb={[2, 2]}
@@ -66,7 +78,9 @@ export const Template100 = () => {
           column_items: items.length > 4 ? 4 : items.length,
           column_padding: items.length - 1,
           layout: selected_layout,
-          slot: items
+          slot: items,
+          spaceA: <Component>left</Component>,
+          spaceB: <Component>right</Component>
         }}
       />
     </Container>

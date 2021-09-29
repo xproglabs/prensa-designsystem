@@ -1,9 +1,8 @@
 import { get } from 'lodash'
-import React from 'react'
+import React, {cloneElement, ReactElement} from 'react'
 
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
-import { RenderNumber } from './RenderMostReadNumber'
 import { RenderSubject } from './RenderSubject'
 import { RenderSubtitle } from './RenderSubtitle'
 import { RenderTitle } from './RenderTitle'
@@ -79,8 +78,14 @@ export type TeaserProps = {
   image_circle?: boolean;
   item: object;
   layout?: LayoutProps;
-  number?: number;
-  has_number?: boolean;
+  /**
+   * @description spaceA prop expects a element or React Component to be rendered before teaser content
+   */
+  spaceA?: ReactElement;
+  /**
+   * @description spaceB prop expects a element or React Component to be rendered after teaser content
+   */
+  spaceB?: ReactElement;
 }
 
 const Teaser = (props: TeaserProps) => {
@@ -91,8 +96,8 @@ const Teaser = (props: TeaserProps) => {
     image_circle = false,
     item,
     layout,
-    number,
-    has_number
+    spaceA,
+    spaceB
   } = props
 
   // main props
@@ -113,6 +118,16 @@ const Teaser = (props: TeaserProps) => {
   const wrap_mt = get(layout, 'box_wrap.mt', [0, 0])
   const wrap_width = get(layout, 'box_wrap.width', ['100%', '100%'])
 
+  /**
+   * Render_space function
+   * @param component Expects a ReactElement
+   * @returns a React cloneElement hook for rendering the component passed as a prop
+   */
+  const render_space = (component: ReactElement) => {
+    if (!component) return null
+    return cloneElement(component)
+  }
+
   return (
     <S.Box
       box_align={box_align}
@@ -129,10 +144,7 @@ const Teaser = (props: TeaserProps) => {
         item_path={item_path}
         layout={layout}
       />
-      <RenderNumber
-        number={number}
-        has_number={has_number}
-      />
+     {render_space(spaceA)}
       <S.ContentWrap
         content_overlap={content_overlap}
         wrap_align={wrap_align}
@@ -167,6 +179,7 @@ const Teaser = (props: TeaserProps) => {
           />
         </S.Content>
       </S.ContentWrap>
+      {render_space(spaceB)}
     </S.Box>
   )
 }
