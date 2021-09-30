@@ -64,7 +64,7 @@ export const Content = ({ children, mb }) =>
 
 Content.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  mb: PropTypes.string
+  mb: PropTypes.array
 }
 
 export const DateLine = ({ children, mb }) => 
