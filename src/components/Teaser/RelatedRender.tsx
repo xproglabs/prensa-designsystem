@@ -9,10 +9,10 @@ const Related = ({
   items,
   layout
 }: RelatedRenderProps) => {
-  const font_color = color ? color : get(layout, 'related.color', 'black')
-  const font_size = get(layout, 'related.font_size', ['14px', '14px'])
-  const line_height = get(layout, 'related.line_height', ['16px', '16px'])
-  const mb = get(layout, 'related.mb', [2, 2])
+  const font_color = color ? color : get(layout, 'color', 'black')
+  const font_size = get(layout, 'font_size', ['14px', '14px'])
+  const line_height = get(layout, 'line_height', ['16px', '16px'])
+  const mb = get(layout, 'mb', [2, 2])
   return (
     <RelatedArea>
       {(map(items, (item, key) => {

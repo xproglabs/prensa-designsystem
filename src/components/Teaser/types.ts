@@ -1,5 +1,3 @@
-import { ReactElement } from 'react'
-
 import { RelatedRenderProps } from './RelatedTypes'
 
 type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]

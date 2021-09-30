@@ -21,5 +21,5 @@ export interface RelatedRenderProps {
   color?: string;
   enabled?: boolean;
   items?: Array<RelatedItemProps>;
-  layout?: LayoutProps;
+  layout?: LayoutProps['related'];
 }
