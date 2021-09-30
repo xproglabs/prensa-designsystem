@@ -1,21 +1,10 @@
 import React from 'react'
 import Block from '../components/Block'
-import RenderSlot from '../components/RenderSlot'
-
-export type SlotProps = {
-  color: string;
-  column_items: number;
-  column_padding: string;
-  domain: string;
-  image_circle: boolean;
-  layout: object;
-  has_number: boolean;
-  slot: Array<any>;
-}
+import RenderSlot, {RenderSlotProps} from '../components/RenderSlot'
 
 interface Props {
-  slot70: SlotProps;
-  slot30: SlotProps;
+  slot70: RenderSlotProps;
+  slot30: RenderSlotProps;
 }
 
 const Template7030 = ({ slot70, slot30 }: Props) => {
