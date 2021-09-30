@@ -2,7 +2,7 @@ import { ReactElement } from 'react'
 
 import { LayoutProps } from '../Teaser/types'
 
-export type RenderSlotProps =  {
+export type RenderSlotProps = {
   color?: string;
   column_items: number;
   column_padding: string;

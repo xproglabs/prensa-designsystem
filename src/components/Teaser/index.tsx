@@ -1,5 +1,5 @@
 import { get } from 'lodash'
-import React, { cloneElement, ReactElement } from 'react'
+import React from 'react'
 
 import RelatedRender from './RelatedRender'
 import { RenderDatetime } from './RenderDateTime'
@@ -17,9 +17,7 @@ const Teaser = (props: TeaserProps) => {
     image_circle = false,
     item,
     layout,
-    related,
-    spaceA,
-    spaceB
+    related
   } = props
   // main props
   const item_path = get(item, 'url', false) || get(item, 'path', '')
@@ -37,15 +35,6 @@ const Teaser = (props: TeaserProps) => {
   const wrap_mb = get(layout, 'box_wrap.mb', [0, 0])
   const wrap_mt = get(layout, 'box_wrap.mt', [0, 0])
   const wrap_width = get(layout, 'box_wrap.width', ['100%', '100%'])
-  /**
-   * Render_space function
-   * @param component Expects a ReactElement
-   * @returns a React cloneElement hook for rendering the component passed as a prop
-   */
-  const render_space = (component: ReactElement) => {
-    if (!component) return null
-    return cloneElement(component)
-  }
   return (
     <S.Box
       box_align={box_align}
@@ -61,7 +50,6 @@ const Teaser = (props: TeaserProps) => {
         item_path={item_path}
         layout={layout}
       />
-      {render_space(spaceA)}
       <S.ContentWrap
         content_overlap={content_overlap}
         wrap_align={wrap_align}
@@ -102,7 +90,6 @@ const Teaser = (props: TeaserProps) => {
           />
         </S.Content>
       </S.ContentWrap>
-      {render_space(spaceB)}
     </S.Box>
   )
 }

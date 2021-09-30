@@ -1,5 +1,5 @@
 import { map } from 'lodash'
-import React from 'react'
+import React, { cloneElement, ReactElement } from 'react'
 import { withTheme } from 'styled-components'
 
 import Block from '../Block'
@@ -22,8 +22,18 @@ const RenderSlot = ({
 }: RenderSlotProps) => {
   const { teasers } = theme
   const column_width = `calc(calc(100% - calc(${column_padding} * 16px)) / ${column_items})`
+  /**
+   * Render_space function
+   * @param component Expects a ReactElement
+   * @returns a React cloneElement hook for rendering the component passed as a prop
+   */
+  const render_space = (component: ReactElement) => {
+    if (!component) return null
+    return cloneElement(component)
+  }
   return (
     <React.Fragment>
+      {render_space(spaceA)}
       {map(slot, (item, key: number) => {
         let teaser_props = parseTeaserProps(key, layout, layouts, slot, teasers)
         if(!teaser_props)
@@ -38,14 +48,13 @@ const RenderSlot = ({
               domain={domain}
               image_circle={image_circle}
               item={item}
-              spaceA={spaceA}
-              spaceB={spaceB}
               layout={teaser_props.layout}
               related={teaser_props.related}
             />
           </Block>
         )
       })}
+      {render_space(spaceB)}
     </React.Fragment>
   )
 }

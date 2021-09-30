@@ -83,14 +83,9 @@ export type TeaserProps = {
    * @description expects an object with layout configuration for teaser
    */
   layout?: LayoutProps;
+  /**
+   * @description expects an object with layout configuration for related news
+   */
   related?: RelatedRenderProps;
-  /**
-   * @description spaceA prop expects a element or React Component to be rendered before teaser content
-   */
-  spaceA?: ReactElement;
-  /**
-   * @description spaceB prop expects a element or React Component to be rendered after teaser content
-   */
-  spaceB?: ReactElement;
 }
 
