@@ -35,18 +35,16 @@ export const ContentError = ({ children }) =>
 
 export const Message = ({ text }: MessageProps) =>
   <Typography
-    {...MESSAGE}
-    dangerouslySetInnerHTML={text}>
+    {...MESSAGE}>
+    {text}
   </Typography>
 
 export const PageTitle = ({ 
-  children,
   color, 
   text 
 }: PageTitleProps) =>
   <Typography
     {...PAGE_TITLE}
-    color={color}
-    dangerouslySetInnerHTML={text}>
-    {children}
+    color={color}>
+    {text}
   </Typography>
