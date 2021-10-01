@@ -3,15 +3,8 @@ import {
   SpacingType
 } from './types'
 
-export interface RelatedAreaProps {
-  children: any;
-}
 
 export interface RelatedItemProps {
-  name: string;
-}
-
-export interface RelatedProps {
   children: any;
   color: string;
   font_size: Array<String>;
@@ -20,9 +13,13 @@ export interface RelatedProps {
   mb?: SpacingType;
 }
 
-export interface RelatedRenderProps {
+export interface RelatedProps {
   color?: string;
   enabled?: boolean;
-  items?: Array<RelatedItemProps>;
+  items?: Array<RelatedTeaserProps>;
   layout?: LayoutProps['related'];
+}
+
+export interface RelatedTeaserProps {
+  name: string;
 }

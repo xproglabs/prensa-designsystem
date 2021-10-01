@@ -2,15 +2,10 @@ import React from 'react'
 
 import Block from '../Block'
 import Typography from '../Typography'
-import {
-  RelatedAreaProps,
-  RelatedProps
-} from './RelatedTypes'
+import { RelatedItemProps } from './RelatedTypes'
 import * as S from './styled'
 
-const RelatedArea = ({
-  children
-}: RelatedAreaProps) => {
+const RelatedArea = ({ children }) => {
   return (
     <Block
       align="column"
@@ -34,7 +29,7 @@ const RelatedItem = ({
   font_size,
   line_height,
   item_path
-}: RelatedProps) => {
+}: RelatedItemProps) => {
   return (
     <Typography
       color={color}

@@ -2,13 +2,13 @@ import { get, map } from 'lodash'
 import React from 'react'
 
 import { RelatedArea, RelatedItem } from './RelatedStyled'
-import { RelatedRenderProps } from './RelatedTypes'
+import { RelatedProps } from './RelatedTypes'
 
 const Related = ({
   color,
   items,
   layout
-}: RelatedRenderProps) => {
+}: RelatedProps) => {
   return (
     <RelatedArea>
       {(map(items, (item, key) => {
