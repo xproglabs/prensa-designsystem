@@ -1,4 +1,4 @@
-.tgz
+*.tgz
 .babelrc
 .eslintrc.json
 .gitignore
