@@ -1,6 +1,6 @@
 import { RelatedRenderProps } from './RelatedTypes'
 
-type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
+export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
 type BoxTypes = {
   align?: [string, string];
@@ -29,6 +29,14 @@ type Image = {
   box?: [string, string];
   mb?: SpacingType;
   ml?: SpacingType;
+}
+
+type Related = {
+  color?: string;
+  font_size?: [string, string];
+  enabled?: boolean;
+  line_height?: [string, string];
+  mb?: SpacingType;
 }
 
 type Subject = {
@@ -62,7 +70,7 @@ export type LayoutProps = {
   carousel?: Object;
   datetime_enabled?: boolean;
   image?: Image;
-  related?: Object;
+  related?: Related;
   section?: Object;
   subject?: Subject;
   subtitle?: Subtitle;

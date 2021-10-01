@@ -1,4 +1,7 @@
-import { LayoutProps } from './types'
+import {
+  LayoutProps,
+  SpacingType
+} from './types'
 
 export interface RelatedAreaProps {
   children: any;
@@ -14,7 +17,7 @@ export interface RelatedProps {
   font_size: Array<String>;
   line_height: Array<String>;
   item_path: String;
-  mb: Array<String>;
+  mb?: SpacingType;
 }
 
 export interface RelatedRenderProps {

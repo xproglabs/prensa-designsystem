@@ -9,10 +9,6 @@ const Related = ({
   items,
   layout
 }: RelatedRenderProps) => {
-  const font_color = color ? color : get(layout, 'color', 'black')
-  const font_size = get(layout, 'font_size', ['14px', '14px'])
-  const line_height = get(layout, 'line_height', ['16px', '16px'])
-  const mb = get(layout, 'mb', [2, 2])
   return (
     <RelatedArea>
       {(map(items, (item, key) => {
@@ -20,17 +16,26 @@ const Related = ({
         return (
           <RelatedItem
             key={key}
-            color={font_color}
-            font_size={font_size}
-            line_height={line_height}
+            color={color || layout.color}
+            font_size={layout.font_size}
+            line_height={layout.line_height}
             item_path={item_path}
-            mb={mb}>
+            mb={layout.mb}>
             {item.name}
           </RelatedItem>
         )
       }))}
     </RelatedArea>
   )
+}
+
+Related.defaultProps = {
+  layout: {
+    color: 'black',
+    font_size: ['14px', '14px'],
+    line_height: ['16px', '16px'],
+    mb: [2, 2]
+  }
 }
 
 export default Related
