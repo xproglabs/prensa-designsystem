@@ -85,7 +85,7 @@ const Teaser = (props: TeaserProps) => {
         <S.Content>
           <RelatedRender
             color={color}
-            layout={layout}
+            layout={layout.related}
             {...related}
           />
         </S.Content>
