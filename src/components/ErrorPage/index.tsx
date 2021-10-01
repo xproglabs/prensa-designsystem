@@ -5,19 +5,22 @@ import * as S from './styled'
 
 const ErrorPage = ({
   buttonText,
-  color,
+  colorButton,
+  colorTitle,
+  message,
+  title
 }: ErrorPageProps) => {
   return(
     <S.ContainerError>
       <S.ContentError>
         <S.PageTitle 
-          color='black'
-          text='Ops!'>
+          color={colorTitle}
+          text={title}>
         </S.PageTitle>
-        <S.Message text='Página não encontrada.' />
+        <S.Message text={message} />
         <S.ButtonGoBack
           buttonAction='./'
-          color={color}>
+          color={colorButton}>
           {buttonText}
         </S.ButtonGoBack>
       </S.ContentError>
@@ -31,5 +34,6 @@ ErrorPage.defaultProps = {
   buttonText: 'Voltar',
   message: 'Página não encontrada.',
   title: 'Ops!',
-  color: 'black'
+  colorButton: 'black',
+  colorTitle: 'black'
 }
