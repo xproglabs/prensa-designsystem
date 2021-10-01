@@ -46,8 +46,8 @@ const RenderSlot = ({
             <Teaser
               color={color}
               domain={domain}
-              image_circle={image_circle}
               item={item}
+              image_circle={image_circle}
               layout={teaser_props.layout}
               related={teaser_props.related}
             />

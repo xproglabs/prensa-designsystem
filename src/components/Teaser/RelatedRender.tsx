@@ -29,13 +29,4 @@ const Related = ({
   )
 }
 
-Related.defaultProps = {
-  layout: {
-    color: 'black',
-    font_size: ['14px', '14px'],
-    line_height: ['16px', '16px'],
-    mb: [2, 2]
-  }
-}
-
 export default Related
