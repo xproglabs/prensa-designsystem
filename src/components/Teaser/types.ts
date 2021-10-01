@@ -1,4 +1,4 @@
-import { RelatedRenderProps } from './RelatedTypes'
+import { RelatedItemProps } from './RelatedTypes'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
@@ -92,6 +92,6 @@ export type TeaserProps = {
   /**
    * @description expects an object with layout configuration for related news
    */
-  related?: RelatedRenderProps;
+  related?: RelatedItemProps;
 }
 
