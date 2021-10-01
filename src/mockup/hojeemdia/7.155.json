@@ -1,0 +1,131 @@
+{
+  "cid": "7.155",
+  "name": "Destaque Linha 2",
+  "type": "template7030",
+  "slot1": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 2,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.157",
+        "img": {
+          "byl": "aaaa",
+          "cap": "aaaaaa",
+          "cid": "1.880207",
+          "sub": ""
+        },
+        "name": "Chuva desta segunda destrói casas e deixa moradores desabrigados na RMBH",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "SITUAÇÃO DE RISCO",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.157",
+        "img": {
+          "byl": "aaaa",
+          "cap": "aaaaaa",
+          "cid": "1.880207",
+          "sub": ""
+        },
+        "name": "Chuva desta segunda destrói casas e deixa moradores desabrigados na RMBH",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "SITUAÇÃO DE RISCO",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": "default"
+  },
+  "slot2": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.156",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Região Centro-Sul é a mais atingida pela chuva em BH; Defesa Civil emite alerta para até esta terça",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "VENTOS A 45 KM/H",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": "default"
+  },
+  "slot3": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 3,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.158",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Adolescentes de 16 anos vão receber primeira dose contra a Covid em São José da Lapa",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "NESTA TERÇA",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.159",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Tempestade de areia que atingiu cidades de Minas e SP pode ocorrer de novo",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "ASSUSTADOR",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.160",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Ministério da Saúde deve suspender prazo entre vacinas da Covid e da gripe",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "ENTENDA",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": ""
+  }
+}

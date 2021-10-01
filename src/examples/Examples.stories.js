@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components'
 
 import PageBlock from '../components/PageBlock'
 import TemplateContainer from '../components/Templates/TemplateContainer'
+import DATA_HOME_ROW from '../mockup/hojeemdia/7.155.json'
 import DATA_HOME_100 from '../mockup/hojeemdia/7.172.json'
 import DATA_HOME_7030 from '../mockup/hojeemdia/7.173.json'
 import DATA_HOME_FEAT from '../mockup/hojeemdia/7.174.json'
@@ -53,6 +54,15 @@ export const HomeFeatured = () => {
       mb={[2, 2]}
       mt={[2, 2]}>
       <PageBlock {...DATA_HOME_FEAT} />
+    </TemplateContainer>
+  )
+}
+export const HomeRow = () => {
+  return (
+    <TemplateContainer
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock {...DATA_HOME_ROW} />
     </TemplateContainer>
   )
 }
