@@ -26,6 +26,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         alignx="center"
         lg={{
           align: 'row',
+          alignx: 'between',
           width: 'calc(calc(calc(100% - 8px) / 3) * 2)'
         }}
         width="100%">

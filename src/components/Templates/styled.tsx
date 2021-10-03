@@ -35,8 +35,7 @@ export const SectionTitle = ({
         mb: mb[1]
       }}
       mb={mb[0]}
-      transform='uppercase'
-    >
+      transform='uppercase'>
       <AreaLinkWrap />
     </Typography> 
   )

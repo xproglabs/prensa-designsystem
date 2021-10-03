@@ -4,7 +4,7 @@ import { LayoutProps } from '../Teaser/types'
 
 export type RenderSlotProps = {
   column_items: number;
-  column_padding: string;
+  column_padding: number;
   color?: string;
   domain?: string;
   image_circle?: boolean;

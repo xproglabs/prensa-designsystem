@@ -51,8 +51,7 @@ const Box = ({
       }}
       xl={{
         height: get(box_height, '[2]', box_height[1])
-      }}
-    >
+      }}>
       {children}
     </Block>
   )
@@ -62,8 +61,7 @@ const Content = ({ children }) => (
   <Block
     align='column'
     lg={{ width: 'calc(100% - 40px)' }}
-    width='calc(100% - 32px)'
-  >
+    width='calc(100% - 32px)'>
     {children}
   </Block>
 )
@@ -129,7 +127,7 @@ const Image = ({
   image_circle = false,
   height,
 }) => {
-  const custom = image_circle ? 'border-radius: 100%;' : false
+  const custom = image_circle ? 'border-radius: 100%;' : ''
   return (
     <Block
       bgColor='neutral10'
@@ -140,8 +138,7 @@ const Image = ({
         align: 'column',
         height: height[1],
         width: '100%'
-      }}
-    >
+      }}>
       {children}
     </Block>
   )
