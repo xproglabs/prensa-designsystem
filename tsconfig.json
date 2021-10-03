@@ -9,6 +9,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": false,
+    "resolveJsonModule": true,
     "sourceMap": true,
     "target": "es5",
     "baseUrl": ".",
