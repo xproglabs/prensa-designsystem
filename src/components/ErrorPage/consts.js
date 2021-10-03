@@ -29,6 +29,7 @@ const PAGE_TITLE = {
   fontFamily: 'secondary',
   fontSize: '20px',
   fontWeight: 700,
+  element: 'span',
   transform: 'uppercase',
   mb: 2
 }
