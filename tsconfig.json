@@ -10,7 +10,19 @@
     "moduleResolution": "node",
     "noImplicitAny": false,
     "sourceMap": true,
-    "target": "es5"
+    "target": "es5",
+    "baseUrl": ".",
+    "paths": {
+      "components/*": [
+        "src/components/*"
+      ],
+      "demo/*": [
+        "src/styles/demo/*"
+      ],
+      "styles/*": [
+        "src/styles/*"
+      ]
+    }
   },
   "include": [
     "src/**/*"
