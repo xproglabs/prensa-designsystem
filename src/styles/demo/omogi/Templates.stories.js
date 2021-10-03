@@ -1,13 +1,13 @@
+import { Template7030 } from 'components/Templates/Template7030'
 import { get } from 'lodash'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import { theme } from 'styles/theme'
 
-import { theme } from '../../styles/theme'
-import { Template7030 } from './Template7030'
 import { data } from './Template7030.data'
 
 export default {
-  title: 'Templates',
+  title: 'Templates/OMogi',
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
