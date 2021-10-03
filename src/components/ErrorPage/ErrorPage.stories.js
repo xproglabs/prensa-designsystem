@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { theme } from '../../styles/theme'
-import { ErrorPage } from './index.tsx'
+import { ErrorPage } from '../ErrorPage'
 
 export default {
   title: 'ErrorPage',
@@ -12,7 +12,7 @@ export default {
 export const Default = () => {
   return(
     <ThemeProvider theme={theme}>
-      <ErrorPage/>
+      <ErrorPage />
     </ThemeProvider>
   )
 }
