@@ -1,17 +1,17 @@
 import { theme as default_theme } from 'styles/theme'
 
+import { HED_COLORS } from './colors'
+
+import { teasers } from './teasers'
+import { templates } from './templates'
+
 export const theme = {
   ...default_theme,
-  colors: {
-    ...default_theme.colors,
-    primary1: '#ED1B35',
-    primary2: '#F58C99',
-    primary3: '#FAC6CC',
-    secondary1: '#5C637A',
-    secondary2: '#858A9B',
-    secondary3: '#ADB0BC',
-  },
+  colors: HED_COLORS,
   fonts: {
-    primary: 'Lato'
-  }
+    primary: 'Lato',
+    secondary: 'Lato'
+  },
+  templates,
+  teasers
 }

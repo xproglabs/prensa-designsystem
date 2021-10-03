@@ -22,7 +22,6 @@ export default {
     )
   ]
 }
-
 export const HomeLinha1 = () => {
   return (
     <TemplateContainer
