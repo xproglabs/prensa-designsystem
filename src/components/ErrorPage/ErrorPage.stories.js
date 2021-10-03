@@ -10,7 +10,7 @@ export default {
 }
 
 export const Default = () => {
-  return(
+  return (
     <ThemeProvider theme={theme}>
       <ErrorPage />
     </ThemeProvider>

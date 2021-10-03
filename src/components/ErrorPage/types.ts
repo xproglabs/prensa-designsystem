@@ -1,10 +1,10 @@
 export interface ErrorPageProps {
   buttonAction?: string;
   buttonText?: string;
-  colorButton?: string;
-  colorTitle?: string;
+  buttonColor?: string;
   message?: string;
   title?: string;
+  titleColor?: string;
 }
 
 export interface PageTitleProps {
