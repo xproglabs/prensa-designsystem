@@ -13,6 +13,12 @@ export const TEASER_IMAGE_TOP: LayoutProps = {
       tokensFonts.NEWS_TITLE_5
     )
   },
+  image: {
+    enabled: true,
+    dimension: ['2x1', '2x1'],
+    height: ['120px', '120px'],
+    width: ['120px', '120px']
+  },
   related: {
     enabled: false
   },

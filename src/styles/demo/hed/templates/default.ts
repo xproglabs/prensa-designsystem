@@ -31,7 +31,7 @@ export const TEMPLATES_DEFAULT = {
       0: ['teaser_default'],
       1: ['teaser_image_top'],
       2: ['teaser_default', 'teaser_image_left'],
-      3: ['teaser_image_left', 'teaser_image_left', 'teaser_image_left'],
+      3: ['teaser_image_top', 'teaser_image_top', 'teaser_image_top'],
       4: ['teaser_image_left', 'teaser_image_left', 'teaser_image_left', 'teaser_image_left'],
     }
   }
