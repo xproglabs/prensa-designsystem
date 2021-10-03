@@ -1,6 +1,6 @@
-import { LayoutProps } from 'styles/layouts'
-import { parseFonts, tokensFonts } from 'demo/hed/tokens/fonts'
-import { SUBJECT_DEFAULT, SUBJECT_FILLED } from 'demo/hed/tokens/subject'
+import { LayoutProps } from '../../../layouts'
+import { parseFonts, tokensFonts } from '../tokens/fonts'
+import { SUBJECT_DEFAULT, SUBJECT_FILLED } from '../tokens/subject'
 
 const TEASER_DEFAULT: LayoutProps = {
   box: {

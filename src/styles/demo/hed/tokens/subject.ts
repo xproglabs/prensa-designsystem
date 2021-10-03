@@ -1,4 +1,4 @@
-import { LayoutProps } from 'prensa/components/styles/layouts'
+import { LayoutProps } from 'styles/layouts'
 
 type SubjectProps = LayoutProps['subject']
 

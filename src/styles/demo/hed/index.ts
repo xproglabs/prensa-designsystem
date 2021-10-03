@@ -1,7 +1,5 @@
-import { theme as default_theme } from 'styles/theme'
-
+import { theme as default_theme } from '../../theme'
 import { HED_COLORS } from './colors'
-
 import { teasers } from './teasers'
 import { templates } from './templates'
 
