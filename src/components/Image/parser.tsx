@@ -13,7 +13,7 @@ type PolicyType = string
 /**
  * @description set the image width (via path param)
  */
-type WidthType = string
+type WidthType = number
 
 export const parseImagePath = (
   derivative: DerivativeType,
@@ -37,6 +37,5 @@ export const parseImagePath = (
   const params = `?${params_d}${params_w}`
   // final string
   url = `${domain}${path_policy}${path_file}${params}`
-  console.log("url", url)
   return url
 }

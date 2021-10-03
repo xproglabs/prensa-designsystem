@@ -3,7 +3,7 @@ import React from 'react'
 
 import Block from '../Block'
 import AmpImage from '../Image'
-import { parseImagePath } from '../Image/parser.tsx'
+import { parseImagePath } from '../Image/parser'
 import * as S from './styled'
 
 const RenderImage = ({ domain, image_circle, item, item_path, layout }) => {
@@ -17,7 +17,7 @@ const RenderImage = ({ domain, image_circle, item, item_path, layout }) => {
   let image_contentid = get(image_object, 'contentId', false)
   image_contentid = image_contentid || get(image_object, 'cid', false)
   if (!image_contentid || !image_enabled) {
-    return false
+    return <></>
   }
   // parse data
   const image_caption = get(image_object, 'caption', '')

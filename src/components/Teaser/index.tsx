@@ -3,7 +3,7 @@ import React from 'react'
 
 import RelatedRender from './RelatedRender'
 import { RenderDatetime } from './RenderDateTime'
-import { RenderImage } from './RenderImage.tsx'
+import { RenderImage } from './RenderImage'
 import { RenderSubject } from './RenderSubject'
 import { RenderSubtitle } from './RenderSubtitle'
 import { RenderTitle } from './RenderTitle'
