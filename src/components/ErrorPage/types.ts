@@ -1,24 +1,23 @@
 export interface ErrorPageProps {
-  buttonAction: string;
-  buttonText: string;
-  colorButton: string;
-  colorTitle: string;
-  message: string;
-  title: string;
+  buttonAction?: string;
+  buttonText?: string;
+  colorButton?: string;
+  colorTitle?: string;
+  message?: string;
+  title?: string;
 }
 
 export interface PageTitleProps {
-  children: any;
   color: string;
-  text: string;
+  children: string;
 }
 
 export interface ButtonProps {
   buttonAction: string;
-  children: any;
+  children: string;
   color: string;
 }
 
 export interface MessageProps {
-  text: string
+  children: string;
 }
