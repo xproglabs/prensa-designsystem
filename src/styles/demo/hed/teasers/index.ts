@@ -1,6 +1,7 @@
 import { LayoutProps } from '../../../layouts'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT, SUBJECT_FILLED } from '../tokens/subject'
+import { TEASER_IMAGE_TOP } from './teaser_image_top'
 
 const TEASER_DEFAULT: LayoutProps = {
   box: {
@@ -84,5 +85,6 @@ export const teasers = {
   teaser_default: TEASER_DEFAULT,
   teaser_featured: TEASER_FEATURED,
   teaser_image_left: TEASER_IMAGE_LEFT,
+  teaser_image_top: TEASER_IMAGE_TOP,
   featured_related: FEATURED_RELATED
 }

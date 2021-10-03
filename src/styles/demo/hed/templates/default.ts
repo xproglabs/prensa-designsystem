@@ -18,9 +18,9 @@ export const TEMPLATES_DEFAULT = {
     layout: {
       0: ['teaser_default'],
       1: ['teaser_default'],
-      2: ['teaser_default', 'teaser_default'],
-      3: ['teaser_default', 'teaser_default', 'teaser_default'],
-      4: ['teaser_default', 'teaser_default', 'teaser_default', 'teaser_default'],
+      2: ['teaser_image_top', 'teaser_image_top'],
+      3: ['teaser_image_top', 'teaser_image_top', 'teaser_image_top'],
+      4: ['teaser_image_top', 'teaser_image_top', 'teaser_image_top', 'teaser_image_top'],
     }
   },
   slot30: {
@@ -29,7 +29,7 @@ export const TEMPLATES_DEFAULT = {
     },
     layout: {
       0: ['teaser_default'],
-      1: ['teaser_default'],
+      1: ['teaser_image_top'],
       2: ['teaser_default', 'teaser_image_left'],
       3: ['teaser_image_left', 'teaser_image_left', 'teaser_image_left'],
       4: ['teaser_image_left', 'teaser_image_left', 'teaser_image_left', 'teaser_image_left'],

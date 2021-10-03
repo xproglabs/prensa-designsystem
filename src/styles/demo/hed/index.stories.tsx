@@ -1,16 +1,16 @@
+import PageBlock from 'components/PageBlock'
+import TemplateContainer from 'components/Templates/TemplateContainer'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { theme } from 'styles/demo/hed'
 
-import PageBlock from '../components/PageBlock'
-import TemplateContainer from '../components/Templates/TemplateContainer'
-import DataHomeLinha1 from '../mockup/hojeemdia/7.153.json'
-import DataHomeLinha2 from '../mockup/hojeemdia/7.155.json'
-import DataHomeLinha3 from '../mockup/hojeemdia/7.161.json'
-import DATA_HOME_100 from '../mockup/hojeemdia/7.172.json'
-import DATA_HOME_7030 from '../mockup/hojeemdia/7.173.json'
-import DATA_HOME_FEAT from '../mockup/hojeemdia/7.174.json'
-import DATA_HOME_30 from '../mockup/hojeemdia/7.204.json'
+import DataHomeLinha1 from './data/7.153.json'
+import DataHomeLinha2 from './data/7.155.json'
+import DataHomeLinha3 from './data/7.161.json'
+// import DATA_HOME_100 from './data/7.172.json'
+import DATA_HOME_7030 from './data/7.173.json'
+import DATA_HOME_FEAT from './data/7.174.json'
+import DATA_HOME_30 from './data/7.204.json'
+import { theme } from './index'
 
 export default {
   title: 'Templates/HojeEmDia',
