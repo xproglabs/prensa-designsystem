@@ -75,55 +75,9 @@
     "color": "",
     "icon": "",
     "link": "",
-    "len1": 3,
+    "len1": 0,
     "len2": 0,
-    "list1": [
-      {
-        "cid": "7.158",
-        "img": {
-          "byl": "",
-          "cap": "",
-          "cid": "1.880203",
-          "sub": ""
-        },
-        "name": "Adolescentes de 16 anos vão receber primeira dose contra a Covid em São José da Lapa",
-        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
-        "subject": "NESTA TERÇA",
-        "subtitle": "",
-        "pubdate": "2021-09-12 2:15:16",
-        "updated": "2021-09-27 18:51:40"
-      },
-      {
-        "cid": "7.159",
-        "img": {
-          "byl": "",
-          "cap": "",
-          "cid": "1.880203",
-          "sub": ""
-        },
-        "name": "Tempestade de areia que atingiu cidades de Minas e SP pode ocorrer de novo",
-        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
-        "subject": "ASSUSTADOR",
-        "subtitle": "",
-        "pubdate": "2021-09-12 2:15:16",
-        "updated": "2021-09-27 18:51:40"
-      },
-      {
-        "cid": "7.160",
-        "img": {
-          "byl": "",
-          "cap": "",
-          "cid": "1.880203",
-          "sub": ""
-        },
-        "name": "Ministério da Saúde deve suspender prazo entre vacinas da Covid e da gripe",
-        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
-        "subject": "ENTENDA",
-        "subtitle": "",
-        "pubdate": "2021-09-12 2:15:16",
-        "updated": "2021-09-27 18:51:40"
-      }
-    ],
+    "list1": [],
     "list2": [],
     "title": "",
     "type": ""
