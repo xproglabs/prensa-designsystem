@@ -10,7 +10,17 @@ type BoxTypes = {
   pt?: SpacingType;
   mb?: SpacingType;
 }
-
+type BoxWrap = {
+  content_overlap?: boolean;
+  align?: [string, string];
+  aligny?: [string, string];
+  height?: [string, string];
+  width?: [string, string];
+  mt?: SpacingType;
+  mr?: SpacingType;
+  mb?: SpacingType;
+  ml?: SpacingType;
+}
 type Image = {
   dimension?: [string, string];
   enabled?: boolean;
@@ -23,7 +33,6 @@ type Image = {
   mb?: SpacingType;
   ml?: SpacingType;
 }
-
 type Related = {
   color?: string;
   font_size?: [string, string];
@@ -31,7 +40,6 @@ type Related = {
   line_height?: [string, string];
   mb?: SpacingType;
 }
-
 type Subject = {
   bg_color?: string;
   color?: string;
@@ -40,14 +48,12 @@ type Subject = {
   line_height?: [string, string];
   mb?: SpacingType;
 }
-
 type Subtitle = {
   color?: string;
   font_size?: [string, string];
   enabled?: boolean;
   line_height?: [string, string];
 }
-
 type Title = {
   color?: string;
   element?: string;
@@ -56,22 +62,9 @@ type Title = {
   line_height?: [string, string];
   mb?: SpacingType;
 }
-
-type WrapContent = {
-  content_overlap?: boolean;
-  align?: [string, string];
-  aligny?: [string, string];
-  height?: [string, string];
-  width?: [string, string];
-  mt?: SpacingType;
-  mr?: SpacingType;
-  mb?: SpacingType;
-  ml?: SpacingType;
-}
-
 export type LayoutProps = {
   box?: BoxTypes;
-  box_wrap?: WrapContent;
+  box_wrap?: BoxWrap;
   carousel?: Object;
   datetime_enabled?: boolean;
   image?: Image;
@@ -81,7 +74,6 @@ export type LayoutProps = {
   subtitle?: Subtitle;
   title?: Title;
 }
-
 export type TeaserProps = {
   color?: string;
   domain?: string;
@@ -99,4 +91,3 @@ export type TeaserProps = {
    */
   related?: RelatedProps;
 }
-
