@@ -17,7 +17,7 @@ export const ContainerAtex = ({ children }) =>
   </Block>
 
 
-export const ContainerCopyright = ({  bgColor, children }) =>
+export const ContainerCopyright = ({ bgColor, children }) =>
   <Block
     {...CONTAINER_COPYRIGHT}
     bgColor={bgColor}>
