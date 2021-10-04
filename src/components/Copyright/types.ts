@@ -1,6 +1,6 @@
 export interface TextItemProps {
   /**
-   * @description Defini a cor do texto
+   * @description Define a cor do texto
    */
   color: string;
   /**
