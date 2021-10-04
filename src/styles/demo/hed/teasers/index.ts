@@ -1,6 +1,10 @@
 import { LayoutProps } from '../../../layouts'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT, SUBJECT_FILLED } from '../tokens/subject'
+import {
+  TEASER_IMAGE_LEFT_MEDIUM,
+  TEASER_IMAGE_LEFT_SMALL,
+} from './teaser_image_left'
 import { TEASER_IMAGE_TOP } from './teaser_image_top'
 
 const TEASER_DEFAULT: LayoutProps = {
@@ -18,38 +22,6 @@ const TEASER_DEFAULT: LayoutProps = {
     enabled: false
   },
   subject: SUBJECT_DEFAULT
-}
-
-const TEASER_IMAGE_LEFT: LayoutProps = {
-  box: {
-    pb: [3, 3],
-    pt: [3, 3]
-  },
-  box_wrap: {
-    aligny: ['top', 'top'],
-    height: ['auto', 'auto'],
-  },
-  datetime_enabled: false,
-  image: {
-    dimension: ['1x1', '2x1'],
-    height: ['220px', '320px'],
-    width: ['300px', '300px'],
-    enabled: true,
-    mb: [3, 3]
-  },
-  title: {
-    enabled: true,
-    ...parseFonts(
-      tokensFonts.NEWS_TITLE_1,
-      tokensFonts.NEWS_TITLE_3
-    )
-  },
-  related: {
-    enabled: false
-  },
-  subject: {
-    enabled: true
-  }
 }
 
 const TEASER_FEATURED: LayoutProps = {
@@ -84,7 +56,8 @@ const FEATURED_RELATED: LayoutProps = {
 export const teasers = {
   teaser_default: TEASER_DEFAULT,
   teaser_featured: TEASER_FEATURED,
-  teaser_image_left: TEASER_IMAGE_LEFT,
+  teaser_image_left_medium: TEASER_IMAGE_LEFT_MEDIUM,
+  teaser_image_left_small: TEASER_IMAGE_LEFT_SMALL,
   teaser_image_top: TEASER_IMAGE_TOP,
   featured_related: FEATURED_RELATED
 }

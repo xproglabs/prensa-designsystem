@@ -1,5 +1,4 @@
-export const TEMPLATES_IMAGE_FEATURED
- = {
+export const TEMPLATES_IMAGE_FEATURED = {
   slot100: {
     related: {
       enabled: false

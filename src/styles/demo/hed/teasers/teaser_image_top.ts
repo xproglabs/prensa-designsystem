@@ -4,7 +4,9 @@ import { SUBJECT_DEFAULT } from '../tokens/subject'
 
 export const TEASER_IMAGE_TOP: LayoutProps = {
   box: {
-    align: ['column', 'row']
+    align: ['column', 'column'],
+    pb: [0, 0],
+    pt: [0, 0]
   },
   title: {
     enabled: true,
@@ -15,8 +17,8 @@ export const TEASER_IMAGE_TOP: LayoutProps = {
   },
   image: {
     enabled: true,
-    dimension: ['2x1', '2x1'],
-    height: ['120px', '120px'],
+    dimension: ['3x2', '3x2'],
+    height: ['180px', '180px'],
     width: ['120px', '120px']
   },
   related: {

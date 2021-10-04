@@ -28,11 +28,11 @@ export const TEMPLATES_DEFAULT = {
       enabled: false
     },
     layout: {
-      0: ['teaser_default'],
+      0: ['teaser_image_top'],
       1: ['teaser_image_top'],
-      2: ['teaser_default', 'teaser_image_left'],
-      3: ['teaser_image_top', 'teaser_image_top', 'teaser_image_top'],
-      4: ['teaser_image_left', 'teaser_image_left', 'teaser_image_left', 'teaser_image_left'],
+      2: ['teaser_image_left_small', 'teaser_image_left_small'],
+      3: ['teaser_image_left_small', 'teaser_image_left_small', 'teaser_image_left_small'],
+      4: ['teaser_image_left_small', 'teaser_image_left_small', 'teaser_image_left_small', 'teaser_image_left_small'],
     }
   }
 }
