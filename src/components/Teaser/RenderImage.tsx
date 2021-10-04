@@ -21,10 +21,12 @@ const RenderImage = ({ domain, image_circle, item, item_path, layout }) => {
   // parse data
   const image_caption = get(image_object, 'caption', '')
   const mobile_dim = get(layout, 'image.dimension[0]', '1x1')
+  const desktop_dim = get(layout, 'image.dimension[1]', '1x1')
   const height = get(layout, 'image.height', 600)
+  const layout_mobile = get(layout, 'image.layout[0]', 'responsive')
+  const layout_desktop = get(layout, 'image.layout[1]', 'responsive')
   const mobile_height = get(layout, 'image.height[0]', 600)
   const mobile_width = get(layout, 'image.width[0]', 600)
-  const desktop_dim = get(layout, 'image.dimension[1]', '1x1')
   const desktop_height = get(layout, 'image.height[1]', 600)
   const desktop_width = get(layout, 'image.width[1]', 600)
   const image_path_mobile = parseImagePath(mobile_dim, domain, image_contentid, 600)
@@ -37,11 +39,11 @@ const RenderImage = ({ domain, image_circle, item, item_path, layout }) => {
         <AmpImage
           custom_class={image_circle == true ? 'image-with-radius' : ''}
           title={image_caption}
-          mobile_layout="responsive"
+          mobile_layout={layout_mobile}
           mobile_path={image_path_mobile}
           mobile_height={mobile_height}
           mobile_width={mobile_width}
-          desktop_layout="responsive"
+          desktop_layout={layout_desktop}
           desktop_path={image_path_desktop}
           desktop_height={desktop_height}
           desktop_width={desktop_width}

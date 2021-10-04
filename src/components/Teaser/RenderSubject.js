@@ -23,8 +23,7 @@ const RenderSubject = ({ color, item, layout }) => {
       color={font_color}
       font_size={font_size}
       line_height={line_height}
-      mb={mb}
-    >
+      mb={mb}>
       {subject_value} 
     </S.Subject>
   )

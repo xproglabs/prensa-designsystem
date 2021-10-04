@@ -27,7 +27,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         lg={{
           align: 'row',
           alignx: 'between',
-          width: 'calc(calc(calc(100% - 8px) / 3) * 2)'
+          width: 'calc(calc(calc(calc(100% - 48px) / 3) * 2) + 24px)'
         }}
         width="100%">
         <RenderSlot {...slot70} />
@@ -37,7 +37,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         alignx="center"
         aligny="top"
         lg={{
-          width: 'calc(calc(100% - 32px) / 3)'
+          width: 'calc(calc(100% - 48px) / 3)'
         }}
         width="100%">
         <RenderSlot {...slot30} />

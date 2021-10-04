@@ -31,6 +31,7 @@ const Teaser = (props: TeaserProps) => {
   // box (content) wrap
   const content_overlap = get(layout, 'box_wrap.content_overlap', false)
   const wrap_align = get(layout, 'box_wrap.align', ['column', 'column'])
+  const wrap_alignx = get(layout, 'box_wrap.alignx', ['left', 'left'])
   const wrap_aligny = get(layout, 'box_wrap.aligny', ['top', 'top'])
   const wrap_height = get(layout, 'box_wrap.height', ['auto', 'auto'])
   const wrap_width = get(layout, 'box_wrap.width', ['100%', '100%'])
@@ -39,10 +40,11 @@ const Teaser = (props: TeaserProps) => {
   const wrap_mb = get(layout, 'box_wrap.mb', [0, 0])
   const wrap_mt = get(layout, 'box_wrap.mt', [0, 0])
   // image wrap
-  const image_align = get(layout, 'image.box.align', ['column', 'column'])
-  const image_aligny = get(layout, 'image.box.aligny', ['top', 'top'])
-  const image_height = get(layout, 'image.box.height', ['auto', 'auto'])
-  const image_width = get(layout, 'image.box.width', ['100%', '100%'])
+  const image_align = get(layout, 'image.align', ['column', 'column'])
+  const image_alignx = get(layout, 'image.alignx', ['left', 'left'])
+  const image_aligny = get(layout, 'image.aligny', ['top', 'top'])
+  const image_height = get(layout, 'image.height', ['auto', 'auto'])
+  const image_wrap_width = get(layout, 'image.wrap_width', ['100%', '100%'])
   const image_mt = get(layout, 'image.mt', [0, 0])
   const image_mr = get(layout, 'image.mr', [0, 0])
   const image_mb = get(layout, 'image.mb', [0, 0])
@@ -58,8 +60,9 @@ const Teaser = (props: TeaserProps) => {
       <S.WrapContent
         wrap_align={image_align}
         wrap_aligny={image_aligny}
+        wrap_alignx={image_alignx}
         wrap_height={image_height}
-        wrap_width={image_width}
+        wrap_width={image_wrap_width}
         wrap_mt={image_mt}
         wrap_mr={image_mr}
         wrap_mb={image_mb}
@@ -76,6 +79,7 @@ const Teaser = (props: TeaserProps) => {
         content_overlap={content_overlap}
         wrap_align={wrap_align}
         wrap_aligny={wrap_aligny}
+        wrap_alignx={wrap_alignx}
         wrap_height={wrap_height}
         wrap_width={wrap_width}
         wrap_mt={wrap_mt}

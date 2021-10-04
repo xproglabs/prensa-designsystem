@@ -17,37 +17,40 @@ const AreaLink = styled.a`
 `
 const Box = ({
   box_align=['column', 'column'],
+  box_alignx=['center', 'center'],
   box_aligny,
   box_height,
   box_pb,
   box_pt,
   box_mb=[2,2],
+  background,
+  border,
   children
 }) => {
   return (
     <Block
       align={box_align[0]}
-      alignx='center'
+      alignx={box_alignx[0]}
       aligny={box_aligny[0]}
-      bgColor='white'
-      custom={`
+      bgColor={background ? background : 'transparent'}
+      custom={border ? `
         border: 1px solid #EAEAEA;
         border-radius: 5px;
-      `}
+      ` : ''}
       height={box_height[0]}
       pb={box_pb[0]}
       pt={box_pt[0]}
       mb={box_mb[0]}
-      width='calc(100% - 2px)'
+      width={border ? 'calc(100% - 2px)' : '100%'}
       lg={{
         align: box_align[1],
-        alignx: 'center',
+        alignx: box_alignx[1],
         aligny: box_aligny[1],
         height: box_height[1],
-        pb: box_pb[1],
         pt: box_pt[1],
+        pb: box_pb[1],
         mb: box_mb[1],
-        width: 'calc(100% - 2px)'
+        width: border ? 'calc(100% - 2px)' : '100%'
       }}
       xl={{
         height: get(box_height, '[2]', box_height[1])
@@ -94,7 +97,7 @@ const Image = ({
 
 const Subject = ({
   children,
-  bg_color,
+  bg_color='transparent',
   color,
   font_size,
   line_height,
@@ -109,10 +112,9 @@ const Subject = ({
       lg={{
         mb: mb[1]
       }}
-      px={bg_color !== 'white' ? 1 : 0}
-      py={bg_color !== 'white' ? 0.5 : 0}
-      mb={mb[0]}
-      width='100%'>
+      px={bg_color !== 'transparent' ? 1 : 0}
+      py={bg_color !== 'transparent' ? 0.5 : 0}
+      mb={mb[0]}>
       <Typography
         color={color}
         element='h2'
@@ -124,8 +126,7 @@ const Subject = ({
           fontSize: font_size[1],
           lineHeight: line_height[1]
         }}
-        transform='uppercase'
-        width='100%'>
+        transform='uppercase'>
         {children}
       </Typography> 
     </Block>
@@ -191,6 +192,7 @@ const WrapContent = ({
   children,
   content_overlap=false,
   wrap_align=['column', 'column'],
+  wrap_alignx,
   wrap_aligny,
   wrap_height,
   wrap_mr=[0, 0],
@@ -208,7 +210,7 @@ const WrapContent = ({
   return (
     <Block
       align={wrap_align[0]}
-      alignx='center'
+      alignx={wrap_alignx[0]}
       aligny={wrap_aligny[0]}
       custom={custom_style}
       height={wrap_height[0]}
@@ -219,7 +221,7 @@ const WrapContent = ({
       width={wrap_width[0]}
       lg={{
         align: wrap_align[1],
-        alignx: 'center',
+        alignx: wrap_alignx[1],
         aligny: wrap_aligny[1],
         custom: custom_style,
         height: wrap_height[1],
@@ -228,8 +230,7 @@ const WrapContent = ({
         mt: wrap_mt[1],
         mb: wrap_mb[1],
         width: wrap_width[1],
-      }}
-    >
+      }}>
       {children}
     </Block>
   )

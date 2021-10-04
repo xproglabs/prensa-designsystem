@@ -4,6 +4,7 @@ export type SpacingType = number | string | [number, number] | [string, string] 
 
 type BoxTypes = {
   align?: [string, string];
+  alignx?: [string, string];
   aligny?: [string, string];
   height?: [string, string] | [string, string, string];
   pb?: SpacingType;
@@ -13,6 +14,7 @@ type BoxTypes = {
 type BoxWrap = {
   content_overlap?: boolean;
   align?: [string, string];
+  alignx?: [string, string];
   aligny?: [string, string];
   height?: [string, string];
   width?: [string, string];
@@ -26,8 +28,10 @@ type Image = {
   enabled?: boolean;
   align?: [string, string];
   aligny?: [string, string];
+  layout?: [string, string];
   height?: [string, string];
   width?: [string, string];
+  wrap_width?: [string, string];
   mt?: SpacingType;
   mr?: SpacingType;
   mb?: SpacingType;
