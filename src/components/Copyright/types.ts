@@ -4,7 +4,7 @@ export interface TextItemProps {
    */
   color: string;
   /**
-   * @description Defini o texto a ser renderizado
+   * @description Define o texto a ser renderizado
    */
   text: string;
 }
