@@ -69,10 +69,10 @@ export const TEASER_IMAGE_FEATURED: LayoutProps = {
   },
   datetime_enabled: false,
   image: {
+    enabled: true,
     dimension: ['2x1', '2x1'],
     height: ['366px', '366px'],
     width: ['366px', '366px'],
-    enabled: true,
   },
   title: {
     color: 'white',
@@ -126,10 +126,10 @@ export const TEASER_IMAGE_TOP: LayoutProps = {
   },
   datetime_enabled: true,
   image: {
+    enabled: true,
     dimension: ['1x1', '2x1'],
     height: ['300px', '300px'],
     width: ['300px', '300px'],
-    enabled: true,
     mb: [3, 3]
   },
   title: {
@@ -159,10 +159,10 @@ export const TEASER_IMAGE_CAROUSEL: LayoutProps = {
     height: ['420px', '540px']
   },
   image: {
+    enabled: true,
     dimension: ['1x1', '2x1'],
     height: ['200px', '200px'],
     width: ['300px', '300px'],
-    enabled: true,
     mb: [3, 3]
   },
   title: {
@@ -189,10 +189,10 @@ export const TEASER_IMAGE_TWO: LayoutProps = {
   },
   datetime_enabled: true,
   image: {
+    enabled: true,
     dimension: ['1x1', '2x1'],
     height: ['300px', '300px'],
     width: ['300px', '300px'],
-    enabled: true,
     mb: [3, 3]
   },
   title: {
@@ -218,10 +218,10 @@ export const TEASER_IMAGE_THREE: LayoutProps = {
   },
   datetime_enabled: true,
   image: {
+    enabled: true,
     dimension: ['1x1', '2x1'],
     height: ['220px', '320px'],
     width: ['300px', '300px'],
-    enabled: true,
     mb: [3, 3]
   },
   title: {
@@ -280,13 +280,12 @@ export const TEASER_LEFTIMAGE_SMALL: LayoutProps = {
   },
   datetime_enabled: false,
   image: {
-    box: ['100px', '100px'],
     dimension: ['1x1', '1x1'],
     enabled: true,
     height: ['100px', '100px'],
+    width: ['60px', '100px'],
     mb: [0, 0],
-    ml: [2, 2],
-    width: ['60px', '100px']
+    ml: [2, 2]
   },
   title: {
     enabled: true,
@@ -322,13 +321,12 @@ export const TEASER_LEFTIMAGE_LARGE: LayoutProps = {
   },
   datetime_enabled: true,
   image: {
-    box: ['100%', '300px'],
     dimension: ['1x1', '1x1'],
     enabled: true,
     height: ['120px', '200px'],
+    width: ['120px', '200px'],
     mb: [2, '0px'],
-    ml: ['0px', '0px'],
-    width: ['120px', '200px']
+    ml: ['0px', '0px']
   },
   title: {
     enabled: true,
