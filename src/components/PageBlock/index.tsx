@@ -24,7 +24,7 @@ const PageBlock = ({
   slot3,
   theme
 }: PageBlockProps) => {
-  const { templates } = theme
+  const { domain, templates } = theme
   // console.log(`[PRENSA] PageBlock ${cid} ${name} ${type}`)
   if(type === 'template100') {
     const slot100 = selectLayoutFromTemplate({
@@ -36,7 +36,8 @@ const PageBlock = ({
       <Template100
         slot100={{
           column_items: slot1.len1,
-          column_padding: '0px',
+          column_padding: 1,
+          domain,
           layouts: slot100,
           slot: slot1.list1
         }}
@@ -58,13 +59,15 @@ const PageBlock = ({
       <Template7030
         slot70={{
           column_items: slot1.len1,
-          column_padding: '0px',
+          column_padding: slot1.len1 > 1 ? (slot1.len1 - 1) : 0,
+          domain,
           layouts: slot70,
           slot: slot1.list1
         }}
         slot30={{
-          column_items: slot2.len1,
-          column_padding: '0px',
+          column_items: 1,
+          column_padding: 0,
+          domain,
           layouts: slot30,
           slot: slot2.list1
         }}
@@ -91,19 +94,22 @@ const PageBlock = ({
       <Template33
         slotLeft={{
           column_items: slot1.len1,
-          column_padding: '0px',
+          column_padding: 1,
+          domain,
           layouts: slotLeft,
           slot: slot1.list1
         }}
         slotCenter={{
           column_items: slot2.len1,
-          column_padding: '0px',
+          column_padding: 1,
+          domain,
           layouts: slotCenter,
           slot: slot2.list1
         }}
         slotRight={{
           column_items: slot3.len1,
-          column_padding: '0px',
+          column_padding: 1,
+          domain,
           layouts: slotRight,
           slot: slot3.list1
         }}
@@ -119,7 +125,8 @@ const PageBlock = ({
     <TemplateWrap
       slotItems={{
         column_items: slot1.len1,
-        column_padding: '0px',
+        column_padding: 1,
+        domain,
         layouts: slot100,
         slot: slot1.list1
       }}

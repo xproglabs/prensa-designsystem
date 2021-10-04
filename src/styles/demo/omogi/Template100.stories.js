@@ -1,15 +1,15 @@
+import { SectionTitle } from 'components/Templates/styled.tsx'
+import { Template100 as Template } from 'components/Templates/Template100'
+import TemplateContainer from 'components/Templates/TemplateContainer'
 import { get } from 'lodash'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import { theme } from 'styles/theme'
 
-import { theme } from '../../styles/theme'
-import { SectionTitle } from './styled'
-import { Template100 as Template } from './Template100'
 import { data } from './Template100.data'
-import TemplateContainer from './TemplateContainer'
 
 export default {
-  title: 'Templates',
+  title: 'Templates/OMogi',
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>

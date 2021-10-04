@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Block from '../Block'
 import Typography from '../Typography'
 
-export const AreaLink = styled.a` 
+const AreaLink = styled.a` 
   color: inherit;
   cursor: pointer;
   text-decoration: none;
@@ -51,62 +51,7 @@ const Box = ({
       }}
       xl={{
         height: get(box_height, '[2]', box_height[1])
-      }}
-    >
-      {children}
-    </Block>
-  )
-}
-
-const Content = ({ children }) => (
-  <Block
-    align='column'
-    lg={{ width: 'calc(100% - 40px)' }}
-    width='calc(100% - 32px)'
-  >
-    {children}
-  </Block>
-)
-
-const ContentWrap = ({
-  children,
-  content_overlap=false,
-  wrap_align=['column', 'column'],
-  wrap_aligny,
-  wrap_height,
-  wrap_mt=[0, 0],
-  wrap_mb=[0, 0],
-  wrap_width=['100%', '100%']
-}) => {
-
-  const content_overlap_style = `
-    z-index: 10;
-  `
-  const custom_style = `
-    ${content_overlap ? content_overlap_style : ''}
-  `
-
-  return (
-    <Block
-      align={wrap_align[0]}
-      alignx='center'
-      aligny={wrap_aligny[0]}
-      custom={custom_style}
-      height={wrap_height[0]}
-      mt={wrap_mt[0]}
-      mb={wrap_mb[0]}
-      width={wrap_width[0]}
-      lg={{
-        align: wrap_align[1],
-        alignx: 'center',
-        aligny: wrap_aligny[1],
-        custom: custom_style,
-        height: wrap_height[1],
-        mt: wrap_mt[1],
-        mb: wrap_mb[1],
-        width: wrap_width[1],
-      }}
-    >
+      }}>
       {children}
     </Block>
   )
@@ -119,7 +64,8 @@ const Datetime = ({ children }) => (
     fontFamily='primary'
     fontSize='14px'
     fontWeight={300}
-    lineHeight='18px'>
+    lineHeight='18px'
+    width='100%'>
     {children}
   </Typography> 
 )
@@ -129,7 +75,7 @@ const Image = ({
   image_circle = false,
   height,
 }) => {
-  const custom = image_circle ? 'border-radius: 100%;' : false
+  const custom = image_circle ? 'border-radius: 100%;' : ''
   return (
     <Block
       bgColor='neutral10'
@@ -140,8 +86,7 @@ const Image = ({
         align: 'column',
         height: height[1],
         width: '100%'
-      }}
-    >
+      }}>
       {children}
     </Block>
   )
@@ -153,7 +98,7 @@ const Subject = ({
   color,
   font_size,
   line_height,
-  mb=[2, 2]
+  mb
 }) => {
   return (
     <Block 
@@ -166,7 +111,8 @@ const Subject = ({
       }}
       px={bg_color !== 'white' ? 1 : 0}
       py={bg_color !== 'white' ? 0.5 : 0}
-      mb={mb[0]}>
+      mb={mb[0]}
+      width='100%'>
       <Typography
         color={color}
         element='h2'
@@ -176,9 +122,10 @@ const Subject = ({
         lineHeight={line_height[0]}
         lg={{
           fontSize: font_size[1],
-          lineHeight: line_height[1],
+          lineHeight: line_height[1]
         }}
-        transform='uppercase'>
+        transform='uppercase'
+        width='100%'>
         {children}
       </Typography> 
     </Block>
@@ -189,7 +136,8 @@ const Subtitle = ({
   children,
   color,
   font_size,
-  line_height
+  line_height,
+  mb
 }) => {
   return (
     <Typography
@@ -201,9 +149,11 @@ const Subtitle = ({
       lineHeight={line_height[0]}
       lg={{
         fontSize: font_size[1],
-        lineHeight: line_height[1]
+        lineHeight: line_height[1],
+        mb: mb[1]
       }}
-      mb={2}>
+      mb={mb[0]}
+      width='100%'>
       {children}
     </Typography> 
   )
@@ -215,7 +165,7 @@ const Title = ({
   element='h2',
   font_size,
   line_height,
-  mb=[2, 2]
+  mb
 }) => {
   return (
     <Typography
@@ -230,19 +180,68 @@ const Title = ({
         lineHeight: line_height[1],
         mb: mb[1]
       }}
-      mb={mb[0]}>
+      mb={mb[0]}
+      width='100%'>
       {children}
     </Typography> 
   )
 }
 
+const WrapContent = ({
+  children,
+  content_overlap=false,
+  wrap_align=['column', 'column'],
+  wrap_aligny,
+  wrap_height,
+  wrap_mr=[0, 0],
+  wrap_ml=[0, 0],
+  wrap_mt=[0, 0],
+  wrap_mb=[0, 0],
+  wrap_width=['100%', '100%']
+}) => {
+  const content_overlap_style = `
+    z-index: 10;
+  `
+  const custom_style = `
+    ${content_overlap ? content_overlap_style : ''}
+  `
+  return (
+    <Block
+      align={wrap_align[0]}
+      alignx='center'
+      aligny={wrap_aligny[0]}
+      custom={custom_style}
+      height={wrap_height[0]}
+      mr={wrap_mr[0]}
+      ml={wrap_ml[0]}
+      mt={wrap_mt[0]}
+      mb={wrap_mb[0]}
+      width={wrap_width[0]}
+      lg={{
+        align: wrap_align[1],
+        alignx: 'center',
+        aligny: wrap_aligny[1],
+        custom: custom_style,
+        height: wrap_height[1],
+        mr: wrap_mr[1],
+        ml: wrap_ml[1],
+        mt: wrap_mt[1],
+        mb: wrap_mb[1],
+        width: wrap_width[1],
+      }}
+    >
+      {children}
+    </Block>
+  )
+}
+
 export {
+  AreaLink,
   Box,
-  Content,
-  ContentWrap,
   Datetime,
   Image,
   Subject,
   Subtitle,
-  Title
+  Title,
+  WrapContent,
 }
