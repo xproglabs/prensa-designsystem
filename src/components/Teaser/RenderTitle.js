@@ -12,7 +12,7 @@ const RenderTitle = ({ layout, item_path, item_title }) => {
   const element = get(layout, 'title.element', 'h2')
   const font_size = get(layout, 'title.font_size', ['32px', '44px'])
   const line_height = get(layout, 'title.line_height', ['36px', '48px'])
-  const mb = get(layout, 'title.mb', [2, 2])
+  const mb = get(layout, 'title.mb', ['0px', '0px'])
   return (
     <S.Title
       color={color}

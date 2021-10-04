@@ -11,22 +11,15 @@ type BoxTypes = {
   mb?: SpacingType;
 }
 
-type BoxWrap = {
-  content_overlap?: boolean;
-  align?: [string, string];
-  aligny?: [string, string];
-  height?: [string, string];
-  mb?: SpacingType;
-  mt?: SpacingType;
-  width?: [string, string];
-}
-
 type Image = {
   dimension?: [string, string];
   enabled?: boolean;
+  align?: [string, string];
+  aligny?: [string, string];
   height?: [string, string];
   width?: [string, string];
-  box?: [string, string];
+  mt?: SpacingType;
+  mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
 }
@@ -64,9 +57,21 @@ type Title = {
   mb?: SpacingType;
 }
 
+type WrapContent = {
+  content_overlap?: boolean;
+  align?: [string, string];
+  aligny?: [string, string];
+  height?: [string, string];
+  width?: [string, string];
+  mt?: SpacingType;
+  mr?: SpacingType;
+  mb?: SpacingType;
+  ml?: SpacingType;
+}
+
 export type LayoutProps = {
   box?: BoxTypes;
-  box_wrap?: BoxWrap;
+  box_wrap?: WrapContent;
   carousel?: Object;
   datetime_enabled?: boolean;
   image?: Image;

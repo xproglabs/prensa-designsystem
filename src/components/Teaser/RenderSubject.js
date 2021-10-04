@@ -9,17 +9,14 @@ const RenderSubject = ({ color, item, layout }) => {
 
   const subject_enabled = get(layout, 'subject.enabled', false)
   const subject_value = get(item, 'subject', '')
-
   if (!subject_value || !subject_enabled) {
     return false
   }
-
   const bg_color = get(layout, 'subject.bg_color', 'primary1')
   const font_color = color ? color : get(layout, 'subject.color', 'white')
   const font_size = get(layout, 'subject.font_size', ['14px', '14px'])
   const line_height = get(layout, 'subject.line_height', ['16px', '16px'])
-  const mb = get(layout, 'subject.mb', [2, 2])
-
+  const mb = get(layout, 'subject.mb', ['0px', '0px'])
   return (
     <S.Subject
       bg_color={bg_color}
