@@ -16,17 +16,12 @@ export const ContainerAtex = ({ children }) =>
     {children}
   </Block>
 
-
 export const ContainerCopyright = ({ bgColor, children }) =>
   <Block
     {...CONTAINER_COPYRIGHT}
     bgColor={bgColor}>
     {children}
   </Block>
-
-ContainerCopyright.defaultProps = {
-  bgColor: 'neutral9',
-}
 
 export const ContainerCopyrightItems = ({ children }) =>
   <Block
@@ -39,12 +34,6 @@ export const ContainerCompanies = ({ children }) =>
     {...CONTAINER_COMPANIES}>
     {children}
   </Block>  
-
-export const ContainerText = ({ children }) =>
-  <Block
-    {...CONTAINER_TEXT}>
-    {children}
-  </Block>
    
 export const ContainerXprog = ({ children }) =>
   <Block

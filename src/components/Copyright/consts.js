@@ -19,6 +19,7 @@ const CONTAINER_COMPANIES = {
 const CONTAINER_COPYRIGHT = {
   align: 'column',
   aligny: 'middle',
+  bgColor: 'neutral9',
   py: 5,
   px: 2,
   width: 'calc(100% - 32px)',
@@ -37,19 +38,10 @@ const CONTAINER_COPYRIGHT_ITEMS = {
   }
 }
 
-const CONTAINER_TEXT = {
-  aligny: 'top',
-  align: 'column',
-  lg: {
-    align: 'row'
-  }
-}
-
 export { 
   CONTAINER_ATEX,
   CONTAINER_COMPANIES,
   CONTAINER_COPYRIGHT,
   CONTAINER_COPYRIGHT_ITEMS,
-  CONTAINER_TEXT,
   CONTAINER_XPROG,
 }
