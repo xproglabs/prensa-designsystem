@@ -1,7 +1,9 @@
-import { Meta } from "@storybook/addon-docs/blocks";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../../styles/theme";
-import ReadMore from "./index";
+import { Meta } from '@storybook/addon-docs/blocks'
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+
+import { theme } from '../../../styles/theme'
+import ReadMore from './index'
 
 <Meta title="Article/ReadMore" />
 
