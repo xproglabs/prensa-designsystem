@@ -4,6 +4,7 @@ import { ErrorPageProps } from './types'
 import * as S from './styled'
 
 const ErrorPage = ({
+  align,
   buttonAction,
   buttonColor,
   buttonText,
@@ -14,7 +15,9 @@ const ErrorPage = ({
   return (
     <S.ContainerError>
       <S.ContentError>
-        <S.PageTitle color={titleColor}>
+        <S.PageTitle 
+          color={titleColor}
+          textAlign={align}>
           {title}
         </S.PageTitle>
         <S.Message>

@@ -1,15 +1,12 @@
+type AlignProps = 'left' | 'center' | 'right'
 export interface ErrorPageProps {
+  align: AlignProps;
   buttonAction?: string;
   buttonText?: string;
   buttonColor?: string;
   message?: string;
   title?: string;
   titleColor?: string;
-}
-
-export interface PageTitleProps {
-  color: string;
-  children: string;
 }
 
 export interface ButtonProps {
@@ -21,3 +18,9 @@ export interface ButtonProps {
 export interface MessageProps {
   children: string;
 }
+
+export interface PageTitleProps {
+  color: string;
+  children: string;
+}
+
