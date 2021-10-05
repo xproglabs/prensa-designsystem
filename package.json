@@ -1,6 +1,6 @@
 {
   "name": "prensa",
-  "version": "1.6.11",
+  "version": "1.6.13",
   "description": "Prensa Design System",
   "main": "components/index.js",
   "module": "components/index.esm.js",
@@ -55,6 +55,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.30.0",
     "styled-components": "^5.2.1",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.3.5"
   },
   "scripts": {
@@ -64,8 +65,8 @@
     "eslint": "eslint --ext js,jsx src/ ",
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
     "test": "jest",
-    "update-prensa:qa": "npm version patch && npm run build && git push --tags && npm publish --tag qa",
-    "update-prensa": "npm version patch && npm run build && git push --tags && npm publish"
+    "update-prensa:qa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish --tag qa",
+    "update-prensa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish"
   },
   "lint-staged": {
     "*.+(js|jsx)": [

@@ -52,17 +52,19 @@ Container.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
 
-export const Content = ({ children }) => 
+export const Content = ({ children, mb }) => 
   <Block
-    width='100%'
     align='column'
-    md={{ align: 'row', aligny: 'middle' }}
+    mb={mb[0]}
+    width='100%'
+    md={{ align: 'row', aligny: 'middle', mb: mb[1] }}
   >
     {children}
   </Block>
 
 Content.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  mb: PropTypes.array
 }
 
 export const DateLine = ({ children, mb }) => 
@@ -74,10 +76,6 @@ export const DateLine = ({ children, mb }) =>
     width='100%'>
     {children}
   </Block>
-
-DateLine.defaultProps = {
-  mb: [4, 4]
-}  
 
 DateLine.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
