@@ -27,6 +27,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         lg={{
           align: 'row',
           alignx: 'between',
+          custom: 'flex-wrap: wrap;',
           width: 'calc(calc(calc(calc(100% - 48px) / 3) * 2) + 24px)'
         }}
         width="100%">

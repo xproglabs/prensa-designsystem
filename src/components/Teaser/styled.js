@@ -20,9 +20,14 @@ const Box = ({
   box_alignx=['center', 'center'],
   box_aligny,
   box_height,
-  box_pb,
   box_pt,
+  box_pr,
+  box_pb,
+  box_pl,
+  box_mt,
+  box_mr,
   box_mb=[2,2],
+  box_ml,
   background,
   border,
   children
@@ -38,9 +43,14 @@ const Box = ({
         border-radius: 5px;
       ` : ''}
       height={box_height[0]}
-      pb={box_pb[0]}
       pt={box_pt[0]}
+      pr={box_pr[0]}
+      pb={box_pb[0]}
+      pl={box_pl[0]}
+      mt={box_mt[0]}
+      mr={box_mr[0]}
       mb={box_mb[0]}
+      ml={box_ml[0]}
       width={border ? 'calc(100% - 2px)' : '100%'}
       lg={{
         align: box_align[1],
@@ -48,8 +58,13 @@ const Box = ({
         aligny: box_aligny[1],
         height: box_height[1],
         pt: box_pt[1],
+        pr: box_pr[1],
         pb: box_pb[1],
+        pl: box_pl[1],
+        mt: box_mt[1],
+        mr: box_mr[1],
         mb: box_mb[1],
+        ml: box_ml[1],
         width: border ? 'calc(100% - 2px)' : '100%'
       }}
       xl={{

@@ -6,10 +6,17 @@ type BoxTypes = {
   align?: [string, string];
   alignx?: [string, string];
   aligny?: [string, string];
+  background?: string;
+  border?: string;
   height?: [string, string] | [string, string, string];
-  pb?: SpacingType;
   pt?: SpacingType;
+  pr?: SpacingType;
+  pb?: SpacingType;
+  pl?: SpacingType;
+  mt?: SpacingType;
+  mr?: SpacingType;
   mb?: SpacingType;
+  ml?: SpacingType;
 }
 type BoxWrap = {
   content_overlap?: boolean;

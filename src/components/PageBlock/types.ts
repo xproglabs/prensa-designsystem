@@ -9,6 +9,7 @@ export interface SlotBlockProps {
   list1: [TeaserProps];
   list2: [TeaserProps];
   title: string;
+  spaces?: [number, number, number, number];
   type: string;
 }
 export interface PageBlockProps {

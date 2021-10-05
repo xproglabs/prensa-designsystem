@@ -23,11 +23,18 @@ const Teaser = (props: TeaserProps) => {
   const item_path = get(item, 'url', false) || get(item, 'path', '')
   const item_title = get(item, 'name', '')
   const box_align = get(layout, 'box.align', ['column', 'column'])
+  const box_alignx = get(layout, 'box.alignx', ['left', 'left'])
   const box_aligny = get(layout, 'box.aligny', ['top', 'top'])
-  const box_pb = get(layout, 'box.pb', [0, 0])
-  const box_pt = get(layout, 'box.pt', [0, 0])
-  const box_mb = get(layout, 'box.mb', [2, 2])
+  const box_background = get(layout, 'box.background', 'transparent')
   const box_height = get(layout, 'box.height', ['auto', 'auto', 'auto'])
+  const box_pt = get(layout, 'box.pt', ['0px', '0px'])
+  const box_pr = get(layout, 'box.pr', ['0px', '0px'])
+  const box_pb = get(layout, 'box.pb', ['0px', '0px'])
+  const box_pl = get(layout, 'box.pl', ['0px', '0px'])
+  const box_mt = get(layout, 'box.mt', ['0px', '0px'])
+  const box_mr = get(layout, 'box.mr', ['0px', '0px'])
+  const box_mb = get(layout, 'box.mb', [2, 2])
+  const box_ml = get(layout, 'box.ml', ['0px', '0px'])
   // box (content) wrap
   const content_overlap = get(layout, 'box_wrap.content_overlap', false)
   const wrap_align = get(layout, 'box_wrap.align', ['column', 'column'])
@@ -35,28 +42,35 @@ const Teaser = (props: TeaserProps) => {
   const wrap_aligny = get(layout, 'box_wrap.aligny', ['top', 'top'])
   const wrap_height = get(layout, 'box_wrap.height', ['auto', 'auto'])
   const wrap_width = get(layout, 'box_wrap.width', ['100%', '100%'])
-  const wrap_ml = get(layout, 'box_wrap.ml', [0, 0])
-  const wrap_mr = get(layout, 'box_wrap.mr', [0, 0])
-  const wrap_mb = get(layout, 'box_wrap.mb', [0, 0])
-  const wrap_mt = get(layout, 'box_wrap.mt', [0, 0])
+  const wrap_ml = get(layout, 'box_wrap.ml', ['0px', '0px'])
+  const wrap_mr = get(layout, 'box_wrap.mr', ['0px', '0px'])
+  const wrap_mb = get(layout, 'box_wrap.mb', ['0px', '0px'])
+  const wrap_mt = get(layout, 'box_wrap.mt', ['0px', '0px'])
   // image wrap
   const image_align = get(layout, 'image.align', ['column', 'column'])
   const image_alignx = get(layout, 'image.alignx', ['left', 'left'])
   const image_aligny = get(layout, 'image.aligny', ['top', 'top'])
   const image_height = get(layout, 'image.height', ['auto', 'auto'])
   const image_wrap_width = get(layout, 'image.wrap_width', ['100%', '100%'])
-  const image_mt = get(layout, 'image.mt', [0, 0])
-  const image_mr = get(layout, 'image.mr', [0, 0])
-  const image_mb = get(layout, 'image.mb', [0, 0])
-  const image_ml = get(layout, 'image.ml', [0, 0])
+  const image_mt = get(layout, 'image.mt', ['0px', '0px'])
+  const image_mr = get(layout, 'image.mr', ['0px', '0px'])
+  const image_mb = get(layout, 'image.mb', ['0px', '0px'])
+  const image_ml = get(layout, 'image.ml', ['0px', '0px'])
   return (
     <S.Box
       box_align={box_align}
+      box_alignx={box_alignx}
       box_aligny={box_aligny}
+      background={box_background}
       box_height={box_height}
-      box_pb={box_pb}
       box_pt={box_pt}
-      box_mb={box_mb}>
+      box_pr={box_pr}
+      box_pb={box_pb}
+      box_pl={box_pl}
+      box_mt={box_mt}
+      box_mr={box_mr}
+      box_mb={box_mb}
+      box_ml={box_ml}>
       <S.WrapContent
         wrap_align={image_align}
         wrap_aligny={image_aligny}
