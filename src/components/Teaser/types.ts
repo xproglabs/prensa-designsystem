@@ -31,18 +31,18 @@ type BoxWrap = {
   ml?: SpacingType;
 }
 type Image = {
-  dimension?: [string, string];
-  enabled?: boolean;
   align?: [string, string];
   aligny?: [string, string];
-  layout?: [string, string];
+  dimension?: [string, string];
+  enabled?: boolean;
   height?: [string, string];
-  width?: [string, string];
-  wrap_width?: [string, string];
+  layout?: [string, string];
   mt?: SpacingType;
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
+  width?: [string, string];
+  wrap_width?: [string, string];
 }
 type Related = {
   color?: string;
