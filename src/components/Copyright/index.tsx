@@ -9,7 +9,8 @@ import * as S from './styled'
 
 const Copyright = ({ 
   bgColor,
-  color, 
+  color,
+  textCompany, 
   textCopyright, 
   textRights, 
   textXprog, 
@@ -19,6 +20,7 @@ const Copyright = ({
     <S.ContainerCopyright bgColor={bgColor}>
       <S.ContainerCopyrightItems>
         <TextItem color={color} text={textCopyright} />
+        <TextItem color={color} text={textCompany} />
         <TextItem color={color} text={textRights} />
       </S.ContainerCopyrightItems>    
       <S.ContainerCompanies>

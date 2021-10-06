@@ -31,6 +31,10 @@ export interface CopyrightProps {
    */
   textCopyright: string;
   /**
+   * @description Define texto da empresa
+   */
+  textCompany: string;
+  /**
    * @description Define texto dos direitos reservados
    */
   textRights: string;
