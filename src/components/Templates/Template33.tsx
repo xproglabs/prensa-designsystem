@@ -22,7 +22,7 @@ const Column = ({ children }) => (
     mb={2}
     lg={{
       mb: 0,
-      width: 'calc(calc(100% - 32px) / 3)'
+      width: 'calc((100% - 32px) / 3)'
     }}
     width="100%">
     {children}

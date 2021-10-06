@@ -21,7 +21,7 @@ const RenderSlot = ({
   theme
 }: RenderSlotProps) => {
   const { teasers } = theme
-  const column_width = `calc(calc(100% - calc(${column_padding} * 24px)) / ${column_items})`
+  const column_width = `calc((100% - (${column_padding} * 24px)) / ${column_items})`
   /**
    * Render_space function
    * @param component Expects a ReactElement
