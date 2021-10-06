@@ -6,7 +6,7 @@ export interface TextItemProps {
   /**
    * @description Define o texto a ser renderizado
    */
-  text: string;
+  text: string
 }
 
 export interface CopyrightProps {
@@ -26,6 +26,14 @@ export interface CopyrightProps {
    * @description Define texto da ATEX
    */
   textAtex: string;
+  /**
+   * @description Define texto do Copyright
+   */
+  textCopyright: string;
+  /**
+   * @description Define texto dos direitos reservados
+   */
+  textRights: string;
   /**
    * @description Define texto da XPROG
    */
