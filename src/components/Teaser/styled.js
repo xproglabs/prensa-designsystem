@@ -28,20 +28,22 @@ const Box = ({
   box_mr,
   box_mb=[2,2],
   box_ml,
-  background,
+  background='transparent',
   border,
   children
 }) => {
+  const border_custom = border ? `
+      border: 1px solid #EAEAEA;
+      border-radius: 5px;
+    ` : ''
+  const box_width = border ? 'calc(100% - 2px)' : '100%'
   return (
     <Block
       align={box_align[0]}
       alignx={box_alignx[0]}
       aligny={box_aligny[0]}
-      bgColor={background ? background : 'transparent'}
-      custom={border ? `
-        border: 1px solid #EAEAEA;
-        border-radius: 5px;
-      ` : ''}
+      bgColor={background}
+      custom={border_custom}
       height={box_height[0]}
       pt={box_pt[0]}
       pr={box_pr[0]}
@@ -51,7 +53,7 @@ const Box = ({
       mr={box_mr[0]}
       mb={box_mb[0]}
       ml={box_ml[0]}
-      width={border ? 'calc(100% - 2px)' : '100%'}
+      width={box_width}
       lg={{
         align: box_align[1],
         alignx: box_alignx[1],
@@ -65,7 +67,7 @@ const Box = ({
         mr: box_mr[1],
         mb: box_mb[1],
         ml: box_ml[1],
-        width: border ? 'calc(100% - 2px)' : '100%'
+        width: box_width
       }}
       xl={{
         height: get(box_height, '[2]', box_height[1])
@@ -118,6 +120,8 @@ const Subject = ({
   line_height,
   mb
 }) => {
+  const subject_px = bg_color !== 'transparent' ? 1 : 0
+  const subject_py = bg_color !== 'transparent' ? 0.5 : 0
   return (
     <Block 
       align='row'
@@ -127,8 +131,8 @@ const Subject = ({
       lg={{
         mb: mb[1]
       }}
-      px={bg_color !== 'transparent' ? 1 : 0}
-      py={bg_color !== 'transparent' ? 0.5 : 0}
+      px={subject_px}
+      py={subject_py}
       mb={mb[0]}>
       <Typography
         color={color}
