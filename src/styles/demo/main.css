@@ -1,0 +1,21 @@
+amp-img {
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+}
+amp-img img {
+  object-fit: cover;
+}
+.image-with-radius {
+  border-radius: 100%;
+}
+@media (max-width: 1015px) {
+  .amp_desktop {
+    display: none;
+  }
+}
+@media (min-width: 1016px) {
+  .amp_mobile {
+    display: none;
+  }
+}

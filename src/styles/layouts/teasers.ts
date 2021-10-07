@@ -1,3 +1,5 @@
+import { LayoutProps } from '../../components/Teaser/types'
+
 const SECTION_DEFAULT = {
   color: 'primary1',
   enabled: true,
@@ -5,14 +7,14 @@ const SECTION_DEFAULT = {
   line_height: ['24px', '24px'],
   mb: [2, 2]
 }
-const SUBJECT_DEFAULT = {
+const SUBJECT_DEFAULT: LayoutProps['subject'] = {
   bg_color: 'white',
   color: 'primary1',
   enabled: true,
   font_size: ['14px', '14px'],
   line_height: ['16px', '16px']
 }
-const SUBJECT_FILLED = {
+const SUBJECT_FILLED: LayoutProps['subject'] = {
   bg_color: 'primary1',
   color: 'white',
   enabled: true,
@@ -20,19 +22,7 @@ const SUBJECT_FILLED = {
   line_height: ['18px', '18px']
 }
 
-export interface TeaserProps {
-  box: object;
-  box_wrap: object;
-  carousel?: object;
-  datetime_enabled: boolean;
-  image: object;
-  title: object;
-  section?: object;
-  subject: object;
-  subtitle: object;
-}
-
-export const TEASER_FEATURED: TeaserProps = {
+export const TEASER_FEATURED: LayoutProps = {
   box: {
     aligny: ['top', 'between'],
     height: ['auto', '366px'],
@@ -43,7 +33,7 @@ export const TEASER_FEATURED: TeaserProps = {
     aligny: ['top', 'between'],
     height: ['auto', '366px']
   },
-  datetime_enabled: true,
+  datetime_enabled: false,
   image: {
     enabled: false,
     mb: [0, 0]
@@ -63,7 +53,7 @@ export const TEASER_FEATURED: TeaserProps = {
   }
 }
 
-export const TEASER_IMAGE_FEATURED: TeaserProps = {
+export const TEASER_IMAGE_FEATURED: LayoutProps = {
   box: {
     aligny: ['bottom', 'bottom'],
     height: ['366px', '366px'],
@@ -79,10 +69,10 @@ export const TEASER_IMAGE_FEATURED: TeaserProps = {
   },
   datetime_enabled: false,
   image: {
+    enabled: true,
     dimension: ['2x1', '2x1'],
     height: ['366px', '366px'],
     width: ['366px', '366px'],
-    enabled: true,
   },
   title: {
     color: 'white',
@@ -97,7 +87,7 @@ export const TEASER_IMAGE_FEATURED: TeaserProps = {
   }
 }
 
-export const TEASER_FEATURED_RELATED: TeaserProps = {
+export const TEASER_FEATURED_RELATED: LayoutProps = {
   box: {
     pb: [3, 3],
     pt: [3, 3]
@@ -106,7 +96,7 @@ export const TEASER_FEATURED_RELATED: TeaserProps = {
     aligny: ['top', 'top'],
     height: ['auto', 'auto']
   },
-  datetime_enabled: true,
+  datetime_enabled: false,
   image: {
     enabled: false,
     mb: [0, 0]
@@ -116,13 +106,16 @@ export const TEASER_FEATURED_RELATED: TeaserProps = {
     font_size: ['24px', '24px'],
     line_height: ['28px', '28px']
   },
+  related: {
+    enabled: true
+  },
   subject: SUBJECT_DEFAULT,
   subtitle: {
     enabled: false
   }
 }
 
-export const TEASER_IMAGE_TOP: TeaserProps = {
+export const TEASER_IMAGE_TOP: LayoutProps = {
   box: {
     pb: [3, 3],
     pt: [0, 0]
@@ -133,10 +126,10 @@ export const TEASER_IMAGE_TOP: TeaserProps = {
   },
   datetime_enabled: true,
   image: {
+    enabled: true,
     dimension: ['1x1', '2x1'],
     height: ['300px', '300px'],
     width: ['300px', '300px'],
-    enabled: true,
     mb: [3, 3]
   },
   title: {
@@ -151,7 +144,7 @@ export const TEASER_IMAGE_TOP: TeaserProps = {
   }
 }
 
-export const TEASER_IMAGE_CAROUSEL: TeaserProps = {
+export const TEASER_IMAGE_CAROUSEL: LayoutProps = {
   box: {
     pb: [3, 3],
     pt: [0, 0],
@@ -166,10 +159,10 @@ export const TEASER_IMAGE_CAROUSEL: TeaserProps = {
     height: ['420px', '540px']
   },
   image: {
+    enabled: true,
     dimension: ['1x1', '2x1'],
     height: ['200px', '200px'],
     width: ['300px', '300px'],
-    enabled: true,
     mb: [3, 3]
   },
   title: {
@@ -184,7 +177,7 @@ export const TEASER_IMAGE_CAROUSEL: TeaserProps = {
   }
 }
 
-export const TEASER_IMAGE_TWO: TeaserProps = {
+export const TEASER_IMAGE_TWO: LayoutProps = {
   box: {
     pb: [3, 3],
     pt: [0, 0],
@@ -196,10 +189,10 @@ export const TEASER_IMAGE_TWO: TeaserProps = {
   },
   datetime_enabled: true,
   image: {
+    enabled: true,
     dimension: ['1x1', '2x1'],
     height: ['300px', '300px'],
     width: ['300px', '300px'],
-    enabled: true,
     mb: [3, 3]
   },
   title: {
@@ -214,7 +207,7 @@ export const TEASER_IMAGE_TWO: TeaserProps = {
   }
 }
 
-export const TEASER_IMAGE_THREE: TeaserProps = {
+export const TEASER_IMAGE_THREE: LayoutProps = {
   box: {
     pb: [3, 3],
     pt: [0, 0]
@@ -225,10 +218,10 @@ export const TEASER_IMAGE_THREE: TeaserProps = {
   },
   datetime_enabled: true,
   image: {
+    enabled: true,
     dimension: ['1x1', '2x1'],
     height: ['220px', '320px'],
     width: ['300px', '300px'],
-    enabled: true,
     mb: [3, 3]
   },
   title: {
@@ -243,7 +236,7 @@ export const TEASER_IMAGE_THREE: TeaserProps = {
   }
 }
 
-export const TEASER_IMAGE_FOUR: TeaserProps = {
+export const TEASER_IMAGE_FOUR: LayoutProps = {
   box: {
     pb: [3, 3],
     pt: [0, 0],
@@ -273,7 +266,7 @@ export const TEASER_IMAGE_FOUR: TeaserProps = {
   }
 }
 
-export const TEASER_LEFTIMAGE_SMALL: TeaserProps = {
+export const TEASER_LEFTIMAGE_SMALL: LayoutProps = {
   box: {
     align: ['row', 'row'],
     aligny: ['top', 'top'],
@@ -287,13 +280,12 @@ export const TEASER_LEFTIMAGE_SMALL: TeaserProps = {
   },
   datetime_enabled: false,
   image: {
-    box: ['100px', '100px'],
     dimension: ['1x1', '1x1'],
     enabled: true,
     height: ['100px', '100px'],
+    width: ['60px', '100px'],
     mb: [0, 0],
-    ml: [2, 2],
-    width: ['60px', '100px']
+    ml: [2, 2]
   },
   title: {
     enabled: true,
@@ -311,7 +303,7 @@ export const TEASER_LEFTIMAGE_SMALL: TeaserProps = {
   }
 }
 
-export const TEASER_LEFTIMAGE_LARGE: TeaserProps = {
+export const TEASER_LEFTIMAGE_LARGE: LayoutProps = {
   box: {
     align: ['column', 'row'],
     aligny: ['top', 'top'],
@@ -329,13 +321,12 @@ export const TEASER_LEFTIMAGE_LARGE: TeaserProps = {
   },
   datetime_enabled: true,
   image: {
-    box: ['100%', '300px'],
     dimension: ['1x1', '1x1'],
     enabled: true,
     height: ['120px', '200px'],
+    width: ['120px', '200px'],
     mb: [2, '0px'],
-    ml: ['0px', '0px'],
-    width: ['120px', '200px']
+    ml: ['0px', '0px']
   },
   title: {
     enabled: true,
@@ -355,7 +346,7 @@ export const TEASER_LEFTIMAGE_LARGE: TeaserProps = {
   }
 }
 
-export const TEASER_MOSTREAD: TeaserProps = {
+export const TEASER_MOSTREAD: LayoutProps = {
   box: {
     align: ['row', 'row'],
     aligny: ['top', 'top'],

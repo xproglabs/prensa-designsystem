@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Link from '../components/Link'
-import Typography from '../components/Typography'
+import Link from '../Link'
+import Typography from '../Typography'
 
 export const SectionTitle = ({
   children,
@@ -35,8 +35,7 @@ export const SectionTitle = ({
         mb: mb[1]
       }}
       mb={mb[0]}
-      transform='uppercase'
-    >
+      transform='uppercase'>
       <AreaLinkWrap />
     </Typography> 
   )

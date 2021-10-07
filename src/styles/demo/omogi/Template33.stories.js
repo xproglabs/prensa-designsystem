@@ -1,15 +1,15 @@
+import { SectionTitle } from 'components/Templates/styled.tsx'
+import { Template33 as Template } from 'components/Templates/Template33'
+import TemplateContainer from 'components/Templates/TemplateContainer'
 import { get } from 'lodash'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import { theme } from 'styles/theme'
 
-import { theme } from '../styles/theme'
-import Container from '../templates/Container'
-import { SectionTitle } from './styled'
-import { Template33 as Template } from './Template33'
 import { data } from './Template33.data'
 
 export default {
-  title: 'Templates',
+  title: 'Templates/OMogi',
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
@@ -60,7 +60,7 @@ export const Template33 = () => {
   )
 
   return (
-    <Container
+    <TemplateContainer
       mb={[2, 2]}
       theme={theme}
     >
@@ -107,6 +107,6 @@ export const Template33 = () => {
           slot: items_right
         }}
       />
-    </Container>
+    </TemplateContainer>
   )
 }
