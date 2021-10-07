@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { theme } from '../../styles/theme'
-import Copyright from './index.tsx'
+import Copyright from '../Copyright'
 
 export default {
   title: 'Copyright',
@@ -13,7 +13,9 @@ export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
       <Copyright
-        text='© Copyright 2021 - Empresa. Todos os direitos reservados.'
+        textCopyright='© Copyright 2021'
+        textCompany='Empresa'
+        textRights='Todos os direitos reservados.'
         textAtex='Distribuído por'
         textXprog='Desenvolvido por'
       />

@@ -9,15 +9,19 @@ import * as S from './styled'
 
 const Copyright = ({ 
   bgColor,
-  color, 
-  text, 
+  color,
+  textCompany, 
+  textCopyright, 
+  textRights, 
   textXprog, 
   textAtex 
 } : CopyrightProps ) => {
   return (
     <S.ContainerCopyright bgColor={bgColor}>
       <S.ContainerCopyrightItems>
-        <TextItem color={color} text={text} />
+        <TextItem color={color} text={textCopyright} />
+        <TextItem color={color} text={textCompany} />
+        <TextItem color={color} text={textRights} />
       </S.ContainerCopyrightItems>    
       <S.ContainerCompanies>
         <S.ContainerXprog>
@@ -25,7 +29,7 @@ const Copyright = ({
           <LogoXprog />
         </S.ContainerXprog>
         <S.ContainerAtex>
-          <TextItem color={color} text={textAtex}></TextItem>
+          <TextItem color={color} text={textAtex} />
           <LogoAtex />
         </S.ContainerAtex>
       </S.ContainerCompanies>  

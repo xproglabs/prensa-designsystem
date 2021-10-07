@@ -1,33 +1,41 @@
 export interface TextItemProps {
   /**
-   * @description Define a cor do texto
+   * @description Define text color
    */
   color: string;
   /**
-   * @description Define o texto a ser renderizado
+   * @description Define text to be rendered
    */
   text: string;
 }
 
 export interface CopyrightProps {
   /**
-   * @description Define a cor background 
+   * @description Define background color for CopyrightContainer
    */
   bgColor: string;
   /**
-   * @description Define a cor do texto
+   * @description Define text color
    */
   color?: string;
   /**
-   * @description Define o texto a ser inserido na mensagem de Copyright
-   */
-  text: string;
-  /**
-   * @description Define texto da ATEX
+   * @description Define ATEX message
    */
   textAtex: string;
   /**
-   * @description Define texto da XPROG
+   * @description Define copyright message
+   */
+  textCopyright: string;
+  /**
+   * @description Define company message
+   */
+  textCompany: string;
+  /**
+   * @description Define "rights reserved" message
+   */
+  textRights: string;
+  /**
+   * @description Define XPROG message
    */
   textXprog: string;
 }
