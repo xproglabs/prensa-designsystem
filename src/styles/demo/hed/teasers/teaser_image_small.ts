@@ -2,34 +2,32 @@ import { LayoutProps } from '../../../layouts'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT } from '../tokens/subject'
 
-export const TEASER_IMAGE_TOP: LayoutProps = {
+export const TEASER_IMAGE_SMALL: LayoutProps = {
   box: {
-    align: ['column', 'column'],
-    pb: [0, 0],
-    pt: [0, 0]
+    align: ['row', 'row'],
+    mb: [3, 3]
   },
   box_wrap: {
     align: ['column', 'column'],
     alignx: ['left', 'left'],
-    mt: [2, 2],
-    mr: [0, 0],
-    mb: [2, 2],
-    ml: [0, 0],
-    width: ['100%', '100%']
+    mt: ['0px', '0px'],
+    mb: ['0px', '0px'],
+    width: ['calc(100% - 96px)', 'calc(100% - 96px)']
   },
   title: {
     enabled: true,
     ...parseFonts(
-      tokensFonts.NEWS_TITLE_5,
-      tokensFonts.NEWS_TITLE_5
+      tokensFonts.NEWS_TITLE_8,
+      tokensFonts.NEWS_TITLE_6
     )
   },
   image: {
     enabled: true,
-    dimension: ['2x1', '2x1'],
-    layout: ['responsive', 'responsive'],
-    height: ['200px', '200px'],
-    width: ['400px', '400px']
+    dimension: ['1x1', '1x1'],
+    height: ['80px', '80px'],
+    width: ['80px', '80px'],
+    wrap_width: ['80px', '80px'],
+    mr: [2, 2]
   },
   related: {
     enabled: false
