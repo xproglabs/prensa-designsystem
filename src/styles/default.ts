@@ -9,8 +9,10 @@ import {
   TEASER_IMAGE_TWO,
   TEASER_LEFTIMAGE_LARGE,
   TEASER_LEFTIMAGE_SMALL,
-  TEASER_MOSTREAD
-} from '../teasers'
+  TEASER_MOSTREAD,
+} from './layouts/teasers'
+
+//TODO: Move to styled-system
 import { parseColor, parseBgColor, parseFontColor } from './parsers/parseColors'
 import { parseCustom, parseCustomDef } from './parsers/parseCustom'
 import { parseFontFamily } from './parsers/parseFontFamily'
@@ -18,7 +20,7 @@ import { parseMargin } from './parsers/parseMargin'
 import { parsePadding } from './parsers/parsePadding'
 import { parseRadius } from './parsers/parseRadius'
 
-export const theme = {
+export const default_theme = {
   colors: {
     activeColor: '#09B77B',
     primary1: '#063F8F',
@@ -68,9 +70,9 @@ export const theme = {
     margin: 8,
   },
   queries: {
-    xs: '360px', 
-    sm: '460px', 
-    md: '768px', 
+    xs: '360px',
+    sm: '460px',
+    md: '768px',
     lg: '1016px',
     xl: '1280px'
   },

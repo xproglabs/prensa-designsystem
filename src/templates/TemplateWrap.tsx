@@ -1,8 +1,12 @@
 import React from 'react'
-import RenderSlot from '../components/RenderSlot'
+import RenderSlot, {RenderSlotProps} from '../components/RenderSlot'
 import Block from '../components/Block'
 
-const TemplateWrap = ({ slotItems }) => {
+interface TemplateWrapProps {
+  slotItems: RenderSlotProps;
+}
+
+const TemplateWrap = ({ slotItems }: TemplateWrapProps) => {
   return (
     <Block
       align="column"

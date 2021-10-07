@@ -1,24 +1,105 @@
 import { get } from 'lodash'
-import React from 'react'
-import { withTheme } from 'styled-components'
+import React, {cloneElement, ReactElement} from 'react'
 
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
-import { RenderNumber } from './RenderMostReadNumber'
 import { RenderSubject } from './RenderSubject'
 import { RenderSubtitle } from './RenderSubtitle'
 import { RenderTitle } from './RenderTitle'
 import * as S from './styled'
 
-const Teaser = ({
-  color,
-  domain,
-  image_circle = false,
-  item,
-  layout,
-  number,
-  has_number
-}) => {
+type BoxTypes = {
+  align: [string, string];
+  aligny: [string, string];
+  pb: [number, number];
+  pt: [number, number];
+  mb: [number, number];
+  height: [string, string, string];
+}
+
+type BoxWrap = {
+  content_overlap: boolean;
+  align: [string, string];
+  aligny: [string, string]; 
+  height: [string, string];
+  mb: [number, number];
+  mt: [number, number];
+  width: [string, string];
+}
+
+type Image = {
+  dimensions: [string, string];
+  enabled: boolean;
+  height: [number, number];
+  width: [number, number];
+  box: [string, string];
+  mb: [number, number];
+  ml: [number, number];
+}
+
+type Subject = {
+  bg_color: string;
+  color: string;
+  font_size: [string, string];
+  enabled: boolean;
+  line_height: [string, string];
+  mb: [number, number];
+}
+
+type Subtitle = {
+  color: string;
+  font_size: [string, string];
+  enabled: boolean;
+  line_height: [string, string];
+}
+
+type Title = {
+  color: string;
+  element: string;
+  enabled: boolean;
+  font_size: [string, string];
+  line_height: [string, string];
+  mb: [number, number];
+}
+
+export type LayoutProps = {
+  box?: BoxTypes;
+  box_wrap?: BoxWrap;
+  image?: Image;
+  datetime_enabled?: boolean;
+  subject?: Subject;
+  subtitle?: Subtitle;
+  title?: Title;
+}
+
+export type TeaserProps = {
+  color: string;
+  domain: string;
+  image_circle?: boolean;
+  item: object;
+  layout?: LayoutProps;
+  /**
+   * @description spaceA prop expects a element or React Component to be rendered before teaser content
+   */
+  spaceA?: ReactElement;
+  /**
+   * @description spaceB prop expects a element or React Component to be rendered after teaser content
+   */
+  spaceB?: ReactElement;
+}
+
+const Teaser = (props: TeaserProps) => {
+
+  const {
+    color,
+    domain,
+    image_circle = false,
+    item,
+    layout,
+    spaceA,
+    spaceB
+  } = props
+
   // main props
   const item_path = get(item, 'path', '')
   const item_title = get(item, 'name', '')
@@ -37,6 +118,16 @@ const Teaser = ({
   const wrap_mt = get(layout, 'box_wrap.mt', [0, 0])
   const wrap_width = get(layout, 'box_wrap.width', ['100%', '100%'])
 
+  /**
+   * Render_space function
+   * @param component Expects a ReactElement
+   * @returns a React cloneElement hook for rendering the component passed as a prop
+   */
+  const render_space = (component: ReactElement) => {
+    if (!component) return null
+    return cloneElement(component)
+  }
+
   return (
     <S.Box
       box_align={box_align}
@@ -53,10 +144,7 @@ const Teaser = ({
         item_path={item_path}
         layout={layout}
       />
-      <RenderNumber
-        number={number}
-        has_number={has_number}
-      />
+     {render_space(spaceA)}
       <S.ContentWrap
         content_overlap={content_overlap}
         wrap_align={wrap_align}
@@ -91,8 +179,9 @@ const Teaser = ({
           />
         </S.Content>
       </S.ContentWrap>
+      {render_space(spaceB)}
     </S.Box>
   )
 }
 
-export default withTheme(Teaser)
+export default Teaser

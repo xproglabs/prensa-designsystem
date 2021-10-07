@@ -13,9 +13,11 @@ const Container = ({ children, featured, mb, value }) => {
 const TopImage = ({
   caption,
   featured,
+  height,
   image,
   mb,
   value,
+  width,
   type
 }) => {
   if (!image) return null
@@ -27,8 +29,8 @@ const TopImage = ({
   const Video = () => (
     <YoutubeMedia
       url={value}
-      height='640'
-      width='1280'
+      height={height}
+      width={width}
       mb='0px'
     />
   )
@@ -42,8 +44,8 @@ const TopImage = ({
         display: 'inline-flex',
         width: '100%'
       }}
-      height='640px'
-      width='1280px'
+      height={height}
+      width={width}
     />
   )
 
@@ -91,17 +93,21 @@ TopImage.defaultProps = {
     show: true,
     value: 'Legenda da Imagem'
   },
-  mb: ['2', '2'],
+  height: '640px',
+  mb: [2, 2],
   value: 'https://xprog.com.br/static/images/img-destak.jpg',
+  width: '1280px'
 }
 
 TopImage.propTypes = {
   amp: PropTypes.bool,
   featured: PropTypes.bool,
+  height: PropTypes.string,
   image: PropTypes.bool,
   caption: PropTypes.object,
   mb: PropTypes.array,
   value: PropTypes.string,
+  width: PropTypes.string,
   type: PropTypes.oneOf(['image', 'video'])
 }
 

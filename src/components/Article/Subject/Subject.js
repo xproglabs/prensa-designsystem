@@ -60,9 +60,9 @@ Subject.defaultProps = {
   fontWeight: 700,
   lineHeight: ['20px', '20px'],
   transform: 'none',
-  mb: ['1', '2'],
-  mt: ['2', '4'],
-  px: '2',
+  mb: [1, 2],
+  mt: [2, 4],
+  px: 2,
   py: '4px',
   value: 'MÍDIA DIGITAL'
 }
