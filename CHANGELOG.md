@@ -1,3 +1,8 @@
+# v1.6.12
+- Ajustes na estrutura e no content do Byline
+# v1.6.11
+- Corrige reescrita de propriedades na função CreateTheme
+- Prensa pipeline CI/CD patch
 # v1.6.10
 - Novas props "spaceA" e "spaceB" no Teaser 
 - Permite altura e largura parametrizada no article topimage 
