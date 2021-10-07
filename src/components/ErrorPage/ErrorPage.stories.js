@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { theme } from '../../styles/theme'
-import { ErrorPage } from '../ErrorPage'
+import ErrorPage from '../ErrorPage'
 
 export default {
   title: 'ErrorPage',

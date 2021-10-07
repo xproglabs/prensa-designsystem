@@ -34,7 +34,7 @@ const ErrorPage = ({
 }
 
 ErrorPage.defaultProps = {
-  alignx: 'center',
+  alignx: 'left',
   buttonAction: '/',
   buttonColor: 'black',
   buttonText: 'Voltar',
@@ -43,4 +43,4 @@ ErrorPage.defaultProps = {
   titleColor: 'black'
 }
 
-export { ErrorPage }
+export default ErrorPage 
