@@ -4,7 +4,7 @@ import { ErrorPageProps } from './types'
 import * as S from './styled'
 
 const ErrorPage = ({
-  align,
+  alignx,
   buttonAction,
   buttonColor,
   buttonText,
@@ -14,10 +14,10 @@ const ErrorPage = ({
 }: ErrorPageProps) => {
   return (
     <S.ContainerError>
-      <S.ContentError>
+      <S.ContentError
+        alignx={alignx}>
         <S.PageTitle 
-          color={titleColor}
-          textAlign={align}>
+          color={titleColor}>
           {title}
         </S.PageTitle>
         <S.Message>
@@ -25,8 +25,7 @@ const ErrorPage = ({
         </S.Message>
         <S.ButtonGoBack
           buttonAction={buttonAction}
-          color={buttonColor}
-        >
+          color={buttonColor}>
           {buttonText}
         </S.ButtonGoBack>
       </S.ContentError>
@@ -35,6 +34,7 @@ const ErrorPage = ({
 }
 
 ErrorPage.defaultProps = {
+  alignx: 'center',
   buttonAction: '/',
   buttonColor: 'black',
   buttonText: 'Voltar',

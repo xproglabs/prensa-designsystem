@@ -31,8 +31,10 @@ export const ContainerError = ({ children }) => (
   </Block>
 )
 
-export const ContentError = ({ children }) => (
-  <Block {...CONTENT_ERROR}>
+export const ContentError = ({ alignx, children }) => (
+  <Block {...CONTENT_ERROR}
+    alignx={alignx}
+  >
     {children}
   </Block>
 )

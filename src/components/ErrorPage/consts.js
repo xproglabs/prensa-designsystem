@@ -14,7 +14,7 @@ const CONTAINER_ERROR = {
 }
 
 const CONTENT_ERROR = {
-  alignx: 'left'
+  align: 'column'
 }
 
 const MESSAGE = {

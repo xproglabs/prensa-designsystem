@@ -1,6 +1,6 @@
-type AlignProps = 'left' | 'center' | 'right'
+type AlignxProps = 'left' | 'center' | 'right'
 export interface ErrorPageProps {
-  align: AlignProps;
+  alignx: AlignxProps;
   buttonAction?: string;
   buttonText?: string;
   buttonColor?: string;
