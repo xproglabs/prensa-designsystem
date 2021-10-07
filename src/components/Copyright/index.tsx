@@ -29,7 +29,7 @@ const Copyright = ({
           <LogoXprog />
         </S.ContainerXprog>
         <S.ContainerAtex>
-          <TextItem color={color} text={textAtex}></TextItem>
+          <TextItem color={color} text={textAtex} />
           <LogoAtex />
         </S.ContainerAtex>
       </S.ContainerCompanies>  
