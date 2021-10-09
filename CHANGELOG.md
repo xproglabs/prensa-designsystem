@@ -1,3 +1,14 @@
+# v1.6.17
+- Novo componente ErrorPage
+# v1.6.16
+- [QA] Nova arquitetura de templates baseado no PageBlock
+# v1.6.15
+- Fix no componente Copyright #218
+# v1.6.14
+- Configura paths no tsconfig
+- Novo componente Copyright
+# v1.6.13
+- Adiciona .tgz no npmignore
 # v1.6.12
 - Ajustes na estrutura e no content do Byline
 # v1.6.11
