@@ -1,6 +1,8 @@
 import React from 'react'
-import RenderSlot, {RenderSlotProps} from '../components/RenderSlot'
-import Block from '../components/Block'
+
+import Block from '../Block'
+import RenderSlot from '../RenderSlot'
+import { RenderSlotProps } from '../RenderSlot/types'
 
 interface TemplateWrapProps {
   slotItems: RenderSlotProps;
@@ -18,11 +20,10 @@ const TemplateWrap = ({ slotItems }: TemplateWrapProps) => {
         aligny: 'top',
         custom: 'flex-wrap: wrap;'
       }}
-      width="100%"
-    >
+      width="100%">
       <RenderSlot {...slotItems} />
     </Block>
   )
 }
 
-export {TemplateWrap}
+export { TemplateWrap }

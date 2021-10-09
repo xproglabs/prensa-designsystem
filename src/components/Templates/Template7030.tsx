@@ -1,6 +1,8 @@
 import React from 'react'
-import Block from '../components/Block'
-import RenderSlot, {RenderSlotProps} from '../components/RenderSlot'
+
+import Block from '../Block'
+import RenderSlot from '../RenderSlot'
+import { RenderSlotProps } from '../RenderSlot/types'
 
 interface Props {
   slot70: RenderSlotProps;
@@ -18,16 +20,17 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         alignx: 'between',
         aligny: 'top'
       }}
-      width="100%"
-    >
+      width="100%">
       <Block
         align="column"
         alignx="center"
         lg={{
-          width: 'calc(calc(calc(100% - 8px) / 3) * 2)'
+          align: 'row',
+          alignx: 'between',
+          custom: 'flex-wrap: wrap;',
+          width: 'calc((((100% - 48px) / 3) * 2) + 24px)'
         }}
-        width="100%"
-      >
+        width="100%">
         <RenderSlot {...slot70} />
       </Block>
       <Block
@@ -35,14 +38,13 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         alignx="center"
         aligny="top"
         lg={{
-          width: 'calc(calc(100% - 32px) / 3)'
+          width: 'calc((100% - 48px) / 3)'
         }}
-        width="100%"
-      >
+        width="100%">
         <RenderSlot {...slot30} />
       </Block>
     </Block>
   )
 }
 
-export { Template7030 };
+export { Template7030 }

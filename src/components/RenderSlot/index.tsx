@@ -1,14 +1,11 @@
 import { map } from 'lodash'
-import React from 'react'
+import React, { cloneElement, ReactElement } from 'react'
+import { withTheme } from 'styled-components'
 
 import Block from '../Block'
-import Teaser, {TeaserProps} from '../Teaser'
-
-export type RenderSlotProps = TeaserProps & {
-  column_items: number;
-  column_padding: string;
-  slot: Array<any>;
-}
+import Teaser from '../Teaser'
+import { RenderSlotProps } from './types'
+import { parseTeaserProps } from './utils'
 
 const RenderSlot = ({
   color,
@@ -17,34 +14,49 @@ const RenderSlot = ({
   domain,
   image_circle,
   layout,
+  layouts,
   slot,
   spaceA,
-  spaceB
+  spaceB,
+  theme
 }: RenderSlotProps) => {
-  
-  const column_width = `calc(calc(100% - calc(${column_padding} * 16px)) / ${column_items})`
-
+  const { teasers } = theme
+  const column_width = `calc((100% - (${column_padding} * 24px)) / ${column_items})`
+  /**
+   * Render_space function
+   * @param component Expects a ReactElement
+   * @returns a React cloneElement hook for rendering the component passed as a prop
+   */
+  const render_space = (component: ReactElement) => {
+    if (!component) return null
+    return cloneElement(component)
+  }
   return (
     <React.Fragment>
-      {map(slot, (item, key: number) => (
-        <Block
-          key={key}
-          width="100%"
-          lg={{ width: column_width }}
-        >
-          <Teaser
-            color={color}
-            domain={domain}
-            image_circle={image_circle}
-            item={item}
-            layout={layout}
-            spaceA={spaceA}
-            spaceB={spaceB}
-          />
-        </Block>
-      ))}
+      {render_space(spaceA)}
+      {map(slot, (item, key: number) => {
+        let teaser_props = parseTeaserProps(key, layout, layouts, slot, teasers)
+        if(!teaser_props)
+          return null
+        return (
+          <Block
+            key={key}
+            width='100%'
+            lg={{ width: column_width }}>
+            <Teaser
+              color={color}
+              domain={domain}
+              item={item}
+              image_circle={image_circle}
+              layout={teaser_props.layout}
+              related={teaser_props.related}
+            />
+          </Block>
+        )
+      })}
+      {render_space(spaceB)}
     </React.Fragment>
   )
 }
 
-export default RenderSlot
+export default withTheme(RenderSlot)
