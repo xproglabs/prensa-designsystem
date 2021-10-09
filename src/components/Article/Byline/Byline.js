@@ -7,13 +7,15 @@ import * as S from './Byline.styled'
 const Byline = ({
   amp,
   author,
+  content,
+  dateline,
   datetime,
   share
 }) => {
   return (
     <S.Container>
-      <S.Content>
-        <S.DateLine>
+      <S.Content {...content}>
+        <S.DateLine {...dateline}>
           <S.Author {...author}>
             {author.value}
           </S.Author>
@@ -37,6 +39,12 @@ Byline.defaultProps = {
     fontSize: ['14px', '14px'],
     lineHeight: ['16px', '16px'],
     value: 'Prensa Design System'
+  },
+  content: {
+    mb: [3, '0px']
+  },
+  dateline: {
+    mb: [4, 4]
   },
   datetime: {
     color: 'neutral2',
