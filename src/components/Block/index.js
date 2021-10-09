@@ -81,11 +81,11 @@ const Block = ({
 
   return (
     <Component
-      className={className}
       align={align}
       alignx={alignx}
       aligny={aligny}
       bgColor={bgColor}
+      className={className}
       customDef={customDef}
       fontColor={fontColor}
       py={py}

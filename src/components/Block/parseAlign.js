@@ -13,7 +13,7 @@ export const parseAlign = (props) => {
   let justifyContent = ''
   
   // check if is column
-  if (align === 'column') {
+  if (align === 'column' || align === 'column-reverse') {
     flexDirection = align
     // x axys
     if(alignx === 'left') {
@@ -49,7 +49,7 @@ export const parseAlign = (props) => {
     }
   }
   // check if is row
-  if (align === 'row') {
+  if (align === 'row' || align === 'row-reverse') {
     flexDirection = align
     if(alignx === 'left') {
       alignItems = 'flex-start'
