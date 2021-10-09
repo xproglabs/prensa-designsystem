@@ -16,3 +16,19 @@ export const Default = () => {
     </ThemeProvider>
   )
 }
+
+export const AlignedCenter = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <ErrorPage alignx='center' />
+    </ThemeProvider>
+  )
+}
+
+export const AlignedRight = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <ErrorPage alignx='right' />
+    </ThemeProvider>
+  )
+}

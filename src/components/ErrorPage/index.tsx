@@ -14,8 +14,7 @@ const ErrorPage = ({
 }: ErrorPageProps) => {
   return (
     <S.ContainerError>
-      <S.ContentError
-        alignx={alignx}>
+      <S.ContentError alignx={alignx}>
         <S.PageTitle 
           color={titleColor}>
           {title}
