@@ -30,7 +30,7 @@ const Column = ({ bgColor, children }: ColumnProps) => (
     mb={2}
     lg={{
       mb: 0,
-      width: 'calc((100% - 32px) / 3)'
+      width: 'calc((100% - 48px) / 3)'
     }}
     width="100%">
     {children}
