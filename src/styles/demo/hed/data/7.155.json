@@ -3,7 +3,8 @@
   "name": "Destaque Linha 2",
   "type": "template7030",
   "slot1": {
-    "color": "",
+    "bgcolor": "primary3",
+    "color": "primary1",
     "icon": "",
     "link": "",
     "len1": 2,
@@ -45,7 +46,8 @@
     "type": "default"
   },
   "slot2": {
-    "color": "",
+    "bgcolor": "secondary3",
+    "color": "primary1",
     "icon": "",
     "link": "",
     "len1": 3,
@@ -102,7 +104,8 @@
     "type": "default"
   },
   "slot3": {
-    "color": "",
+    "bgcolor": "",
+    "color": "primary1",
     "icon": "",
     "link": "",
     "len1": 0,

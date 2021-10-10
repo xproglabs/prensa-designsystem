@@ -76,3 +76,18 @@ export const HomeFeatured = () => {
     </TemplateContainer>
   )
 }
+
+export const HomeFull = () => {
+  return (
+    <TemplateContainer
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock {...DataHomeLinha1} />
+      <PageBlock {...DataHomeLinha2} />
+      <PageBlock {...DataHomeLinha3} />
+      <PageBlock {...DATA_HOME_7030} />
+      <PageBlock {...DATA_HOME_30} />
+      <PageBlock {...DATA_HOME_FEAT} />
+    </TemplateContainer>
+  )
+}
