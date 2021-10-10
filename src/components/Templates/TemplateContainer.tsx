@@ -15,14 +15,15 @@ const TemplateContainer = ({
       alignx='center'
       width='100%'>
       <Block
-        lg={{
-          mb: mb[1],
-          mt: mt[1]
-        }}
-        maxWidth={theme.queries.xl}
         mb={mb[0]}
         mt={mt[0]}
-        width='calc(100% - 32px)'>
+        width='100%'
+        lg={{
+          maxWidth: theme.queries.xl,
+          mb: mb[1],
+          mt: mt[1],
+          width: 'calc(100% - 32px)'
+        }}>
         {children}
       </Block>
     </Block>
