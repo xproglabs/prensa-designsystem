@@ -3,6 +3,7 @@
   "name": "Bloco de Assuntos 1",
   "type": "template30",
   "slot1": {
+    "bgcolor": "primary3",
     "color": "",
     "icon": "",
     "link": "",
