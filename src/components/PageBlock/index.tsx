@@ -1,4 +1,3 @@
-import { get } from 'lodash'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
@@ -33,6 +32,7 @@ const PageBlock = ({
     return (
       <Template100
         slot100={{
+          bgcolor: slot1.bgcolor,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
@@ -52,6 +52,7 @@ const PageBlock = ({
     return (
       <Template7030
         slot70={{
+          bgcolor: slot1.bgcolor,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
@@ -59,6 +60,7 @@ const PageBlock = ({
           slot: slot1.list1
         }}
         slot30={{
+          bgcolor: slot2.bgcolor,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
           domain,
@@ -81,6 +83,7 @@ const PageBlock = ({
     return (
       <Template33
         slotLeft={{
+          bgcolor: slot1.bgcolor,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
@@ -88,6 +91,7 @@ const PageBlock = ({
           slot: slot1.list1
         }}
         slotCenter={{
+          bgcolor: slot2.bgcolor,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
           domain,
@@ -95,6 +99,7 @@ const PageBlock = ({
           slot: slot2.list1
         }}
         slotRight={{
+          bgcolor: slot3.bgcolor,
           column_items: slot3_spaces + 1,
           column_padding: slot3_spaces,
           domain,
@@ -110,6 +115,7 @@ const PageBlock = ({
   return (
     <TemplateWrap
       slotItems={{
+        bgcolor: slot1.bgcolor,
         column_items: slot1_spaces + 1,
         column_padding: slot1_spaces,
         domain,
