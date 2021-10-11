@@ -4,6 +4,7 @@ import { withTheme } from 'styled-components'
 import {
   Template100,
   Template7030,
+  Template5050,
   Template33,
   TemplateWrap
 } from '../Templates'
@@ -65,6 +66,34 @@ const PageBlock = ({
           column_padding: slot2_spaces,
           domain,
           layouts: slot30_layout,
+          slot: slot2.list1
+        }}
+      />
+    )
+  }
+  if(type === 'template50') {
+    const slotLeft_block = selectTemplateFromTheme({ block: 'slot50', slot: slot1, templates })
+    const slotRight_block = selectTemplateFromTheme({ block: 'slot50', slot: slot2, templates })
+    const slotLeft_layout = selectLayoutFromTemplate({ block: slotLeft_block, slot: slot1 })
+    const slotRight_layout = selectLayoutFromTemplate({ block: slotRight_block, slot: slot2 })
+    const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slotLeft_block.spaces)
+    const slot2_spaces = selectLayoutColsFromSlot(slot2.len1, slotRight_block.spaces)
+    return (
+      <Template5050
+        slotLeft={{
+          bgcolor: slot1.bgcolor,
+          column_items: slot1_spaces + 1,
+          column_padding: slot1_spaces,
+          domain,
+          layouts: slotLeft_layout,
+          slot: slot1.list1
+        }}
+        slotRight={{
+          bgcolor: slot2.bgcolor,
+          column_items: slot2_spaces + 1,
+          column_padding: slot2_spaces,
+          domain,
+          layouts: slotRight_layout,
           slot: slot2.list1
         }}
       />

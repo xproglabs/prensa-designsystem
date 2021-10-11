@@ -33,7 +33,7 @@ const Teaser = (props: TeaserProps) => {
   const box_pl = get(layout, 'box.pl', ['0px', '0px'])
   const box_mt = get(layout, 'box.mt', ['0px', '0px'])
   const box_mr = get(layout, 'box.mr', ['0px', '0px'])
-  const box_mb = get(layout, 'box.mb', [2, 2])
+  const box_mb = get(layout, 'box.mb', ['0px', '0px'])
   const box_ml = get(layout, 'box.ml', ['0px', '0px'])
   // box (content) wrap
   const content_overlap = get(layout, 'box_wrap.content_overlap', false)

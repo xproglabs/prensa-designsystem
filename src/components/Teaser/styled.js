@@ -98,7 +98,7 @@ const Image = ({
   const custom = image_circle ? 'border-radius: 100%;' : ''
   return (
     <Block
-      bgColor='neutral10'
+      bgColor='neutral8'
       custom={custom}
       height={height[0]}
       width='100%'
