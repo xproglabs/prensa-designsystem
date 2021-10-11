@@ -1,53 +1,34 @@
 import React from 'react'
 import { withTheme } from 'styled-components'
-
-type ResponsiveHeight = [string, string]
-type Queries = 'sm' | 'md' | 'lg' | 'xl'
-
-export type CarouselProps = {
-  children?: any;
-  enabled: boolean;
-  /**
-   * @description Expects an array of strings. Each string represents a height
-   * @example ['250', '250'] | ['250px', '250px']
-   */
-  height: ResponsiveHeight;
-  /**
-   * @description Expects a breakpoint from theme queries property.
-   * @example <Carousel querie='md' />
-   */
-  querie: Queries;
-  theme?: any;
-}
+import { CarouselProps } from './types'
 
 const Carousel = ({
   children,
   enabled,
   height,
   querie,
-  theme
+  theme,
+  type
 }: CarouselProps) => {
 
   if (!enabled) return null;
 
   let querie_value = theme.queries[querie]
-  
+
   return (
     <React.Fragment>
       <amp-carousel
-        layout='fixed'
+        layout='fixed-height'
         height={height[0]}
         media={`(max-width: ${querie_value})`}
-        width='100%'
-        type='carrossel'>
+        type={type}>
         {children}
       </amp-carousel>
       <amp-carousel
-        layout='fixed'
+        layout='fixed-height'
         height={height[1]}
         media={`(min-width: ${querie_value})`}
-        width='100%'
-        type='carrossel'>
+        type={type}>
         {children}
       </amp-carousel>
     </React.Fragment>
@@ -56,7 +37,9 @@ const Carousel = ({
 
 Carousel.defaultProps = {
   height: ['250', '250'],
-  querie: 'md'
+  layout: 'fixed-height',
+  querie: 'md',
+  type: 'slides'
 }
 
 export default withTheme(Carousel)

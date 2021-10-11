@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import { CarouselProps } from '../../components/Carousel'
+import { CarouselProps } from '../../components/Carousel/types'
 import { LayoutProps } from '../Teaser/types'
 
 export type RenderSlotProps = {
