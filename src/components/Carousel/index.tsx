@@ -12,6 +12,10 @@ export type CarouselProps = {
    * @example ['250', '250'] | ['250px', '250px']
    */
   height: ResponsiveHeight;
+  /**
+   * @description Expects a breakpoint from theme queries property.
+   * @example <Carousel querie='md' />
+   */
   querie: Queries;
   theme?: any;
 }
