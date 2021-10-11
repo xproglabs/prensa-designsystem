@@ -1,4 +1,5 @@
 import { get } from 'lodash'
+import { cloneElement, ReactElement } from 'react'
 
 export const parseTeaserProps = (key, layout, layouts, slot, teasers) => {
   // select layout from pageblocks
@@ -28,4 +29,14 @@ export const parseTeaserProps = (key, layout, layouts, slot, teasers) => {
     layout: teaser_layout,
     related: related_props
   }
+}
+
+/**
+ * Render_space function
+ * @param component Expects a ReactElement
+ * @returns a React cloneElement hook for rendering the component passed as a prop
+ */
+export const renderSpaceSlot = (component: ReactElement) => {
+  if (!component) return null
+  return cloneElement(component)
 }
