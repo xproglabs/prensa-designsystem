@@ -7,6 +7,7 @@ import {
 } from '../PageBlock/utils'
 import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
+import { renderSpaceSlot } from '../RenderSlot/utils'
 
 interface Props {
   slotLeft: RenderSlotProps;
@@ -20,7 +21,7 @@ const Template5050 = ({ slotLeft, slotRight }: Props) => {
   const slotRight_isTransparent = isBackgroundTransparent(slotRight_bgColor)
   return (
     <Block
-      align='column'
+      align='row'
       alignx='center'
       aligny='top'
       px='0px'
@@ -33,11 +34,9 @@ const Template5050 = ({ slotLeft, slotRight }: Props) => {
       width='100%'>
       <Block
         align='column'
-        alignx='center'
-        bgColor={slotLeft_bgColor}
+        alignx='left'
         mb={2}
-        px={2}
-        width='calc(100% - 32px)'
+        width='100%'
         lg={{
           align: 'row',
           alignx: 'between',
@@ -46,12 +45,14 @@ const Template5050 = ({ slotLeft, slotRight }: Props) => {
           px: '0px',
           width: 'calc(((100% - 72px) / 2) + 24px)'
         }}>
+        {(renderSpaceSlot(slotLeft.spaceA))}
         <Block
           align='column'
           alignx='center'
+          bgColor={slotLeft_bgColor}
           px={slotLeft_isTransparent ? '0px' : 2}
           pt={slotLeft_isTransparent ? '0px' : 2}
-          width='100%'
+          width={slotLeft_isTransparent ? '100%' : 'calc(100% - 32px)'}
           lg={{
             align: 'row',
             alignx: 'between',
@@ -65,11 +66,9 @@ const Template5050 = ({ slotLeft, slotRight }: Props) => {
       </Block>
       <Block
         align='column'
-        alignx='center'
-        bgColor={slotRight_bgColor}
+        alignx='left'
         mb={2}
-        px={2}
-        width='calc(100% - 32px)'
+        width='100%'
         lg={{
           align: 'row',
           alignx: 'between',
@@ -78,12 +77,14 @@ const Template5050 = ({ slotLeft, slotRight }: Props) => {
           px: '0px',
           width: 'calc(((100% - 72px) / 2) + 24px)'
         }}>
+        {(renderSpaceSlot(slotRight.spaceA))}
         <Block
           align='column'
           alignx='center'
+          bgColor={slotRight_bgColor}
           px={slotRight_isTransparent ? '0px' : 2}
           pt={slotRight_isTransparent ? '0px' : 2}
-          width='100%'
+          width={slotRight_isTransparent ? '100%' : 'calc(100% - 32px)'}
           lg={{
             align: 'row',
             alignx: 'between',
@@ -92,7 +93,7 @@ const Template5050 = ({ slotLeft, slotRight }: Props) => {
             pt: slotRight_isTransparent ? '0px' : 3,
             width: slotRight_isTransparent ? '100%' : 'calc(100% - 48px)'
           }}>
-          <RenderSlot {...slotLeft} />
+          <RenderSlot {...slotRight} />
         </Block>
       </Block>
     </Block>

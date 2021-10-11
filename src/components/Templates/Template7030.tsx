@@ -7,6 +7,7 @@ import {
 } from '../PageBlock/utils'
 import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
+import { renderSpaceSlot } from '../RenderSlot/utils'
 
 interface Props {
   slot70: RenderSlotProps;
@@ -33,7 +34,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
       width='100%'>
       <Block
         align='column'
-        alignx='center'
+        alignx='left'
         bgColor={slot70_bgColor}
         mb={2}
         px={2}
@@ -46,6 +47,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
           px: '0px',
           width: 'calc((((100% - 48px) / 3) * 2) + 24px)'
         }}>
+        {(renderSpaceSlot(slot70.spaceA))}
         <Block
           align='column'
           alignx='center'
@@ -65,7 +67,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
       </Block>
       <Block
         align='column'
-        alignx='center'
+        alignx='left'
         bgColor={slot30_bgColor}
         mb={2}
         px={2}
@@ -75,6 +77,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
           width: 'calc((100% - 48px) / 3)'
         }}
         width='calc(100% - 32px)'>
+        {(renderSpaceSlot(slot30.spaceA))}
         <Block
           align='column'
           alignx='center'

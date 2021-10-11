@@ -4,6 +4,7 @@ import Block from '../Block'
 import Carousel from '../Carousel'
 import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
+import { renderSpaceSlot } from '../RenderSlot/utils'
 
 type ResponsiveHeight = [string, string]
 
@@ -45,6 +46,7 @@ const Template100 = ({ carousel, slot100 }: Template100Props) => {
         mb: 3
       }}
       width='100%'>
+      {(renderSpaceSlot(slot100.spaceA))}
       {renderContent()}
     </Block>
   )

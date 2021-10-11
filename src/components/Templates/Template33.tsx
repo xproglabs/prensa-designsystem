@@ -7,6 +7,7 @@ import {
 } from '../PageBlock/utils'
 import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
+import { renderSpaceSlot } from '../RenderSlot/utils'
 
 type SlotProps = RenderSlotProps & {
   section_title?: () => void;
@@ -86,6 +87,7 @@ const Template33 = ({
       width="100%">
       <Column
         bgColor={slotLeft_bgColor}>
+        {(renderSpaceSlot(slotLeft.spaceA))}
         <ColumnColor
           transparent={slotLeft_isTransparent}>
           {slotLeft.section_title}

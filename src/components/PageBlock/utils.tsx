@@ -1,4 +1,7 @@
 import { get } from 'lodash'
+import React from 'react'
+
+import SectionTitle, { SectionTitleBlank } from '../SectionTitle'
 
 export const isBackgroundTransparent = (background: string | any) => {
   return !background || background == 'transparent'
@@ -40,4 +43,29 @@ export const selectLayoutColsFromSlot = (
   spaces?: [number, number, number, number],
 ): number => {
   return get(spaces, `[${len1 - 1}]`, 0)
+}
+
+/**
+ * selectSectionTitleFromSlot function
+ * @param title section title
+ * @param link section path to link
+ * @param icon section icon
+ * @param color section color
+ * @returns a React cloneElement hook for rendering the component passed as a prop
+ */
+export const selectSectionTitleFromSlot = (
+  title: string,
+  link?: string,
+  icon?: string,
+  color?: string
+) => {
+  const title_text = !title || title == ''
+  if(title_text) {
+    return (
+      <SectionTitleBlank />
+    )
+  }
+  return (
+    <SectionTitle title={title} />
+  )
 }

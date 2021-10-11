@@ -5,10 +5,7 @@ import { withTheme } from 'styled-components'
 import Block from '../Block'
 import Teaser from '../Teaser'
 import { RenderSlotProps } from './types'
-import { 
-  parseTeaserProps,
-  renderSpaceSlot
-} from './utils'
+import { parseTeaserProps } from './utils'
 
 const RenderSlot = ({
   color,
@@ -19,15 +16,12 @@ const RenderSlot = ({
   layout,
   layouts,
   slot,
-  spaceA,
-  spaceB,
   theme
 }: RenderSlotProps) => {
   const { teasers } = theme
   const column_width = `calc((100% - (${column_padding} * 24px)) / ${column_items})`
   return (
     <React.Fragment>
-      {renderSpaceSlot(spaceA)}
       {map(slot, (item, key: number) => {
         let teaser_props = parseTeaserProps(key, layout, layouts, slot, teasers)
         if(!teaser_props)
@@ -48,7 +42,6 @@ const RenderSlot = ({
           </Block>
         )
       })}
-      {renderSpaceSlot(spaceB)}
     </React.Fragment>
   )
 }
