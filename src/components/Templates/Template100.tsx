@@ -37,10 +37,12 @@ const Template100 = ({ carousel, slot100 }: Template100Props) => {
       align='column'
       alignx='center'
       aligny='top'
+      mb={2}
       lg={{
         align: 'row',
         alignx: 'between',
-        aligny: 'top'
+        aligny: 'top',
+        mb: 3
       }}
       width='100%'>
       {renderContent()}

@@ -76,10 +76,12 @@ const Template33 = ({
       align="column"
       alignx="center"
       aligny="top"
+      mb={2}
       lg={{
         align: 'row',
         alignx: 'between',
-        aligny: 'top'
+        aligny: 'top',
+        mb: 3
       }}
       width="100%">
       <Column

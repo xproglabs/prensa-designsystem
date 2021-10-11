@@ -35,12 +35,14 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         align='column'
         alignx='center'
         bgColor={slot70_bgColor}
+        mb={2}
         px={2}
         width='calc(100% - 32px)'
         lg={{
           align: 'row',
           alignx: 'between',
           custom: 'flex-wrap: wrap;',
+          mb: 3,
           px: '0px',
           width: 'calc((((100% - 48px) / 3) * 2) + 24px)'
         }}>
@@ -65,14 +67,14 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         align='column'
         alignx='center'
         bgColor={slot30_bgColor}
+        mb={2}
         px={2}
-        mt={2}
-        width='calc(100% - 32px)'
         lg={{
+          mb: 3,
           px: '0px',
-          mt: '0px',
           width: 'calc((100% - 48px) / 3)'
-        }}>
+        }}
+        width='calc(100% - 32px)'>
         <Block
           align='column'
           alignx='center'
