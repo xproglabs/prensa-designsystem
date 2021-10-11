@@ -1,0 +1,163 @@
+{
+  "cid": "7.181",
+  "name": "Bloco de Times",
+  "type": "template50",
+  "slot1": {
+    "bgcolor": "secondary3",
+    "color": "",
+    "icon": " IconAtletico",
+    "link": "",
+    "len1": 4,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.130",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203.1632363461",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.131",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203.1632363461",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.182",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203.1632363461",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.183",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203.1632363461",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      }
+    ],
+    "list2": [],
+    "title": "Atlético ",
+    "type": "default"
+  },
+  "slot2": {
+    "bgcolor": "editorial2",
+    "color": "",
+    "icon": " IconCruzeiro",
+    "link": "",
+    "len1": 4,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.184",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203.1632363461",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.185",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203.1632363461",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.186",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203.1632363461",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.187",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203.1632363461",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      }
+    ],
+    "list2": [],
+    "title": "Cruzeiro",
+    "type": "default"
+  },
+  "slot3": {
+    "bgcolor": "",
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 0,
+    "len2": 0,
+    "list1": [],
+    "list2": [],
+    "title": "",
+    "type": ""
+  }
+}
