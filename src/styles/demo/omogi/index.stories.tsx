@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import PageBlock from '../../../components/PageBlock'
 import TemplateContainer from '../../../components/Templates/TemplateContainer'
 import { theme } from './theme'
-import Linha1Data from './data/7.204.json'
+import firstLineData from './data/7.204.json'
 
 export default {
   title: 'Templates/OMogi',
@@ -17,10 +17,10 @@ export default {
   ]
 }
 
-export const Linha1 = () => {
+export const HomeLinha1 = () => {
   return (
     <TemplateContainer>
-      <PageBlock {...Linha1Data} />
+      <PageBlock {...firstLineData} />
     </TemplateContainer>
   )
 }
