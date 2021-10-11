@@ -16,7 +16,7 @@ const SectionTitle = ({ title }: SectionTitleProps) => {
 }
 
 export const SectionTitleBlank = styled.div`
-  height: 22px;
+  height: 18px;
   width: 100%;
 `
 

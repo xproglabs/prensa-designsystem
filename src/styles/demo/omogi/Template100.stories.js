@@ -1,4 +1,4 @@
-import { SectionTitle } from 'components/Templates/styled.tsx'
+import { Title as SectionTitle } from 'components/SectionTitle/styled'
 import { Template100 as Template } from 'components/Templates/Template100'
 import TemplateContainer from 'components/Templates/TemplateContainer'
 import { get } from 'lodash'
