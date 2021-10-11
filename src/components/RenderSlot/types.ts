@@ -1,8 +1,10 @@
 import { ReactElement } from 'react'
 
+import { CarouselProps } from '../../components/Carousel'
 import { LayoutProps } from '../Teaser/types'
 
 export type RenderSlotProps = {
+  carousel?: CarouselProps;
   column_items: number;
   column_padding: number;
   color?: string;

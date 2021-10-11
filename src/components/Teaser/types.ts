@@ -1,4 +1,5 @@
 import { RelatedProps } from './RelatedTypes'
+import { CarouselProps } from '../Carousel'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
@@ -76,7 +77,7 @@ type Title = {
 export type LayoutProps = {
   box?: BoxTypes;
   box_wrap?: BoxWrap;
-  carousel?: Object;
+  carousel?: CarouselProps;
   datetime_enabled?: boolean;
   image?: Image;
   related?: Related;
