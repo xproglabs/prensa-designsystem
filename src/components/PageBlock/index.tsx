@@ -12,6 +12,7 @@ import {
   PageBlockProps
 } from './types'
 import {
+  selectComponentFromSlotList,
   selectLayoutColsFromSlot,
   selectLayoutFromTemplate,
   selectTemplateFromTheme,
@@ -19,17 +20,22 @@ import {
 } from './utils'
 
 const PageBlock = ({
-  type,
+  parseSlot,
   slot1,
   slot2,
   slot3,
-  theme
+  theme,
+  type,
 }: PageBlockProps) => {
-  const { domain, templates } = theme
+  const { domain, sections, templates } = theme
   // define slot titles
-  const slot1_title = selectSectionTitleFromSlot(slot1.title, slot1.icon, slot1.link)
-  const slot2_title = selectSectionTitleFromSlot(slot2.title, slot2.icon, slot2.link)
-  const slot3_title = selectSectionTitleFromSlot(slot3.title, slot3.icon, slot3.link)
+  const slot1_title = selectSectionTitleFromSlot(sections, slot1.title, slot1.icon, slot1.link)
+  const slot2_title = selectSectionTitleFromSlot(sections, slot2.title, slot2.icon, slot2.link)
+  const slot3_title = selectSectionTitleFromSlot(sections, slot3.title, slot3.icon, slot3.link)
+  // define slot spaceB
+  const slot1_slotList = selectComponentFromSlotList(parseSlot, slot1.list2)
+  const slot2_slotList = selectComponentFromSlotList(parseSlot, slot2.list2)
+  const slot3_slotList = selectComponentFromSlotList(parseSlot, slot3.list2)
   if(type === 'template100') {
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
     const slot100_layout = selectLayoutFromTemplate({ block: slot100_block, slot: slot1 })
@@ -44,7 +50,8 @@ const PageBlock = ({
           domain,
           layouts: slot100_layout,
           slot: slot1.list1,
-          spaceA: slotsHaveSecionTitle ? slot1_title : null
+          spaceA: slotsHaveSecionTitle ? slot1_title : null,
+          spaceB: slot1_slotList
         }}
       />
     )
@@ -66,7 +73,8 @@ const PageBlock = ({
           domain,
           layouts: slot70_layout,
           slot: slot1.list1,
-          spaceA: slotsHaveSecionTitle ? slot1_title : null
+          spaceA: slotsHaveSecionTitle ? slot1_title : null,
+          spaceB: slot1_slotList
         }}
         slot30={{
           bgcolor: slot2.bgcolor,
@@ -75,7 +83,8 @@ const PageBlock = ({
           domain,
           layouts: slot30_layout,
           slot: slot2.list1,
-          spaceA: slotsHaveSecionTitle ? slot2_title : null
+          spaceA: slotsHaveSecionTitle ? slot2_title : null,
+          spaceB: slot2_slotList
         }}
       />
     )
@@ -97,7 +106,8 @@ const PageBlock = ({
           domain,
           layouts: slotLeft_layout,
           slot: slot1.list1,
-          spaceA: slotsHaveSecionTitle ? slot1_title : null
+          spaceA: slotsHaveSecionTitle ? slot1_title : null,
+          spaceB: slot1_slotList
         }}
         slotRight={{
           bgcolor: slot2.bgcolor,
@@ -106,7 +116,8 @@ const PageBlock = ({
           domain,
           layouts: slotRight_layout,
           slot: slot2.list1,
-          spaceA: slotsHaveSecionTitle ? slot2_title : null
+          spaceA: slotsHaveSecionTitle ? slot2_title : null,
+          spaceB: slot2_slotList
         }}
       />
     )
@@ -131,7 +142,8 @@ const PageBlock = ({
           domain,
           layouts: slotLeft_layout,
           slot: slot1.list1,
-          spaceA: slotsHaveSecionTitle ? slot1_title : null
+          spaceA: slotsHaveSecionTitle ? slot1_title : null,
+          spaceB: slot1_slotList
         }}
         slotCenter={{
           bgcolor: slot2.bgcolor,
@@ -140,7 +152,8 @@ const PageBlock = ({
           domain,
           layouts: slotCenter_layout,
           slot: slot2.list1,
-          spaceA: slotsHaveSecionTitle ? slot2_title : null
+          spaceA: slotsHaveSecionTitle ? slot2_title : null,
+          spaceB: slot2_slotList
         }}
         slotRight={{
           bgcolor: slot3.bgcolor,
@@ -149,7 +162,8 @@ const PageBlock = ({
           domain,
           layouts: slotRight_layout,
           slot: slot3.list1,
-          spaceA: slotsHaveSecionTitle ? slot3_title : null
+          spaceA: slotsHaveSecionTitle ? slot3_title : null,
+          spaceB: slot3_slotList
         }}
       />
     )
@@ -167,7 +181,8 @@ const PageBlock = ({
         domain,
         layouts: slowWrap_layout,
         slot: slot1.list1,
-        spaceA: slotsHaveSecionTitle ? slot1_title : null
+        spaceA: slotsHaveSecionTitle ? slot1_title : null,
+        spaceB: slot1_slotList
       }}
     />
   )

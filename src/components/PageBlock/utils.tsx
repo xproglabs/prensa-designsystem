@@ -1,7 +1,9 @@
-import { get } from 'lodash'
+import { get, map } from 'lodash'
 import React from 'react'
 
-import SectionTitle, { SectionTitleBlank } from '../SectionTitle'
+import SectionTitle from '../SectionTitle'
+import { TitleEmpty } from '../SectionTitle/styled'
+import { SectionTitleLayout } from '../SectionTitle/types'
 
 export const isBackgroundTransparent = (background: string | any) => {
   return !background || background == 'transparent'
@@ -15,6 +17,22 @@ export const selectBgColorFromSlot = (slot): string => {
     backgroundColor = slot.bgcolor
   }
   return backgroundColor
+}
+/**
+ * @param param0 
+ * @returns a valid react element
+ */
+export const selectComponentFromSlotList = (
+  parseSlot: any,
+  slotList: any
+) => {
+  if(!parseSlot)
+    return <></>
+  return (
+    <React.Fragment>
+      {map(slotList, (item, key) => parseSlot(item, key))}
+    </React.Fragment>
+  )
 }
 
 export const selectTemplateFromTheme = ({
@@ -48,24 +66,27 @@ export const selectLayoutColsFromSlot = (
 /**
  * selectSectionTitleFromSlot function
  * @param title section title
- * @param link section path to link
+ * @param path section link / path
  * @param icon section icon
  * @param color section color
  * @returns a React cloneElement hook for rendering the component passed as a prop
  */
 export const selectSectionTitleFromSlot = (
+  layout: SectionTitleLayout,
   title: string,
-  link?: string,
+  path?: string,
   icon?: string,
   color?: string
 ) => {
   const title_text = !title || title == ''
   if(title_text) {
-    return (
-      <SectionTitleBlank />
-    )
+    return <TitleEmpty />
   }
   return (
-    <SectionTitle title={title} />
+    <SectionTitle
+      layout={layout}
+      path={path}
+      title={title}
+    />
   )
 }

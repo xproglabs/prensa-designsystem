@@ -18,6 +18,7 @@ export interface PageBlockProps {
   cid: string;
   name: string;
   type: string;
+  parseSlot: any;
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;
   slot3: SlotBlockProps;
