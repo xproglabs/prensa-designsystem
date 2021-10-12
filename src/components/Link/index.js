@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Link = styled.a`
   color: inherit;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
   width: 100%;
 `
 

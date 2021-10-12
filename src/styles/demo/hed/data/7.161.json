@@ -70,7 +70,38 @@
         "updated": "2021-09-27 18:51:40"
       }
     ],
-    "list2": [],
+    "list2": [
+      {
+        "contentId": "7.304",
+        "input-template": "br.com.atex.plugins.ads-blocks.it",
+        "template": "",
+        "title": "Placeholder",
+        "mobile": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "tablet": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "desktop": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        }
+      }
+    ],
     "title": "",
     "type": "default"
   },
@@ -97,7 +128,38 @@
         "updated": "2021-09-27 18:51:40"
       }
     ],
-    "list2": [],
+    "list2": [
+      {
+        "contentId": "7.304",
+        "input-template": "br.com.atex.plugins.ads-blocks.it",
+        "template": "",
+        "title": "Placeholder",
+        "mobile": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "tablet": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "desktop": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        }
+      }
+    ],
     "title": "",
     "type": ""
   },
