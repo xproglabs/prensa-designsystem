@@ -50,6 +50,7 @@ const Template5050 = ({ slotLeft, slotRight }: Props) => {
           align='column'
           alignx='center'
           bgColor={slotLeft_bgColor}
+          mb={slotLeft_isTransparent ? '0px' : 2}
           px={slotLeft_isTransparent ? '0px' : 2}
           pt={slotLeft_isTransparent ? '0px' : 2}
           width={slotLeft_isTransparent ? '100%' : 'calc(100% - 32px)'}
@@ -57,12 +58,14 @@ const Template5050 = ({ slotLeft, slotRight }: Props) => {
             align: 'row',
             alignx: 'between',
             custom: 'flex-wrap: wrap;',
+            mb: slotLeft_isTransparent ? '0px' : 3,
             px: slotLeft_isTransparent ? '0px' : 3,
             pt: slotLeft_isTransparent ? '0px' : 3,
             width: slotLeft_isTransparent ? '100%' : 'calc(100% - 48px)'
           }}>
           <RenderSlot {...slotLeft} />
         </Block>
+        {(renderSpaceSlot(slotLeft.spaceB))}
       </Block>
       <Block
         align='column'
@@ -82,6 +85,7 @@ const Template5050 = ({ slotLeft, slotRight }: Props) => {
           align='column'
           alignx='center'
           bgColor={slotRight_bgColor}
+          mb={slotRight_isTransparent ? '0px' : 2}
           px={slotRight_isTransparent ? '0px' : 2}
           pt={slotRight_isTransparent ? '0px' : 2}
           width={slotRight_isTransparent ? '100%' : 'calc(100% - 32px)'}
@@ -89,12 +93,14 @@ const Template5050 = ({ slotLeft, slotRight }: Props) => {
             align: 'row',
             alignx: 'between',
             custom: 'flex-wrap: wrap;',
+            mb: slotRight_isTransparent ? '0px' : 3,
             px: slotRight_isTransparent ? '0px' : 3,
             pt: slotRight_isTransparent ? '0px' : 3,
             width: slotRight_isTransparent ? '100%' : 'calc(100% - 48px)'
           }}>
           <RenderSlot {...slotRight} />
         </Block>
+        {(renderSpaceSlot(slotRight.spaceB))}
       </Block>
     </Block>
   )

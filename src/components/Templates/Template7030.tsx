@@ -24,6 +24,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
       align='column'
       alignx='center'
       aligny='top'
+      mb={2}
       px='0px'
       py='0px'
       lg={{
@@ -35,10 +36,8 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
       <Block
         align='column'
         alignx='left'
-        bgColor={slot70_bgColor}
         mb={2}
-        px={2}
-        width='calc(100% - 32px)'
+        width='100%'
         lg={{
           align: 'row',
           alignx: 'between',
@@ -51,47 +50,53 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         <Block
           align='column'
           alignx='center'
-          px={slot70_isTransparent ? '0px' : 2}
+          bgColor={slot70_bgColor}
+          mb={2}
+          px={2}
           pt={slot70_isTransparent ? '0px' : 2}
-          width='100%'
+          width='calc(100% - 32px)'
           lg={{
             align: 'row',
             alignx: 'between',
             custom: 'flex-wrap: wrap;',
+            mb: slot70_isTransparent ? '0px' : 3,
             px: slot70_isTransparent ? '0px' : 3,
             pt: slot70_isTransparent ? '0px' : 3,
             width: slot70_isTransparent ? '100%' : 'calc(100% - 48px)'
           }}>
           <RenderSlot {...slot70} />
         </Block>
+        {(renderSpaceSlot(slot70.spaceB))}
       </Block>
       <Block
         align='column'
         alignx='left'
-        bgColor={slot30_bgColor}
         mb={2}
-        px={2}
+        width='100%'
         lg={{
           mb: 3,
           px: '0px',
           width: 'calc((100% - 48px) / 3)'
-        }}
-        width='calc(100% - 32px)'>
+        }}>
         {(renderSpaceSlot(slot30.spaceA))}
         <Block
           align='column'
           alignx='center'
           aligny='top'
-          px={slot30_isTransparent ? '0px' : 2}
+          bgColor={slot30_bgColor}
+          mb={2}
+          px={2}
           pt={slot30_isTransparent ? '0px' : 2}
-          width='100%'
+          width='calc(100% - 32px)'
           lg={{
+            mb: slot30_isTransparent ? '0px' : 3,
             px: slot30_isTransparent ? '0px' : 3,
             pt: slot30_isTransparent ? '0px' : 3,
             width: slot30_isTransparent ? '100%' : 'calc(100% - 48px)'
           }}>
           <RenderSlot {...slot30} />
         </Block>
+        {(renderSpaceSlot(slot30.spaceB))}
       </Block>
     </Block>
   )
