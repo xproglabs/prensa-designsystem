@@ -36,18 +36,26 @@ const Template100 = ({ carousel, slot100 }: Template100Props) => {
   return (
     <Block
       align='column'
-      alignx='center'
+      alignx='left'
       aligny='top'
       mb={2}
       lg={{
-        align: 'column',
-        alignx: 'between',
-        aligny: 'top',
         mb: 3
       }}
       width='100%'>
       {(renderSpaceSlot(slot100.spaceA))}
-      {renderContent()}
+      <Block
+        align='column'
+        alignx='center'
+        aligny='top'
+        lg={{
+          align: 'row',
+          alignx: 'between',
+          aligny: 'top'
+        }}
+        width='100%'>
+        {renderContent()}
+      </Block>
       {(renderSpaceSlot(slot100.spaceB))}
     </Block>
   )
