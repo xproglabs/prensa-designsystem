@@ -1,4 +1,4 @@
-import { Title as SectionTitle } from 'components/SectionTitle/styled'
+import { TitleText as SectionTitle } from 'components/SectionTitle/styled'
 import { Template33 as Template } from 'components/Templates/Template33'
 import TemplateContainer from 'components/Templates/TemplateContainer'
 import { get } from 'lodash'
