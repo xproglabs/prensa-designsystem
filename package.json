@@ -81,5 +81,8 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "react-contenteditable": "^3.3.6"
   }
 }
