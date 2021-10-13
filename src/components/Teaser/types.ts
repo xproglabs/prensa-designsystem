@@ -92,7 +92,7 @@ export type TeaserProps = {
   /**
    * @description expects an object with teaser data
    */
-  item: Object;
+  item: any;
   /**
    * @description expects an object with layout configuration for teaser
    */

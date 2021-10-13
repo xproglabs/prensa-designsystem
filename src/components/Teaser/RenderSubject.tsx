@@ -1,16 +1,19 @@
 import { get } from 'lodash'
 import React from 'react'
 
+import AreaEdition from './AreaEdition'
 import * as S from './styled'
 
-const RenderSubject = ({ color, item, layout }) => {
-  if(!item)
-    return false
-
+const RenderSubject = ({
+  color,
+  editable,
+  item,
+  layout
+}) => {
   const subject_enabled = get(layout, 'subject.enabled', false)
   const subject_value = get(item, 'subject', '')
   if (!subject_value || !subject_enabled) {
-    return false
+    return <></>
   }
   const bg_color = get(layout, 'subject.bg_color', 'primary1')
   const font_color = color ? color : get(layout, 'subject.color', 'white')
@@ -24,7 +27,9 @@ const RenderSubject = ({ color, item, layout }) => {
       font_size={font_size}
       line_height={line_height}
       mb={mb}>
-      {subject_value} 
+      <AreaEdition {...editable}>
+        {subject_value}
+      </AreaEdition>
     </S.Subject>
   )
 }

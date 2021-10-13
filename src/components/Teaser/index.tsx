@@ -1,13 +1,14 @@
 import { get } from 'lodash'
 import React from 'react'
 
+import AreaButtons from './AreaButtons'
 import RelatedRender from './Related'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
 import { RenderSubject } from './RenderSubject'
 import { RenderSubtitle } from './RenderSubtitle'
-import { RenderTitle } from './RenderTitle'
 import * as S from './styled'
+import TeaserTitle from './Title'
 import { TeaserProps } from './types'
 
 const Teaser = (props: TeaserProps) => {
@@ -19,6 +20,38 @@ const Teaser = (props: TeaserProps) => {
     layout,
     related
   } = props
+  // editable refs
+  const edition_text = React.useRef(item?.name || '')
+  const edition_subject = React.useRef(item?.subject || '')
+  const [edition_modified, set_modified] = React.useState(false)
+  const [edition_restart, set_restart] = React.useState(false)
+  const [edition_saving, set_saving] = React.useState(false)
+  // editable reset function
+  const resetEditionFields = () => {
+    edition_text.current = item?.name
+    edition_subject.current = item?.subject
+    set_modified(false)
+    set_saving(false)
+    set_restart(true)
+  }
+  const submitEditionFields = () => {
+    const data = {
+      title: edition_text.current,
+      subject: edition_subject.current
+    }
+    set_saving(true)
+    setTimeout(() => {
+      set_modified(false)
+      set_saving(false)
+      set_restart(true)
+    }, 2000)
+  }
+  // editable reset effect
+  React.useEffect(() => {
+    if(edition_restart === true) {
+      set_restart(false)
+    }
+  }, [edition_restart])
   // main props
   const item_path = get(item, 'url', false) || get(item, 'path', '')
   const item_title = get(item, 'name', '')
@@ -101,14 +134,28 @@ const Teaser = (props: TeaserProps) => {
         wrap_mb={wrap_mb}
         wrap_ml={wrap_ml}>
         <RenderSubject
+          editable={{
+            enabled: true,
+            modified: edition_modified,
+            saving: edition_saving,
+            set_modified: set_modified,
+            state: edition_subject
+          }}
           color={color}
           item={item}
           layout={layout}
         />
-        <RenderTitle
-          item_path={item_path}
-          item_title={item_title}
+        <TeaserTitle
+          editable={{
+            enabled: true,
+            modified: edition_modified,
+            saving: edition_saving,
+            set_modified: set_modified,
+            state: edition_text
+          }}
           layout={layout}
+          link={item_path}
+          title={item_title}
         />
         <RenderSubtitle
           item={item}
@@ -122,6 +169,11 @@ const Teaser = (props: TeaserProps) => {
           color={color}
           layout={layout?.related}
           {...related}
+        />
+        <AreaButtons
+          action={submitEditionFields}
+          enabled={edition_modified}
+          reset={resetEditionFields}
         />
       </S.WrapContent>
     </S.Box>
