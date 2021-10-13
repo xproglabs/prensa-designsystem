@@ -1,3 +1,5 @@
+# v1.6.18
+- Condiciona a renderização do SectionTitle "Assuntos" no corpo da matéria
 # v1.6.17
 - Novo componente ErrorPage
 # v1.6.16
