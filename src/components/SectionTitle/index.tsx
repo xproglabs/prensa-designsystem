@@ -1,8 +1,8 @@
 import React from 'react'
 
+import { AreaLink } from '../Link'
 import {
   AreaBox,
-  AreaLink,
   TitleIcon,
   TitleText
 } from './styled'

@@ -34,13 +34,6 @@ export interface SectionTitleProps {
   path?: string;
 }
 /**
- * @description define styled area link properties
- */
-export interface StyledAreaProps {
-  children: any;
-  path: string;
-}
-/**
  * @description define styled area box properties
  */
 export interface StyledBoxProps {

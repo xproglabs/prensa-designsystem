@@ -2,10 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Block from '../Block'
-import Link from '../Link'
 import Typography from '../Typography'
 import {
-  StyledAreaProps,
   StyledBoxProps,
   StyledTitleProps,
   StyledIconProps,
@@ -44,23 +42,6 @@ export const AreaBox = ({
       {children}
     </Block>
   )
-}
-/**
- * Section Area Link
- * @description wrap the icon and title
- * @param children react component
- * @param path link to click the area
- * @returns a component as a React element
- */
-export const AreaLink = ({ children, path } : StyledAreaProps) => {
-  if(path) {
-    return (
-      <Link href={path}>
-        {children}
-      </Link>
-    )
-  }
-  return children
 }
 /**
  * Section Title Icon
