@@ -1,5 +1,6 @@
 import { ReactElement } from 'react'
 
+import { PageBlockPreview } from '../PageBlock/types'
 import { LayoutProps } from '../Teaser/types'
 
 export type RenderSlotProps = {
@@ -11,6 +12,7 @@ export type RenderSlotProps = {
   image_circle?: boolean;
   layout?: LayoutProps;
   layouts: Array<string>;
+  preview: PageBlockPreview;
   slot: Array<any>;
   /**
    * @description spaceA prop expects a element or React Component to be rendered before teaser content

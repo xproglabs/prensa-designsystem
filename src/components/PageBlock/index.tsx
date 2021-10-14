@@ -21,6 +21,7 @@ import {
 
 const PageBlock = ({
   parseSlot,
+  preview,
   slot1,
   slot2,
   slot3,
@@ -49,6 +50,7 @@ const PageBlock = ({
           column_padding: slot1_spaces,
           domain,
           layouts: slot100_layout,
+          preview,
           slot: slot1.list1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
@@ -72,6 +74,7 @@ const PageBlock = ({
           column_padding: slot1_spaces,
           domain,
           layouts: slot70_layout,
+          preview,
           slot: slot1.list1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
@@ -82,6 +85,7 @@ const PageBlock = ({
           column_padding: slot2_spaces,
           domain,
           layouts: slot30_layout,
+          preview,
           slot: slot2.list1,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList
@@ -105,6 +109,7 @@ const PageBlock = ({
           column_padding: slot1_spaces,
           domain,
           layouts: slotLeft_layout,
+          preview,
           slot: slot1.list1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
@@ -115,6 +120,7 @@ const PageBlock = ({
           column_padding: slot2_spaces,
           domain,
           layouts: slotRight_layout,
+          preview,
           slot: slot2.list1,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList
@@ -141,6 +147,7 @@ const PageBlock = ({
           column_padding: slot1_spaces,
           domain,
           layouts: slotLeft_layout,
+          preview,
           slot: slot1.list1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
@@ -151,6 +158,7 @@ const PageBlock = ({
           column_padding: slot2_spaces,
           domain,
           layouts: slotCenter_layout,
+          preview,
           slot: slot2.list1,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList
@@ -161,6 +169,7 @@ const PageBlock = ({
           column_padding: slot3_spaces,
           domain,
           layouts: slotRight_layout,
+          preview,
           slot: slot3.list1,
           spaceA: slotsHaveSecionTitle ? slot3_title : null,
           spaceB: slot3_slotList
@@ -180,6 +189,7 @@ const PageBlock = ({
         column_padding: slot1_spaces,
         domain,
         layouts: slowWrap_layout,
+        preview,
         slot: slot1.list1,
         spaceA: slotsHaveSecionTitle ? slot1_title : null,
         spaceB: slot1_slotList

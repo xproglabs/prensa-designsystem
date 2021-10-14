@@ -2,6 +2,10 @@ import React from 'react'
 
 import Block from '../Block'
 import Carousel from '../Carousel'
+import {
+  isBackgroundTransparent,
+  selectBgColorFromSlot
+} from '../PageBlock/utils'
 import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
 import { renderSpaceSlot } from '../RenderSlot/utils'
@@ -20,6 +24,8 @@ interface Template100Props {
 }
 
 const Template100 = ({ carousel, slot100 }: Template100Props) => {
+  const slot100_bgColor = selectBgColorFromSlot(slot100)
+  const slot100_isTransparent = isBackgroundTransparent(slot100_bgColor)
   const renderContent = () => {
     if (carousel && carousel.enabled === true) {
       return (

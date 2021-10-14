@@ -1,6 +1,10 @@
 import { TeaserProps } from '../Teaser/types'
 
-export interface SlotBlockProps {
+export type PageBlockPreview = {
+  enabled: boolean,
+  save_action: any
+}
+export type SlotBlockProps = {
   bgcolor?: string;
   color: string;
   icon: string;
@@ -13,11 +17,12 @@ export interface SlotBlockProps {
   spaces?: [number, number, number, number];
   type: string;
 }
-export interface PageBlockProps {
+export type PageBlockProps = {
   bgcolor?: string;
   cid: string;
   name: string;
   type: string;
+  preview: PageBlockPreview;
   parseSlot: any;
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;

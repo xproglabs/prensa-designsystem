@@ -110,7 +110,7 @@ const Teaser = (props: TeaserProps) => {
               enabled: true,
               set_modified: editable?.set_modified,
               set_selected: editable?.set_selected,
-              state: states.subject
+              state: states?.subject
             }}
             color={color}
             item={item}
@@ -123,7 +123,7 @@ const Teaser = (props: TeaserProps) => {
             enabled: true,
             set_modified: editable?.set_modified,
             set_selected: editable?.set_selected,
-            state: states.title
+            state: states?.title
           }}
           layout={layout}
           link={item_path}

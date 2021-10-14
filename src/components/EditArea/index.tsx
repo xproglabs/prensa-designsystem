@@ -43,7 +43,7 @@ const EditArea = ({
       <ContentEditable
         className='div-editable-focus'
         contentEditable={true}
-        html={state.current}
+        html={state?.current}
         onBlur={handleBlur}
         onChange={handleChange}
         onFocus={handleFocus}

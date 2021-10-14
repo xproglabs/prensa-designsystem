@@ -1,4 +1,3 @@
-import { get } from 'lodash'
 import React from 'react'
 import { Typography } from 'src'
 import { ThemeProvider } from 'styled-components'
@@ -13,6 +12,7 @@ import DATA_HOME_7030 from './data/7.173.json'
 import DATA_HOME_FEAT from './data/7.174.json'
 import DataHomeTimes from './data/7.181.json'
 import DATA_HOME_30 from './data/7.204.json'
+import { preview_editable } from './editable'
 import { theme } from './index'
 
 export default {
@@ -53,6 +53,7 @@ export const HomeLinha1 = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DataHomeLinha1}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
     </TemplateContainer>
@@ -66,6 +67,7 @@ export const HomeLinha2 = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DataHomeLinha2}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
     </TemplateContainer>
@@ -79,6 +81,7 @@ export const HomeLinha3 = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DataHomeLinha3}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
     </TemplateContainer>
@@ -92,6 +95,7 @@ export const HomeTimes = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DataHomeTimes}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
     </TemplateContainer>
@@ -105,6 +109,7 @@ export const Home7030 = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DATA_HOME_7030}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
     </TemplateContainer>
@@ -118,6 +123,7 @@ export const Home30 = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DATA_HOME_30}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
     </TemplateContainer>
@@ -131,6 +137,7 @@ export const HomeFeatured = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DATA_HOME_FEAT}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
     </TemplateContainer>
@@ -145,30 +152,37 @@ export const HomeFull = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DataHomeLinha1}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
       <PageBlock
         {...DataHomeLinha2}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
       <PageBlock
         {...DataHomeLinha3}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
       <PageBlock
         {...DataHomeTimes}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
       <PageBlock
         {...DATA_HOME_7030}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
       <PageBlock
         {...DATA_HOME_30}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
       <PageBlock
         {...DATA_HOME_FEAT}
+        preview={preview_editable}
         parseSlot={parseSlot}
       />
     </TemplateContainer>

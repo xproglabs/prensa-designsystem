@@ -14,11 +14,11 @@ import { parseTeaserProps } from './utils'
  */
 const RenderPreview = ({
   children,
-  enabled,
   text,
+  preview,
   subject
 }) => {
-  if(!enabled) {
+  if(!preview || !preview.enabled) {
     return children
   }
   // editable refs
@@ -42,6 +42,7 @@ const RenderPreview = ({
       subject: ref_subject.current
     }
     set_saving(true)
+    // preview.save_action()
     setTimeout(() => {
       set_modified(false)
       set_saving(false)
@@ -92,6 +93,7 @@ const RenderSlot = ({
   image_circle,
   layout,
   layouts,
+  preview,
   slot,
   theme
 }: RenderSlotProps) => {
@@ -109,7 +111,7 @@ const RenderSlot = ({
             width='100%'
             lg={{ width: column_width }}>
             <RenderPreview
-              enabled={true}
+              preview={preview}
               text={item?.name}
               subject={item?.subject}>
               <Teaser
