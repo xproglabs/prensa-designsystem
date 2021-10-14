@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-// import {theme} from 'storybook/theme';
 import Block from '../../Block'
 
 export const Container = ({ children, maxWidth }) => 
