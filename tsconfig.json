@@ -20,18 +20,21 @@
       "demo/*": [
         "src/styles/demo/*"
       ],
+      "prensa": [
+        "src/index.ts"
+      ],
       "styles/*": [
         "src/styles/*"
+      ],
+      "storybook/*": [
+        "storybook/*"
       ]
     }
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
     "node_modules",
     ".storyboook",
     ".github",
-    "dist"
+    "components"
   ]
 }
