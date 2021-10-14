@@ -1,8 +1,8 @@
 import { Template7030 } from 'components/Templates/Template7030'
 import { get } from 'lodash'
 import React from 'react'
+import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
-import { theme } from 'styles/theme'
 
 import { data } from './Template7030.data'
 

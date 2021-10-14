@@ -3,8 +3,8 @@ import { Template100 as Template } from 'components/Templates/Template100'
 import TemplateContainer from 'components/Templates/TemplateContainer'
 import { get } from 'lodash'
 import React from 'react'
+import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
-import { theme } from 'styles/theme'
 
 import { data } from './Template100.data'
 

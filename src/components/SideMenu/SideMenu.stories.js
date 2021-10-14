@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
-import { theme } from '../../styles/theme'
 import Accordion from '../AccordionEditorial'
 import SideMenu from './index'
 import dataMock from './sidemenu_datamodel.json'
