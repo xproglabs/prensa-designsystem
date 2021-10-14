@@ -226,6 +226,16 @@ const WrapContent = ({
     </Block>
   )
 }
+const WrapSubject = ({ children }) => {
+  return (
+    <Block 
+      align='row'
+      alignx='between'
+      width='100%'>
+      {children}
+    </Block>
+  )
+}
 
 export {
   AreaLink,
@@ -235,4 +245,5 @@ export {
   Subject,
   Subtitle,
   WrapContent,
+  WrapSubject
 }

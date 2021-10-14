@@ -88,6 +88,11 @@ export type LayoutProps = {
 export type TeaserProps = {
   color?: string;
   domain?: string;
+  /**
+   * @description expects a boolean with editable option
+   */
+  edit_buttons?: any;
+  editable?: any;
   image_circle?: boolean;
   /**
    * @description expects an object with teaser data
@@ -101,4 +106,8 @@ export type TeaserProps = {
    * @description expects an object with layout configuration for related news
    */
   related?: RelatedProps;
+  /**
+   * @description expects a object of states to cover the editable fields
+   */
+  states?: any;
 }

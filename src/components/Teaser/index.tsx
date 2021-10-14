@@ -1,6 +1,7 @@
 import { get } from 'lodash'
 import React from 'react'
 
+import { EditButtons } from '../EditArea'
 import RelatedRender from './Related'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
@@ -13,6 +14,7 @@ import { TeaserProps } from './types'
 const Teaser = (props: TeaserProps) => {
   const {
     color,
+    edit_buttons,
     editable,
     domain,
     image_circle,
@@ -102,20 +104,25 @@ const Teaser = (props: TeaserProps) => {
         wrap_mr={wrap_mr}
         wrap_mb={wrap_mb}
         wrap_ml={wrap_ml}>
-        <RenderSubject
-          editable={{
-            enabled: true,
-            ...editable,
-            state: states.subject
-          }}
-          color={color}
-          item={item}
-          layout={layout}
-        />
+        <S.WrapSubject>
+          <RenderSubject
+            editable={{
+              enabled: true,
+              set_modified: editable?.set_modified,
+              set_selected: editable?.set_selected,
+              state: states.subject
+            }}
+            color={color}
+            item={item}
+            layout={layout}
+          />
+          <EditButtons {...edit_buttons} />
+        </S.WrapSubject>
         <TeaserTitle
           editable={{
             enabled: true,
-            ...editable,
+            set_modified: editable?.set_modified,
+            set_selected: editable?.set_selected,
             state: states.title
           }}
           layout={layout}
