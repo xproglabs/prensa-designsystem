@@ -1,15 +1,8 @@
 import { merge } from 'lodash'
 
-import { LayoutProps } from '../../components/Teaser/types'
+import { TemplateTypes } from '../templates/types'
+import { TeaserTypes } from '../teasers/types'
 import { default_theme } from './default_theme'
-
-export type TemplatesTypes = {
-  default?: Object;
-}
-
-export type TeaserTypes = {
-  default: LayoutProps;
-}
 
 export type ThemeTypes = {
   colors?: Object;
@@ -18,7 +11,7 @@ export type ThemeTypes = {
   queries?: Object;
   radius?: Object;
   teasers?: TeaserTypes;
-  templates?: TemplatesTypes;
+  templates?: TemplateTypes;
 }
 
 /**
