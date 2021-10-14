@@ -1,7 +1,6 @@
 import { get } from 'lodash'
 import React from 'react'
 
-import { EditButtons } from '../EditArea'
 import RelatedRender from './Related'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
@@ -14,44 +13,14 @@ import { TeaserProps } from './types'
 const Teaser = (props: TeaserProps) => {
   const {
     color,
+    editable,
     domain,
     image_circle,
     item,
     layout,
-    related
+    related,
+    states
   } = props
-  // editable refs
-  const edition_text = React.useRef(item?.name || '')
-  const edition_subject = React.useRef(item?.subject || '')
-  const [edition_modified, set_modified] = React.useState(false)
-  const [edition_restart, set_restart] = React.useState(false)
-  const [edition_saving, set_saving] = React.useState(false)
-  // editable reset function
-  const resetEditionFields = () => {
-    edition_text.current = item?.name
-    edition_subject.current = item?.subject
-    set_modified(false)
-    set_saving(false)
-    set_restart(true)
-  }
-  const submitEditionFields = () => {
-    const data = {
-      title: edition_text.current,
-      subject: edition_subject.current
-    }
-    set_saving(true)
-    setTimeout(() => {
-      set_modified(false)
-      set_saving(false)
-      set_restart(true)
-    }, 2000)
-  }
-  // editable reset effect
-  React.useEffect(() => {
-    if(edition_restart === true) {
-      set_restart(false)
-    }
-  }, [edition_restart])
   // main props
   const item_path = get(item, 'url', false) || get(item, 'path', '')
   const item_title = get(item, 'name', '')
@@ -136,10 +105,8 @@ const Teaser = (props: TeaserProps) => {
         <RenderSubject
           editable={{
             enabled: true,
-            modified: edition_modified,
-            saving: edition_saving,
-            set_modified: set_modified,
-            state: edition_subject
+            ...editable,
+            state: states.subject
           }}
           color={color}
           item={item}
@@ -148,10 +115,8 @@ const Teaser = (props: TeaserProps) => {
         <TeaserTitle
           editable={{
             enabled: true,
-            modified: edition_modified,
-            saving: edition_saving,
-            set_modified: set_modified,
-            state: edition_text
+            ...editable,
+            state: states.title
           }}
           layout={layout}
           link={item_path}
@@ -169,11 +134,6 @@ const Teaser = (props: TeaserProps) => {
           color={color}
           layout={layout?.related}
           {...related}
-        />
-        <EditButtons
-          action={submitEditionFields}
-          enabled={edition_modified}
-          reset={resetEditionFields}
         />
       </S.WrapContent>
     </S.Box>
