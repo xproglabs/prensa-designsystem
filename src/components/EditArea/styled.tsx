@@ -1,43 +1,50 @@
 import styled, { css } from 'styled-components'
 
-import { EditBoxProps } from './types'
+import {
+  EditBoxProps,
+  EditWrapProps
+} from './types'
 
 const ButtonsBox = styled.div`
-  background-color: rgba(0,0,0,0.2);
-  margin-top: 8px;
-  padding: 8px;
-  outline: 2px solid rgba(0,0,0,0.4);;
-  width: calc(100% - 16px);
+  margin-top: -4px;
+  & > button:last-child {
+    margin-left: 4px;
+  }
 `
 
 const EditBox = styled.div<EditBoxProps>`
   cursor: pointer;
   width: 100%;
 
-  &:hover {
-    background-color: rgba(255, 225, 50, 0.50);
-    color: black;
+  & .div-editable-focus:focus-visible {
+    outline: none;
   }
+`
 
-  & > .div-editable-focus:focus-visible {
-    background-color: rgba(255, 225, 50, 0.50);
-    outline: 2px solid rgba(0,0,0,0.3);
-    color: black;
-  }
-
-  ${props => props.modified && css`
-    background-color: rgba(255, 225, 50, 1);
-    color: black;
-    outline: 2px solid #b48d43;
+const EditWrap = styled.div<EditWrapProps>`
+  z-index: 100;
+  
+  ${props => props.enabled && css`
+    outline: 5px solid rgba(0,0,0,0.4);
+    outline-offset: 8px;
+    width: 100%;
   `}
 
   ${props => props.saving && css`
-    background-color: rgba(50, 225, 50, 0.3);
-    color: black;
-    outline: 2px solid #128b37;
+    outline: 4px solid rgba(50, 225, 50,0.8);
+    outline-offset: 4px;
+    width: 100%;
+  `}
+
+  ${props => props.selected && css`
+    outline: 4px solid rgba(200,200,0,0.8);
+    outline-offset: 4px;
+    width: 100%;
   `}
 `
+
 export {
   ButtonsBox,
-  EditBox
+  EditBox,
+  EditWrap
 }

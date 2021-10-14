@@ -5,7 +5,10 @@ import {
   ButtonsBox,
   EditBox
 } from './styled'
-import { EditButtonsType } from './types'
+import {
+  EditAreaType,
+  EditButtonsType
+} from './types'
 /**
  * EditArea allows teaser wysiwyg
  * @param children text to be edited
@@ -18,27 +21,32 @@ import { EditButtonsType } from './types'
 const EditArea = ({
   children,
   enabled,
-  modified,
-  saving,
   set_modified,
+  set_selected,
   state
-}) => {
+}: EditAreaType) => {
   if(!enabled) {
     return children
   }
+  const handleBlur = () => {
+    set_selected && set_selected(false)
+  }
   const handleChange = (event) => {
     state.current = event.target.value
-    set_modified(true)
+    set_modified && set_modified(true)
+  }
+  const handleFocus = () => {
+    set_selected && set_selected(true)
   }
   return (
-    <EditBox
-      modified={modified}
-      saving={saving}>
+    <EditBox>
       <ContentEditable
         className='div-editable-focus'
         contentEditable={true}
         html={state.current}
-        onChange={handleChange} 
+        onBlur={handleBlur}
+        onChange={handleChange}
+        onFocus={handleFocus}
         suppressContentEditableWarning={true}
       />
     </EditBox>
