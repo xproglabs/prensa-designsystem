@@ -1,25 +1,14 @@
 import { merge } from 'lodash'
 
-import { LayoutProps } from '../components/Teaser/types'
-import { default_theme } from './default'
+import { LayoutProps } from '../../components/Teaser/types'
+import { default_theme } from './default_theme'
 
 export type TemplatesTypes = {
   default?: Object;
-  featured?: Object;
 }
 
 export type TeaserTypes = {
-  featured?: LayoutProps;
-  featured_related?: LayoutProps;
-  image_carousel?: LayoutProps;
-  image_featured?: LayoutProps;
-  image_four?: LayoutProps;
-  image_three?: LayoutProps;
-  image_top?: LayoutProps;
-  image_two?: LayoutProps;
-  image_large_left?: LayoutProps;
-  image_small_left?: LayoutProps;
-  mostread?: LayoutProps;
+  default: LayoutProps;
 }
 
 export type ThemeTypes = {

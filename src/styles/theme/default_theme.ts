@@ -1,29 +1,13 @@
-import {
-  TEASER_FEATURED,
-  TEASER_FEATURED_RELATED,
-  TEASER_IMAGE_CAROUSEL,
-  TEASER_IMAGE_FEATURED,
-  TEASER_IMAGE_FOUR,
-  TEASER_IMAGE_THREE,
-  TEASER_IMAGE_TOP,
-  TEASER_IMAGE_TWO,
-  TEASER_LEFTIMAGE_LARGE,
-  TEASER_LEFTIMAGE_SMALL,
-  TEASER_MOSTREAD,
-} from './layouts/teasers'
-
-import {
-  TEMPLATES_DEFAULT,
-  TEMPLATES_FEATURED
-} from './layouts/templates'
+import { TEASER_DEFAULT } from '../teasers'
+import { TEMPLATES_DEFAULT } from '../templates'
 
 //TODO: Move to styled-system
-import { parseColor, parseBgColor, parseFontColor } from './parsers/parseColors'
-import { parseCustom, parseCustomDef } from './parsers/parseCustom'
-import { parseFontFamily } from './parsers/parseFontFamily'
-import { parseMargin } from './parsers/parseMargin'
-import { parsePadding } from './parsers/parsePadding'
-import { parseRadius } from './parsers/parseRadius'
+import { parseColor, parseBgColor, parseFontColor } from '../parsers/parseColors'
+import { parseCustom, parseCustomDef } from '../parsers/parseCustom'
+import { parseFontFamily } from '../parsers/parseFontFamily'
+import { parseMargin } from '../parsers/parseMargin'
+import { parsePadding } from '../parsers/parsePadding'
+import { parseRadius } from '../parsers/parseRadius'
 
 export const default_theme = {
   colors: {
@@ -87,21 +71,10 @@ export const default_theme = {
     alternative: '5px'
   },
   teasers: {
-    featured: TEASER_FEATURED,
-    featured_related: TEASER_FEATURED_RELATED,
-    image_carousel: TEASER_IMAGE_CAROUSEL,
-    image_featured: TEASER_IMAGE_FEATURED,
-    image_four: TEASER_IMAGE_FOUR,
-    image_three: TEASER_IMAGE_THREE,
-    image_top: TEASER_IMAGE_TOP,
-    image_two: TEASER_IMAGE_TWO,
-    image_large_left: TEASER_LEFTIMAGE_LARGE,
-    image_small_left: TEASER_LEFTIMAGE_SMALL,
-    mostread: TEASER_MOSTREAD
+    default: TEASER_DEFAULT
   },
   templates: {
-    default: TEMPLATES_DEFAULT,
-    featured: TEMPLATES_FEATURED
+    default: TEMPLATES_DEFAULT
   },
   parseBgColor,
   parseCustom,
