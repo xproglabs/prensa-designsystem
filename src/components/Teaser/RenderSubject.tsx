@@ -1,7 +1,7 @@
 import { get } from 'lodash'
 import React from 'react'
 
-import AreaEdition from './AreaEdition'
+import { EditArea } from '../EditArea'
 import * as S from './styled'
 
 const RenderSubject = ({
@@ -27,9 +27,9 @@ const RenderSubject = ({
       font_size={font_size}
       line_height={line_height}
       mb={mb}>
-      <AreaEdition {...editable}>
+      <EditArea {...editable}>
         {subject_value}
-      </AreaEdition>
+      </EditArea>
     </S.Subject>
   )
 }

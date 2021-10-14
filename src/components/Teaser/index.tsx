@@ -1,7 +1,7 @@
 import { get } from 'lodash'
 import React from 'react'
 
-import AreaButtons from './AreaButtons'
+import { EditButtons } from '../EditArea'
 import RelatedRender from './Related'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
@@ -170,7 +170,7 @@ const Teaser = (props: TeaserProps) => {
           layout={layout?.related}
           {...related}
         />
-        <AreaButtons
+        <EditButtons
           action={submitEditionFields}
           enabled={edition_modified}
           reset={resetEditionFields}
