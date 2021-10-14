@@ -25,6 +25,10 @@ type CreateFunctionTypes = {
   slot30?: TemplateSlotTypes;
 }
 
-export const CreateTemplate = (data: CreateFunctionTypes): Object => {
+/**
+ * CreateTemplate function docs
+ * @param {object} data - An object that define properties for a new template
+ */
+export function CreateTemplate(data: CreateFunctionTypes): Object {
   return data;
 }

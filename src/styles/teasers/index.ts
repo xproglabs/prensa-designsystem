@@ -1,4 +1,4 @@
-export * from './createFunction'
+export * from './CreateFunction'
 export * from './teaser_default'
 
 // export const SECTION_DEFAULT = {

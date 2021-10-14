@@ -1,4 +1,4 @@
-import { CreateTeaser } from './createFunction'
+import { CreateTeaser } from './CreateFunction'
 import { SUBJECT_DEFAULT } from '../subject'
 
 export const TEASER_DEFAULT = CreateTeaser({

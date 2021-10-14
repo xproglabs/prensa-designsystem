@@ -1,5 +1,9 @@
 import { LayoutProps } from '../../components/Teaser/types'
 
-export const CreateTeaser = (data: LayoutProps): Object => {
+/**
+ * CreateTeaser function docs
+ * @param {object} data - An object that define properties for a new teaser
+ */
+export function CreateTeaser(data: LayoutProps): Object {
   return data;
 }

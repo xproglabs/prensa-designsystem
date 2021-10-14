@@ -1,4 +1,4 @@
-import { CreateTemplate } from './createFunction'
+import { CreateTemplate } from './CreateFunction'
 
 export const TEMPLATES_DEFAULT = CreateTemplate({
   slot100: {
