@@ -90,7 +90,6 @@ const RenderSlot = ({
   column_items,
   column_padding,
   domain,
-  image_circle,
   layout,
   layouts,
   preview,
@@ -118,7 +117,6 @@ const RenderSlot = ({
                 color={color}
                 domain={domain}
                 item={item}
-                image_circle={image_circle}
                 layout={teaser_props.layout}
                 related={teaser_props.related}
               />

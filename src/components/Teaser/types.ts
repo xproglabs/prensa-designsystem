@@ -84,6 +84,7 @@ export type LayoutProps = {
   carousel?: Object;
   datetime_enabled?: boolean;
   image?: Image;
+  image_circle?: boolean;
   related?: Related;
   section?: Object;
   subject?: Subject;
@@ -98,7 +99,6 @@ export type TeaserProps = {
    */
   editable?: EditAreaType;
   edit_buttons?: EditButtonsType;
-  image_circle?: boolean;
   /**
    * @description expects an object with teaser data
    */
