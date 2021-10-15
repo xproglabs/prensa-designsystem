@@ -107,7 +107,7 @@ const Teaser = (props: TeaserProps) => {
         <S.WrapSubject>
           <RenderSubject
             editable={{
-              enabled: true,
+              enabled: editable?.enabled,
               set_modified: editable?.set_modified,
               set_selected: editable?.set_selected,
               state: states?.subject
@@ -120,7 +120,7 @@ const Teaser = (props: TeaserProps) => {
         </S.WrapSubject>
         <TeaserTitle
           editable={{
-            enabled: true,
+            enabled: editable?.enabled,
             set_modified: editable?.set_modified,
             set_selected: editable?.set_selected,
             state: states?.title
