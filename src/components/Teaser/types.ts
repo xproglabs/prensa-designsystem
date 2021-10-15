@@ -65,7 +65,7 @@ type Subtitle = {
   enabled?: boolean;
   line_height?: [string, string];
 }
-type Title = {
+export type Title = {
   color?: string;
   element?: string;
   enabled?: boolean;
