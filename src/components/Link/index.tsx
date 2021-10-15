@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-interface LinkProps {
+type LinkProps = {
   opacity?: number
 }
 const Link = styled.a<LinkProps>`
@@ -19,7 +19,7 @@ const Link = styled.a<LinkProps>`
 Link.defaultProps = {
   opacity: 1
 }
-interface AreaLinkProps {
+type AreaLinkProps = {
   children: any;
   hoverOpacity?: number;
   path: string;
