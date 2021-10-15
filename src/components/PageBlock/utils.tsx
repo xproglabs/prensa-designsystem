@@ -51,8 +51,9 @@ export const selectLayoutFromTemplate = ({
   slot
 }) => {
   const slot_len1 = get(slot, 'len1', 0)
+  const slot_position = slot_len1 > 4 ? 0 : slot_len1
   const slot_layouts = get(block, 'layout', false)
-  const slot_layouts_selected = get(slot_layouts, `[${slot_len1}]`, false)
+  const slot_layouts_selected = get(slot_layouts, `[${slot_position}]`, false)
   return slot_layouts_selected
 }
 
