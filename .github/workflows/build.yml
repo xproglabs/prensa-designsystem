@@ -1,52 +1,34 @@
-#name: Build Prensa on push
-# Este fluxo de trabalho é acionado em pushes para o repositório.
-# on: [push]
-
-# jobs:
-#   build-sass-theme:
-#     name: Build Prensa SCSS and JS
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout source Git branch
-#         uses: actions/checkout@v2
-#         with:
-#           ref: ${{ github.ref }}
+name: Build Prensa
+on: push
+jobs:
+  build:
+    name: Build Prensa
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source Git branch
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
           
-#       - name: Set Node.js version ${{ matrix.node_version }}
-#         uses: actions/setup-node@v1
-#         with:
-#           node-version: ${{ matrix.node_version }}
-
-#       - name: Install packages
-#         run: npm install
+    - name: Set Node.js version ${{ matrix.node_version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node_version }}
+    
+    - name: Install dependencies, build and lint
+      run: | 
+        npm install
+        npm run build
+        npm run eslint
           
-#       - name: Create destination for compiled CSS
-#         run: mkdir -vp /tmp/xprog-designsystem/css
-
-#       - name: Compile SCSS Theme
-#         uses: gha-utilities/sass-build@v0.2.2
-#         with:
-#           source: styles/index.scss
-#           destination: /tmp/xprog-designsystem/css/theme.css
-
-#       - name: Compile SCSS Files
-#         uses: gha-utilities/sass-build@v0.2.2
-#         with:
-#           source: styles/router.scss
-#           destination: /tmp/xprog-designsystem/css/router.css
-          
-#       - name: Build
-#         run: npm run build
-          
-#       - name: Slack notifcation theme
-#         uses: 8398a7/action-slack@v3
-#         with:
-#           status: ${{ job.status }}
-#           author_name: ':small_blue_diamond: Build SCSS theme'
-#           icon_emoji: 'warning'
-#           text: Build SCSS theme ${{ job.status }}
-#           fields: commit, message, author
-#         env:
-#           GITHUB_TOKEN: ${{ github.token }}
-#           SLACK_WEBHOOK_URL: ${{ secrets.slack }}
-#         if: ${{ failure() }}
+    - name: Slack notifcation
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        author_name: 'Github service'
+        text: Falha ao buildar prensa/components
+        fields: commit, message, author
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+        SLACK_WEBHOOK_URL: ${{ secrets.slack }}
+      if: ${{ failure() }}

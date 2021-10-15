@@ -35,14 +35,14 @@ const TextBody = (props) => {
     images,
     related_content_intervention,
     paragraph,
-    section_title,
+    tags_section_title,
     tags
   } = props
   
   if (!content) return null
   
   const adsContent = get(ads, 'content', [])
-  const adsRender = get(ads, 'render', false)
+  const adsRender = get(ads, 'render', null)
 
   let readmore = []
   let intervention_amount = get(ads, 'interventionAmount', 3)
@@ -180,7 +180,9 @@ const TextBody = (props) => {
       {gallery && gallery.length > 0 && (
         <ImageGallery items={gallery} />
       )}
-      <SectionTitle {...section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
+      {tags_section_title && tags_section_title.enabled && (
+        <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
+      )}  
       <Tags {...tags} maxWidth={bodyWidth} />
     </S.Body>
   )
@@ -209,7 +211,7 @@ TextBody.propTypes = {
     enabled: PropTypes.bool,
     component: PropTypes.node
   }),
-  section_title: PropTypes.object,
+  tags_section_title: PropTypes.object,
   tags: PropTypes.object
 }
 

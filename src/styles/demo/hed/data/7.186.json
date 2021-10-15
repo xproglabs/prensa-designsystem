@@ -1,0 +1,132 @@
+{
+  "cid": "7.186",
+  "name": "Destaque Linha 2",
+  "type": "template7030",
+  "slot1": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.188",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.188",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "url": "/palestra-reune-prefeitos-e-vereadores-1.186",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "update": "2021-09-20 0:12:46"
+      }
+    ],
+    "list2": [
+      {
+        "contentId": "7.304",
+        "input-template": "br.com.atex.plugins.ads-blocks.it",
+        "template": "",
+        "title": "Placeholder",
+        "mobile": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "tablet": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "desktop": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        }
+      }
+    ],
+    "title": "Titulo da seção",
+    "type": "default"
+  },
+  "slot2": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.191",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.188",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "url": "/palestra-reune-prefeitos-e-vereadores-1.186",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "update": "2021-09-20 0:12:46"
+      }
+    ],
+    "list2": [
+      {
+        "contentId": "7.304",
+        "input-template": "br.com.atex.plugins.ads-blocks.it",
+        "template": "",
+        "title": "Placeholder",
+        "mobile": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "tablet": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "desktop": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        }
+      }
+    ],
+    "title": "Titulo da seção",
+    "type": ""
+  },
+  "slot3": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 0,
+    "len2": 0,
+    "list1": [],
+    "list2": [],
+    "title": "",
+    "type": ""
+  }
+}

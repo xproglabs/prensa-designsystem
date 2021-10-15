@@ -1,6 +1,8 @@
 import React from 'react'
+
 import Block from '../../Block'
-import RenderSlot, { RenderSlotProps } from '../../RenderSlot'
+import RenderSlot from '../../RenderSlot'
+import { RenderSlotProps } from '../../RenderSlot/types'
 
 type GridRelatedProps = RenderSlotProps & {
   enabled: boolean;

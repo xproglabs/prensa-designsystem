@@ -1,0 +1,102 @@
+{
+  "cid": "7.153",
+  "name": "Destaque Linha 1",
+  "type": "template7030",
+  "slot1": {
+    "bgcolor": "",
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 4,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.154",
+        "img": {
+          "byl": "aaa",
+          "cap": "aaa",
+          "cid": "1.880206.1632954904",
+          "sub": ""
+        },
+        "name": "Vacinação reduz em 70% internações de pessoas com mais de 60 anos em BH",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "EFICIÊNCIA",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.249",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203.1632363461",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.248",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203.1632363461",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "7.247",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203.1632363461",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": "featured"
+  },
+  "slot2": {
+    "bgcolor": "",
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 0,
+    "len2": 0,
+    "list1": [],
+    "list2": [],
+    "title": "",
+    "type": ""
+  },
+  "slot3": {
+    "bgcolor": "",
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 0,
+    "len2": 0,
+    "list1": [],
+    "list2": [],
+    "title": "",
+    "type": ""
+  }
+}
