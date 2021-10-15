@@ -2,7 +2,7 @@ import { get } from 'lodash'
 import React from 'react'
 
 import { EditArea } from '../EditArea'
-import { AreaLink } from '../Link'
+import { LinkArea } from '../Link'
 import Typography from '../Typography'
 
 interface TitleProps {
@@ -49,11 +49,11 @@ const Title = ({
         mb: title_layout.mb?.[1]
       }}>
       <EditArea {...editable}>
-        <AreaLink
+        <LinkArea
           hoverOpacity={0.9}
           path={link}>
           {title}
-        </AreaLink>
+        </LinkArea>
       </EditArea>
     </Typography>
   )

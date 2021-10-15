@@ -1,10 +1,42 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-type LinkProps = {
-  opacity?: number
+import * as Types from './types'
+
+/**
+ * Section Link Area
+ * @description render if section title path exists
+ * @param children react component to be rendered
+ * @param hover define mouse hover opacity
+ * @param path define link to click the area
+ * @returns a component as a React element
+ */
+export const LinkArea = ({
+  children,
+  hoverOpacity,
+  path
+}: Types.LinkAreaProps) => {
+  if(!path) {
+    return children
+  }
+  return (
+    <Link
+      href={path}
+      opacity={hoverOpacity}>
+      {children}
+    </Link>
+  )
 }
-const Link = styled.a<LinkProps>`
+
+/**
+ * Section Link
+ * @description wrap the icon and the title
+ * @param children expects a react component
+ * @param hover define mouse hover opacity
+ * @param path define link to click the area
+ * @returns a component as a React element
+ */
+const Link = styled.a<Types.LinkProps>`
   color: inherit;
   cursor: pointer;
   text-decoration: none;
@@ -19,35 +51,5 @@ const Link = styled.a<LinkProps>`
 Link.defaultProps = {
   opacity: 1
 }
-type AreaLinkProps = {
-  children: any;
-  hoverOpacity?: number;
-  path: string;
-}
-/**
- * Section Area Link
- * @description wrap the icon and title
- * @param children react component
- * @param hover define mouse hover opacity
- * @param path link to click the area
- * @returns a component as a React element
- */
-export const AreaLink = ({
-  children,
-  hoverOpacity,
-  path
-}: AreaLinkProps) => {
-  if(path) {
-    return (
-      <Link
-        href={path}
-        opacity={hoverOpacity}>
-        {children}
-      </Link>
-    )
-  }
-  return children
-}
-
 
 export default Link

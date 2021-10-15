@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AreaLink } from '../Link'
+import { LinkArea } from '../Link'
 import {
   AreaBox,
   TitleIcon,
@@ -26,7 +26,7 @@ const SectionTitle = ({
   return (
     <AreaBox
       area={layout?.area}>
-      <AreaLink
+      <LinkArea
         path={path}>
         <TitleIcon
           icon={icon} />
@@ -35,7 +35,7 @@ const SectionTitle = ({
           color={color}>
           {title}
         </TitleText>
-      </AreaLink>
+      </LinkArea>
     </AreaBox>
   )
 }
