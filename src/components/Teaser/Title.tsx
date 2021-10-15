@@ -14,10 +14,10 @@ type TitleProps = {
 }
 /**
  * Teaser Title component
- * @param editable to enable edition
- * @param layout styles from theme
- * @param link path to link the click
- * @param title teaser text title
+ * @param editable enable live edition
+ * @param layout allow style changes based on supported props
+ * @param link link path enable href for Title
+ * @param title text to be rendered
  * @returns a Typography as a React element
  */
 const Title = ({
