@@ -21,8 +21,7 @@ export const Author = ({
     lg={{
       fontSize: fontSize[1],
       lineHeight: lineHeight[1]
-    }}
-    mb='4px'>
+    }}>
     {children}
   </Typography>
 
@@ -67,7 +66,7 @@ Content.propTypes = {
   mb: PropTypes.array
 }
 
-export const DateLine = ({ children, mb }) => 
+export const BylineContainer = ({ children, mb }) => 
   <Block 
     mb={mb[0]}
     lg={{
@@ -77,12 +76,12 @@ export const DateLine = ({ children, mb }) =>
     {children}
   </Block>
 
-DateLine.propTypes = {
+BylineContainer.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   mb: PropTypes.array,
 }
 
-export const TimeEntry = ({
+export const BylineText = ({
   children,
   color,
   fontSize,
@@ -103,7 +102,7 @@ export const TimeEntry = ({
     {children}
   </Typography>
 
-TimeEntry.propTypes = {
+BylineText.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.array, 
     PropTypes.object, 
