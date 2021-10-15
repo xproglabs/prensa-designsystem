@@ -17,7 +17,6 @@ const Teaser = (props: TeaserProps) => {
     edit_buttons,
     editable,
     domain,
-    image_circle,
     item,
     layout,
     related,
@@ -87,7 +86,7 @@ const Teaser = (props: TeaserProps) => {
         wrap_ml={image_ml}>
         <RenderImage
           domain={domain}
-          image_circle={image_circle}
+          image_circle={layout?.image_circle}
           item={item}
           item_path={item_path}
           layout={layout}

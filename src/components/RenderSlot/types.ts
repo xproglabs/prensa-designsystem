@@ -9,7 +9,6 @@ export type RenderSlotProps = {
   column_items: number;
   column_padding: number;
   domain?: string;
-  image_circle?: boolean;
   layout?: LayoutProps;
   layouts: Array<string>;
   preview: PageBlockPreview;
