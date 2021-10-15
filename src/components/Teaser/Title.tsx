@@ -4,11 +4,11 @@ import React from 'react'
 import { EditArea } from '../EditArea'
 import { LinkArea } from '../Link'
 import Typography from '../Typography'
-import { Title as TitleType } from './types'
+import { LayoutProps } from './types'
 
 type TitleProps = {
   editable?: any;
-  layout: TitleType;
+  layout: LayoutProps;
   link?: string;
   title: string;
 }
