@@ -1,3 +1,7 @@
+import {
+  EditAreaType,
+  EditButtonsType
+} from '../EditArea/types'
 import { RelatedProps } from './RelatedTypes'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
@@ -92,8 +96,8 @@ export type TeaserProps = {
   /**
    * @description expects a boolean with editable option
    */
-  edit_buttons?: any;
-  editable?: any;
+  editable?: EditAreaType;
+  edit_buttons?: EditButtonsType;
   image_circle?: boolean;
   /**
    * @description expects an object with teaser data

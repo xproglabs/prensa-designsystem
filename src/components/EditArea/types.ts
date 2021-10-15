@@ -3,16 +3,15 @@ export type EditAreaType = {
   enabled: boolean;
   modified: boolean;
   saving: boolean;
-  set_modified: any;
-  set_selected: any;
+  set_modified: Function;
+  set_selected: Function;
   state: any;
 }
-export type EditBoxProps = {
-}
+export type EditBoxProps = {}
 export type EditButtonsType = {
-  action: any;
+  action: Function;
   enabled: boolean;
-  reset: any;
+  reset: Function;
 }
 export type EditWrapProps = {
   enabled: boolean;
