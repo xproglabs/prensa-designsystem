@@ -21,9 +21,11 @@ const ArticleDR = () => {
         byline={{
           author: {
             color: 'neutral2',
+            email: 'luizagustobarros@diariodaregiao.com.br',
             fontFamily: 'primary',
             fontSize: ['14px', '14px'],
             lineHeight: ['16px', '16px'],
+            socialMedias: '@luisagustobarros',
             value: 'Luiz Augusto Barros'
           },
           datetime: {
