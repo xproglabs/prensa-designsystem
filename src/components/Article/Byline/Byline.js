@@ -13,6 +13,28 @@ const Byline = ({
   datetime,
   share
 }) => {
+  const AuthorInfo = () => {
+    const hasAuthorEmail = author && author.email && author.email !== ''
+    const hasAuthorSocialMedias = author && author.socialMedias && author.socialMedias !== ''
+    if (!hasAuthorEmail && !hasAuthorSocialMedias) {
+      return null
+    }
+    return (
+      <Block mb={1}>
+        {hasAuthorSocialMedias && (
+          <S.BylineText {...datetime}>
+            {author.socialMedias}
+          </S.BylineText>
+        )}
+        {hasAuthorEmail && (
+          <S.BylineText {...datetime}>
+            {author.email}
+          </S.BylineText>
+        )}
+      </Block>
+    )
+  }
+
   return (
     <S.Container>
       <S.Content {...content}>
@@ -20,17 +42,13 @@ const Byline = ({
           <S.Author {...author}>
             {author.value}
           </S.Author>
-          <Block mb={1}>
-            <S.BylineText {...datetime}>
-              {author.socialMedias}
-            </S.BylineText>
-            <S.BylineText {...datetime}>
-              {author.email}
-            </S.BylineText>
-          </Block>
+          <AuthorInfo />
           <Block>
             <S.BylineText {...datetime}>
-              {datetime.time_published} - Atualizado {datetime.time_modified}
+              Publicado em {datetime.time_published}
+            </S.BylineText>
+            <S.BylineText {...datetime}>
+              Atualizado em {datetime.time_modified}
             </S.BylineText>
           </Block>  
         </S.BylineContainer>
@@ -44,10 +62,8 @@ Byline.defaultProps = {
   author: {
     color: 'neutral4',
     fontFamily: 'primary',
-    email: 'emaildoautor@emaildoautor.com.br',
     fontSize: ['14px', '14px'],
     lineHeight: ['16px', '16px'],
-    socialMedias: '@redessocias',
     value: 'Prensa Design System'
   },
   content: {
