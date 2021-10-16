@@ -1,3 +1,5 @@
+# v1.6.20
+- Customiza Article para receber email e redes sociais do autor.
 # v1.6.19
 - Condiciona a renderização do SectionTitle "Assuntos" no corpo da matéria
 # v1.6.17
