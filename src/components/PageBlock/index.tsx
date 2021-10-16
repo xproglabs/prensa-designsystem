@@ -1,3 +1,4 @@
+import { get } from 'lodash'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
@@ -26,7 +27,7 @@ const PageBlock = ({
 }: PageBlockProps) => {
   const { domain, templates } = theme
   // console.log(`[PRENSA] PageBlock ${cid} ${name} ${type}`)
-  if(type === 'template100') {
+  if (type === 'template100') {
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
     const slot100_layout = selectLayoutFromTemplate({ block: slot100_block, slot: slot1 })
     const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slot100_block.spaces)
@@ -43,7 +44,7 @@ const PageBlock = ({
       />
     )
   }
-  if(type === 'template7030') {
+  if (type === 'template7030') {
     const slot70_block = selectTemplateFromTheme({ block: 'slot70', slot: slot1, templates })
     const slot30_block = selectTemplateFromTheme({ block: 'slot30', slot: slot2, templates })
     const slot70_layout = selectLayoutFromTemplate({ block: slot70_block, slot: slot1 })
@@ -71,7 +72,7 @@ const PageBlock = ({
       />
     )
   }
-  if(type === 'template50') {
+  if (type === 'template50') {
     const slotLeft_block = selectTemplateFromTheme({ block: 'slot50', slot: slot1, templates })
     const slotRight_block = selectTemplateFromTheme({ block: 'slot50', slot: slot2, templates })
     const slotLeft_layout = selectLayoutFromTemplate({ block: slotLeft_block, slot: slot1 })
@@ -99,7 +100,7 @@ const PageBlock = ({
       />
     )
   }
-  if(type === 'template30') {
+  if (type === 'template30') {
     const slotLeft_block = selectTemplateFromTheme({ block: 'slot30', slot: slot1, templates })
     const slotCenter_block = selectTemplateFromTheme({ block: 'slot30', slot: slot2, templates })
     const slotRight_block = selectTemplateFromTheme({ block: 'slot30', slot: slot3, templates })
