@@ -84,26 +84,20 @@ const Template33 = ({
         mb: 3
       }}
       width="100%">
-      <Column
-        bgColor={slotLeft_bgColor}>
-        <ColumnColor
-          transparent={slotLeft_isTransparent}>
+      <Column bgColor={slotLeft_bgColor}>
+        <ColumnColor transparent={slotLeft_isTransparent}>
           {slotLeft.section_title}
           <RenderSlot {...slotLeft} />
         </ColumnColor>
       </Column>
-      <Column
-        bgColor={slotCenter_bgColor}>
-        <ColumnColor
-          transparent={slotCenter_isTransparent}>
+      <Column bgColor={slotCenter_bgColor}>
+        <ColumnColor transparent={slotCenter_isTransparent}>
           {slotCenter.section_title}
           <RenderSlot {...slotCenter} />
         </ColumnColor>
       </Column>
-      <Column
-        bgColor={slotRight_bgColor}>
-        <ColumnColor
-          transparent={slotRight_isTransparent}>
+      <Column bgColor={slotRight_bgColor}>
+        <ColumnColor transparent={slotRight_isTransparent}>
           {slotRight.section_title}
           <RenderSlot {...slotRight} />
         </ColumnColor>
