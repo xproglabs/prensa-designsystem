@@ -4,10 +4,11 @@ import { CarouselProps } from '../../components/Carousel/types'
 import { LayoutProps } from '../Teaser/types'
 
 export type RenderSlotProps = {
+  bgcolor?: string;
   carousel?: CarouselProps;
+  color?: string;
   column_items: number;
   column_padding: number;
-  color?: string;
   domain?: string;
   image_circle?: boolean;
   layout?: LayoutProps;

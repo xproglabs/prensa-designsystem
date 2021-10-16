@@ -3,26 +3,26 @@ export const TEMPLATES_FEATURED = {
     related: {
       enabled: true
     },
-    slot: 'slot1.list1',
     layout: {
-      0: ['teaser_featured'],
-      1: ['teaser_featured'],
-      2: ['teaser_featured', 'hide'],
-      3: ['teaser_featured', 'hide', 'hide'],
-      4: ['teaser_featured', 'hide', 'hide', 'hide'],
-    }
+      0: ['featured_related'],
+      1: ['featured_related'],
+      2: ['featured_related', 'hide'],
+      3: ['featured_related', 'hide', 'hide'],
+      4: ['featured_related', 'hide', 'hide', 'hide'],
+    },
+    spaces: [0, 0, 0, 0],
   },
   slot70: {
     related: {
       enabled: true
     },
-    slot: 'slot1.list1',
     layout: {
-      0: ['teaser_featured'],
-      1: ['teaser_featured'],
-      2: ['teaser_featured', 'hide'],
-      3: ['teaser_featured', 'hide', 'hide'],
-      4: ['teaser_featured', 'hide', 'hide', 'hide'],
-    }
+      0: ['featured_related'],
+      1: ['featured_related'],
+      2: ['featured_related', 'hide'],
+      3: ['featured_related', 'hide', 'hide'],
+      4: ['featured_related', 'hide', 'hide', 'hide'],
+    },
+    spaces: [0, 0, 0, 0],
   }
 }

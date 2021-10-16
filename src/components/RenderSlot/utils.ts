@@ -12,7 +12,7 @@ export const parseTeaserProps = (key, layout, layouts, slot, teasers) => {
   if (layouts && layout_selected) {
     // handle featured related props
     if (layout_selected === 'featured_related') {
-      const related_list = slot
+      const related_list = JSON.parse(JSON.stringify(slot))
       related_list.shift()
       related_props = {
         enabled: true,
