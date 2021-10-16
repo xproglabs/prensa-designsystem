@@ -24,9 +24,3 @@ export type CreateTemplateTypes = {
   slot50?: TemplateSlotTypes;
   slot30?: TemplateSlotTypes;
 }
-
-export type TemplatesOptions = 'default'
-
-export type TemplateTypes = {
-  default?: CreateTemplateTypes;
-}

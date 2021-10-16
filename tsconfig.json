@@ -28,6 +28,9 @@
       ],
       "storybook/*": [
         "storybook/*"
+      ],
+      "@prensa_tokens": [
+        "prensa_tokens.d.ts"
       ]
     }
   },
