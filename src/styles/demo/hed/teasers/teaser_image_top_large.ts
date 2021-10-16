@@ -2,7 +2,7 @@ import { LayoutProps } from '../../../layouts'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT } from '../tokens/subject'
 
-export const TEASER_IMAGE_TOP: LayoutProps = {
+export const TEASER_IMAGE_TOP_LARGE: LayoutProps = {
   box: {
     align: ['column', 'column'],
     pb: [0, 0],
@@ -21,7 +21,7 @@ export const TEASER_IMAGE_TOP: LayoutProps = {
     enabled: true,
     ...parseFonts(
       tokensFonts.NEWS_TITLE_5,
-      tokensFonts.NEWS_TITLE_5
+      tokensFonts.NEWS_TITLE_4
     )
   },
   image: {

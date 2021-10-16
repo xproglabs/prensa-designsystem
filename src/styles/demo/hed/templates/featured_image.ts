@@ -9,7 +9,8 @@ export const TEMPLATES_IMAGE_FEATURED = {
       2: ['teaser_image_featured', 'teaser_image_featured'],
       3: ['teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured'],
       4: ['teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured'],
-    }
+    },
+    spaces: [0, 1, 2, 3],
   },
   slot70: {
     related: {
@@ -21,7 +22,8 @@ export const TEMPLATES_IMAGE_FEATURED = {
       2: ['teaser_image_featured', 'teaser_image_featured'],
       3: ['teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured'],
       4: ['teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured'],
-    }
+    },
+    spaces: [0, 1, 2, 3],
   },
   slot30: {
     related: {
@@ -30,9 +32,10 @@ export const TEMPLATES_IMAGE_FEATURED = {
     layout: {
       0: ['teaser_default'],
       1: ['teaser_default'],
-      2: ['teaser_default', 'teaser_image_left'],
-      3: ['teaser_image_left', 'teaser_image_left', 'teaser_image_left'],
-      4: ['teaser_image_left', 'teaser_image_left', 'teaser_image_left', 'teaser_image_left'],
-    }
+      2: ['teaser_default', 'teaser_image_small'],
+      3: ['teaser_image_small', 'teaser_image_small', 'teaser_image_small'],
+      4: ['teaser_image_small', 'teaser_image_small', 'teaser_image_small', 'teaser_image_small'],
+    },
+    spaces: [0, 1, 2, 3],
   }
 }

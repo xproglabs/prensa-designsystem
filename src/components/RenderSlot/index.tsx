@@ -32,6 +32,7 @@ const RenderSlot = ({
   const carousel_enabled = get(carousel, 'enabled', false) 
   const RenderTeaser = () => (
     <React.Fragment>
+      {renderSpaceSlot(spaceA)}
       {map(slot, (item, key: number) => {
         let teaser_props = parseTeaserProps(key, layout, layouts, slot, teasers)
         if (!teaser_props) return null
@@ -52,6 +53,7 @@ const RenderSlot = ({
           </Block>
         )
       })}
+      {renderSpaceSlot(spaceB)}
     </React.Fragment>
   )
 

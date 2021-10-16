@@ -1,6 +1,6 @@
 import { LayoutProps } from '../../../layouts'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
-import { SUBJECT_DEFAULT } from '../tokens/subject'
+import { SUBJECT_FILLED } from '../tokens/subject'
 
 export const FEATURED_RELATED: LayoutProps = {
   box: {
@@ -11,7 +11,7 @@ export const FEATURED_RELATED: LayoutProps = {
   box_wrap: {
     mr: [2, 5],
     ml: [2, 5],
-    width: ['100% - 32px', '100% - 80px']
+    width: ['calc(100% - 32px)', 'calc(100% - 80px)']
   },
   datetime_enabled: false,
   related: {
@@ -25,5 +25,5 @@ export const FEATURED_RELATED: LayoutProps = {
     ),
     mb: [3, 3]
   },
-  subject: SUBJECT_DEFAULT
+  subject: SUBJECT_FILLED
 }

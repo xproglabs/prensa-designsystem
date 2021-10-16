@@ -4,7 +4,10 @@ import { SUBJECT_DEFAULT } from '../tokens/subject'
 
 export const TEASER_DEFAULT: LayoutProps = {
   box: {
-    align: ['column', 'row']
+    align: ['column', 'column']
+  },
+  box_wrap: {
+    width: ['100%', '100%']
   },
   title: {
     enabled: true,

@@ -1,6 +1,7 @@
 import { TeaserProps } from '../Teaser/types'
 
 export interface SlotBlockProps {
+  bgcolor?: string;
   color: string;
   icon: string;
   link: string;
@@ -13,6 +14,7 @@ export interface SlotBlockProps {
   type: string;
 }
 export interface PageBlockProps {
+  bgcolor?: string;
   cid: string;
   name: string;
   type: string;

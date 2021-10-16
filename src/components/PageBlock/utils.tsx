@@ -1,5 +1,19 @@
 import { get } from 'lodash'
 
+export const isBackgroundTransparent = (background: string | any) => {
+  return !background || background == 'transparent'
+}
+
+export const selectBgColorFromSlot = (slot): string => {
+  let backgroundColor: string
+  let defaultColor = 'transparent'
+  backgroundColor = defaultColor
+  if(slot && slot.bgcolor) {
+    backgroundColor = slot.bgcolor
+  }
+  return backgroundColor
+}
+
 export const selectTemplateFromTheme = ({
   block,
   slot,
