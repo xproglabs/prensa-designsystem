@@ -29,7 +29,7 @@ const Article = (props) => {
     images,
     paragraph,
     relatedContent,
-    section_title,
+    tags_section_title,
     subject,
     subtitle,
     title,
@@ -100,7 +100,7 @@ const Article = (props) => {
           images={images}
           paragraph={paragraph}
           related_content_intervention={related_content_body}
-          section_title={section_title}
+          tags_section_title={tags_section_title}
           tags={tags}
         />
         <GridRelated
@@ -158,7 +158,7 @@ Article.propTypes = {
       maxWidth: PropTypes.string
     })
   }),
-  section_title: PropTypes.object,
+  tags_section_title: PropTypes.object,
   subject: PropTypes.object,
   subtitle: PropTypes.object,
   tags: PropTypes.object,

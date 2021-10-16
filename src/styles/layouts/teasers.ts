@@ -144,39 +144,6 @@ export const TEASER_IMAGE_TOP: LayoutProps = {
   }
 }
 
-export const TEASER_IMAGE_CAROUSEL: LayoutProps = {
-  box: {
-    pb: [3, 3],
-    pt: [0, 0],
-    height: ['auto', '480px']
-  },
-  box_wrap: {
-    aligny: ['top', 'top'],
-    height: ['auto', '480px']
-  },
-  datetime_enabled: true,
-  carousel: {
-    height: ['420px', '540px']
-  },
-  image: {
-    enabled: true,
-    dimension: ['1x1', '2x1'],
-    height: ['200px', '200px'],
-    width: ['300px', '300px'],
-    mb: [3, 3]
-  },
-  title: {
-    enabled: true,
-    font_size: ['24px', '24px'],
-    line_height: ['28px', '28px']
-  },
-  section: SECTION_DEFAULT,
-  subject: SUBJECT_DEFAULT,
-  subtitle: {
-    enabled: false
-  }
-}
-
 export const TEASER_IMAGE_TWO: LayoutProps = {
   box: {
     pb: [3, 3],

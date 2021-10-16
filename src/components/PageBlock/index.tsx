@@ -109,10 +109,17 @@ const PageBlock = ({
     const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slotLeft_block.spaces)
     const slot2_spaces = selectLayoutColsFromSlot(slot2.len1, slotCenter_block.spaces)
     const slot3_spaces = selectLayoutColsFromSlot(slot3.len1, slotRight_block.spaces)
+
+    /** * Carousel Props */
+    const slotLeft_carousel = get(slotLeft_block, 'carousel', {})
+    const slotCenter_carousel = get(slotCenter_block, 'carousel', {})
+    const slotRight_carousel = get(slotRight_block, 'carousel', {})
+
     return (
       <Template33
         slotLeft={{
           bgcolor: slot1.bgcolor,
+          carousel: slotLeft_carousel,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
@@ -121,6 +128,7 @@ const PageBlock = ({
         }}
         slotCenter={{
           bgcolor: slot2.bgcolor,
+          carousel: slotCenter_carousel,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
           domain,
@@ -129,6 +137,7 @@ const PageBlock = ({
         }}
         slotRight={{
           bgcolor: slot3.bgcolor,
+          carousel: slotRight_carousel,
           column_items: slot3_spaces + 1,
           column_padding: slot3_spaces,
           domain,
