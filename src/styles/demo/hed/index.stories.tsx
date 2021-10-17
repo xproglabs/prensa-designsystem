@@ -44,7 +44,7 @@ const loadContentFromPagedata = () => {
  * @param key list iterator
  * @returns a mock for the element into spaceB
  */
-const parseSlot = (item?: any, key?: number) => {
+const slot_parser = (item?: any, key?: number) => {
   return (
     <React.Fragment key={key}>
       <Block
@@ -67,7 +67,7 @@ export const HomeLinha1 = () => {
       <PageBlock
         {...DataHomeLinha1}
         preview={preview_editable}
-        parseSlot={parseSlot}
+        slot_parser={slot_parser}
       />
     </TemplateContainer>
   )
@@ -81,7 +81,7 @@ export const HomeLinha2 = () => {
       <PageBlock
         {...DataHomeLinha2}
         preview={preview_editable}
-        parseSlot={parseSlot}
+        slot_parser={slot_parser}
       />
     </TemplateContainer>
   )
@@ -95,7 +95,7 @@ export const HomeLinha3 = () => {
       <PageBlock
         {...DataHomeLinha3}
         preview={preview_editable}
-        parseSlot={parseSlot}
+        slot_parser={slot_parser}
       />
     </TemplateContainer>
   )
@@ -109,7 +109,7 @@ export const HomeTimes = () => {
       <PageBlock
         {...DataHomeTimes}
         preview={preview_editable}
-        parseSlot={parseSlot}
+        slot_parser={slot_parser}
       />
     </TemplateContainer>
   )
@@ -123,7 +123,7 @@ export const Home7030 = () => {
       <PageBlock
         {...DATA_HOME_7030}
         preview={preview_editable}
-        parseSlot={parseSlot}
+        slot_parser={slot_parser}
       />
     </TemplateContainer>
   )
@@ -137,7 +137,7 @@ export const Home30 = () => {
       <PageBlock
         {...DATA_HOME_30}
         preview={preview_editable}
-        parseSlot={parseSlot}
+        slot_parser={slot_parser}
       />
     </TemplateContainer>
   )
@@ -151,7 +151,7 @@ export const HomeFeatured = () => {
       <PageBlock
         {...DATA_HOME_FEAT}
         preview={preview_editable}
-        parseSlot={parseSlot}
+        slot_parser={slot_parser}
       />
     </TemplateContainer>
   )
@@ -165,7 +165,7 @@ export const HomeListPaged = () => {
       <PageBlock
         {...DataListPaged}
         preview={preview_editable}
-        parseSlot={parseSlot}
+        slot_parser={slot_parser}
       />
     </TemplateContainer>
   )
@@ -185,7 +185,7 @@ export const HomeFull = () => {
             {...item}
             key={key}
             preview={preview_editable}
-            parseSlot={parseSlot}
+            slot_parser={slot_parser}
           />
         )
       })}

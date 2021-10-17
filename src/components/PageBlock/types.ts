@@ -2,6 +2,7 @@ import { TeaserProps } from '../Teaser/types'
 
 export type PageBlockPreview = {
   enabled: boolean,
+  render: any,
   save_action: any
 }
 export type SlotBlockProps = {
@@ -23,7 +24,7 @@ export type PageBlockProps = {
   name: string;
   type: string;
   preview: PageBlockPreview;
-  parseSlot: any;
+  slot_parser: any;
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;
   slot3: SlotBlockProps;
