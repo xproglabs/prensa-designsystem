@@ -4,26 +4,18 @@ export const TEMPLATES_MOST_READ = {
       enabled: false
     },
     layout: {
-      0: ['teaser_paged'],
-      1: ['teaser_paged'],
-      2: ['teaser_paged', 'teaser_paged'],
-      3: ['teaser_paged', 'teaser_paged', 'teaser_paged'],
-      4: ['teaser_paged', 'teaser_paged', 'teaser_paged', 'teaser_paged'],
+      0: ['teaser_paged']
     },
-    spaces: [0, 1, 2, 3],
+    spaces: false
   },
   slot70: {
     related: {
       enabled: false
     },
     layout: {
-      0: ['teaser_paged'],
-      1: ['teaser_paged'],
-      2: ['teaser_paged', 'teaser_paged'],
-      3: ['teaser_paged', 'teaser_paged', 'teaser_paged'],
-      4: ['teaser_paged', 'teaser_paged', 'teaser_paged', 'teaser_paged'],
+      0: ['teaser_paged']
     },
-    spaces: [0, 1, 2, 1],
+    spaces: false
   },
   slot30: {
     related: {
