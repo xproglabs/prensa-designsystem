@@ -21,8 +21,8 @@ import {
 } from './utils'
 
 const PageBlock = ({
-  parseSlot,
   preview,
+  slot_parser,
   slot1,
   slot2,
   slot3,
@@ -35,9 +35,9 @@ const PageBlock = ({
   const slot2_title = selectSectionTitleFromSlot(sections, slot2.title, slot2.icon, slot2.link)
   const slot3_title = selectSectionTitleFromSlot(sections, slot3.title, slot3.icon, slot3.link)
   // define slot spaceB
-  const slot1_slotList = selectComponentFromSlotList(parseSlot, slot1.list2)
-  const slot2_slotList = selectComponentFromSlotList(parseSlot, slot2.list2)
-  const slot3_slotList = selectComponentFromSlotList(parseSlot, slot3.list2)
+  const slot1_slotList = selectComponentFromSlotList(slot_parser, slot1.list2)
+  const slot2_slotList = selectComponentFromSlotList(slot_parser, slot2.list2)
+  const slot3_slotList = selectComponentFromSlotList(slot_parser, slot3.list2)
   if (type === 'template100') {
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
     const slot100_layout = selectLayoutFromTemplate({ block: slot100_block, slot: slot1 })
