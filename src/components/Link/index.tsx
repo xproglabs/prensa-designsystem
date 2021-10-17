@@ -22,7 +22,7 @@ export const LinkArea = ({
   return (
     <Link
       href={path}
-      opacity={hoverOpacity}>
+      hoverOpacity={hoverOpacity}>
       {children}
     </Link>
   )
@@ -42,14 +42,14 @@ const Link = styled.a<Types.LinkProps>`
   text-decoration: none;
   width: 100%;
 
-  ${props => props.opacity && css`
+  ${props => props.hoverOpacity && css`
     &:hover {
-      opacity: ${props.opacity};
+      opacity: ${props.hoverOpacity};
     }
   `}
 `
 Link.defaultProps = {
-  opacity: 1
+  hoverOpacity: 1
 }
 
 export default Link

@@ -6,5 +6,5 @@ export type LinkAreaProps = {
 
 export type LinkProps = {
   href: string;
-  opacity?: number;
+  hoverOpacity?: number;
 }
