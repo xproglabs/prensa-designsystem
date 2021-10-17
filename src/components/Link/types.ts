@@ -1,10 +1,9 @@
-export type LinkAreaProps = {
-  children: any;
+export type StyledLinkProps = {
   hoverOpacity?: number;
-  path: string;
 }
 
 export type LinkProps = {
+  children: any;
   href: string;
   hoverOpacity?: number;
 }
