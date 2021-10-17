@@ -8,6 +8,7 @@ import {
   StyledTitleProps,
   StyledIconProps,
 } from './types'
+
 /**
  * Section Area Box
  * @description wrap the area link
@@ -29,6 +30,13 @@ export const AreaBox = ({
       pl={area?.pl?.[0]}
       pt={area?.pt?.[0]}
       pb={area?.pb?.[0]}
+      bt={area?.bt}
+      br={area?.br}
+      bb={area?.bb}
+      bl={area?.bl}
+      b={area?.b}
+      borderColor={area?.borderColor}
+      borderStyle={area?.borderStyle}
       lg={{
         mr: area?.mr?.[1],
         ml: area?.ml?.[1],
@@ -43,6 +51,7 @@ export const AreaBox = ({
     </Block>
   )
 }
+
 /**
  * Section Title Icon
  * @param icon expects an icon string (?)
@@ -64,6 +73,7 @@ export const TitleEmpty = styled.div`
   height: 18px;
   width: 100%;
 `
+
 /**
  * Section Title Text
  * @param children expects the title text

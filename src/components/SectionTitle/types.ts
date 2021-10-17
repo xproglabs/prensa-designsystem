@@ -9,20 +9,37 @@ type AreaLayout = {
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
+  bt?: string;
+  br?: string;
+  bb?: string;
+  bl?: string;
+  b?: string;
+  borderColor?: string;
+  borderStyle?: string;
 }
-/**
- * @description define section title layout props
- */
-export interface SectionTitleLayout {
-  area: AreaLayout;
+type LinkLayout = {
+  hoverOpacity?: number;
+}
+type IconLayout = {}
+type TextLayout = {
   color?: string;
   element?: string;
   font_family?: string;
   font_size?: [string, string];
   line_height?: [string, string];
-  icons?: Array<any>;
   transform?: string;
 }
+
+/**
+ * @description define section title layout props
+ */
+export interface SectionTitleLayout {
+  area?: AreaLayout;  
+  link?: LinkLayout;
+  icon?: IconLayout;
+  text?: TextLayout;
+}
+
 /**
  * @description define section component props
  */
@@ -31,8 +48,9 @@ export interface SectionTitleProps {
   icon?: string;
   layout: SectionTitleLayout;
   title?: string;
-  path?: string;
+  href?: string;
 }
+
 /**
  * @description define styled area box properties
  */
@@ -40,16 +58,17 @@ export interface StyledBoxProps {
   area: AreaLayout;
   children: any;
 }
+
 /**
  * @description define styled icon properties
  */
 export interface StyledIconProps {
   icon: string;
 }
+
 /**
  * @description define styled title properties
  */
-export interface StyledTitleProps extends SectionTitleLayout {
+export interface StyledTitleProps extends TextLayout {
   children: any;
-  color: string;
 }

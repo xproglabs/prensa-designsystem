@@ -1,12 +1,9 @@
 import React from 'react'
 
-import { LinkArea } from '../Link'
-import {
-  AreaBox,
-  TitleIcon,
-  TitleText
-} from './styled'
+import Link from '../Link'
+import { AreaBox, TitleIcon, TitleText } from './styled'
 import { SectionTitleProps } from './types'
+
 /**
  * Section Title Component
  * @param color expects a valid color token
@@ -20,23 +17,25 @@ const SectionTitle = ({
   color,
   icon,
   layout,
-  path,
+  href,
   title
 }: SectionTitleProps) => {
+
+  const area_layout = layout?.area || {}
+  const icon_layout = layout?.icon || {}
+  const link_layout = layout?.link || {}
+  const text_layout = layout?.text || {}
+
   return (
-    <AreaBox
-      area={layout?.area}>
-      <LinkArea
-        path={path}>
-        <TitleIcon
-          icon={icon} />
-        <TitleText
-          {...layout}
-          color={color}>
+    <AreaBox area={area_layout}>
+      <Link href={href} {...link_layout}>
+        {/* <TitleIcon icon={icon} {...icon_layout} /> */}
+        <TitleText color={color} {...text_layout}>
           {title}
         </TitleText>
-      </LinkArea>
+      </Link>
     </AreaBox>
   )
 }
+
 export default SectionTitle
