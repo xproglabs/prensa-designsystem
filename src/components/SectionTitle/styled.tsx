@@ -11,15 +11,9 @@ import {
 
 /**
  * Section Area Box
- * @description wrap the area link
- * @param children react component
- * @param mb area margin-bottom
- * @returns a component as a React element
+ * @description Wrap SectionTitle component with responsive margin & padding and border configurations
  */
-export const AreaBox = ({
-  area,
-  children,
-}: StyledBoxProps) => {
+export const AreaBox = ({ area, children }: StyledBoxProps) => {
   return (
     <Block
       mr={area?.mr?.[0]}
