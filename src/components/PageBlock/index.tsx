@@ -9,20 +9,18 @@ import {
   Template33,
   TemplateWrap
 } from '../Templates'
-import {
-  PageBlockProps
-} from './types'
+import { PageBlockProps } from './types'
 import {
   selectComponentFromSlotList,
   selectLayoutColsFromSlot,
   selectLayoutFromTemplate,
   selectTemplateFromTheme,
-  selectSectionTitleFromSlot
+  renderSectionTitle
 } from './utils'
 
 const PageBlock = ({
   preview,
-  section_title,
+  section_title_component,
   slot_parser,
   slot1,
   slot2,
@@ -30,15 +28,36 @@ const PageBlock = ({
   theme,
   type,
 }: PageBlockProps) => {
-  const { domain, sections, templates } = theme
-  // define slot titles
-  const slot1_title = selectSectionTitleFromSlot(sections, slot1.title, slot1.icon, slot1.link, section_title)
-  const slot2_title = selectSectionTitleFromSlot(sections, slot2.title, slot2.icon, slot2.link, section_title)
-  const slot3_title = selectSectionTitleFromSlot(sections, slot3.title, slot3.icon, slot3.link, section_title)
+  const { domain, section_title, templates } = theme
+
+  // define section_title for slots
+  const slot1_title = renderSectionTitle({
+    icon: slot1.icon,
+    layout: section_title,
+    link: slot1.link,
+    title: slot1.title,
+    customComponent: section_title_component
+  })
+  const slot2_title = renderSectionTitle({
+    icon: slot2.icon,
+    layout: section_title,
+    link: slot2.link,
+    title: slot2.title,
+    customComponent: section_title_component
+  })
+  const slot3_title = renderSectionTitle({
+    icon: slot3.icon,
+    layout: section_title,
+    link: slot3.link,
+    title: slot3.title,
+    customComponent: section_title_component
+  })
+
   // define slot spaceB
   const slot1_slotList = selectComponentFromSlotList(slot_parser, slot1.list2)
   const slot2_slotList = selectComponentFromSlotList(slot_parser, slot2.list2)
   const slot3_slotList = selectComponentFromSlotList(slot_parser, slot3.list2)
+
   if (type === 'template100') {
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
     const slot100_layout = selectLayoutFromTemplate({ block: slot100_block, slot: slot1 })
