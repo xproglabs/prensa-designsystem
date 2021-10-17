@@ -3,5 +3,6 @@
 .env
 *.tgz
 
-
+package-lock.json
 yarn.lock
+
