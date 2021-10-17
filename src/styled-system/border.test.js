@@ -1,4 +1,5 @@
-import { theme } from '../styles/theme'
+import { theme } from 'storybook/theme'
+
 import { border } from './border'
 
 const stringValue = '1px'

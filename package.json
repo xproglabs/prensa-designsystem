@@ -67,7 +67,8 @@
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
     "test": "jest",
     "update-prensa:qa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish --tag qa",
-    "update-prensa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish"
+    "update-prensa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish",
+    "release:local": "npm run build && npm pack"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
