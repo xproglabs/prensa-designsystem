@@ -1,3 +1,4 @@
+import { find, get, map } from 'lodash'
 import React from 'react'
 import { Typography } from 'src'
 import { ThemeProvider } from 'styled-components'
@@ -8,11 +9,12 @@ import TemplateContainer from '../../../components/Templates/TemplateContainer'
 import DataHomeLinha1 from './data/7.153.json'
 import DataHomeLinha2 from './data/7.155.json'
 import DataHomeLinha3 from './data/7.161.json'
+import DataListPaged from './data/7.173_paged.json'
 import DATA_HOME_7030 from './data/7.173.json'
 import DATA_HOME_FEAT from './data/7.174.json'
 import DataHomeTimes from './data/7.181.json'
-import DataListPaged from './data/7.173_paged.json'
 import DATA_HOME_30 from './data/7.204.json'
+import DataHomeFull from './data/home.json'
 import { preview_editable } from './editable'
 import { theme } from './index'
 
@@ -25,6 +27,16 @@ export default {
       </ThemeProvider>
     )
   ]
+}
+const loadContentFromPagedata = () => {
+  const pagedata = get(DataHomeFull, 'props.content.pagedata', [])
+  const pagelist = get(DataHomeFull, 'props.content.pageblocks.list1', [])
+  const pageblocks = []
+  map(pagelist, (item) => {
+    const blockdata = find(pagedata, { cid: item.cid })
+    pageblocks.push(blockdata)
+  })
+  return pageblocks
 }
 /**
  * 
@@ -159,46 +171,24 @@ export const HomeListPaged = () => {
   )
 }
 export const HomeFull = () => {
+  const items = loadContentFromPagedata()
   return (
     <TemplateContainer
       background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
-      <PageBlock
-        {...DataHomeLinha1}
-        preview={preview_editable}
-        parseSlot={parseSlot}
-      />
-      <PageBlock
-        {...DataHomeLinha2}
-        preview={preview_editable}
-        parseSlot={parseSlot}
-      />
-      <PageBlock
-        {...DataHomeLinha3}
-        preview={preview_editable}
-        parseSlot={parseSlot}
-      />
-      <PageBlock
-        {...DataHomeTimes}
-        preview={preview_editable}
-        parseSlot={parseSlot}
-      />
-      <PageBlock
-        {...DATA_HOME_7030}
-        preview={preview_editable}
-        parseSlot={parseSlot}
-      />
-      <PageBlock
-        {...DATA_HOME_30}
-        preview={preview_editable}
-        parseSlot={parseSlot}
-      />
-      <PageBlock
-        {...DATA_HOME_FEAT}
-        preview={preview_editable}
-        parseSlot={parseSlot}
-      />
+      {map(items, (item, key) => {
+        if (!item) 
+          return null
+        return (
+          <PageBlock
+            {...item}
+            key={key}
+            preview={preview_editable}
+            parseSlot={parseSlot}
+          />
+        )
+      })}
     </TemplateContainer>
   )
 }
