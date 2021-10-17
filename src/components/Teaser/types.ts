@@ -8,7 +8,7 @@ import { RadiusTokens } from '@prensa_tokens'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
-interface BoxTypes {
+type BoxTypes {
   align?: [string, string];
   alignx?: [string, string];
   aligny?: [string, string];
