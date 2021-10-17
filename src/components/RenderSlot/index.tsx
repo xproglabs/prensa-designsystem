@@ -109,6 +109,7 @@ const RenderSlot = ({
         return (
           <Block
             key={key}
+            custom='align-self: flex-start;'
             width='100%'
             lg={{ width: column_width }}>
             <RenderPreview
