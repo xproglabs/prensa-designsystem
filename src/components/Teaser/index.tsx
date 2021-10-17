@@ -3,6 +3,7 @@ import React from 'react'
 
 import { EditButtons } from '../EditArea'
 import RelatedRender from './Related'
+import { RenderCircle } from './RenderCircle'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
 import { RenderSubject } from './RenderSubject'
@@ -84,6 +85,9 @@ const Teaser = (props: TeaserProps) => {
         wrap_mr={image_mr}
         wrap_mb={image_mb}
         wrap_ml={image_ml}>
+        <RenderCircle
+          most_read_circle={layout?.most_read_circle}
+        /> 
         <RenderImage
           domain={domain}
           image_circle={layout?.image_circle}

@@ -99,6 +99,23 @@ const Image = ({
   )
 }
 
+const Circle = ({
+  children,
+  most_read_circle = false,
+}) => {
+  const custom = most_read_circle ? 'border-radius: 100%;' : ''
+  return (
+    <Block
+      align='column'
+      bgColor='neutral8'
+      custom={custom}
+      height='40px'
+      width='100%'>
+      {children}
+    </Block>
+  )
+}
+
 const Subject = ({
   children,
   bg_color='transparent',
@@ -227,6 +244,7 @@ const WrapSubject = ({ children }) => {
 export {
   AreaLink,
   Box,
+  Circle,
   Image,
   Subject,
   Subtitle,

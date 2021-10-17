@@ -85,6 +85,7 @@ export type LayoutProps = {
   date_time?: RenderDateTimeLayoutProps;
   image?: Image;
   image_circle?: boolean;
+  most_read_circle?: boolean;
   related?: Related;
   section?: Object;
   subject?: Subject;
