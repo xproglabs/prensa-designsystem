@@ -24,6 +24,7 @@ const TemplateWrap = ({ slotItems }: TemplateWrapProps) => {
       width="100%">
       {(renderSpaceSlot(slotItems.spaceA))}
       <RenderSlot {...slotItems} />
+      {(renderSpaceSlot(slotItems.spaceB))}
     </Block>
   )
 }
