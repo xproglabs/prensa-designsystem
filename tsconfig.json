@@ -20,8 +20,17 @@
       "demo/*": [
         "src/styles/demo/*"
       ],
+      "prensa": [
+        "src/index.ts"
+      ],
       "styles/*": [
         "src/styles/*"
+      ],
+      "storybook/*": [
+        "storybook/*"
+      ],
+      "@prensa_tokens": [
+        "prensa_tokens.d.ts"
       ]
     }
   },
@@ -32,6 +41,7 @@
     "node_modules",
     ".storyboook",
     ".github",
-    "dist"
+    "components",
+    "storybook"
   ]
 }

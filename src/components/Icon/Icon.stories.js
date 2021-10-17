@@ -1,8 +1,8 @@
 import React from 'react'
+import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
 import { IcMenu } from '../../icons/IcMenu'
-import { theme } from '../../styles/theme'
 import ChevronRight from '../AccordionEditorial/assets/ChevronRight'
 
 export default {
