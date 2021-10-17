@@ -24,6 +24,7 @@ export type PageBlockProps = {
   name: string;
   type: string;
   preview: PageBlockPreview;
+  section_title: any;
   slot_parser: any;
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;

@@ -76,14 +76,16 @@ export const selectSectionTitleFromSlot = (
   title: string,
   path?: string,
   icon?: string,
-  color?: string
+  color?: string,
+  render?: any
 ) => {
   const title_text = !title || title == ''
+  const RenderSectionTitle = render ? render : SectionTitle
   if(title_text) {
     return <TitleEmpty />
   }
   return (
-    <SectionTitle
+    <RenderSectionTitle
       layout={layout}
       path={path}
       title={title}

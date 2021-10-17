@@ -22,6 +22,7 @@ import {
 
 const PageBlock = ({
   preview,
+  section_title,
   slot_parser,
   slot1,
   slot2,
@@ -31,9 +32,9 @@ const PageBlock = ({
 }: PageBlockProps) => {
   const { domain, sections, templates } = theme
   // define slot titles
-  const slot1_title = selectSectionTitleFromSlot(sections, slot1.title, slot1.icon, slot1.link)
-  const slot2_title = selectSectionTitleFromSlot(sections, slot2.title, slot2.icon, slot2.link)
-  const slot3_title = selectSectionTitleFromSlot(sections, slot3.title, slot3.icon, slot3.link)
+  const slot1_title = selectSectionTitleFromSlot(sections, slot1.title, slot1.icon, slot1.link, section_title)
+  const slot2_title = selectSectionTitleFromSlot(sections, slot2.title, slot2.icon, slot2.link, section_title)
+  const slot3_title = selectSectionTitleFromSlot(sections, slot3.title, slot3.icon, slot3.link, section_title)
   // define slot spaceB
   const slot1_slotList = selectComponentFromSlotList(slot_parser, slot1.list2)
   const slot2_slotList = selectComponentFromSlotList(slot_parser, slot2.list2)
