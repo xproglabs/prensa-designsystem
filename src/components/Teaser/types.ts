@@ -3,6 +3,7 @@ import {
   EditButtonsType
 } from '../EditArea/types'
 import { RelatedProps } from './RelatedTypes'
+import { RenderDateTimeLayoutProps } from './RenderDateTimeTypes'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
@@ -81,7 +82,7 @@ export type Title = {
 export type LayoutProps = {
   box?: BoxTypes;
   box_wrap?: BoxWrap;
-  datetime_enabled?: boolean;
+  date_time?: RenderDateTimeLayoutProps;
   image?: Image;
   image_circle?: boolean;
   related?: Related;

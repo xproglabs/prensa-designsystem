@@ -77,19 +77,6 @@ const Box = ({
   )
 }
 
-const Datetime = ({ children }) => (
-  <Typography
-    color='neutral3'
-    element='span'
-    fontFamily='primary'
-    fontSize='14px'
-    fontWeight={300}
-    lineHeight='18px'
-    width='100%'>
-    {children}
-  </Typography> 
-)
-
 const Image = ({
   children,
   image_circle = false,
@@ -240,7 +227,6 @@ const WrapSubject = ({ children }) => {
 export {
   AreaLink,
   Box,
-  Datetime,
   Image,
   Subject,
   Subtitle,
