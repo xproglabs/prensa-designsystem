@@ -1,7 +1,6 @@
 import {
   TEASER_FEATURED,
   TEASER_FEATURED_RELATED,
-  TEASER_IMAGE_CAROUSEL,
   TEASER_IMAGE_FEATURED,
   TEASER_IMAGE_FOUR,
   TEASER_IMAGE_THREE,
@@ -89,7 +88,6 @@ export const default_theme = {
   teasers: {
     featured: TEASER_FEATURED,
     featured_related: TEASER_FEATURED_RELATED,
-    image_carousel: TEASER_IMAGE_CAROUSEL,
     image_featured: TEASER_IMAGE_FEATURED,
     image_four: TEASER_IMAGE_FOUR,
     image_three: TEASER_IMAGE_THREE,

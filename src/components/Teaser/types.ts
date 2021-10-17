@@ -81,7 +81,6 @@ export type Title = {
 export type LayoutProps = {
   box?: BoxTypes;
   box_wrap?: BoxWrap;
-  carousel?: Object;
   datetime_enabled?: boolean;
   image?: Image;
   image_circle?: boolean;

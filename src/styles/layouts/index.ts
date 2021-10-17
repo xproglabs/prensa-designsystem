@@ -1,2 +1,2 @@
 export * from './teasers'
-export * from '../../components/Teaser/types'
+export * from './templates'

@@ -1,3 +1,4 @@
+import { get } from 'lodash'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
@@ -37,7 +38,7 @@ const PageBlock = ({
   const slot1_slotList = selectComponentFromSlotList(parseSlot, slot1.list2)
   const slot2_slotList = selectComponentFromSlotList(parseSlot, slot2.list2)
   const slot3_slotList = selectComponentFromSlotList(parseSlot, slot3.list2)
-  if(type === 'template100') {
+  if (type === 'template100') {
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
     const slot100_layout = selectLayoutFromTemplate({ block: slot100_block, slot: slot1 })
     const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slot100_block.spaces)
@@ -58,7 +59,7 @@ const PageBlock = ({
       />
     )
   }
-  if(type === 'template7030') {
+  if (type === 'template7030') {
     const slot70_block = selectTemplateFromTheme({ block: 'slot70', slot: slot1, templates })
     const slot30_block = selectTemplateFromTheme({ block: 'slot30', slot: slot2, templates })
     const slot70_layout = selectLayoutFromTemplate({ block: slot70_block, slot: slot1 })
@@ -93,7 +94,7 @@ const PageBlock = ({
       />
     )
   }
-  if(type === 'template50') {
+  if (type === 'template50') {
     const slotLeft_block = selectTemplateFromTheme({ block: 'slot50', slot: slot1, templates })
     const slotRight_block = selectTemplateFromTheme({ block: 'slot50', slot: slot2, templates })
     const slotLeft_layout = selectLayoutFromTemplate({ block: slotLeft_block, slot: slot1 })
@@ -128,7 +129,7 @@ const PageBlock = ({
       />
     )
   }
-  if(type === 'template30') {
+  if (type === 'template30') {
     const slotLeft_block = selectTemplateFromTheme({ block: 'slot30', slot: slot1, templates })
     const slotCenter_block = selectTemplateFromTheme({ block: 'slot30', slot: slot2, templates })
     const slotRight_block = selectTemplateFromTheme({ block: 'slot30', slot: slot3, templates })
@@ -139,10 +140,15 @@ const PageBlock = ({
     const slot2_spaces = selectLayoutColsFromSlot(slot2.len1, slotCenter_block.spaces)
     const slot3_spaces = selectLayoutColsFromSlot(slot3.len1, slotRight_block.spaces)
     const slotsHaveSecionTitle = slot1.title !== '' || slot2.title !== '' || slot3.title !== ''
+    /** * Carousel Props */
+    const slotLeft_carousel = get(slotLeft_block, 'carousel', {})
+    const slotCenter_carousel = get(slotCenter_block, 'carousel', {})
+    const slotRight_carousel = get(slotRight_block, 'carousel', {})
     return (
       <Template33
         slotLeft={{
           bgcolor: slot1.bgcolor,
+          carousel: slotLeft_carousel,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
@@ -154,6 +160,7 @@ const PageBlock = ({
         }}
         slotCenter={{
           bgcolor: slot2.bgcolor,
+          carousel: slotCenter_carousel,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
           domain,
@@ -165,6 +172,7 @@ const PageBlock = ({
         }}
         slotRight={{
           bgcolor: slot3.bgcolor,
+          carousel: slotRight_carousel,
           column_items: slot3_spaces + 1,
           column_padding: slot3_spaces,
           domain,

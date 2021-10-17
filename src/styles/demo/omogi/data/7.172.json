@@ -1,0 +1,176 @@
+{
+  "cid": "7.132",
+  "name": "Bloco 100",
+  "type": "template100",
+  "slot1": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 3,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.133",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "PF aponta à Justiça elementos de 'pressão' para favorecer empresa na gestão de Barros na Saúde",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Polícia Federal",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-24 23:17:42"
+      },
+      {
+        "cid": "7.134",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Brusque é multado e perde três pontos na Série B por injúria racial ao meia do Londrina",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Caso Celsinho",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-21 23:17:42"
+      },
+      {
+        "cid": "7.135",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Tite faz apelo a presidente da CBF e Juninho: \"Pode armar amistoso com qualquer seleção europeia\"",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Seleção Brasileira",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-19 23:17:42"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": "default"
+  },
+  "slot2": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 3,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.136",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-22 23:17:42"
+      },
+      {
+        "cid": "7.137",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-22 23:17:42"
+      },
+      {
+        "cid": "7.138",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-22 23:17:42"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": ""
+  },
+  "slot3": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 3,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.139",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-22 23:17:42"
+      },
+      {
+        "cid": "7.140",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-22 23:17:42"
+      },
+      {
+        "cid": "7.141",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "Palestra reúne prefeitos e vereadores",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Geral",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-22 23:17:42"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": ""
+  }
+}
