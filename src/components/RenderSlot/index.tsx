@@ -1,12 +1,11 @@
-import { map } from 'lodash'
+import { get, map } from 'lodash'
 import React from 'react'
 import { withTheme } from 'styled-components'
-import { get } from 'lodash'
 
 import Block from '../Block'
+import Carousel from '../Carousel'
 import { EditWrap } from '../EditArea/styled'
 import Teaser from '../Teaser'
-import Carousel from '../Carousel'
 import { RenderSlotProps } from './types'
 import { parseTeaserProps } from './utils'
 
@@ -99,7 +98,6 @@ const RenderSlot = ({
   slot,
   theme
 }: RenderSlotProps) => {
-
   const { teasers } = theme
   const column_width = `calc((100% - (${column_padding} * 24px)) / ${column_items})`
   const carousel_enabled = get(carousel, 'enabled', false) 
@@ -130,28 +128,15 @@ const RenderSlot = ({
       })}
     </React.Fragment>
   )
-
   const RenderCarousel = () => (
     <Carousel {...carousel}>
       <RenderTeaser />
     </Carousel>
   )
-
-  const RenderContent = () => {
-    if (carousel_enabled) {
-      return <RenderCarousel />
-    } else {
-      return <RenderTeaser />
-    }
+  if (carousel_enabled) {
+    return <RenderCarousel />
   }
-
-  return (
-    <React.Fragment>
-      {renderSpaceSlot(spaceA)}
-      <RenderContent />
-      {renderSpaceSlot(spaceB)}
-    </React.Fragment>
-  )
+  return <RenderTeaser />
 }
 
 export default withTheme(RenderSlot)

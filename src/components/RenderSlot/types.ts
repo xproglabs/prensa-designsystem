@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 
-import { PageBlockPreview } from '../PageBlock/types'
 import { CarouselProps } from '../../components/Carousel/types'
+import { PageBlockPreview } from '../PageBlock/types'
 import { LayoutProps } from '../Teaser/types'
 
 export type RenderSlotProps = {
