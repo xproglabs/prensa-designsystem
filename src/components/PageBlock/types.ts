@@ -25,6 +25,7 @@ export type SlotBlockProps = {
 export type PageBlockProps = {
   bgcolor?: string;
   cid: string;
+  image_parser?: any;
   name: string;
   type: string;
   preview: PageBlockPreview;
@@ -33,7 +34,7 @@ export type PageBlockProps = {
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;
   slot3: SlotBlockProps;
-  theme: any;
+  theme?: any;
 }
 
 export type RenderSectionTitleParams = {

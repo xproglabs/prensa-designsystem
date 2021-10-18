@@ -1,19 +1,6 @@
 import React from 'react'
 
-// interface ImageProps {
-//   custom_class: string;
-//   title: string;
-//   mobile_height: string;
-//   mobile_path: string;
-//   mobile_width: string;
-//   mobile_layout: 'responsive';
-//   desktop_height: string;
-//   desktop_path: string;
-//   desktop_width: string;
-//   desktop_layout: 'responsive';
-// }
-
-const Image = ({ 
+const AmpImage = ({
   custom_class,
   title,
   mobile_height,
@@ -30,7 +17,7 @@ const Image = ({
       {mobile_path && (
         <amp-img
           alt={title}
-          class={`amp_mobile ${custom_class}`}
+          class={`hide_desktop ${custom_class}`}
           src={mobile_path}
           height={mobile_height}
           layout={mobile_layout}
@@ -40,7 +27,7 @@ const Image = ({
       {desktop_path && (
         <amp-img
           alt={title}
-          class={`amp_desktop ${custom_class}`}
+          class={`hide_mobile ${custom_class}`}
           src={desktop_path}
           height={desktop_height}
           layout={desktop_layout}
@@ -50,4 +37,4 @@ const Image = ({
     </>
   )
 }
-export default Image
+export default AmpImage

@@ -119,6 +119,10 @@ export type TeaserProps = {
   /**
    * @description expects an object with layout configuration for related news
    */
+  preview?: boolean;
+  /**
+   * @description expects a boolean with preview configuration
+   */
   related?: RelatedProps;
   /**
    * @description expects a object of states to cover the editable fields
