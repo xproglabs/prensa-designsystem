@@ -1,3 +1,6 @@
+/**
+ * deprecated
+ */
 const path_absolute = (derivative, domain, policy_id, width) => {
   if (!policy_id) return null
   const w = width || 1000

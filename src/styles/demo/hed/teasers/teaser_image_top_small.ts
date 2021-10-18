@@ -5,11 +5,9 @@ import { SUBJECT_DEFAULT } from '../tokens/subject'
 export const TEASER_IMAGE_TOP_SMALL: LayoutProps = {
   box: {
     align: ['row-reverse', 'column'],
-    mb: [3, 3]
   },
   box_wrap: {
     align: ['column', 'column'],
-    alignx: ['left', 'left'],
     mr: [2, '0px'],
     ml: ['0px', '0px'],
     width: ['calc(100% - 96px)', '100%']
@@ -24,8 +22,9 @@ export const TEASER_IMAGE_TOP_SMALL: LayoutProps = {
   image: {
     enabled: true,
     dimension: ['1x1', '2x1'],
-    layout: ['responsive', 'responsive'],
     height: ['80px', '139px'],
+    layout: ['responsive', 'responsive'],
+    mb: [2, 2],
     width: ['80px', '278px'],
     wrap_width: ['80px', '278px'],
   },

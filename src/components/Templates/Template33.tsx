@@ -7,59 +7,59 @@ import {
 } from '../PageBlock/utils'
 import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
+import { renderSpaceSlot } from '../RenderSlot/utils'
 
 type SlotProps = RenderSlotProps & {
   section_title?: () => void;
 }
 
 interface ColumnProps {
+  children: any;
+}
+interface ColumnColorProps {
   bgColor: string;
   children: any;
+  transparent: boolean;
 }
 interface Template33Props {
   slotLeft: SlotProps;
   slotCenter: SlotProps;
   slotRight: SlotProps;
 }
-const Column = ({ bgColor, children }: ColumnProps) => (
+const Column = ({ children }: ColumnProps) => (
   <Block
     align="column"
     alignx="left"
     aligny="top"
-    bgColor={bgColor}
     mb={2}
     lg={{
-      mb: 0,
+      mb: 3,
       width: 'calc((100% - 48px) / 3)'
     }}
     width="100%">
     {children}
   </Block>
 )
-
-interface ColumnColorProps {
-  children: any;
-  transparent: boolean;
-}
 const ColumnColor = ({
+  bgColor,
   children,
   transparent
 }: ColumnColorProps) => {
   return (
     <Block
+      bgColor={bgColor}
+      px={2}
       pt={transparent ? '0px' : 2}
-      px={transparent ? '0px' : 2}
-      width='100%'
+      width='calc(100% - 32px)'
       lg={{
+        px: 3,
         pt: transparent ? '0px' : 3,
-        px: transparent ? '0px' : 3,
         width: transparent ? '100%' : 'calc(100% - 48px)'
       }}>
       {children}
     </Block>
   )
 }
-
 const Template33 = ({
   slotLeft,
   slotCenter,
@@ -76,7 +76,6 @@ const Template33 = ({
       align="column"
       alignx="center"
       aligny="top"
-      mb={2}
       lg={{
         align: 'row',
         alignx: 'between',
@@ -84,23 +83,32 @@ const Template33 = ({
         mb: 3
       }}
       width="100%">
-      <Column bgColor={slotLeft_bgColor}>
-        <ColumnColor transparent={slotLeft_isTransparent}>
-          {slotLeft.section_title}
+      <Column>
+        {(renderSpaceSlot(slotLeft.spaceA))}
+        <ColumnColor
+          bgColor={slotLeft_bgColor}
+          transparent={slotLeft_isTransparent}>
           <RenderSlot {...slotLeft} />
         </ColumnColor>
+        {(renderSpaceSlot(slotLeft.spaceB))}
       </Column>
-      <Column bgColor={slotCenter_bgColor}>
-        <ColumnColor transparent={slotCenter_isTransparent}>
-          {slotCenter.section_title}
+      <Column>
+        {(renderSpaceSlot(slotLeft.spaceA))}
+        <ColumnColor
+          bgColor={slotCenter_bgColor}
+          transparent={slotCenter_isTransparent}>
           <RenderSlot {...slotCenter} />
         </ColumnColor>
+        {(renderSpaceSlot(slotLeft.spaceB))}
       </Column>
-      <Column bgColor={slotRight_bgColor}>
-        <ColumnColor transparent={slotRight_isTransparent}>
-          {slotRight.section_title}
+      <Column>
+        {(renderSpaceSlot(slotLeft.spaceA))}
+        <ColumnColor
+          bgColor={slotRight_bgColor}
+          transparent={slotRight_isTransparent}>
           <RenderSlot {...slotRight} />
         </ColumnColor>
+        {(renderSpaceSlot(slotLeft.spaceB))}
       </Column>
     </Block>
   )

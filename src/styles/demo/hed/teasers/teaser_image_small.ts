@@ -5,7 +5,6 @@ import { SUBJECT_DEFAULT } from '../tokens/subject'
 export const TEASER_IMAGE_SMALL: LayoutProps = {
   box: {
     align: ['row-reverse', 'row'],
-    mb: [3, 3]
   },
   box_wrap: {
     align: ['column', 'column'],

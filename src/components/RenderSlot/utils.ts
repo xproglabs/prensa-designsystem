@@ -7,8 +7,13 @@ export const parseTeaserProps = (key, layout, layouts, slot, teasers) => {
     enabled: false,
     items: []
   }
+  const slot_len1 = slot.length
+  // const slot_position = slot_len1 > 4 ? 0 : slot_len1
+  const teaser_position = slot_len1 === 0 ? 0 : key
   let teaser_layout = layout
-  let layout_selected = get(layouts, `[${key}]`, false)
+  let layout_selected = get(layouts, `[${teaser_position}]`, false)
+  layout_selected = layout_selected || get(layouts, '[0]', false)
+
   if (layouts && layout_selected) {
     // handle featured related props
     if (layout_selected === 'featured_related') {

@@ -28,22 +28,42 @@ const Box = ({
   box_mr,
   box_mb=[2,2],
   box_ml,
-  background='transparent',
-  border,
+  background='transparent',  
+  box_bt,
+  box_br,
+  box_bb,
+  box_bl,
+  box_b,
+  box_borderColor,
+  box_borderStyle,
+  box_radius,
   children
 }) => {
-  const border_custom = border ? `
-      border: 1px solid #EAEAEA;
-      border-radius: 5px;
-    ` : ''
-  const box_width = border ? 'calc(100% - 2px)' : '100%'
+
+  const parse_boxwidth = () => {
+    if (box_b) {
+      return `calc(100% - ${box_b} - ${box_b})`
+    }
+    if (box_bl && box_br) {
+      return `calc(100% - ${box_bl} - ${box_br})`
+    }
+    if (box_bl) {
+      return `calc(100% - ${box_bl})`
+    }
+    if (box_br) {
+      return `calc(100% - ${box_br})`
+    }
+    return '100%'
+  }
+
+  const box_width = parse_boxwidth()
+
   return (
     <Block
       align={box_align[0]}
       alignx={box_alignx[0]}
       aligny={box_aligny[0]}
       bgColor={background}
-      custom={border_custom}
       height={box_height[0]}
       pt={box_pt[0]}
       pr={box_pr[0]}
@@ -54,6 +74,14 @@ const Box = ({
       mb={box_mb[0]}
       ml={box_ml[0]}
       width={box_width}
+      bt={box_bt}
+      br={box_br}
+      bb={box_bb}
+      bl={box_bl}
+      b={box_b}
+      borderColor={box_borderColor}
+      borderStyle={box_borderStyle}
+      radius={box_radius}
       lg={{
         align: box_align[1],
         alignx: box_alignx[1],
@@ -77,19 +105,6 @@ const Box = ({
   )
 }
 
-const Datetime = ({ children }) => (
-  <Typography
-    color='neutral3'
-    element='span'
-    fontFamily='primary'
-    fontSize='14px'
-    fontWeight={300}
-    lineHeight='18px'
-    width='100%'>
-    {children}
-  </Typography> 
-)
-
 const Image = ({
   children,
   image_circle = false,
@@ -107,6 +122,23 @@ const Image = ({
         height: height[1],
         width: '100%'
       }}>
+      {children}
+    </Block>
+  )
+}
+
+const Circle = ({
+  children,
+  most_read_circle = false,
+}) => {
+  const custom = most_read_circle ? 'border-radius: 100%;' : ''
+  return (
+    <Block
+      align='column'
+      bgColor='neutral8'
+      custom={custom}
+      height='40px'
+      width='100%'>
       {children}
     </Block>
   )
@@ -179,34 +211,6 @@ const Subtitle = ({
   )
 }
 
-const Title = ({
-  children,
-  color='neutral2',
-  element='h2',
-  font_size,
-  line_height,
-  mb
-}) => {
-  return (
-    <Typography
-      color={color}
-      element={element}
-      fontFamily='primary'
-      fontSize={font_size[0]}
-      fontWeight={700}
-      lineHeight={line_height[0]}
-      lg={{
-        fontSize: font_size[1],
-        lineHeight: line_height[1],
-        mb: mb[1]
-      }}
-      mb={mb[0]}
-      width='100%'>
-      {children}
-    </Typography> 
-  )
-}
-
 const WrapContent = ({
   children,
   content_overlap=false,
@@ -254,14 +258,24 @@ const WrapContent = ({
     </Block>
   )
 }
+const WrapSubject = ({ children }) => {
+  return (
+    <Block 
+      align='row'
+      alignx='between'
+      width='100%'>
+      {children}
+    </Block>
+  )
+}
 
 export {
   AreaLink,
   Box,
-  Datetime,
+  Circle,
   Image,
   Subject,
   Subtitle,
-  Title,
   WrapContent,
+  WrapSubject
 }

@@ -43,6 +43,14 @@ const Block = ({
   width,
   height,
   id,
+  bt,
+  br,
+  bb,
+  bl,
+  b,
+  borderColor,
+  borderStyle,
+  radius,
   dangerouslySetInnerHTML,
   xs,
   sm,
@@ -110,6 +118,14 @@ const Block = ({
       maxWidth={maxWidth}
       minWidth={minWidth}
       id={id}
+      bt={bt}
+      br={br}
+      bb={bb}
+      bl={bl}
+      b={b}
+      borderColor={borderColor}
+      borderStyle={borderStyle}
+      $radius={radius}
       xs={getXsProps()}
       sm={getSmProps()}
       md={getMdProps()}
@@ -217,7 +233,15 @@ Block.propTypes = {
    */
   id: PropTypes.string,
   maxWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  minWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  minWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  bt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  br: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  bb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  bl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  b: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  borderColor: PropTypes.string,
+  borderStyle: PropTypes.string,
+  radius: PropTypes.string,
 }
 
 export default withTheme(Block)

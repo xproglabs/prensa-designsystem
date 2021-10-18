@@ -1,15 +1,21 @@
+import { find, get, map } from 'lodash'
 import React from 'react'
+import { Typography } from 'src'
 import { ThemeProvider } from 'styled-components'
 
+import Block from '../../../components/Block'
 import PageBlock from '../../../components/PageBlock'
 import TemplateContainer from '../../../components/Templates/TemplateContainer'
 import DataHomeLinha1 from './data/7.153.json'
 import DataHomeLinha2 from './data/7.155.json'
 import DataHomeLinha3 from './data/7.161.json'
-import DataHomeTimes from './data/7.181.json'
+import DataListPaged from './data/7.173_paged.json'
 import DATA_HOME_7030 from './data/7.173.json'
 import DATA_HOME_FEAT from './data/7.174.json'
+import DataHomeTimes from './data/7.181.json'
 import DATA_HOME_30 from './data/7.204.json'
+import DataHomeFull from './data/home.json'
+import { preview_editable } from './editable'
 import { theme } from './index'
 
 export default {
@@ -22,13 +28,48 @@ export default {
     )
   ]
 }
+const loadContentFromPagedata = () => {
+  const pagedata = get(DataHomeFull, 'props.content.pagedata', [])
+  const pagelist = get(DataHomeFull, 'props.content.pageblocks.list1', [])
+  const pageblocks = []
+  map(pagelist, (item) => {
+    const blockdata = find(pagedata, { cid: item.cid })
+    pageblocks.push(blockdata)
+  })
+  return pageblocks
+}
+/**
+ * 
+ * @param item slot item (i.e. : ads component)
+ * @param key list iterator
+ * @returns a mock for the element into spaceB
+ */
+const slot_parser = (item?: any, key?: number) => {
+  return (
+    <React.Fragment key={key}>
+      <Block
+        bgColor='neutral9'
+        mb={2}
+        px={2}
+        py={2}
+        width='calc(100% - 32px)'>
+        <Typography color='neutral8'>ads.placeholder</Typography>
+      </Block>
+    </React.Fragment>
+  )
+}
 export const HomeLinha1 = () => {
   return (
     <TemplateContainer
       background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
-      <PageBlock {...DataHomeLinha1} />
+      <PageBlock
+        {...DataHomeLinha1}
+        amp={false}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
     </TemplateContainer>
   )
 }
@@ -38,7 +79,12 @@ export const HomeLinha2 = () => {
       background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
-      <PageBlock {...DataHomeLinha2} />
+      <PageBlock
+        {...DataHomeLinha2}
+        amp={false}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
     </TemplateContainer>
   )
 }
@@ -48,7 +94,12 @@ export const HomeLinha3 = () => {
       background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
-      <PageBlock {...DataHomeLinha3} />
+      <PageBlock
+        {...DataHomeLinha3}
+        amp={false}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
     </TemplateContainer>
   )
 }
@@ -58,7 +109,12 @@ export const HomeTimes = () => {
       background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
-      <PageBlock {...DataHomeTimes} />
+      <PageBlock
+        {...DataHomeTimes}
+        amp={false}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
     </TemplateContainer>
   )
 }
@@ -68,7 +124,12 @@ export const Home7030 = () => {
       background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
-      <PageBlock {...DATA_HOME_7030} />
+      <PageBlock
+        {...DATA_HOME_7030}
+        amp={false}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
     </TemplateContainer>
   )
 }
@@ -78,7 +139,12 @@ export const Home30 = () => {
       background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
-      <PageBlock {...DATA_HOME_30} />
+      <PageBlock
+        {...DATA_HOME_30}
+        amp={false}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
     </TemplateContainer>
   )
 }
@@ -88,24 +154,50 @@ export const HomeFeatured = () => {
       background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
-      <PageBlock {...DATA_HOME_FEAT} />
+      <PageBlock
+        {...DATA_HOME_FEAT}
+        amp={false}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
     </TemplateContainer>
   )
 }
-
-export const HomeFull = () => {
+export const HomeListPaged = () => {
   return (
     <TemplateContainer
       background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
-      <PageBlock {...DataHomeLinha1} />
-      <PageBlock {...DataHomeLinha2} />
-      <PageBlock {...DataHomeLinha3} />
-      <PageBlock {...DataHomeTimes} />
-      <PageBlock {...DATA_HOME_7030} />
-      <PageBlock {...DATA_HOME_30} />
-      <PageBlock {...DATA_HOME_FEAT} />
+      <PageBlock
+        {...DataListPaged}
+        amp={false}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
+  )
+}
+export const HomeFull = () => {
+  const items = loadContentFromPagedata()
+  return (
+    <TemplateContainer
+      background='neutral10'
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      {map(items, (item, key) => {
+        if (!item) 
+          return null
+        return (
+          <PageBlock
+            {...item}
+            key={key}
+            amp={false}
+            preview={preview_editable}
+            slot_parser={slot_parser}
+          />
+        )
+      })}
     </TemplateContainer>
   )
 }
