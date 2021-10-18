@@ -26,6 +26,7 @@ export type PageBlockProps = {
   amp?: boolean;
   bgcolor?: string;
   cid: string;
+  domain: string;
   image_parser?: any;
   name: string;
   type: string;

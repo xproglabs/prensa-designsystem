@@ -38,12 +38,9 @@ const loadContentFromPagedata = () => {
   })
   return pageblocks
 }
-/**
- * 
- * @param item slot item (i.e. : ads component)
- * @param key list iterator
- * @returns a mock for the element into spaceB
- */
+
+const domain = 'http://177.107.132.35:3000'
+
 const slot_parser = (item?: any, key?: number) => {
   return (
     <React.Fragment key={key}>
@@ -67,6 +64,7 @@ export const HomeLinha1 = () => {
       <PageBlock
         {...DataHomeLinha1}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -82,6 +80,7 @@ export const HomeLinha2 = () => {
       <PageBlock
         {...DataHomeLinha2}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -97,6 +96,7 @@ export const HomeLinha3 = () => {
       <PageBlock
         {...DataHomeLinha3}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -112,6 +112,7 @@ export const HomeTimes = () => {
       <PageBlock
         {...DataHomeTimes}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -127,6 +128,7 @@ export const Home7030 = () => {
       <PageBlock
         {...DATA_HOME_7030}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -142,6 +144,7 @@ export const Home30 = () => {
       <PageBlock
         {...DATA_HOME_30}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -157,6 +160,7 @@ export const HomeFeatured = () => {
       <PageBlock
         {...DATA_HOME_FEAT}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -172,6 +176,7 @@ export const HomeListPaged = () => {
       <PageBlock
         {...DataListPaged}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -193,6 +198,7 @@ export const HomeFull = () => {
             {...item}
             key={key}
             amp={false}
+            domain={domain}
             preview={preview_editable}
             slot_parser={slot_parser}
           />
