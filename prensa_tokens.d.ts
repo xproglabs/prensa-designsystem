@@ -25,6 +25,9 @@ type TeaserCartridges =
 type TemplateCartridges =
   'default'
 
+type IconTokens = 
+ 'icon_info' | 
+ 'icon_done'
 
 /**
  * Public types that are providing typing and autosuggestion to all components (can be rewritten in frontend)
