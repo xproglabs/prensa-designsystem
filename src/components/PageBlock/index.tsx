@@ -32,6 +32,7 @@ const PageBlock = ({
 
   // define section_title for slots
   const slot1_title = renderSectionTitle({
+    color: slot1.color,
     icon: slot1.icon,
     layout: section_title,
     link: slot1.link,
@@ -39,6 +40,7 @@ const PageBlock = ({
     customComponent: section_title_component
   })
   const slot2_title = renderSectionTitle({
+    color: slot2.color,
     icon: slot2.icon,
     layout: section_title,
     link: slot2.link,
@@ -46,6 +48,7 @@ const PageBlock = ({
     customComponent: section_title_component
   })
   const slot3_title = renderSectionTitle({
+    color: slot3.color,
     icon: slot3.icon,
     layout: section_title,
     link: slot3.link,
