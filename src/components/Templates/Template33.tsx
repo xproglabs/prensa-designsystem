@@ -48,12 +48,10 @@ const ColumnColor = ({
   return (
     <Block
       bgColor={bgColor}
-      mb={transparent ? '0px' : '0px'}
       pt={transparent ? '0px' : 2}
       px={2}
       width='calc(100% - 32px)'
       lg={{
-        mb: transparent ? '0px' : '0px',
         pt: transparent ? '0px' : 3,
         px: transparent ? '0px' : 3,
         width: transparent ? '100%' : 'calc(100% - 48px)'
