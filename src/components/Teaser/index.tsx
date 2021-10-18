@@ -3,6 +3,7 @@ import React from 'react'
 
 import { EditButtons } from '../EditArea'
 import RelatedRender from './Related'
+import { RenderCircle } from './RenderCircle'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
 import { RenderSubject } from './RenderSubject'
@@ -38,6 +39,17 @@ const Teaser = (props: TeaserProps) => {
   const box_mr = get(layout, 'box.mr', ['0px', '0px'])
   const box_mb = get(layout, 'box.mb', ['0px', '0px'])
   const box_ml = get(layout, 'box.ml', ['0px', '0px'])
+
+  // box border props
+  const box_bt = get(layout, 'box.bt', undefined)
+  const box_br = get(layout, 'box.br', undefined)
+  const box_bb = get(layout, 'box.bb', undefined)
+  const box_bl = get(layout, 'box.bl', undefined)
+  const box_b = get(layout, 'box.b', undefined)
+  const box_borderColor = get(layout, 'box.borderColor', undefined)
+  const box_borderStyle = get(layout, 'box.borderStyle', undefined)
+  const box_radius = get(layout, 'box.radius', undefined)
+
   // box (content) wrap
   const content_overlap = get(layout, 'box_wrap.content_overlap', false)
   const wrap_align = get(layout, 'box_wrap.align', ['column', 'column'])
@@ -73,7 +85,15 @@ const Teaser = (props: TeaserProps) => {
       box_mt={box_mt}
       box_mr={box_mr}
       box_mb={box_mb}
-      box_ml={box_ml}>
+      box_ml={box_ml}
+      box_bt={box_bt}
+      box_br={box_br}
+      box_bb={box_bb}
+      box_bl={box_bl}
+      box_b={box_b}
+      box_borderColor={box_borderColor}
+      box_borderStyle={box_borderStyle}
+      box_radius={box_radius}>
       <S.WrapContent
         wrap_align={image_align}
         wrap_aligny={image_aligny}
@@ -84,6 +104,9 @@ const Teaser = (props: TeaserProps) => {
         wrap_mr={image_mr}
         wrap_mb={image_mb}
         wrap_ml={image_ml}>
+        <RenderCircle
+          most_read_circle={layout?.most_read_circle}
+        /> 
         <RenderImage
           domain={domain}
           image_circle={layout?.image_circle}

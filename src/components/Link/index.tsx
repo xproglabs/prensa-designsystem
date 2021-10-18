@@ -1,55 +1,43 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import * as Types from './types'
+import { LinkProps, StyledLinkProps } from './types'
 
-/**
- * Section Link Area
- * @description render if section title path exists
- * @param children react component to be rendered
- * @param hover define mouse hover opacity
- * @param path define link to click the area
- * @returns a component as a React element
- */
-export const LinkArea = ({
-  children,
-  hoverOpacity,
-  path
-}: Types.LinkAreaProps) => {
-  if(!path) {
-    return children
-  }
-  return (
-    <Link
-      href={path}
-      opacity={hoverOpacity}>
-      {children}
-    </Link>
-  )
-}
-
-/**
- * Section Link
- * @description wrap the icon and the title
- * @param children expects a react component
- * @param hover define mouse hover opacity
- * @param path define link to click the area
- * @returns a component as a React element
- */
-const Link = styled.a<Types.LinkProps>`
+const StyledLink = styled.a<StyledLinkProps>`
   color: inherit;
   cursor: pointer;
   text-decoration: none;
   width: 100%;
 
-  ${props => props.opacity && css`
+  ${props => props.hoverOpacity && css`
     &:hover {
-      opacity: ${props.opacity};
+      opacity: ${props.hoverOpacity};
     }
   `}
 `
+/**
+ * Prensa | Link component
+ * @description Link component is an abstraction for <a/>
+ */
+const Link = ({
+  children,
+  href,
+  hoverOpacity
+}: LinkProps) => {
+
+  if (!href) {
+    return children
+  }
+  
+  return (
+    <StyledLink href={href} hoverOpacity={hoverOpacity}>
+      {children}
+    </StyledLink>
+  )
+}
+
 Link.defaultProps = {
-  opacity: 1
+  hoverOpacity: 1
 }
 
 export default Link

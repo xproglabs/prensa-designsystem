@@ -3,15 +3,16 @@ import {
   EditButtonsType
 } from '../EditArea/types'
 import { RelatedProps } from './RelatedTypes'
+import { RenderDateTimeLayoutProps } from './RenderDateTimeTypes'
+import { RadiusTokens } from '@prensa_tokens'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
-type BoxTypes = {
+type BoxTypes {
   align?: [string, string];
   alignx?: [string, string];
   aligny?: [string, string];
   background?: string;
-  border?: string;
   height?: [string, string] | [string, string, string];
   pt?: SpacingType;
   pr?: SpacingType;
@@ -21,6 +22,14 @@ type BoxTypes = {
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
+  bt?: string;
+  br?: string;
+  bb?: string;
+  bl?: string;
+  b?: string;
+  borderColor?: string;
+  borderStyle?: string;
+  radius?: RadiusTokens;
 }
 type BoxWrap = {
   content_overlap?: boolean;
@@ -81,9 +90,10 @@ export type Title = {
 export type LayoutProps = {
   box?: BoxTypes;
   box_wrap?: BoxWrap;
-  datetime_enabled?: boolean;
+  date_time?: RenderDateTimeLayoutProps;
   image?: Image;
   image_circle?: boolean;
+  most_read_circle?: boolean;
   related?: Related;
   section?: Object;
   subject?: Subject;

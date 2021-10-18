@@ -1,8 +1,8 @@
 import React from 'react'
+import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
 import { data } from '../../mockup/template'
-import { theme } from '../../styles/theme'
 import { GridRelated as GridRelatedComponent } from './GridRelated'
 
 export default {

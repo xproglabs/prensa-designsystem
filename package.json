@@ -15,6 +15,7 @@
     "react": ">=17.0.1",
     "react-contenteditable": "^3.3.6",
     "react-dom": ">=17.0.1",
+    "react-html-parser": ">=2.0.2",
     "react-input-mask": "3.0.0-alpha.2",
     "styled-components": ">=5.2.1"
   },
@@ -30,6 +31,7 @@
     "@svgr/cli": "^5.4.0",
     "@types/lodash": "^4.14.172",
     "@types/react": "^17.0.16",
+    "@types/react-html-parser": "^2.0.2",
     "@types/styled-components": "^5.1.12",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.12.0",
@@ -67,7 +69,8 @@
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
     "test": "jest",
     "update-prensa:qa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish --tag qa",
-    "update-prensa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish"
+    "update-prensa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish",
+    "release:local": "npm run build && npm pack"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
@@ -84,6 +87,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "react-contenteditable": "^3.3.6"
+    "react-contenteditable": "^3.3.6",
+    "react-html-parser": "^2.0.2"
   }
 }

@@ -4,7 +4,6 @@ import React from 'react'
 import InputMask from 'react-input-mask'
 import { withTheme } from 'styled-components'
 
-import { colors_props } from '../../styles/variables/colors'
 import Block from '../Block'
 import FieldLabel from './FieldLabel'
 import FieldMessage from './FieldMessage'
@@ -152,7 +151,7 @@ Field.propTypes = {
     fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     fontWeight: PropTypes.number,
     fontFamily: PropTypes.oneOf(['primary', 'secondary']),
-    color: PropTypes.oneOf(colors_props),
+    color: PropTypes.string,
     mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -165,7 +164,7 @@ Field.propTypes = {
     fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     fontWeight: PropTypes.number,
     fontFamily: PropTypes.oneOf(['primary', 'secondary']),
-    color: PropTypes.oneOf(colors_props),
+    color: PropTypes.string,
     mt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     mr: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     mb: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -175,7 +174,7 @@ Field.propTypes = {
    * Props de estilo para o elemento input HTML
    */
   styledInput: PropTypes.shape({
-    color: PropTypes.oneOf(colors_props),
+    color: PropTypes.string,
     radius: PropTypes.oneOf(['unset', 'default', 'alternative'])
   }),
   /**

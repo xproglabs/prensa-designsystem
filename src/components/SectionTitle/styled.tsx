@@ -3,24 +3,18 @@ import styled from 'styled-components'
 
 import Block from '../Block'
 import Typography from '../Typography'
-import {
-  StyledBoxProps,
-  StyledTitleProps,
-  StyledIconProps,
-} from './types'
+import { StyledBoxProps, StyledTitleProps } from './types'
+
 /**
  * Section Area Box
- * @description wrap the area link
- * @param children react component
- * @param mb area margin-bottom
- * @returns a component as a React element
+ * @description Wrap SectionTitle component with responsive margin & padding and border configurations
  */
-export const AreaBox = ({
-  area,
-  children,
-}: StyledBoxProps) => {
+export const AreaBox = ({ area, children }: StyledBoxProps) => {
   return (
     <Block
+      align='row'
+      alignx='left'
+      aligny='middle'
       mr={area?.mr?.[0]}
       ml={area?.ml?.[0]}
       mt={area?.mt?.[0]}
@@ -29,6 +23,13 @@ export const AreaBox = ({
       pl={area?.pl?.[0]}
       pt={area?.pt?.[0]}
       pb={area?.pb?.[0]}
+      bt={area?.bt}
+      br={area?.br}
+      bb={area?.bb}
+      bl={area?.bl}
+      b={area?.b}
+      borderColor={area?.borderColor}
+      borderStyle={area?.borderStyle}
       lg={{
         mr: area?.mr?.[1],
         ml: area?.ml?.[1],
@@ -43,18 +44,7 @@ export const AreaBox = ({
     </Block>
   )
 }
-/**
- * Section Title Icon
- * @param icon expects an icon string (?)
- * @returns an icon as a React element
- */
-export const TitleIcon = ({
-  icon
-}: StyledIconProps) => {
-  return (
-    <pre>{icon}</pre>
-  )
-}
+
 /**
  * Section Title Empty
  * @description used to space inside cols
@@ -64,6 +54,7 @@ export const TitleEmpty = styled.div`
   height: 18px;
   width: 100%;
 `
+
 /**
  * Section Title Text
  * @param children expects the title text

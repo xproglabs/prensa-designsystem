@@ -229,7 +229,7 @@ Typography.propTypes = {
   /**
    * Permite alterar o valor para css text-transform
    */
-  transform: PropTypes.oneOf(['none', 'inherit', 'capitalize', 'uppercase', 'lowercase']),
+  transform: PropTypes.oneOf(['none', 'inherit', 'capitalize', 'uppercase', 'lowercase', 'initial']),
   /**
    * Permite acessar as cores disponíveis no theme
    */

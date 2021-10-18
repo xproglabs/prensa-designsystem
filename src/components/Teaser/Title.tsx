@@ -2,7 +2,7 @@ import { get } from 'lodash'
 import React from 'react'
 
 import { EditArea } from '../EditArea'
-import { LinkArea } from '../Link'
+import Link from '../Link'
 import Typography from '../Typography'
 import { LayoutProps } from './types'
 
@@ -50,11 +50,11 @@ const Title = ({
         mb: title_layout.mb?.[1]
       }}>
       <EditArea {...editable}>
-        <LinkArea
+        <Link
           hoverOpacity={0.9}
-          path={link}>
+          href={link}>
           {title}
-        </LinkArea>
+        </Link>
       </EditArea>
     </Typography>
   )
