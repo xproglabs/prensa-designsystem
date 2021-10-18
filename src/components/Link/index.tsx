@@ -3,10 +3,6 @@ import styled, { css } from 'styled-components'
 
 import { LinkProps, StyledLinkProps } from './types'
 
-/**
- * Prensa | Link component
- * @description Link component is an abstraction for <a/>
- */
 const StyledLink = styled.a<StyledLinkProps>`
   color: inherit;
   cursor: pointer;
@@ -19,7 +15,10 @@ const StyledLink = styled.a<StyledLinkProps>`
     }
   `}
 `
-
+/**
+ * Prensa | Link component
+ * @description Link component is an abstraction for <a/>
+ */
 const Link = ({
   children,
   href,
