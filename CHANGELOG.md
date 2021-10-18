@@ -1,3 +1,8 @@
+# v1.6.23
+- Move a definição de domínio para o parseBlock
+- Permite seleção de ícone dinâmica e componentes ao invés de conteúdo SVG no componente SectionTitle 
+# v1.6.22
+- Permite Object genérico como type em CreateTheme
 # v1.6.21
 - Permite alternar imagem amp e imagem html
 - Cria novo fluxo de atualização de ícones dos fronts e permite o uso de ícone no SectionTitle
