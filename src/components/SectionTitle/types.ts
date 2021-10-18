@@ -1,4 +1,5 @@
 import { SpacingType } from '../Teaser/types'
+import { IconProps } from '../Icon/types'
 
 type AreaLayout = {
   pt?: SpacingType;
@@ -20,7 +21,6 @@ type AreaLayout = {
 type LinkLayout = {
   hoverOpacity?: number;
 }
-type IconLayout = {}
 type TextLayout = {
   color?: string;
   element?: string;
@@ -36,7 +36,7 @@ type TextLayout = {
 export interface SectionTitleLayout {
   area?: AreaLayout;  
   link?: LinkLayout;
-  icon?: IconLayout;
+  icon?: IconProps;
   text?: TextLayout;
 }
 

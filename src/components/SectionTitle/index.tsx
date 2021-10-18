@@ -1,8 +1,9 @@
 import React from 'react'
 
 import Link from '../Link'
-import { AreaBox, TitleIcon, TitleText } from './styled'
+import { AreaBox, TitleText } from './styled'
 import { SectionTitleProps } from './types'
+import Icon from '../Icon'
 
 /**
  * Section Title Component
@@ -26,10 +27,16 @@ const SectionTitle = ({
   const link_layout = layout?.link || {}
   const text_layout = layout?.text || {}
 
+  const icon_path = icon_layout?.path || false
+
   return (
     <AreaBox area={area_layout}>
       <Link href={href} {...link_layout}>
-        {/* <TitleIcon icon={icon} {...icon_layout} /> */}
+        {icon_path &&
+          <Icon color={color} {...icon_layout}>
+            {icon_path}
+          </Icon>
+        }
         <TitleText color={color} {...text_layout}>
           {title}
         </TitleText>

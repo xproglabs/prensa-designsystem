@@ -47,18 +47,6 @@ export const AreaBox = ({ area, children }: StyledBoxProps) => {
 }
 
 /**
- * Section Title Icon
- * @param icon expects an icon string (?)
- * @returns an icon as a React element
- */
-export const TitleIcon = ({
-  icon
-}: StyledIconProps) => {
-  return (
-    <pre>{icon}</pre>
-  )
-}
-/**
  * Section Title Empty
  * @description used to space inside cols
  * @returns a blank space as a React element
