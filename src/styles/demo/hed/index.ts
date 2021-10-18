@@ -8,7 +8,6 @@ import { icons } from './icons'
 export const theme = {
   ...default_theme,
   colors: HED_COLORS,
-  domain: 'http://177.107.132.35:3000',
   fonts: {
     primary: 'Lato',
     secondary: 'Lato'

@@ -20,6 +20,7 @@ import {
 
 const PageBlock = ({
   amp,
+  domain,
   preview,
   section_title_component,
   slot_parser,
@@ -29,8 +30,7 @@ const PageBlock = ({
   theme,
   type,
 }: PageBlockProps) => {
-  const { domain, section_title, templates } = theme
-
+  const { section_title, templates } = theme
   // define section_title for slots
   const slot1_title = renderSectionTitle({
     color: slot1.color,
@@ -56,7 +56,6 @@ const PageBlock = ({
     title: slot3.title,
     customComponent: section_title_component
   })
-
   // define slot spaceB
   const slot1_slotList = selectComponentFromSlotList(slot_parser, slot1.list2)
   const slot2_slotList = selectComponentFromSlotList(slot_parser, slot2.list2)
