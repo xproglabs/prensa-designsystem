@@ -14,13 +14,13 @@ import { TeaserProps } from './types'
 
 const Teaser = (props: TeaserProps) => {
   const {
+    amp,
     color,
     edit_buttons,
     editable,
     domain,
     item,
     layout,
-    preview,
     related,
     states
   } = props
@@ -109,8 +109,11 @@ const Teaser = (props: TeaserProps) => {
           most_read_circle={layout?.most_read_circle}
         /> 
         <RenderImage
-          amp={!preview}
+          amp={amp}
           domain={domain}
+          editable={{
+            enabled: editable?.enabled
+          }}
           image_circle={layout?.image_circle}
           item={item}
           item_path={item_path}

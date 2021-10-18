@@ -1,14 +1,15 @@
+import { RadiusTokens } from '@prensa_tokens'
+
 import {
   EditAreaType,
   EditButtonsType
 } from '../EditArea/types'
 import { RelatedProps } from './RelatedTypes'
 import { RenderDateTimeLayoutProps } from './RenderDateTimeTypes'
-import { RadiusTokens } from '@prensa_tokens'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
-type BoxTypes {
+type BoxTypes = {
   align?: [string, string];
   alignx?: [string, string];
   aligny?: [string, string];
@@ -101,6 +102,10 @@ export type LayoutProps = {
   title?: Title;
 }
 export type TeaserProps = {
+  /**
+   * @description define if uses an amp image or html image
+  */
+  amp?: boolean;
   color?: string;
   domain?: string;
   /**
@@ -118,10 +123,6 @@ export type TeaserProps = {
   layout?: LayoutProps;
   /**
    * @description expects an object with layout configuration for related news
-   */
-  preview?: boolean;
-  /**
-   * @description expects a boolean with preview configuration
    */
   related?: RelatedProps;
   /**

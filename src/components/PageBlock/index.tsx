@@ -19,6 +19,7 @@ import {
 } from './utils'
 
 const PageBlock = ({
+  amp,
   preview,
   section_title_component,
   slot_parser,
@@ -69,6 +70,7 @@ const PageBlock = ({
     return (
       <Template100
         slot100={{
+          amp,
           bgcolor: slot1.bgcolor,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
@@ -93,6 +95,7 @@ const PageBlock = ({
     return (
       <Template7030
         slot70={{
+          amp,
           bgcolor: slot1.bgcolor,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
@@ -104,6 +107,7 @@ const PageBlock = ({
           spaceB: slot1_slotList
         }}
         slot30={{
+          amp,
           bgcolor: slot2.bgcolor,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
@@ -128,6 +132,7 @@ const PageBlock = ({
     return (
       <Template5050
         slotLeft={{
+          amp,
           bgcolor: slot1.bgcolor,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
@@ -139,6 +144,7 @@ const PageBlock = ({
           spaceB: slot1_slotList
         }}
         slotRight={{
+          amp,
           bgcolor: slot2.bgcolor,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
@@ -170,6 +176,7 @@ const PageBlock = ({
     return (
       <Template33
         slotLeft={{
+          amp,
           bgcolor: slot1.bgcolor,
           carousel: slotLeft_carousel,
           column_items: slot1_spaces + 1,
@@ -182,6 +189,7 @@ const PageBlock = ({
           spaceB: slot1_slotList
         }}
         slotCenter={{
+          amp,
           bgcolor: slot2.bgcolor,
           carousel: slotCenter_carousel,
           column_items: slot2_spaces + 1,
@@ -194,6 +202,7 @@ const PageBlock = ({
           spaceB: slot2_slotList
         }}
         slotRight={{
+          amp,
           bgcolor: slot3.bgcolor,
           carousel: slotRight_carousel,
           column_items: slot3_spaces + 1,
@@ -215,6 +224,7 @@ const PageBlock = ({
   return (
     <TemplateWrap
       slotItems={{
+        amp,
         bgcolor: slot1.bgcolor,
         column_items: slot1_spaces + 1,
         column_padding: slot1_spaces,

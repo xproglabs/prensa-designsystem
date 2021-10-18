@@ -6,7 +6,15 @@ export const SUBJECT_DEFAULT: SubjectProps = {
   bg_color: 'transparent',
   color: 'primary1',
   enabled: true,
-  font_size: ['14px', '14px'],
+  font_size: ['12px', '12px'],
+  line_height: ['16px', '16px'],
+  mb: ['4px', '4px']
+}
+export const SUBJECT_DEFAULT_FEATURED: SubjectProps = {
+  bg_color: 'transparent',
+  color: 'primary1',
+  enabled: true,
+  font_size: ['12px', '16px'],
   line_height: ['16px', '16px'],
   mb: [1, 1]
 }

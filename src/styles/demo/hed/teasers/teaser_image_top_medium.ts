@@ -10,9 +10,7 @@ export const TEASER_IMAGE_TOP_MEDIUM: LayoutProps = {
   box_wrap: {
     align: ['column', 'column'],
     alignx: ['left', 'left'],
-    mr: [2, '0px'],
-    mb: [2, 2],
-    width: ['calc(100% - 96px)', '100%']
+    width: ['100%', '100%']
   },
   image: {
     enabled: true,

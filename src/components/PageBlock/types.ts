@@ -23,6 +23,7 @@ export type SlotBlockProps = {
 }
 
 export type PageBlockProps = {
+  amp?: boolean;
   bgcolor?: string;
   cid: string;
   image_parser?: any;

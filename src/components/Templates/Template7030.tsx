@@ -24,7 +24,6 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
       align='column'
       alignx='center'
       aligny='top'
-      mb={2}
       px='0px'
       py='0px'
       lg={{
@@ -42,7 +41,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
           align: 'row',
           alignx: 'between',
           custom: 'flex-wrap: wrap;',
-          mb: 3,
+          mb: '0px',
           px: '0px',
           width: 'calc((((100% - 48px) / 3) * 2) + 24px)'
         }}>
@@ -74,7 +73,6 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
         mb={2}
         width='100%'
         lg={{
-          mb: 3,
           px: '0px',
           width: 'calc((100% - 48px) / 3)'
         }}>

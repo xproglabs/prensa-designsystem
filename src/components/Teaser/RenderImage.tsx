@@ -9,6 +9,9 @@ import * as S from './styled'
 type RenderImageProps = {
   amp?: boolean,
   domain: string,
+  editable?: {
+    enabled: boolean
+  },
   image_circle?: boolean,
   item?: any,
   item_path?: string,
@@ -18,6 +21,7 @@ type RenderImageProps = {
 const RenderImage = ({
   amp,
   domain,
+  editable,
   image_circle,
   item,
   item_path,
@@ -67,6 +71,15 @@ const RenderImage = ({
       type: layout_desktop,
       width: desktop_width,
     }
+  }
+  if (editable && editable.enabled) {
+    return (
+      <S.Image
+        image_circle={image_circle}
+        height={height}>
+        <ImageElement {...image_props} />
+      </S.Image>
+    )
   }
   return (
     <S.AreaLink href={item_path}>

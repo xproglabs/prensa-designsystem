@@ -1,10 +1,11 @@
 import { LayoutProps } from '../../../layouts'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
-import { SUBJECT_FILLED } from '../tokens/subject'
+import { SUBJECT_DEFAULT_FEATURED } from '../tokens/subject'
 
 export const FEATURED_RELATED: LayoutProps = {
   box: {
     background: 'white',
+    mb: ['0px', 2],
     pt: [5, 9],
     pb: [5, 9]
   },
@@ -25,5 +26,5 @@ export const FEATURED_RELATED: LayoutProps = {
     ),
     mb: [3, 3]
   },
-  subject: SUBJECT_FILLED
+  subject: SUBJECT_DEFAULT_FEATURED
 }

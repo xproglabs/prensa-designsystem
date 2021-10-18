@@ -9,10 +9,6 @@ import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
 import { renderSpaceSlot } from '../RenderSlot/utils'
 
-type SlotProps = RenderSlotProps & {
-  section_title?: () => void;
-}
-
 interface ColumnProps {
   children: any;
 }
@@ -22,7 +18,7 @@ interface ColumnColorProps {
   transparent: boolean;
 }
 interface Template100Props {
-  slot100: SlotProps;
+  slot100: RenderSlotProps;
 }
 const Column = ({ children }: ColumnProps) => (
   <Block
@@ -76,16 +72,12 @@ const Template100 = ({
       alignx="center"
       aligny="top"
       mb={2}
-      lg={{
-        mb: 3
-      }}
       width="100%">
       <Column>
         {(renderSpaceSlot(slot100.spaceA))}
         <ColumnColor
           bgColor={slot100_bgColor}
           transparent={slot100_isTransparent}>
-          {slot100.section_title}
           <RenderSlot {...slot100} />
         </ColumnColor>
         {(renderSpaceSlot(slot100.spaceB))}
