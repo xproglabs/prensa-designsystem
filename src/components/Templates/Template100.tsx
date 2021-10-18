@@ -72,9 +72,6 @@ const Template100 = ({
       alignx="center"
       aligny="top"
       mb={2}
-      lg={{
-        mb: 3
-      }}
       width="100%">
       <Column>
         {(renderSpaceSlot(slot100.spaceA))}
