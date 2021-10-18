@@ -11,7 +11,7 @@ export type PageBlockPreview = {
 export type SlotBlockProps = {
   bgcolor?: string;
   color: string;
-  icon: string;
+  icon: IconTokens;
   link: string;
   len1: number;
   len2: number;
