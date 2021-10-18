@@ -25,6 +25,7 @@ export const TEASER_IMAGE_SMALL: LayoutProps = {
     enabled: true,
     dimension: ['1x1', '1x1'],
     height: ['80px', '80px'],
+    mb: [2, 2],
     width: ['80px', '80px'],
     wrap_width: ['80px', '80px'],
   },
