@@ -28,22 +28,42 @@ const Box = ({
   box_mr,
   box_mb=[2,2],
   box_ml,
-  background='transparent',
-  border,
+  background='transparent',  
+  box_bt,
+  box_br,
+  box_bb,
+  box_bl,
+  box_b,
+  box_borderColor,
+  box_borderStyle,
+  box_radius,
   children
 }) => {
-  const border_custom = border ? `
-      border: 1px solid #EAEAEA;
-      border-radius: 5px;
-    ` : ''
-  const box_width = border ? 'calc(100% - 2px)' : '100%'
+
+  const parse_boxwidth = () => {
+    if (box_b) {
+      return `calc(100% - ${box_b} - ${box_b})`
+    }
+    if (box_bl && box_br) {
+      return `calc(100% - ${box_bl} - ${box_br})`
+    }
+    if (box_bl) {
+      return `calc(100% - ${box_bl})`
+    }
+    if (box_br) {
+      return `calc(100% - ${box_br})`
+    }
+    return '100%'
+  }
+
+  const box_width = parse_boxwidth()
+
   return (
     <Block
       align={box_align[0]}
       alignx={box_alignx[0]}
       aligny={box_aligny[0]}
       bgColor={background}
-      custom={border_custom}
       height={box_height[0]}
       pt={box_pt[0]}
       pr={box_pr[0]}
@@ -54,6 +74,14 @@ const Box = ({
       mb={box_mb[0]}
       ml={box_ml[0]}
       width={box_width}
+      bt={box_bt}
+      br={box_br}
+      bb={box_bb}
+      bl={box_bl}
+      b={box_b}
+      borderColor={box_borderColor}
+      borderStyle={box_borderStyle}
+      radius={box_radius}
       lg={{
         align: box_align[1],
         alignx: box_alignx[1],

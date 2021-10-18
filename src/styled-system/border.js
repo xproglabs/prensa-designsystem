@@ -1,19 +1,30 @@
 import { get } from 'lodash'
 
-export const border = ({
-  theme = {},
-  bt = '',
-  br = '',
-  bb = '',
-  bl = '',
-  // bx = '',
-  // by = '',
-  b = '',
-  borderColor = '',
-  borderStyle = 'solid',
-}) => {
+/**
+ * Prensa | Border Styled Function
+ * @param {Object} props Expects props from a React Styled Component
+ * @returns String with processed CSS from props input.
+ */
+export function border(props) {
+  // TODO: transform to typescript
+  // export function border(props: BorderStyledFunction) {
+
+  const {
+    theme = {},
+    bt = '',
+    br = '',
+    bb = '',
+    bl = '',
+    // bx = '',
+    // by = '',
+    b = '',
+    borderColor = '',
+    borderStyle = 'solid',
+    radius
+  } = props
 
   const colors = get(theme, 'colors', {})
+  const radius_options = get(theme, 'radius')
   const selectedColor = colors[borderColor]
 
   let object = []
@@ -21,51 +32,35 @@ export const border = ({
   if (bt) {
     object.push(`border-top-color: ${selectedColor};`)
     object.push(`border-top-style: ${borderStyle};`)
-    if (typeof bt === 'string') {
-      object.push(`border-top-width: ${bt};`)
-    } else {
-      object.push(`border-top-width: ${bt}px;`)
-    }
+    object.push(`border-top-width: ${bt};`)
   }
 
   if (br) {
     object.push(`border-right-color: ${selectedColor};`)
     object.push(`border-right-style: ${borderStyle};`)
-    if (typeof br === 'string') {
-      object.push(`border-right-width: ${br};`)
-    } else {
-      object.push(`border-right-width: ${br}px;`)
-    }
+    object.push(`border-right-width: ${br};`)    
   }
 
   if (bb) {
     object.push(`border-bottom-color: ${selectedColor};`)
     object.push(`border-bottom-style: ${borderStyle};`)
-    if (typeof bb === 'string') {
-      object.push(`border-bottom-width: ${bb};`)
-    } else {
-      object.push(`border-bottom-width: ${bb}px;`)
-    }
+    object.push(`border-bottom-width: ${bb};`)    
   }
 
   if (bl) {
     object.push(`border-left-color: ${selectedColor};`)
     object.push(`border-left-style: ${borderStyle};`)
-    if (typeof bl === 'string') {
-      object.push(`border-left-width: ${bl};`)
-    } else {
-      object.push(`border-left-width: ${bl}px;`)
-    }
+    object.push(`border-left-width: ${bl};`)    
   }
 
   if (b) {
     object.push(`border-color: ${selectedColor};`)
     object.push(`border-style: ${borderStyle};`)
-    if (typeof b === 'string') {
-      object.push(`border-width: ${b};`)
-    } else {
-      object.push(`border-width: ${b}px;`)
-    }
+    object.push(`border-width: ${b};`)    
+  }
+
+  if (radius) {
+    object.push(`border-radius: ${radius_options[radius]}`)
   }
 
   return object.join('')
