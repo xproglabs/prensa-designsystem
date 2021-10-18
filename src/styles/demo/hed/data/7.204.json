@@ -4,8 +4,8 @@
   "type": "template30",
   "slot1": {
     "bgcolor": "primary3",
-    "color": "",
-    "icon": "",
+    "color": "editorial4",
+    "icon": "icon_info",
     "link": "",
     "len1": 3,
     "len2": 0,
@@ -92,7 +92,7 @@
     "type": "default"
   },
   "slot2": {
-    "color": "",
+    "color": "editorial2",
     "icon": "",
     "link": "",
     "len1": 3,
@@ -180,7 +180,7 @@
     "type": "default"
   },
   "slot3": {
-    "color": "",
+    "color": "editorial3",
     "icon": "",
     "link": "",
     "len1": 3,
