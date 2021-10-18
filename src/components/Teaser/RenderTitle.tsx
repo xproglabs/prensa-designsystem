@@ -20,7 +20,7 @@ type TitleProps = {
  * @param title text to be rendered
  * @returns a Typography as a React element
  */
-const Title = ({
+const RenderTitle = ({
   editable,
   layout,
   link,
@@ -28,10 +28,10 @@ const Title = ({
 }: TitleProps) => {
   const title_layout = get(layout, 'title', false)
   const title_enabled = get(layout, 'title.enabled', false)
-  if(!title || !title_enabled || !title_layout) {
+  if (!title || !title_enabled || !title_layout) {
     return <></>
   }
-  if(editable?.enabled) {
+  if (editable?.enabled) {
     link = ''
   }
   return (
@@ -60,4 +60,4 @@ const Title = ({
   )
 }
 
-export default Title
+export { RenderTitle }

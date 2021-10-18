@@ -9,7 +9,7 @@ import { RenderImage } from './RenderImage'
 import { RenderSubject } from './RenderSubject'
 import { RenderSubtitle } from './RenderSubtitle'
 import * as S from './styled'
-import TeaserTitle from './Title'
+import { RenderTitle } from './RenderTitle'
 import { TeaserProps } from './types'
 
 const Teaser = (props: TeaserProps) => {
@@ -107,7 +107,7 @@ const Teaser = (props: TeaserProps) => {
         wrap_ml={image_ml}>
         <RenderCircle
           most_read_circle={layout?.most_read_circle}
-        /> 
+        />
         <RenderImage
           amp={amp}
           domain={domain}
@@ -145,7 +145,7 @@ const Teaser = (props: TeaserProps) => {
           />
           <EditButtons {...edit_buttons} />
         </S.WrapSubject>
-        <TeaserTitle
+        <RenderTitle
           editable={{
             enabled: editable?.enabled,
             set_modified: editable?.set_modified,
