@@ -1,5 +1,6 @@
 import { SpacingType } from '../Teaser/types'
 import { IconProps } from '../Icon/types'
+import { IconTokens } from '@prensa_tokens'
 
 type AreaLayout = {
   pt?: SpacingType;
@@ -34,7 +35,7 @@ type TextLayout = {
  * @description define section title layout props
  */
 export interface SectionTitleLayout {
-  area?: AreaLayout;  
+  area?: AreaLayout;
   link?: LinkLayout;
   icon?: IconProps;
   text?: TextLayout;
@@ -45,7 +46,7 @@ export interface SectionTitleLayout {
  */
 export interface SectionTitleProps {
   color?: string;
-  icon?: string;
+  icon?: IconTokens;
   layout: SectionTitleLayout;
   title?: string;
   href?: string;
