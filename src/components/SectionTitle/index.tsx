@@ -10,9 +10,9 @@ import Icon from '../Icon'
  * @param color expects a valid color token
  * @param icon expects a valid icon token
  * @param layout expects the layout from theme
- * @param path expects a link to wrap the area
+ * @param href expects a link to wrap the area
  * @param title expects the title string
- * @returns Section Title as a React Component
+ * @returns SectionTitle component
  */
 const SectionTitle = ({
   color,
