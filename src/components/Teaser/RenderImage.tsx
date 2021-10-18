@@ -5,7 +5,23 @@ import AmpImage from '../Image'
 import { parseImagePath } from '../Image/parser'
 import * as S from './styled'
 
-const RenderImage = ({ domain, image_circle, item, item_path, layout }) => {
+type RenderImageProps = {
+  amp?: boolean,
+  domain: string,
+  image_circle?: boolean,
+  item?: any,
+  item_path?: string,
+  layout?: any
+}
+
+const RenderImage = ({
+  amp,
+  domain,
+  image_circle,
+  item,
+  item_path,
+  layout
+}: RenderImageProps) => {
   // get image object from props
   let image_object = get(item, 'image', false)
   if(!image_object) {

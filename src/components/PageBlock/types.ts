@@ -21,13 +21,14 @@ export type SlotBlockProps = {
 export type PageBlockProps = {
   bgcolor?: string;
   cid: string;
+  image_parser?: any;
   name: string;
   type: string;
   preview: PageBlockPreview;
-  section_title: any;
+  section_title?: any;
   slot_parser: any;
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;
   slot3: SlotBlockProps;
-  theme: any;
+  theme?: any;
 }

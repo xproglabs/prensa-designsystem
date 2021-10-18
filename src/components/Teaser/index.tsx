@@ -20,6 +20,7 @@ const Teaser = (props: TeaserProps) => {
     domain,
     item,
     layout,
+    preview,
     related,
     states
   } = props
@@ -108,6 +109,7 @@ const Teaser = (props: TeaserProps) => {
           most_read_circle={layout?.most_read_circle}
         /> 
         <RenderImage
+          amp={!preview}
           domain={domain}
           image_circle={layout?.image_circle}
           item={item}
