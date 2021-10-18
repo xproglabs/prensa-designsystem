@@ -80,12 +80,12 @@ export const renderSectionTitle = ({
   customComponent
 }: RenderSectionTitleParams) => {
 
-  if (!title || title == '') {
-    return <TitleEmpty />
-  }
-
   if (customComponent) {
     return cloneElement(customComponent, { children: title })
+  }
+
+  if (!title || title == '') {
+    return <TitleEmpty />
   }
 
   return (
