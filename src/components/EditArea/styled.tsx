@@ -7,13 +7,14 @@ import {
 
 const ButtonsBox = styled.div`
   margin-top: -4px;
+
   & > button:last-child {
     margin-left: 4px;
   }
 `
 
 const EditBox = styled.div<EditBoxProps>`
-  cursor: pointer;
+  cursor: text;
   width: 100%;
 
   & .div-editable-focus:focus-visible {
@@ -23,6 +24,7 @@ const EditBox = styled.div<EditBoxProps>`
 
 const EditWrap = styled.div<EditWrapProps>`
   z-index: 100;
+  width: 100%;
   
   ${props => props.enabled && css`
     outline: 5px solid rgba(0,0,0,0.4);

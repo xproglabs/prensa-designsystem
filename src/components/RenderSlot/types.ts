@@ -5,6 +5,7 @@ import { PageBlockPreview } from '../PageBlock/types'
 import { LayoutProps } from '../Teaser/types'
 
 export type RenderSlotProps = {
+  amp?: boolean,
   bgcolor?: string;
   carousel?: CarouselProps;
   color?: string;

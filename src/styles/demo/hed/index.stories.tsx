@@ -66,6 +66,7 @@ export const HomeLinha1 = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DataHomeLinha1}
+        amp={false}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -80,6 +81,7 @@ export const HomeLinha2 = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DataHomeLinha2}
+        amp={false}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -94,6 +96,7 @@ export const HomeLinha3 = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DataHomeLinha3}
+        amp={false}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -108,6 +111,7 @@ export const HomeTimes = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DataHomeTimes}
+        amp={false}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -122,6 +126,7 @@ export const Home7030 = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DATA_HOME_7030}
+        amp={false}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -136,6 +141,7 @@ export const Home30 = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DATA_HOME_30}
+        amp={false}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -150,6 +156,7 @@ export const HomeFeatured = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DATA_HOME_FEAT}
+        amp={false}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -164,6 +171,7 @@ export const HomeListPaged = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DataListPaged}
+        amp={false}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -184,6 +192,7 @@ export const HomeFull = () => {
           <PageBlock
             {...item}
             key={key}
+            amp={false}
             preview={preview_editable}
             slot_parser={slot_parser}
           />
