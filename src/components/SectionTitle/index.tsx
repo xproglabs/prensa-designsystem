@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { cloneElement } from 'react'
+import { withTheme } from 'styled-components'
+import { get } from 'lodash'
 
 import Link from '../Link'
 import { AreaBox, TitleText } from './styled'
 import { SectionTitleProps } from './types'
-import Icon from '../Icon'
 
 /**
  * Section Title Component
@@ -19,7 +20,8 @@ const SectionTitle = ({
   icon,
   layout,
   href,
-  title
+  title,
+  theme
 }: SectionTitleProps) => {
 
   const area_layout = layout?.area || {}
@@ -27,17 +29,18 @@ const SectionTitle = ({
   const link_layout = layout?.link || {}
   const text_layout = layout?.text || {}
 
-  const icon_path = icon || icon_layout?.path || false
+  function get_icon_from_theme() {
+    //Todo: Create log patter for theme findings errors
+    const selected_icon = get(theme, `icons.${icon}`, false)
+    return selected_icon
+  }
+
+  //check if icon is from CMS or static defined in layout
+  const icon_component = get_icon_from_theme() || icon_layout?.component || false
 
   return (
     <AreaBox area={area_layout}>
-      {icon_path && 
-        <Icon
-          color={color}
-          path={icon_path}
-          {...icon_layout}
-        />
-      }
+      {icon_component && cloneElement(icon_component, { color, ...icon_layout })}
       <Link href={href} {...link_layout}>
         <TitleText color={color} {...text_layout}>
           {title}
@@ -47,4 +50,4 @@ const SectionTitle = ({
   )
 }
 
-export default SectionTitle
+export default withTheme(SectionTitle)
