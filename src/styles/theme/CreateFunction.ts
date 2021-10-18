@@ -17,7 +17,7 @@ export interface ThemeTypes {
  * CreateTheme function docs
  * @param {object} data - An object that defines/overrides properties in theme
  */
-export function CreateTheme(data: ThemeTypes) {
+export function CreateTheme(data: ThemeTypes | Object) {
   return merge(default_theme, data)
 }
 
