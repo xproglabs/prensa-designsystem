@@ -27,20 +27,20 @@ const EditWrap = styled.div<EditWrapProps>`
   width: 100%;
   
   ${props => props.enabled && css`
-    outline: 5px solid rgba(0,0,0,0.4);
-    outline-offset: 8px;
+    outline: 5px solid #ffa60021;
+    outline-offset: 5px;
     width: 100%;
   `}
 
   ${props => props.saving && css`
-    outline: 4px solid rgba(50, 225, 50,0.8);
-    outline-offset: 4px;
+    outline: 5px solid #14a314cc;
+    outline-offset: 5px;
     width: 100%;
   `}
 
   ${props => props.selected && css`
-    outline: 4px solid rgba(200,200,0,0.8);
-    outline-offset: 4px;
+    outline: 5px solid #ffbb008b;
+    outline-offset: 5px;
     width: 100%;
   `}
 `

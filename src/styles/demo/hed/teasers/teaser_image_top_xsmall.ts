@@ -5,7 +5,6 @@ import { SUBJECT_DEFAULT } from '../tokens/subject'
 export const TEASER_IMAGE_TOP_XSMALL: LayoutProps = {
   box: {
     align: ['column', 'column'],
-    mb: [3, 3]
   },
   box_wrap: {
     align: ['column', 'column'],
