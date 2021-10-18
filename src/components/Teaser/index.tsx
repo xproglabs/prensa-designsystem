@@ -111,6 +111,9 @@ const Teaser = (props: TeaserProps) => {
         <RenderImage
           amp={amp}
           domain={domain}
+          editable={{
+            enabled: editable?.enabled
+          }}
           image_circle={layout?.image_circle}
           item={item}
           item_path={item_path}
