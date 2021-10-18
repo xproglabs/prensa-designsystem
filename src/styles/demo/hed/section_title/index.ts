@@ -3,7 +3,7 @@ import { SectionTitleLayout } from '../../../../components/SectionTitle/types'
 export const SECTION_TITLE: SectionTitleLayout = {
   area: {
     mb: [2, 3],
-    pl: [1, 1],
+    pl: [1, '0px'],
     pt: [1, 1]
   },
   text: {
