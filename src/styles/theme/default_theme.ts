@@ -1,5 +1,6 @@
 import { TEASER_DEFAULT } from '../teasers'
 import { TEMPLATES_DEFAULT } from '../templates'
+import { DEFAULT_ICONS } from '../icons'
 
 //TODO: Move to styled-system
 import { parseColor, parseBgColor, parseFontColor } from '../parsers/parseColors'
@@ -76,6 +77,7 @@ export const default_theme = {
   templates: {
     default: TEMPLATES_DEFAULT
   },
+  icons: DEFAULT_ICONS,
   parseBgColor,
   parseCustom,
   parseCustomDef,

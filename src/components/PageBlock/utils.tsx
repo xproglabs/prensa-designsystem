@@ -1,9 +1,9 @@
 import { get, map } from 'lodash'
-import React from 'react'
+import React, { cloneElement } from 'react'
 
 import SectionTitle from '../SectionTitle'
 import { TitleEmpty } from '../SectionTitle/styled'
-import { SectionTitleLayout } from '../SectionTitle/types'
+import { RenderSectionTitleParams } from './types'
 
 export const isBackgroundTransparent = (background: string | any) => {
   return !background || background == 'transparent'
@@ -13,7 +13,7 @@ export const selectBgColorFromSlot = (slot): string => {
   let backgroundColor: string
   let defaultColor = 'transparent'
   backgroundColor = defaultColor
-  if(slot && slot.bgcolor) {
+  if (slot && slot.bgcolor) {
     backgroundColor = slot.bgcolor
   }
   return backgroundColor
@@ -26,7 +26,7 @@ export const selectComponentFromSlotList = (
   parseSlot: any,
   slotList: any
 ) => {
-  if(!parseSlot)
+  if (!parseSlot)
     return <></>
   return (
     <>{map(slotList, (item, key) => parseSlot(item, key))}</>
@@ -64,30 +64,36 @@ export const selectLayoutColsFromSlot = (
 }
 
 /**
- * selectSectionTitleFromSlot function
- * @param title section title
- * @param path section link / path
- * @param icon section icon
- * @param color section color
- * @returns a React cloneElement hook for rendering the component passed as a prop
+ * RenderSectionTitle function
+ * @param {Object} data Expects a Object with SectionTitle configurations
+ * @returns
+ * - A space for empty titles
+ * - A cloneElement hook when using customComponent prop 
+ * - A SectionTitle with theme configurations
  */
-export const selectSectionTitleFromSlot = (
-  layout: SectionTitleLayout,
-  title: string,
-  path?: string,
-  icon?: string,
-  color?: string,
-  render?: any
-) => {
-  const title_text = !title || title == ''
-  const RenderSectionTitle = render ? render : SectionTitle
-  if(title_text) {
+export const renderSectionTitle = ({
+  layout,
+  color,
+  title,
+  icon,
+  link,
+  customComponent
+}: RenderSectionTitleParams) => {
+
+  if (customComponent) {
+    return cloneElement(customComponent, { children: title })
+  }
+
+  if (!title || title == '') {
     return <TitleEmpty />
   }
+
   return (
-    <RenderSectionTitle
+    <SectionTitle
+      color={color}
+      icon={icon}
       layout={layout}
-      path={path}
+      href={link}
       title={title}
     />
   )
