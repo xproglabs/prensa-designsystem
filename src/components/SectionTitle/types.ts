@@ -1,8 +1,9 @@
+import { ReactElement } from 'react'
 import { SpacingType } from '../Teaser/types'
 import { IconProps } from '../Icon/types'
 import { IconTokens } from '@prensa_tokens'
 
-type AreaLayout = {
+interface AreaLayout {
   pt?: SpacingType;
   pr?: SpacingType;
   pb?: SpacingType;
@@ -19,10 +20,13 @@ type AreaLayout = {
   borderColor?: string;
   borderStyle?: string;
 }
-type LinkLayout = {
+interface LinkLayout {
   hoverOpacity?: number;
 }
-type TextLayout = {
+interface IconLayout extends IconProps {
+  component?: ReactElement;
+}
+interface TextLayout {
   color?: string;
   element?: string;
   font_family?: string;
@@ -37,7 +41,7 @@ type TextLayout = {
 export interface SectionTitleLayout {
   area?: AreaLayout;
   link?: LinkLayout;
-  icon?: IconProps;
+  icon?: IconLayout;
   text?: TextLayout;
 }
 
@@ -50,6 +54,7 @@ export interface SectionTitleProps {
   layout: SectionTitleLayout;
   title?: string;
   href?: string;
+  theme: Object;
 }
 
 /**
