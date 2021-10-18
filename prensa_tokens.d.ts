@@ -36,6 +36,12 @@ export type Colors = {
   [key in ColorTokens]: string;
 }
 
+export type Factors = {
+  dimensions: number;
+  padding: number;
+  margin: number;
+}
+
 export type Fonts = {
   [key in FontTokens]: string;
 }
@@ -54,10 +60,4 @@ export type Teasers = {
 
 export type Templates = {
   [key in TemplateCartridges];
-}
-
-export type Factors = {
-  dimensions: number;
-  padding: number;
-  margin: number;
 }
