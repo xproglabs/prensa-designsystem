@@ -5,7 +5,6 @@ import { SUBJECT_DEFAULT_FEATURED } from '../tokens/subject'
 export const FEATURED_RELATED: LayoutProps = {
   box: {
     background: 'white',
-    mb: ['0px', 2],
     pt: [5, 9],
     pb: [5, 9]
   },

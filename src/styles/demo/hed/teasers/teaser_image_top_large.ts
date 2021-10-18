@@ -13,7 +13,7 @@ export const TEASER_IMAGE_TOP_LARGE: LayoutProps = {
     alignx: ['left', 'left'],
     mt: [2, 2],
     mr: [0, 0],
-    mb: [2, 2],
+    mb: ['0px', '0px'],
     ml: [0, 0],
     width: ['100%', '100%']
   },
