@@ -27,15 +27,17 @@ const SectionTitle = ({
   const link_layout = layout?.link || {}
   const text_layout = layout?.text || {}
 
-  const icon_path = icon_layout?.path || false
+  const icon_path = icon || icon_layout?.path || false
 
   return (
     <AreaBox area={area_layout}>
       <Link href={href} {...link_layout}>
-        {icon_path &&
-          <Icon color={color} {...icon_layout}>
-            {icon_path}
-          </Icon>
+        {icon_path && 
+          <Icon
+            color={color}
+            path={icon_path}
+            {...icon_layout}
+          />
         }
         <TitleText color={color} {...text_layout}>
           {title}
