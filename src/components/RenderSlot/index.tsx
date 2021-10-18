@@ -36,8 +36,12 @@ const RenderSlot = ({
           <Block
             key={key}
             custom='align-self: flex-start;'
+            mb={2}
             width='100%'
-            lg={{ width: column_width }}>
+            lg={{
+              mb: 3,
+              width: column_width
+            }}>
             <RenderPreview
               preview={preview}
               text={item?.name}
