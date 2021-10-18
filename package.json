@@ -15,6 +15,7 @@
     "react": ">=17.0.1",
     "react-contenteditable": "^3.3.6",
     "react-dom": ">=17.0.1",
+    "react-html-parser": ">=2.0.2",
     "react-input-mask": "3.0.0-alpha.2",
     "styled-components": ">=5.2.1"
   },
