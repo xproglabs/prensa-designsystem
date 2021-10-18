@@ -10,12 +10,12 @@ amp-img img {
   border-radius: 100%;
 }
 @media (max-width: 1015px) {
-  .amp_desktop {
+  .hide_desktop {
     display: none;
   }
 }
 @media (min-width: 1016px) {
-  .amp_mobile {
+  .hide_mobile {
     display: none;
   }
 }

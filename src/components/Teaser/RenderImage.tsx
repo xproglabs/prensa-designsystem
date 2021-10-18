@@ -1,11 +1,28 @@
+import { ImageProps } from 'components/Image/types'
 import { get } from 'lodash'
 import React from 'react'
 
-import AmpImage from '../Image'
+import ImageElement from '../Image'
 import { parseImagePath } from '../Image/parser'
 import * as S from './styled'
 
-const RenderImage = ({ domain, image_circle, item, item_path, layout }) => {
+type RenderImageProps = {
+  amp?: boolean,
+  domain: string,
+  image_circle?: boolean,
+  item?: any,
+  item_path?: string,
+  layout?: any
+}
+
+const RenderImage = ({
+  amp,
+  domain,
+  image_circle,
+  item,
+  item_path,
+  layout
+}: RenderImageProps) => {
   // get image object from props
   let image_object = get(item, 'image', false)
   if(!image_object) {
@@ -31,23 +48,32 @@ const RenderImage = ({ domain, image_circle, item, item_path, layout }) => {
   const desktop_width = get(layout, 'image.width[1]', 600)
   const image_path_mobile = parseImagePath(mobile_dim, domain, image_contentid, 600)
   const image_path_desktop = parseImagePath(desktop_dim, domain, image_contentid, 600)
+  // prepare image props to render hybrid image ( amp / html )
+  const image_props: ImageProps = {
+    amp: amp,
+    custom_class: image_circle == true ? 'image-with-radius' : '',
+    title: image_caption,
+    layout_mobile: {
+      enabled: image_path_mobile && image_path_mobile != '',
+      height: mobile_height,
+      path: image_path_mobile,
+      type: layout_mobile,
+      width: mobile_width,
+    },
+    layout_desktop: {
+      enabled: image_path_desktop && image_path_desktop != '',
+      height: desktop_height,
+      path: image_path_desktop,
+      type: layout_desktop,
+      width: desktop_width,
+    }
+  }
   return (
     <S.AreaLink href={item_path}>
       <S.Image
         image_circle={image_circle}
         height={height}>
-        <AmpImage
-          custom_class={image_circle == true ? 'image-with-radius' : ''}
-          title={image_caption}
-          mobile_layout={layout_mobile}
-          mobile_path={image_path_mobile}
-          mobile_height={mobile_height}
-          mobile_width={mobile_width}
-          desktop_layout={layout_desktop}
-          desktop_path={image_path_desktop}
-          desktop_height={desktop_height}
-          desktop_width={desktop_width}
-        />
+        <ImageElement {...image_props} />
       </S.Image>
     </S.AreaLink>
   )

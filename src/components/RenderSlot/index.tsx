@@ -47,6 +47,7 @@ const RenderSlot = ({
                 domain={domain}
                 item={item}
                 layout={teaser_props.layout}
+                preview={preview.enabled}
                 related={teaser_props.related}
               />
             </RenderPreview>
