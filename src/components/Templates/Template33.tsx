@@ -48,12 +48,10 @@ const ColumnColor = ({
   return (
     <Block
       bgColor={bgColor}
-      mb={transparent ? '0px' : 2}
       pt={transparent ? '0px' : 2}
       px={2}
       width='calc(100% - 32px)'
       lg={{
-        mb: transparent ? '0px' : 3,
         pt: transparent ? '0px' : 3,
         px: transparent ? '0px' : 3,
         width: transparent ? '100%' : 'calc(100% - 48px)'
@@ -78,7 +76,6 @@ const Template33 = ({
       align="column"
       alignx="center"
       aligny="top"
-      mb={2}
       lg={{
         align: 'row',
         alignx: 'between',
