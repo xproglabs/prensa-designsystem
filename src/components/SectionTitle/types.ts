@@ -61,13 +61,6 @@ export interface StyledBoxProps {
 }
 
 /**
- * @description define styled icon properties
- */
-export interface StyledIconProps {
-  icon: string;
-}
-
-/**
  * @description define styled title properties
  */
 export interface StyledTitleProps extends TextLayout {

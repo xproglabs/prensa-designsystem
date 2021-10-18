@@ -31,14 +31,14 @@ const SectionTitle = ({
 
   return (
     <AreaBox area={area_layout}>
+      {icon_path && 
+        <Icon
+          color={color}
+          path={icon_path}
+          {...icon_layout}
+        />
+      }
       <Link href={href} {...link_layout}>
-        {icon_path && 
-          <Icon
-            color={color}
-            path={icon_path}
-            {...icon_layout}
-          />
-        }
         <TitleText color={color} {...text_layout}>
           {title}
         </TitleText>

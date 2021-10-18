@@ -8,4 +8,8 @@ export interface IconProps {
   width?: string;
   path?: IconTokens;
   theme?: any;
+  mb?: string | number;
+  ml?: string | number;
+  mr?: string | number;
+  mt?: string | number;
 }

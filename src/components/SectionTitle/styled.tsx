@@ -3,11 +3,7 @@ import styled from 'styled-components'
 
 import Block from '../Block'
 import Typography from '../Typography'
-import {
-  StyledBoxProps,
-  StyledTitleProps,
-  StyledIconProps,
-} from './types'
+import { StyledBoxProps, StyledTitleProps } from './types'
 
 /**
  * Section Area Box
@@ -16,6 +12,9 @@ import {
 export const AreaBox = ({ area, children }: StyledBoxProps) => {
   return (
     <Block
+      align='row'
+      alignx='left'
+      aligny='middle'
       mr={area?.mr?.[0]}
       ml={area?.ml?.[0]}
       mt={area?.mt?.[0]}
