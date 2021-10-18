@@ -3,7 +3,7 @@ import React, { cloneElement } from 'react'
 
 import SectionTitle from '../SectionTitle'
 import { TitleEmpty } from '../SectionTitle/styled'
-import { SectionTitleLayout } from '../SectionTitle/types'
+import { RenderSectionTitleParams } from './types'
 
 export const isBackgroundTransparent = (background: string | any) => {
   return !background || background == 'transparent'
@@ -63,15 +63,6 @@ export const selectLayoutColsFromSlot = (
   return get(spaces, `[${len1 - 1}]`, 0)
 }
 
-type RenderSectionTitleParams = {
-  layout: SectionTitleLayout;
-  color?: string;
-  title: string;
-  icon?: string;
-  link?: string;
-  customComponent?: any;
-}
-
 /**
  * RenderSectionTitle function
  * @param {Object} data Expects a Object with SectionTitle configurations
@@ -94,7 +85,7 @@ export const renderSectionTitle = ({
   }
 
   if (customComponent) {
-    return cloneElement(customComponent, {children: title})
+    return cloneElement(customComponent, { children: title })
   }
 
   return (
