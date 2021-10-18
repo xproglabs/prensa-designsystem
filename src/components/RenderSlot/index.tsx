@@ -9,7 +9,6 @@ import { RenderSlotProps } from './types'
 import { parseTeaserProps } from './utils'
 /**
  * Render Slot component
- * @returns
  */
 const RenderSlot = ({
   carousel,
