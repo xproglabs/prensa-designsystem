@@ -1,5 +1,12 @@
+# v1.6.21
+- Permite alternar imagem amp e imagem html
+- Cria novo fluxo de atualização de ícones dos fronts e permite o uso de ícone no SectionTitle
+- Melhoria na função border e implementação no Block
+- Transforma componente RenderDateTime para TS e permite customizações de layout
+- Implementa o preview dinâmico de blocos e teasers
 # v1.6.20
 - Customiza Article para receber email e redes sociais do autor.
+- Monta novas funções CreateTemplate e CreateTeaser
 # v1.6.19
 - Condiciona a renderização do SectionTitle "Assuntos" no corpo da matéria
 # v1.6.17
