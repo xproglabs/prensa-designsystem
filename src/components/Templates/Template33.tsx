@@ -93,22 +93,22 @@ const Template33 = ({
         {(renderSpaceSlot(slotLeft.spaceB))}
       </Column>
       <Column>
-        {(renderSpaceSlot(slotLeft.spaceA))}
+        {(renderSpaceSlot(slotCenter.spaceA))}
         <ColumnColor
           bgColor={slotCenter_bgColor}
           transparent={slotCenter_isTransparent}>
           <RenderSlot {...slotCenter} />
         </ColumnColor>
-        {(renderSpaceSlot(slotLeft.spaceB))}
+        {(renderSpaceSlot(slotCenter.spaceB))}
       </Column>
       <Column>
-        {(renderSpaceSlot(slotLeft.spaceA))}
+        {(renderSpaceSlot(slotRight.spaceA))}
         <ColumnColor
           bgColor={slotRight_bgColor}
           transparent={slotRight_isTransparent}>
           <RenderSlot {...slotRight} />
         </ColumnColor>
-        {(renderSpaceSlot(slotLeft.spaceB))}
+        {(renderSpaceSlot(slotRight.spaceB))}
       </Column>
     </Block>
   )
