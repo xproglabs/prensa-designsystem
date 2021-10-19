@@ -43,12 +43,20 @@ const Byline = ({
             {author.value}
           </S.Author>
           <AuthorInfo />
-          <Block>
+          <Block 
+            lg={{
+              align: 'row',
+            }}>
+            <Block 
+              lg={{
+                mr: '4px'
+              }}>
+              <S.BylineText {...datetime}>
+                {datetime.time_published}.
+              </S.BylineText>
+            </Block>  
             <S.BylineText {...datetime}>
-              Publicado em {datetime.time_published}
-            </S.BylineText>
-            <S.BylineText {...datetime}>
-              Atualizado em {datetime.time_modified}
+                Atualizado em {datetime.time_modified}
             </S.BylineText>
           </Block>  
         </S.BylineContainer>
