@@ -1,4 +1,6 @@
 # v1.6.23
+- Atualiza dados dos SectionTitles no Template30
+# v1.6.23
 - Move a definição de domínio para o parseBlock
 - Permite seleção de ícone dinâmica e componentes ao invés de conteúdo SVG no componente SectionTitle 
 # v1.6.22
