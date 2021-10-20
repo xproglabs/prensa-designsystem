@@ -161,6 +161,7 @@ const Teaser = (props: TeaserProps) => {
           }}
           layout={layout}
           link={item_path}
+          shadow={opacity_mask}
           title={item_title}
         />
         <RenderSubtitle
