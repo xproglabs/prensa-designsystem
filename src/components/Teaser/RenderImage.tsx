@@ -5,17 +5,19 @@ import React from 'react'
 import ImageElement from '../Image'
 import { parseImagePath } from '../Image/parser'
 import * as S from './styled'
+import { RenderOpacityMask } from './RenderOpacityMask'
 
 type RenderImageProps = {
-  amp?: boolean,
-  domain: string,
+  amp?: boolean;
+  domain: string;
   editable?: {
     enabled: boolean
-  },
-  image_circle?: boolean,
-  item?: any,
-  item_path?: string,
-  layout?: any
+  };
+  image_circle?: boolean;
+  item?: any;
+  item_path?: string;
+  layout?: any;
+  opacityMask?: boolean;
 }
 
 const RenderImage = ({
@@ -25,11 +27,12 @@ const RenderImage = ({
   image_circle,
   item,
   item_path,
-  layout
+  layout,
+  opacityMask
 }: RenderImageProps) => {
   // get image object from props
   let image_object = get(item, 'image', false)
-  if(!image_object) {
+  if (!image_object) {
     image_object = get(item, 'img', false)
   }
   const image_enabled = get(layout, 'image.enabled', false)
@@ -72,24 +75,44 @@ const RenderImage = ({
       width: desktop_width,
     }
   }
-  if (editable && editable.enabled) {
-    return (
-      <S.Image
-        image_circle={image_circle}
-        height={height}>
-        <ImageElement {...image_props} />
-      </S.Image>
-    )
-  }
-  return (
+
+  const RenderImage = () => (
+    <S.Image
+      image_circle={image_circle}
+      height={height}
+    >
+      <ImageElement {...image_props} />
+    </S.Image>
+  )
+
+  const RenderImageWithOpacityMask = () => (
+    <React.Fragment>
+      <RenderImage />
+      <RenderOpacityMask
+        enabled={opacityMask}
+        layout_desktop={image_props.layout_desktop}
+        layout_mobile={image_props.layout_mobile}
+      />
+    </React.Fragment>
+  )
+
+  const RenderImageForPreview = () => (
+    <React.Fragment>
+      {opacityMask ? <RenderImageWithOpacityMask /> : <RenderImage />}
+    </React.Fragment>
+  )
+
+  const RenderImageWithLink = () => (
     <S.AreaLink href={item_path}>
-      <S.Image
-        image_circle={image_circle}
-        height={height}>
-        <ImageElement {...image_props} />
-      </S.Image>
+      {opacityMask ? <RenderImageWithOpacityMask /> : <RenderImage />}
     </S.AreaLink>
   )
+
+  if (editable && editable.enabled) {
+    return <RenderImageForPreview />
+  }
+
+  return <RenderImageWithLink />
 }
 
 export { RenderImage }
