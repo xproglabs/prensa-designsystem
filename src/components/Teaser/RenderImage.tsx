@@ -76,7 +76,7 @@ const RenderImage = ({
     }
   }
 
-  const RenderImage = () => (
+  const RenderImageElement = () => (
     <S.Image
       image_circle={image_circle}
       height={height}
@@ -87,7 +87,7 @@ const RenderImage = ({
 
   const RenderImageWithOpacityMask = () => (
     <React.Fragment>
-      <RenderImage />
+      <RenderImageElement />
       <RenderOpacityMask
         enabled={opacityMask}
         layout_desktop={image_props.layout_desktop}
@@ -98,13 +98,13 @@ const RenderImage = ({
 
   const RenderImageForPreview = () => (
     <React.Fragment>
-      {opacityMask ? <RenderImageWithOpacityMask /> : <RenderImage />}
+      {opacityMask ? <RenderImageWithOpacityMask /> : <RenderImageElement />}
     </React.Fragment>
   )
 
   const RenderImageWithLink = () => (
     <S.AreaLink href={item_path}>
-      {opacityMask ? <RenderImageWithOpacityMask /> : <RenderImage />}
+      {opacityMask ? <RenderImageWithOpacityMask /> : <RenderImageElement />}
     </S.AreaLink>
   )
 
