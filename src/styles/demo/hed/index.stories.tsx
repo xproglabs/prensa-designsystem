@@ -1,7 +1,7 @@
 import { find, get, map } from 'lodash'
 import React from 'react'
 import { Typography } from 'src'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, StyleSheetManager } from 'styled-components'
 
 import Block from '../../../components/Block'
 import PageBlock from '../../../components/PageBlock'
@@ -24,7 +24,9 @@ export default {
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
-        <Story/>
+        <StyleSheetManager disableVendorPrefixes={true}>
+          <Story/>
+        </StyleSheetManager>
       </ThemeProvider>
     )
   ]
