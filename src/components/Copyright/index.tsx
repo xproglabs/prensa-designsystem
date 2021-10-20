@@ -30,13 +30,13 @@ const Copyright = ({
           <TextItem color={color} text={textRights} />
         </S.ContainerCopyrightItems>    
         <S.ContainerCompanies>
-          <Link href='https://xprog.com.br/' target="_blank">
+          <Link href='https://xprog.com.br/' target="_blank" title='Site xProg'> 
             <S.ContainerXprog>
               <TextItem color={color} text={textXprog} />
               <LogoXprog />
             </S.ContainerXprog>
           </Link>
-          <Link href='https://atex.com/' target="_blank">
+          <Link href='https://atex.com/' target="_blank" title='Site Atex'>
             <S.ContainerAtex>
               <TextItem color={color} text={textAtex} />
               <LogoAtex />
