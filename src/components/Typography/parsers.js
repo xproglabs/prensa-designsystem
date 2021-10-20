@@ -51,7 +51,7 @@ const parseFontWeight = ({ $fontWeight }) => {
 }
 const parse_shadow = ({ shadow }) => {
   if (!shadow) return ''
-  return `text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);`
+  return 'text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);'
 }
 
 const parseStyle = (props, theme) => {
