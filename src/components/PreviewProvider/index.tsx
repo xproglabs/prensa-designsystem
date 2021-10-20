@@ -1,4 +1,4 @@
-import React, { cloneElement } from 'react'
+import React from 'react'
 import { PageBlockPreview } from './types'
 
 //ToDo: Improvement in preview.render props
@@ -22,6 +22,7 @@ const PreviewProvider = ({ children, preview, text, subject }: PreviewProviderPr
     const PreviewRender = preview.render
     return (
       <PreviewRender
+        preview={preview}
         text={text}
         subject={subject}
       >
