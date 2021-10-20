@@ -52,7 +52,7 @@ const ColumnColor = ({
       pt={transparent ? '0px' : 2}
       width='calc(100% - 32px)'
       lg={{
-        px: 3,
+        px: transparent ? '0px' : 3,
         pt: transparent ? '0px' : 3,
         width: transparent ? '100%' : 'calc(100% - 48px)'
       }}>
