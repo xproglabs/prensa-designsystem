@@ -26,6 +26,7 @@ export const TEASER_FEATURED_IMAGE = CreateTeaser({
     height: ['300px', '396px'],
     width: ['300px', '396px'],
   },
+  opacity_mask: true,
   title: {
     color: 'white',
     element: 'h1',
