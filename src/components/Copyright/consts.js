@@ -5,7 +5,7 @@ const CONTAINER_ATEX = {
 const CONTAINER_XPROG = {
   align: 'column',
   lg: {
-    mr: 3
+    mr: 5
   }
 }
 
@@ -25,8 +25,20 @@ const CONTAINER_COPYRIGHT = {
   width: 'calc(100% - 32px)',
   lg: {
     align: 'row',
-    alignx: 'between',
+    alignx: 'center',
     py: 3
+  }
+}
+
+const CONTAINER_COPYRIGHT_BOX = {
+  align:'column', 
+  alignx:'left' ,
+  aligny:'top',
+  width:'100%',
+  custom:'max-width: 1280px;',
+  lg: {
+    align:'row',
+    alignx: 'between',
   }
 }
 
@@ -43,5 +55,6 @@ export {
   CONTAINER_COMPANIES,
   CONTAINER_COPYRIGHT,
   CONTAINER_COPYRIGHT_ITEMS,
+  CONTAINER_COPYRIGHT_BOX,
   CONTAINER_XPROG,
 }
