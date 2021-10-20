@@ -12,6 +12,7 @@ import DataHomeLinha3 from './data/7.161.json'
 import DataListPaged from './data/7.173_paged.json'
 import DATA_HOME_7030 from './data/7.173.json'
 import DATA_HOME_FEAT from './data/7.174.json'
+import DataHomeFeaturedImage from './data/7.483.json'
 import DataHomeTimes from './data/7.181.json'
 import DATA_HOME_30 from './data/7.204.json'
 import DataHomeFull from './data/home.json'
@@ -167,21 +168,21 @@ export const HomeFeatured = () => {
     </TemplateContainer>
   )
 }
-// export const HomeFeaturedImage = () => {
-//   return (
-//     <TemplateContainer
-//       mb={[2, 2]}
-//       mt={[2, 2]}>
-//       <PageBlock
-//         {...DATA_HOME_FEAT}
-//         amp={false}
-//         domain={domain}
-//         preview={preview_editable}
-//         slot_parser={slot_parser}
-//       />
-//     </TemplateContainer>
-//   )
-// }
+export const HomeFeaturedImage = () => {
+  return (
+    <TemplateContainer
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...DataHomeFeaturedImage}
+        amp={false}
+        domain={domain}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
+  )
+}
 export const HomeListPaged = () => {
   return (
     <TemplateContainer
