@@ -1,4 +1,6 @@
-# v1.6.23
+# v1.6.25
+- Fix de layout no componente Copyright
+# v1.6.24
 - Atualiza dados dos SectionTitles no Template30
 # v1.6.23
 - Move a definição de domínio para o parseBlock

@@ -7,6 +7,7 @@ const TextItem = ({ color, text } : TextItemProps) => {
   return (
     <Typography 
       color={color}
+      mb='4px'
       element='span'
       fontSize='14px'
       textAlign='left'

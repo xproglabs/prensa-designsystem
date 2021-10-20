@@ -4,6 +4,7 @@ import Block from '../Block'
 import { 
   CONTAINER_ATEX, 
   CONTAINER_COPYRIGHT, 
+  CONTAINER_COPYRIGHT_BOX,
   CONTAINER_COPYRIGHT_ITEMS, 
   CONTAINER_COMPANIES, 
   CONTAINER_XPROG, 
@@ -19,6 +20,13 @@ export const ContainerCopyright = ({ bgColor, children }) =>
   <Block
     {...CONTAINER_COPYRIGHT}
     bgColor={bgColor}>
+    {children}
+  </Block>
+
+export const ContainerCopyrightBox = ({ children }) => 
+  <Block 
+    {...CONTAINER_COPYRIGHT_BOX}
+  >
     {children}
   </Block>
 
