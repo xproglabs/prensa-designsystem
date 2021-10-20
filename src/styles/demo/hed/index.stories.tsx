@@ -167,6 +167,21 @@ export const HomeFeatured = () => {
     </TemplateContainer>
   )
 }
+// export const HomeFeaturedImage = () => {
+//   return (
+//     <TemplateContainer
+//       mb={[2, 2]}
+//       mt={[2, 2]}>
+//       <PageBlock
+//         {...DATA_HOME_FEAT}
+//         amp={false}
+//         domain={domain}
+//         preview={preview_editable}
+//         slot_parser={slot_parser}
+//       />
+//     </TemplateContainer>
+//   )
+// }
 export const HomeListPaged = () => {
   return (
     <TemplateContainer

@@ -1,3 +1,5 @@
+# v1.6.27
+- Corrige funcionamento do preview
 # v1.6.26
 - Cria PreviewProvider no projeto
 - Corrige espaçamento do teaser no bloco 30 quando desktop (no-background)
