@@ -1,3 +1,7 @@
+# v1.6.26
+- Cria PreviewProvider no projeto
+- Corrige espaçamento do teaser no bloco 30 quando desktop (no-background)
+- Adequa diagramação da data para ficar responsiva
 # v1.6.25
 - Fix de layout no componente Copyright
 # v1.6.24
