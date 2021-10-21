@@ -51,7 +51,7 @@ export const AreaBox = ({ area, children }: StyledBoxProps) => {
  * @returns a blank space as a React element
  */
 export const TitleEmpty = () =>
-  <Block width='100%' lg={{ height: '60px' }} />
+  <Block width='100%' lg={{ height: '52px' }} />
   //Todo: Dinamizar altura para o TitleEmpty visto que em outros projetos pode ser diferente
 
 /**
