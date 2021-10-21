@@ -1,29 +1,9 @@
 import { get } from 'lodash'
 import React from 'react'
-import styled, { withTheme } from 'styled-components'
+import { withTheme } from 'styled-components'
+import { Block, Link, Typography } from 'prensa'
 
-import Block from '../Block'
-import Typography from '../Typography'
 import { RelatedItemProps } from './RelatedTypes'
-
-const AreaLink = styled.a`
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  color: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  width: 100%;
-  white-space: normal;
-  &:hover {
-    opacity: 0.9;
-  }
-
-  svg {
-    min-width: 24px;
-    margin-right: 8px;
-  }
-`
 
 export const RelatedArea = ({ children }) => {
   return (
@@ -55,10 +35,12 @@ const RelatedItem = ({
   mr,
   mb
 }: RelatedItemProps) => {
-  
+
+  const icon_token = icon?.icon
+
   function get_icon_from_theme() {
     //Todo: Create log patter for theme findings errors
-    const selected_icon = get(theme, `icons.${icon}`, false)
+    const selected_icon = get(theme, `icons.${icon_token}`, false)
     return selected_icon
   }
   //check if icon is from CMS or static defined in layout
@@ -81,10 +63,9 @@ const RelatedItem = ({
           lineHeight: line_height[1]
         }}
         mr={mr || 1}>
-        <AreaLink
-          href={item_path}>
-          {icon_component && React.cloneElement(icon_component, { color })} {children}
-        </AreaLink>
+        <Link href={item_path}>
+          {icon_component && React.cloneElement(icon_component, { color, ...icon })} {children}
+        </Link>
       </Typography>
     </Block>
   )
@@ -93,7 +74,7 @@ const RelatedItem = ({
 RelatedItem.defaultProps = {
   color: 'black',
   font_size: ['14px', '14px'],
-  font_weight: 300,
+  font_weight: 400,
   line_height: ['16px', '16px'],
   mb: [2, 2]
 }
