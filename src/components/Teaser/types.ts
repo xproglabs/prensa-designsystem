@@ -1,4 +1,4 @@
-import { RadiusTokens } from '@prensa_tokens'
+import { IconTokens, RadiusTokens } from '@prensa_tokens'
 
 import {
   EditAreaType,
@@ -61,9 +61,12 @@ type Image = {
 type Related = {
   color?: string;
   font_size?: [string, string];
+  font_weight?: number;
   enabled?: boolean;
+  icon?: IconTokens;
   line_height?: [string, string];
   mb?: SpacingType;
+  mr?: SpacingType;
 }
 type Subject = {
   bg_color?: string;

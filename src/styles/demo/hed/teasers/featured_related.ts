@@ -15,7 +15,9 @@ export const FEATURED_RELATED: LayoutProps = {
   },
   datetime_enabled: false,
   related: {
-    enabled: true
+    enabled: true,
+    icon: 'IconAtletico',
+    mr: 4
   },
   title: {
     enabled: true,

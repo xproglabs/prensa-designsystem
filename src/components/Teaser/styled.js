@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Block from '../Block'
 import Typography from '../Typography'
 
-const AreaLink = styled.a` 
+const AreaLink = styled.a`
   color: inherit;
   cursor: pointer;
   text-decoration: none;
