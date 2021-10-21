@@ -4,29 +4,32 @@ import { SUBJECT_DEFAULT_FEATURED } from '../tokens/subject'
 
 export const FEATURED_RELATED = CreateTeaser({
   box: {
+    aligny: ['top', 'center'],
     background: 'white',
-    pt: [5, 9],
-    pb: [5, 9]
   },
   box_wrap: {
-    mr: [2, 5],
-    ml: [2, 5],
-    width: ['calc(100% - 32px)', 'calc(100% - 80px)']
+    mr: ['0px', '0px'],
+    width: ['calc(100% - 32px)', '100%']
   },
-  datetime_enabled: false,
   related: {
+    color: 'neutral3',
     enabled: true,
+    ...parseFonts(
+      tokensFonts.NEWS_TITLE_7,
+      tokensFonts.NEWS_TITLE_6
+    ),
+    font_weight: 700,
     icon: {
       icon: 'IconAtletico',
       mr: 1
     },
-    mr: 4
+    mr: 2,
   },
   title: {
     enabled: true,
     ...parseFonts(
       tokensFonts.NEWS_TITLE_4, // token para mobile
-      tokensFonts.NEWS_TITLE_2 // token para desktop
+      tokensFonts.NEWS_TITLE_3 // token para desktop
     ),
     mb: [3, 3]
   },
