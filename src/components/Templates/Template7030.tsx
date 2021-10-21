@@ -3,7 +3,8 @@ import React from 'react'
 import Block from '../Block'
 import {
   isBackgroundTransparent,
-  selectBgColorFromSlot
+  selectBgColorFromSlot,
+  selectHeightFromSlot
 } from '../PageBlock/utils'
 import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
@@ -19,6 +20,10 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
   const slot30_bgColor = selectBgColorFromSlot(slot30)
   const slot70_isTransparent = isBackgroundTransparent(slot70_bgColor)
   const slot30_isTransparent = isBackgroundTransparent(slot30_bgColor)
+  const slot70_customHeight_mobile = selectHeightFromSlot(slot70.min_height?.[0])
+  const slot70_customHeight_desktop = selectHeightFromSlot(slot70.min_height?.[1])
+  const slot30_customHeight_mobile = selectHeightFromSlot(slot30.min_height?.[0])
+  const slot30_customHeight_desktop = selectHeightFromSlot(slot30.min_height?.[1])
   return (
     <Block
       align='column'
@@ -50,6 +55,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
           align='column'
           alignx='center'
           bgColor={slot70_bgColor}
+          custom={slot70_customHeight_mobile}
           mb={2}
           px={2}
           pt={slot70_isTransparent ? '0px' : 2}
@@ -57,7 +63,7 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
           lg={{
             align: 'row',
             alignx: 'between',
-            custom: 'flex-wrap: wrap;',
+            custom: `flex-wrap: wrap; ${slot70_customHeight_desktop}`,
             mb: slot70_isTransparent ? '0px' : 3,
             px: slot70_isTransparent ? '0px' : 3,
             pt: slot70_isTransparent ? '0px' : 3,
@@ -82,11 +88,13 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
           alignx='center'
           aligny='top'
           bgColor={slot30_bgColor}
+          custom={slot30_customHeight_mobile}
           mb={2}
           px={2}
           pt={slot30_isTransparent ? '0px' : 2}
           width='calc(100% - 32px)'
           lg={{
+            custom: slot30_customHeight_desktop,
             mb: slot30_isTransparent ? '0px' : 3,
             px: slot30_isTransparent ? '0px' : 3,
             pt: slot30_isTransparent ? '0px' : 3,

@@ -3,7 +3,8 @@ import React from 'react'
 import Block from '../Block'
 import {
   isBackgroundTransparent,
-  selectBgColorFromSlot
+  selectBgColorFromSlot,
+  selectHeightFromSlot
 } from '../PageBlock/utils'
 import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
@@ -19,6 +20,7 @@ interface ColumnProps {
 interface ColumnColorProps {
   bgColor: string;
   children: any;
+  minHeight?: [string, string];
   transparent: boolean;
 }
 interface Template33Props {
@@ -43,15 +45,20 @@ const Column = ({ children }: ColumnProps) => (
 const ColumnColor = ({
   bgColor,
   children,
+  minHeight,
   transparent
 }: ColumnColorProps) => {
+  const slot_customHeight_mobile = selectHeightFromSlot(minHeight?.[0])
+  const slot_customHeight_desktop = selectHeightFromSlot(minHeight?.[1])
   return (
     <Block
       bgColor={bgColor}
+      custom={slot_customHeight_mobile}
       px={2}
       pt={transparent ? '0px' : 2}
       width='calc(100% - 32px)'
       lg={{
+        custom: slot_customHeight_desktop,
         px: transparent ? '0px' : 3,
         pt: transparent ? '0px' : 3,
         width: transparent ? '100%' : 'calc(100% - 48px)'
@@ -87,6 +94,7 @@ const Template33 = ({
         {(renderSpaceSlot(slotLeft.spaceA))}
         <ColumnColor
           bgColor={slotLeft_bgColor}
+          minHeight={slotLeft.min_height}
           transparent={slotLeft_isTransparent}>
           <RenderSlot {...slotLeft} />
         </ColumnColor>
@@ -96,6 +104,7 @@ const Template33 = ({
         {(renderSpaceSlot(slotCenter.spaceA))}
         <ColumnColor
           bgColor={slotCenter_bgColor}
+          minHeight={slotCenter.min_height}
           transparent={slotCenter_isTransparent}>
           <RenderSlot {...slotCenter} />
         </ColumnColor>
@@ -105,6 +114,7 @@ const Template33 = ({
         {(renderSpaceSlot(slotRight.spaceA))}
         <ColumnColor
           bgColor={slotRight_bgColor}
+          minHeight={slotRight.min_height}
           transparent={slotRight_isTransparent}>
           <RenderSlot {...slotRight} />
         </ColumnColor>
