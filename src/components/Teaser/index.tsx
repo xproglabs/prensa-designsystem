@@ -24,6 +24,7 @@ const Teaser = (props: TeaserProps) => {
     related,
     states
   } = props
+
   // main props
   const item_path = get(item, 'url', false) || get(item, 'path', '')
   const item_title = get(item, 'name', '')
@@ -62,6 +63,7 @@ const Teaser = (props: TeaserProps) => {
   const wrap_mr = get(layout, 'box_wrap.mr', ['0px', '0px'])
   const wrap_mb = get(layout, 'box_wrap.mb', ['0px', '0px'])
   const wrap_mt = get(layout, 'box_wrap.mt', ['0px', '0px'])
+
   // image wrap
   const image_align = get(layout, 'image.align', ['column', 'column'])
   const image_alignx = get(layout, 'image.alignx', ['left', 'left'])
@@ -72,6 +74,10 @@ const Teaser = (props: TeaserProps) => {
   const image_mr = get(layout, 'image.mr', ['0px', '0px'])
   const image_mb = get(layout, 'image.mb', ['0px', '0px'])
   const image_ml = get(layout, 'image.ml', ['0px', '0px'])
+
+  // opacity mask prop
+  const opacity_mask = get(layout, 'opacity_mask', false)
+
   return (
     <S.Box
       box_align={box_align}
@@ -118,6 +124,7 @@ const Teaser = (props: TeaserProps) => {
           item={item}
           item_path={item_path}
           layout={layout}
+          opacityMask={opacity_mask}
         />
       </S.WrapContent>
       <S.WrapContent
@@ -154,6 +161,7 @@ const Teaser = (props: TeaserProps) => {
           }}
           layout={layout}
           link={item_path}
+          shadow={opacity_mask}
           title={item_title}
         />
         <RenderSubtitle

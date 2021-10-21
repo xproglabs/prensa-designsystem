@@ -1,29 +1,16 @@
-export const TEMPLATES_IMAGE_FEATURED = {
-  slot100: {
-    related: {
-      enabled: false
-    },
-    layout: {
-      0: ['teaser_image_featured'],
-      1: ['teaser_image_featured'],
-      2: ['teaser_image_featured', 'teaser_image_featured'],
-      3: ['teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured'],
-      4: ['teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured'],
-    },
-    spaces: [0, 1, 2, 3],
-  },
+export const TEMPLATES_FEATURED_IMAGE = {
   slot70: {
     related: {
       enabled: false
     },
     layout: {
-      0: ['teaser_image_featured'],
-      1: ['teaser_image_featured'],
-      2: ['teaser_image_featured', 'teaser_image_featured'],
-      3: ['teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured'],
-      4: ['teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured', 'teaser_image_featured'],
+      0: ['teaser_featured_image'],
+      1: ['teaser_featured_image'],
+      2: ['teaser_featured_image', 'hide'],
+      3: ['teaser_featured_image', 'hide', 'hide'],
+      4: ['teaser_featured_image', 'hide', 'hide', 'hide']
     },
-    spaces: [0, 1, 2, 3],
+    spaces: [0, 0, 0, 0]
   },
   slot30: {
     related: {

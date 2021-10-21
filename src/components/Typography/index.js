@@ -61,6 +61,7 @@ const Typography = ({
   opacityOnHover,
   target,
   dangerouslySetInnerHTML,
+  shadow,
   ...otherProps
 }) => {
 
@@ -175,6 +176,7 @@ const Typography = ({
     minWidth,
     opacityOnHover,
     target,
+    shadow,
     xs: getXsProps(),
     sm: getSmProps(),
     md: getMdProps(),
@@ -299,7 +301,8 @@ Typography.propTypes = {
   bl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   b: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   borderColor: PropTypes.string,
-  borderStyle: PropTypes.string
+  borderStyle: PropTypes.string,
+  shadow: PropTypes.bool
 }
 
 export default withTheme(Typography)

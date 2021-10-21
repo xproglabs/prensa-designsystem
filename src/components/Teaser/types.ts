@@ -95,6 +95,7 @@ export type LayoutProps = {
   image?: Image;
   image_circle?: boolean;
   most_read_circle?: boolean;
+  opacity_mask?: boolean;
   related?: Related;
   section?: Object;
   subject?: Subject;
