@@ -17,11 +17,24 @@ export const TEMPLATES_FEATURED_IMAGE = {
       enabled: false
     },
     layout: {
-      0: ['teaser_default'],
-      1: ['teaser_default'],
-      2: ['teaser_default', 'teaser_image_small'],
-      3: ['teaser_image_small', 'teaser_image_small', 'teaser_image_small'],
-      4: ['teaser_image_small', 'teaser_image_small', 'teaser_image_small', 'teaser_image_small'],
+      0: ['teaser_featured_image'],
+      1: ['teaser_featured_image'],
+      2: ['teaser_featured_image', 'teaser_image_small'],
+      3: ['teaser_featured_image', 'teaser_image_small', 'teaser_image_small'],
+      4: ['teaser_featured_image', 'teaser_image_small', 'teaser_image_small', 'teaser_image_small'],
+    },
+    spaces: [0, 1, 2, 3],
+  },
+  slot100: {
+    related: {
+      enabled: false
+    },
+    layout: {
+      0: ['teaser_featured_image'],
+      1: ['teaser_featured_image'],
+      2: ['teaser_featured_image', 'teaser_image_small'],
+      3: ['teaser_featured_image', 'teaser_image_small', 'teaser_image_small'],
+      4: ['teaser_featured_image', 'teaser_image_small', 'teaser_image_small', 'teaser_image_small'],
     },
     spaces: [0, 1, 2, 3],
   }
