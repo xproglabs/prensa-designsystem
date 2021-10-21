@@ -4,6 +4,9 @@ import styled, { css } from 'styled-components'
 import { LinkProps, StyledLinkProps } from './types'
 
 const StyledLink = styled.a<StyledLinkProps>`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   color: inherit;
   cursor: pointer;
   text-decoration: none;

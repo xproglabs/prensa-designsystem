@@ -30,14 +30,14 @@ const HtmlImage = ({
     <>
       {layout_desktop.enabled && (
         <RenderHtmlImage
-          className='hide_mobile'
+          className={`hide_mobile ${custom_class}`}
           renderType={layout_desktop.type}
           path={layout_desktop.path}
         />
       )}
       {layout_mobile.enabled && (
         <RenderHtmlImage
-          className='hide_desktop'
+          className={`hide_desktop ${custom_class}`}
           renderType={layout_mobile.type}
           path={layout_desktop.path}
         />
