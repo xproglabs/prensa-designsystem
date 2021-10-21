@@ -1,6 +1,6 @@
 {
   "name": "prensa",
-  "version": "1.6.20-temp18-a",
+  "version": "1.6.27",
   "description": "Prensa Design System",
   "main": "components/index.js",
   "module": "components/index.esm.js",
@@ -15,7 +15,6 @@
     "react": ">=17.0.1",
     "react-contenteditable": "^3.3.6",
     "react-dom": ">=17.0.1",
-    "react-html-parser": ">=2.0.2",
     "react-input-mask": "3.0.0-alpha.2",
     "styled-components": ">=5.2.1"
   },
@@ -68,9 +67,9 @@
     "eslint": "eslint --ext js,jsx src/ ",
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
     "test": "jest",
-    "update-prensa:qa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish --tag qa",
-    "update-prensa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish",
-    "release:local": "npm run build && npm pack"
+    "release:local": "npm run build && npm pack",
+    "release:qa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish --tag qa",
+    "release:prod": "npm version patch && npm run eslint && npm run build && git push && npm publish"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
@@ -87,7 +86,6 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "react-contenteditable": "^3.3.6",
-    "react-html-parser": "^2.0.2"
+    "react-contenteditable": "^3.3.6"
   }
 }

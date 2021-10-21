@@ -1,7 +1,7 @@
 import { find, get, map } from 'lodash'
 import React from 'react'
 import { Typography } from 'src'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, StyleSheetManager } from 'styled-components'
 
 import Block from '../../../components/Block'
 import PageBlock from '../../../components/PageBlock'
@@ -12,6 +12,7 @@ import DataHomeLinha3 from './data/7.161.json'
 import DataListPaged from './data/7.173_paged.json'
 import DATA_HOME_7030 from './data/7.173.json'
 import DATA_HOME_FEAT from './data/7.174.json'
+import DataHomeFeaturedImage from './data/7.483.json'
 import DataHomeTimes from './data/7.181.json'
 import DATA_HOME_30 from './data/7.204.json'
 import DataHomeFull from './data/home.json'
@@ -23,7 +24,9 @@ export default {
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
-        <Story/>
+        <StyleSheetManager disableVendorPrefixes={true}>
+          <Story/>
+        </StyleSheetManager>
       </ThemeProvider>
     )
   ]
@@ -38,12 +41,9 @@ const loadContentFromPagedata = () => {
   })
   return pageblocks
 }
-/**
- * 
- * @param item slot item (i.e. : ads component)
- * @param key list iterator
- * @returns a mock for the element into spaceB
- */
+
+const domain = 'http://177.107.132.35:3000'
+
 const slot_parser = (item?: any, key?: number) => {
   return (
     <React.Fragment key={key}>
@@ -67,6 +67,7 @@ export const HomeLinha1 = () => {
       <PageBlock
         {...DataHomeLinha1}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -82,6 +83,7 @@ export const HomeLinha2 = () => {
       <PageBlock
         {...DataHomeLinha2}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -97,6 +99,7 @@ export const HomeLinha3 = () => {
       <PageBlock
         {...DataHomeLinha3}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -112,6 +115,7 @@ export const HomeTimes = () => {
       <PageBlock
         {...DataHomeTimes}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -127,6 +131,7 @@ export const Home7030 = () => {
       <PageBlock
         {...DATA_HOME_7030}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -142,6 +147,7 @@ export const Home30 = () => {
       <PageBlock
         {...DATA_HOME_30}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -157,6 +163,22 @@ export const HomeFeatured = () => {
       <PageBlock
         {...DATA_HOME_FEAT}
         amp={false}
+        domain={domain}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
+  )
+}
+export const HomeFeaturedImage = () => {
+  return (
+    <TemplateContainer
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...DataHomeFeaturedImage}
+        amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -172,6 +194,7 @@ export const HomeListPaged = () => {
       <PageBlock
         {...DataListPaged}
         amp={false}
+        domain={domain}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -193,6 +216,7 @@ export const HomeFull = () => {
             {...item}
             key={key}
             amp={false}
+            domain={domain}
             preview={preview_editable}
             slot_parser={slot_parser}
           />

@@ -52,7 +52,7 @@ const ColumnColor = ({
       pt={transparent ? '0px' : 2}
       width='calc(100% - 32px)'
       lg={{
-        px: 3,
+        px: transparent ? '0px' : 3,
         pt: transparent ? '0px' : 3,
         width: transparent ? '100%' : 'calc(100% - 48px)'
       }}>
@@ -93,22 +93,22 @@ const Template33 = ({
         {(renderSpaceSlot(slotLeft.spaceB))}
       </Column>
       <Column>
-        {(renderSpaceSlot(slotLeft.spaceA))}
+        {(renderSpaceSlot(slotCenter.spaceA))}
         <ColumnColor
           bgColor={slotCenter_bgColor}
           transparent={slotCenter_isTransparent}>
           <RenderSlot {...slotCenter} />
         </ColumnColor>
-        {(renderSpaceSlot(slotLeft.spaceB))}
+        {(renderSpaceSlot(slotCenter.spaceB))}
       </Column>
       <Column>
-        {(renderSpaceSlot(slotLeft.spaceA))}
+        {(renderSpaceSlot(slotRight.spaceA))}
         <ColumnColor
           bgColor={slotRight_bgColor}
           transparent={slotRight_isTransparent}>
           <RenderSlot {...slotRight} />
         </ColumnColor>
-        {(renderSpaceSlot(slotLeft.spaceB))}
+        {(renderSpaceSlot(slotRight.spaceB))}
       </Column>
     </Block>
   )

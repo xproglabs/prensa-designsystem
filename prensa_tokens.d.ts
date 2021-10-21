@@ -25,15 +25,20 @@ type TeaserCartridges =
 type TemplateCartridges =
   'default'
 
-type IconTokens = 
- 'icon_info' | 
- 'icon_done'
+type IconTokens =
+  'IconMenu'
 
 /**
  * Public types that are providing typing and autosuggestion to all components (can be rewritten in frontend)
  */
 export type Colors = {
   [key in ColorTokens]: string;
+}
+
+export type Factors = {
+  dimensions: number;
+  padding: number;
+  margin: number;
 }
 
 export type Fonts = {
@@ -54,10 +59,4 @@ export type Teasers = {
 
 export type Templates = {
   [key in TemplateCartridges];
-}
-
-export type Factors = {
-  dimensions: number;
-  padding: number;
-  margin: number;
 }
