@@ -1,12 +1,7 @@
 import { IconTokens } from '@prensa_tokens'
 import { SectionTitleLayout } from '../SectionTitle/types'
 import { TeaserProps } from '../Teaser/types'
-
-export type PageBlockPreview = {
-  enabled: boolean,
-  render: any,
-  save_action: any
-}
+import { PageBlockPreview } from '../PreviewProvider/types'
 
 export type SlotBlockProps = {
   bgcolor?: string;

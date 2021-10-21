@@ -1,4 +1,5 @@
-import { RadiusTokens } from '@prensa_tokens'
+import { IconTokens, RadiusTokens } from '@prensa_tokens'
+import { RelatedItemProps } from './RelatedTypes'
 
 import {
   EditAreaType,
@@ -61,9 +62,12 @@ type Image = {
 type Related = {
   color?: string;
   font_size?: [string, string];
+  font_weight?: number;
   enabled?: boolean;
+  icon?: RelatedItemProps['icon'];
   line_height?: [string, string];
   mb?: SpacingType;
+  mr?: SpacingType;
 }
 type Subject = {
   bg_color?: string;
@@ -95,6 +99,7 @@ export type LayoutProps = {
   image?: Image;
   image_circle?: boolean;
   most_read_circle?: boolean;
+  opacity_mask?: boolean;
   related?: Related;
   section?: Object;
   subject?: Subject;

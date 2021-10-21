@@ -1,4 +1,19 @@
-# v1.6.23
+# v1.6.29
+- Reduz z-index no WrapContent do Teaser
+# v1.6.28
+- Habilita estilo de notícia relacionada no featured
+- Corrige a aplicação do custom class no html image
+- Adiciona altura no espaço em branco da coluna
+- Permite camada com gradiente na imagem do teaser e sombra no componente Typography
+# v1.6.27
+- Corrige funcionamento do preview
+# v1.6.26
+- Cria PreviewProvider no projeto
+- Corrige espaçamento do teaser no bloco 30 quando desktop (no-background)
+- Adequa diagramação da data para ficar responsiva
+# v1.6.25
+- Fix de layout no componente Copyright
+# v1.6.24
 - Atualiza dados dos SectionTitles no Template30
 # v1.6.23
 - Move a definição de domínio para o parseBlock

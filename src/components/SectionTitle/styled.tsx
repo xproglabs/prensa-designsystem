@@ -50,10 +50,9 @@ export const AreaBox = ({ area, children }: StyledBoxProps) => {
  * @description used to space inside cols
  * @returns a blank space as a React element
  */
-export const TitleEmpty = styled.div`
-  height: 18px;
-  width: 100%;
-`
+export const TitleEmpty = () =>
+  <Block width='100%' lg={{ height: '60px' }} />
+  //Todo: Dinamizar altura para o TitleEmpty visto que em outros projetos pode ser diferente
 
 /**
  * Section Title Text

@@ -7,6 +7,8 @@ import Carousel from '../Carousel'
 import Teaser from '../Teaser'
 import { RenderSlotProps } from './types'
 import { parseTeaserProps } from './utils'
+import { PreviewProvider } from '../PreviewProvider'
+
 /**
  * Render Slot component
  */
@@ -23,11 +25,12 @@ const RenderSlot = ({
   slot,
   theme
 }: RenderSlotProps) => {
+
   const { teasers } = theme
   const column_width = `calc((100% - (${column_padding} * 24px)) / ${column_items})`
   const carousel_enabled = get(carousel, 'enabled', false)
-  const RenderPreview = preview && preview.render || <React.Fragment />
-  const RenderTeaser = () => (
+
+  const RenderTeasers = () => (
     <React.Fragment>
       {map(slot, (item, key: number) => {
         let teaser_props = parseTeaserProps(key, layout, layouts, slot, teasers)
@@ -38,11 +41,8 @@ const RenderSlot = ({
             custom='align-self: flex-start;'
             mb={2}
             width='100%'
-            lg={{
-              mb: 3,
-              width: column_width
-            }}>
-            <RenderPreview
+            lg={{ mb: 3, width: column_width }}>
+            <PreviewProvider
               preview={preview}
               text={item?.name}
               subject={item?.subject}>
@@ -54,21 +54,24 @@ const RenderSlot = ({
                 layout={teaser_props.layout}
                 related={teaser_props.related}
               />
-            </RenderPreview>
+            </PreviewProvider>
           </Block>
         )
       })}
     </React.Fragment>
   )
+
   const RenderCarousel = () => (
     <Carousel {...carousel}>
-      <RenderTeaser />
+      <RenderTeasers />
     </Carousel>
   )
+
   if (carousel_enabled) {
     return <RenderCarousel />
   }
-  return <RenderTeaser />
+
+  return <RenderTeasers />
 }
 
 export default withTheme(RenderSlot)

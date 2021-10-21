@@ -49,6 +49,10 @@ const parseFontWeight = ({ $fontWeight }) => {
   if (!$fontWeight) return ''
   return `font-weight: ${$fontWeight};`
 }
+const parse_shadow = ({ shadow }) => {
+  if (!shadow) return ''
+  return 'text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);'
+}
 
 const parseStyle = (props, theme) => {
   return `
@@ -56,6 +60,7 @@ const parseStyle = (props, theme) => {
     font-size: ${parseSize(props, 'fontSize')};
     line-height: ${parseSize(props, 'lineHeight')};
     color: ${theme.parseColor(props, theme, '$color')};
+    ${parse_shadow(props)};
     ${theme.parseCustom(props)};
     ${dimensions(props)};
     ${padding(props)};
