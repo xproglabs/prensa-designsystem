@@ -102,11 +102,19 @@ const RenderImage = ({
     </React.Fragment>
   )
 
-  const RenderImageWithLink = () => (
-    <S.AreaLink href={item_path}>
-      {opacityMask ? <RenderImageWithOpacityMask /> : <RenderImageElement />}
-    </S.AreaLink>
-  )
+  const RenderImageWithLink = () => {
+    //Block image click when using opacity mask
+    if (opacityMask) {
+      return (
+        <RenderImageWithOpacityMask/>
+      )
+    }
+    return (
+      <S.AreaLink href={item_path}>
+        <RenderImageElement />
+      </S.AreaLink>
+    )
+  }
 
   if (editable && editable.enabled) {
     return <RenderImageForPreview />
