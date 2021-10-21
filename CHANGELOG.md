@@ -1,3 +1,5 @@
+# v1.6.29
+- Reduz z-index no WrapContent do Teaser
 # v1.6.28
 - Habilita estilo de notícia relacionada no featured
 - Corrige a aplicação do custom class no html image
