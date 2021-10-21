@@ -52,7 +52,7 @@ const RelatedItem = ({
       lg={{ mb: mb[1] }}
       width='100%'>
       <Link href={item_path}>
-        <Block width={icon_width || '42px'}>
+        <Block mr={mr || 1} width={icon_width || '42px'}>
           {icon_component && React.cloneElement(icon_component, { color, ...icon })}
         </Block>
         <Block width={'100%'}>
@@ -63,7 +63,6 @@ const RelatedItem = ({
             fontSize={font_size[0]}
             fontWeight={font_weight}
             lineHeight={line_height[0]}
-            mr={mr || 1}
             lg={{
               fontSize: font_size[1],
               lineHeight: line_height[1]
