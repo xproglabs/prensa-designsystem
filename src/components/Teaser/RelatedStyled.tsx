@@ -13,9 +13,8 @@ export const RelatedArea = ({ children }) => {
       aligny="top"
       lg={{
         align: 'row',
-        alignx: 'between',
+        alignx: 'wrap',
         aligny: 'top',
-        custom: 'flex-wrap: wrap;'
       }}
       width="100%">
       {children}
