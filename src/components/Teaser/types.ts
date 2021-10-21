@@ -129,6 +129,7 @@ export type TeaserProps = {
   /**
    * @description expects an object with layout configuration for related news
    */
+  number: number;
   related?: RelatedProps;
   /**
    * @description expects a object of states to cover the editable fields
