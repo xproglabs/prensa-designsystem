@@ -52,6 +52,7 @@ export const AreaBox = ({ area, children }: StyledBoxProps) => {
  */
 export const TitleEmpty = () =>
   <Block width='100%' lg={{ height: '60px' }} />
+  //Todo: Dinamizar altura para o TitleEmpty visto que em outros projetos pode ser diferente
 
 /**
  * Section Title Text
