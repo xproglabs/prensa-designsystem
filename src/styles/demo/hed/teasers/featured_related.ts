@@ -1,8 +1,8 @@
-import { LayoutProps } from '../../../layouts'
+import { CreateTeaser } from 'prensa'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT_FEATURED } from '../tokens/subject'
 
-export const FEATURED_RELATED: LayoutProps = {
+export const FEATURED_RELATED = CreateTeaser({
   box: {
     background: 'white',
     pt: [5, 9],
@@ -16,7 +16,10 @@ export const FEATURED_RELATED: LayoutProps = {
   datetime_enabled: false,
   related: {
     enabled: true,
-    icon: 'IconAtletico',
+    icon: {
+      icon: 'IconAtletico',
+      mr: 1
+    },
     mr: 4
   },
   title: {
@@ -28,4 +31,4 @@ export const FEATURED_RELATED: LayoutProps = {
     mb: [3, 3]
   },
   subject: SUBJECT_DEFAULT_FEATURED
-}
+})

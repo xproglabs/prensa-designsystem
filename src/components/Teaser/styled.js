@@ -225,7 +225,7 @@ const WrapContent = ({
   wrap_width=['100%', '100%']
 }) => {
   const content_overlap_style = `
-    z-index: 10;
+    z-index: 1;
   `
   const custom_style = `
     ${content_overlap ? content_overlap_style : ''}

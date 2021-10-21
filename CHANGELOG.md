@@ -1,3 +1,10 @@
+# v1.6.29
+- Reduz z-index no WrapContent do Teaser
+# v1.6.28
+- Habilita estilo de notícia relacionada no featured
+- Corrige a aplicação do custom class no html image
+- Adiciona altura no espaço em branco da coluna
+- Permite camada com gradiente na imagem do teaser e sombra no componente Typography
 # v1.6.27
 - Corrige funcionamento do preview
 # v1.6.26

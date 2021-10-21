@@ -1,4 +1,5 @@
 import { IconTokens, RadiusTokens } from '@prensa_tokens'
+import { RelatedItemProps } from './RelatedTypes'
 
 import {
   EditAreaType,
@@ -63,7 +64,7 @@ type Related = {
   font_size?: [string, string];
   font_weight?: number;
   enabled?: boolean;
-  icon?: IconTokens;
+  icon?: RelatedItemProps['icon'];
   line_height?: [string, string];
   mb?: SpacingType;
   mr?: SpacingType;
