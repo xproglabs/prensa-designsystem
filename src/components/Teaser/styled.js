@@ -5,7 +5,10 @@ import styled from 'styled-components'
 import Block from '../Block'
 import Typography from '../Typography'
 
-const AreaLink = styled.a` 
+const AreaLink = styled.a`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   color: inherit;
   cursor: pointer;
   text-decoration: none;
@@ -13,6 +16,10 @@ const AreaLink = styled.a`
   white-space: normal;
   &:hover {
     opacity: 0.9;
+  }
+
+  svg {
+    min-width: 24px;
   }
 `
 const Box = ({

@@ -1,7 +1,7 @@
 import { get, map } from 'lodash'
 import React from 'react'
 
-import { RelatedArea, RelatedItem } from './RelatedStyled'
+import RelatedItem, { RelatedArea } from './RelatedStyled'
 import { RelatedProps } from './RelatedTypes'
 
 const Related = ({
@@ -18,6 +18,8 @@ const Related = ({
             key={key}
             color={color || layout.color}
             font_size={layout.font_size}
+            font_weight={layout.font_weight}
+            icon={layout?.icon}
             line_height={layout.line_height}
             item_path={item_path}
             mb={layout.mb}>
