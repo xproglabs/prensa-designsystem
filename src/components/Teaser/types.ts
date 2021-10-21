@@ -89,6 +89,7 @@ export type Title = {
   enabled?: boolean;
   font_family?: string;
   font_size?: [string, string];
+  font_weight?: number | number;
   line_height?: [string, string];
   mb?: SpacingType;
 }
