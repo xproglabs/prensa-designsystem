@@ -1,16 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import LogoAtex from '../../icons/LogoAtex'
 import LogoXprog from '../../icons/LogoXprog'
 import TextItem from './Item'
 import * as S from './styled'
 import { CopyrightProps } from './types'
-
-const Link = styled.a`
-  text-decoration: none;
-  cursor: pointer;
-`
 
 const Copyright = ({ 
   bgColor,
@@ -30,18 +24,14 @@ const Copyright = ({
           <TextItem color={color} text={textRights} />
         </S.ContainerCopyrightItems>    
         <S.ContainerCompanies>
-          <Link href='https://xprog.com.br/' target="_blank" title='Site xProg'> 
-            <S.ContainerXprog>
-              <TextItem color={color} text={textXprog} />
-              <LogoXprog />
-            </S.ContainerXprog>
-          </Link>
-          <Link href='https://atex.com/' target="_blank" title='Site Atex'>
-            <S.ContainerAtex>
-              <TextItem color={color} text={textAtex} />
-              <LogoAtex />
-            </S.ContainerAtex>
-          </Link>
+          <S.ContainerXprog>
+            <TextItem color={color} text={textXprog} />
+            <LogoXprog href='https://xprog.com.br/' target="_blank" />
+          </S.ContainerXprog>
+          <S.ContainerAtex>
+            <TextItem color={color} text={textAtex} />
+            <LogoAtex href='https://atex.com/' target="_blank" />
+          </S.ContainerAtex>
         </S.ContainerCompanies>
       </S.ContainerCopyrightBox>  
     </S.ContainerCopyright>  
