@@ -18,7 +18,7 @@ export const selectBgColorFromSlot = (slot): string => {
   }
   return backgroundColor
 }
-export const selectHeightFromSlot = (minHeight): string => {
+export const selectMinHeightFromSlot = (minHeight): string => {
   let custom_minHeight: string
   if (minHeight) {
     custom_minHeight = `min-height: ${minHeight};`

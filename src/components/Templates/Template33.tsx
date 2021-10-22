@@ -4,7 +4,7 @@ import Block from '../Block'
 import {
   isBackgroundTransparent,
   selectBgColorFromSlot,
-  selectHeightFromSlot
+  selectMinHeightFromSlot
 } from '../PageBlock/utils'
 import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
@@ -48,8 +48,8 @@ const ColumnColor = ({
   minHeight,
   transparent
 }: ColumnColorProps) => {
-  const slot_customHeight_mobile = selectHeightFromSlot(minHeight?.[0])
-  const slot_customHeight_desktop = selectHeightFromSlot(minHeight?.[1])
+  const slot_customHeight_mobile = selectMinHeightFromSlot(minHeight?.[0])
+  const slot_customHeight_desktop = selectMinHeightFromSlot(minHeight?.[1])
   return (
     <Block
       bgColor={bgColor}

@@ -4,7 +4,7 @@ import Block from '../Block'
 import {
   isBackgroundTransparent,
   selectBgColorFromSlot,
-  selectHeightFromSlot
+  selectMinHeightFromSlot
 } from '../PageBlock/utils'
 import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
@@ -20,10 +20,10 @@ const Template7030 = ({ slot70, slot30 }: Props) => {
   const slot30_bgColor = selectBgColorFromSlot(slot30)
   const slot70_isTransparent = isBackgroundTransparent(slot70_bgColor)
   const slot30_isTransparent = isBackgroundTransparent(slot30_bgColor)
-  const slot70_customHeight_mobile = selectHeightFromSlot(slot70.min_height?.[0])
-  const slot70_customHeight_desktop = selectHeightFromSlot(slot70.min_height?.[1])
-  const slot30_customHeight_mobile = selectHeightFromSlot(slot30.min_height?.[0])
-  const slot30_customHeight_desktop = selectHeightFromSlot(slot30.min_height?.[1])
+  const slot70_customHeight_mobile = selectMinHeightFromSlot(slot70.min_height?.[0])
+  const slot70_customHeight_desktop = selectMinHeightFromSlot(slot70.min_height?.[1])
+  const slot30_customHeight_mobile = selectMinHeightFromSlot(slot30.min_height?.[0])
+  const slot30_customHeight_desktop = selectMinHeightFromSlot(slot30.min_height?.[1])
   return (
     <Block
       align='column'
