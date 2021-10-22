@@ -1,3 +1,5 @@
+# v1.6.30
+- Novo componente Copyright
 # v1.6.29
 - Reduz z-index no WrapContent do Teaser
 # v1.6.28
