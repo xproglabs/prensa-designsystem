@@ -41,7 +41,7 @@ const SectionTitle = ({
   return (
     <AreaBox area={area_layout}>
       {icon_component && cloneElement(icon_component, { color, ...icon_layout })}
-      <Link href={path} {...link_layout}>
+      <Link path={path} {...link_layout}>
         <TitleText color={color} {...text_layout}>
           {title}
         </TitleText>
