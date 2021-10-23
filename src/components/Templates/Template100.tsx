@@ -3,7 +3,8 @@ import React from 'react'
 import Block from '../Block'
 import {
   isBackgroundTransparent,
-  selectBgColorFromSlot
+  selectBgColorFromSlot,
+  selectMinHeightFromSlot
 } from '../PageBlock/utils'
 import RenderSlot from '../RenderSlot'
 import { RenderSlotProps } from '../RenderSlot/types'
@@ -15,6 +16,7 @@ interface ColumnProps {
 interface ColumnColorProps {
   bgColor: string;
   children: any;
+  minHeight: [string, string];
   transparent: boolean;
 }
 interface Template100Props {
@@ -36,14 +38,18 @@ const Column = ({ children }: ColumnProps) => (
 const ColumnColor = ({
   bgColor,
   children,
+  minHeight,
   transparent
 }: ColumnColorProps) => {
+  const slot_customHeight_mobile = selectMinHeightFromSlot(minHeight?.[0])
+  const slot_customHeight_desktop = selectMinHeightFromSlot(minHeight?.[1])
   return (
     <Block
       align="column"
       alignx="left"
       aligny="top"
       bgColor={bgColor}
+      custom={slot_customHeight_mobile}
       mb={transparent ? '0px' : 2}
       pt={transparent ? '0px' : 2}
       px={2}
@@ -52,6 +58,7 @@ const ColumnColor = ({
         align: 'row',
         alignx: 'between',
         aligny: 'top',
+        custom: slot_customHeight_desktop,
         mb: transparent ? '0px' : 3,
         pt: transparent ? '0px' : 3,
         px: transparent ? '0px' : 3,
@@ -77,6 +84,7 @@ const Template100 = ({
         {(renderSpaceSlot(slot100.spaceA))}
         <ColumnColor
           bgColor={slot100_bgColor}
+          minHeight={slot100.min_height}
           transparent={slot100_isTransparent}>
           <RenderSlot {...slot100} />
         </ColumnColor>

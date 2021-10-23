@@ -4,10 +4,10 @@ import { withTheme } from 'styled-components'
 
 import Block from '../Block'
 import Carousel from '../Carousel'
+import { PreviewProvider } from '../PreviewProvider'
 import Teaser from '../Teaser'
 import { RenderSlotProps } from './types'
 import { parseTeaserProps } from './utils'
-import { PreviewProvider } from '../PreviewProvider'
 
 /**
  * Render Slot component
