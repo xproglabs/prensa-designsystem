@@ -24,16 +24,16 @@ const StyledLink = styled.a<StyledLinkProps>`
  */
 const Link = ({
   children,
-  href,
+  path,
   hoverOpacity
 }: LinkProps) => {
 
-  if (!href) {
+  if (!path) {
     return children
   }
   
   return (
-    <StyledLink href={href} hoverOpacity={hoverOpacity}>
+    <StyledLink href={path} hoverOpacity={hoverOpacity}>
       {children}
     </StyledLink>
   )
