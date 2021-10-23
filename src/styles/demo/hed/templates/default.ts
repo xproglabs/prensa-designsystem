@@ -1,5 +1,6 @@
 export const TEMPLATES_DEFAULT = {
   slot100: {
+    min_height: ['auto', '400px'],
     related: {
       enabled: false
     },
@@ -13,6 +14,7 @@ export const TEMPLATES_DEFAULT = {
     spaces: [0, 1, 2, 3],
   },
   slot70: {
+    min_height: ['auto', '400px'],
     related: {
       enabled: false
     },
@@ -26,6 +28,7 @@ export const TEMPLATES_DEFAULT = {
     spaces: [0, 1, 2, 1],
   },
   slot50: {
+    min_height: ['auto', '400px'],
     layout: {
       0: ['teaser_default'],
       1: ['teaser_default'],
@@ -36,6 +39,7 @@ export const TEMPLATES_DEFAULT = {
     spaces: [0, 1, 2, 1],
   },
   slot30: {
+    min_height: ['auto', '400px'],
     related: {
       enabled: false
     },

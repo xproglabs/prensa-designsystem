@@ -1,5 +1,6 @@
 export const TEMPLATES_FEATURED = {
   slot100: {
+    min_height: ['auto', '400px'],
     related: {
       enabled: true
     },
@@ -13,6 +14,7 @@ export const TEMPLATES_FEATURED = {
     spaces: [0, 0, 0, 0],
   },
   slot70: {
+    min_height: ['auto', '500px'],
     related: {
       enabled: true
     },
