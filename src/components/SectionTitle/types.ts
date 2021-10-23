@@ -53,7 +53,7 @@ export interface SectionTitleProps {
   icon?: IconTokens;
   layout: SectionTitleLayout;
   title?: string;
-  href?: string;
+  path?: string;
   theme: Object;
 }
 

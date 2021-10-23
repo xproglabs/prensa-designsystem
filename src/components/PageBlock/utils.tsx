@@ -99,7 +99,7 @@ export const renderSectionTitle = ({
       color={color}
       icon={icon}
       layout={layout}
-      href={link}
+      path={link}
       title={title}
     />
   )
