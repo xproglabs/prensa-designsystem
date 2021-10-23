@@ -21,7 +21,8 @@ export const FEATURED_RELATED = CreateTeaser({
     font_weight: 700,
     icon: {
       icon: 'IconAtletico',
-      mr: 1
+      mr: 1,
+      width: '42px'
     },
     mr: 2,
   },

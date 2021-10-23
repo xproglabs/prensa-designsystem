@@ -71,6 +71,7 @@ const PageBlock = ({
         slot100={{
           amp,
           bgcolor: slot1.bgcolor,
+          color: slot1.color,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
@@ -97,6 +98,7 @@ const PageBlock = ({
         slot70={{
           amp,
           bgcolor: slot1.bgcolor,
+          color: slot1.color,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
@@ -110,6 +112,7 @@ const PageBlock = ({
         slot30={{
           amp,
           bgcolor: slot2.bgcolor,
+          color: slot2.color,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
           domain,
@@ -136,6 +139,7 @@ const PageBlock = ({
         slotLeft={{
           amp,
           bgcolor: slot1.bgcolor,
+          color: slot1.color,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
@@ -149,6 +153,7 @@ const PageBlock = ({
         slotRight={{
           amp,
           bgcolor: slot2.bgcolor,
+          color: slot2.color,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
           domain,
@@ -182,6 +187,7 @@ const PageBlock = ({
         slotLeft={{
           amp,
           bgcolor: slot1.bgcolor,
+          color: slot1.color,
           carousel: slotLeft_carousel,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
@@ -196,6 +202,7 @@ const PageBlock = ({
         slotCenter={{
           amp,
           bgcolor: slot2.bgcolor,
+          color: slot2.color,
           carousel: slotCenter_carousel,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
@@ -210,6 +217,7 @@ const PageBlock = ({
         slotRight={{
           amp,
           bgcolor: slot3.bgcolor,
+          color: slot3.color,
           carousel: slotRight_carousel,
           column_items: slot3_spaces + 1,
           column_padding: slot3_spaces,
@@ -233,6 +241,7 @@ const PageBlock = ({
       slotItems={{
         amp,
         bgcolor: slot1.bgcolor,
+        color: slot1.color,
         column_items: slot1_spaces + 1,
         column_padding: slot1_spaces,
         domain,
