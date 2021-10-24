@@ -1,3 +1,5 @@
+# v1.6.32
+- Fix na área de clique e melhoria na tipagem do componente Link
 # v1.6.31
 - Corrige os warnings do projeto retornados no frontend
 - Permite parametrizar min height de cada slot via template
