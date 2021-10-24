@@ -22,14 +22,14 @@ const StyledLink = styled.a<StyledLinkProps>`
  * Prensa | Link component
  * @description Link component is an abstraction for <a/>
  */
-const Link = ({ children, path, hoverOpacity }: LinkProps) => {
+const Link = ({ children, path, ...otherProps }: LinkProps) => {
 
   if (!path) {
     return children
   }
   
   return (
-    <StyledLink href={path} hoverOpacity={hoverOpacity}>
+    <StyledLink href={path} {...otherProps}>
       {children}
     </StyledLink>
   )
