@@ -1,3 +1,5 @@
+# v1.6.33
+- Corrige alinhamento no TeaserRelated após mudanças no Link
 # v1.6.32
 - Fix na área de clique e melhoria na tipagem do componente Link
 # v1.6.31
