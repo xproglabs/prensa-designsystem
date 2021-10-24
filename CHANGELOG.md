@@ -1,3 +1,6 @@
+# v1.6.31
+- Corrige os warnings do projeto retornados no frontend
+- Permite parametrizar min height de cada slot via template
 # v1.6.30
 - Novo componente Copyright
 # v1.6.29
