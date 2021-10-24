@@ -3,14 +3,14 @@
  * @param {string} derivative 
  * @param {string} domain 
  * @param {string} policy_id 
- * @param {string} width 
+ * @param {number} width 
  * @returns parsed image url as a string
  */
 export function path_absolute(
   derivative: string,
   domain: string,
   policy_id: string,
-  width: string
+  width: number
 ) {
   if (!policy_id) return null
   const w = width || 1000
