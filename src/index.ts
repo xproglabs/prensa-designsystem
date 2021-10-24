@@ -23,6 +23,9 @@ export { default as Subject } from './components/Subject'
 export { default as Typography } from './components/Typography'
 export { default as TemplateContainer } from './components/Templates/TemplateContainer'
 
+/** Exporta função path_absolute */
+export * from './components/Image/utils'
+
 /** Exporta diretório styles */
 export * from './styles'
 
@@ -31,4 +34,3 @@ export * from './components/Templates'
 
 /** Exports com nome estático */
 export * as Embeds from './components/Article/Embeds'
-export * as ImageUtils from './components/Image/utils'
