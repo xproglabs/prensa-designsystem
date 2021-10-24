@@ -1,7 +1,7 @@
 import { get } from 'lodash'
+import { Block, Link, Typography } from 'prensa'
 import React from 'react'
 import { withTheme } from 'styled-components'
-import { Block, Link, Typography } from 'prensa'
 
 import { RelatedItemProps } from './RelatedTypes'
 
@@ -50,12 +50,13 @@ const RelatedItem = ({
     <Block
       mb={mb[0]}
       lg={{ mb: mb[1] }}
-      width='100%'>
-      <Link path={item_path}>
+      width='100%'
+    >
+      <Block align='row'>
         <Block mr={mr || 1} width={icon_width || '42px'}>
           {icon_component && React.cloneElement(icon_component, { color, ...icon })}
         </Block>
-        <Block width={'100%'}>
+        <Block width='100%'>
           <Typography
             color={color}
             element='h2'
@@ -63,14 +64,14 @@ const RelatedItem = ({
             fontSize={font_size[0]}
             fontWeight={font_weight}
             lineHeight={line_height[0]}
-            lg={{
-              fontSize: font_size[1],
-              lineHeight: line_height[1]
-            }}>
-            {children}
+            lg={{ fontSize: font_size[1], lineHeight: line_height[1] }}
+          >
+            <Link path={item_path} hoverOpacity={0.9}>
+              {children}
+            </Link>
           </Typography>
         </Block>
-      </Link>
+      </Block>
     </Block>
   )
 }
