@@ -4,8 +4,8 @@ import React from 'react'
 
 import ImageElement from '../Image'
 import { parseImagePath } from '../Image/parser'
-import * as S from './styled'
 import { RenderOpacityMask } from './RenderOpacityMask'
+import * as S from './styled'
 
 type RenderImageProps = {
   amp?: boolean;

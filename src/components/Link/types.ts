@@ -4,6 +4,6 @@ export type StyledLinkProps = {
 
 export type LinkProps = {
   children: any;
-  href: string;
+  path: string;
   hoverOpacity?: number;
 }

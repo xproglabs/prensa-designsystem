@@ -17,7 +17,7 @@ type TitleProps = {
  * Teaser Title component
  * @param editable enable live edition
  * @param layout allow style changes based on supported props
- * @param link link path enable href for Title
+ * @param path link path enable href for Title
  * @param title text to be rendered
  * @returns a Typography as a React element
  */
@@ -55,7 +55,7 @@ const RenderTitle = ({
       <EditArea {...editable}>
         <Link
           hoverOpacity={0.9}
-          href={link}>
+          path={link}>
           {title}
         </Link>
       </EditArea>

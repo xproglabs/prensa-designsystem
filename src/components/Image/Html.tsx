@@ -8,7 +8,7 @@ const RenderHtmlImage = (props) => {
     return (
       <S.HtmlBackgroundStyled
         className={props.className}
-        href={props.path}
+        img_path={props.path}
       />
     )
   }
@@ -23,8 +23,7 @@ const RenderHtmlImage = (props) => {
 const HtmlImage = ({
   custom_class,
   layout_desktop,
-  layout_mobile,
-  title
+  layout_mobile
 }: T.ImageHtmlProps) => {
   return (
     <>
