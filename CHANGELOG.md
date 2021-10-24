@@ -1,3 +1,5 @@
+# v1.6.34
+- Fix na função path_absolute
 # v1.6.33
 - Corrige alinhamento no TeaserRelated após mudanças no Link
 # v1.6.32
