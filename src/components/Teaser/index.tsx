@@ -1,7 +1,9 @@
 import { get } from 'lodash'
 import React from 'react'
 
+import { EditButtons } from '../EditArea'
 import RelatedRender from './Related'
+import { RenderCircle } from './RenderCircle'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
 import { RenderSubject } from './RenderSubject'
@@ -12,13 +14,17 @@ import { TeaserProps } from './types'
 
 const Teaser = (props: TeaserProps) => {
   const {
+    amp,
     color,
+    edit_buttons,
+    editable,
     domain,
-    image_circle,
     item,
     layout,
-    related
+    related,
+    states
   } = props
+
   // main props
   const item_path = get(item, 'url', false) || get(item, 'path', '')
   const item_title = get(item, 'name', '')
@@ -33,8 +39,19 @@ const Teaser = (props: TeaserProps) => {
   const box_pl = get(layout, 'box.pl', ['0px', '0px'])
   const box_mt = get(layout, 'box.mt', ['0px', '0px'])
   const box_mr = get(layout, 'box.mr', ['0px', '0px'])
-  const box_mb = get(layout, 'box.mb', [2, 2])
+  const box_mb = get(layout, 'box.mb', ['0px', '0px'])
   const box_ml = get(layout, 'box.ml', ['0px', '0px'])
+
+  // box border props
+  const box_bt = get(layout, 'box.bt', undefined)
+  const box_br = get(layout, 'box.br', undefined)
+  const box_bb = get(layout, 'box.bb', undefined)
+  const box_bl = get(layout, 'box.bl', undefined)
+  const box_b = get(layout, 'box.b', undefined)
+  const box_borderColor = get(layout, 'box.borderColor', undefined)
+  const box_borderStyle = get(layout, 'box.borderStyle', undefined)
+  const box_radius = get(layout, 'box.radius', undefined)
+
   // box (content) wrap
   const content_overlap = get(layout, 'box_wrap.content_overlap', false)
   const wrap_align = get(layout, 'box_wrap.align', ['column', 'column'])
@@ -46,6 +63,10 @@ const Teaser = (props: TeaserProps) => {
   const wrap_mr = get(layout, 'box_wrap.mr', ['0px', '0px'])
   const wrap_mb = get(layout, 'box_wrap.mb', ['0px', '0px'])
   const wrap_mt = get(layout, 'box_wrap.mt', ['0px', '0px'])
+
+  // fallback image prop
+  const fallback_image_url = get(layout, 'fallback_image_url', '')
+
   // image wrap
   const image_align = get(layout, 'image.align', ['column', 'column'])
   const image_alignx = get(layout, 'image.alignx', ['left', 'left'])
@@ -56,6 +77,10 @@ const Teaser = (props: TeaserProps) => {
   const image_mr = get(layout, 'image.mr', ['0px', '0px'])
   const image_mb = get(layout, 'image.mb', ['0px', '0px'])
   const image_ml = get(layout, 'image.ml', ['0px', '0px'])
+
+  // opacity mask prop
+  const opacity_mask = get(layout, 'opacity_mask', false)
+
   return (
     <S.Box
       box_align={box_align}
@@ -70,7 +95,15 @@ const Teaser = (props: TeaserProps) => {
       box_mt={box_mt}
       box_mr={box_mr}
       box_mb={box_mb}
-      box_ml={box_ml}>
+      box_ml={box_ml}
+      box_bt={box_bt}
+      box_br={box_br}
+      box_bb={box_bb}
+      box_bl={box_bl}
+      box_b={box_b}
+      box_borderColor={box_borderColor}
+      box_borderStyle={box_borderStyle}
+      box_radius={box_radius}>
       <S.WrapContent
         wrap_align={image_align}
         wrap_aligny={image_aligny}
@@ -81,12 +114,21 @@ const Teaser = (props: TeaserProps) => {
         wrap_mr={image_mr}
         wrap_mb={image_mb}
         wrap_ml={image_ml}>
+        <RenderCircle
+          most_read_circle={layout?.most_read_circle}
+        />
         <RenderImage
+          amp={amp}
           domain={domain}
-          image_circle={image_circle}
+          editable={{
+            enabled: editable?.enabled
+          }}
+          fallback_image_url={fallback_image_url}
+          image_circle={layout?.image_circle}
           item={item}
           item_path={item_path}
           layout={layout}
+          opacityMask={opacity_mask}
         />
       </S.WrapContent>
       <S.WrapContent
@@ -100,15 +142,31 @@ const Teaser = (props: TeaserProps) => {
         wrap_mr={wrap_mr}
         wrap_mb={wrap_mb}
         wrap_ml={wrap_ml}>
-        <RenderSubject
-          color={color}
-          item={item}
-          layout={layout}
-        />
+        <S.WrapSubject>
+          <RenderSubject
+            editable={{
+              enabled: editable?.enabled,
+              set_modified: editable?.set_modified,
+              set_selected: editable?.set_selected,
+              state: states?.subject
+            }}
+            color={color}
+            item={item}
+            layout={layout}
+          />
+          <EditButtons {...edit_buttons} />
+        </S.WrapSubject>
         <RenderTitle
-          item_path={item_path}
-          item_title={item_title}
+          editable={{
+            enabled: editable?.enabled,
+            set_modified: editable?.set_modified,
+            set_selected: editable?.set_selected,
+            state: states?.title
+          }}
           layout={layout}
+          link={item_path}
+          shadow={opacity_mask}
+          title={item_title}
         />
         <RenderSubtitle
           item={item}

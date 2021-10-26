@@ -1,8 +1,12 @@
+import { IconTokens } from '@prensa_tokens'
+import { SectionTitleLayout } from '../SectionTitle/types'
 import { TeaserProps } from '../Teaser/types'
+import { PageBlockPreview } from '../PreviewProvider/types'
 
-export interface SlotBlockProps {
+export type SlotBlockProps = {
+  bgcolor?: string;
   color: string;
-  icon: string;
+  icon: IconTokens;
   link: string;
   len1: number;
   len2: number;
@@ -12,12 +16,29 @@ export interface SlotBlockProps {
   spaces?: [number, number, number, number];
   type: string;
 }
-export interface PageBlockProps {
+
+export type PageBlockProps = {
+  amp?: boolean;
+  bgcolor?: string;
   cid: string;
+  domain: string;
+  image_parser?: any;
   name: string;
   type: string;
+  preview: PageBlockPreview;
+  section_title_component: any;
+  slot_parser: any;
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;
   slot3: SlotBlockProps;
-  theme: any;
+  theme?: any;
+}
+
+export type RenderSectionTitleParams = {
+  layout: SectionTitleLayout;
+  color?: string;
+  title: string;
+  icon?: IconTokens;
+  link?: string;
+  customComponent?: any;
 }

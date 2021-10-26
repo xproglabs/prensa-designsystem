@@ -1,4 +1,12 @@
+import { IconTokens, RadiusTokens } from '@prensa_tokens'
+import { RelatedItemProps } from './RelatedTypes'
+
+import {
+  EditAreaType,
+  EditButtonsType
+} from '../EditArea/types'
 import { RelatedProps } from './RelatedTypes'
+import { RenderDateTimeLayoutProps } from './RenderDateTimeTypes'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
@@ -7,7 +15,6 @@ type BoxTypes = {
   alignx?: [string, string];
   aligny?: [string, string];
   background?: string;
-  border?: string;
   height?: [string, string] | [string, string, string];
   pt?: SpacingType;
   pr?: SpacingType;
@@ -17,6 +24,14 @@ type BoxTypes = {
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
+  bt?: string;
+  br?: string;
+  bb?: string;
+  bl?: string;
+  b?: string;
+  borderColor?: string;
+  borderStyle?: string;
+  radius?: RadiusTokens;
 }
 type BoxWrap = {
   content_overlap?: boolean;
@@ -47,9 +62,12 @@ type Image = {
 type Related = {
   color?: string;
   font_size?: [string, string];
+  font_weight?: number;
   enabled?: boolean;
+  icon?: RelatedItemProps['icon'];
   line_height?: [string, string];
   mb?: SpacingType;
+  mr?: SpacingType;
 }
 type Subject = {
   bg_color?: string;
@@ -65,10 +83,11 @@ type Subtitle = {
   enabled?: boolean;
   line_height?: [string, string];
 }
-type Title = {
+export type Title = {
   color?: string;
   element?: string;
   enabled?: boolean;
+  font_family?: string;
   font_size?: [string, string];
   line_height?: [string, string];
   mb?: SpacingType;
@@ -76,9 +95,12 @@ type Title = {
 export type LayoutProps = {
   box?: BoxTypes;
   box_wrap?: BoxWrap;
-  carousel?: Object;
-  datetime_enabled?: boolean;
+  date_time?: RenderDateTimeLayoutProps;
+  fallback_image_url?: string;
   image?: Image;
+  image_circle?: boolean;
+  most_read_circle?: boolean;
+  opacity_mask?: boolean;
   related?: Related;
   section?: Object;
   subject?: Subject;
@@ -86,13 +108,21 @@ export type LayoutProps = {
   title?: Title;
 }
 export type TeaserProps = {
+  /**
+   * @description define if uses an amp image or html image
+  */
+  amp?: boolean;
   color?: string;
   domain?: string;
-  image_circle?: boolean;
+  /**
+   * @description expects a boolean with editable option
+   */
+  editable?: EditAreaType;
+  edit_buttons?: EditButtonsType;
   /**
    * @description expects an object with teaser data
    */
-  item: Object;
+  item: any;
   /**
    * @description expects an object with layout configuration for teaser
    */
@@ -101,4 +131,8 @@ export type TeaserProps = {
    * @description expects an object with layout configuration for related news
    */
   related?: RelatedProps;
+  /**
+   * @description expects a object of states to cover the editable fields
+   */
+  states?: any;
 }

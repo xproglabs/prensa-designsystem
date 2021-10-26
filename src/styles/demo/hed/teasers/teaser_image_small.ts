@@ -4,14 +4,13 @@ import { SUBJECT_DEFAULT } from '../tokens/subject'
 
 export const TEASER_IMAGE_SMALL: LayoutProps = {
   box: {
-    align: ['row', 'row'],
-    mb: [3, 3]
+    align: ['row-reverse', 'row'],
   },
   box_wrap: {
     align: ['column', 'column'],
     alignx: ['left', 'left'],
-    mt: ['0px', '0px'],
-    mb: ['0px', '0px'],
+    mr: [2, '0px'],
+    ml: ['0px', 2],
     width: ['calc(100% - 96px)', 'calc(100% - 96px)']
   },
   title: {
@@ -27,7 +26,6 @@ export const TEASER_IMAGE_SMALL: LayoutProps = {
     height: ['80px', '80px'],
     width: ['80px', '80px'],
     wrap_width: ['80px', '80px'],
-    mr: [2, 2]
   },
   related: {
     enabled: false

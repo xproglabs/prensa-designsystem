@@ -1,3 +1,58 @@
+# v1.6.34
+- Fix na função path_absolute
+# v1.6.33
+- Corrige alinhamento no TeaserRelated após mudanças no Link
+# v1.6.32
+- Fix na área de clique e melhoria na tipagem do componente Link
+# v1.6.31
+- Corrige os warnings do projeto retornados no frontend
+- Permite parametrizar min height de cada slot via template
+# v1.6.30
+- Novo componente Copyright
+# v1.6.29
+- Reduz z-index no WrapContent do Teaser
+# v1.6.28
+- Habilita estilo de notícia relacionada no featured
+- Corrige a aplicação do custom class no html image
+- Adiciona altura no espaço em branco da coluna
+- Permite camada com gradiente na imagem do teaser e sombra no componente Typography
+# v1.6.27
+- Corrige funcionamento do preview
+# v1.6.26
+- Cria PreviewProvider no projeto
+- Corrige espaçamento do teaser no bloco 30 quando desktop (no-background)
+- Adequa diagramação da data para ficar responsiva
+# v1.6.25
+- Fix de layout no componente Copyright
+# v1.6.24
+- Atualiza dados dos SectionTitles no Template30
+# v1.6.23
+- Move a definição de domínio para o parseBlock
+- Permite seleção de ícone dinâmica e componentes ao invés de conteúdo SVG no componente SectionTitle 
+# v1.6.22
+- Permite Object genérico como type em CreateTheme
+# v1.6.21
+- Permite alternar imagem amp e imagem html
+- Cria novo fluxo de atualização de ícones dos fronts e permite o uso de ícone no SectionTitle
+- Melhoria na função border e implementação no Block
+- Transforma componente RenderDateTime para TS e permite customizações de layout
+- Implementa o preview dinâmico de blocos e teasers
+# v1.6.20
+- Customiza Article para receber email e redes sociais do autor.
+- Monta novas funções CreateTemplate e CreateTeaser
+# v1.6.19
+- Condiciona a renderização do SectionTitle "Assuntos" no corpo da matéria
+# v1.6.17
+- Novo componente ErrorPage
+# v1.6.16
+- [QA] Nova arquitetura de templates baseado no PageBlock
+# v1.6.15
+- Fix no componente Copyright #218
+# v1.6.14
+- Configura paths no tsconfig
+- Novo componente Copyright
+# v1.6.13
+- Adiciona .tgz no npmignore
 # v1.6.12
 - Ajustes na estrutura e no content do Byline
 # v1.6.11

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { withTheme } from 'styled-components'
 
-import { theme } from '../../styles/theme.ts'
 import Block from '../Block'
 import Button from '../Button'
 import Typography from '../Typography'
@@ -72,22 +72,30 @@ Container.propTypes = {
   children: PropTypes.array
 }
 
-export const Content = ({ children }) =>
-  <Block
-    align='row'
-    aligny='middle'
-    alignx='center'
-    custom={`
-      a {
-        color: ${theme.colors['primary3']};
-        cursor: pointer;
-        text-decoration: underline;
-      }
-    `}
-    width='100%'
-  >
-    {children}
-  </Block>
+const ThemedContent = ({ children, theme }) => {
+
+  const custom_style = `
+    a {
+      color: ${theme.colors['primary3']};
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  `
+
+  return (
+    <Block
+      align='row'
+      aligny='middle'
+      alignx='center'
+      custom={custom_style}
+      width='100%'
+    >
+      {children}
+    </Block>
+  )
+}
+
+export const Content = withTheme(ThemedContent)
 
 Content.propTypes = {
   children: PropTypes.object

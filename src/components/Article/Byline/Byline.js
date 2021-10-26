@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import Block from '../../Block'
 import Share from '../Share'
 import * as S from './Byline.styled'
 
@@ -12,20 +13,53 @@ const Byline = ({
   datetime,
   share
 }) => {
+  const AuthorInfo = () => {
+    const hasAuthorEmail = author && author.email && author.email !== ''
+    const hasAuthorSocialMedias = author && author.socialMedias && author.socialMedias !== ''
+    if (!hasAuthorEmail && !hasAuthorSocialMedias) {
+      return null
+    }
+    return (
+      <Block mb={1}>
+        {hasAuthorSocialMedias && (
+          <S.BylineText {...datetime}>
+            {author.socialMedias}
+          </S.BylineText>
+        )}
+        {hasAuthorEmail && (
+          <S.BylineText {...datetime}>
+            {author.email}
+          </S.BylineText>
+        )}
+      </Block>
+    )
+  }
+
   return (
     <S.Container>
       <S.Content {...content}>
-        <S.DateLine {...dateline}>
+        <S.BylineContainer {...dateline}>
           <S.Author {...author}>
             {author.value}
           </S.Author>
-          <S.TimeEntry {...datetime}>
-            Publicado em {datetime.time_published}
-          </S.TimeEntry>
-          <S.TimeEntry {...datetime}>
-            Atualizado há {datetime.time_modified}
-          </S.TimeEntry>
-        </S.DateLine>
+          <AuthorInfo />
+          <Block 
+            lg={{
+              align: 'row',
+            }}>
+            <Block 
+              lg={{
+                mr: '4px'
+              }}>
+              <S.BylineText {...datetime}>
+                {datetime.time_published}.
+              </S.BylineText>
+            </Block>  
+            <S.BylineText {...datetime}>
+                Atualizado em {datetime.time_modified}
+            </S.BylineText>
+          </Block>  
+        </S.BylineContainer>
         <Share amp={amp} {...share} />
       </S.Content>
     </S.Container>

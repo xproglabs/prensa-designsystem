@@ -1,62 +1,77 @@
-import { map } from 'lodash'
-import React, { cloneElement, ReactElement } from 'react'
+import { get, map } from 'lodash'
+import React from 'react'
 import { withTheme } from 'styled-components'
 
 import Block from '../Block'
+import Carousel from '../Carousel'
+import { PreviewProvider } from '../PreviewProvider'
 import Teaser from '../Teaser'
 import { RenderSlotProps } from './types'
 import { parseTeaserProps } from './utils'
 
+/**
+ * Render Slot component
+ */
 const RenderSlot = ({
+  amp,
+  carousel,
   color,
   column_items,
   column_padding,
   domain,
-  image_circle,
   layout,
   layouts,
+  preview,
   slot,
-  spaceA,
-  spaceB,
   theme
 }: RenderSlotProps) => {
+
   const { teasers } = theme
   const column_width = `calc((100% - (${column_padding} * 24px)) / ${column_items})`
-  /**
-   * Render_space function
-   * @param component Expects a ReactElement
-   * @returns a React cloneElement hook for rendering the component passed as a prop
-   */
-  const render_space = (component: ReactElement) => {
-    if (!component) return null
-    return cloneElement(component)
-  }
-  return (
+  const carousel_enabled = get(carousel, 'enabled', false)
+
+  const RenderTeasers = () => (
     <React.Fragment>
-      {render_space(spaceA)}
       {map(slot, (item, key: number) => {
         let teaser_props = parseTeaserProps(key, layout, layouts, slot, teasers)
-        if(!teaser_props)
-          return null
+        if (!teaser_props) return null
         return (
           <Block
             key={key}
+            custom='align-self: flex-start;'
+            mb={2}
             width='100%'
-            lg={{ width: column_width }}>
-            <Teaser
-              color={color}
-              domain={domain}
-              item={item}
-              image_circle={image_circle}
-              layout={teaser_props.layout}
-              related={teaser_props.related}
-            />
+            lg={{ mb: 3, width: column_width }}>
+            <PreviewProvider
+              preview={preview}
+              text={item?.name}
+              subject={item?.subject}>
+              <Teaser
+                amp={amp}
+                color={color}
+                domain={domain}
+                item={item}
+                layout={teaser_props.layout}
+                related={teaser_props.related}
+              />
+            </PreviewProvider>
           </Block>
         )
       })}
-      {render_space(spaceB)}
     </React.Fragment>
   )
+
+  const RenderCarousel = () => (
+    <Carousel {...carousel}>
+      <RenderTeasers />
+    </Carousel>
+  )
+
+  if (carousel_enabled) {
+    return <RenderCarousel />
+  }
+
+  return <RenderTeasers />
 }
 
 export default withTheme(RenderSlot)

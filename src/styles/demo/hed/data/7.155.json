@@ -3,7 +3,8 @@
   "name": "Destaque Linha 2",
   "type": "template7030",
   "slot1": {
-    "color": "",
+    "bgcolor": "primary3",
+    "color": "primary1",
     "icon": "",
     "link": "",
     "len1": 2,
@@ -40,12 +41,44 @@
         "updated": "2021-09-27 18:51:40"
       }
     ],
-    "list2": [],
+    "list2": [
+      {
+        "contentId": "7.304",
+        "input-template": "br.com.atex.plugins.ads-blocks.it",
+        "template": "",
+        "title": "Placeholder",
+        "mobile": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "tablet": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "desktop": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        }
+      }
+    ],
     "title": "",
     "type": "default"
   },
   "slot2": {
-    "color": "",
+    "bgcolor": "secondary3",
+    "color": "primary1",
     "icon": "",
     "link": "",
     "len1": 3,
@@ -97,12 +130,44 @@
         "updated": "2021-09-27 18:51:40"
       }
     ],
-    "list2": [],
+    "list2": [
+      {
+        "contentId": "7.304",
+        "input-template": "br.com.atex.plugins.ads-blocks.it",
+        "template": "",
+        "title": "Placeholder",
+        "mobile": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "tablet": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "desktop": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        }
+      }
+    ],
     "title": "",
     "type": "default"
   },
   "slot3": {
-    "color": "",
+    "bgcolor": "",
+    "color": "primary1",
     "icon": "",
     "link": "",
     "len1": 0,
