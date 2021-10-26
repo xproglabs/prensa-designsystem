@@ -1,8 +1,8 @@
-import { LayoutProps } from 'prensa/components/types'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT } from '../tokens/subject'
+import { CreateTeaser } from 'prensa'
 
-export const TEASER_MOST_READ: LayoutProps = {
+export const TEASER_MOST_READ = CreateTeaser({
   box: {
     align: ['row-reverse', 'row'],
   },
@@ -21,7 +21,7 @@ export const TEASER_MOST_READ: LayoutProps = {
     wrap_width: ['80px', '80px'],
   },
   most_read_circle: {
-    enabled: true,
+    enabled: true
   },
   related: {
     enabled: false
@@ -34,4 +34,4 @@ export const TEASER_MOST_READ: LayoutProps = {
       tokensFonts.NEWS_TITLE_6
     )
   }
-}
+})

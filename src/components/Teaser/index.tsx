@@ -113,8 +113,7 @@ const Teaser = (props: TeaserProps) => {
         wrap_mb={image_mb}
         wrap_ml={image_ml}>
         <NumberCircle
-          color={color}
-          enabled={layout?.most_read_circle}
+          layout={layout}
           number={number}
         />
         <RenderImage

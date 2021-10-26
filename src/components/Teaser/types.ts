@@ -45,6 +45,13 @@ type BoxWrap = {
   mb?: SpacingType;
   ml?: SpacingType;
 }
+type Circle = {
+  border_color?: string;
+  color?:string;
+  enabled?: boolean;
+  font_size?: string;
+  font_family?: string;
+}
 type Image = {
   align?: [string, string];
   aligny?: [string, string];
@@ -98,7 +105,7 @@ export type LayoutProps = {
   date_time?: RenderDateTimeLayoutProps;
   image?: Image;
   image_circle?: boolean;
-  most_read_circle?: boolean;
+  most_read_circle?: Circle;
   opacity_mask?: boolean;
   related?: Related;
   section?: Object;

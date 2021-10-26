@@ -1,24 +1,29 @@
-import { ColorTokens } from '@prensa_tokens'
+import { get } from 'lodash'
+
+import { LayoutProps } from './types'
 import React from 'react'
 
 import * as S from './NumberCircleStyled'
 
 type NumberCircleProps = {
-  color: ColorTokens | string;
-  enabled: boolean;
+  borderColor?: string;
+  layout: LayoutProps;
   number: number;
 }
 
 const NumberCircle = ({
-  color,
-  enabled,
+  layout,
   number
 }: NumberCircleProps) => {
-  if (!enabled)
+  const circle_layout = get(layout, 'most_read_circle')
+  if (!circle_layout?.enabled)
     return <></>
   return (
     <S.Circle
-      color={color}>
+      color={circle_layout?.color}
+      borderColor={circle_layout?.border_color}
+      fontSize={circle_layout?.font_size}
+      fontFamily={circle_layout?.font_family}>
       {number}
     </S.Circle>
   )
