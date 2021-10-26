@@ -35,6 +35,7 @@ const RenderSlot = ({
       {map(slot, (item, key: number) => {
         let teaser_props = parseTeaserProps(key, layout, layouts, slot, teasers)
         if (!teaser_props) return null
+        const teaser_number = key + 1
         return (
           <Block
             key={key}
@@ -53,6 +54,7 @@ const RenderSlot = ({
                 item={item}
                 layout={teaser_props.layout}
                 related={teaser_props.related}
+                number={teaser_number}
               />
             </PreviewProvider>
           </Block>

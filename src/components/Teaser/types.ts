@@ -45,6 +45,13 @@ type BoxWrap = {
   mb?: SpacingType;
   ml?: SpacingType;
 }
+type Circle = {
+  border_color?: string;
+  color?:string;
+  enabled?: boolean;
+  font_size?: string;
+  font_family?: string;
+}
 type Image = {
   align?: [string, string];
   aligny?: [string, string];
@@ -99,7 +106,7 @@ export type LayoutProps = {
   fallback_image_url?: string;
   image?: Image;
   image_circle?: boolean;
-  most_read_circle?: boolean;
+  most_read_circle?: Circle;
   opacity_mask?: boolean;
   related?: Related;
   section?: Object;
@@ -130,6 +137,7 @@ export type TeaserProps = {
   /**
    * @description expects an object with layout configuration for related news
    */
+  number: number;
   related?: RelatedProps;
   /**
    * @description expects a object of states to cover the editable fields
