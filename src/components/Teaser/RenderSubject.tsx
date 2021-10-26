@@ -11,8 +11,19 @@ const RenderSubject = ({
   layout
 }) => {
   const subject_enabled = get(layout, 'subject.enabled', false)
-  const subject_value = get(item, 'subject', '')
-  if (!subject_value || !subject_enabled) {
+  let subject_value = get(item, 'subject', '')
+
+  if (!subject_enabled) {
+    return <></>
+  }
+
+  if (editable && editable.enabled) {
+    if (!subject_value || subject_value == '') {
+      subject_value = ' '
+    }
+  }
+
+  if (!subject_value) {
     return <></>
   }
   const bg_color = get(layout, 'subject.bg_color', 'primary1')

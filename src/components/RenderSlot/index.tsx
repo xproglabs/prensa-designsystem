@@ -44,6 +44,7 @@ const RenderSlot = ({
             width='100%'
             lg={{ mb: 3, width: column_width }}>
             <PreviewProvider
+              item={item}
               preview={preview}
               text={item?.name}
               subject={item?.subject}>
