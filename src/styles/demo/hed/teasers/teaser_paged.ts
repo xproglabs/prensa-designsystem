@@ -1,8 +1,9 @@
-import { LayoutProps } from '../../../layouts'
+import { CreateTeaser } from 'prensa'
+
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT } from '../tokens/subject'
 
-export const TEASER_PAGED: LayoutProps = {
+export const TEASER_PAGED = CreateTeaser({
   box: {
     align: ['row-reverse', 'row'],
     mb: [2, 2],
@@ -17,7 +18,7 @@ export const TEASER_PAGED: LayoutProps = {
     mt: ['0px', '0px'],
     width: ['calc(100% - 96px)', 'calc(100% - 344px)']
   },
-  datetime_enabled: false,
+  fallback_image_url: 'http://localhost:9009/prensa-fallback.jpg',
   image: {
     enabled: true,
     dimension: ['1x1', '2x1'],
@@ -38,4 +39,4 @@ export const TEASER_PAGED: LayoutProps = {
     enabled: false
   },
   subject: SUBJECT_DEFAULT
-}
+})
