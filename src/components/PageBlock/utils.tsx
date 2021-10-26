@@ -18,6 +18,12 @@ export const selectBgColorFromSlot = (slot): string => {
   }
   return backgroundColor
 }
+export const selectMinHeightFromSlot = (minHeight): string => {
+  if (minHeight) {
+    return `min-height: ${minHeight};`
+  }
+  return ''
+}
 /**
  * @param param0 
  * @returns a valid react element
@@ -93,7 +99,7 @@ export const renderSectionTitle = ({
       color={color}
       icon={icon}
       layout={layout}
-      href={link}
+      path={link}
       title={title}
     />
   )

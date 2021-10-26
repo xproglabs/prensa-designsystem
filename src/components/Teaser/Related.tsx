@@ -16,10 +16,11 @@ const Related = ({
         return (
           <RelatedItem
             key={key}
-            color={color || layout.color}
+            color={layout.color}
             font_size={layout.font_size}
             font_weight={layout.font_weight}
             icon={layout?.icon}
+            icon_color={color}
             line_height={layout.line_height}
             item_path={item_path}
             mb={layout.mb}>

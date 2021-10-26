@@ -14,6 +14,7 @@ export type RenderSlotProps = {
   domain?: string;
   layout?: LayoutProps;
   layouts: Array<string>;
+  min_height?: [string, string];
   preview: PageBlockPreview;
   slot: Array<any>;
   /**

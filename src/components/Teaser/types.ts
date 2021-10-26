@@ -103,6 +103,7 @@ export type LayoutProps = {
   box?: BoxTypes;
   box_wrap?: BoxWrap;
   date_time?: RenderDateTimeLayoutProps;
+  fallback_image_url?: string;
   image?: Image;
   image_circle?: boolean;
   most_read_circle?: Circle;

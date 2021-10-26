@@ -25,9 +25,9 @@ export const parseImagePath = (
   /**
    * @description return the image path url
    */
-  let url: string
+  let url: string = ''
   // domain treatments
-  if(domain === 'undefined') {
+  if (domain === 'undefined') {
     domain = ''
   }
   // parse policy

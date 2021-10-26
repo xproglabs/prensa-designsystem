@@ -1,3 +1,14 @@
+# v1.6.34
+- Fix na função path_absolute
+# v1.6.33
+- Corrige alinhamento no TeaserRelated após mudanças no Link
+# v1.6.32
+- Fix na área de clique e melhoria na tipagem do componente Link
+# v1.6.31
+- Corrige os warnings do projeto retornados no frontend
+- Permite parametrizar min height de cada slot via template
+# v1.6.30
+- Novo componente Copyright
 # v1.6.29
 - Reduz z-index no WrapContent do Teaser
 # v1.6.28

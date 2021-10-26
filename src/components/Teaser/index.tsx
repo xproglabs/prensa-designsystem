@@ -8,8 +8,8 @@ import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
 import { RenderSubject } from './RenderSubject'
 import { RenderSubtitle } from './RenderSubtitle'
-import * as S from './styled'
 import { RenderTitle } from './RenderTitle'
+import * as S from './styled'
 import { TeaserProps } from './types'
 
 const Teaser = (props: TeaserProps) => {
@@ -64,6 +64,9 @@ const Teaser = (props: TeaserProps) => {
   const wrap_mr = get(layout, 'box_wrap.mr', ['0px', '0px'])
   const wrap_mb = get(layout, 'box_wrap.mb', ['0px', '0px'])
   const wrap_mt = get(layout, 'box_wrap.mt', ['0px', '0px'])
+
+  // fallback image prop
+  const fallback_image_url = get(layout, 'fallback_image_url', '')
 
   // image wrap
   const image_align = get(layout, 'image.align', ['column', 'column'])
@@ -122,6 +125,7 @@ const Teaser = (props: TeaserProps) => {
           editable={{
             enabled: editable?.enabled
           }}
+          fallback_image_url={fallback_image_url}
           image_circle={layout?.image_circle}
           item={item}
           item_path={item_path}

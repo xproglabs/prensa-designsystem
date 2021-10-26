@@ -1,9 +1,9 @@
-export type StyledLinkProps = {
+import React from 'react'
+
+export interface StyledLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   hoverOpacity?: number;
 }
-
-export type LinkProps = {
+export interface LinkProps extends StyledLinkProps {
   children: any;
-  href: string;
-  hoverOpacity?: number;
+  path: string;
 }

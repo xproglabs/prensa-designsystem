@@ -1,5 +1,5 @@
 export type ImageBackgroundProps = {
-  href?: string
+  img_path?: string
 }
 
 export type ImageHtmlProps = {
