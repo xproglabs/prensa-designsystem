@@ -43,9 +43,8 @@ const RenderSlot = ({
             width='100%'
             lg={{ mb: 3, width: column_width }}>
             <PreviewProvider
-              preview={preview}
-              text={item?.name}
-              subject={item?.subject}>
+              item={item}
+              preview={preview}>
               <Teaser
                 amp={amp}
                 color={color}
@@ -61,14 +60,10 @@ const RenderSlot = ({
     </React.Fragment>
   )
 
-  const RenderCarousel = () => (
+  if (carousel_enabled) {
     <Carousel {...carousel}>
       <RenderTeasers />
     </Carousel>
-  )
-
-  if (carousel_enabled) {
-    return <RenderCarousel />
   }
 
   return <RenderTeasers />
