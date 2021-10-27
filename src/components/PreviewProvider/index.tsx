@@ -4,9 +4,9 @@ import { PageBlockPreview } from './types'
 
 //ToDo: Improvement in preview.render props
 export interface PreviewProviderProps {
-  preview: PageBlockPreview;
   children: any;
   item: any;
+  preview: PageBlockPreview;
 }
 
 /**
