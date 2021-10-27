@@ -9,6 +9,7 @@ export const Circle = ({
   fontFamily,
   fontSize,
   height,
+  radius,
   width
 }) => {
   return (
@@ -18,8 +19,8 @@ export const Circle = ({
       aligny='middle'
       b='1px'
       borderColor={borderColor}
-      custom='border-radius: 100%'
       height={height}
+      radius={radius}
       width={width}>
         <Typography
           color={color}
@@ -36,5 +37,6 @@ Circle.defaultProps = {
   fontFamily: 'primary',
   fontSize: '18px',
   height: '40px',
+  radius: 'circle',
   width: '40px'
 }

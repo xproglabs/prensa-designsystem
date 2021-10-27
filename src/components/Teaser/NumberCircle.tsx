@@ -25,6 +25,7 @@ const NumberCircle = ({
       fontSize={circle_layout?.font_size}
       fontFamily={circle_layout?.font_family}
       height={circle_layout?.height}
+      radius={circle_layout?.radius}
       width={circle_layout?.width}>
       {number}
     </S.Circle>
