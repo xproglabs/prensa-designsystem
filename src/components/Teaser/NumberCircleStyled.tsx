@@ -20,7 +20,6 @@ export const Circle = ({
       borderColor={borderColor}
       custom='border-radius: 100%'
       height={height}
-      width='40px'>
       width={width}>
         <Typography
           color={color}
