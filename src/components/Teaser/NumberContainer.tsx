@@ -1,8 +1,7 @@
 import { Block, Typography } from 'prensa'
 import React from 'react'
 
-// TODO : Circle interface
-export const Circle = ({
+export const NumberContainer = ({
   borderColor,
   children,
   color,
@@ -17,6 +16,7 @@ export const Circle = ({
   mr,
   mb,
   ml,
+  numberContainer,
   radius,
   width
 }) => {
@@ -37,7 +37,8 @@ export const Circle = ({
       mb={mb}
       ml={ml}
       radius={radius}
-      width={width}>
+      width={width}
+      {...numberContainer}>
         <Typography
           color={color}
           fontFamily={fontFamily}
@@ -47,7 +48,7 @@ export const Circle = ({
     </Block>
   )
 }
-Circle.defaultProps = {
+NumberContainer.defaultProps = {
   borderColor: 'primary1',
   color: 'primary1',
   fontFamily: 'primary',

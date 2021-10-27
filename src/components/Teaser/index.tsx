@@ -2,7 +2,7 @@ import { get } from 'lodash'
 import React from 'react'
 
 import { EditButtons } from '../EditArea'
-import NumberCircle from './NumberCircle'
+import RenderNumber from './RenderNumber'
 import RelatedRender from './Related'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
@@ -81,7 +81,6 @@ const Teaser = (props: TeaserProps) => {
 
   // opacity mask prop
   const opacity_mask = get(layout, 'opacity_mask', false)
-  console.log('layout', layout, number)
   return (
     <S.Box
       box_align={box_align}
@@ -115,7 +114,7 @@ const Teaser = (props: TeaserProps) => {
         wrap_mr={image_mr}
         wrap_mb={image_mb}
         wrap_ml={image_ml}>
-        <NumberCircle
+        <RenderNumber
           layout={layout}
           number={number}
         />

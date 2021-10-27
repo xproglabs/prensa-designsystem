@@ -45,7 +45,21 @@ type BoxWrap = {
   mb?: SpacingType;
   ml?: SpacingType;
 }
-type Circle = {
+type Image = {
+  align?: [string, string];
+  aligny?: [string, string];
+  dimension?: [string, string];
+  enabled?: boolean;
+  height?: [string, string];
+  layout?: [string, string];
+  mt?: SpacingType;
+  mr?: SpacingType;
+  mb?: SpacingType;
+  ml?: SpacingType;
+  width?: [string, string];
+  wrap_width?: [string, string];
+}
+type MostRead = {
   border_color?: string;
   color?: string;
   enabled?: boolean;
@@ -62,20 +76,6 @@ type Circle = {
   ml?: SpacingType;
   radius?: string;
   width?: string;
-}
-type Image = {
-  align?: [string, string];
-  aligny?: [string, string];
-  dimension?: [string, string];
-  enabled?: boolean;
-  height?: [string, string];
-  layout?: [string, string];
-  mt?: SpacingType;
-  mr?: SpacingType;
-  mb?: SpacingType;
-  ml?: SpacingType;
-  width?: [string, string];
-  wrap_width?: [string, string];
 }
 type Related = {
   color?: string;
@@ -117,7 +117,7 @@ export type LayoutProps = {
   fallback_image_url?: string;
   image?: Image;
   image_circle?: boolean;
-  most_read_circle?: Circle;
+  most_read_circle?: MostRead;
   opacity_mask?: boolean;
   related?: Related;
   section?: Object;
