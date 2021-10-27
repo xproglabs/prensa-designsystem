@@ -1,6 +1,8 @@
 # v1.6.38
-- Deprecia export da função path_absolute
 - Consolida export da função parseImagePath
+- Deprecia export da função path_absolute
+- Adiciona novo token a família Radius (circle)
+- Permite nova regra fallback_image no Teaser
 # v1.6.35
 - Consolida export da função path_absolute
 # v1.6.34
