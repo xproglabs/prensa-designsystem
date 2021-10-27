@@ -47,10 +47,12 @@ type BoxWrap = {
 }
 type Circle = {
   border_color?: string;
-  color?:string;
+  color?: string;
   enabled?: boolean;
   font_size?: string;
   font_family?: string;
+  height?: string;
+  width?: string;
 }
 type Image = {
   align?: [string, string];

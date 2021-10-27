@@ -16,9 +16,9 @@ export const TEASER_MOST_READ = CreateTeaser({
   image: {
     enabled: false,
     dimension: ['1x1', '1x1'],
-    height: ['80px', '80px'],
-    width: ['80px', '80px'],
-    wrap_width: ['80px', '80px'],
+    height: ['40px', '40px'],
+    width: ['40px', '40px'],
+    wrap_width: ['40px', '40px'],
   },
   most_read_circle: {
     enabled: true

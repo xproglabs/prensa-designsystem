@@ -7,7 +7,9 @@ export const Circle = ({
   children,
   color,
   fontFamily,
-  fontSize
+  fontSize,
+  height,
+  width
 }) => {
   return (
     <Block
@@ -17,8 +19,9 @@ export const Circle = ({
       b='1px'
       borderColor={borderColor}
       custom='border-radius: 100%'
-      height='40px'
+      height={height}
       width='40px'>
+      width={width}>
         <Typography
           color={color}
           fontFamily={fontFamily}
@@ -32,5 +35,7 @@ Circle.defaultProps = {
   borderColor: 'primary1',
   color: 'primary1',
   fontFamily: 'primary',
-  fontSize: '18px'
+  fontSize: '18px',
+  height: '40px',
+  width: '40px'
 }
