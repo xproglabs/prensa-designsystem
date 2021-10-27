@@ -2,9 +2,9 @@ import { Block, Typography } from 'prensa'
 import React from 'react'
 import { PaginationNumberProps } from './types'
 
-import { IcLeftPagination } from '../../icons/IcLeftPagination'
+import { IcRightPagination } from '../../icons/IcRightPagination'
 
-export const ArrowLeft = ({
+export const ArrowRight = ({
   borderColor,
   height,
   radius,
@@ -17,14 +17,14 @@ export const ArrowLeft = ({
       aligny='middle'
       b='1px'
       borderColor={borderColor}
-      height={height}
       radius={radius}
+      height={height}
       width={width}> 
-      <IcLeftPagination />
+      <IcRightPagination />
     </Block>
   )
 }
-ArrowLeft.defaultProps = {
+ArrowRight.defaultProps = {
   borderColor: '#ADB0BC',
   height: '40px',
   radius: 'circle',
