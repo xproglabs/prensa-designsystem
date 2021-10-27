@@ -74,6 +74,7 @@ type MostRead = {
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
+  numberContainer?: object;
   radius?: string;
   width?: string;
 }

@@ -8,14 +8,6 @@ export const NumberContainer = ({
   fontFamily,
   fontSize,
   height,
-  pt,
-  pr,
-  pb,
-  pl,
-  mt,
-  mr,
-  mb,
-  ml,
   numberContainer,
   radius,
   width
@@ -25,17 +17,8 @@ export const NumberContainer = ({
       align='column'
       alignx='center'
       aligny='middle'
-      b='1px'
       borderColor={borderColor}
       height={height}
-      pt={pt}
-      pr={pr}
-      pb={pb}
-      pl={pl}
-      mt={mt}
-      mr={mr}
-      mb={mb}
-      ml={ml}
       radius={radius}
       width={width}
       {...numberContainer}>

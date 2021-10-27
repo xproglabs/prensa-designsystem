@@ -9,6 +9,7 @@ type RenderNumberProps = {
   borderColor?: string;
   layout: LayoutProps;
   number: number;
+  numberContainer?: object;
 }
 
 const RenderNumber = ({
@@ -24,14 +25,6 @@ const RenderNumber = ({
       borderColor={circle_layout?.border_color}
       fontSize={circle_layout?.font_size}
       fontFamily={circle_layout?.font_family}
-      pt={circle_layout?.pt}
-      pr={circle_layout?.pr}
-      pb={circle_layout?.pb}
-      pl={circle_layout?.pl}
-      mt={circle_layout?.mt}
-      mr={circle_layout?.mr}
-      mb={circle_layout?.mb}
-      ml={circle_layout?.ml}
       height={circle_layout?.height}
       radius={circle_layout?.radius}
       width={circle_layout?.width}>
