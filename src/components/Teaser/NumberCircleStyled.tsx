@@ -9,6 +9,14 @@ export const Circle = ({
   fontFamily,
   fontSize,
   height,
+  pt,
+  pr,
+  pb,
+  pl,
+  mt,
+  mr,
+  mb,
+  ml,
   radius,
   width
 }) => {
@@ -20,6 +28,14 @@ export const Circle = ({
       b='1px'
       borderColor={borderColor}
       height={height}
+      pt={pt}
+      pr={pr}
+      pb={pb}
+      pl={pl}
+      mt={mt}
+      mr={mr}
+      mb={mb}
+      ml={ml}
       radius={radius}
       width={width}>
         <Typography

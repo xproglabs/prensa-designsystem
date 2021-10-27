@@ -52,6 +52,15 @@ type Circle = {
   font_size?: string;
   font_family?: string;
   height?: string;
+  pt?: SpacingType;
+  pr?: SpacingType;
+  pb?: SpacingType;
+  pl?: SpacingType;
+  mt?: SpacingType;
+  mr?: SpacingType;
+  mb?: SpacingType;
+  ml?: SpacingType;
+  radius?: string;
   width?: string;
 }
 type Image = {
