@@ -7,8 +7,6 @@ export interface PreviewProviderProps {
   preview: PageBlockPreview;
   children: any;
   item: any;
-  text: any;
-  subject: any;
 }
 
 /**
@@ -21,9 +19,7 @@ export interface PreviewProviderProps {
 const PreviewProvider = ({
   children,
   item,
-  preview,
-  text,
-  subject
+  preview
 }: PreviewProviderProps & Object) => {
 
   function render_preview_enabled() {
@@ -31,10 +27,7 @@ const PreviewProvider = ({
     return (
       <PreviewRender
         item={item}
-        preview={preview}
-        text={text}
-        subject={subject}
-      >
+        preview={preview}>
         {children}
       </PreviewRender>
     )
