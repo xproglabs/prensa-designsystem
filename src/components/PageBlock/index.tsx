@@ -79,6 +79,7 @@ const PageBlock = ({
           min_height: slot100_block.min_height,
           preview,
           slot: slot1.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
         }}
@@ -106,6 +107,7 @@ const PageBlock = ({
           layouts: slot70_layout,
           preview,
           slot: slot1.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
         }}
@@ -120,6 +122,7 @@ const PageBlock = ({
           min_height: slot30_block.min_height,
           preview,
           slot: slot2.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList
         }}
@@ -147,6 +150,7 @@ const PageBlock = ({
           min_height: slotLeft_block.min_height,
           preview,
           slot: slot1.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
         }}
@@ -161,6 +165,7 @@ const PageBlock = ({
           min_height: slotRight_block.min_height,
           preview,
           slot: slot2.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList
         }}
@@ -196,6 +201,7 @@ const PageBlock = ({
           min_height: slotLeft_block.min_height,
           preview,
           slot: slot1.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
         }}
@@ -211,6 +217,7 @@ const PageBlock = ({
           min_height: slotCenter_block.min_height,
           preview,
           slot: slot2.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList
         }}
@@ -226,6 +233,7 @@ const PageBlock = ({
           min_height: slotRight_block.min_height,
           preview,
           slot: slot3.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot3_title : null,
           spaceB: slot3_slotList
         }}
@@ -249,6 +257,7 @@ const PageBlock = ({
         min_height: slowWrap_block.min_height,
         preview,
         slot: slot1.list1,
+        slot_parser,
         spaceA: slotsHaveSecionTitle ? slot1_title : null,
         spaceB: slot1_slotList
       }}

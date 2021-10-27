@@ -1,3 +1,4 @@
+import { selectComponentFromSlotList } from 'components/PageBlock/utils'
 import { get, map } from 'lodash'
 import React from 'react'
 import { withTheme } from 'styled-components'
@@ -7,7 +8,7 @@ import Carousel from '../Carousel'
 import { PreviewProvider } from '../PreviewProvider'
 import Teaser from '../Teaser'
 import { RenderSlotProps } from './types'
-import { parseTeaserProps } from './utils'
+import { parseTeaserProps, renderSpaceSlot } from './utils'
 
 /**
  * Render Slot component
@@ -23,6 +24,7 @@ const RenderSlot = ({
   layouts,
   preview,
   slot,
+  slot_parser,
   theme
 }: RenderSlotProps) => {
 
@@ -30,11 +32,40 @@ const RenderSlot = ({
   const column_width = `calc((100% - (${column_padding} * 24px)) / ${column_items})`
   const carousel_enabled = get(carousel, 'enabled', false)
 
-  const RenderTeasers = () => (
+  const RenderSpace = ({ item }) => {
+    if (item && item['input-template']) {
+      if (slot_parser) {
+        const space = selectComponentFromSlotList(slot_parser, [item])
+        return renderSpaceSlot(space)
+      }
+    }
+    return null
+  }
+
+  const RenderTeaser = ({ item, number }) => {
+    let teaser_props = parseTeaserProps(number, layout, layouts, slot, teasers)
+    if (!teaser_props) {
+      return null
+    }
+    return (
+      <PreviewProvider
+        item={item}
+        preview={preview}>
+        <Teaser
+          amp={amp}
+          color={color}
+          domain={domain}
+          item={item}
+          layout={teaser_props.layout}
+          related={teaser_props.related}
+        />
+      </PreviewProvider>
+    )
+  }
+
+  const RenderList = () => (
     <React.Fragment>
       {map(slot, (item, key: number) => {
-        let teaser_props = parseTeaserProps(key, layout, layouts, slot, teasers)
-        if (!teaser_props) return null
         return (
           <Block
             key={key}
@@ -42,18 +73,11 @@ const RenderSlot = ({
             mb={2}
             width='100%'
             lg={{ mb: 3, width: column_width }}>
-            <PreviewProvider
+            <RenderSpace item={item} />
+            <RenderTeaser
               item={item}
-              preview={preview}>
-              <Teaser
-                amp={amp}
-                color={color}
-                domain={domain}
-                item={item}
-                layout={teaser_props.layout}
-                related={teaser_props.related}
-              />
-            </PreviewProvider>
+              number={key}
+            />
           </Block>
         )
       })}
@@ -62,11 +86,11 @@ const RenderSlot = ({
 
   if (carousel_enabled) {
     <Carousel {...carousel}>
-      <RenderTeasers />
+      <RenderList />
     </Carousel>
   }
 
-  return <RenderTeasers />
+  return <RenderList />
 }
 
 export default withTheme(RenderSlot)
