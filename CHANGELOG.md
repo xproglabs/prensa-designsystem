@@ -1,3 +1,8 @@
+# v1.6.38
+- Deprecia export da função path_absolute
+- Consolida export da função parseImagePath
+# v1.6.35
+- Consolida export da função path_absolute
 # v1.6.34
 - Fix na função path_absolute
 # v1.6.33
