@@ -22,7 +22,7 @@ export const TEASER_LATEST = CreateTeaser({
   image: {
     enabled: true,
     dimension: ['1x1', '2x1'],
-    fallback_image_url: '/prensa-fallback.jpg',
+    fallback_image: true,
     height: ['80px', '160px'],    
     width: ['80px', '320px'],
     wrap_width: ['80px', '320px'],

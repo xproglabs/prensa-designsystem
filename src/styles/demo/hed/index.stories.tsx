@@ -260,6 +260,7 @@ export const HomeListPaged = () => {
         {...DataListPaged}
         amp={false}
         domain={domain}
+        fallback_image_url='/prensa-fallback.jpg'
         preview={preview_editable}
         slot_parser={slot_parser}
       />

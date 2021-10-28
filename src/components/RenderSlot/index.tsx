@@ -20,6 +20,7 @@ const RenderSlot = ({
   column_items,
   column_padding,
   domain,
+  fallback_image_url,
   layout,
   layouts,
   preview,
@@ -59,6 +60,7 @@ const RenderSlot = ({
           amp={amp}
           color={color}
           domain={domain}
+          fallback_image_url={fallback_image_url}
           item={item}
           layout={teaser_props.layout}
           related={teaser_props.related}
