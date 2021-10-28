@@ -48,7 +48,7 @@ type Image = {
   aligny?: [string, string];
   dimension?: [string, string];
   enabled?: boolean;
-  fallback_image_url?: string;
+  fallback_image: boolean;
   height?: [string, string];
   layout?: [string, string];
   mt?: SpacingType;
@@ -95,7 +95,6 @@ export type LayoutProps = {
   box?: BoxTypes;
   box_wrap?: BoxWrap;
   date_time?: RenderDateTimeLayoutProps;
-  fallback_image_url?: string;
   image?: Image;
   image_circle?: boolean;
   number?: NumberLayout;
@@ -109,7 +108,7 @@ export type LayoutProps = {
 export type TeaserProps = {
   /**
    * @description define if uses an amp image or html image
-  */
+   */
   amp?: boolean;
   color?: string;
   domain?: string;
@@ -118,6 +117,7 @@ export type TeaserProps = {
    */
   editable?: EditAreaType;
   edit_buttons?: EditButtonsType;
+  fallback_image_url?: string;
   /**
    * @description expects an object with teaser data
    */

@@ -24,6 +24,7 @@ export type PageBlockProps = {
   bgcolor?: string;
   cid: string;
   domain: string;
+  fallback_image_url?: string,
   image_parser?: any;
   name: string;
   type: string;

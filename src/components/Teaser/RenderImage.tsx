@@ -13,6 +13,7 @@ type RenderImageProps = {
   editable?: {
     enabled: boolean
   };
+  fallback_image_url?: string;
   image_circle?: boolean;
   item?: any;
   item_path?: string;
@@ -24,6 +25,7 @@ const RenderImage = ({
   amp,
   domain,
   editable,
+  fallback_image_url,
   image_circle,
   item,
   item_path,
@@ -45,7 +47,7 @@ const RenderImage = ({
   const image_caption = get(image_object, 'caption', '')
   const mobile_dim = get(layout, 'image.dimension[0]', '1x1')
   const desktop_dim = get(layout, 'image.dimension[1]', '1x1')
-  const fallback_image_url = get(layout, 'image.fallback_image_url', '')
+  const has_fallback_image = get(layout, 'image.fallback_image', false)
   const height = get(layout, 'image.height', 600)
   const layout_mobile = get(layout, 'image.layout[0]', 'responsive')
   const layout_desktop = get(layout, 'image.layout[1]', 'responsive')
@@ -63,9 +65,13 @@ const RenderImage = ({
    *  3 image_contentid exists and generate a valid path (should render CMS image)
    */
   if (!image_contentid || image_contentid === '') {
-    if (fallback_image_url !== '') {
-      image_path_mobile = `${domain}${fallback_image_url}`
-      image_path_desktop = `${domain}${fallback_image_url}`
+    if (has_fallback_image) {
+      if (!fallback_image_url) {
+        console.error('Prensa | Missing fallback_image_url prop in PageBlock component')
+      } else {
+        image_path_mobile = `${domain}${fallback_image_url}`
+        image_path_desktop = `${domain}${fallback_image_url}`
+      }
     } else {
       return null
     }

@@ -16,6 +16,7 @@ const Teaser = (props: TeaserProps) => {
   const {
     amp,
     color,
+    fallback_image_url,
     edit_buttons,
     editable,
     domain,
@@ -151,6 +152,7 @@ const Teaser = (props: TeaserProps) => {
             editable={{
               enabled: editable?.enabled
             }}
+            fallback_image_url={fallback_image_url}
             image_circle={layout?.image_circle}
             item={item}
             item_path={item_path}
