@@ -10,7 +10,6 @@ import { TEASER_IMAGE_TOP_SMALL } from './teaser_image_top_small'
 import { TEASER_IMAGE_TOP_XSMALL } from './teaser_image_top_xsmall'
 import { TEASER_LATEST } from './teaser_latest'
 import { TEASER_MOST_READ } from './teaser_most_read'
-import { TEASER_PAGED } from './teaser_paged'
 
 export const teasers = {
   featured_related: FEATURED_RELATED,
@@ -24,6 +23,5 @@ export const teasers = {
   teaser_image_top_small: TEASER_IMAGE_TOP_SMALL,
   teaser_image_top_xsmall: TEASER_IMAGE_TOP_XSMALL,
   teaser_latest: TEASER_LATEST,
-  teaser_most_read: TEASER_MOST_READ,
-  teaser_paged: TEASER_PAGED,
+  teaser_most_read: TEASER_MOST_READ
 }
