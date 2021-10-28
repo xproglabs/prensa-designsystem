@@ -65,9 +65,6 @@ const Teaser = (props: TeaserProps) => {
   const wrap_mb = get(layout, 'box_wrap.mb', ['0px', '0px'])
   const wrap_mt = get(layout, 'box_wrap.mt', ['0px', '0px'])
 
-  // fallback image prop
-  const fallback_image_url = get(layout, 'fallback_image_url', '')
-
   // image enabled
   const image_enabled = get(layout, 'image.enabled', false)
 
@@ -154,7 +151,6 @@ const Teaser = (props: TeaserProps) => {
             editable={{
               enabled: editable?.enabled
             }}
-            fallback_image_url={fallback_image_url}
             image_circle={layout?.image_circle}
             item={item}
             item_path={item_path}
