@@ -48,6 +48,7 @@ type Image = {
   aligny?: [string, string];
   dimension?: [string, string];
   enabled?: boolean;
+  fallback_image_url?: string;
   height?: [string, string];
   layout?: [string, string];
   mt?: SpacingType;
