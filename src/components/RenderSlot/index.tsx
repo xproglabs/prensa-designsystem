@@ -43,6 +43,9 @@ const RenderSlot = ({
   }
 
   const RenderTeaser = ({ item, number }) => {
+    if (item && item['input-template']) {
+      return null
+    }
     let teaser_props = parseTeaserProps(number, layout, layouts, slot, teasers)
     if (!teaser_props) {
       return null
@@ -73,11 +76,8 @@ const RenderSlot = ({
             mb={2}
             width='100%'
             lg={{ mb: 3, width: column_width }}>
+            <RenderTeaser item={item} number={key} />
             <RenderSpace item={item} />
-            <RenderTeaser
-              item={item}
-              number={key}
-            />
           </Block>
         )
       })}
