@@ -1,3 +1,8 @@
+# v1.6.40
+- Corrige lógica de cor para o componente Related em Teaser
+- Novo componente RenderNumber no Teaser
+- Adiciona os slots de anúncios a partir do slotAds
+- Implemmenta nova lógica de renderização no Subject do Article
 # v1.6.39
 - Correções no Preview Provider e no subject editable
 # v1.6.38
