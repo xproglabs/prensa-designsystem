@@ -1,4 +1,4 @@
-import { IconTokens, RadiusTokens } from '@prensa_tokens'
+import { ColorTokens, RadiusTokens } from '@prensa_tokens'
 
 import { EditAreaType, EditButtonsType } from '../EditArea/types'
 import { RelatedItemProps } from './RelatedTypes'
@@ -104,7 +104,7 @@ export type TeaserProps = {
    * @description define if uses an amp image or html image
   */
   amp?: boolean;
-  color?: string;
+  color?: ColorTokens | string;
   domain?: string;
   /**
    * @description expects a boolean with editable option
