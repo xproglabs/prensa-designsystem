@@ -1,4 +1,6 @@
 # v1.6.40
+- Corrige undefined excpetion no Related
+# v1.6.40
 - Corrige lógica de cor para o componente Related em Teaser
 - Novo componente RenderNumber no Teaser
 - Adiciona os slots de anúncios a partir do slotAds
