@@ -48,7 +48,11 @@ type Image = {
   aligny?: [string, string];
   dimension?: [string, string];
   enabled?: boolean;
-  fallback_image: boolean;
+  /**
+   * @description Enable fallback image behaviour using a boolean
+   * Requires fallback_image_url prop defined in PageBlock component
+   */
+  fallback_image?: boolean;
   height?: [string, string];
   layout?: [string, string];
   mt?: SpacingType;

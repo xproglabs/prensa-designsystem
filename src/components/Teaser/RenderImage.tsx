@@ -65,7 +65,7 @@ const RenderImage = ({
    *  3 image_contentid exists and generate a valid path (should render CMS image)
    */
   if (!image_contentid || image_contentid === '') {
-    if (has_fallback_image) {
+    if (has_fallback_image === true) {
       if (!fallback_image_url) {
         console.error('Prensa | Missing fallback_image_url prop in PageBlock component')
       } else {
