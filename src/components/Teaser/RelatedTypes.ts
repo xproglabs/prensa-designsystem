@@ -13,7 +13,6 @@ type RelatedItemIconProps = IconProps & {
 export interface RelatedItemProps {
   children: any;
   color: string;
-  icon_color: string;
   font_size: Array<String>;
   font_weight: number;
   icon?: RelatedItemIconProps;
