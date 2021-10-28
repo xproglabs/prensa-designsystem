@@ -33,8 +33,6 @@ const RenderImage = ({
   opacityMask
 }: RenderImageProps) => {
 
-  const image_enabled = get(layout, 'image.enabled', false)
-
   // get image object from props
   let image_object = get(item, 'image', false)
   if (!image_object) {
@@ -44,10 +42,6 @@ const RenderImage = ({
   // get contentId from props
   let image_contentid = get(image_object, 'contentId', false)
   image_contentid = image_contentid || get(image_object, 'cid', false)
-
-  if (!image_enabled) {
-    return null
-  }
 
   // parse data
   const image_caption = get(image_object, 'caption', '')

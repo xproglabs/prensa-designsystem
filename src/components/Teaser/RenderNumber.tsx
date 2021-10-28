@@ -55,13 +55,9 @@ export interface RenderNumberProps {
 
 const RenderNumber = ({ layout, number }: RenderNumberProps) => {
 
-  const mr_layout: NumberLayout = get(layout, 'number', {})
-  const containerProps = get(mr_layout, 'containerProps', {})
-  const textProps = get(mr_layout, 'textProps', {})
-
-  if (!mr_layout.enabled) {
-    return null
-  }
+  const layout_data: NumberLayout = get(layout, 'number', {})
+  const containerProps = get(layout_data, 'containerProps', {})
+  const textProps = get(layout_data, 'textProps', {})
 
   return (
     <Block

@@ -68,6 +68,9 @@ const Teaser = (props: TeaserProps) => {
   // fallback image prop
   const fallback_image_url = get(layout, 'fallback_image_url', '')
 
+  // image enabled
+  const image_enabled = get(layout, 'image.enabled', false)
+
   // image wrap
   const image_align = get(layout, 'image.align', ['column', 'column'])
   const image_alignx = get(layout, 'image.alignx', ['left', 'left'])
@@ -80,6 +83,7 @@ const Teaser = (props: TeaserProps) => {
   const image_ml = get(layout, 'image.ml', ['0px', '0px'])
 
   // number wrap
+  const number_enabled = get(layout, 'number.enabled', false)
   const number_align = get(layout, 'number.align', ['column', 'column'])
   const number_alignx = get(layout, 'number.alignx', ['left', 'left'])
   const number_aligny = get(layout, 'number.aligny', ['top', 'top'])
@@ -115,46 +119,50 @@ const Teaser = (props: TeaserProps) => {
       box_borderColor={box_borderColor}
       box_borderStyle={box_borderStyle}
       box_radius={box_radius}>
-      <S.WrapContent
-        wrap_align={number_align}
-        wrap_alignx={number_alignx}
-        wrap_aligny={number_aligny}
-        wrap_height={number_height}
-        wrap_width={number_width}
-        wrap_mt={number_mt}
-        wrap_mr={number_mr}
-        wrap_mb={number_mb}
-        wrap_ml={number_ml}
-      >
-        <RenderNumber
-          layout={layout}
-          number={number}
-        />
-      </S.WrapContent>
-      <S.WrapContent
-        wrap_align={image_align}
-        wrap_aligny={image_aligny}
-        wrap_alignx={image_alignx}
-        wrap_height={image_height}
-        wrap_width={image_wrap_width}
-        wrap_mt={image_mt}
-        wrap_mr={image_mr}
-        wrap_mb={image_mb}
-        wrap_ml={image_ml}>
-        <RenderImage
-          amp={amp}
-          domain={domain}
-          editable={{
-            enabled: editable?.enabled
-          }}
-          fallback_image_url={fallback_image_url}
-          image_circle={layout?.image_circle}
-          item={item}
-          item_path={item_path}
-          layout={layout}
-          opacityMask={opacity_mask}
-        />
-      </S.WrapContent>
+      {number_enabled && 
+        <S.WrapContent
+          wrap_align={number_align}
+          wrap_alignx={number_alignx}
+          wrap_aligny={number_aligny}
+          wrap_height={number_height}
+          wrap_width={number_width}
+          wrap_mt={number_mt}
+          wrap_mr={number_mr}
+          wrap_mb={number_mb}
+          wrap_ml={number_ml}
+        >
+          <RenderNumber
+            layout={layout}
+            number={number}
+          />
+        </S.WrapContent>
+      }
+      {image_enabled && 
+        <S.WrapContent
+          wrap_align={image_align}
+          wrap_aligny={image_aligny}
+          wrap_alignx={image_alignx}
+          wrap_height={image_height}
+          wrap_width={image_wrap_width}
+          wrap_mt={image_mt}
+          wrap_mr={image_mr}
+          wrap_mb={image_mb}
+          wrap_ml={image_ml}>
+          <RenderImage
+            amp={amp}
+            domain={domain}
+            editable={{
+              enabled: editable?.enabled
+            }}
+            fallback_image_url={fallback_image_url}
+            image_circle={layout?.image_circle}
+            item={item}
+            item_path={item_path}
+            layout={layout}
+            opacityMask={opacity_mask}
+          />
+        </S.WrapContent>
+      }
       <S.WrapContent
         content_overlap={content_overlap}
         wrap_align={wrap_align}
