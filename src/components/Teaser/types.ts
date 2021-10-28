@@ -5,6 +5,7 @@ import { RelatedItemProps } from './RelatedTypes'
 import { RelatedProps } from './RelatedTypes'
 import { RenderDateTimeLayoutProps } from './RenderDateTimeTypes'
 import { NumberLayout } from './RenderNumber'
+import { SubjectLayout } from './RenderSubject'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
@@ -68,14 +69,6 @@ type Related = {
   mb?: SpacingType;
   mr?: SpacingType;
 }
-type Subject = {
-  bg_color?: string;
-  color?: string;
-  enabled?: boolean;
-  font_size?: [string, string];
-  line_height?: [string, string];
-  mb?: SpacingType;
-}
 type Subtitle = {
   color?: string;
   font_size?: [string, string];
@@ -102,7 +95,7 @@ export type LayoutProps = {
   opacity_mask?: boolean;
   related?: Related;
   section?: Object;
-  subject?: Subject;
+  subject?: SubjectLayout;
   subtitle?: Subtitle;
   title?: Title;
 }
