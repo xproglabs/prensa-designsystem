@@ -21,6 +21,7 @@ import DATA_HOME_30 from './data/7.204.json'
 import DataHomeFull from './data/home.json'
 import { preview_editable } from './editable'
 import { theme } from './index'
+import Data7795 from './data/7.795.json'
 import Data7188 from './data/7.188.json'
 
 export default {
@@ -181,6 +182,22 @@ export const HomeFeatured = () => {
       mt={[2, 2]}>
       <PageBlock
         {...DATA_HOME_FEAT}
+        amp={false}
+        domain={domain}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
+  )
+}
+export const HomeFeaturedNoImageWithRelated = () => {
+  return (
+    <TemplateContainer
+      background='neutral10'
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...Data7795}
         amp={false}
         domain={domain}
         preview={preview_editable}
