@@ -1,8 +1,6 @@
 import { LayoutProps } from '../../../../types'
 
-type SubjectProps = LayoutProps['subject']
-
-export const SUBJECT_DEFAULT: SubjectProps = {
+export const SUBJECT_DEFAULT: LayoutProps['subject'] = {
   color: 'primary1',
   enabled: true,
   font_size: ['12px', '12px'],
@@ -10,7 +8,7 @@ export const SUBJECT_DEFAULT: SubjectProps = {
   mb: ['4px', '4px'],
   variant: 'default'
 }
-export const SUBJECT_DEFAULT_FEATURED: SubjectProps = {
+export const SUBJECT_DEFAULT_FEATURED: LayoutProps['subject'] = {
   color: 'primary1',
   enabled: true,
   font_size: ['12px', '16px'],
@@ -18,7 +16,7 @@ export const SUBJECT_DEFAULT_FEATURED: SubjectProps = {
   mb: [1, 1],
   variant: 'default'
 }
-export const SUBJECT_FILLED: SubjectProps = {
+export const SUBJECT_FILLED: LayoutProps['subject'] = {
   color: 'white',
   enabled: true,
   font_size: ['16px', '16px'],
