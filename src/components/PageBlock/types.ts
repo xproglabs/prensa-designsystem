@@ -11,6 +11,7 @@ export type SlotBlockProps = {
   link: string;
   len1: number;
   len2: number;
+  list?: [TeaserProps];
   list1: [TeaserProps];
   list2: [TeaserProps];
   title: string;
@@ -32,6 +33,7 @@ export type PageBlockProps = {
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;
   slot3: SlotBlockProps;
+  slot4: SlotBlockProps;
   theme?: any;
 }
 

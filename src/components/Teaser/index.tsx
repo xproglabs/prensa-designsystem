@@ -80,7 +80,6 @@ const Teaser = (props: TeaserProps) => {
 
   // opacity mask prop
   const opacity_mask = get(layout, 'opacity_mask', false)
-
   return (
     <S.Box
       box_align={box_align}
