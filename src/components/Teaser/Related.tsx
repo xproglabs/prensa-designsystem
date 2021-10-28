@@ -9,7 +9,8 @@ const Related = ({
   items,
   layout
 }: RelatedProps) => {
-  const items_color = layout.color || color
+  const layout_color = get(layout, 'color', false)
+  const items_color = layout_color || color
   return (
     <RelatedArea>
       {map(items, (item, key) => {
