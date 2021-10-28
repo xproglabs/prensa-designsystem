@@ -9,7 +9,6 @@ const Icon = ({
   height,
   viewBox,
   width,
-  path,
   ...otherProps
 }: IconProps) => {
 
@@ -28,7 +27,6 @@ const Icon = ({
 }
 
 Icon.defaultProps = {
-  color: 'neutral3',
   height: '24px',
   viewBox: '0 0 24 24',
   width: '24px',
