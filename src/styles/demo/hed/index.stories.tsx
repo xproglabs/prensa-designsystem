@@ -22,6 +22,7 @@ import DataHomeFull from './data/home.json'
 import { preview_editable } from './editable'
 import { theme } from './index'
 import Data7795 from './data/7.795.json'
+import Data7188 from './data/7.188.json'
 
 export default {
   title: 'Templates/HojeEmDia',
@@ -226,6 +227,21 @@ export const HomeFeaturedImage = () => {
       />
       <PageBlock
         {...DataHomeFeaturedImage100}
+        amp={false}
+        domain={domain}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
+  )
+}
+export const UltimasNoticiasComMaisLidas = () => {
+  return (
+    <TemplateContainer
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...Data7188}
         amp={false}
         domain={domain}
         preview={preview_editable}

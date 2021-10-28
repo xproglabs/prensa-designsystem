@@ -50,6 +50,7 @@ const RenderSlot = ({
     if (!teaser_props) {
       return null
     }
+    const teaser_number = number + 1
     return (
       <PreviewProvider
         item={item}
@@ -61,6 +62,7 @@ const RenderSlot = ({
           item={item}
           layout={teaser_props.layout}
           related={teaser_props.related}
+          number={teaser_number}
         />
       </PreviewProvider>
     )

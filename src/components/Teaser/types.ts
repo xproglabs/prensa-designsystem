@@ -1,12 +1,10 @@
 import { IconTokens, RadiusTokens } from '@prensa_tokens'
-import { RelatedItemProps } from './RelatedTypes'
 
-import {
-  EditAreaType,
-  EditButtonsType
-} from '../EditArea/types'
+import { EditAreaType, EditButtonsType } from '../EditArea/types'
+import { RelatedItemProps } from './RelatedTypes'
 import { RelatedProps } from './RelatedTypes'
 import { RenderDateTimeLayoutProps } from './RenderDateTimeTypes'
+import { NumberLayout } from './RenderNumber'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
@@ -99,7 +97,7 @@ export type LayoutProps = {
   fallback_image_url?: string;
   image?: Image;
   image_circle?: boolean;
-  most_read_circle?: boolean;
+  number?: NumberLayout;
   opacity_mask?: boolean;
   related?: Related;
   section?: Object;
@@ -130,6 +128,7 @@ export type TeaserProps = {
   /**
    * @description expects an object with layout configuration for related news
    */
+  number: number;
   related?: RelatedProps;
   /**
    * @description expects a object of states to cover the editable fields
