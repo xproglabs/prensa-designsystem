@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContainerProps } from './types'
+import { ContainerProps, AuthorTitleProps, ColumnTitleProps } from './types'
 import Block from '../../Block'
 import Typography from '../../Typography'
 import {
@@ -11,13 +11,31 @@ import {
   TITLES
 } from './consts'
 
+export const AuthorTitle = ({ 
+  children, 
+  color,
+  fontSize,
+  fontWeight
+}: AuthorTitleProps ) => (
+  <Typography 
+    fontSize={fontSize}
+    fontWeight={fontWeight}
+    color={color}
+    {...AUTHOR_TITLE}>
+    {children}
+  </Typography>
+)
 
 export const Container = ({ 
+  b,
   bgColor,
+  borderColor,
   children 
 }: ContainerProps) => (
   <Block 
+    b={b}
     bgColor={bgColor}
+    borderColor={borderColor}
     {...CONTAINER}>
     {children}
   </Block>
@@ -33,7 +51,7 @@ export const ColumnTitle = ({
   children,
   color,
   fontSize,
-  fontWeight }) => (
+  fontWeight }: ColumnTitleProps) => (
   <Typography 
     color={color}
     fontSize={fontSize}
@@ -43,23 +61,9 @@ export const ColumnTitle = ({
   </Typography>
 )
 
-export const AuthorTitle = ({ 
-  children, 
-  color,
-  fontSize,
-  fontWeight
-}) => (
-  <Typography 
-    fontSize={fontSize}
-    fontWeight={fontWeight}
-    color={color}
-    {...AUTHOR_TITLE}>
-    {children}
-  </Typography>
-)
-
-export const Image = ({ children }) => (
+export const Image = ({ children, radius }) => (
   <Block 
+    radius={radius}
     {...IMAGE}>
     {children}
   </Block>

@@ -1,12 +1,16 @@
 export interface ContainerProps {
+  b: string;
   bgColor: string;
-  children: any
+  borderColor: string;
+  children: any;
 }
 
-export interface ColumnistBioProps {
+export interface AuthorProfileProps {
   authorTitle: string;
   authorTitleColor: string;
+  b: string;
   bgColor: string;
+  borderColor: string;
   children: any;
   columnTitleColor: string;
   columnTitle: string;
@@ -14,14 +18,16 @@ export interface ColumnistBioProps {
   fontSizeColumn: string;
   fontWeightAuthor: string;
   fontWeightColumn: string;
+  radius: string;
 }
 
 export interface ContentProps {
-  children: any
+  children: any;
 }
 
 export interface ImageProps {
   children: any;
+  radius: string;
 }
 
 export interface ColumnTitleProps {
@@ -31,13 +37,13 @@ export interface ColumnTitleProps {
   fontWeight: string
 }
 
-export interface AuhtorTitleProps {
+export interface AuthorTitleProps {
   color: string;
   children: any;
-  fontWeight: string
-  fontSize: string
+  fontWeight: string;
+  fontSize: string;
 }
 
 export interface TitlesProps {
-  children: any
+  children: any;
 }

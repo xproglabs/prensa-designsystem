@@ -1,34 +1,37 @@
 import React from 'react'
-import { border } from 'src/styled-system'
 import  Block from '../../Block'
-
 import * as S from './styled'
-import { ColumnistBioProps } from './types'
+import { AuthorProfileProps } from './types'
 
- const ColumnistBio = ({
+ const AuthorProfile = ({
   authorTitleColor, 
   authorTitle,
+  b,
   bgColor,
+  borderColor,
   columnTitle,
   columnTitleColor,
   fontSizeAuthor,
   fontSizeColumn,
   fontWeightAuthor,
   fontWeightColumn,
-}: ColumnistBioProps) => {
+  radius
+}: AuthorProfileProps) => {
   return(
     <S.Container
-      bgColor={bgColor}>
+      b={b}
+      bgColor={bgColor}
+      borderColor={borderColor}>
       <S.Content>
-        <S.Image>
+        <S.Image radius={radius}>
         </S.Image>
         <S.Titles>
-          <Block  mb={1}>
+          <Block mb={1}>
             <S.ColumnTitle
             fontWeight={fontWeightColumn}
             color={columnTitleColor}
             fontSize={fontSizeColumn}>
-              {columnTitle}
+            {columnTitle}
             </S.ColumnTitle>
           </Block>
           <S.AuthorTitle
@@ -43,16 +46,19 @@ import { ColumnistBioProps } from './types'
   )
 }
 
-ColumnistBio.defaultProps = {
+AuthorProfile.defaultProps = {
   authorTitle: 'Aldecir Xavier',
   authorTitleColor: 'neutral5',
+  b: '1px',
   bgColor: 'white',
+  borderColor: 'neutral9',
   columnTitle: 'Preto no Branco',
   columnTitleColor: 'neutral2',
   fontSizeAuthor: '14px',
   fontSizeColumn: '16px',
   fontWeightColumn: '700',
   fontWeightAuthor: '400',
+  radius: 'circle'
 }
 
-export default ColumnistBio
+export default AuthorProfile

@@ -2,17 +2,17 @@ import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
-import ColumnistBio from '../ColumnistBio'
+import AuthorProfile from '../AuthorProfile'
 
 export default {
-  title: 'ColumnistBio',
-  component: ColumnistBio,
+  title: 'AuthorProfile',
+  component: AuthorProfile,
 }
 
 export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
-      <ColumnistBio />
+      <AuthorProfile />
     </ThemeProvider>
   )
 }

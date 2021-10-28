@@ -10,14 +10,15 @@ const CONTENT= {
   align: 'row',
   aligny: 'middle',
   px: 2,
-  width: 'calc(100% - 80px)',
+  width: 'calc(100% - 32px)',
 
 }
 
 const IMAGE = {
+  bgColor: 'neutral2',
   height: '48px',
   mr: 2,
-  width: '48px',
+  width: '54px',
 }
 
 const COLUMN_TITLE = {
