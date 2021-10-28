@@ -1,3 +1,7 @@
+# v1.6.42
+- Ajustes para permitir fallback image nos teasers
+# v1.6.41
+- Corrige undefined excpetion no Related
 # v1.6.40
 - Corrige undefined excpetion no Related
 # v1.6.40
