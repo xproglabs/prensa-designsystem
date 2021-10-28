@@ -33,6 +33,8 @@ type NumberProps = {
   color?: ColorTokens;
   fontSize?: string;
   fontFamily?: FontTokens;
+  lineHeight?: string;
+  fontWeight?: number;
 }
 export type NumberLayout = {
   align?: [string, string];
