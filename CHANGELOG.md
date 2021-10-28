@@ -1,3 +1,14 @@
+# v1.6.42
+- Ajustes para permitir fallback image nos teasers
+# v1.6.41
+- Corrige undefined excpetion no Related
+# v1.6.40
+- Corrige undefined excpetion no Related
+# v1.6.40
+- Corrige lógica de cor para o componente Related em Teaser
+- Novo componente RenderNumber no Teaser
+- Adiciona os slots de anúncios a partir do slotAds
+- Implemmenta nova lógica de renderização no Subject do Article
 # v1.6.39
 - Correções no Preview Provider e no subject editable
 # v1.6.38

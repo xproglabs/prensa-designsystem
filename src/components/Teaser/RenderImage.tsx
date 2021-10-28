@@ -13,7 +13,6 @@ type RenderImageProps = {
   editable?: {
     enabled: boolean
   };
-  fallback_image_url?: string;
   image_circle?: boolean;
   item?: any;
   item_path?: string;
@@ -25,15 +24,12 @@ const RenderImage = ({
   amp,
   domain,
   editable,
-  fallback_image_url,
   image_circle,
   item,
   item_path,
   layout,
   opacityMask
 }: RenderImageProps) => {
-
-  const image_enabled = get(layout, 'image.enabled', false)
 
   // get image object from props
   let image_object = get(item, 'image', false)
@@ -45,14 +41,11 @@ const RenderImage = ({
   let image_contentid = get(image_object, 'contentId', false)
   image_contentid = image_contentid || get(image_object, 'cid', false)
 
-  if (!image_enabled) {
-    return null
-  }
-
   // parse data
   const image_caption = get(image_object, 'caption', '')
   const mobile_dim = get(layout, 'image.dimension[0]', '1x1')
   const desktop_dim = get(layout, 'image.dimension[1]', '1x1')
+  const fallback_image_url = get(layout, 'image.fallback_image_url', '')
   const height = get(layout, 'image.height', 600)
   const layout_mobile = get(layout, 'image.layout[0]', 'responsive')
   const layout_desktop = get(layout, 'image.layout[1]', 'responsive')
@@ -71,8 +64,8 @@ const RenderImage = ({
    */
   if (!image_contentid || image_contentid === '') {
     if (fallback_image_url !== '') {
-      image_path_mobile = fallback_image_url
-      image_path_desktop = fallback_image_url
+      image_path_mobile = `${domain}${fallback_image_url}`
+      image_path_desktop = `${domain}${fallback_image_url}`
     } else {
       return null
     }

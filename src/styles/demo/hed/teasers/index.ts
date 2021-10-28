@@ -1,14 +1,15 @@
+import { TEASER_DEFAULT } from './default'
 import { FEATURED_RELATED } from './featured_related'
 import { TEASER_COLUMNIST } from './teaser_columnist'
-import { TEASER_DEFAULT } from './default'
-import { TEASER_IMAGE_SMALL } from './teaser_image_small'
+import { TEASER_FEATURED_IMAGE } from './teaser_featured_image'
 import { TEASER_IMAGE_MEDIUM } from './teaser_image_medium'
+import { TEASER_IMAGE_SMALL } from './teaser_image_small'
 import { TEASER_IMAGE_TOP_LARGE } from './teaser_image_top_large'
 import { TEASER_IMAGE_TOP_MEDIUM } from './teaser_image_top_medium'
 import { TEASER_IMAGE_TOP_SMALL } from './teaser_image_top_small'
 import { TEASER_IMAGE_TOP_XSMALL } from './teaser_image_top_xsmall'
-import { TEASER_PAGED } from './teaser_paged'
-import { TEASER_FEATURED_IMAGE } from './teaser_featured_image'
+import { TEASER_LATEST } from './teaser_latest'
+import { TEASER_MOST_READ } from './teaser_most_read'
 
 export const teasers = {
   featured_related: FEATURED_RELATED,
@@ -21,5 +22,6 @@ export const teasers = {
   teaser_image_top_medium: TEASER_IMAGE_TOP_MEDIUM,
   teaser_image_top_small: TEASER_IMAGE_TOP_SMALL,
   teaser_image_top_xsmall: TEASER_IMAGE_TOP_XSMALL,
-  teaser_paged: TEASER_PAGED,
+  teaser_latest: TEASER_LATEST,
+  teaser_most_read: TEASER_MOST_READ
 }
