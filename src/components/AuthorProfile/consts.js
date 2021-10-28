@@ -18,7 +18,8 @@ const IMAGE = {
   bgColor: 'neutral2',
   height: '48px',
   mr: 2,
-  width: '54px',
+  width: '48px',
+  minWidth: '48px'
 }
 
 const COLUMN_TITLE = {

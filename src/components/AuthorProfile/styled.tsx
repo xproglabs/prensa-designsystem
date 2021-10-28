@@ -1,7 +1,7 @@
 import React from 'react'
 import { ContainerProps, AuthorTitleProps, ColumnTitleProps } from './types'
-import Block from '../../Block'
-import Typography from '../../Typography'
+import Block from '../Block'
+import Typography from '../Typography'
 import {
   AUTHOR_TITLE,
   CONTAINER,
