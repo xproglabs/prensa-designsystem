@@ -24,7 +24,7 @@ export { default as Typography } from './components/Typography'
 export { default as TemplateContainer } from './components/Templates/TemplateContainer'
 
 /** Exporta função path_absolute */
-export * from './components/Image/utils'
+export * from './components/Image/parser'
 
 /** Exporta diretório styles */
 export * from './styles'

@@ -20,6 +20,7 @@ interface ColumnColorProps {
   transparent: boolean;
 }
 interface Template100Props {
+  slotAds: RenderSlotProps;
   slot100: RenderSlotProps;
 }
 const Column = ({ children }: ColumnProps) => (
@@ -69,28 +70,32 @@ const ColumnColor = ({
   )
 }
 const Template100 = ({
+  slotAds,
   slot100,
 }: Template100Props) => {
   const slot100_bgColor = selectBgColorFromSlot(slot100)
   const slot100_isTransparent = isBackgroundTransparent(slot100_bgColor)
   return (
-    <Block
-      align="row"
-      alignx="center"
-      aligny="top"
-      mb={2}
-      width="100%">
-      <Column>
-        {(renderSpaceSlot(slot100.spaceA))}
-        <ColumnColor
-          bgColor={slot100_bgColor}
-          minHeight={slot100.min_height}
-          transparent={slot100_isTransparent}>
-          <RenderSlot {...slot100} />
-        </ColumnColor>
-        {(renderSpaceSlot(slot100.spaceB))}
-      </Column>
-    </Block>
+    <>
+      <Block
+        align="row"
+        alignx="center"
+        aligny="top"
+        mb={2}
+        width="100%">
+        <Column>
+          {(renderSpaceSlot(slot100.spaceA))}
+          <ColumnColor
+            bgColor={slot100_bgColor}
+            minHeight={slot100.min_height}
+            transparent={slot100_isTransparent}>
+            <RenderSlot {...slot100} />
+          </ColumnColor>
+          {(renderSpaceSlot(slot100.spaceB))}
+        </Column>
+      </Block>
+      {(renderSpaceSlot(slotAds.spaceB))}
+    </>
   )
 }
 
