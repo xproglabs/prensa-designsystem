@@ -1,36 +1,80 @@
+import { ColorTokens, FontTokens, RadiusTokens } from '@prensa_tokens'
 import { get } from 'lodash'
-
-import { LayoutProps } from './types'
+import { Block, Typography } from 'prensa'
 import React from 'react'
 
-import * as S from './NumberContainer'
+import { SpacingType, LayoutProps } from './types'
 
-type RenderNumberProps = {
-  borderColor?: string;
+type ContainerProps = {
+  align?: string;
+  alignx?: string;
+  aligny?: string;
+  bgColor?: ColorTokens;
+  b?: string;
+  bt?: string;
+  br?: string;
+  bb?: string;
+  bl?: string;
+  borderColor?: ColorTokens;
+  borderStyle?: string;
+  height: string;
+  mt?: SpacingType;
+  mr?: SpacingType;
+  mb?: SpacingType;
+  ml?: SpacingType;
+  pt?: SpacingType;
+  pr?: SpacingType;
+  pb?: SpacingType;
+  pl?: SpacingType;
+  radius?: RadiusTokens;
+  width: string;
+}
+type NumberProps = {
+  color?: ColorTokens;
+  fontSize?: string;
+  fontFamily?: FontTokens;
+}
+export type NumberLayout = {
+  align?: [string, string];
+  alignx?: [string, string];
+  aligny?: [string, string];
+  containerProps?: ContainerProps;
+  enabled?: boolean;
+  height?: [string, string];
+  mt?: SpacingType;
+  mr?: SpacingType;
+  mb?: SpacingType;
+  ml?: SpacingType;
+  textProps?: NumberProps;
+  width?: [string, string];
+}
+export interface RenderNumberProps {
   layout: LayoutProps;
   number: number;
-  numberContainer?: object;
 }
 
-const RenderNumber = ({
-  layout,
-  number
-}: RenderNumberProps) => {
-  const circle_layout = get(layout, 'most_read_circle')
-  if (!circle_layout?.enabled)
-    return <></>
+const RenderNumber = ({ layout, number }: RenderNumberProps) => {
+
+  const mr_layout: NumberLayout = get(layout, 'number', {})
+  const containerProps = get(mr_layout, 'containerProps', {})
+  const textProps = get(mr_layout, 'textProps', {})
+
+  if (!mr_layout.enabled) {
+    return null
+  }
+
   return (
-    <S.NumberContainer
-      color={circle_layout?.color}
-      borderColor={circle_layout?.border_color}
-      fontSize={circle_layout?.font_size}
-      fontFamily={circle_layout?.font_family}
-      height={circle_layout?.height}
-      radius={circle_layout?.radius}
-      width={circle_layout?.width}>
-      {number}
-    </S.NumberContainer>
+    <Block
+      align='column'
+      alignx='center'
+      aligny='middle'
+      {...containerProps}
+    >
+      <Typography element='span' {...textProps}>
+        {number}
+      </Typography>
+    </Block>
   )
 }
 
-export default RenderNumber
+export { RenderNumber }

@@ -1,12 +1,10 @@
 import { IconTokens, RadiusTokens } from '@prensa_tokens'
-import { RelatedItemProps } from './RelatedTypes'
 
-import {
-  EditAreaType,
-  EditButtonsType
-} from '../EditArea/types'
+import { EditAreaType, EditButtonsType } from '../EditArea/types'
+import { RelatedItemProps } from './RelatedTypes'
 import { RelatedProps } from './RelatedTypes'
 import { RenderDateTimeLayoutProps } from './RenderDateTimeTypes'
+import { NumberLayout } from './RenderNumber'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
@@ -59,25 +57,6 @@ type Image = {
   width?: [string, string];
   wrap_width?: [string, string];
 }
-type MostRead = {
-  border_color?: string;
-  color?: string;
-  enabled?: boolean;
-  font_size?: string;
-  font_family?: string;
-  height?: string;
-  pt?: SpacingType;
-  pr?: SpacingType;
-  pb?: SpacingType;
-  pl?: SpacingType;
-  mt?: SpacingType;
-  mr?: SpacingType;
-  mb?: SpacingType;
-  ml?: SpacingType;
-  numberContainer?: object;
-  radius?: string;
-  width?: string;
-}
 type Related = {
   color?: string;
   font_size?: [string, string];
@@ -118,7 +97,7 @@ export type LayoutProps = {
   fallback_image_url?: string;
   image?: Image;
   image_circle?: boolean;
-  most_read_circle?: MostRead;
+  number?: NumberLayout;
   opacity_mask?: boolean;
   related?: Related;
   section?: Object;

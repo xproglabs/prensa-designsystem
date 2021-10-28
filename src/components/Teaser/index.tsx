@@ -2,10 +2,10 @@ import { get } from 'lodash'
 import React from 'react'
 
 import { EditButtons } from '../EditArea'
-import RenderNumber from './RenderNumber'
 import RelatedRender from './Related'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
+import { RenderNumber } from './RenderNumber'
 import { RenderSubject } from './RenderSubject'
 import { RenderSubtitle } from './RenderSubtitle'
 import { RenderTitle } from './RenderTitle'
@@ -79,6 +79,17 @@ const Teaser = (props: TeaserProps) => {
   const image_mb = get(layout, 'image.mb', ['0px', '0px'])
   const image_ml = get(layout, 'image.ml', ['0px', '0px'])
 
+  // number wrap
+  const number_align = get(layout, 'number.align', ['column', 'column'])
+  const number_alignx = get(layout, 'number.alignx', ['left', 'left'])
+  const number_aligny = get(layout, 'number.aligny', ['top', 'top'])
+  const number_height = get(layout, 'number.height', ['auto', 'auto'])
+  const number_width = get(layout, 'number.width', ['100%', '100%'])
+  const number_mt = get(layout, 'number.mt', ['0px', '0px'])
+  const number_mr = get(layout, 'number.mr', ['0px', '0px'])
+  const number_mb = get(layout, 'number.mb', ['0px', '0px'])
+  const number_ml = get(layout, 'number.ml', ['0px', '0px'])
+
   // opacity mask prop
   const opacity_mask = get(layout, 'opacity_mask', false)
   return (
@@ -105,6 +116,22 @@ const Teaser = (props: TeaserProps) => {
       box_borderStyle={box_borderStyle}
       box_radius={box_radius}>
       <S.WrapContent
+        wrap_align={number_align}
+        wrap_alignx={number_alignx}
+        wrap_aligny={number_aligny}
+        wrap_height={number_height}
+        wrap_width={number_width}
+        wrap_mt={number_mt}
+        wrap_mr={number_mr}
+        wrap_mb={number_mb}
+        wrap_ml={number_ml}
+      >
+        <RenderNumber
+          layout={layout}
+          number={number}
+        />
+      </S.WrapContent>
+      <S.WrapContent
         wrap_align={image_align}
         wrap_aligny={image_aligny}
         wrap_alignx={image_alignx}
@@ -114,10 +141,6 @@ const Teaser = (props: TeaserProps) => {
         wrap_mr={image_mr}
         wrap_mb={image_mb}
         wrap_ml={image_ml}>
-        <RenderNumber
-          layout={layout}
-          number={number}
-        />
         <RenderImage
           amp={amp}
           domain={domain}
