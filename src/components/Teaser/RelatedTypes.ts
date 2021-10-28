@@ -1,6 +1,6 @@
 import { IconTokens } from '@prensa_tokens'
-import { IconProps } from '../Icon/types'
 
+import { IconProps } from '../Icon/types'
 import {
   LayoutProps,
   SpacingType
