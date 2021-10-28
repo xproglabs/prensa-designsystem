@@ -1,3 +1,6 @@
+# v1.6.43
+- Aplica fluxo de cores dinâmico no RenderSubject
+- Implementa novo fluxo de dados para fallback_image no Teaser
 # v1.6.42
 - Ajustes para permitir fallback image nos teasers
 # v1.6.41
