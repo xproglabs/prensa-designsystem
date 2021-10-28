@@ -17,6 +17,7 @@ export type RenderSlotProps = {
   min_height?: [string, string];
   preview: PageBlockPreview;
   slot: Array<any>;
+  slot_parser: any;
   /**
    * @description spaceA prop expects a element or React Component to be rendered before teaser content
    */

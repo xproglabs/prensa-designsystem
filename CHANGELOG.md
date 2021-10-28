@@ -1,3 +1,5 @@
+# v1.6.39
+- Correções no Preview Provider e no subject editable
 # v1.6.38
 - Consolida export da função parseImagePath
 - Deprecia export da função path_absolute
