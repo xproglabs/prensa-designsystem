@@ -58,7 +58,7 @@ const RelatedItem = ({
         </Block>
         <Block width='100%'>
           <Typography
-            color={color}
+            color='neutral2'
             element='h2'
             fontFamily='primary'
             fontSize={font_size[0]}
