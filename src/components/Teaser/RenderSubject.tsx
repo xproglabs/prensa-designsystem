@@ -4,7 +4,7 @@ import React from 'react'
 
 import { EditArea } from '../EditArea'
 import * as S from './styled'
-import { SpacingType } from './types'
+import { LayoutProps, SpacingType  } from './types'
 
 export type VariantTypes = 'default' | 'filled'
 
@@ -19,10 +19,10 @@ export type SubjectLayout = {
 }
 
 export type RenderSubjectProps = {
-  color?: ColorTokens;
+  color?: ColorTokens | string;
   editable?: any;
   item?: any;
-  layout?: SubjectLayout;
+  layout?: LayoutProps;
 }
 
 const RenderSubject = ({
