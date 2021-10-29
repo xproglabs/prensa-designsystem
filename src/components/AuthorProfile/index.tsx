@@ -25,23 +25,26 @@ const AuthorProfile = ({
       bgColor={bgColor}
       borderColor={borderColor}>
       <S.Content>
-        <Image 
-        amp={false} 
-        title='Autor'
-        layout_desktop={{ 
-          enabled: true,
-          height: '40px',
-          width: '40px',
-          path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
-          type: 'fixed'
-        }}
-        layout_mobile={{
-          enabled: true,
-          height: '40px',
-          width: '40px',
-          path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
-          type: 'fixed'
-        }} />
+        <Block height='40px' width='40px'>
+          <Image 
+          amp={false} 
+          custom_class='image-with-radius'
+          title='Autor'
+          layout_desktop={{ 
+            enabled: true,
+            height: '40px',
+            width: '40px',
+            path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+            type: 'fixed'
+          }}
+          layout_mobile={{
+            enabled: true,
+            height: '40px',
+            width: '40px',
+            path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+            type: 'fixed'
+          }} />
+        </Block>
         <S.ContainerTitles>
           <Block mb={1}>
             <S.ColumnTitle
