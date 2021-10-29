@@ -25,7 +25,7 @@ const AuthorProfile = ({
       bgColor={bgColor}
       borderColor={borderColor}>
       <S.Content>
-        <Block height='40px' width='40px'>
+        <S.ContentImage>
           <Image 
           amp={false} 
           custom_class='image-with-radius'
@@ -35,16 +35,16 @@ const AuthorProfile = ({
             height: '40px',
             width: '40px',
             path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
-            type: 'fixed'
+            type: 'responsive'
           }}
           layout_mobile={{
             enabled: true,
             height: '40px',
             width: '40px',
             path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
-            type: 'fixed'
+            type: 'responsive'
           }} />
-        </Block>
+        </S.ContentImage>
         <S.ContainerTitles>
           <Block mb={1}>
             <S.ColumnTitle

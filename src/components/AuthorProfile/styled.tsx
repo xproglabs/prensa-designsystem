@@ -6,6 +6,7 @@ import {
   AUTHOR_TITLE,
   CONTAINER,
   CONTENT,
+  CONTENT_IMAGE,
   COLUMN_TITLE,
   IMAGE,
   CONTAINER_TITLES
@@ -43,6 +44,12 @@ export const Container = ({
 
 export const Content = ({ children }) => (
   <Block {...CONTENT}>
+    {children}
+  </Block>
+)
+
+export const ContentImage = ({ children }) => (
+  <Block {...CONTENT_IMAGE}>
     {children}
   </Block>
 )

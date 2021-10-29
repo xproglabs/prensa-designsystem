@@ -11,7 +11,12 @@ const CONTENT = {
   aligny: 'middle',
   px: 2,
   width: 'calc(100% - 32px)',
+}
 
+const CONTENT_IMAGE = {
+  height: '40px',
+  width: '40px',
+  mr: 2
 }
 
 const IMAGE = {
@@ -41,6 +46,7 @@ export {
   AUTHOR_TITLE,
   CONTAINER,
   CONTENT,
+  CONTENT_IMAGE,
   COLUMN_TITLE,
   IMAGE,
   CONTAINER_TITLES
