@@ -8,7 +8,7 @@ import {
   CONTENT,
   COLUMN_TITLE,
   IMAGE,
-  TITLES
+  CONTAINER_TITLES
 } from './consts'
 
 export const AuthorTitle = ({ 
@@ -69,8 +69,8 @@ export const Image = ({ children, radius }) => (
   </Block>
 )
 
-export const Titles = ({ children }) => (
-  <Block {...TITLES}>
+export const ContainerTitles = ({ children }) => (
+  <Block {...CONTAINER_TITLES}>
     {children}
   </Block>
 )

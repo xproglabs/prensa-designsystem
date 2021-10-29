@@ -1,9 +1,9 @@
 import React from 'react'
-import  Block from '../Block'
+import Block from '../Block'
 import * as S from './styled'
-import { AuthorProfileProps } from './types'
+import { ContainerProps } from './types'
 
- const AuthorProfile = ({
+const AuthorProfile = ({
   authorTitleColor, 
   authorTitle,
   b,
@@ -15,8 +15,9 @@ import { AuthorProfileProps } from './types'
   fontSizeColumn,
   fontWeightAuthor,
   fontWeightColumn,
+  mb,
   radius
-}: AuthorProfileProps) => {
+}: ContainerProps) => {
   return(
     <S.Container
       b={b}
@@ -25,12 +26,13 @@ import { AuthorProfileProps } from './types'
       <S.Content>
         <S.Image radius={radius}>
         </S.Image>
-        <S.Titles>
+        <S.ContainerTitles>
           <Block mb={1}>
             <S.ColumnTitle
-            fontWeight={fontWeightColumn}
             color={columnTitleColor}
-            fontSize={fontSizeColumn}>
+            fontSize={fontSizeColumn}
+            fontWeight={fontWeightColumn}
+            mb={mb}>
             {columnTitle}
             </S.ColumnTitle>
           </Block>
@@ -40,7 +42,7 @@ import { AuthorProfileProps } from './types'
             fontWeight={fontWeightAuthor}>
             {authorTitle}
           </S.AuthorTitle>
-        </S.Titles>
+        </S.ContainerTitles>
       </S.Content> 
     </S.Container>
   )
@@ -58,6 +60,7 @@ AuthorProfile.defaultProps = {
   fontSizeColumn: '16px',
   fontWeightColumn: '700',
   fontWeightAuthor: '400',
+  mb: 1,
   radius: 'circle'
 }
 

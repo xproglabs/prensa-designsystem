@@ -5,8 +5,8 @@ import { ThemeProvider } from 'styled-components'
 import AuthorProfile from '../AuthorProfile'
 
 export default {
-  title: 'AuthorProfile',
   component: AuthorProfile,
+  title: 'AuthorProfile',
 }
 
 export const Default = () => {

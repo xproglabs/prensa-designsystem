@@ -1,4 +1,4 @@
-const CONTAINER= {
+const CONTAINER = {
   aligny: 'middle',
   alignx: 'center',
   height: '80px',
@@ -6,7 +6,7 @@ const CONTAINER= {
   width: 'calc(100% - 32px)',
 }
 
-const CONTENT= {
+const CONTENT = {
   align: 'row',
   aligny: 'middle',
   px: 2,
@@ -32,7 +32,7 @@ const AUTHOR_TITLE = {
   element: 'span'
 }
 
-const TITLES = {
+const CONTAINER_TITLES = {
   width: '100%',
   align: 'column',
 }
@@ -43,5 +43,5 @@ export {
   CONTENT,
   COLUMN_TITLE,
   IMAGE,
-  TITLES
+  CONTAINER_TITLES
 }
