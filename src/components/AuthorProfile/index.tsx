@@ -2,6 +2,7 @@ import React from 'react'
 import Block from '../Block'
 import * as S from './styled'
 import { ContainerProps } from './types'
+import Image from '../Image'
 
 const AuthorProfile = ({
   authorTitleColor, 
@@ -24,8 +25,23 @@ const AuthorProfile = ({
       bgColor={bgColor}
       borderColor={borderColor}>
       <S.Content>
-        <S.Image radius={radius}>
-        </S.Image>
+        <Image 
+        amp={false} 
+        title='Autor'
+        layout_desktop={{ 
+          enabled: true,
+          height: '40px',
+          width: '40px',
+          path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+          type: 'fixed'
+        }}
+        layout_mobile={{
+          enabled: true,
+          height: '40px',
+          width: '40px',
+          path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+          type: 'fixed'
+        }} />
         <S.ContainerTitles>
           <Block mb={1}>
             <S.ColumnTitle

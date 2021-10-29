@@ -15,7 +15,9 @@ const RenderHtmlImage = (props) => {
   return (
     <S.HtmlImageStyled
       className={props.className}
+      height={props.height}
       src={props.path}
+      width={props.width}
     />
   )
 }
