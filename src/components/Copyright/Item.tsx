@@ -10,7 +10,7 @@ const TextItem = ({ color, text } : TextItemProps) => {
       mb='4px'
       element='span'
       fontSize='14px'
-      textAlign='left'
+      textAlign='start'
       width='100%'>
       {text}
     </Typography>
