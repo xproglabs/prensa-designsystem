@@ -1,4 +1,5 @@
 import { get } from 'lodash'
+
 /**
  * @description set the image dimension (i.e. 2x1, 1x1, 3x2)
  */
@@ -16,18 +17,26 @@ type PolicyType = string
  */
 type WidthType = number
 
-export const parseImagePath = (
+/**
+ * Prensa | Image path generator for Polopoly CMS
+ * @param derivative set the image dimension (i.e. 2x1, 1x1, 3x2)
+ * @param domain set the domain for the image path prefix
+ * @param policy set the policy id value aka contentid
+ * @param width set the image width (via path param)
+ * @returns parsed image url as a string
+ */
+export function parseImagePath(
   derivative: DerivativeType,
   domain: DomainType,
   policy: PolicyType,
   width: WidthType
-) => {
+) {
   /**
    * @description return the image path url
    */
-  let url: string
+  let url: string = ''
   // domain treatments
-  if(domain === 'undefined') {
+  if (domain === 'undefined') {
     domain = ''
   }
   // parse policy

@@ -1,3 +1,37 @@
+# v1.6.43
+- Aplica fluxo de cores dinâmico no RenderSubject
+- Implementa novo fluxo de dados para fallback_image no Teaser
+# v1.6.42
+- Ajustes para permitir fallback image nos teasers
+# v1.6.41
+- Corrige undefined excpetion no Related
+# v1.6.40
+- Corrige undefined excpetion no Related
+# v1.6.40
+- Corrige lógica de cor para o componente Related em Teaser
+- Novo componente RenderNumber no Teaser
+- Adiciona os slots de anúncios a partir do slotAds
+- Implemmenta nova lógica de renderização no Subject do Article
+# v1.6.39
+- Correções no Preview Provider e no subject editable
+# v1.6.38
+- Consolida export da função parseImagePath
+- Deprecia export da função path_absolute
+- Adiciona novo token a família Radius (circle)
+- Permite nova regra fallback_image no Teaser
+# v1.6.35
+- Consolida export da função path_absolute
+# v1.6.34
+- Fix na função path_absolute
+# v1.6.33
+- Corrige alinhamento no TeaserRelated após mudanças no Link
+# v1.6.32
+- Fix na área de clique e melhoria na tipagem do componente Link
+# v1.6.31
+- Corrige os warnings do projeto retornados no frontend
+- Permite parametrizar min height de cada slot via template
+# v1.6.30
+- Novo componente Copyright
 # v1.6.29
 - Reduz z-index no WrapContent do Teaser
 # v1.6.28

@@ -1,7 +1,7 @@
 import { get } from 'lodash'
+import { Block, Link, Typography } from 'prensa'
 import React from 'react'
 import { withTheme } from 'styled-components'
-import { Block, Link, Typography } from 'prensa'
 
 import { RelatedItemProps } from './RelatedTypes'
 
@@ -13,9 +13,8 @@ export const RelatedArea = ({ children }) => {
       aligny="top"
       lg={{
         align: 'row',
-        alignx: 'between',
+        alignx: 'wrap',
         aligny: 'top',
-        custom: 'flex-wrap: wrap;'
       }}
       width="100%">
       {children}
@@ -37,6 +36,7 @@ const RelatedItem = ({
 }: RelatedItemProps) => {
 
   const icon_token = icon?.icon
+  const icon_width = icon?.width
 
   function get_icon_from_theme() {
     //Todo: Create log patter for theme findings errors
@@ -50,23 +50,28 @@ const RelatedItem = ({
     <Block
       mb={mb[0]}
       lg={{ mb: mb[1] }}
-      width='100%'>
-      <Typography
-        color={color}
-        element='h2'
-        fontFamily='primary'
-        fontSize={font_size[0]}
-        fontWeight={font_weight}
-        lineHeight={line_height[0]}
-        lg={{
-          fontSize: font_size[1],
-          lineHeight: line_height[1]
-        }}
-        mr={mr || 1}>
-        <Link href={item_path}>
-          {icon_component && React.cloneElement(icon_component, { color, ...icon })} {children}
-        </Link>
-      </Typography>
+      width='100%'
+    >
+      <Block align='row'>
+        <Block mr={mr || 1} width={icon_width || '42px'}>
+          {icon_component && React.cloneElement(icon_component, { color, ...icon })}
+        </Block>
+        <Block width='100%'>
+          <Typography
+            color='neutral2'
+            element='h2'
+            fontFamily='primary'
+            fontSize={font_size[0]}
+            fontWeight={font_weight}
+            lineHeight={line_height[0]}
+            lg={{ fontSize: font_size[1], lineHeight: line_height[1] }}
+          >
+            <Link path={item_path} hoverOpacity={0.9}>
+              {children}
+            </Link>
+          </Typography>
+        </Block>
+      </Block>
     </Block>
   )
 }

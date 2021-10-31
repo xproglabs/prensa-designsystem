@@ -6,6 +6,7 @@ import { ThemeProvider, StyleSheetManager } from 'styled-components'
 import Block from '../../../components/Block'
 import PageBlock from '../../../components/PageBlock'
 import TemplateContainer from '../../../components/Templates/TemplateContainer'
+import DataAdsPlaceholder from './data/7.100.json'
 import DataHomeLinha1 from './data/7.153.json'
 import DataHomeLinha2 from './data/7.155.json'
 import DataHomeLinha3 from './data/7.161.json'
@@ -20,6 +21,8 @@ import DATA_HOME_30 from './data/7.204.json'
 import DataHomeFull from './data/home.json'
 import { preview_editable } from './editable'
 import { theme } from './index'
+import Data7795 from './data/7.795.json'
+import Data7188 from './data/7.188.json'
 
 export default {
   title: 'Templates/HojeEmDia',
@@ -44,20 +47,35 @@ const loadContentFromPagedata = () => {
   return pageblocks
 }
 
-const domain = 'http://177.107.132.35:3000'
+const domain = 'https://qa.hojeemdia.com.br'
 
-const slot_parser = (item?: any, key?: number) => {
+const slot_parser = (item, key) => {
   return (
-    <React.Fragment key={key}>
-      <Block
-        bgColor='neutral9'
-        mb={2}
-        px={2}
-        py={2}
-        width='calc(100% - 32px)'>
-        <Typography color='neutral8'>ads.placeholder</Typography>
-      </Block>
-    </React.Fragment>
+    <Block
+      bgColor='neutral9'
+      key={key}
+      mb={2}
+      px={2}
+      py={2}
+      width='calc(100% - 32px)'>
+      <Typography color='neutral8'>{item.title}</Typography>
+    </Block>
+  )
+}
+export const HomeWithAds = () => {
+  return (
+    <TemplateContainer
+      background='neutral10'
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...DataAdsPlaceholder}
+        amp={false}
+        domain={domain}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
   )
 }
 export const HomeLinha1 = () => {
@@ -172,6 +190,22 @@ export const HomeFeatured = () => {
     </TemplateContainer>
   )
 }
+export const HomeFeaturedNoImageWithRelated = () => {
+  return (
+    <TemplateContainer
+      background='neutral10'
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...Data7795}
+        amp={false}
+        domain={domain}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
+  )
+}
 export const HomeFeaturedImage = () => {
   return (
     <TemplateContainer
@@ -201,6 +235,21 @@ export const HomeFeaturedImage = () => {
     </TemplateContainer>
   )
 }
+export const UltimasNoticiasComMaisLidas = () => {
+  return (
+    <TemplateContainer
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...Data7188}
+        amp={false}
+        domain={domain}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
+  )
+}
 export const HomeListPaged = () => {
   return (
     <TemplateContainer
@@ -211,6 +260,7 @@ export const HomeListPaged = () => {
         {...DataListPaged}
         amp={false}
         domain={domain}
+        fallback_image_url='/prensa-fallback.jpg'
         preview={preview_editable}
         slot_parser={slot_parser}
       />

@@ -21,12 +21,14 @@ import {
 const PageBlock = ({
   amp,
   domain,
+  fallback_image_url,
   preview,
   section_title_component,
   slot_parser,
   slot1,
   slot2,
   slot3,
+  slot4,
   theme,
   type,
 }: PageBlockProps) => {
@@ -57,9 +59,10 @@ const PageBlock = ({
     customComponent: section_title_component
   })
   // define slot spaceB
-  const slot1_slotList = selectComponentFromSlotList(slot_parser, slot1.list2)
-  const slot2_slotList = selectComponentFromSlotList(slot_parser, slot2.list2)
-  const slot3_slotList = selectComponentFromSlotList(slot_parser, slot3.list2)
+  const slot1_slotList = selectComponentFromSlotList(slot_parser, slot1?.list2)
+  const slot2_slotList = selectComponentFromSlotList(slot_parser, slot2?.list2)
+  const slot3_slotList = selectComponentFromSlotList(slot_parser, slot3?.list2)
+  const slot4_slotList = selectComponentFromSlotList(slot_parser, slot4?.list)
 
   if (type === 'template100') {
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
@@ -68,15 +71,28 @@ const PageBlock = ({
     const slotsHaveSecionTitle = slot1.title !== ''
     return (
       <Template100
+        slotAds={{
+          column_items: 0,
+          column_padding: 0,
+          layouts: slot100_layout,
+          preview,
+          spaceB: slot4_slotList,
+          slot: [],
+          slot_parser,
+        }}
         slot100={{
           amp,
           bgcolor: slot1.bgcolor,
+          color: slot1.color,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
+          fallback_image_url,
           layouts: slot100_layout,
+          min_height: slot100_block.min_height,
           preview,
           slot: slot1.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
         }}
@@ -93,27 +109,44 @@ const PageBlock = ({
     const slotsHaveSecionTitle = slot1.title !== '' || slot2.title !== ''
     return (
       <Template7030
+        slotAds={{
+          column_items: 0,
+          column_padding: 0,
+          layouts: slot70_layout,
+          preview,
+          spaceB: slot4_slotList,
+          slot: [],
+          slot_parser,
+        }}
         slot70={{
           amp,
           bgcolor: slot1.bgcolor,
+          color: slot1.color,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
+          fallback_image_url,
+          min_height: slot70_block.min_height,
           layouts: slot70_layout,
           preview,
           slot: slot1.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
         }}
         slot30={{
           amp,
           bgcolor: slot2.bgcolor,
+          color: slot2.color,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
           domain,
+          fallback_image_url,
           layouts: slot30_layout,
+          min_height: slot30_block.min_height,
           preview,
           slot: slot2.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList
         }}
@@ -130,27 +163,44 @@ const PageBlock = ({
     const slotsHaveSecionTitle = slot1.title !== '' || slot2.title !== ''
     return (
       <Template5050
+        slotAds={{
+          column_items: 0,
+          column_padding: 0,
+          layouts: slotLeft_layout,
+          preview,
+          spaceB: slot4_slotList,
+          slot: [],
+          slot_parser,
+        }}
         slotLeft={{
           amp,
           bgcolor: slot1.bgcolor,
+          color: slot1.color,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
+          fallback_image_url,
           layouts: slotLeft_layout,
+          min_height: slotLeft_block.min_height,
           preview,
           slot: slot1.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
         }}
         slotRight={{
           amp,
           bgcolor: slot2.bgcolor,
+          color: slot2.color,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
           domain,
+          fallback_image_url,
           layouts: slotRight_layout,
+          min_height: slotRight_block.min_height,
           preview,
           slot: slot2.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList
         }}
@@ -174,42 +224,63 @@ const PageBlock = ({
     const slotRight_carousel = get(slotRight_block, 'carousel', {})
     return (
       <Template33
+        slotAds={{
+          column_items: 0,
+          column_padding: 0,
+          layouts: slotLeft_layout,
+          preview,
+          spaceB: slot4_slotList,
+          slot: [],
+          slot_parser,
+        }}
         slotLeft={{
           amp,
           bgcolor: slot1.bgcolor,
+          color: slot1.color,
           carousel: slotLeft_carousel,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
+          fallback_image_url,
           layouts: slotLeft_layout,
+          min_height: slotLeft_block.min_height,
           preview,
           slot: slot1.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList
         }}
         slotCenter={{
           amp,
           bgcolor: slot2.bgcolor,
+          color: slot2.color,
           carousel: slotCenter_carousel,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
           domain,
+          fallback_image_url,
           layouts: slotCenter_layout,
+          min_height: slotCenter_block.min_height,
           preview,
           slot: slot2.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList
         }}
         slotRight={{
           amp,
           bgcolor: slot3.bgcolor,
+          color: slot3.color,
           carousel: slotRight_carousel,
           column_items: slot3_spaces + 1,
           column_padding: slot3_spaces,
           domain,
+          fallback_image_url,
           layouts: slotRight_layout,
+          min_height: slotRight_block.min_height,
           preview,
           slot: slot3.list1,
+          slot_parser,
           spaceA: slotsHaveSecionTitle ? slot3_title : null,
           spaceB: slot3_slotList
         }}
@@ -222,15 +293,28 @@ const PageBlock = ({
   const slotsHaveSecionTitle = slot1.title !== ''
   return (
     <TemplateWrap
+      slotAds={{
+        column_items: 0,
+        column_padding: 0,
+        layouts: slowWrap_layout,
+        preview,
+        spaceB: slot4_slotList,
+        slot: [],
+        slot_parser,
+      }}
       slotItems={{
         amp,
         bgcolor: slot1.bgcolor,
+        color: slot1.color,
         column_items: slot1_spaces + 1,
         column_padding: slot1_spaces,
         domain,
+        fallback_image_url,
         layouts: slowWrap_layout,
+        min_height: slowWrap_block.min_height,
         preview,
         slot: slot1.list1,
+        slot_parser,
         spaceA: slotsHaveSecionTitle ? slot1_title : null,
         spaceB: slot1_slotList
       }}

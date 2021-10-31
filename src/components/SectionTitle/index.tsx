@@ -1,6 +1,6 @@
+import { get } from 'lodash'
 import React, { cloneElement } from 'react'
 import { withTheme } from 'styled-components'
-import { get } from 'lodash'
 
 import Link from '../Link'
 import { AreaBox, TitleText } from './styled'
@@ -19,7 +19,7 @@ const SectionTitle = ({
   color,
   icon,
   layout,
-  href,
+  path,
   title,
   theme
 }: SectionTitleProps) => {
@@ -41,7 +41,7 @@ const SectionTitle = ({
   return (
     <AreaBox area={area_layout}>
       {icon_component && cloneElement(icon_component, { color, ...icon_layout })}
-      <Link href={href} {...link_layout}>
+      <Link path={path} {...link_layout}>
         <TitleText color={color} {...text_layout}>
           {title}
         </TitleText>
