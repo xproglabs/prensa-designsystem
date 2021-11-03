@@ -1,3 +1,5 @@
+# v1.6.45
+- Ajusta types na CreateFunction dos templates
 # v1.6.44
 - Novas props de cor para o componente Copyright
 # v1.6.43
