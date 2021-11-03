@@ -1,3 +1,5 @@
+# v1.6.44
+- Novas props de cor para o componente Copyright
 # v1.6.43
 - Aplica fluxo de cores dinâmico no RenderSubject
 - Implementa novo fluxo de dados para fallback_image no Teaser
