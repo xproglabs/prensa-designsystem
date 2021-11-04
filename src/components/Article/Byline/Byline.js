@@ -72,7 +72,6 @@ Byline.defaultProps = {
     fontFamily: 'primary',
     fontSize: ['14px', '14px'],
     lineHeight: ['16px', '16px'],
-    value: 'Prensa Design System'
   },
   content: {
     mb: [3, '0px']
