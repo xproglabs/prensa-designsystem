@@ -14,15 +14,15 @@ export const TEASER_LATEST = CreateTeaser({
     alignx: ['left', 'left'],
     mb: [2, '0px'],
     ml: [2, 3],
-    mr: [2, '0px'],
+    mr: [2, 3],
     mt: [2, 3],
-    width: ['calc(100% - 96px)', 'calc(100% - 344px)']
+    width: ['calc(100% - 80px - 32px)', 'calc(100% - 300px - 48px)']
   },
   date_time: { enabled: true },
   image: {
     enabled: true,
     dimension: ['1x1', '2x1'],
-    fallback_image_url: '/prensa-fallback.jpg',
+    fallback_image: true,
     height: ['80px', '160px'],    
     width: ['80px', '320px'],
     wrap_width: ['80px', '320px'],

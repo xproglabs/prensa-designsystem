@@ -8,7 +8,9 @@ type ColorTokens =
   'secondary1' |
   'secondary2' |
   'secondary3' |
-  'primary2'
+  'primary2' |
+  'white' |
+  'black'
 
 type FontTokens =
   'primary' | 'secondary'

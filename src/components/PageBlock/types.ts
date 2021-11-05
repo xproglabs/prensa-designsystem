@@ -24,11 +24,13 @@ export type PageBlockProps = {
   bgcolor?: string;
   cid: string;
   domain: string;
+  fallback_image_url?: string,
   image_parser?: any;
   name: string;
   type: string;
   preview: PageBlockPreview;
   section_title_component?: any;
+  site_data: any;
   slot_parser: any;
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;

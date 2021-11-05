@@ -13,16 +13,17 @@ import DataHomeLinha3 from './data/7.161.json'
 import DataListPaged from './data/7.173_paged.json'
 import DATA_HOME_7030 from './data/7.173.json'
 import DATA_HOME_FEAT from './data/7.174.json'
-import DataHomeFeaturedImage from './data/7.483.json'
-import DataHomeFeaturedImage33 from './data/7.483_33.json'
-import DataHomeFeaturedImage100 from './data/7.483_100.json'
 import DataHomeTimes from './data/7.181.json'
+import Data7188_33 from './data/7.188_33.json'
+import Data7188 from './data/7.188.json'
 import DATA_HOME_30 from './data/7.204.json'
+import DataHomeFeaturedImage100 from './data/7.483_100.json'
+import DataHomeFeaturedImage33 from './data/7.483_33.json'
+import DataHomeFeaturedImage from './data/7.483.json'
+import Data7795 from './data/7.795.json'
 import DataHomeFull from './data/home.json'
 import { preview_editable } from './editable'
 import { theme } from './index'
-import Data7795 from './data/7.795.json'
-import Data7188 from './data/7.188.json'
 
 export default {
   title: 'Templates/HojeEmDia',
@@ -247,6 +248,13 @@ export const UltimasNoticiasComMaisLidas = () => {
         preview={preview_editable}
         slot_parser={slot_parser}
       />
+      <PageBlock
+        {...Data7188_33}
+        amp={false}
+        domain={domain}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
     </TemplateContainer>
   )
 }
@@ -260,6 +268,7 @@ export const HomeListPaged = () => {
         {...DataListPaged}
         amp={false}
         domain={domain}
+        fallback_image_url='/prensa-fallback.jpg'
         preview={preview_editable}
         slot_parser={slot_parser}
       />

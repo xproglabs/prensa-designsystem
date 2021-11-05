@@ -26,11 +26,11 @@ const Copyright = ({
         <S.ContainerCompanies>
           <S.ContainerXprog>
             <TextItem color={color} text={textXprog} />
-            <LogoXprog href='https://xprog.com.br/' target="_blank" />
+            <LogoXprog href='https://xprog.com.br/' target="_blank" color={color} />
           </S.ContainerXprog>
           <S.ContainerAtex>
             <TextItem color={color} text={textAtex} />
-            <LogoAtex href='https://atex.com/' target="_blank" />
+            <LogoAtex href='https://atex.com/' target="_blank" color={color} />
           </S.ContainerAtex>
         </S.ContainerCompanies>
       </S.ContainerCopyrightBox>  

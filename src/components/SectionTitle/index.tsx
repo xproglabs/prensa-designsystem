@@ -24,10 +24,10 @@ const SectionTitle = ({
   theme
 }: SectionTitleProps) => {
 
-  const area_layout = layout?.area || {}
-  const icon_layout = layout?.icon || {}
-  const link_layout = layout?.link || {}
-  const text_layout = layout?.text || {}
+  const area_layout: any = layout?.area || {}
+  const icon_layout: any = layout?.icon || {}
+  const link_layout: any = layout?.link || {}
+  const text_layout: any = layout?.text || {}
 
   function get_icon_from_theme() {
     //Todo: Create log patter for theme findings errors

@@ -12,10 +12,12 @@ export type RenderSlotProps = {
   column_items: number;
   column_padding: number;
   domain?: string;
+  fallback_image_url?: string;
   layout?: LayoutProps;
   layouts: Array<string>;
   min_height?: [string, string];
   preview: PageBlockPreview;
+  site_data: any;
   slot: Array<any>;
   slot_parser: any;
   /**

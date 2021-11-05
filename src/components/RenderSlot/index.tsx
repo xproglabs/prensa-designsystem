@@ -20,9 +20,11 @@ const RenderSlot = ({
   column_items,
   column_padding,
   domain,
+  fallback_image_url,
   layout,
   layouts,
   preview,
+  site_data,
   slot,
   slot_parser,
   theme
@@ -35,7 +37,7 @@ const RenderSlot = ({
   const RenderSpace = ({ item }) => {
     if (item && item['input-template']) {
       if (slot_parser) {
-        const space = selectComponentFromSlotList(slot_parser, [item])
+        const space = selectComponentFromSlotList(slot_parser, [item], site_data)
         return renderSpaceSlot(space)
       }
     }
@@ -59,6 +61,7 @@ const RenderSlot = ({
           amp={amp}
           color={color}
           domain={domain}
+          fallback_image_url={fallback_image_url}
           item={item}
           layout={teaser_props.layout}
           related={teaser_props.related}
