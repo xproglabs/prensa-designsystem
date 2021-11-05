@@ -1,7 +1,6 @@
+import { Image } from 'prensa'
 import React from 'react'
 
-import Block from '../Block'
-import Image from '../Image'
 import * as S from './styled'
 import { ContainerProps } from './types'
 
@@ -26,7 +25,7 @@ const AuthorProfile = ({
       bgColor={bgColor}
       borderColor={borderColor}>
       <S.Content>
-        <S.ContentImage>
+        <S.ImageWrap>
           <Image
             amp={false}
             custom_class='image-with-radius'
@@ -46,24 +45,22 @@ const AuthorProfile = ({
               type: 'responsive'
             }}
           />
-        </S.ContentImage>
-        <S.ContainerTitles>
-          <Block mb={1}>
-            <S.ColumnTitle
-              color={columnTitleColor}
-              fontSize={fontSizeColumn}
-              fontWeight={fontWeightColumn}
-              mb={mb}>
-              {columnTitle}
-            </S.ColumnTitle>
-          </Block>
-          <S.AuthorTitle
+        </S.ImageWrap>
+        <S.TitleWrap>
+          <S.Title
+            color={columnTitleColor}
+            fontSize={fontSizeColumn}
+            fontWeight={fontWeightColumn}
+            mb={mb}>
+            {columnTitle}
+          </S.Title>
+          <S.TitleAuthor
             color={authorTitleColor}
             fontSize={fontSizeAuthor}
             fontWeight={fontWeightAuthor}>
             {authorTitle}
-          </S.AuthorTitle>
-        </S.ContainerTitles>
+          </S.TitleAuthor>
+        </S.TitleWrap>
       </S.Content>
     </S.Container>
   )

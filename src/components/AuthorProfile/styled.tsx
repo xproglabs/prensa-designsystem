@@ -1,83 +1,84 @@
 import React from 'react'
-import { ContainerProps, AuthorTitleProps, ColumnTitleProps } from './types'
+
 import Block from '../Block'
 import Typography from '../Typography'
-import {
-  AUTHOR_TITLE,
-  CONTAINER,
-  CONTENT,
-  CONTENT_IMAGE,
-  COLUMN_TITLE,
-  IMAGE,
-  CONTAINER_TITLES
-} from './consts'
+import { ContainerProps, AuthorTitleProps, ColumnTitleProps } from './types'
 
-export const AuthorTitle = ({ 
-  children, 
-  color,
-  fontSize,
-  fontWeight
-}: AuthorTitleProps ) => (
-  <Typography 
-    fontSize={fontSize}
-    fontWeight={fontWeight}
-    color={color}
-    {...AUTHOR_TITLE}>
+export const Container = ({ children, ...otherProps }: ContainerProps) => (
+  <Block
+    alignx='center'
+    aligny='middle'
+    height='80px'
+    px={2}
+    width='calc(100% - 32px)'
+    {...otherProps}
+  >
+    {children}
+  </Block>
+)
+
+export const Content = ({ children, ...otherProps }) => (
+  <Block
+    align='row'
+    aligny='middle'
+    px={2}
+    width='calc(100% - 32px)'
+    {...otherProps}
+  >
+    {children}
+  </Block>
+)
+
+export const Image = ({ children, ...otherProps }) => (
+  <Block
+    bgColor='neutral2'
+    height='40px'
+    mr={2}
+    width='40px'
+    minWidth='40px'
+    {...otherProps}
+  >
+    {children}
+  </Block>
+)
+
+export const ImageWrap = ({ children, ...otherProps }) => (
+  <Block
+    height='40px'
+    width='40px'
+    {...otherProps}
+  >
+    {children}
+  </Block>
+)
+
+export const Title = ({ children, ...otherProps }: ColumnTitleProps) => (
+  <Typography
+    element='label'
+    mb={1}
+    width='100%'
+    {...otherProps}
+  >
     {children}
   </Typography>
 )
 
-export const Container = ({ 
-  b,
-  bgColor,
-  borderColor,
-  children 
-}: ContainerProps) => (
-  <Block 
-    b={b}
-    bgColor={bgColor}
-    borderColor={borderColor}
-    {...CONTAINER}>
-    {children}
-  </Block>
-)
-
-export const Content = ({ children }) => (
-  <Block {...CONTENT}>
-    {children}
-  </Block>
-)
-
-export const ContentImage = ({ children }) => (
-  <Block {...CONTENT_IMAGE}>
-    {children}
-  </Block>
-)
-
-export const ColumnTitle = ({ 
-  children,
-  color,
-  fontSize,
-  fontWeight }: ColumnTitleProps) => (
-  <Typography 
-    color={color}
-    fontSize={fontSize}
-    fontWeight={fontWeight}
-    {...COLUMN_TITLE}>
+export const TitleAuthor = ({ children, ...otherProps }: AuthorTitleProps) => (
+  <Typography
+    element='span'
+    widht='100%'
+    {...otherProps}
+  >
     {children}
   </Typography>
 )
 
-export const Image = ({ children, radius }) => (
-  <Block 
-    radius={radius}
-    {...IMAGE}>
-    {children}
-  </Block>
-)
-
-export const ContainerTitles = ({ children }) => (
-  <Block {...CONTAINER_TITLES}>
+export const TitleWrap = ({ children, ...otherProps }) => (
+  <Block
+    align='column'
+    width='100%'
+    {...otherProps}
+  >
     {children}
   </Block>
 )
