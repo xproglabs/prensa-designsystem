@@ -24,6 +24,7 @@ const RenderSlot = ({
   layout,
   layouts,
   preview,
+  site_data,
   slot,
   slot_parser,
   theme
@@ -36,7 +37,7 @@ const RenderSlot = ({
   const RenderSpace = ({ item }) => {
     if (item && item['input-template']) {
       if (slot_parser) {
-        const space = selectComponentFromSlotList(slot_parser, [item])
+        const space = selectComponentFromSlotList(slot_parser, [item], site_data)
         return renderSpaceSlot(space)
       }
     }
