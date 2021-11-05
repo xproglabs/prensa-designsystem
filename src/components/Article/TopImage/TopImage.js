@@ -102,7 +102,7 @@ TopImage.defaultProps = {
   py: [3, 2],
   value: 'https://xprog.com.br/static/images/img-destak.jpg',
   width: '1280px',
-  widthBox: ['calc(100% - 32px)', 'calc(100% - 48px)']
+  widthBox: ['calc(100% - 48px)', 'calc(100% - 64px)']
 }
 
 TopImage.propTypes = {
