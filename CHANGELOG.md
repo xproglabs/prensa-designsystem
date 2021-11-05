@@ -1,3 +1,5 @@
+# v1.6.46
+- Permite nova propriedade site_data no PageBlock
 # v1.6.45
 - Ajusta types na CreateFunction dos templates
 # v1.6.44
