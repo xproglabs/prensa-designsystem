@@ -1,11 +1,12 @@
 import React from 'react'
+
 import Block from '../Block'
+import Image from '../Image'
 import * as S from './styled'
 import { ContainerProps } from './types'
-import Image from '../Image'
 
 const AuthorProfile = ({
-  authorTitleColor, 
+  authorTitleColor,
   authorTitle,
   b,
   bgColor,
@@ -19,40 +20,41 @@ const AuthorProfile = ({
   mb,
   radius
 }: ContainerProps) => {
-  return(
+  return (
     <S.Container
       b={b}
       bgColor={bgColor}
       borderColor={borderColor}>
       <S.Content>
         <S.ContentImage>
-          <Image 
-          amp={false} 
-          custom_class='image-with-radius'
-          title='Autor'
-          layout_desktop={{ 
-            enabled: true,
-            height: '40px',
-            width: '40px',
-            path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
-            type: 'responsive'
-          }}
-          layout_mobile={{
-            enabled: true,
-            height: '40px',
-            width: '40px',
-            path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
-            type: 'responsive'
-          }} />
+          <Image
+            amp={false}
+            custom_class='image-with-radius'
+            title='Autor'
+            layout_desktop={{
+              enabled: true,
+              height: '40px',
+              width: '40px',
+              path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+              type: 'responsive'
+            }}
+            layout_mobile={{
+              enabled: true,
+              height: '40px',
+              width: '40px',
+              path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+              type: 'responsive'
+            }}
+          />
         </S.ContentImage>
         <S.ContainerTitles>
           <Block mb={1}>
             <S.ColumnTitle
-            color={columnTitleColor}
-            fontSize={fontSizeColumn}
-            fontWeight={fontWeightColumn}
-            mb={mb}>
-            {columnTitle}
+              color={columnTitleColor}
+              fontSize={fontSizeColumn}
+              fontWeight={fontWeightColumn}
+              mb={mb}>
+              {columnTitle}
             </S.ColumnTitle>
           </Block>
           <S.AuthorTitle
@@ -62,7 +64,7 @@ const AuthorProfile = ({
             {authorTitle}
           </S.AuthorTitle>
         </S.ContainerTitles>
-      </S.Content> 
+      </S.Content>
     </S.Container>
   )
 }
