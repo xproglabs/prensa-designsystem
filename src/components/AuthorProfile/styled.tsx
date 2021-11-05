@@ -2,14 +2,18 @@ import React from 'react'
 
 import Block from '../Block'
 import Typography from '../Typography'
-import { ContainerProps, AuthorTitleProps, ColumnTitleProps } from './types'
+import { ContainerProps, ContentProps, TitleProps, TitleAuthorProps } from './types'
 
 export const Container = ({ children, ...otherProps }: ContainerProps) => (
   <Block
     alignx='center'
     aligny='middle'
+    b='1px'
+    bgColor='white'
+    borderColor='neutral9'
     height='80px'
     px={2}
+    radius='alternative'
     width='calc(100% - 32px)'
     {...otherProps}
   >
@@ -17,7 +21,7 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
   </Block>
 )
 
-export const Content = ({ children, ...otherProps }) => (
+export const Content = ({ children, ...otherProps }: ContentProps) => (
   <Block
     align='row'
     aligny='middle'
@@ -33,7 +37,6 @@ export const Image = ({ children, ...otherProps }) => (
   <Block
     bgColor='neutral2'
     height='40px'
-    mr={2}
     width='40px'
     minWidth='40px'
     {...otherProps}
@@ -46,15 +49,19 @@ export const ImageWrap = ({ children, ...otherProps }) => (
   <Block
     height='40px'
     width='40px'
+    mr={2}
     {...otherProps}
   >
     {children}
   </Block>
 )
 
-export const Title = ({ children, ...otherProps }: ColumnTitleProps) => (
+export const Title = ({ children, ...otherProps }: TitleProps) => (
   <Typography
+    color='neutral2'
     element='label'
+    fontSize='16px'
+    fontWeight={700}
     mb={1}
     width='100%'
     {...otherProps}
@@ -63,9 +70,12 @@ export const Title = ({ children, ...otherProps }: ColumnTitleProps) => (
   </Typography>
 )
 
-export const TitleAuthor = ({ children, ...otherProps }: AuthorTitleProps) => (
+export const TitleAuthor = ({ children, ...otherProps }: TitleAuthorProps) => (
   <Typography
+    color='neutral5'
     element='span'
+    fontSize='14px'
+    fontWeight={400}
     widht='100%'
     {...otherProps}
   >
@@ -73,7 +83,7 @@ export const TitleAuthor = ({ children, ...otherProps }: AuthorTitleProps) => (
   </Typography>
 )
 
-export const TitleWrap = ({ children, ...otherProps }) => (
+export const TitleWrapper = ({ children, ...otherProps }) => (
   <Block
     align='column'
     width='100%'

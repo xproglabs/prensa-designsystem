@@ -1,85 +1,63 @@
+import { get } from 'lodash'
 import { Image } from 'prensa'
 import React from 'react'
 
 import * as S from './styled'
-import { ContainerProps } from './types'
+import { AuthorProfileProps } from './types'
 
 const AuthorProfile = ({
-  authorTitleColor,
+  amp,
   authorTitle,
-  b,
-  bgColor,
-  borderColor,
   columnTitle,
-  columnTitleColor,
-  fontSizeAuthor,
-  fontSizeColumn,
-  fontWeightAuthor,
-  fontWeightColumn,
-  mb,
-  radius
-}: ContainerProps) => {
+  containerProps,
+  image,
+  titleProps,
+  titleAuthorProps,
+}: AuthorProfileProps) => {
+
+  const image_desktop_url = get(image, 'desktop_path', '')
+  const image_mobile_url = get(image, 'mobile_path', '')
+  const image_width_desktop = get(image, 'width[0]', '40px')
+  const image_height_desktop = get(image, 'height[0]', '40px')
+  const image_width_mobile = get(image, 'width[1]', '40px')
+  const image_height_mobile = get(image, 'height[1]', '40px')
+  const image_title = get(image, 'title', '')
+
   return (
-    <S.Container
-      b={b}
-      bgColor={bgColor}
-      borderColor={borderColor}>
+    <S.Container {...containerProps}>
       <S.Content>
         <S.ImageWrap>
           <Image
-            amp={false}
+            amp={amp}
             custom_class='image-with-radius'
-            title='Autor'
+            title={image_title}
             layout_desktop={{
               enabled: true,
-              height: '40px',
-              width: '40px',
-              path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+              height: image_height_desktop,
+              width: image_width_desktop,
+              path: image_desktop_url,
               type: 'responsive'
             }}
             layout_mobile={{
               enabled: true,
-              height: '40px',
-              width: '40px',
-              path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+              height: image_height_mobile,
+              width: image_width_mobile,
+              path: image_mobile_url,
               type: 'responsive'
             }}
           />
         </S.ImageWrap>
-        <S.TitleWrap>
-          <S.Title
-            color={columnTitleColor}
-            fontSize={fontSizeColumn}
-            fontWeight={fontWeightColumn}
-            mb={mb}>
+        <S.TitleWrapper>
+          <S.Title {...titleProps}>
             {columnTitle}
           </S.Title>
-          <S.TitleAuthor
-            color={authorTitleColor}
-            fontSize={fontSizeAuthor}
-            fontWeight={fontWeightAuthor}>
+          <S.TitleAuthor {...titleAuthorProps}>
             {authorTitle}
           </S.TitleAuthor>
-        </S.TitleWrap>
+        </S.TitleWrapper>
       </S.Content>
     </S.Container>
   )
-}
-
-AuthorProfile.defaultProps = {
-  authorTitle: 'Aldecir Xavier',
-  authorTitleColor: 'neutral5',
-  b: '1px',
-  bgColor: 'white',
-  borderColor: 'neutral9',
-  columnTitle: 'Preto no Branco',
-  columnTitleColor: 'neutral2',
-  fontSizeAuthor: '14px',
-  fontSizeColumn: '16px',
-  fontWeightColumn: '700',
-  fontWeightAuthor: '400',
-  mb: 1,
-  radius: 'circle'
 }
 
 export default AuthorProfile
