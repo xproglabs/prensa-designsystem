@@ -37,7 +37,7 @@ const TopImage = ({
   )
 
   const Image = () => {
-    if(amp) {
+    if (amp) {
       return (
         <amp-img
           alt={caption_value}
