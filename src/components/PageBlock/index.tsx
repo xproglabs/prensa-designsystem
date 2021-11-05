@@ -24,6 +24,7 @@ const PageBlock = ({
   fallback_image_url,
   preview,
   section_title_component,
+  site_data,
   slot_parser,
   slot1,
   slot2,
@@ -59,10 +60,10 @@ const PageBlock = ({
     customComponent: section_title_component
   })
   // define slot spaceB
-  const slot1_slotList = selectComponentFromSlotList(slot_parser, slot1?.list2)
-  const slot2_slotList = selectComponentFromSlotList(slot_parser, slot2?.list2)
-  const slot3_slotList = selectComponentFromSlotList(slot_parser, slot3?.list2)
-  const slot4_slotList = selectComponentFromSlotList(slot_parser, slot4?.list)
+  const slot1_slotList = selectComponentFromSlotList(slot_parser, slot1?.list2, site_data)
+  const slot2_slotList = selectComponentFromSlotList(slot_parser, slot2?.list2, site_data)
+  const slot3_slotList = selectComponentFromSlotList(slot_parser, slot3?.list2, site_data)
+  const slot4_slotList = selectComponentFromSlotList(slot_parser, slot4?.list, site_data)
 
   if (type === 'template100') {
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
