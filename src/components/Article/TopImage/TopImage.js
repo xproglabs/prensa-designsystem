@@ -16,8 +16,11 @@ const TopImage = ({
   height,
   image,
   mb,
+  px,
+  py,
   value,
   width,
+  widthBox,
   type
 }) => {
   if (!image) return null
@@ -62,7 +65,7 @@ const TopImage = ({
     <Container featured={featured} mb={mb} value={value}>
       <RenderMedia/>
       {caption && caption.show && (
-        <S.SubtitleBox>
+        <S.SubtitleBox px={px} py={py} widthBox={widthBox}>
           <S.Subtitle
             fontFamily={fontFamily}
             fontSize={fontSize}
@@ -91,12 +94,15 @@ TopImage.defaultProps = {
     fontSize: ['14px', '14px'],
     lineHeight: ['130%', '130%'],
     show: true,
-    value: 'Legenda da Imagem'
+    value: 'Legenda da Imagem', 
   },
   height: '640px',
   mb: [2, 2],
+  px: [3, 4],
+  py: [3, 2],
   value: 'https://xprog.com.br/static/images/img-destak.jpg',
-  width: '1280px'
+  width: '1280px',
+  widthBox: ['calc(100% - 32px)', 'calc(100% - 48px)']
 }
 
 TopImage.propTypes = {
@@ -106,8 +112,11 @@ TopImage.propTypes = {
   image: PropTypes.bool,
   caption: PropTypes.object,
   mb: PropTypes.array,
+  px: PropTypes.array,
+  py: PropTypes.array,
   value: PropTypes.string,
   width: PropTypes.string,
+  widthBox: PropTypes.array,
   type: PropTypes.oneOf(['image', 'video'])
 }
 
