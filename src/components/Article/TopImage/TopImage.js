@@ -11,6 +11,7 @@ const Container = ({ children, featured, mb, value }) => {
 }
 
 const TopImage = ({
+  amp,
   caption,
   featured,
   height,
@@ -35,19 +36,29 @@ const TopImage = ({
     />
   )
 
-  const Image = () => (
-    <amp-img
-      alt={caption_value}
-      src={value}
-      layout='responsive'
-      style={{
-        display: 'inline-flex',
-        width: '100%'
-      }}
-      height={height}
-      width={width}
-    />
-  )
+  const Image = () => {
+    if(amp) {
+      return (
+        <amp-img
+          alt={caption_value}
+          src={value}
+          layout='responsive'
+          style={{
+            display: 'inline-flex',
+            width: '100%'
+          }}
+          height={height}
+          width={width}
+        />
+      )
+    }
+    return (
+      <img 
+        alt={caption_value}
+        src={value}  
+      />
+    )
+  }
 
   const RenderMedia = () => {
     switch (type) {
