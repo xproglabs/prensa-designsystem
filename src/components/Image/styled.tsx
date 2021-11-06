@@ -6,8 +6,8 @@ export const HtmlBackgroundStyled = styled.div<T.ImageBackgroundProps>`
   height: 100%;
   width: 100%;
 
-  ${props => props.href && css`
-    background-image: url(${props.href});
+  ${props => props.img_path && css`
+    background-image: url(${props.img_path});
     background-size: cover;
   `}
 `

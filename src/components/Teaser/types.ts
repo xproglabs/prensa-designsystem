@@ -1,12 +1,11 @@
-import { IconTokens, RadiusTokens } from '@prensa_tokens'
-import { RelatedItemProps } from './RelatedTypes'
+import { ColorTokens, RadiusTokens } from '@prensa_tokens'
 
-import {
-  EditAreaType,
-  EditButtonsType
-} from '../EditArea/types'
+import { EditAreaType, EditButtonsType } from '../EditArea/types'
+import { RelatedItemProps } from './RelatedTypes'
 import { RelatedProps } from './RelatedTypes'
 import { RenderDateTimeLayoutProps } from './RenderDateTimeTypes'
+import { NumberLayout } from './RenderNumber'
+import { SubjectLayout } from './RenderSubject'
 
 export type SpacingType = number | string | [number, number] | [string, string] | [number, string] | [string, number]
 
@@ -50,6 +49,11 @@ type Image = {
   aligny?: [string, string];
   dimension?: [string, string];
   enabled?: boolean;
+  /**
+   * @description Enable fallback image behaviour using a boolean
+   * Requires fallback_image_url prop defined in PageBlock component
+   */
+  fallback_image?: boolean;
   height?: [string, string];
   layout?: [string, string];
   mt?: SpacingType;
@@ -68,14 +72,6 @@ type Related = {
   line_height?: [string, string];
   mb?: SpacingType;
   mr?: SpacingType;
-}
-type Subject = {
-  bg_color?: string;
-  color?: string;
-  enabled?: boolean;
-  font_size?: [string, string];
-  line_height?: [string, string];
-  mb?: SpacingType;
 }
 type Subtitle = {
   color?: string;
@@ -99,26 +95,27 @@ export type LayoutProps = {
   date_time?: RenderDateTimeLayoutProps;
   image?: Image;
   image_circle?: boolean;
-  most_read_circle?: boolean;
+  number?: NumberLayout;
   opacity_mask?: boolean;
   related?: Related;
   section?: Object;
-  subject?: Subject;
+  subject?: SubjectLayout;
   subtitle?: Subtitle;
   title?: Title;
 }
 export type TeaserProps = {
   /**
    * @description define if uses an amp image or html image
-  */
+   */
   amp?: boolean;
-  color?: string;
+  color?: ColorTokens | string;
   domain?: string;
   /**
    * @description expects a boolean with editable option
    */
   editable?: EditAreaType;
   edit_buttons?: EditButtonsType;
+  fallback_image_url?: string;
   /**
    * @description expects an object with teaser data
    */
@@ -130,6 +127,7 @@ export type TeaserProps = {
   /**
    * @description expects an object with layout configuration for related news
    */
+  number: number;
   related?: RelatedProps;
   /**
    * @description expects a object of states to cover the editable fields

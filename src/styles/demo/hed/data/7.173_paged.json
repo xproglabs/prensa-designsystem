@@ -3,7 +3,7 @@
   "name": "Bloco 7030",
   "type": "template7030",
   "slot1": {
-    "color": "",
+    "color": "primary1",
     "icon": "",
     "link": "",
     "len1": 8,
@@ -29,7 +29,7 @@
         "img": {
           "byl": "",
           "cap": "",
-          "cid": "1.880206.1632954904",
+          "cid": "",
           "sub": ""
         },
         "name": "PF aponta à Justiça elementos de 'pressão' para favorecer empresa na gestão de Barros na Saúde",
@@ -163,10 +163,10 @@
       }
     ],
     "title": "TESTE DE SEÇÃO",
-    "type": "most_read"
+    "type": "latest_news"
   },
   "slot2": {
-    "color": "",
+    "color": "primary1",
     "icon": "",
     "link": "",
     "len1": 3,

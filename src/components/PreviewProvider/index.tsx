@@ -1,12 +1,12 @@
 import React from 'react'
+
 import { PageBlockPreview } from './types'
 
 //ToDo: Improvement in preview.render props
 export interface PreviewProviderProps {
-  preview: PageBlockPreview;
   children: any;
-  text: any;
-  subject: any;
+  item: any;
+  preview: PageBlockPreview;
 }
 
 /**
@@ -16,16 +16,18 @@ export interface PreviewProviderProps {
  * - preview.enabled === false => children component
  * - preview.enabled === true => Children component with preview.render wrapper
  */
-const PreviewProvider = ({ children, preview, text, subject }: PreviewProviderProps & Object) => {
+const PreviewProvider = ({
+  children,
+  item,
+  preview
+}: PreviewProviderProps & Object) => {
 
   function render_preview_enabled() {
     const PreviewRender = preview.render
     return (
       <PreviewRender
-        preview={preview}
-        text={text}
-        subject={subject}
-      >
+        item={item}
+        preview={preview}>
         {children}
       </PreviewRender>
     )

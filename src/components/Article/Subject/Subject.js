@@ -19,34 +19,38 @@ const Subject = ({
   transform,
   value
 }) => {
-  return (
-    <Block 
-      bgColor={bgColor}
-      custom={`
-        border-radius: ${borderRadius};
-      `}
-      mb={mb[0]}
-      mt={mt[0]}
-      px={px}
-      py={py}
-      lg={{
-        mb: mb[1],
-        mt: mt[1]
-      }}>
-      <Typography 
+
+  const hasValue = value !== ''
+
+  const RenderText = () => {
+    if (!hasValue) return null
+    return (
+      <Typography
         color={color}
-        dangerouslySetInnerHTML={value}
         element='span'
         fontFamily={fontFamily}
         fontSize={fontSize[0]}
         fontWeight={fontWeight}
         lineHeight={lineHeight[0]}
-        lg={{
-          fontSize: fontSize[1],
-          lineHeight: lineHeight[1]
-        }}
+        lg={{ fontSize: fontSize[1], lineHeight: lineHeight[1] }}
         transform={transform}
-      />
+      >
+        {value}
+      </Typography>
+    )
+  }
+
+  return (
+    <Block
+      bgColor={hasValue ? bgColor : undefined}
+      custom={`border-radius: ${borderRadius};`}
+      mb={mb[0]}
+      mt={mt[0]}
+      px={px}
+      py={py}
+      lg={{ mb: mb[1], mt: mt[1] }}
+    >
+      <RenderText />
     </Block>
   )
 }
@@ -63,8 +67,7 @@ Subject.defaultProps = {
   mb: [1, 2],
   mt: [2, 4],
   px: 2,
-  py: '4px',
-  value: 'MÍDIA DIGITAL'
+  py: '4px'
 }
 
 Subject.propTypes = {

@@ -1,0 +1,477 @@
+{
+  "cid": "7.188",
+  "name": "Bloco de Últimas Notícias",
+  "type": "template30",
+  "slot1": {
+    "bgcolor": "",
+    "color": "",
+    "icon": "IconNoticias",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "contentId": "1.880603",
+        "color": "",
+        "keyid": "1",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Instagram/PT Oficial",
+          "cap": "",
+          "cid": "1.828013.1631039258"
+        },
+        "name": "Primeiro radar de conversão proibida em BH vai fiscalizar motoristas infratores na região Noroeste",
+        "path": "/minas/primeiro-radar-de-convers-o-proibida-em-bh-vai-fiscalizar-motoristas-infratores-na-regi-o-noroeste-1.880603",
+        "subject": "TRÂNSITO",
+        "subtitle": "",
+        "time_formatted": "27/10/2021 - 16:13",
+        "time_published": "2021-10-27 16:13:36",
+        "time_modifiedDate": "2021-10-27 20:43:21"
+      },
+      {
+        "contentId": "1.880416",
+        "color": "",
+        "keyid": "2",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880594.1635343565"
+        },
+        "name": "Diretora morre após tiro acidental efetuado pelo ator Alec Baldwin durante gravações do filme 'Rust'",
+        "path": "/minas/diretora-morre-apos-tiro-acidental-efetuado-pelo-ator-alec-baldwin-durante-gravac-es-do-filme-rust-1.880416",
+        "subject": "luto ",
+        "subtitle": "",
+        "time_formatted": "22/10/2021 - 11:05",
+        "time_published": "2021-10-22 11:05:00",
+        "time_modifiedDate": "2021-10-27 11:13:39"
+      },
+      {
+        "contentId": "1.880413",
+        "color": "",
+        "keyid": "3",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Miva Filho/SES/PE/Divulgação",
+          "cap": "No freezer - No caso da Pfizer, doses precisam ficar em baixas temperaturas",
+          "cid": "1.880415.1634910619"
+        },
+        "name": "Falta de estrutura de cidades deixa 800 mil doses contra Covid estocadas em Minas",
+        "path": "/falta-de-estrutura-de-cidades-deixa-800-mil-doses-contra-covid-estocadas-em-minas-1.880413",
+        "subject": "Armazenamento",
+        "subtitle": "",
+        "time_formatted": "22/10/2021 - 10:50",
+        "time_published": "2021-10-22 10:50:55",
+        "time_modifiedDate": "2021-10-22 10:50:55"
+      },
+      {
+        "contentId": "1.880410",
+        "color": "",
+        "keyid": "4",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Lucas Prates/Hoje em Dia",
+          "cap": "",
+          "cid": "1.826270.1635176355"
+        },
+        "name": "Postos de BH amanhecem com filas e sem gasolina; sindicato pede para evitar corrida às bombas",
+        "path": "/postos-de-bh-amanhecem-com-filas-e-sem-gasolina-sindicato-pede-para-evitar-corrida-as-bombas-1.880410",
+        "subject": "Greve dos tanqueiros",
+        "subtitle": "",
+        "time_formatted": "22/10/2021 - 09:32",
+        "time_published": "2021-10-22 9:32:59",
+        "time_modifiedDate": "2021-10-22 10:43:22"
+      },
+      {
+        "contentId": "1.636912",
+        "color": "",
+        "keyid": "5",
+        "keywords": "",
+        "teste": "0",
+        "image": {},
+        "name": "Municípios recorrem ao tesouro nacional por pagamento de dívida do Estado",
+        "path": "/municipios-recorrem-ao-tesouro-nacional-por-pagamento-de-divida-do-estado-1.636912",
+        "subject": "",
+        "subtitle": "",
+        "time_formatted": "27/10/2021 - 18:27",
+        "time_published": "2018-07-04 20:04:07",
+        "time_modifiedDate": "2021-10-21 16:22:52"
+      },
+      {
+        "contentId": "1.880406",
+        "color": "",
+        "keyid": "6",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Flávio Tavares/Arquivo Hoje em Dia",
+          "cap": "",
+          "cid": "1.797033.1628832217"
+        },
+        "name": "Zema confirma pagamento do 13º salário dos servidores de forma integral em Minas antes do Natal",
+        "path": "/zema-confirma-pagamento-do-13-salario-dos-servidores-de-forma-integral-em-minas-antes-do-natal-1.880406",
+        "subject": "Boa Notícia ",
+        "subtitle": "",
+        "time_formatted": "21/10/2021 - 10:46",
+        "time_published": "2021-10-21 10:46:35",
+        "time_modifiedDate": "2021-10-21 10:59:05"
+      },
+      {
+        "contentId": "1.365818",
+        "color": "",
+        "keyid": "7",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Lute",
+          "cap": "",
+          "cid": "1.183920.1628420076"
+        },
+        "name": "Lute",
+        "path": "/lute-1.365818",
+        "subject": "",
+        "subtitle": "",
+        "time_formatted": "27/10/2021 - 18:27",
+        "time_published": "2021-10-27 18:27:11",
+        "time_modifiedDate": "2021-10-21 5:09:44"
+      },
+      {
+        "contentId": "1.880234",
+        "color": "",
+        "keyid": "8",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880235.1634559663"
+        },
+        "name": "Veja quem já pode sacar o auxílio emergencial",
+        "path": "/veja-quem-ja-pode-sacar-o-auxilio-emergencial-1.880234",
+        "subject": "No seu bolso",
+        "subtitle": "",
+        "time_formatted": "18/10/2021 - 09:22",
+        "time_published": "2021-10-18 9:22:32",
+        "time_modifiedDate": "2021-10-19 17:55:44"
+      },
+      {
+        "contentId": "1.880219",
+        "color": "",
+        "keyid": "9",
+        "keywords": "",
+        "teste": "3",
+        "image": {
+          "byl": "Reprodução",
+          "cap": "",
+          "cid": "1.533732.1629002759"
+        },
+        "name": "BH aplica segunda dose da Pfizer em público de 37 anos nesta segunda; confira calendário da semana",
+        "path": "/bh-aplica-segunda-dose-da-pfizer-em-publico-de-37-anos-nesta-segunda-confira-calendario-da-semana-1.880219",
+        "subject": "Pandemia Teste",
+        "subtitle": "",
+        "time_formatted": "18/10/2021 - 08:49",
+        "time_published": "2021-10-18 8:49:40",
+        "time_modifiedDate": "2021-10-21 7:16:18"
+      },
+      {
+        "contentId": "1.858541",
+        "color": "",
+        "keyid": "10",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Nitro",
+          "cap": "",
+          "cid": "1.858547.1634507742"
+        },
+        "name": "Dobro da safra e dobro do valor: produção de feijão em MG aumenta qualidade e encontra comprador",
+        "path": "/dobro-da-safra-e-dobro-do-valor-produc-o-de-feij-o-em-mg-aumenta-qualidade-e-encontra-comprador-1.858541",
+        "subject": "",
+        "subtitle": "",
+        "time_formatted": "18/10/2021 - 06:00",
+        "time_published": "2021-10-15 13:02:51",
+        "time_modifiedDate": "2021-10-26 2:14:53"
+      }
+    ],
+    "list2": [],
+    "title": "Últimas Notícias",
+    "type": "latest_news"
+  },
+  "slot2": {
+    "bgcolor": "",
+    "color": "",
+    "icon": "IconMaisLidas",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "contentId": "1.880603",
+        "color": "",
+        "keyid": "1",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Instagram/PT Oficial",
+          "cap": "",
+          "cid": "1.828013.1631039258"
+        },
+        "name": "Primeiro radar de conversão proibida em BH vai fiscalizar motoristas infratores na região Noroeste",
+        "path": "/minas/primeiro-radar-de-convers-o-proibida-em-bh-vai-fiscalizar-motoristas-infratores-na-regi-o-noroeste-1.880603",
+        "subject": "TRÂNSITO",
+        "subtitle": "",
+        "time_formatted": "27/10/2021 - 16:13",
+        "time_published": "2021-10-27 16:13:36",
+        "time_modifiedDate": "2021-10-27 20:43:21"
+      },
+      {
+        "contentId": "1.880416",
+        "color": "",
+        "keyid": "2",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880594.1635343565"
+        },
+        "name": "Diretora morre após tiro acidental efetuado pelo ator Alec Baldwin durante gravações do filme 'Rust'",
+        "path": "/minas/diretora-morre-apos-tiro-acidental-efetuado-pelo-ator-alec-baldwin-durante-gravac-es-do-filme-rust-1.880416",
+        "subject": "luto ",
+        "subtitle": "",
+        "time_formatted": "22/10/2021 - 11:05",
+        "time_published": "2021-10-22 11:05:00",
+        "time_modifiedDate": "2021-10-27 11:13:39"
+      },
+      {
+        "contentId": "1.880413",
+        "color": "",
+        "keyid": "3",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Miva Filho/SES/PE/Divulgação",
+          "cap": "No freezer - No caso da Pfizer, doses precisam ficar em baixas temperaturas",
+          "cid": "1.880415.1634910619"
+        },
+        "name": "Falta de estrutura de cidades deixa 800 mil doses contra Covid estocadas em Minas",
+        "path": "/falta-de-estrutura-de-cidades-deixa-800-mil-doses-contra-covid-estocadas-em-minas-1.880413",
+        "subject": "Armazenamento",
+        "subtitle": "",
+        "time_formatted": "22/10/2021 - 10:50",
+        "time_published": "2021-10-22 10:50:55",
+        "time_modifiedDate": "2021-10-22 10:50:55"
+      },
+      {
+        "contentId": "1.880410",
+        "color": "",
+        "keyid": "4",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Lucas Prates/Hoje em Dia",
+          "cap": "",
+          "cid": "1.826270.1635176355"
+        },
+        "name": "Postos de BH amanhecem com filas e sem gasolina; sindicato pede para evitar corrida às bombas",
+        "path": "/postos-de-bh-amanhecem-com-filas-e-sem-gasolina-sindicato-pede-para-evitar-corrida-as-bombas-1.880410",
+        "subject": "Greve dos tanqueiros",
+        "subtitle": "",
+        "time_formatted": "22/10/2021 - 09:32",
+        "time_published": "2021-10-22 9:32:59",
+        "time_modifiedDate": "2021-10-22 10:43:22"
+      },
+      {
+        "contentId": "1.636912",
+        "color": "",
+        "keyid": "5",
+        "keywords": "",
+        "teste": "0",
+        "image": {},
+        "name": "Municípios recorrem ao tesouro nacional por pagamento de dívida do Estado",
+        "path": "/municipios-recorrem-ao-tesouro-nacional-por-pagamento-de-divida-do-estado-1.636912",
+        "subject": "",
+        "subtitle": "",
+        "time_formatted": "27/10/2021 - 18:27",
+        "time_published": "2018-07-04 20:04:07",
+        "time_modifiedDate": "2021-10-21 16:22:52"
+      },
+      {
+        "contentId": "1.880406",
+        "color": "",
+        "keyid": "6",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Flávio Tavares/Arquivo Hoje em Dia",
+          "cap": "",
+          "cid": "1.797033.1628832217"
+        },
+        "name": "Zema confirma pagamento do 13º salário dos servidores de forma integral em Minas antes do Natal",
+        "path": "/zema-confirma-pagamento-do-13-salario-dos-servidores-de-forma-integral-em-minas-antes-do-natal-1.880406",
+        "subject": "Boa Notícia ",
+        "subtitle": "",
+        "time_formatted": "21/10/2021 - 10:46",
+        "time_published": "2021-10-21 10:46:35",
+        "time_modifiedDate": "2021-10-21 10:59:05"
+      },
+      {
+        "contentId": "1.365818",
+        "color": "",
+        "keyid": "7",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Lute",
+          "cap": "",
+          "cid": "1.183920.1628420076"
+        },
+        "name": "Lute",
+        "path": "/lute-1.365818",
+        "subject": "",
+        "subtitle": "",
+        "time_formatted": "27/10/2021 - 18:27",
+        "time_published": "2021-10-27 18:27:11",
+        "time_modifiedDate": "2021-10-21 5:09:44"
+      },
+      {
+        "contentId": "1.880234",
+        "color": "",
+        "keyid": "8",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880235.1634559663"
+        },
+        "name": "Veja quem já pode sacar o auxílio emergencial",
+        "path": "/veja-quem-ja-pode-sacar-o-auxilio-emergencial-1.880234",
+        "subject": "No seu bolso",
+        "subtitle": "",
+        "time_formatted": "18/10/2021 - 09:22",
+        "time_published": "2021-10-18 9:22:32",
+        "time_modifiedDate": "2021-10-19 17:55:44"
+      },
+      {
+        "contentId": "1.880219",
+        "color": "",
+        "keyid": "9",
+        "keywords": "",
+        "teste": "3",
+        "image": {
+          "byl": "Reprodução",
+          "cap": "",
+          "cid": "1.533732.1629002759"
+        },
+        "name": "BH aplica segunda dose da Pfizer em público de 37 anos nesta segunda; confira calendário da semana",
+        "path": "/bh-aplica-segunda-dose-da-pfizer-em-publico-de-37-anos-nesta-segunda-confira-calendario-da-semana-1.880219",
+        "subject": "Pandemia Teste",
+        "subtitle": "",
+        "time_formatted": "18/10/2021 - 08:49",
+        "time_published": "2021-10-18 8:49:40",
+        "time_modifiedDate": "2021-10-21 7:16:18"
+      },
+      {
+        "contentId": "1.858541",
+        "color": "",
+        "keyid": "10",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Nitro",
+          "cap": "",
+          "cid": "1.858547.1634507742"
+        },
+        "name": "Dobro da safra e dobro do valor: produção de feijão em MG aumenta qualidade e encontra comprador",
+        "path": "/dobro-da-safra-e-dobro-do-valor-produc-o-de-feij-o-em-mg-aumenta-qualidade-e-encontra-comprador-1.858541",
+        "subject": "",
+        "subtitle": "",
+        "time_formatted": "18/10/2021 - 06:00",
+        "time_published": "2021-10-15 13:02:51",
+        "time_modifiedDate": "2021-10-26 2:14:53"
+      }
+    ],
+    "list2": [],
+    "title": "Mais Lidas",
+    "type": "most_read"
+  },
+  "slot3": {
+    "bgcolor": "",
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 0,
+    "len2": 0,
+    "list1": [
+      {
+        "contentId": "1.880603",
+        "color": "",
+        "keyid": "1",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Instagram/PT Oficial",
+          "cap": "",
+          "cid": "1.828013.1631039258"
+        },
+        "name": "Primeiro radar de conversão proibida em BH vai fiscalizar motoristas infratores na região Noroeste",
+        "path": "/minas/primeiro-radar-de-convers-o-proibida-em-bh-vai-fiscalizar-motoristas-infratores-na-regi-o-noroeste-1.880603",
+        "subject": "TRÂNSITO",
+        "subtitle": "",
+        "time_formatted": "27/10/2021 - 16:13",
+        "time_published": "2021-10-27 16:13:36",
+        "time_modifiedDate": "2021-10-27 20:43:21"
+      },
+      {
+        "contentId": "1.880416",
+        "color": "",
+        "keyid": "2",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880594.1635343565"
+        },
+        "name": "Diretora morre após tiro acidental efetuado pelo ator Alec Baldwin durante gravações do filme 'Rust'",
+        "path": "/minas/diretora-morre-apos-tiro-acidental-efetuado-pelo-ator-alec-baldwin-durante-gravac-es-do-filme-rust-1.880416",
+        "subject": "luto ",
+        "subtitle": "",
+        "time_formatted": "22/10/2021 - 11:05",
+        "time_published": "2021-10-22 11:05:00",
+        "time_modifiedDate": "2021-10-27 11:13:39"
+      },
+      {
+        "contentId": "1.880413",
+        "color": "",
+        "keyid": "3",
+        "keywords": "",
+        "teste": "1",
+        "image": {
+          "byl": "Miva Filho/SES/PE/Divulgação",
+          "cap": "No freezer - No caso da Pfizer, doses precisam ficar em baixas temperaturas",
+          "cid": "1.880415.1634910619"
+        },
+        "name": "Falta de estrutura de cidades deixa 800 mil doses contra Covid estocadas em Minas",
+        "path": "/falta-de-estrutura-de-cidades-deixa-800-mil-doses-contra-covid-estocadas-em-minas-1.880413",
+        "subject": "Armazenamento",
+        "subtitle": "",
+        "time_formatted": "22/10/2021 - 10:50",
+        "time_published": "2021-10-22 10:50:55",
+        "time_modifiedDate": "2021-10-22 10:50:55"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": "default"
+  },
+  "slot4": {
+    "len": 0,
+    "list": []
+  }
+}

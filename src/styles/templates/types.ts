@@ -3,11 +3,11 @@ type TemplateRelated = {
 }
 
 type TemplateLayout = {
-  0: [string];
-  1: [string];
-  2: [string, string];
-  3: [string, string, string];
-  4: [string, string, string, string];
+  0?: [string];
+  1?: [string];
+  2?: [string, string];
+  3?: [string, string, string];
+  4?: [string, string, string, string];
 }
 
 type TemplateSpaces = [number, number, number, number]
