@@ -1,8 +1,9 @@
+import { TemplateContainer } from 'prensa'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
-import Pagination from '../Pagination'
+import Pagination from '.'
 
 export default {
   title: 'Pagination',
@@ -12,7 +13,12 @@ export default {
 export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Pagination />
+      <TemplateContainer
+        background='neutral10'
+        mb={[2, 2]}
+        mt={[2, 2]}>
+        <Pagination />
+      </TemplateContainer>
     </ThemeProvider>
   )
 }
