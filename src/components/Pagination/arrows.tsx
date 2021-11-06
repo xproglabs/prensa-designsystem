@@ -1,4 +1,4 @@
-import { Block } from 'prensa'
+import { Block, Link } from 'prensa'
 import React from 'react'
 
 import { IcLeftPagination } from '../../icons/IcLeftPagination'
@@ -12,23 +12,31 @@ export const ArrowButton = ({
   radius,
   width
 }: ArrowProps) => {
+  const aria_label_string = direction === 'left' ? 'Anterior' : 'Próximo'
   return (
-    <Block
-      align='column'
-      alignx='center'
-      aligny='middle'
-      b='1px'
-      borderColor={borderColor}
-      height={height}
-      radius={radius}
-      width={width}>
-      {direction == 'left' && (
-        <IcLeftPagination />
-      )}
-      {direction == 'right' && (
-        <IcRightPagination />
-      )}
-    </Block>
+    <Link
+      aria-label={aria_label_string}
+      path='/'
+      rel='noreferrer'
+      target='_blank'
+      title={aria_label_string}>
+      <Block
+        align='column'
+        alignx='center'
+        aligny='middle'
+        b='1px'
+        borderColor={borderColor}
+        height={height}
+        radius={radius}
+        width={width}>
+        {direction == 'left' && (
+          <IcLeftPagination />
+        )}
+        {direction == 'right' && (
+          <IcRightPagination />
+        )}
+      </Block>
+    </Link>
   )
 }
 ArrowButton.defaultProps = {
