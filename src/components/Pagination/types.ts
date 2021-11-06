@@ -1,5 +1,6 @@
-export interface PaginationNumberProps {
+export interface ArrowProps {
   borderColor?: string;
+  direction: 'left' | 'right';
   color?: string;
   fontFamily?: string;
   fontSize?: string;

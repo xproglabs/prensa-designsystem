@@ -1,15 +1,14 @@
 import { Block } from 'prensa'
 import React from 'react'
 
-import { ArrowLeft } from './arrow-left'
-import { ArrowRight } from './arrow-right'
+import { ArrowButton } from './arrows'
 import { PaginationNumber } from './number'
 
 const Pagination = () => {
   return (
     <Block align='row'>
       <Block mr={3}>
-        <ArrowLeft />
+        <ArrowButton direction='left' />
       </Block>
       <Block
         align='row'
@@ -19,7 +18,7 @@ const Pagination = () => {
         <PaginationNumber />
       </Block>
       <Block ml={2}>
-        <ArrowRight />
+        <ArrowButton direction='right' />
       </Block>
     </Block>  
   )

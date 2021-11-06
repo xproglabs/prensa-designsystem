@@ -1,15 +1,17 @@
-import { Block, Typography } from 'prensa'
+import { Block } from 'prensa'
 import React from 'react'
-import { PaginationNumberProps } from './types'
 
 import { IcLeftPagination } from '../../icons/IcLeftPagination'
+import { IcRightPagination } from '../../icons/IcRightPagination'
+import { ArrowProps } from './types'
 
-export const ArrowLeft = ({
+export const ArrowButton = ({
   borderColor,
+  direction,
   height,
   radius,
   width
-}: PaginationNumberProps) => {
+}: ArrowProps) => {
   return (
     <Block
       align='column'
@@ -19,13 +21,19 @@ export const ArrowLeft = ({
       borderColor={borderColor}
       height={height}
       radius={radius}
-      width={width}> 
-      <IcLeftPagination />
+      width={width}>
+      {direction == 'left' && (
+        <IcLeftPagination />
+      )}
+      {direction == 'right' && (
+        <IcRightPagination />
+      )}
     </Block>
   )
 }
-ArrowLeft.defaultProps = {
+ArrowButton.defaultProps = {
   borderColor: '#ADB0BC',
+  direction: 'right',
   height: '40px',
   radius: 'circle',
   width: '40px'
