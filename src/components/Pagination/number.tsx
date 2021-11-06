@@ -19,21 +19,21 @@ export const PaginationNumber = ({
       b='1px'
       borderColor={borderColor}
       height={height}
-      mr={3}
+      mr={2}
       radius={radius}
       width={width}>
-        <Typography
-          color={color}
-          fontFamily={fontFamily}
-          fontSize={fontSize}>
-          1
-        </Typography>  
+      <Typography
+        color={color}
+        fontFamily={fontFamily}
+        fontSize={fontSize}>
+        1
+      </Typography>  
     </Block>
   )
 }
 PaginationNumber.defaultProps = {
-  borderColor: '#ADB0BC',
-  color: '#ADB0BC',
+  borderColor: 'neutral5',
+  color: 'neutral5',
   fontFamily: 'primary',
   fontSize: '18px',
   height: '40px',

@@ -1,7 +1,7 @@
 export interface ArrowProps {
   borderColor?: string;
   direction: 'left' | 'right';
-  color?: string;
+  color: string;
   fontFamily?: string;
   fontSize?: string;
   height?: string;

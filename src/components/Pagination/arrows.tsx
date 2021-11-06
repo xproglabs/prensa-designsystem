@@ -7,6 +7,7 @@ import { ArrowProps } from './types'
 
 export const ArrowButton = ({
   borderColor,
+  color,
   direction,
   height,
   radius,
@@ -27,20 +28,22 @@ export const ArrowButton = ({
         b='1px'
         borderColor={borderColor}
         height={height}
+        mr={2}
         radius={radius}
         width={width}>
         {direction == 'left' && (
-          <IcLeftPagination />
+          <IcLeftPagination color={color} />
         )}
         {direction == 'right' && (
-          <IcRightPagination />
+          <IcRightPagination color={color} />
         )}
       </Block>
     </Link>
   )
 }
 ArrowButton.defaultProps = {
-  borderColor: '#ADB0BC',
+  borderColor: 'neutral5',
+  color: 'neutral5',
   direction: 'right',
   height: '40px',
   radius: 'circle',
