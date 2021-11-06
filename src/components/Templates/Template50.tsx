@@ -27,7 +27,7 @@ const Template5050 = ({
   return (
     <>
       <Block
-        align='row'
+        align='column'
         alignx='center'
         aligny='top'
         px='0px'
