@@ -33,8 +33,6 @@ const RenderImage = ({
   opacityMask
 }: RenderImageProps) => {
 
-  const image_enabled = get(layout, 'image.enabled', false)
-
   // get image object from props
   let image_object = get(item, 'image', false)
   if (!image_object) {
@@ -45,14 +43,11 @@ const RenderImage = ({
   let image_contentid = get(image_object, 'contentId', false)
   image_contentid = image_contentid || get(image_object, 'cid', false)
 
-  if (!image_enabled) {
-    return null
-  }
-
   // parse data
   const image_caption = get(image_object, 'caption', '')
   const mobile_dim = get(layout, 'image.dimension[0]', '1x1')
   const desktop_dim = get(layout, 'image.dimension[1]', '1x1')
+  const has_fallback_image = get(layout, 'image.fallback_image', false)
   const height = get(layout, 'image.height', 600)
   const layout_mobile = get(layout, 'image.layout[0]', 'responsive')
   const layout_desktop = get(layout, 'image.layout[1]', 'responsive')
@@ -70,9 +65,13 @@ const RenderImage = ({
    *  3 image_contentid exists and generate a valid path (should render CMS image)
    */
   if (!image_contentid || image_contentid === '') {
-    if (fallback_image_url !== '') {
-      image_path_mobile = fallback_image_url
-      image_path_desktop = fallback_image_url
+    if (has_fallback_image === true) {
+      if (!fallback_image_url) {
+        console.error('Prensa | Missing fallback_image_url prop in PageBlock component')
+      } else {
+        image_path_mobile = `${domain}${fallback_image_url}`
+        image_path_desktop = `${domain}${fallback_image_url}`
+      }
     } else {
       return null
     }

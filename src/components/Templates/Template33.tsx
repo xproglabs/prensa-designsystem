@@ -24,6 +24,7 @@ interface ColumnColorProps {
   transparent: boolean;
 }
 interface Template33Props {
+  slotAds: SlotProps;
   slotLeft: SlotProps;
   slotCenter: SlotProps;
   slotRight: SlotProps;
@@ -68,6 +69,7 @@ const ColumnColor = ({
   )
 }
 const Template33 = ({
+  slotAds,
   slotLeft,
   slotCenter,
   slotRight
@@ -79,48 +81,51 @@ const Template33 = ({
   const slotCenter_isTransparent = isBackgroundTransparent(slotCenter_bgColor)
   const slotRight_isTransparent = isBackgroundTransparent(slotRight_bgColor)
   return (
-    <Block
-      align="column"
-      alignx="center"
-      aligny="top"
-      lg={{
-        align: 'row',
-        alignx: 'between',
-        aligny: 'top',
-        mb: 3
-      }}
-      width="100%">
-      <Column>
-        {(renderSpaceSlot(slotLeft.spaceA))}
-        <ColumnColor
-          bgColor={slotLeft_bgColor}
-          minHeight={slotLeft.min_height}
-          transparent={slotLeft_isTransparent}>
-          <RenderSlot {...slotLeft} />
-        </ColumnColor>
-        {(renderSpaceSlot(slotLeft.spaceB))}
-      </Column>
-      <Column>
-        {(renderSpaceSlot(slotCenter.spaceA))}
-        <ColumnColor
-          bgColor={slotCenter_bgColor}
-          minHeight={slotCenter.min_height}
-          transparent={slotCenter_isTransparent}>
-          <RenderSlot {...slotCenter} />
-        </ColumnColor>
-        {(renderSpaceSlot(slotCenter.spaceB))}
-      </Column>
-      <Column>
-        {(renderSpaceSlot(slotRight.spaceA))}
-        <ColumnColor
-          bgColor={slotRight_bgColor}
-          minHeight={slotRight.min_height}
-          transparent={slotRight_isTransparent}>
-          <RenderSlot {...slotRight} />
-        </ColumnColor>
-        {(renderSpaceSlot(slotRight.spaceB))}
-      </Column>
-    </Block>
+    <>
+      <Block
+        align="column"
+        alignx="center"
+        aligny="top"
+        lg={{
+          align: 'row',
+          alignx: 'between',
+          aligny: 'top',
+          mb: 3
+        }}
+        width="100%">
+        <Column>
+          {(renderSpaceSlot(slotLeft.spaceA))}
+          <ColumnColor
+            bgColor={slotLeft_bgColor}
+            minHeight={slotLeft.min_height}
+            transparent={slotLeft_isTransparent}>
+            <RenderSlot {...slotLeft} />
+          </ColumnColor>
+          {(renderSpaceSlot(slotLeft.spaceB))}
+        </Column>
+        <Column>
+          {(renderSpaceSlot(slotCenter.spaceA))}
+          <ColumnColor
+            bgColor={slotCenter_bgColor}
+            minHeight={slotCenter.min_height}
+            transparent={slotCenter_isTransparent}>
+            <RenderSlot {...slotCenter} />
+          </ColumnColor>
+          {(renderSpaceSlot(slotCenter.spaceB))}
+        </Column>
+        <Column>
+          {(renderSpaceSlot(slotRight.spaceA))}
+          <ColumnColor
+            bgColor={slotRight_bgColor}
+            minHeight={slotRight.min_height}
+            transparent={slotRight_isTransparent}>
+            <RenderSlot {...slotRight} />
+          </ColumnColor>
+          {(renderSpaceSlot(slotRight.spaceB))}
+        </Column>
+      </Block>
+      {(renderSpaceSlot(slotAds.spaceB))}
+    </>
   )
 }
 

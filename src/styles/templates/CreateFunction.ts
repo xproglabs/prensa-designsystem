@@ -5,5 +5,5 @@ import { CreateTemplateTypes } from './types'
  * @param {object} data - An object that define properties for a new template
  */
 export function CreateTemplate(data: CreateTemplateTypes): Object {
-  return data;
+  return data
 }

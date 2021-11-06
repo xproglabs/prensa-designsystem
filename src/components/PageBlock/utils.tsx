@@ -30,12 +30,13 @@ export const selectMinHeightFromSlot = (minHeight): string => {
  */
 export const selectComponentFromSlotList = (
   parseSlot: any,
-  slotList: any
+  slotList: any,
+  siteData: any
 ) => {
   if (!parseSlot)
     return <></>
   return (
-    <>{map(slotList, (item, key) => parseSlot(item, key))}</>
+    <>{map(slotList, (item, key) => parseSlot(item, key, siteData))}</>
   )
 }
 
