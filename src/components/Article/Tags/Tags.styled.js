@@ -23,16 +23,28 @@ Container.propTypes = {
   maxWidth: PropTypes.string
 }
 
-export const Tag = ({ children, color }) =>
+export const Tag = ({ 
+  b,
+  children, 
+  color, 
+  radius 
+}) =>
   <Block 
     align='column'
+    b={b}
+    borderColor={color}
     mr={2}
     mb={2}
-    custom={`border: 1px solid ${color};border-radius: 3px;`}>
+    radius={radius}>
     {children}
   </Block> 
   
 Tag.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   color: PropTypes.string
+}
+Tag.defaultProps = {
+  b: '1px',
+  borderColor: 'neutral9',
+  radius: 'alternative'
 }
