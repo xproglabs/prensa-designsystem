@@ -2,7 +2,20 @@ import React from 'react'
 
 import Block from '../Block'
 import Typography from '../Typography'
-import { ContainerProps, ContentProps, TitleProps, TitleAuthorProps, NewsTitleProps } from './types'
+import { BylineProps, ContainerProps, ContentProps, TitleProps, NewsTitleProps } from './types'
+
+export const Byline = ({ children, ...otherProps }: BylineProps) => (
+  <Typography
+    color='neutral5'
+    element='span'
+    fontSize='14px'
+    fontWeight={400}
+    widht='100%'
+    {...otherProps}
+  >
+    {children}
+  </Typography>
+)
 
 export const Container = ({ children, ...otherProps }: ContainerProps) => (
   <Block
@@ -79,19 +92,6 @@ export const NewsTitle = ({ children, ...otherProps }: NewsTitleProps) => (
     lineHeight='110%'
     mb={2}
     width='100%'
-    {...otherProps}
-  >
-    {children}
-  </Typography>
-)
-
-export const TitleAuthor = ({ children, ...otherProps }: TitleAuthorProps) => (
-  <Typography
-    color='neutral5'
-    element='span'
-    fontSize='14px'
-    fontWeight={400}
-    widht='100%'
     {...otherProps}
   >
     {children}

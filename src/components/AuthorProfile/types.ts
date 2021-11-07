@@ -58,7 +58,7 @@ export type TitleProps = {
   mb?: SpacingType;
   ml?: SpacingType;
 }
-export type TitleAuthorProps = {
+export type BylineProps = {
   children?: any;
   color?: ColorTokens;
   fontFamily?: FontTokens;
@@ -82,12 +82,12 @@ export type NewsTitleProps = {
 }
 export interface AuthorProfileProps {
   amp?: boolean;
-  authorTitle: string;
-  columnTitle: string;
+  byline: string;
+  bylineProps?: BylineProps;
   containerProps?: ContainerProps;
   image: ImageProps;
+  title: string;
   titleProps?: TitleProps;
-  titleAuthorProps?: TitleAuthorProps;
   newsTitle?: string;
   newsTitleProps?: NewsTitleProps;
 }

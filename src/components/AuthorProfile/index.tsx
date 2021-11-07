@@ -7,12 +7,12 @@ import { AuthorProfileProps } from './types'
 
 const AuthorProfile = ({
   amp = false,
-  authorTitle,
-  columnTitle,
+  byline,
+  bylineProps,
   containerProps,
   image,
+  title,
   titleProps,
-  titleAuthorProps,
   newsTitle,
   newsTitleProps
 }: AuthorProfileProps) => {
@@ -56,11 +56,11 @@ const AuthorProfile = ({
         </S.ImageWrap>
         <S.TitleWrapper>
           <S.Title {...titleProps}>
-            {columnTitle}
+            {title}
           </S.Title>
-          <S.TitleAuthor {...titleAuthorProps}>
-            {authorTitle}
-          </S.TitleAuthor>
+          <S.Byline {...bylineProps}>
+            {byline}
+          </S.Byline>
         </S.TitleWrapper>
       </S.Content>
     </S.Container>
