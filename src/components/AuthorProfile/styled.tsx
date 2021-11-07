@@ -74,8 +74,9 @@ export const NewsTitle = ({ children, ...otherProps }: NewsTitleProps) => (
   <Typography
     color='neutral2'
     element='label'
-    fontSize='16px'
+    fontSize='20px'
     fontWeight={700}
+    lineHeight='110%'
     mb={2}
     width='100%'
     {...otherProps}
