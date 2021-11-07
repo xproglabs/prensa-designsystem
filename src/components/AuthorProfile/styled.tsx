@@ -2,7 +2,7 @@ import React from 'react'
 
 import Block from '../Block'
 import Typography from '../Typography'
-import { ContainerProps, ContentProps, TitleProps, TitleAuthorProps } from './types'
+import { ContainerProps, ContentProps, TitleProps, TitleAuthorProps, NewsTitleProps } from './types'
 
 export const Container = ({ children, ...otherProps }: ContainerProps) => (
   <Block
@@ -11,8 +11,9 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
     b='1px'
     bgColor='white'
     borderColor='neutral9'
-    height='80px'
+    height='max-content'
     px={2}
+    py={2}
     radius='alternative'
     width='calc(100% - 32px)'
     {...otherProps}
@@ -25,8 +26,7 @@ export const Content = ({ children, ...otherProps }: ContentProps) => (
   <Block
     align='row'
     aligny='middle'
-    px={2}
-    width='calc(100% - 32px)'
+    width='100%'
     {...otherProps}
   >
     {children}
@@ -63,6 +63,20 @@ export const Title = ({ children, ...otherProps }: TitleProps) => (
     fontSize='16px'
     fontWeight={700}
     mb={1}
+    width='100%'
+    {...otherProps}
+  >
+    {children}
+  </Typography>
+)
+
+export const NewsTitle = ({ children, ...otherProps }: NewsTitleProps) => (
+  <Typography
+    color='neutral2'
+    element='label'
+    fontSize='16px'
+    fontWeight={700}
+    mb={2}
     width='100%'
     {...otherProps}
   >

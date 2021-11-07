@@ -6,13 +6,15 @@ import * as S from './styled'
 import { AuthorProfileProps } from './types'
 
 const AuthorProfile = ({
-  amp,
+  amp = false,
   authorTitle,
   columnTitle,
   containerProps,
   image,
   titleProps,
   titleAuthorProps,
+  newsTitle,
+  newsTitleProps
 }: AuthorProfileProps) => {
 
   const image_desktop_url = get(image, 'desktop_path', '')
@@ -25,6 +27,9 @@ const AuthorProfile = ({
 
   return (
     <S.Container {...containerProps}>
+      <S.NewsTitle {...newsTitleProps}>
+        {newsTitle}
+      </S.NewsTitle>
       <S.Content>
         <S.ImageWrap>
           <Image
