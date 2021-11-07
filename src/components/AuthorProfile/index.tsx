@@ -27,9 +27,11 @@ const AuthorProfile = ({
 
   return (
     <S.Container {...containerProps}>
-      <S.NewsTitle {...newsTitleProps}>
-        {newsTitle}
-      </S.NewsTitle>
+      {newsTitle &&
+        <S.NewsTitle {...newsTitleProps}>
+          {newsTitle}
+        </S.NewsTitle>
+      }
       <S.Content>
         <S.ImageWrap>
           <Image
