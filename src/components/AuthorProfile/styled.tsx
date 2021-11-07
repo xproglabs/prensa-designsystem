@@ -38,7 +38,6 @@ export const Image = ({ children, ...otherProps }) => (
     bgColor='neutral2'
     height='40px'
     width='40px'
-    minWidth='40px'
     {...otherProps}
   >
     {children}
@@ -49,6 +48,7 @@ export const ImageWrap = ({ children, ...otherProps }) => (
   <Block
     height='40px'
     width='40px'
+    minWidth='40px'
     mr={2}
     {...otherProps}
   >
