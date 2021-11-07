@@ -1,4 +1,4 @@
-import { RadiusTokens } from '@prensa_tokens'
+import { RadiusTokens, ColorTokens, FontTokens } from '@prensa_tokens'
 
 export type SpacingType = number | string
 
@@ -7,7 +7,7 @@ export type ContainerProps = {
   alignx?: string;
   aligny?: string;
   background?: string;
-  children: any;
+  children?: any;
   height?: string;
   pt?: SpacingType;
   pr?: SpacingType;
@@ -22,7 +22,7 @@ export type ContainerProps = {
   bb?: string;
   bl?: string;
   b?: string;
-  borderColor?: string;
+  borderColor?: ColorTokens;
   borderStyle?: string;
   radius?: RadiusTokens;
   width?: string;
@@ -43,33 +43,51 @@ export type ContentProps = {
 export type ImageProps = {
   mobile_path: string;
   desktop_path: string;
-  height: [string, string];
+  height?: [string, string];
   title: string;
-  width: [string, string];
+  width?: [string, string];
 }
 export type TitleProps = {
-  children: any;
-  color: string;
-  fontFamily?: string;
-  fontSize: string;
-  fontWeight: string;
-  mb: SpacingType;
-}
-export type TitleAuthorProps = {
-  children: any;
-  color?: string;
-  fontFamily?: string;
+  children?: any;
+  color?: ColorTokens;
+  fontFamily?: FontTokens;
   fontSize?: string;
   fontWeight?: string;
+  mt?: SpacingType;
+  mr?: SpacingType;
   mb?: SpacingType;
+  ml?: SpacingType;
+}
+export type TitleAuthorProps = {
+  children?: any;
+  color?: ColorTokens;
+  fontFamily?: FontTokens;
+  fontSize?: string;
+  fontWeight?: string;
+  mt?: SpacingType;
+  mr?: SpacingType;
+  mb?: SpacingType;
+  ml?: SpacingType;
+}
+export type NewsTitleProps = {
+  children?: any;
+  color?: ColorTokens;
+  fontFamily?: FontTokens;
+  fontSize?: string;
+  fontWeight?: string;
+  mt?: SpacingType;
+  mr?: SpacingType;
+  mb?: SpacingType;
+  ml?: SpacingType;
 }
 export interface AuthorProfileProps {
-  amp: boolean;
+  amp?: boolean;
   authorTitle: string;
-  children: any;
   columnTitle: string;
   containerProps?: ContainerProps;
   image: ImageProps;
   titleProps?: TitleProps;
   titleAuthorProps?: TitleAuthorProps;
+  newsTitle?: string;
+  newsTitleProps?: NewsTitleProps;
 }
