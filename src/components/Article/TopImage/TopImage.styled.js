@@ -55,16 +55,19 @@ BoxFeatured.propTypes = {
 
 export const SubtitleBox = ({
   children,
+  px,
+  py,
+  widthBox
 }) => 
   <Block
     bgColor='neutral9'
-    px={3}
-    py={3}
-    width='calc(100% - 48px)'
+    px={px[0]}
+    py={py[0]}
+    width={widthBox[0]}
     lg={{
-      px: 4,
-      py: 2,
-      width: 'calc(100% - 64px)'
+      px: px[1],
+      py: py[1],
+      width: widthBox[1]
     }}>
     {children}
   </Block>
@@ -73,7 +76,7 @@ SubtitleBox.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   px: PropTypes.array,
   py: PropTypes.array,
-  width: PropTypes.array
+  widthBox: PropTypes.array
 }
 
 export const Subtitle = ({
