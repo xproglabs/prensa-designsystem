@@ -11,6 +11,7 @@ const AuthorProfile = ({
   bylineProps,
   containerProps,
   image,
+  imageWrapProps,
   title,
   titleProps,
   newsTitle,
@@ -33,7 +34,7 @@ const AuthorProfile = ({
         </S.NewsTitle>
       }
       <S.Content>
-        <S.ImageWrap>
+        <S.ImageWrap {...imageWrapProps}>
           <Image
             amp={amp}
             custom_class='image-with-radius'

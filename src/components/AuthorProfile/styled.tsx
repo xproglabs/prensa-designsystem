@@ -2,7 +2,7 @@ import React from 'react'
 
 import Block from '../Block'
 import Typography from '../Typography'
-import { BylineProps, ContainerProps, ContentProps, TitleProps, NewsTitleProps } from './types'
+import { BylineProps, ContainerProps, ContentProps, ImageWrapProps, TitleProps, NewsTitleProps } from './types'
 
 export const Byline = ({ children, ...otherProps }: BylineProps) => (
   <Typography
@@ -49,19 +49,19 @@ export const Content = ({ children, ...otherProps }: ContentProps) => (
 export const Image = ({ children, ...otherProps }) => (
   <Block
     bgColor='neutral2'
-    height='40px'
-    width='40px'
+    height='48px'
+    width='48px'
     {...otherProps}
   >
     {children}
   </Block>
 )
 
-export const ImageWrap = ({ children, ...otherProps }) => (
+export const ImageWrap = ({ children, ...otherProps }: ImageWrapProps) => (
   <Block
-    height='40px'
-    width='40px'
-    minWidth='40px'
+    height='48px'
+    width='48px'
+    minWidth='48px'
     mr={2}
     {...otherProps}
   >

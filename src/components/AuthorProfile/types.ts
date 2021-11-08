@@ -47,6 +47,15 @@ export type ImageProps = {
   title: string;
   width?: [string, string];
 }
+
+export type ImageWrapProps = {
+  children?: any;
+  height?: string;
+  minWidth?: string;
+  mr?: SpacingType;
+  width?: string;
+}
+
 export type TitleProps = {
   children?: any;
   color?: ColorTokens;
@@ -86,6 +95,7 @@ export interface AuthorProfileProps {
   bylineProps?: BylineProps;
   containerProps?: ContainerProps;
   image: ImageProps;
+  imageWrapProps?: ImageWrapProps;
   title: string;
   titleProps?: TitleProps;
   newsTitle?: string;
