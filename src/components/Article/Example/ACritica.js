@@ -25,7 +25,7 @@ const ArticleACritica = () => {
             fontFamily: 'secondary',
             fontSize: ['14px', '14px'],
             lineHeight: ['16px', '16px'],
-            value: 'FILIPE TÁVORA'
+            value: 'Redação A Crítica'
           },
           datetime: {
             color: 'neutral4',
