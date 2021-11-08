@@ -4,6 +4,13 @@ import { PageBlockPreview } from '../PreviewProvider/types'
 import { SectionTitleLayout } from '../SectionTitle/types'
 import { TeaserProps } from '../Teaser/types'
 
+export type TemplateType = 
+  'template100' | 
+  'template7030' | 
+  'template50' | 
+  'template30' | 
+  'templateWrap'
+
 export type SlotBlockProps = {
   bgcolor?: string;
   color: string;
@@ -16,7 +23,7 @@ export type SlotBlockProps = {
   list2: [TeaserProps];
   title: string;
   spaces?: [number, number, number, number];
-  type: string;
+  type: TemplateType;
 }
 
 export type PageBlockProps = {
@@ -27,7 +34,7 @@ export type PageBlockProps = {
   fallback_image_url?: string,
   image_parser?: any;
   name: string;
-  type: string;
+  type: TemplateType;
   preview: PageBlockPreview;
   section_title_component?: any;
   site_data: any;
