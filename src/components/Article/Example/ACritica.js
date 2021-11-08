@@ -21,7 +21,7 @@ const ArticleACritica = () => {
         byline={{
           author: {
             color: 'neutral2',
-            email: 'luizagustobarros@diariodaregiao.com.br',
+            email: 'jornalista@acritica.com',
             fontFamily: 'secondary',
             fontSize: ['14px', '14px'],
             lineHeight: ['16px', '16px'],
