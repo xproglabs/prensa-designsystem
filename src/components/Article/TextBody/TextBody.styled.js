@@ -23,8 +23,8 @@ export const Body = ({
       px: '0px',
       width: '100%'
     }}
-    px={3}
-    width='calc(100% - 48px)'>
+    px={2}
+    width='calc(100% - 32px)'>
     {children}
   </Block>
 }

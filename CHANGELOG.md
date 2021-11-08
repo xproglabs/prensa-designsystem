@@ -1,3 +1,9 @@
+# v1.6.47
+- Parametriza o container da tag
+- Parametriza os paddings do box do caption no TopImage
+- Adiciona prop font_weight no Title do Teaser
+- Altera direction do bloco 50 50 no mobile
+- Adaptar a exibição da imagem principal no topo da matéria
 # v1.6.46
 - Permite nova propriedade site_data no PageBlock
 # v1.6.45
