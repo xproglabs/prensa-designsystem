@@ -1,3 +1,7 @@
+# v1.6.48
+- Cria componente AuthorProfile
+- Formata exemplo Article A Critica
+- Altera espaçamento do px no Body do Article
 # v1.6.47
 - Parametriza o container da tag
 - Parametriza os paddings do box do caption no TopImage
