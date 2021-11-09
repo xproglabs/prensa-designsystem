@@ -1,3 +1,5 @@
+# v1.6.49
+- Melhorias na função CreateTheme tendo em vista novos tokens de cor
 # v1.6.48
 - Cria componente AuthorProfile
 - Formata exemplo Article A Critica
