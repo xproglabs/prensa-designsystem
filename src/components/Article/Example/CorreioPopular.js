@@ -56,6 +56,21 @@ const ArticleCorreioPopular = () => {
         featured={{
           enabled: isFeatured
         }}
+        heading2= {{
+          fontSize: ['34px', '34px'],
+          lineHeight: ['110%', '110%'],
+          fontWeight: 900
+        }}
+        heading3= {{
+          fontSize: ['24px', '24px'],
+          lineHeight: ['115%', '115%'],
+          fontWeight: 900
+        }}
+        heading4= {{
+          fontSize: ['20px', '20px'],
+          lineHeight: ['115%', '115%'],
+          fontWeight: 900
+        }}
         gallery={[
           {
             caption: 'Mariane criou empresa com foco na economia sustentável (Fotos: Divulgação)',
