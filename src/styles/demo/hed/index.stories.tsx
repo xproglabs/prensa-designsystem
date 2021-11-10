@@ -17,6 +17,7 @@ import DataHomeTimes from './data/7.181.json'
 import Data7188_33 from './data/7.188_33.json'
 import Data7188 from './data/7.188.json'
 import DATA_HOME_30 from './data/7.204.json'
+import DataTemplateWrap from './data/7.223.json'
 import DataHomeFeaturedImage100 from './data/7.483_100.json'
 import DataHomeFeaturedImage33 from './data/7.483_33.json'
 import DataHomeFeaturedImage from './data/7.483.json'
@@ -250,6 +251,21 @@ export const UltimasNoticiasComMaisLidas = () => {
       />
       <PageBlock
         {...Data7188_33}
+        amp={false}
+        domain={domain}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
+  )
+}
+export const TemplateWrap = () => {
+  return (
+    <TemplateContainer
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...DataTemplateWrap}
         amp={false}
         domain={domain}
         preview={preview_editable}
