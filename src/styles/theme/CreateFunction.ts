@@ -1,16 +1,16 @@
+import { Colors, Fonts, Factors, Queries, Radius, Teasers, Templates } from '@prensa_tokens'
 import { merge } from 'lodash'
 
 import { default_theme } from './default_theme'
-import { Colors, Fonts, Factors, Queries, Radius, Teasers, Templates } from '@prensa_tokens'
 
 export interface ThemeTypes {
-  colors?: Colors;
-  fonts?: Fonts;
-  factors?: Factors;
-  queries?: Queries;
-  radius?: Radius;
-  teasers?: Teasers;
-  templates?: Templates;
+  colors: Colors;
+  fonts: Fonts;
+  factors: Factors;
+  queries: Queries;
+  radius: Radius;
+  teasers: Teasers;
+  templates: Templates;
 }
 
 /**

@@ -7,18 +7,24 @@ import { AnchorTag } from '../Tags/Anchor'
 import * as S from './Tags.styled'
 
 const Tags = ({
+  b,
   color,
   fontFamily,
   fontSize,
   fontWeight,
   items,
-  maxWidth
+  maxWidth,
+  radius
 }) => {
   return (
     <S.Container maxWidth={maxWidth}>
       {(map(items, (item, key) => {
         return (
-          <S.Tag color={color} key={key}>
+          <S.Tag 
+            b={b} 
+            color={color} 
+            key={key}
+            radius={radius}>
             <AnchorTag href={`/?term=${item}`}>
               <Typography 
                 color={color}

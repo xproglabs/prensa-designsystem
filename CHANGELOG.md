@@ -1,3 +1,21 @@
+# v1.6.49
+- Melhorias na função CreateTheme tendo em vista novos tokens de cor
+# v1.6.48
+- Cria componente AuthorProfile
+- Formata exemplo Article A Critica
+- Altera espaçamento do px no Body do Article
+# v1.6.47
+- Parametriza o container da tag
+- Parametriza os paddings do box do caption no TopImage
+- Adiciona prop font_weight no Title do Teaser
+- Altera direction do bloco 50 50 no mobile
+- Adaptar a exibição da imagem principal no topo da matéria
+# v1.6.46
+- Permite nova propriedade site_data no PageBlock
+# v1.6.45
+- Ajusta types na CreateFunction dos templates
+# v1.6.44
+- Novas props de cor para o componente Copyright
 # v1.6.43
 - Aplica fluxo de cores dinâmico no RenderSubject
 - Implementa novo fluxo de dados para fallback_image no Teaser

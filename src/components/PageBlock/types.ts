@@ -30,6 +30,7 @@ export type PageBlockProps = {
   type: string;
   preview: PageBlockPreview;
   section_title_component?: any;
+  site_data: any;
   slot_parser: any;
   slot1: SlotBlockProps;
   slot2: SlotBlockProps;
