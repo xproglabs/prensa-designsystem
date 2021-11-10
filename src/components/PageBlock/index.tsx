@@ -301,16 +301,16 @@ const PageBlock = ({
     )
   }
   if (type === 'templateWrap') {
-    const slowWrap_block = selectTemplateFromTheme({ block: 'slotWrap', slot: slot1, templates })
-    const slowWrap_layout = selectLayoutFromTemplate({ block: slowWrap_block, slot: slot1 })
-    const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slowWrap_block.spaces)
+    const slotWrap_block = selectTemplateFromTheme({ block: 'slotWrap', slot: slot1, templates })
+    const slotWrap_layout = selectLayoutFromTemplate({ block: slotWrap_block, slot: slot1 })
+    const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slotWrap_block.spaces)
     const slotsHaveSecionTitle = slot1.title !== ''
     return (
       <TemplateWrap
         slotAds={{
           column_items: 0,
           column_padding: 0,
-          layouts: slowWrap_layout,
+          layouts: slotWrap_layout,
           preview,
           site_data,
           slot: [],
@@ -325,8 +325,8 @@ const PageBlock = ({
           column_padding: slot1_spaces,
           domain,
           fallback_image_url,
-          layouts: slowWrap_layout,
-          min_height: slowWrap_block.min_height,
+          layouts: slotWrap_layout,
+          min_height: slotWrap_block.min_height,
           preview,
           site_data,
           slot: slot1.list1,
