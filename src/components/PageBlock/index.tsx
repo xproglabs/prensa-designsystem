@@ -24,6 +24,7 @@ const PageBlock = ({
   fallback_image_url,
   preview,
   section_title_component,
+  site_data,
   slot_parser,
   slot1,
   slot2,
@@ -59,10 +60,10 @@ const PageBlock = ({
     customComponent: section_title_component
   })
   // define slot spaceB
-  const slot1_slotList = selectComponentFromSlotList(slot_parser, slot1?.list2)
-  const slot2_slotList = selectComponentFromSlotList(slot_parser, slot2?.list2)
-  const slot3_slotList = selectComponentFromSlotList(slot_parser, slot3?.list2)
-  const slot4_slotList = selectComponentFromSlotList(slot_parser, slot4?.list)
+  const slot1_slotList = selectComponentFromSlotList(slot_parser, slot1?.list2, site_data)
+  const slot2_slotList = selectComponentFromSlotList(slot_parser, slot2?.list2, site_data)
+  const slot3_slotList = selectComponentFromSlotList(slot_parser, slot3?.list2, site_data)
+  const slot4_slotList = selectComponentFromSlotList(slot_parser, slot4?.list, site_data)
 
   if (type === 'template100') {
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
@@ -76,9 +77,10 @@ const PageBlock = ({
           column_padding: 0,
           layouts: slot100_layout,
           preview,
-          spaceB: slot4_slotList,
+          site_data,
           slot: [],
           slot_parser,
+          spaceB: slot4_slotList,
         }}
         slot100={{
           amp,
@@ -91,10 +93,11 @@ const PageBlock = ({
           layouts: slot100_layout,
           min_height: slot100_block.min_height,
           preview,
+          site_data,
           slot: slot1.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
-          spaceB: slot1_slotList
+          spaceB: slot1_slotList,
         }}
       />
     )
@@ -114,9 +117,10 @@ const PageBlock = ({
           column_padding: 0,
           layouts: slot70_layout,
           preview,
-          spaceB: slot4_slotList,
+          site_data,
           slot: [],
           slot_parser,
+          spaceB: slot4_slotList,
         }}
         slot70={{
           amp,
@@ -129,6 +133,7 @@ const PageBlock = ({
           min_height: slot70_block.min_height,
           layouts: slot70_layout,
           preview,
+          site_data,
           slot: slot1.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
@@ -145,6 +150,7 @@ const PageBlock = ({
           layouts: slot30_layout,
           min_height: slot30_block.min_height,
           preview,
+          site_data,
           slot: slot2.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
@@ -168,9 +174,10 @@ const PageBlock = ({
           column_padding: 0,
           layouts: slotLeft_layout,
           preview,
-          spaceB: slot4_slotList,
+          site_data,
           slot: [],
           slot_parser,
+          spaceB: slot4_slotList,
         }}
         slotLeft={{
           amp,
@@ -183,6 +190,7 @@ const PageBlock = ({
           layouts: slotLeft_layout,
           min_height: slotLeft_block.min_height,
           preview,
+          site_data,
           slot: slot1.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
@@ -199,6 +207,7 @@ const PageBlock = ({
           layouts: slotRight_layout,
           min_height: slotRight_block.min_height,
           preview,
+          site_data,
           slot: slot2.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
@@ -229,9 +238,10 @@ const PageBlock = ({
           column_padding: 0,
           layouts: slotLeft_layout,
           preview,
-          spaceB: slot4_slotList,
+          site_data,
           slot: [],
           slot_parser,
+          spaceB: slot4_slotList,
         }}
         slotLeft={{
           amp,
@@ -245,6 +255,7 @@ const PageBlock = ({
           layouts: slotLeft_layout,
           min_height: slotLeft_block.min_height,
           preview,
+          site_data,
           slot: slot1.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
@@ -262,6 +273,7 @@ const PageBlock = ({
           layouts: slotCenter_layout,
           min_height: slotCenter_block.min_height,
           preview,
+          site_data,
           slot: slot2.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
@@ -279,6 +291,7 @@ const PageBlock = ({
           layouts: slotRight_layout,
           min_height: slotRight_block.min_height,
           preview,
+          site_data,
           slot: slot3.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot3_title : null,
@@ -298,9 +311,10 @@ const PageBlock = ({
         column_padding: 0,
         layouts: slowWrap_layout,
         preview,
-        spaceB: slot4_slotList,
+        site_data,
         slot: [],
         slot_parser,
+        spaceB: slot4_slotList,
       }}
       slotItems={{
         amp,
@@ -313,6 +327,7 @@ const PageBlock = ({
         layouts: slowWrap_layout,
         min_height: slowWrap_block.min_height,
         preview,
+        site_data,
         slot: slot1.list1,
         slot_parser,
         spaceA: slotsHaveSecionTitle ? slot1_title : null,
