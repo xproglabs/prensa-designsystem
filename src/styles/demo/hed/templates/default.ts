@@ -58,11 +58,11 @@ export const TEMPLATES_DEFAULT = {
       enabled: false
     },
     layout: {
-      0: ['teaser_columnist'],
-      1: ['teaser_columnist'],
-      2: ['teaser_columnist', 'teaser_columnist'],
-      3: ['teaser_columnist', 'teaser_columnist', 'teaser_columnist'],
-      4: ['teaser_columnist', 'teaser_columnist', 'teaser_columnist', 'teaser_columnist'],
+      0: ['teaser_image_circle'],
+      1: ['teaser_image_circle'],
+      2: ['teaser_image_circle', 'teaser_image_circle'],
+      3: ['teaser_image_circle', 'teaser_image_circle', 'teaser_image_circle'],
+      4: ['teaser_image_circle', 'teaser_image_circle', 'teaser_image_circle', 'teaser_image_circle'],
     },
     spaces: [3, 3, 3, 3],
   }
