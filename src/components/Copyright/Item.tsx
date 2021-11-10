@@ -3,20 +3,24 @@ import React from 'react'
 import Typography from '../Typography'
 import { TextItemProps } from './types'
 
-const TextItem = ({ color, text } : TextItemProps) => {
+const TextItem = ({ color, fontFamily, text } : TextItemProps) => {
   return (
     <Typography 
-      color={color}
-      mb='4px'
       element='span'
       fontSize='14px'
+      mb='4px'
       textAlign='start'
-      width='100%'>
+      width='100%'
+      color={color}
+      fontFamily={fontFamily}
+    >
       {text}
     </Typography>
   )
 }
+
 TextItem.defaultProps = {
   color: 'neutral3',
 }
+
 export default TextItem

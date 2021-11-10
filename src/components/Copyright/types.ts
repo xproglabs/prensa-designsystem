@@ -1,8 +1,14 @@
-export interface TextItemProps {
+import { FontTokens } from '@prensa_tokens'
+
+export type TextItemProps = {
   /**
    * @description Define text color
    */
-  color: string;
+  color?: string;
+  /**
+   * @description Expects a font token (e.g. primary/secondary) 
+   */
+  fontFamily?: FontTokens;
   /**
    * @description Define text to be rendered
    */
@@ -13,27 +19,31 @@ export interface CopyrightProps {
   /**
    * @description Define background color for CopyrightContainer
    */
-  bgColor: string;
+  bgColor?: string;
   /**
    * @description Define text color
    */
   color?: string;
   /**
-   * @description Define ATEX message
+   * @description Expects a font token (e.g. primary/secondary) 
    */
-  textAtex: string;
+  fontFamily?: FontTokens;
   /**
    * @description Define copyright message
    */
-  textCopyright: string;
+  textCopyright?: string;
   /**
    * @description Define company message
    */
-  textCompany: string;
+  textCompany?: string;
   /**
    * @description Define "rights reserved" message
    */
-  textRights: string;
+  textRights?: string;
+  /**
+   * @description Define ATEX message
+   */
+  textAtex: string;
   /**
    * @description Define XPROG message
    */
