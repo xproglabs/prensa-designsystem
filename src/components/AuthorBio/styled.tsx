@@ -1,5 +1,16 @@
 import React from 'react'
-import { ContainerProps } from './types'
+import { 
+  AuthorBioProps, 
+  AuthorTitleProps, 
+  ContainerCenterProps,
+  ContainerProps,
+  ContainerImageProps,
+  ContainerMediasProps, 
+  ContainerTitlesProps,
+  ContentProps,
+  ContentImageProps,
+  ColumnTitleProps,
+  ImageProps} from './types'
 import Block from '../Block'
 import Typography from '../Typography'
 import {
@@ -21,7 +32,7 @@ export const AuthorBio = ({
   color,
   fontSize,
   fontWeight,
-}: ContainerProps ) => (
+}: AuthorBioProps ) => (
   <Typography 
     color={color}
     fontSize={fontSize}
@@ -61,37 +72,37 @@ export const Container = ({
   </Block>
 )
 
-export const ContainerCenter = ({ children }) => (
+export const ContainerCenter = ({ children }: ContainerCenterProps ) => (
   <Block {...CONTAINER_CENTER}>
     {children}
   </Block>
 )
 
-export const ContainerImage = ({ children }) => (
+export const ContainerImage = ({ children }: ContainerImageProps) => (
   <Block {...CONTAINER_IMAGE}>
     {children}
   </Block>
 )
 
-export const ContainerMedias = ({ children }) => (
+export const ContainerMedias = ({ children }: ContainerMediasProps) => (
   <Block {...CONTAINER_MEDIAS}>
     {children}
   </Block>
 )
 
-export const ContainerTitles = ({ children }) => (
+export const ContainerTitles = ({ children }: ContainerTitlesProps) => (
   <Block {...CONTAINER_TITLES}>
     {children}
   </Block>
 )
 
-export const Content = ({ children }) => (
+export const Content = ({ children }: ContentProps) => (
   <Block {...CONTENT}>
     {children}
   </Block>
 )
 
-export const ContentImage = ({ children }) => (
+export const ContentImage = ({ children }: ContentImageProps) => (
   <Block {...CONTENT_IMAGE}>
     {children}
   </Block>
@@ -102,7 +113,7 @@ export const ColumnTitle = ({
   color,
   fontSize,
   fontWeight,
-  mb }: ContainerProps) => (
+  mb }: ColumnTitleProps) => (
   <Typography 
     color={color}
     fontSize={fontSize}
@@ -113,7 +124,7 @@ export const ColumnTitle = ({
   </Typography>
 )
 
-export const Image = ({ children, radius }) => (
+export const Image = ({ children, radius }: ImageProps) => (
   <Block 
     radius={radius}
     {...IMAGE}>
