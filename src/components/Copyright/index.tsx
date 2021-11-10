@@ -9,6 +9,7 @@ import { CopyrightProps } from './types'
 const Copyright = ({ 
   bgColor,
   color,
+  fontFamily,
   textCompany, 
   textCopyright, 
   textRights, 
@@ -19,18 +20,52 @@ const Copyright = ({
     <S.ContainerCopyright bgColor={bgColor}>
       <S.ContainerCopyrightBox>
         <S.ContainerCopyrightItems>
-          <TextItem color={color} text={textCopyright} />
-          <TextItem color={color} text={textCompany} />
-          <TextItem color={color} text={textRights} />
+          {textCopyright &&
+            <TextItem
+              color={color}
+              fontFamily={fontFamily}
+              text={textCopyright}
+            />
+          }
+          {textCompany &&
+            <TextItem
+              color={color}
+              fontFamily={fontFamily}
+              text={textCompany}
+            />
+          }
+          {textRights && 
+            <TextItem
+              color={color}
+              fontFamily={fontFamily}
+              text={textRights}
+            />
+          }
         </S.ContainerCopyrightItems>    
         <S.ContainerCompanies>
           <S.ContainerXprog>
-            <TextItem color={color} text={textXprog} />
-            <LogoXprog href='https://xprog.com.br/' target="_blank" color={color} />
+            <TextItem
+              color={color}
+              fontFamily={fontFamily}
+              text={textXprog}
+            />
+            <LogoXprog
+              href='https://xprog.com.br/'
+              target="_blank"
+              color={color}
+            />
           </S.ContainerXprog>
           <S.ContainerAtex>
-            <TextItem color={color} text={textAtex} />
-            <LogoAtex href='https://atex.com/' target="_blank" color={color} />
+            <TextItem
+              color={color}
+              fontFamily={fontFamily}
+              text={textAtex}
+            />
+            <LogoAtex
+              href='https://atex.com/'
+              target="_blank"
+              color={color}
+            />
           </S.ContainerAtex>
         </S.ContainerCompanies>
       </S.ContainerCopyrightBox>  

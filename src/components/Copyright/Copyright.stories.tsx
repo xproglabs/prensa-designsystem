@@ -19,6 +19,13 @@ export const Default = () => {
         textAtex='Distribuído por'
         textXprog='Desenvolvido por'
       />
+      <Copyright
+        textCopyright='© Copyright 2021'
+        textRights='Todos os direitos reservados.'
+        textAtex='Distribuído por'
+        textXprog='Desenvolvido por'
+        fontFamily='secondary'
+      />
     </ThemeProvider>
   )
 }

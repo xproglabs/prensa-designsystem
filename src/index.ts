@@ -1,6 +1,7 @@
 /** Exporta componentes por unidade */
-export { default as Article } from './components/Article/Article'
 export { default as AccordionEditorial } from './components/AccordionEditorial'
+export { default as Article } from './components/Article/Article'
+export { default as AuthorProfile } from './components/AuthorProfile'
 export { default as Carousel } from './components/Carousel'
 export { default as Copyright } from './components/Copyright'
 export { default as Block } from './components/Block'

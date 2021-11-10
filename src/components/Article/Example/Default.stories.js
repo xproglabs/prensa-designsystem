@@ -3,6 +3,7 @@ import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
 import { data } from '../../../mockup/template'
+export { default as ACritica } from './ACritica'
 export { default as DiarioDaRegiao } from './DiarioDaRegiao'
 export { default as ODiarioDeMogi } from './ODiarioDeMogi'
 export { default as OVale } from './OVale'
