@@ -59,14 +59,12 @@ const AuthorBio = ({
               {authorBio}
             </S.AuthorBio>
           </S.ContainerCenter> 
-          <S.ContainerCenter>
-            <S.ContainerMedias>
-              <IcBioFacebook />
-              <IcBioInstagram />
-              <IcBioLinkedin />
-              <IcBioTwitter />
-            </S.ContainerMedias>  
-          </S.ContainerCenter> 
+          <S.ContainerMedias>
+            <IcBioFacebook />
+            <IcBioInstagram />
+            <IcBioLinkedin />
+            <IcBioTwitter />
+          </S.ContainerMedias>  
         </S.ContainerTitles>
       </S.Content> 
     </S.Container>

@@ -13,113 +13,120 @@ import {
   ImageProps} from './types'
 import Block from '../Block'
 import Typography from '../Typography'
-import {
-  AUTHOR_BIO,
-  AUTHOR_TITLE,
-  CONTAINER,
-  CONTAINER_CENTER,
-  CONTAINER_IMAGE,
-  CONTAINER_MEDIAS,
-  CONTENT,
-  CONTENT_IMAGE,
-  COLUMN_TITLE,
-  IMAGE,
-  CONTAINER_TITLES
-} from './consts'
 
-export const AuthorBio = ({ 
-  children, 
-  color,
-  fontSize,
-  fontWeight,
-}: AuthorBioProps ) => (
+export const AuthorBio = ({ children, ...otherProps}: AuthorBioProps ) => (
   <Typography 
-    color={color}
-    fontSize={fontSize}
-    fontWeight={fontWeight}
-    {...AUTHOR_BIO}>
+    element='span'
+    mb={2}
+    textAlign='center'
+    width='100%'
+    lg={{ textAlign: 'left' }}
+    {...otherProps}>
     {children}
   </Typography>
 )
 
-export const AuthorTitle = ({ 
-  children, 
-  color,
-  fontSize,
-  fontWeight,
-}: AuthorTitleProps ) => (
+export const AuthorTitle = ({ children, ...otherProps}: AuthorTitleProps ) => (
   <Typography 
-    color={color}
-    fontSize={fontSize}
-    fontWeight={fontWeight}
-    {...AUTHOR_TITLE}>
+    element='span'
+    mb={2}
+    textAlign='center'
+    width='100%'
+    lg={{ textAlign: 'left' }}
+    {...otherProps}
+  >
     {children}
   </Typography>
 )
 
-export const Container = ({ 
-  b,
-  bgColor,
-  borderColor,
-  children 
-}: ContainerProps) => (
+export const Container = ({ children, ...otherProps }: ContainerProps) => (
   <Block 
-    b={b}
-    bgColor={bgColor}
-    borderColor={borderColor}
-    {...CONTAINER}>
+    aligny='middle'
+    alignx='center'
+    mx={2}
+    width='calc(100% - 32px)'
+    {...otherProps}
+  >
     {children}
   </Block>
 )
 
 export const ContainerCenter = ({ children }: ContainerCenterProps ) => (
-  <Block {...CONTAINER_CENTER}>
+  <Block 
+    alignx='center'
+    width='100%'
+    lg={{ width: 'fit-content' }}
+  >
     {children}
   </Block>
 )
 
 export const ContainerImage = ({ children }: ContainerImageProps) => (
-  <Block {...CONTAINER_IMAGE}>
+  <Block
+    alignx='center'
+    width='100%'
+    lg={{ width: 'unset' }}
+  >
     {children}
   </Block>
 )
 
 export const ContainerMedias = ({ children }: ContainerMediasProps) => (
-  <Block {...CONTAINER_MEDIAS}>
+  <Block
+    align='row'
+    alignx='center'
+    width='100%'
+  >
     {children}
   </Block>
 )
 
 export const ContainerTitles = ({ children }: ContainerTitlesProps) => (
-  <Block {...CONTAINER_TITLES}>
+  <Block
+    align='column'
+    width='100%'
+  >
     {children}
   </Block>
 )
 
 export const Content = ({ children }: ContentProps) => (
-  <Block {...CONTENT}>
+  <Block
+    align='column'
+    aligny='middle'
+    px={2}
+    py={2}
+    width='calc(100% - 32px)'
+    lg={{ align: 'row' }}
+  >
     {children}
   </Block>
 )
 
 export const ContentImage = ({ children }: ContentImageProps) => (
-  <Block {...CONTENT_IMAGE}>
+  <Block
+    height='80px'
+    mb={2}
+    mr='0px'
+    width='80px'
+    lg={{
+      height: '104px',
+      mr: 2,
+      width: '104px'
+    }}
+  >
     {children}
   </Block>
 )
 
-export const ColumnTitle = ({ 
-  children,
-  color,
-  fontSize,
-  fontWeight,
-  mb }: ColumnTitleProps) => (
-  <Typography 
-    color={color}
-    fontSize={fontSize}
-    fontWeight={fontWeight}
-    mb={mb}
-    {...COLUMN_TITLE}>
+export const ColumnTitle = ({ children, ...otherProps}: ColumnTitleProps) => (
+  <Typography
+    element='span'
+    textAlign='center'
+    width='100%'
+    lg={{ textAlign: 'left' }}
+    {...otherProps}
+  >
     {children}
   </Typography>
 )
