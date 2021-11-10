@@ -23,4 +23,5 @@ export type CreateTemplateTypes = {
   slot70?: TemplateSlotTypes;
   slot50?: TemplateSlotTypes;
   slot30?: TemplateSlotTypes;
+  slotWrap?: TemplateSlotTypes;
 }

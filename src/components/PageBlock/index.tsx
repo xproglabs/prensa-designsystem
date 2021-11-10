@@ -301,7 +301,7 @@ const PageBlock = ({
     )
   }
   if (type === 'templateWrap') {
-    const slowWrap_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
+    const slowWrap_block = selectTemplateFromTheme({ block: 'slotWrap', slot: slot1, templates })
     const slowWrap_layout = selectLayoutFromTemplate({ block: slowWrap_block, slot: slot1 })
     const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slowWrap_block.spaces)
     const slotsHaveSecionTitle = slot1.title !== ''
@@ -321,7 +321,7 @@ const PageBlock = ({
           amp,
           bgcolor: slot1.bgcolor,
           color: slot1.color,
-          column_items: slot1_spaces + 1,
+          column_items: slot1_spaces,
           column_padding: slot1_spaces,
           domain,
           fallback_image_url,
