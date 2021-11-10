@@ -47,7 +47,7 @@ export const AuthorTitle = ({
   color,
   fontSize,
   fontWeight,
-}: ContainerProps ) => (
+}: AuthorTitleProps ) => (
   <Typography 
     color={color}
     fontSize={fontSize}
@@ -122,12 +122,4 @@ export const ColumnTitle = ({
     {...COLUMN_TITLE}>
     {children}
   </Typography>
-)
-
-export const Image = ({ children, radius }: ImageProps) => (
-  <Block 
-    radius={radius}
-    {...IMAGE}>
-    {children}
-  </Block>
 )

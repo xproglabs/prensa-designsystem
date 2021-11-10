@@ -10,27 +10,18 @@ import IcBioTwitter from '../../icons/IcBioTwitter'
 
 const AuthorBio = ({
   authorBio,
-  authorBioColor,
-  authorTitleColor, 
+  authorBioProps,
   authorTitle,
+  authorTitleProps,
   b,
   bgColor,
   borderColor,
   columnTitle,
-  columnTitleColor,
-  fontSizeAuthor,
-  fontSizeBio,
-  fontSizeColumn,
-  fontWeightAuthor,
-  fontWeightBio,
-  fontWeightColumn,
-  mb
+  columnTitleProps,
+  containerProps
 }: ContainerProps) => {
   return(
-    <S.Container
-      b={b}
-      bgColor={bgColor}
-      borderColor={borderColor}>
+    <S.Container {...containerProps}>
       <S.Content>
         <S.ContainerImage>
           <S.ContentImage>
@@ -56,25 +47,15 @@ const AuthorBio = ({
         </S.ContainerImage>  
         <S.ContainerTitles>
           <S.ContainerCenter>
-            <S.ColumnTitle
-            color={columnTitleColor}
-            fontSize={fontSizeColumn}
-            fontWeight={fontWeightColumn}
-            mb={mb}>
+            <S.ColumnTitle {...columnTitleProps}>
             {columnTitle}
             </S.ColumnTitle>
           </S.ContainerCenter> 
           <S.ContainerCenter> 
-            <S.AuthorTitle
-              color={authorTitleColor}
-              fontSize={fontSizeAuthor}
-              fontWeight={fontWeightAuthor}>
+            <S.AuthorTitle {...authorTitleProps}>
               {authorTitle}
             </S.AuthorTitle>
-            <S.AuthorBio
-              color={authorBioColor}
-              fontSize={fontSizeBio}
-              fontWeight={fontWeightBio}>
+            <S.AuthorBio {...authorBioProps}>
               {authorBio}
             </S.AuthorBio>
           </S.ContainerCenter> 
@@ -90,26 +71,6 @@ const AuthorBio = ({
       </S.Content> 
     </S.Container>
   )
-}
-
-AuthorBio.defaultProps = {
-  authorBio: 'Mineiro de Muriaé, Leandro Mazzini é jornalista pós-graduado em Ciência Política pela UnB e escritor reportagem@colunaesplanada.com.br',
-  authorBioColor: 'neutral2',
-  authorTitle: 'Aldecir Xavier',
-  authorTitleColor: 'neutral2',
-  b: '1px',
-  bgColor: 'white',
-  borderColor: 'neutral9',
-  columnTitle: 'Preto no Branco',
-  columnTitleColor: 'neutral2',
-  fontSizeAuthor: '14px',
-  fontSizeBio: '12px',
-  fontSizeColumn: '18px',
-  fontWeightAuthor: '700',
-  fontWeightBio: '400',
-  fontWeightColumn: '700',
-  mb: 1,
-  radius: 'circle',
 }
 
 export default AuthorBio

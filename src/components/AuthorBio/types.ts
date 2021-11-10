@@ -2,36 +2,31 @@ export interface AuthorBioProps {
   children?: any;
   color?: string;
   fontSize?: string;
-  fontWeight?: string;
+  fontWeight?: number;
 }
 
 export interface AuthorTitleProps {
   children?: any;
   color?: string;
   fontSize?: string;
-  fontWeight?: string;
+  fontWeight?: number;
 }
 
 export interface ContainerProps {
   authorBio?: string;
-  authorBioColor?: string;
+  authorBioProps?: AuthorBioProps
   authorTitle?: string;
-  authorTitleColor?: string;
+  authorTitleProps?: AuthorTitleProps;
   b?: string;
   bgColor?: string;
   borderColor?: string;
   children?: any;
   color?: string;
   columnTitle?: string;
-  columnTitleColor?: string;
+  columnTitleProps?: ColumnTitleProps;
+  containerProps?: ContainerProps;
   fontSize?: string;
-  fontSizeAuthor?: string;
-  fontSizeBio?: string;
-  fontSizeColumn?: string;
-  fontWeight?: string;
-  fontWeightAuthor?: string;
-  fontWeightBio?: string;
-  fontWeightColumn?: string;
+  fontWeight?: number;
   mb?: string | number;
   radius?: string;
 }
@@ -64,7 +59,7 @@ export interface ColumnTitleProps {
   children?: any;
   color?: string;
   fontSize?: string;
-  fontWeight?: string;
+  fontWeight?: number;
   mb?: string | number;
 }
 
