@@ -18,8 +18,28 @@ const AuthorBio = ({
   borderColor,
   columnTitle,
   columnTitleProps,
-  containerProps
+  containerProps,
+  hasSocialMedia
 }: ContainerProps) => {
+
+  const SocialMediaInfo = () => {
+    return (
+      <S.ContainerMedias>
+        {hasSocialMedia && (
+          <IcBioFacebook hasSocialMedia={hasSocialMedia} />
+        )}  
+        {hasSocialMedia && (
+          <IcBioInstagram hasSocialMedia={hasSocialMedia} />
+        )}
+        {hasSocialMedia && (
+          <IcBioLinkedin hasSocialMedia={hasSocialMedia} />
+        )}  
+        {hasSocialMedia && (
+          <IcBioTwitter hasSocialMedia={hasSocialMedia} />
+        )}
+      </S.ContainerMedias> 
+    )
+  }
   return(
     <S.Container {...containerProps}>
       <S.Content>
@@ -45,7 +65,7 @@ const AuthorBio = ({
               }} 
             />
           </S.ContentImage>
-        </S.ContainerImage>  
+        </S.ContainerImage> 
         <S.ContainerTitles>
           <S.ContainerCenter>
             <S.ColumnTitle {...columnTitleProps}>
@@ -60,12 +80,7 @@ const AuthorBio = ({
               {authorBio}
             </S.AuthorBio>
           </S.ContainerCenter> 
-          <S.ContainerMedias>
-            <IcBioFacebook />
-            <IcBioInstagram />
-            <IcBioLinkedin />
-            <IcBioTwitter />
-          </S.ContainerMedias>  
+          <SocialMediaInfo />
         </S.ContainerTitles>
       </S.Content> 
     </S.Container>

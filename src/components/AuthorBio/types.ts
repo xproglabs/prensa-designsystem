@@ -27,6 +27,7 @@ export interface ContainerProps {
   containerProps?: ContainerProps;
   fontSize?: string;
   fontWeight?: number;
+  hasSocialMedia?: boolean;
   mb?: string | number;
   radius?: string;
 }

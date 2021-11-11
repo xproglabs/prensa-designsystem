@@ -11,5 +11,8 @@ const IcBioFacebook = ({ color, href }) => {
     </a>
   )
 }
-
 export default IcBioFacebook
+
+IcBioFacebook.defaultProps = {
+  hasSocialMedia: true
+}

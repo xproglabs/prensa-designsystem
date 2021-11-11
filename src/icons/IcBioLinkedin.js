@@ -13,3 +13,7 @@ const IcBioLinkedin = ({ color, href }) => {
 }
 
 export default IcBioLinkedin
+
+IcBioLinkedin.defaultProps = {
+  hasSocialMedia: true
+}

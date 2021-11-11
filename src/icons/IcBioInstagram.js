@@ -12,5 +12,8 @@ const IcBioInstagram = ({ color, href }) => {
     </a>
   )
 }
-
 export default IcBioInstagram
+
+IcBioInstagram.defaultProps = {
+  hasSocialMedia: true
+}
