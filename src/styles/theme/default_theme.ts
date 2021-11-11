@@ -7,8 +7,6 @@ import { parseFontFamily } from '../parsers/parseFontFamily'
 import { parseMargin } from '../parsers/parseMargin'
 import { parsePadding } from '../parsers/parsePadding'
 import { parseRadius } from '../parsers/parseRadius'
-import { TEASER_DEFAULT } from '../teasers'
-import { TEMPLATES_DEFAULT } from '../templates'
 
 export const default_theme = {
   fonts: {
@@ -34,12 +32,8 @@ export const default_theme = {
     alternative: '5px',
     circle: '50%'
   },
-  teasers: {
-    default: TEASER_DEFAULT
-  },
-  templates: {
-    default: TEMPLATES_DEFAULT
-  },
+  teasers: {},
+  templates: {},
   parseBgColor,
   parseCustom,
   parseCustomDef,
