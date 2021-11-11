@@ -22,7 +22,7 @@ export const Default = () => {
         authorTitle='Aldecir Xavier'
         authorTitleProps={{
           color: 'neutral2',
-          fontSize: '14px',
+          fontSize: '18px',
           fontWeight: 700
         }}
         containerProps={{
@@ -36,6 +36,7 @@ export const Default = () => {
           fontWeight: 700,
           mb: 1
         }}
+        hasSocialMedia={false}
       />
     </ThemeProvider>
   )

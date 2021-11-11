@@ -65,7 +65,7 @@ export const ContainerImage = ({ children }: ContainerImageProps) => (
   <Block
     alignx='center'
     width='100%'
-    lg={{ width: 'unset' }}
+    lg={{ width: 'unset'}}
   >
     {children}
   </Block>
@@ -76,7 +76,7 @@ export const ContainerMedias = ({ children }: ContainerMediasProps) => (
     align='row'
     alignx='center'
     width='100%'
-  >
+    lg={{ custom: `justify-content: flex-start` }}>
     {children}
   </Block>
 )
