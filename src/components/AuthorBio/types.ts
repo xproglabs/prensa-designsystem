@@ -27,7 +27,10 @@ export interface ContainerProps {
   containerProps?: ContainerProps;
   fontSize?: string;
   fontWeight?: number;
-  hasSocialMedia?: boolean;
+  hasFacebook?: boolean;
+  hasInstagram?: boolean;
+  hasLinkedin?: boolean;
+  hasTwitter?: boolean;
   mb?: string | number;
   radius?: string;
 }

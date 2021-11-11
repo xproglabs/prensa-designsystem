@@ -36,7 +36,10 @@ export const Default = () => {
           fontWeight: 700,
           mb: 1
         }}
-        hasSocialMedia={false}
+        hasFacebook={true}
+        hasInstagram={true}
+        hasLinkedin={true}
+        hasTwitter={true}
       />
     </ThemeProvider>
   )
