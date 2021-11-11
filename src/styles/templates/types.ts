@@ -1,13 +1,17 @@
+import { TeaserCartridges } from '@prensa_tokens'
+
+type TeaserSuggestions = TeaserCartridges | 'hide'
+
 type TemplateRelated = {
   enabled: boolean;
 }
 
 type TemplateLayout = {
-  0?: [string];
-  1?: [string];
-  2?: [string, string];
-  3?: [string, string, string];
-  4?: [string, string, string, string];
+  0: [TeaserSuggestions];
+  1: [TeaserSuggestions];
+  2: [TeaserSuggestions, TeaserSuggestions];
+  3: [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
+  4: [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
 }
 
 type TemplateSpaces = [number, number, number, number]
