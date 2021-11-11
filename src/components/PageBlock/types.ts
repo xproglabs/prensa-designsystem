@@ -1,4 +1,4 @@
-import { IconTokens } from '@prensa_tokens'
+import { ColorTokens, IconTokens } from '@prensa_tokens'
 
 import { PageBlockPreview } from '../PreviewProvider/types'
 import { SectionTitleLayout } from '../SectionTitle/types'
@@ -12,8 +12,8 @@ export type TemplateType =
   'templateWrap'
 
 export type SlotBlockProps = {
-  bgcolor?: string;
-  color: string;
+  bgcolor?: ColorTokens;
+  color: ColorTokens;
   icon: IconTokens;
   link: string;
   len1: number;
@@ -28,7 +28,7 @@ export type SlotBlockProps = {
 
 export type PageBlockProps = {
   amp?: boolean;
-  bgcolor?: string;
+  bgcolor?: ColorTokens;
   cid: string;
   domain: string;
   fallback_image_url?: string,
@@ -48,7 +48,7 @@ export type PageBlockProps = {
 
 export type RenderSectionTitleParams = {
   layout: SectionTitleLayout;
-  color?: string;
+  color?: ColorTokens;
   title: string;
   icon?: IconTokens;
   link?: string;
