@@ -1,5 +1,4 @@
-import { CreateTeaser } from 'prensa'
-
+import { CreateTeaser } from '../../../../index'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT } from '../tokens/subject'
 
