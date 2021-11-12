@@ -6,7 +6,6 @@
 .storybook
 rollup.config.js
 tsconfig.json
-/src
 /storybook
 /public
 prensa_tokens.d.ts
