@@ -10,7 +10,7 @@ import pkg from './package.json'
 
 export default [
   {
-    input: 'src/index.ts',
+    input: 'index.ts',
     output: [
       {
         file: pkg.main,
@@ -33,15 +33,15 @@ export default [
     ]
   },
   {
-    input: 'src/icons.ts',
+    input: 'icons.ts',
     output: [
       {
-        file: 'components/icons.js',
+        file: 'dist/icons.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: 'components/icons.esm.js',
+        file: 'dist/icons.esm.js',
         format: 'es',
         sourcemap: true
       }
@@ -56,15 +56,15 @@ export default [
     ]
   },
   {
-    input: 'src/styled-system.ts',
+    input: 'styled-system.ts',
     output: [
       {
-        file: 'components/styled-system.js',
+        file: 'dist/styled-system.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: 'components/styled-system.esm.js',
+        file: 'dist/styled-system.esm.js',
         format: 'es',
         sourcemap: true
       }
@@ -79,15 +79,15 @@ export default [
     ]
   },
   {
-    input: 'src/utils.ts',
+    input: 'utils.ts',
     output: [
       {
-        file: 'components/utils.js',
+        file: 'dist/utils.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: 'components/utils.esm.js',
+        file: 'dist/utils.esm.js',
         format: 'es',
         sourcemap: true
       }
