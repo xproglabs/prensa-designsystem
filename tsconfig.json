@@ -38,7 +38,12 @@
     "components/**/*",
     "icons/**/*",
     "styled-system/**/*",
-    "styles/**/*"
+    "styles/**/*",
+    "icons.ts",
+    "index.ts",
+    "styled-system.ts",
+    "types.ts",
+    "utils.ts"
   ],
   "exclude": [
     "node_modules",

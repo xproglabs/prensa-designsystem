@@ -10,7 +10,7 @@ import pkg from './package.json'
 
 export default [
   {
-    input: 'index.ts',
+    input: 'components/index.ts',
     output: [
       {
         file: pkg.main,
@@ -33,7 +33,7 @@ export default [
     ]
   },
   {
-    input: 'icons.ts',
+    input: 'icons/index.ts',
     output: [
       {
         file: 'dist/icons.js',
@@ -56,7 +56,7 @@ export default [
     ]
   },
   {
-    input: 'styled-system.ts',
+    input: 'styled-system/index.ts',
     output: [
       {
         file: 'dist/styled-system.js',
@@ -79,7 +79,30 @@ export default [
     ]
   },
   {
-    input: 'utils.ts',
+    input: 'styles/index.ts',
+    output: [
+      {
+        file: 'dist/utils.js',
+        format: 'cjs',
+        sourcemap: true
+      },
+      {
+        file: 'dist/utils.esm.js',
+        format: 'es',
+        sourcemap: true
+      }
+    ],
+    plugins: [
+      analyze(),
+      babel(),
+      commonjs(),
+      peerDepsExternal(),
+      resolve(),
+      typescript({ useTsconfigDeclarationDir: true })
+    ]
+  },
+  {
+    input: 'components/utils.ts',
     output: [
       {
         file: 'dist/utils.js',
