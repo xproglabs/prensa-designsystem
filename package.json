@@ -64,7 +64,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -o ./storybookbuild",
     "build": "rollup --config",
-    "eslint": "eslint --ext js,jsx src/ ",
+    "eslint": "eslint --ext js,jsx ./",
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
     "test": "jest",
     "release:local": "rm -rf dist && npm run build && npm pack",
