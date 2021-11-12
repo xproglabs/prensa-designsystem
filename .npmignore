@@ -6,5 +6,12 @@
 .storybook
 rollup.config.js
 tsconfig.json
-/src
+/components
+/icons
+/mockup
+/public
+/stories
 /storybook
+/styled-system
+/styles
+prensa_tokens.d.ts
