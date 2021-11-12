@@ -1,8 +1,5 @@
 /node_modules
-/components
 .env
 *.tgz
-
 package-lock.json
 yarn.lock
-

@@ -15,16 +15,16 @@
     "baseUrl": ".",
     "paths": {
       "components/*": [
-        "src/components/*"
+        "components/*"
       ],
       "demo/*": [
-        "src/styles/demo/*"
+        "styles/demo/*"
       ],
       "prensa": [
-        "src/index.ts"
+        "index.ts"
       ],
       "styles/*": [
-        "src/styles/*"
+        "styles/*"
       ],
       "storybook/*": [
         "storybook/*"
