@@ -1,11 +1,11 @@
 import { find, get, map } from 'lodash'
 import React from 'react'
-import { Typography } from 'src'
 import { ThemeProvider, StyleSheetManager } from 'styled-components'
 
 import Block from '../../../components/Block'
 import PageBlock from '../../../components/PageBlock'
 import TemplateContainer from '../../../components/Templates/TemplateContainer'
+import Typography from '../../../components/Typography'
 import DataAdsPlaceholder from './data/7.100.json'
 import DataHomeLinha1 from './data/7.153.json'
 import DataHomeLinha2 from './data/7.155.json'
