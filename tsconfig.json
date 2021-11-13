@@ -39,10 +39,7 @@
     "icons/**/*",
     "styled-system/**/*",
     "styles/**/*",
-    "icons.ts",
     "index.ts",
-    "styled-system.ts",
-    "types.ts",
     "utils.ts"
   ],
   "exclude": [
