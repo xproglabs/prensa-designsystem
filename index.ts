@@ -35,3 +35,8 @@ export * from './components/Templates'
 
 /** Exports com nome estático */
 export * as Embeds from './components/Article/Embeds'
+
+/** Export dos types */
+export * from './components/Teaser/types'
+export * from './styles/templates/types'
+export * from './components/SectionTitle/types'
