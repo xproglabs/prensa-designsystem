@@ -10,7 +10,7 @@ import pkg from './package.json'
 
 export default [
   {
-    input: 'components/index.ts',
+    input: 'index.ts',
     output: [
       {
         file: pkg.main,
@@ -102,7 +102,7 @@ export default [
     ]
   },
   {
-    input: 'components/utils.ts',
+    input: 'utils.ts',
     output: [
       {
         file: 'dist/utils.js',
