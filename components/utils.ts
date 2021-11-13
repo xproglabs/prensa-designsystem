@@ -1,5 +1,0 @@
-export { default as dateDistance } from './Util/dateDistance'
-export { default as datePtBrFull } from './Util/datePtBrFull'
-export { default as numberToString } from './Util/numberToString'
-export { default as getFromProps } from './Util/getFromProps'
-export { getImagePath, pathToImage } from './Util/pathToImage'
