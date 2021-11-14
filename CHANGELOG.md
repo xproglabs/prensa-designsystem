@@ -1,3 +1,5 @@
+# v1.6.51
+- Nova estrutura de pastas no projeto (remove src)
 # v1.6.50
 - Permite parametrização de fontFamily no Copyright
 # v1.6.49
