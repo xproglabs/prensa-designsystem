@@ -300,41 +300,44 @@ const PageBlock = ({
       />
     )
   }
-  const slowWrap_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
-  const slowWrap_layout = selectLayoutFromTemplate({ block: slowWrap_block, slot: slot1 })
-  const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slowWrap_block.spaces)
-  const slotsHaveSecionTitle = slot1.title !== ''
-  return (
-    <TemplateWrap
-      slotAds={{
-        column_items: 0,
-        column_padding: 0,
-        layouts: slowWrap_layout,
-        preview,
-        site_data,
-        slot: [],
-        slot_parser,
-        spaceB: slot4_slotList,
-      }}
-      slotItems={{
-        amp,
-        bgcolor: slot1.bgcolor,
-        color: slot1.color,
-        column_items: slot1_spaces + 1,
-        column_padding: slot1_spaces,
-        domain,
-        fallback_image_url,
-        layouts: slowWrap_layout,
-        min_height: slowWrap_block.min_height,
-        preview,
-        site_data,
-        slot: slot1.list1,
-        slot_parser,
-        spaceA: slotsHaveSecionTitle ? slot1_title : null,
-        spaceB: slot1_slotList
-      }}
-    />
-  )
+  if (type === 'templateWrap') {
+    const slotWrap_block = selectTemplateFromTheme({ block: 'slotWrap', slot: slot1, templates })
+    const slotWrap_layout = selectLayoutFromTemplate({ block: slotWrap_block, slot: slot1 })
+    const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slotWrap_block.spaces)
+    const slotsHaveSecionTitle = slot1.title !== ''
+    return (
+      <TemplateWrap
+        slotAds={{
+          column_items: 0,
+          column_padding: 0,
+          layouts: slotWrap_layout,
+          preview,
+          site_data,
+          slot: [],
+          slot_parser,
+          spaceB: slot4_slotList,
+        }}
+        slotItems={{
+          amp,
+          bgcolor: slot1.bgcolor,
+          color: slot1.color,
+          column_items: slot1_spaces,
+          column_padding: slot1_spaces,
+          domain,
+          fallback_image_url,
+          layouts: slotWrap_layout,
+          min_height: slotWrap_block.min_height,
+          preview,
+          site_data,
+          slot: slot1.list1,
+          slot_parser,
+          spaceA: slotsHaveSecionTitle ? slot1_title : null,
+          spaceB: slot1_slotList
+        }}
+      />
+    )
+  }
+  return <pre>template not found</pre>
 }
 
 export default withTheme(PageBlock)

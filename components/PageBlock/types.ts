@@ -1,12 +1,19 @@
-import { IconTokens } from '@prensa_tokens'
+import { ColorTokens, IconTokens } from '@prensa_tokens'
 
 import { PageBlockPreview } from '../PreviewProvider/types'
 import { SectionTitleLayout } from '../SectionTitle/types'
 import { TeaserProps } from '../Teaser/types'
 
+export type TemplateType = 
+  'template100' | 
+  'template7030' | 
+  'template50' | 
+  'template30' | 
+  'templateWrap'
+
 export type SlotBlockProps = {
-  bgcolor?: string;
-  color: string;
+  bgcolor?: ColorTokens;
+  color: ColorTokens;
   icon: IconTokens;
   link: string;
   len1: number;
@@ -16,18 +23,18 @@ export type SlotBlockProps = {
   list2: [TeaserProps];
   title: string;
   spaces?: [number, number, number, number];
-  type: string;
+  type: TemplateType;
 }
 
 export type PageBlockProps = {
   amp?: boolean;
-  bgcolor?: string;
+  bgcolor?: ColorTokens;
   cid: string;
   domain: string;
   fallback_image_url?: string,
   image_parser?: any;
   name: string;
-  type: string;
+  type: TemplateType;
   preview: PageBlockPreview;
   section_title_component?: any;
   site_data: any;
@@ -41,7 +48,7 @@ export type PageBlockProps = {
 
 export type RenderSectionTitleParams = {
   layout: SectionTitleLayout;
-  color?: string;
+  color?: ColorTokens;
   title: string;
   icon?: IconTokens;
   link?: string;
