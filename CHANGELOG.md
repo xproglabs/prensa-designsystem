@@ -1,3 +1,5 @@
+# v1.6.52
+- Configura template wrap no PageBlock e permite slotWrap nos templates
 # v1.6.51
 - Nova estrutura de pastas no projeto (remove src)
 # v1.6.50
