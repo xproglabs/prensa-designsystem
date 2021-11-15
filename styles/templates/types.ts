@@ -26,10 +26,15 @@ type TemplateSlotTypes = {
    */
   layout: TemplateLayout;
   /**
+   * Prensa | CreateTemplate min_height
+   */
+  min_height: [string, string];
+  /**
    * Prensa | CreateTemplate spaces
-   * @param slotLength Expects slot items length
-   * @param spaces Expects the amount of columns that the content will be splitted (list key is items amount)
-   * @returns Configuration for matching items amount | 0
+   * @description Expects an array of numbers. Array keys represent items amount
+   * @example
+   * [0, 1, 2, 3] -> is one column for one item, two column for two items and three cols for three items
+   * [0, 2, 2, 2] -> is two column for one, two or three items
    */
   spaces: TemplateSpaces;
 }
