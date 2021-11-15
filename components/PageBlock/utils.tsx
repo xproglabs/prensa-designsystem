@@ -63,11 +63,14 @@ export const selectLayoutFromTemplate = ({
   return slot_layouts_selected
 }
 
-export const selectLayoutColsFromSlot = (
-  len1: number,
-  spaces?: [number, number, number, number],
-): number => {
-  return get(spaces, `[${len1 - 1}]`, 0)
+/**
+ * Prensa | selectLayoutColsFromSlot
+ * @param slotLength Expects slot items length
+ * @param spaces Expects the amount of columns that the content will be splitted (list key is items amount)
+ * @returns Configuration for matching items amount | 0
+ */
+export const selectLayoutColsFromSlot = (slotLength: number, spaces?: [number, number, number, number] ): number => {
+  return get(spaces, `[${slotLength - 1}]`, 0)
 }
 
 /**
