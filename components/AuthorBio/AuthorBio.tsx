@@ -1,12 +1,12 @@
+import { Image } from 'prensa'
 import React from 'react'
+
+import { IcBioFacebook } from './IcBioFacebook'
+import { IcBioInstagram } from './IcBioInstagram'
+import { IcBioLinkedin } from './IcBioLinkedin'
+import { IcBioTwitter } from './IcBioTwitter'
 import * as S from './styled'
 import { ContainerProps } from './types'
-import Image from '../Image'
-
-import IcBioFacebook from '../../icons/IcBioFacebook'
-import IcBioInstagram from '../../icons/IcBioInstagram'
-import IcBioLinkedin from '../../icons/IcBioLinkedin'
-import IcBioTwitter from '../../icons/IcBioTwitter'
 
 const AuthorBio = ({
   authorBio,
@@ -28,31 +28,23 @@ const AuthorBio = ({
   const SocialMediaInfo = () => {
     return (
       <S.ContainerMedias>
-        {hasFacebook && (
-          <IcBioFacebook hasFacebook={hasFacebook} />
-        )}  
-        {hasInstagram && (
-          <IcBioInstagram hasInstagram={hasInstagram} />
-        )}
-        {hasLinkedin && (
-          <IcBioLinkedin hasLinkedin={hasLinkedin} />
-        )}  
-        {hasTwitter && (
-          <IcBioTwitter hasTwitter={hasTwitter} />
-        )}
-      </S.ContainerMedias> 
+        {hasFacebook && <IcBioFacebook />}
+        {hasInstagram && <IcBioInstagram />}
+        {hasLinkedin && <IcBioLinkedin />}
+        {hasTwitter && <IcBioTwitter />}
+      </S.ContainerMedias>
     )
   }
-  return(
+  return (
     <S.Container {...containerProps}>
       <S.Content>
         <S.ContainerImage>
           <S.ContentImage>
-            <Image 
-              amp={false} 
+            <Image
+              amp={false}
               custom_class='image-with-radius'
               title='Autor'
-              layout_desktop={{ 
+              layout_desktop={{
                 enabled: true,
                 height: '104px',
                 width: '104px',
@@ -65,29 +57,29 @@ const AuthorBio = ({
                 width: '80px',
                 path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
                 type: 'responsive'
-              }} 
+              }}
             />
           </S.ContentImage>
-        </S.ContainerImage> 
+        </S.ContainerImage>
         <S.ContainerTitles>
           <S.ContainerCenter>
             <S.ColumnTitle {...columnTitleProps}>
-            {columnTitle}
+              {columnTitle}
             </S.ColumnTitle>
-          </S.ContainerCenter> 
-          <S.ContainerCenter> 
+          </S.ContainerCenter>
+          <S.ContainerCenter>
             <S.AuthorTitle {...authorTitleProps}>
               {authorTitle}
             </S.AuthorTitle>
             <S.AuthorBio {...authorBioProps}>
               {authorBio}
             </S.AuthorBio>
-          </S.ContainerCenter> 
+          </S.ContainerCenter>
           <SocialMediaInfo />
         </S.ContainerTitles>
-      </S.Content> 
+      </S.Content>
     </S.Container>
   )
 }
 
-export default AuthorBio
+export { AuthorBio }
