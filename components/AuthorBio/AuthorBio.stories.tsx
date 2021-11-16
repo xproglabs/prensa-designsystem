@@ -1,12 +1,10 @@
+import { AuthorBio } from 'prensa'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
-import AuthorBio from '.'
-
 export default {
-  component: AuthorBio,
-  title: 'AuthorBio',
+  title: 'AuthorBio'
 }
 
 export const Default = () => {
@@ -18,7 +16,7 @@ export const Default = () => {
           color: 'neutral2',
           fontSize: '12px',
           fontWeight: 400
-        }} 
+        }}
         authorTitle='Aldecir Xavier'
         authorTitleProps={{
           color: 'neutral2',
