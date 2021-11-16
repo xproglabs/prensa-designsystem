@@ -1,7 +1,8 @@
-import { ReactElement } from 'react'
-import { SpacingType } from '../Teaser/types'
-import { IconProps } from '../Icon/types'
 import { IconTokens } from '@prensa_tokens'
+import { ReactElement } from 'react'
+
+import { IconProps } from '../Icon/types'
+import { SpacingType } from '../Teaser/types'
 
 interface AreaLayout {
   pt?: SpacingType;

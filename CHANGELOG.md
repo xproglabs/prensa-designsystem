@@ -1,3 +1,9 @@
+# v1.6.53
+- Otimizações de tipagem e ajustes na doc do templateWrap em HED
+# v1.6.52
+- Configura template wrap no PageBlock e permite slotWrap nos templates
+# v1.6.51
+- Nova estrutura de pastas no projeto (remove src)
 # v1.6.50
 - Permite parametrização de fontFamily no Copyright
 # v1.6.49
