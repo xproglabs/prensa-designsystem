@@ -51,19 +51,5 @@ export const TEMPLATES_DEFAULT = {
       4: ['teaser_image_top_medium', 'teaser_image_small', 'teaser_image_small', 'teaser_image_small'],
     },
     spaces: [0, 0, 0, 0],
-  },
-  slotWrap: {
-    min_height: ['auto', '350px'],
-    related: {
-      enabled: false
-    },
-    layout: {
-      0: ['teaser_image_circle'],
-      1: ['teaser_image_circle'],
-      2: ['teaser_image_circle', 'teaser_image_circle'],
-      3: ['teaser_image_circle', 'teaser_image_circle', 'teaser_image_circle'],
-      4: ['teaser_image_circle', 'teaser_image_circle', 'teaser_image_circle', 'teaser_image_circle'],
-    },
-    spaces: [3, 3, 3, 3],
   }
 }
