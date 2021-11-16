@@ -1,3 +1,5 @@
+# v1.6.53
+- Otimizações de tipagem e ajustes na doc do templateWrap em HED
 # v1.6.52
 - Configura template wrap no PageBlock e permite slotWrap nos templates
 # v1.6.51
