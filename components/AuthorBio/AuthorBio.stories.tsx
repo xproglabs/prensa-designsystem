@@ -50,6 +50,10 @@ export const HojeEmDia = () => {
           fontWeight: 700,
           mb: 1
         }}
+        facebookUrl='https://google.com.br'
+        instagramUrl='https://google.com.br'
+        linkedinUrl='https://google.com.br'
+        twitterUrl='https://google.com.br'
       />
     </ThemeProvider>
   )
