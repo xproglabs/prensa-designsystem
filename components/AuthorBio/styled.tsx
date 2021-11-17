@@ -54,8 +54,7 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
   <Block
     aligny='middle'
     alignx='center'
-    mx={2}
-    width='calc(100% - 32px)'
+    width='100%'
     {...otherProps}
   >
     {children}
