@@ -5,7 +5,8 @@ import { IcBioFacebook } from './IcBioFacebook'
 import { IcBioInstagram } from './IcBioInstagram'
 import { IcBioLinkedin } from './IcBioLinkedin'
 import { IcBioTwitter } from './IcBioTwitter'
-import { Bio,
+import {
+  Bio,
   Container,
   ContentWrap,
   ImageContainer,
@@ -17,33 +18,18 @@ import { Bio,
 } from './styled'
 
 const AuthorBio = ({
-  authorBio,
-  authorBioProps,
-  authorTitle,
-  authorTitleProps,
-  b,
-  bgColor,
-  borderColor,
-  columnTitle,
-  columnTitleProps,
+  bio,
+  bioProps,
   containerProps,
+  name,
+  nameProps,
+  title,
+  titleProps,
   hasFacebook,
   hasInstagram,
   hasLinkedin,
   hasTwitter
 }) => {
-
-  const SocialMediaInfo = () => {
-    return (
-      <SocialMediasWrap>
-        {hasFacebook && <IcBioFacebook />}
-        {hasInstagram && <IcBioInstagram />}
-        {hasLinkedin && <IcBioLinkedin />}
-        {hasTwitter && <IcBioTwitter />}
-      </SocialMediasWrap>
-    )
-  }
-  
   return (
     <Container {...containerProps}>
       <ContentWrap>
@@ -71,16 +57,21 @@ const AuthorBio = ({
           </ImageWrap>
         </ImageContainer>
         <TextWrap>
-          <Title {...columnTitleProps}>
-            {columnTitle}
+          <Title {...titleProps}>
+            {title}
           </Title>
-          <Name {...authorTitleProps}>
-            {authorTitle}
+          <Name {...nameProps}>
+            {name}
           </Name>
-          <Bio {...authorBioProps}>
-            {authorBio}
+          <Bio {...bioProps}>
+            {bio}
           </Bio>
-          <SocialMediaInfo />
+          <SocialMediasWrap>
+            {hasFacebook && <IcBioFacebook />}
+            {hasInstagram && <IcBioInstagram />}
+            {hasLinkedin && <IcBioLinkedin />}
+            {hasTwitter && <IcBioTwitter />}
+          </SocialMediasWrap>
         </TextWrap>
       </ContentWrap>
     </Container>
