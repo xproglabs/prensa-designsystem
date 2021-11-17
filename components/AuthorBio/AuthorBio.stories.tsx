@@ -11,12 +11,8 @@ export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
       <AuthorBio
-        authorBio='Mineiro de Muriaé, Leandro Mazzini é jornalista pós-graduado em Ciência Política pela UnB e escritor reportagem@colunaesplanada.com.br'
-        authorTitle='Aldecir Xavier'
-        hasFacebook={true}
-        hasInstagram={true}
-        hasLinkedin={true}
-        hasTwitter={true}
+        bio='Mineiro de Muriaé, Leandro Mazzini é jornalista pós-graduado em Ciência Política pela UnB e escritor reportagem@colunaesplanada.com.br'
+        name='Aldecir Xavier'
       />
     </ThemeProvider>
   )
@@ -26,14 +22,14 @@ export const HojeEmDia = () => {
   return (
     <ThemeProvider theme={theme}>
       <AuthorBio
-        authorBio='Mineiro de Muriaé, Leandro Mazzini é jornalista pós-graduado em Ciência Política pela UnB e escritor reportagem@colunaesplanada.com.br'
-        authorBioProps={{
+        bio='Mineiro de Muriaé, Leandro Mazzini é jornalista pós-graduado em Ciência Política pela UnB e escritor reportagem@colunaesplanada.com.br'
+        name='Aldecir Xavier'
+        bioProps={{
           color: 'neutral2',
           fontSize: '12px',
           fontWeight: 400
         }}
-        authorTitle='Aldecir Xavier'
-        authorTitleProps={{
+        nameProps={{
           color: 'neutral2',
           fontSize: '18px',
           fontWeight: 700
@@ -43,16 +39,12 @@ export const HojeEmDia = () => {
           bgColor: 'white',
           borderColor: 'neutral9'
         }}
-        columnTitleProps={{
+        titleProps={{
           color: 'neutral2',
           fontSize: '18px',
           fontWeight: 700,
           mb: 1
         }}
-        hasFacebook={true}
-        hasInstagram={true}
-        hasLinkedin={true}
-        hasTwitter={true}
       />
     </ThemeProvider>
   )
