@@ -1,4 +1,5 @@
 import { RadiusTokens, ColorTokens, FontTokens } from '@prensa_tokens'
+import { ReactNode } from 'react'
 
 export type SpacingType = number | string
 
@@ -19,7 +20,9 @@ export interface AuthorBioProps {
   hideLinkedin: boolean;
   hideTwitter: boolean;
 }
-export interface BioProps {
+
+export type BioProps = {
+  children: ReactNode;
   color?: ColorTokens;
   element: string;
   fontFamily?: FontTokens;
@@ -27,7 +30,8 @@ export interface BioProps {
   fontWeight?: number;
   mb?: SpacingType;
 }
-export interface NameProps {
+export type NameProps = {
+  children: ReactNode;
   color?: ColorTokens;
   element: string;
   fontFamily?: FontTokens;
@@ -35,7 +39,8 @@ export interface NameProps {
   fontWeight?: number;
   mb?: SpacingType;
 }
-export interface TitleProps {
+export type TitleProps = {
+  children: ReactNode;
   color?: ColorTokens;
   element: string;
   fontFamily?: FontTokens;
@@ -43,8 +48,10 @@ export interface TitleProps {
   fontWeight?: number;
   mb?: SpacingType;
 }
-export interface ContainerProps {
-  children?: any;
+
+// Containers
+export type ContainerProps = {
+  children: ReactNode;
   mx: SpacingType;
   my: SpacingType;
   pt?: SpacingType;
@@ -64,4 +71,21 @@ export interface ContainerProps {
   borderStyle?: string;
   radius?: RadiusTokens;
   width?: string;
+}
+export type ImageContainerProps = {
+  children: ReactNode;
+}
+
+// Wraps
+export type ContentWrapProps = {
+  children: ReactNode;
+}
+export type ImageWrapProps = {
+  children: ReactNode;
+}
+export type SocialMediasWrapProps = {
+  children: ReactNode;
+}
+export type TextWrapProps = {
+  children: ReactNode;
 }

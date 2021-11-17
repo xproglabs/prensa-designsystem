@@ -1,20 +1,19 @@
+import { Block, Typography } from 'prensa'
 import React from 'react'
-import {
-  AuthorBioProps,
-  AuthorTitleProps,
-  ContainerProps,
-  ContainerImageProps,
-  ContainerMediasProps,
-  ContainerTitlesProps,
-  ContentProps,
-  ContentImageProps,
-  ColumnTitleProps,
-  ImageProps
-} from './types'
-import Block from '../Block'
-import Typography from '../Typography'
 
-export const Bio = ({ children, ...otherProps }: AuthorBioProps) => (
+import {
+  BioProps,
+  ContainerProps,
+  ContentWrapProps,
+  ImageContainerProps,
+  ImageWrapProps,
+  NameProps,
+  SocialMediasWrapProps,
+  TextWrapProps,
+  TitleProps,
+} from './types'
+
+export const Bio = ({ children, ...otherProps }: BioProps) => (
   <Typography
     element='span'
     mb={2}
@@ -26,7 +25,31 @@ export const Bio = ({ children, ...otherProps }: AuthorBioProps) => (
     {children}
   </Typography>
 )
+export const Name = ({ children, ...otherProps }: NameProps) => (
+  <Typography
+    element='span'
+    mb={2}
+    textAlign='center'
+    width='100%'
+    lg={{ textAlign: 'left' }}
+    {...otherProps}
+  >
+    {children}
+  </Typography>
+)
+export const Title = ({ children, ...otherProps }: TitleProps) => (
+  <Typography
+    element='span'
+    textAlign='center'
+    width='100%'
+    lg={{ textAlign: 'left' }}
+    {...otherProps}
+  >
+    {children}
+  </Typography>
+)
 
+// Containers
 export const Container = ({ children, ...otherProps }: ContainerProps) => (
   <Block
     aligny='middle'
@@ -38,19 +61,14 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
     {children}
   </Block>
 )
-
-export const SocialMediasWrap = ({ children }: ContainerMediasProps) => (
-  <Block
-    align='row'
-    alignx='center'
-    width='100%'
-    lg={{ custom: 'justify-content: flex-start' }}
-  >
+export const ImageContainer = ({ children }: ImageContainerProps) => (
+  <Block alignx='center' width='100%' lg={{ width: 'unset' }}>
     {children}
   </Block>
 )
 
-export const ContentWrap = ({ children }: ContentProps) => (
+// Wraps
+export const ContentWrap = ({ children }: ContentWrapProps) => (
   <Block
     align='column'
     aligny='middle'
@@ -62,46 +80,24 @@ export const ContentWrap = ({ children }: ContentProps) => (
     {children}
   </Block>
 )
-
-export const ImageContainer = ({ children }: ContainerImageProps) => (
-  <Block alignx='center' width='100%' lg={{ width: 'unset' }}>
-    {children}
-  </Block>
-)
-
-export const ImageWrap = ({ children }: ContentImageProps) => (
+export const ImageWrap = ({ children }: ImageWrapProps) => (
   <Block height='80px' mb={2} width='80px' lg={{ height: '104px', mr: 2, width: '104px' }}>
     {children}
   </Block>
 )
-
-export const Name = ({ children, ...otherProps }: AuthorTitleProps) => (
-  <Typography
-    element='span'
-    mb={2}
-    textAlign='center'
+export const SocialMediasWrap = ({ children }: SocialMediasWrapProps) => (
+  <Block
+    align='row'
+    alignx='center'
     width='100%'
-    lg={{ textAlign: 'left' }}
-    {...otherProps}
+    lg={{ custom: 'justify-content: flex-start' }}
   >
     {children}
-  </Typography>
+  </Block>
 )
-
-export const TextWrap = ({ children }: ContainerTitlesProps) => (
+export const TextWrap = ({ children }: TextWrapProps) => (
   <Block align='column' width='100%'>
     {children}
   </Block>
 )
 
-export const Title = ({ children, ...otherProps }: ColumnTitleProps) => (
-  <Typography
-    element='span'
-    textAlign='center'
-    width='100%'
-    lg={{ textAlign: 'left' }}
-    {...otherProps}
-  >
-    {children}
-  </Typography>
-)
