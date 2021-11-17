@@ -2,7 +2,6 @@ import React from 'react'
 import {
   AuthorBioProps,
   AuthorTitleProps,
-  ContainerCenterProps,
   ContainerProps,
   ContainerImageProps,
   ContainerMediasProps,
@@ -22,7 +21,8 @@ export const AuthorBio = ({ children, ...otherProps }: AuthorBioProps) => (
     textAlign='center'
     width='100%'
     lg={{ textAlign: 'left' }}
-    {...otherProps}>
+    {...otherProps}
+  >
     {children}
   </Typography>
 )
@@ -47,16 +47,6 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
     mx={2}
     width='calc(100% - 32px)'
     {...otherProps}
-  >
-    {children}
-  </Block>
-)
-
-export const ContainerCenter = ({ children }: ContainerCenterProps) => (
-  <Block
-    alignx='center'
-    width='100%'
-    lg={{ width: 'fit-content' }}
   >
     {children}
   </Block>

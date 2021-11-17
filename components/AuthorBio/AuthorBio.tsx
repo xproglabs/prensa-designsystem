@@ -23,7 +23,7 @@ const AuthorBio = ({
   hasInstagram,
   hasLinkedin,
   hasTwitter
-}: ContainerProps) => {
+}) => {
 
   const SocialMediaInfo = () => {
     return (
@@ -62,19 +62,15 @@ const AuthorBio = ({
           </S.ContentImage>
         </S.ContainerImage>
         <S.ContainerTitles>
-          <S.ContainerCenter>
-            <S.ColumnTitle {...columnTitleProps}>
-              {columnTitle}
-            </S.ColumnTitle>
-          </S.ContainerCenter>
-          <S.ContainerCenter>
-            <S.AuthorTitle {...authorTitleProps}>
-              {authorTitle}
-            </S.AuthorTitle>
-            <S.AuthorBio {...authorBioProps}>
-              {authorBio}
-            </S.AuthorBio>
-          </S.ContainerCenter>
+          <S.ColumnTitle {...columnTitleProps}>
+            {columnTitle}
+          </S.ColumnTitle>
+          <S.AuthorTitle {...authorTitleProps}>
+            {authorTitle}
+          </S.AuthorTitle>
+          <S.AuthorBio {...authorBioProps}>
+            {authorBio}
+          </S.AuthorBio>
           <SocialMediaInfo />
         </S.ContainerTitles>
       </S.Content>
