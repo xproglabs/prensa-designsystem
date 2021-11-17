@@ -5,9 +5,16 @@ import { IcBioFacebook } from './IcBioFacebook'
 import { IcBioInstagram } from './IcBioInstagram'
 import { IcBioLinkedin } from './IcBioLinkedin'
 import { IcBioTwitter } from './IcBioTwitter'
-import * as S from './styled'
-import { AuthorTitle, AuthorBio, Container, ContentWrap, ImageWrap, TextWrap, Title } from './styled'
-import { ContainerProps } from './types'
+import { Bio,
+  Container,
+  ContentWrap,
+  ImageContainer,
+  ImageWrap,
+  TextWrap,
+  SocialMediasWrap,
+  Title,
+  Name
+} from './styled'
 
 const AuthorBio = ({
   authorBio,
@@ -28,48 +35,51 @@ const AuthorBio = ({
 
   const SocialMediaInfo = () => {
     return (
-      <S.ContainerMedias>
+      <SocialMediasWrap>
         {hasFacebook && <IcBioFacebook />}
         {hasInstagram && <IcBioInstagram />}
         {hasLinkedin && <IcBioLinkedin />}
         {hasTwitter && <IcBioTwitter />}
-      </S.ContainerMedias>
+      </SocialMediasWrap>
     )
   }
+  
   return (
     <Container {...containerProps}>
       <ContentWrap>
-        <ImageWrap>
-          <Image
-            amp={false}
-            custom_class='image-with-radius'
-            title='Autor'
-            layout_desktop={{
-              enabled: true,
-              height: '104px',
-              width: '104px',
-              path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
-              type: 'responsive'
-            }}
-            layout_mobile={{
-              enabled: true,
-              height: '80px',
-              width: '80px',
-              path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
-              type: 'responsive'
-            }}
-          />
-        </ImageWrap>
+        <ImageContainer>
+          <ImageWrap>
+            <Image
+              amp={false}
+              custom_class='image-with-radius'
+              title='Autor'
+              layout_desktop={{
+                enabled: true,
+                height: '104px',
+                width: '104px',
+                path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+                type: 'responsive'
+              }}
+              layout_mobile={{
+                enabled: true,
+                height: '80px',
+                width: '80px',
+                path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+                type: 'responsive'
+              }}
+            />
+          </ImageWrap>
+        </ImageContainer>
         <TextWrap>
           <Title {...columnTitleProps}>
             {columnTitle}
           </Title>
-          <AuthorTitle {...authorTitleProps}>
+          <Name {...authorTitleProps}>
             {authorTitle}
-          </AuthorTitle>
-          <AuthorBio {...authorBioProps}>
+          </Name>
+          <Bio {...authorBioProps}>
             {authorBio}
-          </AuthorBio>
+          </Bio>
           <SocialMediaInfo />
         </TextWrap>
       </ContentWrap>

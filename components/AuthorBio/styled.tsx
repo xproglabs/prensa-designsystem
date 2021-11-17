@@ -14,20 +14,7 @@ import {
 import Block from '../Block'
 import Typography from '../Typography'
 
-export const AuthorBio = ({ children, ...otherProps }: AuthorBioProps) => (
-  <Typography
-    element='span'
-    mb={2}
-    textAlign='center'
-    width='100%'
-    lg={{ textAlign: 'left' }}
-    {...otherProps}
-  >
-    {children}
-  </Typography>
-)
-
-export const AuthorTitle = ({ children, ...otherProps }: AuthorTitleProps) => (
+export const Bio = ({ children, ...otherProps }: AuthorBioProps) => (
   <Typography
     element='span'
     mb={2}
@@ -52,12 +39,13 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
   </Block>
 )
 
-export const ContainerMedias = ({ children }: ContainerMediasProps) => (
+export const SocialMediasWrap = ({ children }: ContainerMediasProps) => (
   <Block
     align='row'
     alignx='center'
     width='100%'
-    lg={{ custom: `justify-content: flex-start` }}>
+    lg={{ custom: 'justify-content: flex-start' }}
+  >
     {children}
   </Block>
 )
@@ -85,6 +73,19 @@ export const ImageWrap = ({ children }: ContentImageProps) => (
   <Block height='80px' mb={2} width='80px' lg={{ height: '104px', mr: 2, width: '104px' }}>
     {children}
   </Block>
+)
+
+export const Name = ({ children, ...otherProps }: AuthorTitleProps) => (
+  <Typography
+    element='span'
+    mb={2}
+    textAlign='center'
+    width='100%'
+    lg={{ textAlign: 'left' }}
+    {...otherProps}
+  >
+    {children}
+  </Typography>
 )
 
 export const TextWrap = ({ children }: ContainerTitlesProps) => (
