@@ -28,10 +28,10 @@ const AuthorBio = ({
   nameProps,
   title,
   titleProps,
-  hideFacebook,
-  hideInstagram,
-  hideLinkedin,
-  hideTwitter
+  facebookUrl,
+  instagramUrl,
+  linkedinUrl,
+  twitterUrl
 }: AuthorBioProps) => {
   return (
     <Container {...containerProps}>
@@ -70,10 +70,10 @@ const AuthorBio = ({
             {bio}
           </Bio>
           <SocialMediasWrap>
-            {!hideFacebook && <IcBioFacebook />}
-            {!hideInstagram && <IcBioInstagram />}
-            {!hideLinkedin && <IcBioLinkedin />}
-            {!hideTwitter && <IcBioTwitter />}
+            {facebookUrl && <IcBioFacebook href={facebookUrl} />}
+            {instagramUrl && <IcBioInstagram href={instagramUrl} />}
+            {linkedinUrl && <IcBioLinkedin href={linkedinUrl} />}
+            {twitterUrl && <IcBioTwitter href={twitterUrl} />}
           </SocialMediasWrap>
         </TextWrap>
       </ContentWrap>

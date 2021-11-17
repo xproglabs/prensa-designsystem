@@ -1,7 +1,9 @@
 import { Icon } from 'prensa'
 import React from 'react'
 
-const IcBioLinkedin = ({ color, href }) => {
+import { IconProps } from './types'
+
+const IcBioLinkedin = ({ color, href }: IconProps) => {
   return (
     <a href={href} aria-label='Logo Linkedin' target='_blank' rel='noreferrer' title='Linkedin'>
       <Icon color={color} width='24' height='24' viewBox='0 0 24 24' mr={2}>

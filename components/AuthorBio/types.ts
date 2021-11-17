@@ -17,10 +17,10 @@ export interface AuthorBioProps {
   nameProps?: NameProps;
   title?: string;
   titleProps?: TitleProps;
-  hideFacebook?: boolean;
-  hideInstagram?: boolean;
-  hideLinkedin?: boolean;
-  hideTwitter?: boolean;
+  facebookUrl: string;
+  instagramUrl: string;
+  linkedinUrl: string;
+  twitterUrl: string;
 }
 
 export type BioProps = {
@@ -90,4 +90,9 @@ export type SocialMediasWrapProps = {
 }
 export type TextWrapProps = {
   children?: ReactNode;
+}
+
+export type IconProps = {
+  color?: ColorTokens;
+  href: string;
 }
