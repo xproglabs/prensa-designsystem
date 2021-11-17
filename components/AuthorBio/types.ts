@@ -24,27 +24,27 @@ export interface AuthorBioProps {
 }
 
 export type BioProps = {
-  children: ReactNode;
+  children?: ReactNode;
   color?: ColorTokens;
-  element: string;
+  element?: string;
   fontFamily?: FontTokens;
   fontSize?: string;
   fontWeight?: number;
   mb?: SpacingType;
 }
 export type NameProps = {
-  children: ReactNode;
+  children?: ReactNode;
   color?: ColorTokens;
-  element: string;
+  element?: string;
   fontFamily?: FontTokens;
   fontSize?: string;
   fontWeight?: number;
   mb?: SpacingType;
 }
 export type TitleProps = {
-  children: ReactNode;
+  children?: ReactNode;
   color?: ColorTokens;
-  element: string;
+  element?: string;
   fontFamily?: FontTokens;
   fontSize?: string;
   fontWeight?: number;
@@ -53,9 +53,9 @@ export type TitleProps = {
 
 // Containers
 export type ContainerProps = {
-  children: ReactNode;
-  mx: SpacingType;
-  my: SpacingType;
+  children?: ReactNode;
+  mx?: SpacingType;
+  my?: SpacingType;
   pt?: SpacingType;
   pr?: SpacingType;
   pb?: SpacingType;
@@ -75,19 +75,19 @@ export type ContainerProps = {
   width?: string;
 }
 export type ImageContainerProps = {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 // Wraps
 export type ContentWrapProps = {
-  children: ReactNode;
+  children?: ReactNode;
 }
 export type ImageWrapProps = {
-  children: ReactNode;
+  children?: ReactNode;
 }
 export type SocialMediasWrapProps = {
-  children: ReactNode;
+  children?: ReactNode;
 }
 export type TextWrapProps = {
-  children: ReactNode;
+  children?: ReactNode;
 }
