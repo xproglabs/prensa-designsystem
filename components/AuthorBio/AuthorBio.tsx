@@ -16,41 +16,44 @@ import {
   Title,
   Name
 } from './styled'
+import { AuthorBioProps } from './types'
 
 const AuthorBio = ({
+  amp,
   bio,
   bioProps,
   containerProps,
+  imagePath,
   name,
   nameProps,
   title,
   titleProps,
-  hasFacebook,
-  hasInstagram,
-  hasLinkedin,
-  hasTwitter
-}) => {
+  hideFacebook,
+  hideInstagram,
+  hideLinkedin,
+  hideTwitter
+}: AuthorBioProps) => {
   return (
     <Container {...containerProps}>
       <ContentWrap>
         <ImageContainer>
           <ImageWrap>
             <Image
-              amp={false}
+              amp={amp}
               custom_class='image-with-radius'
-              title='Autor'
+              title={name}
               layout_desktop={{
                 enabled: true,
                 height: '104px',
                 width: '104px',
-                path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+                path: imagePath,
                 type: 'responsive'
               }}
               layout_mobile={{
                 enabled: true,
                 height: '80px',
                 width: '80px',
-                path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+                path: imagePath,
                 type: 'responsive'
               }}
             />
@@ -67,10 +70,10 @@ const AuthorBio = ({
             {bio}
           </Bio>
           <SocialMediasWrap>
-            {hasFacebook && <IcBioFacebook />}
-            {hasInstagram && <IcBioInstagram />}
-            {hasLinkedin && <IcBioLinkedin />}
-            {hasTwitter && <IcBioTwitter />}
+            {!hideFacebook && <IcBioFacebook />}
+            {!hideInstagram && <IcBioInstagram />}
+            {!hideLinkedin && <IcBioLinkedin />}
+            {!hideTwitter && <IcBioTwitter />}
           </SocialMediasWrap>
         </TextWrap>
       </ContentWrap>

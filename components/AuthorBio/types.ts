@@ -8,17 +8,19 @@ export type SpacingType = number | string
  * @description AuthorBio component
  */
 export interface AuthorBioProps {
+  amp: boolean;
   bio: string;
-  bioProps: BioProps;
-  containerProps: ContainerProps;
+  bioProps?: BioProps;
+  containerProps?: ContainerProps;
+  imagePath: string;
   name: string;
-  nameProps: NameProps;
-  title: string;
-  titleProps: TitleProps;
-  hideFacebook: boolean;
-  hideInstagram: boolean;
-  hideLinkedin: boolean;
-  hideTwitter: boolean;
+  nameProps?: NameProps;
+  title?: string;
+  titleProps?: TitleProps;
+  hideFacebook?: boolean;
+  hideInstagram?: boolean;
+  hideLinkedin?: boolean;
+  hideTwitter?: boolean;
 }
 
 export type BioProps = {
