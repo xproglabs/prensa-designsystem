@@ -1,8 +1,21 @@
 import { RadiusTokens, ColorTokens, FontTokens } from '@prensa_tokens'
 
 export type SpacingType = number | string
+
 export interface AuthorBioProps {
-  children?: any;
+  bio: string;
+  bioProps: BioProps;
+  containerProps: ContainerProps;
+  name: string;
+  nameProps: NameProps;
+  title: string;
+  titleProps: TitleProps;
+  hideFacebook: boolean;
+  hideInstagram: boolean;
+  hideLinkedin: boolean;
+  hideTwitter: boolean;
+}
+export interface BioProps {
   color?: ColorTokens;
   element: string;
   fontFamily?: FontTokens;
@@ -10,9 +23,7 @@ export interface AuthorBioProps {
   fontWeight?: number;
   mb?: SpacingType;
 }
-
-export interface AuthorTitleProps {
-  children?: any;
+export interface NameProps {
   color?: ColorTokens;
   element: string;
   fontFamily?: FontTokens;
@@ -20,7 +31,14 @@ export interface AuthorTitleProps {
   fontWeight?: number;
   mb?: SpacingType;
 }
-
+export interface TitleProps {
+  color?: ColorTokens;
+  element: string;
+  fontFamily?: FontTokens;
+  fontSize?: string;
+  fontWeight?: number;
+  mb?: SpacingType;
+}
 export interface ContainerProps {
   children?: any;
   mx: SpacingType;
@@ -42,63 +60,4 @@ export interface ContainerProps {
   borderStyle?: string;
   radius?: RadiusTokens;
   width?: string;
-}
-
-// export interface ContainerProps {
-//   authorBio?: string;
-//   authorBioProps?: AuthorBioProps
-//   authorTitle?: string;
-//   authorTitleProps?: AuthorTitleProps;
-//   b?: string;
-//   bgColor?: string;
-//   borderColor?: string;
-//   children?: any;
-//   color?: string;
-//   columnTitle?: string;
-//   columnTitleProps?: ColumnTitleProps;
-//   containerProps?: ContainerProps;
-//   fontSize?: string;
-//   fontWeight?: number;
-//   hasFacebook?: boolean;
-//   hasInstagram?: boolean;
-//   hasLinkedin?: boolean;
-//   hasTwitter?: boolean;
-//   mb?: string | number;
-//   radius?: string;
-// }
-
-export interface ContainerImageProps {
-  children?: any;
-}
-
-export interface ContainerMediasProps {
-  children?: any;
-}
-
-export interface ContainerTitlesProps {
-  children?: any;
-}
-
-export interface ContentProps {
-  children?: any;
-}
-
-export interface ContentImageProps {
-  children?: any;
-}
-
-export interface ColumnTitleProps {
-  children?: any;
-  color?: string;
-  fontSize?: string;
-  fontWeight?: number;
-  mb?: string | number;
-}
-
-export interface ImageProps {
-  children?: any;
-  color?: string;
-  fontSize?: string;
-  fontWeight?: string;
-  mb?: string | number;
 }
