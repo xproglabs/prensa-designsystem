@@ -12,6 +12,21 @@ export const Default = () => {
     <ThemeProvider theme={theme}>
       <AuthorBio
         authorBio='Mineiro de Muriaé, Leandro Mazzini é jornalista pós-graduado em Ciência Política pela UnB e escritor reportagem@colunaesplanada.com.br'
+        authorTitle='Aldecir Xavier'
+        hasFacebook={true}
+        hasInstagram={true}
+        hasLinkedin={true}
+        hasTwitter={true}
+      />
+    </ThemeProvider>
+  )
+}
+
+export const HojeEmDia = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <AuthorBio
+        authorBio='Mineiro de Muriaé, Leandro Mazzini é jornalista pós-graduado em Ciência Política pela UnB e escritor reportagem@colunaesplanada.com.br'
         authorBioProps={{
           color: 'neutral2',
           fontSize: '12px',
