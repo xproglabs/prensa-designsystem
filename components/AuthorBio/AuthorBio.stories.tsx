@@ -11,6 +11,7 @@ export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
       <AuthorBio
+        amp={false}
         bio='Mineiro de Muriaé, Leandro Mazzini é jornalista pós-graduado em Ciência Política pela UnB e escritor reportagem@colunaesplanada.com.br'
         imagePath='https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600'
         name='Aldecir Xavier'
@@ -23,6 +24,7 @@ export const HojeEmDia = () => {
   return (
     <ThemeProvider theme={theme}>
       <AuthorBio
+        amp={false}
         bio='Mineiro de Muriaé, Leandro Mazzini é jornalista pós-graduado em Ciência Política pela UnB e escritor reportagem@colunaesplanada.com.br'
         imagePath='https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600'
         name='Aldecir Xavier'
