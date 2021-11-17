@@ -52,16 +52,6 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
   </Block>
 )
 
-export const ContainerImage = ({ children }: ContainerImageProps) => (
-  <Block
-    alignx='center'
-    width='100%'
-    lg={{ width: 'unset' }}
-  >
-    {children}
-  </Block>
-)
-
 export const ContainerMedias = ({ children }: ContainerMediasProps) => (
   <Block
     align='row'
@@ -72,16 +62,7 @@ export const ContainerMedias = ({ children }: ContainerMediasProps) => (
   </Block>
 )
 
-export const ContainerTitles = ({ children }: ContainerTitlesProps) => (
-  <Block
-    align='column'
-    width='100%'
-  >
-    {children}
-  </Block>
-)
-
-export const Content = ({ children }: ContentProps) => (
+export const ContentWrap = ({ children }: ContentProps) => (
   <Block
     align='column'
     aligny='middle'
@@ -94,23 +75,25 @@ export const Content = ({ children }: ContentProps) => (
   </Block>
 )
 
-export const ContentImage = ({ children }: ContentImageProps) => (
-  <Block
-    height='80px'
-    mb={2}
-    mr='0px'
-    width='80px'
-    lg={{
-      height: '104px',
-      mr: 2,
-      width: '104px'
-    }}
-  >
+export const ImageContainer = ({ children }: ContainerImageProps) => (
+  <Block alignx='center' width='100%' lg={{ width: 'unset' }}>
     {children}
   </Block>
 )
 
-export const ColumnTitle = ({ children, ...otherProps }: ColumnTitleProps) => (
+export const ImageWrap = ({ children }: ContentImageProps) => (
+  <Block height='80px' mb={2} width='80px' lg={{ height: '104px', mr: 2, width: '104px' }}>
+    {children}
+  </Block>
+)
+
+export const TextWrap = ({ children }: ContainerTitlesProps) => (
+  <Block align='column' width='100%'>
+    {children}
+  </Block>
+)
+
+export const Title = ({ children, ...otherProps }: ColumnTitleProps) => (
   <Typography
     element='span'
     textAlign='center'
