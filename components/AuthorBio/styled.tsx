@@ -1,21 +1,22 @@
 import React from 'react'
-import { 
-  AuthorBioProps, 
-  AuthorTitleProps, 
+import {
+  AuthorBioProps,
+  AuthorTitleProps,
   ContainerCenterProps,
   ContainerProps,
   ContainerImageProps,
-  ContainerMediasProps, 
+  ContainerMediasProps,
   ContainerTitlesProps,
   ContentProps,
   ContentImageProps,
   ColumnTitleProps,
-  ImageProps} from './types'
+  ImageProps
+} from './types'
 import Block from '../Block'
 import Typography from '../Typography'
 
-export const AuthorBio = ({ children, ...otherProps}: AuthorBioProps ) => (
-  <Typography 
+export const AuthorBio = ({ children, ...otherProps }: AuthorBioProps) => (
+  <Typography
     element='span'
     mb={2}
     textAlign='center'
@@ -26,8 +27,8 @@ export const AuthorBio = ({ children, ...otherProps}: AuthorBioProps ) => (
   </Typography>
 )
 
-export const AuthorTitle = ({ children, ...otherProps}: AuthorTitleProps ) => (
-  <Typography 
+export const AuthorTitle = ({ children, ...otherProps }: AuthorTitleProps) => (
+  <Typography
     element='span'
     mb={2}
     textAlign='center'
@@ -40,7 +41,7 @@ export const AuthorTitle = ({ children, ...otherProps}: AuthorTitleProps ) => (
 )
 
 export const Container = ({ children, ...otherProps }: ContainerProps) => (
-  <Block 
+  <Block
     aligny='middle'
     alignx='center'
     mx={2}
@@ -51,8 +52,8 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
   </Block>
 )
 
-export const ContainerCenter = ({ children }: ContainerCenterProps ) => (
-  <Block 
+export const ContainerCenter = ({ children }: ContainerCenterProps) => (
+  <Block
     alignx='center'
     width='100%'
     lg={{ width: 'fit-content' }}
@@ -65,7 +66,7 @@ export const ContainerImage = ({ children }: ContainerImageProps) => (
   <Block
     alignx='center'
     width='100%'
-    lg={{ width: 'unset'}}
+    lg={{ width: 'unset' }}
   >
     {children}
   </Block>
@@ -119,7 +120,7 @@ export const ContentImage = ({ children }: ContentImageProps) => (
   </Block>
 )
 
-export const ColumnTitle = ({ children, ...otherProps}: ColumnTitleProps) => (
+export const ColumnTitle = ({ children, ...otherProps }: ColumnTitleProps) => (
   <Typography
     element='span'
     textAlign='center'
