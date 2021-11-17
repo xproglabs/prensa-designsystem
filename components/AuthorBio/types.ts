@@ -54,6 +54,7 @@ export type TitleProps = {
 // Containers
 export type ContainerProps = {
   children?: ReactNode;
+  bgColor?: ColorTokens;
   mx?: SpacingType;
   my?: SpacingType;
   pt?: SpacingType;
