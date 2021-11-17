@@ -2,6 +2,10 @@ import { RadiusTokens, ColorTokens, FontTokens } from '@prensa_tokens'
 
 export type SpacingType = number | string
 
+/**
+ * Prensa | AuthorBio
+ * @description AuthorBio component
+ */
 export interface AuthorBioProps {
   bio: string;
   bioProps: BioProps;
