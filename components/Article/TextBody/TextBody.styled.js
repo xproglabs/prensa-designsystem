@@ -13,7 +13,6 @@ export const Body = ({
     custom={`
       a {
         color: ${hyperlinkColor};
-        word-break: break-all;
       }
       max-width: ${bodyWidth};
     `}
