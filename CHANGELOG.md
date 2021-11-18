@@ -1,3 +1,6 @@
+# v1.6.54
+- Aplica uso do get na função border do styled system
+- Corrigir a quebra de linha da palavra quando hyperlink
 # v1.6.53
 - Otimizações de tipagem e ajustes na doc do templateWrap em HED
 # v1.6.52
