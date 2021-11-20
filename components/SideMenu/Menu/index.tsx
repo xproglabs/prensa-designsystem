@@ -1,8 +1,8 @@
 import { Block } from 'prensa'
 import React from 'react'
 
+import { Backdrop, Content } from '../styled'
 import { SideMenuWebProps } from '../types'
-import { Backdrop, Content } from './styled'
 
 const Menu = ({
   backgroundColor,

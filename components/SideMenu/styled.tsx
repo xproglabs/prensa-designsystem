@@ -3,7 +3,7 @@ import { dimensions, padding } from 'prensa/styled-system'
 import { ComponentType } from 'react'
 import styled from 'styled-components'
 
-import { ContentProps, BackdropProps } from '../types'
+import { ContentProps, BackdropProps, StyledContainerProps } from './types'
 
 function getMenuPosition({ menuAnchor }: any) {
   if (menuAnchor === 'left') {
@@ -18,7 +18,7 @@ function getMenuPosition({ menuAnchor }: any) {
   }
 }
 
-export function getBackgroundColor({ $backgroundColor, theme }: any) {
+function getBackgroundColor({ $backgroundColor, theme }: any) {
   const color = get(theme.colors, $backgroundColor, '')
   return `background-color: ${color};`
 }
@@ -45,5 +45,10 @@ export const Content: ComponentType<ContentProps> = styled.div`
   z-index: 11;
   @media (min-width: ${props => props.theme.queries.md}) {
     width: max-content;
+  }
+`
+export const AmpMenuContainer: ComponentType<StyledContainerProps> = styled.div`
+  amp-sidebar {
+    ${getBackgroundColor};
   }
 `
