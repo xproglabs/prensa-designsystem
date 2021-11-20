@@ -1,3 +1,5 @@
+# v1.6.55
+- Refatora SideMenu aplicando typescript
 # v1.6.54
 - Aplica uso do get na função border do styled system
 - Corrigir a quebra de linha da palavra quando hyperlink
