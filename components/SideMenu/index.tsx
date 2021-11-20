@@ -4,6 +4,9 @@ import AmpMenu from './AmpMenu'
 import Menu from './Menu'
 import { SideMenuProps } from './types'
 
+/**
+ * Prensa | SideMenu
+ */
 const SideMenu = ({ amp, ...otherProps }: SideMenuProps) => {
   if (amp) {
     return <AmpMenu {...otherProps} />

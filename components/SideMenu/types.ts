@@ -4,6 +4,9 @@ import { ReactNode, MouseEvent } from 'react'
 type SideMenuPositions = 'left' | 'right'
 type SideMenuClickFunction = (event: MouseEvent<HTMLElement>, value: any) => void
 
+/**
+ * Prensa | SideMenu API
+ */
 export interface SideMenuProps {
   amp: boolean;
   backgroundColor?: ColorTokens;
