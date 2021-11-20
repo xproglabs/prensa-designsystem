@@ -33,10 +33,8 @@ export const Default = () => {
       </Block>
       <SideMenu
         amp={false}
-        backgroundColor='white'
         close={handleClose}
         open={menu}
-        menuAnchor='left'
       >
         <AccordionEditorial
           amp={false}

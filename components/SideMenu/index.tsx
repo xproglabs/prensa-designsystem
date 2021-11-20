@@ -12,4 +12,10 @@ const SideMenu = ({ amp, ...otherProps }: SideMenuProps) => {
   }
 }
 
+SideMenu.defaultProps = {
+  backgroundColor: 'white',
+  menuAnchor: 'left',
+  width: 'max-content'
+}
+
 export default SideMenu
