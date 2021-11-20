@@ -1,6 +1,5 @@
 import { Block } from 'prensa'
 import React from 'react'
-import { withTheme } from 'styled-components'
 
 import { SideMenuWebProps } from '../types'
 import { Backdrop, Content } from './styled'
@@ -36,4 +35,4 @@ const Menu = ({
   )
 }
 
-export default withTheme(Menu)
+export default Menu

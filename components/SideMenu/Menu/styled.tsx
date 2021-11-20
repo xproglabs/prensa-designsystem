@@ -18,7 +18,7 @@ function getMenuPosition({ menuAnchor }: any) {
   }
 }
 
-function getBackgroundColor({ $backgroundColor, theme }: any) {
+export function getBackgroundColor({ $backgroundColor, theme }: any) {
   const color = get(theme.colors, $backgroundColor, '')
   return `background-color: ${color};`
 }
