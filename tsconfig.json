@@ -42,6 +42,7 @@
     "icons/**/*",
     "styled-system/**/*",
     "styles/**/*",
+    "stories/**/*",
     "index.ts",
     "utils.ts"
   ],
