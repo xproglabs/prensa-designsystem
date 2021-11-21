@@ -8,7 +8,7 @@ import ChevronRightIcon from './assets/ChevronRight'
 import ExpandLessIcon from './assets/ExpandLess'
 import ExpandMoreIcon from './assets/ExpandMoreIcon'
 import { CONFIGS } from './consts'
-import { GroupSection, GroupTitleContainer, GroupContent, Hyperlink } from './styled'
+import { GroupSection, GroupTitleContainer, Hyperlink } from './styled'
 
 const GroupTitle = ({ name, ...otherProps }) => (
   <Typography {...CONFIGS.GROUP_TITLE_DEFAULT_PROPS} {...otherProps}>
@@ -57,7 +57,7 @@ const MenuItem = ({ color, content, groupItemProps, groupSubItemProps, groupTitl
         <ExpandMoreIcon data-amp-bind-class={expandMoreIconClass} />
         <ExpandLessIcon data-amp-bind-class={expandLessIconClass} />
       </GroupTitleContainer>
-      <GroupContent data-amp-bind-class={contentClass}>
+      <div data-amp-bind-class={contentClass}>
         {map(subitems, ({ contentId, path, name }, key) => (
           <Block ml='20px' mb={2} mt={2} key={key}>
             <Typography id={`accordion-item-${replace(contentId, '.', '')}`} {...CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS} href={path} {...groupSubItemProps}>
@@ -65,7 +65,7 @@ const MenuItem = ({ color, content, groupItemProps, groupSubItemProps, groupTitl
             </Typography>
           </Block>
         ))}
-      </GroupContent>
+      </div>
     </div>
   )
 

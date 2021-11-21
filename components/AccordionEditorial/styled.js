@@ -48,7 +48,6 @@ const getGroupBorder = ({ removeBorders }) => {
   `
 }
 
-
 const GroupTitleContainer = styled.div`
   ${getGroupBorder};
   ${padding};
@@ -61,12 +60,7 @@ const GroupTitleContainer = styled.div`
   }
 `
 
-const GroupContent = styled.div`
-  margin-top: 8px;
-`
-
 export {
-  GroupContent,
   GroupSection,
   GroupTitleContainer,
   Hyperlink,
