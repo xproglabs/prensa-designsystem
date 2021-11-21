@@ -3,7 +3,7 @@ import { ReactNode, MouseEvent } from 'react'
 
 type SideMenuPositions = 'left' | 'right'
 type SideMenuClickFunction = (event: MouseEvent<HTMLElement>, value: any) => void
-
+type SideMenuWidth = [string, string];
 /**
  * Prensa | SideMenu API
  */
@@ -19,7 +19,7 @@ export interface SideMenuProps {
   open?: boolean;
   px?: string;
   py?: string;
-  width?: string;
+  width?: SideMenuWidth;
 }
 export interface SideMenuAmpProps {
   backgroundColor?: ColorTokens;
@@ -30,7 +30,7 @@ export interface SideMenuAmpProps {
   px?: string;
   py?: string;
   theme?: any;
-  width?: string;
+  width?: SideMenuWidth;
 }
 export interface SideMenuWebProps {
   backgroundColor?: ColorTokens;
@@ -42,9 +42,8 @@ export interface SideMenuWebProps {
   px?: string;
   py?: string;
   theme?: any;
-  width?: string;
+  width?: SideMenuWidth;
 }
-
 export type BackdropProps = {
   className?: string;
   hidden?: boolean;
@@ -61,11 +60,14 @@ export type ContentProps = {
   py?: string;
   $backgroundColor?: ColorTokens;
   $height?: string;
-  $width?: string;
+  $width?: SideMenuWidth;
 }
 export type AmpMenuContainerProps = {
   children?: ReactNode;
+  px?: string;
+  py?: string;
   $backgroundColor?: ColorTokens;
+  $width?: SideMenuWidth;
 }
 export type WebMenuContainerProps = {
   children?: ReactNode;
