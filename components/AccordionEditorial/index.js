@@ -30,7 +30,7 @@ const AccordionEditorial = ({
   removeBorders
 }) => {
   return (
-    <Block px={px} py={py}>
+    <Block px={px} py={py} width='100%'>
       {title &&
         <Typography
           {...titleDefaultProps}
