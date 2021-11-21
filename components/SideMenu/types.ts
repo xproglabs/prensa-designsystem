@@ -24,6 +24,7 @@ export interface SideMenuProps {
 export interface SideMenuAmpProps {
   backgroundColor?: ColorTokens;
   children?: ReactNode;
+  height?: string;
   id?: string;
   layout?: string;
   menuAnchor?: SideMenuPositions;
@@ -67,6 +68,7 @@ export type AmpMenuContainerProps = {
   px?: string;
   py?: string;
   $backgroundColor?: ColorTokens;
+  $height?: string;
   $width?: SideMenuWidth;
 }
 export type WebMenuContainerProps = {
