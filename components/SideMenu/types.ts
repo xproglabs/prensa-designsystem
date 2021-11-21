@@ -54,7 +54,10 @@ export type ContentProps = {
   $backgroundColor?: ColorTokens;
   $width?: string;
 }
-export type StyledContainerProps = {
+export type AmpMenuContainerProps = {
   children?: ReactNode;
   $backgroundColor?: ColorTokens;
+}
+export type WebMenuContainerProps = {
+  children?: ReactNode;
 }
