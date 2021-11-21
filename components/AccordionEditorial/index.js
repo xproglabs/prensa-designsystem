@@ -16,19 +16,51 @@ const titleDefaultProps = {
   mb: 3,
 }
 
-const AccordionEditorial = ({ amp, color, items, title, titleProps, groupItemProps, groupSubItemProps, groupTitleProps, px, py, removeBorders }) => {
+const AccordionEditorial = ({
+  amp,
+  color,
+  items,
+  title,
+  titleProps,
+  groupItemProps,
+  groupSubItemProps,
+  groupTitleProps,
+  px,
+  py,
+  removeBorders
+}) => {
   return (
-    <Block px={px} py={py}>
+    <Block px={px} py={py} width='100%'>
       {title &&
-        <Typography {...titleDefaultProps} {...titleProps}>
+        <Typography
+          {...titleDefaultProps}
+          {...titleProps}
+        >
           {title}
         </Typography>
       }
       {items && 
         map(items, (item, key) => amp ? 
-          <AmpGroup color={color} content={item} groupTitleProps={groupTitleProps} groupSubItemProps={groupSubItemProps} groupItemProps={groupItemProps} key={key} removeBorders={removeBorders} />
+          <AmpGroup
+            color={color}
+            content={item}
+            groupTitleProps={groupTitleProps}
+            groupSubItemProps={groupSubItemProps}
+            groupItemProps={groupItemProps}
+            key={key}
+            removeBorders={removeBorders}
+          />
           :
-          <Group color={color} content={item} groupTitleProps={groupTitleProps} groupSubItemProps={groupSubItemProps} groupItemProps={groupItemProps} key={key} removeBorders={removeBorders} />)
+          <Group
+            color={color}
+            content={item}
+            groupTitleProps={groupTitleProps}
+            groupSubItemProps={groupSubItemProps}
+            groupItemProps={groupItemProps}
+            key={key}
+            removeBorders={removeBorders}
+          />
+        )
       }
     </Block>
   )

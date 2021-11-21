@@ -17,6 +17,7 @@ const SideMenu = ({ amp, ...otherProps }: SideMenuProps) => {
 
 SideMenu.defaultProps = {
   backgroundColor: 'white',
+  height: '100vh',
   layout: 'nodisplay',
   menuAnchor: 'left',
   width: 'max-content'
