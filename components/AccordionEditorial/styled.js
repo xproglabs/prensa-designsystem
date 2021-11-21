@@ -37,9 +37,6 @@ const GroupSection = styled.section`
   .hidden {
     display: none;
   }
-  @media (min-width: ${props => props.theme.queries.md}) {
-    width: 340px;
-  }
 `
 
 const getGroupBorder = ({ removeBorders }) => {
