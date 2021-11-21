@@ -1,5 +1,5 @@
 import { get } from 'lodash'
-import { dimensions, padding } from 'prensa/styled-system'
+import { padding } from 'prensa/styled-system'
 import { ComponentType } from 'react'
 import styled from 'styled-components'
 
@@ -27,6 +27,15 @@ function getHeight({ $height }: any) {
   return `height: ${$height};`
 }
 
+function getResponsiveWidth({ theme, $width }: any) {
+  return `
+    width: ${$width[0]};
+    @media (min-width: ${theme.queries.md}) {
+      width: ${$width[1]};
+    }
+  `
+}
+
 export const Backdrop: ComponentType<BackdropProps> = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   height: 100vh;
@@ -36,24 +45,22 @@ export const Backdrop: ComponentType<BackdropProps> = styled.div`
   width: 100vw;
   z-index: 10;
 `
-export const Content: ComponentType<ContentProps> = styled.div`
-  ${dimensions};
+export const Content: ComponentType<ContentProps> = styled.div<ContentProps>`
   ${padding};
   ${getMenuPosition};
   ${getBackgroundColor};
   ${getHeight};
+  ${getResponsiveWidth};
   display: block;
   overflow-y: auto;
   position: fixed;
   top: 0px;
   z-index: 100;
-  @media (min-width: ${props => props.theme.queries.md}) {
-    width: max-content;
-  }
 `
-export const AmpMenuContainer: ComponentType<AmpMenuContainerProps> = styled.div`
+export const AmpMenuContainer: ComponentType<AmpMenuContainerProps> = styled.div<AmpMenuContainerProps>`
   amp-sidebar {
     ${getBackgroundColor};
+    ${getResponsiveWidth};
   }
 `
 export const WebMenuContainer: ComponentType<WebMenuContainerProps> = styled.div`

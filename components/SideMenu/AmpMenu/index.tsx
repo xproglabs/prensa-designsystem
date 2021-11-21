@@ -11,10 +11,14 @@ const AmpMenu = ({
   layout,
   menuAnchor,
   px,
-  py
+  py,
+  width
 }: SideMenuAmpProps) => {
   return (
-    <AmpMenuContainer $backgroundColor={backgroundColor}>
+    <AmpMenuContainer
+      $backgroundColor={backgroundColor}
+      $width={width}
+    >
       <amp-sidebar
         id={id}
         layout={layout}
