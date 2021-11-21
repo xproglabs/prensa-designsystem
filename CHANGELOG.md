@@ -1,3 +1,5 @@
+# v1.6.58
+- Otimização na engine de publicação
 # v1.6.57
 - Permite manipular css height no SideMenu
 # v1.6.56
