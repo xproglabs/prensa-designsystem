@@ -42,7 +42,7 @@ export const Content: ComponentType<ContentProps> = styled.div`
   overflow-y: auto;
   position: fixed;
   top: 0px;
-  z-index: 11;
+  z-index: 100;
   @media (min-width: ${props => props.theme.queries.md}) {
     width: max-content;
   }
