@@ -1,3 +1,5 @@
+# v1.6.57
+- Permite manipular css height no SideMenu
 # v1.6.56
 - Aplica animações no componente SideMenu
 # v1.6.55
