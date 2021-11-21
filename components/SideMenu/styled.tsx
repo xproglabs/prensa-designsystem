@@ -61,6 +61,7 @@ export const AmpMenuContainer: ComponentType<AmpMenuContainerProps> = styled.div
   amp-sidebar {
     ${padding};
     ${getBackgroundColor};
+    ${getHeight};
     ${getResponsiveWidth};
   }
 `
