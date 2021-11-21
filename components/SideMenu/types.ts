@@ -44,7 +44,6 @@ export interface SideMenuWebProps {
   theme?: any;
   width?: SideMenuWidth;
 }
-
 export type BackdropProps = {
   className?: string;
   hidden?: boolean;

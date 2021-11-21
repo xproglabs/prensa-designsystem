@@ -20,7 +20,7 @@ SideMenu.defaultProps = {
   height: '100vh',
   layout: 'nodisplay',
   menuAnchor: 'left',
-  width: ['300px', '380px']
+  width: ['300px', '360px']
 }
 
 export default SideMenu
