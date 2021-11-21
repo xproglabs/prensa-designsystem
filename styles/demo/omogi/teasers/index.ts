@@ -1,7 +1,7 @@
-import { FEATURED_RELATED } from './featured_related'
 import { TEASER_DEFAULT } from './default'
-import { TEASER_IMAGE_SMALL } from './teaser_image_small'
+import { FEATURED_RELATED } from './featured_related'
 import { TEASER_IMAGE_MEDIUM } from './teaser_image_medium'
+import { TEASER_IMAGE_SMALL } from './teaser_image_small'
 import { TEASER_IMAGE_TOP } from './teaser_image_top'
 
 export const teasers = {
