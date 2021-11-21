@@ -1,3 +1,5 @@
+# v1.6.56
+- Aplica animações no componente SideMenu
 # v1.6.55
 - Refatora SideMenu aplicando typescript
 # v1.6.54
