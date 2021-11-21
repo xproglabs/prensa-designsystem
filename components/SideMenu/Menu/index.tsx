@@ -1,7 +1,6 @@
-import { Block } from 'prensa'
 import React from 'react'
 
-import { Backdrop, Content } from '../styled'
+import { Backdrop, Content, WebMenuContainer } from '../styled'
 import { SideMenuWebProps } from '../types'
 
 const Menu = ({
@@ -14,15 +13,18 @@ const Menu = ({
   py,
   width,
 }: SideMenuWebProps) => {
-
-  if (!open) {
-    return null
-  }
-
   return (
-    <Block>
-      <Backdrop onClick={close} />
+    <WebMenuContainer>
+      <Backdrop
+        className='Prensa_sidemenu_backdrop'
+        open={open}
+        hidden={!open}
+        onClick={close}
+      />
       <Content
+        className='Prensa_sidemenu_content'
+        open={open}
+        hidden={!open}
         px={px}
         py={py}
         menuAnchor={menuAnchor}
@@ -31,7 +33,7 @@ const Menu = ({
       >
         {children}
       </Content>
-    </Block>
+    </WebMenuContainer>
   )
 }
 

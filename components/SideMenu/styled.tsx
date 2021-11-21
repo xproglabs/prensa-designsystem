@@ -3,7 +3,7 @@ import { dimensions, padding } from 'prensa/styled-system'
 import { ComponentType } from 'react'
 import styled from 'styled-components'
 
-import { ContentProps, BackdropProps, StyledContainerProps } from './types'
+import { ContentProps, BackdropProps, AmpMenuContainerProps, WebMenuContainerProps } from './types'
 
 function getMenuPosition({ menuAnchor }: any) {
   if (menuAnchor === 'left') {
@@ -42,13 +42,58 @@ export const Content: ComponentType<ContentProps> = styled.div`
   overflow-y: auto;
   position: fixed;
   top: 0px;
-  z-index: 11;
+  z-index: 100;
   @media (min-width: ${props => props.theme.queries.md}) {
     width: max-content;
   }
 `
-export const AmpMenuContainer: ComponentType<StyledContainerProps> = styled.div`
+export const AmpMenuContainer: ComponentType<AmpMenuContainerProps> = styled.div`
   amp-sidebar {
     ${getBackgroundColor};
+  }
+`
+export const WebMenuContainer: ComponentType<WebMenuContainerProps> = styled.div`
+  .Prensa_sidemenu_content[open] {
+    animation-name: Prensa_Sidemenu_slideInLeft;
+    animation-duration: 233ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,0,.21,1);
+  }
+  .Prensa_sidemenu_content[hidden] {
+    animation-name: Prensa_Sidemenu_slideOutLeft;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,0,.21,1);
+    top: -8000px;
+    transform: translateX(-100%);
+    transition: top 0.01s 1s;
+  }
+  .Prensa_sidemenu_backdrop[open] {
+    animation-name: Prensa_Sidemenu_backdropIn;
+    animation-duration: 233ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,0,.21,1);
+  }
+  .Prensa_sidemenu_backdrop[hidden] {
+    animation-name: Prensa_Sidemenu_backdropOut;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,0,.21,1);
+  }
+  @keyframes Prensa_Sidemenu_slideInLeft {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0%); }
+  }
+  @keyframes Prensa_Sidemenu_slideOutLeft {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+  @keyframes Prensa_Sidemenu_backdropIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes Prensa_Sidemenu_backdropOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
   }
 `
