@@ -1,7 +1,8 @@
 import React from 'react'
-import { ErrorPageProps } from './types'
 
 import * as S from './styled'
+import { ErrorPageProps } from './types'
+
 
 const ErrorPage = ({
   alignx,

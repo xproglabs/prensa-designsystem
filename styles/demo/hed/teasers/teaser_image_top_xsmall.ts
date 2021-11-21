@@ -1,4 +1,5 @@
 import { LayoutProps } from 'prensa/components/styles/layouts'
+
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT } from '../tokens/subject'
 

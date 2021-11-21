@@ -1,4 +1,5 @@
 import { CreateTeaser } from 'prensa'
+
 import { SUBJECT_FILLED } from '../tokens/subject'
 
 export const TEASER_FEATURED_IMAGE = CreateTeaser({
