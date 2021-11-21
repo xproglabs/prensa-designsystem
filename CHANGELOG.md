@@ -1,3 +1,6 @@
+# v1.6.60
+- Permite width responsivo no SideMenu
+- Ajustes de estilo no AccordionEditorial
 # v1.6.59
 - Otimiza eslint e novos scripts de build
 # v1.6.58
