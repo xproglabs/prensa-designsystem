@@ -1,7 +1,7 @@
 import { get } from 'lodash'
 import React from 'react'
-import Typography from '../Typography'
 
+import Typography from '../Typography'
 import { dateDistance } from '../Util'
 import { RenderDateTimeProps } from './RenderDateTimeTypes'
 

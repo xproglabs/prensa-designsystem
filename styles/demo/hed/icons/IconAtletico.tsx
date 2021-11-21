@@ -1,5 +1,5 @@
-import React from 'react'
 import { Icon } from 'prensa'
+import React from 'react'
 
 const IconAtletico = props => {
   return (

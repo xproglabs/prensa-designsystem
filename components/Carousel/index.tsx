@@ -1,5 +1,6 @@
 import React from 'react'
 import { withTheme } from 'styled-components'
+
 import { CarouselProps } from './types'
 
 const Carousel = ({
@@ -11,7 +12,7 @@ const Carousel = ({
   type
 }: CarouselProps) => {
 
-  if (!enabled) return null;
+  if (!enabled) return null
 
   let querie_value = theme.queries[querie]
 
