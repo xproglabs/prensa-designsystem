@@ -54,12 +54,14 @@ export const AmpMenuContainer: ComponentType<AmpMenuContainerProps> = styled.div
 `
 export const WebMenuContainer: ComponentType<WebMenuContainerProps> = styled.div`
   .Prensa_sidemenu_content[open] {
-    background-color: red;
-    transform: none;
-    animation: none;
+    animation-name: Prensa_Sidemenu_slideInLeft;
+    animation-duration: 233ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,0,.21,1);
   }
   .Prensa_sidemenu_content[hidden] {
-    background-color: blue;
+    transform: none;
+    animation: none;
     transform: translateX(-100%);
   }
   .Prensa_sidemenu_backdrop[open] {
@@ -68,5 +70,9 @@ export const WebMenuContainer: ComponentType<WebMenuContainerProps> = styled.div
   }
   .Prensa_sidemenu_backdrop[hidden] {
     transform: translateX(-100%);
+  }
+  @keyframes Prensa_Sidemenu_slideInLeft {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0%); }
   }
 `
