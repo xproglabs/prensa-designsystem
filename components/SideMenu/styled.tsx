@@ -59,6 +59,7 @@ export const Content: ComponentType<ContentProps> = styled.div<ContentProps>`
 `
 export const AmpMenuContainer: ComponentType<AmpMenuContainerProps> = styled.div<AmpMenuContainerProps>`
   amp-sidebar {
+    ${padding};
     ${getBackgroundColor};
     ${getResponsiveWidth};
   }

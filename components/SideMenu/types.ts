@@ -65,6 +65,8 @@ export type ContentProps = {
 }
 export type AmpMenuContainerProps = {
   children?: ReactNode;
+  px?: string;
+  py?: string;
   $backgroundColor?: ColorTokens;
   $width?: SideMenuWidth;
 }

@@ -1,4 +1,3 @@
-import { Block } from 'prensa'
 import React from 'react'
 
 import { AmpMenuContainer } from '../styled'
@@ -16,6 +15,8 @@ const AmpMenu = ({
 }: SideMenuAmpProps) => {
   return (
     <AmpMenuContainer
+      px={px}
+      py={py}
       $backgroundColor={backgroundColor}
       $width={width}
     >
@@ -24,9 +25,7 @@ const AmpMenu = ({
         layout={layout}
         side={menuAnchor}
       >
-        <Block px={px} py={py}>
-          {children}
-        </Block>
+        {children}
       </amp-sidebar>
     </AmpMenuContainer>
   )
