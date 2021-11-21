@@ -44,11 +44,17 @@ export interface SideMenuWebProps {
 }
 
 export type BackdropProps = {
+  className?: string;
+  hidden?: boolean;
   onClick?: SideMenuClickFunction;
+  open: boolean;
 }
 export type ContentProps = {
   children?: ReactNode;
+  className?: string;
+  hidden?: boolean;
   menuAnchor?: SideMenuPositions;
+  open?: boolean;
   px?: string;
   py?: string;
   $backgroundColor?: ColorTokens;
