@@ -75,7 +75,7 @@
   },
   "lint-staged": {
     "*.+(js|jsx)": [
-      "npm run eslint",
+      "eslint --fix",
       "git add"
     ]
   },
