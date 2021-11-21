@@ -6,6 +6,7 @@ import { SideMenuAmpProps } from '../types'
 const AmpMenu = ({
   backgroundColor,
   children,
+  height,
   id,
   layout,
   menuAnchor,
@@ -18,6 +19,7 @@ const AmpMenu = ({
       px={px}
       py={py}
       $backgroundColor={backgroundColor}
+      $height={height}
       $width={width}
     >
       <amp-sidebar

@@ -24,6 +24,7 @@ export interface SideMenuProps {
 export interface SideMenuAmpProps {
   backgroundColor?: ColorTokens;
   children?: ReactNode;
+  height?: string;
   id?: string;
   layout?: string;
   menuAnchor?: SideMenuPositions;
