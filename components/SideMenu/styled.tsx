@@ -61,19 +61,24 @@ export const WebMenuContainer: ComponentType<WebMenuContainerProps> = styled.div
   }
   .Prensa_sidemenu_content[hidden] {
     animation-name: Prensa_Sidemenu_slideOutLeft;
-    animation-duration: 233ms;
-    animation-fill-mode: backwards;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0,0,.21,1);
-    transform: translateX(-100%);
     top: -8000px;
+    transform: translateX(-100%);
     transition: top 0.01s 1s;
   }
   .Prensa_sidemenu_backdrop[open] {
-    transform: none;
-    animation: none;
+    animation-name: Prensa_Sidemenu_backdropIn;
+    animation-duration: 233ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,0,.21,1);
   }
   .Prensa_sidemenu_backdrop[hidden] {
-    transform: translateX(-100%);
+    animation-name: Prensa_Sidemenu_backdropOut;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,0,.21,1);
   }
   @keyframes Prensa_Sidemenu_slideInLeft {
     0% { transform: translateX(-100%); }
@@ -82,5 +87,13 @@ export const WebMenuContainer: ComponentType<WebMenuContainerProps> = styled.div
   @keyframes Prensa_Sidemenu_slideOutLeft {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-100%); }
+  }
+  @keyframes Prensa_Sidemenu_backdropIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes Prensa_Sidemenu_backdropOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
   }
 `
