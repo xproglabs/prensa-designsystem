@@ -1,3 +1,5 @@
+# v1.6.59
+- Otimiza eslint e novos scripts de build
 # v1.6.58
 - Otimização na engine de publicação
 # v1.6.57
