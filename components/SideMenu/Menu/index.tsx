@@ -7,6 +7,7 @@ const Menu = ({
   backgroundColor,
   children,
   close,
+  height,
   menuAnchor,
   open,
   px,
@@ -29,6 +30,7 @@ const Menu = ({
         py={py}
         menuAnchor={menuAnchor}
         $backgroundColor={backgroundColor}
+        $height={height}
         $width={width}
       >
         {children}

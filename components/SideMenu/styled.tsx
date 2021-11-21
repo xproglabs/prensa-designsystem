@@ -23,6 +23,10 @@ function getBackgroundColor({ $backgroundColor, theme }: any) {
   return `background-color: ${color};`
 }
 
+function getHeight({ $height }: any) {
+  return `height: ${$height};`
+}
+
 export const Backdrop: ComponentType<BackdropProps> = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   height: 100vh;
@@ -37,8 +41,8 @@ export const Content: ComponentType<ContentProps> = styled.div`
   ${padding};
   ${getMenuPosition};
   ${getBackgroundColor};
+  ${getHeight};
   display: block;
-  height: 100vh;
   overflow-y: auto;
   position: fixed;
   top: 0px;
