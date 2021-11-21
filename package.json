@@ -67,9 +67,11 @@
     "eslint": "eslint --ext js,jsx components/ icons/ styled-system/ styles/",
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
     "test": "jest",
-    "release:local": "rm -rf dist && npm run build && npm pack",
-    "release:qa": "rm -rf dist && npm version patch && npm run eslint && npm run build && git push --tags && npm publish --tag qa",
-    "release:prod": "rm -rf dist && npm version patch && npm run eslint && npm run build && git push && npm publish"
+    "clear:dist": "rm -rf dist",
+    "prerelease:copyfiles": "cp -rf README.md dist && cp -rf CHANGELOG.md dist && cp -rf package.json dist",
+    "release:local": "npm run clear:dist && npm run build && npm run prerelease:copyfiles && cd dist && npm pack",
+    "release:qa": "npm run clear:dist && npm run build && npm run prerelease:copyfiles && cd dist && npm version patch && npm run eslint && git push --tags && npm publish --tag qa",
+    "release:prod": "npm run clear:dist && npm run build && npm run prerelease:copyfiles && cd dist && npm version patch && npm run eslint && git push && npm publish"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
