@@ -2,7 +2,7 @@ import React from 'react'
 
 import Block from '../Block'
 import Typography from '../Typography'
-import { AuthorNameProps, ContainerProps, ContentProps, ImageWrapProps, TitleProps, NewsTitleProps } from './types'
+import { AuthorNameProps, ContainerProps, ContentProps, DateTimeProps, ImageWrapProps, TitleProps, NewsTitleProps } from './types'
 
 export const AuthorName = ({ children, ...otherProps }: AuthorNameProps) => (
   <Typography
