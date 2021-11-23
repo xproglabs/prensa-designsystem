@@ -15,6 +15,26 @@ export const Default = () => {
         bio='Mineiro de Muriaé, Leandro Mazzini é jornalista pós-graduado em Ciência Política pela UnB e escritor reportagem@colunaesplanada.com.br'
         imagePath='https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600'
         name='Aldecir Xavier'
+        facebookUrl='https://google.com.br'
+        instagramUrl='https://google.com.br'
+        linkedinUrl='https://google.com.br'
+        twitterUrl='https://google.com.br'
+      />
+    </ThemeProvider>
+  )
+}
+
+export const NoData = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <AuthorBio
+        amp={false}
+        imagePath='https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600'
+        facebookUrl='https://google.com.br'
+        instagramUrl='https://google.com.br'
+        linkedinUrl='https://google.com.br'
+        twitterUrl='https://google.com.br'
+      />
       />
     </ThemeProvider>
   )
