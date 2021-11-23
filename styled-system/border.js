@@ -25,7 +25,7 @@ export function border(props) {
 
   const colors = get(theme, 'colors', {})
   const radius_options = get(theme, 'radius')
-  const selectedColor = colors[borderColor]
+  const selectedColor = get(colors, borderColor)
 
   let object = []
 

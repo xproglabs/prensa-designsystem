@@ -37,9 +37,6 @@ const GroupSection = styled.section`
   .hidden {
     display: none;
   }
-  @media (min-width: ${props => props.theme.queries.md}) {
-    width: 340px;
-  }
 `
 
 const getGroupBorder = ({ removeBorders }) => {
@@ -50,7 +47,6 @@ const getGroupBorder = ({ removeBorders }) => {
     border-left-color: ${props => props.theme.colors[props.$color]};
   `
 }
-
 
 const GroupTitleContainer = styled.div`
   ${getGroupBorder};
@@ -64,12 +60,7 @@ const GroupTitleContainer = styled.div`
   }
 `
 
-const GroupContent = styled.div`
-  margin-top: 8px;
-`
-
 export {
-  GroupContent,
   GroupSection,
   GroupTitleContainer,
   Hyperlink,

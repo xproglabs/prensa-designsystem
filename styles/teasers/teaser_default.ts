@@ -1,5 +1,5 @@
-import { CreateTeaser } from './CreateFunction'
 import { SUBJECT_DEFAULT } from '../subject'
+import { CreateTeaser } from './CreateFunction'
 
 export const TEASER_DEFAULT = CreateTeaser({
   box: {

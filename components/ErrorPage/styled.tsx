@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageTitleProps, ButtonProps, MessageProps } from './types'
+
 import Block from '../Block'
 import Button from '../Button'
 import Typography from '../Typography'
@@ -10,6 +10,7 @@ import {
   MESSAGE,
   PAGE_TITLE
 } from './consts'
+import { PageTitleProps, ButtonProps, MessageProps } from './types'
 
 export const ButtonGoBack = ({
   buttonAction,
