@@ -32,12 +32,17 @@ export const HojeEmDia = () => {
         bioProps={{
           color: 'neutral2',
           fontSize: '12px',
-          fontWeight: 400
+          fontWeight: 400,
+          lg: {
+            fontSize: '14px',
+            textAlign: 'left'
+          }
         }}
         nameProps={{
           color: 'neutral2',
-          fontSize: '18px',
-          fontWeight: 700
+          fontSize: '14px',
+          fontWeight: 700,
+          mb: '4px'
         }}
         containerProps={{
           b: '1px',
