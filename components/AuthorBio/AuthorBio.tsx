@@ -24,6 +24,7 @@ const AuthorBio = ({
   bioProps,
   containerProps,
   imagePath,
+  imageWrapProps,
   name,
   nameProps,
   title,
@@ -37,7 +38,7 @@ const AuthorBio = ({
     <Container {...containerProps}>
       <ContentWrap>
         <ImageContainer>
-          <ImageWrap>
+          <ImageWrap {...imageWrapProps}>
             <Image
               amp={amp}
               custom_class='image-with-radius'

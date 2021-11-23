@@ -13,6 +13,7 @@ export interface AuthorBioProps {
   bioProps?: BioProps;
   containerProps?: ContainerProps;
   imagePath: string;
+  imageWrapProps?: ImageWrapProps;
   name: string;
   nameProps?: NameProps;
   title?: string;
