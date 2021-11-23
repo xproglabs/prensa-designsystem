@@ -58,9 +58,11 @@ const AuthorProfile = ({
           />
         </S.ImageWrap>
         <S.TitleWrapper>
-          <S.Title {...titleProps}>
-            {title}
-          </S.Title>
+          {title &&
+            <S.Title {...titleProps}>
+              {title}
+            </S.Title>
+          }  
           {name &&
             <S.AuthorName {...authorNameProps}>
               {name}
