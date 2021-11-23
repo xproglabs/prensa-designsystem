@@ -59,9 +59,11 @@ const AuthorProfile = ({
           <S.Title {...titleProps}>
             {title}
           </S.Title>
-          <S.Byline {...bylineProps}>
-            {byline}
-          </S.Byline>
+          {byline &&
+            <S.Byline {...bylineProps}>
+              {byline}
+            </S.Byline>
+          }   
         </S.TitleWrapper>
       </S.Content>
     </S.Container>
