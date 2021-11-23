@@ -2,15 +2,15 @@ import React from 'react'
 
 import Block from '../Block'
 import Typography from '../Typography'
-import { BylineProps, ContainerProps, ContentProps, ImageWrapProps, TitleProps, NewsTitleProps } from './types'
+import { AuthorNameProps, ContainerProps, ContentProps, DateTimeProps, ImageWrapProps, TitleProps, NewsTitleProps } from './types'
 
-export const Byline = ({ children, ...otherProps }: BylineProps) => (
+export const AuthorName = ({ children, ...otherProps }: AuthorNameProps) => (
   <Typography
     color='neutral5'
     element='span'
     fontSize='14px'
     fontWeight={400}
-    widht='100%'
+    width='100%'
     {...otherProps}
   >
     {children}
@@ -46,6 +46,19 @@ export const Content = ({ children, ...otherProps }: ContentProps) => (
   </Block>
 )
 
+export const DateTime = ({ children, ...otherProps }: DateTimeProps) => (
+  <Typography
+    color='neutral3'
+    element='span'
+    fontSize='12px'
+    fontWeight={400}
+    width='100%'
+    {...otherProps}
+  >
+    {children}
+  </Typography>
+)
+
 export const Image = ({ children, ...otherProps }) => (
   <Block
     bgColor='neutral2'
@@ -69,20 +82,6 @@ export const ImageWrap = ({ children, ...otherProps }: ImageWrapProps) => (
   </Block>
 )
 
-export const Title = ({ children, ...otherProps }: TitleProps) => (
-  <Typography
-    color='neutral2'
-    element='label'
-    fontSize='16px'
-    fontWeight={700}
-    mb={1}
-    width='100%'
-    {...otherProps}
-  >
-    {children}
-  </Typography>
-)
-
 export const NewsTitle = ({ children, ...otherProps }: NewsTitleProps) => (
   <Typography
     color='neutral2'
@@ -91,6 +90,20 @@ export const NewsTitle = ({ children, ...otherProps }: NewsTitleProps) => (
     fontWeight={700}
     lineHeight='110%'
     mb={2}
+    width='100%'
+    {...otherProps}
+  >
+    {children}
+  </Typography>
+)
+
+export const Title = ({ children, ...otherProps }: TitleProps) => (
+  <Typography
+    color='neutral2'
+    element='label'
+    fontSize='16px'
+    fontWeight={700}
+    mb={1}
     width='100%'
     {...otherProps}
   >
