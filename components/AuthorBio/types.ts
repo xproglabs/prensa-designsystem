@@ -9,12 +9,12 @@ export type SpacingType = number | string
  */
 export interface AuthorBioProps {
   amp: boolean;
-  bio: string;
+  bio?: string;
   bioProps?: BioProps;
   containerProps?: ContainerProps;
   imagePath: string;
   imageWrapProps?: ImageWrapProps;
-  name: string;
+  name?: string;
   nameProps?: NameProps;
   title?: string;
   titleProps?: TitleProps;
