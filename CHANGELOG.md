@@ -1,3 +1,6 @@
+# v1.6.61
+- Entrega as props do block no componente do slot
+- Formata matéria exemplo do Correio Popular
 # v1.6.60
 - Permite width responsivo no SideMenu
 - Ajustes de estilo no AccordionEditorial
