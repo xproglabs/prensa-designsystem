@@ -46,7 +46,7 @@ export const Content = ({ children, ...otherProps }: ContentProps) => (
   </Block>
 )
 
-export const DateTime = ({ children, ...otherProps }: AuthorNameProps) => (
+export const DateTime = ({ children, ...otherProps }: DateTimeProps) => (
   <Typography
     color='neutral3'
     element='span'
