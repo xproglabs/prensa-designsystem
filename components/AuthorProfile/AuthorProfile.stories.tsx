@@ -14,7 +14,7 @@ export const Default = () => {
     <ThemeProvider theme={theme}>
       <AuthorProfile
         containerProps={{ mb: 1 }}
-        byline='Aldecir Xavier'
+        name='Aldecir Xavier'
         title='Preto no Branco'
         image={{
           desktop_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
@@ -23,7 +23,7 @@ export const Default = () => {
         }}
       />
       <AuthorProfile
-        byline='Aldecir Xavier'
+        name='Aldecir Xavier'
         title='Preto no Branco'
         image={{
           desktop_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',

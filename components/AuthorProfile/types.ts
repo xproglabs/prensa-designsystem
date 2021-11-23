@@ -91,7 +91,7 @@ export type NewsTitleProps = {
 }
 export interface AuthorProfileProps {
   amp?: boolean;
-  byline: string;
+  name?: string;
   bylineProps?: BylineProps;
   containerProps?: ContainerProps;
   image: ImageProps;
