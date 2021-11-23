@@ -61,15 +61,21 @@ const AuthorBio = ({
           </ImageWrap>
         </ImageContainer>
         <TextWrap>
-          <Title {...titleProps}>
-            {title}
-          </Title>
-          <Name {...nameProps}>
-            {name}
-          </Name>
-          <Bio {...bioProps}>
-            {bio}
-          </Bio>
+          {title &&
+            <Title {...titleProps}>
+              {title}
+            </Title>
+          } 
+          {name && 
+            <Name {...nameProps}>
+              {name}
+            </Name>
+          }  
+          {bio &&
+            <Bio {...bioProps}>
+              {bio}
+            </Bio>
+          }  
           <SocialMediasWrap>
             {facebookUrl && <IcBioFacebook href={facebookUrl} />}
             {instagramUrl && <IcBioInstagram href={instagramUrl} />}
