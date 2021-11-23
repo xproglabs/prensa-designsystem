@@ -23,7 +23,7 @@ export const Default = () => {
         }}
       />
       <AuthorProfile
-        name='Aldecir Xavier'
+        date='18/02/2021 - 00h46 - Atualizado 10h06'
         title='Preto no Branco'
         image={{
           desktop_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
