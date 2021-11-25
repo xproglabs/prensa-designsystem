@@ -263,7 +263,8 @@ export const TemplateWrap = () => {
   return (
     <TemplateContainer
       mb={[2, 2]}
-      mt={[2, 2]}>
+      mt={[2, 2]}
+      background='neutral10'>
       <PageBlock
         {...DataTemplateWrap}
         amp={false}
