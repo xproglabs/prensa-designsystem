@@ -1,28 +1,16 @@
+import { Block } from 'prensa'
 import React from 'react'
 
-import Block from '../Block'
 import {
   isBackgroundTransparent,
   selectBgColorFromSlot,
   selectMinHeightFromSlot
-} from '../PageBlock/utils'
-import RenderSlot from '../RenderSlot'
-import { RenderSlotProps } from '../RenderSlot/types'
-import { renderSpaceSlot } from '../RenderSlot/utils'
+} from '../../PageBlock/utils'
+import RenderSlot from '../../RenderSlot'
+import { renderSpaceSlot } from '../../RenderSlot/utils'
+import { ColorizedColumnProps, ColumnProps, Template100Props } from './types'
 
-interface ColumnProps {
-  children: any;
-}
-interface ColumnColorProps {
-  bgColor: string;
-  children: any;
-  minHeight: [string, string];
-  transparent: boolean;
-}
-interface Template100Props {
-  slotAds: RenderSlotProps;
-  slot100: RenderSlotProps;
-}
+
 const Column = ({ children }: ColumnProps) => (
   <Block
     align="column"
@@ -30,20 +18,20 @@ const Column = ({ children }: ColumnProps) => (
     aligny="top"
     mb={2}
     width="100%"
-    lg={{
-      mb: 0
-    }}>
+    lg={{ mb: 0 }}
+  >
     {children}
   </Block>
 )
-const ColumnColor = ({
-  bgColor,
-  children,
-  minHeight,
-  transparent
-}: ColumnColorProps) => {
-  const slot_customHeight_mobile = selectMinHeightFromSlot(minHeight?.[0])
-  const slot_customHeight_desktop = selectMinHeightFromSlot(minHeight?.[1])
+
+const ColorizedColumn = ({ bgColor, children, minHeight, transparent }: ColorizedColumnProps) => {
+  const slot_customHeight_mobile = `
+    ${selectMinHeightFromSlot(minHeight?.[0])}
+  `
+  const slot_customHeight_desktop = `
+    ${selectMinHeightFromSlot(minHeight?.[1])}
+    flex-wrap: wrap;
+  `
   return (
     <Block
       align="column"
@@ -64,38 +52,39 @@ const ColumnColor = ({
         pt: transparent ? '0px' : 3,
         px: transparent ? '0px' : 3,
         width: transparent ? '100%' : 'calc(100% - 48px)'
-      }}>
+      }}
+    >
       {children}
     </Block>
   )
 }
-const Template100 = ({
-  slotAds,
-  slot100,
-}: Template100Props) => {
+
+const Template100 = ({ slotAds, slot100 }: Template100Props) => {
   const slot100_bgColor = selectBgColorFromSlot(slot100)
   const slot100_isTransparent = isBackgroundTransparent(slot100_bgColor)
   return (
-    <>
+    <React.Fragment>
       <Block
         align="row"
         alignx="center"
         aligny="top"
         mb={2}
-        width="100%">
+        width="100%"
+      >
         <Column>
-          {(renderSpaceSlot(slot100.spaceA))}
-          <ColumnColor
+          {renderSpaceSlot(slot100.spaceA)}
+          <ColorizedColumn
             bgColor={slot100_bgColor}
             minHeight={slot100.min_height}
-            transparent={slot100_isTransparent}>
+            transparent={slot100_isTransparent}
+          >
             <RenderSlot {...slot100} />
-          </ColumnColor>
-          {(renderSpaceSlot(slot100.spaceB))}
+          </ColorizedColumn>
+          {renderSpaceSlot(slot100.spaceB)}
         </Column>
       </Block>
-      {(renderSpaceSlot(slotAds.spaceB))}
-    </>
+      {renderSpaceSlot(slotAds.spaceB)}
+    </React.Fragment>
   )
 }
 
