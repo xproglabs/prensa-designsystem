@@ -80,19 +80,25 @@ export const ContentWrap = ({ children }: ContentWrapProps) => (
   </Block>
 )
 export const ImageWrap = ({ 
-  children, 
-  width = ['80px', '104px'], 
-  height = ['80px', '104px'], 
-  mb = '2', 
-  mr = '2', 
-  ...otherProps }: ImageWrapProps) => (
+  children,
+  size = ['80px', '104px'],
+  mb = [2, '0px'],
+  mr = [undefined, 2],
+  ...otherProps
+}: ImageWrapProps) => (
   <Block 
-    height={height[0]}
+    height={size[0]}
     mb={mb[0]} 
     mr={mr[0]}
-    minWidth={width[0]}
-    width={width[0]}
-    lg={{ height: height[1], minWidth: width[1], mb: mb[1], mr: mr[1], width: width[1] }}
+    minWidth={size[0]}
+    width={size[0]}
+    lg={{
+      height: size[1],
+      minWidth: size[1],
+      mb: mb[1],
+      mr: mr[1],
+      width: size[1]
+    }}
     {...otherProps}
   >
     {children}

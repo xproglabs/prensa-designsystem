@@ -2,6 +2,7 @@ import { RadiusTokens, ColorTokens, FontTokens } from '@prensa_tokens'
 import { ReactNode } from 'react'
 
 export type SpacingType = number | string
+export type ResponsiveSpacingType = Array<string | number>
 
 /**
  * Prensa | AuthorBio
@@ -86,11 +87,9 @@ export type ContentWrapProps = {
 }
 export type ImageWrapProps = {
   children?: ReactNode;
-  height?: Array<string>;
-  mb?: SpacingType;
-  minWidth?: Array<string>;
-  mr?: SpacingType;
-  width?: Array<string>;
+  size?: Array<string>;
+  mb?: ResponsiveSpacingType;
+  mr?: ResponsiveSpacingType;
 }
 export type SocialMediasWrapProps = {
   children?: ReactNode;
