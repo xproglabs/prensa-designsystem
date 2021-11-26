@@ -86,6 +86,11 @@ export type ContentWrapProps = {
 }
 export type ImageWrapProps = {
   children?: ReactNode;
+  height?: Array<string>;
+  mb?: SpacingType;
+  minWidth?: Array<string>;
+  mr?: SpacingType;
+  width?: Array<string>;
 }
 export type SocialMediasWrapProps = {
   children?: ReactNode;
