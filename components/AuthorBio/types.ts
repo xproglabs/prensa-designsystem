@@ -14,7 +14,7 @@ export interface AuthorBioProps {
   bioProps?: BioProps;
   containerProps?: ContainerProps;
   imagePath: string;
-  imageWrapProps?: ImageWrapProps;
+  imageProps?: ImageProps;
   name?: string;
   nameProps?: NameProps;
   title?: string;
@@ -85,7 +85,7 @@ export type ImageContainerProps = {
 export type ContentWrapProps = {
   children?: ReactNode;
 }
-export type ImageWrapProps = {
+export type ImageProps = {
   children?: ReactNode;
   size?: Array<string>;
   mb?: ResponsiveSpacingType;

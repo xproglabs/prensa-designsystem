@@ -1,3 +1,4 @@
+import { get } from 'lodash'
 import { Image } from 'prensa'
 import React from 'react'
 
@@ -24,7 +25,7 @@ const AuthorBio = ({
   bioProps,
   containerProps,
   imagePath,
-  imageWrapProps,
+  imageProps,
   name,
   nameProps,
   title,
@@ -34,26 +35,29 @@ const AuthorBio = ({
   linkedinUrl,
   twitterUrl
 }: AuthorBioProps) => {
+
+  const imageSize = get(imageProps, 'size', ['80px', '104px'])
+
   return (
     <Container {...containerProps}>
       <ContentWrap>
         <ImageContainer>
-          <ImageWrap {...imageWrapProps}>
+          <ImageWrap {...imageProps}>
             <Image
               amp={amp}
               custom_class='image-with-radius'
               title={name}
               layout_desktop={{
                 enabled: true,
-                height: '104px',
-                width: '104px',
+                height: imageSize[1],
+                width: imageSize[1],
                 path: imagePath,
                 type: 'responsive'
               }}
               layout_mobile={{
                 enabled: true,
-                height: '80px',
-                width: '80px',
+                height: imageSize[0],
+                width: imageSize[0],
                 path: imagePath,
                 type: 'responsive'
               }}
@@ -65,17 +69,17 @@ const AuthorBio = ({
             <Title {...titleProps}>
               {title}
             </Title>
-          } 
-          {name && 
+          }
+          {name &&
             <Name {...nameProps}>
               {name}
             </Name>
-          }  
+          }
           {bio &&
             <Bio {...bioProps}>
               {bio}
             </Bio>
-          }  
+          }
           <SocialMediasWrap>
             {facebookUrl && <IcBioFacebook href={facebookUrl} />}
             {instagramUrl && <IcBioInstagram href={instagramUrl} />}
