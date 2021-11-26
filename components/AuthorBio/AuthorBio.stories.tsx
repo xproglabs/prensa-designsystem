@@ -35,7 +35,6 @@ export const NoData = () => {
         linkedinUrl='https://google.com.br'
         twitterUrl='https://google.com.br'
       />
-      />
     </ThemeProvider>
   )
 }
