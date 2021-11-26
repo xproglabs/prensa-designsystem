@@ -2,11 +2,44 @@ import { RadiusTokens, ColorTokens, FontTokens } from '@prensa_tokens'
 
 export type SpacingType = number | string
 
+export type AuthorNameProps = {
+  children?: any;
+  color?: ColorTokens;
+  fontFamily?: FontTokens;
+  fontSize?: string;
+  fontWeight?: string;
+  mt?: SpacingType;
+  mr?: SpacingType;
+  mb?: SpacingType;
+  ml?: SpacingType;
+}
+export interface AuthorProfileProps {
+  amp?: boolean;
+  authorNameProps?: AuthorNameProps;
+  containerProps?: ContainerProps;
+  date?: string;
+  dateTimeProps?: DateTimeProps;
+  image: ImageProps;
+  imageWrapProps?: ImageWrapProps;
+  name?: string;
+  newsTitle?: string;
+  newsTitleProps?: NewsTitleProps;
+  title: string;
+  titleProps?: TitleProps;
+}
+
 export type ContainerProps = {
   align?: string;
   alignx?: string;
   aligny?: string;
   background?: string;
+  bt?: string;
+  br?: string;
+  bb?: string;
+  bl?: string;
+  b?: string;
+  borderColor?: ColorTokens;
+  borderStyle?: string;
   children?: any;
   height?: string;
   pt?: SpacingType;
@@ -17,13 +50,6 @@ export type ContainerProps = {
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
-  bt?: string;
-  br?: string;
-  bb?: string;
-  bl?: string;
-  b?: string;
-  borderColor?: ColorTokens;
-  borderStyle?: string;
   radius?: RadiusTokens;
   width?: string;
 }
@@ -40,10 +66,23 @@ export type ContentProps = {
   pl?: SpacingType;
   width?: string;
 }
+
+export type DateTimeProps = {
+  children?: any;
+  color?: ColorTokens;
+  fontFamily?: FontTokens;
+  fontSize?: string;
+  fontWeight?: string;
+  mt?: SpacingType;
+  mr?: SpacingType;
+  mb?: SpacingType;
+  ml?: SpacingType;
+}
+
 export type ImageProps = {
-  mobile_path: string;
   desktop_path: string;
   height?: [string, string];
+  mobile_path: string;
   title: string;
   width?: [string, string];
 }
@@ -56,28 +95,6 @@ export type ImageWrapProps = {
   width?: string;
 }
 
-export type TitleProps = {
-  children?: any;
-  color?: ColorTokens;
-  fontFamily?: FontTokens;
-  fontSize?: string;
-  fontWeight?: string;
-  mt?: SpacingType;
-  mr?: SpacingType;
-  mb?: SpacingType;
-  ml?: SpacingType;
-}
-export type BylineProps = {
-  children?: any;
-  color?: ColorTokens;
-  fontFamily?: FontTokens;
-  fontSize?: string;
-  fontWeight?: string;
-  mt?: SpacingType;
-  mr?: SpacingType;
-  mb?: SpacingType;
-  ml?: SpacingType;
-}
 export type NewsTitleProps = {
   children?: any;
   color?: ColorTokens;
@@ -89,15 +106,15 @@ export type NewsTitleProps = {
   mb?: SpacingType;
   ml?: SpacingType;
 }
-export interface AuthorProfileProps {
-  amp?: boolean;
-  byline: string;
-  bylineProps?: BylineProps;
-  containerProps?: ContainerProps;
-  image: ImageProps;
-  imageWrapProps?: ImageWrapProps;
-  title: string;
-  titleProps?: TitleProps;
-  newsTitle?: string;
-  newsTitleProps?: NewsTitleProps;
+
+export type TitleProps = {
+  children?: any;
+  color?: ColorTokens;
+  fontFamily?: FontTokens;
+  fontSize?: string;
+  fontWeight?: string;
+  mt?: SpacingType;
+  mr?: SpacingType;
+  mb?: SpacingType;
+  ml?: SpacingType;
 }

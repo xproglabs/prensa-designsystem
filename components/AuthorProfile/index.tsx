@@ -7,13 +7,15 @@ import { AuthorProfileProps } from './types'
 
 const AuthorProfile = ({
   amp = false,
-  byline,
-  bylineProps,
+  authorNameProps,
   containerProps,
+  date,
+  dateTimeProps,
   image,
   imageWrapProps,
   title,
   titleProps,
+  name,
   newsTitle,
   newsTitleProps
 }: AuthorProfileProps) => {
@@ -56,12 +58,21 @@ const AuthorProfile = ({
           />
         </S.ImageWrap>
         <S.TitleWrapper>
-          <S.Title {...titleProps}>
-            {title}
-          </S.Title>
-          <S.Byline {...bylineProps}>
-            {byline}
-          </S.Byline>
+          {title &&
+            <S.Title {...titleProps}>
+              {title}
+            </S.Title>
+          }  
+          {name &&
+            <S.AuthorName {...authorNameProps}>
+              {name}
+            </S.AuthorName>
+          } 
+          {date &&
+            <S.DateTime {...dateTimeProps}>
+              {date}
+            </S.DateTime>
+          }     
         </S.TitleWrapper>
       </S.Content>
     </S.Container>

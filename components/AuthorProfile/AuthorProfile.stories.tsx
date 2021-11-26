@@ -5,16 +5,22 @@ import { ThemeProvider } from 'styled-components'
 import AuthorProfile from '../AuthorProfile'
 
 export default {
-  component: AuthorProfile,
   title: 'AuthorProfile',
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={theme}>
+        <Story />
+      </ThemeProvider>
+    )
+  ]
 }
 
 export const Default = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <React.Fragment>
       <AuthorProfile
         containerProps={{ mb: 1 }}
-        byline='Aldecir Xavier'
+        name='Aldecir Xavier'
         title='Preto no Branco'
         image={{
           desktop_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
@@ -23,7 +29,7 @@ export const Default = () => {
         }}
       />
       <AuthorProfile
-        byline='Aldecir Xavier'
+        date='18/02/2021 - 00h46 - Atualizado 10h06'
         title='Preto no Branco'
         image={{
           desktop_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
@@ -45,7 +51,35 @@ export const Default = () => {
           mb: '0px'
         }}
       />
-    </ThemeProvider>
+    </React.Fragment>
+  )
+}
+
+export const NoData = () => {
+  return (
+    <AuthorProfile
+      date={undefined}
+      title={undefined}
+      image={{
+        desktop_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+        mobile_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+        title: 'Imagem de perfil do colunista'
+      }}
+      imageWrapProps={{
+        mr: 1,
+        height: '32px',
+        minWidth: '32px',
+        width: '32px'
+      }}
+      newsTitle={undefined}
+      newsTitleProps={{
+        mb: 2
+      }}
+      titleProps={{
+        fontSize: '14px',
+        mb: '0px'
+      }}
+    />
   )
 }
 
