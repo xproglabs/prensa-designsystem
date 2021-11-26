@@ -89,6 +89,7 @@ export const ImageWrap = ({
   <Block 
     height={height[0]}
     mb={mb[0]} 
+    mr={mr[0]}
     minWidth={width[0]}
     width={width[0]}
     lg={{ height: height[1], minWidth: width[1], mr: mr[1], width: width[1] }}
