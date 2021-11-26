@@ -69,6 +69,7 @@ const PageBlock = ({
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
     const slot100_layout = selectLayoutFromTemplate({ block: slot100_block, slot: slot1 })
     const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slot100_block.spaces)
+    const slot1_space_bottom = slot100_block.space_bottom
     const slotsHaveSecionTitle = slot1.title !== ''
     return (
       <Template100
@@ -98,6 +99,7 @@ const PageBlock = ({
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
+          space_bottom: slot1_space_bottom
         }}
       />
     )
@@ -109,6 +111,8 @@ const PageBlock = ({
     const slot30_layout = selectLayoutFromTemplate({ block: slot30_block, slot: slot2 })
     const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slot70_block.spaces)
     const slot2_spaces = selectLayoutColsFromSlot(slot2.len1, slot30_block.spaces)
+    const slot1_space_bottom = get(slot70_block, 'space_bottom', [])
+    const slot2_space_bottom = get(slot30_block, 'space_bottom', [])
     const slotsHaveSecionTitle = slot1.title !== '' || slot2.title !== ''
     return (
       <Template7030
@@ -137,7 +141,8 @@ const PageBlock = ({
           slot: slot1.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
-          spaceB: slot1_slotList
+          spaceB: slot1_slotList,
+          space_bottom: slot1_space_bottom
         }}
         slot30={{
           amp,
@@ -154,7 +159,8 @@ const PageBlock = ({
           slot: slot2.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
-          spaceB: slot2_slotList
+          spaceB: slot2_slotList,
+          space_bottom: slot2_space_bottom
         }}
       />
     )
@@ -167,6 +173,8 @@ const PageBlock = ({
     const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slotLeft_block.spaces)
     const slot2_spaces = selectLayoutColsFromSlot(slot2.len1, slotRight_block.spaces)
     const slotsHaveSecionTitle = slot1.title !== '' || slot2.title !== ''
+    const slot1_space_bottom = get(slotLeft_block, 'space_bottom', [])
+    const slot2_space_bottom = get(slotRight_block, 'space_bottom', [])
     return (
       <Template5050
         slotAds={{
@@ -194,7 +202,8 @@ const PageBlock = ({
           slot: slot1.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
-          spaceB: slot1_slotList
+          spaceB: slot1_slotList,
+          space_bottom: slot1_space_bottom
         }}
         slotRight={{
           amp,
@@ -211,7 +220,8 @@ const PageBlock = ({
           slot: slot2.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
-          spaceB: slot2_slotList
+          spaceB: slot2_slotList,
+          space_bottom: slot2_space_bottom
         }}
       />
     )
@@ -231,6 +241,10 @@ const PageBlock = ({
     const slotLeft_carousel = get(slotLeft_block, 'carousel', {})
     const slotCenter_carousel = get(slotCenter_block, 'carousel', {})
     const slotRight_carousel = get(slotRight_block, 'carousel', {})
+    /** * Slot Teaser mb */
+    const slot1_space_bottom = get(slotLeft_block, 'space_bottom', [])
+    const slot2_space_bottom = get(slotCenter_block, 'space_bottom', [])
+    const slot3_space_bottom = get(slotRight_block, 'space_bottom', [])
     return (
       <Template33
         slotAds={{
@@ -259,7 +273,8 @@ const PageBlock = ({
           slot: slot1.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
-          spaceB: slot1_slotList
+          spaceB: slot1_slotList,
+          space_bottom: slot1_space_bottom
         }}
         slotCenter={{
           amp,
@@ -277,7 +292,8 @@ const PageBlock = ({
           slot: slot2.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
-          spaceB: slot2_slotList
+          spaceB: slot2_slotList,
+          space_bottom: slot2_space_bottom
         }}
         slotRight={{
           amp,
@@ -295,7 +311,8 @@ const PageBlock = ({
           slot: slot3.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot3_title : null,
-          spaceB: slot3_slotList
+          spaceB: slot3_slotList,
+          space_bottom: slot3_space_bottom
         }}
       />
     )
@@ -305,6 +322,7 @@ const PageBlock = ({
     const slotWrap_layout = selectLayoutFromTemplate({ block: slotWrap_block, slot: slot1 })
     const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slotWrap_block.spaces)
     const slotsHaveSecionTitle = slot1.title !== ''
+    const slot1_space_bottom = get(slotWrap_block, 'space_bottom', [])
     return (
       <TemplateWrap
         slotAds={{
@@ -332,7 +350,8 @@ const PageBlock = ({
           slot: slot1.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
-          spaceB: slot1_slotList
+          spaceB: slot1_slotList,
+          space_bottom: slot1_space_bottom
         }}
       />
     )
