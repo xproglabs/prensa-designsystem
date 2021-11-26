@@ -83,7 +83,6 @@ export const ImageWrap = ({
   children, 
   width = ['80px', '104px'], 
   height = ['80px', '104px'], 
-  minWidth = ['80px', '104px'], 
   mb = '2', 
   mr = '2', 
   ...otherProps }: ImageWrapProps) => (
