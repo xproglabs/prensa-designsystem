@@ -92,7 +92,7 @@ export const ImageWrap = ({
     mr={mr[0]}
     minWidth={width[0]}
     width={width[0]}
-    lg={{ height: height[1], minWidth: width[1], mr: mr[1], width: width[1] }}
+    lg={{ height: height[1], minWidth: width[1], mb: mb[1], mr: mr[1], width: width[1] }}
     {...otherProps}
   >
     {children}
