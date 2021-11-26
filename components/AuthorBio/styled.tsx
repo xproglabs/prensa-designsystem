@@ -6,7 +6,7 @@ import {
   ContainerProps,
   ContentWrapProps,
   ImageContainerProps,
-  ImageWrapProps,
+  ImageProps,
   NameProps,
   SocialMediasWrapProps,
   TextWrapProps,
@@ -85,7 +85,7 @@ export const ImageWrap = ({
   mb = [2, '0px'],
   mr = [undefined, 2],
   ...otherProps
-}: ImageWrapProps) => (
+}: ImageProps) => (
   <Block 
     height={size[0]}
     mb={mb[0]} 
