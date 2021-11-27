@@ -7,11 +7,27 @@ export const TEMPLATE_FEATURED = CreateTemplate({
     },
     min_height: ['auto', 'auto'],
     layout: {
-      0: ['hide'],
-      1: ['default'],
-      2: ['default', 'default'],
-      3: ['default', 'default', 'default'],
-      4: ['hide', 'hide', 'hide', 'hide'],
+      1: ['featured']
+    },
+    spaces: [0, 0, 0, 0]
+  },
+  slot70: {
+    related: {
+      enabled: false
+    },
+    min_height: ['auto', 'auto'],
+    layout: {
+      1: ['featured']
+    },
+    spaces: [0, 0, 0, 0]
+  },
+  slot100: {
+    related: {
+      enabled: false
+    },
+    min_height: ['auto', 'auto'],
+    layout: {
+      1: ['featured']
     },
     spaces: [0, 0, 0, 0]
   }

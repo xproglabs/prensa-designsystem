@@ -31,7 +31,7 @@ export const TEASER_BIG = CreateTeaser({
     mb: [1, 3],
     ...parseResponsiveFont(
       NEWS_TITLE_TOKENS.NEWS_TITLE_5,
-      NEWS_TITLE_TOKENS.NEWS_TITLE_3
+      NEWS_TITLE_TOKENS.NEWS_TITLE_4
     )
   },
   image: {
@@ -40,15 +40,15 @@ export const TEASER_BIG = CreateTeaser({
     height: ['196px', '196px'],
     width: ['300px', '300px'],
     wrap_width: [
-      'calc(100% - 32px)',
-      'calc(100% - 32px)'
+      'calc(100%)',
+      'calc(100%)'
     ],
-    ml: [2, 2],
-    mr: [2, 2],
-    mt: [2, 2]
+    ml: [0, 0],
+    mr: [0, 0],
+    mt: [0, 0]
   },
   subject: {
     ...SUBJECT_FILLED,
-    mb: [1, 3]
+    mb: [1, 2]
   }
 })

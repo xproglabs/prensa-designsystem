@@ -1,5 +1,6 @@
 import { CreateTeaser } from 'prensa'
 
+import { parseResponsiveFont, NEWS_TITLE_TOKENS } from '../fonts'
 import { SUBJECT_FILLED } from '../subject'
 
 export const TEASER_FEATURED = CreateTeaser({
@@ -32,8 +33,10 @@ export const TEASER_FEATURED = CreateTeaser({
     color: 'white',
     element: 'h1',
     enabled: true,
-    font_size: ['32px', '44px'],
-    line_height: ['36px', '48px'],
+    ...parseResponsiveFont(
+      NEWS_TITLE_TOKENS.NEWS_TITLE_5,
+      NEWS_TITLE_TOKENS.NEWS_TITLE_3
+    ),
     mb: [1, 2]
   },
   subject: SUBJECT_FILLED,
