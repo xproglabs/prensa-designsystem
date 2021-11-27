@@ -15,7 +15,7 @@ type TemplateLayout = {
 }
 
 type TemplateSpaces = [number, number, number, number]
-type TemplateSpacesBottom = [number | string, number | string]
+type TemplateSpacesBottom = [number, number]
 
 type TemplateSlotTypes = {
   /**
