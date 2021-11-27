@@ -15,6 +15,7 @@ type TemplateLayout = {
 }
 
 type TemplateSpaces = [number, number, number, number]
+type TemplateSpacesBottom = [number | string, number | string]
 
 type TemplateSlotTypes = {
   /**
@@ -37,6 +38,7 @@ type TemplateSlotTypes = {
    * [0, 2, 2, 2] -> is two column for one, two or three items
    */
   spaces: TemplateSpaces;
+  space_bottom: TemplateSpacesBottom;
 }
 
 export type CreateTemplateTypes = {
