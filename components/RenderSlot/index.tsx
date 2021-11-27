@@ -34,8 +34,8 @@ const RenderSlot = ({
   const { teasers } = theme
   const column_width = `calc((100% - (${column_padding} * 24px)) / ${column_items})`
   const carousel_enabled = get(carousel, 'enabled', false)
-  const space_bottom_sm = get(space_bottom, '[0]', 2)
-  const space_bottom_lg = get(space_bottom, '[1]', 3)
+  const space_bottom_mobile = get(space_bottom, '[0]', 2)
+  const space_bottom_desktop = get(space_bottom, '[1]', 3)
 
   const RenderSpace = ({ item }) => {
     if (item && item['input-template']) {
@@ -81,9 +81,9 @@ const RenderSlot = ({
           <Block
             key={key}
             custom='align-self: flex-start;'
-            mb={space_bottom_sm}
+            mb={space_bottom_mobile}
             width='100%'
-            lg={{ mb: space_bottom_lg, width: column_width }}>
+            lg={{ mb: space_bottom_desktop, width: column_width }}>
             <RenderTeaser item={item} number={key} />
             <RenderSpace item={item} />
           </Block>
