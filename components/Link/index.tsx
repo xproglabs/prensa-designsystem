@@ -6,7 +6,9 @@ import { LinkProps, StyledLinkProps } from './types'
 const StyledLink = styled.a<StyledLinkProps>`
   color: inherit;
   cursor: pointer;
-  text-decoration: none;
+  ${props => props.textDecoration && css`
+    text-decoration: ${props.textDecoration};
+  `}
   ${props => props.hoverOpacity && css`
     &:hover {
       opacity: ${props.hoverOpacity};
@@ -31,7 +33,8 @@ const Link = ({ children, path, ...otherProps }: LinkProps) => {
 }
 
 Link.defaultProps = {
-  hoverOpacity: 1
+  hoverOpacity: 1,
+  textDecoration: 'none'
 }
 
 export default Link

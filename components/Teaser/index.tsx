@@ -67,7 +67,8 @@ const Teaser = (props: TeaserProps) => {
   const wrap_mt = get(layout, 'box_wrap.mt', ['0px', '0px'])
 
   // image enabled
-  const image_enabled = get(layout, 'image.enabled', false)
+  const image_contentid = get(item, 'img.contentId', false)
+  const image_enabled = image_contentid && get(layout, 'image.enabled', false)
 
   // image wrap
   const image_align = get(layout, 'image.align', ['column', 'column'])
