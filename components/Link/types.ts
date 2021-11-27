@@ -1,10 +1,21 @@
-import React from 'react'
+import { ColorTokens } from '@prensa_tokens'
+import { ReactNode } from 'react'
 
-export interface StyledLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+/**
+ * Prensa | Link component API
+ * @description
+ */
+export interface LinkProps {
+  children: ReactNode;
+  color?: ColorTokens;
   hoverOpacity?: number;
+  path?: string;
   textDecoration?: string;
 }
-export interface LinkProps extends StyledLinkProps {
-  children: any;
-  path: string;
+
+export type StyledLinkProps = {
+  children: ReactNode;
+  color?: ColorTokens;
+  hoverOpacity?: number;
+  $textDecoration?: string;
 }
