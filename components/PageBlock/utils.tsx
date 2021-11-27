@@ -60,7 +60,8 @@ export const selectLayoutFromTemplate = ({
   const slot_layouts = get(block, 'layout', false)
   const slot_spaces = get(block, 'spaces', false)
   const slot_position = slot_spaces.length > 0 ? slot_len1 : 0
-  const slot_layouts_selected = get(slot_layouts, `[${slot_position}]`, false)
+  const slot_default_selected = get(slot_layouts, '[0]', false)
+  const slot_layouts_selected = get(slot_layouts, `[${slot_position}]`, slot_default_selected)
   return slot_layouts_selected
 }
 
@@ -71,7 +72,9 @@ export const selectLayoutFromTemplate = ({
  * @returns Configuration for matching items amount | 0
  */
 export const selectLayoutColsFromSlot = (slotLength: number, spaces?: [number, number, number, number] ): number => {
-  return get(spaces, `[${slotLength - 1}]`, 0)
+  const space_default = get(spaces, '[0]', 0)
+  const space_from_layout = get(spaces, `[${slotLength - 1}]`, space_default)
+  return space_from_layout
 }
 
 /**
