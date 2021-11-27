@@ -36,27 +36,27 @@ const PageBlock = ({
   const { section_title, templates } = theme
   // define section_title for slots
   const slot1_title = renderSectionTitle({
-    color: slot1.color,
-    icon: slot1.icon,
+    color: slot1?.color,
+    icon: slot1?.icon,
     layout: section_title,
-    link: slot1.link,
-    title: slot1.title,
+    link: slot1?.link,
+    title: slot1?.title,
     customComponent: section_title_component
   })
   const slot2_title = renderSectionTitle({
-    color: slot2.color,
-    icon: slot2.icon,
+    color: slot2?.color,
+    icon: slot2?.icon,
     layout: section_title,
-    link: slot2.link,
-    title: slot2.title,
+    link: slot2?.link,
+    title: slot2?.title,
     customComponent: section_title_component
   })
   const slot3_title = renderSectionTitle({
-    color: slot3.color,
-    icon: slot3.icon,
+    color: slot3?.color,
+    icon: slot3?.icon,
     layout: section_title,
-    link: slot3.link,
-    title: slot3.title,
+    link: slot3?.link,
+    title: slot3?.title,
     customComponent: section_title_component
   })
   // define slot spaceB
@@ -68,9 +68,9 @@ const PageBlock = ({
   if (type === 'template100') {
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
     const slot100_layout = selectLayoutFromTemplate({ block: slot100_block, slot: slot1 })
-    const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slot100_block.spaces)
+    const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slot100_block.spaces)
     const slot1_space_bottom = slot100_block.space_bottom
-    const slotsHaveSecionTitle = slot1.title !== ''
+    const slotsHaveSecionTitle = slot1?.title !== ''
     return (
       <Template100
         slotAds={{
@@ -85,8 +85,8 @@ const PageBlock = ({
         }}
         slot100={{
           amp,
-          bgcolor: slot1.bgcolor,
-          color: slot1.color,
+          bgcolor: slot1?.bgcolor,
+          color: slot1?.color,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
@@ -95,7 +95,7 @@ const PageBlock = ({
           min_height: slot100_block.min_height,
           preview,
           site_data,
-          slot: slot1.list1,
+          slot: slot1?.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
@@ -109,11 +109,11 @@ const PageBlock = ({
     const slot30_block = selectTemplateFromTheme({ block: 'slot30', slot: slot2, templates })
     const slot70_layout = selectLayoutFromTemplate({ block: slot70_block, slot: slot1 })
     const slot30_layout = selectLayoutFromTemplate({ block: slot30_block, slot: slot2 })
-    const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slot70_block.spaces)
-    const slot2_spaces = selectLayoutColsFromSlot(slot2.len1, slot30_block.spaces)
+    const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slot70_block.spaces)
+    const slot2_spaces = selectLayoutColsFromSlot(slot2?.len1, slot30_block.spaces)
     const slot1_space_bottom = get(slot70_block, 'space_bottom', [])
     const slot2_space_bottom = get(slot30_block, 'space_bottom', [])
-    const slotsHaveSecionTitle = slot1.title !== '' || slot2.title !== ''
+    const slotsHaveSecionTitle = slot1?.title !== '' || slot2?.title !== ''
     return (
       <Template7030
         slotAds={{
@@ -128,8 +128,8 @@ const PageBlock = ({
         }}
         slot70={{
           amp,
-          bgcolor: slot1.bgcolor,
-          color: slot1.color,
+          bgcolor: slot1?.bgcolor,
+          color: slot1?.color,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
@@ -138,7 +138,7 @@ const PageBlock = ({
           layouts: slot70_layout,
           preview,
           site_data,
-          slot: slot1.list1,
+          slot: slot1?.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
@@ -146,8 +146,8 @@ const PageBlock = ({
         }}
         slot30={{
           amp,
-          bgcolor: slot2.bgcolor,
-          color: slot2.color,
+          bgcolor: slot2?.bgcolor,
+          color: slot2?.color,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
           domain,
@@ -156,7 +156,7 @@ const PageBlock = ({
           min_height: slot30_block.min_height,
           preview,
           site_data,
-          slot: slot2.list1,
+          slot: slot2?.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList,
@@ -170,9 +170,9 @@ const PageBlock = ({
     const slotRight_block = selectTemplateFromTheme({ block: 'slot50', slot: slot2, templates })
     const slotLeft_layout = selectLayoutFromTemplate({ block: slotLeft_block, slot: slot1 })
     const slotRight_layout = selectLayoutFromTemplate({ block: slotRight_block, slot: slot2 })
-    const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slotLeft_block.spaces)
-    const slot2_spaces = selectLayoutColsFromSlot(slot2.len1, slotRight_block.spaces)
-    const slotsHaveSecionTitle = slot1.title !== '' || slot2.title !== ''
+    const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slotLeft_block.spaces)
+    const slot2_spaces = selectLayoutColsFromSlot(slot2?.len1, slotRight_block.spaces)
+    const slotsHaveSecionTitle = slot1?.title !== '' || slot2?.title !== ''
     const slot1_space_bottom = get(slotLeft_block, 'space_bottom', [])
     const slot2_space_bottom = get(slotRight_block, 'space_bottom', [])
     return (
@@ -189,8 +189,8 @@ const PageBlock = ({
         }}
         slotLeft={{
           amp,
-          bgcolor: slot1.bgcolor,
-          color: slot1.color,
+          bgcolor: slot1?.bgcolor,
+          color: slot1?.color,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
           domain,
@@ -199,7 +199,7 @@ const PageBlock = ({
           min_height: slotLeft_block.min_height,
           preview,
           site_data,
-          slot: slot1.list1,
+          slot: slot1?.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
@@ -207,8 +207,8 @@ const PageBlock = ({
         }}
         slotRight={{
           amp,
-          bgcolor: slot2.bgcolor,
-          color: slot2.color,
+          bgcolor: slot2?.bgcolor,
+          color: slot2?.color,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
           domain,
@@ -217,7 +217,7 @@ const PageBlock = ({
           min_height: slotRight_block.min_height,
           preview,
           site_data,
-          slot: slot2.list1,
+          slot: slot2?.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList,
@@ -233,10 +233,10 @@ const PageBlock = ({
     const slotLeft_layout = selectLayoutFromTemplate({ block: slotLeft_block, slot: slot1 })
     const slotCenter_layout = selectLayoutFromTemplate({ block: slotCenter_block, slot: slot2 })
     const slotRight_layout = selectLayoutFromTemplate({ block: slotRight_block, slot: slot3 })
-    const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slotLeft_block.spaces)
-    const slot2_spaces = selectLayoutColsFromSlot(slot2.len1, slotCenter_block.spaces)
-    const slot3_spaces = selectLayoutColsFromSlot(slot3.len1, slotRight_block.spaces)
-    const slotsHaveSecionTitle = slot1.title !== '' || slot2.title !== '' || slot3.title !== ''
+    const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slotLeft_block.spaces)
+    const slot2_spaces = selectLayoutColsFromSlot(slot2?.len1, slotCenter_block.spaces)
+    const slot3_spaces = selectLayoutColsFromSlot(slot3?.len1, slotRight_block.spaces)
+    const slotsHaveSecionTitle = slot1?.title !== '' || slot2?.title !== '' || slot3?.title !== ''
     /** * Carousel Props */
     const slotLeft_carousel = get(slotLeft_block, 'carousel', {})
     const slotCenter_carousel = get(slotCenter_block, 'carousel', {})
@@ -259,8 +259,8 @@ const PageBlock = ({
         }}
         slotLeft={{
           amp,
-          bgcolor: slot1.bgcolor,
-          color: slot1.color,
+          bgcolor: slot1?.bgcolor,
+          color: slot1?.color,
           carousel: slotLeft_carousel,
           column_items: slot1_spaces + 1,
           column_padding: slot1_spaces,
@@ -270,7 +270,7 @@ const PageBlock = ({
           min_height: slotLeft_block.min_height,
           preview,
           site_data,
-          slot: slot1.list1,
+          slot: slot1?.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
@@ -278,8 +278,8 @@ const PageBlock = ({
         }}
         slotCenter={{
           amp,
-          bgcolor: slot2.bgcolor,
-          color: slot2.color,
+          bgcolor: slot2?.bgcolor,
+          color: slot2?.color,
           carousel: slotCenter_carousel,
           column_items: slot2_spaces + 1,
           column_padding: slot2_spaces,
@@ -289,7 +289,7 @@ const PageBlock = ({
           min_height: slotCenter_block.min_height,
           preview,
           site_data,
-          slot: slot2.list1,
+          slot: slot2?.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList,
@@ -297,8 +297,8 @@ const PageBlock = ({
         }}
         slotRight={{
           amp,
-          bgcolor: slot3.bgcolor,
-          color: slot3.color,
+          bgcolor: slot3?.bgcolor,
+          color: slot3?.color,
           carousel: slotRight_carousel,
           column_items: slot3_spaces + 1,
           column_padding: slot3_spaces,
@@ -308,7 +308,7 @@ const PageBlock = ({
           min_height: slotRight_block.min_height,
           preview,
           site_data,
-          slot: slot3.list1,
+          slot: slot3?.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot3_title : null,
           spaceB: slot3_slotList,
@@ -320,8 +320,8 @@ const PageBlock = ({
   if (type === 'templateWrap') {
     const slotWrap_block = selectTemplateFromTheme({ block: 'slotWrap', slot: slot1, templates })
     const slotWrap_layout = selectLayoutFromTemplate({ block: slotWrap_block, slot: slot1 })
-    const slot1_spaces = selectLayoutColsFromSlot(slot1.len1, slotWrap_block.spaces)
-    const slotsHaveSecionTitle = slot1.title !== ''
+    const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slotWrap_block.spaces)
+    const slotsHaveSecionTitle = slot1?.title !== ''
     const slot1_space_bottom = get(slotWrap_block, 'space_bottom', [])
     return (
       <TemplateWrap
@@ -337,8 +337,8 @@ const PageBlock = ({
         }}
         slotItems={{
           amp,
-          bgcolor: slot1.bgcolor,
-          color: slot1.color,
+          bgcolor: slot1?.bgcolor,
+          color: slot1?.color,
           column_items: slot1_spaces,
           column_padding: slot1_spaces,
           domain,
@@ -347,7 +347,7 @@ const PageBlock = ({
           min_height: slotWrap_block.min_height,
           preview,
           site_data,
-          slot: slot1.list1,
+          slot: slot1?.list1,
           slot_parser,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
