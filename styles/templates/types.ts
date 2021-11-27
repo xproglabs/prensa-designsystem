@@ -38,7 +38,7 @@ type TemplateSlotTypes = {
    * [0, 2, 2, 2] -> is two column for one, two or three items
    */
   spaces: TemplateSpaces;
-  spaces_bottom: TemplateSpacesBottom;
+  space_bottom: TemplateSpacesBottom;
 }
 
 export type CreateTemplateTypes = {
