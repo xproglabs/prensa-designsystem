@@ -2,6 +2,8 @@ import { get } from 'lodash'
 import { cloneElement, ReactElement } from 'react'
 
 export const parseTeaserProps = (key, layout, layouts, slot, teasers) => {
+  // select default from configuration
+  const default_selected = get(layouts, '[0]', false)
   // select layout from pageblocks
   let related_props = {
     enabled: false,
@@ -12,7 +14,7 @@ export const parseTeaserProps = (key, layout, layouts, slot, teasers) => {
   const teaser_position = slot_len1 === 0 ? 0 : key
   let teaser_layout = layout
   let layout_selected = get(layouts, `[${teaser_position}]`, false)
-  layout_selected = layout_selected || get(layouts, '[0]', false)
+  layout_selected = layout_selected || default_selected
 
   if (layouts && layout_selected) {
     // handle featured related props
