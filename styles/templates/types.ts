@@ -14,7 +14,7 @@ type TemplateLayout = {
   4?: [TeaserSuggestions] | [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
 }
 
-type TemplateSpaces = [number, number, number, number]
+type TemplateSpaces = [number] | [number, number, number, number]
 type TemplateSpacesBottom = [number, number]
 
 type TemplateSlotTypes = {
