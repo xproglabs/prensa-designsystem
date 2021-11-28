@@ -1,3 +1,5 @@
+# v1.6.63
+- Permite modelo cid e contentId na renderização da imagem
 # v1.6.62
 - Realizar ajustes de parametrização no AuthorProfile
 - Cria componente AuthorBio
