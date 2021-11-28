@@ -1,4 +1,4 @@
-import { SectionTitleLayout } from '../../../../components/SectionTitle/types'
+import { SectionTitleLayout } from 'prensa'
 
 export const SECTION_TITLE: SectionTitleLayout = {
   area: {
