@@ -8,13 +8,13 @@ type TemplateRelated = {
 
 type TemplateLayout = {
   0: [TeaserSuggestions];
-  1: [TeaserSuggestions];
-  2: [TeaserSuggestions, TeaserSuggestions];
-  3: [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
-  4: [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
+  1?: [TeaserSuggestions];
+  2?: [TeaserSuggestions] | [TeaserSuggestions, TeaserSuggestions];
+  3?: [TeaserSuggestions] | [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
+  4?: [TeaserSuggestions] | [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
 }
 
-type TemplateSpaces = [number, number, number, number]
+type TemplateSpaces = [number] | [number, number, number, number]
 type TemplateSpacesBottom = [number, number]
 
 type TemplateSlotTypes = {
@@ -38,7 +38,7 @@ type TemplateSlotTypes = {
    * [0, 2, 2, 2] -> is two column for one, two or three items
    */
   spaces: TemplateSpaces;
-  space_bottom: TemplateSpacesBottom;
+  space_bottom?: TemplateSpacesBottom;
 }
 
 export type CreateTemplateTypes = {
