@@ -1,37 +1,38 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
 
-import { LinkProps, StyledLinkProps } from './types'
+import { StyledLink } from './styled'
+import { LinkProps } from './types'
 
-const StyledLink = styled.a<StyledLinkProps>`
-  color: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  ${props => props.hoverOpacity && css`
-    &:hover {
-      opacity: ${props.hoverOpacity};
-    }
-  `}
-`
 /**
  * Prensa | Link component
  * @description Link component is an abstraction for <a/>
  */
-const Link = ({ children, path, ...otherProps }: LinkProps) => {
+const Link = ({
+  children,
+  color,
+  path,
+  textDecoration,
+  ...otherProps
+}: LinkProps) => {
 
   if (!path) {
-    return children
+    return (
+      <React.Fragment>
+        {children}
+      </React.Fragment>
+    )
   }
-  
+
   return (
-    <StyledLink href={path} {...otherProps}>
+    <StyledLink
+      href={path}
+      $color={color}
+      $textDecoration={textDecoration}
+      {...otherProps}
+    >
       {children}
     </StyledLink>
   )
-}
-
-Link.defaultProps = {
-  hoverOpacity: 1
 }
 
 export default Link

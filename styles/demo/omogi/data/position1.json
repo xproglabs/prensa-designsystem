@@ -1,0 +1,133 @@
+{
+  "cid": "7.177",
+  "name": "Destaque Linha 1",
+  "type": "template30",
+  "slot1": {
+    "bgcolor": "",
+    "color": "primary1",
+    "icon": "",
+    "link": "",
+    "len1": 2,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.178",
+        "img": {},
+        "name": "Saiba mais sobre o novo parque de Mogi para prática esportiva",
+        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
+        "subject": "POLÍCIA",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-11-26 0:33:00"
+      },
+      {
+        "cid": "7.179",
+        "img": {
+          "byline": "",
+          "caption": "",
+          "contentId": "1.197.1637897579",
+          "subtitle": ""
+        },
+        "name": "Radial Transporte tem vagas para motoristas, em Suzano",
+        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
+        "subject": "VACINAÇÃO",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-11-26 0:33:00"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": "default"
+  },
+  "slot2": {
+    "bgcolor": "",
+    "color": "primary1",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.180",
+        "img": {
+          "byline": "",
+          "caption": "",
+          "contentId": "1.197.1637897579",
+          "subtitle": ""
+        },
+        "name": "Saiba mais sobre o novo parque de Mogi para prática esportiva",
+        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
+        "subject": "EFICIÊNCIA",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-11-26 0:33:00"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": "featured_carousel"
+  },
+  "slot3": {
+    "bgcolor": "",
+    "color": "primary1",
+    "icon": "",
+    "link": "",
+    "len1": 3,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.183",
+        "img": {
+          "byline": "",
+          "caption": "",
+          "contentId": "1.197.1637897579",
+          "subtitle": ""
+        },
+        "name": "Saiba mais sobre o novo parque de Mogi para prática esportiva",
+        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
+        "subject": "EFICIÊNCIA",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-11-26 0:33:00"
+      },
+      {
+        "cid": "7.184",
+        "img": {
+          "byline": "",
+          "caption": "",
+          "contentId": "1.197.1637897579",
+          "subtitle": ""
+        },
+        "name": "Radial Transporte tem vagas para motoristas, em Suzano",
+        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
+        "subject": "TEORIAS DE DARWIN",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-11-26 0:33:00"
+      },
+      {
+        "cid": "7.185",
+        "img": {
+          "byline": "",
+          "caption": "",
+          "contentId": "1.197.1637897579",
+          "subtitle": ""
+        },
+        "name": "O retorno de Valdemar Costa Neto e a influência nas eleições",
+        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
+        "subject": "EDUCAÇÃO",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-11-26 0:33:00"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": "default"
+  },
+  "slot4": {
+    "len": 0,
+    "list": []
+  }
+}

@@ -1,3 +1,12 @@
+# v1.6.63
+- Permite modelo cid e contentId na renderização da imagem
+# v1.6.62
+- Realizar ajustes de parametrização no AuthorProfile
+- Cria componente AuthorBio
+- Adiciona o text-decoration como parametro no link
+- Revisa a condição de exibição de imagem no teaser
+- O Mogi | Adiciona os estilos para os novos templates e teasers
+- Melhorias no componente Link
 # v1.6.61
 - Entrega as props do block no componente do slot
 - Formata matéria exemplo do Correio Popular

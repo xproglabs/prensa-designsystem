@@ -47,7 +47,7 @@ const ColorizedColumn = ({ bgColor, children, minHeight, transparent }: Colorize
         align: 'row',
         alignx: 'between',
         aligny: 'top',
-        custom: slot_customHeight_desktop,
+        custom: `flex-wrap: wrap; ${slot_customHeight_desktop}`,
         mb: transparent ? '0px' : 3,
         pt: transparent ? '0px' : 3,
         px: transparent ? '0px' : 3,
