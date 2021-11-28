@@ -25,13 +25,8 @@ const Column = ({ children }: ColumnProps) => (
 )
 
 const ColorizedColumn = ({ bgColor, children, minHeight, transparent }: ColorizedColumnProps) => {
-  const slot_customHeight_mobile = `
-    ${selectMinHeightFromSlot(minHeight?.[0])}
-  `
-  const slot_customHeight_desktop = `
-    ${selectMinHeightFromSlot(minHeight?.[1])}
-    flex-wrap: wrap;
-  `
+  const slot_customHeight_mobile = `${selectMinHeightFromSlot(minHeight?.[0])}`
+  const slot_customHeight_desktop = `${selectMinHeightFromSlot(minHeight?.[1])}`
   return (
     <Block
       align="column"
