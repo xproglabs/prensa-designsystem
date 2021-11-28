@@ -8,10 +8,10 @@ type TemplateRelated = {
 
 type TemplateLayout = {
   0: [TeaserSuggestions];
-  1: [TeaserSuggestions];
-  2: [TeaserSuggestions, TeaserSuggestions];
-  3: [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
-  4: [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
+  1?: [TeaserSuggestions];
+  2?: [TeaserSuggestions] | [TeaserSuggestions, TeaserSuggestions];
+  3?: [TeaserSuggestions] | [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
+  4?: [TeaserSuggestions] | [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
 }
 
 type TemplateSpaces = [number, number, number, number]
