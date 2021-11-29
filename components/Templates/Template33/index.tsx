@@ -7,7 +7,6 @@ import { renderSpaceSlot } from '../../RenderSlot/utils'
 import { Column, ColumnColor } from './styled'
 import { Template33Props } from './types'
 
-
 const Template33 = ({
   slotAds,
   slotLeft,

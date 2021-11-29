@@ -1,4 +1,3 @@
-import { ColorTokens } from '@prensa_tokens'
 import { ReactNode } from 'react'
 
 import { RenderSlotProps } from '../../RenderSlot/types'
@@ -7,7 +6,7 @@ export type ColumnProps = {
   children: any;
 }
 export type ColorizedColumnProps = {
-  bgColor: ColorTokens;
+  bgColor: string;
   children: ReactNode;
   minHeight: [string, string];
   transparent: boolean;
