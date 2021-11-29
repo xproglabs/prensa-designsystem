@@ -6,8 +6,7 @@ import {
   Template100,
   Template7030,
   Template5050,
-  Template33,
-  TemplateWrap
+  Template33
 } from '../Templates'
 import { PageBlockProps } from './types'
 import {
@@ -317,45 +316,7 @@ const PageBlock = ({
       />
     )
   }
-  if (type === 'templateWrap') {
-    const slotWrap_block = selectTemplateFromTheme({ block: 'slotWrap', slot: slot1, templates })
-    const slotWrap_layout = selectLayoutFromTemplate({ block: slotWrap_block, slot: slot1 })
-    const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slotWrap_block.spaces)
-    const slotsHaveSecionTitle = slot1?.title !== ''
-    const slot1_space_bottom = get(slotWrap_block, 'space_bottom', [])
-    return (
-      <TemplateWrap
-        slotAds={{
-          column_items: 0,
-          column_padding: 0,
-          layouts: slotWrap_layout,
-          preview,
-          site_data,
-          slot: [],
-          slot_parser,
-          spaceB: slot4_slotList,
-        }}
-        slotItems={{
-          amp,
-          bgcolor: slot1?.bgcolor,
-          color: slot1?.color,
-          column_items: slot1_spaces,
-          column_padding: slot1_spaces,
-          domain,
-          fallback_image_url,
-          layouts: slotWrap_layout,
-          min_height: slotWrap_block.min_height,
-          preview,
-          site_data,
-          slot: slot1?.list1,
-          slot_parser,
-          spaceA: slotsHaveSecionTitle ? slot1_title : null,
-          spaceB: slot1_slotList,
-          space_bottom: slot1_space_bottom
-        }}
-      />
-    )
-  }
+  
   return <pre>template not found</pre>
 }
 

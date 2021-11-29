@@ -1,26 +1,13 @@
+import { Block } from 'prensa'
 import React from 'react'
 
-import Block from '../Block'
-import {
-  isBackgroundTransparent,
-  selectBgColorFromSlot,
-  selectMinHeightFromSlot
-} from '../PageBlock/utils'
-import RenderSlot from '../RenderSlot'
-import { RenderSlotProps } from '../RenderSlot/types'
-import { renderSpaceSlot } from '../RenderSlot/utils'
+import { isBackgroundTransparent, selectBgColorFromSlot, selectMinHeightFromSlot } from '../../PageBlock/utils'
+import RenderSlot from '../../RenderSlot'
+import { renderSpaceSlot } from '../../RenderSlot/utils'
+import { Template7030Props } from './types'
 
-interface Props {
-  slotAds: RenderSlotProps;
-  slot70: RenderSlotProps;
-  slot30: RenderSlotProps;
-}
+const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
 
-const Template7030 = ({
-  slotAds,
-  slot70,
-  slot30
-}: Props) => {
   const slot70_bgColor = selectBgColorFromSlot(slot70)
   const slot30_bgColor = selectBgColorFromSlot(slot30)
   const slot70_isTransparent = isBackgroundTransparent(slot70_bgColor)
@@ -29,6 +16,7 @@ const Template7030 = ({
   const slot70_customHeight_desktop = selectMinHeightFromSlot(slot70.min_height?.[1])
   const slot30_customHeight_mobile = selectMinHeightFromSlot(slot30.min_height?.[0])
   const slot30_customHeight_desktop = selectMinHeightFromSlot(slot30.min_height?.[1])
+
   return (
     <>
       <Block
@@ -42,7 +30,8 @@ const Template7030 = ({
           alignx: 'between',
           aligny: 'top'
         }}
-        width='100%'>
+        width='100%'
+      >
         <Block
           align='column'
           alignx='left'
@@ -55,8 +44,9 @@ const Template7030 = ({
             mb: '0px',
             px: '0px',
             width: 'calc((((100% - 48px) / 3) * 2) + 24px)'
-          }}>
-          {(renderSpaceSlot(slot70.spaceA))}
+          }}
+        >
+          {renderSpaceSlot(slot70.spaceA)}
           <Block
             align='column'
             alignx='center'
@@ -74,10 +64,11 @@ const Template7030 = ({
               px: slot70_isTransparent ? '0px' : 3,
               pt: slot70_isTransparent ? '0px' : 3,
               width: slot70_isTransparent ? '100%' : 'calc(100% - 48px)'
-            }}>
+            }}
+          >
             <RenderSlot {...slot70} />
           </Block>
-          {(renderSpaceSlot(slot70.spaceB))}
+          {renderSpaceSlot(slot70.spaceB)}
         </Block>
         <Block
           align='column'
@@ -87,8 +78,9 @@ const Template7030 = ({
           lg={{
             px: '0px',
             width: 'calc((100% - 48px) / 3)'
-          }}>
-          {(renderSpaceSlot(slot30.spaceA))}
+          }}
+        >
+          {renderSpaceSlot(slot30.spaceA)}
           <Block
             align='column'
             alignx='center'
@@ -105,13 +97,14 @@ const Template7030 = ({
               px: slot30_isTransparent ? '0px' : 3,
               pt: slot30_isTransparent ? '0px' : 3,
               width: slot30_isTransparent ? '100%' : 'calc(100% - 48px)'
-            }}>
+            }}
+          >
             <RenderSlot {...slot30} />
           </Block>
-          {(renderSpaceSlot(slot30.spaceB))}
+          {renderSpaceSlot(slot30.spaceB)}
         </Block>
       </Block>
-      {(renderSpaceSlot(slotAds.spaceB))}
+      {renderSpaceSlot(slotAds.spaceB)}
     </>
   )
 }

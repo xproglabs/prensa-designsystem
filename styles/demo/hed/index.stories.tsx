@@ -17,7 +17,9 @@ import DataHomeTimes from './data/7.181.json'
 import Data7188_33 from './data/7.188_33.json'
 import Data7188 from './data/7.188.json'
 import DATA_HOME_30 from './data/7.204.json'
-import DataTemplateWrap from './data/7.223.json'
+import DataTemplateColumnist_Slot100 from './data/7.223_slot100.json'
+import DataTemplateColumnist_Slot30 from './data/7.223_slot30.json'
+import DataTemplateColumnist_Slot7030 from './data/7.223_slot7030.json'
 import DataHomeFeaturedImage100 from './data/7.483_100.json'
 import DataHomeFeaturedImage33 from './data/7.483_33.json'
 import DataHomeFeaturedImage from './data/7.483.json'
@@ -259,19 +261,49 @@ export const UltimasNoticiasComMaisLidas = () => {
     </TemplateContainer>
   )
 }
-export const TemplateWrap = () => {
+export const TemplateColumnist = () => {
   return (
-    <TemplateContainer
-      mb={[2, 2]}
-      mt={[2, 2]}>
-      <PageBlock
-        {...DataTemplateWrap}
-        amp={false}
-        domain={domain}
-        preview={preview_editable}
-        slot_parser={slot_parser}
-      />
-    </TemplateContainer>
+    <React.Fragment>
+      <TemplateContainer
+        mb={[2, 2]}
+        mt={[2, 2]}
+        background='neutral10'
+      >
+        <PageBlock
+          {...DataTemplateColumnist_Slot100}
+          amp={false}
+          domain={domain}
+          preview={preview_editable}
+          slot_parser={slot_parser}
+        />
+      </TemplateContainer>
+      <TemplateContainer
+        mb={[2, 2]}
+        mt={[2, 2]}
+        background='neutral10'
+      >
+        <PageBlock
+          {...DataTemplateColumnist_Slot30}
+          amp={false}
+          domain={domain}
+          preview={preview_editable}
+          slot_parser={slot_parser}
+        />
+      </TemplateContainer>
+      <TemplateContainer
+        mb={[2, 2]}
+        mt={[2, 2]}
+        background='neutral10'
+      >
+        <PageBlock
+          {...DataTemplateColumnist_Slot7030}
+          amp={false}
+          domain={domain}
+          preview={preview_editable}
+          slot_parser={slot_parser}
+        />
+      </TemplateContainer>
+    </React.Fragment>
   )
 }
 export const HomeListPaged = () => {

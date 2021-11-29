@@ -8,8 +8,7 @@ export type TemplateType =
   'template100' | 
   'template7030' | 
   'template50' | 
-  'template30' | 
-  'templateWrap'
+  'template30' 
 
 export type SlotBlockProps = {
   bgcolor?: ColorTokens;

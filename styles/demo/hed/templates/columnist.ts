@@ -1,15 +1,25 @@
 import { CreateTemplate } from 'prensa'
 
 export const TEMPLATE_COLUMNIST = CreateTemplate({
-  slotWrap: {
+  slot100: {
     layout: {
-      0: ['teaser_image_circle'],
-      1: ['teaser_image_circle'],
-      2: ['teaser_image_circle', 'teaser_image_circle'],
-      3: ['teaser_image_circle', 'teaser_image_circle', 'teaser_image_circle'],
-      4: ['teaser_image_circle', 'teaser_image_circle', 'teaser_image_circle', 'teaser_image_circle']
+      0: ['teaser_image_circle']
     },
     min_height: ['auto', '350px'],
-    spaces: [3, 3, 3, 3]
+    spaces: [3]
+  },
+  slot70: {
+    layout: {
+      0: ['teaser_image_circle']
+    },
+    min_height: ['auto', '350px'],
+    spaces: [1]
+  },
+  slot30: {
+    layout: {
+      0: ['teaser_image_circle']
+    },
+    min_height: ['auto', '350px'],
+    spaces: [0]
   }
 })
