@@ -59,7 +59,7 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
             lg={{
               align: 'row',
               alignx: 'between',
-              custom: `${slot70_customHeight_desktop}`,
+              custom: `flex-wrap: wrap; ${slot70_customHeight_desktop}`,
               mb: slot70_isTransparent ? '0px' : 3,
               px: slot70_isTransparent ? '0px' : 3,
               pt: slot70_isTransparent ? '0px' : 3,
