@@ -1,10 +1,13 @@
 import { CreateTemplate } from 'prensa'
 
-export const TEMPLATE_DEFAULT = CreateTemplate({
+export const TEMPLATE_COLUMNIST = CreateTemplate({
   slot30: {
     layout: {
       0: ['default'],
-      1: ['big']
+      1: ['big'],
+      2: ['big', 'default'],
+      3: ['default'],
+      4: ['default'],
     },
     min_height: ['auto', '350px'],
     related: {
@@ -32,7 +35,7 @@ export const TEMPLATE_DEFAULT = CreateTemplate({
     related: {
       enabled: false
     },
-    spaces: [3],
+    spaces: [2],
     space_bottom: [1, 1],
   }
 })

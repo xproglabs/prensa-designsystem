@@ -1,8 +1,38 @@
 {
-  "cid": "7.195",
-  "name": "Destaque Linha 1",
+  "cid": "7.234",
+  "name": "Destaque Linha 10 (Cultura)",
   "type": "template30",
   "slot1": {
+    "bgcolor": "",
+    "color": "primary1",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.235",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.197.1637897579",
+          "sub": "",
+          "height": "1026",
+          "width": "2054"
+        },
+        "name": "Saiba mais sobre o novo parque de Mogi para prática esportiva",
+        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
+        "subject": "POLÍCIA",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-11-26 0:33:00"
+      }
+    ],
+    "list2": [],
+    "title": "CULTURA",
+    "type": "default"
+  },
+  "slot2": {
     "bgcolor": "",
     "color": "primary1",
     "icon": "",
@@ -11,17 +41,7 @@
     "len2": 0,
     "list1": [
       {
-        "cid": "7.196",
-        "img": {},
-        "name": "Saiba mais sobre o novo parque de Mogi para prática esportiva",
-        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
-        "subject": "LOCAL",
-        "subtitle": "",
-        "pubdate": "2021-09-12 2:15:16",
-        "updated": "2021-11-26 0:33:00"
-      },
-      {
-        "cid": "7.197",
+        "cid": "7.236",
         "img": {
           "byl": "",
           "cap": "",
@@ -36,13 +56,30 @@
         "subtitle": "",
         "pubdate": "2021-09-12 2:15:16",
         "updated": "2021-11-26 0:33:00"
+      },
+      {
+        "cid": "7.237",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.197.1637897579",
+          "sub": "",
+          "height": "1026",
+          "width": "2054"
+        },
+        "name": "Saiba mais sobre o novo parque de Mogi para prática esportiva",
+        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
+        "subject": "EFICIÊNCIA",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-11-26 0:33:00"
       }
     ],
     "list2": [],
     "title": "",
-    "type": "featured"
+    "type": "default"
   },
-  "slot2": {
+  "slot3": {
     "bgcolor": "",
     "color": "primary1",
     "icon": "",
@@ -51,7 +88,7 @@
     "len2": 0,
     "list1": [
       {
-        "cid": "7.198",
+        "cid": "7.238",
         "img": {
           "byl": "",
           "cap": "",
@@ -69,71 +106,7 @@
       }
     ],
     "list2": [],
-    "title": "",
-    "type": "featured_carousel"
-  },
-  "slot3": {
-    "bgcolor": "",
-    "color": "primary1",
-    "icon": "",
-    "link": "",
-    "len1": 3,
-    "len2": 0,
-    "list1": [
-      {
-        "cid": "7.199",
-        "img": {
-          "byl": "",
-          "cap": "",
-          "cid": "1.197.1637897579",
-          "sub": "",
-          "height": "1026",
-          "width": "2054"
-        },
-        "name": "Saiba mais sobre o novo parque de Mogi para prática esportiva",
-        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
-        "subject": "EFICIÊNCIA",
-        "subtitle": "",
-        "pubdate": "2021-09-12 2:15:16",
-        "updated": "2021-11-26 0:33:00"
-      },
-      {
-        "cid": "7.200",
-        "img": {
-          "byl": "",
-          "cap": "",
-          "cid": "1.197.1637897579",
-          "sub": "",
-          "height": "1026",
-          "width": "2054"
-        },
-        "name": "Radial Transporte tem vagas para motoristas, em Suzano",
-        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
-        "subject": "TEORIAS DE DARWIN",
-        "subtitle": "",
-        "pubdate": "2021-09-12 2:15:16",
-        "updated": "2021-11-26 0:33:00"
-      },
-      {
-        "cid": "7.201",
-        "img": {
-          "byl": "",
-          "cap": "",
-          "cid": "1.197.1637897579",
-          "sub": "",
-          "height": "1026",
-          "width": "2054"
-        },
-        "name": "O retorno de Valdemar Costa Neto e a influência nas eleições",
-        "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
-        "subject": "EDUCAÇÃO",
-        "subtitle": "",
-        "pubdate": "2021-09-12 2:15:16",
-        "updated": "2021-11-26 0:33:00"
-      }
-    ],
-    "list2": [],
-    "title": "",
+    "title": "CONTEÚDO DE MARCA",
     "type": "default"
   },
   "slot4": {
