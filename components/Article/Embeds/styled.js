@@ -1,15 +1,17 @@
 import { margin } from 'prensa/styled-system'
-import { ComponentType } from 'react'
 import styled from 'styled-components'
 
-type ContainerProps = {
-  mt?: string | number;
-  mr?: string | number;
-  mb?: string | number;
-  ml?: string | number;
-  $height: Array<string>;
-  $width: Array<string>;
-}
+// ToDo: Implement .tsx file and typing
+// import { ComponentType } from 'react'
+// type ContainerProps = {
+//   mt?: string | number;
+//   mr?: string | number;
+//   mb?: string | number;
+//   ml?: string | number;
+//   $height: Array<string>;
+//   $width: Array<string>;
+// }
+// const Container: ComponentType<ContainerProps> = styled.div<ContainerProps>`
 
 function mobile_height({ $height }) {
   const value = $height[0]
@@ -32,7 +34,7 @@ function desktop_width({ $width }) {
   return `width: ${value}`
 }
 
-const Container: ComponentType<ContainerProps> = styled.div<ContainerProps>`
+const Container = styled.div`
   ${margin};
   ${mobile_height};
   ${mobile_width};
