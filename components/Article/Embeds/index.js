@@ -1,4 +1,4 @@
 export { default as Facebok } from './Facebook'
 export { default as Twitter } from './Twitter'
 export { default as Instagram } from './Instagram'
-export * from './YouTube'
+export * from './YouTube/index.ts'
