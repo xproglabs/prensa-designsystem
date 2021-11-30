@@ -11,109 +11,79 @@
     "len2": 0,
     "list1": [
       {
-        "contentId": "1.880632",
-        "color": "",
-        "keyid": "1",
-        "keywords": "",
-        "teste": "1",
-        "image": {
-          "byl": "Pedro Souza / Atlético",
+        "cid": "7.433",
+        "img": {
+          "byl": "Bruno Haddad/Cruzeiro",
           "cap": "",
-          "cid": "1.860351.1635393576",
-          "height": "534",
-          "width": "800"
+          "cid": "1.858786.1634507794",
+          "sub": ""
         },
-        "name": "Matéria teste - remover depois",
-        "path": "http://localhost:8080/hojeemdia/materia-teste-remover-depois-1.880632",
-        "subject": "TESTE",
-        "subtitle": "",
-        "time_formatted": "28/10/2021 - 13:24",
-        "time_published": "2021-10-28 13:24:47",
-        "time_modifiedDate": "2021-10-31 19:49:29"
-      },
-      {
-        "contentId": "1.860355",
-        "color": "",
-        "keyid": "2",
-        "keywords": "",
-        "teste": "1",
-        "image": {
-          "byl": "Pedro Souza / Atlético",
-          "cap": "",
-          "cid": "1.860356.1635393577",
-          "height": "1367",
-          "width": "2048"
-        },
-        "name": "Com Galo na final, Minas pode se isolar como segundo estado com mais títulos da Copa do Brasil",
-        "path": "http://localhost:8080/hojeemdia/esportes/com-galo-na-final-minas-pode-se-isolar-como-segundo-estado-com-mais-titulos-da-copa-do-brasil-1.860355",
+        "name": "Utopia ou possibilidade: o que acontece se o Cruzeiro vencer seus oito últimos jogos na Série B?",
+        "path": "/esportes/utopia-ou-possibilidade-o-que-acontece-se-o-cruzeiro-vencer-seus-oito-ultimos-jogos-na-serie-b-1.858783",
         "subject": "",
         "subtitle": "",
-        "time_formatted": "28/10/2021 - 00:46",
-        "time_published": "2021-10-28 0:46:05",
-        "time_modifiedDate": "2021-10-28 1:01:11"
+        "pubdate": "2021-10-17 18:02:53",
+        "updated": "2021-10-17 20:34:16"
       },
       {
-        "contentId": "1.860352",
-        "color": "",
-        "keyid": "3",
-        "keywords": "",
-        "teste": "1",
-        "image": {
-          "byl": "Pedro Souza/Atlético",
+        "cid": "7.433",
+        "img": {
+          "byl": "Bruno Haddad/Cruzeiro",
           "cap": "",
-          "cid": "1.860354.1635393576",
-          "height": "533",
-          "width": "800"
+          "cid": "1.858786.1634507794",
+          "sub": ""
         },
-        "name": "Atlético x Flamengo: enquanto Cuca poupa titulares, Renato Gaúcho usa força máxima",
-        "path": "http://localhost:8080/hojeemdia/esportes/atletico-x-flamengo-enquanto-cuca-poupa-titulares-renato-gaucho-usa-forca-maxima-1.860352",
+        "name": "Utopia ou possibilidade: o que acontece se o Cruzeiro vencer seus oito últimos jogos na Série B?",
+        "path": "/esportes/utopia-ou-possibilidade-o-que-acontece-se-o-cruzeiro-vencer-seus-oito-ultimos-jogos-na-serie-b-1.858783",
         "subject": "",
         "subtitle": "",
-        "time_formatted": "28/10/2021 - 00:38",
-        "time_published": "2021-10-28 0:38:56",
-        "time_modifiedDate": "2021-10-28 1:01:11"
+        "pubdate": "2021-10-17 18:02:53",
+        "updated": "2021-10-17 20:34:16"
       },
       {
-        "contentId": "1.860350",
-        "color": "",
-        "keyid": "4",
-        "keywords": "",
-        "teste": "1",
-        "image": {
-          "byl": "Pedro Souza / Atlético",
+        "cid": "7.433",
+        "img": {
+          "byl": "Bruno Haddad/Cruzeiro",
           "cap": "",
-          "cid": "1.860351.1635393576",
-          "height": "534",
-          "width": "800"
+          "cid": "1.858786.1634507794",
+          "sub": ""
         },
-        "name": "Craque do jogo, Diego Costa comemora classificação e mira final de temporada sem lesões pelo Galo",
-        "path": "http://localhost:8080/hojeemdia/esportes/craque-do-jogo-diego-costa-comemora-classificac-o-e-mira-final-de-temporada-sem-les-es-pelo-galo-1.860350",
+        "name": "Utopia ou possibilidade: o que acontece se o Cruzeiro vencer seus oito últimos jogos na Série B?",
+        "path": "/esportes/utopia-ou-possibilidade-o-que-acontece-se-o-cruzeiro-vencer-seus-oito-ultimos-jogos-na-serie-b-1.858783",
         "subject": "",
         "subtitle": "",
-        "time_formatted": "28/10/2021 - 00:13",
-        "time_published": "2021-10-28 0:13:38",
-        "time_modifiedDate": "2021-10-28 1:01:11"
+        "pubdate": "2021-10-17 18:02:53",
+        "updated": "2021-10-17 20:34:16"
       },
       {
-        "contentId": "1.860347",
-        "color": "",
-        "keyid": "5",
-        "keywords": "",
-        "teste": "1",
-        "image": {
-          "byl": "Pedro Souza / Atlético",
+        "cid": "7.433",
+        "img": {
+          "byl": "Bruno Haddad/Cruzeiro",
           "cap": "",
-          "cid": "1.860348.1635393575",
-          "height": "1365",
-          "width": "2048"
+          "cid": "1.858786.1634507794",
+          "sub": ""
         },
-        "name": "Em busca de ‘doblete’ na temporada, Hulk marca mais um e se isola na artilharia da Copa do Brasil",
-        "path": "http://localhost:8080/hojeemdia/esportes/em-busca-de-doblete-na-temporada-hulk-marca-mais-um-e-se-isola-na-artilharia-da-copa-do-brasil-1.860347",
+        "name": "Utopia ou possibilidade: o que acontece se o Cruzeiro vencer seus oito últimos jogos na Série B?",
+        "path": "/esportes/utopia-ou-possibilidade-o-que-acontece-se-o-cruzeiro-vencer-seus-oito-ultimos-jogos-na-serie-b-1.858783",
         "subject": "",
         "subtitle": "",
-        "time_formatted": "27/10/2021 - 23:42",
-        "time_published": "2021-10-27 23:42:18",
-        "time_modifiedDate": "2021-10-28 1:01:10"
+        "pubdate": "2021-10-17 18:02:53",
+        "updated": "2021-10-17 20:34:16"
+      },
+      {
+        "cid": "7.433",
+        "img": {
+          "byl": "Bruno Haddad/Cruzeiro",
+          "cap": "",
+          "cid": "1.858786.1634507794",
+          "sub": ""
+        },
+        "name": "Utopia ou possibilidade: o que acontece se o Cruzeiro vencer seus oito últimos jogos na Série B?",
+        "path": "/esportes/utopia-ou-possibilidade-o-que-acontece-se-o-cruzeiro-vencer-seus-oito-ultimos-jogos-na-serie-b-1.858783",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "2021-10-17 18:02:53",
+        "updated": "2021-10-17 20:34:16"
       }
     ],
     "list2": [],
@@ -129,46 +99,34 @@
     "len2": 0,
     "list1": [
       {
-        "contentId": "1.860344",
-        "color": "",
-        "keyid": "6",
-        "keywords": "",
-        "teste": "1",
-        "image": {
-          "byl": "Gustavo Oliveira/athletico.com.br ",
+        "cid": "7.433",
+        "img": {
+          "byl": "Bruno Haddad/Cruzeiro",
           "cap": "",
-          "cid": "1.860345.1635393575",
-          "height": "1600",
-          "width": "2880"
+          "cid": "1.858786.1634507794",
+          "sub": ""
         },
-        "name": "Athletico-PR atropela o Flamengo no Maracanã e vai encarar o Galo na final da Copa do Brasil",
-        "path": "http://localhost:8080/hojeemdia/esportes/athletico-pr-atropela-o-flamengo-no-maracan-e-vai-encarar-o-galo-na-final-da-copa-do-brasil-1.860344",
+        "name": "Utopia ou possibilidade: o que acontece se o Cruzeiro vencer seus oito últimos jogos na Série B?",
+        "path": "/esportes/utopia-ou-possibilidade-o-que-acontece-se-o-cruzeiro-vencer-seus-oito-ultimos-jogos-na-serie-b-1.858783",
         "subject": "",
         "subtitle": "",
-        "time_formatted": "27/10/2021 - 23:37",
-        "time_published": "2021-10-27 23:37:16",
-        "time_modifiedDate": "2021-10-28 1:01:10"
+        "pubdate": "2021-10-17 18:02:53",
+        "updated": "2021-10-17 20:34:16"
       },
       {
-        "contentId": "1.860344",
-        "color": "",
-        "keyid": "6",
-        "keywords": "",
-        "teste": "1",
-        "image": {
-          "byl": "Gustavo Oliveira/athletico.com.br ",
+        "cid": "7.433",
+        "img": {
+          "byl": "Bruno Haddad/Cruzeiro",
           "cap": "",
-          "cid": "1.860345.1635393575",
-          "height": "1600",
-          "width": "2880"
+          "cid": "1.858786.1634507794",
+          "sub": ""
         },
-        "name": "Athletico-PR atropela o Flamengo no Maracanã e vai encarar o Galo na final da Copa do Brasil",
-        "path": "http://localhost:8080/hojeemdia/esportes/athletico-pr-atropela-o-flamengo-no-maracan-e-vai-encarar-o-galo-na-final-da-copa-do-brasil-1.860344",
+        "name": "Utopia ou possibilidade: o que acontece se o Cruzeiro vencer seus oito últimos jogos na Série B?",
+        "path": "/esportes/utopia-ou-possibilidade-o-que-acontece-se-o-cruzeiro-vencer-seus-oito-ultimos-jogos-na-serie-b-1.858783",
         "subject": "",
         "subtitle": "",
-        "time_formatted": "27/10/2021 - 23:37",
-        "time_published": "2021-10-27 23:37:16",
-        "time_modifiedDate": "2021-10-28 1:01:10"
+        "pubdate": "2021-10-17 18:02:53",
+        "updated": "2021-10-17 20:34:16"
       }
     ],
     "list2": [],
@@ -184,46 +142,34 @@
     "len2": 0,
     "list1": [
       {
-        "contentId": "1.860344",
-        "color": "",
-        "keyid": "6",
-        "keywords": "",
-        "teste": "1",
-        "image": {
-          "byl": "Gustavo Oliveira/athletico.com.br ",
+        "cid": "7.433",
+        "img": {
+          "byl": "Bruno Haddad/Cruzeiro",
           "cap": "",
-          "cid": "1.860345.1635393575",
-          "height": "1600",
-          "width": "2880"
+          "cid": "1.858786.1634507794",
+          "sub": ""
         },
-        "name": "Athletico-PR atropela o Flamengo no Maracanã e vai encarar o Galo na final da Copa do Brasil",
-        "path": "http://localhost:8080/hojeemdia/esportes/athletico-pr-atropela-o-flamengo-no-maracan-e-vai-encarar-o-galo-na-final-da-copa-do-brasil-1.860344",
+        "name": "Utopia ou possibilidade: o que acontece se o Cruzeiro vencer seus oito últimos jogos na Série B?",
+        "path": "/esportes/utopia-ou-possibilidade-o-que-acontece-se-o-cruzeiro-vencer-seus-oito-ultimos-jogos-na-serie-b-1.858783",
         "subject": "",
         "subtitle": "",
-        "time_formatted": "27/10/2021 - 23:37",
-        "time_published": "2021-10-27 23:37:16",
-        "time_modifiedDate": "2021-10-28 1:01:10"
+        "pubdate": "2021-10-17 18:02:53",
+        "updated": "2021-10-17 20:34:16"
       },
       {
-        "contentId": "1.860344",
-        "color": "",
-        "keyid": "6",
-        "keywords": "",
-        "teste": "1",
-        "image": {
-          "byl": "Gustavo Oliveira/athletico.com.br ",
+        "cid": "7.433",
+        "img": {
+          "byl": "Bruno Haddad/Cruzeiro",
           "cap": "",
-          "cid": "1.860345.1635393575",
-          "height": "1600",
-          "width": "2880"
+          "cid": "1.858786.1634507794",
+          "sub": ""
         },
-        "name": "Athletico-PR atropela o Flamengo no Maracanã e vai encarar o Galo na final da Copa do Brasil",
-        "path": "http://localhost:8080/hojeemdia/esportes/athletico-pr-atropela-o-flamengo-no-maracan-e-vai-encarar-o-galo-na-final-da-copa-do-brasil-1.860344",
+        "name": "Utopia ou possibilidade: o que acontece se o Cruzeiro vencer seus oito últimos jogos na Série B?",
+        "path": "/esportes/utopia-ou-possibilidade-o-que-acontece-se-o-cruzeiro-vencer-seus-oito-ultimos-jogos-na-serie-b-1.858783",
         "subject": "",
         "subtitle": "",
-        "time_formatted": "27/10/2021 - 23:37",
-        "time_published": "2021-10-27 23:37:16",
-        "time_modifiedDate": "2021-10-28 1:01:10"
+        "pubdate": "2021-10-17 18:02:53",
+        "updated": "2021-10-17 20:34:16"
       }
     ],
     "list2": [],
