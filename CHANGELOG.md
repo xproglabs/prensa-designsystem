@@ -1,3 +1,6 @@
+# v1.6.64
+- Reorganiza templates em pastas individuais e remove TemplateWrap
+- Corrige o linter do TemplateLayout no TeaserSuggestion
 # v1.6.63
 - Permite modelo cid e contentId na renderização da imagem
 # v1.6.62

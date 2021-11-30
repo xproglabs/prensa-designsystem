@@ -13,10 +13,12 @@
       {
         "cid": "7.189",
         "img": {
-          "byline": "",
-          "caption": "",
-          "contentId": "1.197.1637897579",
-          "subtitle": ""
+          "byl": "",
+          "cap": "",
+          "cid": "1.197.1637897579",
+          "sub": "",
+          "height": "1026",
+          "width": "2054"
         },
         "name": "São Paulo \"Continuará vacinando\" adolescentes contra a Covid-19",
         "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
@@ -28,10 +30,12 @@
       {
         "cid": "7.190",
         "img": {
-          "byline": "",
-          "caption": "",
-          "contentId": "1.197.1637897579",
-          "subtitle": ""
+          "byl": "",
+          "cap": "",
+          "cid": "1.197.1637897579",
+          "sub": "",
+          "height": "1026",
+          "width": "2054"
         },
         "name": "São Paulo \"Continuará vacinando\" adolescentes contra a Covid-19",
         "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
@@ -43,10 +47,12 @@
       {
         "cid": "7.191",
         "img": {
-          "byline": "",
-          "caption": "",
-          "contentId": "1.197.1637897579",
-          "subtitle": ""
+          "byl": "",
+          "cap": "",
+          "cid": "1.197.1637897579",
+          "sub": "",
+          "height": "1026",
+          "width": "2054"
         },
         "name": "São Paulo \"Continuará vacinando\" adolescentes contra a Covid-19",
         "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
@@ -58,10 +64,12 @@
       {
         "cid": "7.192",
         "img": {
-          "byline": "",
-          "caption": "",
-          "contentId": "1.197.1637897579",
-          "subtitle": ""
+          "byl": "",
+          "cap": "",
+          "cid": "1.197.1637897579",
+          "sub": "",
+          "height": "1026",
+          "width": "2054"
         },
         "name": "São Paulo \"Continuará vacinando\" adolescentes contra a Covid-19",
         "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
@@ -73,10 +81,12 @@
       {
         "cid": "7.193",
         "img": {
-          "byline": "",
-          "caption": "",
-          "contentId": "1.197.1637897579",
-          "subtitle": ""
+          "byl": "",
+          "cap": "",
+          "cid": "1.197.1637897579",
+          "sub": "",
+          "height": "1026",
+          "width": "2054"
         },
         "name": "São Paulo \"Continuará vacinando\" adolescentes contra a Covid-19",
         "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
@@ -88,10 +98,12 @@
       {
         "cid": "7.194",
         "img": {
-          "byline": "",
-          "caption": "",
-          "contentId": "1.197.1637897579",
-          "subtitle": ""
+          "byl": "",
+          "cap": "",
+          "cid": "1.197.1637897579",
+          "sub": "",
+          "height": "1026",
+          "width": "2054"
         },
         "name": "São Paulo \"Continuará vacinando\" adolescentes contra a Covid-19",
         "path": "/mogi-realiza-ate-5-de-outubro-uma-consulta-publica-sobre-o-retorno-das-aulas-presenciais-1.196",
@@ -102,8 +114,8 @@
       }
     ],
     "list2": [],
-    "title": "",
-    "type": "default"
+    "title": "CANAIS",
+    "type": "columnist"
   },
   "slot2": {
     "bgcolor": "",

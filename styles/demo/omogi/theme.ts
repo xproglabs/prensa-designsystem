@@ -3,6 +3,7 @@ import { CreateTheme } from 'prensa'
 import { MOGI_COLORS } from './colors'
 import { teasers } from './teasers'
 import { templates } from './templates'
+import { SECTION_TITLE } from './titles'
 import { TOPBAR_BRAND } from './topbar'
 
 export const theme = CreateTheme({
@@ -19,5 +20,6 @@ export const theme = CreateTheme({
     brand: TOPBAR_BRAND
   },
   teasers,
-  templates
+  templates,
+  section_title: SECTION_TITLE,
 })

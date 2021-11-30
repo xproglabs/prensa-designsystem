@@ -7,9 +7,12 @@ export const TEMPLATE_FEATURED = CreateTemplate({
     },
     min_height: ['auto', 'auto'],
     layout: {
-      1: ['featured']
+      0: ['default'],
+      1: ['featured'],
+      2: ['big', 'default'],
     },
-    spaces: [0, 0, 0, 0]
+    spaces: [0, 0, 0, 0],
+    space_bottom: [1, 1]
   },
   slot70: {
     related: {
@@ -17,9 +20,10 @@ export const TEMPLATE_FEATURED = CreateTemplate({
     },
     min_height: ['auto', 'auto'],
     layout: {
-      1: ['featured']
+      0: ['featured'],
     },
-    spaces: [0, 0, 0, 0]
+    spaces: [0],
+    space_bottom: [1, 1]
   },
   slot100: {
     related: {
@@ -27,8 +31,9 @@ export const TEMPLATE_FEATURED = CreateTemplate({
     },
     min_height: ['auto', 'auto'],
     layout: {
-      1: ['featured']
+      0: ['featured'],
     },
-    spaces: [0, 0, 0, 0]
+    spaces: [0],
+    space_bottom: [1, 1]
   }
 })
