@@ -5,6 +5,13 @@ import { IconProps } from '../Icon/types'
 import { SpacingType } from '../Teaser/types'
 
 interface AreaLayout {
+  b?: string;
+  bt?: string;
+  br?: string;
+  bb?: string;
+  bl?: string;
+  borderColor?: string;
+  borderStyle?: string;
   pt?: SpacingType;
   pr?: SpacingType;
   pb?: SpacingType;
@@ -13,13 +20,7 @@ interface AreaLayout {
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
-  bt?: string;
-  br?: string;
-  bb?: string;
-  bl?: string;
-  b?: string;
-  borderColor?: string;
-  borderStyle?: string;
+  width?: Array<string>;
 }
 interface LinkLayout {
   hoverOpacity?: number;

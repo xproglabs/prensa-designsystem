@@ -14,6 +14,13 @@ export const AreaBox = ({ area, children }: StyledBoxProps) => {
       align='row'
       alignx='left'
       aligny='middle'
+      b={area?.b}
+      bt={area?.bt}
+      br={area?.br}
+      bb={area?.bb}
+      bl={area?.bl}
+      borderColor={area?.borderColor}
+      borderStyle={area?.borderStyle}
       mr={area?.mr?.[0]}
       ml={area?.ml?.[0]}
       mt={area?.mt?.[0]}
@@ -22,13 +29,7 @@ export const AreaBox = ({ area, children }: StyledBoxProps) => {
       pl={area?.pl?.[0]}
       pt={area?.pt?.[0]}
       pb={area?.pb?.[0]}
-      bt={area?.bt}
-      br={area?.br}
-      bb={area?.bb}
-      bl={area?.bl}
-      b={area?.b}
-      borderColor={area?.borderColor}
-      borderStyle={area?.borderStyle}
+      width={area?.width?.[0]}
       lg={{
         mr: area?.mr?.[1],
         ml: area?.ml?.[1],
@@ -38,6 +39,7 @@ export const AreaBox = ({ area, children }: StyledBoxProps) => {
         pl: area?.pl?.[1],
         pt: area?.pt?.[1],
         pb: area?.pb?.[1],
+        width: area?.width?.[1]
       }}>
       {children}
     </Block>
