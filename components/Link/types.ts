@@ -1,12 +1,12 @@
 import { ColorTokens } from '@prensa_tokens'
 import { ReactNode } from 'react'
-import { LinkHTMLAttributes } from 'react'
+import { AnchorHTMLAttributes } from 'react'
 
 /**
  * Prensa | Link component API
  * @description
  */
-export interface LinkProps extends LinkHTMLAttributes<HTMLAnchorElement> {
+export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
   color?: ColorTokens;
   hoverOpacity?: number;
@@ -16,7 +16,8 @@ export interface LinkProps extends LinkHTMLAttributes<HTMLAnchorElement> {
 
 export type StyledLinkProps = {
   children: ReactNode;
-  color?: ColorTokens;
+  href: string;
   hoverOpacity?: number;
+  $color?: ColorTokens;
   $textDecoration?: string;
 }
