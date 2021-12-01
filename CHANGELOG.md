@@ -1,5 +1,7 @@
-# v1.6.67
+# v1.6.68
 - Corrige tipagem do Link aplicando tipagem com atributos HTML do AnchorElement
+# v1.6.67
+- Corrige elemento HTML no Link
 # v1.6.66
 - Conecta types do Link com HTMLLinkElement
 # v1.6.65
