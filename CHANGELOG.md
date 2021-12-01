@@ -1,3 +1,5 @@
+# v1.6.66
+- Conecta types do Link com HTMLLinkElement
 # v1.6.65
 - Adiciona props de width no AreaBox do SectionTitle 
 # v1.6.64
