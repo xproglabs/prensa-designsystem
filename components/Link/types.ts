@@ -6,7 +6,7 @@ import { LinkHTMLAttributes } from 'react'
  * Prensa | Link component API
  * @description
  */
-export interface LinkProps extends LinkHTMLAttributes<HTMLLinkElement> {
+export interface LinkProps extends LinkHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
   color?: ColorTokens;
   hoverOpacity?: number;
