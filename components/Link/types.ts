@@ -1,11 +1,12 @@
 import { ColorTokens } from '@prensa_tokens'
 import { ReactNode } from 'react'
+import { LinkHTMLAttributes } from 'react'
 
 /**
  * Prensa | Link component API
  * @description
  */
-export interface LinkProps {
+export interface LinkProps extends LinkHTMLAttributes<HTMLLinkElement> {
   children: ReactNode;
   color?: ColorTokens;
   hoverOpacity?: number;
