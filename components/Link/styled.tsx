@@ -1,4 +1,5 @@
 import { get } from 'lodash'
+import { ComponentType } from 'react'
 import styled, { css } from 'styled-components'
 
 import { StyledLinkProps } from './types'
@@ -32,7 +33,7 @@ function colorCSS({ $color, theme }: any) {
   `
 }
 
-export const StyledLink: StyledLinkProps | any = styled.a<StyledLinkProps>`
+export const StyledLink: ComponentType<StyledLinkProps> | any = styled.a<StyledLinkProps>`
   cursor: pointer;
   ${colorCSS};
   ${textDecorationCSS};
