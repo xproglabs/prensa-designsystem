@@ -1,3 +1,5 @@
+# v1.6.65
+- Adiciona props de width no AreaBox do SectionTitle 
 # v1.6.64
 - Reorganiza templates em pastas individuais e remove TemplateWrap
 - Corrige o linter do TemplateLayout no TeaserSuggestion
