@@ -38,4 +38,10 @@ const InstagramEmbed = ({ amp, url, height, mb, ml, mr, mt, width }: InstagramEm
   )
 }
 
+InstagramEmbed.defaultProps = {
+  height: ['max-content', '360px'],
+  mb: 3,
+  width: ['100%', '720px']
+}
+
 export default InstagramEmbed
