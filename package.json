@@ -86,6 +86,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "react-contenteditable": "^3.3.6"
+    "react-contenteditable": "^3.3.6",
+    "react-facebook": "^8.1.4"
   }
 }
