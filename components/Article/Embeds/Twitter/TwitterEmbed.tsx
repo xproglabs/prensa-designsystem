@@ -16,9 +16,7 @@ const TwitterEmbed = ({ amp, url, height, mb, ml, mr, mt, width }: TwitterEmbedP
   )
 
   const Amp = () => (
-    <div>
-      <amp-twitter data-tweetid={url} layout='responsive' height='472' width='552' />
-    </div>
+    <amp-twitter data-tweetid={url} layout='responsive' height='472' width='552' />
   )
 
   return (

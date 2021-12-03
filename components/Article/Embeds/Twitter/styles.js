@@ -1,18 +1,6 @@
 import { margin } from 'prensa/styled-system'
 import styled from 'styled-components'
 
-// ToDo: Implement .tsx file and typing
-// import { ComponentType } from 'react'
-// type ContainerProps = {
-//   mt?: string | number;
-//   mr?: string | number;
-//   mb?: string | number;
-//   ml?: string | number;
-//   $height: Array<string>;
-//   $width: Array<string>;
-// }
-// const Container: ComponentType<ContainerProps> = styled.div<ContainerProps>`
-
 function mobile_height({ $height }) {
   const value = $height[0]
   if (!value) return ''
@@ -38,14 +26,14 @@ const Container = styled.div`
   ${margin};
   ${mobile_height};
   ${mobile_width};
-  .Prensa-YouTubeEmbed-web {
+  .Prensa-Twitter-web {
     ${mobile_height};
     ${mobile_width};
   }
   @media (min-width: ${props => props.theme.queries.md}) {
     ${desktop_height};
     ${desktop_width};
-    .Prensa-YouTubeEmbed-web {
+    .Prensa-Twitter-web {
       ${desktop_height};
       ${desktop_width};
     }
