@@ -15,7 +15,7 @@ const InstagramEmbed = ({ amp, url, height, mb, ml, mr, mt, width }: InstagramEm
   const Web = () => (
     <Instagram
       className="Prensa-Instagram-web" 
-      url={url}
+      url={dataShortcode}
       clientAccessToken="" // prop obrigatória, mas não precisa ser preenchida
     />
   )
