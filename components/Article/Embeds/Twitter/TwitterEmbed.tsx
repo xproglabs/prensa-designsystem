@@ -10,7 +10,10 @@ const TwitterEmbed = ({ amp, url, height, mb, ml, mr, mt, width }: TwitterEmbedP
   }
 
   const Web = () => (
-    <Tweet 
+    <Tweet
+      options={{
+        className:'Prensa-Twitter-web'
+      }} 
       tweetId={url}
     />
   )
