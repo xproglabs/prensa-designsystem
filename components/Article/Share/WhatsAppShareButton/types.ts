@@ -7,9 +7,10 @@ export type WhatsAppProps = {
 
 export type WhatsAppShareButtonProps = {
   amp: boolean;
+  pageUrl: string;
+  size?: string;
   whatsappPath?: string;
   whatsappProps?: WhatsAppProps;
-  size?: string;
 }
 
 export type WhatsAppAmpContainerProps = {

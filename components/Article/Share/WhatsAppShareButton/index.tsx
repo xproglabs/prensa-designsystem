@@ -1,29 +1,51 @@
 import { IcWhatsApp } from 'icons'
+import { Block, Link } from 'prensa'
 import React from 'react'
 
+import { WhatsAppAmpContainer } from './styled'
 import { WhatsAppShareButtonProps } from './types'
 
 const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
 
-  const { amp, size, ...otherProps } = props
+  const {
+    amp,
+    pageUrl,
+    size,
+    whatsappPath,
+    whatsappProps,
+  } = props
+
+  // ?phone={phone_number}
+  // &text={title}
+  // %20{url}
+
+  const pageUrlParam = `%20${pageUrl}`
+  const shareUrl = `https://api.whatsapp.com/send${pageUrlParam}`
 
   if (amp) {
     return (
-      <amp-social-share
-        type='whatsapp'
-        width={size}
-        height={size}
-        {...otherProps}
-      />
+      <WhatsAppAmpContainer
+        whatsappPath={whatsappPath}
+        {...whatsappProps}
+      >
+        <amp-social-share
+          type='whatsapp'
+          width={size}
+          height={size}
+        />
+      </WhatsAppAmpContainer>
     )
   } else {
     return (
-      <IcWhatsApp
-        width={size}
-        height={size}
-        color='primary1'
-        {...otherProps}
-      />
+      <Block {...whatsappProps}>
+        <Link path={shareUrl} target='_blank'>
+          <IcWhatsApp
+            width={size}
+            height={size}
+            color='primary1'
+          />
+        </Link>
+      </Block>
     )
   }
 }
