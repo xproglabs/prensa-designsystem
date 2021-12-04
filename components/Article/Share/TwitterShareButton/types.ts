@@ -1,24 +1,22 @@
-export type FacebookProps = {
+export type TwitterProps = {
   mt?: number | string;
   mr?: number | string;
   mb?: number | string;
   ml?: number | string;
 }
 
-export type FacebookShareButtonProps = {
+export type TwitterShareButtonProps = {
   amp: boolean;
-  facebookPath?: string;
-  facebookProps?: FacebookProps;
-  fbappid: string;
+  twitterPath?: string;
+  twitterProps?: TwitterProps;
   size?: string;
 }
 
-export type FacebookAmpContainerProps = {
+export type TwitterAmpContainerProps = {
   children?: any;
-  facebookPath: string;
+  twitterPath: string;
   mt?: number | string;
   mr?: number | string;
   mb?: number | string;
   ml?: number | string;
-  $size: string;
 }

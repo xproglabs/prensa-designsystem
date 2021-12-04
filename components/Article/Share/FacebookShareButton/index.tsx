@@ -2,7 +2,7 @@ import { IcFacebook } from 'icons'
 import React from 'react'
 
 import { FacebookAmpContainer } from './styled'
-import {FacebookShareButtonProps} from './types'
+import { FacebookShareButtonProps } from './types'
 
 const FacebookShareButton = (props: FacebookShareButtonProps) => {
 

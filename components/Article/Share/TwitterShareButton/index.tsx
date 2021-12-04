@@ -1,18 +1,23 @@
 import { IcTwitter } from 'icons'
 import React from 'react'
 
-const TwitterShareButton = (props) => {
+import { TwitterAmpContainer } from './styled'
+import { TwitterShareButtonProps } from './types'
 
-  const { amp, size, ...otherProps } = props
+const TwitterShareButton = (props: TwitterShareButtonProps) => {
+
+  const { amp, size, twitterPath, twitterProps } = props
 
   if (amp) {
     return (
-      <amp-social-share
-        type='twitter'
-        width={size}
-        height={size}
-        {...otherProps}
-      />
+      <TwitterAmpContainer twitterPath={twitterPath}>
+        <amp-social-share
+          type='twitter'
+          width={size}
+          height={size}
+          {...twitterProps}
+        />
+      </TwitterAmpContainer>
     )
   } else {
     return (
@@ -20,7 +25,7 @@ const TwitterShareButton = (props) => {
         width={40}
         height={40}
         color='primary1'
-        {...otherProps}
+        {...twitterProps}
       />
     )
   }
