@@ -19,7 +19,7 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
   const displayParam = '&display=popup'
   const fbappidParam = `?app_id=${fbappid}`
   const pageUrlParam = `&href=${pageUrl}`
-  const shareUrl = `https://www.facebook.com/dialog/share${fbappidParam}/${displayParam}${pageUrlParam}`
+  const shareUrl = `https://www.facebook.com/dialog/share${fbappidParam}${displayParam}${pageUrlParam}`
 
   if (amp) {
     return (
