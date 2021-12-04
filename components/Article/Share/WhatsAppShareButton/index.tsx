@@ -1,7 +1,9 @@
 import { IcWhatsApp } from 'icons'
 import React from 'react'
 
-const WhatsAppShareButton = (props) => {
+import { WhatsAppShareButtonProps } from './types'
+
+const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
 
   const { amp, size, ...otherProps } = props
 
