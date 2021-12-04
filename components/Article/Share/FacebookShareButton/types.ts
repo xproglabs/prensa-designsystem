@@ -10,6 +10,7 @@ export type FacebookShareButtonProps = {
   facebookPath?: string;
   facebookProps?: FacebookProps;
   fbappid: string;
+  pageUrl: string;
   size?: string;
 }
 

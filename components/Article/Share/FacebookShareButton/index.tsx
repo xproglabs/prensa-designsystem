@@ -1,4 +1,5 @@
 import { IcFacebook } from 'icons'
+import { Block, Link } from 'prensa'
 import React from 'react'
 
 import { FacebookAmpContainer } from './styled'
@@ -11,8 +12,14 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
     facebookPath,
     facebookProps,
     fbappid,
+    pageUrl,
     size
   } = props
+
+  const displayParam = '&display=popup'
+  const fbappidParam = `app_id=${fbappid}`
+  const pageUrlParam = `&href=${pageUrl}`
+  const shareUrl = `https://www.facebook.com/dialog/share?${fbappidParam}/${displayParam}${pageUrlParam}`
 
   if (amp) {
     return (
@@ -31,12 +38,15 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
     )
   } else {
     return (
-      <IcFacebook
-        width={size}
-        height={size}
-        color='primary1'
-        {...facebookProps}
-      />
+      <Block {...facebookProps}>
+        <Link path={shareUrl} target='_blank' height={size}>
+          <IcFacebook
+            width={size}
+            height={size}
+            color='primary1'
+          />
+        </Link>
+      </Block>
     )
   }
 }

@@ -1,5 +1,6 @@
 export interface ShareProps {
   amp: boolean;
+  pageUrl: string;
   size?: string;
   facebookPath?: string;
   facebookProps?: Object;

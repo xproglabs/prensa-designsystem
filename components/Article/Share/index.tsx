@@ -10,6 +10,7 @@ const Share = (props: ShareProps) => {
 
   const {
     amp,
+    pageUrl,
     size,
     fbappid,
     facebookPath,
@@ -31,6 +32,7 @@ const Share = (props: ShareProps) => {
         facebookPath={facebookPath}
         facebookProps={facebookProps}
         fbappid={fbappid}
+        pageUrl={pageUrl}
         size={size}
       />
       <TwitterShareButton
@@ -51,7 +53,7 @@ const Share = (props: ShareProps) => {
 
 Share.defaultProps = {
   align: 'row',
-  size: '24',
+  size: '24px',
   facebookPath: 'assets/facebook.svg',
   twitterPath: 'assets/twitter.svg',
   whatsappPath: 'assets/whatsapp.svg'
