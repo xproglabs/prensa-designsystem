@@ -37,12 +37,14 @@ const Share = (props: ShareProps) => {
       />
       <TwitterShareButton
         amp={amp}
+        pageUrl={pageUrl}
         twitterPath={twitterPath}
         twitterProps={twitterProps}
         size={size}
       />
       <WhatsAppShareButton
         amp={amp}
+        pageUrl={pageUrl}
         whatsappPath={whatsappPath}
         whatsappProps={whatsappProps}
         size={size}
