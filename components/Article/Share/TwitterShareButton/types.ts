@@ -7,6 +7,7 @@ export type TwitterProps = {
 
 export type TwitterShareButtonProps = {
   amp: boolean;
+  pageUrl: string;
   twitterPath?: string;
   twitterProps?: TwitterProps;
   size?: string;
