@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { getMinWidthValue } from '../styled'
 
 export const TwitterAmpContainer = styled.div`
-  amp-social-share[type="whatsapp"] {
+  amp-social-share[type="twitter"] {
     ${getMinWidthValue};
-    background-image: ${props => `url(${props.whatsappPath})`};
+    background-image: ${props => `url(${props.twitterPath})`};
     background-color: transparent; 
     &:hover {
       opacity: 80%;
