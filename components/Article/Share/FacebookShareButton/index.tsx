@@ -1,19 +1,33 @@
 import { IcFacebook } from 'icons'
 import React from 'react'
 
-const FacebookShareButton = (props) => {
+import { FacebookAmpContainer } from './styled'
+import {FacebookShareButtonProps} from './types'
 
-  const { amp, fbappid, size, ...otherProps } = props
+const FacebookShareButton = (props: FacebookShareButtonProps) => {
+
+  const {
+    amp,
+    facebookPath,
+    facebookProps,
+    fbappid,
+    size
+  } = props
 
   if (amp) {
     return (
-      <amp-social-share
-        type='facebook'
-        width={size}
-        height={size}
-        data-param-app_id={fbappid}
-        {...otherProps}
-      />
+      <FacebookAmpContainer
+        facebookPath={facebookPath}
+        $size={size}
+        {...facebookProps}
+      >
+        <amp-social-share
+          type='facebook'
+          width={size}
+          height={size}
+          data-param-app_id={fbappid}
+        />
+      </FacebookAmpContainer>
     )
   } else {
     return (
@@ -21,7 +35,7 @@ const FacebookShareButton = (props) => {
         width={40}
         height={40}
         color='primary1'
-        {...otherProps}
+        {...facebookProps}
       />
     )
   }
