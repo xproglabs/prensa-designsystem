@@ -22,8 +22,8 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
   } else {
     return (
       <IcTwitter
-        width={40}
-        height={40}
+        width={size}
+        height={size}
         color='primary1'
         {...twitterProps}
       />

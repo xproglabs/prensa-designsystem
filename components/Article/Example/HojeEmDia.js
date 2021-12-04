@@ -36,6 +36,9 @@ const ArticleHJD = () => {
             facebookProps: {
               mr: 1
             },
+            twitterProps: {
+              mr: 1
+            }
           }
         }}
         citation={{

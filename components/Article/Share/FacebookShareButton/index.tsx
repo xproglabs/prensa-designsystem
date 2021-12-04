@@ -32,8 +32,8 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
   } else {
     return (
       <IcFacebook
-        width={40}
-        height={40}
+        width={size}
+        height={size}
         color='primary1'
         {...facebookProps}
       />

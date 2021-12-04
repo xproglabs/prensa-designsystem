@@ -19,8 +19,8 @@ const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
   } else {
     return (
       <IcWhatsApp
-        width={40}
-        height={40}
+        width={size}
+        height={size}
         color='primary1'
         {...otherProps}
       />
