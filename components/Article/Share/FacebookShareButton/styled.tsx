@@ -1,11 +1,14 @@
+import { margin } from 'prensa/styled-system'
+import { ComponentType } from 'react'
 import styled from 'styled-components'
 
-import { getItemMarginStyle, getMinWidthValue } from '../styled'
+import { getMinWidthValue } from '../styled'
+import { FacebookAmpContainerProps } from './types'
 
-export const FacebookAmpContainer = styled.div`
-   amp-social-share[type="facebook"] {
+export const FacebookAmpContainer: ComponentType<FacebookAmpContainerProps> = styled.div<FacebookAmpContainerProps>`
+  amp-social-share[type="facebook"] {
     ${getMinWidthValue};
-    ${getItemMarginStyle};
+    ${margin};
     background-image: ${props => `url(${props.facebookPath})`};
     background-color: transparent;
     &:hover {
