@@ -1,3 +1,5 @@
+# v1.6.70
+- Fix output css no compartilhamento das redes
 # v1.6.69
 - Atualiza dependência prensa-docs
 - Implementa módulo de compartilhamento de redes sociais híbrido no Article 
