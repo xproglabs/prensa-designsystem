@@ -1,3 +1,7 @@
+# v1.6.73
+- Corrige breakpoint do layout responsivo em SocialShare
+# v1.6.72
+- Fix no layout repsonsivo do SocialShare
 # v1.6.71
 - Espera nova prop containerProps no SocialShare
 # v1.6.70
