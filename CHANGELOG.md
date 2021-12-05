@@ -1,3 +1,22 @@
+# v1.6.73
+- Corrige breakpoint do layout responsivo em SocialShare
+# v1.6.72
+- Fix no layout repsonsivo do SocialShare
+# v1.6.71
+- Espera nova prop containerProps no SocialShare
+# v1.6.70
+- Fix output css no compartilhamento das redes
+# v1.6.69
+- Atualiza dependência prensa-docs
+- Implementa módulo de compartilhamento de redes sociais híbrido no Article 
+# v1.6.68
+- Corrige tipagem do Link aplicando tipagem com atributos HTML do AnchorElement
+# v1.6.67
+- Corrige elemento HTML no Link
+# v1.6.66
+- Conecta types do Link com HTMLLinkElement
+# v1.6.65
+- Adiciona props de width no AreaBox do SectionTitle 
 # v1.6.64
 - Reorganiza templates em pastas individuais e remove TemplateWrap
 - Corrige o linter do TemplateLayout no TeaserSuggestion

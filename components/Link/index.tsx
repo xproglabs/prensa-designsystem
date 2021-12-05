@@ -10,6 +10,7 @@ import { LinkProps } from './types'
 const Link = ({
   children,
   color,
+  height,
   path,
   textDecoration,
   ...otherProps
@@ -28,6 +29,7 @@ const Link = ({
       href={path}
       $color={color}
       $textDecoration={textDecoration}
+      $height={height}
       {...otherProps}
     >
       {children}

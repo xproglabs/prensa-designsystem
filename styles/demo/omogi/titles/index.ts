@@ -2,9 +2,14 @@ import { SectionTitleLayout } from 'prensa'
 
 export const SECTION_TITLE: SectionTitleLayout = {
   area: {
+    bl: '8px',
+    borderColor:'primary1',
+    borderStyle: 'solid',
     mb: [2, 2],
-    pl: [1, '0px'],
-    pt: [1, 1]
+    ml: [2, 2],
+    mr: [2, 2],
+    pl: [1, 1],
+    width: ['calc(100% - 32px)', 'calc(100% - 32px)']
   },
   text: {
     font_size: ['24px', '24px'],

@@ -40,7 +40,7 @@ const RenderSlot = ({
   const RenderSpace = ({ item }) => {
     if (item && item['input-template']) {
       if (slot_parser) {
-        const space = selectComponentFromSlotList(slot_parser, [item], site_data, slot)
+        const space = selectComponentFromSlotList(slot_parser, [item], site_data, color)
         return renderSpaceSlot(space)
       }
     }
