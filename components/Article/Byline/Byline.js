@@ -76,10 +76,10 @@ Byline.defaultProps = {
     value: 'Prensa Design System'
   },
   content: {
-    mb: [3, '0px']
+    mb: [3, 3]
   },
   dateline: {
-    mb: [4, 4]
+    mb: [4, '0px']
   },
   datetime: {
     color: 'neutral2',
