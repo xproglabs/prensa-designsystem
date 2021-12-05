@@ -25,6 +25,7 @@ const TextBody = (props) => {
     bodyWidth,
     citation,
     content,
+    fbappid,
     gallery,
     heading2,
     heading3,
@@ -142,15 +143,46 @@ const TextBody = (props) => {
   const switch_component = (type, value) => {
     switch (type) {
       case 'Cite':
-        return <Citation {...citation} maxWidth={bodyWidth} value={value} />
+        return (
+          <Citation
+            maxWidth={bodyWidth}
+            value={value}
+            {...citation}
+          />
+        )
       case 'Facebook':
-        return <FacebookEmbed amp={amp} maxWidth={bodyWidth} url={value} />
+        return (
+          <FacebookEmbed
+            amp={amp}
+            fbappid={fbappid}
+            maxWidth={bodyWidth}
+            url={value}
+          />
+        )
       case 'Instagram':
-        return <InstagramEmbed amp={amp} maxWidth={bodyWidth} url={value} />
+        return (
+          <InstagramEmbed
+            amp={amp}
+            maxWidth={bodyWidth}
+            url={value}
+          />
+        )
       case 'Tweet':
-        return <TwitterEmbed amp={amp} maxWidth={bodyWidth} url={value} />
+        return (
+          <TwitterEmbed
+            amp={amp}
+            maxWidth={bodyWidth}
+            url={value} 
+          />
+        )
       case 'Youtube':
-        return <YouTubeEmbed amp={amp} maxWidth={bodyWidth} url={value} />
+        return (
+          <YouTubeEmbed
+            amp={amp}
+            maxWidth={bodyWidth}
+            url={value}
+          />
+        )
       case 'Image':
         return render_image(value)
       case 'Heading2':
