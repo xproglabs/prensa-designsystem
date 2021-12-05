@@ -25,8 +25,9 @@ const Share = (props: ShareProps) => {
   return (
     <Block
       align='row'
-      alignx='right'
+      alignx='left'
       width='100%'
+      lg={{ alignx: 'right' }}
       {...containerProps}
     >
       <FacebookShareButton
