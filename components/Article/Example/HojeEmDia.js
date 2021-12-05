@@ -31,6 +31,14 @@ const ArticleHJD = () => {
           },
           medias: {
             color: hojeemdia.colors['primary1']
+          },
+          share: {
+            facebookProps: {
+              mr: 1
+            },
+            twitterProps: {
+              mr: 1
+            }
           }
         }}
         citation={{
