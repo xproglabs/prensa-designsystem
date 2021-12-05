@@ -10,11 +10,13 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
   const {
     amp,
     facebookPath,
-    facebookProps,
+    facebookProps = {},
     fbappid,
     pageUrl,
     size
   } = props
+
+  const { mt, mr, mb, ml, ...otherProps } = facebookProps
 
   const displayParam = '&display=popup'
   const fbappidParam = `?app_id=${fbappid}`
@@ -26,24 +28,29 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
       <FacebookAmpContainer
         facebookPath={facebookPath}
         $size={size}
-        {...facebookProps}
+        mt={mt}
+        mr={mr}
+        mb={mb}
+        ml={ml}
       >
         <amp-social-share
           type='facebook'
           width={size}
           height={size}
           data-param-app_id={fbappid}
+          {...otherProps}
         />
       </FacebookAmpContainer>
     )
   } else {
     return (
-      <Block {...facebookProps}>
+      <Block mt={mt} mr={mr} mb={mb} ml={ml}>
         <Link path={shareUrl} target='_blank' height={size}>
           <IcFacebook
             width={size}
             height={size}
             color='primary1'
+            {...otherProps}
           />
         </Link>
       </Block>
