@@ -15,7 +15,6 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
     twitterProps
   } = props
 
-  // &url={url}
   // &text={title}
 
   const pageUrlParam = `url=${pageUrl}`
