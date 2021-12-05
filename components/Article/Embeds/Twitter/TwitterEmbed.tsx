@@ -1,28 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Tweet } from 'react-twitter-widgets'
 
-import { Container } from './styles'
+import { TwitterEmbedContainer } from './styled'
 import { TwitterEmbedProps } from './types'
 
 const TwitterEmbed = ({
   amp,
-  url,
   height,
   mb,
   ml,
   mr,
   mt,
+  url,
   width
 }: TwitterEmbedProps) => {
 
   if (!url) {
+    console.error('Prensa | TwitterEmbed > missing url')
     return null
   }
 
   const Web = () => (
     <Tweet
-      options={{ className: 'Prensa-Twitter-web' }}
-      tweetId={url}
+      tweetId='841418541026877441'
+      options={{
+        align: 'center',
+        width: '552px',
+        height: '472px',
+      }}
     />
   )
 
@@ -36,7 +41,7 @@ const TwitterEmbed = ({
   )
 
   return (
-    <Container
+    <TwitterEmbedContainer
       $height={height}
       $width={width}
       mt={mt}
@@ -45,12 +50,12 @@ const TwitterEmbed = ({
       ml={ml}
     >
       {amp ? <Amp /> : <Web />}
-    </Container>
+    </TwitterEmbedContainer>
   )
 }
 
 TwitterEmbed.defaultProps = {
-  height: ['max-content', '360px'],
+  height: ['max-content', 'max-content'],
   mb: 3,
   width: ['100%', '720px']
 }
