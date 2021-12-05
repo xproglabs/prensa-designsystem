@@ -44,8 +44,18 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
     )
   } else {
     return (
-      <Block mt={mt} mr={mr} mb={mb} ml={ml}>
-        <Link path={shareUrl} target='_blank' height={size}>
+      <Block
+        height={size}
+        mt={mt}
+        mr={mr}
+        mb={mb}
+        ml={ml}
+      >
+        <Link
+          height={size}
+          path={shareUrl}
+          target='_blank'
+        >
           <IcFacebook
             width={size}
             height={size}

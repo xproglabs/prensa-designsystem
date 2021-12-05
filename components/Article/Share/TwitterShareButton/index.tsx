@@ -39,8 +39,18 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
     )
   } else {
     return (
-      <Block mt={mt} mr={mr} mb={mb} ml={ml}>
-        <Link path={shareUrl} target='_blank'>
+      <Block
+        height={size}
+        mt={mt}
+        mr={mr}
+        mb={mb}
+        ml={ml}
+      >
+        <Link
+          height={size}
+          path={shareUrl}
+          target='_blank'
+        >
           <IcTwitter
             width={size}
             height={size}
