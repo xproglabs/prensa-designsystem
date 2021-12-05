@@ -45,7 +45,7 @@
     "jest": "^26.6.3",
     "lint-staged": "^10.2.11",
     "lodash": "^4.17.19",
-    "prensa-docs": "0.0.3",
+    "prensa-docs": "0.0.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
