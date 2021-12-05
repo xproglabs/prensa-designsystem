@@ -1,10 +1,9 @@
-import { margin } from 'prensa/styled-system'
-
 export const getMinWidthValue = ({ $size }: any) => {
   if (!$size) return ''
-  return `min-width: ${$size}`
+  return `min-width: ${$size};`
 }
 
-export const getItemMarginStyle = ({ theme, itemProps }: any) => {
-  return margin({ theme, ...itemProps })
+export const getIconHeight = ({ $size }: any) => {
+  if (!$size) return ''
+  return `height: ${$size};`
 }
