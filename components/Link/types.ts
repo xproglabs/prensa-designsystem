@@ -9,6 +9,7 @@ import { AnchorHTMLAttributes } from 'react'
 export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
   color?: ColorTokens;
+  height?: string;
   hoverOpacity?: number;
   path?: string;
   textDecoration?: string;
@@ -17,6 +18,7 @@ export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 export type StyledLinkProps = {
   children: ReactNode;
   href: string;
+  height?: string;
   hoverOpacity?: number;
   $color?: ColorTokens;
   $textDecoration?: string;

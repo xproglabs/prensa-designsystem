@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Block from '../../Block'
-import Share from '../Share'
+import Share from '../Share/index.tsx'
 import * as S from './Byline.styled'
 
 const Byline = ({
@@ -11,6 +11,8 @@ const Byline = ({
   content,
   dateline,
   datetime,
+  fbappid,
+  pageUrl,
   share
 }) => {
   const AuthorInfo = () => {
@@ -43,24 +45,23 @@ const Byline = ({
             {author.value}
           </S.Author>
           <AuthorInfo />
-          <Block 
-            lg={{
-              align: 'row',
-            }}>
-            <Block 
-              lg={{
-                mr: '4px'
-              }}>
+          <Block lg={{ align: 'row' }}>
+            <Block lg={{ mr: '4px' }}>
               <S.BylineText {...datetime}>
                 {datetime.time_published}.
               </S.BylineText>
-            </Block>  
+            </Block>
             <S.BylineText {...datetime}>
-                Atualizado em {datetime.time_modified}
+              Atualizado em {datetime.time_modified}
             </S.BylineText>
-          </Block>  
+          </Block>
         </S.BylineContainer>
-        <Share amp={amp} {...share} />
+        <Share
+          amp={amp}
+          fbappid={fbappid}
+          pageUrl={pageUrl}
+          {...share}
+        />
       </S.Content>
     </S.Container>
   )
