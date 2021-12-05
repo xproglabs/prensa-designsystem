@@ -2,7 +2,7 @@ import { get } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import YoutubeMedia from '../Embeds/YouTube'
+import { YouTubeEmbed } from '../Embeds'
 import * as S from './TopImage.styled'
 
 const Container = ({ children, featured, mb, value }) => {
@@ -31,7 +31,8 @@ const TopImage = ({
   const lineHeight = get(caption, 'lineHeight', '')
 
   const Video = () => (
-    <YoutubeMedia
+    <YouTubeEmbed
+      amp={amp}
       url={value}
       height={height}
       width={width}
@@ -56,9 +57,9 @@ const TopImage = ({
       )
     }
     return (
-      <img 
+      <img
         alt={caption_value}
-        src={value}  
+        src={value}
       />
     )
   }
@@ -66,15 +67,15 @@ const TopImage = ({
   const RenderMedia = () => {
     switch (type) {
       case 'video':
-        return <Video/>
+        return <Video />
       default:
-        return <Image/>
+        return <Image />
     }
   }
 
   return (
     <Container featured={featured} mb={mb} value={value}>
-      <RenderMedia/>
+      <RenderMedia />
       {caption && caption.show && (
         <S.SubtitleBox px={px} py={py} widthBox={widthBox}>
           <S.Subtitle
@@ -105,7 +106,7 @@ TopImage.defaultProps = {
     fontSize: ['14px', '14px'],
     lineHeight: ['130%', '130%'],
     show: true,
-    value: 'Legenda da Imagem', 
+    value: 'Legenda da Imagem',
   },
   height: '640px',
   mb: [2, 2],
