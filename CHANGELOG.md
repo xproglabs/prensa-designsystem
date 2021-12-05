@@ -1,3 +1,5 @@
+# v1.6.71
+- Espera nova prop containerProps no SocialShare
 # v1.6.70
 - Fix output css no compartilhamento das redes
 # v1.6.69
