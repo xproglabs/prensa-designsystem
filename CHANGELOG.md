@@ -1,3 +1,8 @@
+# v1.6.70
+- Fix output css no compartilhamento das redes
+# v1.6.69
+- Atualiza dependência prensa-docs
+- Implementa módulo de compartilhamento de redes sociais híbrido no Article 
 # v1.6.68
 - Corrige tipagem do Link aplicando tipagem com atributos HTML do AnchorElement
 # v1.6.67
