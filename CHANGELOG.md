@@ -1,3 +1,130 @@
+# v1.6.73
+- Corrige breakpoint do layout responsivo em SocialShare
+# v1.6.72
+- Fix no layout repsonsivo do SocialShare
+# v1.6.71
+- Espera nova prop containerProps no SocialShare
+# v1.6.70
+- Fix output css no compartilhamento das redes
+# v1.6.69
+- Atualiza dependência prensa-docs
+- Implementa módulo de compartilhamento de redes sociais híbrido no Article 
+# v1.6.68
+- Corrige tipagem do Link aplicando tipagem com atributos HTML do AnchorElement
+# v1.6.67
+- Corrige elemento HTML no Link
+# v1.6.66
+- Conecta types do Link com HTMLLinkElement
+# v1.6.65
+- Adiciona props de width no AreaBox do SectionTitle 
+# v1.6.64
+- Reorganiza templates em pastas individuais e remove TemplateWrap
+- Corrige o linter do TemplateLayout no TeaserSuggestion
+# v1.6.63
+- Permite modelo cid e contentId na renderização da imagem
+# v1.6.62
+- Realizar ajustes de parametrização no AuthorProfile
+- Cria componente AuthorBio
+- Adiciona o text-decoration como parametro no link
+- Revisa a condição de exibição de imagem no teaser
+- O Mogi | Adiciona os estilos para os novos templates e teasers
+- Melhorias no componente Link
+# v1.6.61
+- Entrega as props do block no componente do slot
+- Formata matéria exemplo do Correio Popular
+# v1.6.60
+- Permite width responsivo no SideMenu
+- Ajustes de estilo no AccordionEditorial
+# v1.6.59
+- Otimiza eslint e novos scripts de build
+# v1.6.58
+- Otimização na engine de publicação
+# v1.6.57
+- Permite manipular css height no SideMenu
+# v1.6.56
+- Aplica animações no componente SideMenu
+# v1.6.55
+- Refatora SideMenu aplicando typescript
+# v1.6.54
+- Aplica uso do get na função border do styled system
+- Corrigir a quebra de linha da palavra quando hyperlink
+# v1.6.53
+- Otimizações de tipagem e ajustes na doc do templateWrap em HED
+# v1.6.52
+- Configura template wrap no PageBlock e permite slotWrap nos templates
+# v1.6.51
+- Nova estrutura de pastas no projeto (remove src)
+# v1.6.50
+- Permite parametrização de fontFamily no Copyright
+# v1.6.49
+- Melhorias na função CreateTheme tendo em vista novos tokens de cor
+# v1.6.48
+- Cria componente AuthorProfile
+- Formata exemplo Article A Critica
+- Altera espaçamento do px no Body do Article
+# v1.6.47
+- Parametriza o container da tag
+- Parametriza os paddings do box do caption no TopImage
+- Adiciona prop font_weight no Title do Teaser
+- Altera direction do bloco 50 50 no mobile
+- Adaptar a exibição da imagem principal no topo da matéria
+# v1.6.46
+- Permite nova propriedade site_data no PageBlock
+# v1.6.45
+- Ajusta types na CreateFunction dos templates
+# v1.6.44
+- Novas props de cor para o componente Copyright
+# v1.6.43
+- Aplica fluxo de cores dinâmico no RenderSubject
+- Implementa novo fluxo de dados para fallback_image no Teaser
+# v1.6.42
+- Ajustes para permitir fallback image nos teasers
+# v1.6.41
+- Corrige undefined excpetion no Related
+# v1.6.40
+- Corrige undefined excpetion no Related
+# v1.6.40
+- Corrige lógica de cor para o componente Related em Teaser
+- Novo componente RenderNumber no Teaser
+- Adiciona os slots de anúncios a partir do slotAds
+- Implemmenta nova lógica de renderização no Subject do Article
+# v1.6.39
+- Correções no Preview Provider e no subject editable
+# v1.6.38
+- Consolida export da função parseImagePath
+- Deprecia export da função path_absolute
+- Adiciona novo token a família Radius (circle)
+- Permite nova regra fallback_image no Teaser
+# v1.6.35
+- Consolida export da função path_absolute
+# v1.6.34
+- Fix na função path_absolute
+# v1.6.33
+- Corrige alinhamento no TeaserRelated após mudanças no Link
+# v1.6.32
+- Fix na área de clique e melhoria na tipagem do componente Link
+# v1.6.31
+- Corrige os warnings do projeto retornados no frontend
+- Permite parametrizar min height de cada slot via template
+# v1.6.30
+- Novo componente Copyright
+# v1.6.29
+- Reduz z-index no WrapContent do Teaser
+# v1.6.28
+- Habilita estilo de notícia relacionada no featured
+- Corrige a aplicação do custom class no html image
+- Adiciona altura no espaço em branco da coluna
+- Permite camada com gradiente na imagem do teaser e sombra no componente Typography
+# v1.6.27
+- Corrige funcionamento do preview
+# v1.6.26
+- Cria PreviewProvider no projeto
+- Corrige espaçamento do teaser no bloco 30 quando desktop (no-background)
+- Adequa diagramação da data para ficar responsiva
+# v1.6.25
+- Fix de layout no componente Copyright
+# v1.6.24
+- Atualiza dados dos SectionTitles no Template30
 # v1.6.23
 - Move a definição de domínio para o parseBlock
 - Permite seleção de ícone dinâmica e componentes ao invés de conteúdo SVG no componente SectionTitle 

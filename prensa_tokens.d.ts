@@ -8,7 +8,9 @@ type ColorTokens =
   'secondary1' |
   'secondary2' |
   'secondary3' |
-  'primary2'
+  'primary2' |
+  'white' |
+  'black'
 
 type FontTokens =
   'primary' | 'secondary'
@@ -17,7 +19,7 @@ type QuerieTokens =
   'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 type RadiusTokens =
-  'unset' | 'default' | 'alternative'
+  'unset' | 'default' | 'alternative' | 'circle'
 
 type TeaserCartridges =
   'default'
