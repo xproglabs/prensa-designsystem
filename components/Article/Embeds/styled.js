@@ -35,6 +35,8 @@ function desktop_width({ $width }) {
 }
 
 const Container = styled.div`
+  display: flex;
+  justify-content: center;
   ${margin};
   ${mobile_height};
   ${mobile_width};

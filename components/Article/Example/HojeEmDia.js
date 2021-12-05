@@ -13,6 +13,7 @@ const ArticleHJD = () => {
   return (
     <ThemeProvider theme={hojeemdia}>
       <Article
+        amp={false}
         byline={{
           author: {
             color: 'neutral2',
@@ -28,9 +29,6 @@ const ArticleHJD = () => {
             lineHeight: ['16px', '16px'],
             time_modified: '18 dias atrás',
             time_published: '21/05/2021 às 23:20'
-          },
-          medias: {
-            color: hojeemdia.colors['primary1']
           },
           share: {
             facebookProps: {
