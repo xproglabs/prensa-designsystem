@@ -17,7 +17,6 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
 
   // &url={url}
   // &text={title}
-  // &hashtags={hash_tags}
 
   const pageUrlParam = `url=${pageUrl}`
   const shareUrl = `https://twitter.com/intent/tweet?${pageUrlParam}`
