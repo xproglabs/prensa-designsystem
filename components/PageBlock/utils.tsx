@@ -32,12 +32,12 @@ export const selectComponentFromSlotList = (
   parseSlot: any,
   slotList: any,
   siteData: any,
-  slotData?: any
+  slotColor?: any
 ) => {
   if (!parseSlot)
     return <></>
   return (
-    <>{map(slotList, (item, key) => parseSlot(item, key, siteData, slotData))}</>
+    <>{map(slotList, (item, key) => parseSlot(item, key, siteData, slotColor))}</>
   )
 }
 
