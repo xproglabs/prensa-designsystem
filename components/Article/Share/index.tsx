@@ -27,7 +27,11 @@ const Share = (props: ShareProps) => {
       align='row'
       alignx='left'
       width='100%'
-      lg={{ alignx: 'right' }}
+      md={{
+        align: 'row',
+        alignx: 'right',
+        width: '100%'
+      }}
       {...containerProps}
     >
       <FacebookShareButton
