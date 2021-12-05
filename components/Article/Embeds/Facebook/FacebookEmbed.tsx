@@ -51,7 +51,7 @@ const FacebookEmbed = ({
 }
 
 FacebookEmbed.defaultProps = {
-  height: ['max-content', '360px'],
+  height: ['max-content', 'max-content'],
   mb: 3,
   width: ['100%', '720px']
 }
