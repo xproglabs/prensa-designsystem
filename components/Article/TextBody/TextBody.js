@@ -144,13 +144,13 @@ const TextBody = (props) => {
       case 'Cite':
         return <Citation {...citation} maxWidth={bodyWidth} value={value} />
       case 'Facebook':
-        return <FacebookEmbed maxWidth={bodyWidth} url={value} />
+        return <FacebookEmbed amp={amp} maxWidth={bodyWidth} url={value} />
       case 'Instagram':
-        return <InstagramEmbed maxWidth={bodyWidth} url={value} />
+        return <InstagramEmbed amp={amp} maxWidth={bodyWidth} url={value} />
       case 'Tweet':
-        return <TwitterEmbed maxWidth={bodyWidth} url={value} />
+        return <TwitterEmbed amp={amp} maxWidth={bodyWidth} url={value} />
       case 'Youtube':
-        return <YouTubeEmbed maxWidth={bodyWidth} url={value} />
+        return <YouTubeEmbed amp={amp} maxWidth={bodyWidth} url={value} />
       case 'Image':
         return render_image(value)
       case 'Heading2':
