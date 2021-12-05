@@ -21,5 +21,5 @@ export type FacebookAmpContainerProps = {
   mr?: number | string;
   mb?: number | string;
   ml?: number | string;
-  $size: string;
+  $size?: string;
 }

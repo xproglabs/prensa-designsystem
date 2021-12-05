@@ -28,6 +28,7 @@ const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
         mr={mr}
         mb={mb}
         ml={ml}
+        $size={size}
       >
         <amp-social-share
           type='whatsapp'
@@ -39,8 +40,18 @@ const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
     )
   } else {
     return (
-      <Block mt={mt} mr={mr} mb={mb} ml={ml}>
-        <Link path={shareUrl} target='_blank'>
+      <Block
+        height={size}
+        mt={mt}
+        mr={mr}
+        mb={mb}
+        ml={ml}
+      >
+        <Link
+          height={size}
+          path={shareUrl}
+          target='_blank'
+        >
           <IcWhatsApp
             width={size}
             height={size}

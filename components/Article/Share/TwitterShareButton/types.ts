@@ -20,4 +20,5 @@ export type TwitterAmpContainerProps = {
   mr?: number | string;
   mb?: number | string;
   ml?: number | string;
+  $size?: string;
 }
