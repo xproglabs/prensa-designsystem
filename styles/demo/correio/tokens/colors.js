@@ -1,0 +1,36 @@
+export const CORREIO_COLOR_TOKENS = {
+  primary: {
+    dark: '#000F1F',
+    main: '#002951',
+    light: '#004385',
+  },
+  secondary: {
+    dark: '#2A4F6B',
+    main: '#3F769F',
+    light: '#539BD1',
+  },
+  black: '#000000',
+  neutral1: '#151515',
+  neutral2: '#333333',
+  neutral3: '#555555',
+  neutral4: '#666666',
+  neutral5: '#707070',
+  neutral6: '#999999',
+  neutral7: '#B5B5B5',
+  neutral8: '#D7D7D7',
+  neutral9: '#EAEAEA',
+  neutral10: '#F2F2F2',
+  neutral11: '#FAFAFA',
+  white: '#FFFFFF',
+  colorAds: '#FF5C00',
+  success: {
+    dark: '#3c8d40',
+    main: '#50ae55',
+    light: '#83c686',
+  },
+  error: {
+    dark: '#d13135',
+    main: '#f1453d',
+    light: '#e37475',
+  },
+}

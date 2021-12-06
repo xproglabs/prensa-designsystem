@@ -1,0 +1,56 @@
+{
+  "cid": "7.195",
+  "name": "Teaser 100 Sem Imagem",
+  "type": "template100",
+  "slot1": {
+    "bgcolor": "",
+    "color": "primary1",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.196",
+        "img": {},
+        "name": "Instituto Agronômico de Campinas abrigará startups voltadas à inovação",
+        "path": "/",
+        "subject": "INOVAÇÃO",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-11-26 0:33:00"
+      }
+    ],
+    "list2": [],
+    "title": "",
+    "type": "default"
+  },
+  "slot2": {
+    "bgcolor": "",
+    "color": "primary1",
+    "icon": "",
+    "link": "",
+    "len1": 0,
+    "len2": 0,
+    "list1": [],
+    "list2": [],
+    "title": "",
+    "type": "default"
+  },
+  "slot3": {
+    "bgcolor": "",
+    "color": "primary1",
+    "icon": "",
+    "link": "",
+    "len1": 0,
+    "len2": 0,
+    "list1": [],
+    "list2": [],
+    "title": "",
+    "type": "default"
+  },
+  "slot4": {
+    "len": 0,
+    "list": []
+  }
+}
