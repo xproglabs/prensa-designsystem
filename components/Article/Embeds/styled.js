@@ -34,22 +34,22 @@ function desktop_width({ $width }) {
   return `width: ${value}`
 }
 
+/**
+ * Prensa | Embeds Container
+ * @description A container for web/amp embeds
+ * Do NOT use display: flex; in this container. It must render a display: block; property in order to render AMP content
+ */
 const Container = styled.div`
-  display: flex;
-  justify-content: center;
   ${margin};
   ${mobile_height};
   ${mobile_width};
-
   .Prensa-YouTubeEmbed-web {
     ${mobile_height};
     ${mobile_width};
   }
-
   @media (min-width: ${props => props.theme.queries.md}) {
     ${desktop_height};
     ${desktop_width};
-
     .Prensa-YouTubeEmbed-web {
       ${desktop_height};
       ${desktop_width};
