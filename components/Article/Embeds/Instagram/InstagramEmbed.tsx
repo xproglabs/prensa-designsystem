@@ -1,16 +1,37 @@
 import React from 'react'
 import Instagram from 'react-instagram-embed'
 
-import { Container } from './styles'
+import { Container } from '../styled'
 import { InstagramEmbedProps } from './types'
+import { getInstagramShortcode } from './utils'
 
-const InstagramEmbed = ({ amp, url, height, mb, ml, mr, mt, width }: InstagramEmbedProps) => {
-  const parsedPrefix = url.split('instagram.com/p/')
-  if (!parsedPrefix[1]) return null
-  const parsedSufix = parsedPrefix[1] && parsedPrefix[1].split('/')
-  const dataShortcode = parsedSufix[0] ? parsedSufix[0] : parsedPrefix[1]
+const InstagramEmbed = ({
+  amp,
+  height,
+  mb,
+  ml,
+  mr,
+  mt,
+  url,
+  width
+}: InstagramEmbedProps) => {
+  
+  if (!url) {
+    console.error('Prensa | InstagramEmbed > missing url')
+    return null
+  }
 
-  if (!url) return null
+  const dataShortcode = getInstagramShortcode(url)
+
+  const Amp = () => (
+    <amp-instagram
+      data-captioned
+      data-shortcode={dataShortcode}
+      layout='responsive'
+      height='552'
+      width='552'
+    />
+  )
 
   const Web = () => (
     <Instagram
@@ -18,10 +39,6 @@ const InstagramEmbed = ({ amp, url, height, mb, ml, mr, mt, width }: InstagramEm
       url={dataShortcode}
       clientAccessToken="" // prop obrigatória, mas não precisa ser preenchida
     />
-  )
-
-  const Amp = () => (
-    <amp-instagram data-captioned data-shortcode={dataShortcode} layout='responsive' height='552' width='552' />
   )
 
   return (
@@ -44,4 +61,4 @@ InstagramEmbed.defaultProps = {
   width: ['100%', '720px']
 }
 
-export default InstagramEmbed
+export { InstagramEmbed }
