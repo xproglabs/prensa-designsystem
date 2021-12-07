@@ -18,6 +18,7 @@ export const Author = ({
     fontWeight={700}
     fontSize={fontSize[0]}
     lineHeight={lineHeight[0]}
+    mb='4px'
     lg={{
       fontSize: fontSize[1],
       lineHeight: lineHeight[1]

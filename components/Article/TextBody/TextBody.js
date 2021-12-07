@@ -6,10 +6,8 @@ import { withTheme } from 'styled-components'
 import Block from '../../Block'
 import ImageGallery from '../../ImageGallery'
 import Citation from '../Citation/Citation'
-import FacebookEmbed from '../Embeds/Facebook'
+import { FacebookEmbed, TwitterEmbed, YouTubeEmbed } from '../Embeds'
 import InstagramEmbed from '../Embeds/Instagram'
-import TwitterEmbed from '../Embeds/Twitter'
-import YouTubeEmbed from '../Embeds/YouTube'
 import Heading2 from '../Headings/Heading2'
 import Heading3 from '../Headings/Heading3'
 import Heading4 from '../Headings/Heading4'
@@ -27,6 +25,7 @@ const TextBody = (props) => {
     bodyWidth,
     citation,
     content,
+    fbappid,
     gallery,
     heading2,
     heading3,
@@ -38,9 +37,9 @@ const TextBody = (props) => {
     tags_section_title,
     tags
   } = props
-  
+
   if (!content) return null
-  
+
   const adsContent = get(ads, 'content', [])
   const adsRender = get(ads, 'render', null)
 
@@ -52,14 +51,14 @@ const TextBody = (props) => {
   let ad_counter = 0
   // let intervention_readmore = false;
   const body_items = parse_content(content)
-  
+
   const render_image = (value) => {
     if (!value) return null
     const image_items = get(images, 'items', [])
     let image_data = undefined
     map(image_items, (item) => {
       const item_value = get(item, 'contentId', '')
-      if(item_value.indexOf(value.contentId) > -1) {
+      if (item_value.indexOf(value.contentId) > -1) {
         image_data = item
       }
     })
@@ -142,32 +141,63 @@ const TextBody = (props) => {
   }
 
   const switch_component = (type, value) => {
-    switch(type) {
-      case 'Cite': 
-        return <Citation {...citation} maxWidth={bodyWidth} value={value} />
-      case 'Facebook': 
-        return <FacebookEmbed maxWidth={bodyWidth} url={value} />
-      case 'Instagram': 
-        return <InstagramEmbed maxWidth={bodyWidth} url={value} />            
-      case 'Tweet': 
-        return <TwitterEmbed maxWidth={bodyWidth} url={value} />
-      case 'Youtube': 
-        return <YouTubeEmbed maxWidth={bodyWidth} url={value} />
-      case 'Image': 
+    switch (type) {
+      case 'Cite':
+        return (
+          <Citation
+            maxWidth={bodyWidth}
+            value={value}
+            {...citation}
+          />
+        )
+      case 'Facebook':
+        return (
+          <FacebookEmbed
+            amp={amp}
+            fbappid={fbappid}
+            maxWidth={bodyWidth}
+            url={value}
+          />
+        )
+      case 'Instagram':
+        return (
+          <InstagramEmbed
+            amp={amp}
+            maxWidth={bodyWidth}
+            url={value}
+          />
+        )
+      case 'Tweet':
+        return (
+          <TwitterEmbed
+            amp={amp}
+            maxWidth={bodyWidth}
+            url={value} 
+          />
+        )
+      case 'Youtube':
+        return (
+          <YouTubeEmbed
+            amp={amp}
+            maxWidth={bodyWidth}
+            url={value}
+          />
+        )
+      case 'Image':
         return render_image(value)
-      case 'Heading2': 
+      case 'Heading2':
         return <Heading2 {...heading2} maxWidth={bodyWidth} value={value} />
-      case 'Heading3': 
+      case 'Heading3':
         return <Heading3 {...heading3} maxWidth={bodyWidth} value={value} />
-      case 'Heading4': 
+      case 'Heading4':
         return <Heading4 {...heading4} maxWidth={bodyWidth} value={value} />
-      case 'Paragraph': 
+      case 'Paragraph':
         return render_paragraph(value)
       default:
         return <pre>erro no parse do conteúdo</pre>
     }
   }
-  
+
   return (
     <S.Body hyperlinkColor={get_hyperlink_color()}>
       {map(body_items, ({ type, value }, key) => {
@@ -182,7 +212,7 @@ const TextBody = (props) => {
       )}
       {tags_section_title && tags_section_title.enabled && (
         <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
-      )}  
+      )}
       <Tags {...tags} maxWidth={bodyWidth} />
     </S.Body>
   )

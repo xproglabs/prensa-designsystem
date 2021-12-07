@@ -9,23 +9,24 @@ export const Body = ({
   children,
   hyperlinkColor
 }) => {
-  return <Block
-    custom={`
-      a {
-        color: ${hyperlinkColor};
-      }
-      max-width: ${bodyWidth};
-    `}
-    lg={{
-      align: 'column',
-      alignx: 'center',
-      px: '0px',
-      width: '100%'
-    }}
-    px={2}
-    width='calc(100% - 32px)'>
-    {children}
-  </Block>
+
+  const custom = `a {color: ${hyperlinkColor};}`
+
+  return (
+    <Block
+      custom={custom}
+      maxWidth={bodyWidth}
+      px={2}
+      lg={{
+        align: 'column',
+        alignx: 'center',
+        px: '0px',
+        width: '100%'
+      }}
+    >
+      {children}
+    </Block>
+  )
 }
 
 Body.propTypes = {

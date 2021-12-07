@@ -19,6 +19,7 @@ const Article = (props) => {
     bodyWidth,
     byline,
     citation,
+    fbappid,
     featured,
     gallery,
     headWidth,
@@ -35,7 +36,8 @@ const Article = (props) => {
     title,
     tags,
     textbody,
-    topimage
+    topimage,
+    url
   } = props
 
   // prepare article slots
@@ -76,7 +78,12 @@ const Article = (props) => {
                 <Subject {...subject} />
                 <Title {...title} />
                 <Subtitle {...subtitle} />
-                <Byline amp={amp} {...byline} />
+                <Byline
+                  amp={amp}
+                  fbappid={fbappid}
+                  pageUrl={url}
+                  {...byline}
+                />
               </S.Content>
             </S.MaxWidth>
             {adTopImage && React.cloneElement(adTopImage)}
@@ -92,6 +99,7 @@ const Article = (props) => {
           bodyWidth={bodyWidth}
           citation={citation}
           content={textbody}
+          fbappid={fbappid}
           gallery={gallery}
           heading2={heading2}
           heading3={heading3}
@@ -103,9 +111,7 @@ const Article = (props) => {
           tags_section_title={tags_section_title}
           tags={tags}
         />
-        <GridRelated
-          {...related_content_bottom}
-        />
+        <GridRelated {...related_content_bottom} />
       </S.Container>
     </S.Page>
   )
@@ -132,6 +138,7 @@ Article.propTypes = {
   bodyWidth: PropTypes.string,
   byline: PropTypes.object,
   citation: PropTypes.object,
+  fbappid: PropTypes.string.isRequired,
   featured: PropTypes.object,
   gallery: PropTypes.array,
   headWidth: PropTypes.string,
@@ -165,6 +172,7 @@ Article.propTypes = {
   textbody: PropTypes.string,
   title: PropTypes.object,
   topimage: PropTypes.object,
+  url: PropTypes.string.isRequired
 }
 
 export default withTheme(Article)
