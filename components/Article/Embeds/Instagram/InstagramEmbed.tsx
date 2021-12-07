@@ -7,6 +7,8 @@ import { getInstagramShortcode } from './utils'
 
 const InstagramEmbed = ({
   amp,
+  clientToken,
+  fbappid,
   height,
   mb,
   ml,
@@ -22,6 +24,7 @@ const InstagramEmbed = ({
   }
 
   const dataShortcode = getInstagramShortcode(url)
+  const accessToken = `${fbappid}|${clientToken}`
 
   const Amp = () => (
     <amp-instagram
@@ -35,9 +38,8 @@ const InstagramEmbed = ({
 
   const Web = () => (
     <Instagram
-      className="Prensa-Instagram-web" 
       url={dataShortcode}
-      clientAccessToken="" // prop obrigatória, mas não precisa ser preenchida
+      clientAccessToken={accessToken}
     />
   )
 
