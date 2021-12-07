@@ -93,6 +93,7 @@
   "dependencies": {
     "react-contenteditable": "^3.3.6",
     "react-facebook": "^8.1.4",
+    "react-instagram-embed": "^3.0.0",
     "react-twitter-widgets": "^1.10.0",
     "react-youtube": "^7.13.1"
   }
