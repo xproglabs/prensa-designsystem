@@ -1,6 +1,5 @@
+import { Icon } from 'prensa'
 import React from 'react'
-
-import Icon from '../components/Icon'
 
 export const IcLeftPagination = ({ color }) => {
   return (
