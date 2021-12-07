@@ -99,6 +99,7 @@ const Article = (props) => {
           bodyWidth={bodyWidth}
           citation={citation}
           content={textbody}
+          fbappid={fbappid}
           gallery={gallery}
           heading2={heading2}
           heading3={heading3}
@@ -110,9 +111,7 @@ const Article = (props) => {
           tags_section_title={tags_section_title}
           tags={tags}
         />
-        <GridRelated
-          {...related_content_bottom}
-        />
+        <GridRelated {...related_content_bottom} />
       </S.Container>
     </S.Page>
   )

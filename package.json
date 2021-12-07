@@ -14,6 +14,7 @@
     "prop-types": ">=15.7.2",
     "react": ">=17.0.1",
     "react-contenteditable": ">=3.3.6",
+    "react-facebook": ">=8.1.4",
     "react-dom": ">=17.0.1",
     "react-input-mask": "3.0.0-alpha.2",
     "react-twitter-widgets": ">=1.10.0",
@@ -91,6 +92,7 @@
   },
   "dependencies": {
     "react-contenteditable": "^3.3.6",
+    "react-facebook": "^8.1.4",
     "react-twitter-widgets": "^1.10.0",
     "react-youtube": "^7.13.1"
   }
