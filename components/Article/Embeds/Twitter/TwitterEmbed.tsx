@@ -23,23 +23,23 @@ const TwitterEmbed = ({
 
   const tweetId = getTweetId(url)
 
+  const Amp = () => (
+    <amp-twitter
+      data-tweetid={tweetId}
+      layout='responsive'
+      height='472px'
+      width={width[1]}
+    />
+  )
+
   const Web = () => (
     <Tweet
       tweetId={tweetId}
       options={{
         align: 'center',
-        width: '552px',
+        width: width[1],
         height: '472px',
       }}
-    />
-  )
-
-  const Amp = () => (
-    <amp-twitter
-      data-tweetid={tweetId}
-      layout='responsive'
-      height='472'
-      width='552'
     />
   )
 
@@ -60,7 +60,7 @@ const TwitterEmbed = ({
 TwitterEmbed.defaultProps = {
   height: ['max-content', 'max-content'],
   mb: 3,
-  width: ['100%', '720px']
+  width: ['100%', '552px']
 }
 
 export { TwitterEmbed }

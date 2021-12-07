@@ -24,19 +24,19 @@ const YouTubeEmbed = ({
 
   const videoId = getYoutubeVideoId(url)
 
-  const Web = () => (
-    <WebYouTube
-      className='Prensa-YouTubeEmbed-web'
-      videoId={videoId}
-    />
-  )
-
   const Amp = () => (
     <amp-youtube
       data-videoid={videoId}
       height={height[1]}
       layout='responsive'
       width={width[1]}
+    />
+  )
+
+  const Web = () => (
+    <WebYouTube
+      className='Prensa-YouTubeEmbed-web'
+      videoId={videoId}
     />
   )
 
@@ -55,7 +55,7 @@ const YouTubeEmbed = ({
 }
 
 YouTubeEmbed.defaultProps = {
-  height: ['max-content', '360px'],
+  height: ['max-content', '472px'],
   mb: 3,
   width: ['100%', '720px']
 }
