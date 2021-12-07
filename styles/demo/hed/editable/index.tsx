@@ -30,10 +30,10 @@ export const preview_render = ({
     set_restart(true)
   }
   const submitEditionFields = () => {
-    const data = {
-      title: ref_text.current,
-      subject: ref_subject.current
-    }
+    // const data = {
+    //   title: ref_text.current,
+    //   subject: ref_subject.current
+    // }
     set_saving(true)
     // preview.save_action()
     setTimeout(() => {
