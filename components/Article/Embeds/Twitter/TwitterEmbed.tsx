@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tweet } from 'react-twitter-widgets'
 
-import { TwitterEmbedContainer } from './styled'
+import { Container } from '../styled'
 import { TwitterEmbedProps } from './types'
 import { getTweetId } from './utils'
 
@@ -35,16 +35,12 @@ const TwitterEmbed = ({
   const Web = () => (
     <Tweet
       tweetId={tweetId}
-      options={{
-        align: 'center',
-        width: width[1],
-        height: '472px',
-      }}
+      options={{ align: 'center' }}
     />
   )
 
   return (
-    <TwitterEmbedContainer
+    <Container
       $height={height}
       $width={width}
       mt={mt}
@@ -53,7 +49,7 @@ const TwitterEmbed = ({
       ml={ml}
     >
       {amp ? <Amp /> : <Web />}
-    </TwitterEmbedContainer>
+    </Container>
   )
 }
 
