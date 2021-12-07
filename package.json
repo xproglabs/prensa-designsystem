@@ -1,9 +1,9 @@
 {
   "name": "prensa",
-  "version": "1.6.46",
+  "version": "1.6.73",
   "description": "Prensa Design System",
-  "main": "components/index.js",
-  "module": "components/index.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "author": "XPROG",
   "license": "ISC",
   "repository": "https://github.com/xproglabs/prensa-designsystem.git",
@@ -13,9 +13,12 @@
     "lodash": ">=4.17.19",
     "prop-types": ">=15.7.2",
     "react": ">=17.0.1",
-    "react-contenteditable": "^3.3.6",
+    "react-contenteditable": ">=3.3.6",
+    "react-facebook": ">=8.1.4",
     "react-dom": ">=17.0.1",
     "react-input-mask": "3.0.0-alpha.2",
+    "react-twitter-widgets": ">=1.10.0",
+    "react-youtube": ">=7.13.1",
     "styled-components": ">=5.2.1"
   },
   "devDependencies": {
@@ -45,7 +48,7 @@
     "jest": "^26.6.3",
     "lint-staged": "^10.2.11",
     "lodash": "^4.17.19",
-    "prensa-docs": "0.0.3",
+    "prensa-docs": "0.0.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -64,12 +67,14 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -o ./storybookbuild",
     "build": "rollup --config",
-    "eslint": "eslint --ext js,jsx src/ ",
+    "eslint": "eslint -c .eslintrc.json --fix --ext js,ts,tsx ./",
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
     "test": "jest",
-    "release:local": "npm run build && npm pack",
-    "release:qa": "npm version patch && npm run eslint && npm run build && git push --tags && npm publish --tag qa",
-    "release:prod": "npm version patch && npm run eslint && npm run build && git push && npm publish"
+    "clear:dist": "rm -rf dist",
+    "prerelease:copyfiles": "cp -rf README.md dist && cp -rf CHANGELOG.md dist && cp -rf package.json dist",
+    "release:local": "npm run clear:dist && npm run build && npm run prerelease:copyfiles && cd dist && npm pack",
+    "release:qa": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish --tag qa",
+    "release:prod": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
@@ -86,6 +91,10 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "react-contenteditable": "^3.3.6"
+    "react-contenteditable": "^3.3.6",
+    "react-facebook": "^8.1.4",
+    "react-instagram-embed": "^3.0.0",
+    "react-twitter-widgets": "^1.10.0",
+    "react-youtube": "^7.13.1"
   }
 }
