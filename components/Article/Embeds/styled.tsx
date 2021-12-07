@@ -1,17 +1,15 @@
 import { margin } from 'prensa/styled-system'
+import { ComponentType } from 'react'
 import styled from 'styled-components'
 
-// ToDo: Implement .tsx file and typing
-// import { ComponentType } from 'react'
-// type ContainerProps = {
-//   mt?: string | number;
-//   mr?: string | number;
-//   mb?: string | number;
-//   ml?: string | number;
-//   $height: Array<string>;
-//   $width: Array<string>;
-// }
-// const Container: ComponentType<ContainerProps> = styled.div<ContainerProps>`
+type ContainerProps = {
+  mt?: string | number;
+  mr?: string | number;
+  mb?: string | number;
+  ml?: string | number;
+  $height: Array<string>;
+  $width: Array<string>;
+}
 
 function mobile_height({ $height }) {
   const value = $height[0]
@@ -34,9 +32,12 @@ function desktop_width({ $width }) {
   return `width: ${value}`
 }
 
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
+/**
+ * Prensa | Embeds Container
+ * @description A container for web/amp embeds
+ * Do NOT use display: flex; in this container. It must render a display: block; property in order to render AMP content
+ */
+const Container: ComponentType<ContainerProps> = styled.div<ContainerProps>`
   ${margin};
   ${mobile_height};
   ${mobile_width};
@@ -49,7 +50,7 @@ const Container = styled.div`
   @media (min-width: ${props => props.theme.queries.md}) {
     ${desktop_height};
     ${desktop_width};
-
+    
     .Prensa-YouTubeEmbed-web {
       ${desktop_height};
       ${desktop_width};
