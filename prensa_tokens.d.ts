@@ -3,9 +3,11 @@
  */
 type ColorTokens =
   'primary1' |
+  'primary.main' |
   'primary2' |
   'primary3' |
   'secondary1' |
+  'secondary.main' |
   'secondary2' |
   'secondary3' |
   'primary2' |
