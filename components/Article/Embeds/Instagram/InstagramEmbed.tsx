@@ -7,6 +7,8 @@ import { getInstagramShortcode } from './utils'
 
 const InstagramEmbed = ({
   amp,
+  ampElementProps,
+  elementProps,
   clientToken,
   fbappid,
   height,
@@ -33,6 +35,7 @@ const InstagramEmbed = ({
       layout='responsive'
       height={width[1]}
       width={width[1]}
+      {...ampElementProps}
     />
   )
 
@@ -40,6 +43,7 @@ const InstagramEmbed = ({
     <Instagram
       url={dataShortcode}
       clientAccessToken={accessToken}
+      {...elementProps}
     />
   )
 
