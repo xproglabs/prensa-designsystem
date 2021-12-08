@@ -53,7 +53,7 @@ const loadContentFromPagedata = () => {
 
 const domain = 'https://qa.hojeemdia.com.br'
 
-const slot_parser = (item, key, siteData, slotData) => {
+const slot_parser = (item, key) => {
   return (
     <Block
       bgColor='neutral9'
@@ -336,8 +336,8 @@ export const HomeFull = () => {
         return (
           <PageBlock
             {...item}
-            key={key}
             amp={false}
+            key={key}
             domain={domain}
             preview={preview_editable}
             slot_parser={slot_parser}
