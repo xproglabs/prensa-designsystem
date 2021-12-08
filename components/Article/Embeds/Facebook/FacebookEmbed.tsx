@@ -6,6 +6,8 @@ import { FacebookEmbedProps } from './types'
 
 const FacebookEmbed = ({
   amp,
+  ampElementProps,
+  elementProps,
   fbappid,
   height,
   mb,
@@ -27,6 +29,7 @@ const FacebookEmbed = ({
       layout='responsive'
       height='472px'
       width={width[1]}
+      {...ampElementProps}
     />
   )
 
@@ -35,6 +38,7 @@ const FacebookEmbed = ({
       <EmbeddedPost
         href={url}
         width={width[1]}
+        {...elementProps}
       />
     </FacebookProvider>
   )

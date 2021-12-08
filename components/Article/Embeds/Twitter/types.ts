@@ -1,5 +1,7 @@
 export type TwitterEmbedProps = {
   amp: boolean;
+  ampElementProps?: Object;
+  elementProps?: Object;
   height?: Array<string>;
   mt?: string | number;
   mr?: string | number;
