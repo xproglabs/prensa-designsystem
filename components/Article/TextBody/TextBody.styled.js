@@ -17,6 +17,7 @@ export const Body = ({
       custom={custom}
       maxWidth={bodyWidth}
       px={2}
+      width='calc(100% - 32px)'
       lg={{
         align: 'column',
         alignx: 'center',
