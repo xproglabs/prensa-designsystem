@@ -54,7 +54,7 @@ const loadContentFromPagedata = () => {
 const domain = 'https://qa.hojeemdia.com.br'
 const fallback_image_url = 'https://polopoly.hojeemdia.com.br/image/policy:1.880787.1638746928:1638746928/image.jpg?w=1000'
 
-const slot_parser = (item, key, siteData, slotData) => {
+const slot_parser = (item, key) => {
   return (
     <Block
       bgColor='neutral9'
@@ -355,8 +355,8 @@ export const HomeFull = () => {
         return (
           <PageBlock
             {...item}
-            key={key}
             amp={false}
+            key={key}
             domain={domain}
         fallback_image_url={fallback_image_url}
             preview={preview_editable}
