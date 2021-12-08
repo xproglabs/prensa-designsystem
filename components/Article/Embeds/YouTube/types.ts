@@ -3,6 +3,8 @@
  */
 export interface YouTubeEmbedProps {
   amp: boolean;
+  ampElementProps: any;
+  elementProps: any;
   height?: Array<string>;
   url: string;
   mt?: string | number;
