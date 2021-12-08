@@ -29,8 +29,8 @@ const YouTubeEmbed = ({
   const Amp = () => (
     <amp-youtube
       data-videoid={videoId}
-      height={height[1]}
       layout='responsive'
+      height={height[1]}
       width={width[1]}
       {...ampElementProps}
     />
