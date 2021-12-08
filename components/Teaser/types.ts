@@ -78,6 +78,7 @@ type Subtitle = {
   font_size?: [string, string];
   enabled?: boolean;
   line_height?: [string, string];
+  mb?: [string, string];
 }
 export type Title = {
   color?: string;
