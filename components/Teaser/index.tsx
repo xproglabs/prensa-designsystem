@@ -69,7 +69,7 @@ const Teaser = (props: TeaserProps) => {
   // image enabled
   const image_cid = get(item, 'img.cid', false)
   const image_contentid = get(item, 'img.contentId', image_cid)
-  const image_enabled = image_contentid && get(layout, 'image.enabled', false)
+  const image_enabled = (image_contentid || fallback_image_url) && get(layout, 'image.enabled', false)
 
   // image wrap
   const image_align = get(layout, 'image.align', ['column', 'column'])

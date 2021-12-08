@@ -34,7 +34,7 @@ export default {
     (Story) => (
       <ThemeProvider theme={theme}>
         <StyleSheetManager disableVendorPrefixes={true}>
-          <Story/>
+          <Story />
         </StyleSheetManager>
       </ThemeProvider>
     )
@@ -52,6 +52,7 @@ const loadContentFromPagedata = () => {
 }
 
 const domain = 'https://qa.hojeemdia.com.br'
+const fallback_image_url = 'https://polopoly.hojeemdia.com.br/image/policy:1.880787.1638746928:1638746928/image.jpg?w=1000'
 
 const slot_parser = (item, key) => {
   return (
@@ -76,6 +77,7 @@ export const HomeWithAds = () => {
         {...DataAdsPlaceholder}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -92,6 +94,7 @@ export const HomeLinha1 = () => {
         {...DataHomeLinha1}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -108,6 +111,7 @@ export const HomeLinha2 = () => {
         {...DataHomeLinha2}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -124,6 +128,7 @@ export const HomeLinha3 = () => {
         {...DataHomeLinha3}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -140,6 +145,7 @@ export const HomeTimes = () => {
         {...DataHomeTimes}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -156,6 +162,7 @@ export const Home7030 = () => {
         {...DATA_HOME_7030}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -172,6 +179,7 @@ export const Home30 = () => {
         {...DATA_HOME_30}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -188,6 +196,7 @@ export const HomeFeatured = () => {
         {...DATA_HOME_FEAT}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -204,6 +213,7 @@ export const HomeFeaturedNoImageWithRelated = () => {
         {...Data7795}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -219,6 +229,7 @@ export const HomeFeaturedImage = () => {
         {...DataHomeFeaturedImage}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -226,6 +237,7 @@ export const HomeFeaturedImage = () => {
         {...DataHomeFeaturedImage33}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -233,6 +245,7 @@ export const HomeFeaturedImage = () => {
         {...DataHomeFeaturedImage100}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -248,6 +261,7 @@ export const UltimasNoticiasComMaisLidas = () => {
         {...Data7188}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -255,6 +269,7 @@ export const UltimasNoticiasComMaisLidas = () => {
         {...Data7188_33}
         amp={false}
         domain={domain}
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -273,6 +288,7 @@ export const TemplateColumnist = () => {
           {...DataTemplateColumnist_Slot100}
           amp={false}
           domain={domain}
+          fallback_image_url={fallback_image_url}
           preview={preview_editable}
           slot_parser={slot_parser}
         />
@@ -286,6 +302,7 @@ export const TemplateColumnist = () => {
           {...DataTemplateColumnist_Slot30}
           amp={false}
           domain={domain}
+          fallback_image_url={fallback_image_url}
           preview={preview_editable}
           slot_parser={slot_parser}
         />
@@ -299,6 +316,7 @@ export const TemplateColumnist = () => {
           {...DataTemplateColumnist_Slot7030}
           amp={false}
           domain={domain}
+          fallback_image_url={fallback_image_url}
           preview={preview_editable}
           slot_parser={slot_parser}
         />
@@ -316,7 +334,7 @@ export const HomeListPaged = () => {
         {...DataListPaged}
         amp={false}
         domain={domain}
-        fallback_image_url='/prensa-fallback.jpg'
+        fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
       />
@@ -331,7 +349,7 @@ export const HomeFull = () => {
       mb={[2, 2]}
       mt={[2, 2]}>
       {map(items, (item, key) => {
-        if (!item) 
+        if (!item)
           return null
         return (
           <PageBlock
@@ -339,6 +357,7 @@ export const HomeFull = () => {
             amp={false}
             key={key}
             domain={domain}
+            fallback_image_url={fallback_image_url}
             preview={preview_editable}
             slot_parser={slot_parser}
           />
