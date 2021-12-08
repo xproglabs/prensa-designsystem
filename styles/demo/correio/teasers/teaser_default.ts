@@ -8,8 +8,8 @@ export const TEASER_DEFAULT = CreateTeaser({
     align: ['column', 'row'],
     background: 'white',
     mb: [0, 0],
-    pb: [6, 3],
-    pt: [6, 3],
+    pb: [5, 5],
+    pt: [5, 5],
     pl: [3, 3],
     pr: [3, 3]
   },
@@ -18,23 +18,24 @@ export const TEASER_DEFAULT = CreateTeaser({
     alignx: ['left', 'left'],
     mt: ['0px', '0px'],
     ml: ['0px', '0px'],
-    width: ['calc(100% - 32px - 16px - 80px)', 'calc(100% - 32px - 16px - 80px)']
+    width: ['calc(100% - 32px)', 'calc(100% - 32px - 16px - 80px)']
   },
   date_time: {
     enabled: false
   },
+  subtitle: {
+    enabled: true,
+    font_size: ['16px', '18px'],
+    line_height: ['140%', '140%']
+  },
   title: {
     enabled: true,
-    font_weight: 900,
     mb: ['8px', '4px'],
+    font_weight: 900,
     ...parseResponsiveFont(
       tokensFonts.NEWS_TITLE_4,
-      tokensFonts.NEWS_TITLE_6
-    ),
-    line_height: ['110%', '110%'],
-  },
-  subtitle: {
-    enabled: true
+      tokensFonts.NEWS_TITLE_2
+      ),
   },
   image: {
     enabled: false,
