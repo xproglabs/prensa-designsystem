@@ -34,7 +34,7 @@ export default {
     (Story) => (
       <ThemeProvider theme={theme}>
         <StyleSheetManager disableVendorPrefixes={true}>
-          <Story/>
+          <Story />
         </StyleSheetManager>
       </ThemeProvider>
     )
@@ -288,7 +288,7 @@ export const TemplateColumnist = () => {
           {...DataTemplateColumnist_Slot100}
           amp={false}
           domain={domain}
-        fallback_image_url={fallback_image_url}
+          fallback_image_url={fallback_image_url}
           preview={preview_editable}
           slot_parser={slot_parser}
         />
@@ -302,7 +302,7 @@ export const TemplateColumnist = () => {
           {...DataTemplateColumnist_Slot30}
           amp={false}
           domain={domain}
-        fallback_image_url={fallback_image_url}
+          fallback_image_url={fallback_image_url}
           preview={preview_editable}
           slot_parser={slot_parser}
         />
@@ -316,7 +316,7 @@ export const TemplateColumnist = () => {
           {...DataTemplateColumnist_Slot7030}
           amp={false}
           domain={domain}
-        fallback_image_url={fallback_image_url}
+          fallback_image_url={fallback_image_url}
           preview={preview_editable}
           slot_parser={slot_parser}
         />
@@ -334,7 +334,6 @@ export const HomeListPaged = () => {
         {...DataListPaged}
         amp={false}
         domain={domain}
-        fallback_image_url='/prensa-fallback.jpg'
         fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
@@ -350,7 +349,7 @@ export const HomeFull = () => {
       mb={[2, 2]}
       mt={[2, 2]}>
       {map(items, (item, key) => {
-        if (!item) 
+        if (!item)
           return null
         return (
           <PageBlock
@@ -358,7 +357,7 @@ export const HomeFull = () => {
             amp={false}
             key={key}
             domain={domain}
-        fallback_image_url={fallback_image_url}
+            fallback_image_url={fallback_image_url}
             preview={preview_editable}
             slot_parser={slot_parser}
           />
