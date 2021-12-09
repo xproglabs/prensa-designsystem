@@ -14,16 +14,13 @@ export const Body = ({
 
   return (
     <Block
+      align='column'
+      alignx='center'
       custom={custom}
       maxWidth={bodyWidth}
       px={2}
       width='calc(100% - 32px)'
-      lg={{
-        align: 'column',
-        alignx: 'center',
-        px: '0px',
-        width: '100%'
-      }}
+      lg={{ px: '0px', width: '100%' }}
     >
       {children}
     </Block>
