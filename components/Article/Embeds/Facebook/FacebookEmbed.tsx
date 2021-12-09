@@ -25,7 +25,7 @@ const FacebookEmbed = ({
 
   const Amp = () => (
     <amp-facebook
-      data-tweetid={url}
+      data-href={url}
       layout='responsive'
       height='472px'
       width={width[1]}
