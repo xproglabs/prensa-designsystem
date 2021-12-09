@@ -154,7 +154,6 @@ const TextBody = (props) => {
           <FacebookEmbed
             amp={amp}
             fbappid={fbappid}
-            maxWidth={bodyWidth}
             url={value}
           />
         )
@@ -162,7 +161,6 @@ const TextBody = (props) => {
         return (
           <InstagramEmbed
             amp={amp}
-            maxWidth={bodyWidth}
             url={value}
           />
         )
@@ -170,7 +168,6 @@ const TextBody = (props) => {
         return (
           <TwitterEmbed
             amp={amp}
-            maxWidth={bodyWidth}
             url={value} 
           />
         )
@@ -178,7 +175,8 @@ const TextBody = (props) => {
         return (
           <YouTubeEmbed
             amp={amp}
-            maxWidth={bodyWidth}
+            ampProps={{ height: '360px', width: '552px' }}
+            height={amp ? ['max-content', '360px'] : ['360px', '360px']}
             url={value}
           />
         )
