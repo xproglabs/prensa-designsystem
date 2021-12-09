@@ -49,6 +49,25 @@ const Article = (props) => {
   const related_content_body = get(relatedContent, 'body', {})
   const related_content_bottom = get(relatedContent, 'bottom', {})
 
+  const dummyFacebook = '<p><a id="https://www.facebook.com/tecmundo/posts/4748374661907004" name="https://www.facebook.com/tecmundo/posts/4748374661907004">https://www.facebook.com/tecmundo/posts/4748374661907004</a></p>'
+  const dummyInstagram = '<p><a id="https://www.instagram.com/p/CWuG5QMM2pu/?utm_source=ig_web_button_share_sheet" name="https://www.instagram.com/p/CWuG5QMM2pu/?utm_source=ig_web_button_share_sheet">https://www.instagram.com/p/CWuG5QMM2pu/?utm_source=ig_web_button_share_sheet</a></p>'
+  const dummyTweet = '<p><a id="https://twitter.com/UOL/status/1399821735231426566" name="https://twitter.com/UOL/status/1399821735231426566">https://twitter.com/UOL/status/1399821735231426566</a></p>'
+  const dummyYoutube = '<p><a id="https://www.youtube.com/watch?v=5mpafLYHVd0" name="https://www.youtube.com/watch?v=5mpafLYHVd0">https://www.youtube.com/watch?v=5mpafLYHVd0</a></p>'
+  const dummyYoutubeAlternative = '<p><a id="https://youtu.be/3vYeQLJ2as4" name="https://youtu.be/3vYeQLJ2as4">https://youtu.be/3vYeQLJ2as4</a></p>'
+
+  const textBodyFakeContent = `
+    ${dummyFacebook}
+    ${dummyInstagram}
+    ${dummyTweet}
+    ${dummyYoutube}
+    ${dummyYoutubeAlternative}
+  `
+
+  const fakeContent = `
+    ${textbody}
+    ${textBodyFakeContent}
+  `
+
   return (
     <S.Page>
       <S.Container>
@@ -98,7 +117,7 @@ const Article = (props) => {
           amp={amp}
           bodyWidth={bodyWidth}
           citation={citation}
-          content={textbody}
+          content={fakeContent}
           fbappid={fbappid}
           gallery={gallery}
           heading2={heading2}
