@@ -1,3 +1,13 @@
+# v1.6.74
+- Adiciona novas props nos embeds do Article (ampElementProps e elementProps)
+- Adiciona width com cálculo de paddings no corpo do texto em Article (mobile)
+- Permite fallbackimage e ajusta o background-position do fallback image
+- Permite novo formato de URL no embed do YouTube (youtu.be)
+- Cria novos embeds híbridos AMP/WEB para o Article (Facebook, Instagram, Twitter e YouTube)
+- Corrige inconsistência na largura do corpo do texto em breakpoint md
+- Corrige Pageblock para passar o slotColor no renderSpace
+- Adiciona margin bottom no Author do byline
+- Corrige altura dos ícones no SocialShare
 # v1.6.73
 - Corrige breakpoint do layout responsivo em SocialShare
 # v1.6.72
