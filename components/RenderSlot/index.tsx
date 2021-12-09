@@ -5,10 +5,14 @@ import { withTheme } from 'styled-components'
 
 import Block from '../Block'
 import Carousel from '../Carousel'
+import Pagination from '../Pagination'
 import { PreviewProvider } from '../PreviewProvider'
 import Teaser from '../Teaser'
 import { RenderSlotProps } from './types'
-import { parseTeaserProps, renderSpaceSlot } from './utils'
+import {
+  parseTeaserProps,
+  renderSpaceSlot
+} from './utils'
 
 /**
  * Render Slot component
@@ -23,7 +27,9 @@ const RenderSlot = ({
   fallback_image_url,
   layout,
   layouts,
+  pagination,
   preview,
+  search_len,
   site_data,
   slot,
   slot_parser,
@@ -36,6 +42,15 @@ const RenderSlot = ({
   const carousel_enabled = get(carousel, 'enabled', false)
   const space_bottom_mobile = get(space_bottom, '[0]', 2)
   const space_bottom_desktop = get(space_bottom, '[1]', 3)
+
+  const RenderPagination = () => {
+    if (!pagination) {
+      return null
+    }
+    return (
+      <Pagination {...search_len} />
+    )
+  }
 
   const RenderSpace = ({ item }) => {
     if (item && item['input-template']) {
@@ -89,6 +104,7 @@ const RenderSlot = ({
           </Block>
         )
       })}
+      <RenderPagination />
     </React.Fragment>
   )
 

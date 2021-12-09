@@ -198,6 +198,17 @@
       }
     ],
     "list2": [],
+    "pagination": true,
+    "search_len": {
+      "numFound": 343,
+      "rows": 10,
+      "start": 10,
+      "path": "/editais",
+      "query": {
+        "page": 2,
+        "term": 2020
+      }
+    },
     "title": "Últimas Notícias",
     "type": "latest_news"
   },
