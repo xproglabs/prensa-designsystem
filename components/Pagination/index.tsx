@@ -86,7 +86,7 @@ const Pagination = ({ numFound, rows, start, path, query }) => {
     )
   }
   return (
-    <Block align='row' custom='flex-wrap: wrap;' width='100%'>
+    <Block align='row' custom='flex-wrap: wrap;' mb={2} width='100%'>
       <RenderStart />
       {data.last > data.start + 1 && <RenderSpace />}
       <RenderLast />

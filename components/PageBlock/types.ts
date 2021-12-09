@@ -20,6 +20,9 @@ export type SlotBlockProps = {
   list?: [TeaserProps];
   list1: [TeaserProps];
   list2: [TeaserProps];
+  more?: boolean;
+  more_title?: string;
+  more_link?: string;
   pagination?: boolean;
   search_len?: any;
   title: string;

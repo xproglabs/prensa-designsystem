@@ -15,6 +15,9 @@ export type RenderSlotProps = {
   fallback_image_url?: string;
   layout?: LayoutProps;
   layouts: Array<string>;
+  more?: boolean;
+  more_link?: string;
+  more_title?: string;
   min_height?: [string, string];
   preview: PageBlockPreview;
   pagination?: boolean;

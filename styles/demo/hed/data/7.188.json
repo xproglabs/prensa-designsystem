@@ -408,7 +408,10 @@
       }
     ],
     "list2": [],
-    "title": "Mais Lidas",
+    "title": "Mais Lidassss",
+    "more": true,
+    "more_title": "VER MAIS EDITAIS",
+    "more_link": "/editais?page=2",
     "type": "most_read"
   },
   "slot3": {
