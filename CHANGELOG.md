@@ -1,3 +1,5 @@
+# v1.6.75
+- Ajusta tamanhos no Embed YouTube
 # v1.6.74
 - Adiciona novas props nos embeds do Article (ampElementProps e elementProps)
 - Adiciona width com cálculo de paddings no corpo do texto em Article (mobile)
