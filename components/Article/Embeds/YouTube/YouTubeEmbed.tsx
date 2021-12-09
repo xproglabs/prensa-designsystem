@@ -58,9 +58,9 @@ const YouTubeEmbed = ({
 }
 
 YouTubeEmbed.defaultProps = {
-  height: ['360px', '360px'],
+  height: ['384px', '384px'],
   mb: 3,
-  width: ['100%', '552px']
+  width: ['100%', '768px']
 }
 
 export { YouTubeEmbed }

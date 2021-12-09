@@ -175,8 +175,8 @@ const TextBody = (props) => {
         return (
           <YouTubeEmbed
             amp={amp}
-            ampProps={{ height: '360px', width: '552px' }}
-            height={amp ? ['max-content', '360px'] : ['360px', '360px']}
+            ampProps={{ height: '384px', width: '768px' }}
+            height={amp ? ['max-content', '384px'] : ['384px', '384px']}
             url={value}
           />
         )
