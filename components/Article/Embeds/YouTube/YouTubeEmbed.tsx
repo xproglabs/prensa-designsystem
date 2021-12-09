@@ -8,6 +8,8 @@ import { getYoutubeVideoId } from './utils'
 
 const YouTubeEmbed = ({
   amp,
+  ampElementProps,
+  elementProps,
   height,
   mt,
   mr,
@@ -24,19 +26,21 @@ const YouTubeEmbed = ({
 
   const videoId = getYoutubeVideoId(url)
 
+  const Amp = () => (
+    <amp-youtube
+      data-videoid={videoId}
+      layout='responsive'
+      height={height[1]}
+      width={width[1]}
+      {...ampElementProps}
+    />
+  )
+
   const Web = () => (
     <WebYouTube
       className='Prensa-YouTubeEmbed-web'
       videoId={videoId}
-    />
-  )
-
-  const Amp = () => (
-    <amp-youtube
-      data-videoid={videoId}
-      height={height[1]}
-      layout='responsive'
-      width={width[1]}
+      {...elementProps}
     />
   )
 
@@ -55,7 +59,7 @@ const YouTubeEmbed = ({
 }
 
 YouTubeEmbed.defaultProps = {
-  height: ['max-content', '360px'],
+  height: ['360px', '472px'],
   mb: 3,
   width: ['100%', '720px']
 }

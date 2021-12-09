@@ -1,5 +1,7 @@
 export type FacebookEmbedProps = {
   amp: boolean;
+  ampElementProps?: Object;
+  elementProps?: Object;
   fbappid: string;
   height?: Array<string>;
   url: string;

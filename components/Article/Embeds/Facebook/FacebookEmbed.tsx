@@ -6,6 +6,8 @@ import { FacebookEmbedProps } from './types'
 
 const FacebookEmbed = ({
   amp,
+  ampElementProps,
+  elementProps,
   fbappid,
   height,
   mb,
@@ -25,14 +27,19 @@ const FacebookEmbed = ({
     <amp-facebook
       data-tweetid={url}
       layout='responsive'
-      height='472'
-      width='552'
+      height='472px'
+      width={width[1]}
+      {...ampElementProps}
     />
   )
 
   const Web = () => (
     <FacebookProvider appId={fbappid}>
-      <EmbeddedPost href={url} width='500' />
+      <EmbeddedPost
+        href={url}
+        width={width[1]}
+        {...elementProps}
+      />
     </FacebookProvider>
   )
 
@@ -53,7 +60,7 @@ const FacebookEmbed = ({
 FacebookEmbed.defaultProps = {
   height: ['max-content', 'max-content'],
   mb: 3,
-  width: ['100%', '720px']
+  width: ['100%', '552px']
 }
 
 export { FacebookEmbed }
