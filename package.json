@@ -1,6 +1,6 @@
 {
   "name": "prensa",
-  "version": "1.6.73",
+  "version": "1.6.73-qa", 
   "description": "Prensa Design System",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
