@@ -37,6 +37,7 @@ const YouTubeEmbed = ({
 
   const Web = () => (
     <WebYouTube
+      className='Prensa-YouTubeEmbed-web'
       videoId={videoId}
       {...elementProps}
     />
@@ -57,9 +58,9 @@ const YouTubeEmbed = ({
 }
 
 YouTubeEmbed.defaultProps = {
-  height: ['max-content', '472px'],
+  height: ['384px', '384px'],
   mb: 3,
-  width: ['100%', '720px']
+  width: ['100%', '768px']
 }
 
 export { YouTubeEmbed }
