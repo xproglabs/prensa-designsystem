@@ -6,6 +6,8 @@ import { FacebookEmbedProps } from './types'
 
 const FacebookEmbed = ({
   amp,
+  ampElementProps,
+  elementProps,
   fbappid,
   height,
   mb,
@@ -23,10 +25,11 @@ const FacebookEmbed = ({
 
   const Amp = () => (
     <amp-facebook
-      data-tweetid={url}
+      data-href={url}
       layout='responsive'
       height='472px'
       width={width[1]}
+      {...ampElementProps}
     />
   )
 
@@ -35,6 +38,7 @@ const FacebookEmbed = ({
       <EmbeddedPost
         href={url}
         width={width[1]}
+        {...elementProps}
       />
     </FacebookProvider>
   )

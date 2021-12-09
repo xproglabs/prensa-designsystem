@@ -1,5 +1,7 @@
 export interface InstagramEmbedProps {
   amp: boolean;
+  ampElementProps?: Object;
+  elementProps?: Object;
   fbappid: string;
   /**
    * Required value for building instagram access_token access_token={app-id}|{client-token}. NOT required when using AMP version.

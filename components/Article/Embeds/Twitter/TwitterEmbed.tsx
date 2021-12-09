@@ -7,6 +7,8 @@ import { getTweetId } from './utils'
 
 const TwitterEmbed = ({
   amp,
+  ampElementProps,
+  elementProps,
   height,
   mb,
   ml,
@@ -29,6 +31,7 @@ const TwitterEmbed = ({
       layout='responsive'
       height='472px'
       width={width[1]}
+      {...ampElementProps}
     />
   )
 
@@ -36,6 +39,7 @@ const TwitterEmbed = ({
     <Tweet
       tweetId={tweetId}
       options={{ align: 'center' }}
+      {...elementProps}
     />
   )
 
