@@ -67,7 +67,7 @@ const RenderSlot = ({
         <Button
           color='neutral4'
           borderColor='neutral4'
-          fontSize='16px'
+          fontSize={16}
           size={6}
           path={more_link}
           variant='outlined'
