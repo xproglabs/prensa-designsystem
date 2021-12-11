@@ -5,7 +5,6 @@ import { Container } from '../styled'
 import { YouTubeEmbedProps } from './types'
 import { getYoutubeVideoId } from './utils'
 
-
 const YouTubeEmbed = ({
   amp,
   ampElementProps,
@@ -59,9 +58,9 @@ const YouTubeEmbed = ({
 }
 
 YouTubeEmbed.defaultProps = {
-  height: ['360px', '472px'],
+  height: ['384px', '384px'],
   mb: 3,
-  width: ['100%', '720px']
+  width: ['100%', '768px']
 }
 
 export { YouTubeEmbed }
