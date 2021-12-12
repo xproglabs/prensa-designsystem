@@ -2,8 +2,9 @@ type AlignxProps = 'left' | 'center' | 'right'
 export interface ErrorPageProps {
   alignx: AlignxProps;
   buttonAction?: string;
-  buttonText?: string;
   buttonColor?: string;
+  buttonPath?: string;
+  buttonText?: string;
   message?: string;
   title?: string;
   titleColor?: string;
@@ -13,6 +14,7 @@ export interface ButtonProps {
   buttonAction: string;
   children: string;
   color: string;
+  path?: string;
 }
 
 export interface MessageProps {
@@ -23,4 +25,3 @@ export interface PageTitleProps {
   color: string;
   children: string;
 }
-
