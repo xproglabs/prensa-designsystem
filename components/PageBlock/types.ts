@@ -4,11 +4,11 @@ import { PageBlockPreview } from '../PreviewProvider/types'
 import { SectionTitleLayout } from '../SectionTitle/types'
 import { TeaserProps } from '../Teaser/types'
 
-export type TemplateType = 
-  'template100' | 
-  'template7030' | 
-  'template50' | 
-  'template30' 
+export type TemplateType =
+  'template100' |
+  'template7030' |
+  'template50' |
+  'template30'
 
 export type SlotBlockProps = {
   bgcolor?: ColorTokens;
@@ -20,6 +20,7 @@ export type SlotBlockProps = {
   list?: [TeaserProps];
   list1: [TeaserProps];
   list2: [TeaserProps];
+  order?: string;
   title: string;
   spaces?: [number, number, number, number];
   type: TemplateType;
