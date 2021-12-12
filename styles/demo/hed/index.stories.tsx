@@ -17,6 +17,7 @@ import DataHomeTimes from './data/7.181.json'
 import Data7188_33 from './data/7.188_33.json'
 import Data7188 from './data/7.188.json'
 import DATA_HOME_30 from './data/7.204.json'
+import DATA_OPINIAO from './data/opiniao.json'
 import DataTemplateColumnist_Slot100 from './data/7.223_slot100.json'
 import DataTemplateColumnist_Slot30 from './data/7.223_slot30.json'
 import DataTemplateColumnist_Slot7030 from './data/7.223_slot7030.json'
@@ -40,9 +41,9 @@ export default {
     )
   ]
 }
-const loadContentFromPagedata = () => {
-  const pagedata = get(DataHomeFull, 'props.content.pagedata', [])
-  const pagelist = get(DataHomeFull, 'props.content.pageblocks.list1', [])
+const loadContentFromPagedata = (data=DataHomeFull) => {
+  const pagedata = get(data, 'props.content.pagedata', [])
+  const pagelist = get(data, 'props.content.pageblocks.list1', [])
   const pageblocks = []
   map(pagelist, (item) => {
     const blockdata = find(pagedata, { cid: item.cid })
@@ -363,6 +364,23 @@ export const HomeFull = () => {
           />
         )
       })}
+    </TemplateContainer>
+  )
+}
+export const EditoriaOpiniao = () => {
+  return (
+    <TemplateContainer
+      background='neutral10'
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...DATA_OPINIAO}
+        amp={false}
+        domain={domain}
+        fallback_image_url={fallback_image_url}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
     </TemplateContainer>
   )
 }

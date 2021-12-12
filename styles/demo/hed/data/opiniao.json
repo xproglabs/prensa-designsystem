@@ -1,0 +1,536 @@
+{
+  "cid": "7.357",
+  "name": "Colunistas",
+  "type": "template7030",
+  "slot1": {
+    "bgcolor": "",
+    "color": "primary1",
+    "icon": "IconOpiniao",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "1.197",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.358.1635434155",
+          "sub": "",
+          "height": "491",
+          "width": "780"
+        },
+        "name": "Testando edição da matéria pelo .content e via ContentId",
+        "path": "/politica/testando-edic-o-da-materia-pelo-content-e-via-contentid-1.197",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "2021-10-15 20:01:09",
+        "updated": "2021-10-28 12:16:02"
+      },
+      {
+        "cid": "1.182",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.183.1629048514",
+          "sub": "",
+          "height": "750",
+          "width": "1828"
+        },
+        "name": "Vans intermunicipal fica mais caro em Minas; tarifas têm alta média de 5,82% e 3,55%",
+        "path": "http://localhost:8080/onorte/cultura/vans-intermunicipal-fica-mais-caro-em-minas-tarifas-tem-alta-media-de-5-82-e-3-55-1.182",
+        "subject": "AGORA",
+        "subtitle": "",
+        "pubdate": "2021-08-15 14:28:30",
+        "updated": "2021-08-30 2:14:50"
+      },
+      {
+        "cid": "1.381",
+        "img": {},
+        "name": "Editais - 07/12/2021",
+        "path": "/editais/editais-07-12-2021-1.381",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "2020-12-31 0:00:00",
+        "updated": "2021-12-07 19:08:01"
+      },
+      {
+        "cid": "1.392",
+        "img": {},
+        "name": "Editais - 06/12/2021",
+        "path": "/editais/editais-06-12-2021-1.392",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "2020-12-30 0:00:00",
+        "updated": "2021-12-07 19:08:01"
+      },
+      {
+        "cid": "1.394",
+        "img": {},
+        "name": "Editais - 04 e 05/12/2021",
+        "path": "/editais/editais-04-e-05-12-2021-1.394",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "2020-12-29 0:00:00",
+        "updated": "2021-12-07 19:08:01"
+      },
+      {
+        "cid": "1.395",
+        "img": {},
+        "name": "Editais - 03/12/2021",
+        "path": "/editais/editais-03-12-2021-1.395",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "2020-12-28 0:00:00",
+        "updated": "2021-12-07 19:08:01"
+      },
+      {
+        "cid": "1.396",
+        "img": {},
+        "name": "Editais - 02/12/2021",
+        "path": "/editais/editais-02-12-2021-1.396",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "2020-12-27 0:00:00",
+        "updated": "2021-12-07 19:08:01"
+      },
+      {
+        "cid": "1.397",
+        "img": {},
+        "name": "Editais - 01/12/2021",
+        "path": "/editais/editais-01-12-2021-1.397",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "2020-12-26 0:00:00",
+        "updated": "2021-12-07 19:08:01"
+      },
+      {
+        "cid": "1.398",
+        "img": {},
+        "name": "Editais - 30/11/2021",
+        "path": "/editais/editais-30-11-2021-1.398",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "2020-12-25 0:00:00",
+        "updated": "2021-12-07 19:08:01"
+      },
+      {
+        "cid": "1.399",
+        "img": {},
+        "name": "Editais - 29/11/2021",
+        "path": "/editais/editais-29-11-2021-1.399",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "2020-12-24 0:00:00",
+        "updated": "2021-12-07 19:08:01"
+      }
+    ],
+    "list2": [],
+    "more": true,
+    "more_title": "Ver mais postagens",
+    "more_link": "/?page=2",
+    "order": false,
+    "pagination": false,
+    "title": "Últimas Postagens",
+    "type": "latest_news"
+  },
+  "slot2": {
+    "bgcolor": "",
+    "color": "primary1",
+    "icon": "IconMaisLidas",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "2.644",
+        "img": {},
+        "name": "Blog do Lute",
+        "path": "/opiniao/2.644",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.645",
+        "img": {},
+        "name": "Blogs e Colunas",
+        "path": "/opiniao/2.645",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.873",
+        "img": {},
+        "name": "Bombou mas não mudou sua vida",
+        "path": "/opiniao/bombou-mas-n%C3%A3o-mudou-sua-vida",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.874",
+        "img": {},
+        "name": "Economia Criativa",
+        "path": "/opiniao/economia-criativa",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.875",
+        "img": {},
+        "name": "Economia & Negócios",
+        "path": "/opiniao/economia-neg%C3%B3cios",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.876",
+        "img": {},
+        "name": "#ENEMNASALINHA",
+        "path": "/opiniao/enemnasalinha",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.877",
+        "img": {},
+        "name": "Fábio Caldeira",
+        "path": "/opiniao/f%C3%A1bio-caldeira",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.878",
+        "img": {},
+        "name": "Guilherme da Cunha",
+        "path": "/opiniao/guilherme-da-cunha",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.879",
+        "img": {},
+        "name": "Irlan Melo",
+        "path": "/opiniao/irlan-melo",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.880",
+        "img": {},
+        "name": "José Roberto Lima",
+        "path": "/opiniao/jos%C3%A9-roberto-lima",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.881",
+        "img": {},
+        "name": "Mateus Simões",
+        "path": "/opiniao/mateus-sim%C3%B5es",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.882",
+        "img": {},
+        "name": "Momento Meet",
+        "path": "/opiniao/momento-meet",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.883",
+        "img": {},
+        "name": "Professor Wendel",
+        "path": "/opiniao/professor-wendel",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.884",
+        "img": {},
+        "name": "Raquel Muniz",
+        "path": "/opiniao/raquel-muniz",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.885",
+        "img": {},
+        "name": "Tempo de Inovação",
+        "path": "/opiniao/tempo-de-inova%C3%A7%C3%A3o",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.886",
+        "img": {},
+        "name": "Tiago Mitraud",
+        "path": "/opiniao/tiago-mitraud",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.887",
+        "img": {},
+        "name": "Tiago Reis",
+        "path": "/opiniao/tiago-reis",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.888",
+        "img": {},
+        "name": "Wadson Ribeiro",
+        "path": "/opiniao/wadson-ribeiro",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.889",
+        "img": {},
+        "name": "Opinião",
+        "path": "/opiniao/opini%C3%A3o",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.890",
+        "img": {},
+        "name": "Aqui é Galo!",
+        "path": "/opiniao/aqui-%C3%A9-galo",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.891",
+        "img": {},
+        "name": "Direito Hoje",
+        "path": "/opiniao/direito-hoje",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.892",
+        "img": {},
+        "name": "Rádio Patrulha",
+        "path": "/opiniao/r%C3%A1dio-patrulha",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.893",
+        "img": {},
+        "name": "Blog do Lute",
+        "path": "/opiniao/blog-do-lute",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.894",
+        "img": {},
+        "name": "Arte HD",
+        "path": "/opiniao/arte-hd",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.895",
+        "img": {},
+        "name": "Kênio Pereira",
+        "path": "/opiniao/k%C3%AAnio-pereira",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.896",
+        "img": {},
+        "name": "Educação",
+        "path": "/opiniao/educa%C3%A7%C3%A3o",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.897",
+        "img": {},
+        "name": "Editorial",
+        "path": "/opiniao/editorial",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.898",
+        "img": {},
+        "name": "Simone Demolinari",
+        "path": "/opiniao/simone-demolinari",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.899",
+        "img": {},
+        "name": "Perspectiva Racial",
+        "path": "/opiniao/perspectiva-racial",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.900",
+        "img": {},
+        "name": "Causa Animal",
+        "path": "/opiniao/causa-animal",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.901",
+        "img": {},
+        "name": "Tio Flávio",
+        "path": "/opiniao/tio-fl%C3%A1vio",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.902",
+        "img": {},
+        "name": "Cristiano Lopes",
+        "path": "/opiniao/cristiano-lopes",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.903",
+        "img": {},
+        "name": "Ricardo Rodrigues",
+        "path": "/opiniao/ricardo-rodrigues",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.904",
+        "img": {},
+        "name": "Coluna Esplanada",
+        "path": "/opiniao/coluna-esplanada",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.905",
+        "img": {},
+        "name": "Manoel Hygino",
+        "path": "/opiniao/manoel-hygino",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      },
+      {
+        "cid": "2.627",
+        "img": {},
+        "name": "Opinião",
+        "path": "/opiniao",
+        "subject": "",
+        "subtitle": "",
+        "pubdate": "",
+        "updated": ""
+      }
+    ],
+    "list2": [],
+    "more": false,
+    "more_title": "",
+    "more_link": "",
+    "order": ["name", "asc"],
+    "pagination": false,
+    "title": "Colunistas",
+    "type": "columnist"
+  },
+  "slot3": {
+    "bgcolor": "",
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 0,
+    "len2": 0,
+    "list1": [],
+    "list2": [],
+    "more": false,
+    "more_title": "",
+    "more_link": "",
+    "order": false,
+    "pagination": false,
+    "title": "",
+    "type": ""
+  },
+  "slot4": {
+    "len": 0,
+    "list": []
+  }
+}
