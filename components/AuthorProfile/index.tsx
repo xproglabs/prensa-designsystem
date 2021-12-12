@@ -1,10 +1,15 @@
 import { get } from 'lodash'
 import { Image } from 'prensa'
 import React from 'react'
+import styled from 'styled-components'
 
-import { Link } from '../Button/styled'
 import * as S from './styled'
 import { AuthorProfileProps } from './types'
+
+const Link = styled.a`
+  cursor: pointer;
+  text-transform: uppercase;
+`
 
 const AuthorProfile = ({
   amp = false,
@@ -51,7 +56,7 @@ const AuthorProfile = ({
         </AreaLink>
       }
       <S.Content>
-        <AreaLink path={href}>
+        <AreaLink path={href} >
           <S.ImageWrap {...imageWrapProps}>
             <Image
               amp={amp}

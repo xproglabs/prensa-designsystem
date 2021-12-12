@@ -28,7 +28,7 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
     px={2}
     py={2}
     radius='alternative'
-    width='calc(100% - 32px)'
+    width='calc(100% - 32px - 2px)'
     {...otherProps}
   >
     {children}
@@ -115,7 +115,7 @@ export const Title = ({ children, ...otherProps }: TitleProps) => (
 export const TitleWrapper = ({ children, ...otherProps }) => (
   <Block
     align='column'
-    width='100%'
+    width='calc(100% - 48px - 16px)'
     {...otherProps}
   >
     {children}
