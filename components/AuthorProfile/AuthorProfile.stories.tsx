@@ -15,6 +15,8 @@ export default {
   ]
 }
 
+const domain = 'http://177.107.132.35:3000'
+
 export const Default = () => {
   return (
     <React.Fragment>
@@ -23,8 +25,8 @@ export const Default = () => {
         name='Aldecir Xavier'
         title='Preto no Branco'
         image={{
-          desktop_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
-          mobile_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+          desktop_path: `${domain}/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600`,
+          mobile_path: `${domain}/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600`,
           title: 'Imagem de perfil do colunista'
         }}
       />
@@ -32,8 +34,8 @@ export const Default = () => {
         date='18/02/2021 - 00h46 - Atualizado 10h06'
         title='Preto no Branco'
         image={{
-          desktop_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
-          mobile_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+          desktop_path: `${domain}/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600`,
+          mobile_path: `${domain}/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600`,
           title: 'Imagem de perfil do colunista'
         }}
         imageWrapProps={{
@@ -61,8 +63,8 @@ export const NoData = () => {
       date={undefined}
       title={undefined}
       image={{
-        desktop_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
-        mobile_path: 'https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600',
+        desktop_path: `${domain}/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600`,
+        mobile_path: `${domain}/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600`,
         title: 'Imagem de perfil do colunista'
       }}
       imageWrapProps={{
