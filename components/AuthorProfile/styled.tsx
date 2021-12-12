@@ -100,6 +100,7 @@ export const NewsTitle = ({ children, ...otherProps }: NewsTitleProps) => (
 export const Title = ({ children, ...otherProps }: TitleProps) => (
   <Typography
     color='neutral2'
+    custom='cursor: pointer;'
     element='label'
     fontSize='16px'
     fontWeight={700}
