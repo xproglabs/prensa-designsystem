@@ -20,7 +20,7 @@ export type SlotBlockProps = {
   list?: [TeaserProps];
   list1: [TeaserProps];
   list2: [TeaserProps];
-  order?: string;
+  order?: boolean | [string, 'asc' | 'desc'];
   title: string;
   spaces?: [number, number, number, number];
   type: TemplateType;

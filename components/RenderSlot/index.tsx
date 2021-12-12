@@ -38,7 +38,7 @@ const RenderSlot = ({
   const space_bottom_mobile = get(space_bottom, '[0]', 2)
   const space_bottom_desktop = get(space_bottom, '[1]', 3)
 
-  let slot_sorted = []
+  let slot_sorted = slot
   if (order) {
     try {
       slot_sorted = orderBy(slot, [get(order, [0])], [get(order, [1])])

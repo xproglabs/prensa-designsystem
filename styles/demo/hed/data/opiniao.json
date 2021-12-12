@@ -129,7 +129,7 @@
     "more": true,
     "more_title": "Ver mais postagens",
     "more_link": "/?page=2",
-    "order": "false",
+    "order": false,
     "pagination": false,
     "title": "Últimas Postagens",
     "type": "latest_news"
@@ -524,7 +524,7 @@
     "more": false,
     "more_title": "",
     "more_link": "",
-    "order": "false",
+    "order": false,
     "pagination": false,
     "title": "",
     "type": ""

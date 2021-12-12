@@ -19,7 +19,7 @@ export type RenderSlotProps = {
   /**
    * @description order prop expects an array of two strings, prop name and order asc | desc
    */
-  order?: [string, "asc" | "desc"];
+  order?: boolean | [string, 'asc' | 'desc'];
   preview: PageBlockPreview;
   site_data: any;
   slot: Array<any>;
