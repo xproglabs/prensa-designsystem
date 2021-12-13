@@ -33,11 +33,11 @@ export const NEWS_TITLE_6: TokenProps = {
 }
 export const NEWS_TITLE_7: TokenProps = {
   font_size: '18px',
-  line_height: '100%'
+  line_height: '115%'
 }
 export const NEWS_TITLE_8: TokenProps = {
   font_size: '16px',
-  line_height: '110%'
+  line_height: '115%'
 }
 
 export const tokensFonts = { NEWS_TITLE_1, NEWS_TITLE_2, NEWS_TITLE_3, NEWS_TITLE_4, NEWS_TITLE_5, NEWS_TITLE_6, NEWS_TITLE_7, NEWS_TITLE_8 }

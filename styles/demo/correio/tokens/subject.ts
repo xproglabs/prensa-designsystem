@@ -11,6 +11,15 @@ export const SUBJECT_DEFAULT: SubjectProps = {
   mb: ['4px', '4px'],
   variant: 'default'
 }
+export const SUBJECT_DEFAULT_SMALL: SubjectProps = {
+  bg_color: 'white',
+  color: 'primary1',
+  enabled: true,
+  font_size: ['10px', '12px'],
+  line_height: ['16px', '16px'],
+  mb: ['4px', '4px'],
+  variant: 'default'
+}
 export const SUBJECT_DEFAULT_FEATURED: SubjectProps = {
   bg_color: 'white',
   color: 'primary1',
