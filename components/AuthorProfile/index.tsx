@@ -1,15 +1,10 @@
 import { get } from 'lodash'
-import { Image } from 'prensa'
+import { Block, Image } from 'prensa'
 import React from 'react'
-import styled from 'styled-components'
 
+import Link from '../Link'
 import * as S from './styled'
 import { AuthorProfileProps } from './types'
-
-const Link = styled.a`
-  cursor: pointer;
-  text-transform: uppercase;
-`
 
 const AuthorProfile = ({
   amp = false,
@@ -36,27 +31,19 @@ const AuthorProfile = ({
   const image_height_mobile = get(image, 'height[1]', '40px')
   const image_title = get(image, 'title', '')
 
-  const AreaLink = ({ children, path }) => {
-    if (path && path !== '') {
-      return (
-        <Link href={path}>
-          {children}
-        </Link>
-      )
-    }
-    return children
-  }
   return (
     <S.Container {...containerProps}>
       {newsTitle &&
-        <AreaLink path={newsTitleHref}>
-          <S.NewsTitle {...newsTitleProps}>
-            {newsTitle}
-          </S.NewsTitle>
-        </AreaLink>
+        <Block alignx='center' width='100%'>
+          <Link path={newsTitleHref}>
+            <S.NewsTitle {...newsTitleProps}>
+              {newsTitle}
+            </S.NewsTitle>
+          </Link>
+        </Block>
       }
       <S.Content>
-        <AreaLink path={href} >
+        <Link path={href} >
           <S.ImageWrap {...imageWrapProps}>
             <Image
               amp={amp}
@@ -78,14 +65,16 @@ const AuthorProfile = ({
               }}
             />
           </S.ImageWrap>
-        </AreaLink>
+        </Link>
         <S.TitleWrapper>
           {title &&
-            <AreaLink path={href}>
-              <S.Title {...titleProps}>
-                {title}
-              </S.Title>
-            </AreaLink>
+            <Block alignx='center' width='100%'>
+              <Link path={href}>
+                <S.Title {...titleProps}>
+                  {title}
+                </S.Title>
+              </Link>
+            </Block>
           }
           {name &&
             <S.AuthorName {...authorNameProps}>

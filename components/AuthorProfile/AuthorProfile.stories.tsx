@@ -27,6 +27,7 @@ export const Default = () => {
       <AuthorProfile
         containerProps={{ mb: 1 }}
         name='Aldecir Xavier'
+        href='/opiniao'
         title='Preto no Branco'
         image={{
           desktop_path: `${domain}/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600`,

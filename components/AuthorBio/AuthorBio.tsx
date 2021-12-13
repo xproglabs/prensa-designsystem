@@ -1,8 +1,8 @@
 import { get } from 'lodash'
-import { Image } from 'prensa'
+import { Block, Image } from 'prensa'
 import React from 'react'
-import styled from 'styled-components'
 
+import Link from '../Link'
 import { IcBioFacebook } from './IcBioFacebook'
 import { IcBioInstagram } from './IcBioInstagram'
 import { IcBioLinkedin } from './IcBioLinkedin'
@@ -19,11 +19,6 @@ import {
   Name
 } from './styled'
 import { AuthorBioProps } from './types'
-
-const Link = styled.a`
-  cursor: pointer;
-  text-transform: uppercase;
-`
 
 const AuthorBio = ({
   amp,
@@ -45,51 +40,52 @@ const AuthorBio = ({
 
   const imageSize = get(imageProps, 'size', ['80px', '104px'])
 
-  const AreaLink = ({ children, path }) => {
-    if (path && path !== '') {
-      return (
-        <Link href={path}>
-          {children}
-        </Link>
-      )
-    }
-    return children
-  }
   return (
     <Container {...containerProps}>
       <ContentWrap>
         <ImageContainer>
-          <AreaLink path={href} >
-            <ImageWrap {...imageProps}>
-              <Image
-                amp={amp}
-                custom_class='image-with-radius'
-                title={name}
-                layout_desktop={{
-                  enabled: true,
-                  height: imageSize[1],
-                  width: imageSize[1],
-                  path: imagePath,
-                  type: 'responsive'
-                }}
-                layout_mobile={{
-                  enabled: true,
-                  height: imageSize[0],
-                  width: imageSize[0],
-                  path: imagePath,
-                  type: 'responsive'
-                }}
-              />
-            </ImageWrap>
-          </AreaLink>
+          <Block alignx='center' width='100%'>
+            <Link path={href} >
+              <ImageWrap {...imageProps}>
+                <Image
+                  amp={amp}
+                  custom_class='image-with-radius'
+                  title={name}
+                  layout_desktop={{
+                    enabled: true,
+                    height: imageSize[1],
+                    width: imageSize[1],
+                    path: imagePath,
+                    type: 'responsive'
+                  }}
+                  layout_mobile={{
+                    enabled: true,
+                    height: imageSize[0],
+                    width: imageSize[0],
+                    path: imagePath,
+                    type: 'responsive'
+                  }}
+                />
+              </ImageWrap>
+            </Link>
+          </Block>
         </ImageContainer>
         <TextWrap>
           {title &&
-            <AreaLink path={href}>
-              <Title {...titleProps}>
-                {title}
-              </Title>
-            </AreaLink>
+            <Block
+              alignx='center'
+              lg={{
+                align: 'row',
+                alignx: 'left'
+              }}
+              mb={1}
+              width='100%'>
+              <Link path={href}>
+                <Title {...titleProps}>
+                  {title}
+                </Title>
+              </Link>
+            </Block>
           }
           {name &&
             <Name {...nameProps}>
