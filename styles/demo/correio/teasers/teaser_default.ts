@@ -10,15 +10,14 @@ export const TEASER_DEFAULT = CreateTeaser({
     mb: [0, 0],
     pb: [5, 5],
     pt: [5, 5],
-    pl: [3, 3],
-    pr: [3, 3]
   },
   box_wrap: {
     align: ['column', 'column'],
     alignx: ['left', 'left'],
     mt: ['0px', '0px'],
-    ml: ['0px', '0px'],
-    width: ['calc(100% - 32px)', 'calc(100% - 32px - 16px - 80px)']
+    ml: [3, 3],
+    mr: [3, 3],
+    width: ['calc(100% - 48px)', 'calc(100% - 48px)']
   },
   date_time: {
     enabled: false
