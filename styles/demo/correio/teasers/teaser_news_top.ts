@@ -11,7 +11,6 @@ export const TEASER_NEWS_TOP = CreateTeaser({
     mb: [0, 0],
     pt: [2, 2],
     pb: [2, 2],
-    width: ['calc(100%)', 'calc(100%)']
   },
   box_wrap: {
     align: ['column', 'column'],
