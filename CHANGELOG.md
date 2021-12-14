@@ -1,3 +1,7 @@
+# v1.6.77
+- Correções no layout dos componentes de colunistas
+- Adiciona método para ordenação de lista do slot
+- Adiciona link híbrido no botão de voltar da página de erro
 # v1.6.76
 - Adiciona método para ordenação de lista do slot
 - Adiciona link híbrido no botão de voltar da página de erro
