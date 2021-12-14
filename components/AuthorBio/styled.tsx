@@ -1,4 +1,4 @@
-import { Block, Link, Typography } from 'prensa'
+import { Block, Typography } from 'prensa'
 import React from 'react'
 
 import {
