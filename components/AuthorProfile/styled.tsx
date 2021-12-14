@@ -1,8 +1,15 @@
+import { Block, Link, Typography } from 'prensa'
 import React from 'react'
 
-import Block from '../Block'
-import Typography from '../Typography'
-import { AuthorNameProps, ContainerProps, ContentProps, DateTimeProps, ImageWrapProps, TitleProps, NewsTitleProps } from './types'
+import {
+  AuthorNameProps,
+  ContainerProps,
+  ContentProps,
+  DateTimeProps,
+  ImageWrapProps,
+  TitleProps,
+  NewsTitleProps
+} from './types'
 
 export const AuthorName = ({ children, ...otherProps }: AuthorNameProps) => (
   <Typography
@@ -75,7 +82,6 @@ export const ImageWrap = ({ children, ...otherProps }: ImageWrapProps) => (
     height='48px'
     width='48px'
     minWidth='48px'
-    mr={2}
     {...otherProps}
   >
     {children}

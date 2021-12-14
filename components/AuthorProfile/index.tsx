@@ -43,7 +43,7 @@ const AuthorProfile = ({
         </Block>
       }
       <S.Content>
-        <Link path={href} >
+        <Link path={href} mr={2}>
           <S.ImageWrap {...imageWrapProps}>
             <Image
               amp={amp}
