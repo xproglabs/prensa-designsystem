@@ -1,4 +1,4 @@
-import { Block, Typography } from 'prensa'
+import { Block, Link, Typography } from 'prensa'
 import React from 'react'
 
 import {
@@ -81,6 +81,7 @@ export const ContentWrap = ({ children }: ContentWrapProps) => (
 )
 export const ImageWrap = ({ 
   children,
+  href,
   size = ['80px', '104px'],
   mb = [2, '0px'],
   mr = [undefined, 2],
@@ -101,7 +102,9 @@ export const ImageWrap = ({
     }}
     {...otherProps}
   >
-    {children}
+    <Link path={href}>
+      {children}
+    </Link>
   </Block>
 )
 export const SocialMediasWrap = ({ children }: SocialMediasWrapProps) => (

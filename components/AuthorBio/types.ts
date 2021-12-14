@@ -88,6 +88,7 @@ export type ContentWrapProps = {
 }
 export type ImageProps = {
   children?: ReactNode;
+  href?: string;
   size?: Array<string>;
   mb?: ResponsiveSpacingType;
   mr?: ResponsiveSpacingType;

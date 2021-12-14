@@ -45,29 +45,27 @@ const AuthorBio = ({
       <ContentWrap>
         <ImageContainer>
           <Block alignx='center' width='100%'>
-            <Link path={href} >
-              <ImageWrap {...imageProps}>
-                <Image
-                  amp={amp}
-                  custom_class='image-with-radius'
-                  title={name}
-                  layout_desktop={{
-                    enabled: true,
-                    height: imageSize[1],
-                    width: imageSize[1],
-                    path: imagePath,
-                    type: 'responsive'
-                  }}
-                  layout_mobile={{
-                    enabled: true,
-                    height: imageSize[0],
-                    width: imageSize[0],
-                    path: imagePath,
-                    type: 'responsive'
-                  }}
-                />
-              </ImageWrap>
-            </Link>
+            <ImageWrap href={href} {...imageProps}>
+              <Image
+                amp={amp}
+                custom_class='image-with-radius'
+                title={name}
+                layout_desktop={{
+                  enabled: true,
+                  height: imageSize[1],
+                  width: imageSize[1],
+                  path: imagePath,
+                  type: 'responsive'
+                }}
+                layout_mobile={{
+                  enabled: true,
+                  height: imageSize[0],
+                  width: imageSize[0],
+                  path: imagePath,
+                  type: 'responsive'
+                }}
+              />
+            </ImageWrap>
           </Block>
         </ImageContainer>
         <TextWrap>
