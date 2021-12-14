@@ -12,7 +12,7 @@ export default {
 export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
-      <ErrorPage />
+      <ErrorPage buttonPath="/" />
     </ThemeProvider>
   )
 }

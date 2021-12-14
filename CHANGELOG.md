@@ -1,3 +1,6 @@
+# v1.6.76
+- Adiciona método para ordenação de lista do slot
+- Adiciona link híbrido no botão de voltar da página de erro
 # v1.6.75
 - Ajusta tamanhos no Embed YouTube
 # v1.6.74
