@@ -44,8 +44,8 @@ const AuthorBio = ({
     <Container {...containerProps}>
       <ContentWrap>
         <ImageContainer>
-          <Block alignx='center' width='100%'>
-            <ImageWrap href={href} {...imageProps}>
+          <Link path={href}>
+            <ImageWrap {...imageProps}>
               <Image
                 amp={amp}
                 custom_class='image-with-radius'
@@ -66,7 +66,7 @@ const AuthorBio = ({
                 }}
               />
             </ImageWrap>
-          </Block>
+          </Link>
         </ImageContainer>
         <TextWrap>
           {title &&

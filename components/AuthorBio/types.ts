@@ -80,6 +80,8 @@ export type ContainerProps = {
 }
 export type ImageContainerProps = {
   children?: ReactNode;
+  mb?: ResponsiveSpacingType;
+  mr?: ResponsiveSpacingType;
 }
 
 // Wraps
@@ -87,11 +89,8 @@ export type ContentWrapProps = {
   children?: ReactNode;
 }
 export type ImageProps = {
-  children?: ReactNode;
-  href?: string;
+  children?: ReactNode;  
   size?: Array<string>;
-  mb?: ResponsiveSpacingType;
-  mr?: ResponsiveSpacingType;
 }
 export type SocialMediasWrapProps = {
   children?: ReactNode;
