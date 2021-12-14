@@ -5,6 +5,7 @@
   "slot1": {
     "bgcolor": "",
     "color": "primary1",
+    "component": "false",
     "icon": "IconOpiniao",
     "link": "",
     "len1": 1,
@@ -128,7 +129,7 @@
     "list2": [],
     "more": true,
     "more_title": "Ver mais postagens",
-    "more_link": "/?page=2",
+    "more_link": "/opiniao/?page=2",
     "order": false,
     "pagination": false,
     "title": "Últimas Postagens",
@@ -137,384 +138,353 @@
   "slot2": {
     "bgcolor": "",
     "color": "primary1",
+    "component": "columnist_index",
     "icon": "IconMaisLidas",
     "link": "",
     "len1": 1,
     "len2": 0,
     "list1": [
       {
+        "bio": false,
         "cid": "2.644",
-        "img": {},
+        "img": "",
         "name": "Blog do Lute",
         "path": "/opiniao/2.644",
         "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subtitle": ""
       },
       {
+        "bio": false,
         "cid": "2.645",
-        "img": {},
+        "img": "",
         "name": "Blogs e Colunas",
         "path": "/opiniao/2.645",
         "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subtitle": ""
       },
       {
+        "bio": false,
         "cid": "2.873",
-        "img": {},
+        "img": "",
         "name": "Bombou mas não mudou sua vida",
         "path": "/opiniao/bombou-mas-n%C3%A3o-mudou-sua-vida",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Bombou mas não mudou sua vida",
+        "subtitle": "Tudo o que você (não) precisa saber, mas quer saber, sobre a vida dos famosos"
       },
       {
+        "bio": false,
         "cid": "2.874",
-        "img": {},
+        "img": "",
         "name": "Economia Criativa",
         "path": "/opiniao/economia-criativa",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Economia Criativa",
+        "subtitle": "Lucas Gonzalez é Deputado Federal, Empresário, Palestrante e Diretor Institucional da Transpes SA."
       },
       {
+        "bio": false,
         "cid": "2.875",
-        "img": {},
+        "img": "",
         "name": "Economia & Negócios",
         "path": "/opiniao/economia-neg%C3%B3cios",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Economia & Negócios",
+        "subtitle": "Economista, pós-graduado em Consultoria Empresarial, Palestrante e Professor Universitário."
       },
       {
+        "bio": false,
         "cid": "2.876",
-        "img": {},
+        "img": "",
         "name": "#ENEMNASALINHA",
         "path": "/opiniao/enemnasalinha",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "#ENEMNASALINHA",
+        "subtitle": "Newton Luiz de Miranda é professor de História, Literatura Brasileira e Repertório Sociocultural para Redação do Enem"
       },
       {
+        "bio": false,
         "cid": "2.877",
-        "img": {},
+        "img": "",
         "name": "Fábio Caldeira",
         "path": "/opiniao/f%C3%A1bio-caldeira",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Fábio Caldeira",
+        "subtitle": "Doutor em Direito pela UFMG, professor da Academia da PMMG e diretor de Projetos e Parcerias da Empresa Mineira de Comunicação (EMC) do Estado."
       },
       {
+        "bio": false,
         "cid": "2.878",
-        "img": {},
+        "img": "",
         "name": "Guilherme da Cunha",
         "path": "/opiniao/guilherme-da-cunha",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Guilherme da Cunha",
+        "subtitle": "Advogado pós-graduado em Direito Tributário e deputado estadual, coordenador da Frente Parlamentar pela Desburocratização"
       },
       {
+        "bio": false,
         "cid": "2.879",
-        "img": {},
+        "img": "",
         "name": "Irlan Melo",
         "path": "/opiniao/irlan-melo",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Irlan Melo",
+        "subtitle": "Advogado, teólogo, professor universitário e vereador de BH eleito para seu segundo mandato como o 8° vereador mais votado de BH"
       },
       {
+        "bio": false,
         "cid": "2.880",
-        "img": {},
+        "img": "",
         "name": "José Roberto Lima",
         "path": "/opiniao/jos%C3%A9-roberto-lima",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "José Roberto Lima",
+        "subtitle": "Advogado, professor e palestrante, com a experiência de quem foi aprovado em 15 concursos públicos."
       },
       {
+        "bio": false,
         "cid": "2.881",
-        "img": {},
+        "img": "",
         "name": "Mateus Simões",
         "path": "/opiniao/mateus-sim%C3%B5es",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Mateus Simões",
+        "subtitle": "Secretário-geral do Governo de Minas Gerais, mestre em Direito Empresarial, procurador licenciado da ALMG, advogado e professor universitário."
       },
       {
+        "bio": false,
         "cid": "2.882",
-        "img": {},
+        "img": "",
         "name": "Momento Meet",
         "path": "/opiniao/momento-meet",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Momento Meet",
+        "subtitle": "Porque a vida é feita de momentos e encontros. Com Fernando Nando Junior"
       },
       {
+        "bio": false,
         "cid": "2.883",
-        "img": {},
+        "img": "",
         "name": "Professor Wendel",
         "path": "/opiniao/professor-wendel",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Professor Wendel",
+        "subtitle": "Formado em Comunicação Social e Artes Cênicas pela UFMG. Professor universitário e deputado estadual pelo Solidariedade"
       },
       {
+        "bio": false,
         "cid": "2.884",
-        "img": {},
+        "img": "",
         "name": "Raquel Muniz",
         "path": "/opiniao/raquel-muniz",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Raquel Muniz",
+        "subtitle": "Raquel Muniz é deputada federal pelo Partido Social Democrático, membro titular da Comissão de Educação e trabalha fortemente em prol de uma educação básica moderna, bem equipada e com professores bem remunerados."
       },
       {
+        "bio": false,
         "cid": "2.885",
-        "img": {},
+        "img": "",
         "name": "Tempo de Inovação",
         "path": "/opiniao/tempo-de-inova%C3%A7%C3%A3o",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Tempo de Inovação",
+        "subtitle": "Tudo sobre o universo das startups, empreendedorismo e ecossistema inovador."
       },
       {
+        "bio": false,
         "cid": "2.886",
-        "img": {},
+        "img": "",
         "name": "Tiago Mitraud",
         "path": "/opiniao/tiago-mitraud",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Tiago Mitraud",
+        "subtitle": "Administrador e deputado federal pelo NOVO/MG. É Líder do RenovaBR e dirigiu a Fundação Estudar"
       },
       {
+        "bio": false,
         "cid": "2.887",
-        "img": {},
+        "img": "",
         "name": "Tiago Reis",
         "path": "/opiniao/tiago-reis",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Tiago Reis",
+        "subtitle": "Investidor há mais de 15 anos, fundador e CEO da casa de análise financeira Suno Research."
       },
       {
+        "bio": false,
         "cid": "2.888",
-        "img": {},
+        "img": "",
         "name": "Wadson Ribeiro",
         "path": "/opiniao/wadson-ribeiro",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Wadson Ribeiro",
+        "subtitle": "Wadson Ribeiro é presidente do PCdoB-MG e foi presidente da UNE e secretário de Estado"
       },
       {
+        "bio": false,
         "cid": "2.889",
-        "img": {},
+        "img": "",
         "name": "Opinião",
         "path": "/opiniao/opini%C3%A3o",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Opinião",
+        "subtitle": "."
       },
       {
+        "bio": false,
         "cid": "2.890",
-        "img": {},
+        "img": "",
         "name": "Aqui é Galo!",
         "path": "/opiniao/aqui-%C3%A9-galo",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Aqui é Galo!",
+        "subtitle": "Paulo Henrique Silva é jornalista do caderno Almanaque e escreve sobre o Atlético"
       },
       {
+        "bio": false,
         "cid": "2.891",
-        "img": {},
+        "img": "",
         "name": "Direito Hoje",
         "path": "/opiniao/direito-hoje",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Direito Hoje",
+        "subtitle": "\"Espaço dedicado para notícias e debates do mundo jurídico\""
       },
       {
+        "bio": false,
         "cid": "2.892",
-        "img": {},
+        "img": "",
         "name": "Rádio Patrulha",
         "path": "/opiniao/r%C3%A1dio-patrulha",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Rádio Patrulha",
+        "subtitle": "Escrito pelo jornalista Gledson Leão, RP aborda temas que viraram casos de polícia no mundo"
       },
       {
-        "cid": "2.893",
-        "img": {},
-        "name": "Blog do Lute",
-        "path": "/opiniao/blog-do-lute",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
-      },
-      {
+        "bio": false,
         "cid": "2.894",
-        "img": {},
+        "img": "",
         "name": "Arte HD",
         "path": "/opiniao/arte-hd",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Arte HD",
+        "subtitle": "Blog com diversas artes feitas pelos ilustradores do Jornal Hoje em Dia"
       },
       {
+        "bio": false,
         "cid": "2.895",
-        "img": {},
+        "img": "",
         "name": "Kênio Pereira",
         "path": "/opiniao/k%C3%AAnio-pereira",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Kênio Pereira",
+        "subtitle": "Kênio Pereira advogado especialista em Direito Imobiliário e presidente da Comissão de Direito Imobiliário da OAB-MG"
       },
       {
+        "bio": false,
         "cid": "2.896",
-        "img": {},
+        "img": "",
         "name": "Educação",
         "path": "/opiniao/educa%C3%A7%C3%A3o",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Educação",
+        "subtitle": "Léo Miranda. Do “Mundo Geográfico” - YouTube Marcelo Batista. Do “Aprendi com o Papai” - YouTube"
       },
       {
+        "bio": false,
         "cid": "2.897",
-        "img": {},
+        "img": "",
         "name": "Editorial",
         "path": "/opiniao/editorial",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Editorial",
+        "subtitle": "."
       },
       {
+        "bio": false,
         "cid": "2.898",
-        "img": {},
+        "img": "",
         "name": "Simone Demolinari",
         "path": "/opiniao/simone-demolinari",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Simone Demolinari",
+        "subtitle": "Psicanalista com Mestrado e dissertação em Anomalias Comportamentais, apresentadora na 102,9 e 98 FM"
       },
       {
+        "bio": false,
         "cid": "2.899",
-        "img": {},
+        "img": "",
         "name": "Perspectiva Racial",
         "path": "/opiniao/perspectiva-racial",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Perspectiva Racial",
+        "subtitle": "\"Um espaço para mostrar como o racismo se revela no cotidiano, a fim de que toda a sociedade compreenda a importância de se engajar nessa luta. Andreia Pereira é doutora em Literatura (UnB), servidora pública federal, jornalista, professora, pesquisadora e palestrante.\""
       },
       {
+        "bio": false,
         "cid": "2.900",
-        "img": {},
+        "img": "",
         "name": "Causa Animal",
         "path": "/opiniao/causa-animal",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Causa Animal",
+        "subtitle": "Osvaldo Lopes é ambientalista, protetor dos animais há 40 anos e Deputado Estadual por Minas Gerais"
       },
       {
+        "bio": false,
         "cid": "2.901",
-        "img": {},
+        "img": "",
         "name": "Tio Flávio",
         "path": "/opiniao/tio-fl%C3%A1vio",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Tio Flávio",
+        "subtitle": "Palestrante, professor e criador do movimento voluntário Tio Flávio Cultural."
       },
       {
+        "bio": false,
         "cid": "2.902",
-        "img": {},
+        "img": "",
         "name": "Cristiano Lopes",
         "path": "/opiniao/cristiano-lopes",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Cristiano Lopes",
+        "subtitle": "Palestrante profissional, consultor empresarial, e professor universitário para programas de MBA"
       },
       {
+        "bio": false,
         "cid": "2.903",
-        "img": {},
+        "img": "",
         "name": "Ricardo Rodrigues",
         "path": "/opiniao/ricardo-rodrigues",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Ricardo Rodrigues",
+        "subtitle": "Conselheiro consultivo da Abrasel-MG"
       },
       {
+        "bio": false,
         "cid": "2.904",
-        "img": {},
+        "img": "",
         "name": "Coluna Esplanada",
         "path": "/opiniao/coluna-esplanada",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Coluna Esplanada",
+        "subtitle": "Mineiro de Muriaé, Leandro Mazzini é jornalista pós-graduado em Ciência Política pela UnB e escritor"
       },
       {
+        "bio": false,
         "cid": "2.905",
-        "img": {},
+        "img": "",
         "name": "Manoel Hygino",
         "path": "/opiniao/manoel-hygino",
-        "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subject": "Manoel Hygino",
+        "subtitle": "\"O autor é membro da Academia Mineira de Letras e escreve para o Hoje em Dia\""
       },
       {
+        "bio": false,
         "cid": "2.627",
-        "img": {},
+        "img": "",
         "name": "Opinião",
         "path": "/opiniao",
         "subject": "",
-        "subtitle": "",
-        "pubdate": "",
-        "updated": ""
+        "subtitle": ""
+      },
+      {
+        "bio": true,
+        "cid": "2.893",
+        "img": "1.188.1638840103",
+        "name": "Blog do Lute",
+        "path": "/opiniao/blog-do-lute",
+        "subject": "TAWTAWTAWTAW",
+        "subtitle": "AEWAEAWEAWEAWEAWE"
       }
     ],
     "list2": [],
     "more": false,
     "more_title": "",
     "more_link": "",
-    "order": ["name", "asc"],
+    "order": [
+      "name",
+      "asc"
+    ],
     "pagination": false,
     "title": "Colunistas",
-    "type": "columnist"
+    "type": "columnist_index"
   },
   "slot3": {
     "bgcolor": "",
     "color": "",
+    "component": "false",
     "icon": "",
     "link": "",
     "len1": 0,

@@ -54,14 +54,28 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
   <Block
     aligny='middle'
     alignx='center'
-    width='100%'
+    width='calc(100% - 2px)'
     {...otherProps}
   >
     {children}
   </Block>
 )
-export const ImageContainer = ({ children }: ImageContainerProps) => (
-  <Block alignx='center' width='100%' lg={{ width: 'unset' }}>
+export const ImageContainer = ({
+  children,
+  mb = [2, '0px'],
+  mr = [undefined, 2]
+}: ImageContainerProps) => (
+  <Block
+    alignx='center'
+    mb={mb[0]} 
+    mr={mr[0]}
+    width='100%'
+    lg={{
+      width: 'unset',
+      mb: mb[1],
+      mr: mr[1],
+    }}
+  >
     {children}
   </Block>
 )
@@ -82,21 +96,15 @@ export const ContentWrap = ({ children }: ContentWrapProps) => (
 export const ImageWrap = ({ 
   children,
   size = ['80px', '104px'],
-  mb = [2, '0px'],
-  mr = [undefined, 2],
   ...otherProps
 }: ImageProps) => (
   <Block 
     height={size[0]}
-    mb={mb[0]} 
-    mr={mr[0]}
     minWidth={size[0]}
     width={size[0]}
     lg={{
       height: size[1],
       minWidth: size[1],
-      mb: mb[1],
-      mr: mr[1],
       width: size[1]
     }}
     {...otherProps}

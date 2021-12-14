@@ -1,8 +1,15 @@
+import { Block, Link, Typography } from 'prensa'
 import React from 'react'
 
-import Block from '../Block'
-import Typography from '../Typography'
-import { AuthorNameProps, ContainerProps, ContentProps, DateTimeProps, ImageWrapProps, TitleProps, NewsTitleProps } from './types'
+import {
+  AuthorNameProps,
+  ContainerProps,
+  ContentProps,
+  DateTimeProps,
+  ImageWrapProps,
+  TitleProps,
+  NewsTitleProps
+} from './types'
 
 export const AuthorName = ({ children, ...otherProps }: AuthorNameProps) => (
   <Typography
@@ -28,7 +35,7 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
     px={2}
     py={2}
     radius='alternative'
-    width='calc(100% - 32px)'
+    width='calc(100% - 32px - 2px)'
     {...otherProps}
   >
     {children}
@@ -75,7 +82,6 @@ export const ImageWrap = ({ children, ...otherProps }: ImageWrapProps) => (
     height='48px'
     width='48px'
     minWidth='48px'
-    mr={2}
     {...otherProps}
   >
     {children}
@@ -100,6 +106,7 @@ export const NewsTitle = ({ children, ...otherProps }: NewsTitleProps) => (
 export const Title = ({ children, ...otherProps }: TitleProps) => (
   <Typography
     color='neutral2'
+    custom='cursor: pointer;'
     element='label'
     fontSize='16px'
     fontWeight={700}
@@ -114,7 +121,7 @@ export const Title = ({ children, ...otherProps }: TitleProps) => (
 export const TitleWrapper = ({ children, ...otherProps }) => (
   <Block
     align='column'
-    width='100%'
+    width='calc(100% - 48px - 16px)'
     {...otherProps}
   >
     {children}

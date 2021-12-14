@@ -1,7 +1,8 @@
 import { get } from 'lodash'
-import { Image } from 'prensa'
+import { Block, Image } from 'prensa'
 import React from 'react'
 
+import Link from '../Link'
 import { IcBioFacebook } from './IcBioFacebook'
 import { IcBioInstagram } from './IcBioInstagram'
 import { IcBioLinkedin } from './IcBioLinkedin'
@@ -24,6 +25,7 @@ const AuthorBio = ({
   bio,
   bioProps,
   containerProps,
+  href,
   imagePath,
   imageProps,
   name,
@@ -42,33 +44,46 @@ const AuthorBio = ({
     <Container {...containerProps}>
       <ContentWrap>
         <ImageContainer>
-          <ImageWrap {...imageProps}>
-            <Image
-              amp={amp}
-              custom_class='image-with-radius'
-              title={name}
-              layout_desktop={{
-                enabled: true,
-                height: imageSize[1],
-                width: imageSize[1],
-                path: imagePath,
-                type: 'responsive'
-              }}
-              layout_mobile={{
-                enabled: true,
-                height: imageSize[0],
-                width: imageSize[0],
-                path: imagePath,
-                type: 'responsive'
-              }}
-            />
-          </ImageWrap>
+          <Link path={href}>
+            <ImageWrap {...imageProps}>
+              <Image
+                amp={amp}
+                custom_class='image-with-radius'
+                title={name}
+                layout_desktop={{
+                  enabled: true,
+                  height: imageSize[1],
+                  width: imageSize[1],
+                  path: imagePath,
+                  type: 'responsive'
+                }}
+                layout_mobile={{
+                  enabled: true,
+                  height: imageSize[0],
+                  width: imageSize[0],
+                  path: imagePath,
+                  type: 'responsive'
+                }}
+              />
+            </ImageWrap>
+          </Link>
         </ImageContainer>
         <TextWrap>
           {title &&
-            <Title {...titleProps}>
-              {title}
-            </Title>
+            <Block
+              alignx='center'
+              lg={{
+                align: 'row',
+                alignx: 'left'
+              }}
+              mb={1}
+              width='100%'>
+              <Link path={href}>
+                <Title {...titleProps}>
+                  {title}
+                </Title>
+              </Link>
+            </Block>
           }
           {name &&
             <Name {...nameProps}>
