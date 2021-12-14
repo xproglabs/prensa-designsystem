@@ -1,6 +1,7 @@
 import { get } from 'lodash'
 import { ComponentType } from 'react'
 import styled, { css } from 'styled-components'
+import { margin } from 'styled-system'
 
 import { StyledLinkProps } from './types'
 
@@ -44,4 +45,5 @@ export const StyledLink: ComponentType<StyledLinkProps> | any = styled.a<StyledL
   ${heightCSS};
   ${textDecorationCSS};
   ${hoverStateCSS};
+  ${margin};
 `
