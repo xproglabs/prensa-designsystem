@@ -204,9 +204,12 @@ const TextBody = (props) => {
           </React.Fragment>
         )
       })}
-      {gallery && gallery.length > 0 && (
-        <ImageGallery items={gallery} />
-      )}
+      {gallery && gallery.length > 0 && 
+        <ImageGallery
+          amp={amp}
+          items={gallery}
+        />
+      }
       {tags_section_title && tags_section_title.enabled && (
         <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
       )}
