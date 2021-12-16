@@ -15,9 +15,7 @@ const Container = styled.div`
   }
 `
 
-const SubtitleBox = ({
-  children,
-}) => 
+const SubtitleBox = ({ children }) => (
   <Block
     bgColor='neutral9'
     px={3}
@@ -27,9 +25,11 @@ const SubtitleBox = ({
       px: 4,
       py: 2,
       width: 'calc(100% - 64px)'
-    }}>
+    }}
+  >
     {children}
   </Block>
+)
 
 SubtitleBox.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
@@ -43,7 +43,7 @@ const Subtitle = ({
   fontFamily,
   fontSize,
   lineHeight
-}) => 
+}) => (
   <Typography 
     color='neutral4'
     dangerouslySetInnerHTML={children}
@@ -56,6 +56,7 @@ const Subtitle = ({
       lineHeight: lineHeight[1]
     }}
   />
+)
   
 Subtitle.propTypes = {
   children: PropTypes.string,
