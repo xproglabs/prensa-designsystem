@@ -2,8 +2,9 @@ import { map } from 'lodash'
 import React from 'react'
 
 import { ControlButton } from './ControlButton'
-import { Image, WebCarousel } from './styled'
+import { WebCarousel } from './styled'
 import { WebImageGalleryProps } from './types'
+import { WebImage } from './WebImage'
 
 const WebImageGallery = ({ items }: WebImageGalleryProps) => {
 
@@ -23,7 +24,7 @@ const WebImageGallery = ({ items }: WebImageGalleryProps) => {
       renderArrowPrev={renderArrowPrev}
       renderArrowNext={renderArrowNext}
     >
-      {map(items, item => <Image src={item.value} />)}
+      {map(items, item => <WebImage src={item.value} />)}
     </WebCarousel>
   )
 }
