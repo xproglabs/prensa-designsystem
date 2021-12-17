@@ -65,4 +65,14 @@ Subtitle.propTypes = {
   lineHeight: PropTypes.array
 }
 
-export { Container, SubtitleBox, Subtitle }
+const Image = styled.img`
+  height: 360px;
+  object-fit: none;
+  object-position: center;
+  @media (min-width: ${props => props.theme.queries.md}) {
+    width: 768px;
+    height: 500px;
+  }
+`
+
+export { Container, Image, SubtitleBox, Subtitle }
