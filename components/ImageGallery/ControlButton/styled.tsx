@@ -14,6 +14,9 @@ export const Button = styled.button`
   background-color: rgba(0,0,0,.5);
   border-radius: 2px;
   border: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 34px;
   height: 34px;
   margin: 16px;
