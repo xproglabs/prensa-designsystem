@@ -24,7 +24,12 @@ const WebImageGallery = ({ items }: WebImageGalleryProps) => {
       renderArrowPrev={renderArrowPrev}
       renderArrowNext={renderArrowNext}
     >
-      {map(items, item => <WebImage src={item.value} />)}
+      {map(items, (item, key) => 
+        <WebImage
+          key={key}
+          src={item.value}
+        />
+      )}
     </WebCarousel>
   )
 }
