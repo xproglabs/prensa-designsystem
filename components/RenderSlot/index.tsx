@@ -1,5 +1,5 @@
 import { selectComponentFromSlotList } from 'components/PageBlock/utils'
-import { get, map } from 'lodash'
+import { get, map, orderBy } from 'lodash'
 import { Button } from 'prensa'
 import React from 'react'
 import { withTheme } from 'styled-components'
@@ -28,6 +28,7 @@ const RenderSlot = ({
   fallback_image_url,
   layout,
   layouts,
+  order,
   more,
   more_link,
   more_title,
@@ -46,6 +47,15 @@ const RenderSlot = ({
   const carousel_enabled = get(carousel, 'enabled', false)
   const space_bottom_mobile = get(space_bottom, '[0]', 2)
   const space_bottom_desktop = get(space_bottom, '[1]', 3)
+
+  let slot_sorted = slot
+  if (order) {
+    try {
+      slot_sorted = orderBy(slot, [get(order, [0])], [get(order, [1])])
+    } catch (e) {
+      slot_sorted = slot
+    }
+  }
 
   const RenderPagination = () => {
     if (!pagination) {
@@ -92,7 +102,7 @@ const RenderSlot = ({
     if (item && item['input-template']) {
       return null
     }
-    let teaser_props = parseTeaserProps(number, layout, layouts, slot, teasers)
+    let teaser_props = parseTeaserProps(number, layout, layouts, slot_sorted, teasers)
     if (!teaser_props) {
       return null
     }
@@ -114,10 +124,9 @@ const RenderSlot = ({
       </PreviewProvider>
     )
   }
-
   const RenderList = () => (
     <React.Fragment>
-      {map(slot, (item, key: number) => {
+      {map(slot_sorted, (item, key: number) => {
         return (
           <Block
             key={key}

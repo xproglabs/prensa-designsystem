@@ -24,12 +24,14 @@ export const Default = () => {
 
 export const StylizedLink = () => {
   return (
-    <React.Fragment>
+    <div style={{ height: 'max-content' }}>
       <Link
         color='secondary1'
         path='https://google.com.br'
         hoverOpacity={0.8}
         textDecoration='unset'
+        mb={1}
+        mr={2}
       >
         Testando texto com link
       </Link>
@@ -40,7 +42,7 @@ export const StylizedLink = () => {
       >
         Testando texto com link
       </Link>
-    </React.Fragment>
+    </div>
   )
 }
 

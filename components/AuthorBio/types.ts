@@ -13,6 +13,7 @@ export interface AuthorBioProps {
   bio?: string;
   bioProps?: BioProps;
   containerProps?: ContainerProps;
+  href?: string;
   imagePath: string;
   imageProps?: ImageProps;
   name?: string;
@@ -79,6 +80,8 @@ export type ContainerProps = {
 }
 export type ImageContainerProps = {
   children?: ReactNode;
+  mb?: ResponsiveSpacingType;
+  mr?: ResponsiveSpacingType;
 }
 
 // Wraps
@@ -86,10 +89,8 @@ export type ContentWrapProps = {
   children?: ReactNode;
 }
 export type ImageProps = {
-  children?: ReactNode;
+  children?: ReactNode;  
   size?: Array<string>;
-  mb?: ResponsiveSpacingType;
-  mr?: ResponsiveSpacingType;
 }
 export type SocialMediasWrapProps = {
   children?: ReactNode;

@@ -19,6 +19,10 @@ export type RenderSlotProps = {
   more_link?: string;
   more_title?: string;
   min_height?: [string, string];
+  /**
+   * @description order prop expects an array of two strings, prop name and order asc | desc
+   */
+  order?: boolean | [string, 'asc' | 'desc'];
   preview: PageBlockPreview;
   pagination?: boolean;
   search_len?: any;

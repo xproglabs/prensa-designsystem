@@ -10,13 +10,14 @@ import { LinkProps } from './types'
 const Link = ({
   children,
   color,
+  href,
   height,
   path,
   textDecoration,
   ...otherProps
 }: LinkProps) => {
 
-  if (!path) {
+  if (!path && !href) {
     return (
       <React.Fragment>
         {children}
@@ -26,7 +27,7 @@ const Link = ({
 
   return (
     <StyledLink
-      href={path}
+      href={path || href}
       $color={color}
       $textDecoration={textDecoration}
       $height={height}

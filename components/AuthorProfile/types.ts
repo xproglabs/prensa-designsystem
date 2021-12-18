@@ -19,10 +19,12 @@ export interface AuthorProfileProps {
   containerProps?: ContainerProps;
   date?: string;
   dateTimeProps?: DateTimeProps;
+  href?: string;
   image: ImageProps;
   imageWrapProps?: ImageWrapProps;
   name?: string;
   newsTitle?: string;
+  newsTitleHref?: string;
   newsTitleProps?: NewsTitleProps;
   title: string;
   titleProps?: TitleProps;

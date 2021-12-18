@@ -3,11 +3,11 @@ import React from 'react'
 import * as S from './styled'
 import { ErrorPageProps } from './types'
 
-
 const ErrorPage = ({
   alignx,
   buttonAction,
   buttonColor,
+  buttonPath,
   buttonText,
   message,
   title,
@@ -25,7 +25,8 @@ const ErrorPage = ({
         </S.Message>
         <S.ButtonGoBack
           buttonAction={buttonAction}
-          color={buttonColor}>
+          color={buttonColor}
+          path={buttonPath}>
           {buttonText}
         </S.ButtonGoBack>
       </S.ContentError>

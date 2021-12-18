@@ -11,6 +11,10 @@ export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   color?: ColorTokens;
   height?: string;
   hoverOpacity?: number;
+  mt?: string | number;
+  mr?: string | number;
+  mb?: string | number;
+  ml?: string | number;
   path?: string;
   textDecoration?: string;
 }
@@ -20,6 +24,10 @@ export type StyledLinkProps = {
   href: string;
   height?: string;
   hoverOpacity?: number;
+  mt?: string | number;
+  mr?: string | number;
+  mb?: string | number;
+  ml?: string | number;
   $color?: ColorTokens;
   $textDecoration?: string;
 }

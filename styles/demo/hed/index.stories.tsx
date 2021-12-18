@@ -25,6 +25,7 @@ import DataHomeFeaturedImage33 from './data/7.483_33.json'
 import DataHomeFeaturedImage from './data/7.483.json'
 import Data7795 from './data/7.795.json'
 import DataHomeFull from './data/home.json'
+import DATA_OPINIAO from './data/opiniao.json'
 import { preview_editable } from './editable'
 import { theme } from './index'
 
@@ -40,9 +41,9 @@ export default {
     )
   ]
 }
-const loadContentFromPagedata = () => {
-  const pagedata = get(DataHomeFull, 'props.content.pagedata', [])
-  const pagelist = get(DataHomeFull, 'props.content.pageblocks.list1', [])
+const loadContentFromPagedata = (data=DataHomeFull) => {
+  const pagedata = get(data, 'props.content.pagedata', [])
+  const pagelist = get(data, 'props.content.pageblocks.list1', [])
   const pageblocks = []
   map(pagelist, (item) => {
     const blockdata = find(pagedata, { cid: item.cid })
@@ -363,6 +364,23 @@ export const HomeFull = () => {
           />
         )
       })}
+    </TemplateContainer>
+  )
+}
+export const EditoriaOpiniao = () => {
+  return (
+    <TemplateContainer
+      background='neutral10'
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...DATA_OPINIAO}
+        amp={false}
+        domain={domain}
+        fallback_image_url={fallback_image_url}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
     </TemplateContainer>
   )
 }

@@ -15,13 +15,16 @@ import { PageTitleProps, ButtonProps, MessageProps } from './types'
 export const ButtonGoBack = ({
   buttonAction,
   children,
-  color
+  color,
+  path
 }: ButtonProps) => (
   <Button
     {...BUTTON_GO_BACK}
     color={color}
     on={buttonAction}
-  >
+    path={path}
+    pr='0px'
+    pl='0px'>
     {children}
   </Button>
 )
