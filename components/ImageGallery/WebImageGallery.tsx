@@ -26,10 +26,10 @@ const WebImageGallery = ({ items }: WebImageGalleryProps) => {
       renderArrowNext={renderArrowNext}
     >
       {map(items, (item, key) =>
-        <React.Fragment>
+        <div>
           <WebImage key={key} src={item.value} />
           <Caption>{item.caption}</Caption>
-        </React.Fragment>
+        </div>
       )}
     </WebCarousel>
   )
