@@ -22,7 +22,6 @@ export const Button = styled.button`
   margin: 16px;
   position: absolute;
   z-index: 10;
-  top: 50%;
   ${renderXPosition};
   ${renderYPosition};
   &:focus {
