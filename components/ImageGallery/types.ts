@@ -9,6 +9,11 @@ export type CaptionProps = {
   lineHeight?: [string, string];
 }
 
+export type ContainerProps = {
+  $width: string;
+  $height: string;
+}
+
 // AMP Image Gallery component
 export type AmpImageGalleryProps = {
   captionProps?: CaptionProps;

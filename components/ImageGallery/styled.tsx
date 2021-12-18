@@ -1,7 +1,9 @@
 import { Carousel } from 'react-responsive-carousel'
 import styled from 'styled-components'
 
-const Container = styled.div`
+import { ContainerProps } from './types'
+
+const Container = styled.div<ContainerProps>`
   height: max-content;
   margin-bottom: 24px;
   width: 100%;
