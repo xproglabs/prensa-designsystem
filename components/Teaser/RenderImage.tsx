@@ -4,6 +4,7 @@ import React from 'react'
 
 import ImageElement from '../Image'
 import { parseImagePath } from '../Image/parser'
+import { ImagePreviewLink } from '../Image/preview'
 import { RenderOpacityMask } from './RenderOpacityMask'
 import * as S from './styled'
 
@@ -122,9 +123,14 @@ const RenderImage = ({
   )
 
   const RenderImageForPreview = () => (
-    <React.Fragment>
-      {opacityMask ? <RenderImageWithOpacityMask /> : <RenderImageElement />}
-    </React.Fragment>
+    <ImagePreviewLink
+      editable={editable}
+      image={item}>
+      {opacityMask ?
+        <RenderImageWithOpacityMask /> :
+        <RenderImageElement />
+      }
+    </ImagePreviewLink>
   )
 
   const RenderImageWithLink = () => {
