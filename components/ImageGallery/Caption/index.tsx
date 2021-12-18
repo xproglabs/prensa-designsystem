@@ -1,12 +1,7 @@
 import { Block, Typography } from 'prensa'
 import React from 'react'
 
-type CaptionProps = {
-  children: string;
-  fontSize?: [string, string];
-  fontFamily?: [string, string];
-  lineHeight?: [string, string];
-}
+import { CaptionProps } from './types'
 
 const Caption = ({
   children,
