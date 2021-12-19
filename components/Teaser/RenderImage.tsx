@@ -126,7 +126,7 @@ const RenderImage = ({
     return (
       <ImagePreviewLink
         editable={editable}
-        image={item}>
+        item={item}>
         {opacityMask ?
           <RenderImageWithOpacityMask /> :
           <RenderImageElement />
