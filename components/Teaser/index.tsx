@@ -28,6 +28,7 @@ const Teaser = (props: TeaserProps) => {
   } = props
 
   // main props
+  const item_cid = get(item, 'cid', '')
   const item_path = get(item, 'url', false) || get(item, 'path', '')
   const item_title = get(item, 'name', '')
   const box_align = get(layout, 'box.align', ['column', 'column'])
@@ -189,6 +190,7 @@ const Teaser = (props: TeaserProps) => {
           <EditButtons {...edit_buttons} />
         </S.WrapSubject>
         <RenderTitle
+          cid={item_cid}
           editable={{
             enabled: editable?.enabled,
             set_modified: editable?.set_modified,

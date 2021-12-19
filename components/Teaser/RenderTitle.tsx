@@ -7,6 +7,7 @@ import Typography from '../Typography'
 import { LayoutProps } from './types'
 
 type TitleProps = {
+  cid: string;
   editable?: any;
   layout: LayoutProps;
   link?: string;
@@ -22,6 +23,7 @@ type TitleProps = {
  * @returns a Typography as a React element
  */
 const RenderTitle = ({
+  cid, 
   editable,
   layout,
   link,
@@ -54,6 +56,7 @@ const RenderTitle = ({
       }}>
       <EditArea {...editable}>
         <Link
+          id={cid}
           hoverOpacity={0.9}
           path={link}>
           {title}
