@@ -61,7 +61,7 @@ export const preview_render = ({
           reset: resetEditionFields
         },
         editable: {
-          enabled: !saving,
+          enabled: true,
           image_load,
           modified: modified,
           saving: saving,
