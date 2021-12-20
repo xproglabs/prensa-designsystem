@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { EditWrap } from '../../../../components/EditArea/styled'
+import { image_load } from './image'
 /**
  * Render Preview component
  * @returns
@@ -60,7 +61,8 @@ export const preview_render = ({
           reset: resetEditionFields
         },
         editable: {
-          enabled: !saving,
+          enabled: true,
+          image_load,
           modified: modified,
           saving: saving,
           set_selected: set_selected,
@@ -83,7 +85,7 @@ const save_action = async () => {
 }
 // editable actions
 export const preview_editable = {
-  enabled: false,
+  enabled: true,
   render: preview_render,
   save_action: save_action
 }

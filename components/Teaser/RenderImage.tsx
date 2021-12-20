@@ -4,6 +4,7 @@ import React from 'react'
 
 import ImageElement from '../Image'
 import { parseImagePath } from '../Image/parser'
+import { ImagePreviewLink } from '../Image/preview'
 import { RenderOpacityMask } from './RenderOpacityMask'
 import * as S from './styled'
 
@@ -121,11 +122,18 @@ const RenderImage = ({
     </React.Fragment>
   )
 
-  const RenderImageForPreview = () => (
-    <React.Fragment>
-      {opacityMask ? <RenderImageWithOpacityMask /> : <RenderImageElement />}
-    </React.Fragment>
-  )
+  const RenderImageForPreview = () => {
+    return (
+      <ImagePreviewLink
+        editable={editable}
+        item={item}>
+        {opacityMask ?
+          <RenderImageWithOpacityMask /> :
+          <RenderImageElement />
+        }
+      </ImagePreviewLink>
+    )
+  }
 
   const RenderImageWithLink = () => {
     //Block image click when using opacity mask
@@ -140,7 +148,6 @@ const RenderImage = ({
       </S.AreaLink>
     )
   }
-
   if (editable && editable.enabled) {
     return <RenderImageForPreview />
   }
