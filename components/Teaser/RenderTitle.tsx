@@ -65,6 +65,9 @@ const RenderTitle = ({
     }
   }
 
+  /** Control eventTracking ids */
+  const linkid = titleEventTracking && `cid${parseCid(cid)}`
+
   return (
     <Typography
       color={title_layout?.color || 'neutral2'}
@@ -83,7 +86,7 @@ const RenderTitle = ({
       }}>
       <EditArea {...editable}>
         <Link
-          id={`cid${parseCid(cid)}`}
+          id={linkid}
           onClick={handleClick}
           hoverOpacity={0.9}
           path={link}>
