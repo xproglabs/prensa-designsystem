@@ -23,7 +23,7 @@ export const ImagePreviewLink = ({
     if (!editable || !editable.image_load) {
       return false
     }
-    return editable.image_load(item)
+    return editable.image_load(editable, item)
   }
   return (
     <ImagePreviewArea onClick={() => handlePreviewClick(item)}>
