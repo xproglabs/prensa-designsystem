@@ -31,6 +31,7 @@ export type PageBlockProps = {
   bgcolor?: ColorTokens;
   cid: string;
   domain: string;
+  eventTracking?: any;
   fallback_image_url?: string,
   image_parser?: any;
   name: string;
