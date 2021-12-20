@@ -1,3 +1,7 @@
+# v1.6.77
+- Adiciona provider da imagem para o preview interativo
+- Viabiliza alguns fluxos de dados para o monitoramento de eventos
+- Transforma componente ImageGallery em híbrido (Web/AMP)
 # v1.6.76
 - Correções no layout dos componentes de colunistas
 - Adiciona método para ordenação de lista do slot
