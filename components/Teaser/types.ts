@@ -115,6 +115,7 @@ export type TeaserProps = {
    */
   editable?: EditAreaType;
   edit_buttons?: EditButtonsType;
+  eventTracking?: any;
   fallback_image_url?: string;
   /**
    * @description expects an object with teaser data

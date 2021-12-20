@@ -17,6 +17,7 @@ const Teaser = (props: TeaserProps) => {
     amp,
     color,
     fallback_image_url,
+    eventTracking,
     edit_buttons,
     editable,
     domain,
@@ -97,6 +98,10 @@ const Teaser = (props: TeaserProps) => {
 
   // opacity mask prop
   const opacity_mask = get(layout, 'opacity_mask', false)
+
+  //eventTracking
+  const titleEventTracking = eventTracking?.titleEventTracking
+
   return (
     <S.Box
       box_align={box_align}
@@ -200,7 +205,9 @@ const Teaser = (props: TeaserProps) => {
           layout={layout}
           link={item_path}
           shadow={opacity_mask}
+          position={number}
           title={item_title}
+          titleEventTracking={titleEventTracking}
         />
         <RenderSubtitle
           item={item}
