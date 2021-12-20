@@ -25,6 +25,7 @@ export type RenderSlotProps = {
   site_data: any;
   slot: Array<any>;
   slot_parser: any;
+  slot_position?: number;
   /**
    * @description spaceA prop expects a element or React Component to be rendered before teaser content
    */

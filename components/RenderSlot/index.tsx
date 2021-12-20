@@ -29,6 +29,7 @@ const RenderSlot = ({
   site_data,
   slot,
   slot_parser,
+  slot_position,
   space_bottom,
   theme
 }: RenderSlotProps) => {
@@ -80,6 +81,7 @@ const RenderSlot = ({
           item={item}
           layout={teaser_props.layout}
           related={teaser_props.related}
+          slot_position={slot_position}
           number={teaser_number}
         />
       </PreviewProvider>
