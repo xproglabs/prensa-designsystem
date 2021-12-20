@@ -134,4 +134,5 @@ export type TeaserProps = {
    * @description expects a object of states to cover the editable fields
    */
   states?: any;
+  slot_position?: number;
 }

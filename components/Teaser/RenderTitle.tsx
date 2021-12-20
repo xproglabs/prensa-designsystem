@@ -19,6 +19,7 @@ type TitleProps = {
   layout: LayoutProps;
   link?: string;
   position?: number;
+  slot_position?: number;
   shadow: boolean;
   title: string;
   titleEventTracking?: any;
@@ -38,6 +39,7 @@ const RenderTitle = ({
   link,
   shadow,
   position,
+  slot_position,
   title,
   titleEventTracking
 }: TitleProps) => {
@@ -56,7 +58,7 @@ const RenderTitle = ({
   const handleClick = event => {
     if (titleEventTracking) {
       titleEventTracking({
-        action: `Clique na posição ${position} | Coluna 3`,
+        action: `Clique na posição ${position} | Coluna ${slot_position}`,
         label: cid
       })
     }
