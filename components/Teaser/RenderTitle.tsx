@@ -58,8 +58,9 @@ const RenderTitle = ({
   const handleClick = event => {
     if (titleEventTracking) {
       titleEventTracking({
-        action: `Clique na posição ${position} | Coluna ${slot_position}`,
-        label: cid
+        cid,
+        slot_position,
+        teaser_position: position,
       })
     }
   }
