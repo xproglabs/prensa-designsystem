@@ -12,6 +12,7 @@ export type RenderSlotProps = {
   column_items: number;
   column_padding: number;
   domain?: string;
+  eventTracking?: Object;
   fallback_image_url?: string;
   layout?: LayoutProps;
   layouts: Array<string>;
