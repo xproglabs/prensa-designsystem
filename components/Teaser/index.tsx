@@ -25,6 +25,7 @@ const Teaser = (props: TeaserProps) => {
     layout,
     number,
     related,
+    slot_position,
     states
   } = props
 
@@ -204,6 +205,7 @@ const Teaser = (props: TeaserProps) => {
           }}
           layout={layout}
           link={item_path}
+          slot_position={slot_position}
           shadow={opacity_mask}
           position={number}
           title={item_title}
