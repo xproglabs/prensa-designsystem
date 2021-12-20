@@ -99,6 +99,7 @@ const PageBlock = ({
           site_data,
           slot: slot1?.list1,
           slot_parser,
+          slot_position: 1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
           space_bottom: slot1_space_bottom
@@ -144,6 +145,7 @@ const PageBlock = ({
           site_data,
           slot: slot1?.list1,
           slot_parser,
+          slot_position: 1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
           space_bottom: slot1_space_bottom
@@ -164,6 +166,7 @@ const PageBlock = ({
           site_data,
           slot: slot2?.list1,
           slot_parser,
+          slot_position: 2,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList,
           space_bottom: slot2_space_bottom
@@ -209,6 +212,7 @@ const PageBlock = ({
           site_data,
           slot: slot1?.list1,
           slot_parser,
+          slot_position: 1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
           space_bottom: slot1_space_bottom
@@ -229,6 +233,7 @@ const PageBlock = ({
           site_data,
           slot: slot2?.list1,
           slot_parser,
+          slot_position: 2,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList,
           space_bottom: slot2_space_bottom
@@ -284,6 +289,7 @@ const PageBlock = ({
           site_data,
           slot: slot1?.list1,
           slot_parser,
+          slot_position: 1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
           space_bottom: slot1_space_bottom
@@ -305,6 +311,7 @@ const PageBlock = ({
           site_data,
           slot: slot2?.list1,
           slot_parser,
+          slot_position: 2,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList,
           space_bottom: slot2_space_bottom
@@ -326,6 +333,7 @@ const PageBlock = ({
           site_data,
           slot: slot3?.list1,
           slot_parser,
+          slot_position: 3,
           spaceA: slotsHaveSecionTitle ? slot3_title : null,
           spaceB: slot3_slotList,
           space_bottom: slot3_space_bottom
