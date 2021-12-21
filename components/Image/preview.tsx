@@ -1,5 +1,3 @@
-// import { ImageProps } from 'components/Image/types'
-// import { get } from 'lodash'
 import React from 'react'
 import styled from 'styled-components'
 
