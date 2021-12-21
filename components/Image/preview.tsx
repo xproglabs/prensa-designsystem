@@ -17,13 +17,14 @@ const ImagePreviewArea = styled.a`
 export const ImagePreviewLink = ({
   children,
   editable,
+  image_props,
   item
 }) => {
   const handlePreviewClick = (item) => {
     if (!editable || !editable.image_load) {
       return false
     }
-    return editable.image_load(editable, item)
+    return editable.image_load(editable, item, image_props)
   }
   return (
     <ImagePreviewArea onClick={() => handlePreviewClick(item)}>
