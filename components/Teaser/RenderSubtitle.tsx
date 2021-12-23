@@ -2,7 +2,6 @@ import { Typography } from 'prensa'
 import React from 'react'
 
 import { LayoutProps } from './types'
-} from './types'
 
 export type ItemProps = {
   subtitle?: string;
