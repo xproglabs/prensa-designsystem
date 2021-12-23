@@ -20,6 +20,7 @@ type RenderImageProps = {
   item_path?: string;
   layout?: any;
   opacityMask?: boolean;
+  state_of_image?: any;
 }
 
 const RenderImage = ({
@@ -39,11 +40,16 @@ const RenderImage = ({
   if (!image_object) {
     image_object = get(item, 'img', false)
   }
-
   // get contentId from props
   let image_contentid = get(image_object, 'contentId', false)
   image_contentid = image_contentid || get(image_object, 'cid', false)
-
+  // show new policy when saved
+  if (editable && editable.enabled) {
+    const image_cid_editing = get(editable, 'state_of_image.cid.current', false)
+    if (image_cid_editing) {
+      image_contentid = image_cid_editing
+    }
+  }
   // parse data
   const image_caption = get(image_object, 'caption', '')
   const mobile_dim = get(layout, 'image.dimension[0]', '1x1')
@@ -126,6 +132,10 @@ const RenderImage = ({
     return (
       <ImagePreviewLink
         editable={editable}
+        image_props={{
+          mobile_dim,
+          desktop_dim
+        }}
         item={item}>
         {opacityMask ?
           <RenderImageWithOpacityMask /> :
