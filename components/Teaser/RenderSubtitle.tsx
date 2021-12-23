@@ -1,7 +1,6 @@
 import { Typography } from 'prensa'
 import React from 'react'
 
-import * as S from './styled'
 import {
   LayoutProps,
 } from './types'
