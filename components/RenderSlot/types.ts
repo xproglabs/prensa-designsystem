@@ -1,13 +1,13 @@
 import { ReactElement } from 'react'
 
-import { CarouselProps } from '../../components/Carousel/types'
+import { CarouselLayoutProps } from '../../components/Carousel/types'
 import { PageBlockPreview } from '../PreviewProvider/types'
 import { LayoutProps } from '../Teaser/types'
 
 export type RenderSlotProps = {
   amp?: boolean,
   bgcolor?: string;
-  carousel?: CarouselProps;
+  carousel?: CarouselLayoutProps;
   color?: string;
   column_items: number;
   column_padding: number;

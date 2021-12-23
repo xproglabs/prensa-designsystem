@@ -106,9 +106,11 @@ const RenderSlot = ({
   )
 
   if (carousel_enabled) {
-    <Carousel {...carousel}>
-      <RenderList />
-    </Carousel>
+    return (
+      <Carousel {...carousel}>
+        <RenderList />
+      </Carousel>
+    )
   }
 
   return <RenderList />
