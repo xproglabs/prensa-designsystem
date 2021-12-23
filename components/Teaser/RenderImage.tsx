@@ -13,7 +13,7 @@ type RenderImageProps = {
   domain: string;
   editable?: {
     enabled: boolean,
-    state_of_image: any;
+    state_of_image?: any;
   };
   fallback_image_url?: string;
   image_circle?: boolean;
@@ -51,7 +51,7 @@ const RenderImage = ({
     image_cid = get(image_cid.split(':'), '[0]', '').split('.')
     image_cid = `${get(image_cid, '[0]', '')}.${get(image_cid, '[1]', '')}`
     
-    const image_cid_editing = editable?.state_of_image[`${image_cid}_cid`].current
+    const image_cid_editing = editable?.state_of_image[`${image_cid}_cid`]?.current
     if (image_cid_editing) {
       image_contentid = image_cid_editing
     }
