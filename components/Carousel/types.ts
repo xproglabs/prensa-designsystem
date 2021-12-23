@@ -12,6 +12,7 @@ export type CarouselProps = {
    */
   height: ResponsiveHeight;
   layout?: CarouselLayoutTypes;
+  mb: [string | number, string | number];
   /**
    * @description Expects a breakpoint from theme queries property.
    * @example <Carousel querie='md' />
@@ -29,6 +30,7 @@ export type CarouselLayoutProps = {
    */
   height: ResponsiveHeight;
   layout?: CarouselLayoutTypes;
+  mb: [string | number, string | number];
   /**
    * @description Expects a breakpoint from theme queries property.
    * @example <Carousel querie='md' />
