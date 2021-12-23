@@ -1,6 +1,6 @@
 import { TeaserCartridges } from '@prensa_tokens'
 
-import { CarouselProps } from '../../components/Carousel/types'
+import { CarouselLayoutProps } from '../../components/Carousel/types'
 
 type TeaserSuggestions = TeaserCartridges | 'hide'
 
@@ -20,7 +20,7 @@ type TemplateSpaces = [number] | [number, number, number, number]
 type TemplateSpacesBottom = [number, number]
 
 type TemplateSlotTypes = {
-  carousel?: CarouselProps;
+  carousel?: CarouselLayoutProps;
   /**
    * Prensa | CreateTemplate related
    */

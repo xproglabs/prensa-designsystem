@@ -20,3 +20,19 @@ export type CarouselProps = {
   theme?: any;
   type?: CarouselType;
 }
+
+export type CarouselLayoutProps = {
+  enabled: boolean;
+  /**
+   * @description Expects an array of strings. Each string represents a height
+   * @example ['250', '250'] | ['250px', '250px']
+   */
+  height: ResponsiveHeight;
+  layout?: CarouselLayoutTypes;
+  /**
+   * @description Expects a breakpoint from theme queries property.
+   * @example <Carousel querie='md' />
+   */
+  querie: Queries;
+  type?: CarouselType;
+}
