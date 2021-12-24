@@ -5,6 +5,7 @@ import React from 'react'
 import ImageElement from '../Image'
 import { parseImagePath } from '../Image/parser'
 import { ImagePreviewLink } from '../Image/preview'
+import { parseContentId } from '../Util/parseContentId'
 import { RenderOpacityMask } from './RenderOpacityMask'
 import * as S from './styled'
 
@@ -45,15 +46,12 @@ const RenderImage = ({
   let image_contentid = get(image_object, 'contentId', false)
   image_contentid = image_contentid || get(image_object, 'cid', false)
   // show new policy when saved
-  if (editable && editable.enabled) {
-    
-    let image_cid = get(image_contentid.split(':'), '[0]', '')
-    image_cid = get(image_cid.split(':'), '[0]', '').split('.')
-    image_cid = `${get(image_cid, '[0]', '')}.${get(image_cid, '[1]', '')}`
-    
-    const image_cid_editing = editable?.state_of_image[`${image_cid}_cid`]?.current
-    if (image_cid_editing) {
-      image_contentid = image_cid_editing
+  if (editable && editable.enabled && image_contentid) {
+    // parse image contentid
+    let image_cid = parseContentId(image_contentid)
+    // check if editable state of image exists
+    if (editable.state_of_image && editable.state_of_image[`${image_cid}_cid`]) {
+      image_contentid = editable.state_of_image[`${image_cid}_cid`].current
     }
   }
   // parse data
