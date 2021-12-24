@@ -4,7 +4,7 @@ import React from 'react'
 import { withTheme } from 'styled-components'
 
 import Block from '../../Block'
-import ImageGallery from '../../ImageGallery'
+import { ImageGallery } from '../../ImageGallery/index.tsx'
 import Citation from '../Citation/Citation'
 import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed } from '../Embeds'
 import Heading2 from '../Headings/Heading2'
@@ -204,9 +204,12 @@ const TextBody = (props) => {
           </React.Fragment>
         )
       })}
-      {gallery && gallery.length > 0 && (
-        <ImageGallery items={gallery} />
-      )}
+      {gallery && gallery.length > 0 && 
+        <ImageGallery
+          amp={amp}
+          items={gallery}
+        />
+      }
       {tags_section_title && tags_section_title.enabled && (
         <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
       )}

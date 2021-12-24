@@ -17,6 +17,7 @@ const Teaser = (props: TeaserProps) => {
     amp,
     color,
     fallback_image_url,
+    eventTracking,
     edit_buttons,
     editable,
     domain,
@@ -24,10 +25,12 @@ const Teaser = (props: TeaserProps) => {
     layout,
     number,
     related,
+    slot_position,
     states
   } = props
 
   // main props
+  const item_cid = get(item, 'cid', '')
   const item_path = get(item, 'url', false) || get(item, 'path', '')
   const item_title = get(item, 'name', '')
   const box_align = get(layout, 'box.align', ['column', 'column'])
@@ -96,6 +99,10 @@ const Teaser = (props: TeaserProps) => {
 
   // opacity mask prop
   const opacity_mask = get(layout, 'opacity_mask', false)
+
+  //eventTracking
+  const titleEventTracking = eventTracking?.titleEventTracking
+
   return (
     <S.Box
       box_align={box_align}
@@ -187,6 +194,7 @@ const Teaser = (props: TeaserProps) => {
           <EditButtons {...edit_buttons} />
         </S.WrapSubject>
         <RenderTitle
+          cid={item_cid}
           editable={{
             enabled: editable?.enabled,
             set_modified: editable?.set_modified,
@@ -195,8 +203,11 @@ const Teaser = (props: TeaserProps) => {
           }}
           layout={layout}
           link={item_path}
+          slot_position={slot_position}
           shadow={opacity_mask}
+          position={number}
           title={item_title}
+          titleEventTracking={titleEventTracking}
         />
         <RenderSubtitle
           item={item}

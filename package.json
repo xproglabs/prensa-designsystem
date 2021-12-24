@@ -1,6 +1,6 @@
 {
   "name": "prensa",
-  "version": "1.6.76",
+  "version": "1.6.78",
   "description": "Prensa Design System",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -16,8 +16,9 @@
     "react-contenteditable": ">=3.3.6",
     "react-dom": ">=17.0.1",
     "react-facebook": ">=8.1.4",
-    "react-instagram-embed": ">=3.0.0",
     "react-input-mask": "3.0.0-alpha.2",
+    "react-instagram-embed": ">=3.0.0",
+    "react-responsive-carousel": ">=3.2.22",
     "react-twitter-widgets": ">=1.10.0",
     "react-youtube": ">=7.13.1",
     "styled-components": ">=5.2.1"
@@ -92,10 +93,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "react-contenteditable": "^3.3.6",
-    "react-facebook": "^8.1.4",
-    "react-instagram-embed": "^3.0.0",
-    "react-twitter-widgets": "^1.10.0",
-    "react-youtube": "^7.13.1"
+    "react-contenteditable": ">=3.3.6",
+    "react-facebook": ">=8.1.4",
+    "react-instagram-embed": ">=3.0.0",
+    "react-responsive-carousel": "^3.2.22",
+    "react-twitter-widgets": ">=1.10.0",
+    "react-youtube": ">=7.13.1"
   }
 }

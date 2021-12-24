@@ -167,33 +167,6 @@ const Subject = ({
   )
 }
 
-const Subtitle = ({
-  children,
-  color,
-  font_size,
-  line_height,
-  mb
-}) => {
-  return (
-    <Typography
-      color={color}
-      element='h2'
-      fontFamily='secondary'
-      fontSize={font_size[0]}
-      fontWeight={300}
-      lineHeight={line_height[0]}
-      lg={{
-        fontSize: font_size[1],
-        lineHeight: line_height[1],
-        mb: mb[1]
-      }}
-      mb={mb[0]}
-      width='100%'>
-      {children}
-    </Typography> 
-  )
-}
-
 const WrapContent = ({
   children,
   content_overlap=false,
@@ -257,7 +230,6 @@ export {
   Box,
   Image,
   Subject,
-  Subtitle,
   WrapContent,
   WrapSubject
 }

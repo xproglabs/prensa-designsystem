@@ -1,17 +1,18 @@
 import { ReactElement } from 'react'
 
-import { CarouselProps } from '../../components/Carousel/types'
+import { CarouselLayoutProps } from '../../components/Carousel/types'
 import { PageBlockPreview } from '../PreviewProvider/types'
 import { LayoutProps } from '../Teaser/types'
 
 export type RenderSlotProps = {
   amp?: boolean,
   bgcolor?: string;
-  carousel?: CarouselProps;
+  carousel?: CarouselLayoutProps;
   color?: string;
   column_items: number;
   column_padding: number;
   domain?: string;
+  eventTracking?: Object;
   fallback_image_url?: string;
   layout?: LayoutProps;
   layouts: Array<string>;
@@ -24,6 +25,7 @@ export type RenderSlotProps = {
   site_data: any;
   slot: Array<any>;
   slot_parser: any;
+  slot_position?: number;
   /**
    * @description spaceA prop expects a element or React Component to be rendered before teaser content
    */

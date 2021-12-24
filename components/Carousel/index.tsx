@@ -1,3 +1,4 @@
+import { Block } from 'prensa'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
@@ -7,6 +8,7 @@ const Carousel = ({
   children,
   enabled,
   height,
+  mb,
   querie,
   theme,
   type
@@ -17,7 +19,12 @@ const Carousel = ({
   let querie_value = theme.queries[querie]
 
   return (
-    <React.Fragment>
+    <Block
+      width='100%'
+      height={height[0]}
+      mb={mb[0]}
+      lg={{ height: height[1], mb: mb[1] }}
+    >
       <amp-carousel
         layout='fixed-height'
         height={height[0]}
@@ -32,14 +39,15 @@ const Carousel = ({
         type={type}>
         {children}
       </amp-carousel>
-    </React.Fragment>
+    </Block>
   )
 }
 
 Carousel.defaultProps = {
-  height: ['250', '250'],
+  height: ['250px', '250px'],
   layout: 'fixed-height',
   querie: 'md',
+  mb: [undefined, undefined],
   type: 'slides'
 }
 
