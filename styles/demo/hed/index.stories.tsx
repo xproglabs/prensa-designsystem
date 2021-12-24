@@ -72,6 +72,7 @@ export const HomeWithAds = () => {
 
   //event tracking example
   const eventTracking = {
+    // eslint-disable-next-line no-console
     titleEventTracking: params => console.log(params)
   }
   

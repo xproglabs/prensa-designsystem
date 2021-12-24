@@ -14,7 +14,7 @@ type RenderImageProps = {
   domain: string;
   editable?: {
     enabled: boolean,
-    state_of_image?: any;
+    state_of_image: any;
   };
   fallback_image_url?: string;
   image_circle?: boolean;

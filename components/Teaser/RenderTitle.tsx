@@ -55,7 +55,7 @@ const RenderTitle = ({
     link = ''
   }
 
-  const handleClick = event => {
+  const handleClick = () => {
     if (titleEventTracking) {
       titleEventTracking({
         cid,
