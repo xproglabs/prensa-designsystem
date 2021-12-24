@@ -11,6 +11,7 @@ const Byline = ({
   content,
   dateline,
   datetime,
+  isExpanded,
   share
 }) => {
   const AuthorInfo = () => {
@@ -35,6 +36,34 @@ const Byline = ({
     )
   }
 
+  const BylineExpanded = () => {
+    return (
+      <Block>
+        <S.BylineText {...datetime}>
+              Publicado em {datetime.time_published}
+        </S.BylineText>
+        <S.BylineText {...datetime}>
+              Atualizado em {datetime.time_modified}
+        </S.BylineText>
+      </Block>
+    )
+  }
+
+  const BylineReduced = () => {
+    return (
+      <Block lg={{ align: 'row' }}>
+        <Block lg={{ mr: '4px' }}>
+          <S.BylineText {...datetime}>
+            {datetime.time_published}.
+          </S.BylineText>
+        </Block>
+        <S.BylineText {...datetime}>
+          Atualizado em {datetime.time_modified}
+        </S.BylineText>
+      </Block>
+    )
+  }
+
   return (
     <S.Container>
       <S.Content {...content}>
@@ -43,14 +72,11 @@ const Byline = ({
             {author.value}
           </S.Author>
           <AuthorInfo />
-          <Block>
-            <S.BylineText {...datetime}>
-              Publicado em {datetime.time_published}
-            </S.BylineText>
-            <S.BylineText {...datetime}>
-              Atualizado em {datetime.time_modified}
-            </S.BylineText>
-          </Block>  
+          {isExpanded ? (
+            <BylineExpanded />
+          ) : (
+            <BylineReduced />
+          )}
         </S.BylineContainer>
         <Share amp={amp} {...share} />
       </S.Content>
@@ -90,6 +116,7 @@ Byline.propTypes = {
   author: PropTypes.object,
   datetime: PropTypes.object,
   medias: PropTypes.object,
+  isExpanded: PropTypes.bool,
   share: PropTypes.object
 }
 
