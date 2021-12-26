@@ -19,6 +19,7 @@ const ListComponent = ({ items, itemsSpace, maxWidth, ordered }: ListComponentPr
         $fontSize='20px'
         key={key}
         mb={itemsSpace}
+        value={ordered ? key + 1 : undefined}
       >
         <Typography
           color='neutral2'

@@ -15,6 +15,7 @@ export type ListItemProps = {
   mr?: string | number;
   mb?: string | number;
   ml?: string | number;
+  value?: number;
 }
 
 export interface ListComponentProps {
