@@ -39,15 +39,11 @@ const parse_content = (content) => {
       return true
     }
     if (tag === 'ul') {
-      tagItems.push({ 'type': 'list', 'value': renderItemsFromList(child) })
+      tagItems.push({ 'type': 'ul', 'value': renderItemsFromList(child) })
       return true
     }
     if (tag === 'ol') {
-      tagItems.push({ 'type': 'list', 'value': renderItemsFromList(child) })
-      return true
-    }
-    if (tag === 'li') {
-      tagItems.push({ 'type': 'list', 'value': `<li>${renderChildValue(child)}</li>` })
+      tagItems.push({ 'type': 'ol', 'value': renderItemsFromList(child) })
       return true
     }
     if (tag === 'cite') {
@@ -163,8 +159,11 @@ const parse_content = (content) => {
     }
 
     switch (type) {
-      case 'list':
-        bodyItems.push({ type: 'List', value })
+      case 'ul':
+        bodyItems.push({ type: 'UnorderedList', value })
+        break
+      case 'ol':
+        bodyItems.push({ type: 'OrderedList', value })
         break
       case 'cite':
         if (value && value !== '') {
