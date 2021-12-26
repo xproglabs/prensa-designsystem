@@ -15,6 +15,8 @@ const ListComponent = ({ items, itemsSpace, maxWidth, ordered }: ListComponentPr
   function renderItems() {
     return items?.map((entry, key) => (
       <ListItem
+        $fontFamily='primary'
+        $fontSize='20px'
         key={key}
         mb={itemsSpace}
       >
