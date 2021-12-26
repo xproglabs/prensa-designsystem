@@ -6,5 +6,5 @@ import { OrderedListProps } from './types'
 
 export const OrderedList: ComponentType<OrderedListProps> = styled.ol<OrderedListProps>`
   max-width: calc(${props => props.maxWidth} - 40px);
-  width: 100%;
+  width: calc(100% - 40px);
 `

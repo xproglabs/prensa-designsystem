@@ -5,5 +5,5 @@ import { UnorderedListProps } from './types'
 
 export const UnorderedList: ComponentType<UnorderedListProps> = styled.ul<UnorderedListProps>`
   max-width: calc(${props => props.maxWidth} - 40px);
-  width: 100%;
+  width: calc(100% - 40px);
 `
