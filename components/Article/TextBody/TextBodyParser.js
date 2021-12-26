@@ -13,10 +13,10 @@ const parse_content = (content) => {
     const ul_content = []
     map(list_items, (it) => {
       map(it.child, ({ text }) => {
-        ul_content.push(`<li>${text}</li>`)
+        ul_content.push(text)
       })
     })
-    return ul_content.join('')
+    return ul_content
   }
 
   const switchNode = (obj) => {
@@ -34,20 +34,20 @@ const parse_content = (content) => {
       tagItems.push({ 'type': 'text', 'value': `<u>${renderChildValue(child)}</u>` })
       return true
     }
+    if (tag === 'em') {
+      tagItems.push({ 'type': 'text', 'value': `<em>${renderChildValue(child)}</em>` })
+      return true
+    }
     if (tag === 'ul') {
-      tagItems.push({ 'type': 'text', 'value': `<ul>${renderItemsFromList(child)}</ul>` })
+      tagItems.push({ 'type': 'list', 'value': renderItemsFromList(child) })
       return true
     }
     if (tag === 'ol') {
-      tagItems.push({ 'type': 'text', 'value': `<ol>${renderItemsFromList(child)}</ol>` })
+      tagItems.push({ 'type': 'list', 'value': renderItemsFromList(child) })
       return true
     }
     if (tag === 'li') {
-      tagItems.push({ 'type': 'text', 'value': `<li>${renderChildValue(child)}</li>` })
-      return true
-    }
-    if (tag === 'em') {
-      tagItems.push({ 'type': 'text', 'value': `<em>${renderChildValue(child)}</em>` })
+      tagItems.push({ 'type': 'list', 'value': `<li>${renderChildValue(child)}</li>` })
       return true
     }
     if (tag === 'cite') {
@@ -90,7 +90,7 @@ const parse_content = (content) => {
         tagItems.push({ type: 'Image', value: propsImage })
         return true
       }
-      
+
       // embeds
     } else if (tag === 'img' && attr && attr.src && attr.src.startsWith('/legacy/image')) {
       // let source = attr.src.startsWith('/legacy/image')
@@ -161,7 +161,11 @@ const parse_content = (content) => {
         p_text = ''
       }
     }
+
     switch (type) {
+      case 'list':
+        bodyItems.push({ type: 'List', value })
+        break
       case 'cite':
         if (value && value !== '') {
           bodyItems.push({ type: 'Cite', value })
@@ -195,6 +199,7 @@ const parse_content = (content) => {
   })
 
   let added = add_text(p_text)
+  
   if (added) {
     p_text = ''
   }
