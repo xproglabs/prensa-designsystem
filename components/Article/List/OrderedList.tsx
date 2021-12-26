@@ -3,10 +3,8 @@ import styled from 'styled-components'
 
 import { OrderedListProps } from './types'
 
-function renderMaxWidth({ maxWidth }: any) {
-  return `max-width: calc(${maxWidth} - 40px)`
-}
 
 export const OrderedList: ComponentType<OrderedListProps> = styled.ol<OrderedListProps>`
-  ${renderMaxWidth};
+  max-width: calc(${props => props.maxWidth} - 40px);
+  width: 100%;
 `
