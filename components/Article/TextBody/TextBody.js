@@ -191,7 +191,9 @@ const TextBody = (props) => {
         return <Heading4 {...heading4} maxWidth={bodyWidth} value={value} />
       case 'Paragraph':
         return render_paragraph(value)
-      case 'List':
+      case 'OrderedList':
+        return <ListComponent items={value} maxWidth={bodyWidth} ordered />
+      case 'UnorderedList':
         return <ListComponent items={value} maxWidth={bodyWidth} />
       default:
         return <pre>erro no parse do conteúdo</pre>
