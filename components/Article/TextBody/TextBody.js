@@ -10,7 +10,7 @@ import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed } from '../Em
 import Heading2 from '../Headings/Heading2'
 import Heading3 from '../Headings/Heading3'
 import Heading4 from '../Headings/Heading4'
-import { ListComponent } from '../List'
+import { ListComponent } from '../List/index.ts'
 import Paragraph from '../Paragraph/Paragraph'
 import SectionTitle from '../SectionTitle'
 import Tags from '../Tags/Tags'
