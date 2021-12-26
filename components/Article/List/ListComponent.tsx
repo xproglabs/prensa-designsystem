@@ -19,6 +19,7 @@ const ListComponent = ({ items, itemsSpace, maxWidth, ordered }: ListComponentPr
         mb={itemsSpace}
       >
         <Typography
+          color='neutral2'
           fontFamily='primary'
           fontSize='20px'
           lineHeight='160%'
