@@ -8,6 +8,7 @@
  * @returns tweetId
  */
 export function getTweetId(url: string) {
+  if (!url) return null
   let split_a = url.split('/')
   let split_b = split_a[split_a.length - 1].split('?')
   return split_b[0]
