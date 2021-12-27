@@ -11,6 +11,7 @@ const Byline = ({
   content,
   dateline,
   datetime,
+  isExpanded,
   fbappid,
   pageUrl,
   share
@@ -37,6 +38,34 @@ const Byline = ({
     )
   }
 
+  const BylineExpanded = () => {
+    return (
+      <Block>
+        <S.BylineText {...datetime}>
+            Publicado em {datetime.time_published}
+        </S.BylineText>
+        <S.BylineText {...datetime}>
+            Atualizado em {datetime.time_modified_expanded}
+        </S.BylineText>
+      </Block>
+    )
+  }
+
+  const BylineReduced = () => {
+    return (
+      <Block lg={{ align: 'row' }}>
+        <Block lg={{ mr: '4px' }}>
+          <S.BylineText {...datetime}>
+            {datetime.time_published}.
+          </S.BylineText>
+        </Block>
+        <S.BylineText {...datetime}>
+           Atualizado em {datetime.time_modified}
+        </S.BylineText>
+      </Block>
+    )
+  }
+
   return (
     <S.Container>
       <S.Content {...content}>
@@ -45,16 +74,7 @@ const Byline = ({
             {author.value}
           </S.Author>
           <AuthorInfo />
-          <Block lg={{ align: 'row' }}>
-            <Block lg={{ mr: '4px' }}>
-              <S.BylineText {...datetime}>
-                {datetime.time_published}.
-              </S.BylineText>
-            </Block>
-            <S.BylineText {...datetime}>
-              Atualizado em {datetime.time_modified}
-            </S.BylineText>
-          </Block>
+          {isExpanded  ? <BylineExpanded /> : <BylineReduced />}
         </S.BylineContainer>
         <Share
           amp={amp}
@@ -87,6 +107,7 @@ Byline.defaultProps = {
     fontSize: ['12px', '12px'],
     lineHeight: ['16px', '16px'],
     time_modified: '18 dias atrás',
+    time_modified_expanded: '21/05/2021 às 23:20',
     time_published: '21/05/2021 às 23:20'
   },
   medias: {
@@ -99,7 +120,9 @@ Byline.propTypes = {
   author: PropTypes.object,
   datetime: PropTypes.object,
   medias: PropTypes.object,
-  share: PropTypes.object
+  share: PropTypes.object,
+  isExpanded: PropTypes.bool,
+
 }
 
 export default Byline
