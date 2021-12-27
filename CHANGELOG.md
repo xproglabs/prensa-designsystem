@@ -1,3 +1,5 @@
+# v1.6.80
+- Corrige null exception no embed do Instagram (ajustes nas funções Twitter, YouTube)
 # v1.6.79
 - Permite comportamento expandido e nova prop "isExpanded" no Byline em Article
 - Adiciona edição da imagem no RenderImage do Teaser
