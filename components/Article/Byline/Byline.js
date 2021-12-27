@@ -42,10 +42,10 @@ const Byline = ({
     return (
       <Block>
         <S.BylineText {...datetime}>
-            Publicado em {datetime.time_published}
+          Publicado em {datetime.time_published}
         </S.BylineText>
         <S.BylineText {...datetime}>
-            Atualizado em {datetime.time_modified_expanded}
+          Atualizado em {datetime.time_modified_expanded}
         </S.BylineText>
       </Block>
     )
@@ -60,7 +60,7 @@ const Byline = ({
           </S.BylineText>
         </Block>
         <S.BylineText {...datetime}>
-           Atualizado em {datetime.time_modified}
+          Atualizado em {datetime.time_modified}
         </S.BylineText>
       </Block>
     )
@@ -74,7 +74,7 @@ const Byline = ({
             {author.value}
           </S.Author>
           <AuthorInfo />
-          {isExpanded  ? <BylineExpanded /> : <BylineReduced />}
+          {isExpanded ? <BylineExpanded /> : <BylineReduced />}
         </S.BylineContainer>
         <Share
           amp={amp}
