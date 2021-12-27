@@ -1,3 +1,6 @@
+# v1.6.79
+- Permite comportamento expandido e nova prop "isExpanded" no Byline em Article
+- Adiciona edição da imagem no RenderImage do Teaser
 # v1.6.78
 - Revisa os types do RenderSubtitle do Teaser
 - Adiciona derivativa da imagem no preview dinamico
