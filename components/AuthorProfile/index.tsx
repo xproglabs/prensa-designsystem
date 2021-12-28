@@ -69,11 +69,8 @@ const AuthorProfile = ({
         <S.TitleWrapper>
           {title &&
             <Block
-              alignx='center'
-              lg={{
-                align: 'row',
-                alignx: 'left'
-              }}
+              alignx='left'
+              align='row'
               mb={1}
               width='100%'>
               <Link path={href}>
