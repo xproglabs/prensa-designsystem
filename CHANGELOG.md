@@ -1,4 +1,8 @@
 # v1.6.80
+- Revisar alinhamento lateral dos elementos no topo da matéria
+- Ajustar posicionamento do título da Coluna no AuthorProfile
+- Remove margin-bottom no author do byline
+# v1.6.80
 - Corrige null exception no embed do Instagram (ajustes nas funções Twitter, YouTube)
 # v1.6.79
 - Permite comportamento expandido e nova prop "isExpanded" no Byline em Article
