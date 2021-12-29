@@ -29,8 +29,7 @@ const Template33 = ({
         lg={{
           align: 'row',
           alignx: 'between',
-          aligny: 'top',
-          mb: 3
+          aligny: 'top'
         }}
       >
         <Column>
