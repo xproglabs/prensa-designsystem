@@ -6,7 +6,7 @@ import { dimensions } from '../../styled-system/dimensions'
 import { margin } from '../../styled-system/margin'
 import { padding } from '../../styled-system/padding'
 
-const parseFontFamily = props => {
+export const parseFontFamily = props => {
   const fonts = get(props, 'theme.fonts', {})
   const propValue = get(props, '$fontFamily', '')
   const selected = get(fonts, propValue, '')
