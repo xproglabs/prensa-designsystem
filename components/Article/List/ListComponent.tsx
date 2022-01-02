@@ -12,7 +12,7 @@ const ListComponent = ({ items, itemsSpace, maxWidth, ordered, textProps }: List
     return null
   }
 
-  function renderItems() {
+  const renderItems = () => {
     return items?.map((entry, key) => (
       <ListItem
         $fontFamily='primary'
