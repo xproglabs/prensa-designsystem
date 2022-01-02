@@ -1,4 +1,10 @@
-import { FontTokens } from '@prensa_tokens'
+import { ColorTokens, FontTokens } from '@prensa_tokens'
+
+export type TextProps = {
+  color?: ColorTokens;
+  fontFamily?: FontTokens;
+  fontSize?: string;
+}
 
 export type OrderedListProps = {
   maxWidth?: string;
@@ -21,6 +27,7 @@ export type ListItemProps = {
 export interface ListComponentProps {
   items: Array<string>;
   itemsSpace?: number;
-  ordered?: boolean;
   maxWidth?: string;
+  ordered?: boolean;
+  textProps?: TextProps;
 }

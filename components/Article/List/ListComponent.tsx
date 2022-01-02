@@ -6,7 +6,7 @@ import { OrderedList } from './OrderedList'
 import { ListComponentProps } from './types'
 import { UnorderedList } from './UnorderedList'
 
-const ListComponent = ({ items, itemsSpace, maxWidth, ordered }: ListComponentProps) => {
+const ListComponent = ({ items, itemsSpace, maxWidth, ordered, textProps }: ListComponentProps) => {
 
   if (items?.length === 0) {
     return null
@@ -20,6 +20,7 @@ const ListComponent = ({ items, itemsSpace, maxWidth, ordered }: ListComponentPr
         key={key}
         mb={itemsSpace}
         value={ordered ? key + 1 : undefined}
+        {...textProps}
       >
         <Typography
           color='neutral2'
@@ -27,6 +28,7 @@ const ListComponent = ({ items, itemsSpace, maxWidth, ordered }: ListComponentPr
           fontSize='20px'
           lineHeight='160%'
           element='span'
+          {...textProps}
         >
           {entry}
         </Typography>
