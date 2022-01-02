@@ -1,3 +1,5 @@
+# v1.6.83
+- Cria novo componente List e implementa listas ordenada e não ordenada no corpo do texto
 # v1.6.82
 - Permite ativar/desativar o caption no ImageGallery
 # v1.6.81
