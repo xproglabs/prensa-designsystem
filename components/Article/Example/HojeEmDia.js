@@ -161,6 +161,12 @@ const ArticleHJD = () => {
           mb: ['5', '8'],
           value: 'https://www.odiariodemogi.net.br/image/policy:1.15230.1621460050:1621460050/image.jpg?f=2x1&w=1000'
         }}
+        orderedList={{
+          color: 'primary1'
+        }}
+        unorderedList={{
+          color: 'primary1'
+        }}
       />
     </ThemeProvider>
   )
