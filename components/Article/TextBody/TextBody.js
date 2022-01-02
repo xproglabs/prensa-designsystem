@@ -32,10 +32,12 @@ const TextBody = (props) => {
     heading4,
     hyperlink,
     images,
-    related_content_intervention,
+    orderedList,
     paragraph,
+    related_content_intervention,
     tags_section_title,
-    tags
+    tags,
+    unorderedList
   } = props
 
   if (!content) return null
@@ -192,9 +194,9 @@ const TextBody = (props) => {
       case 'Paragraph':
         return render_paragraph(value)
       case 'OrderedList':
-        return <ListComponent items={value} maxWidth={bodyWidth} ordered />
+        return <ListComponent textProps={orderedList} items={value} maxWidth={bodyWidth} ordered />
       case 'UnorderedList':
-        return <ListComponent items={value} maxWidth={bodyWidth} />
+        return <ListComponent textProps={unorderedList} items={value} maxWidth={bodyWidth} />
       default:
         return <pre>erro no parse do conteúdo</pre>
     }
