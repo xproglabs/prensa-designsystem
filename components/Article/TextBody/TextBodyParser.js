@@ -9,13 +9,22 @@ const parse_content = (content) => {
   const renderChildValue = (child) => child && child.length > 0 && child[0].text
 
   const renderItemsFromList = (child) => {
+    const discard_text = [' ', '&nbsp;']
+    const invalid_text = discard_text.includes(child)
+
+    if (invalid_text) {
+      return null
+    }
+
     const list_items = filter(child, { tag: 'li' })
     const ul_content = []
+    
     map(list_items, (it) => {
       map(it.child, ({ text }) => {
         ul_content.push(text)
       })
     })
+    
     return ul_content
   }
 
