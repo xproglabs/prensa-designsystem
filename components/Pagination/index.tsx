@@ -1,22 +1,8 @@
 import { Block } from 'prensa'
 import React from 'react'
 
-// import { ArrowButton } from './arrows'
 import { PaginationNumber } from './number'
 
-// const PaginationBox = () => {
-//   return (
-//     <Block align='row'>
-//       <ArrowButton
-//         direction='left'
-//       />
-//       <PaginationNumber />
-//       <ArrowButton
-//         direction='right'
-//       />
-//     </Block>
-//   )
-// }
 const Pagination = ({ numFound, rows, start, path, query }) => {
   const data = {
     current: 0,
