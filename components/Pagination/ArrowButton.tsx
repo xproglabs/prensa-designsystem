@@ -27,7 +27,8 @@ const ArrowButton = ({
   return (
     <Link
       aria-label={aria_label_string}
-      path='/'
+      mr={2}
+      href='/'
       rel='noreferrer'
       target='_blank'
       title={aria_label_string}
@@ -39,7 +40,6 @@ const ArrowButton = ({
         b='1px'
         borderColor={borderColor}
         height={height}
-        mr={2}
         radius={radius}
         width={width}
       >
