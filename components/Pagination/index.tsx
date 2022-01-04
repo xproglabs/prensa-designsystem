@@ -1,6 +1,7 @@
 import { Block } from 'prensa'
 import React from 'react'
 
+import { ArrowButton } from './ArrowButton'
 import { PageIndicator } from './PageIndicator'
 import { PaginationComponentProps } from './types'
 
@@ -98,6 +99,7 @@ const Pagination = ({
       mb={2}
       width='100%'
     >
+      <ArrowButton direction='left' />
       <RenderStart />
       {data.last > data.start + 1 && <RenderSpace />}
       <RenderLast />
@@ -105,6 +107,7 @@ const Pagination = ({
       <RenderNext />
       {data.next < data.end - 1 && <RenderSpace />}
       <RenderEnd />
+      <ArrowButton direction='right' />
     </Block>
   )
 }
