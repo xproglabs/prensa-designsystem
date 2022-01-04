@@ -1,9 +1,10 @@
 import { Block } from 'prensa'
 import React from 'react'
 
-import { PaginationNumber } from './number'
+import { PageIndicator } from './PageIndicator'
 
 const Pagination = ({ numFound, rows, start, path, query }) => {
+
   const data = {
     current: 0,
     end: 0,
@@ -13,7 +14,7 @@ const Pagination = ({ numFound, rows, start, path, query }) => {
   }
 
   if (!numFound || numFound == 0 || numFound < rows) {
-    return <></>
+    return null
   }
 
   data.current = Math.floor(start / rows) + 1
@@ -29,9 +30,9 @@ const Pagination = ({ numFound, rows, start, path, query }) => {
       return null
     }
     return (
-      <PaginationNumber href={`${href}&page=${data.start}`}>
+      <PageIndicator href={`${href}&page=${data.start}`}>
         {data.start}
-      </PaginationNumber>
+      </PageIndicator>
     )
   }
 
@@ -40,19 +41,19 @@ const Pagination = ({ numFound, rows, start, path, query }) => {
       return null
     }
     return (
-      <PaginationNumber href={`${href}&page=${data.last}`}>
+      <PageIndicator href={`${href}&page=${data.last}`}>
         {data.last}
-      </PaginationNumber>
+      </PageIndicator>
     )
   }
 
   const RenderCurrent = () => {
     return (
-      <PaginationNumber
+      <PageIndicator
         bgColor="neutral5"
         color="neutral9">
         {data.current}
-      </PaginationNumber>
+      </PageIndicator>
     )
   }
 
@@ -61,9 +62,9 @@ const Pagination = ({ numFound, rows, start, path, query }) => {
       return null
     }
     return (
-      <PaginationNumber href={`${href}&page=${data.next}`}>
+      <PageIndicator href={`${href}&page=${data.next}`}>
         {data.next}
-      </PaginationNumber>
+      </PageIndicator>
     )
   }
 
@@ -72,15 +73,15 @@ const Pagination = ({ numFound, rows, start, path, query }) => {
       return null
     }
     return (
-      <PaginationNumber href={`${href}&page=${data.end}`}>
+      <PageIndicator href={`${href}&page=${data.end}`}>
         {data.end}
-      </PaginationNumber>
+      </PageIndicator>
     )
   }
 
   const RenderSpace = () => {
     return (
-      <PaginationNumber>...</PaginationNumber>
+      <PageIndicator>...</PageIndicator>
     )
   }
 
