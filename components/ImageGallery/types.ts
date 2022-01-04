@@ -1,12 +1,8 @@
+import { CaptionProps } from '../ImageGallery/Caption/types'
+
 export type ItemProps = {
   caption: string;
   value: string;
-}
-
-export type CaptionProps = {
-  fontFamily?: string;
-  fontSize?: [string, string];
-  lineHeight?: [string, string];
 }
 
 export type ContainerProps = {

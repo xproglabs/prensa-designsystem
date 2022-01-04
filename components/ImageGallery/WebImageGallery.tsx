@@ -7,7 +7,7 @@ import { WebCarousel } from './styled'
 import { WebImageGalleryProps } from './types'
 import { WebImage } from './WebImage'
 
-const WebImageGallery = ({ items }: WebImageGalleryProps) => {
+const WebImageGallery = ({ captionProps, items }: WebImageGalleryProps) => {
 
   const renderArrowPrev = (onClick, hasArrow) => {
     return hasArrow && <ControlButton onClick={onClick} />
@@ -28,7 +28,7 @@ const WebImageGallery = ({ items }: WebImageGalleryProps) => {
       {map(items, (item, key) =>
         <div>
           <WebImage key={key} src={item.value} />
-          <Caption>{item.caption}</Caption>
+          {captionProps?.enabled && <Caption {...captionProps}>{item.caption}</Caption>}
         </div>
       )}
     </WebCarousel>
