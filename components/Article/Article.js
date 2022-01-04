@@ -28,6 +28,7 @@ const Article = (props) => {
     heading4,
     hyperlink,
     images,
+    orderedList,
     paragraph,
     relatedContent,
     tags_section_title,
@@ -37,6 +38,7 @@ const Article = (props) => {
     tags,
     textbody,
     topimage,
+    unorderedList,
     url
   } = props
 
@@ -106,10 +108,12 @@ const Article = (props) => {
           heading4={heading4}
           hyperlink={hyperlink}
           images={images}
+          orderedList={orderedList}
           paragraph={paragraph}
           related_content_intervention={related_content_body}
           tags_section_title={tags_section_title}
           tags={tags}
+          unorderedList={unorderedList}
         />
         <GridRelated {...related_content_bottom} />
       </S.Container>
@@ -148,6 +152,7 @@ Article.propTypes = {
   hyperlink: PropTypes.string,
   images: PropTypes.object,
   paragraph: PropTypes.object,
+  orderedList: PropTypes.object,
   relatedContent: PropTypes.shape({
     body: PropTypes.shape({
       enabled: PropTypes.bool,
@@ -172,6 +177,7 @@ Article.propTypes = {
   textbody: PropTypes.string,
   title: PropTypes.object,
   topimage: PropTypes.object,
+  unorderedList: PropTypes.object,
   url: PropTypes.string.isRequired
 }
 

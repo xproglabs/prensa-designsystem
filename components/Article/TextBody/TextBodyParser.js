@@ -7,76 +7,75 @@ const parse_content = (content) => {
   let tagItems = []
 
   const renderChildValue = (child) => child && child.length > 0 && child[0].text
+
   const renderItemsFromList = (child) => {
     const list_items = filter(child, { tag: 'li' })
     const ul_content = []
     map(list_items, (it) => {
       map(it.child, ({ text }) => {
-        ul_content.push(`<li>${text}</li>`)
+        ul_content.push(text)
       })
     })
-    return ul_content.join('')
+    return ul_content
   }
+
   const switchNode = (obj) => {
-    
+
     const { attr, child, node, tag, text } = obj
 
-    if(tag === 'p' || tag === 'br') {
+    if (tag === 'p' || tag === 'br') {
       tagItems.push({ 'type': 'p', 'value': '' })
     }
-    if(tag === 'strong') {
+    if (tag === 'strong') {
       tagItems.push({ 'type': 'text', 'value': `<strong>${renderChildValue(child)}</strong>` })
       return true
     }
-    if(tag === 'u') {
+    if (tag === 'u') {
       tagItems.push({ 'type': 'text', 'value': `<u>${renderChildValue(child)}</u>` })
       return true
     }
-    if(tag === 'ul') {
-      tagItems.push({ 'type': 'text', 'value': `<ul>${renderItemsFromList(child)}</ul>` })
-      return true
-    }
-    if(tag === 'ol') {
-      tagItems.push({ 'type': 'text', 'value': `<ol>${renderItemsFromList(child)}</ol>` })
-      return true
-    }
-    if(tag === 'li') {
-      tagItems.push({ 'type': 'text', 'value': `<li>${renderChildValue(child)}</li>` })
-      return true
-    }
-    if(tag === 'em') {
+    if (tag === 'em') {
       tagItems.push({ 'type': 'text', 'value': `<em>${renderChildValue(child)}</em>` })
       return true
     }
-    if(tag === 'cite') {
+    if (tag === 'ul') {
+      tagItems.push({ 'type': 'ul', 'value': renderItemsFromList(child) })
+      return true
+    }
+    if (tag === 'ol') {
+      tagItems.push({ 'type': 'ol', 'value': renderItemsFromList(child) })
+      return true
+    }
+    if (tag === 'cite') {
       tagItems.push({ 'type': 'cite', 'value': `${renderChildValue(child)}` })
       return true
     }
-    if(tag === 'h2') {
+    if (tag === 'h2') {
       tagItems.push({ 'type': 'h2', 'value': `${renderChildValue(child)}` })
       return true
     }
-    if(tag === 'h3') {
+    if (tag === 'h3') {
       tagItems.push({ 'type': 'h3', 'value': `${renderChildValue(child)}` })
       return true
     }
-    if(tag === 'h4') {
+    if (tag === 'h4') {
       tagItems.push({ 'type': 'h4', 'value': `${renderChildValue(child)}` })
       return true
     }
-    if(node === 'text') {
-      if(text && text !== '') {
+    if (node === 'text') {
+      if (text && text !== '') {
         tagItems.push({ 'type': 'text', 'value': text })
       }
     }
+
     // render image
-    if(tag === 'a' && attr.class && attr.class === 'p-smartembed') {
+    if (tag === 'a' && attr.class && attr.class === 'p-smartembed') {
       const childImage = find(child, { tag: 'img' })
-      if(childImage) {
-        let subtitle = 
-          childImage && 
-            childImage.attr && 
-              childImage.attr['alt'] ? childImage.attr['alt'].join(' ') : ''
+      if (childImage) {
+        let subtitle =
+          childImage &&
+            childImage.attr &&
+            childImage.attr['alt'] ? childImage.attr['alt'].join(' ') : ''
 
         subtitle = subtitle && subtitle !== undefined && subtitle !== 'undefined' ? subtitle : ''
         const propsImage = {
@@ -87,30 +86,31 @@ const parse_content = (content) => {
         tagItems.push({ type: 'Image', value: propsImage })
         return true
       }
-    // embeds
-    } else if(tag === 'img' && attr && attr.src && attr.src.startsWith('/legacy/image')) {
+
+      // embeds
+    } else if (tag === 'img' && attr && attr.src && attr.src.startsWith('/legacy/image')) {
       // let source = attr.src.startsWith('/legacy/image')
       // if(source) {
       tagItems.push({ type: 'Image', value: { 'image-legacy': attr.src } })
       return true
       // }
-    } else if(attr && attr['data-oembed-url']) {
-      if(attr['data-oembed-url'].indexOf('youtu.be') > -1) {
+    } else if (attr && attr['data-oembed-url']) {
+      if (attr['data-oembed-url'].indexOf('youtu.be') > -1) {
         tagItems.push({ type: 'Youtube', value: attr['data-oembed-url'] })
         return true
       }
-    } else if(tag === 'a') {
-      if(!attr.href) {
-        if(attr['name'].indexOf('facebook.com') > -1) {
+    } else if (tag === 'a') {
+      if (!attr.href) {
+        if (attr['name'].indexOf('facebook.com') > -1) {
           tagItems.push({ type: 'Facebook', value: attr['name'] })
           return true
-        } else if(attr['name'].indexOf('instagram.com') > -1) {
+        } else if (attr['name'].indexOf('instagram.com') > -1) {
           tagItems.push({ type: 'Instagram', value: attr['name'] })
           return true
-        } else if(attr['name'].indexOf('twitter.com') > -1) {
+        } else if (attr['name'].indexOf('twitter.com') > -1) {
           tagItems.push({ type: 'Tweet', value: attr['name'] })
           return true
-        } else if(attr['name'].indexOf('youtube.com') > -1 || attr['name'].indexOf('youtu.be') > -1) {
+        } else if (attr['name'].indexOf('youtube.com') > -1 || attr['name'].indexOf('youtu.be') > -1) {
           tagItems.push({ type: 'Youtube', value: attr['name'] })
           return true
         }
@@ -121,7 +121,7 @@ const parse_content = (content) => {
       }
     }
     let child_len = child && child.length
-    if(child && child_len > 0) {
+    if (child && child_len > 0) {
       map(child, item => {
         switchNode(item)
       })
@@ -130,7 +130,7 @@ const parse_content = (content) => {
   // convert html
   let parsed = content.replace(/(\r\n|\n|\r)/gm, '')
   parsed = html2json(parsed)
-  
+
   let elements = filter(parsed.child, ({ node: 'element' }))
   elements = elements.size === 0 || { type: 'p', value: parsed }
   // parse elements
@@ -142,7 +142,7 @@ const parse_content = (content) => {
   const add_text = (value) => {
     let invalid_text = discard_text.includes(value)
     let is_valid = value && value !== '' && value !== ' ' && !invalid_text
-    if(is_valid) {
+    if (is_valid) {
       bodyItems.push({ type: 'Paragraph', value })
       p_text = ''
     }
@@ -151,30 +151,37 @@ const parse_content = (content) => {
 
   map(tagItems, ({ type, value }) => {
 
-    if(type !== 'text') {
+    if (type !== 'text') {
       let added = add_text(p_text)
-      if(added) {
+      if (added) {
         p_text = ''
       }
     }
-    switch(type) {
+
+    switch (type) {
+      case 'ul':
+        bodyItems.push({ type: 'UnorderedList', value })
+        break
+      case 'ol':
+        bodyItems.push({ type: 'OrderedList', value })
+        break
       case 'cite':
-        if(value && value !== '') {
+        if (value && value !== '') {
           bodyItems.push({ type: 'Cite', value })
         }
         break
       case 'h2':
-        if(value && value !== '') {
+        if (value && value !== '') {
           bodyItems.push({ type: 'Heading2', value })
         }
         break
       case 'h3':
-        if(value && value !== '') {
+        if (value && value !== '') {
           bodyItems.push({ type: 'Heading3', value })
         }
         break
       case 'h4':
-        if(value && value !== '') {
+        if (value && value !== '') {
           bodyItems.push({ type: 'Heading4', value })
         }
         break
@@ -191,10 +198,11 @@ const parse_content = (content) => {
   })
 
   let added = add_text(p_text)
-  if(added) {
+  
+  if (added) {
     p_text = ''
   }
-  
+
   return bodyItems
 }
 

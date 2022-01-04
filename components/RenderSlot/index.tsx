@@ -25,6 +25,7 @@ const RenderSlot = ({
   column_items,
   column_padding,
   domain,
+  eventTracking,
   fallback_image_url,
   layout,
   layouts,
@@ -38,6 +39,7 @@ const RenderSlot = ({
   site_data,
   slot,
   slot_parser,
+  slot_position,
   space_bottom,
   theme
 }: RenderSlotProps) => {
@@ -115,10 +117,12 @@ const RenderSlot = ({
           amp={amp}
           color={color}
           domain={domain}
+          eventTracking={eventTracking}
           fallback_image_url={fallback_image_url}
           item={item}
           layout={teaser_props.layout}
           related={teaser_props.related}
+          slot_position={slot_position}
           number={teaser_number}
         />
       </PreviewProvider>
@@ -145,9 +149,11 @@ const RenderSlot = ({
   )
 
   if (carousel_enabled) {
-    <Carousel {...carousel}>
-      <RenderList />
-    </Carousel>
+    return (
+      <Carousel {...carousel}>
+        <RenderList />
+      </Carousel>
+    )
   }
 
   return <RenderList />

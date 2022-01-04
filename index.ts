@@ -13,7 +13,6 @@ export { default as Form } from './components/Form'
 export { default as Field } from './components/Field'
 export { default as Icon } from './components/Icon'
 export { default as Image } from './components/Image'
-export { default as ImageGallery } from './components/ImageGallery'
 export { default as Link } from './components/Link'
 export { default as Pagination } from './components/Pagination'
 export { default as PageBlock } from './components/PageBlock'
@@ -27,6 +26,7 @@ export { default as TemplateContainer } from './components/Templates/TemplateCon
 
 export * from './components/AuthorBio'
 export * from './components/Image/parser'
+export * from './components/ImageGallery'
 export * from './components/Templates'
 export * from './styles'
 
