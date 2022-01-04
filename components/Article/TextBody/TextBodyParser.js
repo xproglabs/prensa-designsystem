@@ -8,20 +8,14 @@ const parse_content = (content) => {
 
   const renderChildValue = (child) => child && child.length > 0 && child[0].text
 
-  const renderItemsFromList = (child) => {
-    const discard_text = [' ', '&nbsp;']
-    const invalid_text = discard_text.includes(child)
-
-    if (invalid_text) {
-      return null
-    }
+  const renderListItems = (child) => {
 
     const list_items = filter(child, { tag: 'li' })
     const ul_content = []
-    
+
     map(list_items, (it) => {
       map(it.child, ({ text }) => {
-        ul_content.push(text)
+        ul_content.push(text.replaceAll('&nbsp;', ' '))
       })
     })
     
@@ -48,11 +42,11 @@ const parse_content = (content) => {
       return true
     }
     if (tag === 'ul') {
-      tagItems.push({ 'type': 'ul', 'value': renderItemsFromList(child) })
+      tagItems.push({ 'type': 'ul', 'value': renderListItems(child) })
       return true
     }
     if (tag === 'ol') {
-      tagItems.push({ 'type': 'ol', 'value': renderItemsFromList(child) })
+      tagItems.push({ 'type': 'ol', 'value': renderListItems(child) })
       return true
     }
     if (tag === 'cite') {
