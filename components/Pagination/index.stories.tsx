@@ -15,7 +15,8 @@ export const Default = () => {
       <TemplateContainer
         background='neutral10'
         mb={[2, 2]}
-        mt={[2, 2]}>
+        mt={[2, 2]}
+      >
         <Pagination
           numFound={12}
           rows={10}

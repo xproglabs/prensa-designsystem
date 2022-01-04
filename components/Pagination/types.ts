@@ -22,14 +22,14 @@ export type ArrowButtonProps = {
 export type IndicatorLayoutProps = {
   bgColor?: string;
   borderColor?: string;
-  color: string;
+  color?: string;
   fontFamily?: string;
   fontSize?: string;
   height?: string;
-  mt: number | string;
-  mr: number | string;
-  mb: number | string;
-  ml: number | string;
+  mt?: number | string;
+  mr?: number | string;
+  mb?: number | string;
+  ml?: number | string;
   radius?: string;
   width?: string;
 }
