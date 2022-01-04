@@ -26,6 +26,10 @@ export type IndicatorLayoutProps = {
   fontFamily?: string;
   fontSize?: string;
   height?: string;
+  mt: number | string;
+  mr: number | string;
+  mb: number | string;
+  ml: number | string;
   radius?: string;
   width?: string;
 }

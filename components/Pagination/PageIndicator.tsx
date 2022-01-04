@@ -12,6 +12,10 @@ const PageIndicator = ({
   fontSize,
   height,
   href,
+  mt,
+  mr,
+  mb,
+  ml,
   radius,
   width
 }: IndicatorProps) => {
@@ -25,8 +29,10 @@ const PageIndicator = ({
       bgColor={bgColor}
       borderColor={borderColor}
       height={height}
-      mb={1}
-      mr={1.5}
+      mt={href ? undefined : mt}
+      mr={href ? undefined : mr}
+      mb={href ? undefined : mb}
+      ml={href ? undefined : ml}
       radius={radius}
       width={width}
     >
@@ -42,7 +48,14 @@ const PageIndicator = ({
 
   if (href) {
     return (
-      <Link aria-label={`Página ${children}`} href={href}>
+      <Link
+        aria-label={`Página ${children}`}
+        href={href}
+        mt={mt}
+        mr={mr}
+        mb={mb}
+        ml={ml}
+      >
         <Indicator />
       </Link>
     )
@@ -58,6 +71,7 @@ PageIndicator.defaultProps = {
   fontFamily: 'primary',
   fontSize: '18px',
   height: '40px',
+  mr: 1.5,
   radius: 'circle',
   width: '40px'
 }
