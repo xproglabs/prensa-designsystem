@@ -28,12 +28,15 @@ const dummyLists = `
   <p>Veja o calendário de vacinação até 5 de novembro:</p>
 
   <ul>
-    <li>Quinta-feira (28) - repescagem de dose de reforço para idosos ou trabalhadores da saúde cuja 2ª dose tenha completado 6 meses ou que faltem até 15 dias para esse prazo; repescagem de dose adicional para pessoas com alto grau de imunossupressão cuja 2ª dose já tenha completado 28 dias</li>
-    <li>Sexta-feira (29) - dose de reforço para idosos de 89 anos ou mais, cuja 2ª dose tenha completado 6 meses ou que faltem até 15 dias para este prazo; 2ª dose para pessoas de 30 anos</li>
-    <li>Segunda-feira (1º) - 2ª dose para pessoas de 26 e 29 anos</li>
-    <li>Quarta-feira (3 )- 2ª dose para pessoas de 25 anos</li>
-    <li>Quinta-feira (4) - 2ª dose para pessoas de 22 e 24 anos</li>
-    <li>Sexta-feira (5) - 2ª dose para pessoas de 20 e 21 anos</li>
+    <li>Cemitérios - abertos das 7h às 19h, exclusivamente para realização e atendimento para sepultamentos.</li>
+    <li>Sepultamento gratuito - plantão das 8h às 17h, na Rua Tupis, 149, 1º andar - Centro. Telefone: (31) 3277- 9834&nbsp;&nbsp;</li>
+    <li>Central de Abastecimento Municipal -&nbsp;das&nbsp;7h às 13h</li>
+    <li>Feira Coberta do Padre Eustáquio - das&nbsp;8h às 13h</li>
+    <li>Mercado Distrital do Cruzeiro- das 7h às 13h</li>
+    <li>Restaurantes Populares I, II, III e IV - rotina de feriado, atende apenas população em situação de rua</li>
+    <li>Programa Abastecer - das 7h às 13h</li>
+    <li>Conselho Tutelar (rua Tupis, 149, loja 1 – Centro) - atendimento 24h no Plantão Centralizado&nbsp;</li>
+    <li>Zoológico e Jardim Botânico - abertos das 8h às 17h, com entrada permitida até às 16h. Obrigatório agendamento prévio no site.</li>
   </ul>
 
   <p><strong>Leia mais:</strong><br />
