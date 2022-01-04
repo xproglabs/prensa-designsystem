@@ -1,14 +1,3 @@
-// export interface ArrowProps {
-//   borderColor?: string;
-//   color: string;
-//   direction: 'left' | 'right';
-//   fontFamily?: string;
-//   fontSize?: string;
-//   height?: string;
-//   radius?: string;
-//   width?: string;
-// }
-
 /**
  * Prensa Design System | Pagination component
  */
@@ -16,9 +5,18 @@ export interface PaginationComponentProps {
   indicatorLayout?: IndicatorLayoutProps;
   numFound: number;
   path: string;
-  query: QueryProps;
+  query?: QueryProps;
   rows: number;
   start: number;
+}
+
+export type ArrowButtonProps = {
+  borderColor?: string;
+  color?: string;
+  direction: 'left' | 'right';
+  height?: string;
+  radius?: string;
+  width?: string;
 }
 
 export type IndicatorLayoutProps = {
