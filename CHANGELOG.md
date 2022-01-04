@@ -1,4 +1,8 @@
-# v1.6.80
+# v1.6.83
+- Cria novo componente List e implementa listas ordenada e não ordenada no corpo do texto
+# v1.6.82
+- Permite ativar/desativar o caption no ImageGallery
+# v1.6.81
 - Revisar alinhamento lateral dos elementos no topo da matéria
 - Ajustar posicionamento do título da Coluna no AuthorProfile
 - Remove margin-bottom no author do byline
