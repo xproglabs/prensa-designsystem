@@ -1,7 +1,7 @@
 import { Block, Link, Typography } from 'prensa'
 import React from 'react'
 
-import { NumberProps } from './types'
+import { IndicatorProps } from './types'
 
 const PageIndicator = ({
   bgColor,
@@ -14,7 +14,7 @@ const PageIndicator = ({
   href,
   radius,
   width
-}: NumberProps) => {
+}: IndicatorProps) => {
 
   const Indicator = () => (
     <Block

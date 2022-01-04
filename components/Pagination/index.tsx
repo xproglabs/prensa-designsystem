@@ -2,8 +2,16 @@ import { Block } from 'prensa'
 import React from 'react'
 
 import { PageIndicator } from './PageIndicator'
+import { PaginationComponentProps } from './types'
 
-const Pagination = ({ numFound, rows, start, path, query }) => {
+const Pagination = ({
+  indicatorLayout,
+  numFound,
+  path,
+  query,
+  rows,
+  start
+}: PaginationComponentProps) => {
 
   const data = {
     current: 0,
@@ -30,7 +38,7 @@ const Pagination = ({ numFound, rows, start, path, query }) => {
       return null
     }
     return (
-      <PageIndicator href={`${href}&page=${data.start}`}>
+      <PageIndicator href={`${href}&page=${data.start}`} {...indicatorLayout}>
         {data.start}
       </PageIndicator>
     )
@@ -41,7 +49,7 @@ const Pagination = ({ numFound, rows, start, path, query }) => {
       return null
     }
     return (
-      <PageIndicator href={`${href}&page=${data.last}`}>
+      <PageIndicator href={`${href}&page=${data.last}`} {...indicatorLayout}>
         {data.last}
       </PageIndicator>
     )
@@ -49,9 +57,7 @@ const Pagination = ({ numFound, rows, start, path, query }) => {
 
   const RenderCurrent = () => {
     return (
-      <PageIndicator
-        bgColor="neutral5"
-        color="neutral9">
+      <PageIndicator bgColor="neutral5" color="neutral9" {...indicatorLayout}>
         {data.current}
       </PageIndicator>
     )
@@ -62,7 +68,7 @@ const Pagination = ({ numFound, rows, start, path, query }) => {
       return null
     }
     return (
-      <PageIndicator href={`${href}&page=${data.next}`}>
+      <PageIndicator href={`${href}&page=${data.next}`} {...indicatorLayout}>
         {data.next}
       </PageIndicator>
     )
@@ -73,7 +79,7 @@ const Pagination = ({ numFound, rows, start, path, query }) => {
       return null
     }
     return (
-      <PageIndicator href={`${href}&page=${data.end}`}>
+      <PageIndicator href={`${href}&page=${data.end}`} {...indicatorLayout}>
         {data.end}
       </PageIndicator>
     )
