@@ -1,3 +1,5 @@
+# v1.6.85
+- Adiciona 3 novos slots de publicidade para os pageblocks
 # v1.6.84
 - Remove os espaços fixos dos templates de capa
 - Cria componente de paginação e botão ver mais no slot
