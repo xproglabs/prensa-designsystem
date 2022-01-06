@@ -1,3 +1,5 @@
+# v1.6.86
+- Insere prop width no componente Link
 # v1.6.85
 - Adiciona 3 novos slots de publicidade para os pageblocks
 # v1.6.84
