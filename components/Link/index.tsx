@@ -14,6 +14,7 @@ const Link = ({
   height,
   path,
   textDecoration,
+  width,
   ...otherProps
 }: LinkProps) => {
 
@@ -31,6 +32,7 @@ const Link = ({
       $color={color}
       $textDecoration={textDecoration}
       $height={height}
+      $width={width}
       {...otherProps}
     >
       {children}

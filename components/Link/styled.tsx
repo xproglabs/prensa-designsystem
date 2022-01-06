@@ -39,6 +39,12 @@ function heightCSS({ $height }: any) {
   `
 }
 
+function widthCSS({ $width }: any) {
+  return css`
+    width: ${$width};
+  `
+}
+
 export const StyledLink: ComponentType<StyledLinkProps> | any = styled.a<StyledLinkProps>`
   cursor: pointer;
   ${colorCSS};
@@ -46,4 +52,5 @@ export const StyledLink: ComponentType<StyledLinkProps> | any = styled.a<StyledL
   ${textDecorationCSS};
   ${hoverStateCSS};
   ${margin};
+  ${widthCSS};
 `
