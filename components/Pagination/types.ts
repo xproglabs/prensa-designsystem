@@ -7,6 +7,7 @@ export interface PaginationComponentProps {
   path: string;
   query?: QueryProps;
   rows: number;
+  showArrows?: boolean;
   start: number;
 }
 

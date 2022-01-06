@@ -11,6 +11,7 @@ const Pagination = ({
   path,
   query,
   rows,
+  showArrows,
   start
 }: PaginationComponentProps) => {
 
@@ -99,7 +100,7 @@ const Pagination = ({
       mb={2}
       width='100%'
     >
-      <ArrowButton direction='left' />
+      {showArrows && <ArrowButton direction='left' />}
       <RenderStart />
       {data.last > data.start + 1 && <RenderSpace />}
       <RenderLast />
@@ -107,7 +108,7 @@ const Pagination = ({
       <RenderNext />
       {data.next < data.end - 1 && <RenderSpace />}
       <RenderEnd />
-      <ArrowButton direction='right' />
+      {showArrows && <ArrowButton direction='right' />}
     </Block>
   )
 }
