@@ -26,8 +26,8 @@ const WebImageGallery = ({ captionProps, items }: WebImageGalleryProps) => {
       renderArrowNext={renderArrowNext}
     >
       {map(items, (item, key) =>
-        <div>
-          <WebImage key={key} src={item.value} />
+        <div key={key}>
+          <WebImage src={item.value} />
           {captionProps?.enabled && <Caption {...captionProps}>{item.caption}</Caption>}
         </div>
       )}

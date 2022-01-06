@@ -15,9 +15,8 @@ const AmpImageGallery = ({ captionProps, items }: AmpImageGalleryProps) => {
       width='768'
     >
       {map(items, (item, key) => (
-        <div>
+        <div key={key}>
           <AmpImage
-            key={key}
             alt={item.caption}
             src={item.value}
           />
