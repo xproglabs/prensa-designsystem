@@ -16,7 +16,6 @@ const Template100 = ({ slotAds, slot100 }: Template100Props) => {
         align="row"
         alignx="center"
         aligny="top"
-        mb={2}
         width="100%"
       >
         <Column>

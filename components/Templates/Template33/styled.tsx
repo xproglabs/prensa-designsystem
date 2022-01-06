@@ -9,8 +9,7 @@ export const Column = ({ children }: ColumnProps) => (
     align='column'
     alignx='left'
     aligny='top'
-    mb={2}
-    lg={{ mb: 3, width: 'calc((100% - 48px) / 3)' }}
+    lg={{ width: 'calc((100% - 48px) / 3)' }}
     width='100%'
   >
     {children}

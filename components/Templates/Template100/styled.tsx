@@ -9,9 +9,7 @@ export const Column = ({ children }: ColumnProps) => (
     align="column"
     alignx="left"
     aligny="top"
-    mb={2}
     width="100%"
-    lg={{ mb: 0 }}
   >
     {children}
   </Block>
