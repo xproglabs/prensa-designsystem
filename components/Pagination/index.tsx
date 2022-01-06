@@ -59,7 +59,7 @@ const Pagination = ({
 
   const RenderCurrent = () => {
     return (
-      <PageIndicator bgColor="neutral5" color="neutral9" {...indicatorLayout}>
+      <PageIndicator bgColor='neutral5' color='neutral9' {...indicatorLayout}>
         {data.current}
       </PageIndicator>
     )
