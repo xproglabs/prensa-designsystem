@@ -72,6 +72,7 @@ PageIndicator.defaultProps = {
   fontSize: '18px',
   height: '40px',
   mr: 1.5,
+  mb: 1.5,
   radius: 'circle',
   width: '40px'
 }
