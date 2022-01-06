@@ -30,6 +30,9 @@ const PageBlock = ({
   slot2,
   slot3,
   slot4,
+  slot5,
+  slot6,
+  slot7,
   theme,
   type,
 }: PageBlockProps) => {
@@ -64,6 +67,9 @@ const PageBlock = ({
   const slot2_slotList = selectComponentFromSlotList(slot_parser, slot2?.list2, site_data, slot2)
   const slot3_slotList = selectComponentFromSlotList(slot_parser, slot3?.list2, site_data, slot3)
   const slot4_slotList = selectComponentFromSlotList(slot_parser, slot4?.list, site_data, slot4)
+  const slot5_slotList = selectComponentFromSlotList(slot_parser, slot1?.list3, site_data, slot5)
+  const slot6_slotList = selectComponentFromSlotList(slot_parser, slot2?.list3, site_data, slot6)
+  const slot7_slotList = selectComponentFromSlotList(slot_parser, slot3?.list3, site_data, slot7)
 
   if (type === 'template100') {
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
@@ -82,6 +88,7 @@ const PageBlock = ({
           slot: [],
           slot_parser,
           spaceB: slot4_slotList,
+          spaceTopLeft: slot5_slotList,
         }}
         slot100={{
           amp,
@@ -133,6 +140,8 @@ const PageBlock = ({
           slot: [],
           slot_parser,
           spaceB: slot4_slotList,
+          spaceTopLeft: slot5_slotList,
+          spaceTopCenter: slot6_slotList,
         }}
         slot70={{
           amp,
@@ -210,6 +219,8 @@ const PageBlock = ({
           slot: [],
           slot_parser,
           spaceB: slot4_slotList,
+          spaceTopLeft: slot5_slotList,
+          spaceTopCenter: slot6_slotList,
         }}
         slotLeft={{
           amp,
@@ -296,6 +307,9 @@ const PageBlock = ({
           slot: [],
           slot_parser,
           spaceB: slot4_slotList,
+          spaceTopLeft: slot5_slotList,
+          spaceTopCenter: slot6_slotList,
+          spaceTopRight: slot7_slotList,
         }}
         slotLeft={{
           amp,

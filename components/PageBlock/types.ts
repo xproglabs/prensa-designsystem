@@ -20,6 +20,7 @@ export type SlotBlockProps = {
   list?: [TeaserProps];
   list1: [TeaserProps];
   list2: [TeaserProps];
+  list3?: [any];
   order?: boolean | [string, 'asc' | 'desc'];
   more?: boolean;
   more_title?: string;
@@ -49,6 +50,9 @@ export type PageBlockProps = {
   slot2: SlotBlockProps;
   slot3: SlotBlockProps;
   slot4: SlotBlockProps;
+  slot5: SlotBlockProps;
+  slot6: SlotBlockProps;
+  slot7: SlotBlockProps;
   theme?: any;
 }
 

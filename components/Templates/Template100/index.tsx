@@ -19,6 +19,7 @@ const Template100 = ({ slotAds, slot100 }: Template100Props) => {
         width="100%"
       >
         <Column>
+          {renderSpaceSlot(slotAds.spaceTopLeft)}
           {renderSpaceSlot(slot100.spaceA)}
           <ColorizedColumn
             bgColor={slot100_bgColor}
