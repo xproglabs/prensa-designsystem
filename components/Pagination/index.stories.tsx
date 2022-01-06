@@ -32,14 +32,21 @@ export const Default = () => {
           query={{ term: '' }}
         />
         <Pagination
-          numFound={48}
+          numFound={800}
           rows={10}
           start={30}
           path='/'
           query={{ term: '' }}
         />
         <Pagination
-          numFound={323}
+          numFound={1000}
+          rows={10}
+          start={40}
+          path='/'
+          query={{ term: '' }}
+        />
+        <Pagination
+          numFound={13000}
           rows={10}
           start={40}
           path='/'
