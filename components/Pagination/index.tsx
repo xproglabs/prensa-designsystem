@@ -77,11 +77,30 @@ const Pagination = ({
   }
 
   const RenderEnd = () => {
+
+    const flexibleLayout: PaginationComponentProps['indicatorLayout'] = {}
+
     if (data.end === data.current) {
       return null
     }
+
+    if (data.end > 100) {
+      flexibleLayout.radius = 'alternative'
+      flexibleLayout.width = '50px'
+    }
+
+    if (data.end > 1000) {
+      flexibleLayout.radius = 'alternative'
+      flexibleLayout.width = '60px'
+    }
+
+    if (data.end > 10000) {
+      flexibleLayout.radius = 'alternative'
+      flexibleLayout.width = '70px'
+    }
+
     return (
-      <PageIndicator href={`${href}&page=${data.end}`} {...indicatorLayout}>
+      <PageIndicator href={`${href}&page=${data.end}`} {...indicatorLayout} {...flexibleLayout}>
         {data.end}
       </PageIndicator>
     )
