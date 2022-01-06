@@ -44,8 +44,8 @@ ImageGallery.defaultProps = {
     fontSize: ['14px', '14px'],
     lineHeight: ['130%', '130%']
   },
-  height: 'max-content',
-  width: '768px'
+  height: ['360px', '500px'],
+  width: ['100%', '768px']
 }
 
 export { ImageGallery }

@@ -3,6 +3,7 @@ import React from 'react'
 
 import { AmpImage } from './AmpImage'
 import { Caption } from './Caption'
+import { Content } from './styled'
 import { AmpImageGalleryProps } from './types'
 
 const AmpImageGallery = ({ captionProps, items }: AmpImageGalleryProps) => {
@@ -15,13 +16,13 @@ const AmpImageGallery = ({ captionProps, items }: AmpImageGalleryProps) => {
       width='768'
     >
       {map(items, (item, key) => (
-        <div key={key}>
+        <Content key={key}>
           <AmpImage
             alt={item.caption}
             src={item.value}
           />
           {captionProps?.enabled && <Caption {...captionProps}>{item.caption}</Caption>}
-        </div>
+        </Content>
       ))}
     </amp-carousel>
   )
