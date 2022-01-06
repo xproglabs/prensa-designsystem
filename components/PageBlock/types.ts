@@ -21,6 +21,11 @@ export type SlotBlockProps = {
   list1: [TeaserProps];
   list2: [TeaserProps];
   order?: boolean | [string, 'asc' | 'desc'];
+  more?: boolean;
+  more_title?: string;
+  more_link?: string;
+  pagination?: boolean;
+  search_len?: any;
   title: string;
   spaces?: [number, number, number, number];
   type: TemplateType;
