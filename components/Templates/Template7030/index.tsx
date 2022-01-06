@@ -35,7 +35,6 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
         <Block
           align='column'
           alignx='left'
-          mb={2}
           width='100%'
           lg={{
             align: 'row',
@@ -46,13 +45,13 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
             width: 'calc((((100% - 48px) / 3) * 2) + 24px)'
           }}
         >
+          {renderSpaceSlot(slotAds.spaceTopLeft)}
           {renderSpaceSlot(slot70.spaceA)}
           <Block
             align='column'
             alignx='center'
             bgColor={slot70_bgColor}
             custom={slot70_customHeight_mobile}
-            mb={2}
             px={2}
             pt={slot70_isTransparent ? '0px' : 2}
             width='calc(100% - 32px)'
@@ -73,13 +72,13 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
         <Block
           align='column'
           alignx='left'
-          mb={2}
           width='100%'
           lg={{
             px: '0px',
             width: 'calc((100% - 48px) / 3)'
           }}
         >
+          {renderSpaceSlot(slotAds.spaceTopCenter)}
           {renderSpaceSlot(slot30.spaceA)}
           <Block
             align='column'
@@ -87,7 +86,6 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
             aligny='top'
             bgColor={slot30_bgColor}
             custom={slot30_customHeight_mobile}
-            mb={2}
             px={2}
             pt={slot30_isTransparent ? '0px' : 2}
             width='calc(100% - 32px)'

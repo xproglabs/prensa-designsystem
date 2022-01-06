@@ -78,6 +78,7 @@ type Subtitle = {
   font_size?: [string, string];
   enabled?: boolean;
   line_height?: [string, string];
+  mb?: SpacingType;
 }
 export type Title = {
   color?: string;
@@ -115,6 +116,7 @@ export type TeaserProps = {
    */
   editable?: EditAreaType;
   edit_buttons?: EditButtonsType;
+  eventTracking?: any;
   fallback_image_url?: string;
   /**
    * @description expects an object with teaser data
@@ -133,4 +135,5 @@ export type TeaserProps = {
    * @description expects a object of states to cover the editable fields
    */
   states?: any;
+  slot_position?: number;
 }

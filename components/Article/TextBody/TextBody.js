@@ -10,6 +10,7 @@ import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed } from '../Em
 import Heading2 from '../Headings/Heading2'
 import Heading3 from '../Headings/Heading3'
 import Heading4 from '../Headings/Heading4'
+import { ListComponent } from '../List/index.ts'
 import Paragraph from '../Paragraph/Paragraph'
 import SectionTitle from '../SectionTitle'
 import Tags from '../Tags/Tags'
@@ -31,10 +32,12 @@ const TextBody = (props) => {
     heading4,
     hyperlink,
     images,
-    related_content_intervention,
+    orderedList,
     paragraph,
+    related_content_intervention,
     tags_section_title,
-    tags
+    tags,
+    unorderedList
   } = props
 
   if (!content) return null
@@ -168,7 +171,7 @@ const TextBody = (props) => {
         return (
           <TwitterEmbed
             amp={amp}
-            url={value} 
+            url={value}
           />
         )
       case 'Youtube':
@@ -190,6 +193,10 @@ const TextBody = (props) => {
         return <Heading4 {...heading4} maxWidth={bodyWidth} value={value} />
       case 'Paragraph':
         return render_paragraph(value)
+      case 'OrderedList':
+        return <ListComponent textProps={orderedList} items={value} maxWidth={bodyWidth} ordered />
+      case 'UnorderedList':
+        return <ListComponent textProps={unorderedList} items={value} maxWidth={bodyWidth} />
       default:
         return <pre>erro no parse do conteúdo</pre>
     }
@@ -204,7 +211,7 @@ const TextBody = (props) => {
           </React.Fragment>
         )
       })}
-      {gallery && gallery.length > 0 && 
+      {gallery && gallery.length > 0 &&
         <ImageGallery
           amp={amp}
           items={gallery}

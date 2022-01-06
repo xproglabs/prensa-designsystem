@@ -40,7 +40,7 @@ const HtmlImage = ({
         <RenderHtmlImage
           className={`hide_desktop ${custom_class}`}
           renderType={layout_mobile.type}
-          path={layout_desktop.path}
+          path={layout_mobile.path}
         />
       )}
     </>

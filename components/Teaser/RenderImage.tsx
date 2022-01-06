@@ -4,6 +4,8 @@ import React from 'react'
 
 import ImageElement from '../Image'
 import { parseImagePath } from '../Image/parser'
+import { ImagePreviewLink } from '../Image/preview'
+import { parseContentId } from '../Util/parseContentId'
 import { RenderOpacityMask } from './RenderOpacityMask'
 import * as S from './styled'
 
@@ -11,7 +13,8 @@ type RenderImageProps = {
   amp?: boolean;
   domain: string;
   editable?: {
-    enabled: boolean
+    enabled: boolean,
+    state_of_image?: any;
   };
   fallback_image_url?: string;
   image_circle?: boolean;
@@ -19,6 +22,7 @@ type RenderImageProps = {
   item_path?: string;
   layout?: any;
   opacityMask?: boolean;
+  state_of_image?: any;
 }
 
 const RenderImage = ({
@@ -38,11 +42,18 @@ const RenderImage = ({
   if (!image_object) {
     image_object = get(item, 'img', false)
   }
-
   // get contentId from props
   let image_contentid = get(image_object, 'contentId', false)
   image_contentid = image_contentid || get(image_object, 'cid', false)
-
+  // show new policy when saved
+  if (editable && editable.enabled && image_contentid) {
+    // parse image contentid
+    let image_cid = parseContentId(image_contentid)
+    // check if editable state of image exists
+    if (editable.state_of_image && editable.state_of_image[`${image_cid}_cid`]) {
+      image_contentid = editable.state_of_image[`${image_cid}_cid`].current
+    }
+  }
   // parse data
   const image_caption = get(image_object, 'caption', '')
   const mobile_dim = get(layout, 'image.dimension[0]', '1x1')
@@ -121,11 +132,22 @@ const RenderImage = ({
     </React.Fragment>
   )
 
-  const RenderImageForPreview = () => (
-    <React.Fragment>
-      {opacityMask ? <RenderImageWithOpacityMask /> : <RenderImageElement />}
-    </React.Fragment>
-  )
+  const RenderImageForPreview = () => {
+    return (
+      <ImagePreviewLink
+        editable={editable}
+        image_props={{
+          mobile_dim,
+          desktop_dim
+        }}
+        item={item}>
+        {opacityMask ?
+          <RenderImageWithOpacityMask /> :
+          <RenderImageElement />
+        }
+      </ImagePreviewLink>
+    )
+  }
 
   const RenderImageWithLink = () => {
     //Block image click when using opacity mask
@@ -140,7 +162,6 @@ const RenderImage = ({
       </S.AreaLink>
     )
   }
-
   if (editable && editable.enabled) {
     return <RenderImageForPreview />
   }

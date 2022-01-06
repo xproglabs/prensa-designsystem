@@ -29,11 +29,11 @@ const Template33 = ({
         lg={{
           align: 'row',
           alignx: 'between',
-          aligny: 'top',
-          mb: 3
+          aligny: 'top'
         }}
       >
         <Column>
+          {renderSpaceSlot(slotAds.spaceTopLeft)}
           {renderSpaceSlot(slotLeft.spaceA)}
           <ColumnColor
             bgColor={slotLeft_bgColor}
@@ -45,6 +45,7 @@ const Template33 = ({
           {renderSpaceSlot(slotLeft.spaceB)}
         </Column>
         <Column>
+          {renderSpaceSlot(slotAds.spaceTopCenter)}
           {renderSpaceSlot(slotCenter.spaceA)}
           <ColumnColor
             bgColor={slotCenter_bgColor}
@@ -56,6 +57,7 @@ const Template33 = ({
           {renderSpaceSlot(slotCenter.spaceB)}
         </Column>
         <Column>
+          {renderSpaceSlot(slotAds.spaceTopRight)}
           {renderSpaceSlot(slotRight.spaceA)}
           <ColumnColor
             bgColor={slotRight_bgColor}

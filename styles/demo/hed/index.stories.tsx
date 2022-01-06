@@ -69,6 +69,13 @@ const slot_parser = (item, key) => {
   )
 }
 export const HomeWithAds = () => {
+
+  //event tracking example
+  const eventTracking = {
+    // eslint-disable-next-line no-console
+    titleEventTracking: params => console.log(params)
+  }
+  
   return (
     <TemplateContainer
       background='neutral10'
@@ -81,6 +88,7 @@ export const HomeWithAds = () => {
         fallback_image_url={fallback_image_url}
         preview={preview_editable}
         slot_parser={slot_parser}
+        eventTracking={eventTracking}
       />
     </TemplateContainer>
   )

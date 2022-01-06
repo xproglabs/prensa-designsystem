@@ -8,9 +8,19 @@ type ColorTokens =
   'secondary1' |
   'secondary2' |
   'secondary3' |
-  'primary2' |
-  'white' |
-  'black'
+  'black' |
+  'neutral1' |
+  'neutral2' |
+  'neutral3' |
+  'neutral4' |
+  'neutral5' |
+  'neutral6' |
+  'neutral7' |
+  'neutral8' |
+  'neutral9' |
+  'neutral10' |
+  'neutral11' |
+  'white'
 
 type FontTokens =
   'primary' | 'secondary'

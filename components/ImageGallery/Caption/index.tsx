@@ -1,14 +1,14 @@
 import { Block, Typography } from 'prensa'
 import React from 'react'
 
-import { CaptionProps } from './types'
+import { CaptionComponentProps } from './types'
 
 const Caption = ({
   children,
   fontSize,
   fontFamily,
   lineHeight
-}: CaptionProps) => {
+}: CaptionComponentProps) => {
   return (
     <Block
       bgColor='neutral9'

@@ -20,7 +20,13 @@ export type SlotBlockProps = {
   list?: [TeaserProps];
   list1: [TeaserProps];
   list2: [TeaserProps];
+  list3?: [any];
   order?: boolean | [string, 'asc' | 'desc'];
+  more?: boolean;
+  more_title?: string;
+  more_link?: string;
+  pagination?: boolean;
+  search_len?: any;
   title: string;
   spaces?: [number, number, number, number];
   type: TemplateType;
@@ -31,6 +37,7 @@ export type PageBlockProps = {
   bgcolor?: ColorTokens;
   cid: string;
   domain: string;
+  eventTracking?: any;
   fallback_image_url?: string,
   image_parser?: any;
   name: string;
@@ -43,6 +50,9 @@ export type PageBlockProps = {
   slot2: SlotBlockProps;
   slot3: SlotBlockProps;
   slot4: SlotBlockProps;
+  slot5: SlotBlockProps;
+  slot6: SlotBlockProps;
+  slot7: SlotBlockProps;
   theme?: any;
 }
 

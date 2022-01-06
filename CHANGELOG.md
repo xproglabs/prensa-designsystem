@@ -1,3 +1,31 @@
+# v1.6.85
+- Adiciona 3 novos slots de publicidade para os pageblocks
+# v1.6.84
+- Remove os espaços fixos dos templates de capa
+- Cria componente de paginação e botão ver mais no slot
+- Implementa tratamento para `&nbsp;` nas listas do corpo do texto
+- Corrige o path do componente background image
+# v1.6.83
+- Cria novo componente List e implementa listas ordenada e não ordenada no corpo do texto
+# v1.6.82
+- Permite ativar/desativar o caption no ImageGallery
+# v1.6.81
+- Revisar alinhamento lateral dos elementos no topo da matéria
+- Ajustar posicionamento do título da Coluna no AuthorProfile
+- Remove margin-bottom no author do byline
+# v1.6.80
+- Corrige null exception no embed do Instagram (ajustes nas funções Twitter, YouTube)
+# v1.6.79
+- Permite comportamento expandido e nova prop "isExpanded" no Byline em Article
+- Adiciona edição da imagem no RenderImage do Teaser
+# v1.6.78
+- Revisa os types do RenderSubtitle do Teaser
+- Adiciona derivativa da imagem no preview dinamico
+- Corrige a renderização do Carousel no RenderSlot
+# v1.6.77
+- Adiciona provider da imagem para o preview interativo
+- Viabiliza alguns fluxos de dados para o monitoramento de eventos
+- Transforma componente ImageGallery em híbrido (Web/AMP)
 # v1.6.76
 - Correções no layout dos componentes de colunistas
 - Adiciona método para ordenação de lista do slot
