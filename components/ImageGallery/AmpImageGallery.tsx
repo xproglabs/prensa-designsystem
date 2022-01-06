@@ -2,9 +2,10 @@ import { map } from 'lodash'
 import React from 'react'
 
 import { AmpImage } from './AmpImage'
+import { Caption } from './Caption'
 import { AmpImageGalleryProps } from './types'
 
-const AmpImageGallery = ({ items }: AmpImageGalleryProps) => {
+const AmpImageGallery = ({ captionProps, items }: AmpImageGalleryProps) => {
   return (
     <amp-carousel
       lightbox={true}
@@ -14,11 +15,14 @@ const AmpImageGallery = ({ items }: AmpImageGalleryProps) => {
       width='768'
     >
       {map(items, (item, key) => (
-        <AmpImage
-          key={key}
-          alt={item.caption}
-          src={item.value}
-        />
+        <div>
+          <AmpImage
+            key={key}
+            alt={item.caption}
+            src={item.value}
+          />
+          {captionProps?.enabled && <Caption {...captionProps}>{item.caption}</Caption>}
+        </div>
       ))}
     </amp-carousel>
   )
