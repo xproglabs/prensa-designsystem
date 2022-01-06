@@ -1,8 +1,8 @@
 import { Block, Link } from 'prensa'
 import React from 'react'
 
-import { IcLeftPagination } from '../../src/icons/IcLeftPagination'
-import { IcRightPagination } from '../../src/icons/IcRightPagination'
+import { IcLeftPagination } from './IcLeftPagination'
+import { IcRightPagination } from './IcRightPagination'
 import { ArrowButtonProps } from './types'
 
 const ArrowButton = ({
