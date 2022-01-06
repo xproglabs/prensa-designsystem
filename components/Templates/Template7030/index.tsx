@@ -45,6 +45,7 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
             width: 'calc((((100% - 48px) / 3) * 2) + 24px)'
           }}
         >
+          {renderSpaceSlot(slotAds.spaceTopLeft)}
           {renderSpaceSlot(slot70.spaceA)}
           <Block
             align='column'
@@ -77,6 +78,7 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
             width: 'calc((100% - 48px) / 3)'
           }}
         >
+          {renderSpaceSlot(slotAds.spaceTopCenter)}
           {renderSpaceSlot(slot30.spaceA)}
           <Block
             align='column'
