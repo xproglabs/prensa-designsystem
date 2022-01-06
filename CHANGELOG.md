@@ -1,3 +1,8 @@
+# v1.6.84
+- Remove os espaços fixos dos templates de capa
+- Cria componente de paginação e botão ver mais no slot
+- Implementa tratamento para `&nbsp;` nas listas do corpo do texto
+- Corrige o path do componente background image
 # v1.6.83
 - Cria novo componente List e implementa listas ordenada e não ordenada no corpo do texto
 # v1.6.82
