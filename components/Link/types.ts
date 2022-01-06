@@ -31,5 +31,5 @@ export type StyledLinkProps = {
   ml?: string | number;
   $color?: ColorTokens;
   $textDecoration?: string;
-  width?: string;
+  $width?: string;
 }
