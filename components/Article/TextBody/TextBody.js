@@ -211,12 +211,12 @@ const TextBody = (props) => {
           </React.Fragment>
         )
       })}
-      {gallery && gallery.items.length > 0 &&
+      {gallery?.items?.length > 0 && 
         <ImageGallery amp={amp} {...gallery} />
       }
-      {tags_section_title && tags_section_title.enabled && (
+      {tags_section_title?.enabled && 
         <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
-      )}
+      }
       <Tags {...tags} maxWidth={bodyWidth} />
     </S.Body>
   )
