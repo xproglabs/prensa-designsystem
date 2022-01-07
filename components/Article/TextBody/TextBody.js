@@ -235,7 +235,6 @@ TextBody.propTypes = {
   content: PropTypes.string,
   citation: PropTypes.object,
   gallery: PropTypes.shape({
-    enabled: PropTypes.bool,
     captionProps: PropTypes.object,
     items: PropTypes.array
   }),
