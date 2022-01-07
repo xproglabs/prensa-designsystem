@@ -42,9 +42,10 @@ ImageGallery.defaultProps = {
   caption: {
     fontFamily: 'secondary',
     fontSize: ['14px', '14px'],
+    height: '48px',
     lineHeight: ['130%', '130%']
   },
-  height: ['360px', '500px'],
+  height: ['408px', '548px'],
   width: ['100%', '768px']
 }
 

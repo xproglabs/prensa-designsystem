@@ -10,7 +10,7 @@ const AmpImageGallery = ({ captionProps, items }: AmpImageGalleryProps) => {
   return (
     <amp-carousel
       lightbox={true}
-      height='500'
+      height='548'
       layout='responsive'
       type='slides'
       width='768'
