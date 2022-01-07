@@ -74,15 +74,21 @@ const ArticleOM = () => {
     })
   })
 
-  let gallery_parsed = []
+  let image_gallery = {
+    captionProps: { enabled: false },
+    items: []
+  }
   map(gallery, (img) => {
     let img_path = pathToImage('2x1', domain, img.contentId, 1200)
     let img_caption = `${img.caption} ${img.byline && `(${img.byline})`}`
-    gallery_parsed.push({
+    image_gallery.push({
       caption: img_caption,
       contentId: img.contentId,
       value: img_path
     })
+    image_gallery.captionProps = {
+      enabled: true
+    }
   })
 
   const time_modified = timestamps ? datePtBrFull(timestamps.time_modified) : ''
@@ -184,7 +190,7 @@ const ArticleOM = () => {
       amp={isAmp}
       byline={byline}
       featured={{ enabled: isFeatured }}
-      gallery={gallery_parsed}
+      gallery={gallery}
       images={{ items: images_parsed }}
       intertitle={intertitle}
       subject={props_subject}

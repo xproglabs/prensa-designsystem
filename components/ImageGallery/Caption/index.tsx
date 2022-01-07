@@ -7,17 +7,20 @@ const Caption = ({
   children,
   fontSize,
   fontFamily,
+  height,
   lineHeight
 }: CaptionComponentProps) => {
   return (
     <Block
+      align='row'
+      alignx='left'
+      aligny='middle'
       bgColor='neutral9'
+      height={height}
       px={3}
-      py={3}
       width='100%'
       lg={{
         px: 4,
-        py: 2
       }}
     >
       <Typography

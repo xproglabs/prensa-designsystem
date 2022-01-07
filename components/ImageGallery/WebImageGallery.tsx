@@ -3,7 +3,7 @@ import React from 'react'
 
 import { Caption } from './Caption'
 import { ControlButton } from './ControlButton'
-import { WebCarousel } from './styled'
+import { Content, WebCarousel } from './styled'
 import { WebImageGalleryProps } from './types'
 import { WebImage } from './WebImage'
 
@@ -26,10 +26,10 @@ const WebImageGallery = ({ captionProps, items }: WebImageGalleryProps) => {
       renderArrowNext={renderArrowNext}
     >
       {map(items, (item, key) =>
-        <div>
-          <WebImage key={key} src={item.value} />
+        <Content key={key}>
+          <WebImage src={item.value} />
           {captionProps?.enabled && <Caption {...captionProps}>{item.caption}</Caption>}
-        </div>
+        </Content>
       )}
     </WebCarousel>
   )

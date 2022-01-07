@@ -211,15 +211,12 @@ const TextBody = (props) => {
           </React.Fragment>
         )
       })}
-      {gallery && gallery.length > 0 &&
-        <ImageGallery
-          amp={amp}
-          items={gallery}
-        />
+      {gallery && gallery.items && gallery.items.length > 0 && 
+        <ImageGallery amp={amp} {...gallery} />
       }
-      {tags_section_title && tags_section_title.enabled && (
+      {tags_section_title && tags_section_title.enabled && 
         <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
-      )}
+      }
       <Tags {...tags} maxWidth={bodyWidth} />
     </S.Body>
   )
@@ -237,7 +234,10 @@ TextBody.propTypes = {
   bodyWidth: PropTypes.string,
   content: PropTypes.string,
   citation: PropTypes.object,
-  gallery: PropTypes.array,
+  gallery: PropTypes.shape({
+    captionProps: PropTypes.object,
+    items: PropTypes.array
+  }),
   heading2: PropTypes.object,
   heading3: PropTypes.object,
   heading4: PropTypes.object,

@@ -144,7 +144,10 @@ Article.propTypes = {
   citation: PropTypes.object,
   fbappid: PropTypes.string.isRequired,
   featured: PropTypes.object,
-  gallery: PropTypes.array,
+  gallery: PropTypes.shape({
+    captionProps: PropTypes.object,
+    items: PropTypes.array
+  }),
   headWidth: PropTypes.string,
   heading2: PropTypes.object,
   heading3: PropTypes.object,

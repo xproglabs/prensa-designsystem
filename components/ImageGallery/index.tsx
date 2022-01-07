@@ -5,6 +5,13 @@ import { Container } from './styled'
 import { ImageGalleryProps } from './types'
 import { WebImageGallery } from './WebImageGallery'
 
+const captionDefaultProps: ImageGalleryProps['captionProps'] = {
+  fontFamily: 'secondary',
+  fontSize: ['14px', '14px'],
+  height: '48px',
+  lineHeight: ['130%', '130%']
+}
+
 const ImageGallery = ({
   amp,
   captionProps,
@@ -17,14 +24,20 @@ const ImageGallery = ({
     if (amp) {
       return (
         <AmpImageGallery
-          captionProps={captionProps}
+          captionProps={{ 
+            ...captionDefaultProps,
+            ...captionProps
+          }}
           items={items}
         />
       )
     } else {
       return (
         <WebImageGallery
-          captionProps={captionProps}
+          captionProps={{ 
+            ...captionDefaultProps,
+            ...captionProps
+          }}
           items={items}
         />
       )
@@ -39,13 +52,8 @@ const ImageGallery = ({
 }
 
 ImageGallery.defaultProps = {
-  caption: {
-    fontFamily: 'secondary',
-    fontSize: ['14px', '14px'],
-    lineHeight: ['130%', '130%']
-  },
-  height: 'max-content',
-  width: '768px'
+  height: ['408px', '548px'],
+  width: ['100%', '768px']
 }
 
 export { ImageGallery }
