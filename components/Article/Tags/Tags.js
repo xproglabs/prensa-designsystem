@@ -51,8 +51,7 @@ Tags.defaultProps = {
   fontFamily: 'secondary',
   fontSize: ['14px'],
   fontWeight: 700,
-  items: [],
-  transform: 'none'
+  items: []
 }
 
 Tags.propTypes = {
