@@ -7,11 +7,13 @@ const Caption = ({
   children,
   fontSize,
   fontFamily,
+  height,
   lineHeight
 }: CaptionComponentProps) => {
   return (
     <Block
       bgColor='neutral9'
+      height={height}
       px={3}
       py={3}
       width='100%'
