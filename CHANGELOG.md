@@ -1,3 +1,5 @@
+# v1.6.87
+- Permite renderização do caption da imagem na web e amp
 # v1.6.86
 - Insere prop width no componente Link
 # v1.6.85
