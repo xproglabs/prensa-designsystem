@@ -1,3 +1,5 @@
+# v1.6.90
+- Remove mb restante dos blocos de 50
 # v1.6.89
 - Adiciona mb para os slots que tem cor de fundo
 # v1.6.88
