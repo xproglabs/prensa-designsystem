@@ -1,3 +1,5 @@
+# v1.6.89
+- Adiciona mb para os slots que tem cor de fundo
 # v1.6.88
 - Adiciona transform ao Typography de tags
 # v1.6.87
