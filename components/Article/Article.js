@@ -1,7 +1,6 @@
 import { get } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Share from 'react-facebook/dist/Share'
 import { withTheme } from 'styled-components'
 
 import { GridRelated } from '../Grids/GridRelated'
@@ -29,6 +28,7 @@ const Article = (props) => {
     heading4,
     hyperlink,
     images,
+    isBottomShare,
     orderedList,
     paragraph,
     relatedContent,
@@ -109,6 +109,7 @@ const Article = (props) => {
           heading4={heading4}
           hyperlink={hyperlink}
           images={images}
+          isBottomShare={isBottomShare}
           orderedList={orderedList}
           pageUrl={url}
           paragraph={paragraph}
@@ -156,6 +157,7 @@ Article.propTypes = {
   heading4: PropTypes.object,
   hyperlink: PropTypes.string,
   images: PropTypes.object,
+  isBottomShare: PropTypes.bool,
   paragraph: PropTypes.object,
   orderedList: PropTypes.object,
   relatedContent: PropTypes.shape({

@@ -33,6 +33,7 @@ const TextBody = (props) => {
     heading4,
     hyperlink,
     images,
+    isBottomShare,
     orderedList,
     pageUrl,
     paragraph,
@@ -225,10 +226,11 @@ const TextBody = (props) => {
         { 
           tags_section_title && 
           tags_section_title.enabled && 
+          isBottomShare &&
         <SectionTitle {...tags_section_title}>Compartilhar</SectionTitle> 
         }
         <Share 
-          isBottomShare
+          isBottomShare={isBottomShare}
           amp={amp}
           fbappid={fbappid}
           pageUrl={pageUrl}
@@ -260,14 +262,13 @@ TextBody.propTypes = {
   heading4: PropTypes.object,
   hyperlink: PropTypes.string,
   images: PropTypes.object,
+  isBottomShare: PropTypes.bool,
   paragraph: PropTypes.object,
   related_content_insertion: PropTypes.shape({
     enabled: PropTypes.bool,
     component: PropTypes.node
   }),
-  share: PropTypes.shape({
-    isBottomShare: PropTypes.bool,
-  }),
+  share: PropTypes.object,
   tags_section_title: PropTypes.object,
   tags: PropTypes.object
 }
