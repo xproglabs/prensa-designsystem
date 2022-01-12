@@ -15,7 +15,7 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
     twitterProps = {}
   } = props
 
-  const { mt, mb, ml, ...otherProps } = twitterProps
+  const { mt, mb, mr, ml, ...otherProps } = twitterProps
 
   const pageUrlParam = `url=${pageUrl}`
   const shareUrl = `https://twitter.com/intent/tweet?${pageUrlParam}`
@@ -24,7 +24,7 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
     return (
       <TwitterAmpContainer
         mt={mt}
-        mr={2}
+        mr={mr}
         mb={mb}
         ml={ml}
         twitterPath={twitterPath}
@@ -42,7 +42,7 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
       <Block
         height={size}
         mt={mt}
-        mr={2}
+        mr={mr}
         mb={mb}
         ml={ml}
       >
