@@ -13,6 +13,7 @@ import Heading4 from '../Headings/Heading4'
 import { ListComponent } from '../List/index.ts'
 import Paragraph from '../Paragraph/Paragraph'
 import SectionTitle from '../SectionTitle'
+import Share from '../Share/index.tsx'
 import Tags from '../Tags/Tags'
 import TopImage from '../TopImage/TopImage'
 import * as S from './TextBody.styled'
@@ -33,8 +34,10 @@ const TextBody = (props) => {
     hyperlink,
     images,
     orderedList,
+    pageUrl,
     paragraph,
     related_content_intervention,
+    share,
     tags_section_title,
     tags,
     unorderedList
@@ -218,6 +221,20 @@ const TextBody = (props) => {
         <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
       }
       <Tags {...tags} maxWidth={bodyWidth} />
+      <Block width='100%' maxWidth={bodyWidth}>
+        { 
+          tags_section_title && 
+          tags_section_title.enabled && 
+        <SectionTitle {...tags_section_title}>Compartilhar</SectionTitle> 
+        }
+        <Share 
+          isBottomShare
+          amp={amp}
+          fbappid={fbappid}
+          pageUrl={pageUrl}
+          {...share}
+        />
+      </Block>
     </S.Body>
   )
 }
@@ -247,6 +264,9 @@ TextBody.propTypes = {
   related_content_insertion: PropTypes.shape({
     enabled: PropTypes.bool,
     component: PropTypes.node
+  }),
+  share: PropTypes.shape({
+    isBottomShare: PropTypes.bool,
   }),
   tags_section_title: PropTypes.object,
   tags: PropTypes.object

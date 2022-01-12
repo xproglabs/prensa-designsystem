@@ -15,7 +15,7 @@ const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
     whatsappProps = {},
   } = props
 
-  const { mt, mr, mb, ml, ...otherProps } = whatsappProps
+  const { mt, mb, ml, ...otherProps } = whatsappProps
 
   const textParam = `?text=${pageUrl}`
   const shareUrl = `https://api.whatsapp.com/send${textParam}`
@@ -25,7 +25,7 @@ const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
       <WhatsAppAmpContainer
         whatsappPath={whatsappPath}
         mt={mt}
-        mr={mr}
+        mr={2}
         mb={mb}
         ml={ml}
         $size={size}
@@ -43,7 +43,7 @@ const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
       <Block
         height={size}
         mt={mt}
-        mr={mr}
+        mr={2}
         mb={mb}
         ml={ml}
       >

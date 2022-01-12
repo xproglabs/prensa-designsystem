@@ -1,6 +1,7 @@
 import { get } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
+import Share from 'react-facebook/dist/Share'
 import { withTheme } from 'styled-components'
 
 import { GridRelated } from '../Grids/GridRelated'
@@ -109,6 +110,7 @@ const Article = (props) => {
           hyperlink={hyperlink}
           images={images}
           orderedList={orderedList}
+          pageUrl={url}
           paragraph={paragraph}
           related_content_intervention={related_content_body}
           tags_section_title={tags_section_title}

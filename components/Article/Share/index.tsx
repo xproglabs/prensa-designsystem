@@ -20,16 +20,19 @@ const Share = (props: ShareProps) => {
     twitterProps,
     whatsappPath,
     whatsappProps,
+    isBottomShare,
   } = props
+
+  const bottomShare = isBottomShare ? 'left' : 'right'
 
   return (
     <Block
       align='row'
-      alignx='left'
+      alignx={bottomShare}
       width='100%'
       md={{
         align: 'row',
-        alignx: 'right',
+        alignx: bottomShare,
         width: '100%'
       }}
       {...containerProps}

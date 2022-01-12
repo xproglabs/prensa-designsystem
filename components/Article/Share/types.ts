@@ -16,6 +16,7 @@ export type ContainerProps = {
 export interface ShareProps {
   amp: boolean;
   containerProps?: ContainerProps;
+  isBottomShare: boolean;
   pageUrl: string;
   size?: string;
   facebookPath?: string;

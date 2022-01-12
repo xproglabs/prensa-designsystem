@@ -16,7 +16,7 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
     size
   } = props
 
-  const { mt, mr, mb, ml, ...otherProps } = facebookProps
+  const { mt, mb, ml, ...otherProps } = facebookProps
 
   const displayParam = '&display=popup'
   const fbappidParam = `?app_id=${fbappid}`
@@ -29,7 +29,7 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
         facebookPath={facebookPath}
         $size={size}
         mt={mt}
-        mr={mr}
+        mr={2}
         mb={mb}
         ml={ml}
       >
@@ -47,7 +47,7 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
       <Block
         height={size}
         mt={mt}
-        mr={mr}
+        mr={2}
         mb={mb}
         ml={ml}
       >

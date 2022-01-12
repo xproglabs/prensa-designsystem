@@ -22,6 +22,7 @@ const Byline = ({
     if (!hasAuthorEmail && !hasAuthorSocialMedias) {
       return null
     }
+
     return (
       <Block mb={1}>
         {hasAuthorSocialMedias && (
