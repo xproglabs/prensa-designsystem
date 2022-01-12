@@ -125,8 +125,9 @@ const Teaser = (props: TeaserProps) => {
       box_b={box_b}
       box_borderColor={box_borderColor}
       box_borderStyle={box_borderStyle}
-      box_radius={box_radius}>
-      {number_enabled && 
+      box_radius={box_radius}
+    >
+      {number_enabled &&
         <S.WrapContent
           wrap_align={number_align}
           wrap_alignx={number_alignx}
@@ -144,7 +145,7 @@ const Teaser = (props: TeaserProps) => {
           />
         </S.WrapContent>
       }
-      {image_enabled && 
+      {image_enabled &&
         <S.WrapContent
           wrap_align={image_align}
           wrap_aligny={image_aligny}
@@ -154,7 +155,8 @@ const Teaser = (props: TeaserProps) => {
           wrap_mt={image_mt}
           wrap_mr={image_mr}
           wrap_mb={image_mb}
-          wrap_ml={image_ml}>
+          wrap_ml={image_ml}
+        >
           <RenderImage
             amp={amp}
             domain={domain}
@@ -178,7 +180,8 @@ const Teaser = (props: TeaserProps) => {
         wrap_mt={wrap_mt}
         wrap_mr={wrap_mr}
         wrap_mb={wrap_mb}
-        wrap_ml={wrap_ml}>
+        wrap_ml={wrap_ml}
+      >
         <S.WrapSubject>
           <RenderSubject
             editable={{
