@@ -1,15 +1,18 @@
 import { ColorTokens } from '@prensa_tokens'
 import { ReactNode } from 'react'
-import { AnchorHTMLAttributes } from 'react'
+import { ReactHTMLElement } from 'react'
+
+import { ResponsiveHeight } from '../../styled-system/height/types'
 
 /**
  * Prensa | Link component API
  * @description
  */
-export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface LinkProps extends ReactHTMLElement<HTMLAnchorElement> {
   children: ReactNode;
   color?: ColorTokens;
-  height?: string;
+  height?: ResponsiveHeight;
+  href?: string;
   hoverOpacity?: number;
   mt?: string | number;
   mr?: string | number;
@@ -23,7 +26,7 @@ export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 export type StyledLinkProps = {
   children: ReactNode;
   href: string;
-  height?: string;
+  $height: ResponsiveHeight;
   hoverOpacity?: number;
   mt?: string | number;
   mr?: string | number;
