@@ -2,7 +2,6 @@ import { Link } from 'prensa'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
-import { height } from 'prensa/styled-system'
 
 export default {
   title: 'Link',
