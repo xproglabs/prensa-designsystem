@@ -7,6 +7,7 @@ import RelatedRender from './Related'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
 import { RenderNumber } from './RenderNumber'
+import { RenderOpacityMaskClickArea } from './RenderOpacityMaskClickArea'
 import { RenderSubject } from './RenderSubject'
 import { RenderSubtitle } from './RenderSubtitle'
 import { RenderTitle } from './RenderTitle'
@@ -104,8 +105,6 @@ const Teaser = (props: TeaserProps) => {
   //eventTracking
   const titleEventTracking = eventTracking?.titleEventTracking
 
-  console.log(props)
-
   return (
     <S.Box
       box_align={box_align}
@@ -148,9 +147,11 @@ const Teaser = (props: TeaserProps) => {
           />
         </S.WrapContent>
       }
-      <Link
-        height={image_height}
-        href={opacity_mask && item_path}
+      <RenderOpacityMaskClickArea
+        editable={editable}
+        layout={layout}
+        item_path={item_path}
+        opacity_mask={opacity_mask}
       >
         {image_enabled &&
           <S.WrapContent
@@ -233,7 +234,7 @@ const Teaser = (props: TeaserProps) => {
             {...related}
           />
         </S.WrapContent>
-      </Link>
+      </RenderOpacityMaskClickArea>
     </S.Box>
   )
 }
