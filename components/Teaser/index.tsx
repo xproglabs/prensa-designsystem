@@ -1,4 +1,5 @@
 import { get } from 'lodash'
+import { Link } from 'prensa'
 import React from 'react'
 
 import { EditButtons } from '../EditArea'
@@ -103,6 +104,8 @@ const Teaser = (props: TeaserProps) => {
   //eventTracking
   const titleEventTracking = eventTracking?.titleEventTracking
 
+  console.log(props)
+
   return (
     <S.Box
       box_align={box_align}
@@ -145,87 +148,92 @@ const Teaser = (props: TeaserProps) => {
           />
         </S.WrapContent>
       }
-      {image_enabled &&
-        <S.WrapContent
-          wrap_align={image_align}
-          wrap_aligny={image_aligny}
-          wrap_alignx={image_alignx}
-          wrap_height={image_height}
-          wrap_width={image_wrap_width}
-          wrap_mt={image_mt}
-          wrap_mr={image_mr}
-          wrap_mb={image_mb}
-          wrap_ml={image_ml}
-        >
-          <RenderImage
-            amp={amp}
-            domain={domain}
-            editable={editable}
-            fallback_image_url={fallback_image_url}
-            image_circle={layout?.image_circle}
-            item={item}
-            item_path={item_path}
-            layout={layout}
-            opacityMask={opacity_mask}
-          />
-        </S.WrapContent>
-      }
-      <S.WrapContent
-        content_overlap={content_overlap}
-        wrap_align={wrap_align}
-        wrap_aligny={wrap_aligny}
-        wrap_alignx={wrap_alignx}
-        wrap_height={wrap_height}
-        wrap_width={wrap_width}
-        wrap_mt={wrap_mt}
-        wrap_mr={wrap_mr}
-        wrap_mb={wrap_mb}
-        wrap_ml={wrap_ml}
+      <Link
+        height={image_height}
+        href={opacity_mask && item_path}
       >
-        <S.WrapSubject>
-          <RenderSubject
+        {image_enabled &&
+          <S.WrapContent
+            wrap_align={image_align}
+            wrap_aligny={image_aligny}
+            wrap_alignx={image_alignx}
+            wrap_height={image_height}
+            wrap_width={image_wrap_width}
+            wrap_mt={image_mt}
+            wrap_mr={image_mr}
+            wrap_mb={image_mb}
+            wrap_ml={image_ml}
+          >
+            <RenderImage
+              amp={amp}
+              domain={domain}
+              editable={editable}
+              fallback_image_url={fallback_image_url}
+              image_circle={layout?.image_circle}
+              item={item}
+              item_path={item_path}
+              layout={layout}
+              opacityMask={opacity_mask}
+            />
+          </S.WrapContent>
+        }
+        <S.WrapContent
+          content_overlap={content_overlap}
+          wrap_align={wrap_align}
+          wrap_aligny={wrap_aligny}
+          wrap_alignx={wrap_alignx}
+          wrap_height={wrap_height}
+          wrap_width={wrap_width}
+          wrap_mt={wrap_mt}
+          wrap_mr={wrap_mr}
+          wrap_mb={wrap_mb}
+          wrap_ml={wrap_ml}
+        >
+          <S.WrapSubject>
+            <RenderSubject
+              editable={{
+                enabled: editable?.enabled,
+                set_modified: editable?.set_modified,
+                set_selected: editable?.set_selected,
+                state: states?.subject
+              }}
+              color={color}
+              item={item}
+              layout={layout}
+            />
+            <EditButtons {...edit_buttons} />
+          </S.WrapSubject>
+          <RenderTitle
+            cid={item_cid}
             editable={{
               enabled: editable?.enabled,
               set_modified: editable?.set_modified,
               set_selected: editable?.set_selected,
-              state: states?.subject
+              state: states?.title
             }}
-            color={color}
+            layout={layout}
+            link={item_path}
+            slot_position={slot_position}
+            shadow={opacity_mask}
+            position={number}
+            title={item_title}
+            titleEventTracking={titleEventTracking}
+          />
+          <RenderSubtitle
             item={item}
             layout={layout}
           />
-          <EditButtons {...edit_buttons} />
-        </S.WrapSubject>
-        <RenderTitle
-          cid={item_cid}
-          editable={{
-            enabled: editable?.enabled,
-            set_modified: editable?.set_modified,
-            set_selected: editable?.set_selected,
-            state: states?.title
-          }}
-          layout={layout}
-          link={item_path}
-          slot_position={slot_position}
-          shadow={opacity_mask}
-          position={number}
-          title={item_title}
-          titleEventTracking={titleEventTracking}
-        />
-        <RenderSubtitle
-          item={item}
-          layout={layout}
-        />
-        <RenderDatetime
-          item={item}
-          layout={layout}
-        />
-        <RelatedRender
-          color={color}
-          layout={layout?.related}
-          {...related}
-        />
-      </S.WrapContent>
+          <RenderDatetime
+            item={item}
+            layout={layout}
+          />
+          <RelatedRender
+            color={color}
+            layout={layout?.related}
+            {...related}
+          />
+        </S.WrapContent>
+      </Link>
     </S.Box>
   )
 }
