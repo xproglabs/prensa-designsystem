@@ -1,6 +1,6 @@
 import { get, isArray } from 'lodash'
 
-import { renderMedia } from '../responsiveFunction'
+import { responsiveEngine } from '../responsiveEngine'
 import { parseNumberHeight, parseStringHeight } from './parsers'
 import { HeightStyledFunctionParam0 } from './types'
 
@@ -19,6 +19,6 @@ export function height(props: HeightStyledFunctionParam0) {
   }
 
   if (isArray(value)) {
-    return renderMedia(value, theme, { string: parseStringHeight, number: parseNumberHeight })
+    return responsiveEngine(value, theme, { string: parseStringHeight, number: parseNumberHeight })
   }
 }
