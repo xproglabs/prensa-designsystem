@@ -9,7 +9,6 @@ export function height(props: HeightStyledFunctionParam0) {
   const value = get(props, '$height', undefined)
   const theme = get(props, 'theme', undefined)
   const factor = get(theme, 'factors.dimensions', undefined)
-  const css = []
 
   if (typeof value === 'string') {
     return parseStringHeight(value)
@@ -19,9 +18,7 @@ export function height(props: HeightStyledFunctionParam0) {
     return parseNumberHeight(value, factor)
   }
 
-  if (isArray(height)) {
+  if (isArray(value)) {
     return renderMedia(value, theme, { string: parseStringHeight, number: parseNumberHeight })
   }
-
-  return css.join('')
 }
