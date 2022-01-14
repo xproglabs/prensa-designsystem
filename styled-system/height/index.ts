@@ -4,6 +4,12 @@ import { responsiveEngine } from '../responsiveEngine'
 import { parseNumberHeight, parseStringHeight } from './parsers'
 import { HeightStyledFunctionParam0 } from './types'
 
+/**
+ * Prensa Styled System | height
+ * @param props Expect an Object containing props from component that is invoking this function
+ * $height: string | number | Array<string | number>;
+ * @returns a string with CSS syntax
+ */
 export function height(props: HeightStyledFunctionParam0) {
 
   const value = get(props, '$height', undefined)
