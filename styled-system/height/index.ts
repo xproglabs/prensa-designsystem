@@ -19,6 +19,9 @@ export function height(props: HeightStyledFunctionParam0) {
   }
 
   if (isArray(value)) {
-    return responsiveEngine(value, theme, { string: parseStringHeight, number: parseNumberHeight })
+    return responsiveEngine(value, theme, {
+      string: parseStringHeight,
+      number: parseNumberHeight
+    })
   }
 }
