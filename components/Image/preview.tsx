@@ -17,7 +17,7 @@ export const ImagePreviewLink = ({
   editable,
   image_props,
   item
-}) => {
+}: any) => {
   const handlePreviewClick = (item) => {
     if (!editable || !editable.image_load) {
       return false
