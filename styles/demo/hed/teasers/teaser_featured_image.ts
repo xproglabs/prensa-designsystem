@@ -14,7 +14,7 @@ export const TEASER_FEATURED_IMAGE = CreateTeaser({
     ml: [2, 3],
     mr: [2, 3],
     mb: [2, 3],
-    mt: ['-300px', '-396px'],
+    mt: ['-316px', '-420px'],
     width: ['calc(100% - 32px)', 'calc(100% - 48px)']
   },
   date_time: {
