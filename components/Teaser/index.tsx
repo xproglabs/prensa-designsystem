@@ -212,7 +212,7 @@ const Teaser = (props: TeaserProps) => {
               state: states?.title
             }}
             layout={layout}
-            link={item_path}
+            link={opacity_mask ? undefined : item_path}
             slot_position={slot_position}
             shadow={opacity_mask}
             position={number}
