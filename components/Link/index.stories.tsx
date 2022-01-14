@@ -2,6 +2,7 @@ import { Link } from 'prensa'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
+import { height } from 'prensa/styled-system'
 
 export default {
   title: 'Link',
@@ -51,5 +52,15 @@ export const NoPath = () => {
     <Link>
       The quick brown fox
     </Link>
+  )
+}
+
+export const ResponsiveHeight = () => {
+  return (
+    <div style={{ height: '300px' }}>
+      <Link href='https://google.com.br' height={['300px', '150px']}>
+        The quick brown fox
+      </Link>
+    </div>
   )
 }
