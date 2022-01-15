@@ -5,6 +5,7 @@ import Block from '../../Block'
 import Typography from '../../Typography'
 
 export const Body = ({
+  align,
   bodyWidth,
   children,
   hyperlinkColor
@@ -20,7 +21,7 @@ export const Body = ({
       maxWidth={bodyWidth}
       px={2}
       width='calc(100% - 32px)'
-      lg={{ px: '0px', width: '100%' }}
+      lg={{ px: '0px', width: '100%', align: align }}
     >
       {children}
     </Block>
@@ -28,6 +29,7 @@ export const Body = ({
 }
 
 Body.propTypes = {
+  align: PropTypes.string,
   bodyWidth: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   hyperlinkColor: PropTypes.string

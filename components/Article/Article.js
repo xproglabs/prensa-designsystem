@@ -96,6 +96,7 @@ const Article = (props) => {
           </React.Fragment>
         }
         <TextBody
+          hasColumnRight
           ads={adsBody}
           amp={amp}
           bodyWidth={bodyWidth}

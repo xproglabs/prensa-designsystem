@@ -27,6 +27,7 @@ const TextBody = (props) => {
     content,
     fbappid,
     gallery,
+    hasColumnRight,
     heading2,
     heading3,
     heading4,
@@ -202,27 +203,42 @@ const TextBody = (props) => {
     }
   }
 
+  const adSideBar = get(ads, 'sideBar', false)
+
   return (
-    <S.Body hyperlinkColor={get_hyperlink_color()}>
-      {map(body_items, ({ type, value }, key) => {
-        return (
-          <React.Fragment key={key}>
-            {switch_component(type, value)}
-          </React.Fragment>
-        )
-      })}
-      {gallery && gallery.items && gallery.items.length > 0 && 
+    hasColumnRight ? (
+      <S.Body align='row' hyperlinkColor={get_hyperlink_color()}>
+        <Block width='800px'>
+          <h1>Coluna1</h1>
+        </Block>
+        <Block width='calc(100% - 800px)' bgColor='primary'>
+          <h1>Coluna2</h1>
+          {adSideBar && React.cloneElement(adSideBar)}
+        </Block>
+      </S.Body>
+    ) : (
+      <S.Body align='column' hyperlinkColor={get_hyperlink_color()}>
+        {map(body_items, ({ type, value }, key) => {
+          return (
+            <React.Fragment key={key}>
+              {switch_component(type, value)}
+            </React.Fragment>
+          )
+        })}
+        {gallery && gallery.items && gallery.items.length > 0 && 
         <ImageGallery amp={amp} {...gallery} />
-      }
-      {tags_section_title && tags_section_title.enabled && 
+        }
+        {tags_section_title && tags_section_title.enabled && 
         <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
-      }
-      <Tags {...tags} maxWidth={bodyWidth} />
-    </S.Body>
+        }
+        <Tags {...tags} maxWidth={bodyWidth} />
+      </S.Body>
+    )
   )
 }
 
 TextBody.propTypes = {
+  hasColumnRight: PropTypes.bool,
   ads: PropTypes.shape({
     content: PropTypes.array,
     enabled: PropTypes.bool,
