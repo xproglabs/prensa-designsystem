@@ -6,17 +6,16 @@ import Typography from '../../Typography'
 
 export const Body = ({
   align,
+  alignx,
   bodyWidth,
   children,
   hyperlinkColor
 }) => {
-
   const custom = `a {color: ${hyperlinkColor};}`
-
   return (
     <Block
-      align='row'
-      alignx='center'
+      align={align}
+      alignx={alignx}
       aligny='top'
       custom={custom}
       maxWidth={bodyWidth}
@@ -28,7 +27,10 @@ export const Body = ({
     </Block>
   )
 }
-
+Body.defaultProps = {
+  align: 'column',
+  alignx: 'center'
+}
 Body.propTypes = {
   align: PropTypes.string,
   bodyWidth: PropTypes.string,
@@ -43,14 +45,12 @@ export const TextBodyColumn = ({
   return (
     <Block
       align='row'
-      alignx='right'
       aligny='top'
       width={width}>
       {children}
     </Block>
   )
 }
-
 TextBodyColumn.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   width: PropTypes.string

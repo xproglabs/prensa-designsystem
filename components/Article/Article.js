@@ -45,8 +45,9 @@ const Article = (props) => {
 
   // prepare article slots
   const adsBody = get(ads, 'body', {})
-  const adTopImage = get(ads, 'topImage', false)
-  const adTopBody = get(ads, 'topBody', false)
+  const adsSideBar = get(ads, 'sideBar', false)
+  const adsTopImage = get(ads, 'topImage', false)
+  const adsTopBody = get(ads, 'topBody', false)
 
   // related content
   const related_content_body = get(relatedContent, 'body', {})
@@ -72,7 +73,7 @@ const Article = (props) => {
                 <Byline amp={amp} {...byline} />
               </S.Content>
             </S.MaxWidth>
-            {adTopBody && React.cloneElement(adTopBody)}
+            {adsTopBody && React.cloneElement(adsTopBody)}
           </React.Fragment>
           :
           <React.Fragment>
@@ -89,16 +90,18 @@ const Article = (props) => {
                 />
               </S.Content>
             </S.MaxWidth>
-            {adTopImage && React.cloneElement(adTopImage)}
+            {adsTopImage && React.cloneElement(adsTopImage)}
             <S.MaxWidth maxWidth={headWidth}>
               <TopImage amp={amp} {...topimage} />
             </S.MaxWidth>
-            {adTopBody && React.cloneElement(adTopBody)}
+            {adsTopBody && React.cloneElement(adsTopBody)}
           </React.Fragment>
         }
-        <S.MaxWidth maxWidth={headWidth}>
+        <S.MaxWidth
+          maxWidth={headWidth}>
           <TextBody
-            ads={adsBody}
+            adsBody={adsBody}
+            adsSide={adsSideBar}
             amp={amp}
             bodyWidth={bodyWidth}
             citation={citation}
@@ -140,6 +143,7 @@ Article.propTypes = {
       render: PropTypes.node,
       interventionAmount: PropTypes.number
     }),
+    sideBar: PropTypes.node,
     topImage: PropTypes.node,
     topBody: PropTypes.node
   }),
