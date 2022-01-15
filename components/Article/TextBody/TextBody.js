@@ -205,19 +205,14 @@ const TextBody = (props) => {
 
   const adSideBar = get(ads, 'sideBar', false)
 
-  return (
-    hasColumnRight ? (
-      <S.Body align='row' hyperlinkColor={get_hyperlink_color()}>
-        <Block width='800px'>
-          <h1>Coluna1</h1>
-        </Block>
-        <Block width='calc(100% - 800px)' bgColor='primary'>
-          <h1>Coluna2</h1>
-          {adSideBar && React.cloneElement(adSideBar)}
-        </Block>
-      </S.Body>
-    ) : (
-      <S.Body align='column' hyperlinkColor={get_hyperlink_color()}>
+  const RenderMainColumn = () => {
+    const isGalleryVisible = gallery && gallery.items && gallery.items.length > 0
+    const isTagSectionVisible = tags_section_title && tags_section_title.enabled
+    return (
+      <S.Body
+        align='column'
+        hyperlinkColor={get_hyperlink_color()}
+      >
         {map(body_items, ({ type, value }, key) => {
           return (
             <React.Fragment key={key}>
@@ -225,16 +220,50 @@ const TextBody = (props) => {
             </React.Fragment>
           )
         })}
-        {gallery && gallery.items && gallery.items.length > 0 && 
-        <ImageGallery amp={amp} {...gallery} />
-        }
-        {tags_section_title && tags_section_title.enabled && 
-        <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
-        }
-        <Tags {...tags} maxWidth={bodyWidth} />
+        {isGalleryVisible && (
+          <ImageGallery
+            {...gallery}
+            amp={amp}
+          />
+        )}
+        {isTagSectionVisible && (
+          <SectionTitle
+            {...tags_section_title}
+            maxWidth={bodyWidth}>
+              Assuntos
+          </SectionTitle>
+        )}
+        <Tags
+          {...tags}
+          maxWidth={bodyWidth}
+        />
       </S.Body>
     )
-  )
+  }
+
+  if (hasColumnRight) {
+    return (
+      <S.Body
+        align='row'
+        hyperlinkColor={get_hyperlink_color()}
+      >
+        <S.TextBodyColumn
+          width={bodyWidth}
+        >
+          <RenderMainColumn />
+        </S.TextBodyColumn>
+        <S.TextBodyColumn
+          bgColor='primary'
+          width={`calc(100% - ${bodyWidth})`}
+        >
+          <h1>Coluna2</h1>
+          {/* {adSideBar && React.cloneElement(adSideBar)} */}
+        </S.TextBodyColumn>
+      </S.Body>
+    )
+  }
+
+  return <RenderMainColumn />
 }
 
 TextBody.propTypes = {
