@@ -193,6 +193,7 @@ const ArticleOM = () => {
       gallery={gallery}
       images={{ items: images_parsed }}
       intertitle={intertitle}
+      hasColumnRight={true}
       subject={props_subject}
       subtitle={props_subtitle}
       tags={{ items: metadata }}
