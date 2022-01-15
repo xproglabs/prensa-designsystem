@@ -1,5 +1,4 @@
 import { get } from 'lodash'
-import { Link } from 'prensa'
 import React from 'react'
 
 import { EditButtons } from '../EditArea'
@@ -150,6 +149,7 @@ const Teaser = (props: TeaserProps) => {
       <RenderOpacityMaskClickArea
         editable={editable}
         layout={layout}
+        item={item}
         item_path={item_path}
         opacity_mask={opacity_mask}
       >
