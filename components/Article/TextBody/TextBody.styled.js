@@ -15,8 +15,9 @@ export const Body = ({
 
   return (
     <Block
-      align='column'
+      align='row'
       alignx='center'
+      aligny='top'
       custom={custom}
       maxWidth={bodyWidth}
       px={2}
@@ -33,6 +34,26 @@ Body.propTypes = {
   bodyWidth: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   hyperlinkColor: PropTypes.string
+}
+
+export const TextBodyColumn = ({
+  children,
+  width
+}) => {
+  return (
+    <Block
+      align='row'
+      alignx='right'
+      aligny='top'
+      width={width}>
+      {children}
+    </Block>
+  )
+}
+
+TextBodyColumn.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  width: PropTypes.string
 }
 
 export const TextBody = ({ color, children }) => 
