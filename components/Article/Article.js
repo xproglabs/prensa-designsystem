@@ -96,27 +96,29 @@ const Article = (props) => {
             {adTopBody && React.cloneElement(adTopBody)}
           </React.Fragment>
         }
-        <TextBody
-          ads={adsBody}
-          amp={amp}
-          bodyWidth={bodyWidth}
-          citation={citation}
-          content={textbody}
-          fbappid={fbappid}
-          gallery={gallery}
-          hasColumnRight={hasColumnRight}
-          heading2={heading2}
-          heading3={heading3}
-          heading4={heading4}
-          hyperlink={hyperlink}
-          images={images}
-          orderedList={orderedList}
-          paragraph={paragraph}
-          related_content_intervention={related_content_body}
-          tags_section_title={tags_section_title}
-          tags={tags}
-          unorderedList={unorderedList}
-        />
+        <S.MaxWidth maxWidth={headWidth}>
+          <TextBody
+            ads={adsBody}
+            amp={amp}
+            bodyWidth={bodyWidth}
+            citation={citation}
+            content={textbody}
+            fbappid={fbappid}
+            gallery={gallery}
+            hasColumnRight={hasColumnRight}
+            heading2={heading2}
+            heading3={heading3}
+            heading4={heading4}
+            hyperlink={hyperlink}
+            images={images}
+            orderedList={orderedList}
+            paragraph={paragraph}
+            related_content_intervention={related_content_body}
+            tags_section_title={tags_section_title}
+            tags={tags}
+            unorderedList={unorderedList}
+          />
+        </S.MaxWidth>
         <GridRelated {...related_content_bottom} />
       </S.Container>
     </S.Page>
