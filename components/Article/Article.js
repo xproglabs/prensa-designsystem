@@ -23,6 +23,7 @@ const Article = (props) => {
     featured,
     gallery,
     headWidth,
+    hasColumnRight,
     heading2,
     heading3,
     heading4,
@@ -96,7 +97,6 @@ const Article = (props) => {
           </React.Fragment>
         }
         <TextBody
-          hasColumnRight
           ads={adsBody}
           amp={amp}
           bodyWidth={bodyWidth}
@@ -104,6 +104,7 @@ const Article = (props) => {
           content={textbody}
           fbappid={fbappid}
           gallery={gallery}
+          hasColumnRight={hasColumnRight}
           heading2={heading2}
           heading3={heading3}
           heading4={heading4}
@@ -125,7 +126,8 @@ const Article = (props) => {
 Article.defaultProps = {
   amp: false,
   bodyWidth: '768px',
-  headWidth: '1016px'
+  headWidth: '1016px',
+  hasColumnRight: false
 }
 
 Article.propTypes = {
@@ -149,6 +151,7 @@ Article.propTypes = {
     captionProps: PropTypes.object,
     items: PropTypes.array
   }),
+  hasColumnRight: PropTypes.bool,
   headWidth: PropTypes.string,
   heading2: PropTypes.object,
   heading3: PropTypes.object,
