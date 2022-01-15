@@ -27,7 +27,7 @@ import Data7795 from './data/7.795.json'
 import DataHomeFull from './data/home.json'
 import DATA_OPINIAO from './data/opiniao.json'
 import { preview_editable } from './editable'
-import { theme } from './index'
+import { hojeemdia_theme as theme } from './index'
 
 export default {
   title: 'Templates/HojeEmDia',
@@ -52,7 +52,7 @@ const loadContentFromPagedata = (data=DataHomeFull) => {
   return pageblocks
 }
 
-const domain = 'https://qa.hojeemdia.com.br'
+const domain = 'https://polopoly.hojeemdia.com.br'
 const fallback_image_url = 'https://polopoly.hojeemdia.com.br/image/policy:1.880787.1638746928:1638746928/image.jpg?w=1000'
 
 const slot_parser = (item, key) => {
@@ -264,6 +264,7 @@ export const HomeFeaturedImage = () => {
 export const UltimasNoticiasComMaisLidas = () => {
   return (
     <TemplateContainer
+      background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
       <PageBlock
@@ -271,7 +272,6 @@ export const UltimasNoticiasComMaisLidas = () => {
         amp={false}
         domain={domain}
         fallback_image_url={fallback_image_url}
-        preview={preview_editable}
         slot_parser={slot_parser}
       />
       <PageBlock
@@ -279,7 +279,6 @@ export const UltimasNoticiasComMaisLidas = () => {
         amp={false}
         domain={domain}
         fallback_image_url={fallback_image_url}
-        preview={preview_editable}
         slot_parser={slot_parser}
       />
     </TemplateContainer>
