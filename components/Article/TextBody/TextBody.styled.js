@@ -23,7 +23,6 @@ export const Body = ({
       px={2}
       width='calc(100% - 32px)'
       lg={lg || {
-        lg,
         align,
         px: '0px',
         width: '100%',
