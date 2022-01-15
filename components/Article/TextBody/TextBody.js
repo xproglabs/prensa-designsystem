@@ -248,7 +248,10 @@ const TextBody = (props) => {
         hyperlinkColor={get_hyperlink_color()}
         lg={{
           align: 'row',
-          alignx: 'between'
+          alignx: 'between',
+          aligny: 'top',
+          px: '0px',
+          width: '100%',
         }}
       >
         <S.TextBodyColumn

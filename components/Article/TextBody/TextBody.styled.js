@@ -9,7 +9,8 @@ export const Body = ({
   alignx,
   bodyWidth,
   children,
-  hyperlinkColor
+  hyperlinkColor,
+  lg
 }) => {
   const custom = `a {color: ${hyperlinkColor};}`
   return (
@@ -21,7 +22,12 @@ export const Body = ({
       maxWidth={bodyWidth}
       px={2}
       width='calc(100% - 32px)'
-      lg={{ px: '0px', width: '100%', align: align }}
+      lg={lg || {
+        lg,
+        align,
+        px: '0px',
+        width: '100%',
+      }}
     >
       {children}
     </Block>
