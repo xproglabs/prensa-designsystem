@@ -243,9 +243,13 @@ const TextBody = (props) => {
   if (hasColumnRight) {
     return (
       <S.Body
-        align='row'
-        alignx='between'
+        align='column'
+        alignx='center'
         hyperlinkColor={get_hyperlink_color()}
+        lg={{
+          align: 'row',
+          alignx: 'between'
+        }}
       >
         <S.TextBodyColumn
           width={bodyWidth}
