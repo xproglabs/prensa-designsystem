@@ -49,7 +49,7 @@ export const TextBodyColumn = ({
 }) => {
   return (
     <Block
-      align='row'
+      align='column'
       aligny='top'
       width={width}>
       {children}
