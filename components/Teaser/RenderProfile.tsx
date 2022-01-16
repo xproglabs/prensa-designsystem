@@ -1,4 +1,4 @@
-import TeaserProfile from 'components/AuthorProfile/Teaser'
+import TeaserProfile from 'components/AuthorProfile/Profile'
 import { ContainerProps } from 'components/AuthorProfile/types'
 import React from 'react'
 
@@ -9,6 +9,7 @@ export type RenderProfileProps = {
     desc?: string;
     enabled: boolean;
     name: string;
+    path: string;
     image?: {
       byline?: string;
       caption?: string;
@@ -20,6 +21,7 @@ export type RenderProfileProps = {
   };
   className?: string;
   containerProps: ContainerProps;
+  subtitleContainer?: any;
 }
 
 const RenderProfile = ({
@@ -27,7 +29,8 @@ const RenderProfile = ({
   domain,
   content,
   className,
-  containerProps
+  containerProps,
+  subtitleContainer
 }: RenderProfileProps) => {
   return (
     <TeaserProfile
@@ -35,12 +38,13 @@ const RenderProfile = ({
       className={className}
       containerProps={containerProps}
       domain={domain}
+      href={content?.path}
       image={{
         mobile_path: content?.image?.contentId,
         desktop_path: content?.image?.contentId,
         title: content.name
       }}
-      date={content.desc}
+      subtitleContainer={subtitleContainer}
       title={content.name}
     />
   )

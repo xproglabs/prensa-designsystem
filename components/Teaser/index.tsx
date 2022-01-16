@@ -100,11 +100,20 @@ const Teaser = (props: TeaserProps) => {
   const number_ml = get(layout, 'number.ml', ['0px', '0px'])
 
   // profile enabled and options
-  const profile_content = get(item, 'parentBio', false)
-  const profile_content_visible = get(profile_content, 'enabled', false)
+  const profile_data = get(item, 'parentBio', false)
+  const profile_data_visible = get(profile_data, 'enabled', false)
   const profile_layout_enabled = get(layout, 'profile_bio.enabled', false)
-  const isProfileEnabled = profile_content_visible && profile_layout_enabled
+  const isProfileEnabled = profile_data_visible && profile_layout_enabled
 
+  const profile_content = {
+    name: get(profile_data, 'name'),
+    image: get(profile_data, 'image'),
+    path: get(profile_data, 'path'),
+    enabled: isProfileEnabled
+  }
+
+
+  // <RenderDatetime item={item} layout={layout} />
   // opacity mask prop
   const opacity_mask = get(layout, 'opacity_mask', false)
 
@@ -196,6 +205,20 @@ const Teaser = (props: TeaserProps) => {
     )
   }
 
+  const RenderDateTimeWrap = () => {
+    return (
+      <RenderDatetime
+        item={item}
+        layout={{
+          date_time: {
+            ...layout?.date_time,
+            enabled: true
+          }
+        }}
+      />
+    )
+  }
+
   const RenderContentWrap = () => {
     return (
       <>
@@ -244,20 +267,21 @@ const Teaser = (props: TeaserProps) => {
             item={item}
             layout={layout}
           />
-          <RenderDatetime
-            item={item}
-            layout={layout}
-          />
-          {isProfileEnabled && (
+          {isProfileEnabled ? (
             <RenderProfile
               amp={amp}
               domain={domain}
               content={profile_content}
               className='hide_mobile'
               containerProps={{
-                pt: 2,
                 width: '100%'
               }}
+              subtitleContainer={() => <RenderDateTimeWrap />}
+            />
+          ) : (
+            <RenderDatetime
+              item={item}
+              layout={layout}
             />
           )}
           <RelatedRender
@@ -290,6 +314,7 @@ const Teaser = (props: TeaserProps) => {
                 pr: 2,
                 width: 'calc(100% - 32px)'
               }}
+              subtitleContainer={() => <RenderDateTimeWrap />}
             />
           </RenderBox>
         </Block>
