@@ -31,6 +31,9 @@ export const TEASER_LATEST = CreateTeaser({
     width: ['80px', '320px'],
     wrap_width: ['80px', '320px'],
   },
+  profile_bio: {
+    enabled: true
+  },
   title: {
     enabled: true,
     ...parseFonts(
