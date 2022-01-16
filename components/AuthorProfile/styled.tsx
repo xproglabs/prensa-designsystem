@@ -112,7 +112,7 @@ export const Title = ({ children, ...otherProps }: TitleProps) => (
     element='label'
     fontSize='16px'
     fontWeight={700}
-    mb={1}
+    mb={0.5}
     width='100%'
     {...otherProps}
   >

@@ -11,12 +11,11 @@ const TeaserProfile = ({
   authorNameProps,
   className,
   containerProps,
-  date,
-  dateTimeProps,
   domain,
   href,
   image,
   imageWrapProps,
+  subtitleContainer,
   title,
   titleProps,
   name,
@@ -80,11 +79,7 @@ const TeaserProfile = ({
               {name}
             </S.AuthorName>
           } 
-          {date &&
-            <S.DateTime {...dateTimeProps}>
-              {date}
-            </S.DateTime>
-          }     
+          {subtitleContainer && subtitleContainer()}
         </S.TitleWrapper>
       </S.Content>
     </S.ResponsiveWrap>

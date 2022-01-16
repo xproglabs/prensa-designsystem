@@ -28,6 +28,7 @@ export interface AuthorProfileProps {
   newsTitle?: string;
   newsTitleHref?: string;
   newsTitleProps?: NewsTitleProps;
+  subtitleContainer?: any;
   title: string;
   titleProps?: TitleProps;
 }
