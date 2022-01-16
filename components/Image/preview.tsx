@@ -16,15 +16,21 @@ export const ImagePreviewLink = ({
   children,
   editable,
   image_props,
-  item
+  item,
+  restrictedClickArea
 }: any) => {
+
+  const previewAreaId = `preview-area-${item.cid}`
 
   const handlePreviewClick = item => {
     editable.image_load(editable, item, image_props)
   }
 
   const handleAreaClick = event => {
-    if (!editable || !editable.image_load || event.target.id !== 'preview-area') {
+    if (restrictedClickArea && event.target.id !== previewAreaId) {
+      return undefined
+    }
+    if (!editable || !editable.image_load) {
       return undefined
     }
     handlePreviewClick(item)
@@ -32,7 +38,7 @@ export const ImagePreviewLink = ({
 
   return (
     <ImagePreviewArea 
-      id='preview-area'
+      id={previewAreaId}
       onClick={handleAreaClick}
     >
       {children}
