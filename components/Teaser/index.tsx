@@ -102,12 +102,19 @@ const Teaser = (props: TeaserProps) => {
   // profile enabled and options
   const profile_data = get(item, 'parentBio', false)
   const profile_data_visible = get(profile_data, 'enabled', false)
+  const profile_layout = get(layout, 'profile_bio', {})
+  const profile_layout_height = get(profile_layout, 'height', ['40px', '40px'])
+  const profile_layout_width = get(profile_layout, 'width', ['40px', '40px'])
   const profile_layout_enabled = get(layout, 'profile_bio.enabled', false)
   const isProfileEnabled = profile_data_visible && profile_layout_enabled
 
   const profile_content = {
     name: get(profile_data, 'name'),
-    image: get(profile_data, 'image'),
+    image: {
+      ...get(profile_data, 'image'),
+      height: profile_layout_height,
+      width: profile_layout_width
+    },
     path: get(profile_data, 'path'),
     enabled: isProfileEnabled
   }
@@ -272,7 +279,6 @@ const Teaser = (props: TeaserProps) => {
               amp={amp}
               domain={domain}
               content={profile_content}
-              className='hide_mobile'
               containerProps={{
                 width: '100%'
               }}
@@ -294,38 +300,11 @@ const Teaser = (props: TeaserProps) => {
     )
   }
   return (
-    <>
-      {isProfileEnabled ? (
-        <Block width='100%'>
-          <RenderBox>
-            <RenderNumberWrap />
-            <RenderImageWrap />
-            <RenderContentWrap />
-          </RenderBox>
-          <RenderBox>
-            <RenderProfile
-              amp={amp}
-              domain={domain}
-              content={profile_content}
-              className='hide_desktop'
-              containerProps={{
-                pb: 2,
-                pl: 2,
-                pr: 2,
-                width: 'calc(100% - 32px)'
-              }}
-              subtitleContainer={() => <RenderDateTimeWrap />}
-            />
-          </RenderBox>
-        </Block>
-      ) : (
-        <RenderBox>
-          <RenderNumberWrap />
-          <RenderImageWrap />
-          <RenderContentWrap />
-        </RenderBox>
-      )}
-    </>
+    <RenderBox>
+      <RenderNumberWrap />
+      <RenderImageWrap />
+      <RenderContentWrap />
+    </RenderBox>
   )
 }
 

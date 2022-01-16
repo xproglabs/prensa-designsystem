@@ -99,7 +99,9 @@ export type LayoutProps = {
   number?: NumberLayout;
   opacity_mask?: boolean;
   profile_bio?: {
-    enabled: boolean
+    enabled: boolean,
+    height?: SpacingType,
+    width?: SpacingType
   };
   related?: Related;
   section?: Object;

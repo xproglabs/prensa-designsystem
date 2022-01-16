@@ -2,7 +2,7 @@ import { get } from 'lodash'
 import React from 'react'
 
 import Typography from '../Typography'
-import { dateDistance } from '../Util'
+import { dateDistance, datePtBrFull } from '../Util'
 import { RenderDateTimeProps } from './RenderDateTimeTypes'
 
 const RenderDatetime = ({ item, layout }: RenderDateTimeProps) => {
@@ -21,7 +21,13 @@ const RenderDatetime = ({ item, layout }: RenderDateTimeProps) => {
   // get time_formatted  
   let time_formatted = get(item, 'time_modifiedDate', '')
   if (datetime_format == 'time_formatted') {
-    time_formatted = get(item, 'time_formatted', '')
+    time_formatted = get(item, 'time_published', false)
+    
+    if (!time_formatted || time_formatted == '') {
+      time_formatted = get(item, 'pubdate', false)
+    }
+
+    time_formatted = time_formatted && datePtBrFull(time_formatted)
   }
   if (!time_formatted || time_formatted == '') {
     time_formatted = get(item, 'time-modified', '')
@@ -33,7 +39,8 @@ const RenderDatetime = ({ item, layout }: RenderDateTimeProps) => {
     return null
   }
   
-  let time_string = `Publicado em ${time_formatted}`
+  let time_string = time_formatted
+  
   if (datetime_format != 'time_formatted') {
     time_string = dateDistance(time_formatted, 600)
     time_string = time_string && time_string.startsWith('Há') ?

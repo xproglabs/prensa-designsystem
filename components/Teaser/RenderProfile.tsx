@@ -15,8 +15,8 @@ export type RenderProfileProps = {
       caption?: string;
       contentId?: string;
       subtitle?: string;
-      height?: string;
-      width?: string;
+      height?: [string, string];
+      width?: [string, string];
     };
   };
   className?: string;
@@ -42,10 +42,15 @@ const RenderProfile = ({
       image={{
         mobile_path: content?.image?.contentId,
         desktop_path: content?.image?.contentId,
+        height: content?.image?.height,
+        width: content?.image?.width,
         title: content.name
       }}
       subtitleContainer={subtitleContainer}
       title={content.name}
+      titleProps={{
+        fontSize: '14px'
+      }}
     />
   )
 }
