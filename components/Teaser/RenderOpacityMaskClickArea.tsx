@@ -27,6 +27,7 @@ const RenderOpacityMaskClickArea = ({
         editable={editable}
         image_props={{ mobile_dim, desktop_dim }}
         item={item}
+        restrictedClickArea
       >
         {children}
       </ImagePreviewLink>
