@@ -35,7 +35,9 @@ export const TEASER_LATEST = CreateTeaser({
     wrap_width: ['80px', '320px'],
   },
   profile_bio: {
-    enabled: true
+    enabled: true,
+    height: ['32px', '40px'],
+    width: ['32px', '40px']
   },
   title: {
     enabled: true,
