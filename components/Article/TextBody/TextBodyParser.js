@@ -6,7 +6,7 @@ const parse_content = (content) => {
   let bodyItems = []
   let tagItems = []
 
-  const renderChildValue = (child) => child && child.length > 0 && child[0].text
+  const renderChildValue = (child) => child && child.length > 0 && child[0].text ? child[0].text : ''
 
   const renderListItems = (child) => {
 
