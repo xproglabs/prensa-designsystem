@@ -25,12 +25,12 @@ amp-sidebar {
   border-radius: 100%;
 }
 @media (max-width: 1015px) {
-  .hide_desktop {
+  .hide_mobile {
     display: none;
   }
 }
 @media (min-width: 1016px) {
-  .hide_mobile {
+  .hide_desktop {
     display: none;
   }
 }
