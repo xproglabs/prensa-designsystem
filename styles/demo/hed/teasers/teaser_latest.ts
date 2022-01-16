@@ -18,7 +18,10 @@ export const TEASER_LATEST = CreateTeaser({
     mt: [2, 3],
     width: ['calc(100% - 80px - 32px)', 'calc(100% - 300px - 48px)']
   },
-  date_time: { enabled: false },
+  date_time: {
+    enabled: true,
+    format: 'time_formatted'
+  },
   image: {
     enabled: true,
     dimension: ['1x1', '2x1'],
@@ -40,7 +43,7 @@ export const TEASER_LATEST = CreateTeaser({
       tokensFonts.NEWS_TITLE_8,
       tokensFonts.NEWS_TITLE_5
     ),
-    mb: 2
+    mb: [1, 1]
   },
   related: {
     enabled: false

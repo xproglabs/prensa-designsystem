@@ -29,6 +29,7 @@
           "enabled": true,
           "name": "Cristiano Lopes",
           "desc": "Description do Colunista de Política da editoria de Política",
+          "path": "/politica",
           "image": {
             "byline": "",
             "caption": "",
