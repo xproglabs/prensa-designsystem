@@ -19,15 +19,22 @@ export const ImagePreviewLink = ({
   item
 }: any) => {
 
-  const handlePreviewClick = (item) => {
-    if (!editable || !editable.image_load) {
-      return false
+  const handlePreviewClick = item => {
+    editable.image_load(editable, item, image_props)
+  }
+
+  const handleAreaClick = event => {
+    if (!editable || !editable.image_load || event.target.id !== 'preview-area') {
+      return undefined
     }
-    return editable.image_load(editable, item, image_props)
+    handlePreviewClick(item)
   }
 
   return (
-    <ImagePreviewArea onClick={() => handlePreviewClick(item)}>
+    <ImagePreviewArea 
+      id='preview-area'
+      onClick={handleAreaClick}
+    >
       {children}
     </ImagePreviewArea>
   )
