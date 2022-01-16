@@ -98,6 +98,9 @@ export type LayoutProps = {
   image_circle?: boolean;
   number?: NumberLayout;
   opacity_mask?: boolean;
+  profile_bio?: {
+    enabled: boolean
+  };
   related?: Related;
   section?: Object;
   subject?: SubjectLayout;
