@@ -16,9 +16,11 @@ export type AuthorNameProps = {
 export interface AuthorProfileProps {
   amp?: boolean;
   authorNameProps?: AuthorNameProps;
+  className?: string;
   containerProps?: ContainerProps;
   date?: string;
   dateTimeProps?: DateTimeProps;
+  domain?: string;
   href?: string;
   image: ImageProps;
   imageWrapProps?: ImageWrapProps;
@@ -59,6 +61,7 @@ export type ContentProps = {
   align?: string;
   alignx?: string;
   aligny?: string;
+  className?: string;
   children: any;
   px?: SpacingType;
   py?: SpacingType;
