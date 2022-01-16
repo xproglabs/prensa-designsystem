@@ -27,11 +27,20 @@ const TeaserProfile = ({
   const image_desktop_url = parseImagePath('1x1', domain, image_desktop_policy, 40)
   const image_mobile_url = parseImagePath('1x1', domain, image_mobile_policy, 40)
 
-  const image_width_desktop = get(image, 'width[0]', '40px')
-  const image_height_desktop = get(image, 'height[0]', '40px')
-  const image_width_mobile = get(image, 'width[1]', '40px')
-  const image_height_mobile = get(image, 'height[1]', '40px')
+  const image_width_desktop = get(image, 'width[1]', '40px')
+  const image_height_desktop = get(image, 'height[1]', '40px')
+  const image_width_mobile = get(image, 'width[0]', '40px')
+  const image_height_mobile = get(image, 'height[0]', '40px')
   const image_title = get(image, 'title', '')
+
+  const imageBoxWidth = {
+    height: image_height_mobile,
+    width: image_width_mobile,
+    lg: {
+      height: image_height_desktop,
+      width: image_width_desktop,
+    }
+  }
 
   return (
     <S.ResponsiveWrap className={className}>
@@ -39,6 +48,7 @@ const TeaserProfile = ({
         <Link path={href}>
           <S.ImageWrap
             {...imageWrapProps}
+            {...imageBoxWidth}
             mr={1}>
             <Image
               amp={amp}

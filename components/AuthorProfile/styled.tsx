@@ -83,7 +83,6 @@ export const ImageWrap = ({ children, ...otherProps }: ImageWrapProps) => (
   <Block
     height='48px'
     width='48px'
-    minWidth='48px'
     {...otherProps}
   >
     {children}
