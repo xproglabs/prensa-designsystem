@@ -52,6 +52,9 @@ const Article = (props) => {
   const related_content_body = get(relatedContent, 'body', {})
   const related_content_bottom = get(relatedContent, 'bottom', {})
 
+  //share buttons content
+  const share_data = get(byline, 'share', {})
+
   return (
     <S.Page>
       <S.Container>
@@ -69,7 +72,10 @@ const Article = (props) => {
             </S.ContainerFeatured>
             <S.MaxWidth maxWidth={headWidth}>
               <S.Content>
-                <Byline amp={amp} {...byline} />
+                <Byline
+                  amp={amp}
+                  {...byline}
+                />
               </S.Content>
             </S.MaxWidth>
             {adTopBody && React.cloneElement(adTopBody)}
@@ -100,16 +106,17 @@ const Article = (props) => {
           ads={adsBody}
           amp={amp}
           bodyWidth={bodyWidth}
+          bottomShare={share_data}
           citation={citation}
           content={textbody}
           fbappid={fbappid}
           gallery={gallery}
+          hasBottomShare={hasBottomShare}
           heading2={heading2}
           heading3={heading3}
           heading4={heading4}
           hyperlink={hyperlink}
           images={images}
-          hasBottomShare={hasBottomShare}
           orderedList={orderedList}
           pageUrl={url}
           paragraph={paragraph}
