@@ -22,7 +22,6 @@ const PageIndicator = ({
 
   const flexibleLayout: IndicatorLayoutProps = {}
 
-  //flexible layout
   if (children > 100) {
     flexibleLayout.radius = 'rounded'
     flexibleLayout.width = '50px'
