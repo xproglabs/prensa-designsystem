@@ -91,11 +91,15 @@ ContentImage.propTypes = {
 export const MaxWidth = ({
   children, 
   maxWidth
-}) => 
-  <Block custom={`max-width: ${maxWidth};`} width='100%'>
-    {children}
-  </Block>
-
+}) => {
+  return (
+    <Block
+      maxWidth={maxWidth}
+      width='100%'>
+      {children}
+    </Block>
+  )
+}
 MaxWidth.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   maxWidth: PropTypes.string
