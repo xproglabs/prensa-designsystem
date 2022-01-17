@@ -38,7 +38,6 @@ const TextBody = (props) => {
     pageUrl,
     paragraph,
     related_content_intervention,
-    share,
     tags_section_title,
     tags,
     unorderedList
@@ -222,21 +221,22 @@ const TextBody = (props) => {
         <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
       }
       <Tags {...tags} maxWidth={bodyWidth} />
-      <Block width='100%' maxWidth={bodyWidth}>
-        { 
-          tags_section_title && 
-          tags_section_title.enabled && 
+      { 
+        tags_section_title.enabled && 
           isBottomShare &&
         <SectionTitle {...tags_section_title}>Compartilhar</SectionTitle> 
-        }
-        <Share 
-          isBottomShare={isBottomShare}
-          amp={amp}
-          fbappid={fbappid}
-          pageUrl={pageUrl}
-          {...share}
-        />
-      </Block>
+      }
+      <Share 
+        isBottomShare={isBottomShare}
+        amp={amp}
+        fbappid={fbappid}
+        pageUrl={pageUrl}
+        containerProps={{
+          alignx: 'left',
+          maxWidth: bodyWidth,
+          md: { alignx: 'left' }
+        }}
+      />
     </S.Body>
   )
 }
@@ -268,7 +268,6 @@ TextBody.propTypes = {
     enabled: PropTypes.bool,
     component: PropTypes.node
   }),
-  share: PropTypes.object,
   tags_section_title: PropTypes.object,
   tags: PropTypes.object
 }

@@ -28,7 +28,7 @@ const Article = (props) => {
     heading4,
     hyperlink,
     images,
-    isBottomShare,
+    hasBottomShare,
     orderedList,
     paragraph,
     relatedContent,
@@ -109,7 +109,7 @@ const Article = (props) => {
           heading4={heading4}
           hyperlink={hyperlink}
           images={images}
-          isBottomShare={isBottomShare}
+          hasBottomShare={hasBottomShare}
           orderedList={orderedList}
           pageUrl={url}
           paragraph={paragraph}
@@ -157,7 +157,7 @@ Article.propTypes = {
   heading4: PropTypes.object,
   hyperlink: PropTypes.string,
   images: PropTypes.object,
-  isBottomShare: PropTypes.bool,
+  hasBottomShare: PropTypes.bool,
   paragraph: PropTypes.object,
   orderedList: PropTypes.object,
   relatedContent: PropTypes.shape({
