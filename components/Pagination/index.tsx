@@ -49,9 +49,23 @@ const Pagination = ({
     )
   }
 
+  const RenderBeforeLast = () => {
+    return (
+      <PageIndicator
+        href={`${href}&page=${data.last - 1}`}
+        {...indicatorLayout}
+      >
+        {data.last - 1}
+      </PageIndicator>
+    )
+  }
+
   const RenderLast = () => {
     if (data.last === data.current || data.last === data.start || data.last === 0) {
       return null
+    }
+    if (data.current > data.end) {
+      return <RenderBeforeLast/>
     }
     return (
       <PageIndicator
@@ -82,7 +96,9 @@ const Pagination = ({
     if (
       data.next === data.current ||
       data.next === data.end ||
-      data.next === 1
+      data.next === 1 ||
+      data.current === data.end ||
+      data.current > data.end
     ) {
       return null
     }
