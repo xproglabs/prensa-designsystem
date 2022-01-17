@@ -8,8 +8,8 @@ export type ResponsiveAlignXTokens = Array<AlignXTokens>
 export type ResponsiveAlignYTokens = Array<AlignYTokens>
 
 export type AlignStyledFunctionParam0 = {
-  align: AlignTokens | ResponsiveAlignTokens;
-  alignx: AlignXTokens | ResponsiveAlignXTokens;
-  aligny: AlignYTokens | ResponsiveAlignYTokens;
-  theme: ThemeTypes;
+  align?: AlignTokens | ResponsiveAlignTokens;
+  alignx?: AlignXTokens | ResponsiveAlignXTokens;
+  aligny?: AlignYTokens | ResponsiveAlignYTokens;
+  theme?: ThemeTypes;
 }
