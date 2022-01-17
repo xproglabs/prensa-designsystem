@@ -223,7 +223,7 @@ const TextBody = (props) => {
         {isGalleryVisible && (
           <ImageGallery
             {...gallery}
-            width={bodyWidth}
+            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
             amp={amp}
           />
         )}
