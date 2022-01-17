@@ -209,10 +209,7 @@ const TextBody = (props) => {
     const isGalleryVisible = gallery && gallery.items && gallery.items.length > 0
     const isTagSectionVisible = tags_section_title && tags_section_title.enabled
     return (
-      <S.Body
-        align='column'
-        hyperlinkColor={get_hyperlink_color()}
-      >
+      <>
         {map(body_items, ({ type, value }, key) => {
           return (
             <React.Fragment key={key}>
@@ -238,7 +235,7 @@ const TextBody = (props) => {
           {...tags}
           maxWidth={bodyWidth}
         />
-      </S.Body>
+      </>
     )
   }
 
@@ -254,8 +251,7 @@ const TextBody = (props) => {
           aligny: 'top',
           px: '0px',
           width: '100%',
-        }}
-      >
+        }}>
         <S.TextBodyColumn
           lg={{
             width: bodyWidth
@@ -273,7 +269,13 @@ const TextBody = (props) => {
     )
   }
 
-  return <RenderMainColumn />
+  return (
+    <S.Body
+      align='column'
+      hyperlinkColor={get_hyperlink_color()}>
+      <RenderMainColumn />
+    </S.Body>
+  )
 }
 
 TextBody.propTypes = {
