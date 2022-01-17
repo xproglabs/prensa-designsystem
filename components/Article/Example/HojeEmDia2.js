@@ -15,8 +15,32 @@ const textbody = `
 
   <p>Foram aplicadas na cidade 2.135.046 primeiras doses, 1.843.621 segundas doses, 60.882 doses únicas e 336.178 doses de reforço.</p>
 
-  <p>&nbsp;</p>
+  <p>Casos suspeitos de contágio simultâneo pelos vírus que provocam a Covid e a gripe, chamados de Flurona, são preocupantes e de alto risco para a população mais vulnerável. Médicos alertam que a dupla infecção reforça a obrigatoriedade para uso da máscara de proteção, distanciamento social e higienização das mãos, além da vacinação para quem ainda não completou o ciclo.</p>
 
+  <p>Clique <a href="https://www.hojeemdia.com.br/horizontes/trabalhadores-do-ensino-fundamental-de-bh-recebem-a-dose-de-refor%C3%A7o-contra-a-covid-nesta-quarta-1.870632" target="_blank">aqui </a>e saiba quem vacina hoje</p>
+  
+  <p>Três notificações são investigadas em Juiz de Fora, na Zona da Mata. No entanto, não há informações sobre idade, sexo e estado de saúde dos pacientes. Conforme a prefeitura, análises epidemiológicas estão sendo feitas. A Secretaria de Estado de Saúde (SES-MG) ainda não foi comunicada sobre as suspeitas.</p>
+  
+  <p>Em Belo Horizonte, não há casos. No Brasil, houve registros em São Paulo, Rio de Janeiro e no Ceará. Há também notificações em outros países, como Estados Unidos e Israel.&nbsp;</p>
+  
+  <p><a class="p-smartembed" data-attr-f="3x2" data-attr-q="0.3" data-attr-w="400" data-onecms-id="policy:1.816166" data-onecms-type="image" href="javascript:window.parent.actionEventData({$contentId:'1.816166', $action:'view', $target:'work'})" polopoly:contentid="policy:1.816166"><img src="/image/policy:1.816166/image/image.jpg?f=3x2&amp;w=400&amp;q=0.3" /></a></p>
+  
+  <p>O cenário já era esperado, segundo o infectologista e membro do Comitê de Enfrentamento à Covid em Belo Horizonte, Unaí Tupinambás. “Tivemos quase dois anos sem circulação viral e, infelizmente, a procura pelo imunizante (da gripe) foi muito pequena. Era esperado que acontecesse no nosso outono, mas antecipou para o verão”, disse.</p>
+  
+  <p><a id="https://www.youtube.com/watch?v=i8dmFGu0QA8" name="https://www.youtube.com/watch?v=i8dmFGu0QA8"></a></p>
+  
+  <p>Conforme o médico, o risco é maior principalmente para pessoas não vacinadas e dos grupos de risco. “Ou seja, crianças e também adultos como gestantes, idosos e aqueles com comorbidades que, mesmo imunizados, têm vulnerabilidade maior diante das duas infecções”, alerta o infectologista.</p>
+  
+  <p><strong>Proteção</strong></p>
+  
+  <p>A imunização contra a Covid-19, como mostram as pesquisas e os números, é eficaz contra a doença e as formas mais graves. No entanto, é imprescindível seguir as demais medidas de proteção contra o coronavírus.&nbsp;</p>
+  
+  <p>Já a vacina contra a gripe não protege contra a nova cepa do vírus, H3N2 Darwin, mas garante imunização contra as outras variantes por ser do tipo trivalente.</p>
+  
+  <p><strong>Leia mais:</strong><br />
+  <a class="p-smartembed" data-onecms-id="policy:1.865478" data-onecms-type="article" href="javascript:window.parent.actionEventData({$contentId:'1.865478', $action:'view', $target:'work'})" polopoly:contentid="policy:1.865478">[[(standard.Article) Taxa de transmissão da Covid-19 em BH volta a crescer]]</a><br />
+  <a class="p-smartembed" data-onecms-id="policy:1.825220" data-onecms-type="article" href="javascript:window.parent.actionEventData({$contentId:'1.825220', $action:'view', $target:'work'})" polopoly:contentid="policy:1.825220">[[(standard.Article) Suposto ato de vandalismo pode ter estragado vacinas de Covid-19 no ES]]</a></p>
+    
   <p><strong>Leia mais:</strong></p>
 
   <p><strong><a href="https://www.hojeemdia.com.br/horizontes/sa%C3%BAde/avan%C3%A7o-na-vacina%C3%A7%C3%A3o-faz-mortes-por-covid-19-cair-15-vezes-em-minas-1.865358" target="_blank">Avanço na vacinação faz mortes por Covid-19 cair 15 vezes em Minas</a><br />
@@ -29,6 +53,8 @@ const ArticleHojeEmDia2 = () => {
     <ThemeProvider theme={hojeemdia_theme}>
       <Article
         amp={false}
+        bodyWidth='660px'
+        hasColumnRight={true}
         byline={{
           author: {
             color: 'neutral2',
@@ -69,18 +95,18 @@ const ArticleHojeEmDia2 = () => {
           items: [
             {
               caption: 'Mariane criou empresa com foco na economia sustentável (Fotos: Divulgação)',
-              contentId: '1.3658',
-              value: 'http://qa.diariodaregiao.com.br/image/policy:1.3658/image.jpg?f=2x1&w=1200'
+              contentId: '1.816166',
+              value: 'http://polopoly.hojeemdia.com.br/image/policy:1.3658/image.jpg?f=2x1&w=1200'
             },
             {
               caption: 'O cabeleireiro Douglas Negrett montou salão para valorizar estética negra (Guilherme Baffi 7/5/2021)',
               contentId: '1.34636',
-              value: 'http://qa.diariodaregiao.com.br/image/policy:1.34636/image.jpg?f=2x1&w=1200'
+              value: 'http://polopoly.hojeemdia.com.br/image/policy:1.34636/image.jpg?f=2x1&w=1200'
             },
             {
               caption: 'Isadora, filha da médica Luciana Casseb, com camiseta da marca ',
               contentId: '1.34723',
-              value: 'http://qa.diariodaregiao.com.br/image/policy:1.34723/image.jpg?f=2x1&w=1200'
+              value: 'http://polopoly.hojeemdia.com.br/image/policy:1.34723/image.jpg?f=2x1&w=1200'
             }
           ]
         }}
@@ -88,18 +114,18 @@ const ArticleHojeEmDia2 = () => {
           items: [
             {
               caption: 'Mariane criou empresa com foco na economia sustentável (Fotos: Divulgação)',
-              contentId: '1.3658',
-              value: 'http://qa.diariodaregiao.com.br/image/policy:1.3658/image.jpg?f=2x1&w=1200'
+              contentId: '1.816166',
+              value: 'http://polopoly.hojeemdia.com.br/image/policy:1.816166/image.jpg?f=2x1&w=1200'
             },
             {
               caption: 'O cabeleireiro Douglas Negrett montou salão para valorizar estética negra (Guilherme Baffi 7/5/2021)',
               contentId: '1.34636',
-              value: 'http://qa.diariodaregiao.com.br/image/policy:1.34636/image.jpg?f=2x1&w=1200'
+              value: 'http://polopoly.hojeemdia.com.br/image/policy:1.34636/image.jpg?f=2x1&w=1200'
             },
             {
               caption: 'Isadora, filha da médica Luciana Casseb, com camiseta da marca ',
               contentId: '1.34723',
-              value: 'http://qa.diariodaregiao.com.br/image/policy:1.34723/image.jpg?f=2x1&w=1200'
+              value: 'http://polopoly.hojeemdia.com.br/image/policy:1.34723/image.jpg?f=2x1&w=1200'
             }
           ]
         }}
