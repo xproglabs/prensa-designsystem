@@ -26,8 +26,11 @@ const parse_content = (content) => {
 
     const { attr, child, node, tag, text } = obj
 
-    if (tag === 'p' || tag === 'br') {
+    if (tag === 'p') {
       tagItems.push({ 'type': 'p', 'value': '' })
+    }
+    if (tag === 'br') {
+      tagItems.push({ 'type': 'br', 'value': '' })
     }
     if (tag === 'strong') {
       tagItems.push({ 'type': 'text', 'value': `<strong>${renderChildValue(child)}</strong>` })
@@ -138,6 +141,7 @@ const parse_content = (content) => {
   elements = elements.size === 0 || { type: 'p', value: parsed }
   // parse elements
   map(elements, (item) => switchNode(item))
+
   // render
   let p_text = ''
   // discard text empty
@@ -154,7 +158,7 @@ const parse_content = (content) => {
 
   map(tagItems, ({ type, value }) => {
 
-    if (type !== 'text') {
+    if (['text', 'br', 'a'].indexOf(type) == -1) {
       let added = add_text(p_text)
       if (added) {
         p_text = ''
@@ -190,6 +194,9 @@ const parse_content = (content) => {
         break
       case 'p':
         // insert if exist and clean
+        break
+      case 'br':
+        p_text = `${p_text}<br />`
         break
       case 'text':
         p_text = `${p_text}${value}`
