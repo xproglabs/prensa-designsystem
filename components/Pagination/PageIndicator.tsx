@@ -1,7 +1,7 @@
 import { Block, Link, Typography } from 'prensa'
 import React from 'react'
 
-import { IndicatorProps, PaginationComponentProps } from './types'
+import { IndicatorProps, IndicatorLayoutProps } from './types'
 
 const PageIndicator = ({
   bgColor,
@@ -20,7 +20,7 @@ const PageIndicator = ({
   width
 }: IndicatorProps) => {
 
-  const flexibleLayout: PaginationComponentProps['indicatorLayout'] = {}
+  const flexibleLayout: IndicatorLayoutProps = {}
 
   //flexible layout
   if (children > 100) {
