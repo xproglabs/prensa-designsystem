@@ -209,7 +209,7 @@ const TextBody = (props) => {
     const isGalleryVisible = gallery && gallery.items && gallery.items.length > 0
     const isTagSectionVisible = tags_section_title && tags_section_title.enabled
     return (
-      <>
+      <React.Fragment>
         {map(body_items, ({ type, value }, key) => {
           return (
             <React.Fragment key={key}>
@@ -217,25 +217,26 @@ const TextBody = (props) => {
             </React.Fragment>
           )
         })}
-        {isGalleryVisible && (
+        {isGalleryVisible && 
           <ImageGallery
             {...gallery}
             width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
             amp={amp}
           />
-        )}
-        {isTagSectionVisible && (
+        }
+        {isTagSectionVisible && 
           <SectionTitle
             {...tags_section_title}
-            maxWidth={bodyWidth}>
+            maxWidth={bodyWidth}
+          >
               Assuntos
           </SectionTitle>
-        )}
+        }
         <Tags
           {...tags}
           maxWidth={bodyWidth}
         />
-      </>
+      </React.Fragment>
     )
   }
 
@@ -251,18 +252,17 @@ const TextBody = (props) => {
           aligny: 'top',
           px: '0px',
           width: '100%',
-        }}>
+        }}
+      >
         <S.TextBodyColumn
-          lg={{
-            width: bodyWidth
-          }}>
+          lg={{ width: bodyWidth }}
+        >
           <RenderMainColumn />
         </S.TextBodyColumn>
         <S.TextBodyColumn
           bgColor='primary'
-          lg={{
-            width: `calc(100% - ${bodyWidth} - 32px)`
-          }}>
+          lg={{ width: `calc(100% - ${bodyWidth} - 32px)` }}
+        >
           {adsSide && React.cloneElement(adsSide)}
         </S.TextBodyColumn>
       </S.Body>
@@ -272,7 +272,8 @@ const TextBody = (props) => {
   return (
     <S.Body
       align='column'
-      hyperlinkColor={get_hyperlink_color()}>
+      hyperlinkColor={get_hyperlink_color()}
+    >
       <RenderMainColumn />
     </S.Body>
   )
