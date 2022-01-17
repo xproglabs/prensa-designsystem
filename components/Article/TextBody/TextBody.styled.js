@@ -5,32 +5,60 @@ import Block from '../../Block'
 import Typography from '../../Typography'
 
 export const Body = ({
+  align,
+  alignx,
   bodyWidth,
   children,
-  hyperlinkColor
+  hyperlinkColor,
+  lg
 }) => {
-
   const custom = `a {color: ${hyperlinkColor};}`
-
   return (
     <Block
-      align='column'
-      alignx='center'
+      align={align}
+      alignx={alignx}
+      aligny='top'
       custom={custom}
       maxWidth={bodyWidth}
       px={2}
       width='calc(100% - 32px)'
-      lg={{ px: '0px', width: '100%' }}
+      lg={lg || {
+        align,
+        px: '0px',
+        width: '100%',
+      }}
     >
       {children}
     </Block>
   )
 }
-
+Body.defaultProps = {
+  align: 'column',
+  alignx: 'center'
+}
 Body.propTypes = {
+  align: PropTypes.string,
   bodyWidth: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   hyperlinkColor: PropTypes.string
+}
+
+export const TextBodyColumn = ({
+  children,
+  width
+}) => {
+  return (
+    <Block
+      align='column'
+      aligny='top'
+      width={width}>
+      {children}
+    </Block>
+  )
+}
+TextBodyColumn.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  width: PropTypes.string
 }
 
 export const TextBody = ({ color, children }) => 

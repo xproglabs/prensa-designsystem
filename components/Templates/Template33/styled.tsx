@@ -9,8 +9,7 @@ export const Column = ({ children }: ColumnProps) => (
     align='column'
     alignx='left'
     aligny='top'
-    mb={2}
-    lg={{ mb: 3, width: 'calc((100% - 48px) / 3)' }}
+    lg={{ width: 'calc((100% - 48px) / 3)' }}
     width='100%'
   >
     {children}
@@ -26,11 +25,13 @@ export const ColumnColor = ({ bgColor, children, minHeight, transparent }: Color
       custom={slot_customHeight_mobile}
       px={2}
       pt={transparent ? '0px' : 2}
+      mb={transparent ? '0px' : 2}
       width='calc(100% - 32px)'
       lg={{
         custom: slot_customHeight_desktop,
         px: transparent ? '0px' : 3,
         pt: transparent ? '0px' : 3,
+        mb: transparent ? '0px' : 3,
         width: transparent ? '100%' : 'calc(100% - 48px)'
       }}
     >

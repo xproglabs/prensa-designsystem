@@ -1,4 +1,3 @@
-export { align } from './align'
 export { border } from './border'
 export { dimensions } from './dimensions'
 export { margin } from './margin'

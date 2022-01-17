@@ -133,24 +133,23 @@ const RenderImage = ({
   )
 
   const RenderImageForPreview = () => {
+    if (opacityMask) {
+      return (
+        <RenderImageWithOpacityMask />
+      )
+    }
     return (
       <ImagePreviewLink
         editable={editable}
-        image_props={{
-          mobile_dim,
-          desktop_dim
-        }}
-        item={item}>
-        {opacityMask ?
-          <RenderImageWithOpacityMask /> :
-          <RenderImageElement />
-        }
+        image_props={{ mobile_dim, desktop_dim }}
+        item={item}
+      >
+        <RenderImageElement/>
       </ImagePreviewLink>
     )
   }
 
   const RenderImageWithLink = () => {
-    //Block image click when using opacity mask
     if (opacityMask) {
       return (
         <RenderImageWithOpacityMask/>

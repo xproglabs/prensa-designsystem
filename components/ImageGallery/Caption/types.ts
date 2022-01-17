@@ -3,6 +3,7 @@ export type CaptionComponentProps = {
   enabled?: boolean;
   fontFamily?: string;
   fontSize?: [string, string];
+  height?: string;
   lineHeight?: [string, string];
 }
 
@@ -10,5 +11,6 @@ export type CaptionProps = {
   enabled?: boolean;
   fontFamily?: string;
   fontSize?: [string, string];
+  height?: string;
   lineHeight?: [string, string];
 }

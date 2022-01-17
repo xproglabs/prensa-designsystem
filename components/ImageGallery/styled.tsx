@@ -4,12 +4,38 @@ import styled from 'styled-components'
 import { ContainerProps } from './types'
 
 const Container = styled.div<ContainerProps>`
-  height: max-content;
+  background-color: #EAEAEA;
+  width: ${props => props.$width[0]};
+  height: ${props => props.$height[0]};
   margin-bottom: 24px;
-  width: 100%;
+  amp-carousel {
+    width: ${props => props.$width[0]};
+    height: ${props => props.$height[0]};
+  }
   @media (min-width: ${props => props.theme.queries.md}) {
-    width: ${props => props.$width};
-    height: ${props => props.$height};
+    width: ${props => props.$width[1]};
+    height: ${props => props.$height[1]};
+    amp-carousel {
+      width: ${props => props.$width[1]};
+      height: ${props => props.$height[1]};
+    }
+  }
+`
+
+const Content = styled.div`
+  amp-img {
+    height: 360px;
+    width: 100%;
+    img {
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+  @media (min-width: ${props => props.theme.queries.md}) {
+    amp-img {
+      height: 500px;
+      width: 768px;
+    }
   }
 `
 
@@ -89,4 +115,4 @@ const WebCarousel = styled(Carousel)`
   }
 `
 
-export { Container, WebCarousel }
+export { Container, Content, WebCarousel }

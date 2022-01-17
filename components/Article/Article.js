@@ -23,6 +23,7 @@ const Article = (props) => {
     featured,
     gallery,
     headWidth,
+    hasColumnRight,
     heading2,
     heading3,
     heading4,
@@ -44,8 +45,9 @@ const Article = (props) => {
 
   // prepare article slots
   const adsBody = get(ads, 'body', {})
-  const adTopImage = get(ads, 'topImage', false)
-  const adTopBody = get(ads, 'topBody', false)
+  const adsSideBar = get(ads, 'sideBar', false)
+  const adsTopImage = get(ads, 'topImage', false)
+  const adsTopBody = get(ads, 'topBody', false)
 
   // related content
   const related_content_body = get(relatedContent, 'body', {})
@@ -71,7 +73,7 @@ const Article = (props) => {
                 <Byline amp={amp} {...byline} />
               </S.Content>
             </S.MaxWidth>
-            {adTopBody && React.cloneElement(adTopBody)}
+            {adsTopBody && React.cloneElement(adsTopBody)}
           </React.Fragment>
           :
           <React.Fragment>
@@ -88,33 +90,38 @@ const Article = (props) => {
                 />
               </S.Content>
             </S.MaxWidth>
-            {adTopImage && React.cloneElement(adTopImage)}
+            {adsTopImage && React.cloneElement(adsTopImage)}
             <S.MaxWidth maxWidth={headWidth}>
               <TopImage amp={amp} {...topimage} />
             </S.MaxWidth>
-            {adTopBody && React.cloneElement(adTopBody)}
+            {adsTopBody && React.cloneElement(adsTopBody)}
           </React.Fragment>
         }
-        <TextBody
-          ads={adsBody}
-          amp={amp}
-          bodyWidth={bodyWidth}
-          citation={citation}
-          content={textbody}
-          fbappid={fbappid}
-          gallery={gallery}
-          heading2={heading2}
-          heading3={heading3}
-          heading4={heading4}
-          hyperlink={hyperlink}
-          images={images}
-          orderedList={orderedList}
-          paragraph={paragraph}
-          related_content_intervention={related_content_body}
-          tags_section_title={tags_section_title}
-          tags={tags}
-          unorderedList={unorderedList}
-        />
+        <S.MaxWidth
+          maxWidth={headWidth}>
+          <TextBody
+            adsBody={adsBody}
+            adsSide={adsSideBar}
+            amp={amp}
+            bodyWidth={bodyWidth}
+            citation={citation}
+            content={textbody}
+            fbappid={fbappid}
+            gallery={gallery}
+            hasColumnRight={hasColumnRight}
+            heading2={heading2}
+            heading3={heading3}
+            heading4={heading4}
+            hyperlink={hyperlink}
+            images={images}
+            orderedList={orderedList}
+            paragraph={paragraph}
+            related_content_intervention={related_content_body}
+            tags_section_title={tags_section_title}
+            tags={tags}
+            unorderedList={unorderedList}
+          />
+        </S.MaxWidth>
         <GridRelated {...related_content_bottom} />
       </S.Container>
     </S.Page>
@@ -124,7 +131,8 @@ const Article = (props) => {
 Article.defaultProps = {
   amp: false,
   bodyWidth: '768px',
-  headWidth: '1016px'
+  headWidth: '1016px',
+  hasColumnRight: false
 }
 
 Article.propTypes = {
@@ -135,6 +143,7 @@ Article.propTypes = {
       render: PropTypes.node,
       interventionAmount: PropTypes.number
     }),
+    sideBar: PropTypes.node,
     topImage: PropTypes.node,
     topBody: PropTypes.node
   }),
@@ -144,7 +153,11 @@ Article.propTypes = {
   citation: PropTypes.object,
   fbappid: PropTypes.string.isRequired,
   featured: PropTypes.object,
-  gallery: PropTypes.array,
+  gallery: PropTypes.shape({
+    captionProps: PropTypes.object,
+    items: PropTypes.array
+  }),
+  hasColumnRight: PropTypes.bool,
   headWidth: PropTypes.string,
   heading2: PropTypes.object,
   heading3: PropTypes.object,

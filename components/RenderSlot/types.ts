@@ -39,6 +39,9 @@ export type RenderSlotProps = {
    * @description spaceB prop expects a element or React Component to be rendered after teaser content
    */
   spaceB?: ReactElement;
+  spaceTopLeft?: ReactElement;
+  spaceTopCenter?: ReactElement;
+  spaceTopRight?: ReactElement;
   space_bottom?: Array<number>;
   theme?: any;
 }

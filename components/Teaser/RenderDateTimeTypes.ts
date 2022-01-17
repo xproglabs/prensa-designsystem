@@ -10,6 +10,7 @@ export type RenderDateTimeLayoutProps = {
   enabled?: boolean;
   color?: string;
   element?: string;
+  format?: string;
   fontFamily?: string;
   fontSize?: string;
   fontWeight?: number;

@@ -41,13 +41,11 @@ const Template5050 = ({
         <Block
           align='column'
           alignx='left'
-          mb={2}
           width='100%'
           lg={{
             align: 'row',
             alignx: 'between',
             custom: 'flex-wrap: wrap;',
-            mb: 3,
             px: '0px',
             width: 'calc(((100% - 72px) / 2) + 24px)'
           }}>
@@ -76,13 +74,11 @@ const Template5050 = ({
         <Block
           align='column'
           alignx='left'
-          mb={2}
           width='100%'
           lg={{
             align: 'row',
             alignx: 'between',
             custom: 'flex-wrap: wrap;',
-            mb: 3,
             px: '0px',
             width: 'calc(((100% - 72px) / 2) + 24px)'
           }}>
