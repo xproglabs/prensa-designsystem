@@ -1,22 +1,22 @@
 export function generateMT(value, factor) {
   if (!value) return ''
   if (typeof value === 'string') return `margin-top: ${value};`
-  if (typeof value === 'number') return `margin-top: ${value * factor};`
+  if (typeof value === 'number') return `margin-top: ${value * factor}px;`
 }
 export function generateMR(value, factor) {
   if (!value) return ''
   if (typeof value === 'string') return `margin-right: ${value};`
-  if (typeof value === 'number') return `margin-right: ${value * factor};`
+  if (typeof value === 'number') return `margin-right: ${value * factor}px;`
 }
 export function generateMB(value, factor) {
   if (!value) return ''
   if (typeof value === 'string') return `margin-bottom: ${value};`
-  if (typeof value === 'number') return `margin-bottom: ${value * factor};`
+  if (typeof value === 'number') return `margin-bottom: ${value * factor}px;`
 }
 export function generateML(value, factor) {
   if (!value) return ''
   if (typeof value === 'string') return `margin-left: ${value};`
-  if (typeof value === 'number') return `margin-left: ${value * factor};`
+  if (typeof value === 'number') return `margin-left: ${value * factor}px;`
 }
 export function generateMX(value, factor) {
   if (!value) return ''
@@ -25,8 +25,8 @@ export function generateMX(value, factor) {
     margin-right: ${value};
   `
   if (typeof value === 'number') return `
-    margin-left: ${value * factor};
-    margin-right: ${value * factor};
+    margin-left: ${value * factor}px;
+    margin-right: ${value * factor}px;
   `
 }
 export function generateMY(value, factor) {
@@ -36,8 +36,8 @@ export function generateMY(value, factor) {
     margin-bottom: ${value};
   `
   if (typeof value === 'number') return `
-    margin-top: ${value * factor};
-    margin-bottom: ${value * factor};
+    margin-top: ${value * factor}px;
+    margin-bottom: ${value * factor}px;
   `
 }
 export function generateM(value, factor) {
@@ -49,9 +49,9 @@ export function generateM(value, factor) {
     margin-left: ${value};
   `
   if (typeof value === 'number') return `
-    margin-top: ${value * factor};
-    margin-right: ${value * factor};
-    margin-bottom: ${value * factor};
-    margin-left: ${value * factor};
+    margin-top: ${value * factor}px;
+    margin-right: ${value * factor}px;
+    margin-bottom: ${value * factor}px;
+    margin-left: ${value * factor}px;
   `
 }
