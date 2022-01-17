@@ -1,3 +1,6 @@
+# v1.6.92
+- Corrige o espaçamento do TextBody
+- Corrige parametrização de margin no groupSubItemProps em AccordionEditorial
 # v1.6.91
 - Altera uso da propriedade BodyWidth
 - Adiciona coluna lateral à direita do texto na página de matéria
