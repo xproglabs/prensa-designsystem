@@ -46,9 +46,9 @@ const MenuItem = ({
   const expandMoreIconClass = `${stateId}.status ? "${CONFIGS.GROUP_ICON_CLASS} hidden" : "${CONFIGS.GROUP_ICON_CLASS} visible"`
   const expandLessIconClass = `${stateId}.status ? "${CONFIGS.GROUP_ICON_CLASS} visible" : "${CONFIGS.GROUP_ICON_CLASS} hidden"`
 
-  const subitem_mt = get(groupSubItemProps, 'mt', undefined)
+  const subitem_mt = get(groupSubItemProps, 'mt', 2)
   const subitem_mr = get(groupSubItemProps, 'mr', undefined)
-  const subitem_mb = get(groupSubItemProps, 'mb', undefined)
+  const subitem_mb = get(groupSubItemProps, 'mb', 2)
   const subitem_ml = get(groupSubItemProps, 'ml', '20px')
   const subitem_color = get(groupSubItemProps, 'color', 'neutral2')
   const subitem_element = get(groupSubItemProps, 'element', 'a')
@@ -68,7 +68,15 @@ const MenuItem = ({
 
   const Group = () => (
     <div>
-      <GroupTitleContainer iconColor={iconColor} removeBorders={removeBorders} role='setMenuItemState' tabIndex='0' on={newState} $color={itemColor} {...groupItemProps}>
+      <GroupTitleContainer
+        iconColor={iconColor}
+        removeBorders={removeBorders}
+        role='setMenuItemState'
+        tabIndex='0'
+        on={newState}
+        $color={itemColor}
+        {...groupItemProps}
+      >
         <GroupTitle name={name} {...groupTitleProps} />
         <ExpandMoreIcon data-amp-bind-class={expandMoreIconClass} />
         <ExpandLessIcon data-amp-bind-class={expandLessIconClass} />
