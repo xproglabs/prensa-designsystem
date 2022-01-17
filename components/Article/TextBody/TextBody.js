@@ -13,7 +13,7 @@ import Heading4 from '../Headings/Heading4'
 import { ListComponent } from '../List/index.ts'
 import Paragraph from '../Paragraph/Paragraph'
 import SectionTitle from '../SectionTitle'
-import Share from '../Share/index.tsx'
+import { BottomShare } from '../Share/BottomShare/index.tsx'
 import Tags from '../Tags/Tags'
 import TopImage from '../TopImage/TopImage'
 import * as S from './TextBody.styled'
@@ -24,16 +24,17 @@ const TextBody = (props) => {
     ads,
     amp,
     bodyWidth,
+    bottomShare,
     citation,
     content,
     fbappid,
     gallery,
+    hasBottomShare,
     heading2,
     heading3,
     heading4,
     hyperlink,
     images,
-    isBottomShare,
     orderedList,
     pageUrl,
     paragraph,
@@ -214,29 +215,20 @@ const TextBody = (props) => {
           </React.Fragment>
         )
       })}
-      {gallery && gallery.items && gallery.items.length > 0 && 
+      {gallery && gallery.items && gallery.items.length > 0 &&
         <ImageGallery amp={amp} {...gallery} />
       }
-      {tags_section_title && tags_section_title.enabled && 
+      {tags_section_title && tags_section_title.enabled &&
         <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
       }
       <Tags {...tags} maxWidth={bodyWidth} />
-      { 
-        tags_section_title.enabled && 
-          isBottomShare &&
-        <SectionTitle {...tags_section_title}>Compartilhar</SectionTitle> 
+      {hasBottomShare &&
+        <BottomShare
+          maxWidth={bodyWidth}
+          pageUrl={pageUrl}
+          {...bottomShare}
+        />
       }
-      <Share 
-        isBottomShare={isBottomShare}
-        amp={amp}
-        fbappid={fbappid}
-        pageUrl={pageUrl}
-        containerProps={{
-          alignx: 'left',
-          maxWidth: bodyWidth,
-          md: { alignx: 'left' }
-        }}
-      />
     </S.Body>
   )
 }
@@ -251,18 +243,19 @@ TextBody.propTypes = {
   AdPlaceholder: PropTypes.func,
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
+  bottomShare: PropTypes.object,
   content: PropTypes.string,
   citation: PropTypes.object,
   gallery: PropTypes.shape({
     captionProps: PropTypes.object,
     items: PropTypes.array
   }),
+  hasBottomShare: PropTypes.bool,
   heading2: PropTypes.object,
   heading3: PropTypes.object,
   heading4: PropTypes.object,
   hyperlink: PropTypes.string,
   images: PropTypes.object,
-  isBottomShare: PropTypes.bool,
   paragraph: PropTypes.object,
   related_content_insertion: PropTypes.shape({
     enabled: PropTypes.bool,
