@@ -15,7 +15,7 @@ const parse_content = (content) => {
 
     map(list_items, (it) => {
       map(it.child, ({ text }) => {
-        ul_content.push(text.replaceAll('&nbsp;', ' '))
+        text && ul_content.push(text.replaceAll('&nbsp;', ' '))
       })
     })
     
