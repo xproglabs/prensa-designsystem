@@ -257,14 +257,16 @@ const TextBody = (props) => {
         }}
       >
         <S.TextBodyColumn
-          width={bodyWidth}
-        >
+          lg={{
+            width: bodyWidth
+          }}>
           <RenderMainColumn />
         </S.TextBodyColumn>
         <S.TextBodyColumn
           bgColor='primary'
-          width={`calc(100% - ${bodyWidth} - 32px)`}
-        >
+          lg={{
+            width: `calc(100% - ${bodyWidth} - 32px)`
+          }}>
           {adsSide && React.cloneElement(adsSide)}
         </S.TextBodyColumn>
       </S.Body>
