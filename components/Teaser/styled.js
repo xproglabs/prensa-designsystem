@@ -38,7 +38,8 @@ const Box = ({
   box_borderColor,
   box_borderStyle,
   box_radius,
-  children
+  children,
+  className
 }) => {
 
   const parse_boxwidth = () => {
@@ -64,6 +65,7 @@ const Box = ({
       align={box_align[0]}
       alignx={box_alignx[0]}
       aligny={box_aligny[0]}
+      className={className}
       bgColor={background}
       height={box_height[0]}
       pt={box_pt[0]}

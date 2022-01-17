@@ -1,3 +1,15 @@
+a {
+  text-decoration: none;
+  word-break: break-word;
+}
+body {
+  background-color: #f2f2f2;
+  margin: 0px;
+}
+amp-carousel {
+  display: inline-flex;
+  width: 100%;
+}
 amp-img {
   display: inline-flex;
   height: 100%;
@@ -6,16 +18,37 @@ amp-img {
 amp-img img {
   object-fit: cover;
 }
+amp-sidebar {
+  max-width: unset;
+}
 .image-with-radius {
   border-radius: 100%;
 }
 @media (max-width: 1015px) {
-  .hide_desktop {
+  .hide_mobile {
     display: none;
   }
 }
 @media (min-width: 1016px) {
-  .hide_mobile {
+  .hide_desktop {
     display: none;
   }
+}
+.hidden-img-logo {
+  display: none;
+}
+:focus {
+  outline: unset;
+}
+.scrollable-menu-topbar {
+  scrollbar-width: none; 
+}
+.scrollable-menu-topbar::-webkit-scrollbar {
+  display: none;
+}
+.scroll {
+  overflow-y: auto;
+}
+.no-scroll {
+  overflow-y: hidden;
 }

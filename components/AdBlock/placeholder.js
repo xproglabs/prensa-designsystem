@@ -6,15 +6,14 @@ const AdPlaceholder = () => {
   const propsItem = {
     alignx: 'center',
     aligny: 'middle',
-    bgColor: 'neutral8',
+    custom: `
+      background-color: #eee;
+      max-width: 980px;
+    `,
     fontColor: 'neutral4',
     height: '300px',
-    mb: 4,
-    mx: 3,
-    width: 'calc(100% - 48px)',
-    custom: `
-      max-width: 1080px;
-    `,
+    mb: 2,
+    width: '100%',
   }
   return (
     <Block {...propsItem}>
