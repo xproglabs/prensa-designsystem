@@ -120,14 +120,14 @@ TopImage.defaultProps = {
 TopImage.propTypes = {
   amp: PropTypes.bool,
   featured: PropTypes.bool,
-  height: PropTypes.string,
+  height: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   image: PropTypes.bool,
   caption: PropTypes.object,
   mb: PropTypes.array,
   px: PropTypes.array,
   py: PropTypes.array,
   value: PropTypes.string,
-  width: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   widthBox: PropTypes.array,
   type: PropTypes.oneOf(['image', 'video'])
 }

@@ -182,6 +182,7 @@ const TextBody = (props) => {
             amp={amp}
             ampProps={{ height: '384px', width: '768px' }}
             height={amp ? ['max-content', '384px'] : ['384px', '384px']}
+            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
             url={value}
           />
         )
@@ -222,6 +223,7 @@ const TextBody = (props) => {
         {isGalleryVisible && (
           <ImageGallery
             {...gallery}
+            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
             amp={amp}
           />
         )}
@@ -286,7 +288,8 @@ TextBody.propTypes = {
   citation: PropTypes.object,
   gallery: PropTypes.shape({
     captionProps: PropTypes.object,
-    items: PropTypes.array
+    items: PropTypes.array,
+    bodyWidth: PropTypes.string,
   }),
   hasColumnRight: PropTypes.bool,
   heading2: PropTypes.object,
