@@ -28,8 +28,9 @@ export const default_theme = {
   },
   radius: {
     unset: '0px',
-    default: '3px',
     alternative: '5px',
+    default: '3px',
+    rounded: '99px',
     circle: '50%'
   },
   teasers: {},

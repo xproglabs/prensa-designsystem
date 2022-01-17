@@ -29,7 +29,7 @@ type QuerieTokens =
   'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 type RadiusTokens =
-  'unset' | 'default' | 'alternative' | 'circle'
+  'unset' | 'default' | 'alternative' | 'rounded' | 'circle'
 
 type TeaserCartridges =
   'default'
