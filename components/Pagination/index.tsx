@@ -40,7 +40,10 @@ const Pagination = ({
       return null
     }
     return (
-      <PageIndicator href={`${href}&page=${data.start}`} {...indicatorLayout}>
+      <PageIndicator
+        href={`${href}&page=${data.start}`}
+        {...indicatorLayout}
+      >
         {data.start}
       </PageIndicator>
     )
@@ -51,26 +54,43 @@ const Pagination = ({
       return null
     }
     return (
-      <PageIndicator href={`${href}&page=${data.last}`} {...indicatorLayout}>
+      <PageIndicator
+        href={`${href}&page=${data.last}`}
+        {...indicatorLayout}
+      >
         {data.last}
       </PageIndicator>
     )
   }
 
   const RenderCurrent = () => {
+    if (data.current > data.end) {
+      return null
+    }
     return (
-      <PageIndicator bgColor='neutral5' color='neutral9' {...indicatorLayout}>
+      <PageIndicator
+        bgColor='neutral5'
+        color='neutral9'
+        {...indicatorLayout}
+      >
         {data.current}
       </PageIndicator>
     )
   }
 
   const RenderNext = () => {
-    if (data.next === data.current || data.next === data.end || data.next === 1) {
+    if (
+      data.next === data.current ||
+      data.next === data.end ||
+      data.next === 1
+    ) {
       return null
     }
     return (
-      <PageIndicator href={`${href}&page=${data.next}`} {...indicatorLayout}>
+      <PageIndicator
+        href={`${href}&page=${data.next}`}
+        {...indicatorLayout}
+      >
         {data.next}
       </PageIndicator>
     )
@@ -78,29 +98,15 @@ const Pagination = ({
 
   const RenderEnd = () => {
 
-    const flexibleLayout: PaginationComponentProps['indicatorLayout'] = {}
-
     if (data.end === data.current) {
       return null
     }
 
-    if (data.end > 100) {
-      flexibleLayout.radius = 'alternative'
-      flexibleLayout.width = '50px'
-    }
-
-    if (data.end > 1000) {
-      flexibleLayout.radius = 'alternative'
-      flexibleLayout.width = '60px'
-    }
-
-    if (data.end > 10000) {
-      flexibleLayout.radius = 'alternative'
-      flexibleLayout.width = '70px'
-    }
-
     return (
-      <PageIndicator href={`${href}&page=${data.end}`} {...indicatorLayout} {...flexibleLayout}>
+      <PageIndicator
+        href={`${href}&page=${data.end}`}
+        {...indicatorLayout}
+      >
         {data.end}
       </PageIndicator>
     )
