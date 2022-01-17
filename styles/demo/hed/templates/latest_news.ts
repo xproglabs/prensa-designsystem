@@ -2,28 +2,22 @@ import { CreateTemplate } from 'prensa'
 
 export const TEMPLATE_LATEST_NEWS = CreateTemplate({
   slot70: {
+    min_height: ['auto', 'auto'],
     related: {
       enabled: false
     },
     layout: {
-      0: ['hide'],
-      1: ['teaser_latest'],
-      2: ['teaser_latest', 'teaser_latest'],
-      3: ['teaser_latest', 'teaser_latest', 'teaser_latest'],
-      4: ['teaser_latest', 'teaser_latest', 'teaser_latest', 'teaser_latest'],
+      0: ['teaser_latest'],
     },
     spaces: [0, 0, 0, 0]
   },
   slot30: {
+    min_height: ['auto', 'auto'],
     related: {
       enabled: false
     },
     layout: {
-      0: ['hide'],
-      1: ['teaser_image_small'],
-      2: ['teaser_image_small', 'teaser_image_small'],
-      3: ['teaser_image_small', 'teaser_image_small', 'teaser_image_small'],
-      4: ['teaser_image_small', 'teaser_image_small', 'teaser_image_small', 'teaser_image_small'],
+      0: ['teaser_latest']
     },
     spaces: [0, 0, 0, 0]
   }

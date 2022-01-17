@@ -1,5 +1,6 @@
 import { Block, Typography } from 'prensa'
 import React from 'react'
+import styled from 'styled-components'
 
 import {
   AuthorNameProps,
@@ -42,10 +43,11 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
   </Block>
 )
 
-export const Content = ({ children, ...otherProps }: ContentProps) => (
+export const Content = ({ children, className, ...otherProps }: ContentProps) => (
   <Block
     align='row'
     aligny='middle'
+    className={className}
     width='100%'
     {...otherProps}
   >
@@ -81,7 +83,6 @@ export const ImageWrap = ({ children, ...otherProps }: ImageWrapProps) => (
   <Block
     height='48px'
     width='48px'
-    minWidth='48px'
     {...otherProps}
   >
     {children}
@@ -110,7 +111,7 @@ export const Title = ({ children, ...otherProps }: TitleProps) => (
     element='label'
     fontSize='16px'
     fontWeight={700}
-    mb={1}
+    mb={0.5}
     width='100%'
     {...otherProps}
   >
@@ -121,9 +122,14 @@ export const Title = ({ children, ...otherProps }: TitleProps) => (
 export const TitleWrapper = ({ children, ...otherProps }) => (
   <Block
     align='column'
+    aligny='top'
     width='calc(100% - 48px - 16px)'
     {...otherProps}
   >
     {children}
   </Block>
 )
+
+export const ResponsiveWrap = styled.div`
+  width: 100%;
+`
