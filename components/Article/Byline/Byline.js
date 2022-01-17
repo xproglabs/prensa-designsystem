@@ -66,7 +66,6 @@ const Byline = ({
       </Block>
     )
   }
-  console.log(share)
   return (
     <S.Container>
       <S.Content {...content}>
