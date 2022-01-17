@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { ContainerProps } from './types'
 
 const Container = styled.div<ContainerProps>`
+  background-color: #EAEAEA;
   width: ${props => props.$width[0]};
   height: ${props => props.$height[0]};
   margin-bottom: 24px;

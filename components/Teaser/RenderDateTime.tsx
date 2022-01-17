@@ -2,13 +2,14 @@ import { get } from 'lodash'
 import React from 'react'
 
 import Typography from '../Typography'
-import { dateDistance } from '../Util'
+import { dateDistance, datePtBrFull } from '../Util'
 import { RenderDateTimeProps } from './RenderDateTimeTypes'
 
 const RenderDatetime = ({ item, layout }: RenderDateTimeProps) => {
 
   const component_layout = get(layout, 'date_time', {})
   const datetime_enabled = get(component_layout, 'enabled', false)
+  const datetime_format = get(component_layout, 'format', false)
   const text_color = get(component_layout, 'color', 'neutral3')
   const text_element = get(component_layout, 'element', 'span')
   const text_fontFamily = get(component_layout, 'fontFamily', 'primary')
@@ -18,7 +19,16 @@ const RenderDatetime = ({ item, layout }: RenderDateTimeProps) => {
   const text_width = get(component_layout, 'width', '100%')
 
   // get time_formatted  
-  let time_formatted = get(item, 'time_modifiedDate', false)
+  let time_formatted = get(item, 'time_modifiedDate', '')
+  if (datetime_format == 'time_formatted') {
+    time_formatted = get(item, 'time_published', false)
+    
+    if (!time_formatted || time_formatted == '') {
+      time_formatted = get(item, 'pubdate', false)
+    }
+
+    time_formatted = time_formatted && datePtBrFull(time_formatted)
+  }
   if (!time_formatted || time_formatted == '') {
     time_formatted = get(item, 'time-modified', '')
   }
@@ -28,10 +38,15 @@ const RenderDatetime = ({ item, layout }: RenderDateTimeProps) => {
   if (!time_formatted || !datetime_enabled) {
     return null
   }
-  let time_string = dateDistance(time_formatted, 2880)
-  time_string = time_string && time_string.startsWith('Há') ?
-    time_string.replace('Há', 'Atualizado há') :
-    `Atualizado em ${time_string}`
+  
+  let time_string = time_formatted
+  
+  if (datetime_format != 'time_formatted') {
+    time_string = dateDistance(time_formatted, 600)
+    time_string = time_string && time_string.startsWith('Há') ?
+      time_string.replace('Há', 'Atualizado há') :
+      `Atualizado em ${time_string}`
+  }
 
   return (
     <Typography

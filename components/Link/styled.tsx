@@ -1,7 +1,7 @@
 import { get } from 'lodash'
+import { align, height, margin, padding, width } from 'prensa/styled-system'
 import { ComponentType } from 'react'
 import styled, { css } from 'styled-components'
-import { margin } from 'styled-system'
 
 import { StyledLinkProps } from './types'
 
@@ -33,24 +33,15 @@ function colorCSS({ $color, theme }: any) {
     color: ${get(theme, `colors.${$color}`, 'inherit')};
   `
 }
-function heightCSS({ $height }: any) {
-  return css`
-    height: ${$height};
-  `
-}
-
-function widthCSS({ $width }: any) {
-  return css`
-    width: ${$width};
-  `
-}
 
 export const StyledLink: ComponentType<StyledLinkProps> | any = styled.a<StyledLinkProps>`
   cursor: pointer;
+  ${align};
   ${colorCSS};
-  ${heightCSS};
+  ${height};
   ${textDecorationCSS};
   ${hoverStateCSS};
   ${margin};
-  ${widthCSS};
+  ${padding};
+  ${width};
 `

@@ -54,6 +54,7 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
             custom={slot70_customHeight_mobile}
             px={2}
             pt={slot70_isTransparent ? '0px' : 2}
+            mb={slot70_isTransparent ? '0px' : 2}
             width='calc(100% - 32px)'
             lg={{
               align: 'row',
@@ -88,6 +89,7 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
             custom={slot30_customHeight_mobile}
             px={2}
             pt={slot30_isTransparent ? '0px' : 2}
+            mb={slot30_isTransparent ? '0px' : 2}
             width='calc(100% - 32px)'
             lg={{
               custom: slot30_customHeight_desktop,

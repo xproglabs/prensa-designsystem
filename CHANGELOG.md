@@ -1,3 +1,22 @@
+# v1.6.92
+- Corrige o espaçamento do TextBody
+- Corrige parametrização de margin no groupSubItemProps em AccordionEditorial
+# v1.6.91
+- Altera uso da propriedade BodyWidth
+- Adiciona coluna lateral à direita do texto na página de matéria
+- Adiciona o AuthorProfile no teaser que é de colunista
+- Implementa função width responsiva
+- Implementa função padding responsiva
+- Implementa função estilizada margin responsiva
+- Otimiza função estilizada "align" para ser responsiva
+- Nova função height e responsiveEngine
+- Instala addon-docs para evitar exception no Storybook
+# v1.6.90
+- Remove mb restante dos blocos de 50
+# v1.6.89
+- Adiciona mb para os slots que tem cor de fundo
+# v1.6.88
+- Adiciona transform ao Typography de tags
 # v1.6.87
 - Permite renderização do caption da imagem na web e amp
 # v1.6.86

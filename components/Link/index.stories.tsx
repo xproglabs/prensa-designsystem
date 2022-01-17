@@ -53,3 +53,13 @@ export const NoPath = () => {
     </Link>
   )
 }
+
+export const ResponsiveHeight = () => {
+  return (
+    <div style={{ height: '300px' }}>
+      <Link href='https://google.com.br' height={['300px', '150px']}>
+        The quick brown fox
+      </Link>
+    </div>
+  )
+}

@@ -11,9 +11,9 @@ export const TEASER_FEATURED_IMAGE = CreateTeaser({
     aligny: ['bottom', 'bottom'],
     content_overlap: true,
     height: ['300px', '396px'],
-    ml: [2, 3],
-    mr: [2, 3],
-    mb: [2, 3],
+    pl: [2, 3],
+    pr: [2, 3],
+    pb: [2, 3],
     mt: ['-300px', '-396px'],
     width: ['calc(100% - 32px)', 'calc(100% - 48px)']
   },

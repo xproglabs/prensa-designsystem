@@ -21,7 +21,8 @@ import { parse_content } from './TextBodyParser'
 
 const TextBody = (props) => {
   const {
-    ads,
+    adsBody,
+    adsSide,
     amp,
     bodyWidth,
     bottomShare,
@@ -30,6 +31,7 @@ const TextBody = (props) => {
     fbappid,
     gallery,
     hasBottomShare,
+    hasColumnRight,
     heading2,
     heading3,
     heading4,
@@ -46,11 +48,11 @@ const TextBody = (props) => {
 
   if (!content) return null
 
-  const adsContent = get(ads, 'content', [])
-  const adsRender = get(ads, 'render', null)
+  const adsContent = get(adsBody, 'content', [])
+  const adsRender = get(adsBody, 'render', null)
 
   let readmore = []
-  let intervention_amount = get(ads, 'interventionAmount', 3)
+  let intervention_amount = get(adsBody, 'interventionAmount', 3)
   let intervention_readmore_inserted = false
   let intervention_status = false
   let paragraph_length = 0
@@ -112,7 +114,7 @@ const TextBody = (props) => {
 
     const ad_data_key = ad_counter - 1
     const ad_content = adsContent[ad_data_key]
-    const has_ad_intervention = get(ads, 'enabled', false)
+    const has_ad_intervention = get(adsBody, 'enabled', false)
     const has_relatedc_intervention = get(related_content_intervention, 'enabled', false)
     const relatedc_component = get(related_content_intervention, 'component', null)
 
@@ -184,6 +186,7 @@ const TextBody = (props) => {
             amp={amp}
             ampProps={{ height: '384px', width: '768px' }}
             height={amp ? ['max-content', '384px'] : ['384px', '384px']}
+            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
             url={value}
           />
         )
@@ -206,41 +209,93 @@ const TextBody = (props) => {
     }
   }
 
-  return (
-    <S.Body hyperlinkColor={get_hyperlink_color()}>
-      {map(body_items, ({ type, value }, key) => {
-        return (
-          <React.Fragment key={key}>
-            {switch_component(type, value)}
-          </React.Fragment>
-        )
-      })}
-      {gallery && gallery.items && gallery.items.length > 0 &&
-        <ImageGallery amp={amp} {...gallery} />
-      }
-      {tags_section_title && tags_section_title.enabled &&
-        <SectionTitle {...tags_section_title} maxWidth={bodyWidth}>Assuntos</SectionTitle>
-      }
-      <Tags {...tags} maxWidth={bodyWidth} />
-      {hasBottomShare &&
-        <BottomShare
+  const RenderMainColumn = () => {
+    const isGalleryVisible = gallery && gallery.items && gallery.items.length > 0
+    const isTagSectionVisible = tags_section_title && tags_section_title.enabled
+    return (
+      <React.Fragment>
+        {map(body_items, ({ type, value }, key) => {
+          return (
+            <React.Fragment key={key}>
+              {switch_component(type, value)}
+            </React.Fragment>
+          )
+        })}
+        {isGalleryVisible && 
+          <ImageGallery
+            {...gallery}
+            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
+            amp={amp}
+          />
+        }
+        {isTagSectionVisible && 
+          <SectionTitle
+            {...tags_section_title}
+            maxWidth={bodyWidth}
+          >
+            Assuntos
+          </SectionTitle>
+        }
+        <Tags
+          {...tags}
           maxWidth={bodyWidth}
-          pageUrl={pageUrl}
-          {...bottomShare}
         />
-      }
+        {hasBottomShare &&
+          <BottomShare 
+            pageUrl={pageUrl}
+            maxWidth={bodyWidth}
+            {...bottomShare}
+          />
+        }
+      </React.Fragment>
+    )
+  }
+
+  if (hasColumnRight) {
+    return (
+      <S.Body
+        align='column'
+        alignx='center'
+        hyperlinkColor={get_hyperlink_color()}
+        lg={{
+          align: 'row',
+          alignx: 'between',
+          aligny: 'top',
+          px: '0px',
+          width: '100%',
+        }}
+      >
+        <S.TextBodyColumn lg={{ width: bodyWidth }}>
+          <RenderMainColumn />
+        </S.TextBodyColumn>
+        <S.TextBodyColumn
+          bgColor='primary'
+          lg={{ width: `calc(100% - ${bodyWidth} - 32px)` }}
+        >
+          {adsSide && React.cloneElement(adsSide)}
+        </S.TextBodyColumn>
+      </S.Body>
+    )
+  }
+
+  return (
+    <S.Body
+      align='column'
+      hyperlinkColor={get_hyperlink_color()}
+    >
+      <RenderMainColumn />
     </S.Body>
   )
 }
 
 TextBody.propTypes = {
-  ads: PropTypes.shape({
+  adsBody: PropTypes.shape({
     content: PropTypes.array,
     enabled: PropTypes.bool,
     render: PropTypes.node,
     interventionAmount: PropTypes.number
   }),
-  AdPlaceholder: PropTypes.func,
+  adsSide: PropTypes.node,
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
   bottomShare: PropTypes.object,
@@ -248,9 +303,11 @@ TextBody.propTypes = {
   citation: PropTypes.object,
   gallery: PropTypes.shape({
     captionProps: PropTypes.object,
-    items: PropTypes.array
+    items: PropTypes.array,
+    bodyWidth: PropTypes.string,
   }),
   hasBottomShare: PropTypes.bool,
+  hasColumnRight: PropTypes.bool,
   heading2: PropTypes.object,
   heading3: PropTypes.object,
   heading4: PropTypes.object,

@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { LayoutProps } from 'prensa'
 
 export const SUBJECT_DEFAULT: LayoutProps['subject'] = {
@@ -17,7 +16,7 @@ export const SUBJECT_DEFAULT_FEATURED: LayoutProps['subject'] = {
   mb: [1, 1],
   variant: 'default'
 }
-export const SUBJECT_FILLED: LayoutProps['subject'] = {
+export const SUBJECT_FILLED: LayoutProps['subject'] = { 
   color: 'white',
   enabled: true,
   font_size: ['16px', '16px'],
