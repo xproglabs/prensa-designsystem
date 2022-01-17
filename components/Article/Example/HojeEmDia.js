@@ -175,6 +175,7 @@ const ArticleHJD = () => {
         unorderedList={{
           color: 'primary1'
         }}
+        hasBottomShare={true}
       />
     </ThemeProvider>
   )
