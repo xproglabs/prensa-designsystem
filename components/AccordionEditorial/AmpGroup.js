@@ -16,7 +16,14 @@ const GroupTitle = ({ name, ...otherProps }) => (
   </Typography>
 )
 
-const MenuItem = ({ color, content, groupItemProps, groupSubItemProps, groupTitleProps, removeBorders }) => {
+const MenuItem = ({
+  color,
+  content,
+  groupItemProps,
+  groupSubItemProps,
+  groupTitleProps,
+  removeBorders
+}) => {
   
   // 1. Creates one state for each item in list | state name is polopoly prefix + stateId
   // 2. State does not accept special chars or Numbers as key, so we use a prefix to identify it (state L.14)
@@ -39,6 +46,15 @@ const MenuItem = ({ color, content, groupItemProps, groupSubItemProps, groupTitl
   const expandMoreIconClass = `${stateId}.status ? "${CONFIGS.GROUP_ICON_CLASS} hidden" : "${CONFIGS.GROUP_ICON_CLASS} visible"`
   const expandLessIconClass = `${stateId}.status ? "${CONFIGS.GROUP_ICON_CLASS} visible" : "${CONFIGS.GROUP_ICON_CLASS} hidden"`
 
+  const subitem_mt = get(groupSubItemProps, 'mt', undefined)
+  const subitem_mr = get(groupSubItemProps, 'mr', undefined)
+  const subitem_mb = get(groupSubItemProps, 'mb', undefined)
+  const subitem_ml = get(groupSubItemProps, 'ml', '20px')
+  const subitem_color = get(groupSubItemProps, 'color', 'neutral2')
+  const subitem_element = get(groupSubItemProps, 'element', 'a')
+  const subitem_fontSize = get(groupSubItemProps, 'fontSize', '16px')
+  const subitem_fontFamily = get(groupSubItemProps, 'fontFamily', 'secondary')
+
   const iconColor = get(groupItemProps, 'iconColor', 'neutral3')
   const itemId = `accordion-item-${parsedContentId}`
   const HyperlinkGroup = () => (
@@ -59,8 +75,21 @@ const MenuItem = ({ color, content, groupItemProps, groupSubItemProps, groupTitl
       </GroupTitleContainer>
       <div data-amp-bind-class={contentClass}>
         {map(subitems, ({ contentId, path, name }, key) => (
-          <Block ml='20px' mb={2} mt={2} key={key}>
-            <Typography id={`accordion-item-${replace(contentId, '.', '')}`} {...CONFIGS.GROUP_SUBITEM_DEFAULT_PROPS} href={path} {...groupSubItemProps}>
+          <Block
+            key={key}
+            mt={subitem_mt}
+            mr={subitem_mr}
+            mb={subitem_mb}
+            ml={subitem_ml}
+          >
+            <Typography
+              color={subitem_color}
+              element={subitem_element}
+              fontFamily={subitem_fontFamily}
+              fontSize={subitem_fontSize}
+              href={path}
+              id={`accordion-item-${replace(contentId, '.', '')}`}
+            >
               {name}
             </Typography>
           </Block>
