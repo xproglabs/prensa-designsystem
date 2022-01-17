@@ -14,7 +14,16 @@ const RenderOpacityMaskClickArea = ({
   layout,
   item,
   item_path,
-  opacity_mask
+  mr,
+  ml,
+  mt,
+  mb,
+  pr,
+  pl,
+  pt,
+  pb,
+  opacity_mask,
+  width
 }: any) => {
 
   if (!opacity_mask) {
@@ -34,7 +43,16 @@ const RenderOpacityMaskClickArea = ({
         editable={editable}
         image_props={{ mobile_dim, desktop_dim }}
         item={item}
+        mr={mr}
+        ml={ml}
+        mt={mt}
+        mb={mb}
+        pr={pr}
+        pl={pl}
+        pt={pt}
+        pb={pb}
         restrictedClickArea
+        width={width}
       >
         {children}
       </ImagePreviewLink>
@@ -43,8 +61,20 @@ const RenderOpacityMaskClickArea = ({
 
   return (
     <Link
+      align={align}
+      alignx={alignx}
+      aligny={aligny}
       height={height}
       href={item_path}
+      mr={mr}
+      ml={ml}
+      mt={mt}
+      mb={mb}
+      pr={pr}
+      pl={pl}
+      pt={pt}
+      pb={pb}
+      width={width}
     >
       {children}
     </Link>
