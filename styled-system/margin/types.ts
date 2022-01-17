@@ -8,5 +8,8 @@ export type MarginStyledFunctionParam0 = {
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
+  mx?: SpacingType;
+  my?: SpacingType;
+  m?: SpacingType;
   theme?: ThemeTypes;
 }
