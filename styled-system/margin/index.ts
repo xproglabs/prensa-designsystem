@@ -1,4 +1,4 @@
-import { generateMT, generateMR, generateMB, generateML } from './parsers'
+import { generateMT, generateMR, generateMB, generateML, generateMX, generateMY, generateM } from './parsers'
 import { marginResponsive } from './responsive'
 import { MarginStyledFunctionParam0 } from './types'
 
@@ -15,7 +15,7 @@ export function margin(props: MarginStyledFunctionParam0) {
 
   if (!props) return ''
 
-  const { mt, mr, mb, ml, theme }: MarginStyledFunctionParam0 = props
+  const { mt, mr, mb, ml, mx, my, m, theme }: MarginStyledFunctionParam0 = props
   const factor = theme.factors.margin
   const styles = []
 
@@ -23,6 +23,9 @@ export function margin(props: MarginStyledFunctionParam0) {
   if (mr) styles.push( generateMR(mr, factor) )
   if (mb) styles.push( generateMB(mb, factor) )
   if (ml) styles.push( generateML(ml, factor) )
+  if (mx) styles.push( generateMX(mx, factor) )
+  if (my) styles.push( generateMY(my, factor) )
+  if (m) styles.push( generateM(m, factor) )
 
   styles.push(
     marginResponsive(
@@ -30,6 +33,9 @@ export function margin(props: MarginStyledFunctionParam0) {
       mr,
       mb,
       ml,
+      mx,
+      my,
+      m,
       theme
     )
   )

@@ -18,3 +18,40 @@ export function generateML(value, factor) {
   if (typeof value === 'string') return `margin-left: ${value};`
   if (typeof value === 'number') return `margin-left: ${value * factor};`
 }
+export function generateMX(value, factor) {
+  if (!value) return ''
+  if (typeof value === 'string') return `
+    margin-left: ${value};
+    margin-right: ${value};
+  `
+  if (typeof value === 'number') return `
+    margin-left: ${value * factor};
+    margin-right: ${value * factor};
+  `
+}
+export function generateMY(value, factor) {
+  if (!value) return ''
+  if (typeof value === 'string') return `
+    margin-top: ${value};
+    margin-bottom: ${value};
+  `
+  if (typeof value === 'number') return `
+    margin-top: ${value * factor};
+    margin-bottom: ${value * factor};
+  `
+}
+export function generateM(value, factor) {
+  if (!value) return ''
+  if (typeof value === 'string') return `
+    margin-top: ${value};
+    margin-right: ${value};
+    margin-bottom: ${value};
+    margin-left: ${value};
+  `
+  if (typeof value === 'number') return `
+    margin-top: ${value * factor};
+    margin-right: ${value * factor};
+    margin-bottom: ${value * factor};
+    margin-left: ${value * factor};
+  `
+}
