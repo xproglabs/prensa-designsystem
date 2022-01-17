@@ -3,7 +3,7 @@ import { get, isArray } from 'lodash'
 import { generateNewMediaQuerie } from '../responsiveEngine'
 import { generatePT, generatePR, generatePB, generatePL, generatePX, generatePY, generateP } from './parsers'
 
-export function marginResponsive(mt, mr, mb, ml, mx, my, m, theme) {
+export function paddingResponsive(pt, pr, pb, pl, px, py, p, theme) {
 
   const factor = get(theme, 'factors.padding', 1)
   const queries = get(theme, 'queries', {})
@@ -12,74 +12,74 @@ export function marginResponsive(mt, mr, mb, ml, mx, my, m, theme) {
   const tabletStyles = []
   const desktopStyles = []
 
-  if (isArray(mt) && mt.length === 2) {
-    mobileStyles.push( generatePT(mt[0], factor) )
-    desktopStyles.push( generatePT(mt[1], factor) )
+  if (isArray(pt) && pt.length === 2) {
+    mobileStyles.push( generatePT(pt[0], factor) )
+    desktopStyles.push( generatePT(pt[1], factor) )
   }
-  if (isArray(mt) && mt.length === 3) {
-    mobileStyles.push( generatePT(mt[0], factor) )
-    tabletStyles.push( generatePT(mt[1], factor) )
-    desktopStyles.push( generatePT(mt[2], factor) )
-  }
-
-  if (isArray(mr) && mr.length === 2) {
-    mobileStyles.push( generatePR(mr[0], factor) )
-    desktopStyles.push( generatePR(mr[1], factor) )
-  }
-  if (isArray(mr) && mr.length === 3) {
-    mobileStyles.push( generatePR(mr[0], factor) )
-    tabletStyles.push( generatePR(mr[1], factor) )
-    desktopStyles.push( generatePR(mr[2], factor) )
+  if (isArray(pt) && pt.length === 3) {
+    mobileStyles.push( generatePT(pt[0], factor) )
+    tabletStyles.push( generatePT(pt[1], factor) )
+    desktopStyles.push( generatePT(pt[2], factor) )
   }
 
-  if (isArray(mb) && mb.length === 2) {
-    mobileStyles.push( generatePB(mb[0], factor) )
-    desktopStyles.push( generatePB(mb[1], factor) )
+  if (isArray(pr) && pr.length === 2) {
+    mobileStyles.push( generatePR(pr[0], factor) )
+    desktopStyles.push( generatePR(pr[1], factor) )
   }
-  if (isArray(mb) && mb.length === 3) {
-    mobileStyles.push( generatePB(mb[0], factor) )
-    tabletStyles.push( generatePB(mb[1], factor) )
-    desktopStyles.push( generatePB(mb[2], factor) )
-  }
-
-  if (isArray(ml) && ml.length === 2) {
-    mobileStyles.push( generatePL(ml[0], factor) )
-    desktopStyles.push( generatePL(ml[1], factor) )
-  }
-  if (isArray(ml) && ml.length === 3) {
-    mobileStyles.push( generatePL(ml[0], factor) )
-    tabletStyles.push( generatePL(ml[1], factor) )
-    desktopStyles.push( generatePL(ml[2], factor) )
+  if (isArray(pr) && pr.length === 3) {
+    mobileStyles.push( generatePR(pr[0], factor) )
+    tabletStyles.push( generatePR(pr[1], factor) )
+    desktopStyles.push( generatePR(pr[2], factor) )
   }
 
-  if (isArray(mx) && mx.length === 2) {
-    mobileStyles.push( generatePX(mx[0], factor) )
-    desktopStyles.push( generatePX(mx[1], factor) )
+  if (isArray(pb) && pb.length === 2) {
+    mobileStyles.push( generatePB(pb[0], factor) )
+    desktopStyles.push( generatePB(pb[1], factor) )
   }
-  if (isArray(mx) && mx.length === 3) {
-    mobileStyles.push( generatePX(mx[0], factor) )
-    tabletStyles.push( generatePX(mx[1], factor) )
-    desktopStyles.push( generatePX(mx[2], factor) )
-  }
-
-  if (isArray(my) && my.length === 2) {
-    mobileStyles.push( generatePY(my[0], factor) )
-    desktopStyles.push( generatePY(my[1], factor) )
-  }
-  if (isArray(my) && my.length === 3) {
-    mobileStyles.push( generatePY(my[0], factor) )
-    tabletStyles.push( generatePY(my[1], factor) )
-    desktopStyles.push( generatePY(my[2], factor) )
+  if (isArray(pb) && pb.length === 3) {
+    mobileStyles.push( generatePB(pb[0], factor) )
+    tabletStyles.push( generatePB(pb[1], factor) )
+    desktopStyles.push( generatePB(pb[2], factor) )
   }
 
-  if (isArray(m) && m.length === 2) {
-    mobileStyles.push( generateP(m[0], factor) )
-    desktopStyles.push( generateP(m[1], factor) )
+  if (isArray(pl) && pl.length === 2) {
+    mobileStyles.push( generatePL(pl[0], factor) )
+    desktopStyles.push( generatePL(pl[1], factor) )
   }
-  if (isArray(m) && m.length === 3) {
-    mobileStyles.push( generateP(m[0], factor) )
-    tabletStyles.push( generateP(m[1], factor) )
-    desktopStyles.push( generateP(m[2], factor) )
+  if (isArray(pl) && pl.length === 3) {
+    mobileStyles.push( generatePL(pl[0], factor) )
+    tabletStyles.push( generatePL(pl[1], factor) )
+    desktopStyles.push( generatePL(pl[2], factor) )
+  }
+
+  if (isArray(px) && px.length === 2) {
+    mobileStyles.push( generatePX(px[0], factor) )
+    desktopStyles.push( generatePX(px[1], factor) )
+  }
+  if (isArray(px) && px.length === 3) {
+    mobileStyles.push( generatePX(px[0], factor) )
+    tabletStyles.push( generatePX(px[1], factor) )
+    desktopStyles.push( generatePX(px[2], factor) )
+  }
+
+  if (isArray(py) && py.length === 2) {
+    mobileStyles.push( generatePY(py[0], factor) )
+    desktopStyles.push( generatePY(py[1], factor) )
+  }
+  if (isArray(py) && py.length === 3) {
+    mobileStyles.push( generatePY(py[0], factor) )
+    tabletStyles.push( generatePY(py[1], factor) )
+    desktopStyles.push( generatePY(py[2], factor) )
+  }
+
+  if (isArray(p) && p.length === 2) {
+    mobileStyles.push( generateP(p[0], factor) )
+    desktopStyles.push( generateP(p[1], factor) )
+  }
+  if (isArray(p) && p.length === 3) {
+    mobileStyles.push( generateP(p[0], factor) )
+    tabletStyles.push( generateP(p[1], factor) )
+    desktopStyles.push( generateP(p[2], factor) )
   }
 
   styles.push(

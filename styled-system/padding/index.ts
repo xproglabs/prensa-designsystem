@@ -1,14 +1,14 @@
 import { generatePT, generatePR, generatePB, generatePL, generatePX, generatePY, generateP } from './parsers'
-import { marginResponsive } from './responsive'
+import { paddingResponsive } from './responsive'
 import { PaddingStyledFunctionParam0 } from './types'
 
 /**
- * Prensa Styled System | margin
+ * Prensa Styled System | padding
  * @param props Expect an Object containing props from component that is invoking this function
- * mt: string | number | Array<string|number>;
- * mr: string | number | Array<string|number>;
- * mb: string | number | Array<string|number>;
- * ml: string | number | Array<string|number>;
+ * pt: string | number | Array<string|number>;
+ * pr: string | number | Array<string|number>;
+ * pb: string | number | Array<string|number>;
+ * pl: string | number | Array<string|number>;
  * @returns a string with CSS syntax
  */
 export function padding(props: PaddingStyledFunctionParam0) {
@@ -28,7 +28,7 @@ export function padding(props: PaddingStyledFunctionParam0) {
   if (p) styles.push( generateP(p, factor) )
 
   styles.push(
-    marginResponsive(
+    paddingResponsive(
       pt,
       pr,
       pb,
