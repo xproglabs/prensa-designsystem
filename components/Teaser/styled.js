@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Block from '../Block'
 import Typography from '../Typography'
+import { RenderOpacityMaskClickArea } from './RenderOpacityMaskClickArea'
 
 const AreaLink = styled.a`
   color: inherit;
@@ -171,7 +172,11 @@ const Subject = ({
 
 const WrapContent = ({
   children,
-  content_overlap=false,
+  editable,
+  item,
+  item_path,
+  layout,
+  opacity_mask,
   wrap_align=['column', 'column'],
   wrap_alignx,
   wrap_aligny,
@@ -180,38 +185,71 @@ const WrapContent = ({
   wrap_ml=[0, 0],
   wrap_mt=[0, 0],
   wrap_mb=[0, 0],
+  wrap_pr=[0, 0],
+  wrap_pl=[0, 0],
+  wrap_pt=[0, 0],
+  wrap_pb=[0, 0],
   wrap_width=['100%', '100%']
 }) => {
-  const content_overlap_style = `
-    z-index: 1;
-  `
-  const custom_style = `
-    ${content_overlap ? content_overlap_style : ''}
-  `
+
+  if (opacity_mask) {
+    return (
+      <RenderOpacityMaskClickArea
+        align={wrap_align}
+        alignx={wrap_alignx}
+        aligny={wrap_aligny}
+        height={wrap_height}
+        mr={wrap_mr}
+        ml={wrap_ml}
+        mt={wrap_mt}
+        mb={wrap_mb}
+        pr={wrap_pr}
+        pl={wrap_pl}
+        pt={wrap_pt}
+        pb={wrap_pb}
+        width={wrap_width}
+        editable={editable}
+        item={item}
+        item_path={item_path}
+        layout={layout}
+        opacity_mask={opacity_mask}
+      >
+        {children}
+      </RenderOpacityMaskClickArea>
+    )
+  }
+
   return (
     <Block
       align={wrap_align[0]}
       alignx={wrap_alignx[0]}
       aligny={wrap_aligny[0]}
-      custom={custom_style}
       height={wrap_height[0]}
       mr={wrap_mr[0]}
       ml={wrap_ml[0]}
       mt={wrap_mt[0]}
       mb={wrap_mb[0]}
+      pr={wrap_pr[0]}
+      pl={wrap_pl[0]}
+      pt={wrap_pt[0]}
+      pb={wrap_pb[0]}
       width={wrap_width[0]}
       lg={{
         align: wrap_align[1],
         alignx: wrap_alignx[1],
         aligny: wrap_aligny[1],
-        custom: custom_style,
         height: wrap_height[1],
         mr: wrap_mr[1],
         ml: wrap_ml[1],
         mt: wrap_mt[1],
         mb: wrap_mb[1],
+        pr: wrap_pr[1],
+        pl: wrap_pl[1],
+        pt: wrap_pt[1],
+        pb: wrap_pb[1],
         width: wrap_width[1],
-      }}>
+      }}
+    >
       {children}
     </Block>
   )

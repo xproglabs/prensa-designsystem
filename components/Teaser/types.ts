@@ -43,6 +43,10 @@ type BoxWrap = {
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
+  pt?: SpacingType;
+  pr?: SpacingType;
+  pb?: SpacingType;
+  pl?: SpacingType;
 }
 type Image = {
   align?: [string, string];

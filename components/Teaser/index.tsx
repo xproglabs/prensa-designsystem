@@ -60,7 +60,6 @@ const Teaser = (props: TeaserProps) => {
   const box_radius = get(layout, 'box.radius', undefined)
 
   // box (content) wrap
-  const content_overlap = get(layout, 'box_wrap.content_overlap', false)
   const wrap_align = get(layout, 'box_wrap.align', ['column', 'column'])
   const wrap_alignx = get(layout, 'box_wrap.alignx', ['left', 'left'])
   const wrap_aligny = get(layout, 'box_wrap.aligny', ['top', 'top'])
@@ -70,6 +69,10 @@ const Teaser = (props: TeaserProps) => {
   const wrap_mr = get(layout, 'box_wrap.mr', ['0px', '0px'])
   const wrap_mb = get(layout, 'box_wrap.mb', ['0px', '0px'])
   const wrap_mt = get(layout, 'box_wrap.mt', ['0px', '0px'])
+  const wrap_pl = get(layout, 'box_wrap.pl', undefined)
+  const wrap_pr = get(layout, 'box_wrap.pr', undefined)
+  const wrap_pb = get(layout, 'box_wrap.pb', undefined)
+  const wrap_pt = get(layout, 'box_wrap.pt', undefined)
 
   // image enabled
   const image_cid = get(item, 'img.cid', false)
@@ -108,6 +111,9 @@ const Teaser = (props: TeaserProps) => {
   const profile_layout_enabled = get(layout, 'profile_bio.enabled', false)
   const isProfileEnabled = profile_data_visible && profile_layout_enabled
 
+  //related
+  const related_layout = get(layout, 'related', {})
+
   const profile_content = {
     name: get(profile_data, 'name'),
     image: {
@@ -119,96 +125,64 @@ const Teaser = (props: TeaserProps) => {
     enabled: isProfileEnabled
   }
 
-
-  // <RenderDatetime item={item} layout={layout} />
   // opacity mask prop
   const opacity_mask = get(layout, 'opacity_mask', false)
 
   //eventTracking
   const titleEventTracking = eventTracking?.titleEventTracking
 
-  const RenderBox = ({ children }) => {
-    return (
-      <S.Box
-        box_align={box_align}
-        box_alignx={box_alignx}
-        box_aligny={box_aligny}
-        background={box_background}
-        box_height={box_height}
-        box_pt={box_pt}
-        box_pr={box_pr}
-        box_pb={box_pb}
-        box_pl={box_pl}
-        box_mt={box_mt}
-        box_mr={box_mr}
-        box_mb={box_mb}
-        box_ml={box_ml}
-        box_bt={box_bt}
-        box_br={box_br}
-        box_bb={box_bb}
-        box_bl={box_bl}
-        box_b={box_b}
-        box_borderColor={box_borderColor}
-        box_borderStyle={box_borderStyle}
-        box_radius={box_radius}>
-        {children}
-      </S.Box>
-    )
-  }
-
   const RenderNumberWrap = () => {
+    if (!number_enabled) {
+      return null
+    }
     return (
-      <>
-        {number_enabled && 
-          <S.WrapContent
-            wrap_align={number_align}
-            wrap_alignx={number_alignx}
-            wrap_aligny={number_aligny}
-            wrap_height={number_height}
-            wrap_width={number_width}
-            wrap_mt={number_mt}
-            wrap_mr={number_mr}
-            wrap_mb={number_mb}
-            wrap_ml={number_ml}
-          >
-            <RenderNumber
-              layout={layout}
-              number={number}
-            />
-          </S.WrapContent>
-        }
-      </>
+      <S.WrapContent
+        wrap_align={number_align}
+        wrap_alignx={number_alignx}
+        wrap_aligny={number_aligny}
+        wrap_height={number_height}
+        wrap_width={number_width}
+        wrap_mt={number_mt}
+        wrap_mr={number_mr}
+        wrap_mb={number_mb}
+        wrap_ml={number_ml}
+      >
+        <RenderNumber
+          layout={layout}
+          number={number}
+        />
+      </S.WrapContent>
     )
   }
 
   const RenderImageWrap = () => {
+    if (!image_enabled) {
+      return null
+    }
     return (
-      <>
-        {image_enabled && 
-          <S.WrapContent
-            wrap_align={image_align}
-            wrap_aligny={image_aligny}
-            wrap_alignx={image_alignx}
-            wrap_height={image_height}
-            wrap_width={image_wrap_width}
-            wrap_mt={image_mt}
-            wrap_mr={image_mr}
-            wrap_mb={image_mb}
-            wrap_ml={image_ml}>
-            <RenderImage
-              amp={amp}
-              domain={domain}
-              editable={editable}
-              fallback_image_url={fallback_image_url}
-              image_circle={layout?.image_circle}
-              item={item}
-              item_path={item_path}
-              layout={layout}
-              opacityMask={opacity_mask}
-            />
-          </S.WrapContent>
-        }
-      </>
+      <S.WrapContent
+        wrap_align={image_align}
+        wrap_aligny={image_aligny}
+        wrap_alignx={image_alignx}
+        wrap_height={image_height}
+        wrap_width={image_wrap_width}
+        wrap_mt={image_mt}
+        wrap_mr={image_mr}
+        wrap_mb={image_mb}
+        wrap_ml={image_ml}
+      >
+        <RenderImage
+          amp={amp}
+          domain={domain}
+          editable={editable}
+          fallback_image_url={fallback_image_url}
+          image_circle={layout?.image_circle}
+          item={item}
+          item_path={item_path}
+          layout={layout}
+          opacityMask={opacity_mask}
+        />
+      </S.WrapContent>
     )
   }
 
@@ -217,10 +191,7 @@ const Teaser = (props: TeaserProps) => {
       <RenderDatetime
         item={item}
         layout={{
-          date_time: {
-            ...layout?.date_time,
-            enabled: true
-          }
+          date_time: { ...layout?.date_time, enabled: true }
         }}
       />
     )
@@ -228,9 +199,13 @@ const Teaser = (props: TeaserProps) => {
 
   const RenderContentWrap = () => {
     return (
-      <>
+      <React.Fragment>
         <S.WrapContent
-          content_overlap={content_overlap}
+          editable={editable}
+          item={item}
+          item_path={item_path}
+          layout={layout}
+          opacity_mask={opacity_mask}
           wrap_align={wrap_align}
           wrap_aligny={wrap_aligny}
           wrap_alignx={wrap_alignx}
@@ -239,7 +214,12 @@ const Teaser = (props: TeaserProps) => {
           wrap_mt={wrap_mt}
           wrap_mr={wrap_mr}
           wrap_mb={wrap_mb}
-          wrap_ml={wrap_ml}>
+          wrap_ml={wrap_ml}
+          wrap_pt={wrap_pt}
+          wrap_pr={wrap_pr}
+          wrap_pb={wrap_pb}
+          wrap_pl={wrap_pl}
+        >
           <S.WrapSubject>
             <RenderSubject
               editable={{
@@ -252,7 +232,9 @@ const Teaser = (props: TeaserProps) => {
               item={item}
               layout={layout}
             />
-            <EditButtons {...edit_buttons} />
+            <EditButtons
+              {...edit_buttons}
+            />
           </S.WrapSubject>
           <RenderTitle
             cid={item_cid}
@@ -274,37 +256,58 @@ const Teaser = (props: TeaserProps) => {
             item={item}
             layout={layout}
           />
-          {isProfileEnabled ? (
+          {isProfileEnabled ? 
             <RenderProfile
               amp={amp}
               domain={domain}
               content={profile_content}
-              containerProps={{
-                width: '100%'
-              }}
+              containerProps={{ width: '100%' }}
               subtitleContainer={() => <RenderDateTimeWrap />}
             />
-          ) : (
+            : 
             <RenderDatetime
               item={item}
               layout={layout}
             />
-          )}
+          }
           <RelatedRender
             color={color}
-            layout={layout?.related}
+            layout={related_layout}
             {...related}
           />
         </S.WrapContent>
-      </>
+      </React.Fragment>
     )
   }
+
   return (
-    <RenderBox>
+    <S.Box
+      box_align={box_align}
+      box_alignx={box_alignx}
+      box_aligny={box_aligny}
+      background={box_background}
+      box_height={box_height}
+      box_pt={box_pt}
+      box_pr={box_pr}
+      box_pb={box_pb}
+      box_pl={box_pl}
+      box_mt={box_mt}
+      box_mr={box_mr}
+      box_mb={box_mb}
+      box_ml={box_ml}
+      box_bt={box_bt}
+      box_br={box_br}
+      box_bb={box_bb}
+      box_bl={box_bl}
+      box_b={box_b}
+      box_borderColor={box_borderColor}
+      box_borderStyle={box_borderStyle}
+      box_radius={box_radius}
+    >
       <RenderNumberWrap />
       <RenderImageWrap />
       <RenderContentWrap />
-    </RenderBox>
+    </S.Box>
   )
 }
 
