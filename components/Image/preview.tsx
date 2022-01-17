@@ -1,7 +1,10 @@
+import { align, height } from 'prensa/styled-system'
 import React from 'react'
 import styled from 'styled-components'
 
 const ImagePreviewArea = styled.a`
+  ${align};
+  ${height};
   color: inherit;
   cursor: pointer;
   text-decoration: none;
@@ -13,11 +16,15 @@ const ImagePreviewArea = styled.a`
 `
 
 export const ImagePreviewLink = ({
+  align,
+  alignx,
+  aligny,
   children,
   editable,
+  height,
   image_props,
   item,
-  restrictedClickArea
+  restrictedClickArea,
 }: any) => {
 
   const previewAreaId = `preview-area-${item.cid}`
@@ -37,9 +44,13 @@ export const ImagePreviewLink = ({
   }
 
   return (
-    <ImagePreviewArea 
+    <ImagePreviewArea
+      align={align}
+      alignx={alignx}
+      aligny={aligny}
       id={previewAreaId}
       onClick={handleAreaClick}
+      $height={height}
     >
       {children}
     </ImagePreviewArea>
