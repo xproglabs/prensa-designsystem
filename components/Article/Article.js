@@ -17,6 +17,7 @@ const Article = (props) => {
     ads,
     amp,
     bodyWidth,
+    bottomShare,
     byline,
     citation,
     fbappid,
@@ -29,6 +30,7 @@ const Article = (props) => {
     heading4,
     hyperlink,
     images,
+    hasBottomShare,
     orderedList,
     paragraph,
     relatedContent,
@@ -53,6 +55,9 @@ const Article = (props) => {
   const related_content_body = get(relatedContent, 'body', {})
   const related_content_bottom = get(relatedContent, 'bottom', {})
 
+  //share buttons content
+  const share_data = get(byline, 'share', {})
+
   return (
     <S.Page>
       <S.Container>
@@ -70,7 +75,10 @@ const Article = (props) => {
             </S.ContainerFeatured>
             <S.MaxWidth maxWidth={headWidth}>
               <S.Content>
-                <Byline amp={amp} {...byline} />
+                <Byline
+                  amp={amp}
+                  {...byline}
+                />
               </S.Content>
             </S.MaxWidth>
             {adsTopBody && React.cloneElement(adsTopBody)}
@@ -98,16 +106,19 @@ const Article = (props) => {
           </React.Fragment>
         }
         <S.MaxWidth
-          maxWidth={headWidth}>
+          maxWidth={headWidth}
+        >
           <TextBody
             adsBody={adsBody}
             adsSide={adsSideBar}
             amp={amp}
             bodyWidth={bodyWidth}
+            bottomShare={bottomShare}
             citation={citation}
             content={textbody}
             fbappid={fbappid}
             gallery={gallery}
+            hasBottomShare={hasBottomShare}
             hasColumnRight={hasColumnRight}
             heading2={heading2}
             heading3={heading3}
@@ -149,6 +160,7 @@ Article.propTypes = {
   }),
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
+  bottomShare: PropTypes.object,
   byline: PropTypes.object,
   citation: PropTypes.object,
   fbappid: PropTypes.string.isRequired,
@@ -157,6 +169,7 @@ Article.propTypes = {
     captionProps: PropTypes.object,
     items: PropTypes.array
   }),
+  hasBottomShare: PropTypes.bool,
   hasColumnRight: PropTypes.bool,
   headWidth: PropTypes.string,
   heading2: PropTypes.object,

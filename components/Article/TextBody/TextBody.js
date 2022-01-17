@@ -13,6 +13,7 @@ import Heading4 from '../Headings/Heading4'
 import { ListComponent } from '../List/index.ts'
 import Paragraph from '../Paragraph/Paragraph'
 import SectionTitle from '../SectionTitle'
+import { BottomShare } from '../Share/BottomShare/index.tsx'
 import Tags from '../Tags/Tags'
 import TopImage from '../TopImage/TopImage'
 import * as S from './TextBody.styled'
@@ -24,10 +25,12 @@ const TextBody = (props) => {
     adsSide,
     amp,
     bodyWidth,
+    bottomShare,
     citation,
     content,
     fbappid,
     gallery,
+    hasBottomShare,
     hasColumnRight,
     heading2,
     heading3,
@@ -35,6 +38,7 @@ const TextBody = (props) => {
     hyperlink,
     images,
     orderedList,
+    pageUrl,
     paragraph,
     related_content_intervention,
     tags_section_title,
@@ -229,13 +233,20 @@ const TextBody = (props) => {
             {...tags_section_title}
             maxWidth={bodyWidth}
           >
-              Assuntos
+            Assuntos
           </SectionTitle>
         }
         <Tags
           {...tags}
           maxWidth={bodyWidth}
         />
+        {hasBottomShare &&
+          <BottomShare 
+            pageUrl={pageUrl}
+            maxWidth={bodyWidth}
+            {...bottomShare}
+          />
+        }
       </React.Fragment>
     )
   }
@@ -254,9 +265,7 @@ const TextBody = (props) => {
           width: '100%',
         }}
       >
-        <S.TextBodyColumn
-          lg={{ width: bodyWidth }}
-        >
+        <S.TextBodyColumn lg={{ width: bodyWidth }}>
           <RenderMainColumn />
         </S.TextBodyColumn>
         <S.TextBodyColumn
@@ -289,6 +298,7 @@ TextBody.propTypes = {
   adsSide: PropTypes.node,
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
+  bottomShare: PropTypes.object,
   content: PropTypes.string,
   citation: PropTypes.object,
   gallery: PropTypes.shape({
@@ -296,6 +306,7 @@ TextBody.propTypes = {
     items: PropTypes.array,
     bodyWidth: PropTypes.string,
   }),
+  hasBottomShare: PropTypes.bool,
   hasColumnRight: PropTypes.bool,
   heading2: PropTypes.object,
   heading3: PropTypes.object,
