@@ -4,7 +4,7 @@
  * boxShadow: string;
  * @returns a string with CSS syntax
  */
-export function boxShadow(props) {
-  const { boxShadow } = props
+export function boxShadow({ boxShadow }) {
+  if (!boxShadow) return ''
   return `box-shadow: ${boxShadow};`
 }
