@@ -1,5 +1,5 @@
 import { border } from '../../styled-system/border'
-import { boxShadow } from '../../styled-system/boxShadow/index'
+import { boxShadow } from '../../styled-system/boxShadow/index.tsx'
 import { dimensions } from '../../styled-system/dimensions'
 import { parseAlign } from './parseAlign'
 import { parseHeight } from './parseDimensions'
