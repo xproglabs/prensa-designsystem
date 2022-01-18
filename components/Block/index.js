@@ -21,6 +21,7 @@ const Block = ({
   alignx,
   aligny,
   bgColor,
+  boxShadow,
   customDef,
   fontColor,
   py,
@@ -93,6 +94,7 @@ const Block = ({
       alignx={alignx}
       aligny={aligny}
       bgColor={bgColor}
+      boxShadow={boxShadow}
       className={className}
       customDef={customDef}
       fontColor={fontColor}
@@ -160,6 +162,10 @@ Block.propTypes = {
    * Define propriedade de background-color
    */
   bgColor: PropTypes.string,
+  /**
+   * Define propriedade box-shadow
+   */
+  boxShadow: PropTypes.string,
   /**
    * Define estilo customizado para o bloco
    */
