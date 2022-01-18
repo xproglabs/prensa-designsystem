@@ -32,7 +32,18 @@ const handleHover = props => {
     return ''
   }
 }
-
+const parseFontWeight = ({ $fontWeight }) => {
+  if (!$fontWeight) return ''
+  return `font-weight: ${$fontWeight};`
+}
+const parseLetterSpacing = ({ $letterSpacing }) => {
+  if (!$letterSpacing) return ''
+  return `letter-spacing: ${$letterSpacing};`
+}
+const parseTextAlign = ({ textAlign }) => {
+  if (!textAlign) return ''
+  return `text-align: ${textAlign};`
+}
 const parseTextDecoration = ({ textDecoration }) => {
   if (!textDecoration) return ''
   return `text-decoration: ${textDecoration};`
@@ -40,14 +51,6 @@ const parseTextDecoration = ({ textDecoration }) => {
 const parseTextTransform = ({ $transform }) => {
   if (!$transform) return ''
   return `text-transform: ${$transform};`
-}
-const parseTextAlign = ({ textAlign }) => {
-  if (!textAlign) return ''
-  return `text-align: ${textAlign};`
-}
-const parseFontWeight = ({ $fontWeight }) => {
-  if (!$fontWeight) return ''
-  return `font-weight: ${$fontWeight};`
 }
 const parse_shadow = ({ shadow }) => {
   if (!shadow) return ''
@@ -71,6 +74,7 @@ const parseStyle = (props, theme) => {
     ${parseTextTransform(props)};
     ${parseTextAlign(props)};
     ${parseFontWeight(props)};
+    ${parseLetterSpacing(props)};
   `
 }
 
