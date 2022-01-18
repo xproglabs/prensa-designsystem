@@ -1,3 +1,5 @@
+# v1.6.95
+- Ajuste finos na função boxShadow
 # v1.6.94
 - Implementa letterSpacing no Typography
 - Implementa função boxShadow no Block
