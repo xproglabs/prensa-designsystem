@@ -1,3 +1,6 @@
+# v1.6.94
+- Implementa letterSpacing no Typography
+- Implementa função boxShadow no Block
 # v1.6.93
 - Corrige inconsistência ao chegar na última página [Pagination]
 - Adiciona botão de compartilhar abaixo das tags
