@@ -1,3 +1,6 @@
+# v1.6.93
+- Corrige inconsistência ao chegar na última página [Pagination]
+- Adiciona botão de compartilhar abaixo das tags
 # v1.6.92
 - Corrige o espaçamento do TextBody
 - Corrige parametrização de margin no groupSubItemProps em AccordionEditorial
