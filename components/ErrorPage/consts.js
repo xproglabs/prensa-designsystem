@@ -9,8 +9,9 @@ const BUTTON_GO_BACK = {
 const CONTAINER_ERROR = {
   aligny: 'middle',
   alignx: 'center',
-  height: 'calc(100vh - 140px)',
-  width: '100%'
+  height: 'calc(100vh - 400px)',
+  width: '100%',
+  lg: { height:'calc(100vh - 620px)' }
 }
 
 const CONTENT_ERROR = {
