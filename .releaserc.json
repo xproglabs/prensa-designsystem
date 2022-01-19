@@ -10,6 +10,20 @@
         "assets": "dist/**"
       }
     ],
-    "@semantic-release/git"    
+    "@semantic-release/git",
+    [
+      "semantic-release-slack-bot",
+      {
+        "notifyOnSuccess": true,
+        "notifyOnFail": true,
+        "branchesConfig": [
+          {
+            "pattern": "master1",
+            "notifyOnSuccess": true,
+            "notifyOnFail": true
+          }
+        ]
+      }
+    ] 
   ]
 }
