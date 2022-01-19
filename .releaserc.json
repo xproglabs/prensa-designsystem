@@ -10,21 +10,6 @@
         "assets": "dist/**"
       }
     ],
-    "@semantic-release/git",
-    [
-      "semantic-release-slack-bot",
-      {
-        "notifyOnSuccess": true,
-        "notifyOnFail": true,
-        "slackWebhook": "https://hooks.slack.com/services/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",
-        "branchesConfig": [
-          {
-            "pattern": "master1",
-            "notifyOnSuccess": true,
-            "notifyOnFail": true
-          }
-        ]
-      }
-    ]
+    "@semantic-release/git"    
   ]
 }
