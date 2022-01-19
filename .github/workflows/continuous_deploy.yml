@@ -19,14 +19,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: prensa-bot notify
-        id: parseReleaseBody
-        uses: LoveToKnow/slackify-markdown-action@v1.0.0
-        with:
-          text: ${{ github.event.release.body }}
       - uses: homeday-de/slack-release-bot-action@main
         with:
           webhook_url: ${{ secrets.PRENSA_BOT_WEBHOOK }}
           title: ${{ github.event.release.name }}
-          body: Deploy realizado com sucesso
+          body: ${{ github.event.release.body }}
           context: prensa-bot deploy
