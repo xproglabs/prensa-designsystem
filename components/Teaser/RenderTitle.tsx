@@ -18,9 +18,9 @@ type TitleProps = {
   editable?: any;
   layout: LayoutProps;
   link?: string;
+  opacity_mask?: boolean;
   position?: number;
   slot_position?: number;
-  shadow: boolean;
   title: string;
   titleEventTracking?: any;
 }
@@ -37,7 +37,7 @@ const RenderTitle = ({
   editable,
   layout,
   link,
-  shadow,
+  opacity_mask,
   position,
   slot_position,
   title,
@@ -51,7 +51,7 @@ const RenderTitle = ({
     return <></>
   }
 
-  if (editable?.enabled) {
+  if (editable?.enabled || opacity_mask) {
     link = ''
   }
 
@@ -77,19 +77,21 @@ const RenderTitle = ({
       fontWeight={title_layout?.font_weight || 700 }
       lineHeight={title_layout.line_height?.[0]}
       mb={title_layout.mb?.[0]}
-      shadow={shadow}
+      shadow={opacity_mask}
       width='100%'
       lg={{
         fontSize: title_layout.font_size?.[1],
         lineHeight: title_layout.line_height?.[1],
         mb: title_layout.mb?.[1]
-      }}>
+      }}
+    >
       <EditArea {...editable}>
         <Link
           id={linkid}
           onClick={handleClick}
           hoverOpacity={0.9}
-          path={link}>
+          path={link}
+        >
           {title}
         </Link>
       </EditArea>
