@@ -7,6 +7,12 @@ import { ListItemProps } from './types'
 
 export const ListItem: ComponentType<ListItemProps> = styled.li<ListItemProps>`
   ${margin};
+  a {
+    text-decoration: underline;
+    :hover {
+      opacity: 0.8;
+    }
+  }
   ::marker {
     ${getColor};
     font-family: ${parseFontFamily};

@@ -55,9 +55,6 @@ const Article = (props) => {
   const related_content_body = get(relatedContent, 'body', {})
   const related_content_bottom = get(relatedContent, 'bottom', {})
 
-  //share buttons content
-  const share_data = get(byline, 'share', {})
-
   return (
     <S.Page>
       <S.Container>
