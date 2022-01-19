@@ -7,13 +7,11 @@
     "@semantic-release/release-notes-generator",
     [
       "@semantic-release/npm", {
-        "assets": "dist/**"
+        "pkgRoot": "dist/**"
       }
     ],
     [
-      "@semantic-release/git", {
-        "assets": "dist/**"
-      }
+      "@semantic-release/git"
     ],
     [
       "semantic-release-slack-bot",
