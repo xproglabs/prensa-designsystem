@@ -19,7 +19,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  notification:
-    - name: prensa-bot send slack notification
-      uses: slackapi/slack-github-action@v1.17.0
