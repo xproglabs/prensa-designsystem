@@ -1,5 +1,4 @@
 import { get } from 'lodash'
-import { Block } from 'prensa'
 import React from 'react'
 
 import { EditButtons } from '../EditArea'
