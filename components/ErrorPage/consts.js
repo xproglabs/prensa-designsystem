@@ -10,8 +10,8 @@ const CONTAINER_ERROR = {
   aligny: 'middle',
   alignx: 'center',
   height: 'calc(100vh - 400px)',
-  width: '100%',
-  lg: { height:'calc(100vh - 620px)' }
+  lg: { height:'calc(100vh - 620px)' },
+  width: '100%'
 }
 
 const CONTENT_ERROR = {
@@ -31,8 +31,8 @@ const PAGE_TITLE = {
   fontSize: '20px',
   fontWeight: 700,
   element: 'span',
-  transform: 'uppercase',
-  mb: 2
+  mb: 2,
+  transform: 'uppercase'
 }
 
 export {
