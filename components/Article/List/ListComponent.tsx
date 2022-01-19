@@ -6,7 +6,13 @@ import { OrderedList } from './OrderedList'
 import { ListComponentProps } from './types'
 import { UnorderedList } from './UnorderedList'
 
-const ListComponent = ({ items, itemsSpace, maxWidth, ordered, textProps }: ListComponentProps) => {
+const ListComponent = ({
+  items,
+  itemsSpace,
+  maxWidth,
+  ordered,
+  textProps
+}: ListComponentProps) => {
 
   if (items?.length === 0) {
     return null
@@ -28,10 +34,9 @@ const ListComponent = ({ items, itemsSpace, maxWidth, ordered, textProps }: List
           fontSize='20px'
           lineHeight='160%'
           element='span'
+          dangerouslySetInnerHTML={entry}
           {...textProps}
-        >
-          {entry}
-        </Typography>
+        />
       </ListItem>
     ))
   }
