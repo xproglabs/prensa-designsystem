@@ -1,0 +1,20 @@
+name: Prensa continuous deploy
+"on":
+  push:
+    branches:
+      - master
+jobs:
+  release:
+    name: build and deploy to npm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: 16
+      - run: npm run release:prod
+      - run: npm run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
