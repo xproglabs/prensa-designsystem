@@ -14,7 +14,7 @@ const dummyYoutube = () => '<p><a id="https://www.youtube.com/watch?v=uj_K_S1Iqc
 const dummyYoutubeDesk = () => '<div data-oembed-url="https://youtu.be/3vYeQLJ2as4"><div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"><iframe allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture" allowfullscreen="" scrolling="no" src="https://www.youtube.com/embed/3vYeQLJ2as4?rel=0" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" tabindex="-1"></iframe></div></div>'
 const dummyLists = `
   <ul>
-    <li><a href="https://google.com.br">UFMG Campus Saúde</a> (Escola de Enfermagem): avenida Professor Alfredo Balena, 190 - Santa Efigênia – das 12h às 20h;</li>
+    <li><a href="https://google.com.br">UFMG Campus Saúde</a> (Escola de Enfermagem): <a href="https://xprog.com.br">avenida Professor Alfredo Balena, 190</a> - Santa Efigênia – das 12h às 20h;</li>
     <li>Faculdade Pitágoras: rua dos Timbiras, 1.375 - Funcionários – das 8h às 20h</li>
     <li>UNA-BH: rua Aimorés, 1.451 - Lourdes – das 8h às 20h.</li>
   </ul>
