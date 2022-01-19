@@ -7,9 +7,24 @@
     "@semantic-release/release-notes-generator",
     [
       "@semantic-release/npm", {
-        "pkgRoot": "dist"
+        "assets": "dist/**"
       }
     ],
-    "@semantic-release/git"
+    "@semantic-release/git",
+    [
+      "semantic-release-slack-bot",
+      {
+        "notifyOnSuccess": true,
+        "notifyOnFail": true,
+        "slackWebhook": "https://hooks.slack.com/services/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",
+        "branchesConfig": [
+          {
+            "pattern": "master1",
+            "notifyOnSuccess": true,
+            "notifyOnFail": true
+          }
+        ]
+      }
+    ]
   ]
 }

@@ -1,11 +1,11 @@
-name: Prensa continuous deploy
+name: prensa-bot-continuous-deploy
 "on":
   push:
     branches:
       - master
 jobs:
   release:
-    name: build and deploy to npm
+    - name: deploy prensa to npm
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,3 +19,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+    - name: prensa-bot send slack notification
+      uses: slackapi/slack-github-action@v1.17.0
