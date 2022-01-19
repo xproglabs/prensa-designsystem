@@ -16,6 +16,7 @@
       {
         "notifyOnSuccess": true,
         "notifyOnFail": true,
+        "slackWebhook": SLACK_WEBHOOK,
         "branchesConfig": [
           {
             "pattern": "master1",
