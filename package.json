@@ -79,7 +79,8 @@
     "release:local": "npm run clear:dist && npm run build && npm run prerelease:copyfiles && cd dist && npm pack",
     "release:qa": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish --tag qa",
     "release:prod": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish",
-    "semantic-release": "semantic-release -b master -d"
+    "semantic-release": "semantic-release -b master -d",
+    "cd": "npm run build && npm run prerelease:copyfiles"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
