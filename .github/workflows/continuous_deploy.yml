@@ -13,6 +13,7 @@ jobs:
         with:
           cache: npm
           node-version: 16
+      - run: npm install
       - run: npm run release:prod
       - run: npm run semantic-release
         env:
