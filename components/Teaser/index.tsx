@@ -40,14 +40,14 @@ const Teaser = (props: TeaserProps) => {
   const box_aligny = get(layout, 'box.aligny', ['top', 'top'])
   const box_background = get(layout, 'box.background', 'transparent')
   const box_height = get(layout, 'box.height', ['auto', 'auto', 'auto'])
-  const box_pt = get(layout, 'box.pt', ['0px', '0px'])
-  const box_pr = get(layout, 'box.pr', ['0px', '0px'])
-  const box_pb = get(layout, 'box.pb', ['0px', '0px'])
-  const box_pl = get(layout, 'box.pl', ['0px', '0px'])
-  const box_mt = get(layout, 'box.mt', ['0px', '0px'])
-  const box_mr = get(layout, 'box.mr', ['0px', '0px'])
-  const box_mb = get(layout, 'box.mb', ['0px', '0px'])
-  const box_ml = get(layout, 'box.ml', ['0px', '0px'])
+  const box_pt = get(layout, 'box.pt', [undefined, undefined])
+  const box_pr = get(layout, 'box.pr', [undefined, undefined])
+  const box_pb = get(layout, 'box.pb', [undefined, undefined])
+  const box_pl = get(layout, 'box.pl', [undefined, undefined])
+  const box_mt = get(layout, 'box.mt', [undefined, undefined])
+  const box_mr = get(layout, 'box.mr', [undefined, undefined])
+  const box_mb = get(layout, 'box.mb', [undefined, undefined])
+  const box_ml = get(layout, 'box.ml', [undefined, undefined])
 
   // box border props
   const box_bt = get(layout, 'box.bt', undefined)
@@ -65,10 +65,10 @@ const Teaser = (props: TeaserProps) => {
   const wrap_aligny = get(layout, 'box_wrap.aligny', ['top', 'top'])
   const wrap_height = get(layout, 'box_wrap.height', ['auto', 'auto'])
   const wrap_width = get(layout, 'box_wrap.width', ['100%', '100%'])
-  const wrap_ml = get(layout, 'box_wrap.ml', ['0px', '0px'])
-  const wrap_mr = get(layout, 'box_wrap.mr', ['0px', '0px'])
-  const wrap_mb = get(layout, 'box_wrap.mb', ['0px', '0px'])
-  const wrap_mt = get(layout, 'box_wrap.mt', ['0px', '0px'])
+  const wrap_ml = get(layout, 'box_wrap.ml', [undefined, undefined])
+  const wrap_mr = get(layout, 'box_wrap.mr', [undefined, undefined])
+  const wrap_mb = get(layout, 'box_wrap.mb', [undefined, undefined])
+  const wrap_mt = get(layout, 'box_wrap.mt', [undefined, undefined])
   const wrap_pl = get(layout, 'box_wrap.pl', undefined)
   const wrap_pr = get(layout, 'box_wrap.pr', undefined)
   const wrap_pb = get(layout, 'box_wrap.pb', undefined)
@@ -85,10 +85,10 @@ const Teaser = (props: TeaserProps) => {
   const image_aligny = get(layout, 'image.aligny', ['top', 'top'])
   const image_height = get(layout, 'image.height', ['auto', 'auto'])
   const image_wrap_width = get(layout, 'image.wrap_width', ['100%', '100%'])
-  const image_mt = get(layout, 'image.mt', ['0px', '0px'])
-  const image_mr = get(layout, 'image.mr', ['0px', '0px'])
-  const image_mb = get(layout, 'image.mb', ['0px', '0px'])
-  const image_ml = get(layout, 'image.ml', ['0px', '0px'])
+  const image_mt = get(layout, 'image.mt', [undefined, undefined])
+  const image_mr = get(layout, 'image.mr', [undefined, undefined])
+  const image_mb = get(layout, 'image.mb', [undefined, undefined])
+  const image_ml = get(layout, 'image.ml', [undefined, undefined])
 
   // number wrap
   const number_enabled = get(layout, 'number.enabled', false)
@@ -97,10 +97,10 @@ const Teaser = (props: TeaserProps) => {
   const number_aligny = get(layout, 'number.aligny', ['top', 'top'])
   const number_height = get(layout, 'number.height', ['auto', 'auto'])
   const number_width = get(layout, 'number.width', ['100%', '100%'])
-  const number_mt = get(layout, 'number.mt', ['0px', '0px'])
-  const number_mr = get(layout, 'number.mr', ['0px', '0px'])
-  const number_mb = get(layout, 'number.mb', ['0px', '0px'])
-  const number_ml = get(layout, 'number.ml', ['0px', '0px'])
+  const number_mt = get(layout, 'number.mt', [undefined, undefined])
+  const number_mr = get(layout, 'number.mr', [undefined, undefined])
+  const number_mb = get(layout, 'number.mb', [undefined, undefined])
+  const number_ml = get(layout, 'number.ml', [undefined, undefined])
 
   // profile enabled and options
   const profile_data = get(item, 'parentBio', false)
@@ -199,84 +199,82 @@ const Teaser = (props: TeaserProps) => {
 
   const RenderContentWrap = () => {
     return (
-      <React.Fragment>
-        <S.WrapContent
-          editable={editable}
-          item={item}
-          item_path={item_path}
-          layout={layout}
-          opacity_mask={opacity_mask}
-          wrap_align={wrap_align}
-          wrap_aligny={wrap_aligny}
-          wrap_alignx={wrap_alignx}
-          wrap_height={wrap_height}
-          wrap_width={wrap_width}
-          wrap_mt={wrap_mt}
-          wrap_mr={wrap_mr}
-          wrap_mb={wrap_mb}
-          wrap_ml={wrap_ml}
-          wrap_pt={wrap_pt}
-          wrap_pr={wrap_pr}
-          wrap_pb={wrap_pb}
-          wrap_pl={wrap_pl}
-        >
-          <S.WrapSubject>
-            <RenderSubject
-              editable={{
-                enabled: editable?.enabled,
-                set_modified: editable?.set_modified,
-                set_selected: editable?.set_selected,
-                state: states?.subject
-              }}
-              color={color}
-              item={item}
-              layout={layout}
-            />
-            <EditButtons
-              {...edit_buttons}
-            />
-          </S.WrapSubject>
-          <RenderTitle
-            cid={item_cid}
+      <S.WrapContent
+        editable={editable}
+        item={item}
+        item_path={item_path}
+        layout={layout}
+        opacity_mask={opacity_mask}
+        wrap_align={wrap_align}
+        wrap_aligny={wrap_aligny}
+        wrap_alignx={wrap_alignx}
+        wrap_height={wrap_height}
+        wrap_width={wrap_width}
+        wrap_mt={wrap_mt}
+        wrap_mr={wrap_mr}
+        wrap_mb={wrap_mb}
+        wrap_ml={wrap_ml}
+        wrap_pt={wrap_pt}
+        wrap_pr={wrap_pr}
+        wrap_pb={wrap_pb}
+        wrap_pl={wrap_pl}
+      >
+        <S.WrapSubject>
+          <RenderSubject
             editable={{
               enabled: editable?.enabled,
               set_modified: editable?.set_modified,
               set_selected: editable?.set_selected,
-              state: states?.title
+              state: states?.subject
             }}
-            layout={layout}
-            link={item_path}
-            slot_position={slot_position}
-            shadow={opacity_mask}
-            position={number}
-            title={item_title}
-            titleEventTracking={titleEventTracking}
-          />
-          <RenderSubtitle
+            color={color}
             item={item}
             layout={layout}
           />
-          {isProfileEnabled ? 
-            <RenderProfile
-              amp={amp}
-              domain={domain}
-              content={profile_content}
-              containerProps={{ width: '100%' }}
-              subtitleContainer={() => <RenderDateTimeWrap />}
-            />
-            : 
-            <RenderDatetime
-              item={item}
-              layout={layout}
-            />
-          }
-          <RelatedRender
-            color={color}
-            layout={related_layout}
-            {...related}
+          <EditButtons
+            {...edit_buttons}
           />
-        </S.WrapContent>
-      </React.Fragment>
+        </S.WrapSubject>
+        <RenderTitle
+          cid={item_cid}
+          editable={{
+            enabled: editable?.enabled,
+            set_modified: editable?.set_modified,
+            set_selected: editable?.set_selected,
+            state: states?.title
+          }}
+          layout={layout}
+          link={item_path}
+          slot_position={slot_position}
+          opacity_mask={opacity_mask}
+          position={number}
+          title={item_title}
+          titleEventTracking={titleEventTracking}
+        />
+        <RenderSubtitle
+          item={item}
+          layout={layout}
+        />
+        {isProfileEnabled ? 
+          <RenderProfile
+            amp={amp}
+            domain={domain}
+            content={profile_content}
+            containerProps={{ width: '100%' }}
+            subtitleContainer={() => <RenderDateTimeWrap />}
+          />
+          : 
+          <RenderDatetime
+            item={item}
+            layout={layout}
+          />
+        }
+        <RelatedRender
+          color={color}
+          layout={related_layout}
+          {...related}
+        />
+      </S.WrapContent>
     )
   }
 
