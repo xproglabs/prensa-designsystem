@@ -1,7 +1,7 @@
 import { Block, Link, Typography } from 'prensa'
 import React from 'react'
 
-import { IndicatorProps } from './types'
+import { IndicatorProps, IndicatorLayoutProps } from './types'
 
 const PageIndicator = ({
   bgColor,
@@ -20,6 +20,23 @@ const PageIndicator = ({
   width
 }: IndicatorProps) => {
 
+  const flexibleLayout: IndicatorLayoutProps = {}
+
+  if (children > 100) {
+    flexibleLayout.radius = 'rounded'
+    flexibleLayout.width = '50px'
+  }
+
+  if (children > 1000) {
+    flexibleLayout.radius = 'rounded'
+    flexibleLayout.width = '60px'
+  }
+
+  if (children > 10000) {
+    flexibleLayout.radius = 'rounded'
+    flexibleLayout.width = '70px'
+  }
+
   const Indicator = () => (
     <Block
       align='column'
@@ -35,6 +52,7 @@ const PageIndicator = ({
       ml={href ? undefined : ml}
       radius={radius}
       width={width}
+      {...flexibleLayout}
     >
       <Typography
         color={color}

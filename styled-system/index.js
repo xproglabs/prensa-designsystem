@@ -1,3 +1,4 @@
+export { boxShadow } from './boxShadow'
 export { border } from './border'
 export { dimensions } from './dimensions'
 export { margin } from './margin'

@@ -13,6 +13,7 @@ import Heading4 from '../Headings/Heading4'
 import { ListComponent } from '../List/index.ts'
 import Paragraph from '../Paragraph/Paragraph'
 import SectionTitle from '../SectionTitle'
+import { BottomShare } from '../Share/BottomShare/index.tsx'
 import Tags from '../Tags/Tags'
 import TopImage from '../TopImage/TopImage'
 import * as S from './TextBody.styled'
@@ -24,10 +25,12 @@ const TextBody = (props) => {
     adsSide,
     amp,
     bodyWidth,
+    bottomShare,
     citation,
     content,
     fbappid,
     gallery,
+    hasBottomShare,
     hasColumnRight,
     heading2,
     heading3,
@@ -35,6 +38,7 @@ const TextBody = (props) => {
     hyperlink,
     images,
     orderedList,
+    pageUrl,
     paragraph,
     related_content_intervention,
     tags_section_title,
@@ -209,10 +213,7 @@ const TextBody = (props) => {
     const isGalleryVisible = gallery && gallery.items && gallery.items.length > 0
     const isTagSectionVisible = tags_section_title && tags_section_title.enabled
     return (
-      <S.Body
-        align='column'
-        hyperlinkColor={get_hyperlink_color()}
-      >
+      <React.Fragment>
         {map(body_items, ({ type, value }, key) => {
           return (
             <React.Fragment key={key}>
@@ -220,25 +221,33 @@ const TextBody = (props) => {
             </React.Fragment>
           )
         })}
-        {isGalleryVisible && (
+        {isGalleryVisible && 
           <ImageGallery
             {...gallery}
             width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
             amp={amp}
           />
-        )}
-        {isTagSectionVisible && (
+        }
+        {isTagSectionVisible && 
           <SectionTitle
             {...tags_section_title}
-            maxWidth={bodyWidth}>
-              Assuntos
+            maxWidth={bodyWidth}
+          >
+            Assuntos
           </SectionTitle>
-        )}
+        }
         <Tags
           {...tags}
           maxWidth={bodyWidth}
         />
-      </S.Body>
+        {hasBottomShare &&
+          <BottomShare 
+            pageUrl={pageUrl}
+            maxWidth={bodyWidth}
+            {...bottomShare}
+          />
+        }
+      </React.Fragment>
     )
   }
 
@@ -256,14 +265,12 @@ const TextBody = (props) => {
           width: '100%',
         }}
       >
-        <S.TextBodyColumn
-          width={bodyWidth}
-        >
+        <S.TextBodyColumn lg={{ width: bodyWidth }}>
           <RenderMainColumn />
         </S.TextBodyColumn>
         <S.TextBodyColumn
           bgColor='primary'
-          width={`calc(100% - ${bodyWidth} - 32px)`}
+          lg={{ width: `calc(100% - ${bodyWidth} - 32px)` }}
         >
           {adsSide && React.cloneElement(adsSide)}
         </S.TextBodyColumn>
@@ -271,7 +278,14 @@ const TextBody = (props) => {
     )
   }
 
-  return <RenderMainColumn />
+  return (
+    <S.Body
+      align='column'
+      hyperlinkColor={get_hyperlink_color()}
+    >
+      <RenderMainColumn />
+    </S.Body>
+  )
 }
 
 TextBody.propTypes = {
@@ -284,6 +298,7 @@ TextBody.propTypes = {
   adsSide: PropTypes.node,
   amp: PropTypes.bool,
   bodyWidth: PropTypes.string,
+  bottomShare: PropTypes.object,
   content: PropTypes.string,
   citation: PropTypes.object,
   gallery: PropTypes.shape({
@@ -291,6 +306,7 @@ TextBody.propTypes = {
     items: PropTypes.array,
     bodyWidth: PropTypes.string,
   }),
+  hasBottomShare: PropTypes.bool,
   hasColumnRight: PropTypes.bool,
   heading2: PropTypes.object,
   heading3: PropTypes.object,
