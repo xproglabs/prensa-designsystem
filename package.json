@@ -82,7 +82,7 @@
     "release:qa": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish --tag qa",
     "release:prod": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish",
     "cd": "npm run build && npm run prerelease:copyfiles",
-    "semantic-release": "cd dist && ls -l && semantic-release -d",
+    "semantic-release": "cd dist && semantic-release",
     "postversion": "cp -r dist/package.json .."
   },
   "lint-staged": {
