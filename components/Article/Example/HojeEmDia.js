@@ -13,6 +13,11 @@ const dummyTweet = () => '<p><a id="https://twitter.com/UOL/status/1399821735231
 const dummyYoutube = () => '<p><a id="https://www.youtube.com/watch?v=uj_K_S1Iqcg" name="https://www.youtube.com/watch?v=uj_K_S1Iqcg">https://www.youtube.com/watch?v=uj_K_S1Iqcg</a></p>'
 const dummyYoutubeDesk = () => '<div data-oembed-url="https://youtu.be/3vYeQLJ2as4"><div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"><iframe allow="encrypted-media; accelerometer; clipboard-write; gyroscope; picture-in-picture" allowfullscreen="" scrolling="no" src="https://www.youtube.com/embed/3vYeQLJ2as4?rel=0" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" tabindex="-1"></iframe></div></div>'
 const dummyLists = `
+  <ul>
+    <li><a href="https://google.com.br">UFMG Campus Saúde</a> (Escola de Enfermagem): avenida Professor Alfredo Balena, 190 - Santa Efigênia – das 12h às 20h;</li>
+    <li>Faculdade Pitágoras: rua dos Timbiras, 1.375 - Funcionários – das 8h às 20h</li>
+    <li>UNA-BH: rua Aimorés, 1.451 - Lourdes – das 8h às 20h.</li>
+  </ul>
 
   <ol>
     <li>Item um</li>
@@ -20,12 +25,6 @@ const dummyLists = `
     <li>item três</li>
     <li>item 4</li>
   </ol>
-
-  <ul>
-    <li>UFMG Campus Saúde (Escola de Enfermagem): avenida Professor Alfredo Balena, 190 - Santa Efigênia – das 12h às 20h;</li>
-    <li>Faculdade Pitágoras: rua dos Timbiras, 1.375 - Funcionários – das 8h às 20h</li>
-    <li>UNA-BH: rua Aimorés, 1.451 - Lourdes – das 8h às 20h.</li>
-  </ul>
 
   <p>Veja o calendário de vacinação até 5 de novembro:</p>
 
