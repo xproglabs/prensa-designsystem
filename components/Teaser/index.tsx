@@ -254,7 +254,7 @@ const Teaser = (props: TeaserProps) => {
           item={item}
           layout={layout}
         />
-        {isProfileEnabled ? 
+        {isProfileEnabled ?
           <RenderProfile
             amp={amp}
             domain={domain}
@@ -262,7 +262,7 @@ const Teaser = (props: TeaserProps) => {
             containerProps={{ width: '100%' }}
             subtitleContainer={() => <RenderDateTimeWrap />}
           />
-          : 
+          :
           <RenderDatetime
             item={item}
             layout={layout}
