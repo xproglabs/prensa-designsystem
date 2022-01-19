@@ -9,7 +9,8 @@ const BUTTON_GO_BACK = {
 const CONTAINER_ERROR = {
   aligny: 'middle',
   alignx: 'center',
-  height: 'calc(100vh - 140px)',
+  height: 'calc(100vh - 400px)',
+  lg: { height:'calc(100vh - 620px)' },
   width: '100%'
 }
 
@@ -30,8 +31,8 @@ const PAGE_TITLE = {
   fontSize: '20px',
   fontWeight: 700,
   element: 'span',
-  transform: 'uppercase',
-  mb: 2
+  mb: 2,
+  transform: 'uppercase'
 }
 
 export {
