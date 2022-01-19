@@ -16,7 +16,7 @@ export function parseListChildren(child) {
         if (node === 'element' && tag === 'a') {
           map(child, hyperlinkedText => {
             hasHyperlink.push(
-              `<a href="${attr.href}">${hyperlinkedText.text}</a>`
+              `<a href="${attr.href}" target="_blank">${hyperlinkedText.text}</a>`
             )
           })
         }
