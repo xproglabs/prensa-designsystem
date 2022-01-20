@@ -9,7 +9,11 @@
       "@semantic-release/npm"
     ],
     [
-      "@semantic-release/git"
+      "@semantic-release/git", {
+        "assets": [
+          "!dist/**/*"
+        ]
+      }
     ],
     [
       "semantic-release-slack-bot",
