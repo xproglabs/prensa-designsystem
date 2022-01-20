@@ -3,6 +3,12 @@
     "master"
   ],
   "plugins": [
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
     [
