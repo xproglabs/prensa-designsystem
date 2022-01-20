@@ -79,13 +79,12 @@
     "test": "jest",
     "clear:dist": "rm -rf dist",
     "prerelease:copyfiles": "cp -rf README.md dist && cp -rf CHANGELOG.md dist && cp -rf package.json dist && cp -rf .npmignore dist",
-    "postrelease:copyfiles": "cp -rf dist/CHANGELOG.md && cp -rf dist/package.json",
+    "postrelease:copyfiles": "cp -rf package.json .. && cp -rf CHANGELOG.md ..",
     "release:local": "npm run clear:dist && npm run build && npm run prerelease:copyfiles && cd dist && npm pack",
     "release:qa": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish --tag qa",
     "release:prod": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish",
     "cd": "npm run build && npm run prerelease:copyfiles",
-    "semantic-release": "cd dist && semantic-release",
-    "postversion": "cp -rf package.json .. && cp -rf CHANGELOG.md .."
+    "semantic-release": "cd dist && semantic-release"
   },
   "lint-staged": {
     "*.+(js|jsx)": [
