@@ -2,6 +2,7 @@ import { html2json } from 'html2json'
 import { find, filter, map } from 'lodash'
 
 import { parseListChildren } from './ListHTMLParser'
+import { StrongHTMLParser } from './StrongHTMLParser'
 
 const parse_content = (content) => {
 
@@ -18,7 +19,7 @@ const parse_content = (content) => {
       tagItems.push({ 'type': 'p', 'value': '' })
     }
     if (tag === 'strong') {
-      tagItems.push({ 'type': 'text', 'value': `<strong>${renderChildValue(child)}</strong>` })
+      tagItems.push({ 'type': 'text', 'value': StrongHTMLParser(child) })
       return true
     }
     if (tag === 'u') {
