@@ -8,14 +8,29 @@ jobs:
     name: prensa-bot deploy
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
       - uses: actions/checkout@v2
+
+      - name: setup node
       - uses: actions/setup-node@v2
         with:
           cache: npm
           node-version: 16
+
+      - name: Extract version
+        id: extract_version
+        uses: Saionaro/extract-package-version@v1.0.6
+
+      - name: deploy
       - run: npm install
       - run: npm run cd
       - run: npm run semantic-release
+      - run: |
+          npm run postrelease:copyfiles
+          git config --global user.name 'deploy-bot'
+          git config --global user.email 'giovanni@xproglabs.com'
+          git commit -m "chore(release): ${{ steps.extract_version.outputs.version }} [skip ci]"
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
