@@ -1,26 +1,15 @@
 import { html2json } from 'html2json'
 import { find, filter, map } from 'lodash'
 
+import { parseListChildren } from './ListHTMLParser'
+import { StrongHTMLParser } from './StrongHTMLParser'
+
 const parse_content = (content) => {
 
   let bodyItems = []
   let tagItems = []
 
   const renderChildValue = (child) => child && child.length > 0 && child[0].text ? child[0].text : ''
-
-  const renderListItems = (child) => {
-
-    const list_items = filter(child, { tag: 'li' })
-    const ul_content = []
-
-    map(list_items, (it) => {
-      map(it.child, ({ text }) => {
-        text && ul_content.push(text.replaceAll('&nbsp;', ' '))
-      })
-    })
-    
-    return ul_content
-  }
 
   const switchNode = (obj) => {
 
@@ -33,7 +22,7 @@ const parse_content = (content) => {
       tagItems.push({ 'type': 'br', 'value': '' })
     }
     if (tag === 'strong') {
-      tagItems.push({ 'type': 'text', 'value': `<strong>${renderChildValue(child)}</strong>` })
+      tagItems.push({ 'type': 'text', 'value': StrongHTMLParser(child) })
       return true
     }
     if (tag === 'u') {
@@ -45,11 +34,11 @@ const parse_content = (content) => {
       return true
     }
     if (tag === 'ul') {
-      tagItems.push({ 'type': 'ul', 'value': renderListItems(child) })
+      tagItems.push({ 'type': 'ul', 'value': parseListChildren(child) })
       return true
     }
     if (tag === 'ol') {
-      tagItems.push({ 'type': 'ol', 'value': renderListItems(child) })
+      tagItems.push({ 'type': 'ol', 'value': parseListChildren(child) })
       return true
     }
     if (tag === 'cite') {
@@ -208,7 +197,7 @@ const parse_content = (content) => {
   })
 
   let added = add_text(p_text)
-  
+
   if (added) {
     p_text = ''
   }

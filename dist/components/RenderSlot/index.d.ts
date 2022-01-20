@@ -1,0 +1,35 @@
+import React from 'react';
+declare const _default: React.ForwardRefExoticComponent<{
+    slot: any[];
+    color?: string;
+    amp?: boolean;
+    bgcolor?: string;
+    more?: boolean;
+    more_title?: string;
+    more_link?: string;
+    order?: boolean | [string, "desc" | "asc"];
+    pagination?: boolean;
+    domain?: string;
+    carousel?: import("../Carousel/types").CarouselLayoutProps;
+    layout?: import("prensa").LayoutProps;
+    column_items: number;
+    column_padding: number;
+    eventTracking?: Object;
+    fallback_image_url?: string;
+    layouts: string[];
+    min_height?: [string, string];
+    preview: import("../PreviewProvider/types").PageBlockPreview;
+    search_len?: any;
+    site_data: any;
+    slot_parser: any;
+    slot_position?: number;
+    spaceA?: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+    spaceB?: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+    spaceTopLeft?: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+    spaceTopCenter?: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+    spaceTopRight?: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+    space_bottom?: number[];
+} & {
+    theme?: any;
+}>;
+export default _default;

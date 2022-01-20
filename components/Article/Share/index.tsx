@@ -25,7 +25,7 @@ const Share = (props: ShareProps) => {
   return (
     <Block
       align='row'
-      alignx='left'
+      alignx='right'
       width='100%'
       md={{
         align: 'row',

@@ -22,6 +22,7 @@ const Byline = ({
     if (!hasAuthorEmail && !hasAuthorSocialMedias) {
       return null
     }
+
     return (
       <Block mb={1}>
         {hasAuthorSocialMedias && (
@@ -65,7 +66,6 @@ const Byline = ({
       </Block>
     )
   }
-
   return (
     <S.Container>
       <S.Content {...content}>

@@ -40,3 +40,8 @@ export function responsiveEngine(value: Param0, theme: Param1, parsers) {
 
   return css.join('').replace(/(\r\n|\n|\r)/gm, '').replace(/ /g, '')
 }
+
+export function generateNewMediaQuerie(css, querie) {
+  if (!css || css === '') return ''
+  return `@media(min-width:${querie}){${css}}`
+}

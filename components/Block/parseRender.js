@@ -1,3 +1,4 @@
+import { boxShadow } from '../../styled-system'
 import { border } from '../../styled-system/border'
 import { dimensions } from '../../styled-system/dimensions'
 import { parseAlign } from './parseAlign'
@@ -6,6 +7,7 @@ import { parseHeight } from './parseDimensions'
 const parseStyle = (props, theme) => {
   return `
     ${border({ ...props, radius: props.$radius, theme })};
+    ${boxShadow({ ...props, boxShadow: props.boxShadow })};
     ${dimensions({ ...props, theme })};
     ${parseAlign(props, theme)};
     ${parseHeight(props, theme)};

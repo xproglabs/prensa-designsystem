@@ -43,6 +43,10 @@ type BoxWrap = {
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
+  pt?: SpacingType;
+  pr?: SpacingType;
+  pb?: SpacingType;
+  pl?: SpacingType;
 }
 type Image = {
   align?: [string, string];
@@ -98,6 +102,11 @@ export type LayoutProps = {
   image_circle?: boolean;
   number?: NumberLayout;
   opacity_mask?: boolean;
+  profile_bio?: {
+    enabled: boolean,
+    height?: SpacingType,
+    width?: SpacingType
+  };
   related?: Related;
   section?: Object;
   subject?: SubjectLayout;

@@ -25,6 +25,7 @@ const Typography = ({
   fontFamily,
   fontWeight,
   href,
+  letterSpacing,
   lineHeight,
   textAlign,
   transform,
@@ -144,6 +145,7 @@ const Typography = ({
     $fontWeight: fontWeight,
     $fontSize: fontSize,
     $fontFamily: fontFamily,
+    $letterSpacing: letterSpacing,
     $lineHeight: lineHeight,
     $transform: transform,
     $color: color,
@@ -250,6 +252,10 @@ Typography.propTypes = {
    * Alterar o valor da propriedade line-height no css
    */
   lineHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Permite propriedade letter-spacing
+   */
+  letterSpacing: PropTypes.string,
   /**
    * Alterar o valor da propriedade font-family no css
    */
