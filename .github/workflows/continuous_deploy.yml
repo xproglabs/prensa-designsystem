@@ -12,7 +12,6 @@ jobs:
         id: extract_version
         uses: Saionaro/extract-package-version@v1.0.6
 
-      - name: deploy
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
