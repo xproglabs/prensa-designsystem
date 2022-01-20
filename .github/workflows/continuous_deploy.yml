@@ -27,7 +27,9 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       - run: |
           npm run postrelease:copyfiles
+          rm -rf dist
           git config --global user.name 'deploy-bot'
           git config --global user.email 'giovanni@xproglabs.com'
+          git add .
           git commit -m "chore(release): ${{ steps.extract_version.outputs.version }} [skip ci]"
           git push
