@@ -160,6 +160,7 @@ const ArticleHJD = () => {
           value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra eleifend pellentesque. Suspendisse semper gravida fermentum. Integer pulvinar euismod hendrerit.'
         }}
         tags={{
+          borderColor: hojeemdia.colors['primary1'],
           color: hojeemdia.colors['primary1'],
           fontFamily: 'primary',
           items: ['Tag1', 'Tag2']
