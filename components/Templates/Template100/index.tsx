@@ -24,6 +24,7 @@ const Template100 = ({ slotAds, slot100 }: Template100Props) => {
           <ColorizedColumn
             bgColor={slot100_bgColor}
             minHeight={slot100.min_height}
+            slot={slot100}
             transparent={slot100_isTransparent}
           >
             <RenderSlot {...slot100} />

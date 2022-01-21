@@ -43,5 +43,7 @@ export type RenderSlotProps = {
   spaceTopCenter?: ReactElement;
   spaceTopRight?: ReactElement;
   space_bottom?: Array<number>;
+  space_bottom_column?: Array<number>;
+  space_bottom_column_color?: Array<number>;
   theme?: any;
 }
