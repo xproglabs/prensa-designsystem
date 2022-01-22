@@ -1,39 +1,56 @@
+const { get } = require('lodash')
 const { chunkifyString } = require('semantic-release-slack-bot/lib/chunkifier')
 const slackifyMarkdown = require('slackify-markdown')
 
-function parseNotification(pluginConfig, context) {
+function successNotification(pluginConfig, context) {
 
-  console.log(context)
+  //info search
+  const isQA = get(context, 'branch.name', false)
+  const releaseVersion = get(context, 'nextRelease.version', '')
+  const releaseNotes = get(context, 'nextRelease.notes', '')
 
-  const releaseNotes = slackifyMarkdown(context.nextRelease.notes)
-  const text = `Updates to ${
-    pluginConfig.packageName
-  } has been released to *Stage!*`
-  const headerBlock = {
-    type: 'section',
+  //info mount
+  const prodMessage = `📮 Prensa atualizado - ${releaseVersion}`
+  const qaMessage = `📦 Prensa QA atualizado - ${releaseVersion}`
+  const parsedReleaseNotes = slackifyMarkdown(releaseNotes)
+  const notificationMessage = isQA ? prodMessage : qaMessage
+  
+  //slack based block mount
+  const mainInformation = {
+    type: 'header',
     text: {
-      type: 'mrkdwn',
-      text
+      type: 'plain_text',
+      text: notificationMessage
     }
+  }
+  const secondInformation = chunkifyString(parsedReleaseNotes, 2900)
+    .map(chunk => {
+      const text = []
+      text.push('```')
+      text.push(chunk)
+      text.push('```')
+      return {
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: text.join('')
+        }
+      }
+    })
+  const divider = {
+    type: 'divider'
   }
 
   return {
-    text,
+    text: notificationMessage,
     blocks: [
-      headerBlock,
-      ...chunkifyString(releaseNotes, 2900).map(chunk => {
-        return {
-          type: 'section',
-          text: {
-            type: 'mrkdwn',
-            text: chunk
-          }
-        }
-      })
+      mainInformation,
+      divider,
+      secondInformation
     ]
   }
 }
 
 module.exports = {
-  parseNotification
+  successNotification
 }
