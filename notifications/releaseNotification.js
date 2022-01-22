@@ -1,6 +1,6 @@
 function parseNotification() {
 
-  const message = '*v$npm_package_version* publicada com sucesso'
+  const message = '* $npm_package_version * publicada com sucesso'
 
   return {
     text: '',
