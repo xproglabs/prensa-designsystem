@@ -1,6 +1,6 @@
 function parseNotification(pluginConfig) {
 
-  console.log(JSON.stringify(pluginConfig))
+  const message = `*v${pluginConfig.packageVersion}* publicada com sucesso`
 
   return {
     text: '',
@@ -9,7 +9,7 @@ function parseNotification(pluginConfig) {
         type: 'section',
         text: {
           type: 'text',
-          text: `Teste ${pluginConfig.packageVersion}`
+          text: message
         }
       }
     ]
