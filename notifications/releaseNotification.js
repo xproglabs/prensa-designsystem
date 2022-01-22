@@ -8,8 +8,8 @@ function successNotification(pluginConfig, context) {
   const commitHead = get(context, 'nextRelease.gitHead', '')
 
   //info mount
-  const prodMessage = `📮 Prensa atualizado - ${releaseVersion}`
-  const qaMessage = `📦 Prensa QA atualizado - ${releaseVersion}`
+  const prodMessage = `📮 Prensa atualizado - *v${releaseVersion}*`
+  const qaMessage = `📦 Prensa QA atualizado - *v${releaseVersion}*`
   const notificationMessage = isQA ? qaMessage : prodMessage
   const commitUrl = `https://github.com/xproglabs/prensa-designsystem/commit/${commitHead}`
   
