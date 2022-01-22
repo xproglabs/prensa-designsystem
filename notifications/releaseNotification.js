@@ -17,8 +17,9 @@ function successNotification(pluginConfig, context) {
   const mainInformation = {
     type: 'section',
     text: {
-      type: 'plain_text',
-      text: notificationMessage
+      type: 'mrkdwn',
+      text: notificationMessage,
+      emoji: true
     }
   }
   const secondInformation = {
