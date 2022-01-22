@@ -1,4 +1,4 @@
-// const { parseNotification } = require('./notifications/releaseNotification')
+const { parseNotification } = require('./notifications/releaseNotification')
 const { version } = require('./package.json')
 
 module.exports = {
@@ -35,10 +35,7 @@ module.exports = {
         packageVersion: version,
         notifyOnSuccess: true,
         notifyOnFail: true,
-        // onSuccessFunction: data => parseNotification(data),
-        onSuccessTemplate: {
-          text: 'A new version of $package_name with version $npm_package_version has been released at $repo_url!'
-        },
+        onSuccessFunction: parseNotification,
         branchesConfig: [
           {
             pattern: 'master1',

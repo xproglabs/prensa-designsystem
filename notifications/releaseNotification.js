@@ -1,17 +1,35 @@
-function parseNotification() {
+const { chunkifyString } = require('semantic-release-slack-bot/lib/chunkifier')
+const slackifyMarkdown = require('slackify-markdown')
 
-  const message = 'A new version of $package_name with version $npm_package_version has been released at $repo_url!'
+function parseNotification(pluginConfig, context) {
+
+  console.log(JSON.stringify(context))
+
+  const releaseNotes = slackifyMarkdown(context.nextRelease.notes)
+  const text = `Updates to ${
+    pluginConfig.packageName
+  } has been released to *Stage!*`
+  const headerBlock = {
+    type: 'section',
+    text: {
+      type: 'mrkdwn',
+      text
+    }
+  }
 
   return {
-    text: '',
+    text,
     blocks: [
-      {
-        type: 'section',
-        text: {
-          type: 'plain_text',
-          text: message
+      headerBlock,
+      ...chunkifyString(releaseNotes, 2900).map(chunk => {
+        return {
+          type: 'section',
+          text: {
+            type: 'mrkdwn',
+            text: chunk
+          }
         }
-      },
+      })
     ]
   }
 }
