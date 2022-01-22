@@ -1,6 +1,6 @@
 function parseNotification() {
 
-  const message = '* $npm_package_version * publicada com sucesso'
+  const message = 'A new version of $package_name with version $npm_package_version has been released at $repo_url!'
 
   return {
     text: '',
