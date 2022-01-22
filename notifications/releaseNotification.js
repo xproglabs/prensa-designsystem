@@ -40,15 +40,19 @@ function successNotification(pluginConfig, context) {
   const divider = {
     type: 'divider'
   }
-
-  return {
+  
+  const message = {
     text: notificationMessage,
     blocks: [
       mainInformation,
       divider,
-      secondInformation
+      ...secondInformation
     ]
   }
+
+  console.log(message)
+
+  return message
 }
 
 module.exports = {
