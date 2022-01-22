@@ -15,7 +15,7 @@ function successNotification(pluginConfig, context) {
   
   //slack based block mount
   const mainInformation = {
-    type: 'header',
+    type: 'section',
     text: {
       type: 'plain_text',
       text: notificationMessage
@@ -30,15 +30,11 @@ function successNotification(pluginConfig, context) {
       }
     ]
   }
-  const divider = {
-    type: 'divider'
-  }
   
   const message = {
     text: notificationMessage,
     blocks: [
       mainInformation,
-      divider,
       secondInformation
     ]
   }  
