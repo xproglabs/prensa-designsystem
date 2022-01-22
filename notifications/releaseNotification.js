@@ -1,4 +1,7 @@
 function parseNotification() {
+
+  const message = '*v$npm_package_version* publicada com sucesso'
+
   return {
     text: '',
     blocks: [
@@ -6,7 +9,7 @@ function parseNotification() {
         type: 'section',
         text: {
           type: 'plain_text',
-          text: '*v$npm_package_version* publicada com sucesso'
+          text: message
         }
       },
     ]
