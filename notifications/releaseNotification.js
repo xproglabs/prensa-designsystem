@@ -13,7 +13,7 @@ function successNotification(pluginConfig, context) {
   const prodMessage = `📮 Prensa atualizado - ${releaseVersion}`
   const qaMessage = `📦 Prensa QA atualizado - ${releaseVersion}`
   const parsedReleaseNotes = slackifyMarkdown(releaseNotes)
-  const notificationMessage = isQA ? prodMessage : qaMessage
+  const notificationMessage = isQA ? qaMessage : prodMessage
   
   //slack based block mount
   const mainInformation = {
@@ -50,7 +50,7 @@ function successNotification(pluginConfig, context) {
     ]
   }
 
-  console.log(message)
+  console.log(secondInformation)
 
   return message
 }
