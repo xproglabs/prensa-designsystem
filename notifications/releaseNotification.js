@@ -3,7 +3,7 @@ const slackifyMarkdown = require('slackify-markdown')
 
 function parseNotification(pluginConfig, context) {
 
-  console.log(context && JSON.stringify(context))
+  console.log(context)
 
   const releaseNotes = slackifyMarkdown(context.nextRelease.notes)
   const text = `Updates to ${
