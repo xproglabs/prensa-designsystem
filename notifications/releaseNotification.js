@@ -1,19 +1,17 @@
 const { get } = require('lodash')
-const { chunkifyString } = require('semantic-release-slack-bot/lib/chunkifier')
-const slackifyMarkdown = require('slackify-markdown')
 
 function successNotification(pluginConfig, context) {
 
   //info search
   const isQA = get(context, 'branch.name', false)
   const releaseVersion = get(context, 'nextRelease.version', '')
-  const releaseNotes = get(context, 'nextRelease.notes', '')
+  const commitHead = get(context, 'nextRelease.gitHead', '')
 
   //info mount
   const prodMessage = `📮 Prensa atualizado - ${releaseVersion}`
   const qaMessage = `📦 Prensa QA atualizado - ${releaseVersion}`
-  const parsedReleaseNotes = slackifyMarkdown(releaseNotes)
   const notificationMessage = isQA ? qaMessage : prodMessage
+  const commitUrl = `https://github.com/xproglabs/prensa-designsystem/commit/${commitHead}`
   
   //slack based block mount
   const mainInformation = {
@@ -23,20 +21,15 @@ function successNotification(pluginConfig, context) {
       text: notificationMessage
     }
   }
-  const secondInformation = chunkifyString(parsedReleaseNotes, 2900)
-    .map(chunk => {
-      const text = []
-      text.push('```')
-      text.push(chunk)
-      text.push('```')
-      return {
-        type: 'section',
-        text: {
-          type: 'mrkdwn',
-          text: text.join('')
-        }
+  const secondInformation = {
+    type: 'context',
+    elements: [
+      {
+        type: 'mrkdwn',
+        text: commitUrl
       }
-    })
+    ]
+  }
   const divider = {
     type: 'divider'
   }
@@ -46,11 +39,9 @@ function successNotification(pluginConfig, context) {
     blocks: [
       mainInformation,
       divider,
-      ...secondInformation
+      secondInformation
     ]
-  }
-
-  console.log(secondInformation)
+  }  
 
   return message
 }
