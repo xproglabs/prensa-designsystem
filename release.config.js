@@ -1,4 +1,5 @@
 const { parseNotification } = require('./notifications/releaseNotification')
+const { version } = require('./package.json')
 
 module.exports = {
   branches: [
@@ -31,6 +32,7 @@ module.exports = {
     [
       'semantic-release-slack-bot',
       {
+        packageVersion: version,
         notifyOnSuccess: true,
         notifyOnFail: true,
         onSuccessFunction: data => parseNotification(data),
@@ -42,6 +44,6 @@ module.exports = {
           }
         ]
       }
-    ] 
+    ]
   ]
 }

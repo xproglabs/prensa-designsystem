@@ -1,13 +1,6 @@
-function parseNotification(pluginConfig, context) {
+function parseNotification(pluginConfig) {
 
-  const message = []
-
-  message.push('```')
-  message.push(`${pluginConfig}`)
-  message.push(`${context}`)
-  message.push('```')
-
-  console.log(message)
+  console.log(JSON.stringify(pluginConfig))
 
   return {
     text: '',
@@ -15,8 +8,8 @@ function parseNotification(pluginConfig, context) {
       {
         type: 'section',
         text: {
-          type: 'mrkdwn',
-          text: message.join('')
+          type: 'text',
+          text: `Teste ${pluginConfig.packageVersion}`
         }
       }
     ]
