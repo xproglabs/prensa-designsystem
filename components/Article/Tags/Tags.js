@@ -15,7 +15,8 @@ const Tags = ({
   fontWeight,
   items,
   maxWidth,
-  transform,
+  radius,
+  transform
 }) => {
   return (
     <S.Container maxWidth={maxWidth}>
@@ -24,6 +25,7 @@ const Tags = ({
           b={b}
           borderColor={borderColor}
           key={key}
+          radius={radius}
         >
           <AnchorTag href={`/?term=${item}`}>
             <Typography
@@ -60,6 +62,7 @@ Tags.propTypes = {
   fontWeight: PropTypes.number,
   items: PropTypes.array,
   maxWidth: PropTypes.string,
+  radius: PropTypes.string,
   transform: PropTypes.string,
 }
 
