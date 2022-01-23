@@ -1,3 +1,11 @@
+## [1.9.17](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.16...v1.9.17) (2022-01-23)
+
+
+### Bug Fixes
+
+* Ajuste nas parametrizações do Tags em Article ([378b99f](https://github.com/xproglabs/prensa-designsystem/commit/378b99ff150701055acabdb72ee16c54f384971a))
+* Permite passagem do radius no Tags ([d02fbf5](https://github.com/xproglabs/prensa-designsystem/commit/d02fbf5540413d3ec04204987737b446ab463e33))
+
 ## [1.9.16](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.15...v1.9.16) (2022-01-23)
 
 
