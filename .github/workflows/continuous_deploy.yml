@@ -29,7 +29,6 @@ jobs:
           
       - run: |
           npm run postrelease:copyfiles
-          rm -rf dist
           git config --global user.name 'deploy-bot'
           git config --global user.email 'giovanni@xproglabs.com'
           git add .
