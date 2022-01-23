@@ -9,7 +9,7 @@ function onSuccessCI(pluginConfig, context) {
 
   //info mount
   const isQa = branchName === 'qa'
-  const prodMessage = `📮 Prensa atualizado - *v${releaseVersion}*`
+  const prodMessage = `🗳️ Prensa atualizado - *v${releaseVersion}*`
   const qaMessage = `📦 Prensa QA atualizado - *v${releaseVersion}*`
   const notificationMessage = isQa !== false ? qaMessage : prodMessage
   const commitUrl = `Ver mais: https://github.com/xproglabs/prensa-designsystem/commit/${commitHead}`
