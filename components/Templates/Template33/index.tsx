@@ -38,6 +38,7 @@ const Template33 = ({
           <ColumnColor
             bgColor={slotLeft_bgColor}
             minHeight={slotLeft.min_height}
+            slot={slotLeft}
             transparent={slotLeft_isTransparent}
           >
             <RenderSlot {...slotLeft} />
@@ -50,6 +51,7 @@ const Template33 = ({
           <ColumnColor
             bgColor={slotCenter_bgColor}
             minHeight={slotCenter.min_height}
+            slot={slotCenter}
             transparent={slotCenter_isTransparent}
           >
             <RenderSlot {...slotCenter} />
@@ -62,6 +64,7 @@ const Template33 = ({
           <ColumnColor
             bgColor={slotRight_bgColor}
             minHeight={slotRight.min_height}
+            slot={slotRight}
             transparent={slotRight_isTransparent}
           >
             <RenderSlot {...slotRight} />

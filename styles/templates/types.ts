@@ -42,6 +42,8 @@ type TemplateSlotTypes = {
    */
   spaces: TemplateSpaces;
   space_bottom?: TemplateSpacesBottom;
+  space_bottom_column?: TemplateSpacesBottom;
+  space_bottom_column_color?: TemplateSpacesBottom;
 }
 
 export type CreateTemplateTypes = {

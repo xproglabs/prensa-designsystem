@@ -76,6 +76,8 @@ const PageBlock = ({
     const slot100_layout = selectLayoutFromTemplate({ block: slot100_block, slot: slot1 })
     const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slot100_block.spaces)
     const slot1_space_bottom = slot100_block.space_bottom
+    const slot1_space_bottom_column = slot100_block.space_bottom_column
+    const slot1_space_bottom_column_color = slot100_block.space_bottom_column_color
     const slotsHaveSecionTitle = slot1?.title !== ''
     return (
       <Template100
@@ -114,7 +116,9 @@ const PageBlock = ({
           slot_position: 1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
-          space_bottom: slot1_space_bottom
+          space_bottom: slot1_space_bottom,
+          space_bottom_column: slot1_space_bottom_column,
+          space_bottom_column_color: slot1_space_bottom_column_color
         }}
       />
     )
@@ -128,6 +132,10 @@ const PageBlock = ({
     const slot2_spaces = selectLayoutColsFromSlot(slot2?.len1, slot30_block.spaces)
     const slot1_space_bottom = get(slot70_block, 'space_bottom', [])
     const slot2_space_bottom = get(slot30_block, 'space_bottom', [])
+    const slot1_space_bottom_column = slot70_block.space_bottom_column
+    const slot1_space_bottom_column_color = slot70_block.space_bottom_column_color
+    const slot2_space_bottom_column = slot30_block.space_bottom_column
+    const slot2_space_bottom_column_color = slot30_block.space_bottom_column_color
     const slotsHaveSecionTitle = slot1?.title !== '' || slot2?.title !== ''
     return (
       <Template7030
@@ -167,7 +175,9 @@ const PageBlock = ({
           slot_position: 1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
-          space_bottom: slot1_space_bottom
+          space_bottom: slot1_space_bottom,
+          space_bottom_column: slot1_space_bottom_column,
+          space_bottom_column_color: slot1_space_bottom_column_color
         }}
         slot30={{
           amp,
@@ -193,7 +203,9 @@ const PageBlock = ({
           slot_position: 2,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList,
-          space_bottom: slot2_space_bottom
+          space_bottom: slot2_space_bottom,
+          space_bottom_column: slot2_space_bottom_column,
+          space_bottom_column_color: slot2_space_bottom_column_color
         }}
       />
     )
@@ -208,6 +220,10 @@ const PageBlock = ({
     const slotsHaveSecionTitle = slot1?.title !== '' || slot2?.title !== ''
     const slot1_space_bottom = get(slotLeft_block, 'space_bottom', [])
     const slot2_space_bottom = get(slotRight_block, 'space_bottom', [])
+    const slot1_space_bottom_column = slotLeft_block.space_bottom_column
+    const slot1_space_bottom_column_color = slotLeft_block.space_bottom_column_color
+    const slot2_space_bottom_column = slotRight_block.space_bottom_column
+    const slot2_space_bottom_column_color = slotRight_block.space_bottom_column_color
     return (
       <Template5050
         slotAds={{
@@ -246,7 +262,9 @@ const PageBlock = ({
           slot_position: 1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
-          space_bottom: slot1_space_bottom
+          space_bottom: slot1_space_bottom,
+          space_bottom_column: slot1_space_bottom_column,
+          space_bottom_column_color: slot1_space_bottom_column_color
         }}
         slotRight={{
           amp,
@@ -272,7 +290,9 @@ const PageBlock = ({
           slot_position: 2,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList,
-          space_bottom: slot2_space_bottom
+          space_bottom: slot2_space_bottom,
+          space_bottom_column: slot2_space_bottom_column,
+          space_bottom_column_color: slot2_space_bottom_column_color
         }}
       />
     )
@@ -296,6 +316,13 @@ const PageBlock = ({
     const slot1_space_bottom = get(slotLeft_block, 'space_bottom', [])
     const slot2_space_bottom = get(slotCenter_block, 'space_bottom', [])
     const slot3_space_bottom = get(slotRight_block, 'space_bottom', [])
+    // space bottom
+    const slot1_space_bottom_column = slotLeft_block.space_bottom_column
+    const slot1_space_bottom_column_color = slotLeft_block.space_bottom_column_color
+    const slot2_space_bottom_column = slotCenter_block.space_bottom_column
+    const slot2_space_bottom_column_color = slotCenter_block.space_bottom_column_color
+    const slot3_space_bottom_column = slotRight_block.space_bottom_column
+    const slot3_space_bottom_column_color = slotRight_block.space_bottom_column_color
     return (
       <Template33
         slotAds={{
@@ -336,7 +363,9 @@ const PageBlock = ({
           slot_position: 1,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
-          space_bottom: slot1_space_bottom
+          space_bottom: slot1_space_bottom,
+          space_bottom_column: slot1_space_bottom_column,
+          space_bottom_column_color: slot1_space_bottom_column_color
         }}
         slotCenter={{
           amp,
@@ -363,7 +392,9 @@ const PageBlock = ({
           slot_position: 2,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList,
-          space_bottom: slot2_space_bottom
+          space_bottom: slot2_space_bottom,
+          space_bottom_column: slot2_space_bottom_column,
+          space_bottom_column_color: slot2_space_bottom_column_color
         }}
         slotRight={{
           amp,
@@ -390,12 +421,14 @@ const PageBlock = ({
           slot_position: 3,
           spaceA: slotsHaveSecionTitle ? slot3_title : null,
           spaceB: slot3_slotList,
-          space_bottom: slot3_space_bottom
+          space_bottom: slot3_space_bottom,
+          space_bottom_column: slot3_space_bottom_column,
+          space_bottom_column_color: slot3_space_bottom_column_color
         }}
       />
     )
   }
-  
+
   return <pre>template not found</pre>
 }
 
