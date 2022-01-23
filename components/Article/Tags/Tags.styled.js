@@ -25,6 +25,7 @@ Container.propTypes = {
 
 export const Tag = ({ 
   b,
+  borderColor,
   children, 
   color, 
   radius 
@@ -32,7 +33,8 @@ export const Tag = ({
   <Block 
     align='column'
     b={b}
-    borderColor={color}
+    borderColor={borderColor}
+    color={color}
     mr={2}
     mb={2}
     radius={radius}>
@@ -40,11 +42,13 @@ export const Tag = ({
   </Block> 
   
 Tag.propTypes = {
+  borderColor: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   color: PropTypes.string
 }
 Tag.defaultProps = {
   b: '1px',
-  borderColor: 'neutral9',
+  borderColor: 'neutral6',
+  color: 'neutral3',
   radius: 'alternative'
 }
