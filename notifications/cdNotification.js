@@ -1,6 +1,6 @@
 const { get } = require('lodash')
 
-function successNotification(pluginConfig, context) {
+function onSuccessCI(pluginConfig, context) {
 
   //info search
   const branchName = get(context, 'branch.name', false)
@@ -44,5 +44,5 @@ function successNotification(pluginConfig, context) {
 }
 
 module.exports = {
-  successNotification
+  onSuccessCI
 }

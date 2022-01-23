@@ -1,4 +1,4 @@
-const { successNotification } = require('./notifications/releaseNotification')
+const { onSuccessCI } = require('./notifications/cdNotification')
 
 module.exports = {
   branches: [
@@ -33,7 +33,7 @@ module.exports = {
       {
         notifyOnSuccess: true,
         notifyOnFail: true,
-        onSuccessFunction: successNotification,
+        onSuccessFunction: onSuccessCI,
       }
     ]
   ]
