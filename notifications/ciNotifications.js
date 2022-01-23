@@ -54,3 +54,7 @@ function onErrorCI() {
 }
 
 onErrorCI()
+
+module.exports = {
+  onErrorCI
+}
