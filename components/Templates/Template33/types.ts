@@ -10,6 +10,7 @@ export type ColorizedColumnProps = {
   bgColor: string;
   children: any;
   minHeight?: [string, string];
+  slot: SlotProps;
   transparent: boolean;
 }
 export interface Template33Props {

@@ -9,6 +9,7 @@ export type ColorizedColumnProps = {
   bgColor: string;
   children: ReactNode;
   minHeight: [string, string];
+  slot: RenderSlotProps;
   transparent: boolean;
 }
 export interface Template100Props {

@@ -1,3 +1,4 @@
+import { get } from 'lodash'
 import { Block } from 'prensa'
 import React from 'react'
 
@@ -54,13 +55,17 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
             custom={slot70_customHeight_mobile}
             px={2}
             pt={slot70_isTransparent ? '0px' : 2}
-            mb={slot70_isTransparent ? '0px' : 2}
+            mb={slot70_isTransparent ?
+              get(slot70, 'space_bottom_column[0]', '0px') :
+              get(slot70, 'space_bottom_column_color[0]', 2)}
             width='calc(100% - 32px)'
             lg={{
               align: 'row',
               alignx: 'between',
               custom: `flex-wrap: wrap; ${slot70_customHeight_desktop}`,
-              mb: slot70_isTransparent ? '0px' : 3,
+              mb: slot70_isTransparent ?
+                get(slot70, 'space_bottom_column[1]', '0px') :
+                get(slot70, 'space_bottom_column_color[1]', 3),
               px: slot70_isTransparent ? '0px' : 3,
               pt: slot70_isTransparent ? '0px' : 3,
               width: slot70_isTransparent ? '100%' : 'calc(100% - 48px)'
@@ -89,11 +94,15 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
             custom={slot30_customHeight_mobile}
             px={2}
             pt={slot30_isTransparent ? '0px' : 2}
-            mb={slot30_isTransparent ? '0px' : 2}
+            mb={slot30_isTransparent ?
+              get(slot30, 'space_bottom_column[0]', '0px') :
+              get(slot30, 'space_bottom_column_color[0]', 2)}
             width='calc(100% - 32px)'
             lg={{
               custom: slot30_customHeight_desktop,
-              mb: slot30_isTransparent ? '0px' : 3,
+              mb: slot30_isTransparent ?
+                get(slot30, 'space_bottom_column[1]', '0px') :
+                get(slot30, 'space_bottom_column_color[1]', 3),
               px: slot30_isTransparent ? '0px' : 3,
               pt: slot30_isTransparent ? '0px' : 3,
               width: slot30_isTransparent ? '100%' : 'calc(100% - 48px)'
