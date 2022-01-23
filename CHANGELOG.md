@@ -1,3 +1,52 @@
+## [1.9.17](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.16...v1.9.17) (2022-01-23)
+
+
+### Bug Fixes
+
+* Ajuste nas parametrizações do Tags em Article ([378b99f](https://github.com/xproglabs/prensa-designsystem/commit/378b99ff150701055acabdb72ee16c54f384971a))
+* Permite passagem do radius no Tags ([d02fbf5](https://github.com/xproglabs/prensa-designsystem/commit/d02fbf5540413d3ec04204987737b446ab463e33))
+
+## [1.9.16](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.15...v1.9.16) (2022-01-23)
+
+
+### Bug Fixes
+
+* Adiciona prefixo "ver mais" no commit url ([b844c5c](https://github.com/xproglabs/prensa-designsystem/commit/b844c5cf32b8b121f3ad8fd7e6b01a3b2bbc5aca))
+* Atualiza fluxo de CD com nomes para cada run ([a20f14c](https://github.com/xproglabs/prensa-designsystem/commit/a20f14cdce56a8090d0dbce1453aa2f714452dd6))
+* Padroniza nomes da função de cd ([df8adac](https://github.com/xproglabs/prensa-designsystem/commit/df8adac7990e1f773a8733bce3040335f014298d))
+
+
+### Features
+
+* Atualiza imagem da notificação de prod ([d0b9479](https://github.com/xproglabs/prensa-designsystem/commit/d0b94790aa671d8d8b26caed8e353a58176d2628))
+* Configura novos prefixos para o release ([c66e893](https://github.com/xproglabs/prensa-designsystem/commit/c66e893cc0e54f0d7ca2b453634852f8aa185498))
+
+## [1.9.15](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.14...v1.9.15) (2022-01-23)
+
+
+### Bug Fixes
+
+* Aumenta regra do typescript ([0776fab](https://github.com/xproglabs/prensa-designsystem/commit/0776fab642faca72fec393cbca6710840f474443))
+* Cria arquivo de CI ([cdcbe91](https://github.com/xproglabs/prensa-designsystem/commit/cdcbe91ba709f8dd87c4fd4c0c968832ab16f1dd))
+* Cria função para lidar com a notificação de erro na CI ([a629380](https://github.com/xproglabs/prensa-designsystem/commit/a6293801a2a6316430f004d7fe080630bfd4abf2))
+* Instala axios e git-last-commit ([eea3336](https://github.com/xproglabs/prensa-designsystem/commit/eea33363005ed36327945bd200cb7bf6cf662ee5))
+* Nova função getGitCommit ([01e725d](https://github.com/xproglabs/prensa-designsystem/commit/01e725de62467960535076cc6a86ba1774ac4515))
+* Remove lint-staged e husky e separa comandos do eslint pela option --fix ([121278b](https://github.com/xproglabs/prensa-designsystem/commit/121278bd4c542827ff59e3d73328ad8ad4fff075))
+
+## [1.9.14](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.13...v1.9.14) (2022-01-23)
+
+
+### Bug Fixes
+
+* Corrige condição qa ([c0f4c84](https://github.com/xproglabs/prensa-designsystem/commit/c0f4c8466128894cead723e9403e34c0353d2deb))
+
+## [1.9.13](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.12...v1.9.13) (2022-01-23)
+
+
+### Bug Fixes
+
+* Corrige comando postrelease ([ad2bb7c](https://github.com/xproglabs/prensa-designsystem/commit/ad2bb7cfcadf5719c35d6fe90a037835e21c4880))
+
 # v1.6.95
 - Ajuste finos na função boxShadow
 # v1.6.94

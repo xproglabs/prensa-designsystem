@@ -1,6 +1,6 @@
 {
   "name": "prensa",
-  "version": "1.7.3",
+  "version": "1.9.17",
   "description": "Prensa Design System",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -41,6 +41,7 @@
     "@types/react": "^17.0.16",
     "@types/react-html-parser": "^2.0.2",
     "@types/styled-components": "^5.1.12",
+    "axios": "^0.25.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.12.0",
     "core-js": "^3.6.5",
@@ -49,10 +50,9 @@
     "eslint-plugin-import-helpers": "^1.1.0",
     "eslint-plugin-jest": "^24.3.5",
     "eslint-plugin-react": "^7.20.3",
+    "git-last-commit": "^1.0.1",
     "html2json": "^1.0.2",
-    "husky": "^4.2.5",
     "jest": "^26.6.3",
-    "lint-staged": "^10.2.11",
     "lodash": "^4.17.19",
     "prensa-docs": "0.0.6",
     "prop-types": "^15.7.2",
@@ -66,6 +66,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "semantic-release": "19.0.0",
     "semantic-release-slack-bot": "^3.4.1",
+    "slackify-markdown": "^4.3.1",
     "styled-components": "^5.2.1",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.3.5"
@@ -74,28 +75,18 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -o ./storybookbuild",
     "build": "rollup --config",
-    "eslint": "eslint -c .eslintrc.json --fix --ext js,ts,tsx ./",
+    "eslint": "eslint -c .eslintrc.json --ext js,ts,tsx ./",
+    "eslint:fix": "eslint -c .eslintrc.json --fix --ext js,ts,tsx ./",
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
     "test": "jest",
     "clear:dist": "rm -rf dist",
     "prerelease:copyfiles": "cp -rf README.md dist && cp -rf CHANGELOG.md dist && cp -rf package.json dist && cp -rf .npmignore dist",
-    "postrelease:copyfiles": "cp -rf package.json .. && cp -rf CHANGELOG.md ..",
+    "postrelease:copyfiles": "cp -rf dist/package.json . && cp -rf dist/CHANGELOG.md .",
     "release:local": "npm run clear:dist && npm run build && npm run prerelease:copyfiles && cd dist && npm pack",
     "release:qa": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish --tag qa",
     "release:prod": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish",
     "cd": "npm run build && npm run prerelease:copyfiles",
     "semantic-release": "cd dist && semantic-release"
-  },
-  "lint-staged": {
-    "*.+(js|jsx)": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
