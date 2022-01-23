@@ -1,24 +1,13 @@
 const axios = require('axios')
-const { getLastCommit } = require('git-last-commit')
 const { get } = require('lodash')
 
-function onErrorCI() {
+const { getGitCommit } = require('./getGitCommit')
 
-  let lastCommitData = {}
-
-  getLastCommit(
-    function (err, commit) {
-      if (err) {
-        console.error('err', err)
-        throw new Error(err)
-      } else {
-        lastCommitData = commit
-      }
-    }
-  )
+async function onErrorCI() {
 
   //info search
-  const commitHash = get(lastCommitData, 'hash', '')
+  const commitData = await getGitCommit()
+  const commitHash = get(commitData, 'hash', '')
   const slackWebhook = process.env.SLACK_WEBHOOK
 
   //info mount
