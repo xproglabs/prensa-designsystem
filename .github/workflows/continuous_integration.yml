@@ -23,6 +23,6 @@ jobs:
     
       - name: prensa-bot notify
         if: ${{ failure() }}
-        run: pwd && node ./notifications/ci_notification.js
+        run: pwd && ls -l && node ./notifications/ci_notification.js
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
