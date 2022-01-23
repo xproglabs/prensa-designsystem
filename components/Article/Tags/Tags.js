@@ -8,46 +8,45 @@ import * as S from './Tags.styled'
 
 const Tags = ({
   b,
+  borderColor,
   color,
   fontFamily,
   fontSize,
   fontWeight,
   items,
   maxWidth,
-  transform,
-  radius
+  radius,
+  transform
 }) => {
   return (
     <S.Container maxWidth={maxWidth}>
-      {(map(items, (item, key) => {
-        return (
-          <S.Tag 
-            b={b} 
-            color={color} 
-            key={key}
-            radius={radius}>
-            <AnchorTag href={`/?term=${item}`}>
-              <Typography 
-                color={color}
-                element='span'
-                fontFamily={fontFamily}
-                fontSize={fontSize[0]}
-                fontWeight={fontWeight}
-                transform={transform}
-                custom='white-space: nowrap;'
-              >
-                {item}
-              </Typography>
-            </AnchorTag>   
-          </S.Tag>
-        )
-      }))}
+      {(map(items, (item, key) => (
+        <S.Tag
+          b={b}
+          borderColor={borderColor}
+          key={key}
+          radius={radius}
+        >
+          <AnchorTag href={`/?term=${item}`}>
+            <Typography
+              color={color}
+              element='span'
+              fontFamily={fontFamily}
+              fontSize={fontSize[0]}
+              fontWeight={fontWeight}
+              transform={transform}
+              custom='white-space: nowrap;'
+            >
+              {item}
+            </Typography>
+          </AnchorTag>
+        </S.Tag>
+      )))}
     </S.Container>
   )
 }
 
 Tags.defaultProps = {
-  color: '#999999',
   fontFamily: 'secondary',
   fontSize: ['14px'],
   fontWeight: 700,
@@ -55,12 +54,15 @@ Tags.defaultProps = {
 }
 
 Tags.propTypes = {
+  b: PropTypes.string,
+  borderColor: PropTypes.string,
   color: PropTypes.string,
   fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
   fontWeight: PropTypes.number,
   items: PropTypes.array,
   maxWidth: PropTypes.string,
+  radius: PropTypes.string,
   transform: PropTypes.string,
 }
 

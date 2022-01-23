@@ -126,8 +126,8 @@ const ArticleCorreioPopular = () => {
           value: 'Adiamento das eleições para 15 e 29 de novembro é aprovado no Senado'
         }}
         tags={{
-          borderColor: 'secondary2',
-          color: 'secondary2',
+          borderColor: 'neutral3',
+          color: 'neutral6',
           items: ['Tag1', 'Tag2']
         }}
         tags_section_title={{
