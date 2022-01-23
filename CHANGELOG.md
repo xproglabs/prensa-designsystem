@@ -1,3 +1,18 @@
+## [1.9.16](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.15...v1.9.16) (2022-01-23)
+
+
+### Bug Fixes
+
+* Adiciona prefixo "ver mais" no commit url ([b844c5c](https://github.com/xproglabs/prensa-designsystem/commit/b844c5cf32b8b121f3ad8fd7e6b01a3b2bbc5aca))
+* Atualiza fluxo de CD com nomes para cada run ([a20f14c](https://github.com/xproglabs/prensa-designsystem/commit/a20f14cdce56a8090d0dbce1453aa2f714452dd6))
+* Padroniza nomes da função de cd ([df8adac](https://github.com/xproglabs/prensa-designsystem/commit/df8adac7990e1f773a8733bce3040335f014298d))
+
+
+### Features
+
+* Atualiza imagem da notificação de prod ([d0b9479](https://github.com/xproglabs/prensa-designsystem/commit/d0b94790aa671d8d8b26caed8e353a58176d2628))
+* Configura novos prefixos para o release ([c66e893](https://github.com/xproglabs/prensa-designsystem/commit/c66e893cc0e54f0d7ca2b453634852f8aa185498))
+
 ## [1.9.15](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.14...v1.9.15) (2022-01-23)
 
 
