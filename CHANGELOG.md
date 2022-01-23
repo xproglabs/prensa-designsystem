@@ -1,3 +1,10 @@
+## [1.9.14](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.13...v1.9.14) (2022-01-23)
+
+
+### Bug Fixes
+
+* Corrige condição qa ([c0f4c84](https://github.com/xproglabs/prensa-designsystem/commit/c0f4c8466128894cead723e9403e34c0353d2deb))
+
 ## [1.9.13](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.12...v1.9.13) (2022-01-23)
 
 
