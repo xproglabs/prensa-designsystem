@@ -30,6 +30,32 @@ const Article = (props) => {
     heading4,
     hyperlink,
     images,
+    hasBottomShare,
+    orderedList,
+    paragraph,
+    relatedContent,
+    tags_section_title,
+    subject,
+    subtitle,
+    title,
+    tags,
+    textbody,
+    topimage,
+    unorderedList,
+    url
+  } = props
+
+  // prepare article slots
+  const adsBody = get(ads, 'body', {})
+  const adsSideBar = get(ads, 'sideBar', false)
+  const adsTopImage = get(ads, 'topImage', false)
+  const adsTopBody = get(ads, 'topBody', false)
+
+  // related content
+  const related_content_body = get(relatedContent, 'body', {})
+  const related_content_bottom = get(relatedContent, 'bottom', {})
+
+  return (
     <S.Page>
       <S.Container>
         {featured && featured.enabled ?
