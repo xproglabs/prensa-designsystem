@@ -10,7 +10,7 @@ function successNotification(pluginConfig, context) {
   //info mount
   const prodMessage = `📮 Prensa atualizado - *v${releaseVersion}*`
   const qaMessage = `📦 Prensa QA atualizado - *v${releaseVersion}*`
-  const notificationMessage = isQA ? qaMessage : prodMessage
+  const notificationMessage = isQA !== false ? qaMessage : prodMessage
   const commitUrl = `https://github.com/xproglabs/prensa-designsystem/commit/${commitHead}`
   
   //slack based block mount
