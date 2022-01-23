@@ -66,6 +66,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "semantic-release": "19.0.0",
     "semantic-release-slack-bot": "^3.4.1",
+    "slackify-markdown": "^4.3.1",
     "styled-components": "^5.2.1",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.3.5"
@@ -79,23 +80,12 @@
     "test": "jest",
     "clear:dist": "rm -rf dist",
     "prerelease:copyfiles": "cp -rf README.md dist && cp -rf CHANGELOG.md dist && cp -rf package.json dist && cp -rf .npmignore dist",
+    "postrelease:copyfiles": "cp -rf package.json .. && cp -rf CHANGELOG.md ..",
     "release:local": "npm run clear:dist && npm run build && npm run prerelease:copyfiles && cd dist && npm pack",
     "release:qa": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish --tag qa",
     "release:prod": "npm run clear:dist && npm run eslint && npm run build && npm version patch && git push && git push --tags && npm run prerelease:copyfiles && cd dist && npm publish",
     "cd": "npm run build && npm run prerelease:copyfiles",
-    "semantic-release": "cd dist && semantic-release",
-    "postversion": "cp -r package.json .."
-  },
-  "lint-staged": {
-    "*.+(js|jsx)": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "semantic-release": "cd dist && semantic-release"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
