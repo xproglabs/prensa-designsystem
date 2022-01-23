@@ -33,7 +33,7 @@
     }
   },
   "rules": {
-    "react/display-name": "warn",
+    "react/display-name": "error",
     "react/no-danger-with-children": "off",
     "indent": [
       1,
@@ -47,7 +47,7 @@
       "single"
     ],
     "no-unused-vars": [
-      "warn",
+      "error",
       {
         "vars": "all",
         "args": "after-used",
@@ -74,10 +74,10 @@
       "always"
     ],
     "react/no-unescaped-entities": [
-      "warn"
+      "error"
     ],
     "import-helpers/order-imports": [
-      "warn",
+      "error",
       {
         "newlinesBetween": "always",
         "groups": [
