@@ -13,7 +13,13 @@ module.exports = {
       }
     ],
     [
-      '@semantic-release/commit-analyzer',
+      '@semantic-release/commit-analyzer', {
+        releaseRules: [
+          { type: 'feat', release: 'patch' },
+          { type: 'feat:major', release: 'minor' },
+          { type: 'fix', release: 'patch' }
+        ],
+      }
     ],
     [
       '@semantic-release/release-notes-generator',
