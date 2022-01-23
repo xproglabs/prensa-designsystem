@@ -49,7 +49,8 @@ Tag.defaultProps = {
 }
 
 Tag.propTypes = {
+  b: PropTypes.string,
   borderColor: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  color: PropTypes.string
+  radius: PropTypes.string
 }
