@@ -1,3 +1,10 @@
+## [1.9.13](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.12...v1.9.13) (2022-01-23)
+
+
+### Bug Fixes
+
+* Corrige comando postrelease ([ad2bb7c](https://github.com/xproglabs/prensa-designsystem/commit/ad2bb7cfcadf5719c35d6fe90a037835e21c4880))
+
 # v1.6.95
 - Ajuste finos na função boxShadow
 # v1.6.94
