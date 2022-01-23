@@ -18,8 +18,7 @@ function successNotification(pluginConfig, context) {
     type: 'section',
     text: {
       type: 'mrkdwn',
-      text: notificationMessage,
-      emoji: true
+      text: notificationMessage
     }
   }
   const secondInformation = {
