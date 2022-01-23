@@ -32,7 +32,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           
-      - name: update package.json and CHANGELOG.md
+      - name: update git with changes
         run: |
           npm run postrelease:copyfiles
           git config --global user.name 'deploy-bot'
