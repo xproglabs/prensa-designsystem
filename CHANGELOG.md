@@ -1,3 +1,22 @@
+## [1.9.15](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.14...v1.9.15) (2022-01-23)
+
+
+### Bug Fixes
+
+* Aumenta regra do typescript ([0776fab](https://github.com/xproglabs/prensa-designsystem/commit/0776fab642faca72fec393cbca6710840f474443))
+* Cria arquivo de CI ([cdcbe91](https://github.com/xproglabs/prensa-designsystem/commit/cdcbe91ba709f8dd87c4fd4c0c968832ab16f1dd))
+* Cria função para lidar com a notificação de erro na CI ([a629380](https://github.com/xproglabs/prensa-designsystem/commit/a6293801a2a6316430f004d7fe080630bfd4abf2))
+* Instala axios e git-last-commit ([eea3336](https://github.com/xproglabs/prensa-designsystem/commit/eea33363005ed36327945bd200cb7bf6cf662ee5))
+* Nova função getGitCommit ([01e725d](https://github.com/xproglabs/prensa-designsystem/commit/01e725de62467960535076cc6a86ba1774ac4515))
+* Remove lint-staged e husky e separa comandos do eslint pela option --fix ([121278b](https://github.com/xproglabs/prensa-designsystem/commit/121278bd4c542827ff59e3d73328ad8ad4fff075))
+
+## [1.9.14](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.13...v1.9.14) (2022-01-23)
+
+
+### Bug Fixes
+
+* Corrige condição qa ([c0f4c84](https://github.com/xproglabs/prensa-designsystem/commit/c0f4c8466128894cead723e9403e34c0353d2deb))
+
 ## [1.9.13](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.12...v1.9.13) (2022-01-23)
 
 
