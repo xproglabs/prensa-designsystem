@@ -8,11 +8,15 @@ async function onErrorCI() {
   //info search
   const commitData = await getGitCommit()
   const commitHash = get(commitData, 'hash', '')
+  const commitAuthor = get(commitData, 'author.email', '')
+  const branchName = get(commitData, 'branch', '')
   const slackWebhook = process.env.SLACK_WEBHOOK
 
   //info mount
-  const notificationMessage = '⛔ Falha ao buildar o Prensa'
+  const notificationMessage = '⛔ Build do Prensa falhou'
   const commitUrl = `https://github.com/xproglabs/prensa-designsystem/commit/${commitHash}`
+  const triggeredBy = `Committer: ${commitAuthor}`
+  const currentBranch = `Branch: ${branchName}`
   const goToCommit = `Ver mais: ${commitUrl}`
 
   //slack based block mount
@@ -28,6 +32,24 @@ async function onErrorCI() {
     elements: [
       {
         type: 'mrkdwn',
+        text: triggeredBy
+      }
+    ]
+  }
+  const thirdInformation = {
+    type: 'context',
+    elements: [
+      {
+        type: 'mrkdwn',
+        text: currentBranch
+      }
+    ]
+  }
+  const fourthInformation = {
+    type: 'context',
+    elements: [
+      {
+        type: 'mrkdwn',
         text: goToCommit
       }
     ]
@@ -37,7 +59,9 @@ async function onErrorCI() {
     text: notificationMessage,
     blocks: [
       mainInformation,
-      secondInformation
+      secondInformation,
+      thirdInformation,
+      fourthInformation
     ]
   })
 }
