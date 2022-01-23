@@ -1,6 +1,6 @@
 const { get } = require('lodash')
 
-function successNotification(pluginConfig, context) {
+function onSuccessCI(pluginConfig, context) {
 
   //info search
   const branchName = get(context, 'branch.name', false)
@@ -9,10 +9,10 @@ function successNotification(pluginConfig, context) {
 
   //info mount
   const isQa = branchName === 'qa'
-  const prodMessage = `📮 Prensa atualizado - *v${releaseVersion}*`
+  const prodMessage = `💿 Prensa atualizado - *v${releaseVersion}*`
   const qaMessage = `📦 Prensa QA atualizado - *v${releaseVersion}*`
   const notificationMessage = isQa !== false ? qaMessage : prodMessage
-  const commitUrl = `https://github.com/xproglabs/prensa-designsystem/commit/${commitHead}`
+  const commitUrl = `Ver mais: https://github.com/xproglabs/prensa-designsystem/commit/${commitHead}`
   
   //slack based block mount
   const mainInformation = {
@@ -44,5 +44,5 @@ function successNotification(pluginConfig, context) {
 }
 
 module.exports = {
-  successNotification
+  onSuccessCI
 }

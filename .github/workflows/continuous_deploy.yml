@@ -19,15 +19,21 @@ jobs:
         id: extract_version
         uses: Saionaro/extract-package-version@v1.0.6
 
-      - run: npm install
-      - run: npm run cd
-      - run: npm run semantic-release
+      - name: pkg install
+        run: npm install
+      
+      - name: pkg build
+        run: npm run cd
+
+      - name: pkg release
+        run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           
-      - run: |
+      - name: update git with changes
+        run: |
           npm run postrelease:copyfiles
           git config --global user.name 'deploy-bot'
           git config --global user.email 'giovanni@xproglabs.com'

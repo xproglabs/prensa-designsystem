@@ -1,4 +1,4 @@
-const { successNotification } = require('./notifications/releaseNotification')
+const { onSuccessCI } = require('./notifications/cdNotification')
 
 module.exports = {
   branches: [
@@ -13,7 +13,13 @@ module.exports = {
       }
     ],
     [
-      '@semantic-release/commit-analyzer',
+      '@semantic-release/commit-analyzer', {
+        releaseRules: [
+          { type: 'feat', release: 'patch' },
+          { type: 'feat:major', release: 'minor' },
+          { type: 'fix', release: 'patch' }
+        ],
+      }
     ],
     [
       '@semantic-release/release-notes-generator',
@@ -33,7 +39,7 @@ module.exports = {
       {
         notifyOnSuccess: true,
         notifyOnFail: true,
-        onSuccessFunction: successNotification,
+        onSuccessFunction: onSuccessCI,
       }
     ]
   ]
