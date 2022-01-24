@@ -26,7 +26,8 @@ const TopImage = ({
   type
 }) => {
   if (!image) return null
-  const caption_value = get(caption, 'value', '')
+  const showCaption = get(caption, 'show', false)
+  const captionValue = get(caption, 'value', false)
   const fontFamily = get(caption, 'fontFamily', '')
   const fontSize = get(caption, 'fontSize', '')
   const lineHeight = get(caption, 'lineHeight', '')
@@ -46,7 +47,7 @@ const TopImage = ({
     if (amp) {
       return (
         <amp-img
-          alt={caption_value}
+          alt={captionValue}
           src={value}
           layout='responsive'
           style={{
@@ -60,7 +61,7 @@ const TopImage = ({
     }
     return (
       <img
-        alt={caption_value}
+        alt={captionValue}
         src={value}
       />
     )
@@ -78,14 +79,14 @@ const TopImage = ({
   return (
     <Container featured={featured} mb={mb} value={value}>
       <RenderMedia />
-      {caption && caption.show && (
+      {showCaption && captionValue && (
         <S.SubtitleBox px={px} py={py} widthBox={widthBox}>
           <S.Subtitle
             fontFamily={fontFamily}
             fontSize={fontSize}
             lineHeight={lineHeight}
           >
-            {caption_value}
+            {captionValue}
           </S.Subtitle>
         </S.SubtitleBox>
       )}
