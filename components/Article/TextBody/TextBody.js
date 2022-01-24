@@ -42,6 +42,7 @@ const TextBody = (props) => {
     paragraph,
     related_content_intervention,
     tags_section_title,
+    tags_section_title_value,
     tags,
     unorderedList
   } = props
@@ -233,7 +234,7 @@ const TextBody = (props) => {
             {...tags_section_title}
             maxWidth={bodyWidth}
           >
-            Assuntos
+            {tags_section_title_value}
           </SectionTitle>
         }
         <Tags
@@ -319,6 +320,7 @@ TextBody.propTypes = {
     component: PropTypes.node
   }),
   tags_section_title: PropTypes.object,
+  tags_section_title_value: PropTypes.string,
   tags: PropTypes.object
 }
 
