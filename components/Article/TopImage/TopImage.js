@@ -12,6 +12,7 @@ const Container = ({ children, featured, mb, value }) => {
 
 const TopImage = ({
   amp,
+  ampElementProps,
   caption,
   featured,
   height,
@@ -33,6 +34,7 @@ const TopImage = ({
   const Video = () => (
     <YouTubeEmbed
       amp={amp}
+      ampElementProps={ampElementProps}
       url={value}
       height={height}
       width={width}
