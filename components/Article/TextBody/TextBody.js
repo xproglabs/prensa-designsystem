@@ -222,14 +222,14 @@ const TextBody = (props) => {
             </React.Fragment>
           )
         })}
-        {isGalleryVisible && 
+        {isGalleryVisible &&
           <ImageGallery
             {...gallery}
             width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
             amp={amp}
           />
         }
-        {isTagSectionVisible && 
+        {isTagSectionVisible &&
           <SectionTitle
             {...tags_section_title}
             maxWidth={bodyWidth}
@@ -242,7 +242,7 @@ const TextBody = (props) => {
           maxWidth={bodyWidth}
         />
         {hasBottomShare &&
-          <BottomShare 
+          <BottomShare
             pageUrl={pageUrl}
             maxWidth={bodyWidth}
             {...bottomShare}
