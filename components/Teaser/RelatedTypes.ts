@@ -1,10 +1,7 @@
 import { IconTokens } from '@prensa_tokens'
 
 import { IconProps } from '../Icon/types'
-import {
-  LayoutProps,
-  SpacingType
-} from './types'
+import { LayoutProps, SpacingType } from './types'
 
 type RelatedItemIconProps = IconProps & {
   icon: IconTokens;
@@ -13,6 +10,7 @@ type RelatedItemIconProps = IconProps & {
 export interface RelatedItemProps {
   children: any;
   color: string;
+  element?: string;
   font_size: Array<String>;
   font_weight: number;
   icon?: RelatedItemIconProps;
