@@ -1,3 +1,10 @@
+## [1.9.23](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.22...v1.9.23) (2022-01-25)
+
+
+### Features
+
+* Permite clique no ícone em SectionTitle ([22403f1](https://github.com/xproglabs/prensa-designsystem/commit/22403f189199803b364e7769878d873490b3a607))
+
 ## [1.9.22](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.21...v1.9.22) (2022-01-25)
 
 
