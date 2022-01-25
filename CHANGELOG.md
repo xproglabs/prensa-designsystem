@@ -1,3 +1,17 @@
+## [1.9.21](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.20...v1.9.21) (2022-01-25)
+
+
+### Bug Fixes
+
+* Fixa elemento de texto do RenderSubject como span ([558ae79](https://github.com/xproglabs/prensa-designsystem/commit/558ae792548c76c9efac2029c5902ca0974c0cda))
+
+
+### Features
+
+* Implementa função border radius no Link ([1d99600](https://github.com/xproglabs/prensa-designsystem/commit/1d996006892591a72197e0ae1467b0f3b89c55be))
+* Permite element no PageIndicator e conecta radius no Link para corrigir área de clique ([0fc35b9](https://github.com/xproglabs/prensa-designsystem/commit/0fc35b93a69322ab805cea1660c4e8c2ac56be7a))
+* Permite prop element no fluxo Related em Teaser ([9d5e547](https://github.com/xproglabs/prensa-designsystem/commit/9d5e547b6b27cb0c04a5dc3bd712b4f9bb35a5a7))
+
 ## [1.9.17](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.16...v1.9.17) (2022-01-23)
 
 
