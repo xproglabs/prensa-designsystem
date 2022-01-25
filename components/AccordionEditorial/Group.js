@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
 import Block from '../Block'
-import Link from '../Link'
+import Link from '../Link/index.tsx'
 import Typography from '../Typography'
 import ChevronRightIcon from './assets/ChevronRight'
 import ExpandLessIcon from './assets/ExpandLess'
