@@ -145,25 +145,24 @@ const Subject = ({
       align='row'
       alignx='between'
       bgColor={bg_color}
-      custom='border-radius: 3px;'
+      radius='default'
       lg={{
         mb: mb[1]
       }}
       px={subject_px}
       py={subject_py}
-      mb={mb[0]}>
+      mb={mb[0]}
+    >
       <Typography
         color={color}
-        element='h2'
+        element='span'
         fontFamily='secondary'
         fontSize={font_size[0]}
         fontWeight={700}
         lineHeight={line_height[0]}
-        lg={{
-          fontSize: font_size[1],
-          lineHeight: line_height[1]
-        }}
-        transform='uppercase'>
+        lg={{ fontSize: font_size[1], lineHeight: line_height[1] }}
+        transform='uppercase'
+      >
         {children}
       </Typography> 
     </Block>
