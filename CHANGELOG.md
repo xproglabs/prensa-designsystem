@@ -1,3 +1,10 @@
+## [1.9.25](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.24...v1.9.25) (2022-01-25)
+
+
+### Bug Fixes
+
+* Corrige condição na função removeSpaces em TextBody ([63e7055](https://github.com/xproglabs/prensa-designsystem/commit/63e7055a0743da806c2f3db215e353da20220ed7))
+
 ## [1.9.24](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.23...v1.9.24) (2022-01-25)
 
 
