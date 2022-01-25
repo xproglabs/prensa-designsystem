@@ -1,3 +1,15 @@
+## [1.9.24](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.23...v1.9.24) (2022-01-25)
+
+
+### Bug Fixes
+
+* Permite clique no texto do group em AccordionEditorial ([4cd91a0](https://github.com/xproglabs/prensa-designsystem/commit/4cd91a0f5c6d23f4595a0a405e921e760a9ee7d3))
+
+
+### Features
+
+* Configura separação de cliques no Group ([1d6ac01](https://github.com/xproglabs/prensa-designsystem/commit/1d6ac017c418ac0ccd885afc2707707c5d9b7c8d))
+
 ## [1.9.23](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.22...v1.9.23) (2022-01-25)
 
 
