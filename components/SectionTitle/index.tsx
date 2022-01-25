@@ -17,6 +17,7 @@ import { SectionTitleProps } from './types'
  */
 const SectionTitle = ({
   color,
+  href,
   icon,
   layout,
   path,
@@ -38,14 +39,21 @@ const SectionTitle = ({
   //check if icon is from CMS or static defined in layout
   const icon_component = get_icon_from_theme() || icon_layout?.component || false
 
+  //url mount
+  const url = path || href
+
   return (
     <AreaBox area={area_layout}>
-      {icon_component && cloneElement(icon_component, { color, ...icon_layout })}
-      <Link path={path} {...link_layout}>
-        <TitleText color={color} {...text_layout}>
+      {icon_component && 
+        <Link href={url}>
+          {cloneElement(icon_component, { color, ...icon_layout })}
+        </Link>
+      }
+      <TitleText color={color} {...text_layout}>
+        <Link href={url} {...link_layout}>
           {title}
-        </TitleText>
-      </Link>
+        </Link>
+      </TitleText>
     </AreaBox>
   )
 }
