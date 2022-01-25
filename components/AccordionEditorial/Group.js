@@ -65,14 +65,24 @@ const MenuItem = ({
   const Group = () => (
     <div>
       <GroupTitleContainer
-        id={contentId}
-        onClick={handleItemClick}
         removeBorders={removeBorders}
         $color={itemColor}
         {...groupItemProps}
       >
         <GroupTitleWithPath/>
-        {open ? <ExpandLessIcon color={iconColor} /> : <ExpandMoreIcon color={iconColor} />}
+        {open ?
+          <ExpandLessIcon
+            color={iconColor}
+            id={contentId}
+            onClick={handleItemClick}
+          /> 
+          :
+          <ExpandMoreIcon
+            color={iconColor}
+            id={contentId}
+            onClick={handleItemClick}
+          />
+        }
       </GroupTitleContainer>
       <div>
         {open && 
