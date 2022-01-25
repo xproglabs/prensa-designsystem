@@ -75,6 +75,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -o ./storybookbuild",
     "build": "rollup --config",
+    "hotreload": "rollup --config --watch",
     "eslint": "eslint -c .eslintrc.json --ext js,ts,tsx ./",
     "eslint:fix": "eslint -c .eslintrc.json --fix --ext js,ts,tsx ./",
     "run-prod": "npx http-server /var/www/prensa-designsystem/storybookbuild",
