@@ -9,6 +9,7 @@ const Related = ({
   items,
   layout
 }: RelatedProps) => {
+  const element = get(layout, 'element', undefined)
   const layout_color = get(layout, 'color', false)
   const items_color = layout_color || color
   return (
@@ -19,12 +20,14 @@ const Related = ({
           <RelatedItem
             key={key}
             color={items_color}
+            element={element}
             font_size={layout.font_size}
             font_weight={layout.font_weight}
             icon={layout?.icon}
             line_height={layout.line_height}
             item_path={item_path}
-            mb={layout.mb}>
+            mb={layout.mb}
+          >
             {item.name}
           </RelatedItem>
         )

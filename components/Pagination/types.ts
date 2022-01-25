@@ -26,6 +26,7 @@ export type IndicatorLayoutProps = {
   bgColor?: ColorTokens;
   borderColor?: ColorTokens;
   color?: ColorTokens;
+  element?: string;
   fontFamily?: FontTokens;
   fontSize?: string;
   height?: string;

@@ -69,6 +69,7 @@ type Image = {
 }
 type Related = {
   color?: string;
+  element?: string;
   font_size?: [string, string];
   font_weight?: number;
   enabled?: boolean;

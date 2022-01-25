@@ -8,6 +8,7 @@ const PageIndicator = ({
   borderColor,
   children,
   color,
+  element,
   fontFamily,
   fontSize,
   height,
@@ -55,6 +56,7 @@ const PageIndicator = ({
       {...flexibleLayout}
     >
       <Typography
+        element={element}
         color={color}
         fontFamily={fontFamily}
         fontSize={fontSize}
@@ -73,6 +75,7 @@ const PageIndicator = ({
         mr={mr}
         mb={mb}
         ml={ml}
+        radius={radius}
       >
         <Indicator />
       </Link>
@@ -86,6 +89,7 @@ PageIndicator.defaultProps = {
   bgColor: 'transparent',
   borderColor: 'neutral5',
   color: 'neutral5',
+  element: 'span',
   fontFamily: 'primary',
   fontSize: '18px',
   height: '40px',

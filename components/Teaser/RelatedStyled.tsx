@@ -25,6 +25,7 @@ export const RelatedArea = ({ children }) => {
 const RelatedItem = ({
   children,
   color,
+  element,
   font_size,
   font_weight,
   icon,
@@ -59,7 +60,7 @@ const RelatedItem = ({
         <Block width='100%'>
           <Typography
             color='neutral2'
-            element='h2'
+            element={element}
             fontFamily='primary'
             fontSize={font_size[0]}
             fontWeight={font_weight}
@@ -78,6 +79,7 @@ const RelatedItem = ({
 
 RelatedItem.defaultProps = {
   color: 'black',
+  element: 'h2',
   font_size: ['14px', '14px'],
   font_weight: 400,
   line_height: ['16px', '16px'],
