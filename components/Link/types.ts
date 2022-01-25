@@ -1,4 +1,4 @@
-import { ColorTokens } from '@prensa_tokens'
+import { ColorTokens, RadiusTokens } from '@prensa_tokens'
 import { AlignStyledFunctionParam0 } from 'prensa'
 import { HTMLProps, ReactNode } from 'react'
 
@@ -12,6 +12,9 @@ export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
   align?: AlignStyledFunctionParam0['align'];
   alignx?: AlignStyledFunctionParam0['alignx'];
   aligny?: AlignStyledFunctionParam0['aligny'];
+  b?: string;
+  borderColor?: ColorTokens;
+  borderStyle?: string;
   children?: ReactNode;
   color?: ColorTokens;
   height?: ResponsiveHeight;
@@ -26,6 +29,7 @@ export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
   pb?: string | number;
   pl?: string | number;
   path?: string;
+  radius?: RadiusTokens;
   textDecoration?: string;
   width?: string;
 }
@@ -34,6 +38,9 @@ export type StyledLinkProps = {
   align?: AlignStyledFunctionParam0['align'];
   alignx?: AlignStyledFunctionParam0['alignx'];
   aligny?: AlignStyledFunctionParam0['aligny'];
+  b?: string;
+  borderColor?: ColorTokens;
+  borderStyle?: string;
   children?: ReactNode;
   href?: string;
   hoverOpacity?: number;
@@ -45,6 +52,7 @@ export type StyledLinkProps = {
   pr?: string | number;
   pb?: string | number;
   pl?: string | number;
+  radius?: RadiusTokens;
   $color?: ColorTokens;
   $height: ResponsiveHeight;
   $textDecoration?: string;
