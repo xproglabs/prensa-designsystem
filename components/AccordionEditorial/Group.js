@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
 import Block from '../Block'
+import Link from '../Link'
 import Typography from '../Typography'
 import ChevronRightIcon from './assets/ChevronRight'
 import ExpandLessIcon from './assets/ExpandLess'
@@ -19,7 +20,7 @@ const MenuItem = ({
   removeBorders
 }) => {
   const [open, setOpenStatus] = useState(false)
-  const { contentId, name, path, subitems } = content
+  const { contentId, name, path, subitems, target } = content
   const isGroup = subitems.length > 0
   const iconColor = get(groupItemProps, 'iconColor', 'neutral3')
   const subitem_mt = get(groupSubItemProps, 'mt', 2)
@@ -44,6 +45,14 @@ const MenuItem = ({
     </Typography>
   )
 
+  const GroupTitleWithPath = () => (
+    <Typography {...CONFIGS.GROUP_TITLE_DEFAULT_PROPS} {...groupTitleProps}>
+      <Link href={path} target={target}>
+        {name}
+      </Link>
+    </Typography>
+  )
+
   const HyperlinkGroup = () => (
     <Hyperlink href={path}>
       <GroupTitleContainer $color={itemColor} removeBorders={removeBorders} {...groupItemProps}>
@@ -62,7 +71,7 @@ const MenuItem = ({
         $color={itemColor}
         {...groupItemProps}
       >
-        <GroupTitle/>
+        <GroupTitleWithPath/>
         {open ? <ExpandLessIcon color={iconColor} /> : <ExpandMoreIcon color={iconColor} />}
       </GroupTitleContainer>
       <div>
