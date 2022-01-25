@@ -1,3 +1,10 @@
+## [1.9.22](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.21...v1.9.22) (2022-01-25)
+
+
+### Features
+
+* Implementa primeiro comando para hotreload ([d1be0f1](https://github.com/xproglabs/prensa-designsystem/commit/d1be0f1e998072eca7b469423303707d08b4d8cc))
+
 ## [1.9.21](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.20...v1.9.21) (2022-01-25)
 
 
