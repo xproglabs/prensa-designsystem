@@ -52,9 +52,13 @@ export interface SectionTitleLayout {
  */
 export interface SectionTitleProps {
   color?: string;
+  href?: string;
   icon?: IconTokens;
   layout: SectionTitleLayout;
   title?: string;
+  /**
+   * WARNING: DEPRECATED use href instead
+   */
   path?: string;
   theme: Object;
 }
