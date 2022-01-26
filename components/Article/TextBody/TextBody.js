@@ -85,6 +85,8 @@ const TextBody = (props) => {
           }}
           featured={false}
           image={true}
+          height={image_data.height}
+          width={image_data.width}
           value={image_data.value}
         />
       </Block>
