@@ -17,6 +17,7 @@ export type ContainerProps = {
 
 export interface ShareProps {
   amp: boolean;
+  enabled: boolean;
   color: ColorTokens;
   containerProps?: ContainerProps;
   pageUrl: string;

@@ -10,8 +10,9 @@ const Share = (props: ShareProps) => {
 
   const {
     amp,
-    pageUrl,
+    enabled,
     color,
+    pageUrl,
     containerProps,
     size,
     fbappid,
@@ -22,6 +23,8 @@ const Share = (props: ShareProps) => {
     whatsappPath,
     whatsappProps,
   } = props
+
+  if (!enabled) return null
 
   return (
     <Block
