@@ -41,8 +41,7 @@ const TextBody = (props) => {
     pageUrl,
     paragraph,
     related_content_intervention,
-    tags_section_title,
-    tags_section_title_value,
+    sectionTitle,
     tags,
     unorderedList
   } = props
@@ -212,7 +211,8 @@ const TextBody = (props) => {
 
   const RenderMainColumn = () => {
     const isGalleryVisible = gallery && gallery.items && gallery.items.length > 0
-    const isTagSectionVisible = tags_section_title && tags_section_title.enabled
+    const isTagsSectionTitleVisible = get(tags, 'sectionTitle.enabled', false)
+    const tagsSectionTitleValue = get(tags, 'sectionTitle.value', 'Assuntos')
     return (
       <React.Fragment>
         {map(body_items, ({ type, value }, key) => {
@@ -229,22 +229,22 @@ const TextBody = (props) => {
             amp={amp}
           />
         }
-        {isTagSectionVisible &&
+        {isTagsSectionTitleVisible &&
           <SectionTitle
-            {...tags_section_title}
             maxWidth={bodyWidth}
+            {...sectionTitle}
           >
-            {tags_section_title_value}
+            {tagsSectionTitleValue}
           </SectionTitle>
         }
         <Tags
-          {...tags}
           maxWidth={bodyWidth}
+          {...tags}
         />
         {hasBottomShare &&
           <BottomShare
-            pageUrl={pageUrl}
             maxWidth={bodyWidth}
+            pageUrl={pageUrl}
             {...bottomShare}
           />
         }
@@ -319,8 +319,7 @@ TextBody.propTypes = {
     enabled: PropTypes.bool,
     component: PropTypes.node
   }),
-  tags_section_title: PropTypes.object,
-  tags_section_title_value: PropTypes.string,
+  sectionTitle: PropTypes.object,
   tags: PropTypes.object
 }
 

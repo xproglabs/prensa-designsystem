@@ -24,18 +24,17 @@ const Article = (props) => {
     featured,
     gallery,
     headWidth,
+    hasBottomShare,
     hasColumnRight,
     heading2,
     heading3,
     heading4,
     hyperlink,
     images,
-    hasBottomShare,
     orderedList,
     paragraph,
     relatedContent,
-    tags_section_title,
-    tags_section_title_value,
+    sectionTitle,
     subject,
     subtitle,
     title,
@@ -129,8 +128,7 @@ const Article = (props) => {
             orderedList={orderedList}
             paragraph={paragraph}
             related_content_intervention={related_content_body}
-            tags_section_title={tags_section_title}
-            tags_section_title_value={tags_section_title_value}
+            sectionTitle={sectionTitle}
             tags={tags}
             unorderedList={unorderedList}
           />
@@ -145,8 +143,7 @@ Article.defaultProps = {
   amp: false,
   bodyWidth: '768px',
   headWidth: '1016px',
-  hasColumnRight: false,
-  tags_section_title_value: 'Assuntos'
+  hasColumnRight: false
 }
 
 Article.propTypes = {
@@ -199,8 +196,7 @@ Article.propTypes = {
       maxWidth: PropTypes.string
     })
   }),
-  tags_section_title: PropTypes.object,
-  tags_section_title_value: PropTypes.string,
+  sectionTitle: PropTypes.object,
   subject: PropTypes.object,
   subtitle: PropTypes.object,
   tags: PropTypes.object,
