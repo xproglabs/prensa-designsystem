@@ -35,12 +35,6 @@ const ArticleCorreioPopular = () => {
             lineHeight: ['120%', '120%'],
             time_modified: '18/10/2021 às 12:44',
             time_published: '18/10/2021 às 08:49'
-          },
-          medias: {
-            color: acritica.colors['primary1'],
-            facebookUrl: 'https://www.facebook.com/',
-            twitterUrl: 'https://www.facebook.com/',
-            whatsappUrl: 'https://www.facebook.com/'
           }
         }}
         citation={{
@@ -101,6 +95,13 @@ const ArticleCorreioPopular = () => {
           fontSize: ['18px', '18px'],
           fontWeight: 400,
           lineHeight: ['160%', '180%'],
+        }}
+        share={{
+          color: 'primary1',
+          facebookUrl: 'https://www.facebook.com/',
+          twitterUrl: 'https://www.facebook.com/',
+          whatsappUrl: 'https://www.facebook.com/',
+          byline: { enabled: true }
         }}
         subject={{
           bgColor: 'secondary2',

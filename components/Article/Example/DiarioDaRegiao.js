@@ -35,12 +35,6 @@ const ArticleDR = () => {
             lineHeight: ['16px', '16px'],
             time_modified: '18/10/2021 às 12:44',
             time_published: '18/10/2021 às 08:49'
-          },
-          medias: {
-            color: diariodaregiao.colors['primary1'],
-            facebookUrl: 'https://www.facebook.com/',
-            twitterUrl: 'https://www.facebook.com/',
-            whatsappUrl: 'https://www.facebook.com/'
           }
         }}
         featured={{
@@ -88,6 +82,13 @@ const ArticleDR = () => {
           fontFamily: 'secondary',
           fontSize: ['20px', '20px'],
           lineHeight: ['36px', '42px'],
+        }}
+        share={{
+          color: 'primary1',
+          facebookUrl: 'https://www.facebook.com/',
+          twitterUrl: 'https://www.facebook.com/',
+          whatsappUrl: 'https://www.facebook.com/',
+          byline: { enabled: true }
         }}
         subject={{
           bgColor: 'primary1',

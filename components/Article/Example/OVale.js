@@ -88,6 +88,17 @@ const ArticleOV = () => {
           fontSize: ['18px', '20px'],
           lineHeight: ['190%', '190%'],
         }}
+        share={{
+          color: 'primary1',
+          facebookUrl: 'https://www.facebook.com/',
+          twitterUrl: 'https://www.facebook.com/',
+          whatsappUrl: 'https://www.facebook.com/',
+          byline: {
+            enabled: true,
+            facebookProps: { mr: 1 },
+            twitterProps: { mr: 1 }
+          }
+        }}
         subject={{
           bgColor: 'primary1',
           color: 'white',

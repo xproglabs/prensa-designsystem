@@ -78,14 +78,6 @@ const ArticleHJD = () => {
             lineHeight: ['16px', '16px'],
             time_modified: '18 dias atrás',
             time_published: '21/05/2021 às 23:20'
-          },
-          share: {
-            facebookProps: {
-              mr: 1
-            },
-            twitterProps: {
-              mr: 1
-            }
           }
         }}
         citation={{
@@ -145,6 +137,20 @@ const ArticleHJD = () => {
           fontSize: ['20px', '20px'],
           lineHeight: ['160%', '180%'],
         }}
+        share={{
+          color: 'primary1',
+          facebookUrl: 'https://www.facebook.com/',
+          twitterUrl: 'https://www.facebook.com/',
+          whatsappUrl: 'https://www.facebook.com/',
+          byline: {
+            enabled: true,
+            facebookProps: { mr: 1 },
+            twitterProps: { mr: 1 }
+          },
+          textBody: {
+            enabled: true
+          }
+        }}
         subject={{
           bgColor: 'primary1',
           color: 'white',
@@ -192,7 +198,6 @@ const ArticleHJD = () => {
         unorderedList={{
           color: 'primary1'
         }}
-        hasBottomShare={true}
       />
     </ThemeProvider>
   )
