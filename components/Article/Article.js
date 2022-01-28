@@ -35,6 +35,7 @@ const Article = (props) => {
     paragraph,
     relatedContent,
     sectionTitle,
+    share,
     subject,
     subtitle,
     title,
@@ -77,6 +78,7 @@ const Article = (props) => {
               <S.Content>
                 <Byline
                   amp={amp}
+                  share={share}
                   {...byline}
                 />
               </S.Content>
@@ -94,6 +96,7 @@ const Article = (props) => {
                   amp={amp}
                   fbappid={fbappid}
                   pageUrl={url}
+                  share={share}
                   {...byline}
                 />
               </S.Content>
@@ -129,6 +132,7 @@ const Article = (props) => {
             paragraph={paragraph}
             related_content_intervention={related_content_body}
             sectionTitle={sectionTitle}
+            share={share}
             tags={tags}
             unorderedList={unorderedList}
           />
@@ -197,6 +201,10 @@ Article.propTypes = {
     })
   }),
   sectionTitle: PropTypes.object,
+  share: PropTypes.shape({
+    byline: PropTypes.object,
+    textBody: PropTypes.object
+  }),
   subject: PropTypes.object,
   subtitle: PropTypes.object,
   tags: PropTypes.object,

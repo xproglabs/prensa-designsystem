@@ -25,12 +25,10 @@ const TextBody = (props) => {
     adsSide,
     amp,
     bodyWidth,
-    bottomShare,
     citation,
     content,
     fbappid,
     gallery,
-    hasBottomShare,
     hasColumnRight,
     heading2,
     heading3,
@@ -42,6 +40,7 @@ const TextBody = (props) => {
     paragraph,
     related_content_intervention,
     sectionTitle,
+    share,
     tags,
     unorderedList
   } = props
@@ -231,6 +230,7 @@ const TextBody = (props) => {
         }
         {isTagsSectionTitleVisible &&
           <SectionTitle
+            element='h6'
             maxWidth={bodyWidth}
             {...sectionTitle}
           >
@@ -241,13 +241,12 @@ const TextBody = (props) => {
           maxWidth={bodyWidth}
           {...tags}
         />
-        {hasBottomShare &&
-          <BottomShare
-            maxWidth={bodyWidth}
-            pageUrl={pageUrl}
-            {...bottomShare}
-          />
-        }
+        <BottomShare
+          maxWidth={bodyWidth}
+          pageUrl={pageUrl}
+          sectionTitle={sectionTitle}
+          share={share}
+        />
       </React.Fragment>
     )
   }
