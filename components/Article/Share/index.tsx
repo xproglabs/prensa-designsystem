@@ -11,6 +11,7 @@ const Share = (props: ShareProps) => {
   const {
     amp,
     pageUrl,
+    color,
     containerProps,
     size,
     fbappid,
@@ -36,6 +37,7 @@ const Share = (props: ShareProps) => {
     >
       <FacebookShareButton
         amp={amp}
+        color={color}
         facebookPath={facebookPath}
         facebookProps={facebookProps}
         fbappid={fbappid}
@@ -44,6 +46,7 @@ const Share = (props: ShareProps) => {
       />
       <TwitterShareButton
         amp={amp}
+        color={color}
         pageUrl={pageUrl}
         twitterPath={twitterPath}
         twitterProps={twitterProps}
@@ -51,6 +54,7 @@ const Share = (props: ShareProps) => {
       />
       <WhatsAppShareButton
         amp={amp}
+        color={color}
         pageUrl={pageUrl}
         whatsappPath={whatsappPath}
         whatsappProps={whatsappProps}
