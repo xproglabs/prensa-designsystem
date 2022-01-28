@@ -3,21 +3,22 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
+import ArticleImage from '../Image'
 import Block from '../../Block'
-import { ImageGallery } from '../../ImageGallery/index.tsx'
 import Citation from '../Citation/Citation'
-import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed } from '../Embeds'
 import Heading2 from '../Headings/Heading2'
 import Heading3 from '../Headings/Heading3'
 import Heading4 from '../Headings/Heading4'
-import { ListComponent } from '../List/index.ts'
 import Paragraph from '../Paragraph/Paragraph'
 import SectionTitle from '../SectionTitle'
-import { BottomShare } from '../Share/BottomShare/index.tsx'
 import Tags from '../Tags/Tags'
-import TopImage from '../TopImage/TopImage'
-import * as S from './TextBody.styled'
+
+import { ImageGallery } from '../../ImageGallery/index.tsx'
+import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed } from '../Embeds'
+import { ListComponent } from '../List/index.ts'
+import { BottomShare } from '../Share/BottomShare/index.tsx'
 import { parse_content } from './TextBodyParser'
+import * as S from './TextBody.styled'
 
 const TextBody = (props) => {
   const {
@@ -74,7 +75,7 @@ const TextBody = (props) => {
     if (!image_data) return null
     return (
       <Block mb={3} maxWidth={bodyWidth} width="100%">
-        <TopImage
+        <ArticleImage
           amp={amp}
           caption={{
             fontFamily: 'secondary',

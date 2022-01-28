@@ -5,12 +5,12 @@ import { withTheme } from 'styled-components'
 
 import { GridRelated } from '../Grids/GridRelated'
 import * as S from './Article.styled'
+import ArticleImage from './Image'
 import Byline from './Byline/Byline'
 import Subject from './Subject/Subject'
 import Subtitle from './Subtitle/Subtitle'
 import TextBody from './TextBody/TextBody'
 import Title from './Title/Title'
-import TopImage from './TopImage/TopImage'
 
 const Article = (props) => {
   const {
@@ -63,7 +63,7 @@ const Article = (props) => {
           <React.Fragment>
             <S.ContainerFeatured>
               <S.ContentImage>
-                <TopImage
+                <ArticleImage
                   amp={amp}
                   {...topimage}
                 />
@@ -101,7 +101,7 @@ const Article = (props) => {
             </S.MaxWidth>
             {adsTopImage && React.cloneElement(adsTopImage)}
             <S.MaxWidth maxWidth={headWidth}>
-              <TopImage amp={amp} {...topimage} />
+              <ArticleImage amp={amp} {...topimage} />
             </S.MaxWidth>
             {adsTopBody && React.cloneElement(adsTopBody)}
           </React.Fragment>
