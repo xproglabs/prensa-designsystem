@@ -122,10 +122,10 @@ ArticleImage.defaultProps = {
 
 ArticleImage.propTypes = {
   amp: PropTypes.bool,
+  caption: PropTypes.object,
   featured: PropTypes.bool,
   height: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   image: PropTypes.bool,
-  caption: PropTypes.object,
   mb: PropTypes.array,
   px: PropTypes.array,
   py: PropTypes.array,

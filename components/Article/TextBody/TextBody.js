@@ -25,6 +25,7 @@ const TextBody = (props) => {
     adsBody,
     adsSide,
     amp,
+    bodyImage,
     bodyWidth,
     bottomShare,
     citation,
@@ -76,16 +77,12 @@ const TextBody = (props) => {
     return (
       <Block mb={3} maxWidth={bodyWidth} width="100%">
         <ArticleImage
+          {...bodyImage}
           amp={amp}
           caption={{
-            fontFamily: 'secondary',
-            fontSize: ['14px', '14px'],
-            lineHeight: ['130%', '130%'],
-            show: true,
+            ...bodyImage.caption,
             value: image_data.caption
           }}
-          featured={false}
-          image={true}
           height={image_data.height}
           width={image_data.width}
           value={image_data.value}
@@ -301,6 +298,7 @@ TextBody.propTypes = {
   }),
   adsSide: PropTypes.node,
   amp: PropTypes.bool,
+  bodyImage: PropTypes.object,
   bodyWidth: PropTypes.string,
   bottomShare: PropTypes.object,
   content: PropTypes.string,

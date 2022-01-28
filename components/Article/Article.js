@@ -16,6 +16,7 @@ const Article = (props) => {
   const {
     ads,
     amp,
+    bodyImage,
     bodyWidth,
     bottomShare,
     byline,
@@ -113,6 +114,7 @@ const Article = (props) => {
             adsBody={adsBody}
             adsSide={adsSideBar}
             amp={amp}
+            bodyImage={bodyImage}
             bodyWidth={bodyWidth}
             bottomShare={bottomShare}
             citation={citation}
@@ -144,6 +146,17 @@ const Article = (props) => {
 Article.defaultProps = {
   amp: false,
   bodyWidth: '768px',
+  bodyImage: {
+    caption: {
+      fontFamily: 'secondary',
+      fontSize: ['14px', '14px'],
+      lineHeight: ['130%', '130%'],
+      show: true,
+      value: ''
+    },
+    featured: false,
+    image: true
+  },
   headWidth: '1016px',
   hasColumnRight: false,
   tags_section_title_value: 'Assuntos'
@@ -162,6 +175,7 @@ Article.propTypes = {
     topBody: PropTypes.node
   }),
   amp: PropTypes.bool,
+  bodyImage: PropTypes.object,
   bodyWidth: PropTypes.string,
   bottomShare: PropTypes.object,
   byline: PropTypes.object,
