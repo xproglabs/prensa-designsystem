@@ -35,12 +35,6 @@ const ArticleACritica = () => {
             lineHeight: ['16px', '16px'],
             time_modified: '18/10/2021 às 12:44',
             time_published: '18/10/2021 às 08:49'
-          },
-          medias: {
-            color: acritica.colors['primary1'],
-            facebookUrl: 'https://www.facebook.com/',
-            twitterUrl: 'https://www.facebook.com/',
-            whatsappUrl: 'https://www.facebook.com/'
           }
         }}
         citation={{
@@ -100,6 +94,24 @@ const ArticleACritica = () => {
           fontSize: ['18px', '18px'],
           fontWeight: 400,
           lineHeight: ['180%', '180%'],
+        }}
+        share={{
+          color: 'primary1',
+          size: '48px',
+          facebookUrl: 'https://www.facebook.com/',
+          twitterUrl: 'https://www.facebook.com/',
+          whatsappUrl: 'https://www.facebook.com/',
+          byline: {
+            enabled: true,
+            facebookProps: { mr: 1 },
+            twitterProps: { mr: 1 },
+          },
+          textBody: {
+            twitterProps: { ml: 1 },
+            whatsappProps: { ml: 1 },
+            enabled: true,
+            sectionTitle: true
+          }
         }}
         subject={{
           bgColor: 'primary1',
