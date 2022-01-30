@@ -7,6 +7,7 @@ import { AnchorTag } from '../Tags/Anchor'
 import * as S from './Tags.styled'
 
 const Tags = ({
+  b,
   borderColor,
   color,
   fontFamily,
@@ -14,31 +15,33 @@ const Tags = ({
   fontWeight,
   items,
   maxWidth,
-  transform,
+  radius,
+  transform
 }) => {
   return (
     <S.Container maxWidth={maxWidth}>
-      {(map(items, (item, key) => {
-        return (
-          <S.Tag 
-            key={key}
-            borderColor={borderColor}>
-            <AnchorTag href={`/?term=${item}`}>
-              <Typography 
-                color={color}
-                element='span'
-                fontFamily={fontFamily}
-                fontSize={fontSize[0]}
-                fontWeight={fontWeight}
-                transform={transform}
-                custom='white-space: nowrap;'
-              >
-                {item}
-              </Typography>
-            </AnchorTag>   
-          </S.Tag>
-        )
-      }))}
+      {(map(items, (item, key) => (
+        <S.Tag
+          b={b}
+          borderColor={borderColor}
+          key={key}
+          radius={radius}
+        >
+          <AnchorTag href={`/?term=${item}`}>
+            <Typography
+              color={color}
+              element='span'
+              fontFamily={fontFamily}
+              fontSize={fontSize[0]}
+              fontWeight={fontWeight}
+              transform={transform}
+              custom='white-space: nowrap;'
+            >
+              {item}
+            </Typography>
+          </AnchorTag>
+        </S.Tag>
+      )))}
     </S.Container>
   )
 }
@@ -59,6 +62,7 @@ Tags.propTypes = {
   fontWeight: PropTypes.number,
   items: PropTypes.array,
   maxWidth: PropTypes.string,
+  radius: PropTypes.string,
   transform: PropTypes.string,
 }
 

@@ -69,6 +69,7 @@ type Image = {
 }
 type Related = {
   color?: string;
+  element?: string;
   font_size?: [string, string];
   font_weight?: number;
   enabled?: boolean;
@@ -106,6 +107,9 @@ export type LayoutProps = {
     enabled: boolean,
     height?: SpacingType,
     width?: SpacingType
+  };
+  profile_image?: {
+    enabled: boolean,
   };
   related?: Related;
   section?: Object;

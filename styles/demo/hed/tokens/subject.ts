@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { LayoutProps } from 'prensa'
 
 export const SUBJECT_DEFAULT: LayoutProps['subject'] = {

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Block from '../Block'
+import Link from '../Link/index.tsx'
 import Typography from '../Typography'
 import ChevronRightIcon from './assets/ChevronRight'
 import ExpandLessIcon from './assets/ExpandLess'
@@ -13,6 +14,14 @@ import { GroupSection, GroupTitleContainer, Hyperlink } from './styled'
 const GroupTitle = ({ name, ...otherProps }) => (
   <Typography {...CONFIGS.GROUP_TITLE_DEFAULT_PROPS} {...otherProps}>
     {name}
+  </Typography>
+)
+
+const GroupTitleWithPath = ({ name, path, target, ...otherProps }) => (
+  <Typography {...CONFIGS.GROUP_TITLE_DEFAULT_PROPS} {...otherProps}>
+    <Link href={path} target={target}>
+      {name}
+    </Link>
   </Typography>
 )
 
@@ -71,15 +80,27 @@ const MenuItem = ({
       <GroupTitleContainer
         iconColor={iconColor}
         removeBorders={removeBorders}
-        role='setMenuItemState'
-        tabIndex='0'
-        on={newState}
         $color={itemColor}
         {...groupItemProps}
       >
-        <GroupTitle name={name} {...groupTitleProps} />
-        <ExpandMoreIcon data-amp-bind-class={expandMoreIconClass} />
-        <ExpandLessIcon data-amp-bind-class={expandLessIconClass} />
+        <GroupTitleWithPath
+          name={name}
+          path={path}
+          target={target}
+          {...groupTitleProps}
+        />
+        <ExpandMoreIcon
+          data-amp-bind-class={expandMoreIconClass}
+          on={newState}
+          role='setMenuItemState'
+          tabIndex='0'
+        />
+        <ExpandLessIcon
+          data-amp-bind-class={expandLessIconClass}
+          on={newState}
+          role='setMenuItemState'
+          tabIndex='0'
+        />
       </GroupTitleContainer>
       <div data-amp-bind-class={contentClass}>
         {map(subitems, ({ contentId, path, name }, key) => (

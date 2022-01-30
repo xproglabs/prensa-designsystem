@@ -35,6 +35,7 @@ const Article = (props) => {
     paragraph,
     relatedContent,
     tags_section_title,
+    tags_section_title_value,
     subject,
     subtitle,
     title,
@@ -62,7 +63,10 @@ const Article = (props) => {
           <React.Fragment>
             <S.ContainerFeatured>
               <S.ContentImage>
-                <TopImage {...topimage} />
+                <TopImage
+                  amp={amp}
+                  {...topimage}
+                />
               </S.ContentImage>
               <S.ContentFeatured maxWidth={headWidth}>
                 <Subject {...subject} />
@@ -126,6 +130,7 @@ const Article = (props) => {
             paragraph={paragraph}
             related_content_intervention={related_content_body}
             tags_section_title={tags_section_title}
+            tags_section_title_value={tags_section_title_value}
             tags={tags}
             unorderedList={unorderedList}
           />
@@ -140,7 +145,8 @@ Article.defaultProps = {
   amp: false,
   bodyWidth: '768px',
   headWidth: '1016px',
-  hasColumnRight: false
+  hasColumnRight: false,
+  tags_section_title_value: 'Assuntos'
 }
 
 Article.propTypes = {
@@ -194,6 +200,7 @@ Article.propTypes = {
     })
   }),
   tags_section_title: PropTypes.object,
+  tags_section_title_value: PropTypes.string,
   subject: PropTypes.object,
   subtitle: PropTypes.object,
   tags: PropTypes.object,

@@ -1,4 +1,6 @@
 export const removeSpaces = value => {
-  if (!value) return ''
-  return value.replaceAll('&nbsp;', ' ')
+  if (typeof value === 'string') {
+    return value.replaceAll('&nbsp;', ' ')
+  }
+  return value
 }
