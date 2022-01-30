@@ -85,7 +85,7 @@ const save_action = async () => {
 }
 // editable actions
 export const preview_editable = {
-  enabled: true,
+  enabled: false,
   render: preview_render,
   save_action: save_action
 }
