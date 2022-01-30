@@ -108,6 +108,7 @@ const Teaser = (props: TeaserProps) => {
   const profile_layout_height = get(profile_layout, 'height', ['40px', '40px'])
   const profile_layout_width = get(profile_layout, 'width', ['40px', '40px'])
   const profile_layout_enabled = get(layout, 'profile_bio.enabled', false)
+  const profile_image_enabled = get(layout, 'profile_image.enabled', false)
   const isProfileEnabled = profile_data_visible && profile_layout_enabled
 
   //related
@@ -158,6 +159,16 @@ const Teaser = (props: TeaserProps) => {
     if (!image_enabled) {
       return null
     }
+    let profile_image_parsed = item.img
+    if (profile_image_enabled) {
+      profile_image_parsed = {
+        byl: '',
+        cap: profile_content?.name,
+        cid: profile_content?.image?.contentId,
+        sub: ''
+      }
+    }
+    const item_parsed = { ...item, img: profile_image_parsed }
     return (
       <S.WrapContent
         wrap_align={image_align}
@@ -176,7 +187,7 @@ const Teaser = (props: TeaserProps) => {
           editable={editable}
           fallback_image_url={fallback_image_url}
           image_circle={layout?.image_circle}
-          item={item}
+          item={item_parsed}
           item_path={item_path}
           layout={layout}
           opacityMask={opacity_mask}

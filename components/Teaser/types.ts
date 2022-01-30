@@ -108,6 +108,9 @@ export type LayoutProps = {
     height?: SpacingType,
     width?: SpacingType
   };
+  profile_image?: {
+    enabled: boolean,
+  };
   related?: Related;
   section?: Object;
   subject?: SubjectLayout;
