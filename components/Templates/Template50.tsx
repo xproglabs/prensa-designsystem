@@ -58,7 +58,7 @@ const Template5050 = ({
             mb={slotLeft_isTransparent ?
               get(slotLeft, 'space_bottom_column[0]', '0px') :
               get(slotLeft, 'space_bottom_column_color[0]', 2)}
-            px={slotLeft_isTransparent ? '0px' : 2}
+            px={2}
             pt={slotLeft_isTransparent ? '0px' : 2} 
             width='calc(100% - 32px)'
             lg={{
@@ -95,7 +95,7 @@ const Template5050 = ({
             mb={slotRight_isTransparent ?
               get(slotRight, 'space_bottom_column[0]', '0px') :
               get(slotRight, 'space_bottom_column_color[0]', 2)}
-            px={slotRight_isTransparent ? '0px' : 2}
+            px={2}
             pt={slotRight_isTransparent ? '0px' : 2}
             width='calc(100% - 32px)'
             lg={{
