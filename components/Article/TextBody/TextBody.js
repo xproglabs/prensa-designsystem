@@ -2,6 +2,7 @@ import { get, map } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
+
 import Block from '../../Block'
 import { ImageGallery } from '../../ImageGallery/index.tsx'
 import Citation from '../Citation/Citation'
