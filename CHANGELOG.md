@@ -1,3 +1,16 @@
+## [1.9.26](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.25...v1.9.26) (2022-01-31)
+
+
+### Bug Fixes
+
+* Ajusta ordem alfabética e otimiza alteração das informações no objeto item ([87a6ea0](https://github.com/xproglabs/prensa-designsystem/commit/87a6ea069cf9a7e76cf66cc3f1b08af7f58fe357))
+* **preview:** desativa preview interativo do storybook ([9a2a122](https://github.com/xproglabs/prensa-designsystem/commit/9a2a122fae72d571bbb6af989bf1588c52b4cc2e))
+
+
+### Features
+
+* **profileImage:** adiciona a propriedade no teaser ([b352617](https://github.com/xproglabs/prensa-designsystem/commit/b352617c301b877ca52549af13e042dcf9f02289))
+
 ## [1.9.25](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.24...v1.9.25) (2022-01-25)
 
 
