@@ -3,22 +3,22 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import ArticleImage from '../Image'
 import Block from '../../Block'
+
+import { ImageGallery } from '../../ImageGallery/index.tsx'
 import Citation from '../Citation/Citation'
+import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed } from '../Embeds'
 import Heading2 from '../Headings/Heading2'
 import Heading3 from '../Headings/Heading3'
 import Heading4 from '../Headings/Heading4'
-import Paragraph from '../Paragraph/Paragraph'
-import SectionTitle from '../SectionTitle'
-import Tags from '../Tags/Tags'
-
-import { ImageGallery } from '../../ImageGallery/index.tsx'
-import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed } from '../Embeds'
+import ArticleImage from '../Image'
 import { ListComponent } from '../List/index.ts'
+import SectionTitle from '../SectionTitle'
+import Paragraph from '../Paragraph/Paragraph'
 import { BottomShare } from '../Share/BottomShare/index.tsx'
-import { parse_content } from './TextBodyParser'
+import Tags from '../Tags/Tags'
 import * as S from './TextBody.styled'
+import { parse_content } from './TextBodyParser'
 
 const TextBody = (props) => {
   const {
