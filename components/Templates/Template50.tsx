@@ -60,7 +60,7 @@ const Template5050 = ({
               get(slotLeft, 'space_bottom_column_color[0]', 2)}
             px={slotLeft_isTransparent ? '0px' : 2}
             pt={slotLeft_isTransparent ? '0px' : 2} 
-            width={slotLeft_isTransparent ? '100%' : 'calc(100% - 32px)'}
+            width='calc(100% - 32px)'
             lg={{
               align: 'row',
               alignx: 'between',
@@ -97,7 +97,7 @@ const Template5050 = ({
               get(slotRight, 'space_bottom_column_color[0]', 2)}
             px={slotRight_isTransparent ? '0px' : 2}
             pt={slotRight_isTransparent ? '0px' : 2}
-            width={slotRight_isTransparent ? '100%' : 'calc(100% - 32px)'}
+            width='calc(100% - 32px)'
             lg={{
               align: 'row',
               alignx: 'between',
