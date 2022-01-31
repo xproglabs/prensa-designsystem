@@ -1,6 +1,7 @@
 import { html2json } from 'html2json'
 import { find, filter, map } from 'lodash'
 
+import { BlockquoteHTMLParser } from './BlockquoteHTMLParser'
 import { parseListChildren } from './ListHTMLParser'
 import { StrongHTMLParser } from './StrongHTMLParser'
 
@@ -42,7 +43,11 @@ const parse_content = (content) => {
       return true
     }
     if (tag === 'cite') {
-      tagItems.push({ 'type': 'cite', 'value': `${renderChildValue(child)}` })
+      tagItems.push({ 'type': 'cite', 'value': `${BlockquoteHTMLParser(child)}` })
+      return true
+    }
+    if (tag === 'blockquote') {
+      tagItems.push({ 'type': 'blockquote', 'value': `${BlockquoteHTMLParser(child)}` })
       return true
     }
     if (tag === 'h2') {
@@ -164,6 +169,11 @@ const parse_content = (content) => {
       case 'cite':
         if (value && value !== '') {
           bodyItems.push({ type: 'Cite', value })
+        }
+        break
+      case 'blockquote':
+        if (value && value !== '') {
+          bodyItems.push({ type: 'Blockquote', value })
         }
         break
       case 'h2':

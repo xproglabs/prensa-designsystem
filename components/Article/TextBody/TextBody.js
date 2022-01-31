@@ -151,6 +151,7 @@ const TextBody = (props) => {
 
   const switch_component = (type, value) => {
     switch (type) {
+      case 'Blockquote':
       case 'Cite':
         return (
           <Citation
