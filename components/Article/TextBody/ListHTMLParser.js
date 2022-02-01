@@ -13,6 +13,14 @@ export function parseListChildren(child) {
       (text_item) => {
         const { attr, child, tag, text, node } = text_item
 
+        if (node === 'element' && tag === 'p') {
+          map(child, item => {
+            html.push(
+              item.text
+            )
+          })
+        }
+
         if (node === 'element' && tag === 'a') {
           map(child, hyperlinkedText => {
             hasHyperlink.push(
@@ -29,7 +37,7 @@ export function parseListChildren(child) {
           }
         }
 
-        if (hasHyperlink.length === 0) {
+        if (hasHyperlink.length === 0 && !child) {
           html.push(
             removeSpaces(
               text

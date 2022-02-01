@@ -44,13 +44,17 @@ Body.propTypes = {
 }
 
 export const TextBodyColumn = ({
+  bgColor,
   children,
+  lg,
   width
 }) => {
   return (
     <Block
       align='column'
       aligny='top'
+      bgColor={bgColor}
+      lg={lg}
       width={width}>
       {children}
     </Block>
