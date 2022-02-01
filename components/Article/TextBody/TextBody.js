@@ -10,12 +10,12 @@ import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed } from '../Em
 import Heading2 from '../Headings/Heading2'
 import Heading3 from '../Headings/Heading3'
 import Heading4 from '../Headings/Heading4'
+import ArticleImage from '../Image'
 import { ListComponent } from '../List/index.ts'
 import Paragraph from '../Paragraph/Paragraph'
 import SectionTitle from '../SectionTitle'
 import { BottomShare } from '../Share/BottomShare/index.tsx'
 import Tags from '../Tags/Tags'
-import TopImage from '../TopImage/TopImage'
 import * as S from './TextBody.styled'
 import { parse_content } from './TextBodyParser'
 
@@ -24,6 +24,7 @@ const TextBody = (props) => {
     adsBody,
     adsSide,
     amp,
+    bodyImage,
     bodyWidth,
     bottomShare,
     citation,
@@ -74,17 +75,15 @@ const TextBody = (props) => {
     if (!image_data) return null
     return (
       <Block mb={3} maxWidth={bodyWidth} width="100%">
-        <TopImage
+        <ArticleImage
+          {...bodyImage}
           amp={amp}
           caption={{
-            fontFamily: 'secondary',
-            fontSize: ['14px', '14px'],
-            lineHeight: ['130%', '130%'],
-            show: true,
+            ...bodyImage.caption,
             value: image_data.caption
           }}
-          featured={false}
-          image={true}
+          height={image_data.height}
+          width={image_data.width}
           value={image_data.value}
         />
       </Block>
@@ -298,6 +297,7 @@ TextBody.propTypes = {
   }),
   adsSide: PropTypes.node,
   amp: PropTypes.bool,
+  bodyImage: PropTypes.object,
   bodyWidth: PropTypes.string,
   bottomShare: PropTypes.object,
   content: PropTypes.string,

@@ -17,6 +17,18 @@ const ArticleCorreioPopular = () => {
       <Article
         amp={false}
         AdPlaceholder={AdPlaceholder}
+        bodyImage={{
+          caption: {
+            color: 'neutral4',
+            fontFamily: 'secondary',
+            fontSize: ['12px', '12px'],
+            lineHeight: ['130%', '130%'],
+            show: true
+          },
+          px: [2, 2],
+          py: [2, 2],
+          widthBox: ['calc(100% - 32px)', 'calc(100% - 32px)']
+        }}
         bodyWidth='768px'
         byline={{
           author: {

@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import { YouTubeEmbed } from '../Embeds'
-import * as S from './TopImage.styled'
+import * as S from './index.styled'
 
 const Container = ({ children, featured, mb, value }) => {
   if (featured) return <S.BoxFeatured mb={mb} value={value} />
   return <S.Box mb={mb}>{children}</S.Box>
 }
 
-const TopImage = ({
+const ArticleImage = ({
   amp,
   ampElementProps,
   caption,
@@ -101,7 +101,7 @@ Container.propTypes = {
   value: PropTypes.string
 }
 
-TopImage.defaultProps = {
+ArticleImage.defaultProps = {
   featured: false,
   image: true,
   caption: {
@@ -120,12 +120,12 @@ TopImage.defaultProps = {
   widthBox: ['calc(100% - 48px)', 'calc(100% - 64px)']
 }
 
-TopImage.propTypes = {
+ArticleImage.propTypes = {
   amp: PropTypes.bool,
+  caption: PropTypes.object,
   featured: PropTypes.bool,
   height: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   image: PropTypes.bool,
-  caption: PropTypes.object,
   mb: PropTypes.array,
   px: PropTypes.array,
   py: PropTypes.array,
@@ -135,4 +135,4 @@ TopImage.propTypes = {
   type: PropTypes.oneOf(['image', 'video'])
 }
 
-export default TopImage
+export default ArticleImage
