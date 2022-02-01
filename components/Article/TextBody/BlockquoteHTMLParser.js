@@ -1,34 +1,36 @@
 import { map } from 'lodash'
 
-import { StrongHTMLParser } from './StrongHTMLParser'
 import { removeSpaces } from './utils'
 
 export function BlockquoteHTMLParser(data) {
 
   const html = []
 
-  map(data, item => {
-    if (!item.child) {
-      html.push(item.text)
+  function parseInnerHTML(data) {
+
+    if (!data) {
+      return ''
     }
-
-    if (item.child && item.child.length > 0) {
-      map(item.child, subitem => {
-        if (subitem.child && subitem.child.length > 0) {
-          map(subitem.child, levelthree => {
-            if (levelthree.node === 'element' && levelthree.type === 'strong') {
-              html.push(
-                StrongHTMLParser(levelthree)
-              )
-            }
-
-            if (levelthree.text !== '') {
-              html.push(
-                removeSpaces(
-                  levelthree.text
-                )
-              )
-            }
+  
+    if (data.text !== '') {
+      html.push(
+        removeSpaces(
+          data.text
+        )
+      )
+    }
+  }
+  
+  map(data, levelOne => {
+    if (!levelOne.child) {
+      html.push(parseInnerHTML(levelOne))
+    } else {
+      map(levelOne.child, levelTwo => {
+        if (!levelTwo.child) {
+          html.push(parseInnerHTML(levelTwo))
+        } else {
+          map(levelTwo.child, levelThree => {
+            html.push(parseInnerHTML(levelThree))
           })
         }
       })
