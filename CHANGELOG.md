@@ -1,3 +1,18 @@
+## [1.9.27](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.26...v1.9.27) (2022-02-01)
+
+
+### Bug Fixes
+
+* corrige direction das tags no mobile ([277ce42](https://github.com/xproglabs/prensa-designsystem/commit/277ce42a7fe9f9a184ce7a657b4542775f4a4c0e))
+* parametriza tamanho do topimage ([01a56a3](https://github.com/xproglabs/prensa-designsystem/commit/01a56a3668fc634a7739fd69ac81faf5ccd1a351))
+* renomeia TopImage para ArticleImage ([d3fd7bb](https://github.com/xproglabs/prensa-designsystem/commit/d3fd7bbfe70628f598c21852c11e7fb89f30501e))
+* **template50:** padding lateral do bloco no mobile ([3eb489a](https://github.com/xproglabs/prensa-designsystem/commit/3eb489abd48e61b427ac379b464fe78f20dc4b93))
+
+
+### Features
+
+* cria prop bodyImage para imagem do corpo do texto ([b70294c](https://github.com/xproglabs/prensa-designsystem/commit/b70294c14a486ade39d7c1e08b93d684a58b272b))
+
 ## [1.9.26](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.25...v1.9.26) (2022-01-31)
 
 
