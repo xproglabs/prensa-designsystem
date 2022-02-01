@@ -1,3 +1,12 @@
+## [1.9.29](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.28...v1.9.29) (2022-02-01)
+
+
+### Features
+
+* configura novo parser blockquote no switch principal ([7a35944](https://github.com/xproglabs/prensa-designsystem/commit/7a359444907b4ccc491d5721c7b72d40eee9a626))
+* novo html parser para Blockquote ([801953c](https://github.com/xproglabs/prensa-designsystem/commit/801953c76c868c622f3b2c266792dfc03db991e2))
+* permite p dentro dos itens da lista ([bf8cb94](https://github.com/xproglabs/prensa-designsystem/commit/bf8cb94d2514346480f18bc56a145059bc5449f3))
+
 ## [1.9.28](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.27...v1.9.28) (2022-02-01)
 
 
