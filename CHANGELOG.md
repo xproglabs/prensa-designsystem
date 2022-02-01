@@ -1,3 +1,10 @@
+## [1.9.31](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.30...v1.9.31) (2022-02-01)
+
+
+### Bug Fixes
+
+* **articleColumn:** apply right props correctly ([70accd4](https://github.com/xproglabs/prensa-designsystem/commit/70accd4b46d08103ca8bfa86f01722a9f3d659ec))
+
 ## [1.9.30](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.29...v1.9.30) (2022-02-01)
 
 
