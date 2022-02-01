@@ -1,3 +1,10 @@
+## [1.9.28](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.27...v1.9.28) (2022-02-01)
+
+
+### Features
+
+* Remove configuração main e module do package.json ([4c2ff22](https://github.com/xproglabs/prensa-designsystem/commit/4c2ff22002e1a94e8e8909e25798539a9b273a15))
+
 ## [1.9.27](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.26...v1.9.27) (2022-02-01)
 
 
