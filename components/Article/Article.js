@@ -6,16 +6,17 @@ import { withTheme } from 'styled-components'
 import { GridRelated } from '../Grids/GridRelated'
 import * as S from './Article.styled'
 import Byline from './Byline/Byline'
+import ArticleImage from './Image'
 import Subject from './Subject/Subject'
 import Subtitle from './Subtitle/Subtitle'
 import TextBody from './TextBody/TextBody'
 import Title from './Title/Title'
-import TopImage from './TopImage/TopImage'
 
 const Article = (props) => {
   const {
     ads,
     amp,
+    bodyImage,
     bodyWidth,
     bottomShare,
     byline,
@@ -63,7 +64,7 @@ const Article = (props) => {
           <React.Fragment>
             <S.ContainerFeatured>
               <S.ContentImage>
-                <TopImage
+                <ArticleImage
                   amp={amp}
                   {...topimage}
                 />
@@ -101,7 +102,7 @@ const Article = (props) => {
             </S.MaxWidth>
             {adsTopImage && React.cloneElement(adsTopImage)}
             <S.MaxWidth maxWidth={headWidth}>
-              <TopImage amp={amp} {...topimage} />
+              <ArticleImage amp={amp} {...topimage} />
             </S.MaxWidth>
             {adsTopBody && React.cloneElement(adsTopBody)}
           </React.Fragment>
@@ -113,6 +114,7 @@ const Article = (props) => {
             adsBody={adsBody}
             adsSide={adsSideBar}
             amp={amp}
+            bodyImage={bodyImage}
             bodyWidth={bodyWidth}
             bottomShare={bottomShare}
             citation={citation}
@@ -144,6 +146,17 @@ const Article = (props) => {
 Article.defaultProps = {
   amp: false,
   bodyWidth: '768px',
+  bodyImage: {
+    caption: {
+      fontFamily: 'secondary',
+      fontSize: ['14px', '14px'],
+      lineHeight: ['130%', '130%'],
+      show: true,
+      value: ''
+    },
+    featured: false,
+    image: true
+  },
   headWidth: '1016px',
   hasColumnRight: false,
   tags_section_title_value: 'Assuntos'
@@ -162,6 +175,7 @@ Article.propTypes = {
     topBody: PropTypes.node
   }),
   amp: PropTypes.bool,
+  bodyImage: PropTypes.object,
   bodyWidth: PropTypes.string,
   bottomShare: PropTypes.object,
   byline: PropTypes.object,
