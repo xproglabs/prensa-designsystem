@@ -1,6 +1,8 @@
+import { replace } from 'lodash'
+
 export const removeSpaces = value => {
   if (typeof value === 'string') {
-    return value.replaceAll('&nbsp;', ' ')
+    return replace(value, '&nbsp;', ' ')
   }
   return value
 }
