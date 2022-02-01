@@ -1,3 +1,10 @@
+## [1.9.30](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.29...v1.9.30) (2022-02-01)
+
+
+### Bug Fixes
+
+* Troca replaceAll por método replace do lodash ([8445a29](https://github.com/xproglabs/prensa-designsystem/commit/8445a296ff52df67902db55e5fc1cfd436fe4d18))
+
 ## [1.9.29](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.28...v1.9.29) (2022-02-01)
 
 
