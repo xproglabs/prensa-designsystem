@@ -1,3 +1,11 @@
+## [1.9.35](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.34...v1.9.35) (2022-02-02)
+
+
+### Bug Fixes
+
+* Lint e corrige CI ([fbbade3](https://github.com/xproglabs/prensa-designsystem/commit/fbbade3b150acd6814d9439402ae783b78b1ed41))
+* Nova prop amp no Caption e ajustes finos no layout ([49954bf](https://github.com/xproglabs/prensa-designsystem/commit/49954bf43037f807952023797069b66bb5614563))
+
 ## [1.9.34](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.33...v1.9.34) (2022-02-02)
 
 
