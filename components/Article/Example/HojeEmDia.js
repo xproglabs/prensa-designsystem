@@ -40,6 +40,30 @@ const dummyLists = `
     <li>Zoológico e Jardim Botânico - abertos das 8h às 17h, com entrada permitida até às 16h. Obrigatório agendamento prévio no site.</li>
   </ul>
 
+  <ul>
+    <li>
+    <p>Goleiros: Rafael Cabral e Denivys</p>
+    </li>
+    <li>
+    <p>Laterais-direitos: Rômulo, Gabriel Dias e Geovane Jesus</p>
+    </li>
+    <li>
+    <p>Zagueiros: Sidnei, Mateus Silva, Eduardo Brock</p>
+    </li>
+    <li>
+    <p>Laterais-esquerdos: Matheus Bidu e Rafael Santos</p>
+    </li>
+    <li>
+    <p>Volantes: Lucas Ventura, Filipe Machado, Willian Oliveira e Ageu</p>
+    </li>
+    <li>
+    <p>Meias: João Paulo, Giovanni e Marco Antônio</p>
+    </li>
+    <li>
+    <p>Atacantes: Thiago, Waguininho, Vitor Leque, Edu e Bruno José</p>
+    </li>
+  </ul>
+
   <p><strong>Leia mais:</strong><br />
 `
 
