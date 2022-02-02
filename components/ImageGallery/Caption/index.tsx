@@ -17,11 +17,9 @@ const Caption = ({
       aligny='middle'
       bgColor='neutral9'
       height={height}
-      px={3}
+      px={1}
       width='100%'
-      lg={{
-        px: 4,
-      }}
+      lg={{ px: 2 }}
     >
       <Typography
         color='neutral4'

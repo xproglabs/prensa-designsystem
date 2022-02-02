@@ -266,7 +266,7 @@ const TextBody = (props) => {
           width: '100%',
         }}
       >
-        <S.TextBodyColumn lg={{ width: bodyWidth }}>
+        <S.TextBodyColumn width='100%' lg={{ width: bodyWidth }}>
           <RenderMainColumn />
         </S.TextBodyColumn>
         <S.TextBodyColumn
