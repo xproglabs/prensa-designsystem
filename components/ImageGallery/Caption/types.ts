@@ -1,5 +1,5 @@
 export type CaptionComponentProps = {
-  amp: boolean;
+  amp?: boolean;
   children: string;
   enabled?: boolean;
   fontFamily?: string;
@@ -9,7 +9,7 @@ export type CaptionComponentProps = {
 }
 
 export type CaptionProps = {
-  amp: boolean;
+  amp?: boolean;
   enabled?: boolean;
   fontFamily?: string;
   fontSize?: [string, string];
