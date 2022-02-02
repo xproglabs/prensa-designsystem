@@ -65,8 +65,8 @@ TextBodyColumn.propTypes = {
   width: PropTypes.string
 }
 
-export const TextBody = ({ color, children }) => 
-  <Typography 
+export const TextBody = ({ color, children }) =>
+  <Typography
     color={color}
     dangerouslySetInnerHTML={children}
     element='h3'
