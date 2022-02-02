@@ -1,3 +1,10 @@
+## [1.9.33](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.32...v1.9.33) (2022-02-02)
+
+
+### Bug Fixes
+
+* Corrige lógica isBlank ([853914d](https://github.com/xproglabs/prensa-designsystem/commit/853914d8e46c12c519b8021915ae323c8e70312b))
+
 ## [1.9.32](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.31...v1.9.32) (2022-02-02)
 
 
