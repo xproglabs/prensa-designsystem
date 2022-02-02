@@ -21,7 +21,11 @@ const AmpImageGallery = ({ captionProps, items }: AmpImageGalleryProps) => {
             alt={item.caption}
             src={item.value}
           />
-          {captionProps?.enabled && <Caption {...captionProps}>{item.caption}</Caption>}
+          {captionProps?.enabled && 
+            <Caption amp={true} {...captionProps}>
+              {item.caption}
+            </Caption>
+          }
         </Content>
       ))}
     </amp-carousel>

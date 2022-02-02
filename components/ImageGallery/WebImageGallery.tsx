@@ -28,7 +28,11 @@ const WebImageGallery = ({ captionProps, items }: WebImageGalleryProps) => {
       {map(items, (item, key) =>
         <Content key={key}>
           <WebImage src={item.value} />
-          {captionProps?.enabled && <Caption {...captionProps}>{item.caption}</Caption>}
+          {captionProps?.enabled && 
+            <Caption amp={false} {...captionProps}>
+              {item.caption}
+            </Caption>
+          }
         </Content>
       )}
     </WebCarousel>
