@@ -1,3 +1,15 @@
+## [1.9.32](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.31...v1.9.32) (2022-02-02)
+
+
+### Bug Fixes
+
+* Adiciona verificação se a string é blank ([5a5c78a](https://github.com/xproglabs/prensa-designsystem/commit/5a5c78ac74cf0cf8e259449d31ff9e055c5ef57f))
+
+
+### Features
+
+* Nova função stringIsBlank ([4599d59](https://github.com/xproglabs/prensa-designsystem/commit/4599d592b1880e0bda2b162b7c9c88f9f9399eaf))
+
 ## [1.9.31](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.30...v1.9.31) (2022-02-01)
 
 
