@@ -1,3 +1,11 @@
+## [1.9.34](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.33...v1.9.34) (2022-02-02)
+
+
+### Bug Fixes
+
+* Altera o height e padding default do Caption ([81e52a7](https://github.com/xproglabs/prensa-designsystem/commit/81e52a7efa02262d4e918096385704c4c1bdd4fe))
+* Define width como 100% na coluna principal ([8509245](https://github.com/xproglabs/prensa-designsystem/commit/85092455b5185c1d39030dd0c5be5ecbccd6751c))
+
 ## [1.9.33](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.32...v1.9.33) (2022-02-02)
 
 
