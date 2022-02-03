@@ -22,6 +22,7 @@ const Article = (props) => {
     byline,
     citation,
     fbappid,
+    fbclienttoken,
     featured,
     gallery,
     headWidth,
@@ -120,6 +121,7 @@ const Article = (props) => {
             citation={citation}
             content={textbody}
             fbappid={fbappid}
+            fbclienttoken={fbclienttoken}
             gallery={gallery}
             hasBottomShare={hasBottomShare}
             hasColumnRight={hasColumnRight}
