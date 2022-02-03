@@ -41,7 +41,7 @@ const InstagramEmbed = ({
 
   const Web = () => (
     <Instagram
-      url={dataShortcode}
+      url={url}
       clientAccessToken={accessToken}
       {...elementProps}
     />
