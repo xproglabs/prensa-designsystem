@@ -13,6 +13,7 @@ const Link = ({
   href,
   height,
   path,
+  radius,
   textDecoration,
   width,
   ...otherProps
@@ -32,6 +33,7 @@ const Link = ({
       $color={color}
       $textDecoration={textDecoration}
       $height={height}
+      $radius={radius}
       $width={width}
       {...otherProps}
     >
