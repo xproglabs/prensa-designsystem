@@ -1,3 +1,10 @@
+## [1.9.36](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.35...v1.9.36) (2022-02-04)
+
+
+### Features
+
+* **EmParser:** add EmParser ([7786017](https://github.com/xproglabs/prensa-designsystem/commit/778601719ecf63a3566e4c0a64f2eca3046e2b3e))
+
 ## [1.9.35](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.34...v1.9.35) (2022-02-02)
 
 
