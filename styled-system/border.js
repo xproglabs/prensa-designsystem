@@ -20,7 +20,7 @@ export function border(props) {
     b = '',
     borderColor = '',
     borderStyle = 'solid',
-    radius
+    $radius
   } = props
 
   const colors = get(theme, 'colors', {})
@@ -59,8 +59,8 @@ export function border(props) {
     object.push(`border-width: ${b};`)    
   }
 
-  if (radius) {
-    object.push(`border-radius: ${radius_options[radius]}`)
+  if ($radius) {
+    object.push(`border-radius: ${radius_options[$radius]}`)
   }
 
   return object.join('')
