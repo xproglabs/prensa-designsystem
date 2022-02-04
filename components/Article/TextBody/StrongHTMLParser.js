@@ -1,5 +1,7 @@
 import { map } from 'lodash'
 
+import { EmHTMLParser } from './EmHTMLParser'
+
 export function StrongHTMLParser(data) {
 
   if (!data) return ''
@@ -7,6 +9,9 @@ export function StrongHTMLParser(data) {
   const html = []
 
   map(data, item => {
+    if (item.tag === 'em') {
+      html.push(EmHTMLParser(item.child))
+    }
     if (item.tag === 'br') {
       html.push('<br/>')
     }
