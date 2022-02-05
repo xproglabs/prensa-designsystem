@@ -1,3 +1,13 @@
+## [1.9.37](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.36...v1.9.37) (2022-02-05)
+
+
+### Bug Fixes
+
+* Aceita somente prop $radius na função border ([cbdca03](https://github.com/xproglabs/prensa-designsystem/commit/cbdca03b20d535aabad414aaeb498e5ab8c07705))
+* Configura itinerant prop $radius no Block ([0fb7987](https://github.com/xproglabs/prensa-designsystem/commit/0fb79873fa4535bd8190c693c8d785111aeb94c9))
+* Configura itinerant prop $radius no Link ([02a9473](https://github.com/xproglabs/prensa-designsystem/commit/02a9473b2630a949effb361b56e7ebcf37cfd73b))
+* Configura itinerant prop $radius no Typography ([a2d8cc4](https://github.com/xproglabs/prensa-designsystem/commit/a2d8cc4f414b883bdcb39d7203fb520a9949132c))
+
 ## [1.9.36](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.35...v1.9.36) (2022-02-04)
 
 
