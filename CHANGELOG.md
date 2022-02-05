@@ -1,3 +1,10 @@
+## [1.9.38](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.37...v1.9.38) (2022-02-05)
+
+
+### Bug Fixes
+
+* Otimiza montagem da url de busca no componente de paginação ([5ba2106](https://github.com/xproglabs/prensa-designsystem/commit/5ba2106a0d485ca6801d7a598e71f8af13375d72))
+
 ## [1.9.37](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.36...v1.9.37) (2022-02-05)
 
 
