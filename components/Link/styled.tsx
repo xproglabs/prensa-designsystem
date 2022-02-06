@@ -13,6 +13,15 @@ function textDecorationCSS({ $textDecoration }: any) {
     text-decoration: ${$textDecoration};
   `
 }
+
+function displayCSS({ $display }: any) {
+  if (!$display) {
+    return ''
+  }
+  return css`
+    display: ${$display};
+  `
+}
 function hoverStateCSS({ hoverOpacity }: any) {
   if (!hoverOpacity) {
     return ''
@@ -39,6 +48,7 @@ export const StyledLink: ComponentType<StyledLinkProps> | any = styled.a<StyledL
   ${align};
   ${border};
   ${colorCSS};
+  ${displayCSS};
   ${height};
   ${textDecorationCSS};
   ${hoverStateCSS};
