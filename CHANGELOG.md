@@ -1,3 +1,10 @@
+## [1.9.39](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.38...v1.9.39) (2022-02-06)
+
+
+### Features
+
+* Adiciona prop display no componente Link ([1188035](https://github.com/xproglabs/prensa-designsystem/commit/11880354832cf76051567849296dd78617fffdeb))
+
 ## [1.9.38](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.37...v1.9.38) (2022-02-05)
 
 
