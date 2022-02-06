@@ -13,15 +13,6 @@ function textDecorationCSS({ $textDecoration }: any) {
     text-decoration: ${$textDecoration};
   `
 }
-
-function displayCSS({ $display }: any) {
-  if (!$display) {
-    return ''
-  }
-  return css`
-    display: ${$display};
-  `
-}
 function hoverStateCSS({ hoverOpacity }: any) {
   if (!hoverOpacity) {
     return ''
@@ -40,6 +31,14 @@ function colorCSS({ $color, theme }: any) {
   }
   return css`
     color: ${get(theme, `colors.${$color}`, 'inherit')};
+  `
+}
+function displayCSS({ $display }: any) {
+  if (!$display) {
+    return ''
+  }
+  return css`
+    display: ${$display};
   `
 }
 
