@@ -2,6 +2,7 @@ import { html2json } from 'html2json'
 import { find, filter, map } from 'lodash'
 
 import { BlockquoteHTMLParser } from './BlockquoteHTMLParser'
+import { EmHTMLParser } from './EmHTMLParser'
 import { parseListChildren } from './ListHTMLParser'
 import { StrongHTMLParser } from './StrongHTMLParser'
 
@@ -31,7 +32,7 @@ const parse_content = (content) => {
       return true
     }
     if (tag === 'em') {
-      tagItems.push({ 'type': 'text', 'value': `<em>${renderChildValue(child)}</em>` })
+      tagItems.push({ 'type': 'text', 'value': `${EmHTMLParser(child)}` })
       return true
     }
     if (tag === 'ul') {

@@ -1,6 +1,6 @@
 import { filter, map } from 'lodash'
 
-import { removeSpaces } from './utils'
+import { removeSpaces, stringIsBlank } from './utils'
 
 export function parseListChildren(child) {
 
@@ -12,6 +12,7 @@ export function parseListChildren(child) {
     map(it.child,
       (text_item) => {
         const { attr, child, tag, text, node } = text_item
+        const isBlank = stringIsBlank(text)
 
         if (node === 'element' && tag === 'p') {
           map(child, item => {
@@ -37,7 +38,7 @@ export function parseListChildren(child) {
           }
         }
 
-        if (hasHyperlink.length === 0 && !child) {
+        if (hasHyperlink.length === 0 && !child && !isBlank) {
           html.push(
             removeSpaces(
               text

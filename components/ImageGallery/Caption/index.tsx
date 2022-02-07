@@ -4,12 +4,17 @@ import React from 'react'
 import { CaptionComponentProps } from './types'
 
 const Caption = ({
+  amp,
   children,
   fontSize,
   fontFamily,
   height,
   lineHeight
 }: CaptionComponentProps) => {
+
+  const mobileWidth = amp ? 'calc(100% - 16px)' : '100%'
+  const desktopWidth = amp ? 'calc(100% - 32px)' : '100%'
+
   return (
     <Block
       align='row'
@@ -17,10 +22,11 @@ const Caption = ({
       aligny='middle'
       bgColor='neutral9'
       height={height}
-      px={3}
-      width='100%'
+      px={1}
+      width={mobileWidth}
       lg={{
-        px: 4,
+        px: 2,
+        width: desktopWidth
       }}
     >
       <Typography

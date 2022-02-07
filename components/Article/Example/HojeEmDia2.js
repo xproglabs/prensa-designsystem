@@ -5,6 +5,14 @@ import { hojeemdia_theme } from '../../../styles/demo/hed'
 import Article from '../Article'
 
 const textbody = `
+  <p><em><strong>Conteúdo de inteira responsabilidade da Cantina Do Lucas</strong></em></p>
+
+  <p><strong><em>Conteúdo de inteira responsabilidade da Cantina Do Lucas</em></strong></p>
+
+  <p><em>Conteúdo de inteira responsabilidade da Cantina Do Lucas</em></p>
+
+  <p><strong>Conteúdo de inteira responsabilidade da Cantina Do Lucas</strong></p>
+  
   <p>A taxa de transmissão da Covid-19, o chamado índice RT, voltou a aumentar em Belo Horizonte. De acordo com o Boletim Epidemiológico divulgado pela Prefeitura de Belo Horizonte (PBH) nesta terça-feira (30), a taxa está em 0,96, ou seja, 100 pessoas infectadas pelo coronavírus podem contaminar outras 96.</p>
 
   <p>Já a taxa de ocupação de leitos de UTI destinados à Covid caiu de 40% na última segunda (29) para 34,1% nesta terça. Os leitos de enfermaria exclusivos para pacientes com coronavírus teve uma pequena alta, passando de 46,2% para 46,6%, conforme os dados da PBH.</p>

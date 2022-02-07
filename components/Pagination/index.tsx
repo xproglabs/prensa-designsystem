@@ -33,7 +33,19 @@ const Pagination = ({
   data.next = data.current + 1
   data.start = 1
 
-  const href = `${path || '/'}?term=${query?.term || ''}`
+  const actionUrl = []
+  
+  if (!path) {
+    actionUrl.push('?')
+  }
+  if (path) {
+    actionUrl.push(`${path}?`)
+  }
+  if (query && query.term) {
+    actionUrl.push(`term=${query.term}`)
+  }
+
+  const href = actionUrl.join('')
 
   const RenderStart = () => {
     if (data.start === data.current) {

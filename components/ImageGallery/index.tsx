@@ -8,7 +8,7 @@ import { WebImageGallery } from './WebImageGallery'
 const captionDefaultProps: ImageGalleryProps['captionProps'] = {
   fontFamily: 'secondary',
   fontSize: ['14px', '14px'],
-  height: '48px',
+  height: 'max-content',
   lineHeight: ['130%', '130%']
 }
 

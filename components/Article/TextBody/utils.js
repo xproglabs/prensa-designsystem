@@ -6,3 +6,7 @@ export const removeSpaces = value => {
   }
   return value
 }
+
+export const stringIsBlank = (str) => {
+  return (!str || /^\s*$/.test(str))
+}

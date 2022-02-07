@@ -1,3 +1,76 @@
+## [1.9.39](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.38...v1.9.39) (2022-02-06)
+
+
+### Features
+
+* Adiciona prop display no componente Link ([1188035](https://github.com/xproglabs/prensa-designsystem/commit/11880354832cf76051567849296dd78617fffdeb))
+
+## [1.9.38](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.37...v1.9.38) (2022-02-05)
+
+
+### Bug Fixes
+
+* Otimiza montagem da url de busca no componente de paginação ([5ba2106](https://github.com/xproglabs/prensa-designsystem/commit/5ba2106a0d485ca6801d7a598e71f8af13375d72))
+
+## [1.9.37](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.36...v1.9.37) (2022-02-05)
+
+
+### Bug Fixes
+
+* Aceita somente prop $radius na função border ([cbdca03](https://github.com/xproglabs/prensa-designsystem/commit/cbdca03b20d535aabad414aaeb498e5ab8c07705))
+* Configura itinerant prop $radius no Block ([0fb7987](https://github.com/xproglabs/prensa-designsystem/commit/0fb79873fa4535bd8190c693c8d785111aeb94c9))
+* Configura itinerant prop $radius no Link ([02a9473](https://github.com/xproglabs/prensa-designsystem/commit/02a9473b2630a949effb361b56e7ebcf37cfd73b))
+* Configura itinerant prop $radius no Typography ([a2d8cc4](https://github.com/xproglabs/prensa-designsystem/commit/a2d8cc4f414b883bdcb39d7203fb520a9949132c))
+
+## [1.9.36](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.35...v1.9.36) (2022-02-04)
+
+
+### Features
+
+* **EmParser:** add EmParser ([7786017](https://github.com/xproglabs/prensa-designsystem/commit/778601719ecf63a3566e4c0a64f2eca3046e2b3e))
+
+## [1.9.35](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.34...v1.9.35) (2022-02-02)
+
+
+### Bug Fixes
+
+* Lint e corrige CI ([fbbade3](https://github.com/xproglabs/prensa-designsystem/commit/fbbade3b150acd6814d9439402ae783b78b1ed41))
+* Nova prop amp no Caption e ajustes finos no layout ([49954bf](https://github.com/xproglabs/prensa-designsystem/commit/49954bf43037f807952023797069b66bb5614563))
+
+## [1.9.34](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.33...v1.9.34) (2022-02-02)
+
+
+### Bug Fixes
+
+* Altera o height e padding default do Caption ([81e52a7](https://github.com/xproglabs/prensa-designsystem/commit/81e52a7efa02262d4e918096385704c4c1bdd4fe))
+* Define width como 100% na coluna principal ([8509245](https://github.com/xproglabs/prensa-designsystem/commit/85092455b5185c1d39030dd0c5be5ecbccd6751c))
+
+## [1.9.33](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.32...v1.9.33) (2022-02-02)
+
+
+### Bug Fixes
+
+* Corrige lógica isBlank ([853914d](https://github.com/xproglabs/prensa-designsystem/commit/853914d8e46c12c519b8021915ae323c8e70312b))
+
+## [1.9.32](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.31...v1.9.32) (2022-02-02)
+
+
+### Bug Fixes
+
+* Adiciona verificação se a string é blank ([5a5c78a](https://github.com/xproglabs/prensa-designsystem/commit/5a5c78ac74cf0cf8e259449d31ff9e055c5ef57f))
+
+
+### Features
+
+* Nova função stringIsBlank ([4599d59](https://github.com/xproglabs/prensa-designsystem/commit/4599d592b1880e0bda2b162b7c9c88f9f9399eaf))
+
+## [1.9.31](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.30...v1.9.31) (2022-02-01)
+
+
+### Bug Fixes
+
+* **articleColumn:** apply right props correctly ([70accd4](https://github.com/xproglabs/prensa-designsystem/commit/70accd4b46d08103ca8bfa86f01722a9f3d659ec))
+
 ## [1.9.30](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.29...v1.9.30) (2022-02-01)
 
 

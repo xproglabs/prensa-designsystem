@@ -21,8 +21,8 @@ export const Default = () => {
           numFound={12}
           rows={10}
           start={1}
-          path='/'
-          query={{ term: '' }}
+          path='/geral'
+          query={{ term: 'teste' }}
         />
         <Pagination
           numFound={76}
