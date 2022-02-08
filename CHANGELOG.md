@@ -1,3 +1,10 @@
+## [1.9.41](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.40...v1.9.41) (2022-02-08)
+
+
+### Features
+
+* Implementa codesplitting nas funções do date-fns ([d2b3dc1](https://github.com/xproglabs/prensa-designsystem/commit/d2b3dc1078ed98b667dd79bbfb09b8c4cc0d7ef7))
+
 ## [1.9.40](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.39...v1.9.40) (2022-02-08)
 
 
