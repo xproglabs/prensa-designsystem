@@ -1,4 +1,4 @@
-const createBundle = require('./createBundle')
+import createBundle from './createBundle'
 
 export default [
   createBundle('index.ts', 'dist/index'),
