@@ -1,15 +1,15 @@
 import { visualizer } from 'rollup-plugin-visualizer'
 
-export function createTreeMapViz() {
+export function createTreeMapViz(filename) {
   return visualizer({
-    filename: 'bundleEngine/viz/treeMapViz.html',
+    filename: `bundleEngine/viz/${filename}_map.html`,
     template: 'treemap'
   })
 }
 
-export function createNetworkViz() {
+export function createNetworkViz(filename) {
   return visualizer({
-    filename: 'bundleEngine/viz/networkViz.html',
+    filename: `bundleEngine/viz/${filename}_network.html`,
     template: 'network'
   })
 }
