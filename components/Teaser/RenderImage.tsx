@@ -87,8 +87,8 @@ const RenderImage = ({
       return null
     }
   } else {
-    image_path_mobile = parseImagePath(mobile_dim, domain, image_contentid, mobile_width)
-    image_path_desktop = parseImagePath(desktop_dim, domain, image_contentid, desktop_width)
+    image_path_mobile = parseImagePath(mobile_dim, domain, image_contentid, 1200)
+    image_path_desktop = parseImagePath(desktop_dim, domain, image_contentid, 1200)
   }
 
   // prepare image props to render hybrid image ( amp / html )
