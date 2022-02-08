@@ -6,7 +6,7 @@ import typescript from 'rollup-plugin-typescript2'
 
 import { createNetworkViz, createTreeMapViz } from './bundleVisualizer'
 
-function createBundle(inputDir, outputDir) {
+function createBundle(inputDir, outputDir, name) {
 
   const cjsOutDir = `${outputDir}.js`
   const esmOutDir = `${outputDir}.esm`
@@ -31,8 +31,8 @@ function createBundle(inputDir, outputDir) {
       peerDepsExternal(),
       resolve(),
       typescript({ useTsconfigDeclarationDir: true }),
-      createNetworkViz(),
-      createTreeMapViz()
+      createNetworkViz(name),
+      createTreeMapViz(name)
     ]
   }
 }
