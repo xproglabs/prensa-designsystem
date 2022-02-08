@@ -59,13 +59,13 @@ const RenderImage = ({
   const mobile_dim = get(layout, 'image.dimension[0]', '1x1')
   const desktop_dim = get(layout, 'image.dimension[1]', '1x1')
   const has_fallback_image = get(layout, 'image.fallback_image', false)
-  const height = get(layout, 'image.height', 600)
+  const height = get(layout, 'image.height', 1200)
   const layout_mobile = get(layout, 'image.layout[0]', 'responsive')
   const layout_desktop = get(layout, 'image.layout[1]', 'responsive')
-  const mobile_height = get(layout, 'image.height[0]', 600)
-  const mobile_width = get(layout, 'image.width[0]', 600)
-  const desktop_height = get(layout, 'image.height[1]', 600)
-  const desktop_width = get(layout, 'image.width[1]', 600)
+  const mobile_height = get(layout, 'image.height[0]', 1200)
+  const mobile_width = get(layout, 'image.width[0]', 1200)
+  const desktop_height = get(layout, 'image.height[1]', 1200)
+  const desktop_width = get(layout, 'image.width[1]', 1200)
 
   let image_path_mobile = ''
   let image_path_desktop = ''
@@ -87,8 +87,8 @@ const RenderImage = ({
       return null
     }
   } else {
-    image_path_mobile = parseImagePath(mobile_dim, domain, image_contentid, 600)
-    image_path_desktop = parseImagePath(desktop_dim, domain, image_contentid, 600)
+    image_path_mobile = parseImagePath(mobile_dim, domain, image_contentid, mobile_width)
+    image_path_desktop = parseImagePath(desktop_dim, domain, image_contentid, desktop_width)
   }
 
   // prepare image props to render hybrid image ( amp / html )
