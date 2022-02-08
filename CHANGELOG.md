@@ -1,3 +1,11 @@
+## [1.9.40](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.39...v1.9.40) (2022-02-08)
+
+
+### Bug Fixes
+
+* corrige o tamanho default das imagens ([2972566](https://github.com/xproglabs/prensa-designsystem/commit/2972566d10a1131f8b1e2cd411a34df3573136de))
+* define valor fixo para a imagem do teaser ([7fa1729](https://github.com/xproglabs/prensa-designsystem/commit/7fa17293308e9cba8a7de667bf3909ef83b3da43))
+
 ## [1.9.39](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.38...v1.9.39) (2022-02-06)
 
 
