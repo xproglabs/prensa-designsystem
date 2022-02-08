@@ -4,6 +4,8 @@ import resolve from '@rollup/plugin-node-resolve'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import typescript from 'rollup-plugin-typescript2'
 
+import { createNetworkViz, createTreeMapViz } from './bundleVisualizer'
+
 function createBundle(inputDir, outputDir) {
 
   const cjsOutDir = `${outputDir}.js`
@@ -24,11 +26,13 @@ function createBundle(inputDir, outputDir) {
       }
     ],
     plugins: [
-      babel(),
+      babel({ babelHelpers: 'bundled' }),
       commonjs(),
       peerDepsExternal(),
       resolve(),
-      typescript({ useTsconfigDeclarationDir: true })
+      typescript({ useTsconfigDeclarationDir: true }),
+      createNetworkViz(),
+      createTreeMapViz()
     ]
   }
 }
