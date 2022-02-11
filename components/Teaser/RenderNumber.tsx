@@ -3,9 +3,6 @@ import { get } from 'lodash'
 import { Block, Typography } from 'prensa'
 import React from 'react'
 
-import styled from 'styled-components'
-
-
 import { SpacingType, LayoutProps } from './types'
 
 type ContainerProps = {
@@ -67,13 +64,13 @@ const RenderNumber = ({ layout, number, color }: RenderNumberProps) => {
   const textProps = get(layout_data, 'textProps', {})
   return (
     <Block
+      {...containerProps}
       align='column'
       alignx='center'
       aligny='middle'
       borderColor={color}
-      {...containerProps}
     >
-      <Typography color={color} element='span' {...textProps}>
+      <Typography {...textProps} color={color} element='span'>
         {number}
       </Typography>
     </Block>
