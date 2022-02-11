@@ -148,6 +148,7 @@ const Teaser = (props: TeaserProps) => {
         wrap_ml={number_ml}
       >
         <RenderNumber
+          color={color}
           layout={layout}
           number={number}
         />
