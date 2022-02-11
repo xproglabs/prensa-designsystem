@@ -1,3 +1,10 @@
+## [1.9.42](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.41...v1.9.42) (2022-02-11)
+
+
+### Bug Fixes
+
+* parametriza color do borderColor e do number no RenderNumber ([2b1d421](https://github.com/xproglabs/prensa-designsystem/commit/2b1d421897a8a6b69cf4442aa4ed6b80e17e78b3))
+
 ## [1.9.41](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.40...v1.9.41) (2022-02-08)
 
 
