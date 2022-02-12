@@ -11,6 +11,8 @@ const Pagination = ({
   path,
   query,
   rows,
+  pageSlug,
+  termSlug,
   showArrows,
   start
 }: PaginationComponentProps) => {
@@ -33,19 +35,10 @@ const Pagination = ({
   data.next = data.current + 1
   data.start = 1
 
-  const actionUrl = []
-  
-  if (!path) {
-    actionUrl.push('?')
+  let termPath = ''
+  if (query && query.term && query.term !== '') {
+    termPath = `${termSlug}${query.term}`
   }
-  if (path) {
-    actionUrl.push(`${path}?`)
-  }
-  if (query && query.term) {
-    actionUrl.push(`term=${query.term}`)
-  }
-
-  const href = actionUrl.join('')
 
   const RenderStart = () => {
     if (data.start === data.current) {
@@ -53,7 +46,7 @@ const Pagination = ({
     }
     return (
       <PageIndicator
-        href={`${href}&page=${data.start}`}
+        href={`${path}${pageSlug}${data.start}${termPath}`}
         {...indicatorLayout}
       >
         {data.start}
@@ -64,7 +57,7 @@ const Pagination = ({
   const RenderBeforeLast = () => {
     return (
       <PageIndicator
-        href={`${href}&page=${data.last - 1}`}
+        href={`${path}${pageSlug}${data.last - 1}${termPath}`}
         {...indicatorLayout}
       >
         {data.last - 1}
@@ -81,7 +74,7 @@ const Pagination = ({
     }
     return (
       <PageIndicator
-        href={`${href}&page=${data.last}`}
+        href={`${path}${pageSlug}${data.last}${termPath}`}
         {...indicatorLayout}
       >
         {data.last}
@@ -116,7 +109,7 @@ const Pagination = ({
     }
     return (
       <PageIndicator
-        href={`${href}&page=${data.next}`}
+        href={`${path}${pageSlug}${data.next}${termPath}`}
         {...indicatorLayout}
       >
         {data.next}
@@ -132,7 +125,7 @@ const Pagination = ({
 
     return (
       <PageIndicator
-        href={`${href}&page=${data.end}`}
+        href={`${path}${pageSlug}${data.end}${termPath}`}
         {...indicatorLayout}
       >
         {data.end}
@@ -164,6 +157,11 @@ const Pagination = ({
       {showArrows && <ArrowButton direction='right' />}
     </Block>
   )
+}
+
+Pagination.defaultProps = {
+  pageSlug: '?page=',
+  termSlug: '&term='
 }
 
 export default Pagination
