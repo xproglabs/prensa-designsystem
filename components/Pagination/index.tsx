@@ -40,6 +40,10 @@ const Pagination = ({
     termPath = `${termSlug}${query.term}`
   }
 
+  if (path == '') {
+    path = '/'
+  }
+
   const RenderStart = () => {
     if (data.start === data.current) {
       return null

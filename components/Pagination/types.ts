@@ -8,6 +8,7 @@ export interface PaginationComponentProps {
   numFound: number;
   path: string;
   pageSlug: string;
+  termSlug: string;
   query?: QueryProps;
   rows: number;
   showArrows?: boolean;
