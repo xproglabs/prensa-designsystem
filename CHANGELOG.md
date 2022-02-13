@@ -1,3 +1,10 @@
+## [1.9.44](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.43...v1.9.44) (2022-02-13)
+
+
+### Bug Fixes
+
+* article pagination end number ([ff30a82](https://github.com/xproglabs/prensa-designsystem/commit/ff30a82003cc84890adb471163f9cb8439446c33))
+
 ## [1.9.43](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.42...v1.9.43) (2022-02-13)
 
 
