@@ -16,6 +16,7 @@ const Tags = ({
   items,
   maxWidth,
   radius,
+  termSlug,
   transform
 }) => {
   return (
@@ -27,7 +28,7 @@ const Tags = ({
           key={key}
           radius={radius}
         >
-          <AnchorTag href={`/?term=${item}`}>
+          <AnchorTag href={`${termSlug}${item}`}>
             <Typography
               color={color}
               element='span'
@@ -50,7 +51,8 @@ Tags.defaultProps = {
   fontFamily: 'secondary',
   fontSize: ['14px'],
   fontWeight: 700,
-  items: []
+  items: [],
+  termSlug: '/?term='
 }
 
 Tags.propTypes = {
