@@ -30,7 +30,7 @@ const Pagination = ({
   }
 
   data.current = Math.floor(start / rows) + 1
-  data.end = Math.floor(numFound / rows)
+  data.end = Math.floor(numFound / rows) + 1
   data.last = data.current - 1
   data.next = data.current + 1
   data.start = 1
