@@ -1,3 +1,10 @@
+## [1.9.43](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.42...v1.9.43) (2022-02-13)
+
+
+### Bug Fixes
+
+* atualiza article tags slug ([6d4ea62](https://github.com/xproglabs/prensa-designsystem/commit/6d4ea62a19bf226d138538c50952ee0b10a0287b))
+
 ## [1.9.42](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.41...v1.9.42) (2022-02-11)
 
 
