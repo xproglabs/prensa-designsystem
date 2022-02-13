@@ -56,7 +56,6 @@ const Article = (props) => {
   // related content
   const related_content_body = get(relatedContent, 'body', {})
   const related_content_bottom = get(relatedContent, 'bottom', {})
-
   return (
     <S.Page>
       <S.Container>
