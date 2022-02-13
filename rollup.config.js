@@ -1,11 +1,9 @@
-import createBundle from './createBundle'
+import createBundle from './bundleEngine/bundleGenerator'
 
 export default [
-  createBundle('index.ts', 'dist/index'),
-  createBundle('icons/index.ts', 'dist/icons'),
-  createBundle('styled-system/index.ts', 'dist/styled-system'),
-  createBundle('styles/index.ts', 'dist/styles'),
-  createBundle('utils.ts', 'dist/utils'),
-
-  createBundle('styles/theme/default_theme.ts', 'dist/theme')
+  createBundle('index.ts', 'dist/index', 'index'),
+  createBundle('icons/index.ts', 'dist/icons', 'icons'),
+  createBundle('styled-system/index.ts', 'dist/styled-system', 'styled-system'),
+  createBundle('styles/index.ts', 'dist/styles', 'styles'),
+  createBundle('utils.ts', 'dist/utils', 'utils')
 ]
