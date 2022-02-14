@@ -3,7 +3,7 @@ import WebYouTube from 'react-youtube'
 
 import { Container } from '../styled'
 import { YouTubeEmbedProps } from './types'
-import { getYoutubeVideoId } from './utils'
+import { getYoutubeVideoId, getYoutubePlaylistId } from './utils'
 
 const YouTubeEmbed = ({
   amp,
@@ -23,7 +23,18 @@ const YouTubeEmbed = ({
     return null
   }
 
-  const videoId = getYoutubeVideoId(url)
+  let opts = {}
+  let videoId = getYoutubeVideoId(url)
+  if (url.includes('list=')) {
+    const playlistId = getYoutubePlaylistId(url)
+    opts = {
+      playerVars: {
+        listType: 'playlist',
+        list: playlistId,
+      }
+    }
+    videoId = null
+  }
 
   const Amp = () => (
     <amp-youtube
@@ -40,6 +51,7 @@ const YouTubeEmbed = ({
       className='Prensa-YouTubeEmbed-web'
       videoId={videoId}
       {...elementProps}
+      opts={opts}
     />
   )
 
