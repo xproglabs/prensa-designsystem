@@ -1,6 +1,6 @@
 export const getYoutubePlaylistId = (url: string) => {
   if (!url) return null
-  const playlistId = url.replace(/^.*list=/, '').replace(/\&.*$/, '')
+  const playlistId = url.replace(/^.*list=/, '').replace(/\\&.*$/, '')
   return playlistId
 }
 export const getYoutubeVideoId = url => {
