@@ -36,15 +36,30 @@ const YouTubeEmbed = ({
     videoId = null
   }
 
-  const Amp = () => (
-    <amp-youtube
-      data-videoid={videoId}
-      layout='responsive'
-      height={height[1]}
-      width={width[1]}
-      {...ampElementProps}
-    />
-  )
+  const Amp = () => {
+    // if url.includes('list=') return amp-iframe if not, return amp-youtube
+    if (url.includes('list=')) {
+      return (
+        <amp-iframe
+          {...ampElementProps}
+          height={height}
+          layout="responsive"
+          sandbox="allow-scripts allow-same-origin"
+          src={url}
+          width={width}
+        />
+      )
+    } else {
+      return (
+        <amp-youtube
+          {...ampElementProps}
+          data-videoid={videoId}
+          layout="responsive"
+          width={width}
+        />
+      )
+    }
+  }
 
   const Web = () => (
     <WebYouTube
@@ -64,7 +79,7 @@ const YouTubeEmbed = ({
       mb={mb}
       ml={ml}
     >
-      {amp ? <Amp/> : <Web/>}
+      {amp ? <Amp /> : <Web />}
     </Container>
   )
 }
