@@ -18,6 +18,7 @@ const YouTubeEmbed = ({
   width,
 }: YouTubeEmbedProps) => {
 
+
   if (!url) {
     console.error('Prensa | YouTubeEmbed > missing url')
     return null
@@ -36,16 +37,18 @@ const YouTubeEmbed = ({
     videoId = null
   }
 
+  const playlistId = getYoutubePlaylistId(url)
+
   const Amp = () => {
-    // if url.includes('list=') return amp-iframe if not, return amp-youtube
     if (url.includes('list=')) {
       return (
-        <amp-iframe
-          {...ampElementProps}
-          layout='responsive'
-          src={url}
-          height='200'
-          width='300'
+        <amp-youtube
+          data-param-listType='playlist'
+          data-param-list={playlistId}
+          data-live-channelid={videoId}
+          layout='responsive' 
+          height={height[1]}
+          width={width[1]}
         />
       )
     } else {
