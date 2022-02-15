@@ -20,10 +20,13 @@ export const Default = () => {
     <Block
       align='column'
       alignx='center'
-      color='white'
-      bgColor='neutral1'
+      color='primary1'
       height='50px'
-      width='100%'
+      width='calc(100% - 4px)'
+      b='2px'
+      borderColor='primary1'
+      borderStyle='solid'
+      maxWidth='200px'
     >
       teste
     </Block>
@@ -39,6 +42,7 @@ export const Responsive = () => {
       bgColor={['white', 'neutral1']}
       height={['100px', '50px']}
       width={['50%', '100%']}
+      maxWidth={['200px', '400px', '600px']}
     >
       teste
     </Block>
