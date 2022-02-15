@@ -1,6 +1,7 @@
 import {
   AlignProps,
   BorderProps,
+  BoxShadowProps,
   ColorProps,
   HeightProps,
   MarginProps,
@@ -14,6 +15,7 @@ import { ReactNode } from 'react'
 export interface BlockProps extends
   AlignProps,
   BorderProps,
+  BoxShadowProps,
   MarginProps,
   MaxAndMinProps,
   PaddingProps
@@ -29,6 +31,7 @@ export interface BlockProps extends
 export interface StyledBlockProps extends
   AlignProps,
   BorderProps,
+  BoxShadowProps,
   ColorProps,
   HeightProps,
   MarginProps,

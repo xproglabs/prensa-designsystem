@@ -1,5 +1,6 @@
 import { align } from '@xprog/prensa-css-engine/align'
 import { border } from '@xprog/prensa-css-engine/border'
+import { boxShadow } from '@xprog/prensa-css-engine/boxShadow'
 import { color } from '@xprog/prensa-css-engine/color'
 import { height } from '@xprog/prensa-css-engine/height'
 import { margin } from '@xprog/prensa-css-engine/margin'
@@ -15,6 +16,7 @@ import { StyledBlockProps } from './props'
 const StyledBlock: ComponentType<StyledBlockProps> = styled.div<StyledBlockProps>`
   ${align};
   ${border};
+  ${boxShadow};
   ${color};
   ${height};
   ${margin};
