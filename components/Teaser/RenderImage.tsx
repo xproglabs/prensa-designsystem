@@ -22,6 +22,7 @@ type RenderImageProps = {
   item_path?: string;
   layout?: any;
   opacityMask?: boolean;
+  radius_top?: boolean;
   state_of_image?: any;
 }
 
@@ -31,6 +32,7 @@ const RenderImage = ({
   editable,
   fallback_image_url,
   image_circle,
+  radius_top,
   item,
   item_path,
   layout,
@@ -94,7 +96,7 @@ const RenderImage = ({
   // prepare image props to render hybrid image ( amp / html )
   const image_props: ImageProps = {
     amp: amp,
-    custom_class: image_circle == true ? 'image-with-radius' : '',
+    custom_class: radius_top ? 'image-with-radius-top' : image_circle ? 'image-with-radius' : '',
     title: image_caption,
     layout_mobile: {
       enabled: image_path_mobile && image_path_mobile != '',
@@ -116,6 +118,7 @@ const RenderImage = ({
     <S.Image
       image_circle={image_circle}
       height={height}
+      radius_top={radius_top}
     >
       <ImageElement {...image_props} />
     </S.Image>
@@ -144,7 +147,7 @@ const RenderImage = ({
         image_props={{ mobile_dim, desktop_dim }}
         item={item}
       >
-        <RenderImageElement/>
+        <RenderImageElement />
       </ImagePreviewLink>
     )
   }
@@ -152,7 +155,7 @@ const RenderImage = ({
   const RenderImageWithLink = () => {
     if (opacityMask) {
       return (
-        <RenderImageWithOpacityMask/>
+        <RenderImageWithOpacityMask />
       )
     }
     return (
