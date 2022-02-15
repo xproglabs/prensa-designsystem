@@ -24,4 +24,10 @@ const Block = ({
   </StyledBlock>
 )
 
+Block.defaultProps = {
+  align: 'column',
+  alignx: 'left',
+  aligny: 'top'
+}
+
 export default Block
