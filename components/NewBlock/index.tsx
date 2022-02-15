@@ -6,6 +6,7 @@ import { StyledBlock } from './styled'
 const Block = ({
   bgColor,
   children,
+  dangerouslySetInnerHTML,
   color,
   height,
   width,
@@ -16,9 +17,10 @@ const Block = ({
     $color={color}
     $height={height}
     $width={width}
+    dangerouslySetInnerHTML={dangerouslySetInnerHTML ? { __html: dangerouslySetInnerHTML } : undefined}
     {...otherProps}
   >
-    {children}
+    {dangerouslySetInnerHTML ? undefined : children}
   </StyledBlock>
 )
 
