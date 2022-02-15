@@ -42,20 +42,20 @@ const YouTubeEmbed = ({
       return (
         <amp-iframe
           {...ampElementProps}
-          height={height}
-          layout="responsive"
-          sandbox="allow-scripts allow-same-origin"
+          layout='responsive'
           src={url}
-          width={width}
+          height='200'
+          width='300'
         />
       )
     } else {
       return (
         <amp-youtube
-          {...ampElementProps}
           data-videoid={videoId}
-          layout="responsive"
-          width={width}
+          layout='responsive'
+          height={height[1]}
+          width={width[1]}
+          {...ampElementProps}
         />
       )
     }
