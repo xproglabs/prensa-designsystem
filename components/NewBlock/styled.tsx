@@ -2,6 +2,7 @@ import { align } from '@xprog/prensa-css-engine/align'
 import { border } from '@xprog/prensa-css-engine/border'
 import { boxShadow } from '@xprog/prensa-css-engine/boxShadow'
 import { color } from '@xprog/prensa-css-engine/color'
+import { customCSS } from '@xprog/prensa-css-engine/customCSS'
 import { height } from '@xprog/prensa-css-engine/height'
 import { margin } from '@xprog/prensa-css-engine/margin'
 import { maxAndMin } from '@xprog/prensa-css-engine/maxAndMin'
@@ -18,6 +19,7 @@ const StyledBlock: ComponentType<StyledBlockProps> = styled.div<StyledBlockProps
   ${border};
   ${boxShadow};
   ${color};
+  ${customCSS};
   ${height};
   ${margin};
   ${maxAndMin};
