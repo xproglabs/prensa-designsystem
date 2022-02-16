@@ -95,10 +95,29 @@ const RenderImage = ({
     image_path_desktop = parseImagePath(desktop_dim, domain, image_contentid, 1200)
   }
 
+  let custom = ''
+  if (radius_bottom) {
+    custom = `
+      ${custom}
+      image-with-radius-bottom 
+    `
+  }
+  if (radius_top) {
+    custom = `
+      ${custom}
+      image-with-radius-top
+    `
+  }
+  if (image_circle) {
+    custom = `
+      ${custom}
+      image-with-radius 
+    `
+  }
   // prepare image props to render hybrid image ( amp / html )
   const image_props: ImageProps = {
     amp: amp,
-    custom_class: radius_bottom ? 'image-with-radius-bottom' : radius_top ? 'image-with-radius-top' : image_circle ? 'image-with-radius' : '',
+    custom_class: custom,
     title: image_caption,
     layout_mobile: {
       enabled: image_path_mobile && image_path_mobile != '',

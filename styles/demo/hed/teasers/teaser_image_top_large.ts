@@ -34,9 +34,6 @@ export const TEASER_IMAGE_TOP_LARGE: LayoutProps = {
   radius_bottom: {
     enabled: true
   },
-  radius_top: {
-    enabled: true
-  },
   related: {
     enabled: false
   },
