@@ -34,7 +34,6 @@ const YouTubeEmbed = ({
         list: playlistId,
       }
     }
-    videoId = null
   }
 
   const playlistId = getYoutubePlaylistId(url)
