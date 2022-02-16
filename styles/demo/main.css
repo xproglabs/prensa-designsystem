@@ -24,9 +24,13 @@ amp-sidebar {
 .image-with-radius {
   border-radius: 100%;
 }
+.image-with-radius-bottom {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 .image-with-radius-top {
   border-top-left-radius: 10px;
-  border-top-right-radius: 10px
+  border-top-right-radius: 10px;
 }
 @media (max-width: 1015px) {
   .hide_mobile {

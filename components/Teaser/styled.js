@@ -111,10 +111,11 @@ const Box = ({
 const Image = ({
   children,
   image_circle = false,
+  radius_bottom = false,
   radius_top = false,
   height,
 }) => {
-  const custom = radius_top ? 'border-top-left-radius: 10px; border-top-right-radius: 10px' : image_circle ? 'border-radius: 100%;' : ''
+  const custom = radius_bottom ? 'border-bottom-left-radius: 10px; border-bottom-right-radius: 10px' : radius_top ? 'border-top-left-radius: 10px; border-top-right-radius: 10px' : image_circle ? 'border-radius: 100%;' : ''
   return (
     <Block
       bgColor='neutral8'
