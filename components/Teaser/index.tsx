@@ -190,6 +190,7 @@ const Teaser = (props: TeaserProps) => {
           editable={editable}
           fallback_image_url={fallback_image_url}
           image_circle={layout?.image_circle}
+          radius_top={layout?.radius_top}
           item={item}
           item_path={item_path}
           layout={layout}
