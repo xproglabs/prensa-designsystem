@@ -25,7 +25,7 @@ const YouTubeEmbed = ({
   }
 
   let opts = {}
-  let videoId = getYoutubeVideoId(url)
+  const videoId = getYoutubeVideoId(url)
   if (url.includes('list=')) {
     const playlistId = getYoutubePlaylistId(url)
     opts = {
