@@ -1,3 +1,10 @@
+## [1.9.47](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.46...v1.9.47) (2022-02-17)
+
+
+### Bug Fixes
+
+* restaura package.lock removido ([505226d](https://github.com/xproglabs/prensa-designsystem/commit/505226db0b787efc2385ee5abd30dfaa168bd408))
+
 ## [1.9.46](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.45...v1.9.46) (2022-02-16)
 
 
