@@ -3,7 +3,7 @@ import WebYouTube from 'react-youtube'
 
 import { Container } from '../styled'
 import { YouTubeEmbedProps } from './types'
-import { getYoutubeVideoId } from './utils'
+import { getYoutubeVideoId, getYoutubePlaylistId } from './utils'
 
 const YouTubeEmbed = ({
   amp,
@@ -18,28 +18,57 @@ const YouTubeEmbed = ({
   width,
 }: YouTubeEmbedProps) => {
 
+
   if (!url) {
     console.error('Prensa | YouTubeEmbed > missing url')
     return null
   }
 
+  let opts = {}
   const videoId = getYoutubeVideoId(url)
+  if (url.includes('list=')) {
+    const playlistId = getYoutubePlaylistId(url)
+    opts = {
+      playerVars: {
+        listType: 'playlist',
+        list: playlistId,
+      }
+    }
+  }
 
-  const Amp = () => (
-    <amp-youtube
-      data-videoid={videoId}
-      layout='responsive'
-      height={height[1]}
-      width={width[1]}
-      {...ampElementProps}
-    />
-  )
+  const playlistId = getYoutubePlaylistId(url)
+
+  const Amp = () => {
+    if (url.includes('list=')) {
+      return (
+        <amp-youtube
+          data-param-listType='playlist'
+          data-param-list={playlistId}
+          data-live-channelid={videoId}
+          layout='responsive' 
+          height={height[1]}
+          width={width[1]}
+        />
+      )
+    } else {
+      return (
+        <amp-youtube
+          data-videoid={videoId}
+          layout='responsive'
+          height={height[1]}
+          width={width[1]}
+          {...ampElementProps}
+        />
+      )
+    }
+  }
 
   const Web = () => (
     <WebYouTube
       className='Prensa-YouTubeEmbed-web'
       videoId={videoId}
       {...elementProps}
+      opts={opts}
     />
   )
 
@@ -52,7 +81,7 @@ const YouTubeEmbed = ({
       mb={mb}
       ml={ml}
     >
-      {amp ? <Amp/> : <Web/>}
+      {amp ? <Amp /> : <Web />}
     </Container>
   )
 }
