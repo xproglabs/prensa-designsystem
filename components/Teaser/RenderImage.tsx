@@ -22,6 +22,8 @@ type RenderImageProps = {
   item_path?: string;
   layout?: any;
   opacityMask?: boolean;
+  radius_bottom?: boolean;
+  radius_top?: boolean;
   state_of_image?: any;
 }
 
@@ -31,6 +33,8 @@ const RenderImage = ({
   editable,
   fallback_image_url,
   image_circle,
+  radius_bottom,
+  radius_top,
   item,
   item_path,
   layout,
@@ -91,10 +95,29 @@ const RenderImage = ({
     image_path_desktop = parseImagePath(desktop_dim, domain, image_contentid, 1200)
   }
 
+  let custom = ''
+  if (radius_bottom) {
+    custom = `
+      ${custom}
+      image-with-radius-bottom 
+    `
+  }
+  if (radius_top) {
+    custom = `
+      ${custom}
+      image-with-radius-top
+    `
+  }
+  if (image_circle) {
+    custom = `
+      ${custom}
+      image-with-radius 
+    `
+  }
   // prepare image props to render hybrid image ( amp / html )
   const image_props: ImageProps = {
     amp: amp,
-    custom_class: image_circle == true ? 'image-with-radius' : '',
+    custom_class: custom,
     title: image_caption,
     layout_mobile: {
       enabled: image_path_mobile && image_path_mobile != '',
@@ -116,6 +139,8 @@ const RenderImage = ({
     <S.Image
       image_circle={image_circle}
       height={height}
+      radius_bottom={radius_bottom}
+      radius_top={radius_top}
     >
       <ImageElement {...image_props} />
     </S.Image>
@@ -144,7 +169,7 @@ const RenderImage = ({
         image_props={{ mobile_dim, desktop_dim }}
         item={item}
       >
-        <RenderImageElement/>
+        <RenderImageElement />
       </ImagePreviewLink>
     )
   }
@@ -152,7 +177,7 @@ const RenderImage = ({
   const RenderImageWithLink = () => {
     if (opacityMask) {
       return (
-        <RenderImageWithOpacityMask/>
+        <RenderImageWithOpacityMask />
       )
     }
     return (

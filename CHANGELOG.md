@@ -1,3 +1,17 @@
+## [1.9.46](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.45...v1.9.46) (2022-02-16)
+
+
+### Features
+
+* Permitir definição  de border-radius-bottom nas imagens do Teaser ([c3daed5](https://github.com/xproglabs/prensa-designsystem/commit/c3daed51fa63d763db21d6068c69c4dec1e95d17))
+
+## [1.9.45](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.44...v1.9.45) (2022-02-16)
+
+
+### Bug Fixes
+
+* Permitir definição de border radius nas imagens do Teaser ([e831a43](https://github.com/xproglabs/prensa-designsystem/commit/e831a43e966d9908803cfe6eaf1ca1d02a093291))
+
 ## [1.9.44](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.43...v1.9.44) (2022-02-13)
 
 
