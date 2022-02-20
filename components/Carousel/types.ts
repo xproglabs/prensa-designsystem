@@ -6,6 +6,8 @@ type CarouselLayoutTypes = 'fill' | 'fixed' | 'fixed-height' | 'flex-item' | 'in
 export type CarouselProps = {
   children?: any;
   enabled: boolean;
+  delay?: number;
+  autoplay?: boolean;
   /**
    * @description Expects an array of strings. Each string represents a height
    * @example ['250', '250'] | ['250px', '250px']

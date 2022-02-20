@@ -11,7 +11,9 @@ const Carousel = ({
   mb,
   querie,
   theme,
-  type
+  type,
+  autoplay,
+  delay
 }: CarouselProps) => {
 
   if (!enabled) return null
@@ -26,6 +28,8 @@ const Carousel = ({
       lg={{ height: height[1], mb: mb[1] }}
     >
       <amp-carousel
+        autoplay={autoplay}
+        delay={delay}
         layout='fixed-height'
         height={height[0]}
         media={`(max-width: ${querie_value})`}
@@ -33,6 +37,8 @@ const Carousel = ({
         {children}
       </amp-carousel>
       <amp-carousel
+        autoplay={autoplay}
+        delay={delay}
         layout='fixed-height'
         height={height[1]}
         media={`(min-width: ${querie_value})`}
@@ -44,6 +50,8 @@ const Carousel = ({
 }
 
 Carousel.defaultProps = {
+  autoplay: true,
+  delay: 6000,
   height: ['250px', '250px'],
   layout: 'fixed-height',
   querie: 'md',
