@@ -25,6 +25,8 @@ export type CarouselProps = {
 }
 
 export type CarouselLayoutProps = {
+  autoplay?: boolean;
+  delay?: number;
   enabled: boolean;
   /**
    * @description Expects an array of strings. Each string represents a height
