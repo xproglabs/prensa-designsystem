@@ -13,7 +13,7 @@ export type ContainerProps = {
 export type CarouselProps = {
   delay?: string;
   autoplay?: string;
-  controlos?: string;
+  controls?: string;
   loop?: string;
 }
 

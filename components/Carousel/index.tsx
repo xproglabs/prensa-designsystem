@@ -53,8 +53,8 @@ const Carousel = ({
 }
 
 Carousel.defaultProps = {
-  autoplay: false,
-  delay: 6000,
+  autoplay: '',
+  delay: '',
   height: ['250px', '250px'],
   layout: 'fixed-height',
   querie: 'md',

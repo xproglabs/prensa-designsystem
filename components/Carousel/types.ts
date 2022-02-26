@@ -7,8 +7,8 @@ export type CarouselProps = {
   children?: any;
   enabled: boolean;
   delay?: string;
-  autoplay?: boolean;
-  loop?: boolean;
+  autoplay?: string;
+  loop?: string;
   /**
    * @description Expects an array of strings. Each string represents a height
    * @example ['250', '250'] | ['250px', '250px']
@@ -28,7 +28,7 @@ export type CarouselProps = {
 export type CarouselLayoutProps = {
   delay?: string;
   autoplay?: string;
-  controlos?: string;
+  controls?: string;
   loop?: string;
   enabled: boolean;
   /**

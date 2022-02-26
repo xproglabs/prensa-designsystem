@@ -2,8 +2,8 @@ import { CreateTemplate } from 'prensa'
 
 export const TEMPLATE_CAROUSEL = CreateTemplate({
   slot30: {
-    autoplay: true,
-    delay: 3000,
+    autoplay: '',
+    delay: '',
     layout: {
       0: ['hide'],
       1: ['featured'],
