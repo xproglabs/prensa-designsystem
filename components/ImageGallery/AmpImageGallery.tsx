@@ -6,9 +6,12 @@ import { Caption } from './Caption'
 import { Content } from './styled'
 import { AmpImageGalleryProps } from './types'
 
-const AmpImageGallery = ({ captionProps, items }: AmpImageGalleryProps) => {
+const AmpImageGallery = ({ captionProps, items, carouselProps }: AmpImageGalleryProps) => {
   return (
     <amp-carousel
+      autoplay={carouselProps.autoplay}
+      delay={carouselProps.delay}
+      loop={carouselProps.loop}
       lightbox={true}
       height='548'
       layout='responsive'

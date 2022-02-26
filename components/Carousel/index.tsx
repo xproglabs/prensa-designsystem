@@ -13,7 +13,8 @@ const Carousel = ({
   theme,
   type,
   autoplay,
-  delay
+  delay,
+  loop
 }: CarouselProps) => {
 
   if (!enabled) return null
@@ -31,6 +32,7 @@ const Carousel = ({
         autoplay={autoplay}
         delay={delay}
         layout='fixed-height'
+        loop={loop}
         height={height[0]}
         media={`(max-width: ${querie_value})`}
         type={type}>
@@ -40,6 +42,7 @@ const Carousel = ({
         autoplay={autoplay}
         delay={delay}
         layout='fixed-height'
+        loop={loop}
         height={height[1]}
         media={`(min-width: ${querie_value})`}
         type={type}>

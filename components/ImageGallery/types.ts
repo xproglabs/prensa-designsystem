@@ -10,10 +10,18 @@ export type ContainerProps = {
   $height: string;
 }
 
+export type CarouselProps = {
+  delay?: string;
+  autoplay?: string;
+  controlos?: string;
+  loop?: string;
+}
+
 // AMP Image Gallery component
 export type AmpImageGalleryProps = {
   captionProps?: CaptionProps;
   items: Array<ItemProps>;
+  carouselProps: CarouselProps;
 }
 
 // WEB Image Gallery component
