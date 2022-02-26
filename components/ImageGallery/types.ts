@@ -21,7 +21,7 @@ export type CarouselProps = {
 export type AmpImageGalleryProps = {
   captionProps?: CaptionProps;
   items: Array<ItemProps>;
-  carouselProps: CarouselProps;
+  carouselProps?: CarouselProps;
 }
 
 // WEB Image Gallery component
