@@ -6,7 +6,7 @@ import { withTheme } from 'styled-components'
 import Block from '../../Block'
 import { ImageGallery } from '../../ImageGallery/index.tsx'
 import Citation from '../Citation/Citation'
-import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed } from '../Embeds'
+import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed, TikTokEmbed } from '../Embeds'
 import Heading2 from '../Headings/Heading2'
 import Heading3 from '../Headings/Heading3'
 import Heading4 from '../Headings/Heading4'
@@ -180,6 +180,10 @@ const TextBody = (props) => {
             amp={amp}
             url={value}
           />
+        )
+      case 'TikTok':
+        return (
+          <TikTokEmbed amp={amp} url={value} />
         )
       case 'Youtube':
         return (
