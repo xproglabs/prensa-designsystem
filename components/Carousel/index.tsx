@@ -5,16 +5,16 @@ import { withTheme } from 'styled-components'
 import { CarouselProps } from './types'
 
 const Carousel = ({
+  autoplay,
   children,
+  delay,
   enabled,
   height,
+  loop,
   mb,
   querie,
   theme,
   type,
-  autoplay,
-  delay,
-  loop
 }: CarouselProps) => {
 
   if (!enabled) return null

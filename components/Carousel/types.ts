@@ -4,10 +4,10 @@ type CarouselType = 'carousel' | 'slides'
 type CarouselLayoutTypes = 'fill' | 'fixed' | 'fixed-height' | 'flex-item' | 'intrinsic' | 'nodisplay' | 'responsive'
 
 export type CarouselProps = {
-  children?: any;
-  enabled: boolean;
-  delay?: string;
   autoplay?: string;
+  children?: any;
+  delay?: string;
+  enabled: boolean;
   loop?: string;
   /**
    * @description Expects an array of strings. Each string represents a height
