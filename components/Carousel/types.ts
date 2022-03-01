@@ -28,7 +28,6 @@ export type CarouselProps = {
 export type CarouselLayoutProps = {
   delay?: string;
   autoplay?: string;
-  controls?: string;
   loop?: string;
   enabled: boolean;
   /**
