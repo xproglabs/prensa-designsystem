@@ -5,13 +5,16 @@ import { withTheme } from 'styled-components'
 import { CarouselProps } from './types'
 
 const Carousel = ({
+  autoplay,
   children,
+  delay,
   enabled,
   height,
+  loop,
   mb,
   querie,
   theme,
-  type
+  type,
 }: CarouselProps) => {
 
   if (!enabled) return null
@@ -26,14 +29,20 @@ const Carousel = ({
       lg={{ height: height[1], mb: mb[1] }}
     >
       <amp-carousel
+        autoplay={autoplay}
+        delay={delay}
         layout='fixed-height'
+        loop={loop}
         height={height[0]}
         media={`(max-width: ${querie_value})`}
         type={type}>
         {children}
       </amp-carousel>
       <amp-carousel
+        autoplay={autoplay}
+        delay={delay}
         layout='fixed-height'
+        loop={loop}
         height={height[1]}
         media={`(min-width: ${querie_value})`}
         type={type}>
