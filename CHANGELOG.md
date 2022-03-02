@@ -1,3 +1,10 @@
+## [1.9.48](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.47...v1.9.48) (2022-03-02)
+
+
+### Features
+
+* ajusta ordem alfabetica ([b2c3abf](https://github.com/xproglabs/prensa-designsystem/commit/b2c3abf6388910856ce96d0ab0220bf921237b5a))
+
 ## [1.9.47](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.46...v1.9.47) (2022-02-17)
 
 
