@@ -1,3 +1,10 @@
+## [1.9.49](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.48...v1.9.49) (2022-03-02)
+
+
+### Bug Fixes
+
+* Permite boolean na prop autoplay ([c2d6287](https://github.com/xproglabs/prensa-designsystem/commit/c2d628795c62805abb1566a571005234dbb2554e))
+
 ## [1.9.48](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.47...v1.9.48) (2022-03-02)
 
 
