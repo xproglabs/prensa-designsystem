@@ -20,19 +20,20 @@ export const TikTokEmbed = ({
 }: TikTokProps) => {
 
   const videoId = getTikTokVideoId(url)
-
+  
   const Amp = () => (
     <amp-tiktok
-      width={width}
-      height={height}
       data-src={videoId}
-      layout='responsive'
+      height={height[1]}
+      width={width[1]}
       {...ampElementProps}
     />
   )
 
   const Web = () => (
-    <TikTok 
+    <TikTok
+      height={height[1]}
+      width={width[1]}
       url={videoId}
       {...elementProps}
     />

@@ -111,6 +111,9 @@ const parse_content = (content) => {
         } else if (attr['name'].indexOf('twitter.com') > -1) {
           tagItems.push({ type: 'Tweet', value: attr['name'] })
           return true
+        } else if (attr['name'].indexOf('tiktok.com') > -1) {
+          tagItems.push({ type: 'TikTok', value: attr['name'] })
+          return true
         } else if (attr['name'].indexOf('youtube.com') > -1 || attr['name'].indexOf('youtu.be') > -1) {
           tagItems.push({ type: 'Youtube', value: attr['name'] })
           return true
