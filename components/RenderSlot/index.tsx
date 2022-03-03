@@ -2,12 +2,13 @@ import { selectComponentFromSlotList } from 'components/PageBlock/utils'
 import { get, map, orderBy } from 'lodash'
 import React from 'react'
 import { withTheme } from 'styled-components'
-import RenderMoreButton from './RenderMoreButton'
+
 import Block from '../Block'
 import Carousel from '../Carousel'
 import Pagination from '../Pagination'
 import { PreviewProvider } from '../PreviewProvider'
 import Teaser from '../Teaser'
+import RenderMoreButton from './RenderMoreButton'
 import { RenderSlotProps } from './types'
 import {
   parseTeaserProps,
