@@ -7,8 +7,8 @@ import { getTikTokVideoId } from './utils'
 
 
 export const TikTokEmbed = ({
-  url,
   amp,
+  url,
   ampElementProps,
   elementProps,
   height,
