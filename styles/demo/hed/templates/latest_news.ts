@@ -9,6 +9,11 @@ export const TEMPLATE_LATEST_NEWS = CreateTemplate({
     layout: {
       0: ['teaser_latest'],
     },
+    more_button: {
+      color: 'black',
+      border: 'black',
+      variant: 'filled'
+    },
     spaces: [0, 0, 0, 0]
   },
   slot30: {

@@ -1,9 +1,8 @@
 import { selectComponentFromSlotList } from 'components/PageBlock/utils'
 import { get, map, orderBy } from 'lodash'
-import { Button } from 'prensa'
 import React from 'react'
 import { withTheme } from 'styled-components'
-
+import RenderMoreButton from './RenderMoreButton'
 import Block from '../Block'
 import Carousel from '../Carousel'
 import Pagination from '../Pagination'
@@ -31,6 +30,7 @@ const RenderSlot = ({
   layouts,
   order,
   more,
+  more_button,
   more_link,
   more_title,
   pagination,
@@ -65,28 +65,6 @@ const RenderSlot = ({
     }
     return (
       <Pagination {...search_len} />
-    )
-  }
-
-  const RenderMoreButton = () => {
-    if (!more) {
-      return null
-    }
-    return (
-      <Block
-        mb={3}
-        width='100%'>
-        <Button
-          color='neutral4'
-          borderColor='neutral4'
-          fontSize={16}
-          size={6}
-          path={more_link}
-          variant='outlined'
-          width='calc(100% - 32px)'>
-          {more_title}
-        </Button>
-      </Block>
     )
   }
 
@@ -143,7 +121,12 @@ const RenderSlot = ({
           </Block>
         )
       })}
-      <RenderMoreButton />
+      <RenderMoreButton 
+        more={more} 
+        more_button={more_button} 
+        more_link={more_link} 
+        more_title={more_title}  
+      />
       <RenderPagination />
     </React.Fragment>
   )

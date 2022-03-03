@@ -3,6 +3,7 @@ import { ReactElement } from 'react'
 import { CarouselLayoutProps } from '../../components/Carousel/types'
 import { PageBlockPreview } from '../PreviewProvider/types'
 import { LayoutProps } from '../Teaser/types'
+import { MoreButtonLayoutProps } from './RenderMoreButton'
 
 export type RenderSlotProps = {
   amp?: boolean,
@@ -17,6 +18,7 @@ export type RenderSlotProps = {
   layout?: LayoutProps;
   layouts: Array<string>;
   more?: boolean;
+  more_button?: MoreButtonLayoutProps;
   more_link?: string;
   more_title?: string;
   min_height?: [string, string];
