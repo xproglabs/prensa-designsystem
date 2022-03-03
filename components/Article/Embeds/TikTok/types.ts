@@ -9,8 +9,6 @@ export type TikTokProps = {
   mb?: string | number;
   ml?: string | number;
   width?: Array<string>;
-  user?: string;
-  tiktokId?: string; 
 }
 
 type AmpElementProps = {
