@@ -12,7 +12,8 @@ export const TEMPLATE_LATEST_NEWS = CreateTemplate({
     more_button: {
       color: 'black',
       border: 'black',
-      variant: 'filled'
+      variant: 'filled',
+      width: 'calc(100% - 32px)'
     },
     spaces: [0, 0, 0, 0]
   },
@@ -23,6 +24,12 @@ export const TEMPLATE_LATEST_NEWS = CreateTemplate({
     },
     layout: {
       0: ['teaser_latest']
+    },
+    more_button: {
+      color: 'black',
+      border: 'black',
+      variant: 'filled',
+      width: 'calc(100% - 32px)'
     },
     spaces: [0, 0, 0, 0]
   }

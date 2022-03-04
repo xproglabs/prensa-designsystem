@@ -4,12 +4,13 @@ import React from 'react'
 export type MoreButtonLayoutProps = {
   color?: string,
   border?: string,
-  variant?: string
+  variant?: string,
+  width?: string
 }
 
 type RenderMoreButtonProps = {
   more?: boolean;
-  more_button: MoreButtonLayoutProps;
+  more_button?: MoreButtonLayoutProps;
   more_title: string;
   more_link: string;
 }
@@ -30,11 +31,11 @@ const RenderMoreButton = ({
       <Button
         color={more_button.color}
         borderColor={more_button.border}
-        fontSize={16}
+        fontSize={12}
         size={6}
         path={more_link}
         variant={more_button.variant}
-        width='calc(100% - 32px)'>
+        width={more_button.width}>
         {more_title}
       </Button>
     </Block>
@@ -45,7 +46,8 @@ RenderMoreButton.defaultProps = {
   more_button: {
     color: 'primary1',
     border: 'primary1',
-    variant: 'filled'
+    variant: 'filled',
+    width: 'calc(100% - 32px)'
   }
 }
 

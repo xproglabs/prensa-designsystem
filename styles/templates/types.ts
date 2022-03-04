@@ -1,4 +1,5 @@
 import { TeaserCartridges } from '@prensa_tokens'
+import { MoreButtonLayoutProps } from 'components/RenderSlot/RenderMoreButton'
 
 import { CarouselLayoutProps } from '../../components/Carousel/types'
 
@@ -40,6 +41,7 @@ type TemplateSlotTypes = {
    * [0, 1, 2, 3] -> is one column for one item, two column for two items and three cols for three items
    * [0, 2, 2, 2] -> is two column for one, two or three items
    */
+  more_button?: MoreButtonLayoutProps;
   spaces: TemplateSpaces;
   space_bottom?: TemplateSpacesBottom;
   space_bottom_column?: TemplateSpacesBottom;
