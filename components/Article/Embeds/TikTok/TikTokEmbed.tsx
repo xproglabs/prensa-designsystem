@@ -24,7 +24,8 @@ export const TikTokEmbed = ({
   const Amp = () => (
     <amp-tiktok
       data-src={videoId}
-      height={height[1]}
+      height='724px'
+      layout='responsive'
       width={width[1]}
       {...ampElementProps}
     />
@@ -32,8 +33,6 @@ export const TikTokEmbed = ({
 
   const Web = () => (
     <TikTok
-      height={height[1]}
-      width={width[1]}
       url={videoId}
       {...elementProps}
     />
@@ -54,7 +53,7 @@ export const TikTokEmbed = ({
 }
 
 TikTokEmbed.defaultProps = {
-  height: ['384px', '384px'],
+  height: ['max-content', 'max-content'],
   mb: 3,
   width: ['100%', '768px'],
 }
