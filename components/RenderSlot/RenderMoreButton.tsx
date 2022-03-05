@@ -1,14 +1,14 @@
 import { Button, Block } from 'prensa'
 import React from 'react'
 
-export type MoreButtonLayoutProps = {
+export interface MoreButtonLayoutProps {
   color?: string,
   border?: string,
   variant?: string,
   width?: string
 }
 
-type RenderMoreButtonProps = {
+interface RenderMoreButtonProps {
   more?: boolean;
   more_button?: MoreButtonLayoutProps;
   more_title: string;
@@ -46,8 +46,8 @@ RenderMoreButton.defaultProps = {
   more_button: {
     color: 'primary1',
     border: 'primary1',
-    variant: 'filled',
-    width: 'calc(100% - 32px)'
+    variant: 'outlined',
+    width: '100%'
   }
 }
 
