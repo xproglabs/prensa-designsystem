@@ -80,7 +80,7 @@ const TextBody = (props) => {
           amp={amp}
           caption={{
             ...bodyImage.caption,
-            value: image_data.caption
+            value: value.caption || image_data.caption
           }}
           height={image_data.height}
           width={image_data.width}
