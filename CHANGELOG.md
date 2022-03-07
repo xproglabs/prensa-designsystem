@@ -1,3 +1,10 @@
+## [1.9.51](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.50...v1.9.51) (2022-03-07)
+
+
+### Bug Fixes
+
+* **scheduled:** published and modified date ([fe1e324](https://github.com/xproglabs/prensa-designsystem/commit/fe1e32402b1f70f15ce3792819df056346303e19))
+
 ## [1.9.50](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.49...v1.9.50) (2022-03-07)
 
 
