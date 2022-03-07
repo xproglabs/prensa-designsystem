@@ -111,8 +111,8 @@ export type LayoutProps = {
   profile_image?: {
     enabled: boolean,
   };
-  radius_bottom?: boolean;
-  radius_top?: boolean;
+  radius_bottom?: string;
+  radius_top?: string;
   related?: Related;
   section?: Object;
   subject?: SubjectLayout;

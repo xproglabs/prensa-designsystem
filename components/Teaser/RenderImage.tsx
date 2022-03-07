@@ -22,8 +22,8 @@ type RenderImageProps = {
   item_path?: string;
   layout?: any;
   opacityMask?: boolean;
-  radius_bottom?: boolean;
-  radius_top?: boolean;
+  radius_bottom?: string;
+  radius_top?: string;
   state_of_image?: any;
 }
 

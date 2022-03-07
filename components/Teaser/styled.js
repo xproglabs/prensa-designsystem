@@ -111,23 +111,23 @@ const Box = ({
 const Image = ({
   children,
   image_circle = false,
-  radius_bottom = false,
-  radius_top = false,
+  radius_bottom = '10px',
+  radius_top = '10px',
   height,
 }) => {
   let custom = ''
   if (radius_bottom) {
     custom = `
       ${custom}
-      border-bottom-left-radius: 10px; 
-      border-bottom-right-radius: 10px   
+      border-bottom-left-radius: ${radius_bottom}px; 
+      border-bottom-right-radius: ${radius_bottom}px;   
     `
   }
   if (radius_top) {
     custom = `
       ${custom}
-      border-top-left-radius: 10px; 
-      border-top-right-radius: 10px   
+      border-bottom-left-radius: ${radius_top}px; 
+      border-bottom-right-radius: ${radius_top}px;  
     `
   }
   if (image_circle) {
