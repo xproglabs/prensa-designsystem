@@ -1,3 +1,11 @@
+## [1.9.50](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.49...v1.9.50) (2022-03-07)
+
+
+### Bug Fixes
+
+* **caption:** redefine subtitle rules ([c40e7a7](https://github.com/xproglabs/prensa-designsystem/commit/c40e7a71ff3c48d2fde206b59f4246516cc23d33))
+* **caption:** set textbody caption as default ([3c84eba](https://github.com/xproglabs/prensa-designsystem/commit/3c84eba7dec5f3f23d403f371cde407b62bddddd))
+
 ## [1.9.49](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.48...v1.9.49) (2022-03-02)
 
 
