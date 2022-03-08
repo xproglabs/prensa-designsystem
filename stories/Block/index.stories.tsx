@@ -36,12 +36,12 @@ export const Default = () => {
 export const Responsive = () => {
   return (
     <Block
-      align={['row', 'column']}
-      alignx={['left','center']}
+      align={['row', 'column', 'row']}
+      alignx={['left', 'center', 'right']}
       color={['black', 'white']}
-      bgColor={['white', 'neutral1']}
-      height={['100px', '50px']}
-      width={['50%', '100%']}
+      bgColor={['primary1', 'primary2']}
+      height={['50px', '100px', '200px']}
+      width='100%'
       maxWidth={['200px', '400px', '600px']}
     >
       teste
