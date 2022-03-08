@@ -1,5 +1,5 @@
 import { TeaserCartridges } from '@prensa_tokens'
-import { MoreButtonLayoutProps } from 'components/RenderSlot/RenderMoreButton'
+import { MoreButtonLayoutProps } from 'components/RenderSlot/MoreButton'
 
 import { CarouselLayoutProps } from '../../components/Carousel/types'
 

@@ -8,19 +8,21 @@ export interface MoreButtonLayoutProps {
   width?: string
 }
 
-interface RenderMoreButtonProps {
+interface MoreButtonProps extends MoreButtonLayoutProps {
   more?: boolean;
-  more_button?: MoreButtonLayoutProps;
   more_title: string;
   more_link: string;
 }
 
-const RenderMoreButton = ({
+const MoreButton = ({
   more,
-  more_button,
+  color,
+  border,
   more_link,
-  more_title
-}: RenderMoreButtonProps ) => {
+  more_title,
+  variant,
+  width,
+}: MoreButtonProps ) => {
   if (!more) {
     return null
   }
@@ -29,20 +31,20 @@ const RenderMoreButton = ({
       mb={3}
       width='100%'>
       <Button
-        color={more_button.color}
-        borderColor={more_button.border}
+        color={color}
+        borderColor={border}
         fontSize={12}
         size={6}
         path={more_link}
-        variant={more_button.variant}
-        width={more_button.width}>
+        variant={variant}
+        width={width}>
         {more_title}
       </Button>
     </Block>
   )
 }
 
-RenderMoreButton.defaultProps = {
+MoreButton.defaultProps = {
   more_button: {
     color: 'primary1',
     border: 'primary1',
@@ -51,4 +53,4 @@ RenderMoreButton.defaultProps = {
   }
 }
 
-export default RenderMoreButton
+export default MoreButton

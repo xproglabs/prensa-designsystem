@@ -1,5 +1,5 @@
 import { ColorTokens, IconTokens } from '@prensa_tokens'
-import { MoreButtonLayoutProps } from 'components/RenderSlot/RenderMoreButton'
+import { MoreButtonLayoutProps } from 'components/RenderSlot/MoreButton'
 
 import { PageBlockPreview } from '../PreviewProvider/types'
 import { SectionTitleLayout } from '../SectionTitle/types'

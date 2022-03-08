@@ -8,7 +8,7 @@ import Carousel from '../Carousel'
 import Pagination from '../Pagination'
 import { PreviewProvider } from '../PreviewProvider'
 import Teaser from '../Teaser'
-import RenderMoreButton from './RenderMoreButton'
+import MoreButton from './MoreButton'
 import { RenderSlotProps } from './types'
 import {
   parseTeaserProps,
@@ -122,9 +122,9 @@ const RenderSlot = ({
           </Block>
         )
       })}
-      <RenderMoreButton 
+      <MoreButton 
+        {...more_button}
         more={more} 
-        more_button={more_button} 
         more_link={more_link} 
         more_title={more_title}  
       />
