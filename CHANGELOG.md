@@ -1,3 +1,10 @@
+## [1.9.52](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.51...v1.9.52) (2022-03-08)
+
+
+### Bug Fixes
+
+* responsive layoyt ([9ce0847](https://github.com/xproglabs/prensa-designsystem/commit/9ce0847621220e2350afdb4c1b15521c5d8f1d9c))
+
 ## [1.9.51](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.50...v1.9.51) (2022-03-07)
 
 
