@@ -95,6 +95,7 @@
     "react-facebook": ">=8.1.4",
     "react-instagram-embed": ">=3.0.0",
     "react-responsive-carousel": ">=3.2.22",
+    "react-social-media-embed": "^2.0.11",
     "react-twitter-widgets": ">=1.10.0",
     "react-youtube": ">=7.13.1"
   }
