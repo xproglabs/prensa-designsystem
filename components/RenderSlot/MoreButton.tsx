@@ -45,12 +45,10 @@ const MoreButton = ({
 }
 
 MoreButton.defaultProps = {
-  more_button: {
-    color: 'primary1',
-    border: 'primary1',
-    variant: 'outlined',
-    width: '100%'
-  }
+  color: 'primary1',
+  border: 'primary1',
+  variant: 'outlined',
+  width: '100%'
 }
 
 export default MoreButton
