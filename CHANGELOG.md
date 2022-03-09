@@ -1,3 +1,10 @@
+## [1.9.53](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.52...v1.9.53) (2022-03-09)
+
+
+### Bug Fixes
+
+* Parametrizar estilo do button VER MAIS na lista paginada ([bd162da](https://github.com/xproglabs/prensa-designsystem/commit/bd162da87952d826c71d5004b99fc691df65ac7c))
+
 ## [1.9.52](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.51...v1.9.52) (2022-03-08)
 
 
