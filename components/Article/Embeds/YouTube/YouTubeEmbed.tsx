@@ -46,8 +46,7 @@ const YouTubeEmbed = ({
           data-param-list={playlistId}
           data-live-channelid={videoId}
           layout='responsive' 
-          height={height[1]}
-          width={width[1]}
+          {...ampElementProps}
         />
       )
     } else {
@@ -55,8 +54,6 @@ const YouTubeEmbed = ({
         <amp-youtube
           data-videoid={videoId}
           layout='responsive'
-          height={height[1]}
-          width={width[1]}
           {...ampElementProps}
         />
       )
