@@ -12,6 +12,7 @@ export const TEMPLATE_LATEST_NEWS = CreateTemplate({
     more_button: {
       color: 'black',
       border: 'black',
+      fontSize: 16,
       variant: 'filled',
       width: 'calc(100% - 32px)'
     },
