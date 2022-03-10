@@ -1,3 +1,10 @@
+## [1.9.55](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.54...v1.9.55) (2022-03-10)
+
+
+### Features
+
+* insere props fontSize no MoreButton ([bad7aec](https://github.com/xproglabs/prensa-designsystem/commit/bad7aec3ef9aec970fd5fb32f0938ae857897657))
+
 ## [1.9.54](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.53...v1.9.54) (2022-03-10)
 
 
