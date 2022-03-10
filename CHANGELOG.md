@@ -1,3 +1,10 @@
+## [1.9.54](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.53...v1.9.54) (2022-03-10)
+
+
+### Bug Fixes
+
+* **youtube:** semantic commit to release ([abcebca](https://github.com/xproglabs/prensa-designsystem/commit/abcebca6e255daceec6095016650e2ad06c31c7b))
+
 ## [1.9.53](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.52...v1.9.53) (2022-03-09)
 
 
