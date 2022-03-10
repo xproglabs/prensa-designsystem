@@ -18,7 +18,6 @@ const YouTubeEmbed = ({
   width,
 }: YouTubeEmbedProps) => {
 
-
   if (!url) {
     console.error('Prensa | YouTubeEmbed > missing url')
     return null
