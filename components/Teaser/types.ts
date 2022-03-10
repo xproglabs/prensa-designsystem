@@ -51,6 +51,7 @@ type BoxWrap = {
 type Image = {
   align?: [string, string];
   aligny?: [string, string];
+  custom_class?: string;
   dimension?: [string, string];
   enabled?: boolean;
   /**
@@ -111,8 +112,6 @@ export type LayoutProps = {
   profile_image?: {
     enabled: boolean,
   };
-  radius_bottom?: boolean;
-  radius_top?: boolean;
   related?: Related;
   section?: Object;
   subject?: SubjectLayout;

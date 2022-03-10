@@ -11,6 +11,7 @@ import * as S from './styled'
 
 type RenderImageProps = {
   amp?: boolean;
+  custom_class?: string;
   domain: string;
   editable?: {
     enabled: boolean,
@@ -22,19 +23,16 @@ type RenderImageProps = {
   item_path?: string;
   layout?: any;
   opacityMask?: boolean;
-  radius_bottom?: boolean;
-  radius_top?: boolean;
   state_of_image?: any;
 }
 
 const RenderImage = ({
   amp,
+  custom_class,
   domain,
   editable,
   fallback_image_url,
   image_circle,
-  radius_bottom,
-  radius_top,
   item,
   item_path,
   layout,
@@ -96,23 +94,11 @@ const RenderImage = ({
   }
 
   let custom = ''
-  if (radius_bottom) {
-    custom = `
-      ${custom}
-      image-with-radius-bottom 
-    `
-  }
-  if (radius_top) {
-    custom = `
-      ${custom}
-      image-with-radius-top
-    `
-  }
   if (image_circle) {
-    custom = `
-      ${custom}
-      image-with-radius 
-    `
+    custom = `${custom} image-with-radius`
+  }
+  if (custom_class) {
+    custom = `${custom} ${custom_class}`
   }
   // prepare image props to render hybrid image ( amp / html )
   const image_props: ImageProps = {
@@ -139,8 +125,6 @@ const RenderImage = ({
     <S.Image
       image_circle={image_circle}
       height={height}
-      radius_bottom={radius_bottom}
-      radius_top={radius_top}
     >
       <ImageElement {...image_props} />
     </S.Image>
