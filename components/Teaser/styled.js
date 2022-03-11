@@ -111,25 +111,9 @@ const Box = ({
 const Image = ({
   children,
   image_circle = false,
-  radius_bottom = false,
-  radius_top = false,
   height,
 }) => {
   let custom = ''
-  if (radius_bottom) {
-    custom = `
-      ${custom}
-      border-bottom-left-radius: 10px; 
-      border-bottom-right-radius: 10px   
-    `
-  }
-  if (radius_top) {
-    custom = `
-      ${custom}
-      border-top-left-radius: 10px; 
-      border-top-right-radius: 10px   
-    `
-  }
   if (image_circle) {
     custom = `
       ${custom}
