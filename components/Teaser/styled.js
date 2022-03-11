@@ -122,7 +122,7 @@ const Image = ({
   }
   return (
     <Block
-      bgColor='neutral8' //REMOVE THAT
+      bgColor='neutral8'
       custom={custom}
       height={height[0]}
       width='100%'
