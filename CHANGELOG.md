@@ -1,3 +1,15 @@
+## [1.9.57](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.56...v1.9.57) (2022-03-12)
+
+
+### Bug Fixes
+
+* **borders:** commit to release ([38659a5](https://github.com/xproglabs/prensa-designsystem/commit/38659a549bb01f73d9a5d9d0dafb64b439522422))
+
+
+### Features
+
+* Desenvolve lógica para borda arredondada no Teaser/RenderImage ([26db2d2](https://github.com/xproglabs/prensa-designsystem/commit/26db2d221adeb4ed283f21e97f8ceaadeb336109))
+
 ## [1.9.56](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.55...v1.9.56) (2022-03-12)
 
 
