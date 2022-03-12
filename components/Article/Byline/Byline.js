@@ -99,7 +99,7 @@ Byline.defaultProps = {
     mb: [3, 3]
   },
   dateline: {
-    mb: [4, '0px']
+    mb: [4, 0, 0]
   },
   datetime: {
     color: 'neutral2',
