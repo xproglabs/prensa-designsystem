@@ -9,7 +9,7 @@ export const isBackgroundTransparent = (background: string | any) => {
   return !background || background == 'transparent'
 }
 
-export const selectBgColorFromSlot = (slot): string => {
+export const selectBgColorFromSlot = (slot): any => {
   let backgroundColor: string
   let defaultColor = 'transparent'
   backgroundColor = defaultColor
@@ -71,7 +71,7 @@ export const selectLayoutFromTemplate = ({
  * @param spaces Expects the amount of columns that the content will be splitted (list key is items amount)
  * @returns Configuration for matching items amount | 0
  */
-export const selectLayoutColsFromSlot = (slotLength: number, spaces?: [number, number, number, number] ): number => {
+export const selectLayoutColsFromSlot = (slotLength: number, spaces?: [number, number, number, number]): number => {
   const space_default = get(spaces, '[0]', 0)
   const space_from_layout = get(spaces, `[${slotLength - 1}]`, space_default)
   return space_from_layout
