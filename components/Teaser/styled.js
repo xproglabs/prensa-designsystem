@@ -122,7 +122,6 @@ const Image = ({
   }
   return (
     <Block
-      bgColor='neutral8'
       custom={custom}
       height={height[0]}
       width='100%'
