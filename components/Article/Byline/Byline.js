@@ -120,9 +120,6 @@ Byline.defaultProps = {
     fontFamily: 'secondary',
     fontSize: ['12px', '12px'],
     lineHeight: ['16px', '16px']
-  },
-  medias: {
-    color: '#999999'
   }
 }
 
@@ -132,7 +129,6 @@ Byline.propTypes = {
   datetime: PropTypes.object,
   share: PropTypes.object,
   isExpanded: PropTypes.bool,
-
 }
 
 export default Byline
