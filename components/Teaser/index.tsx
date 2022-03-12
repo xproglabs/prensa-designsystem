@@ -104,10 +104,11 @@ const Teaser = (props: TeaserProps) => {
   // profile enabled and options
   const profile_data = get(item, 'parentBio', false)
   const profile_data_visible = get(profile_data, 'enabled', false)
+  const profile_image_enabled = get(layout, 'profile_image.enabled', false)
   const profile_layout = get(layout, 'profile_bio', {})
+  const profile_layout_enabled = get(layout, 'profile_bio.enabled', false)
   const profile_layout_height = get(profile_layout, 'height', ['40px', '40px'])
   const profile_layout_width = get(profile_layout, 'width', ['40px', '40px'])
-  const profile_layout_enabled = get(layout, 'profile_bio.enabled', false)
   const isProfileEnabled = profile_data_visible && profile_layout_enabled
 
   //related
@@ -147,6 +148,7 @@ const Teaser = (props: TeaserProps) => {
         wrap_ml={number_ml}
       >
         <RenderNumber
+          color={color}
           layout={layout}
           number={number}
         />
@@ -158,6 +160,18 @@ const Teaser = (props: TeaserProps) => {
     if (!image_enabled) {
       return null
     }
+
+    if (profile_image_enabled) {
+      if (item) {
+        item['img'] = {
+          byl: '',
+          cap: profile_content?.name,
+          cid: profile_content?.image?.contentId,
+          sub: ''
+        }
+      }
+    }
+
     return (
       <S.WrapContent
         wrap_align={image_align}
@@ -172,6 +186,7 @@ const Teaser = (props: TeaserProps) => {
       >
         <RenderImage
           amp={amp}
+          custom_class={layout?.image?.custom_class}
           domain={domain}
           editable={editable}
           fallback_image_url={fallback_image_url}

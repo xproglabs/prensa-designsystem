@@ -5,14 +5,11 @@ import Block from '../../Block'
 
 export const Container = ({ children, maxWidth }) => (
   <Block 
-    align='column'
+    align='row'
+    custom='flex-wrap: wrap'
     mb={5}
     maxWidth={maxWidth}
     width='100%'
-    lg={{
-      align: 'row',
-      custom: 'flex-wrap: wrap;'
-    }}
   >
     {children}
   </Block> 

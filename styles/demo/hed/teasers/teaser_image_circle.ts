@@ -24,6 +24,9 @@ export const TEASER_IMAGE_CIRCLE = CreateTeaser({
     wrap_width: ['80px', '120px']
   },
   image_circle: true,
+  profile_image: {
+    enabled: true
+  },
   title: {
     enabled: true,
     ...parseFonts(

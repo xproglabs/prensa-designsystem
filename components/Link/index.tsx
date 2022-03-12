@@ -10,9 +10,11 @@ import { LinkProps } from './types'
 const Link = ({
   children,
   color,
+  display,
   href,
   height,
   path,
+  radius,
   textDecoration,
   width,
   ...otherProps
@@ -30,8 +32,10 @@ const Link = ({
     <StyledLink
       href={path || href}
       $color={color}
+      $display={display}
       $textDecoration={textDecoration}
       $height={height}
+      $radius={radius}
       $width={width}
       {...otherProps}
     >

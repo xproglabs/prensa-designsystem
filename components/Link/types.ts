@@ -17,6 +17,7 @@ export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
   borderStyle?: string;
   children?: ReactNode;
   color?: ColorTokens;
+  display?: string;
   height?: ResponsiveHeight;
   href?: string;
   hoverOpacity?: number;
@@ -42,6 +43,7 @@ export type StyledLinkProps = {
   borderColor?: ColorTokens;
   borderStyle?: string;
   children?: ReactNode;
+  display?: string;
   href?: string;
   hoverOpacity?: number;
   mt?: string | number;

@@ -1,4 +1,5 @@
 import { ColorTokens, IconTokens } from '@prensa_tokens'
+import { MoreButtonLayoutProps } from 'components/RenderSlot/MoreButton'
 
 import { PageBlockPreview } from '../PreviewProvider/types'
 import { SectionTitleLayout } from '../SectionTitle/types'
@@ -23,6 +24,7 @@ export type SlotBlockProps = {
   list3?: [any];
   order?: boolean | [string, 'asc' | 'desc'];
   more?: boolean;
+  more_button?: MoreButtonLayoutProps;
   more_title?: string;
   more_link?: string;
   pagination?: boolean;

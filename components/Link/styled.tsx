@@ -33,12 +33,21 @@ function colorCSS({ $color, theme }: any) {
     color: ${get(theme, `colors.${$color}`, 'inherit')};
   `
 }
+function displayCSS({ $display }: any) {
+  if (!$display) {
+    return ''
+  }
+  return css`
+    display: ${$display};
+  `
+}
 
 export const StyledLink: ComponentType<StyledLinkProps> | any = styled.a<StyledLinkProps>`
   cursor: pointer;
   ${align};
   ${border};
   ${colorCSS};
+  ${displayCSS};
   ${height};
   ${textDecorationCSS};
   ${hoverStateCSS};

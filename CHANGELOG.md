@@ -1,3 +1,241 @@
+## [1.9.55](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.54...v1.9.55) (2022-03-10)
+
+
+### Features
+
+* insere props fontSize no MoreButton ([bad7aec](https://github.com/xproglabs/prensa-designsystem/commit/bad7aec3ef9aec970fd5fb32f0938ae857897657))
+
+## [1.9.54](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.53...v1.9.54) (2022-03-10)
+
+
+### Bug Fixes
+
+* **youtube:** semantic commit to release ([abcebca](https://github.com/xproglabs/prensa-designsystem/commit/abcebca6e255daceec6095016650e2ad06c31c7b))
+
+## [1.9.53](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.52...v1.9.53) (2022-03-09)
+
+
+### Bug Fixes
+
+* Parametrizar estilo do button VER MAIS na lista paginada ([bd162da](https://github.com/xproglabs/prensa-designsystem/commit/bd162da87952d826c71d5004b99fc691df65ac7c))
+
+## [1.9.52](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.51...v1.9.52) (2022-03-08)
+
+
+### Bug Fixes
+
+* responsive layoyt ([9ce0847](https://github.com/xproglabs/prensa-designsystem/commit/9ce0847621220e2350afdb4c1b15521c5d8f1d9c))
+
+## [1.9.51](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.50...v1.9.51) (2022-03-07)
+
+
+### Bug Fixes
+
+* **scheduled:** published and modified date ([fe1e324](https://github.com/xproglabs/prensa-designsystem/commit/fe1e32402b1f70f15ce3792819df056346303e19))
+
+## [1.9.50](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.49...v1.9.50) (2022-03-07)
+
+
+### Bug Fixes
+
+* **caption:** redefine subtitle rules ([c40e7a7](https://github.com/xproglabs/prensa-designsystem/commit/c40e7a71ff3c48d2fde206b59f4246516cc23d33))
+* **caption:** set textbody caption as default ([3c84eba](https://github.com/xproglabs/prensa-designsystem/commit/3c84eba7dec5f3f23d403f371cde407b62bddddd))
+
+## [1.9.49](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.48...v1.9.49) (2022-03-02)
+
+
+### Bug Fixes
+
+* Permite boolean na prop autoplay ([c2d6287](https://github.com/xproglabs/prensa-designsystem/commit/c2d628795c62805abb1566a571005234dbb2554e))
+
+## [1.9.48](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.47...v1.9.48) (2022-03-02)
+
+
+### Features
+
+* ajusta ordem alfabetica ([b2c3abf](https://github.com/xproglabs/prensa-designsystem/commit/b2c3abf6388910856ce96d0ab0220bf921237b5a))
+
+## [1.9.47](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.46...v1.9.47) (2022-02-17)
+
+
+### Bug Fixes
+
+* restaura package.lock removido ([505226d](https://github.com/xproglabs/prensa-designsystem/commit/505226db0b787efc2385ee5abd30dfaa168bd408))
+
+## [1.9.46](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.45...v1.9.46) (2022-02-16)
+
+
+### Features
+
+* Permitir definição  de border-radius-bottom nas imagens do Teaser ([c3daed5](https://github.com/xproglabs/prensa-designsystem/commit/c3daed51fa63d763db21d6068c69c4dec1e95d17))
+
+## [1.9.45](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.44...v1.9.45) (2022-02-16)
+
+
+### Bug Fixes
+
+* Permitir definição de border radius nas imagens do Teaser ([e831a43](https://github.com/xproglabs/prensa-designsystem/commit/e831a43e966d9908803cfe6eaf1ca1d02a093291))
+
+## [1.9.44](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.43...v1.9.44) (2022-02-13)
+
+
+### Bug Fixes
+
+* article pagination end number ([ff30a82](https://github.com/xproglabs/prensa-designsystem/commit/ff30a82003cc84890adb471163f9cb8439446c33))
+
+## [1.9.43](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.42...v1.9.43) (2022-02-13)
+
+
+### Bug Fixes
+
+* atualiza article tags slug ([6d4ea62](https://github.com/xproglabs/prensa-designsystem/commit/6d4ea62a19bf226d138538c50952ee0b10a0287b))
+
+## [1.9.42](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.41...v1.9.42) (2022-02-11)
+
+
+### Bug Fixes
+
+* parametriza color do borderColor e do number no RenderNumber ([2b1d421](https://github.com/xproglabs/prensa-designsystem/commit/2b1d421897a8a6b69cf4442aa4ed6b80e17e78b3))
+
+## [1.9.41](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.40...v1.9.41) (2022-02-08)
+
+
+### Features
+
+* Implementa codesplitting nas funções do date-fns ([d2b3dc1](https://github.com/xproglabs/prensa-designsystem/commit/d2b3dc1078ed98b667dd79bbfb09b8c4cc0d7ef7))
+
+## [1.9.40](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.39...v1.9.40) (2022-02-08)
+
+
+### Bug Fixes
+
+* corrige o tamanho default das imagens ([2972566](https://github.com/xproglabs/prensa-designsystem/commit/2972566d10a1131f8b1e2cd411a34df3573136de))
+* define valor fixo para a imagem do teaser ([7fa1729](https://github.com/xproglabs/prensa-designsystem/commit/7fa17293308e9cba8a7de667bf3909ef83b3da43))
+
+## [1.9.39](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.38...v1.9.39) (2022-02-06)
+
+
+### Features
+
+* Adiciona prop display no componente Link ([1188035](https://github.com/xproglabs/prensa-designsystem/commit/11880354832cf76051567849296dd78617fffdeb))
+
+## [1.9.38](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.37...v1.9.38) (2022-02-05)
+
+
+### Bug Fixes
+
+* Otimiza montagem da url de busca no componente de paginação ([5ba2106](https://github.com/xproglabs/prensa-designsystem/commit/5ba2106a0d485ca6801d7a598e71f8af13375d72))
+
+## [1.9.37](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.36...v1.9.37) (2022-02-05)
+
+
+### Bug Fixes
+
+* Aceita somente prop $radius na função border ([cbdca03](https://github.com/xproglabs/prensa-designsystem/commit/cbdca03b20d535aabad414aaeb498e5ab8c07705))
+* Configura itinerant prop $radius no Block ([0fb7987](https://github.com/xproglabs/prensa-designsystem/commit/0fb79873fa4535bd8190c693c8d785111aeb94c9))
+* Configura itinerant prop $radius no Link ([02a9473](https://github.com/xproglabs/prensa-designsystem/commit/02a9473b2630a949effb361b56e7ebcf37cfd73b))
+* Configura itinerant prop $radius no Typography ([a2d8cc4](https://github.com/xproglabs/prensa-designsystem/commit/a2d8cc4f414b883bdcb39d7203fb520a9949132c))
+
+## [1.9.36](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.35...v1.9.36) (2022-02-04)
+
+
+### Features
+
+* **EmParser:** add EmParser ([7786017](https://github.com/xproglabs/prensa-designsystem/commit/778601719ecf63a3566e4c0a64f2eca3046e2b3e))
+
+## [1.9.35](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.34...v1.9.35) (2022-02-02)
+
+
+### Bug Fixes
+
+* Lint e corrige CI ([fbbade3](https://github.com/xproglabs/prensa-designsystem/commit/fbbade3b150acd6814d9439402ae783b78b1ed41))
+* Nova prop amp no Caption e ajustes finos no layout ([49954bf](https://github.com/xproglabs/prensa-designsystem/commit/49954bf43037f807952023797069b66bb5614563))
+
+## [1.9.34](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.33...v1.9.34) (2022-02-02)
+
+
+### Bug Fixes
+
+* Altera o height e padding default do Caption ([81e52a7](https://github.com/xproglabs/prensa-designsystem/commit/81e52a7efa02262d4e918096385704c4c1bdd4fe))
+* Define width como 100% na coluna principal ([8509245](https://github.com/xproglabs/prensa-designsystem/commit/85092455b5185c1d39030dd0c5be5ecbccd6751c))
+
+## [1.9.33](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.32...v1.9.33) (2022-02-02)
+
+
+### Bug Fixes
+
+* Corrige lógica isBlank ([853914d](https://github.com/xproglabs/prensa-designsystem/commit/853914d8e46c12c519b8021915ae323c8e70312b))
+
+## [1.9.32](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.31...v1.9.32) (2022-02-02)
+
+
+### Bug Fixes
+
+* Adiciona verificação se a string é blank ([5a5c78a](https://github.com/xproglabs/prensa-designsystem/commit/5a5c78ac74cf0cf8e259449d31ff9e055c5ef57f))
+
+
+### Features
+
+* Nova função stringIsBlank ([4599d59](https://github.com/xproglabs/prensa-designsystem/commit/4599d592b1880e0bda2b162b7c9c88f9f9399eaf))
+
+## [1.9.31](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.30...v1.9.31) (2022-02-01)
+
+
+### Bug Fixes
+
+* **articleColumn:** apply right props correctly ([70accd4](https://github.com/xproglabs/prensa-designsystem/commit/70accd4b46d08103ca8bfa86f01722a9f3d659ec))
+
+## [1.9.30](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.29...v1.9.30) (2022-02-01)
+
+
+### Bug Fixes
+
+* Troca replaceAll por método replace do lodash ([8445a29](https://github.com/xproglabs/prensa-designsystem/commit/8445a296ff52df67902db55e5fc1cfd436fe4d18))
+
+## [1.9.29](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.28...v1.9.29) (2022-02-01)
+
+
+### Features
+
+* configura novo parser blockquote no switch principal ([7a35944](https://github.com/xproglabs/prensa-designsystem/commit/7a359444907b4ccc491d5721c7b72d40eee9a626))
+* novo html parser para Blockquote ([801953c](https://github.com/xproglabs/prensa-designsystem/commit/801953c76c868c622f3b2c266792dfc03db991e2))
+* permite p dentro dos itens da lista ([bf8cb94](https://github.com/xproglabs/prensa-designsystem/commit/bf8cb94d2514346480f18bc56a145059bc5449f3))
+
+## [1.9.28](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.27...v1.9.28) (2022-02-01)
+
+
+### Features
+
+* Remove configuração main e module do package.json ([4c2ff22](https://github.com/xproglabs/prensa-designsystem/commit/4c2ff22002e1a94e8e8909e25798539a9b273a15))
+
+## [1.9.27](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.26...v1.9.27) (2022-02-01)
+
+
+### Bug Fixes
+
+* corrige direction das tags no mobile ([277ce42](https://github.com/xproglabs/prensa-designsystem/commit/277ce42a7fe9f9a184ce7a657b4542775f4a4c0e))
+* parametriza tamanho do topimage ([01a56a3](https://github.com/xproglabs/prensa-designsystem/commit/01a56a3668fc634a7739fd69ac81faf5ccd1a351))
+* renomeia TopImage para ArticleImage ([d3fd7bb](https://github.com/xproglabs/prensa-designsystem/commit/d3fd7bbfe70628f598c21852c11e7fb89f30501e))
+* **template50:** padding lateral do bloco no mobile ([3eb489a](https://github.com/xproglabs/prensa-designsystem/commit/3eb489abd48e61b427ac379b464fe78f20dc4b93))
+
+
+### Features
+
+* cria prop bodyImage para imagem do corpo do texto ([b70294c](https://github.com/xproglabs/prensa-designsystem/commit/b70294c14a486ade39d7c1e08b93d684a58b272b))
+
+## [1.9.26](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.25...v1.9.26) (2022-01-31)
+
+
+### Bug Fixes
+
+* Ajusta ordem alfabética e otimiza alteração das informações no objeto item ([87a6ea0](https://github.com/xproglabs/prensa-designsystem/commit/87a6ea069cf9a7e76cf66cc3f1b08af7f58fe357))
+* **preview:** desativa preview interativo do storybook ([9a2a122](https://github.com/xproglabs/prensa-designsystem/commit/9a2a122fae72d571bbb6af989bf1588c52b4cc2e))
+
+
+### Features
+
+* **profileImage:** adiciona a propriedade no teaser ([b352617](https://github.com/xproglabs/prensa-designsystem/commit/b352617c301b877ca52549af13e042dcf9f02289))
+
 ## [1.9.25](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.24...v1.9.25) (2022-01-25)
 
 

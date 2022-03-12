@@ -1,6 +1,8 @@
 import { html2json } from 'html2json'
 import { find, filter, map } from 'lodash'
 
+import { BlockquoteHTMLParser } from './BlockquoteHTMLParser'
+import { EmHTMLParser } from './EmHTMLParser'
 import { parseListChildren } from './ListHTMLParser'
 import { StrongHTMLParser } from './StrongHTMLParser'
 
@@ -30,7 +32,7 @@ const parse_content = (content) => {
       return true
     }
     if (tag === 'em') {
-      tagItems.push({ 'type': 'text', 'value': `<em>${renderChildValue(child)}</em>` })
+      tagItems.push({ 'type': 'text', 'value': `${EmHTMLParser(child)}` })
       return true
     }
     if (tag === 'ul') {
@@ -42,7 +44,11 @@ const parse_content = (content) => {
       return true
     }
     if (tag === 'cite') {
-      tagItems.push({ 'type': 'cite', 'value': `${renderChildValue(child)}` })
+      tagItems.push({ 'type': 'cite', 'value': `${BlockquoteHTMLParser(child)}` })
+      return true
+    }
+    if (tag === 'blockquote') {
+      tagItems.push({ 'type': 'blockquote', 'value': `${BlockquoteHTMLParser(child)}` })
       return true
     }
     if (tag === 'h2') {
@@ -67,11 +73,13 @@ const parse_content = (content) => {
     if (tag === 'a' && attr.class && attr.class === 'p-smartembed') {
       const childImage = find(child, { tag: 'img' })
       if (childImage) {
-        let subtitle =
-          childImage &&
-            childImage.attr &&
-            childImage.attr['alt'] ? childImage.attr['alt'].join(' ') : ''
-
+        let subtitle = ''
+        if (childImage.attr && childImage.attr['alt']) {
+          subtitle = childImage.attr['alt']
+          if (Array.isArray(subtitle)) {
+            subtitle = subtitle.join(' ')
+          }
+        }
         subtitle = subtitle && subtitle !== undefined && subtitle !== 'undefined' ? subtitle : ''
         const propsImage = {
           'contentId': attr['data-onecms-id'].replace('policy:', ''),
@@ -104,6 +112,9 @@ const parse_content = (content) => {
           return true
         } else if (attr['name'].indexOf('twitter.com') > -1) {
           tagItems.push({ type: 'Tweet', value: attr['name'] })
+          return true
+        } else if (attr['name'].indexOf('tiktok.com') > -1) {
+          tagItems.push({ type: 'TikTok', value: attr['name'] })
           return true
         } else if (attr['name'].indexOf('youtube.com') > -1 || attr['name'].indexOf('youtu.be') > -1) {
           tagItems.push({ type: 'Youtube', value: attr['name'] })
@@ -164,6 +175,11 @@ const parse_content = (content) => {
       case 'cite':
         if (value && value !== '') {
           bodyItems.push({ type: 'Cite', value })
+        }
+        break
+      case 'blockquote':
+        if (value && value !== '') {
+          bodyItems.push({ type: 'Blockquote', value })
         }
         break
       case 'h2':

@@ -44,13 +44,17 @@ Body.propTypes = {
 }
 
 export const TextBodyColumn = ({
+  bgColor,
   children,
+  lg,
   width
 }) => {
   return (
     <Block
       align='column'
       aligny='top'
+      bgColor={bgColor}
+      lg={lg}
       width={width}>
       {children}
     </Block>
@@ -61,8 +65,8 @@ TextBodyColumn.propTypes = {
   width: PropTypes.string
 }
 
-export const TextBody = ({ color, children }) => 
-  <Typography 
+export const TextBody = ({ color, children }) =>
+  <Typography
     color={color}
     dangerouslySetInnerHTML={children}
     element='h3'

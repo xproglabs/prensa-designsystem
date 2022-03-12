@@ -5,19 +5,17 @@ import babel from 'rollup-plugin-babel'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import typescript from 'rollup-plugin-typescript2'
 
-import pkg from './package.json'
-
 export default [
   {
     input: 'index.ts',
     output: [
       {
-        file: pkg.main,
+        file: 'dist/index.js',
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: pkg.module,
+        file: 'dist/index.esm',
         format: 'es',
         sourcemap: true
       }

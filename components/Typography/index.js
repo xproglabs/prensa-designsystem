@@ -62,6 +62,7 @@ const Typography = ({
   opacityOnHover,
   target,
   dangerouslySetInnerHTML,
+  radius,
   shadow,
   ...otherProps
 }) => {
@@ -178,6 +179,7 @@ const Typography = ({
     minWidth,
     opacityOnHover,
     target,
+    $radius: radius,
     shadow,
     xs: getXsProps(),
     sm: getSmProps(),

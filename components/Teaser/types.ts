@@ -51,6 +51,7 @@ type BoxWrap = {
 type Image = {
   align?: [string, string];
   aligny?: [string, string];
+  custom_class?: string;
   dimension?: [string, string];
   enabled?: boolean;
   /**
@@ -107,6 +108,9 @@ export type LayoutProps = {
     enabled: boolean,
     height?: SpacingType,
     width?: SpacingType
+  };
+  profile_image?: {
+    enabled: boolean,
   };
   related?: Related;
   section?: Object;

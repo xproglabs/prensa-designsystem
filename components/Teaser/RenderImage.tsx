@@ -11,6 +11,7 @@ import * as S from './styled'
 
 type RenderImageProps = {
   amp?: boolean;
+  custom_class?: string;
   domain: string;
   editable?: {
     enabled: boolean,
@@ -27,6 +28,7 @@ type RenderImageProps = {
 
 const RenderImage = ({
   amp,
+  custom_class,
   domain,
   editable,
   fallback_image_url,
@@ -59,13 +61,13 @@ const RenderImage = ({
   const mobile_dim = get(layout, 'image.dimension[0]', '1x1')
   const desktop_dim = get(layout, 'image.dimension[1]', '1x1')
   const has_fallback_image = get(layout, 'image.fallback_image', false)
-  const height = get(layout, 'image.height', 600)
+  const height = get(layout, 'image.height', 1200)
   const layout_mobile = get(layout, 'image.layout[0]', 'responsive')
   const layout_desktop = get(layout, 'image.layout[1]', 'responsive')
-  const mobile_height = get(layout, 'image.height[0]', 600)
-  const mobile_width = get(layout, 'image.width[0]', 600)
-  const desktop_height = get(layout, 'image.height[1]', 600)
-  const desktop_width = get(layout, 'image.width[1]', 600)
+  const mobile_height = get(layout, 'image.height[0]', 1200)
+  const mobile_width = get(layout, 'image.width[0]', 1200)
+  const desktop_height = get(layout, 'image.height[1]', 1200)
+  const desktop_width = get(layout, 'image.width[1]', 1200)
 
   let image_path_mobile = ''
   let image_path_desktop = ''
@@ -87,14 +89,21 @@ const RenderImage = ({
       return null
     }
   } else {
-    image_path_mobile = parseImagePath(mobile_dim, domain, image_contentid, 600)
-    image_path_desktop = parseImagePath(desktop_dim, domain, image_contentid, 600)
+    image_path_mobile = parseImagePath(mobile_dim, domain, image_contentid, 1200)
+    image_path_desktop = parseImagePath(desktop_dim, domain, image_contentid, 1200)
   }
 
+  let custom = ''
+  if (image_circle) {
+    custom = `${custom} image-with-radius`
+  }
+  if (custom_class) {
+    custom = `${custom} ${custom_class}`
+  }
   // prepare image props to render hybrid image ( amp / html )
   const image_props: ImageProps = {
     amp: amp,
-    custom_class: image_circle == true ? 'image-with-radius' : '',
+    custom_class: custom,
     title: image_caption,
     layout_mobile: {
       enabled: image_path_mobile && image_path_mobile != '',
@@ -144,7 +153,7 @@ const RenderImage = ({
         image_props={{ mobile_dim, desktop_dim }}
         item={item}
       >
-        <RenderImageElement/>
+        <RenderImageElement />
       </ImagePreviewLink>
     )
   }
@@ -152,7 +161,7 @@ const RenderImage = ({
   const RenderImageWithLink = () => {
     if (opacityMask) {
       return (
-        <RenderImageWithOpacityMask/>
+        <RenderImageWithOpacityMask />
       )
     }
     return (

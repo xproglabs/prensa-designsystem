@@ -113,7 +113,13 @@ const Image = ({
   image_circle = false,
   height,
 }) => {
-  const custom = image_circle ? 'border-radius: 100%;' : ''
+  let custom = ''
+  if (image_circle) {
+    custom = `
+      ${custom}
+      border-radius: 100%;  
+    `
+  }
   return (
     <Block
       bgColor='neutral8'

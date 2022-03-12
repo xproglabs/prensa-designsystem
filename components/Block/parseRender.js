@@ -6,7 +6,7 @@ import { parseHeight } from './parseDimensions'
 
 const parseStyle = (props, theme) => {
   return `
-    ${border({ ...props, radius: props.$radius, theme })};
+    ${border({ ...props, $radius: props.$radius, theme })};
     ${boxShadow({ ...props, boxShadow: props.boxShadow })};
     ${dimensions({ ...props, theme })};
     ${parseAlign(props, theme)};
