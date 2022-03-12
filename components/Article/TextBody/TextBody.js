@@ -246,6 +246,7 @@ const TextBody = (props) => {
           {...tags}
         />
         <BottomShare
+          amp={amp}
           maxWidth={bodyWidth}
           pageUrl={pageUrl}
           sectionTitle={sectionTitle}
@@ -303,7 +304,6 @@ TextBody.propTypes = {
   amp: PropTypes.bool,
   bodyImage: PropTypes.object,
   bodyWidth: PropTypes.string,
-  bottomShare: PropTypes.object,
   content: PropTypes.string,
   citation: PropTypes.object,
   gallery: PropTypes.shape({
@@ -311,7 +311,6 @@ TextBody.propTypes = {
     items: PropTypes.array,
     bodyWidth: PropTypes.string,
   }),
-  hasBottomShare: PropTypes.bool,
   hasColumnRight: PropTypes.bool,
   heading2: PropTypes.object,
   heading3: PropTypes.object,
