@@ -25,7 +25,6 @@ const Article = (props) => {
     featured,
     gallery,
     headWidth,
-    hasBottomShare,
     hasColumnRight,
     heading2,
     heading3,
@@ -122,7 +121,6 @@ const Article = (props) => {
             content={textbody}
             fbappid={fbappid}
             gallery={gallery}
-            hasBottomShare={hasBottomShare}
             hasColumnRight={hasColumnRight}
             heading2={heading2}
             heading3={heading3}
@@ -186,7 +184,6 @@ Article.propTypes = {
     captionProps: PropTypes.object,
     items: PropTypes.array
   }),
-  hasBottomShare: PropTypes.bool,
   hasColumnRight: PropTypes.bool,
   headWidth: PropTypes.string,
   heading2: PropTypes.object,
