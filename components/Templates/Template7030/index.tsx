@@ -25,7 +25,6 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
         alignx={['center', 'between']}
         aligny={['top', 'top']}
         width='100%'
-        bgColor='primary1'
       >
         <Block
           align={['column', 'row']}
