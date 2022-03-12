@@ -1,3 +1,16 @@
+## [1.9.56](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.55...v1.9.56) (2022-03-12)
+
+
+### Bug Fixes
+
+* Remove propriedade não utilizada ([71698fb](https://github.com/xproglabs/prensa-designsystem/commit/71698fb5ed94297e416c7a389885ecbcb6f54fea))
+
+
+### Features
+
+* Parametriza cor dos ícones com a nova prop color em Share ([4cd4e96](https://github.com/xproglabs/prensa-designsystem/commit/4cd4e96eab5405d483838437391fd617c71298c1))
+* Permite prop enabled no Article/Share ([0012e3e](https://github.com/xproglabs/prensa-designsystem/commit/0012e3e8894791f66001a4215778e636cbc74230))
+
 ## [1.9.55](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.54...v1.9.55) (2022-03-10)
 
 
