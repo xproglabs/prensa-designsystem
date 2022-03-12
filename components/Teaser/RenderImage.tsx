@@ -38,6 +38,7 @@ const RenderImage = ({
   layout,
   opacityMask
 }: RenderImageProps) => {
+  
   // get image object from props
   let image_object = get(item, 'image', false)
   if (!image_object) {
