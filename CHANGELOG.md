@@ -1,3 +1,11 @@
+## [1.9.58](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.57...v1.9.58) (2022-03-12)
+
+
+### Bug Fixes
+
+* Conecta prop amp ao BottomShare e remove prop hasBottomShare depreciada ([b6f1df9](https://github.com/xproglabs/prensa-designsystem/commit/b6f1df9ac5e62852576935126e3ffd3abef9947a))
+* remove bgColor da estrutura do Image ([50bf799](https://github.com/xproglabs/prensa-designsystem/commit/50bf799479b469d94ed6022f590e8edc6100eda7))
+
 ## [1.9.57](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.56...v1.9.57) (2022-03-12)
 
 
