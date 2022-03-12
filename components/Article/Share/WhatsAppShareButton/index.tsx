@@ -9,6 +9,7 @@ const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
 
   const {
     amp,
+    color,
     pageUrl,
     size,
     whatsappPath,
@@ -55,7 +56,7 @@ const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
           <IcWhatsApp
             width={size}
             height={size}
-            color='primary1'
+            color={color}
             {...otherProps}
           />
         </Link>

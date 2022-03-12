@@ -10,6 +10,8 @@ const Share = (props: ShareProps) => {
 
   const {
     amp,
+    enabled,
+    color,
     pageUrl,
     containerProps,
     size,
@@ -21,6 +23,8 @@ const Share = (props: ShareProps) => {
     whatsappPath,
     whatsappProps,
   } = props
+
+  if (!enabled) return null
 
   return (
     <Block
@@ -36,6 +40,7 @@ const Share = (props: ShareProps) => {
     >
       <FacebookShareButton
         amp={amp}
+        color={color}
         facebookPath={facebookPath}
         facebookProps={facebookProps}
         fbappid={fbappid}
@@ -44,6 +49,7 @@ const Share = (props: ShareProps) => {
       />
       <TwitterShareButton
         amp={amp}
+        color={color}
         pageUrl={pageUrl}
         twitterPath={twitterPath}
         twitterProps={twitterProps}
@@ -51,6 +57,7 @@ const Share = (props: ShareProps) => {
       />
       <WhatsAppShareButton
         amp={amp}
+        color={color}
         pageUrl={pageUrl}
         whatsappPath={whatsappPath}
         whatsappProps={whatsappProps}

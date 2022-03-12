@@ -1,3 +1,4 @@
+import { get } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -16,6 +17,12 @@ const Byline = ({
   pageUrl,
   share
 }) => {
+
+  const shareData = get(share, 'byline', {})
+  const shareColor = get(share, 'color', undefined)
+  const shareSize = get(share, 'size', undefined)
+  const shareEnabled = get(shareData, 'enabled', false)
+
   const AuthorInfo = () => {
     const hasAuthorEmail = author && author.email && author.email !== ''
     const hasAuthorSocialMedias = author && author.socialMedias && author.socialMedias !== ''
@@ -82,9 +89,12 @@ const Byline = ({
         </S.BylineContainer>
         <Share
           amp={amp}
+          color={shareColor}
+          enabled={shareEnabled}
           fbappid={fbappid}
           pageUrl={pageUrl}
-          {...share}
+          size={shareSize}
+          {...shareData}
         />
       </S.Content>
     </S.Container>
@@ -110,9 +120,6 @@ Byline.defaultProps = {
     fontFamily: 'secondary',
     fontSize: ['12px', '12px'],
     lineHeight: ['16px', '16px']
-  },
-  medias: {
-    color: '#999999'
   }
 }
 
@@ -120,10 +127,8 @@ Byline.propTypes = {
   amp: PropTypes.bool,
   author: PropTypes.object,
   datetime: PropTypes.object,
-  medias: PropTypes.object,
   share: PropTypes.object,
   isExpanded: PropTypes.bool,
-
 }
 
 export default Byline

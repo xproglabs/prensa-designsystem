@@ -1,3 +1,5 @@
+import { ColorTokens } from '@prensa_tokens'
+
 import { FacebookProps } from './FacebookShareButton/types'
 import { TwitterProps } from './TwitterShareButton/types'
 import { WhatsAppProps } from './WhatsAppShareButton/types'
@@ -15,6 +17,8 @@ export type ContainerProps = {
 
 export interface ShareProps {
   amp: boolean;
+  enabled: boolean;
+  color: ColorTokens;
   containerProps?: ContainerProps;
   pageUrl: string;
   size?: string;
