@@ -1,26 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import Block from '../NewBlock'
 import Typography from '../Typography'
 import { RenderOpacityMaskClickArea } from './RenderOpacityMaskClickArea'
 
-const AreaLink = styled.a`
-  color: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  width: 100%;
-  white-space: normal;
-  &:hover {
-    opacity: 0.9;
-  }
-`
-
-const Image = ({
+const StyledImage = ({
   children,
   image_circle = false,
   height,
-}) => {
+}: any) => {
   return (
     <Block
       align={['column', 'column']}
@@ -41,7 +29,7 @@ const Subject = ({
   font_size,
   line_height,
   mb
-}) => {
+}: any) => {
   return (
     <Block 
       align='row'
@@ -88,7 +76,7 @@ const WrapContent = ({
   wrap_pt = [0, 0],
   wrap_pb = [0, 0],
   wrap_width = ['100%', '100%']
-}) => {
+}: any) => {
 
   if (opacity_mask) {
     return (
@@ -140,7 +128,7 @@ const WrapContent = ({
 
 const WrapSubject = ({
   children
-}) => {
+}: any) => {
   return (
     <Block 
       align='row'
@@ -153,8 +141,7 @@ const WrapSubject = ({
 }
 
 export {
-  AreaLink,
-  Image,
+  StyledImage,
   Subject,
   WrapContent,
   WrapSubject

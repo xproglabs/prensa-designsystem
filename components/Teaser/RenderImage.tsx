@@ -5,17 +5,15 @@ import React from 'react'
 import ImageElement from '../Image'
 import { parseImagePath } from '../Image/parser'
 import { ImagePreviewLink } from '../Image/preview'
+import Link from '../Link'
 import { parseContentId } from '../Util/parseContentId'
 import { RenderOpacityMask } from './RenderOpacityMask'
-import * as S from './styled'
+import { StyledImage } from './styled'
 
-type RenderImageProps = {
+interface RenderImageProps {
   amp?: boolean;
   domain: string;
-  editable?: {
-    enabled: boolean,
-    state_of_image?: any;
-  };
+  editable?: { enabled: boolean; state_of_image?: any; };
   fallback_image_url?: string;
   image_circle?: boolean;
   item?: any;
@@ -113,23 +111,23 @@ const RenderImage = ({
   }
 
   const RenderImageElement = () => (
-    <S.Image
+    <StyledImage
       image_circle={image_circle}
       height={height}
     >
       <ImageElement {...image_props} />
-    </S.Image>
+    </StyledImage>
   )
 
   const RenderImageWithOpacityMask = () => (
-    <React.Fragment>
+    <>
       <RenderImageElement />
       <RenderOpacityMask
         enabled={opacityMask}
         layout_desktop={image_props.layout_desktop}
         layout_mobile={image_props.layout_mobile}
       />
-    </React.Fragment>
+    </>
   )
 
   const RenderImageForPreview = () => {
@@ -144,7 +142,7 @@ const RenderImage = ({
         image_props={{ mobile_dim, desktop_dim }}
         item={item}
       >
-        <RenderImageElement/>
+        <RenderImageElement />
       </ImagePreviewLink>
     )
   }
@@ -152,13 +150,17 @@ const RenderImage = ({
   const RenderImageWithLink = () => {
     if (opacityMask) {
       return (
-        <RenderImageWithOpacityMask/>
+        <RenderImageWithOpacityMask />
       )
     }
     return (
-      <S.AreaLink href={item_path}>
+      <Link
+        width='100%'
+        hoverOpacity={0.9}
+        href={item_path}
+      >
         <RenderImageElement />
-      </S.AreaLink>
+      </Link>
     )
   }
   if (editable && editable.enabled) {
