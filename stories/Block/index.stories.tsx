@@ -26,6 +26,7 @@ export const Default = () => {
       b='2px'
       borderColor='primary1'
       borderStyle='solid'
+      radius='circle'
       maxWidth='200px'
     >
       teste

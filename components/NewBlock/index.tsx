@@ -9,6 +9,7 @@ const Block = ({
   dangerouslySetInnerHTML,
   color,
   height,
+  radius,
   width,
   ...otherProps
 }: BlockProps) => (
@@ -16,6 +17,7 @@ const Block = ({
     $bgColor={bgColor}
     $color={color}
     $height={height}
+    $radius={radius}
     $width={width}
     dangerouslySetInnerHTML={dangerouslySetInnerHTML ? { __html: dangerouslySetInnerHTML } : undefined}
     {...otherProps}

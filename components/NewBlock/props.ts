@@ -33,7 +33,6 @@ export interface BlockProps extends
 }
 
 export interface StyledBlockProps extends
-  BlockHTMLAttributes,
   AlignProps,
   BorderProps,
   BoxShadowProps,
