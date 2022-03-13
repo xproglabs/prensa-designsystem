@@ -1,6 +1,7 @@
-import { Block } from 'prensa'
+// import { Block } from 'prensa'
 import React from 'react'
 
+import Block from '../../NewBlock'
 import { isBackgroundTransparent, selectBgColorFromSlot } from '../../PageBlock/utils'
 import RenderSlot from '../../RenderSlot'
 import { renderSpaceSlot } from '../../RenderSlot/utils'
@@ -22,15 +23,10 @@ const Template33 = ({
   return (
     <>
       <Block
-        align='column'
-        alignx='center'
-        aligny='top'
+        align={['column', 'row']}
+        alignx={['center', 'between']}
+        aligny={['top', 'top']}
         width='100%'
-        lg={{
-          align: 'row',
-          alignx: 'between',
-          aligny: 'top'
-        }}
       >
         <Column>
           {renderSpaceSlot(slotAds.spaceTopLeft)}
