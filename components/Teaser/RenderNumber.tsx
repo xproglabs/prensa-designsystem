@@ -30,6 +30,7 @@ export type NumberLayout = {
 }
 export interface RenderNumberProps {
   layout: LayoutProps;
+  color?: ColorTokens;
   number: number;
 }
 
