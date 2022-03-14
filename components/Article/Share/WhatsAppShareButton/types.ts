@@ -1,3 +1,5 @@
+import { ColorTokens } from '@prensa_tokens'
+
 export type WhatsAppProps = {
   mt?: number | string;
   mr?: number | string;
@@ -7,6 +9,7 @@ export type WhatsAppProps = {
 
 export type WhatsAppShareButtonProps = {
   amp: boolean;
+  color: ColorTokens;
   pageUrl: string;
   size?: string;
   whatsappPath?: string;

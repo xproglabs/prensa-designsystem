@@ -20,6 +20,7 @@ const Carousel = ({
   if (!enabled) return null
 
   let querie_value = theme.queries[querie]
+  const carousel_autoplay = autoplay ? '' : undefined
 
   return (
     <Block
@@ -29,7 +30,7 @@ const Carousel = ({
       lg={{ height: height[1], mb: mb[1] }}
     >
       <amp-carousel
-        autoplay={autoplay}
+        autoplay={carousel_autoplay}
         delay={delay}
         layout='fixed-height'
         loop={loop}
@@ -39,7 +40,7 @@ const Carousel = ({
         {children}
       </amp-carousel>
       <amp-carousel
-        autoplay={autoplay}
+        autoplay={carousel_autoplay}
         delay={delay}
         layout='fixed-height'
         loop={loop}

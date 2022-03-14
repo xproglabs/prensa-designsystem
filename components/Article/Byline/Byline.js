@@ -1,3 +1,4 @@
+import { get } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -16,6 +17,12 @@ const Byline = ({
   pageUrl,
   share
 }) => {
+
+  const shareData = get(share, 'byline', {})
+  const shareColor = get(share, 'color', undefined)
+  const shareSize = get(share, 'size', undefined)
+  const shareEnabled = get(shareData, 'enabled', false)
+
   const AuthorInfo = () => {
     const hasAuthorEmail = author && author.email && author.email !== ''
     const hasAuthorSocialMedias = author && author.socialMedias && author.socialMedias !== ''
@@ -45,9 +52,11 @@ const Byline = ({
         <S.BylineText {...datetime}>
           Publicado em {datetime.time_published}
         </S.BylineText>
-        <S.BylineText {...datetime}>
-          Atualizado em {datetime.time_modified_expanded}
-        </S.BylineText>
+        {datetime.time_modified_expanded && (
+          <S.BylineText {...datetime}>
+            Atualizado em {datetime.time_modified_expanded}
+          </S.BylineText>
+        )}
       </Block>
     )
   }
@@ -57,12 +66,14 @@ const Byline = ({
       <Block lg={{ align: 'row' }}>
         <Block lg={{ mr: '4px' }}>
           <S.BylineText {...datetime}>
-            {datetime.time_published}.
+            {!datetime.time_modified && 'Publicado em '} {datetime.time_published}.
           </S.BylineText>
         </Block>
-        <S.BylineText {...datetime}>
-          Atualizado em {datetime.time_modified}
-        </S.BylineText>
+        {datetime.time_modified && (
+          <S.BylineText {...datetime}>
+            Atualizado em {datetime.time_modified}
+          </S.BylineText>
+        )}
       </Block>
     )
   }
@@ -78,9 +89,12 @@ const Byline = ({
         </S.BylineContainer>
         <Share
           amp={amp}
+          color={shareColor}
+          enabled={shareEnabled}
           fbappid={fbappid}
           pageUrl={pageUrl}
-          {...share}
+          size={shareSize}
+          {...shareData}
         />
       </S.Content>
     </S.Container>
@@ -105,13 +119,7 @@ Byline.defaultProps = {
     color: 'neutral2',
     fontFamily: 'secondary',
     fontSize: ['12px', '12px'],
-    lineHeight: ['16px', '16px'],
-    time_modified: '18 dias atrás',
-    time_modified_expanded: '21/05/2021 às 23:20',
-    time_published: '21/05/2021 às 23:20'
-  },
-  medias: {
-    color: '#999999'
+    lineHeight: ['16px', '16px']
   }
 }
 
@@ -119,10 +127,8 @@ Byline.propTypes = {
   amp: PropTypes.bool,
   author: PropTypes.object,
   datetime: PropTypes.object,
-  medias: PropTypes.object,
   share: PropTypes.object,
   isExpanded: PropTypes.bool,
-
 }
 
 export default Byline

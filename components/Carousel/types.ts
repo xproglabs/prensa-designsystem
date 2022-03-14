@@ -4,7 +4,7 @@ type CarouselType = 'carousel' | 'slides'
 type CarouselLayoutTypes = 'fill' | 'fixed' | 'fixed-height' | 'flex-item' | 'intrinsic' | 'nodisplay' | 'responsive'
 
 export type CarouselProps = {
-  autoplay?: string;
+  autoplay?: boolean;
   children?: any;
   delay?: string;
   enabled: boolean;
@@ -27,7 +27,7 @@ export type CarouselProps = {
 
 export type CarouselLayoutProps = {
   delay?: string;
-  autoplay?: string;
+  autoplay?: boolean;
   loop?: string;
   enabled: boolean;
   /**

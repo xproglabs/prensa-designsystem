@@ -1,3 +1,5 @@
+import { ColorTokens } from '@prensa_tokens'
+
 export type FacebookProps = {
   mt?: number | string;
   mr?: number | string;
@@ -7,6 +9,7 @@ export type FacebookProps = {
 
 export type FacebookShareButtonProps = {
   amp: boolean;
+  color: ColorTokens;
   facebookPath?: string;
   facebookProps?: FacebookProps;
   fbappid: string;

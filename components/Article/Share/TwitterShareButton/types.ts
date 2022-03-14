@@ -1,3 +1,5 @@
+import { ColorTokens } from '@prensa_tokens'
+
 export type TwitterProps = {
   mt?: number | string;
   mr?: number | string;
@@ -7,6 +9,7 @@ export type TwitterProps = {
 
 export type TwitterShareButtonProps = {
   amp: boolean;
+  color: ColorTokens;
   pageUrl: string;
   twitterPath?: string;
   twitterProps?: TwitterProps;

@@ -1,3 +1,93 @@
+## [1.9.58](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.57...v1.9.58) (2022-03-12)
+
+
+### Bug Fixes
+
+* Conecta prop amp ao BottomShare e remove prop hasBottomShare depreciada ([b6f1df9](https://github.com/xproglabs/prensa-designsystem/commit/b6f1df9ac5e62852576935126e3ffd3abef9947a))
+* remove bgColor da estrutura do Image ([50bf799](https://github.com/xproglabs/prensa-designsystem/commit/50bf799479b469d94ed6022f590e8edc6100eda7))
+
+## [1.9.57](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.56...v1.9.57) (2022-03-12)
+
+
+### Bug Fixes
+
+* **borders:** commit to release ([38659a5](https://github.com/xproglabs/prensa-designsystem/commit/38659a549bb01f73d9a5d9d0dafb64b439522422))
+
+
+### Features
+
+* Desenvolve lógica para borda arredondada no Teaser/RenderImage ([26db2d2](https://github.com/xproglabs/prensa-designsystem/commit/26db2d221adeb4ed283f21e97f8ceaadeb336109))
+
+## [1.9.56](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.55...v1.9.56) (2022-03-12)
+
+
+### Bug Fixes
+
+* Remove propriedade não utilizada ([71698fb](https://github.com/xproglabs/prensa-designsystem/commit/71698fb5ed94297e416c7a389885ecbcb6f54fea))
+
+
+### Features
+
+* Parametriza cor dos ícones com a nova prop color em Share ([4cd4e96](https://github.com/xproglabs/prensa-designsystem/commit/4cd4e96eab5405d483838437391fd617c71298c1))
+* Permite prop enabled no Article/Share ([0012e3e](https://github.com/xproglabs/prensa-designsystem/commit/0012e3e8894791f66001a4215778e636cbc74230))
+
+## [1.9.55](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.54...v1.9.55) (2022-03-10)
+
+
+### Features
+
+* insere props fontSize no MoreButton ([bad7aec](https://github.com/xproglabs/prensa-designsystem/commit/bad7aec3ef9aec970fd5fb32f0938ae857897657))
+
+## [1.9.54](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.53...v1.9.54) (2022-03-10)
+
+
+### Bug Fixes
+
+* **youtube:** semantic commit to release ([abcebca](https://github.com/xproglabs/prensa-designsystem/commit/abcebca6e255daceec6095016650e2ad06c31c7b))
+
+## [1.9.53](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.52...v1.9.53) (2022-03-09)
+
+
+### Bug Fixes
+
+* Parametrizar estilo do button VER MAIS na lista paginada ([bd162da](https://github.com/xproglabs/prensa-designsystem/commit/bd162da87952d826c71d5004b99fc691df65ac7c))
+
+## [1.9.52](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.51...v1.9.52) (2022-03-08)
+
+
+### Bug Fixes
+
+* responsive layoyt ([9ce0847](https://github.com/xproglabs/prensa-designsystem/commit/9ce0847621220e2350afdb4c1b15521c5d8f1d9c))
+
+## [1.9.51](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.50...v1.9.51) (2022-03-07)
+
+
+### Bug Fixes
+
+* **scheduled:** published and modified date ([fe1e324](https://github.com/xproglabs/prensa-designsystem/commit/fe1e32402b1f70f15ce3792819df056346303e19))
+
+## [1.9.50](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.49...v1.9.50) (2022-03-07)
+
+
+### Bug Fixes
+
+* **caption:** redefine subtitle rules ([c40e7a7](https://github.com/xproglabs/prensa-designsystem/commit/c40e7a71ff3c48d2fde206b59f4246516cc23d33))
+* **caption:** set textbody caption as default ([3c84eba](https://github.com/xproglabs/prensa-designsystem/commit/3c84eba7dec5f3f23d403f371cde407b62bddddd))
+
+## [1.9.49](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.48...v1.9.49) (2022-03-02)
+
+
+### Bug Fixes
+
+* Permite boolean na prop autoplay ([c2d6287](https://github.com/xproglabs/prensa-designsystem/commit/c2d628795c62805abb1566a571005234dbb2554e))
+
+## [1.9.48](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.47...v1.9.48) (2022-03-02)
+
+
+### Features
+
+* ajusta ordem alfabetica ([b2c3abf](https://github.com/xproglabs/prensa-designsystem/commit/b2c3abf6388910856ce96d0ab0220bf921237b5a))
+
 ## [1.9.47](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.46...v1.9.47) (2022-02-17)
 
 

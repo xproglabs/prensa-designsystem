@@ -51,6 +51,7 @@ type BoxWrap = {
 type Image = {
   align?: [string, string];
   aligny?: [string, string];
+  custom_class?: string;
   dimension?: [string, string];
   enabled?: boolean;
   /**
@@ -68,7 +69,7 @@ type Image = {
   wrap_width?: [string, string];
 }
 type Related = {
-  color?: string;
+  color?: ColorTokens | string;
   element?: string;
   font_size?: [string, string];
   font_weight?: number;
@@ -79,14 +80,14 @@ type Related = {
   mr?: SpacingType;
 }
 type Subtitle = {
-  color?: string;
+  color?: ColorTokens | string;
   font_size?: [string, string];
   enabled?: boolean;
   line_height?: [string, string];
   mb?: SpacingType;
 }
 export type Title = {
-  color?: string;
+  color?: ColorTokens | string;
   element?: string;
   enabled?: boolean;
   font_family?: string;
@@ -111,8 +112,6 @@ export type LayoutProps = {
   profile_image?: {
     enabled: boolean,
   };
-  radius_bottom?: boolean;
-  radius_top?: boolean;
   related?: Related;
   section?: Object;
   subject?: SubjectLayout;
@@ -124,7 +123,7 @@ export type TeaserProps = {
    * @description define if uses an amp image or html image
    */
   amp?: boolean;
-  color?: ColorTokens | string;
+  color?: ColorTokens;
   domain?: string;
   /**
    * @description expects a boolean with editable option

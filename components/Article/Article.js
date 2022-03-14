@@ -31,12 +31,11 @@ const Article = (props) => {
     heading4,
     hyperlink,
     images,
-    hasBottomShare,
     orderedList,
     paragraph,
     relatedContent,
-    tags_section_title,
-    tags_section_title_value,
+    sectionTitle,
+    share,
     subject,
     subtitle,
     title,
@@ -78,6 +77,7 @@ const Article = (props) => {
               <S.Content>
                 <Byline
                   amp={amp}
+                  share={share}
                   {...byline}
                 />
               </S.Content>
@@ -95,6 +95,7 @@ const Article = (props) => {
                   amp={amp}
                   fbappid={fbappid}
                   pageUrl={url}
+                  share={share}
                   {...byline}
                 />
               </S.Content>
@@ -120,7 +121,6 @@ const Article = (props) => {
             content={textbody}
             fbappid={fbappid}
             gallery={gallery}
-            hasBottomShare={hasBottomShare}
             hasColumnRight={hasColumnRight}
             heading2={heading2}
             heading3={heading3}
@@ -130,8 +130,8 @@ const Article = (props) => {
             orderedList={orderedList}
             paragraph={paragraph}
             related_content_intervention={related_content_body}
-            tags_section_title={tags_section_title}
-            tags_section_title_value={tags_section_title_value}
+            sectionTitle={sectionTitle}
+            share={share}
             tags={tags}
             unorderedList={unorderedList}
           />
@@ -157,8 +157,7 @@ Article.defaultProps = {
     image: true
   },
   headWidth: '1016px',
-  hasColumnRight: false,
-  tags_section_title_value: 'Assuntos'
+  hasColumnRight: false
 }
 
 Article.propTypes = {
@@ -185,7 +184,6 @@ Article.propTypes = {
     captionProps: PropTypes.object,
     items: PropTypes.array
   }),
-  hasBottomShare: PropTypes.bool,
   hasColumnRight: PropTypes.bool,
   headWidth: PropTypes.string,
   heading2: PropTypes.object,
@@ -212,8 +210,11 @@ Article.propTypes = {
       maxWidth: PropTypes.string
     })
   }),
-  tags_section_title: PropTypes.object,
-  tags_section_title_value: PropTypes.string,
+  sectionTitle: PropTypes.object,
+  share: PropTypes.shape({
+    byline: PropTypes.object,
+    textBody: PropTypes.object
+  }),
   subject: PropTypes.object,
   subtitle: PropTypes.object,
   tags: PropTypes.object,

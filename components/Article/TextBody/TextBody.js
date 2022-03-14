@@ -26,12 +26,10 @@ const TextBody = (props) => {
     amp,
     bodyImage,
     bodyWidth,
-    bottomShare,
     citation,
     content,
     fbappid,
     gallery,
-    hasBottomShare,
     hasColumnRight,
     heading2,
     heading3,
@@ -42,8 +40,8 @@ const TextBody = (props) => {
     pageUrl,
     paragraph,
     related_content_intervention,
-    tags_section_title,
-    tags_section_title_value,
+    sectionTitle,
+    share,
     tags,
     unorderedList
   } = props
@@ -80,7 +78,7 @@ const TextBody = (props) => {
           amp={amp}
           caption={{
             ...bodyImage.caption,
-            value: image_data.caption
+            value: value.caption || image_data.caption
           }}
           height={image_data.height}
           width={image_data.width}
@@ -216,7 +214,8 @@ const TextBody = (props) => {
 
   const RenderMainColumn = () => {
     const isGalleryVisible = gallery && gallery.items && gallery.items.length > 0
-    const isTagSectionVisible = tags_section_title && tags_section_title.enabled
+    const isTagsSectionTitleVisible = get(tags, 'sectionTitle.enabled', false)
+    const tagsSectionTitleValue = get(tags, 'sectionTitle.value', 'Assuntos')
     return (
       <React.Fragment>
         {map(body_items, ({ type, value }, key) => {
@@ -233,25 +232,26 @@ const TextBody = (props) => {
             amp={amp}
           />
         }
-        {isTagSectionVisible &&
+        {isTagsSectionTitleVisible &&
           <SectionTitle
-            {...tags_section_title}
+            element='h6'
             maxWidth={bodyWidth}
+            {...sectionTitle}
           >
-            {tags_section_title_value}
+            {tagsSectionTitleValue}
           </SectionTitle>
         }
         <Tags
-          {...tags}
           maxWidth={bodyWidth}
+          {...tags}
         />
-        {hasBottomShare &&
-          <BottomShare
-            pageUrl={pageUrl}
-            maxWidth={bodyWidth}
-            {...bottomShare}
-          />
-        }
+        <BottomShare
+          amp={amp}
+          maxWidth={bodyWidth}
+          pageUrl={pageUrl}
+          sectionTitle={sectionTitle}
+          share={share}
+        />
       </React.Fragment>
     )
   }
@@ -304,7 +304,6 @@ TextBody.propTypes = {
   amp: PropTypes.bool,
   bodyImage: PropTypes.object,
   bodyWidth: PropTypes.string,
-  bottomShare: PropTypes.object,
   content: PropTypes.string,
   citation: PropTypes.object,
   gallery: PropTypes.shape({
@@ -312,7 +311,6 @@ TextBody.propTypes = {
     items: PropTypes.array,
     bodyWidth: PropTypes.string,
   }),
-  hasBottomShare: PropTypes.bool,
   hasColumnRight: PropTypes.bool,
   heading2: PropTypes.object,
   heading3: PropTypes.object,
@@ -324,8 +322,7 @@ TextBody.propTypes = {
     enabled: PropTypes.bool,
     component: PropTypes.node
   }),
-  tags_section_title: PropTypes.object,
-  tags_section_title_value: PropTypes.string,
+  sectionTitle: PropTypes.object,
   tags: PropTypes.object
 }
 

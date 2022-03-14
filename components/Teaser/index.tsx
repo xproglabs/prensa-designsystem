@@ -187,12 +187,11 @@ const Teaser = (props: TeaserProps) => {
       >
         <RenderImage
           amp={amp}
+          custom_class={layout?.image?.custom_class}
           domain={domain}
           editable={editable}
           fallback_image_url={fallback_image_url}
           image_circle={layout?.image_circle}
-          radius_bottom={layout?.radius_bottom}
-          radius_top={layout?.radius_top}
           item={item}
           item_path={item_path}
           layout={layout}
