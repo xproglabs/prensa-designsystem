@@ -149,6 +149,7 @@ const Teaser = (props: TeaserProps) => {
         wrap_ml={number_ml}
       >
         <RenderNumber
+          color={color}
           layout={layout}
           number={number}
         />
@@ -186,6 +187,7 @@ const Teaser = (props: TeaserProps) => {
       >
         <RenderImage
           amp={amp}
+          custom_class={layout?.image?.custom_class}
           domain={domain}
           editable={editable}
           fallback_image_url={fallback_image_url}

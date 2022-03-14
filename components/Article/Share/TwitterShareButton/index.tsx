@@ -9,6 +9,7 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
 
   const {
     amp,
+    color,
     size,
     pageUrl,
     twitterPath,
@@ -54,7 +55,7 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
           <IcTwitter
             width={size}
             height={size}
-            color='primary1'
+            color={color}
             {...otherProps}
           />
         </Link>

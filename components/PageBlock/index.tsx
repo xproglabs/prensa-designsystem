@@ -131,7 +131,9 @@ const PageBlock = ({
     const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slot70_block.spaces)
     const slot2_spaces = selectLayoutColsFromSlot(slot2?.len1, slot30_block.spaces)
     const slot1_space_bottom = get(slot70_block, 'space_bottom', [])
+    const slot1_more_button = get(slot70_block, 'more_button', {})
     const slot2_space_bottom = get(slot30_block, 'space_bottom', [])
+    const slot2_more_button = get(slot30_block, 'more_button', {})
     const slot1_space_bottom_column = slot70_block.space_bottom_column
     const slot1_space_bottom_column_color = slot70_block.space_bottom_column_color
     const slot2_space_bottom_column = slot30_block.space_bottom_column
@@ -164,6 +166,7 @@ const PageBlock = ({
           layouts: slot70_layout,
           order: slot1?.order,
           more: slot1?.more,
+          more_button: slot1_more_button,
           more_title: slot1?.more_title,
           more_link: slot1?.more_link,
           pagination: slot1?.pagination,
@@ -192,6 +195,7 @@ const PageBlock = ({
           min_height: slot30_block.min_height,
           order: slot2?.order,
           more: slot2?.more,
+          more_button: slot2_more_button,
           more_title: slot2?.more_title,
           more_link: slot2?.more_link,
           pagination: slot2?.pagination,

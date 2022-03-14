@@ -20,6 +20,8 @@ export const TEASER_IMAGE_TOP_MEDIUM: LayoutProps = {
     width: ['400px', '400px'],
     wrap_width: ['100%', '100%'],
   },
+  radius_bottom: true,
+  radius_top: true,
   related: {
     enabled: false
   },

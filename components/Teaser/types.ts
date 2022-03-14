@@ -51,6 +51,7 @@ type BoxWrap = {
 type Image = {
   align?: [string, string];
   aligny?: [string, string];
+  custom_class?: string;
   dimension?: [string, string];
   enabled?: boolean;
   /**

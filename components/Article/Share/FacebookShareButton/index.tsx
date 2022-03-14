@@ -9,6 +9,7 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
 
   const {
     amp,
+    color,
     facebookPath,
     facebookProps = {},
     fbappid,
@@ -59,7 +60,7 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
           <IcFacebook
             width={size}
             height={size}
-            color='primary1'
+            color={color}
             {...otherProps}
           />
         </Link>

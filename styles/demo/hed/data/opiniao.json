@@ -470,16 +470,13 @@
       }
     ],
     "list2": [],
-    "more": false,
-    "more_title": "",
-    "more_link": "",
-    "order": [
-      "name",
-      "asc"
-    ],
+    "more": true,
+    "more_title": "Ver mais postagens",
+    "more_link": "/opiniao/?page=2",
+    "order": false,
     "pagination": false,
-    "title": "Colunistas",
-    "type": "columnist_index"
+    "title": "Últimas Postagens",
+    "type": "latest_news"
   },
   "slot3": {
     "bgcolor": "",
