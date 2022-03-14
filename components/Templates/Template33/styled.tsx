@@ -1,23 +1,22 @@
 import { get } from 'lodash'
-import { Block } from 'prensa'
 import React from 'react'
 
+import Block from '../../NewBlock'
 import { selectMinHeightFromSlot } from '../../PageBlock/utils'
 import { ColorizedColumnProps, ColumnProps } from './types'
 
-export const Column = ({ children }: ColumnProps) => (
+const Column = ({ children }: ColumnProps) => (
   <Block
     align='column'
     alignx='left'
     aligny='top'
-    lg={{ width: 'calc((100% - 48px) / 3)' }}
-    width='100%'
+    width={['100%', 'calc((100% - 48px) / 3)']}
   >
     {children}
   </Block>
 )
 
-export const ColumnColor = ({
+const ColumnColor = ({
   bgColor,
   children,
   minHeight,
@@ -29,24 +28,30 @@ export const ColumnColor = ({
   return (
     <Block
       bgColor={bgColor}
-      custom={slot_customHeight_mobile}
-      px={2}
-      pt={transparent ? '0px' : 2}
-      mb={transparent ?
-        get(slot, 'space_bottom_column[0]', '0px') :
-        get(slot, 'space_bottom_column_color[0]', 2)}
-      width='calc(100% - 32px)'
-      lg={{
-        custom: slot_customHeight_desktop,
-        px: transparent ? '0px' : 3,
-        pt: transparent ? '0px' : 3,
-        mb: transparent ?
-          get(slot, 'space_bottom_column[1]', '0px') :
-          get(slot, 'space_bottom_column_color[1]', 3),
-        width: transparent ? '100%' : 'calc(100% - 48px)'
-      }}
+      custom={[
+        slot_customHeight_mobile,
+        slot_customHeight_desktop
+      ]}
+      mb={[
+        transparent ? get(slot, 'space_bottom_column[0]', '0px') : get(slot, 'space_bottom_column_color[0]', 2),
+        transparent ? get(slot, 'space_bottom_column[1]', '0px') : get(slot, 'space_bottom_column_color[1]', 3)
+      ]}
+      px={[
+        2,
+        transparent ? '0px' : 3
+      ]}
+      pt={[
+        transparent ? '0px' : 2,
+        transparent ? '0px' : 3
+      ]}
+      width={[
+        'calc(100% - 32px)',
+        transparent ? '100%' : 'calc(100% - 48px)'
+      ]}
     >
       {children}
     </Block>
   )
 }
+
+export { Column, ColumnColor }

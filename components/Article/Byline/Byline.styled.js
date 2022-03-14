@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../../Block'
+import Block from '../../NewBlock/index.tsx'
 import Typography from '../../Typography'
 
 export const Author = ({
@@ -37,44 +37,44 @@ Author.propTypes = {
   lineHeight: PropTypes.array
 }
 
-export const Container = ({ children }) => 
+export const Container = ({ children }) => (
   <Block 
+    align={['column', 'row']}
+    alignx={['left', 'between']}
     width='100%'
-    lg={{
-      align: 'row',
-      alignx: 'between'
-    }}>
+  >
     {children}
   </Block>
+)
 
 Container.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
 
-export const Content = ({ children, mb }) => 
+export const Content = ({ children, mb }) => (
   <Block
-    align='column'
+    align={['column', 'row', 'row']}
+    aligny={['top', 'middle', 'middle']}
     mb={mb[0]}
     width='100%'
-    md={{ align: 'row', aligny: 'middle', mb: mb[1] }}
   >
     {children}
   </Block>
+)
 
 Content.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   mb: PropTypes.array
 }
 
-export const BylineContainer = ({ children, mb }) => 
+export const BylineContainer = ({ children, mb }) => (
   <Block 
-    mb={mb[0]}
-    lg={{
-      mb: mb[1]
-    }}
-    width='100%'>
+    mb={mb}
+    width='100%'
+  >
     {children}
   </Block>
+)
 
 BylineContainer.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),

@@ -1,0 +1,10 @@
+
+.block-custom-def {
+  background-color: rgba(1,22,39,0.2);
+}
+.block-custom-def span {
+  border: 1px solid rgba(255,55,255,1);
+  font-size: 11px;
+  padding: 3px;
+  margin: 0px;
+}

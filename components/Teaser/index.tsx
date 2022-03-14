@@ -2,6 +2,7 @@ import { get } from 'lodash'
 import React from 'react'
 
 import { EditButtons } from '../EditArea'
+import Block from '../NewBlock'
 import RelatedRender from './Related'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'
@@ -35,7 +36,7 @@ const Teaser = (props: TeaserProps) => {
   const item_path = get(item, 'url', false) || get(item, 'path', '')
   const item_title = get(item, 'name', '')
   const box_align = get(layout, 'box.align', ['column', 'column'])
-  const box_alignx = get(layout, 'box.alignx', ['left', 'left'])
+  const box_alignx = get(layout, 'box.alignx', ['center', 'center'])
   const box_aligny = get(layout, 'box.aligny', ['top', 'top'])
   const box_background = get(layout, 'box.background', 'transparent')
   const box_height = get(layout, 'box.height', ['auto', 'auto', 'auto'])
@@ -45,7 +46,7 @@ const Teaser = (props: TeaserProps) => {
   const box_pl = get(layout, 'box.pl', [undefined, undefined])
   const box_mt = get(layout, 'box.mt', [undefined, undefined])
   const box_mr = get(layout, 'box.mr', [undefined, undefined])
-  const box_mb = get(layout, 'box.mb', [undefined, undefined])
+  const box_mb = get(layout, 'box.mb', [2, 2])
   const box_ml = get(layout, 'box.ml', [undefined, undefined])
 
   // box border props
@@ -293,34 +294,53 @@ const Teaser = (props: TeaserProps) => {
     )
   }
 
+  const parseBoxWidth = () => {
+    if (box_b) {
+      return `calc(100% - ${box_b} - ${box_b})`
+    }
+    if (box_bl && box_br) {
+      return `calc(100% - ${box_bl} - ${box_br})`
+    }
+    if (box_bl) {
+      return `calc(100% - ${box_bl})`
+    }
+    if (box_br) {
+      return `calc(100% - ${box_br})`
+    }
+    return '100%'
+  }
+
+  const box_width = parseBoxWidth()
+
   return (
-    <S.Box
-      box_align={box_align}
-      box_alignx={box_alignx}
-      box_aligny={box_aligny}
-      background={box_background}
-      box_height={box_height}
-      box_pt={box_pt}
-      box_pr={box_pr}
-      box_pb={box_pb}
-      box_pl={box_pl}
-      box_mt={box_mt}
-      box_mr={box_mr}
-      box_mb={box_mb}
-      box_ml={box_ml}
-      box_bt={box_bt}
-      box_br={box_br}
-      box_bb={box_bb}
-      box_bl={box_bl}
-      box_b={box_b}
-      box_borderColor={box_borderColor}
-      box_borderStyle={box_borderStyle}
-      box_radius={box_radius}
+    <Block
+      align={box_align}
+      alignx={box_alignx}
+      aligny={box_aligny}
+      bgColor={box_background}
+      height={box_height}
+      pt={box_pt}
+      pr={box_pr}
+      pb={box_pb}
+      pl={box_pl}
+      mt={box_mt}
+      mr={box_mr}
+      mb={box_mb}
+      ml={box_ml}
+      bt={box_bt}
+      br={box_br}
+      bb={box_bb}
+      bl={box_bl}
+      b={box_b}
+      borderColor={box_borderColor}
+      borderStyle={box_borderStyle}
+      radius={box_radius}
+      width={box_width}
     >
       <RenderNumberWrap />
       <RenderImageWrap />
       <RenderContentWrap />
-    </S.Box>
+    </Block>
   )
 }
 

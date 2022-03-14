@@ -1,0 +1,152 @@
+import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
+import {ThemeProvider} from 'styled-components';
+import {Space, CodeBlock} from 'prensa-docs';
+import {theme} from 'storybook/theme';
+
+import Block from '../../components/NewBlock/index';
+
+<Meta title="NewBlock/Colors" />
+
+# Block / Colors
+
+<Space size={3} />
+
+Block é um componente baseado em uma `<div>` para entregar posicionamentos blocados na tela.
+
+<Space size={6} />
+
+### Propriedades para cores
+
+Pode ser utilizado propriedades de cores para background `bgColor` e cor primária da fonte `fontColor`.
+
+Os valores aceitáveis são os contidos no styleguide / theme do design system.
+
+<Space size={6} />
+
+### Exemplo 1:
+
+`bgColor='primary1'`
+
+`fontColor='white'`
+
+<pre>
+  <CodeBlock>{`<Block bgColor='primary1' fontColor='white'>children</Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block bgColor='primary1' fontColor='white' custom={`padding: 10px;`}>
+    Texto
+  </Block>
+</ThemeProvider>
+
+### Exemplo 2:
+
+`bgColor='primary2'`
+
+`fontColor='white'`
+
+<pre>
+  <CodeBlock>{`<Block bgColor='primary2' fontColor='white'>children</Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block bgColor='primary2' fontColor='white' custom={`padding: 10px;`}>
+    Texto
+  </Block>
+</ThemeProvider>
+
+### Exemplo 3:
+
+`bgColor='primary3'`
+
+`fontColor='primary1'`
+
+<pre>
+  <CodeBlock>{`<Block bgColor='primary3' fontColor='primary1'>children</Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block bgColor='primary3' fontColor='primary1' custom={`padding: 10px;`}>
+    Texto
+  </Block>
+</ThemeProvider>
+
+### Exemplo 4:
+
+`bgColor='white'`
+
+`fontColor='black'`
+
+<pre>
+  <CodeBlock>{`<Block bgColor='white' fontColor='black'>children</Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block bgColor='white' fontColor='black' custom={`padding: 10px;`}>
+    Texto
+  </Block>
+</ThemeProvider>
+
+### Exemplo 5:
+
+`bgColor='error1'`
+
+`fontColor='white'`
+
+<pre>
+  <CodeBlock>{`<Block bgColor='error1' fontColor='white'>children</Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block bgColor='error1' fontColor='white' custom={`padding: 10px;`}>
+    Texto
+  </Block>
+</ThemeProvider>
+
+### Exemplo 6:
+
+`bgColor='success2'`
+
+`fontColor='white'`
+
+<pre>
+  <CodeBlock>{`<Block bgColor='success2' fontColor='white'>children</Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block bgColor='success2' fontColor='white' custom={`padding: 10px;`}>
+    Texto
+  </Block>
+</ThemeProvider>
+
+### Exemplo 7:
+
+`custom='background-color: rgba(50,100,250,1);'`
+
+`fontColor='white'`
+
+<pre>
+  <CodeBlock>{`<Block fontColor='white' custom='background-color: rgba(50,100,250,1);'>children</Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block fontColor='white' custom={`background-color: rgba(50,100,250,1); padding: 10px;`}>
+    Texto
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />

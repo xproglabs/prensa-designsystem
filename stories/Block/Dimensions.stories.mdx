@@ -1,0 +1,147 @@
+import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
+import {ThemeProvider} from 'styled-components';
+import {Space, CodeBlock} from 'prensa-docs';
+import {theme} from 'storybook/theme';
+
+import Block from '../../components/NewBlock/index';
+
+<Meta title="NewBlock / Dimensions" />
+
+# Block / Dimensions
+
+<Space size={3} />
+
+Block é um componente baseado em uma `<div>` para entregar posicionamentos blocados na tela.
+
+<Space size={6} />
+
+### Propriedade para definir dimensões
+
+<Space size={3} />
+
+Utilize a propriedade `height` ou `width`
+
+<Space size={6} />
+
+### Exemplo 1
+
+`height: '20px'`
+
+`width: '100px'`
+
+<pre>
+  <CodeBlock>{`<Block width='100px'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    bgColor='primary2'
+    fontColor='white'
+    width='100px'
+    height='20px'>
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />
+
+### Exemplo 2
+
+`height: '20px'`
+
+`width: '200px'`
+
+<pre>
+  <CodeBlock>{`<Block width='200px'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    bgColor='primary2'
+    fontColor='white'
+    width='200px'
+    height='20px'>
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />
+
+### Exemplo 3
+
+`height: '20px'`
+
+`width: '400px'`
+
+<pre>
+  <CodeBlock>{`<Block width='400px'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    bgColor='primary2'
+    fontColor='white'
+    width='400px'
+    height='20px'>
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />
+
+### Exemplo 4
+
+`height: '20px'`
+
+`width: '100%'`
+
+<pre>
+  <CodeBlock>{`<Block width='100%'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    bgColor='primary2'
+    fontColor='white'
+    width='100%'
+    height='20px'>
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />
+
+### Exemplo 5
+
+`height: '20px'`
+
+`fullWidth: true`
+
+`px: 4`
+
+<pre>
+  <CodeBlock>{`<Block fullWidth px={4}></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    bgColor='primary2'
+    fontColor='white'
+    height='20px'
+    fullWidth
+    px={4}>
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />

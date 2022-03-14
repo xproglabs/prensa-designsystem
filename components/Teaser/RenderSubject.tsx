@@ -3,8 +3,8 @@ import { get } from 'lodash'
 import React from 'react'
 
 import { EditArea } from '../EditArea'
-import * as S from './styled'
-import { LayoutProps, SpacingType  } from './types'
+import { Subject } from './styled'
+import { LayoutProps, SpacingType } from './types'
 
 export type VariantTypes = 'default' | 'filled'
 
@@ -37,7 +37,7 @@ const RenderSubject = ({
   const mb = get(layout, 'subject.mb', ['0px', '0px'])
   const subject_enabled = get(layout, 'subject.enabled', false)
   const subject_variant = get(layout, 'subject.variant', '')
-  
+
   let subject_value = get(item, 'subject', '')
 
   if (!subject_enabled) {
@@ -76,7 +76,7 @@ const RenderSubject = ({
   const font_color = parseFontColor()
 
   return (
-    <S.Subject
+    <Subject
       bg_color={bg_color}
       color={font_color}
       font_size={font_size}
@@ -86,7 +86,7 @@ const RenderSubject = ({
       <EditArea {...editable}>
         {subject_value}
       </EditArea>
-    </S.Subject>
+    </Subject>
   )
 }
 

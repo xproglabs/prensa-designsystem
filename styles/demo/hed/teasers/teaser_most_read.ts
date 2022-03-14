@@ -13,6 +13,7 @@ export const TEASER_MOST_READ = CreateTeaser({
     containerProps: {
       b: '1px',
       borderColor: 'primary1',
+      borderStyle: 'solid',
       radius: 'circle',
       height: '40px',
       width: '40px',

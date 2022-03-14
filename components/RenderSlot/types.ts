@@ -1,3 +1,4 @@
+import { ColorTokens } from '@prensa_tokens'
 import { ReactElement } from 'react'
 
 import { CarouselLayoutProps } from '../../components/Carousel/types'
@@ -6,9 +7,9 @@ import { LayoutProps } from '../Teaser/types'
 
 export type RenderSlotProps = {
   amp?: boolean,
-  bgcolor?: string;
+  bgcolor?: ColorTokens;
   carousel?: CarouselLayoutProps;
-  color?: string;
+  color?: ColorTokens;
   column_items: number;
   column_padding: number;
   domain?: string;

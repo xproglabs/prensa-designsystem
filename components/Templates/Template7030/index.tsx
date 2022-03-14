@@ -1,7 +1,7 @@
 import { get } from 'lodash'
-import { Block } from 'prensa'
 import React from 'react'
 
+import Block from '../../NewBlock'
 import { isBackgroundTransparent, selectBgColorFromSlot, selectMinHeightFromSlot } from '../../PageBlock/utils'
 import RenderSlot from '../../RenderSlot'
 import { renderSpaceSlot } from '../../RenderSlot/utils'
@@ -21,55 +21,43 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
   return (
     <>
       <Block
-        align='column'
-        alignx='center'
-        aligny='top'
-        px='0px'
-        py='0px'
-        lg={{
-          align: 'row',
-          alignx: 'between',
-          aligny: 'top'
-        }}
+        align={['column', 'row']}
+        alignx={['center', 'between']}
+        aligny={['top', 'top']}
         width='100%'
       >
         <Block
-          align='column'
-          alignx='left'
-          width='100%'
-          lg={{
-            align: 'row',
-            alignx: 'between',
-            custom: 'flex-wrap: wrap;',
-            mb: '0px',
-            px: '0px',
-            width: 'calc((((100% - 48px) / 3) * 2) + 24px)'
-          }}
+          align={['column', 'row']}
+          alignx={['left', 'between']}
+          custom={['', 'flex-wrap:wrap;']}
+          width={['100%', 'calc((((100% - 48px) / 3) * 2) + 24px)']}
         >
           {renderSpaceSlot(slotAds.spaceTopLeft)}
           {renderSpaceSlot(slot70.spaceA)}
           <Block
-            align='column'
-            alignx='center'
+            align={['column', 'row']}
+            alignx={['center', 'between']}
             bgColor={slot70_bgColor}
-            custom={slot70_customHeight_mobile}
-            px={2}
-            pt={slot70_isTransparent ? '0px' : 2}
-            mb={slot70_isTransparent ?
-              get(slot70, 'space_bottom_column[0]', '0px') :
-              get(slot70, 'space_bottom_column_color[0]', 2)}
-            width='calc(100% - 32px)'
-            lg={{
-              align: 'row',
-              alignx: 'between',
-              custom: `flex-wrap: wrap; ${slot70_customHeight_desktop}`,
-              mb: slot70_isTransparent ?
-                get(slot70, 'space_bottom_column[1]', '0px') :
-                get(slot70, 'space_bottom_column_color[1]', 3),
-              px: slot70_isTransparent ? '0px' : 3,
-              pt: slot70_isTransparent ? '0px' : 3,
-              width: slot70_isTransparent ? '100%' : 'calc(100% - 48px)'
-            }}
+            custom={[
+              slot70_customHeight_mobile,
+              `flex-wrap: wrap; ${slot70_customHeight_desktop}`
+            ]}
+            px={[
+              2,
+              slot70_isTransparent ? '0px' : 3
+            ]}
+            pt={[
+              slot70_isTransparent ? '0px' : 2,
+              slot70_isTransparent ? '0px' : 3
+            ]}
+            mb={[
+              slot70_isTransparent ? get(slot70, 'space_bottom_column[0]', '0px') : get(slot70, 'space_bottom_column_color[0]', 2),
+              slot70_isTransparent ? get(slot70, 'space_bottom_column[1]', '0px') : get(slot70, 'space_bottom_column_color[1]', 3)
+            ]}
+            width={[
+              'calc(100% - 32px)',
+              slot70_isTransparent ? '100%' : 'calc(100% - 48px)'
+            ]}
           >
             <RenderSlot {...slot70} />
           </Block>
@@ -78,11 +66,7 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
         <Block
           align='column'
           alignx='left'
-          width='100%'
-          lg={{
-            px: '0px',
-            width: 'calc((100% - 48px) / 3)'
-          }}
+          width={['100%', 'calc((100% - 48px) / 3)']}
         >
           {renderSpaceSlot(slotAds.spaceTopCenter)}
           {renderSpaceSlot(slot30.spaceA)}
@@ -91,22 +75,17 @@ const Template7030 = ({ slotAds, slot70, slot30 }: Template7030Props) => {
             alignx='center'
             aligny='top'
             bgColor={slot30_bgColor}
-            custom={slot30_customHeight_mobile}
-            px={2}
-            pt={slot30_isTransparent ? '0px' : 2}
-            mb={slot30_isTransparent ?
-              get(slot30, 'space_bottom_column[0]', '0px') :
-              get(slot30, 'space_bottom_column_color[0]', 2)}
-            width='calc(100% - 32px)'
-            lg={{
-              custom: slot30_customHeight_desktop,
-              mb: slot30_isTransparent ?
-                get(slot30, 'space_bottom_column[1]', '0px') :
-                get(slot30, 'space_bottom_column_color[1]', 3),
-              px: slot30_isTransparent ? '0px' : 3,
-              pt: slot30_isTransparent ? '0px' : 3,
-              width: slot30_isTransparent ? '100%' : 'calc(100% - 48px)'
-            }}
+            custom={[slot30_customHeight_mobile, slot30_customHeight_desktop]}
+            px={[2, slot30_isTransparent ? '0px' : 3]}
+            pt={[slot30_isTransparent ? '0px' : 2, slot30_isTransparent ? '0px' : 3]}
+            mb={[
+              slot30_isTransparent ? get(slot30, 'space_bottom_column[0]', '0px') : get(slot30, 'space_bottom_column_color[0]', 2),
+              slot30_isTransparent ? get(slot30, 'space_bottom_column[1]', '0px') : get(slot30, 'space_bottom_column_color[1]', 3)
+            ]}
+            width={[
+              'calc(100% - 32px)',
+              slot30_isTransparent ? '100%' : 'calc(100% - 48px)'
+            ]}
           >
             <RenderSlot {...slot30} />
           </Block>

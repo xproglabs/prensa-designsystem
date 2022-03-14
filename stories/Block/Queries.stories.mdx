@@ -1,0 +1,51 @@
+import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
+import {ThemeProvider} from 'styled-components';
+import {Space, CodeBlock} from 'prensa-docs';
+import {theme} from 'storybook/theme';
+
+import Block from '../../components/NewBlock/index';
+
+<Meta title="NewBlock/Queries" />
+
+# Block / Queries
+
+<Space size={3} />
+
+Block é um componente baseado em uma `<div>` para entregar posicionamentos blocados na tela. 
+
+<Space size={6} />
+
+### Exemplos
+
+<Space size={3} />
+
+<pre>
+  <CodeBlock>{`<Block 
+    align={['column', 'column']}
+    alignx={['center', 'right']}
+    aligny={['middle', 'bottom']}
+    bgColor={['primary3', 'primary1']}
+  >
+    <span>Teste1</span>
+    <span>Teste2</span>
+    <span>Teste3</span>
+  </Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    align={['column', 'column']}
+    alignx={['center', 'right']}
+    aligny={['middle', 'bottom']}
+    bgColor={['primary3', 'primary1']}
+    className='block-custom-def'
+  >
+    <span>Teste1</span>
+    <span>Teste2</span>
+    <span>Teste3</span>
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />

@@ -2,11 +2,11 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import Block from '../Block'
 import Button from '../Button'
+import Block from '../NewBlock/index.tsx'
 import Typography from '../Typography'
 
-export const Area = ({ children }) =>
+export const Area = ({ children }) => (
   <Block
     align='row'
     aligny='middle'
@@ -22,12 +22,13 @@ export const Area = ({ children }) =>
   >
     {children}
   </Block>
+)
 
 Area.propTypes = {
   children: PropTypes.object
 }
 
-export const ButtonSubmit = ({ buttonAction, children }) =>
+export const ButtonSubmit = ({ buttonAction, children }) => (
   <Button
     align='row'
     aligny='middle'
@@ -41,32 +42,27 @@ export const ButtonSubmit = ({ buttonAction, children }) =>
   >
     {children}
   </Button>
+)
 
 ButtonSubmit.propTypes = {
   buttonAction: PropTypes.func,
   children: PropTypes.string
 }
 
-export const Container = ({ children }) =>
+export const Container = ({ children }) => (
   <Block
-    align='column'
+    align={['column', 'row', 'row', 'row']}
     aligny='middle'
     alignx='center'
     py={2}
     px={2}
+    minHeight='calc(72px - 32px)'
+    maxWidth='1024px'
     width='calc(100% - 32px)'
-    custom={`
-      min-height: calc(72px - 32px);
-      max-width: 1024px;
-    `}
-    sm={{
-      align: 'row',
-      aligny: 'middle',
-      alignx: 'center'
-    }}
   >
     {children}
   </Block>
+)
 
 Container.propTypes = {
   children: PropTypes.array
@@ -101,7 +97,7 @@ Content.propTypes = {
   children: PropTypes.object
 }
 
-export const Message = ({ text }) =>
+export const Message = ({ text }) => (
   <Typography 
     color="neutral2"
     dangerouslySetInnerHTML={text}
@@ -114,7 +110,9 @@ export const Message = ({ text }) =>
       mb: '0'
     }}
     mb={2}
-    mr={2} />
+    mr={2}
+  />
+)
 
 Message.propTypes = {
   text: PropTypes.string

@@ -1,22 +1,20 @@
-import { get } from 'lodash'
-import { Block, Link, Typography } from 'prensa'
+import get from 'lodash/get'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
+import Link from '../Link'
+import Block from '../NewBlock'
+import Typography from '../Typography'
 import { RelatedItemProps } from './RelatedTypes'
 
-export const RelatedArea = ({ children }) => {
+export const RelatedArea = ({ children }: any) => {
   return (
     <Block
-      align="column"
-      alignx="left"
-      aligny="top"
-      lg={{
-        align: 'row',
-        alignx: 'wrap',
-        aligny: 'top',
-      }}
-      width="100%">
+      align={['column', 'row']}
+      alignx={['left', 'left']}
+      aligny={['top', 'top']}
+      width='100%'
+    >
       {children}
     </Block>
   )
@@ -29,11 +27,11 @@ const RelatedItem = ({
   font_size,
   font_weight,
   icon,
-  line_height,
   item_path,
-  theme,
+  line_height,
+  mb,
   mr,
-  mb
+  theme
 }: RelatedItemProps) => {
 
   const icon_token = icon?.icon
@@ -49,13 +47,18 @@ const RelatedItem = ({
 
   return (
     <Block
-      mb={mb[0]}
-      lg={{ mb: mb[1] }}
+      mb={mb}
       width='100%'
     >
       <Block align='row'>
-        <Block mr={mr || 1} width={icon_width || '42px'}>
-          {icon_component && React.cloneElement(icon_component, { color, ...icon })}
+        <Block
+          mr={mr}
+          width={icon_width || '42px'}
+        >
+          {icon_component && React.cloneElement(
+            icon_component,
+            { color, ...icon }
+          )}
         </Block>
         <Block width='100%'>
           <Typography
@@ -83,7 +86,8 @@ RelatedItem.defaultProps = {
   font_size: ['14px', '14px'],
   font_weight: 400,
   line_height: ['16px', '16px'],
-  mb: [2, 2]
+  mb: [2, 2],
+  mr: 1
 }
 
 export default withTheme(RelatedItem)

@@ -1,35 +1,12 @@
-import { ColorTokens, FontTokens, RadiusTokens } from '@prensa_tokens'
+import { ColorTokens, FontTokens } from '@prensa_tokens'
 import { get } from 'lodash'
-import { Block, Typography } from 'prensa'
 import React from 'react'
 
+import Block from '../NewBlock'
+import { BlockProps } from '../NewBlock/props'
+import Typography from '../Typography'
 import { SpacingType, LayoutProps } from './types'
 
-type ContainerProps = {
-  align?: string;
-  alignx?: string;
-  aligny?: string;
-  bgColor?: ColorTokens;
-  b?: string;
-  bt?: string;
-  br?: string;
-  bb?: string;
-  bl?: string;
-  borderColor?: ColorTokens;
-  borderStyle?: string;
-  color?: string;
-  height: string;
-  mt?: SpacingType;
-  mr?: SpacingType;
-  mb?: SpacingType;
-  ml?: SpacingType;
-  pt?: SpacingType;
-  pr?: SpacingType;
-  pb?: SpacingType;
-  pl?: SpacingType;
-  radius?: RadiusTokens;
-  width: string;
-}
 type NumberProps = {
   color?: ColorTokens;
   fontSize?: string;
@@ -41,7 +18,7 @@ export type NumberLayout = {
   align?: [string, string];
   alignx?: [string, string];
   aligny?: [string, string];
-  containerProps?: ContainerProps;
+  containerProps?: BlockProps;
   enabled?: boolean;
   height?: [string, string];
   mt?: SpacingType;

@@ -1,10 +1,11 @@
+import { ColorTokens } from '@prensa_tokens'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import Block from '../Block'
+import Block from '../NewBlock'
 
 interface ContainerProps {
-  background?: string;
+  background?: ColorTokens;
   children?: any;
   mb?: any;
   mt?: any;
@@ -23,17 +24,14 @@ const TemplateContainer = ({
       align='column'
       alignx='center'
       bgColor={background}
-      width='100%'>
+      width='100%'
+    >
       <Block
-        mb={mb[0]}
-        mt={mt[0]}
-        width='100%'
-        lg={{
-          maxWidth: theme.queries.xl,
-          mb: mb[1],
-          mt: mt[1],
-          width: 'calc(100% - 32px)'
-        }}>
+        mb={mb}
+        mt={mt}
+        maxWidth={['unset', theme.queries.xl]}
+        width={['100%', 'calc(100% - 32px)']}
+      >
         {children}
       </Block>
     </Block>

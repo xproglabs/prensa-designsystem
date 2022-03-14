@@ -1,6 +1,6 @@
-import { Block } from 'prensa'
 import React from 'react'
 
+import Block from '../../NewBlock'
 import { FacebookShareButton } from './FacebookShareButton'
 import { TwitterShareButton } from './TwitterShareButton'
 import { ShareProps } from './types'
@@ -24,14 +24,9 @@ const Share = (props: ShareProps) => {
 
   return (
     <Block
-      align='row'
-      alignx='left'
+      align={['row', 'row', 'row']}
+      alignx={['left', 'right', 'right']}
       width='100%'
-      md={{
-        align: 'row',
-        alignx: 'right',
-        width: '100%'
-      }}
       {...containerProps}
     >
       <FacebookShareButton

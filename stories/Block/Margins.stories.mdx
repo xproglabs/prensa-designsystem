@@ -1,0 +1,233 @@
+import {ArgsTable, Meta} from '@storybook/addon-docs/blocks';
+import {ThemeProvider} from 'styled-components';
+import {Space, CodeBlock} from 'prensa-docs';
+import {theme} from 'storybook/theme';
+
+import Block from '../../components/NewBlock/index';
+
+<Meta title="NewBlock / Margins" />
+
+# Block / Margins
+
+<Space size={3} />
+
+Block é um componente baseado em uma `<div>` para entregar posicionamentos blocados na tela.
+
+<Space size={6} />
+
+### Propriedade para definir margins
+
+<Space size={3} />
+
+Utilize a propriedade `mt` para definir valor geral para o margin no topo
+
+Utilize a propriedade `mb` para definir valor geral para o margin embaixo
+
+Utilize a propriedade `ml` para definir valor geral para o margin na esquerda
+
+Utilize a propriedade `mr` para definir valor geral para o margin na direita
+
+Utilize a propriedade `mx` para definir valor geral para o margin na direita e na esquerda
+
+Utilize a propriedade `my` para definir valor geral para o margin no topo e embaixo
+
+É possível também usar os valores com os múltiplos de 8, use por exemplo `my={5}` para aplicar o valor de `40px`, por exemplo.
+
+<Space size={6} />
+
+### Exemplo 1
+
+`mt: '90px'`
+
+<pre>
+  <CodeBlock>{`<Block 
+    onClick={() => console.log('oi')}
+    bgColor='primary2'
+    fontColor='white'
+    mt='90px'
+    width='150px'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    onClick={() => console.log('oi')}
+    custom={`cursor: pointer;`}
+    bgColor='primary2'
+    fontColor='white'
+    mt='90px'
+    width="150px">
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />
+
+### Exemplo 2
+
+`mb: '90px'`
+
+<pre>
+  <CodeBlock>{`<Block 
+    onClick={() => console.log('oi')}
+    bgColor='primary2'
+    fontColor='white'
+    mb='90px'
+    width='150px'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    onClick={() => console.log('oi')}
+    custom={`cursor: pointer;`}
+    bgColor='primary2'
+    fontColor='white'
+    mb='90px'
+    width="150px">
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />
+
+### Exemplo 3
+
+`ml: '90px'`
+
+<pre>
+  <CodeBlock>{`<Block 
+    onClick={() => console.log('oi')}
+    bgColor='primary2'
+    fontColor='white'
+    ml='90px'
+    width='150px'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    onClick={() => console.log('oi')}
+    custom={`cursor: pointer;`}
+    bgColor='primary2'
+    fontColor='white'
+    ml='90px'
+    width="150px">
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />
+
+### Exemplo 4
+
+`mr: '90px'`
+
+<pre>
+  <CodeBlock>{`<Block 
+    onClick={() => console.log('oi')}
+    bgColor='primary2'
+    fontColor='white'
+    mr='90px'
+    width='150px'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    onClick={() => console.log('oi')}
+    custom={`cursor: pointer;`}
+    bgColor='primary2'
+    fontColor='white'
+    mr='90px'
+    width="150px">
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+<Space size={6} />
+
+### Exemplo 5
+
+`mx: '90px'`
+
+<pre>
+  <CodeBlock>{`<Block 
+    onClick={() => console.log('oi')}
+    bgColor='primary2'
+    fontColor='white'
+    mx='90px'
+    width='150px'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    onClick={() => console.log('oi')}
+    custom={`cursor: pointer;`}
+    bgColor='primary2'
+    fontColor='white'
+    mx='90px'
+    width="150px">
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+### Exemplo 6
+
+`my: '90px'`
+
+<pre>
+  <CodeBlock>{`<Block 
+    onClick={() => console.log('oi')}
+    bgColor='primary2'
+    fontColor='white'
+    my='90px'
+    width='150px'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    onClick={() => console.log('oi')}
+    custom={`cursor: pointer;`}
+    bgColor='primary2'
+    fontColor='white'
+    my='90px'
+    width="150px">
+    Texto simples
+  </Block>
+</ThemeProvider>
+
+### Exemplo 7
+
+`my={5}`
+
+<pre>
+  <CodeBlock>{`<Block 
+    onClick={() => console.log('oi')}
+    bgColor='primary2'
+    fontColor='white'
+    my={5}
+    width='150px'></Block>`}</CodeBlock>
+</pre>
+
+<Space size={3} />
+
+<ThemeProvider theme={theme}>
+  <Block 
+    onClick={() => console.log('oi')}
+    custom={`cursor: pointer;`}
+    bgColor='primary2'
+    fontColor='white'
+    my={5}
+    width="150px">
+    Texto simples
+  </Block>
+</ThemeProvider>

@@ -1,17 +1,19 @@
+import { ColorTokens } from '@prensa_tokens'
+
 import { RenderSlotProps } from '../../RenderSlot/types'
 
 type SlotProps = RenderSlotProps & {
   section_title?: () => void;
 }
-export type ColumnProps = {
-  children: any;
+export interface ColumnProps {
+  children?: any;
 }
-export type ColorizedColumnProps = {
-  bgColor: string;
-  children: any;
+export interface ColorizedColumnProps {
+  bgColor?: ColorTokens;
+  children?: any;
   minHeight?: [string, string];
-  slot: SlotProps;
-  transparent: boolean;
+  slot?: SlotProps;
+  transparent?: boolean;
 }
 export interface Template33Props {
   slotAds: SlotProps;
