@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../../NewBlock'
+import Block from '../../NewBlock/index.tsx'
 import Typography from '../../Typography'
 
 export const Author = ({

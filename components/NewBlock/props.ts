@@ -24,9 +24,10 @@ export interface BlockProps extends
   MarginProps,
   MaxAndMinProps,
   PaddingProps {
+  bgColor?: ColorProps['$bgColor'];
   children?: ReactNode;
   color?: ColorProps['$color'];
-  bgColor?: ColorProps['$bgColor'];
+  dangerouslySetInnerHTML?: any;
   height?: HeightProps['$height'];
   radius?: RadiusProps['$radius'];
   width?: WidthProps['$width'];
@@ -45,4 +46,5 @@ export interface StyledBlockProps extends
   RadiusProps,
   WidthProps {
   children: ReactNode;
+  dangerouslySetInnerHTML?: any;
 }
