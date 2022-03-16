@@ -1,6 +1,7 @@
 import { Block } from 'prensa'
 import React from 'react'
 
+import { CopyLinkButton } from './CopyLinkButton'
 import { FacebookShareButton } from './FacebookShareButton'
 import { TwitterShareButton } from './TwitterShareButton'
 import { ShareProps } from './types'
@@ -16,6 +17,8 @@ const Share = (props: ShareProps) => {
     containerProps,
     size,
     fbappid,
+    copyLinkProps,
+    copyLinkUrl,
     facebookPath,
     facebookProps,
     twitterPath,
@@ -24,7 +27,9 @@ const Share = (props: ShareProps) => {
     whatsappProps,
   } = props
 
-  if (!enabled) return null
+  if (!enabled) {
+    return null
+  }
 
   return (
     <Block
@@ -63,6 +68,15 @@ const Share = (props: ShareProps) => {
         whatsappProps={whatsappProps}
         size={size}
       />
+      {copyLinkUrl &&
+        <CopyLinkButton
+          amp={amp}
+          color={color}
+          size={size}
+          url={copyLinkUrl}
+          {...copyLinkProps}
+        />
+      }
     </Block>
   )
 }

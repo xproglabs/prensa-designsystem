@@ -1,5 +1,6 @@
 import { ColorTokens } from '@prensa_tokens'
 
+import { CopyLinkButtonProps } from './CopyLinkButton/props'
 import { FacebookProps } from './FacebookShareButton/types'
 import { TwitterProps } from './TwitterShareButton/types'
 import { WhatsAppProps } from './WhatsAppShareButton/types'
@@ -22,6 +23,8 @@ export interface ShareProps {
   containerProps?: ContainerProps;
   pageUrl: string;
   size?: string;
+  copyLinkUrl?: string;
+  copyLinkProps?: CopyLinkButtonProps;
   facebookPath?: string;
   facebookProps?: FacebookProps;
   fbappid: string;
