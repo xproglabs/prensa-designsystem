@@ -1,16 +1,17 @@
-import { IconTokens } from '@prensa_tokens'
+import { ColorTokens, IconTokens } from '@prensa_tokens'
+import { BorderStyleProps } from '@xprog/prensa-css-engine/props'
 import { ReactElement } from 'react'
 
 import { IconProps } from '../Icon/types'
 import { SpacingType } from '../Teaser/types'
 
-interface AreaLayout {
+interface AreaLayout extends BorderStyleProps {
   b?: string;
   bt?: string;
   br?: string;
   bb?: string;
   bl?: string;
-  borderColor?: string;
+  borderColor?: ColorTokens;
   borderStyle?: string;
   pt?: SpacingType;
   pr?: SpacingType;
@@ -29,7 +30,7 @@ interface IconLayout extends IconProps {
   component?: ReactElement;
 }
 interface TextLayout {
-  color?: string;
+  color?: ColorTokens;
   element?: string;
   font_family?: string;
   font_size?: [string, string];
@@ -51,7 +52,7 @@ export interface SectionTitleLayout {
  * @description define section component props
  */
 export interface SectionTitleProps {
-  color?: string;
+  color?: ColorTokens;
   href?: string;
   icon?: IconTokens;
   layout: SectionTitleLayout;

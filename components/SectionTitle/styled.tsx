@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Block from '../Block'
+import Block from '../NewBlock'
 import Typography from '../Typography'
 import { StyledBoxProps, StyledTitleProps } from './types'
 
@@ -19,28 +19,23 @@ export const AreaBox = ({ area, children }: StyledBoxProps) => {
       br={area?.br}
       bb={area?.bb}
       bl={area?.bl}
+      bs={area?.bs}
+      bst={area?.bst}
+      bsr={area?.bsr}
+      bsb={area?.bsb}
+      bsl={area?.bsl}
       borderColor={area?.borderColor}
       borderStyle={area?.borderStyle}
-      mr={area?.mr?.[0]}
-      ml={area?.ml?.[0]}
-      mt={area?.mt?.[0]}
-      mb={area?.mb?.[0]}
-      pr={area?.pr?.[0]}
-      pl={area?.pl?.[0]}
-      pt={area?.pt?.[0]}
-      pb={area?.pb?.[0]}
-      width={area?.width?.[0]}
-      lg={{
-        mr: area?.mr?.[1],
-        ml: area?.ml?.[1],
-        mt: area?.mt?.[1],
-        mb: area?.mb?.[1],
-        pr: area?.pr?.[1],
-        pl: area?.pl?.[1],
-        pt: area?.pt?.[1],
-        pb: area?.pb?.[1],
-        width: area?.width?.[1]
-      }}>
+      mr={area?.mr}
+      ml={area?.ml}
+      mt={area?.mt}
+      mb={area?.mb}
+      pr={area?.pr}
+      pl={area?.pl}
+      pt={area?.pt}
+      pb={area?.pb}
+      width={area?.width}
+    >
       {children}
     </Block>
   )
@@ -51,9 +46,13 @@ export const AreaBox = ({ area, children }: StyledBoxProps) => {
  * @description used to space inside cols
  * @returns a blank space as a React element
  */
-export const TitleEmpty = () =>
-  <Block width='100%' lg={{ height: '52px' }} />
+export const TitleEmpty = () => (
+  <Block
+    height={['max-content', '52px']}
+    width='100%'
+  />
   //Todo: Dinamizar altura para o TitleEmpty visto que em outros projetos pode ser diferente
+)
 
 /**
  * Section Title Text
