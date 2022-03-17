@@ -1,3 +1,10 @@
+## [1.9.59](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.58...v1.9.59) (2022-03-17)
+
+
+### Features
+
+* add prefix to commit ([f3dced1](https://github.com/xproglabs/prensa-designsystem/commit/f3dced19d89761cfc1c5b8b3df7367255e0f8d28))
+
 ## [1.9.58](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.57...v1.9.58) (2022-03-12)
 
 
