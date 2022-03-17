@@ -12,6 +12,7 @@ const Byline = ({
   content,
   dateline,
   datetime,
+  domain,
   isExpanded,
   fbappid,
   pageUrl,
@@ -90,6 +91,7 @@ const Byline = ({
         <Share
           amp={amp}
           color={shareColor}
+          domain={domain}
           enabled={shareEnabled}
           fbappid={fbappid}
           pageUrl={pageUrl}
