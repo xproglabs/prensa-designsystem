@@ -13,6 +13,7 @@ const Share = (props: ShareProps) => {
     amp,
     enabled,
     color,
+    domain,
     pageUrl,
     containerProps,
     size,
@@ -72,6 +73,7 @@ const Share = (props: ShareProps) => {
         <CopyLinkButton
           amp={amp}
           color={color}
+          domain={domain}
           size={size}
           url={copyLinkUrl}
           {...copyLinkProps}

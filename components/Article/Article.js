@@ -21,6 +21,7 @@ const Article = (props) => {
     bottomShare,
     byline,
     citation,
+    domain,
     fbappid,
     featured,
     gallery,
@@ -93,6 +94,7 @@ const Article = (props) => {
                 <Subtitle {...subtitle} />
                 <Byline
                   amp={amp}
+                  domain={domain}
                   fbappid={fbappid}
                   pageUrl={url}
                   share={share}

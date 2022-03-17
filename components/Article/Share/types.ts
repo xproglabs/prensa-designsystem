@@ -21,6 +21,7 @@ export interface ShareProps {
   enabled: boolean;
   color: ColorTokens;
   containerProps?: ContainerProps;
+  domain?: string;
   pageUrl: string;
   size?: string;
   copyLinkUrl?: string;
