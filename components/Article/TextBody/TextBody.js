@@ -189,8 +189,8 @@ const TextBody = (props) => {
             amp={amp}
             ampElementProps={{ height: '384px', width: '768px' }}
             height={amp ? ['max-content', '384px'] : ['384px', '384px']}
-            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
             url={value}
+            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
           />
         )
       case 'Image':
