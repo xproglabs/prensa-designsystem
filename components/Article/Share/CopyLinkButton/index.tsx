@@ -3,10 +3,21 @@ import React from 'react'
 import Block from '../../../Block'
 import IcCopy from './IcCopy'
 import { CopyLinkButtonProps } from './props'
+import { ClickArea } from './styled'
 
 const CopyLinkButton = (props: CopyLinkButtonProps) => {
 
-  const { amp, color, mt, mr, mb, ml, size, url } = props
+  const {
+    amp,
+    color,
+    domain,
+    mt,
+    mr,
+    mb,
+    ml,
+    size,
+    url
+  } = props
 
   function copyToClipboard() {
     navigator.clipboard.writeText(url)
@@ -19,14 +30,15 @@ const CopyLinkButton = (props: CopyLinkButtonProps) => {
         width={size}
         height={size}
         frameborder='0'
-        src='/static/samples/files/copier.html#Testando texto que será copiado'
+        src={`${domain}/static/samples/files/copier.html#${url}`}
       >
-        {/* <button class='copy-button' placeholder disabled>Copy</button> */}
-        <IcCopy
-          color={color}
-          height={size}
-          width={size}
-        />
+        <ClickArea placeholder='' disabled>
+          <IcCopy
+            color={color}
+            height={size}
+            width={size}
+          />
+        </ClickArea>
       </amp-iframe>
     )
   } else {
