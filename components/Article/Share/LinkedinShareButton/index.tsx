@@ -31,7 +31,7 @@ const Linkedin = (props: LinkedinShareButtonProps) => {
         linkedinPath={linkedinPath}
       >
         <amp-social-share
-          type='twitter'
+          type='linkedin'
           width={size}
           height={size}
           {...otherProps}
