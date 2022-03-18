@@ -2,6 +2,7 @@ import { Block } from 'prensa'
 import React from 'react'
 
 import { FacebookShareButton } from './FacebookShareButton'
+import { TelegramShareButton } from './TelegramShareButton'
 import { TwitterShareButton } from './TwitterShareButton'
 import { ShareProps } from './types'
 import { WhatsAppShareButton } from './WhatsAppShareButton'
@@ -61,6 +62,14 @@ const Share = (props: ShareProps) => {
         pageUrl={pageUrl}
         whatsappPath={whatsappPath}
         whatsappProps={whatsappProps}
+        size={size}
+      />
+      <TelegramShareButton 
+        amp={amp}
+        color={color}
+        pageUrl={pageUrl}
+        telegramPath={whatsappPath}
+        telegramProps={whatsappProps}
         size={size}
       />
     </Block>
