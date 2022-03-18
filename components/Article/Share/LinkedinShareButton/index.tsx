@@ -31,6 +31,7 @@ const Linkedin = (props: LinkedinShareButtonProps) => {
         linkedinPath={linkedinPath}
       >
         <amp-social-share
+          data-param-url={pageUrlParam}
           type='linkedin'
           width={size}
           height={size}
