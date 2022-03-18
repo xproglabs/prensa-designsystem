@@ -5,7 +5,7 @@ import React from 'react'
 import { LinkedinAmpContainer } from './styled'
 import { LinkedinShareButtonProps } from './types'
 
-const Linkedin = (props: LinkedinShareButtonProps) => {
+const LinkedinshareButton = (props: LinkedinShareButtonProps) => {
 
   const {
     amp,
@@ -65,4 +65,4 @@ const Linkedin = (props: LinkedinShareButtonProps) => {
   }
 }
 
-export { Linkedin }
+export { LinkedinshareButton }

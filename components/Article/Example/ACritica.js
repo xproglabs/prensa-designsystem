@@ -101,6 +101,7 @@ const ArticleACritica = () => {
           facebookUrl: 'https://www.facebook.com/',
           twitterUrl: 'https://www.facebook.com/',
           whatsappUrl: 'https://www.facebook.com/',
+          linkedinUrl: 'https://www.facebook.com/',
           byline: {
             enabled: true,
             facebookProps: { mr: 1 },
