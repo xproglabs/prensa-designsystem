@@ -19,7 +19,7 @@ const Linkedin = (props: LinkedinShareButtonProps) => {
   const { mt, mb, mr, ml, ...otherProps } = linkedinProps
 
   const pageUrlParam = `url=${pageUrl}`
-  const shareUrl = `https://www.linkedin.com/shareArticle?${pageUrlParam}`
+  const shareUrl = `https://www.linkedin.com/embed/feed/update/urn:li:share:${pageUrlParam}`
 
   if (amp) {
     return (
