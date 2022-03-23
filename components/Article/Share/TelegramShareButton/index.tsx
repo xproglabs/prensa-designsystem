@@ -2,7 +2,7 @@ import { IcTelegram } from 'icons'
 import { Block, Link } from 'prensa'
 import React from 'react'
 
-import { LinkedinAmpContainer } from './styled'
+import { TelegramAmpContainer } from './styled'
 import { TelegramShareButtonProps } from './types'
 
 const TelegramShareButton = (props: TelegramShareButtonProps) => {
@@ -23,7 +23,7 @@ const TelegramShareButton = (props: TelegramShareButtonProps) => {
 
   if (amp) {
     return (
-      <LinkedinAmpContainer
+      <TelegramAmpContainer
         mt={mt}
         mr={mr}
         mb={mb}
@@ -36,7 +36,7 @@ const TelegramShareButton = (props: TelegramShareButtonProps) => {
           height={size}
           {...otherProps}
         />
-      </LinkedinAmpContainer>
+      </TelegramAmpContainer>
     )
   } else {
     return (
