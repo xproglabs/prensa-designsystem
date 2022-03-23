@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../../Block'
+import Block from '../../NewBlock'
 import Typography from '../../Typography'
 
 const Title = ({
@@ -14,11 +14,9 @@ const Title = ({
 }) => {
   return (
     <Block
-      width="100%"
-      mb={mb[0]}
-      lg={{
-        mb: mb[1]
-      }}>
+      width='100%'
+      mb={mb}
+    >
       <Typography 
         color={color}
         dangerouslySetInnerHTML={value}
