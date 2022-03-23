@@ -21,7 +21,7 @@ const TelegramShareButton = (props: TelegramShareButtonProps) => {
   const pageUrlParam = `url=${pageUrl}`
   const shareUrl = `https://telegram.me/share/url?url=${pageUrlParam}`
 
-  if (amp) {
+  if (amp && telegramPath) {
     return (
       <TelegramAmpContainer
         mt={mt}
