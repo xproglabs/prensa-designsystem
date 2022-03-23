@@ -1,6 +1,7 @@
-import { Block, Typography } from 'prensa'
+import { Typography } from 'prensa'
 import React from 'react'
 
+import Block from '../NewBlock'
 import {
   BioProps,
   ContainerProps,
@@ -52,6 +53,7 @@ export const Title = ({ children, ...otherProps }: TitleProps) => (
 // Containers
 export const Container = ({ children, ...otherProps }: ContainerProps) => (
   <Block
+    align='column'
     aligny='middle'
     alignx='center'
     width='calc(100% - 2px)'
@@ -67,14 +69,9 @@ export const ImageContainer = ({
 }: ImageContainerProps) => (
   <Block
     alignx='center'
-    mb={mb[0]} 
-    mr={mr[0]}
-    width='100%'
-    lg={{
-      width: 'unset',
-      mb: mb[1],
-      mr: mr[1],
-    }}
+    mb={mb} 
+    mr={mr}
+    width={['100%', 'unset']}
   >
     {children}
   </Block>
@@ -83,12 +80,11 @@ export const ImageContainer = ({
 // Wraps
 export const ContentWrap = ({ children }: ContentWrapProps) => (
   <Block
-    align='column'
-    aligny='middle'
+    align={['column', 'row']}
+    aligny={['middle', 'middle']}
     px={2}
     py={2}
     width='calc(100% - 32px)'
-    lg={{ align: 'row' }}
   >
     {children}
   </Block>
@@ -99,14 +95,9 @@ export const ImageWrap = ({
   ...otherProps
 }: ImageProps) => (
   <Block 
-    height={size[0]}
-    minWidth={size[0]}
-    width={size[0]}
-    lg={{
-      height: size[1],
-      minWidth: size[1],
-      width: size[1]
-    }}
+    height={size}
+    minWidth={size}
+    width={size}
     {...otherProps}
   >
     {children}
@@ -114,10 +105,10 @@ export const ImageWrap = ({
 )
 export const SocialMediasWrap = ({ children }: SocialMediasWrapProps) => (
   <Block
-    align='row'
-    alignx='center'
+    align={['row', 'row']}
+    alignx={['center', 'left']}
+    aligny={['top', 'top']}
     width='100%'
-    lg={{ custom: 'justify-content: flex-start' }}
   >
     {children}
   </Block>
