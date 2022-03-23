@@ -21,6 +21,8 @@ const Share = (props: ShareProps) => {
     facebookProps,
     twitterPath,
     twitterProps,
+    telegramPath,
+    telegramProps,
     whatsappPath,
     whatsappProps,
   } = props
@@ -64,14 +66,16 @@ const Share = (props: ShareProps) => {
         whatsappProps={whatsappProps}
         size={size}
       />
-      <TelegramShareButton 
-        amp={amp}
-        color={color}
-        pageUrl={pageUrl}
-        telegramPath={whatsappPath}
-        telegramProps={whatsappProps}
-        size={size}
-      />
+      {telegramPath && (
+        <TelegramShareButton 
+          amp={amp}
+          color={color}
+          pageUrl={pageUrl}
+          telegramPath={telegramPath}
+          telegramProps={telegramProps}
+          size={size}
+        />
+      )}
     </Block>
   )
 }
