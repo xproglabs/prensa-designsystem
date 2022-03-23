@@ -1,6 +1,7 @@
-import { Block, Typography } from 'prensa'
+import { Typography } from 'prensa'
 import React from 'react'
 
+import Block from '../../NewBlock'
 import { CaptionComponentProps } from './types'
 
 const Caption = ({
@@ -22,12 +23,8 @@ const Caption = ({
       aligny='middle'
       bgColor='neutral9'
       height={height}
-      px={1}
-      width={mobileWidth}
-      lg={{
-        px: 2,
-        width: desktopWidth
-      }}
+      px={[1, 2]}
+      width={[mobileWidth, desktopWidth]}
     >
       <Typography
         color='neutral4'
