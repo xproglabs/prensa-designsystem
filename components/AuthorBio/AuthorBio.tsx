@@ -1,8 +1,9 @@
 import { get } from 'lodash'
-import { Block, Image } from 'prensa'
+import { Image } from 'prensa'
 import React from 'react'
 
 import Link from '../Link'
+import Block from '../NewBlock'
 import { IcBioFacebook } from './IcBioFacebook'
 import { IcBioInstagram } from './IcBioInstagram'
 import { IcBioLinkedin } from './IcBioLinkedin'
@@ -71,13 +72,11 @@ const AuthorBio = ({
         <TextWrap>
           {title &&
             <Block
-              alignx='center'
-              lg={{
-                align: 'row',
-                alignx: 'left'
-              }}
+              align={['column', 'row']}
+              alignx={['center', 'left']}
               mb={1}
-              width='100%'>
+              width='100%'
+            >
               <Link path={href}>
                 <Title {...titleProps}>
                   {title}
