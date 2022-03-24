@@ -114,7 +114,7 @@ const ArticleOV = () => {
         }}
         title={{
           fontSize: ['38px', '62px'],
-          mb: ['3', '3'],
+          mb: [3, 3],
           value: 'Líder no jornalismo, OVALE é selecionado em programa global do Google'
         }}
         tags={{

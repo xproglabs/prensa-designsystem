@@ -106,7 +106,7 @@ const ArticleDR = () => {
         title={{
           color: isFeatured ? 'white' : 'neutral2',
           fontSize: ['38px', '62px'],
-          mb: ['2', '3'],
+          mb: [2, 3],
           value: 'Adiamento das eleições para 15 e 29 de novembro é aprovado no Senado'
         }}
         tags={{

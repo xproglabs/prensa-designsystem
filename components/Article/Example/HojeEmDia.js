@@ -208,7 +208,7 @@ const ArticleHJD = () => {
           color: 'neutral2',
           fontSize: ['38px', '62px'],
           fontWeight: 800,
-          mb: ['2', '3'],
+          mb: [2, 3],
           value: 'Almost before we knew it, we had left the ground.'
         }}
         topimage={{

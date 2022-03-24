@@ -162,7 +162,7 @@ const ArticleOM = () => {
     color: 'neutral2',
     fontSize: ['38px', '62px'],
     lineHeight: ['42px', '64px'],
-    mb: ['2', '2'],
+    mb: [2, 2],
     value: title
   }
   const props_paragraph = {
