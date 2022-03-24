@@ -279,7 +279,6 @@ const TextBody = (props) => {
           alignx='center'
           aligny='top'
           custom={['display:none;', 'display:flex;']}
-          bgColor='primary1'          
           width={['unset', `calc(100% - ${bodyWidth} - 32px)`]}
         >
           {adsSide && React.cloneElement(adsSide)}
