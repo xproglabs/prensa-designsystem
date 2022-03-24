@@ -155,7 +155,7 @@ const ArticleOM = () => {
   }
   const props_subtitle = {
     color: 'neutral3',
-    mb: ['5', '5'],
+    mb: [5, 5],
     value: subtitle
   }
   const props_title = {

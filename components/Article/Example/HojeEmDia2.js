@@ -160,7 +160,7 @@ const ArticleHojeEmDia2 = () => {
         }}
         subtitle={{
           fontFamily: 'primary',
-          mb: ['4', '4'],
+          mb: [4, 4],
           value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra eleifend pellentesque. Suspendisse semper gravida fermentum. Integer pulvinar euismod hendrerit.'
         }}
         tags={{
