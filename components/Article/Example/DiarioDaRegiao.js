@@ -93,7 +93,7 @@ const ArticleDR = () => {
         subject={{
           bgColor: 'primary1',
           color: 'white',
-          mb: ['2', '3'],
+          mb: [2, 3],
           transform: 'uppercase',
           value: 'Diário da Região'
         }}

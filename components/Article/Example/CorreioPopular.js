@@ -119,7 +119,7 @@ const ArticleCorreioPopular = () => {
           bgColor: 'secondary2',
           color: 'white',
           fontSize: ['12px', '12px'],
-          mb: ['2', '2'],
+          mb: [2, 2],
           transform: 'uppercase',
           value: 'A Crítica'
         }}

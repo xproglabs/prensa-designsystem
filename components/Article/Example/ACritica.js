@@ -117,7 +117,7 @@ const ArticleACritica = () => {
           bgColor: 'primary1',
           color: 'white',
           fontSize: ['12px', '12px'],
-          mb: ['2', '3'],
+          mb: [2, 3],
           transform: 'uppercase',
           value: 'A Crítica'
         }}

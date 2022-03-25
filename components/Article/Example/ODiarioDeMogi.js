@@ -149,7 +149,7 @@ const ArticleOM = () => {
   const props_subject = {
     bgColor: config.header_color,
     color: 'white',
-    mb: ['3', '3'],
+    mb: [3, 3],
     transform: 'uppercase',
     value: subject
   }

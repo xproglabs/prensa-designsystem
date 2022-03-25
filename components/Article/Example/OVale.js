@@ -103,7 +103,7 @@ const ArticleOV = () => {
         subject={{
           bgColor: 'primary1',
           color: 'white',
-          mb: ['3', '3'],
+          mb: [3, 3],
           transform: 'uppercase',
           value: 'Especial'
         }}
