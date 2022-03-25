@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../Block'
+import Block from '../NewBlock'
 
 export const Container = ({
   children,
@@ -10,9 +10,7 @@ export const Container = ({
   <Block
     align='column'
     alignx='center'
-    lg={{
-      custom: `max-width: ${maxWidth};`
-    }}
+    maxWidth={maxWidth}
     width='100%'
   >
     {children}
@@ -23,66 +21,63 @@ Container.propTypes = {
   maxWidth: PropTypes.string
 }
 
-export const Content = ({ children }) => 
+export const Content = ({ children }) => (
   <Block
-    px={2}
-    width='calc(100% - 32px)'
-    lg={{
-      px: '0px',
-      width: '100%'
-    }}>
+    px={[2, 0]}
+    width={['calc(100% - 32px)', '100%']}
+  >
     {children}
   </Block>
+)
 
 Content.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
   
-export const ContainerFeatured = ({ children }) => 
+export const ContainerFeatured = ({ children }) => (
   <Block
     align='column'
     aligny='bottom'
     alignx='center'
     bgColor='neutral2'
     mb={4}
-    width='100%'>
+    width='100%'
+  >
     {children}
   </Block>
+)
 
 ContainerFeatured.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 }
   
-export const ContentFeatured = ({ children, maxWidth }) => 
+export const ContentFeatured = ({ children, maxWidth }) => (
   <Block
     alignx='left'
-    custom={`
-      max-width: ${maxWidth};
-      position: absolute;
-    `}
+    custom={'position: absolute;'}
+    maxWidth={maxWidth}
     px={3}
     pb={2}
-    width='calc(100% - 48px)'>
+    width='calc(100% - 48px)'
+  >
     {children}
   </Block>
+)
 
 ContentFeatured.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   maxWidth: PropTypes.string
 }
 
-export const ContentImage = ({ children }) => 
+export const ContentImage = ({ children }) => (
   <Block
-    custom={`
-      opacity: 0.5;
-    `}
-    lg={{
-      height: '520px'
-    }}
-    height='420px'
-    width='100%'>
+    custom={'opacity: 0.5;'}
+    height={['420px', '520px']}
+    width='100%'
+  >
     {children}
   </Block>
+)
 
 ContentImage.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
@@ -95,7 +90,8 @@ export const MaxWidth = ({
   return (
     <Block
       maxWidth={maxWidth}
-      width='100%'>
+      width='100%'
+    >
       {children}
     </Block>
   )
@@ -105,15 +101,15 @@ MaxWidth.propTypes = {
   maxWidth: PropTypes.string
 }
 
-export const Page = ({ children }) => 
+export const Page = ({ children }) => (
   <Block
-    lg={{
-      align: 'column',
-      alignx: 'center'
-    }}
-    width='100%'>
+    align={['column', 'column']}
+    alignx={['left', 'center']}
+    width='100%'
+  >
     {children}
   </Block>
+)
 
 Page.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
