@@ -60,7 +60,9 @@ const TextBody = (props) => {
   const body_items = parse_content(content)
 
   const render_image = (value) => {
-    if (!value) return null
+    if (!value) {
+      return null
+    }
     const image_items = get(images, 'items', [])
     let image_data = undefined
     map(image_items, (item) => {
@@ -69,9 +71,15 @@ const TextBody = (props) => {
         image_data = item
       }
     })
-    if (!image_data) return null
+    if (!image_data) {
+      return null
+    }
     return (
-      <Block mb={3} maxWidth={bodyWidth} width="100%">
+      <Block
+        mb={3}
+        maxWidth={bodyWidth}
+        width='100%'
+      >
         <ArticleImage
           {...bodyImage}
           amp={amp}
