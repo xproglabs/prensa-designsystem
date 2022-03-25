@@ -81,6 +81,9 @@ const ArticleHojeEmDia2 = () => {
           }
         }}
         citation={{
+          bl: '8px',
+          borderColor: 'primary1',
+          bsl: 'solid',
           color: 'neutral5',
           fontFamily: 'primary',
           fontSize: ['20px', '20px'],

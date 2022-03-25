@@ -113,9 +113,9 @@ const ArticleHJD = () => {
           }
         }}
         citation={{
-          customCite: `
-            border-left: 8px solid ${hojeemdia.colors['primary1']};
-          `,
+          bl: '8px',
+          borderColor: 'primary1',
+          bsl: 'solid',
           color: 'neutral5',
           fontFamily: 'primary',
           fontSize: ['20px', '20px'],

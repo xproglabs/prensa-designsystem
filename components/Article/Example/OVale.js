@@ -35,9 +35,9 @@ const ArticleOV = () => {
           }
         }}
         citation={{
-          customCite: `
-            border-left: 8px solid ${ovale.colors['primary1']};
-          `,
+          bl: '8px',
+          borderColor: 'primary1',
+          bsl: 'solid',
           color: 'neutral2',
           fontFamily: 'primary',
           fontSize: ['24px', '24px'],

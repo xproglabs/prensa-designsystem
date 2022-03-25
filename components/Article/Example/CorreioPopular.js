@@ -50,9 +50,9 @@ const ArticleCorreioPopular = () => {
           }
         }}
         citation={{
-          customCite: `
-            border-left: 4px solid ${acritica.colors['primary1']};
-          `,
+          bl: '8px',
+          borderColor: 'primary1',
+          bsl: 'solid',
           color: 'secondary2',
           fontSize: ['18px', '18px'],
           fontWeight: 400,

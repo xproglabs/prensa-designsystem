@@ -38,9 +38,9 @@ const ArticleACritica = () => {
           }
         }}
         citation={{
-          customCite: `
-            border-left: 4px solid ${acritica.colors['primary1']};
-          `,
+          bl: '8px',
+          borderColor: 'primary1',
+          bsl: 'solid',
           color: 'neutral3',
           fontSize: ['18px', '18px'],
           fontWeight: 400,
