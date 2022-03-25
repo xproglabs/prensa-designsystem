@@ -2,7 +2,7 @@ import { get } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../../NewBlock'
+import Block from '../../NewBlock/index.tsx'
 import Share from '../Share/index.tsx'
 import * as S from './Byline.styled'
 
