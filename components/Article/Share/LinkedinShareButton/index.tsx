@@ -19,7 +19,7 @@ const LinkedinshareButton = (props: LinkedinShareButtonProps) => {
   const { mt, mb, mr, ml, ...otherProps } = linkedinProps
 
   const pageUrlParam = `?url=${pageUrl}`
-  const shareUrl = `https://www.linkedin.com/sharing/share-offsite/${pageUrlParam}`
+  const shareUrl = `https://www.linkedin.com/sharing/share-offsite/${pageUrlParam}` 
 
   if (amp) {
     return (
@@ -53,9 +53,9 @@ const LinkedinshareButton = (props: LinkedinShareButtonProps) => {
           target='_blank'
         >
           <IcLinkedin
-            width={size}
-            height={size}
             color={color}
+            height={size}
+            width={size}
             {...otherProps}
           />
         </Link>
