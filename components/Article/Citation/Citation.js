@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../../Block'
+import Block from '../../NewBlock'
 import Typography from '../../Typography'
 
 const Citation = ({
+  bl,
+  bsl,
+  borderColor,
   color,
   customCite,
   fontFamily,
@@ -19,12 +22,15 @@ const Citation = ({
 }) => {
   return (
     <Block 
-      maxWidth={maxWidth}
+      align='row'
+      bl={bl}
+      bsl={bsl}
+      borderColor={borderColor}
       custom={customCite}
-      width={width} 
-      align='row' 
-      mb={mb[0]}
-      lg={{ mb: mb[1] }}>
+      maxWidth={maxWidth}
+      mb={mb}
+      width={width}
+    >
       <Typography 
         color={color}
         dangerouslySetInnerHTML={value}
@@ -45,14 +51,16 @@ const Citation = ({
 }
 
 Citation.defaultProps = {
+  bl: '8px',
+  borderColor: 'primary1',
+  bsl: 'solid',
   color: 'primary2',
   fontFamily: 'secondary',
   fontWeight: 700,
   fontSize: ['32px', '32px'],
   lineHeight: ['140%', '140%'],
   mb: [3, 3],
-  pl: ['0px', '0px'],
-  value: '“Uma das nossas prioridades no mandato é fortalecer o Sistema de Saúde. Oferecer uma infraestrutura digna para a população é um dever mínimo do estado.”',
+  pl: [undefined, undefined],
   width: '100%'
 }
 
