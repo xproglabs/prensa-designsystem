@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../../Block'
+import Block from '../../NewBlock'
 import Typography from '../../Typography'
 
-export const Paragraph = ({ color, children }) => 
+export const Paragraph = ({ color, children }) => (
   <Typography 
     color={color}
     dangerouslySetInnerHTML={children}
@@ -18,17 +18,18 @@ export const Paragraph = ({ color, children }) =>
       lineHeight: '22px'
     }} 
   />
+)
 
 Paragraph.propTypes = {
   children: PropTypes.string,
   color: PropTypes.string
 }
 
-export const Row = ({ children }) => 
-  <Block
-    width='100%'>
+export const Row = ({ children }) => (
+  <Block width='100%'>
     {children}
   </Block>
+)
 
 Row.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
