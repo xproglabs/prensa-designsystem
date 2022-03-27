@@ -11,6 +11,9 @@ jobs:
         with:
           cache: npm
           node-version: 16
+          
+      - name: pkg install
+        run: npm install
 
       - name: chromatic
         run: npm run chromatic
