@@ -20,9 +20,6 @@ jobs:
 
       - name: pkg lint
         run: npm run eslint
-
-      - name: chromatic
-        run: npm run chromatic
     
       - name: prensa-bot notify
         if: ${{ failure() }}

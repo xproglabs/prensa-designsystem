@@ -14,3 +14,5 @@ jobs:
 
       - name: chromatic
         run: npm run chromatic
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
