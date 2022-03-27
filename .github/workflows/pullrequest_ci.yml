@@ -1,0 +1,16 @@
+name: chromatic CI
+on: [pull_request]
+
+jobs:
+  update_chromatic_data:
+    name: run chromatic update 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: 16
+
+      - name: chromatic
+        run: npm run chromatic
