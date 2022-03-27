@@ -4,7 +4,7 @@ import React from 'react'
 import { withTheme } from 'styled-components'
 
 import { getColor } from '../../styled-system/color'
-import Block from '../Block'
+import Block from '../NewBlock/index.tsx'
 
 const parseWidth = param => {
   try {

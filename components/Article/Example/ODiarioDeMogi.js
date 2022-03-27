@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { data } from '../../../mockup/template'
 import { theme as MogiTheme } from '../../../styles/demo/odiariodemogi'
-import Block from '../../Block'
+import Block from '../../NewBlock/index.tsx'
 import datePtBrFull from '../../Util/datePtBrFull'
 import { pathToImage } from '../../Util/pathToImage'
 import Article from '../Article'
@@ -149,20 +149,20 @@ const ArticleOM = () => {
   const props_subject = {
     bgColor: config.header_color,
     color: 'white',
-    mb: ['3', '3'],
+    mb: [3, 3],
     transform: 'uppercase',
     value: subject
   }
   const props_subtitle = {
     color: 'neutral3',
-    mb: ['5', '5'],
+    mb: [5, 5],
     value: subtitle
   }
   const props_title = {
     color: 'neutral2',
     fontSize: ['38px', '62px'],
     lineHeight: ['42px', '64px'],
-    mb: ['2', '2'],
+    mb: [2, 2],
     value: title
   }
   const props_paragraph = {

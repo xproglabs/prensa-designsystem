@@ -1,8 +1,9 @@
-import { AccordionEditorial, Block, Button, SideMenu } from 'prensa'
+import { AccordionEditorial, Button, SideMenu } from 'prensa'
 import React, { useState } from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
+import Block from '../../components/NewBlock'
 import dataMock from './sidemenu_datamodel.json'
 
 export default {

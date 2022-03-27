@@ -50,9 +50,9 @@ const ArticleCorreioPopular = () => {
           }
         }}
         citation={{
-          customCite: `
-            border-left: 4px solid ${acritica.colors['primary1']};
-          `,
+          bl: '8px',
+          borderColor: 'primary1',
+          bsl: 'solid',
           color: 'secondary2',
           fontSize: ['18px', '18px'],
           fontWeight: 400,
@@ -119,7 +119,7 @@ const ArticleCorreioPopular = () => {
           bgColor: 'secondary2',
           color: 'white',
           fontSize: ['12px', '12px'],
-          mb: ['2', '2'],
+          mb: [2, 2],
           transform: 'uppercase',
           value: 'A Crítica'
         }}
@@ -127,7 +127,7 @@ const ArticleCorreioPopular = () => {
           color: isFeatured ? 'white' : 'neutral2',
           fontSize: ['16px', '18px'],
           lineHeight: ['140%', '140%'],
-          mb: ['4', '4'],
+          mb: [4, 4],
           value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra eleifend pellentesque. Suspendisse semper gravida fermentum. Integer pulvinar euismod hendrerit.'
         }}
         sectionTitle={{
@@ -142,7 +142,7 @@ const ArticleCorreioPopular = () => {
           fontSize: ['34px', '62px'],
           fontWeight: 900,
           lineHeight: ['110%', '110%'],
-          mb: ['1', '2'],
+          mb: [1, 2],
           value: 'Adiamento das eleições para 15 e 29 de novembro é aprovado no Senado'
         }}
         tags={{

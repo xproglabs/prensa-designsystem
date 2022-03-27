@@ -3,8 +3,8 @@ import { SectionTitleLayout } from 'prensa'
 export const SECTION_TITLE: SectionTitleLayout = {
   area: {
     bl: '8px',
+    bsl: 'solid',
     borderColor:'primary1',
-    borderStyle: 'solid',
     mb: [2, 2],
     ml: [2, 2],
     mr: [2, 2],

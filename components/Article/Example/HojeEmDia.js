@@ -113,9 +113,9 @@ const ArticleHJD = () => {
           }
         }}
         citation={{
-          customCite: `
-            border-left: 8px solid ${hojeemdia.colors['primary1']};
-          `,
+          bl: '8px',
+          borderColor: 'primary1',
+          bsl: 'solid',
           color: 'neutral5',
           fontFamily: 'primary',
           fontSize: ['20px', '20px'],
@@ -188,13 +188,13 @@ const ArticleHJD = () => {
           color: 'white',
           fontFamily: 'primary',
           fontWeight: 900,
-          mb: ['2', '3'],
+          mb: [2, 3],
           transform: 'uppercase',
           value: 'HOJE EM DIA'
         }}
         subtitle={{
           fontFamily: 'primary',
-          mb: ['4', '4'],
+          mb: [4, 4],
           value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra eleifend pellentesque. Suspendisse semper gravida fermentum. Integer pulvinar euismod hendrerit.'
         }}
         tags={{
@@ -208,7 +208,7 @@ const ArticleHJD = () => {
           color: 'neutral2',
           fontSize: ['38px', '62px'],
           fontWeight: 800,
-          mb: ['2', '3'],
+          mb: [2, 3],
           value: 'Almost before we knew it, we had left the ground.'
         }}
         topimage={{

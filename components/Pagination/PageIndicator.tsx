@@ -1,6 +1,7 @@
-import { Block, Link, Typography } from 'prensa'
+import { Link, Typography } from 'prensa'
 import React from 'react'
 
+import Block from '../NewBlock'
 import { IndicatorProps, IndicatorLayoutProps } from './types'
 
 const PageIndicator = ({

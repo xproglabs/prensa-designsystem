@@ -7,10 +7,10 @@ const BUTTON_GO_BACK = {
 }
 
 const CONTAINER_ERROR = {
+  align: 'column',
   aligny: 'middle',
   alignx: 'center',
-  height: 'calc(100vh - 400px)',
-  lg: { height:'calc(100vh - 620px)' },
+  height: ['calc(100vh - 400px)', 'calc(100vh - 620px)'],
   width: '100%'
 }
 

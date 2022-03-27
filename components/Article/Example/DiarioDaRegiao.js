@@ -93,20 +93,20 @@ const ArticleDR = () => {
         subject={{
           bgColor: 'primary1',
           color: 'white',
-          mb: ['2', '3'],
+          mb: [2, 3],
           transform: 'uppercase',
           value: 'Diário da Região'
         }}
         subtitle={{
           color: isFeatured ? 'white' : 'neutral2',
-          mb: ['3', '4'],
+          mb: [3, 4],
           value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra eleifend pellentesque. Suspendisse semper gravida fermentum. Integer pulvinar euismod hendrerit.'
         }}
         hyperlink='primary3'
         title={{
           color: isFeatured ? 'white' : 'neutral2',
           fontSize: ['38px', '62px'],
-          mb: ['2', '3'],
+          mb: [2, 3],
           value: 'Adiamento das eleições para 15 e 29 de novembro é aprovado no Senado'
         }}
         tags={{

@@ -1,7 +1,7 @@
-import { Block } from 'prensa'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
+import Block from '../NewBlock'
 import { CarouselProps } from './types'
 
 const Carousel = ({
@@ -24,10 +24,9 @@ const Carousel = ({
 
   return (
     <Block
+      height={height}
+      mb={mb}
       width='100%'
-      height={height[0]}
-      mb={mb[0]}
-      lg={{ height: height[1], mb: mb[1] }}
     >
       <amp-carousel
         autoplay={carousel_autoplay}
@@ -36,7 +35,8 @@ const Carousel = ({
         loop={loop}
         height={height[0]}
         media={`(max-width: ${querie_value})`}
-        type={type}>
+        type={type}
+      >
         {children}
       </amp-carousel>
       <amp-carousel
@@ -46,7 +46,8 @@ const Carousel = ({
         loop={loop}
         height={height[1]}
         media={`(min-width: ${querie_value})`}
-        type={type}>
+        type={type}
+      >
         {children}
       </amp-carousel>
     </Block>

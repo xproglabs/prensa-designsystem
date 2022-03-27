@@ -3,8 +3,8 @@ import { get, map, orderBy } from 'lodash'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import Block from '../Block'
 import Carousel from '../Carousel'
+import Block from '../NewBlock'
 import Pagination from '../Pagination'
 import { PreviewProvider } from '../PreviewProvider'
 import Teaser from '../Teaser'
@@ -41,15 +41,13 @@ const RenderSlot = ({
   slot,
   slot_parser,
   slot_position,
-  space_bottom,
+  space_bottom = [2, 3],
   theme
 }: RenderSlotProps) => {
 
   const { teasers } = theme
   const column_width = `calc((100% - (${column_padding} * 24px)) / ${column_items})`
   const carousel_enabled = get(carousel, 'enabled', false)
-  const space_bottom_mobile = get(space_bottom, '[0]', 2)
-  const space_bottom_desktop = get(space_bottom, '[1]', 3)
 
   let slot_sorted = slot
   if (order) {
@@ -107,6 +105,7 @@ const RenderSlot = ({
       </PreviewProvider>
     )
   }
+
   const RenderList = () => (
     <React.Fragment>
       {map(slot_sorted, (item, key: number) => {
@@ -114,11 +113,16 @@ const RenderSlot = ({
           <Block
             key={key}
             custom='align-self: flex-start;'
-            mb={space_bottom_mobile}
-            width='100%'
-            lg={{ mb: space_bottom_desktop, width: column_width }}>
-            <RenderTeaser item={item} number={key} />
-            <RenderSpace item={item} />
+            mb={space_bottom}
+            width={['100%', column_width]}
+          >
+            <RenderTeaser
+              item={item}
+              number={key}
+            />
+            <RenderSpace
+              item={item}
+            />
           </Block>
         )
       })}

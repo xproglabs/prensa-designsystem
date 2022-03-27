@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../../Block'
+import Block from '../../NewBlock/index.tsx'
 import Typography from '../../Typography'
 
 const Subject = ({
   bgColor,
-  borderRadius,
   color,
   fontFamily,
   fontSize,
@@ -16,6 +15,7 @@ const Subject = ({
   mt,
   px,
   py,
+  radius,
   transform,
   value
 }) => {
@@ -43,12 +43,11 @@ const Subject = ({
   return (
     <Block
       bgColor={hasValue ? bgColor : undefined}
-      custom={`border-radius: ${borderRadius};`}
-      mb={mb[0]}
-      mt={mt[0]}
+      radius={radius}
+      mb={mb}
+      mt={mt}
       px={px}
       py={py}
-      lg={{ mb: mb[1], mt: mt[1] }}
     >
       <RenderText />
     </Block>
@@ -57,22 +56,21 @@ const Subject = ({
 
 Subject.defaultProps = {
   bgColor: 'primary1',
-  borderRadius: '3px',
   color: 'white',
   fontFamily: 'secondary',
   fontSize: ['14px', '14px'],
   fontWeight: 700,
   lineHeight: ['20px', '20px'],
-  transform: 'none',
   mb: [1, 2],
   mt: [2, 4],
   px: 2,
-  py: '4px'
+  py: '4px',
+  radius: 'default',
+  transform: 'none'
 }
 
 Subject.propTypes = {
   bgColor: PropTypes.string,
-  borderRadius: PropTypes.string,
   color: PropTypes.string,
   fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
@@ -82,6 +80,7 @@ Subject.propTypes = {
   mt: PropTypes.array,
   px: PropTypes.string,
   py: PropTypes.string,
+  radius: PropTypes.string,
   transform: PropTypes.string,
   value: PropTypes.string
 }

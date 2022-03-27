@@ -35,9 +35,9 @@ const ArticleOV = () => {
           }
         }}
         citation={{
-          customCite: `
-            border-left: 8px solid ${ovale.colors['primary1']};
-          `,
+          bl: '8px',
+          borderColor: 'primary1',
+          bsl: 'solid',
           color: 'neutral2',
           fontFamily: 'primary',
           fontSize: ['24px', '24px'],
@@ -103,18 +103,18 @@ const ArticleOV = () => {
         subject={{
           bgColor: 'primary1',
           color: 'white',
-          mb: ['3', '3'],
+          mb: [3, 3],
           transform: 'uppercase',
           value: 'Especial'
         }}
         subtitle={{
           fontSize: ['20px', '20px'], 
-          mb: ['5', '10'],
+          mb: [5, 10],
           value: 'Veículo líder em toda a RMVale, nas mídias impressas e digitais, jornal recebeu do GNI (Google News Iniciative), do Google, financiamento de cerca de R$ 80 mil para investimento exclusivo na ampliação da cobertura jornalística durante a pandemia do novo coronavírus.'
         }}
         title={{
           fontSize: ['38px', '62px'],
-          mb: ['3', '3'],
+          mb: [3, 3],
           value: 'Líder no jornalismo, OVALE é selecionado em programa global do Google'
         }}
         tags={{

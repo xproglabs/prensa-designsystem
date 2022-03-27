@@ -1,11 +1,11 @@
-import { Block, Typography } from 'prensa'
+import { Typography } from 'prensa'
 import React from 'react'
 import styled from 'styled-components'
 
+import Block from '../NewBlock'
+import { BlockProps } from '../NewBlock/props'
 import {
   AuthorNameProps,
-  ContainerProps,
-  ContentProps,
   DateTimeProps,
   ImageWrapProps,
   TitleProps,
@@ -25,7 +25,7 @@ export const AuthorName = ({ children, ...otherProps }: AuthorNameProps) => (
   </Typography>
 )
 
-export const Container = ({ children, ...otherProps }: ContainerProps) => (
+export const Container = ({ children, ...otherProps }: BlockProps) => (
   <Block
     alignx='center'
     aligny='middle'
@@ -43,7 +43,7 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
   </Block>
 )
 
-export const Content = ({ children, className, ...otherProps }: ContentProps) => (
+export const Content = ({ children, className, ...otherProps }: BlockProps) => (
   <Block
     align='row'
     aligny='middle'

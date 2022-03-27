@@ -6,7 +6,9 @@ import { YouTubeEmbed } from '../Embeds'
 import * as S from './index.styled'
 
 const Container = ({ children, featured, mb, value }) => {
-  if (featured) return <S.BoxFeatured mb={mb} value={value} />
+  if (featured) {
+    return <S.BoxFeatured mb={mb} value={value} />
+  }
   return <S.Box mb={mb}>{children}</S.Box>
 }
 

@@ -1,4 +1,3 @@
-// import { Block } from 'prensa'
 import React from 'react'
 
 import Block from '../../NewBlock'

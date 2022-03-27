@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../../Block'
+import Block from '../../NewBlock/index.tsx'
 import Typography from '../../Typography'
 
 const Subtitle = ({
@@ -14,11 +14,9 @@ const Subtitle = ({
 }) => {
   return (
     <Block 
-      mb={mb[0]}
-      lg={{
-        mb: mb[1]
-      }}
-      width="100%">
+      mb={mb}
+      width='100%'
+    >
       <Typography 
         color={color}
         dangerouslySetInnerHTML={value}
@@ -29,8 +27,8 @@ const Subtitle = ({
         lg={{
           fontSize: fontSize[1],
           lineHeight: lineHeight[1]
-        }}>
-      </Typography>
+        }}
+      />
     </Block>
   )
 }

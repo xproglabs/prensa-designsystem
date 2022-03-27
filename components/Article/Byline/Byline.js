@@ -2,7 +2,7 @@ import { get } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../../Block'
+import Block from '../../NewBlock/index.tsx'
 import Share from '../Share/index.tsx'
 import * as S from './Byline.styled'
 
@@ -63,8 +63,8 @@ const Byline = ({
 
   const BylineReduced = () => {
     return (
-      <Block lg={{ align: 'row' }}>
-        <Block lg={{ mr: '4px' }}>
+      <Block align={['column', 'row']}>
+        <Block mr={['unset', '4px']}>
           <S.BylineText {...datetime}>
             {!datetime.time_modified && 'Publicado em '} {datetime.time_published}.
           </S.BylineText>

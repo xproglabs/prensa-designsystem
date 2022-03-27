@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import Block from '../../Block'
 import { ImageGallery } from '../../ImageGallery/index.tsx'
+import Block from '../../NewBlock/index.tsx'
 import Citation from '../Citation/Citation'
 import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed, TikTokEmbed } from '../Embeds'
 import Heading2 from '../Headings/Heading2'
@@ -16,7 +16,6 @@ import Paragraph from '../Paragraph/Paragraph'
 import SectionTitle from '../SectionTitle'
 import { BottomShare } from '../Share/BottomShare/index.tsx'
 import Tags from '../Tags/Tags'
-import * as S from './TextBody.styled'
 import { parse_content } from './TextBodyParser'
 
 const TextBody = (props) => {
@@ -61,7 +60,9 @@ const TextBody = (props) => {
   const body_items = parse_content(content)
 
   const render_image = (value) => {
-    if (!value) return null
+    if (!value) {
+      return null
+    }
     const image_items = get(images, 'items', [])
     let image_data = undefined
     map(image_items, (item) => {
@@ -70,9 +71,15 @@ const TextBody = (props) => {
         image_data = item
       }
     })
-    if (!image_data) return null
+    if (!image_data) {
+      return null
+    }
     return (
-      <Block mb={3} maxWidth={bodyWidth} width="100%">
+      <Block
+        mb={3}
+        maxWidth={bodyWidth}
+        width='100%'
+      >
         <ArticleImage
           {...bodyImage}
           amp={amp}
@@ -143,7 +150,8 @@ const TextBody = (props) => {
   const get_hyperlink_color = () => {
     let color = 'primary1'
     if (hyperlink) color = hyperlink
-    return get(props, `theme.colors.${color}`)
+    const selectedColor = get(props, `theme.colors.${color}`)
+    return `a{color:${selectedColor};}`
   }
 
   const switch_component = (type, value) => {
@@ -187,10 +195,10 @@ const TextBody = (props) => {
         return (
           <YouTubeEmbed
             amp={amp}
-            ampProps={{ height: '384px', width: '768px' }}
+            ampElementProps={{ height: '384px', width: '768px' }}
             height={amp ? ['max-content', '384px'] : ['384px', '384px']}
-            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
             url={value}
+            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
           />
         )
       case 'Image':
@@ -258,38 +266,46 @@ const TextBody = (props) => {
 
   if (hasColumnRight) {
     return (
-      <S.Body
-        align='column'
-        alignx='center'
-        hyperlinkColor={get_hyperlink_color()}
-        lg={{
-          align: 'row',
-          alignx: 'between',
-          aligny: 'top',
-          px: '0px',
-          width: '100%',
-        }}
+      <Block
+        align={['column', 'row']}
+        alignx={['center', 'between']}
+        aligny={['top', 'top']}
+        px={[2, 0]}
+        width={['calc(100% - 32px)', '100%']}
+        custom={get_hyperlink_color()}
       >
-        <S.TextBodyColumn width='100%' lg={{ width: bodyWidth }}>
+        <Block
+          align='column'
+          alignx='center'
+          aligny='top'
+          width={['100%', bodyWidth]}
+        >
           <RenderMainColumn />
-        </S.TextBodyColumn>
-        <S.TextBodyColumn
-          bgColor='primary'
-          lg={{ width: `calc(100% - ${bodyWidth} - 32px)` }}
+        </Block>
+        <Block
+          align='column'
+          alignx='center'
+          aligny='top'
+          custom={['display:none;', 'display:flex;']}
+          width={['unset', `calc(100% - ${bodyWidth} - 32px)`]}
         >
           {adsSide && React.cloneElement(adsSide)}
-        </S.TextBodyColumn>
-      </S.Body>
+        </Block>
+      </Block>
     )
   }
 
   return (
-    <S.Body
+    <Block
       align='column'
-      hyperlinkColor={get_hyperlink_color()}
+      alignx='center'
+      aligny='top'
+      px={[2, 0]}
+      width={['calc(100% - 32px)', '100%']}
+      custom={get_hyperlink_color()}
     >
       <RenderMainColumn />
-    </S.Body>
+    </Block>
   )
 }
 

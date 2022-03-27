@@ -1,6 +1,7 @@
 import {
   AlignProps,
   BorderProps,
+  BorderStyleProps,
   BoxShadowProps,
   ColorProps,
   CustomCSSProps,
@@ -19,6 +20,7 @@ export interface BlockProps extends
   BlockHTMLAttributes,
   AlignProps,
   BorderProps,
+  BorderStyleProps,
   BoxShadowProps,
   CustomCSSProps,
   MarginProps,
@@ -36,6 +38,7 @@ export interface BlockProps extends
 export interface StyledBlockProps extends
   AlignProps,
   BorderProps,
+  BorderStyleProps,
   BoxShadowProps,
   ColorProps,
   CustomCSSProps,
