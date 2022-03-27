@@ -4,50 +4,34 @@ const CONTAINER_ATEX = {
 
 const CONTAINER_XPROG = {
   align: 'column',
-  lg: {
-    mr: 5
-  }
+  mr: ['unset', 5]
 }
 
 const CONTAINER_COMPANIES = {
-  align: 'column',
-  lg: {
-    align: 'row'
-  }
+  align: ['column', 'row']
 }
 
 const CONTAINER_COPYRIGHT = {
-  align: 'column',
-  aligny: 'middle',
+  align: ['column', 'row'],
+  alignx: ['left', 'center'],
+  aligny: ['middle', 'middle'],
   bgColor: 'neutral9',
-  py: 5,
+  py: [5, 3],
   px: 2,
-  width: 'calc(100% - 32px)',
-  lg: {
-    align: 'row',
-    alignx: 'center',
-    py: 3
-  }
+  width: 'calc(100% - 32px)'
 }
 
 const CONTAINER_COPYRIGHT_BOX = {
-  align:'column', 
-  alignx:'left' ,
-  aligny:'top',
-  width:'100%',
-  custom:'max-width: 1280px;',
-  lg: {
-    align:'row',
-    alignx: 'between',
-  }
+  align: ['column', 'row'],
+  alignx: ['left', 'between'],
+  aligny: ['top', 'top'],
+  width: '100%',
+  custom: 'max-width: 1280px;'
 }
 
 const CONTAINER_COPYRIGHT_ITEMS = {
   alignx: 'center',
-  mb: 3,
-  lg: {
-    mb: '0px'
-  }
+  mb: [3, 0]  
 }
 
 export { 

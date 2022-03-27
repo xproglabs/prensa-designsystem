@@ -1,6 +1,7 @@
-import { Block, Link } from 'prensa'
+import { Link } from 'prensa'
 import React from 'react'
 
+import Block from '../NewBlock'
 import { IcLeftPagination } from './IcLeftPagination'
 import { IcRightPagination } from './IcRightPagination'
 import { ArrowButtonProps } from './types'
@@ -38,6 +39,7 @@ const ArrowButton = ({
         alignx='center'
         aligny='middle'
         b='1px'
+        borderStyle='solid'
         borderColor={borderColor}
         height={height}
         radius={radius}

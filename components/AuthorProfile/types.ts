@@ -1,4 +1,6 @@
-import { RadiusTokens, ColorTokens, FontTokens } from '@prensa_tokens'
+import { ColorTokens, FontTokens } from '@prensa_tokens'
+
+import { BlockProps } from '../NewBlock/props'
 
 export type SpacingType = number | string
 
@@ -17,7 +19,7 @@ export interface AuthorProfileProps {
   amp?: boolean;
   authorNameProps?: AuthorNameProps;
   className?: string;
-  containerProps?: ContainerProps;
+  containerProps?: BlockProps;
   date?: string;
   dateTimeProps?: DateTimeProps;
   domain?: string;
@@ -31,46 +33,6 @@ export interface AuthorProfileProps {
   subtitleContainer?: any;
   title: string;
   titleProps?: TitleProps;
-}
-
-export type ContainerProps = {
-  align?: string;
-  alignx?: string;
-  aligny?: string;
-  background?: string;
-  bt?: string;
-  br?: string;
-  bb?: string;
-  bl?: string;
-  b?: string;
-  borderColor?: ColorTokens;
-  borderStyle?: string;
-  children?: any;
-  height?: string;
-  pt?: SpacingType;
-  pr?: SpacingType;
-  pb?: SpacingType;
-  pl?: SpacingType;
-  mt?: SpacingType;
-  mr?: SpacingType;
-  mb?: SpacingType;
-  ml?: SpacingType;
-  radius?: RadiusTokens;
-  width?: string;
-}
-export type ContentProps = {
-  align?: string;
-  alignx?: string;
-  aligny?: string;
-  className?: string;
-  children: any;
-  px?: SpacingType;
-  py?: SpacingType;
-  pt?: SpacingType;
-  pr?: SpacingType;
-  pb?: SpacingType;
-  pl?: SpacingType;
-  width?: string;
 }
 
 export type DateTimeProps = {

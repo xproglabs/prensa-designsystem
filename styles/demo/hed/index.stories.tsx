@@ -2,7 +2,7 @@ import { find, get, map } from 'lodash'
 import React from 'react'
 import { ThemeProvider, StyleSheetManager } from 'styled-components'
 
-import Block from '../../../components/Block'
+import Block from '../../../components/NewBlock'
 import PageBlock from '../../../components/PageBlock'
 import TemplateContainer from '../../../components/Templates/TemplateContainer'
 import Typography from '../../../components/Typography'

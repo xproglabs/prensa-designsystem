@@ -1,6 +1,7 @@
-import { Button, Block } from 'prensa'
+import { Button } from 'prensa'
 import React from 'react'
 
+import Block from '../NewBlock'
 export interface MoreButtonLayoutProps {
   color?: string,
   border?: string,
@@ -31,7 +32,8 @@ const MoreButton = ({
   return (
     <Block
       mb={3}
-      width='100%'>
+      width='100%'
+    >
       <Button
         color={color}
         borderColor={border}

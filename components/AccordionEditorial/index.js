@@ -2,7 +2,7 @@ import { map } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../Block'
+import Block from '../NewBlock/index.tsx'
 import Typography from '../Typography'
 import AmpGroup from './AmpGroup'
 import Group from './Group'

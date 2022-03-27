@@ -1,8 +1,9 @@
 import { get } from 'lodash'
-import { Block, Image, parseImagePath } from 'prensa'
+import { Image, parseImagePath } from 'prensa'
 import React from 'react'
 
 import Link from '../Link'
+import Block from '../NewBlock'
 import * as S from './styled'
 import { AuthorProfileProps } from './types'
 

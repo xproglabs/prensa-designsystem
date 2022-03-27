@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Block from '../Block'
+import Block from '../NewBlock/index.tsx'
 import { 
   CONTAINER_ATEX, 
   CONTAINER_COPYRIGHT, 
