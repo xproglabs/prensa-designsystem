@@ -195,10 +195,10 @@ const TextBody = (props) => {
         return (
           <YouTubeEmbed
             amp={amp}
-            ampProps={{ height: '384px', width: '768px' }}
+            ampElementProps={{ height: '384px', width: '768px' }}
             height={amp ? ['max-content', '384px'] : ['384px', '384px']}
-            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
             url={value}
+            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
           />
         )
       case 'Image':
