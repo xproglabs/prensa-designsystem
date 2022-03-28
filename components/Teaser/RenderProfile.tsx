@@ -1,6 +1,7 @@
 import TeaserProfile from 'components/AuthorProfile/Profile'
-import { ContainerProps } from 'components/AuthorProfile/types'
 import React from 'react'
+
+import { BlockProps } from '../NewBlock/props'
 
 export type RenderProfileProps = {
   amp: boolean;
@@ -20,7 +21,7 @@ export type RenderProfileProps = {
     };
   };
   className?: string;
-  containerProps: ContainerProps;
+  containerProps: BlockProps;
   subtitleContainer?: any;
 }
 
