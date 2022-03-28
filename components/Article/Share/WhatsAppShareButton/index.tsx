@@ -16,7 +16,7 @@ const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
     whatsappProps = {},
   } = props
 
-  const { mt, mb, mr, ml, ...otherProps } = whatsappProps
+  const { mt, mb, mr, ml, otherProps } = whatsappProps
 
   const textParam = `?text=${pageUrl}`
   const shareUrl = `https://api.whatsapp.com/send${textParam}`

@@ -5,6 +5,7 @@ export type TwitterProps = {
   mr?: number | string;
   mb?: number | string;
   ml?: number | string;
+  otherProps?: any;
 }
 
 export type TwitterShareButtonProps = {

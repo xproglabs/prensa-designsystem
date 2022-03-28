@@ -17,7 +17,7 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
     size
   } = props
 
-  const { mt, mb, mr, ml, ...otherProps } = facebookProps
+  const { mt, mb, mr, ml, otherProps } = facebookProps
 
   const displayParam = '&display=popup'
   const fbappidParam = `?app_id=${fbappid}`
