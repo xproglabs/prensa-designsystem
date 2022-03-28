@@ -16,7 +16,7 @@ const LinkedinShareButton = (props: LinkedinShareButtonProps) => {
     linkedinProps = {}
   } = props
 
-  const { enabled, mt, mb, mr, ml, otherProps } = linkedinProps
+  const { enabled, mb, mt, mr, ml, otherProps } = linkedinProps
 
   if (enabled === false) return null
 
