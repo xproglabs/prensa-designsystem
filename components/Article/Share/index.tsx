@@ -2,7 +2,7 @@ import { Block } from 'prensa'
 import React from 'react'
 
 import { FacebookShareButton } from './FacebookShareButton'
-import { LinkedinshareButton } from './LinkedinShareButton'
+import { LinkedinShareButton } from './LinkedinShareButton'
 import { TwitterShareButton } from './TwitterShareButton'
 import { ShareProps } from './types'
 import { WhatsAppShareButton } from './WhatsAppShareButton'
@@ -66,7 +66,7 @@ const Share = (props: ShareProps) => {
         whatsappProps={whatsappProps}
         size={size}
       />
-      <LinkedinshareButton 
+      <LinkedinShareButton 
         amp={amp}
         color={color}
         pageUrl={pageUrl}

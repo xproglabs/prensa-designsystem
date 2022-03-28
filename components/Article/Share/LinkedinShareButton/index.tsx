@@ -5,7 +5,7 @@ import React from 'react'
 import { LinkedinAmpContainer } from './styled'
 import { LinkedinShareButtonProps } from './types'
 
-const LinkedinshareButton = (props: LinkedinShareButtonProps) => {
+const LinkedinShareButton = (props: LinkedinShareButtonProps) => {
 
   const {
     amp,
@@ -16,7 +16,9 @@ const LinkedinshareButton = (props: LinkedinShareButtonProps) => {
     linkedinProps = {}
   } = props
 
-  const { mt, mb, mr, ml, ...otherProps } = linkedinProps
+  const { enabled, mt, mb, mr, ml, otherProps } = linkedinProps
+
+  if (enabled === false) return null
 
   const pageUrlParam = `?url=${pageUrl}`
   const shareUrl = `https://www.linkedin.com/sharing/share-offsite/${pageUrlParam}` 
@@ -64,4 +66,4 @@ const LinkedinshareButton = (props: LinkedinShareButtonProps) => {
   }
 }
 
-export { LinkedinshareButton }
+export { LinkedinShareButton }
