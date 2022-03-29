@@ -1,0 +1,24 @@
+name: chromatic CI
+on: [pull_request]
+
+jobs:
+  update_chromatic_data:
+    name: run chromatic update 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+
+      - uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: 16
+
+      - name: pkg install
+        run: npm install
+
+      - name: chromatic
+        run: npm run chromatic
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

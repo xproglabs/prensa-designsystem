@@ -1,3 +1,13 @@
+## [1.9.60](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.59...v1.9.60) (2022-03-27)
+
+
+### Features
+
+* Adicion chromatic no CI ([ed55589](https://github.com/xproglabs/prensa-designsystem/commit/ed555895bdcac68b11d252e9c489d03aa1cfade4))
+* Adiciona chromatic ([dff16a2](https://github.com/xproglabs/prensa-designsystem/commit/dff16a26209665f350cb89f49a4e2d4cf1622fc6))
+* Adiciona CI para o chromatic ([c5c9de5](https://github.com/xproglabs/prensa-designsystem/commit/c5c9de5d73291f8d9cf5e51a2a2f6d1f03342e00))
+* Adiciona env var no CI chromatic e remove execução do comando da CI geral ([bba7fa6](https://github.com/xproglabs/prensa-designsystem/commit/bba7fa60cd601fb18acba6ce8821e206bc6a392e))
+
 ## [1.9.59](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.58...v1.9.59) (2022-03-17)
 
 
