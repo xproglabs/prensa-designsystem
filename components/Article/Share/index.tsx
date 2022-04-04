@@ -4,6 +4,7 @@ import React from 'react'
 
 import { FacebookShareButton } from './FacebookShareButton'
 import { LinkedinShareButton } from './LinkedinShareButton'
+import { TelegramShareButton } from './TelegramShareButton'
 import { TwitterShareButton } from './TwitterShareButton'
 import { ShareProps } from './types'
 import { WhatsAppShareButton } from './WhatsAppShareButton'
@@ -24,6 +25,8 @@ const Share = (props: ShareProps) => {
     linkedinProps,
     twitterPath,
     twitterProps,
+    telegramPath,
+    telegramProps,
     whatsappPath,
     whatsappProps,
   } = props
@@ -33,6 +36,7 @@ const Share = (props: ShareProps) => {
   }
 
   const isLinkedinEnabled = get(linkedinProps, 'enabled', false)
+  const isTelegramEnabled = get(telegramProps, 'enabled', false)
 
   return (
     <Block
@@ -78,6 +82,16 @@ const Share = (props: ShareProps) => {
           pageUrl={pageUrl}
           linkedinPath={linkedinPath}
           linkedinProps={linkedinProps}
+          size={size}
+        />
+      }
+      {isTelegramEnabled && 
+        <TelegramShareButton 
+          amp={amp}
+          color={color}
+          pageUrl={pageUrl}
+          telegramPath={telegramPath}
+          telegramProps={telegramProps}
           size={size}
         />
       }

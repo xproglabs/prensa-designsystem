@@ -209,7 +209,8 @@ const ArticleOM = () => {
           facebookProps: { mr: 1 },
           twitterProps: { mr: 1 },
           whatsappProps: { mr: 1 },
-          linkedinProps: { enabled: true }
+          linkedinProps: { enabled: true },
+          telegramProps: { enabled: true }
         }
       }}
     />
