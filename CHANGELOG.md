@@ -1,3 +1,21 @@
+## [1.9.63](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.62...v1.9.63) (2022-04-04)
+
+
+### Bug Fixes
+
+* adapta peça para renderizacao condicional do telegram share ([9adb591](https://github.com/xproglabs/prensa-designsystem/commit/9adb591ee8398e61ea4595875cb4db7fb535c6b8))
+* change condition path ([147cbe1](https://github.com/xproglabs/prensa-designsystem/commit/147cbe165ed1a327e781d2cde5dc3e2c8d836d83))
+* nome do componente de style ([33b12e3](https://github.com/xproglabs/prensa-designsystem/commit/33b12e36d269a3535b1bfa71921965d64300e1be))
+* pr comment ([3c0b7bf](https://github.com/xproglabs/prensa-designsystem/commit/3c0b7bf3815b4e66d2107ea5339225804d430d06))
+
+
+### Features
+
+* aplica condição para renderizar o icone ([69ea66d](https://github.com/xproglabs/prensa-designsystem/commit/69ea66d3b4f9a38e281747d3fdcc50ad7cbfeebd))
+* aplica share para o telegram ([d501235](https://github.com/xproglabs/prensa-designsystem/commit/d501235ee3575f7ffd3787773e41f206770f0d7f))
+* Cria botão de compartilhamento para o Telegram e implementa no componente Share ([6f6812b](https://github.com/xproglabs/prensa-designsystem/commit/6f6812be40107ff37a4b1576759d8514ed5c3416))
+* upgrade branche ([90245d4](https://github.com/xproglabs/prensa-designsystem/commit/90245d429fd1874360e3c48a5ca065ff9e15b816))
+
 ## [1.9.62](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.61...v1.9.62) (2022-04-04)
 
 
