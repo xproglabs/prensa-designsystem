@@ -203,13 +203,13 @@ const ArticleOM = () => {
       relatedContent={related_content}
       share={{
         color: 'primary1',
-        facebookUrl: 'https://www.facebook.com/',
-        twitterUrl: 'https://www.facebook.com/',
-        whatsappUrl: 'https://www.facebook.com/',
         byline: {
           enabled: true,
+          size: '32px',
           facebookProps: { mr: 1 },
-          twitterProps: { mr: 1 }
+          twitterProps: { mr: 1 },
+          whatsappProps: { mr: 1 },
+          linkedinProps: { enabled: true }
         }
       }}
     />
