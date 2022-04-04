@@ -1,3 +1,18 @@
+## [1.9.62](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.61...v1.9.62) (2022-04-04)
+
+
+### Bug Fixes
+
+* ajustes finos no amp-social-share ([0bcafc4](https://github.com/xproglabs/prensa-designsystem/commit/0bcafc4adb1a733a89e4ff0f2c5967b8a395230c))
+* ordem alfabetica ([48f755f](https://github.com/xproglabs/prensa-designsystem/commit/48f755f86dffadf90bca8a3807aae7053e448d41))
+
+
+### Features
+
+* create share for linkedin ([4b5377b](https://github.com/xproglabs/prensa-designsystem/commit/4b5377b6959a1fb53f7726657e59e4811af91106))
+* Cria botão de compartilhamento pelo Linkedin e implementa no Share ([eee62e9](https://github.com/xproglabs/prensa-designsystem/commit/eee62e9afe21836206910879d8a6668545ee71f5))
+* upgrande branche ([c437413](https://github.com/xproglabs/prensa-designsystem/commit/c4374139ca5fdda2b5b3b915574e71c5b42095c4))
+
 ## [1.9.61](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.60...v1.9.61) (2022-03-29)
 
 
