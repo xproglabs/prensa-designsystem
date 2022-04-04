@@ -16,9 +16,7 @@ const TelegramShareButton = (props: TelegramShareButtonProps) => {
     telegramProps = {}
   } = props
 
-  const { enabled, mt, mb, mr, ml, ...otherProps } = telegramProps
-
-  if (enabled === false) return null
+  const { mt, mb, mr, ml, ...otherProps } = telegramProps
 
   const pageUrlParam = `${pageUrl}`
   const shareUrl = `https://telegram.me/share/url?url=${pageUrlParam}`

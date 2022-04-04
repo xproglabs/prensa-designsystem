@@ -36,6 +36,7 @@ const Share = (props: ShareProps) => {
   }
 
   const isLinkedinEnabled = get(linkedinProps, 'enabled', false)
+  const isTelegramEnabled = get(telegramProps, 'enabled', false)
 
   return (
     <Block
@@ -84,14 +85,16 @@ const Share = (props: ShareProps) => {
           size={size}
         />
       }
-      <TelegramShareButton 
-        amp={amp}
-        color={color}
-        pageUrl={pageUrl}
-        telegramPath={telegramPath}
-        telegramProps={telegramProps}
-        size={size}
-      />
+      {isTelegramEnabled && 
+        <TelegramShareButton 
+          amp={amp}
+          color={color}
+          pageUrl={pageUrl}
+          telegramPath={telegramPath}
+          telegramProps={telegramProps}
+          size={size}
+        />
+      }
     </Block>
   )
 }
