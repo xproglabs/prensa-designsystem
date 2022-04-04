@@ -80,8 +80,9 @@ Subject.propTypes = {
   lineHeight: PropTypes.array,
   mb: PropTypes.array,
   mt: PropTypes.array,
-  px: PropTypes.string,
-  py: PropTypes.string,
+  px: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.array]),
+  py: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.array]),
+  radius: PropTypes.string,
   transform: PropTypes.string,
   value: PropTypes.string
 }

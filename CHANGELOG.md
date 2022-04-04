@@ -1,3 +1,10 @@
+## [1.9.61](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.60...v1.9.61) (2022-03-29)
+
+
+### Bug Fixes
+
+* Permite dados string e number nas props de padding do Article/Subject ([2c0f76d](https://github.com/xproglabs/prensa-designsystem/commit/2c0f76d4a51cdaa90913dfd4325eda11b25a4e41))
+
 ## [1.9.60](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.59...v1.9.60) (2022-03-27)
 
 
