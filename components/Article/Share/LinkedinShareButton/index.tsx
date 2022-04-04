@@ -16,9 +16,7 @@ const LinkedinShareButton = (props: LinkedinShareButtonProps) => {
     linkedinProps = {}
   } = props
 
-  const { enabled, mb, mt, mr, ml, ...otherProps } = linkedinProps
-
-  if (enabled === false) return null
+  const { mb, mt, mr, ml, ...otherProps } = linkedinProps
 
   const pageUrlParam = `?url=${pageUrl}`
   const shareUrl = `https://www.linkedin.com/sharing/share-offsite/${pageUrlParam}` 
