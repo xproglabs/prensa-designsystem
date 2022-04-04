@@ -6,7 +6,7 @@ import { getIconHeight, getMinWidthValue } from '../styled'
 import { TelegramAmpContainerProps } from './types'
 
 export const TelegramAmpContainer: ComponentType<TelegramAmpContainerProps> = styled.div<TelegramAmpContainerProps>`
-  amp-social-share[type="twitter"] {
+  amp-social-share[type="telegram"] {
     ${getIconHeight};
     ${getMinWidthValue};
     ${margin};
