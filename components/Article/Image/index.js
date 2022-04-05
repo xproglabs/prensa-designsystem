@@ -16,6 +16,7 @@ const ArticleImage = ({
   ampElementProps,
   caption,
   clickToOpen,
+  customClick,
   featured,
   height,
   image,
@@ -66,8 +67,14 @@ const ArticleImage = ({
 
   const RenderClickArea = ({ children }) => {
     if (clickToOpen) {
+      const clickToOpenHref = customClick ? customClick : value
       return (
-        <Link href={value} target='_blank' rel='noreferrer' width='100%'>
+        <Link
+          href={clickToOpenHref}
+          target='_blank'
+          rel='noreferrer'
+          width='100%'
+        >
           {children}
         </Link>
       )
@@ -122,6 +129,7 @@ ArticleImage.defaultProps = {
     value: 'Legenda da Imagem'
   },
   clickToOpen: false,
+  customClick: '',
   height: '640px',
   mb: [2, 2],
   px: [3, 4],
@@ -135,6 +143,7 @@ ArticleImage.propTypes = {
   amp: PropTypes.bool,
   caption: PropTypes.object,
   clickToOpen: PropTypes.bool,
+  customClick: PropTypes.string,
   featured: PropTypes.bool,
   height: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   image: PropTypes.bool,
