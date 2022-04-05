@@ -1,4 +1,5 @@
 import { get } from 'lodash'
+import { Link } from 'prensa'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -60,20 +61,15 @@ const ArticleImage = ({
         />
       )
     }
-    return (
-      <img
-        alt={captionValue}
-        src={value}
-      />
-    )
+    return <img alt={captionValue} src={value} />
   }
 
   const RenderClickArea = ({ children }) => {
     if (clickToOpen) {
       return (
-        <a href={value} target="_blank" rel="noreferrer">
+        <Link href={value} target='_blank' rel='noreferrer' width='100%'>
           {children}
-        </a>
+        </Link>
       )
     }
     return <>{children}</>
@@ -123,7 +119,7 @@ ArticleImage.defaultProps = {
     fontSize: ['14px', '14px'],
     lineHeight: ['130%', '130%'],
     show: true,
-    value: 'Legenda da Imagem',
+    value: 'Legenda da Imagem'
   },
   clickToOpen: false,
   height: '640px',
