@@ -14,6 +14,7 @@ const ArticleImage = ({
   amp,
   ampElementProps,
   caption,
+  clickToOpen,
   featured,
   height,
   image,
@@ -67,6 +68,17 @@ const ArticleImage = ({
     )
   }
 
+  const RenderClickArea = ({ children }) => {
+    if (clickToOpen) {
+      return (
+        <a href={value} target="_blank" rel="noreferrer">
+          {children}
+        </a>
+      )
+    }
+    return <>{children}</>
+  }
+
   const RenderMedia = () => {
     switch (type) {
       case 'video':
@@ -78,7 +90,9 @@ const ArticleImage = ({
 
   return (
     <Container featured={featured} mb={mb} value={value}>
-      <RenderMedia />
+      <RenderClickArea>
+        <RenderMedia />
+      </RenderClickArea>
       {showCaption && captionValue && (
         <S.SubtitleBox px={px} py={py} widthBox={widthBox}>
           <S.Subtitle
@@ -111,6 +125,7 @@ ArticleImage.defaultProps = {
     show: true,
     value: 'Legenda da Imagem',
   },
+  clickToOpen: false,
   height: '640px',
   mb: [2, 2],
   px: [3, 4],
@@ -123,6 +138,7 @@ ArticleImage.defaultProps = {
 ArticleImage.propTypes = {
   amp: PropTypes.bool,
   caption: PropTypes.object,
+  clickToOpen: PropTypes.bool,
   featured: PropTypes.bool,
   height: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   image: PropTypes.bool,
