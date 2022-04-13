@@ -7,7 +7,7 @@ const CONTAINER_LOGO = {
   }
 }
 
-const CONTAINER_XPROG = {
+const CONTAINER_LOGO_XPROG = {
   align: 'column',
   lg: {
     mr: '0px'
@@ -61,5 +61,5 @@ export {
   CONTAINER_COPYRIGHT,
   CONTAINER_COPYRIGHT_ITEMS,
   CONTAINER_COPYRIGHT_BOX,
-  CONTAINER_XPROG,
+  CONTAINER_LOGO_XPROG,
 }
