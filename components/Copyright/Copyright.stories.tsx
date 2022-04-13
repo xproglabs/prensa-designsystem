@@ -14,13 +14,6 @@ export const Default = () => {
     <ThemeProvider theme={theme}>
       <Copyright
         textCopyright='© Copyright 2021'
-        textCompany='Empresa'
-        textRights='Todos os direitos reservados.'
-        textAtex='Distribuído por'
-        textXprog='Desenvolvido por'
-      />
-      <Copyright
-        textCopyright='© Copyright 2021'
         textRights='Todos os direitos reservados.'
         textAtex='Distribuído por'
         textXprog='Desenvolvido por'

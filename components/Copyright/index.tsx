@@ -1,6 +1,7 @@
 import React from 'react'
 
 import LogoAtex from '../../icons/LogoAtex'
+import LogoPolopoly from '../../icons/LogoPolopoly'
 import LogoXprog from '../../icons/LogoXprog'
 import TextItem from './Item'
 import * as S from './styled'
@@ -43,19 +44,7 @@ const Copyright = ({
           }
         </S.ContainerCopyrightItems>    
         <S.ContainerCompanies>
-          <S.ContainerXprog>
-            <TextItem
-              color={color}
-              fontFamily={fontFamily}
-              text={textXprog}
-            />
-            <LogoXprog
-              href='https://xprog.com.br/'
-              target="_blank"
-              color={color}
-            />
-          </S.ContainerXprog>
-          <S.ContainerAtex>
+          <S.ContainerLogo>
             <TextItem
               color={color}
               fontFamily={fontFamily}
@@ -66,7 +55,31 @@ const Copyright = ({
               target="_blank"
               color={color}
             />
-          </S.ContainerAtex>
+          </S.ContainerLogo>
+          <S.ContainerLogo>
+            <TextItem
+              color={color}
+              fontFamily={fontFamily}
+              text={textAtex}
+            />
+            <LogoPolopoly
+              href='https://atex.com/'
+              target="_blank"
+              color={color}
+            />
+          </S.ContainerLogo>
+          <S.ContainerLogoXprog>
+            <TextItem
+              color={color}
+              fontFamily={fontFamily}
+              text={textXprog}
+            />
+            <LogoXprog
+              href='https://xprog.com.br/'
+              target="_blank"
+              color={color}
+            />
+          </S.ContainerLogoXprog>
         </S.ContainerCompanies>
       </S.ContainerCopyrightBox>  
     </S.ContainerCopyright>  

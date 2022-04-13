@@ -7,7 +7,7 @@ const TextItem = ({ color, fontFamily, text } : TextItemProps) => {
   return (
     <Typography 
       element='span'
-      fontSize='14px'
+      fontSize='12px'
       mb='4px'
       textAlign='start'
       width='100%'
