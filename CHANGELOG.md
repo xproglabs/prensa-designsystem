@@ -1,3 +1,10 @@
+## [1.9.64](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.63...v1.9.64) (2022-04-14)
+
+
+### Bug Fixes
+
+* Remove spread de props dos botões de compartilhamento ([28336b6](https://github.com/xproglabs/prensa-designsystem/commit/28336b6f81ec9aa1e79a750adfca993d21f5c196))
+
 ## [1.9.63](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.62...v1.9.63) (2022-04-04)
 
 
