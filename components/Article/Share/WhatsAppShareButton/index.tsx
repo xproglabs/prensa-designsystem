@@ -35,7 +35,6 @@ const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
           type='whatsapp'
           width={size}
           height={size}
-          {...otherProps}
         />
       </WhatsAppAmpContainer>
     )

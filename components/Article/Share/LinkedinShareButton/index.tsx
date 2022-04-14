@@ -34,7 +34,6 @@ const LinkedinShareButton = (props: LinkedinShareButtonProps) => {
           type='linkedin'
           height={size}
           width={size}
-          {...otherProps}
         />
       </LinkedinAmpContainer>
     )
