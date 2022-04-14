@@ -36,7 +36,6 @@ const TelegramShareButton = (props: TelegramShareButtonProps) => {
           type='telegram'
           width={size}
           height={size}
-          {...otherProps}
         />
       </TelegramAmpContainer>
     )

@@ -39,7 +39,6 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
           width={size}
           height={size}
           data-param-app_id={fbappid}
-          {...otherProps}
         />
       </FacebookAmpContainer>
     )
