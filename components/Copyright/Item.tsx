@@ -8,7 +8,7 @@ const TextItem = ({ color, fontFamily, text } : TextItemProps) => {
     <Typography 
       element='span'
       fontSize='12px'
-      mb='4px'
+      mb='7px'
       textAlign='start'
       width='100%'
       color={color}
