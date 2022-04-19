@@ -13,26 +13,24 @@ const Copyright = ({
   fontFamily,
   textCompany, 
   textCopyright, 
-  textRights, 
-  textXprog, 
-  textAtex 
+  textRights 
 } : CopyrightProps ) => {
   return (
     <S.ContainerCopyright bgColor={bgColor}>
       <S.ContainerCopyrightBox>
         <S.ContainerCopyrightItems>
-          {textCopyright &&
-            <TextItem
-              color={color}
-              fontFamily={fontFamily}
-              text={textCopyright}
-            />
-          }
           {textCompany &&
             <TextItem
               color={color}
               fontFamily={fontFamily}
               text={textCompany}
+            />
+          }
+          {textCopyright &&
+            <TextItem
+              color={color}
+              fontFamily={fontFamily}
+              text={textCopyright}
             />
           }
           {textRights && 
@@ -48,7 +46,7 @@ const Copyright = ({
             <TextItem
               color={color}
               fontFamily={fontFamily}
-              text={textAtex}
+              text='Distribuído por'
             />
             <LogoAtex
               href='https://atex.com/'
@@ -60,7 +58,7 @@ const Copyright = ({
             <TextItem
               color={color}
               fontFamily={fontFamily}
-              text={textAtex}
+              text='Publicado no'
             />
             <LogoPolopoly
               href='https://atex.com/'
@@ -72,7 +70,7 @@ const Copyright = ({
             <TextItem
               color={color}
               fontFamily={fontFamily}
-              text={textXprog}
+              text='Desenvolvido por'
             />
             <LogoXprog
               href='https://xprog.com.br/'

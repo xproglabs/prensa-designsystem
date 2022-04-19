@@ -43,9 +43,13 @@ export interface CopyrightProps {
   /**
    * @description Define ATEX message
    */
-  textAtex: string;
+  textAtex?: string;
   /**
-   * @description Define XPROG message
+   *    * @description Define ATEX message
    */
-  textXprog: string;
+  textPolopoly?: string;
+  /**
+   * @description Define Polopoly message
+   */
+  textXprog?: string;
 }

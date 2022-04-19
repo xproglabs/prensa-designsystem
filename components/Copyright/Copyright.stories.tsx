@@ -13,10 +13,9 @@ export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
       <Copyright
+        textCompany='Prensa News'
         textCopyright='© Copyright 2021'
         textRights='Todos os direitos reservados.'
-        textAtex='Distribuído por'
-        textXprog='Desenvolvido por'
         fontFamily='secondary'
       />
     </ThemeProvider>
