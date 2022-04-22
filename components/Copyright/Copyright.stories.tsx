@@ -9,17 +9,11 @@ export default {
   component: Copyright,
 }
 
-const getCurrentYear = () => {
-  const data = new Date()
-  return data.getFullYear()
-}
-
 export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
       <Copyright
         textCompany='Prensa News'
-        textCopyright={`© Copyright ${getCurrentYear()}`}
         textRights='Todos os direitos reservados.'
         fontFamily='secondary'
       />

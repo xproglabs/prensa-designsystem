@@ -4,15 +4,14 @@ import LogoAtex from '../../icons/LogoAtex'
 import LogoPolopoly from '../../icons/LogoPolopoly'
 import LogoXprog from '../../icons/LogoXprog'
 import TextItem from './Item'
+import TextItemYear from './ItemYear'
 import * as S from './styled'
 import { CopyrightProps } from './types'
 
 const Copyright = ({ 
   bgColor,
   color,
-  fontFamily,
   textCompany, 
-  textCopyright, 
   textRights 
 } : CopyrightProps ) => {
   return (
@@ -22,21 +21,15 @@ const Copyright = ({
           {textCompany &&
             <TextItem
               color={color}
-              fontFamily={fontFamily}
               text={textCompany}
             />
           }
-          {textCopyright &&
-            <TextItem
-              color={color}
-              fontFamily={fontFamily}
-              text={textCopyright}
-            />
-          }
+          <TextItemYear
+            color={color}
+          />
           {textRights && 
             <TextItem
               color={color}
-              fontFamily={fontFamily}
               text={textRights}
             />
           }
@@ -45,7 +38,6 @@ const Copyright = ({
           <S.ContainerLogo>
             <TextItem
               color={color}
-              fontFamily={fontFamily}
               text='Distribuído por'
             />
             <LogoAtex
@@ -57,7 +49,6 @@ const Copyright = ({
           <S.ContainerLogo>
             <TextItem
               color={color}
-              fontFamily={fontFamily}
               text='Publicado no'
             />
             <LogoPolopoly
@@ -69,7 +60,6 @@ const Copyright = ({
           <S.ContainerLogoXprog>
             <TextItem
               color={color}
-              fontFamily={fontFamily}
               text='Desenvolvido por'
             />
             <LogoXprog

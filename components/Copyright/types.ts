@@ -12,7 +12,7 @@ export type TextItemProps = {
   /**
    * @description Define text to be rendered
    */
-  text: string;
+  text?: string;
 }
 
 export interface CopyrightProps {
