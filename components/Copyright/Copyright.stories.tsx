@@ -13,17 +13,7 @@ export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
       <Copyright
-        textCopyright='© Copyright 2021'
-        textCompany='Empresa'
-        textRights='Todos os direitos reservados.'
-        textAtex='Distribuído por'
-        textXprog='Desenvolvido por'
-      />
-      <Copyright
-        textCopyright='© Copyright 2021'
-        textRights='Todos os direitos reservados.'
-        textAtex='Distribuído por'
-        textXprog='Desenvolvido por'
+        textCompany='Prensa News'
         fontFamily='secondary'
       />
     </ThemeProvider>

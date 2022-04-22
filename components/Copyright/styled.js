@@ -2,24 +2,19 @@ import React from 'react'
 
 import Block from '../Block'
 import { 
-  CONTAINER_ATEX, 
   CONTAINER_COPYRIGHT, 
   CONTAINER_COPYRIGHT_BOX,
   CONTAINER_COPYRIGHT_ITEMS, 
   CONTAINER_COMPANIES, 
-  CONTAINER_XPROG, 
+  CONTAINER_LOGO, 
+  CONTAINER_LOGO_XPROG, 
 } from './consts'
-
-export const ContainerAtex = ({ children }) =>
-  <Block
-    {...CONTAINER_ATEX}>
-    {children}
-  </Block>
 
 export const ContainerCopyright = ({ bgColor, children }) =>
   <Block
     {...CONTAINER_COPYRIGHT}
-    bgColor={bgColor}>
+    bgColor={bgColor}
+  >
     {children}
   </Block>
 
@@ -32,19 +27,31 @@ export const ContainerCopyrightBox = ({ children }) =>
 
 export const ContainerCopyrightItems = ({ children }) =>
   <Block
-    {...CONTAINER_COPYRIGHT_ITEMS}>
+    {...CONTAINER_COPYRIGHT_ITEMS}
+  >
     {children}
   </Block>
 
 export const ContainerCompanies = ({ children }) =>
   <Block
-    {...CONTAINER_COMPANIES}>
+    {...CONTAINER_COMPANIES}
+  >
     {children}
   </Block>  
-   
-export const ContainerXprog = ({ children }) =>
+
+export const ContainerLogo = ({ children }) =>
   <Block
-    {...CONTAINER_XPROG}>
+    {...CONTAINER_LOGO}
+  >
     {children}
-  </Block>  
+  </Block>
+
+export const ContainerLogoXprog = ({ children }) =>
+  <Block
+    {...CONTAINER_LOGO_XPROG}
+  >
+    {children}
+  </Block>
+
+
 

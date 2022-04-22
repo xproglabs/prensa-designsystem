@@ -1,11 +1,16 @@
-const CONTAINER_ATEX = {
+const CONTAINER_LOGO = {
   align: 'column',
+  mb: 2,
+  lg: {
+    mb: '0px',
+    mr: 5
+  }
 }
 
-const CONTAINER_XPROG = {
+const CONTAINER_LOGO_XPROG = {
   align: 'column',
   lg: {
-    mr: 5
+    mr: '0px'
   }
 }
 
@@ -51,10 +56,10 @@ const CONTAINER_COPYRIGHT_ITEMS = {
 }
 
 export { 
-  CONTAINER_ATEX,
+  CONTAINER_LOGO,
   CONTAINER_COMPANIES,
   CONTAINER_COPYRIGHT,
   CONTAINER_COPYRIGHT_ITEMS,
   CONTAINER_COPYRIGHT_BOX,
-  CONTAINER_XPROG,
+  CONTAINER_LOGO_XPROG,
 }
