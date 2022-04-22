@@ -8,10 +8,6 @@ export type TextItemProps = {
   /**
    * @description Expects a font token (e.g. primary/secondary) 
    */
-  fontFamily?: FontTokens;
-  /**
-   * @description Define text to be rendered
-   */
   text?: string;
 }
 
@@ -24,10 +20,6 @@ export interface CopyrightProps {
    * @description Define text color
    */
   color?: string;
-  /**
-   * @description Expects a font token (e.g. primary/secondary) 
-   */
-  fontFamily?: FontTokens;
   /**
    * @description Define copyright message
    */
