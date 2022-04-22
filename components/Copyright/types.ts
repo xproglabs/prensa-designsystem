@@ -1,5 +1,3 @@
-import { FontTokens } from '@prensa_tokens'
-
 export type TextItemProps = {
   /**
    * @description Define text color
