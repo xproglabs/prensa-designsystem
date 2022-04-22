@@ -1,3 +1,23 @@
+## [1.9.65](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.64...v1.9.65) (2022-04-22)
+
+
+### Bug Fixes
+
+* ajusta indentação ([af390fd](https://github.com/xproglabs/prensa-designsystem/commit/af390fdc95e1f62667b10f72e0333df9aa473aa8))
+* ajusta indentação [#2](https://github.com/xproglabs/prensa-designsystem/issues/2) ([dc93304](https://github.com/xproglabs/prensa-designsystem/commit/dc93304091e08306c3a27fd592e7c3e9b0abe503))
+* ajusta tamanho dos logos e a distância do Typography ([dda6f60](https://github.com/xproglabs/prensa-designsystem/commit/dda6f60333cd23092bc031efc75871b9195a6e61))
+* ajustes na estrutura dos logos ([359957e](https://github.com/xproglabs/prensa-designsystem/commit/359957ea17071828292d56c08896e276a58e086e))
+* cria novo item para o ano ([2b9eb12](https://github.com/xproglabs/prensa-designsystem/commit/2b9eb1240ee89aa59e68d247e96b6f1399ff791d))
+* remove fontFamily dos types ([ba849e1](https://github.com/xproglabs/prensa-designsystem/commit/ba849e13d239dc977a0a1a06175a6d74adf0e47c))
+* remove FontTokens ([a7d0a9c](https://github.com/xproglabs/prensa-designsystem/commit/a7d0a9cde45585e6eebe12012ee59fb0c03c0245))
+* torna blocado o texto de direitos ([24e2628](https://github.com/xproglabs/prensa-designsystem/commit/24e2628e809368582db795333989fcf9395ec2ce))
+
+
+### Features
+
+* aplica getCurrentYear ([77d859f](https://github.com/xproglabs/prensa-designsystem/commit/77d859f577a8bc6257207ce06282b57650ddd9c0))
+* insere logo do Polopoly no componente Copyright ([3e6761e](https://github.com/xproglabs/prensa-designsystem/commit/3e6761efe7e2f060d8ead83d7f0e523f07aa7217))
+
 ## [1.9.64](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.63...v1.9.64) (2022-04-14)
 
 
