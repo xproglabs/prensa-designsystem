@@ -13,7 +13,8 @@ import {
 export const ContainerCopyright = ({ bgColor, children }) =>
   <Block
     {...CONTAINER_COPYRIGHT}
-    bgColor={bgColor}>
+    bgColor={bgColor}
+  >
     {children}
   </Block>
 
@@ -26,25 +27,29 @@ export const ContainerCopyrightBox = ({ children }) =>
 
 export const ContainerCopyrightItems = ({ children }) =>
   <Block
-    {...CONTAINER_COPYRIGHT_ITEMS}>
+    {...CONTAINER_COPYRIGHT_ITEMS}
+  >
     {children}
   </Block>
 
 export const ContainerCompanies = ({ children }) =>
   <Block
-    {...CONTAINER_COMPANIES}>
+    {...CONTAINER_COMPANIES}
+  >
     {children}
   </Block>  
 
 export const ContainerLogo = ({ children }) =>
 <Block
-  {...CONTAINER_LOGO}>
+  {...CONTAINER_LOGO}
+>
   {children}
 </Block>
 
 export const ContainerLogoXprog = ({ children }) =>
 <Block
-  {...CONTAINER_LOGO_XPROG}>
+  {...CONTAINER_LOGO_XPROG}
+>
   {children}
 </Block>
 
