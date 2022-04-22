@@ -40,18 +40,18 @@ export const ContainerCompanies = ({ children }) =>
   </Block>  
 
 export const ContainerLogo = ({ children }) =>
-<Block
-  {...CONTAINER_LOGO}
->
-  {children}
-</Block>
+  <Block
+    {...CONTAINER_LOGO}
+  >
+    {children}
+  </Block>
 
 export const ContainerLogoXprog = ({ children }) =>
-<Block
-  {...CONTAINER_LOGO_XPROG}
->
-  {children}
-</Block>
+  <Block
+    {...CONTAINER_LOGO_XPROG}
+  >
+    {children}
+  </Block>
 
 
 
