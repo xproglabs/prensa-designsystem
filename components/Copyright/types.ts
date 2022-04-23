@@ -21,10 +21,6 @@ export interface CopyrightProps {
   /**
    * @description Define copyright message
    */
-  textCopyright?: string;
-  /**
-   * @description Define company message
-   */
   textCompany?: string;
   /**
    * @description Define "rights reserved" message
@@ -33,13 +29,4 @@ export interface CopyrightProps {
   /**
    * @description Define ATEX message
    */
-  textAtex?: string;
-  /**
-   *    * @description Define ATEX message
-   */
-  textPolopoly?: string;
-  /**
-   * @description Define Polopoly message
-   */
-  textXprog?: string;
 }

@@ -11,7 +11,8 @@ import { CopyrightProps } from './types'
 const Copyright = ({ 
   bgColor,
   color,
-  textCompany 
+  textCompany,
+  textRights 
 } : CopyrightProps ) => {
   return (
     <S.ContainerCopyright bgColor={bgColor}>
@@ -26,10 +27,12 @@ const Copyright = ({
           <TextItemYear
             color={color}
           />
-          <TextItem
-            color={color}
-            text='Todos os direitos reservados.'
-          />
+          {textRights &&
+            <TextItem
+              color={color}
+              text={textRights}
+            />
+          }
         </S.ContainerCopyrightItems>    
         <S.ContainerCompanies>
           <S.ContainerLogo>
