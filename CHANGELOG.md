@@ -1,3 +1,10 @@
+## [1.9.67](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.66...v1.9.67) (2022-04-23)
+
+
+### Bug Fixes
+
+* remove color fixas dos svgs ([fd819a5](https://github.com/xproglabs/prensa-designsystem/commit/fd819a5d2a0b5c8063f6eb6a6214af5c90009296))
+
 ## [1.9.66](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.65...v1.9.66) (2022-04-23)
 
 
