@@ -1,3 +1,16 @@
+## [1.9.66](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.65...v1.9.66) (2022-04-23)
+
+
+### Bug Fixes
+
+* realoca textRights e remove types ([7cffc5e](https://github.com/xproglabs/prensa-designsystem/commit/7cffc5e14aa076d76123ac9356c0aab5c9c129e2))
+* remove arquivo de consts ([045b439](https://github.com/xproglabs/prensa-designsystem/commit/045b43925f9e5d66deb71f66d48bbea44e0878d4))
+
+
+### Features
+
+* adiciona props pb ([acde7a9](https://github.com/xproglabs/prensa-designsystem/commit/acde7a96c1351dc8aa5dd0e5231821d8008124da))
+
 ## [1.9.65](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.64...v1.9.65) (2022-04-22)
 
 
