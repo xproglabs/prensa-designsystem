@@ -14,7 +14,8 @@ export const Default = () => {
     <ThemeProvider theme={theme}>
       <Copyright
         textCompany='Prensa News'
-        fontFamily='secondary'
+        textRights='Todos os direitos reservados.'
+        pb={[3, 5]}
       />
     </ThemeProvider>
   )
