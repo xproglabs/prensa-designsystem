@@ -21,6 +21,10 @@ export interface CopyrightProps {
   /**
    * @description Define copyright message
    */
+  pb?: Array<string | number>;
+   /**
+    * @description Define padding bottom
+    */
   textCompany?: string;
   /**
    * @description Define "rights reserved" message
