@@ -11,6 +11,7 @@ import {
   Bio,
   Container,
   ContentWrap,
+  Email,
   ImageContainer,
   ImageWrap,
   TextWrap,
@@ -25,6 +26,8 @@ const AuthorBio = ({
   bio,
   bioProps,
   containerProps,
+  email,
+  emailProps,
   href,
   imagePath,
   imageProps,
@@ -84,6 +87,11 @@ const AuthorBio = ({
                 </Title>
               </Link>
             </Block>
+          }
+          {email &&
+            <Email {...emailProps}>
+              {email}
+            </Email>
           }
           {name &&
             <Name {...nameProps}>

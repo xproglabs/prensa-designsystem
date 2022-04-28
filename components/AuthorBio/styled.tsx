@@ -25,6 +25,18 @@ export const Bio = ({ children, ...otherProps }: BioProps) => (
     {children}
   </Typography>
 )
+export const Email = ({ children, ...otherProps }: EmailProps) => (
+  <Typography
+    element='span'
+    mb={2}
+    textAlign='center'
+    width='100%'
+    lg={{ textAlign: 'left' }}
+    {...otherProps}
+  >
+    {children}
+  </Typography>
+)
 export const Name = ({ children, ...otherProps }: NameProps) => (
   <Typography
     element='span'
