@@ -1,3 +1,18 @@
+## [1.9.68](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.67...v1.9.68) (2022-04-28)
+
+
+### Bug Fixes
+
+* lint ([08a2862](https://github.com/xproglabs/prensa-designsystem/commit/08a28626e65c7a413de93ff45f8b0210f76bd284))
+
+
+### Features
+
+* adiciona e formata componente email ([0169147](https://github.com/xproglabs/prensa-designsystem/commit/0169147df00009c1a12f6100ff7271e1554697af))
+* adiciona novos types ([a4877a2](https://github.com/xproglabs/prensa-designsystem/commit/a4877a2673579bf4b9fb3e0ac9c540482ffb96dc))
+* atualiza Authorbio stories ([7eabfd6](https://github.com/xproglabs/prensa-designsystem/commit/7eabfd6f797424ddcc441945ae5e7e12c444acbb))
+* formata props ([cf48f03](https://github.com/xproglabs/prensa-designsystem/commit/cf48f03d56d8d7859f1dbdf5fe1390c871ca9f70))
+
 ## [1.9.67](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.66...v1.9.67) (2022-04-23)
 
 
