@@ -13,6 +13,8 @@ export interface AuthorBioProps {
   bio?: string;
   bioProps?: BioProps;
   containerProps?: ContainerProps;
+  email?: string;
+  emailProps?: string;
   href?: string;
   imagePath: string;
   imageProps?: ImageProps;
@@ -27,6 +29,15 @@ export interface AuthorBioProps {
 }
 
 export type BioProps = {
+  children?: ReactNode;
+  color?: ColorTokens;
+  element?: string;
+  fontFamily?: FontTokens;
+  fontSize?: string;
+  fontWeight?: number;
+  mb?: SpacingType;
+}
+export type EmailProps = {
   children?: ReactNode;
   color?: ColorTokens;
   element?: string;
