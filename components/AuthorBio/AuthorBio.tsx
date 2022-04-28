@@ -3,6 +3,7 @@ import { Block, Image } from 'prensa'
 import React from 'react'
 
 import Link from '../Link'
+import { IcEmail } from './IcEmail'
 import { IcBioFacebook } from './IcBioFacebook'
 import { IcBioInstagram } from './IcBioInstagram'
 import { IcBioLinkedin } from './IcBioLinkedin'
@@ -35,6 +36,7 @@ const AuthorBio = ({
   nameProps,
   title,
   titleProps,
+  emailUrl,
   facebookUrl,
   instagramUrl,
   linkedinUrl,
@@ -104,6 +106,7 @@ const AuthorBio = ({
             </Bio>
           }
           <SocialMediasWrap>
+            {emailUrl && <IcEmail href={emailUrl} />}
             {facebookUrl && <IcBioFacebook href={facebookUrl} />}
             {instagramUrl && <IcBioInstagram href={instagramUrl} />}
             {linkedinUrl && <IcBioLinkedin href={linkedinUrl} />}

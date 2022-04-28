@@ -5,6 +5,7 @@ import {
   BioProps,
   ContainerProps,
   ContentWrapProps,
+  EmailProps,
   ImageContainerProps,
   ImageProps,
   NameProps,

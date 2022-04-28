@@ -22,6 +22,7 @@ export interface AuthorBioProps {
   nameProps?: NameProps;
   title?: string;
   titleProps?: TitleProps;
+  emailUrl?: string;
   facebookUrl: string;
   instagramUrl: string;
   linkedinUrl: string;
