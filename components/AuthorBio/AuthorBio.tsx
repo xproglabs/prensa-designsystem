@@ -3,11 +3,11 @@ import { Block, Image } from 'prensa'
 import React from 'react'
 
 import Link from '../Link'
-import { IcEmail } from './IcEmail'
 import { IcBioFacebook } from './IcBioFacebook'
 import { IcBioInstagram } from './IcBioInstagram'
 import { IcBioLinkedin } from './IcBioLinkedin'
 import { IcBioTwitter } from './IcBioTwitter'
+import { IcEmail } from './IcEmail'
 import {
   Bio,
   Container,
