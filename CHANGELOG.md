@@ -1,3 +1,10 @@
+## [1.9.69](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.68...v1.9.69) (2022-04-29)
+
+
+### Bug Fixes
+
+* adiciona mailto: no href do emailUrl ([8cd5520](https://github.com/xproglabs/prensa-designsystem/commit/8cd5520b534123860aaf2688f688c7945ab39f71))
+
 ## [1.9.68](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.67...v1.9.68) (2022-04-28)
 
 
