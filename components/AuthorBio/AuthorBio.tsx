@@ -106,7 +106,7 @@ const AuthorBio = ({
             </Bio>
           }
           <SocialMediasWrap>
-            {emailUrl && <IcEmail href={emailUrl} />}
+            {emailUrl && <IcEmail href={`mailto:${emailUrl}`} />}
             {facebookUrl && <IcBioFacebook href={facebookUrl} />}
             {instagramUrl && <IcBioInstagram href={instagramUrl} />}
             {linkedinUrl && <IcBioLinkedin href={linkedinUrl} />}
