@@ -1,3 +1,10 @@
+## [1.9.70](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.69...v1.9.70) (2022-05-03)
+
+
+### Bug Fixes
+
+* telegramPath ([c7d3aae](https://github.com/xproglabs/prensa-designsystem/commit/c7d3aaee71e7082aa96e1983e880bbf8d0bebffd))
+
 ## [1.9.69](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.68...v1.9.69) (2022-04-29)
 
 
