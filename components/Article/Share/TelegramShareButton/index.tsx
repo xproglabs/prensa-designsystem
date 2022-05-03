@@ -16,9 +16,9 @@ const TelegramShareButton = (props: TelegramShareButtonProps) => {
     telegramProps = {}
   } = props
 
-  const { mt, mb, mr, ml, ...otherProps } = telegramProps
+  const { domain, mt, mb, mr, ml, ...otherProps } = telegramProps
 
-  const pageUrlParam = `${pageUrl}`
+  const pageUrlParam = `${domain}${pageUrl}`
   const shareUrl = `https://telegram.me/share/url?url=${pageUrlParam}`
 
   if (amp) {
@@ -32,7 +32,7 @@ const TelegramShareButton = (props: TelegramShareButtonProps) => {
       >
         <amp-social-share
           data-share-endpoint={shareUrl}
-          data-param-share-text={pageUrlParam}
+          data-param-text={pageUrlParam}
           type='telegram'
           width={size}
           height={size}
