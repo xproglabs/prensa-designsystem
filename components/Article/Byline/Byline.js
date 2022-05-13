@@ -86,7 +86,7 @@ const Byline = ({
         <S.BylineContainer {...dateline}>
           {authors.items.length > 0 ? (
             <ManyAuthors items={authors.items} />
-          ): (
+          ) : (
             <>
               <S.Author {...author}>{author.value}</S.Author>
               <AuthorInfo />
