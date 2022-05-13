@@ -4,11 +4,13 @@ import React from 'react'
 
 import Block from '../../Block'
 import Share from '../Share/index.tsx'
+import ManyAuthors from './Authors'
 import * as S from './Byline.styled'
 
 const Byline = ({
   amp,
   author,
+  authors,
   content,
   dateline,
   datetime,
@@ -77,14 +79,19 @@ const Byline = ({
       </Block>
     )
   }
+
   return (
     <S.Container>
       <S.Content {...content}>
         <S.BylineContainer {...dateline}>
-          <S.Author {...author}>
-            {author.value}
-          </S.Author>
-          <AuthorInfo />
+          {authors.items.length > 0 ? (
+            <ManyAuthors items={authors.items} />
+          ): (
+            <>
+              <S.Author {...author}>{author.value}</S.Author>
+              <AuthorInfo />
+            </>
+          )}
           {isExpanded ? <BylineExpanded /> : <BylineReduced />}
         </S.BylineContainer>
         <Share
@@ -109,6 +116,13 @@ Byline.defaultProps = {
     lineHeight: ['16px', '16px'],
     value: 'Prensa Design System'
   },
+  authors: {
+    items: [
+      // todo: default items should be an empty array []
+      { name: 'Autor Exemplo 1', path: '/autores/AutorExemplo' },
+      { name: 'Pessoa Teste 2', path: '/autores/TagExemplo' }
+    ]
+  },
   content: {
     mb: [3, 3]
   },
@@ -126,6 +140,7 @@ Byline.defaultProps = {
 Byline.propTypes = {
   amp: PropTypes.bool,
   author: PropTypes.object,
+  authors: PropTypes.object,
   datetime: PropTypes.object,
   share: PropTypes.object,
   isExpanded: PropTypes.bool,
