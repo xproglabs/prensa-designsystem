@@ -34,7 +34,6 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
           type='twitter'
           width={size}
           height={size}
-          {...otherProps}
         />
       </TwitterAmpContainer>
     )

@@ -1,6 +1,7 @@
 import { ColorTokens } from '@prensa_tokens'
 
 export type TelegramProps = {
+  domain?: string;
   enabled?: boolean;
   mt?: number | string;
   mr?: number | string;

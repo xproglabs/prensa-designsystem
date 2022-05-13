@@ -3,7 +3,11 @@ import React from 'react'
 import Typography from '../Typography'
 import { TextItemProps } from './types'
 
-const TextItem = ({ color, text } : TextItemProps) => {
+const TextItemYear = ({ color } : TextItemProps) => {
+  const getCurrentYear = () => {
+    const data = new Date()
+    return data.getFullYear()
+  }
   return (
     <Typography 
       element='span'
@@ -14,13 +18,13 @@ const TextItem = ({ color, text } : TextItemProps) => {
       color={color}
       fontFamily='secondary'
     >
-      {text}
+      © Copyright {getCurrentYear()}
     </Typography>
   )
 }
 
-TextItem.defaultProps = {
+TextItemYear.defaultProps = {
   color: 'neutral3',
 }
 
-export default TextItem
+export default TextItemYear

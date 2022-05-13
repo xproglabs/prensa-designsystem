@@ -5,6 +5,7 @@ import {
   BioProps,
   ContainerProps,
   ContentWrapProps,
+  EmailProps,
   ImageContainerProps,
   ImageProps,
   NameProps,
@@ -14,6 +15,18 @@ import {
 } from './types'
 
 export const Bio = ({ children, ...otherProps }: BioProps) => (
+  <Typography
+    element='span'
+    mb={2}
+    textAlign='center'
+    width='100%'
+    lg={{ textAlign: 'left' }}
+    {...otherProps}
+  >
+    {children}
+  </Typography>
+)
+export const Email = ({ children, ...otherProps }: EmailProps) => (
   <Typography
     element='span'
     mb={2}
