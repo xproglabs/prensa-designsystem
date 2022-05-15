@@ -2,16 +2,29 @@ import { map } from 'lodash'
 import React from 'react'
 
 import Block from '../../Block'
+import Typography from '../../Typography'
 
 const ManyAuthors = ({ items }) => {
-  const AuthorWithLink = ({ item, showComma }) => {
+  const AuthorWithLink = ({ item, showComma, color }) => {
     return (
       // todo: add AuthorWithLink layout
       <>
-        <a href={item.path}>{item.name}</a>
+        <a href={item.path}>
+          <Typography 
+          element='span'
+          fontFamily='secondary'
+          fontWeight={700}
+          fontSize='14px'
+          color={color}>
+            {item.name}
+          </Typography>  
+        </a>
         {showComma && (<span>,&nbsp;</span>)}
       </>
     )
+  }
+  AuthorWithLink.defaultProps = {
+    color: 'neutral2'
   }
   return (
     <Block align='row'>
@@ -24,7 +37,7 @@ const ManyAuthors = ({ items }) => {
 }
 
 ManyAuthors.defaultProps = {
-  items: []
+  items: [],
 }
 
 export default ManyAuthors
