@@ -4,6 +4,7 @@ import React from 'react'
 import Block from '../../Block'
 import Typography from '../../Typography'
 
+import Block from '../../Block'
 
 const ManyAuthors = ({ items }) => {
   const AuthorWithLink = ({ item, showComma, color }) => {
@@ -12,11 +13,11 @@ const ManyAuthors = ({ items }) => {
       <>
         <a href={item.path}>
           <Typography 
-            element='span'
-            fontFamily='secondary'
-            fontWeight={700}
-            fontSize='14px'
-            color={color}>
+          element='span'
+          fontFamily='secondary'
+          fontWeight={700}
+          fontSize='14px'
+          color={color}>
             {item.name}
           </Typography>  
         </a>

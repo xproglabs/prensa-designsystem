@@ -93,7 +93,6 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "postcss": "^8.4.13",
     "react-contenteditable": ">=3.3.6",
     "react-facebook": ">=8.1.4",
     "react-instagram-embed": ">=3.0.0",
