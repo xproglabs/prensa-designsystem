@@ -2,8 +2,8 @@ import { map } from 'lodash'
 import React from 'react'
 
 import Block from '../../Block'
-import Link from '../../Link'
 import Typography from '../../Typography'
+import Link from '../../Link'
 
 
 const ManyAuthors = ({ items }) => {
