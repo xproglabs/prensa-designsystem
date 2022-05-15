@@ -20,6 +20,8 @@ export interface AuthorBioProps {
   imageProps?: ImageProps;
   name?: string;
   nameProps?: NameProps;
+  position?: string;
+  positionProps?: PositionProps;
   title?: string;
   titleProps?: TitleProps;
   emailUrl?: string;
@@ -48,6 +50,15 @@ export type EmailProps = {
   mb?: SpacingType;
 }
 export type NameProps = {
+  children?: ReactNode;
+  color?: ColorTokens;
+  element?: string;
+  fontFamily?: FontTokens;
+  fontSize?: string;
+  fontWeight?: number;
+  mb?: SpacingType;
+}
+export type PositionProps = {
   children?: ReactNode;
   color?: ColorTokens;
   element?: string;

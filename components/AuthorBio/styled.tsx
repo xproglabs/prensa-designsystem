@@ -9,6 +9,7 @@ import {
   ImageContainerProps,
   ImageProps,
   NameProps,
+  PositionProps,
   SocialMediasWrapProps,
   TextWrapProps,
   TitleProps,
@@ -39,6 +40,18 @@ export const Email = ({ children, ...otherProps }: EmailProps) => (
   </Typography>
 )
 export const Name = ({ children, ...otherProps }: NameProps) => (
+  <Typography
+    element='span'
+    mb={2}
+    textAlign='center'
+    width='100%'
+    lg={{ textAlign: 'left' }}
+    {...otherProps}
+  >
+    {children}
+  </Typography>
+)
+export const Position = ({ children, ...otherProps }: PositionProps) => (
   <Typography
     element='span'
     mb={2}
