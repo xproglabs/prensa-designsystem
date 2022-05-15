@@ -3,7 +3,6 @@ import React from 'react'
 
 import Block from '../../Block'
 import Typography from '../../Typography'
-import Link from '../../Link'
 
 
 const ManyAuthors = ({ items }) => {
@@ -11,7 +10,7 @@ const ManyAuthors = ({ items }) => {
     return (
       // todo: add AuthorWithLink layout
       <>
-        <Link href={item.path}>
+        <a href={item.path}>
           <Typography 
             element='span'
             fontFamily='secondary'
@@ -20,7 +19,7 @@ const ManyAuthors = ({ items }) => {
             color={color}>
             {item.name}
           </Typography>  
-        </Link>
+        </a>
         {showComma && (<span>,&nbsp;</span>)}
       </>
     )
