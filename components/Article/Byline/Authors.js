@@ -4,8 +4,6 @@ import React from 'react'
 import Block from '../../Block'
 import Typography from '../../Typography'
 
-import Block from '../../Block'
-
 const ManyAuthors = ({ items }) => {
   const AuthorWithLink = ({ item, showComma, color }) => {
     return (
