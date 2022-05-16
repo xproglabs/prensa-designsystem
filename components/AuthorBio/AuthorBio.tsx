@@ -13,12 +13,13 @@ import {
   Container,
   ContentWrap,
   Email,
+  Name,
   ImageContainer,
   ImageWrap,
+  Position,
   TextWrap,
   SocialMediasWrap,
   Title,
-  Name
 } from './styled'
 import { AuthorBioProps } from './types'
 
@@ -34,6 +35,8 @@ const AuthorBio = ({
   imageProps,
   name,
   nameProps,
+  position,
+  positionProps,
   title,
   titleProps,
   emailUrl,
@@ -99,6 +102,11 @@ const AuthorBio = ({
             <Name {...nameProps}>
               {name}
             </Name>
+          }
+          {position &&
+            <Position {...positionProps}>
+              {position}
+            </Position>
           }
           {bio &&
             <Bio {...bioProps}>
