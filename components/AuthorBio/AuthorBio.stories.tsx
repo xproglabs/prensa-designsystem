@@ -32,6 +32,14 @@ export const NoData = () => {
       <AuthorBio
         amp={false}
         imagePath='https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600'
+        name='Alessandra Moraes'
+        position='Jornalista'
+        positionProps={{
+          color: 'neutral2',
+          fontSize: '14px',
+          fontWeight: 700,
+          mb: '4px'
+        }}
         emailUrl='https://google.com.br'
         facebookUrl='https://google.com.br'
         instagramUrl='https://google.com.br'
