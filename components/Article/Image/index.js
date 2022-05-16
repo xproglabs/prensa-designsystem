@@ -1,4 +1,5 @@
 import { get } from 'lodash'
+import { Link } from 'prensa'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -14,6 +15,8 @@ const ArticleImage = ({
   amp,
   ampElementProps,
   caption,
+  clickToOpen,
+  customClick,
   featured,
   height,
   image,
@@ -59,12 +62,24 @@ const ArticleImage = ({
         />
       )
     }
-    return (
-      <img
-        alt={captionValue}
-        src={value}
-      />
-    )
+    return <img alt={captionValue} src={value} />
+  }
+
+  const RenderClickArea = ({ children }) => {
+    if (clickToOpen) {
+      const clickToOpenHref = customClick ? customClick : value
+      return (
+        <Link
+          href={clickToOpenHref}
+          target='_blank'
+          rel='noreferrer'
+          width='100%'
+        >
+          {children}
+        </Link>
+      )
+    }
+    return <>{children}</>
   }
 
   const RenderMedia = () => {
@@ -78,7 +93,9 @@ const ArticleImage = ({
 
   return (
     <Container featured={featured} mb={mb} value={value}>
-      <RenderMedia />
+      <RenderClickArea>
+        <RenderMedia />
+      </RenderClickArea>
       {showCaption && captionValue && (
         <S.SubtitleBox px={px} py={py} widthBox={widthBox}>
           <S.Subtitle
@@ -109,8 +126,10 @@ ArticleImage.defaultProps = {
     fontSize: ['14px', '14px'],
     lineHeight: ['130%', '130%'],
     show: true,
-    value: 'Legenda da Imagem',
+    value: 'Legenda da Imagem'
   },
+  clickToOpen: false,
+  customClick: '',
   height: '640px',
   mb: [2, 2],
   px: [3, 4],
@@ -123,6 +142,8 @@ ArticleImage.defaultProps = {
 ArticleImage.propTypes = {
   amp: PropTypes.bool,
   caption: PropTypes.object,
+  clickToOpen: PropTypes.bool,
+  customClick: PropTypes.string,
   featured: PropTypes.bool,
   height: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   image: PropTypes.bool,
