@@ -1,3 +1,10 @@
+## [1.9.72](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.71...v1.9.72) (2022-05-16)
+
+
+### Features
+
+* adiciona campo de Cargo (position) no Authorbio ([6cea047](https://github.com/xproglabs/prensa-designsystem/commit/6cea0477ff0c15006934add9fbb7a58dd6ac1618))
+
 ## [1.9.71](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.70...v1.9.71) (2022-05-16)
 
 
