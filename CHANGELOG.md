@@ -1,3 +1,12 @@
+## [1.9.71](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.70...v1.9.71) (2022-05-16)
+
+
+### Features
+
+* **clickToOpen:** add click to textbody image ([62a985d](https://github.com/xproglabs/prensa-designsystem/commit/62a985d5d6c9026d90e774b75430a5e8a51351ea))
+* **clickToOpen:** add Link do image in article ([686862e](https://github.com/xproglabs/prensa-designsystem/commit/686862ee8bf151de5b6879504cf08f61b24db5a2))
+* **clickToOpen:** allow custom link in image ([00402f0](https://github.com/xproglabs/prensa-designsystem/commit/00402f02f4f630e82e54505f01a82242b216c314))
+
 ## [1.9.70](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.69...v1.9.70) (2022-05-03)
 
 
