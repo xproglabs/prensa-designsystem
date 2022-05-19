@@ -5,6 +5,7 @@ export const dimensions = ({
   theme = {},
   $width = '',
   maxWidth = '',
+  minHeight = '',
   minWidth = ''
 }) => {  
 
@@ -25,6 +26,15 @@ export const dimensions = ({
       object.push(`min-width: ${minWidth};`)
     } else {
       object.push(`min-width: ${minWidth * unit}px;`)
+    }
+  }
+
+
+  if (minHeight) {
+    if (typeof minHeight === 'string') {
+      object.push(`min-height: ${minHeight};`)
+    } else {
+      object.push(`min-height: ${minHeight * unit}px;`)
     }
   }
 

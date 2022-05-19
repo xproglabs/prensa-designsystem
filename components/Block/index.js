@@ -59,6 +59,7 @@ const Block = ({
   lg,
   xl,
   maxWidth,
+  minHeight,
   minWidth
 }) => {
 
@@ -119,6 +120,7 @@ const Block = ({
       $height={height}
       maxWidth={maxWidth}
       minWidth={minWidth}
+      minHeight={minHeight}
       id={id}
       bt={bt}
       br={br}
@@ -239,6 +241,7 @@ Block.propTypes = {
    */
   id: PropTypes.string,
   maxWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  minHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   minWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   bt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   br: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
