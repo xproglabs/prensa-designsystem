@@ -60,7 +60,7 @@ const Block = ({
   md,
   lg,
   xl,
-  width,
+  width
 }) => {
 
   const getXsProps = () => xs && ({
