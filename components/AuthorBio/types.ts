@@ -81,11 +81,11 @@ export type TitleProps = {
 // Containers
 export type ContainerProps = {
   children?: ReactNode;
-  bt?: string;
-  br?: string;
-  bb?: string;
-  bl?: string;
-  b?: string;
+  bt?: SpacingType;
+  br?: SpacingType;
+  bb?: SpacingType;
+  bl?: SpacingType;
+  b?: SpacingType;
   bgColor?: ColorTokens;
   borderColor?: ColorTokens;
   borderStyle?: string;
