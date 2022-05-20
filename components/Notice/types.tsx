@@ -4,7 +4,7 @@ import { ReactNode } from 'react'
 export type SpacingType = number | string
 export type ResponsiveSpacingType = Array<string | number>
 
-export type NoticeProps {
+export type NoticeProps = {
   buttonProps?: ButtonPdfProps;
   containerProps?: ContainerProps;
   children?: ReactNode;
