@@ -5,15 +5,15 @@ export type SpacingType = number | string
 export type ResponsiveSpacingType = Array<string | number>
 
 export type NoticeProps = {
-  buttonProps?: ButtonPdfProps;
+  buttonProps?: string;
   containerProps?: ContainerProps;
   children?: ReactNode;
   subject?: string;
-  subjectProps?: SubjectProps;
+  subjectProps?: string;
   subtitle?: string;
   subtitleProps?: string;
   title?: string;
-  titleProps?: TitleProps;
+  titleProps?: string;
 }
 
 export type ContainerProps = {
