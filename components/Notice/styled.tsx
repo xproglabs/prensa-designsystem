@@ -2,18 +2,12 @@ import { Block, Button, Typography } from 'prensa'
 import React from 'react'
 
 import {
-  ButtonPdfProps,
-  ButtonWrapProps,
   ContainerProps,
-  ContentWrapProps,
-  SubjectProps,
-  SubtitleProps,
-  TextWrapProps,
-  TitleProps
+  NoticeProps,
   
 } from './types'
 
-export const ButtonPdf = ({ children, ...otherProps  }: ButtonPdfProps) => (
+export const ButtonPdf = ({ children, ...otherProps  }: NoticeProps) => (
   <Button
     size='40px'
     lg={{ size: '32px' }}
@@ -23,7 +17,7 @@ export const ButtonPdf = ({ children, ...otherProps  }: ButtonPdfProps) => (
   </Button>
 )
 
-export const ButtonWrap = ({ children }: ButtonWrapProps) => (
+export const ButtonWrap = ({ children }: NoticeProps) => (
   <Block
     align='column'
     alignx='left'
@@ -45,7 +39,7 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
   </Block>
 )
 
-export const ContentWrap = ({ children }: ContentWrapProps) => (
+export const ContentWrap = ({ children }: NoticeProps) => (
   <Block
     align='column'
     aligny='middle'
@@ -58,7 +52,7 @@ export const ContentWrap = ({ children }: ContentWrapProps) => (
   </Block>
 )
 
-export const TextWrap = ({ children }: TextWrapProps) => (
+export const TextWrap = ({ children }: NoticeProps) => (
   <Block 
     align='column' 
     width='100%'
@@ -68,7 +62,7 @@ export const TextWrap = ({ children }: TextWrapProps) => (
   </Block>
 )
 
-export const Subject = ({ children, ...otherProps }: SubjectProps) => (
+export const Subject = ({ children, ...otherProps }: NoticeProps) => (
   <Typography
     element='span'
     textAlign='left'
@@ -79,7 +73,7 @@ export const Subject = ({ children, ...otherProps }: SubjectProps) => (
   </Typography>
 )
 
-export const Subtitle = ({ children, ...otherProps }: SubtitleProps) => (
+export const Subtitle = ({ children, ...otherProps }: NoticeProps) => (
   <Typography
     element='span'
     textAlign='left'
@@ -90,7 +84,7 @@ export const Subtitle = ({ children, ...otherProps }: SubtitleProps) => (
   </Typography>
 )
 
-export const Title = ({ children, ...otherProps }: TitleProps) => (
+export const Title = ({ children, ...otherProps }: NoticeProps) => (
   <Typography
     element='span'
     textAlign='left'
