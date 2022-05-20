@@ -28,7 +28,7 @@ export const ButtonWrap = ({ children }: ButtonWrapProps) => (
     align='column'
     alignx='left'
     width='100%'
-    lg={{ custom: `align-items: end`, width: '20%' }}
+    lg={{ custom: 'align-items: end', width: '20%' }}
   >
     {children}
   </Block>
@@ -62,7 +62,7 @@ export const TextWrap = ({ children }: TextWrapProps) => (
   <Block 
     align='column' 
     width='100%'
-    lg={{ width: '80%'}}
+    lg={{ width: '80%' }}
   >
     {children}
   </Block>

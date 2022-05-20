@@ -1,4 +1,4 @@
-import { RadiusTokens, ColorTokens, FontTokens } from '@prensa_tokens'
+import { RadiusTokens, ColorTokens } from '@prensa_tokens'
 import { ReactNode } from 'react'
 
 export type SpacingType = number | string
