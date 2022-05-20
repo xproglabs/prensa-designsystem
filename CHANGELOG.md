@@ -1,3 +1,18 @@
+## [1.9.73](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.72...v1.9.73) (2022-05-20)
+
+
+### Bug Fixes
+
+* code review ([f149e8d](https://github.com/xproglabs/prensa-designsystem/commit/f149e8d00ee181484952dd7edec9ed4466b3a7c8))
+* indentação ([941781b](https://github.com/xproglabs/prensa-designsystem/commit/941781b5397c9c26afdc963c4ee1e67ae721624a))
+* insere SpacingType nas props de border ([d53f807](https://github.com/xproglabs/prensa-designsystem/commit/d53f807fdb9bc71ff7375bbd13e85835cc36f812))
+* virgula sobrando ([42a70ef](https://github.com/xproglabs/prensa-designsystem/commit/42a70ef2e61a8ee3ebbcedcfd940cafaac50456c))
+
+
+### Features
+
+* Adiciona min-height no componente Block e AuthorBio ([c3cbbb1](https://github.com/xproglabs/prensa-designsystem/commit/c3cbbb175ff5745e9fd99cef9b69c17333a34730))
+
 ## [1.9.72](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.71...v1.9.72) (2022-05-16)
 
 
