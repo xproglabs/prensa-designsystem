@@ -27,6 +27,7 @@ export { default as TemplateContainer } from './components/Templates/TemplateCon
 export * from './components/AuthorBio'
 export * from './components/Image/parser'
 export * from './components/ImageGallery'
+export * from './components/Notice'
 export * from './components/Templates'
 export * from './styles'
 
