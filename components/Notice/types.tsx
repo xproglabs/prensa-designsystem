@@ -5,6 +5,7 @@ export type SpacingType = number | string
 export type ResponsiveSpacingType = Array<string | number>
 
 export interface NoticeProps {
+  buttonProps: ButtonPdfProps;
   containerProps?: ContainerProps;
   subject?: string;
   subjectProps?: SubjectProps;

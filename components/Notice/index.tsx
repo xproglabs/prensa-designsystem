@@ -11,6 +11,8 @@ import {
   Title
 } from './styled'
 
+import { NoticeProps } from './types'
+
 const Notice = ({
   buttonProps,
   containerProps,
