@@ -2,6 +2,7 @@ import { Block, Button, Typography } from 'prensa'
 import React from 'react'
 
 import {
+  ButtonPdfProps,
   ButtonWrapProps,
   ContainerProps,
   ContentWrapProps,
