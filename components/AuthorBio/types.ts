@@ -80,7 +80,16 @@ export type TitleProps = {
 // Containers
 export type ContainerProps = {
   children?: ReactNode;
+  bt?: SpacingType;
+  br?: SpacingType;
+  bb?: SpacingType;
+  bl?: SpacingType;
+  b?: SpacingType;
   bgColor?: ColorTokens;
+  borderColor?: ColorTokens;
+  borderStyle?: string;
+  minHeight?: string;
+  maxWidth?: string;
   mx?: SpacingType;
   my?: SpacingType;
   pt?: SpacingType;
@@ -91,13 +100,6 @@ export type ContainerProps = {
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
-  bt?: string;
-  br?: string;
-  bb?: string;
-  bl?: string;
-  b?: string;
-  borderColor?: ColorTokens;
-  borderStyle?: string;
   radius?: RadiusTokens;
   width?: string;
 }

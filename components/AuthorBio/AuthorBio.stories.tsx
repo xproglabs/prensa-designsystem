@@ -31,6 +31,13 @@ export const NoData = () => {
     <ThemeProvider theme={theme}>
       <AuthorBio
         amp={false}
+        containerProps={{
+          b: '1px',
+          bgColor: 'white',
+          borderColor: 'neutral9',
+          minHeight: '200px',
+          mb: 5
+        }}
         imagePath='https://qa.hojeemdia.com.br/image/policy:1.787226.1628829880:1628829880/image.jpg?f=1x1&w=600'
         name='Alessandra Moraes'
         position='Jornalista'
