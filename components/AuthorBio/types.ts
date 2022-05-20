@@ -18,7 +18,6 @@ export interface AuthorBioProps {
   href?: string;
   imagePath: string;
   imageProps?: ImageProps;
-  minHeight?: string;
   name?: string;
   nameProps?: NameProps;
   position?: string;
