@@ -24,30 +24,28 @@ const Notice = ({
 }: NoticeProps) => {
   return (
     <Container {...containerProps}>
-      <ContentWrap>
-        <TextWrap>
-          {subject &&
-            <Subject {...subjectProps}>
-              {subject}
-            </Subject>
-          }
-          {title &&
-            <Title {...titleProps}>
-              {title}
-            </Title>
-          }
-          {subtitle &&
-            <Subtitle {...subtitleProps}>
-              {subtitle}
-            </Subtitle>
-          }
-        </TextWrap>
-        <ButtonWrap>
-          <ButtonPdf {...buttonProps}>
-            VER PDF
-          </ButtonPdf>
-        </ButtonWrap>
-      </ContentWrap>
+      <TextWrap>
+        {subject &&
+          <Subject {...subjectProps}>
+            {subject}
+          </Subject>
+        }
+        {title &&
+          <Title {...titleProps}>
+            {title}
+          </Title>
+        }
+        {subtitle &&
+          <Subtitle {...subtitleProps}>
+            {subtitle}
+          </Subtitle>
+        }
+      </TextWrap>
+      <ButtonWrap>
+        <ButtonPdf {...buttonProps}>
+          VER PDF
+        </ButtonPdf>
+      </ButtonWrap>
     </Container>
   )
 } 

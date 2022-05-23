@@ -22,7 +22,7 @@ export const ButtonWrap = ({ children }: NoticeProps) => (
     align='column'
     alignx='left'
     width='100%'
-    lg={{ custom: 'align-items: end', width: '20%' }}
+    lg={{ custom: 'align-items: flex-start', width: 'auto' }}
   >
     {children}
   </Block>
@@ -30,33 +30,25 @@ export const ButtonWrap = ({ children }: NoticeProps) => (
 
 export const Container = ({ children, ...otherProps }: ContainerProps) => (
   <Block
+    align='column'
     aligny='middle'
     alignx='center'
-    width='100%'
+    px={2}
+    py={2}
+    custom='gap: 16px'
+    lg={{ align: 'row', custom: 'flex: none; order: 0; flex-grow: 0; gap: 40px' }}
+    
     {...otherProps}
   >
     {children}
   </Block>
 )
 
-export const ContentWrap = ({ children }: NoticeProps) => (
-  <Block
-    align='column'
-    aligny='middle'
-    px={2}
-    py={2}
-    width='calc(100% - 32px)'
-    lg={{ align: 'row' }}
-  >
-    {children}
-  </Block>
-)
 
 export const TextWrap = ({ children }: NoticeProps) => (
   <Block 
     align='column' 
     width='100%'
-    lg={{ width: '80%' }}
   >
     {children}
   </Block>
