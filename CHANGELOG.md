@@ -1,3 +1,24 @@
+## [1.9.74](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.73...v1.9.74) (2022-05-23)
+
+
+### Bug Fixes
+
+* formata estilo do author with link ([600a1be](https://github.com/xproglabs/prensa-designsystem/commit/600a1bea65c9b5d95f4bde9fc1176cd3a4ceac42))
+* lint ([9f387ca](https://github.com/xproglabs/prensa-designsystem/commit/9f387ca82bdb80a808393c3c637df31a72f34847))
+* lint ([c3d1715](https://github.com/xproglabs/prensa-designsystem/commit/c3d171571113af26a98265d5bdc139b5e18c1a15))
+* remove componente Link ([1f86403](https://github.com/xproglabs/prensa-designsystem/commit/1f86403609bd96b9d14b7dee54c284d7d35e84fd))
+* remove items name / path from default props ([d77b1f1](https://github.com/xproglabs/prensa-designsystem/commit/d77b1f12e4fbfe5d804cc9aa0b639d3e5206dd00))
+
+
+### Features
+
+* **articleAuthors:** add ManyAuthors into Article Byline ([9a59391](https://github.com/xproglabs/prensa-designsystem/commit/9a59391d24a3fdd1de38092d3daae5e99e0f2b5a))
+
+
+### Reverts
+
+* Revert "fix: install postcss" ([962bb37](https://github.com/xproglabs/prensa-designsystem/commit/962bb37a91aa5370b1a91a3c890f4b1a18c362d2))
+
 ## [1.9.73](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.72...v1.9.73) (2022-05-20)
 
 
