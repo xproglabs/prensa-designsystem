@@ -7,15 +7,14 @@ import Typography from '../../Typography'
 const ManyAuthors = ({ items }) => {
   const AuthorWithLink = ({ item, showComma, color }) => {
     return (
-      // todo: add AuthorWithLink layout
       <>
         <a href={item.path}>
           <Typography 
-          element='span'
-          fontFamily='secondary'
-          fontWeight={700}
-          fontSize='14px'
-          color={color}>
+            element='span'
+            fontFamily='secondary'
+            fontWeight={700}
+            fontSize='14px'
+            color={color}>
             {item.name}
           </Typography>  
         </a>
