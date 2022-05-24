@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-  ButtonPdf,
+  ButtonFile,
   ButtonWrap,
   Container,
   Subject,
@@ -41,9 +41,9 @@ const Notice = ({
         }
       </TextWrap>
       <ButtonWrap>
-        <ButtonPdf {...buttonProps}>
+        <ButtonFile {...buttonProps}>
           VER PDF
-        </ButtonPdf>
+        </ButtonFile>
       </ButtonWrap>
     </Container>
   )

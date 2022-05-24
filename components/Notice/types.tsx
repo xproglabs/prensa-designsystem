@@ -39,3 +39,27 @@ export type ContainerProps = {
   radius?: RadiusTokens;
   width?: string;
 }
+
+export type ButtonFileProps = {
+  children?: ReactNode;
+}
+
+export type ButtonWrapProps = {
+  children?: ReactNode;
+}
+
+export type SubjectProps = {
+  children?: ReactNode;
+}
+
+export type SubtitleProps = {
+  children?: ReactNode;
+}
+
+export type TextWrapProps = {
+  children?: ReactNode;
+}
+
+export type TitleProps = {
+  children?: ReactNode;
+}
