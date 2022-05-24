@@ -1,3 +1,15 @@
+## [1.9.75](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.74...v1.9.75) (2022-05-24)
+
+
+### Bug Fixes
+
+* ajusta nomenclatura da cor específica ([798ee22](https://github.com/xproglabs/prensa-designsystem/commit/798ee22c47cd33b8a0f711a0388637c4cfbe72ef))
+
+
+### Features
+
+* adiciona props para mudar cor individual do ícone ([50888eb](https://github.com/xproglabs/prensa-designsystem/commit/50888ebbb39b59d19d1d6e5ec426b29f125e80d9))
+
 ## [1.9.74](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.73...v1.9.74) (2022-05-23)
 
 
