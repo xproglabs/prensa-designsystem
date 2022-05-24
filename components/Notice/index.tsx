@@ -4,7 +4,6 @@ import {
   ButtonPdf,
   ButtonWrap,
   Container,
-  ContentWrap,
   Subject,
   Subtitle,
   TextWrap,
