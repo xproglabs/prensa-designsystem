@@ -1,3 +1,23 @@
+## [1.9.76](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.75...v1.9.76) (2022-05-24)
+
+
+### Bug Fixes
+
+* code review ([22dccf7](https://github.com/xproglabs/prensa-designsystem/commit/22dccf739e1a251ceffb6d1996d0b0559f9c9d2c))
+* lint ([50683fc](https://github.com/xproglabs/prensa-designsystem/commit/50683fce9efc4d788f0f99c276f96c93ada4c1a5))
+* lint [2] ([f8b57f4](https://github.com/xproglabs/prensa-designsystem/commit/f8b57f403655b6fef500e8595e508d8789e239df))
+* lint [3] ([e0ba726](https://github.com/xproglabs/prensa-designsystem/commit/e0ba726b23e80f91f673a658630c058200063588))
+* post build ([1b600f5](https://github.com/xproglabs/prensa-designsystem/commit/1b600f5e5447ffbb67a79b84ac535c87d20ca78e))
+* post build [2] ([be34d46](https://github.com/xproglabs/prensa-designsystem/commit/be34d46f4c369f9e104b65f9860570454bfb32fd))
+* reinsere props específicas nos estilos dos componentes ([9906b90](https://github.com/xproglabs/prensa-designsystem/commit/9906b905211d83bc54862a390bb4586de181fd97))
+* remove estilo antigo das props ([c7ee47c](https://github.com/xproglabs/prensa-designsystem/commit/c7ee47c0293e39dce0efe1d4b2416eabf34027c4))
+
+
+### Features
+
+* Criar componente de Edital (Notice) ([ff812f2](https://github.com/xproglabs/prensa-designsystem/commit/ff812f21c5f9706d6aeedf317bf1dc0dbd27d32b))
+* testando nova estrutura do componente ([1ee3317](https://github.com/xproglabs/prensa-designsystem/commit/1ee3317e3431eba0431afb07e4ec4d20f8b432b4))
+
 ## [1.9.75](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.74...v1.9.75) (2022-05-24)
 
 
