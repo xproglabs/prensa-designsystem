@@ -115,7 +115,7 @@ const ArticleCorreioPopular = () => {
           whatsappUrl: 'https://www.facebook.com/',
           byline: {
             enabled: true,
-            facebookProps: { mr: 1, facebookColor: 'secondary1' },
+            facebookProps: { mr: 1, color: 'secondary3' },
             twitterProps: { mr: 1 },
           },
         }}

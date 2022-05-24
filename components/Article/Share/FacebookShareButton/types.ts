@@ -1,7 +1,7 @@
 import { ColorTokens } from '@prensa_tokens'
 
 export type FacebookProps = {
-  facebookColor?: ColorTokens | string;
+  color?: ColorTokens | string;
   mt?: number | string;
   mr?: number | string;
   mb?: number | string;
