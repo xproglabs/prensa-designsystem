@@ -113,7 +113,11 @@ const ArticleCorreioPopular = () => {
           facebookUrl: 'https://www.facebook.com/',
           twitterUrl: 'https://www.facebook.com/',
           whatsappUrl: 'https://www.facebook.com/',
-          byline: { enabled: true }
+          byline: {
+            enabled: true,
+            facebookProps: { mr: 1, facebookColor: 'secondary1' },
+            twitterProps: { mr: 1 },
+          },
         }}
         subject={{
           bgColor: 'secondary2',

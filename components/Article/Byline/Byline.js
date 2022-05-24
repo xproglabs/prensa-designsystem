@@ -117,11 +117,7 @@ Byline.defaultProps = {
     value: 'Prensa Design System'
   },
   authors: {
-    items: [
-      // todo: default items should be an empty array []
-      { name: 'Autor Exemplo 1', path: '/autores/AutorExemplo' },
-      { name: 'Pessoa Teste 2', path: '/autores/TagExemplo' }
-    ]
+    items: []
   },
   content: {
     mb: [3, 3]

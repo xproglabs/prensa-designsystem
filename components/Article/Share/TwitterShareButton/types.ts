@@ -1,6 +1,7 @@
 import { ColorTokens } from '@prensa_tokens'
 
 export type TwitterProps = {
+  twitterColor?: ColorTokens | string;
   mt?: number | string;
   mr?: number | string;
   mb?: number | string;
