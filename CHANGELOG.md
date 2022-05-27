@@ -1,3 +1,21 @@
+## [1.9.78](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.77...v1.9.78) (2022-05-27)
+
+
+### Bug Fixes
+
+* ordenamento de imports (3) ([1fd7caa](https://github.com/xproglabs/prensa-designsystem/commit/1fd7caa38be29e45ad2e37877fc7e0327453aa0f))
+* ordenamento de imports (lint) ([470dd6b](https://github.com/xproglabs/prensa-designsystem/commit/470dd6b53568a02f2c73074626578f28a5a11a4e))
+* orderamento de imports (2) ([895e504](https://github.com/xproglabs/prensa-designsystem/commit/895e5045bd0dbdce1ee05ee769161fd246bd683f))
+
+
+### Features
+
+* atualiza tokens de cor da Folha da Região ([d45cb49](https://github.com/xproglabs/prensa-designsystem/commit/d45cb4931fdc171f28a814b9aff7c0f4402e795f))
+* atualiza tokens de cores de acordo com o styleguide ([6c2d1b1](https://github.com/xproglabs/prensa-designsystem/commit/6c2d1b1e02af237a2516eb48a84f6b03eb69dcd2))
+* configura estilo do Article da Folha da Região ([866e83e](https://github.com/xproglabs/prensa-designsystem/commit/866e83e8c969d1a4ce70db31155c03d21705753c))
+* cria Article exemplo da Folha da Região; insere novas fonts ([fbdd4b1](https://github.com/xproglabs/prensa-designsystem/commit/fbdd4b108cf3b4f8e195498d3097e5d93892ad0f))
+* insere estilo itálico no subtitle ([e71d6f1](https://github.com/xproglabs/prensa-designsystem/commit/e71d6f175f32415c492dfe1b1facd6dd3483e59b))
+
 ## [1.9.77](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.76...v1.9.77) (2022-05-27)
 
 
