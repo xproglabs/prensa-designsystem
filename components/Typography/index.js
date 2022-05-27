@@ -252,7 +252,7 @@ Typography.propTypes = {
    * Permite a escolha da tag de texto a ser utilizada
    */
   element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label', 'cite', 'a']),
-    /**
+  /**
    * Altera o valor da propriedade font-style no css
    */
   fontStyle: PropTypes.string,
