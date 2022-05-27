@@ -1,3 +1,15 @@
+## [1.9.77](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.76...v1.9.77) (2022-05-27)
+
+
+### Bug Fixes
+
+* espaço indentação ([7159f17](https://github.com/xproglabs/prensa-designsystem/commit/7159f17dbafa571fff862e5edec1c82fef7a31fd))
+
+
+### Features
+
+* adiciona props fontStyle no Typography e Subtitle ([125cc5a](https://github.com/xproglabs/prensa-designsystem/commit/125cc5a4211d0f7e1175c2afb8e368a3d2fa7290))
+
 ## [1.9.76](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.75...v1.9.76) (2022-05-24)
 
 
