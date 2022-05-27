@@ -22,6 +22,7 @@ const Typography = ({
   color,
   element,
   fontSize,
+  fontStyle,
   fontFamily,
   fontWeight,
   href,
@@ -80,6 +81,7 @@ const Typography = ({
     ...xs,
     theme,
     $fontWeight: xs.fontWeight ? xs.fontWeight : fontWeight,
+    $fontStyle: xs.fontStyle ? xs.fontStyle : fontStyle,
     $fontSize: xs.fontSize ? xs.fontSize : fontSize,
     $fontFamily: xs.fontFamily ? xs.fontFamily : fontFamily,
     $lineHeight: xs.lineHeight ? xs.lineHeight : lineHeight,
@@ -93,6 +95,7 @@ const Typography = ({
     ...sm,
     theme,
     $fontWeight: sm.fontWeight ? sm.fontWeight : fontWeight,
+    $fontStyle: sm.fontStyle ? sm.fontStyle : fontStyle,
     $fontSize: sm.fontSize ? sm.fontSize : fontSize,
     $fontFamily: sm.fontFamily ? sm.fontFamily : fontFamily,
     $lineHeight: sm.lineHeight ? sm.lineHeight : lineHeight,
@@ -106,6 +109,7 @@ const Typography = ({
     ...md,
     theme,
     $fontWeight: md.fontWeight ? md.fontWeight : fontWeight,
+    $fontStyle: md.fontStyle ? md.fontStyle : fontStyle,
     $fontSize: md.fontSize ? md.fontSize : fontSize,
     $fontFamily: md.fontFamily ? md.fontFamily : fontFamily,
     $lineHeight: md.lineHeight ? md.lineHeight : lineHeight,
@@ -119,6 +123,7 @@ const Typography = ({
     ...lg,
     theme,
     $fontWeight: lg.fontWeight ? lg.fontWeight : fontWeight,
+    $fontStyle: lg.fontStyle ? lg.fontStyle : fontStyle,
     $fontSize: lg.fontSize ? lg.fontSize : fontSize,
     $fontFamily: lg.fontFamily ? lg.fontFamily : fontFamily,
     $lineHeight: lg.lineHeight ? lg.lineHeight : lineHeight,
@@ -132,6 +137,7 @@ const Typography = ({
     ...xl,
     theme,
     $fontWeight: xl.fontWeight ? xl.fontWeight : fontWeight,
+    $fontStyle: xl.fontStyle ? xl.fontStyle : fontStyle,
     $fontSize: xl.fontSize ? xl.fontSize : fontSize,
     $fontFamily: xl.fontFamily ? xl.fontFamily : fontFamily,
     $lineHeight: xl.lineHeight ? xl.lineHeight : lineHeight,
@@ -144,6 +150,7 @@ const Typography = ({
 
   const props = {
     $fontWeight: fontWeight,
+    $fontStyle: fontStyle,
     $fontSize: fontSize,
     $fontFamily: fontFamily,
     $letterSpacing: letterSpacing,
@@ -245,6 +252,10 @@ Typography.propTypes = {
    * Permite a escolha da tag de texto a ser utilizada
    */
   element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'label', 'cite', 'a']),
+  /**
+   * Altera o valor da propriedade font-style no css
+   */
+  fontStyle: PropTypes.string,
   /**
    * Altera o valor da propriedade font-size no css
    */
