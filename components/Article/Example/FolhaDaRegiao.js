@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { theme as folhadaregiao } from '../../../styles/demo/folhadaregiao'
 
+import { theme as folhadaregiao } from '../../../styles/demo/folhadaregiao'
 import AdPlaceholder from '../../AdBlock/placeholder'
 import Block from '../../Block'
 import Article from '../Article'
