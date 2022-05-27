@@ -4,9 +4,12 @@ export const theme = {
   ...default_theme,
   colors: {
     ...default_theme.colors,
-    primary1: '#0062A7',
-    primary2: '#4B8EBD',
-    primary3: '#0D4166',
+    primary_dark: '#0D4166',
+    primary_main: '#0062A7',
+    primary_light: '#4B8EBD',
+    secondary_dark: '#2A4F6B',
+    secondary_main: '#415F8C',
+    secondary_light: '#A1BCE5',
     mediaColor1: '#3b5998',
     mediaColor2: '#00acee',
     mediaColor3: '#128c7e',
@@ -21,6 +24,12 @@ export const theme = {
     neutral9: '#EAEAEA',
     neutral10: '#F2F2F2',
     neutral11: '#FAFAFA',
+    success_dark: '#3C8D40',
+    success_main: '#50AE55',
+    success_light: '83C686',
+    error_dark: '#D13135',
+    error_main: '#F1453D',
+    error_light: '#E37475',
     white: '#FFFFFF'
   },
   fonts: {
