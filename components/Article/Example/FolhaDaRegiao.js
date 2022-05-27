@@ -155,7 +155,7 @@ const ArticleFolhaDaRegiao = () => {
           }}
           subtitle={{
             color: isFeatured ? 'white' : 'neutral2',
-            // fontStyle: 'italic'
+            fontStyle: 'italic',
             fontSize: ['16px', '20px'],
             lineHeight: ['140%', '140%'],
             mb: ['4', '4'],
