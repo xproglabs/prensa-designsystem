@@ -5,9 +5,15 @@ type ColorTokens =
   'primary1' |
   'primary2' |
   'primary3' |
+  'primary_main' |
+  'primary_dark' |
+  'primary_light' |
   'secondary1' |
   'secondary2' |
   'secondary3' |
+  'secondary_main' |
+  'secondary_dark' |
+  'secondary_light' |
   'black' |
   'neutral1' |
   'neutral2' |

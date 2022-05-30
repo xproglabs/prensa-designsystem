@@ -30,6 +30,7 @@ export const theme = {
     error_dark: '#D13135',
     error_main: '#F1453D',
     error_light: '#E37475',
+    black: '#000000',
     white: '#FFFFFF'
   },
   fonts: {
