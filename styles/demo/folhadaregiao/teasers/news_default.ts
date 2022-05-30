@@ -7,8 +7,8 @@ export const TEASER_DEFAULT = CreateTeaser({
   box: {
     aligny: ['middle', 'middle'],
     background: 'white',
-    pt: [9, 5],
-    pb: [9, 5],
+    pt: [9, 12],
+    pb: [9, 12],
     mb: [2, '0px'],
     height: ['auto', 'calc(256px - 80px)']
   },

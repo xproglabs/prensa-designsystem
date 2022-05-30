@@ -30,7 +30,7 @@ export const TEASER_RIGHT_RIGHT = CreateTeaser({
     enabled: true,
     ...parseFonts(
       tokensFonts.NEWS_TITLE_8,
-      tokensFonts.NEWS_TITLE_5
+      tokensFonts.NEWS_TITLE_7
     )
   },
   related: {

@@ -25,7 +25,8 @@
         "updated": "2021-09-24 23:17:42"
       }
     ],
-    "type": "featured_top" 
+    "title": "BLOCO DESTAQUE TOPO (PADRÃO)",
+    "type": "featured_top"
   },
   "slot2": {
     "color": "",
@@ -80,18 +81,39 @@
         "updated": "2021-09-19 23:17:42"
       }
     ],
+    "list2": [
+      {
+        "contentId": "7.304",
+        "input-template": "br.com.atex.plugins.ads-blocks.it",
+        "template": "",
+        "title": "Placeholder",
+        "mobile": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "tablet": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        },
+        "desktop": {
+          "code": "",
+          "name": "",
+          "height": "",
+          "size": "",
+          "status": "true",
+          "template": ""
+        }
+      }
+    ],
     "title": "",
     "type": "featured_top"
-  },
-  "slot3": {
-    "color": "",
-    "icon": "",
-    "link": "",
-    "len1": 3,
-    "len2": 0,
-    "list1": [],
-    "list2": [],
-    "title": "",
-    "type": ""
   }
 }
