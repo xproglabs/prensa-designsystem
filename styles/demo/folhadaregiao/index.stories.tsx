@@ -7,6 +7,7 @@ import PageBlock from '../../../components/PageBlock'
 import TemplateContainer from '../../../components/Templates/TemplateContainer'
 import Typography from '../../../components/Typography'
 import FEATURED_TOP_BLOCK from './data/featured_top_block.json'
+import FEATURED_TOP_BLOCK_100 from './data/featured_top_block_100.json'
 
 import { preview_editable } from './editable'
 import { folhadaregiao_theme as theme } from './index'
@@ -59,6 +60,24 @@ export const FeaturedTopBlock = () => {
       mt={[2, 2]}>
       <PageBlock
         {...FEATURED_TOP_BLOCK}
+        amp={false}
+        domain={domain}
+        fallback_image_url={fallback_image_url}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
+  )
+}
+
+export const FeaturedTopBlock100 = () => {
+  return (
+    <TemplateContainer
+      background='neutral10'
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...FEATURED_TOP_BLOCK_100}
         amp={false}
         domain={domain}
         fallback_image_url={fallback_image_url}
