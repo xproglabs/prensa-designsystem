@@ -6,6 +6,7 @@ import Block from '../../../components/Block'
 import PageBlock from '../../../components/PageBlock'
 import TemplateContainer from '../../../components/Templates/TemplateContainer'
 import Typography from '../../../components/Typography'
+import FEATURED from './data/featured.json'
 import FEATURED_TOP from './data/featured_top.json'
 import FEATURED_TOP_100 from './data/featured_top_100.json'
 import FEATURED_TOP_IMAGE from './data/featured_top_image.json'
@@ -51,6 +52,24 @@ const slot_parser = (item, key) => {
       width='calc(100% - 32px)'>
       <Typography color='neutral8'>{item.title}</Typography>
     </Block>
+  )
+}
+
+export const Featured = () => {
+  return (
+    <TemplateContainer
+      background='neutral10'
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...FEATURED}
+        amp={false}
+        domain={domain}
+        fallback_image_url={fallback_image_url}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
   )
 }
 

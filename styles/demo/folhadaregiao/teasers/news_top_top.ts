@@ -6,28 +6,30 @@ import { SUBJECT_DEFAULT } from '../tokens/subjects'
 export const TEASER_TOP_TOP = CreateTeaser({
   box: {
     align: ['row-reverse', 'column'],
+    background: 'white',
   },
   box_wrap: {
     align: ['column', 'column'],
-    mr: [2, '0px'],
-    ml: ['0px', '0px'],
-    width: ['calc(100% - 96px)', '100%']
+    mb: [1, 2],
+    ml: [1, 2],
+    mr: [1, 2],
+    mt: [1, 2],
+    width: ['calc(100% - 96px)', 'calc(100% - 32px)']
   },
   title: {
     enabled: true,
     ...parseFonts(
       tokensFonts.NEWS_TITLE_8,
-      tokensFonts.NEWS_TITLE_7
+      tokensFonts.NEWS_TITLE_6
     )
   },
   image: {
     enabled: true,
     dimension: ['1x1', '2x1'],
-    height: ['80px', '139px'],
+    height: ['80px', '194px'],
     layout: ['responsive', 'responsive'],
-    mb: [2, 2],
-    width: ['80px', '278px'],
-    wrap_width: ['80px', '278px'],
+    width: ['80px', '100%'],
+    wrap_width: ['80px', '100%'],
   },
   related: {
     enabled: false

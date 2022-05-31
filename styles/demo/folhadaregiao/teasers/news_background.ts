@@ -6,7 +6,8 @@ import { SUBJECT_FILLED } from '../tokens/subjects'
 export const TEASER_BACKGROUND = CreateTeaser({
   box: {
     aligny: ['bottom', 'bottom'],
-    height: ['300px', '396px']
+    height: ['300px', '396px'],
+    mb: [2, '0px'],
   },
   box_wrap: {
     aligny: ['bottom', 'bottom'],

@@ -3,7 +3,7 @@ export const TEMPLATES_FEATURED_TOP_IMAGE = {
     layout: {
       0: ['news_background']
     },
-    min_height: ['auto', '350px'],
+    min_height: ['auto', '368px'],
     related: {
       enabled: false
     },
@@ -14,7 +14,7 @@ export const TEMPLATES_FEATURED_TOP_IMAGE = {
     layout: {
       0: ['news_background']
     },
-    min_height: ['auto', '350px'],
+    min_height: ['auto', '368px'],
     related: {
       enabled: false
     },
