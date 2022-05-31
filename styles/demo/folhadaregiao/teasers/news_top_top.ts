@@ -10,10 +10,10 @@ export const TEASER_TOP_TOP = CreateTeaser({
   },
   box_wrap: {
     align: ['column', 'column'],
-    mb: [1, 2],
+    mb: [2, 2],
     ml: [2, 2],
     mr: [2, 2],
-    mt: [1, 2],
+    mt: [2, 2],
     width: ['calc(100% - 32px)', 'calc(100% - 32px)'],
   },
   title: {

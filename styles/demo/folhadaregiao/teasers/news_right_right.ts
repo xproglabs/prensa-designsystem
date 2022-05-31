@@ -11,10 +11,10 @@ export const TEASER_RIGHT_RIGHT = CreateTeaser({
   box_wrap: {
     align: ['column', 'column'],
     alignx: ['left', 'left'],
-    mb: [1, 2],
+    mb: [2, 2],
     ml: [2, 2],
     mr: [2, 2],
-    mt: [1, 2],
+    mt: [2, 2],
     width: ['calc(100% - 112px)', 'calc(100% - 152px)']
   },
   image: {
