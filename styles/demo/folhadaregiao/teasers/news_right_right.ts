@@ -15,16 +15,16 @@ export const TEASER_RIGHT_RIGHT = CreateTeaser({
     ml: [2, 2],
     mr: [2, 2],
     mt: [2, 2],
-    width: ['calc(100% - 128px)', 'calc(100% - 152px)']
+    width: ['calc(100% - 136px)', 'calc(100% - 152px)']
   },
   image: {
     enabled: true,
     dimension: ['1x1', '1x1'],
-    height: ['96px', '120px'],
+    height: ['104px', '120px'],
     mb: '0px',
     mr: '0px',
-    width: ['96px', '120px'],
-    wrap_width: ['96px', '120px'],
+    width: ['104px', '120px'],
+    wrap_width: ['104px', '120px'],
   },
   title: {
     enabled: true,

@@ -15,17 +15,17 @@ export const TEASER_RIGHT_TOP = CreateTeaser({
     ml: [2, 2],
     mr: [2, 2],
     mt: [2, 2],
-    width: ['calc(100% - 128px)', 'calc(100% - 32px)']
+    width: ['calc(100% - 136px)', 'calc(100% - 32px)']
   },
   image: {
     enabled: true,
     dimension: ['1x1', '2x1'],
-    height: ['96px', '194px'],
+    height: ['104px', '194px'],
     layout: ['fixed', 'responsive'],
     mb: '0px',
     mr: '0px',
-    width: ['96px', '100%'],
-    wrap_width: ['96px', '100%'],
+    width: ['104px', '100%'],
+    wrap_width: ['104px', '100%'],
   },
   title: {
     enabled: true,
