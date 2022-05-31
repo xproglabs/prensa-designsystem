@@ -6,8 +6,10 @@ import Block from '../../../components/Block'
 import PageBlock from '../../../components/PageBlock'
 import TemplateContainer from '../../../components/Templates/TemplateContainer'
 import Typography from '../../../components/Typography'
-import FEATURED_TOP_BLOCK from './data/featured_top_block.json'
-import FEATURED_TOP_BLOCK_100 from './data/featured_top_block_100.json'
+import FEATURED_TOP from './data/featured_top.json'
+import FEATURED_TOP_100 from './data/featured_top_100.json'
+import FEATURED_TOP_IMAGE from './data/featured_top_image.json'
+import FEATURED_TOP_IMAGE_100 from './data/featured_top_image_100.json'
 
 import { preview_editable } from './editable'
 import { folhadaregiao_theme as theme } from './index'
@@ -52,14 +54,22 @@ const slot_parser = (item, key) => {
   )
 }
 
-export const FeaturedTopBlock = () => {
+export const FeaturedTop = () => {
   return (
     <TemplateContainer
       background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
       <PageBlock
-        {...FEATURED_TOP_BLOCK}
+        {...FEATURED_TOP}
+        amp={false}
+        domain={domain}
+        fallback_image_url={fallback_image_url}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+      <PageBlock
+        {...FEATURED_TOP_100}
         amp={false}
         domain={domain}
         fallback_image_url={fallback_image_url}
@@ -70,14 +80,22 @@ export const FeaturedTopBlock = () => {
   )
 }
 
-export const FeaturedTopBlock100 = () => {
+export const FeaturedTopImage = () => {
   return (
     <TemplateContainer
       background='neutral10'
       mb={[2, 2]}
       mt={[2, 2]}>
       <PageBlock
-        {...FEATURED_TOP_BLOCK_100}
+        {...FEATURED_TOP_IMAGE}
+        amp={false}
+        domain={domain}
+        fallback_image_url={fallback_image_url}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+      <PageBlock
+        {...FEATURED_TOP_IMAGE_100}
         amp={false}
         domain={domain}
         fallback_image_url={fallback_image_url}

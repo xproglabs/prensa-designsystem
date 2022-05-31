@@ -1,7 +1,7 @@
-export const TEMPLATES_FEATURED_TOP = {
+export const TEMPLATES_FEATURED_TOP_IMAGE = {
   slot100: {
     layout: {
-      0: ['news_default']
+      0: ['news_background']
     },
     min_height: ['auto', '350px'],
     related: {
@@ -12,13 +12,13 @@ export const TEMPLATES_FEATURED_TOP = {
   },
   slot70: {
     layout: {
-      0: ['news_default'],
+      0: ['news_background']
     },
     min_height: ['auto', '350px'],
     related: {
       enabled: false
     },
-    spaces: [0, 1, 2, 1],
+    spaces: [0, 1, 2, 3],
     space_bottom: ['0px', '0px']
   },
   slot30: {
@@ -35,5 +35,5 @@ export const TEMPLATES_FEATURED_TOP = {
     spaces: [0, 0, 0, 0],
     space_bottom: [1, 2],
     space_bottom_column: [2, 1]
-  }
+  },
 }
