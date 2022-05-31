@@ -7,16 +7,16 @@ export const TEASER_DEFAULT = CreateTeaser({
   box: {
     aligny: ['middle', 'middle'],
     background: 'white',
-    pt: [9, 12],
-    pb: [9, 12],
+    pt: [5, '0px'],
+    pb: [5, '0px'],
     mb: [2, '0px'],
-    height: ['auto', 'calc(256px - 80px)']
+    height: ['auto', '392px']
   },
   box_wrap: {
     mb: ['0px', '0px'],
-    mr: [3, 3],
-    ml: [3, 3],
-    width: ['calc(100% - 48px)', 'calc(100% - 48px)']
+    mr: [2, 3],
+    ml: [2, 3],
+    width: ['calc(100% - 32px)', 'calc(100% - 48px)']
   },
   date_time: {
     enabled: true,
