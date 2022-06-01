@@ -3,7 +3,7 @@ import { CreateTeaser } from 'prensa'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_FILLED } from '../tokens/subjects'
 
-export const TEASER_BACKGROUND = CreateTeaser({
+export const TEASER_NEWS_BACKGROUND = CreateTeaser({
   box: {
     aligny: ['bottom', 'bottom'],
     height: ['300px', '396px'],

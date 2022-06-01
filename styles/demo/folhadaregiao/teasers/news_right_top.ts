@@ -3,7 +3,7 @@ import { CreateTeaser } from 'prensa'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT } from '../tokens/subjects'
 
-export const TEASER_RIGHT_TOP = CreateTeaser({
+export const TEASER_NEWS_RIGHT_TOP = CreateTeaser({
   box: {
     align: ['row-reverse', 'column'],
     background: 'white',
