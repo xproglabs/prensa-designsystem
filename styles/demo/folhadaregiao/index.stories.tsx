@@ -12,6 +12,7 @@ import FEATURED_TOP from './data/featured_top.json'
 import FEATURED_TOP_100 from './data/featured_top_100.json'
 import FEATURED_TOP_IMAGE from './data/featured_top_image.json'
 import FEATURED_TOP_IMAGE_100 from './data/featured_top_image_100.json'
+import MOST_READ from './data/most_read.json'
 
 import { preview_editable } from './editable'
 import { folhadaregiao_theme as theme } from './index'
@@ -135,6 +136,24 @@ export const FeaturedTopImage = () => {
       />
       <PageBlock
         {...FEATURED_TOP_IMAGE_100}
+        amp={false}
+        domain={domain}
+        fallback_image_url={fallback_image_url}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
+  )
+}
+
+export const MostRead = () => {
+  return (
+    <TemplateContainer
+      background='neutral10'
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...MOST_READ}
         amp={false}
         domain={domain}
         fallback_image_url={fallback_image_url}
