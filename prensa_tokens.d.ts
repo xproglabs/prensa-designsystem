@@ -38,7 +38,8 @@ type RadiusTokens =
   'unset' | 'default' | 'alternative' | 'rounded' | 'circle'
 
 type TeaserCartridges =
-  'default'
+  'default' | 'news_background' | 'news_most_read' | 'news_right_left' | 'news_right_right' | 'news_right_top' | 'news_top_top'
+
 
 type TemplateCartridges =
   'default'
