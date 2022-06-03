@@ -1,3 +1,37 @@
+## [1.9.79](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.78...v1.9.79) (2022-06-03)
+
+
+### Bug Fixes
+
+* ajuste de fonts ([4a88d7d](https://github.com/xproglabs/prensa-designsystem/commit/4a88d7d4fa7357ace0d244f2cf8f7c6f601b95d1))
+* ajuste de tamanho da imagem no mobile ([d8e8820](https://github.com/xproglabs/prensa-designsystem/commit/d8e882039d74f218ed714896c8dba79b21e266a0))
+* ajuste de tamanho da imagem no mobile (2) ([be732db](https://github.com/xproglabs/prensa-designsystem/commit/be732db3270be73ddd277471a1c95d40fe20d0a3))
+* ajustes de estilo no teaser news_top_top ([2a1acd1](https://github.com/xproglabs/prensa-designsystem/commit/2a1acd1e9bbbe4293bf1569cf40725482c9fb8df))
+* espaçamentos box_wrap dos teasers ([3a9a0f9](https://github.com/xproglabs/prensa-designsystem/commit/3a9a0f94830bcd9e20b8b925a96ef413aeb65942))
+* remove teasers do suggestions ([b260489](https://github.com/xproglabs/prensa-designsystem/commit/b260489e4aca62f6c9d0432ebb9f5881748d30c3))
+* renomeia teasers ([ed08e3a](https://github.com/xproglabs/prensa-designsystem/commit/ed08e3a58b46be88fdb16cef09347b71e43680fd))
+
+
+### Features
+
+* adiciona cores ([a22cfeb](https://github.com/xproglabs/prensa-designsystem/commit/a22cfebb49c04f8dbf4a1111425bb925d4a7c132))
+* adiciona estilos no TeaserCartridges ([9caf581](https://github.com/xproglabs/prensa-designsystem/commit/9caf581beb1ab6d6ffbdbb6bde6d1694c96cd6c5))
+* adiciona fontWeight como props do more_button ([4d6aac2](https://github.com/xproglabs/prensa-designsystem/commit/4d6aac29ee222a6a90516f1fdde0c8d6584f7f0e))
+* atualiza cores dos tokens ([a46135b](https://github.com/xproglabs/prensa-designsystem/commit/a46135bea73ec7f8f93fca72b303d4ac1f7cea29))
+* cria bloco de Mais lidas ([c3eddc6](https://github.com/xproglabs/prensa-designsystem/commit/c3eddc6be20fa6366dc867d7450222849727f99c))
+* cria bloco Destaque ([42a3135](https://github.com/xproglabs/prensa-designsystem/commit/42a3135c7696f8358e71aaf77b02319417c63f4b))
+* cria bloco Destaque Topo (imagem) e ajusta estilo dos teasers ([2688e8d](https://github.com/xproglabs/prensa-designsystem/commit/2688e8d99369aa6df59ab81b8c0a0a4ffbc60e6b))
+* cria bloco Destaque Topo (padrão) ([5d1599f](https://github.com/xproglabs/prensa-designsystem/commit/5d1599fb5bc1052a2c66472e75d95d5f522b9ef5))
+* cria bloco Editorial ([96504b2](https://github.com/xproglabs/prensa-designsystem/commit/96504b24fb465b0f0cd706273199b58b6dce6a06))
+* cria index de teasers e estilos (default, right_right e top_top) ([7b3f0e7](https://github.com/xproglabs/prensa-designsystem/commit/7b3f0e760f3d3377bf0176a8dfa6905d893f20bf))
+* cria index.stories do projeto ([c09c43f](https://github.com/xproglabs/prensa-designsystem/commit/c09c43f02c6c75e90f826f36935bbbdeb251b0b2))
+* cria theme da folhadaregiao ([d3a5d3f](https://github.com/xproglabs/prensa-designsystem/commit/d3a5d3f9d9df1aaa0ae15295f42274c90c01a055))
+* cria variação 100 para o template featured_top ([929e645](https://github.com/xproglabs/prensa-designsystem/commit/929e6450caac6d9981e052e253bc42a350eaf25e))
+* estilizando bloco Destaque Topo ([642c8ed](https://github.com/xproglabs/prensa-designsystem/commit/642c8ed9ca4dd296066f87e134c485bbee6b15b8))
+* insere arquivo de fonts e subjects ([13ba568](https://github.com/xproglabs/prensa-designsystem/commit/13ba5685f048db3ccee8f2ffc5ab12a0ba1fca92))
+* insere arquivo de section_title ([bf24f85](https://github.com/xproglabs/prensa-designsystem/commit/bf24f857bba849c8a58e1d3b0aaaf3e082068bd9))
+* insere configurações do image ([5b079b4](https://github.com/xproglabs/prensa-designsystem/commit/5b079b43f26d705777cf75bed068c09c2cfab13d))
+
 ## [1.9.78](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.77...v1.9.78) (2022-05-27)
 
 

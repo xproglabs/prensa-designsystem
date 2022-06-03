@@ -5,6 +5,7 @@ export interface MoreButtonLayoutProps {
   color?: string,
   border?: string,
   fontSize?: number,
+  fontWeight?: number,
   variant?: string,
   width?: string
 }
@@ -20,6 +21,7 @@ const MoreButton = ({
   color,
   border,
   fontSize,
+  fontWeight,
   more_link,
   more_title,
   variant,
@@ -36,6 +38,7 @@ const MoreButton = ({
         color={color}
         borderColor={border}
         fontSize={fontSize}
+        fontWeight={fontWeight}
         size={6}
         path={more_link}
         variant={variant}
@@ -50,6 +53,7 @@ MoreButton.defaultProps = {
   color: 'primary1',
   border: 'primary1',
   fontSize: 12,
+  fontWeight: 700,
   variant: 'outlined',
   width: '100%'
 }
