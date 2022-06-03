@@ -12,13 +12,18 @@ export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
       <PageTitle
-        fontSize='24px'
-        color='primary1'
-        mbTitle={3}
-        mb={5}
-        fontWeight={700}
-        transform='uppercase'>
-        TÍTULO EDITORIA TESTE
+        containerProps={{
+          mb: 5
+        }}
+        hasSelect={true}
+        titleProps={{
+          color: 'primary1',
+          fontSize: '24px',
+          fontWeight: 700,
+          mb: 2,
+          transform: 'uppercase'
+        }}
+        title='TESTE DE TÍTULO DE EDITORIA'>
       </PageTitle>
     </ThemeProvider>
   )
