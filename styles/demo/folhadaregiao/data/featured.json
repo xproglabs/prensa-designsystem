@@ -1,0 +1,61 @@
+{
+  "cid": "7.132",
+  "name": "Bloco 100",
+  "type": "template100",
+  "slot1": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "1.902257",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.902259.1654014706",
+          "sub": ""
+        },
+        "name": "Chega a 100 o número de mortes devido às chuvas em Pernambuco",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "SITUAÇÃO DE RISCO",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "1.902219",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.902220.1654004759",
+          "sub": ""
+        },
+        "name": "Mega-Sena sorteia nesta terça-feira prêmio estimado em R$ 120 milhões",
+        "path": "/geral/mega-sena-sorteia-nesta-terca-feira-premio-estimado-em-r-120-milh-es-1.902219",
+        "subject": "MEGA-SENA",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      },
+      {
+        "cid": "1.902221",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.902224.1654005308",
+          "sub": ""
+        },
+        "name": "Desemprego cai para 10,5% em abril e atinge 11,3 milhões, diz IBGE",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "ECONOMIA",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-27 18:51:40"
+      }
+    ],
+    "title": "BLOCO DESTAQUE",
+    "type": "featured"
+  }
+}
