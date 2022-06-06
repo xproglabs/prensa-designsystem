@@ -1,3 +1,4 @@
+import { map } from 'lodash'
 import React from 'react'
 
 import {
@@ -12,9 +13,17 @@ const PageTitle = ({
   containerProps,
   titleProps,
   title,
-  hasSelect
+  hasSelect,
+  items,
+  item
 }: PageTitleProps) => {
-  
+  const SelectOption = ({ item }) => {
+    return (
+      <>
+        <option>{item}</option>
+      </>
+    )
+  }
   return (
     <Container {...containerProps}>
       {title &&
@@ -25,10 +34,10 @@ const PageTitle = ({
       {hasSelect &&
         <ContainerSelect>
           <ContentSelect>
-            <select name='' id=''>
-              <option>Item1</option>
-              <option>Item2</option>
-              <option>Item3</option>
+            <select>
+              {map(items, (item, key) => {
+                return <SelectOption item={item} key={key}  />
+              })}
             </select>
           </ContentSelect>   
         </ContainerSelect>  

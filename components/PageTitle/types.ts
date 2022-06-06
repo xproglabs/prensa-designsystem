@@ -19,6 +19,8 @@ export interface PageTitleProps {
   title?: string;
   titleProps?: TitleProps;
   transform?: string;
+  items?: any;
+  item?: any;
 }
 
 export type ContainerProps = {
