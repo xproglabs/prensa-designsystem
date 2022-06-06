@@ -1,12 +1,11 @@
 import React from 'react'
-
-import { PageTitleProps } from './types'
 import {
   Container,
   ContainerSelect,
   ContentSelect,
   Title
 } from './styled'
+import { PageTitleProps } from './types'
 
 const PageTitle = ({
   containerProps,

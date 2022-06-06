@@ -1,5 +1,5 @@
-import { ReactNode } from 'react'
 import { FontTokens, ColorTokens } from '@prensa_tokens'
+import { ReactNode } from 'react'
 
 export type SpacingType = number | string
 

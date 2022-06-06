@@ -1,7 +1,6 @@
-import React from 'react'
-
-import { theme } from 'storybook/theme'
 import { PageTitle } from 'prensa'
+import React from 'react'
+import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
 export default {
