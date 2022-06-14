@@ -14,8 +14,7 @@ const PageTitle = ({
   titleProps,
   title,
   hasSelect,
-  items,
-  item
+  items
 }: PageTitleProps) => {
   const SelectOption = ({ item }) => {
     return (
