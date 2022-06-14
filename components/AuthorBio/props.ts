@@ -14,7 +14,7 @@ export interface AuthorBioProps {
   bioProps?: BioProps;
   containerProps?: ContainerProps;
   email?: string;
-  emailProps?: string;
+  emailProps?: EmailProps;
   href?: string;
   imagePath: string;
   imageProps?: ImageProps;
@@ -31,7 +31,7 @@ export interface AuthorBioProps {
   twitterUrl: string;
 }
 
-export type BioProps = {
+export interface BioProps {
   children?: ReactNode;
   color?: ColorTokens;
   element?: string;
@@ -40,7 +40,7 @@ export type BioProps = {
   fontWeight?: number;
   mb?: SpacingType;
 }
-export type EmailProps = {
+export interface EmailProps {
   children?: ReactNode;
   color?: ColorTokens;
   element?: string;
@@ -49,7 +49,7 @@ export type EmailProps = {
   fontWeight?: number;
   mb?: SpacingType;
 }
-export type NameProps = {
+export interface NameProps {
   children?: ReactNode;
   color?: ColorTokens;
   element?: string;
@@ -58,7 +58,7 @@ export type NameProps = {
   fontWeight?: number;
   mb?: SpacingType;
 }
-export type PositionProps = {
+export interface PositionProps {
   children?: ReactNode;
   color?: ColorTokens;
   element?: string;
@@ -67,7 +67,7 @@ export type PositionProps = {
   fontWeight?: number;
   mb?: SpacingType;
 }
-export type TitleProps = {
+export interface TitleProps {
   children?: ReactNode;
   color?: ColorTokens;
   element?: string;
@@ -78,7 +78,7 @@ export type TitleProps = {
 }
 
 // Containers
-export type ContainerProps = {
+export interface ContainerProps {
   children?: ReactNode;
   bt?: SpacingType;
   br?: SpacingType;
@@ -103,28 +103,28 @@ export type ContainerProps = {
   radius?: RadiusTokens;
   width?: string;
 }
-export type ImageContainerProps = {
+export interface ImageContainerProps {
   children?: ReactNode;
   mb?: ResponsiveSpacingType;
   mr?: ResponsiveSpacingType;
 }
 
 // Wraps
-export type ContentWrapProps = {
+export interface ContentWrapProps {
   children?: ReactNode;
 }
-export type ImageProps = {
+export interface ImageProps {
   children?: ReactNode;  
   size?: Array<string>;
 }
-export type SocialMediasWrapProps = {
+export interface SocialMediasWrapProps {
   children?: ReactNode;
 }
-export type TextWrapProps = {
+export interface TextWrapProps {
   children?: ReactNode;
 }
 
-export type IconProps = {
+export interface IconProps {
   color?: ColorTokens;
   href: string;
 }
