@@ -8,6 +8,7 @@ import { IcBioInstagram } from './IcBioInstagram'
 import { IcBioLinkedin } from './IcBioLinkedin'
 import { IcBioTwitter } from './IcBioTwitter'
 import { IcEmail } from './IcEmail'
+import { AuthorBioProps } from './props'
 import {
   Bio,
   Container,
@@ -21,7 +22,6 @@ import {
   SocialMediasWrap,
   Title,
 } from './styled'
-import { AuthorBioProps } from './types'
 
 const AuthorBio = ({
   amp,
