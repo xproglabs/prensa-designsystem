@@ -14,7 +14,7 @@ export interface AuthorBioProps {
   bioProps?: BioProps;
   containerProps?: ContainerProps;
   email?: string;
-  emailProps?: string;
+  emailProps?: EmailProps;
   href?: string;
   imagePath: string;
   imageProps?: ImageProps;
