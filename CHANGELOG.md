@@ -1,3 +1,20 @@
+## [1.9.80](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.79...v1.9.80) (2022-06-15)
+
+
+### Bug Fixes
+
+* lint ([724282b](https://github.com/xproglabs/prensa-designsystem/commit/724282b021e04f374b6d15861acb472173ec7de4))
+* ordem de linhas de import ([13c8711](https://github.com/xproglabs/prensa-designsystem/commit/13c87113cbd59850dcd35f0c2e9ca8408be89db7))
+* remove item sem uso ([ec75254](https://github.com/xproglabs/prensa-designsystem/commit/ec75254beb919d0ee09827bcdf424df098dfd50b))
+* remove margin bottom do container de Tags ([9298c49](https://github.com/xproglabs/prensa-designsystem/commit/9298c493e7f334c51589e96d3c028370498ad08b))
+
+
+### Features
+
+* cria componente PageTitle ([e340db3](https://github.com/xproglabs/prensa-designsystem/commit/e340db33c3a9a7af9557d46b8da0ef15bdb0ff6b))
+* insere map e novas types ([6513f77](https://github.com/xproglabs/prensa-designsystem/commit/6513f778e44b72c52b7a61dde5c54b82e755947f))
+* move estilo dos blocks para o styled e cria novos types. ([efa91f7](https://github.com/xproglabs/prensa-designsystem/commit/efa91f7e7eea8e9a3700fb897e96f3b7d8d091d9))
+
 ## [1.9.79](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.78...v1.9.79) (2022-06-03)
 
 
