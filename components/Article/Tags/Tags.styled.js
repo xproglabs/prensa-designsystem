@@ -7,7 +7,6 @@ export const Container = ({ children, maxWidth }) => (
   <Block 
     align='row'
     custom='flex-wrap: wrap'
-    mb={5}
     maxWidth={maxWidth}
     width='100%'
   >
