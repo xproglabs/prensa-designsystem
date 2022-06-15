@@ -9,7 +9,7 @@ import {
   SubtitleProps,
   TextWrapProps,
   TitleProps
-} from './types'
+} from './props'
 
 export const ButtonFile = ({ children, ...otherProps  }: ButtonFileProps) => (
   <Button

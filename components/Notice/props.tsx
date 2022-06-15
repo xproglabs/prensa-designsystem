@@ -4,19 +4,19 @@ import { ReactNode } from 'react'
 export type SpacingType = number | string
 export type ResponsiveSpacingType = Array<string | number>
 
-export type NoticeProps = {
-  buttonProps?: string;
+export interface NoticeProps {
+  buttonProps?: any;
   containerProps?: ContainerProps;
   children?: ReactNode;
   subject?: string;
-  subjectProps?: string;
+  subjectProps?: any;
   subtitle?: string;
-  subtitleProps?: string;
+  subtitleProps?: any;
   title?: string;
-  titleProps?: string;
+  titleProps?: any;
 }
 
-export type ContainerProps = {
+export interface ContainerProps {
   b?: SpacingType;
   bt?: SpacingType;
   br?: SpacingType;
@@ -40,26 +40,26 @@ export type ContainerProps = {
   width?: string;
 }
 
-export type ButtonFileProps = {
+export interface ButtonFileProps {
   children?: ReactNode;
 }
 
-export type ButtonWrapProps = {
+export interface ButtonWrapProps {
   children?: ReactNode;
 }
 
-export type SubjectProps = {
+export interface SubjectProps {
   children?: ReactNode;
 }
 
-export type SubtitleProps = {
+export interface SubtitleProps {
   children?: ReactNode;
 }
 
-export type TextWrapProps = {
+export interface TextWrapProps {
   children?: ReactNode;
 }
 
-export type TitleProps = {
+export interface TitleProps {
   children?: ReactNode;
 }

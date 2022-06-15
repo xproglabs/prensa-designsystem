@@ -1,7 +1,7 @@
 import { Icon, Link } from 'prensa'
 import React from 'react'
 
-import { IconProps } from './types'
+import { IconProps } from './props'
 
 const IcBioFacebook = ({ color, href }: IconProps) => {
   return (

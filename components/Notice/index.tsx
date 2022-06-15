@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { NoticeProps } from './props'
 import {
   ButtonFile,
   ButtonWrap,
@@ -9,7 +10,6 @@ import {
   TextWrap,
   Title
 } from './styled'
-import { NoticeProps } from './types'
 
 const Notice = ({
   buttonProps,
