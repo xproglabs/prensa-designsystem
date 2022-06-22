@@ -2,83 +2,61 @@ import React from 'react'
 
 import Block from '../NewBlock/index.tsx'
 
-export const ContainerCopyright = ({ bgColor, children, pb }) =>
+export const ContainerCopyright = ({ bgColor, children, pb }) => (
   <Block
-    align='column'
-    aligny='middle'
+    align={['column', 'row']}
+    alignx={['left', 'center']}
+    aligny={['middle', 'middle']}
     bgColor={bgColor}
-    pb={pb[0]}
-    pt={5}
+    pb={pb}
+    pt={[5, 3]}
     px={2}
     width='calc(100% - 32px)'
-    lg={{
-      align: 'row',
-      alignx: 'center',
-      pb: pb[1],
-      pt: 3
-    }}
   >
     {children}
   </Block>
+)
 
 ContainerCopyright.defaultProps = {
   bgColor: 'neutral9',
   pb: [3, 3]
 }
 
-export const ContainerCopyrightBox = ({ children }) => 
+export const ContainerCopyrightBox = ({ children }) => (
   <Block 
-    align='column'
-    alignx='left'
-    aligny='top'
-    custom='max-width: 1280px'
+    align={['column', 'row']}
+    alignx={['left', 'between']}
+    aligny={['top', 'top']}
+    custom='max-width: 1280px;'
     width='100%'
-    lg={{
-      align: 'row',
-      alignx: 'between'
-    }}
   >
     {children}
   </Block>
+)
 
-export const ContainerCopyrightItems = ({ children }) =>
-  <Block
-    alignx='center'
-    mb={3}
-    lg={{ mb: '0px' }}
-  >
+export const ContainerCopyrightItems = ({ children }) => (
+  <Block alignx='center' mb={[3, 0]}>
     {children}
   </Block>
+)
 
-export const ContainerCompanies = ({ children }) =>
-  <Block
-    align='column'
-    lg={{ align: 'row' }}
-  >
+export const ContainerCompanies = ({ children }) => (
+  <Block align={['column', 'row']}>
     {children}
   </Block>  
+)
 
-export const ContainerLogo = ({ children }) =>
-  <Block
-    align='column'
-    mb={2}
-    lg={{
-      mb: '0px',
-      mr: 5
-    }}
-  >
+export const ContainerLogo = ({ children }) => (
+  <Block align='column' mb={[2, 0]} mr={[0, 5]}>
     {children}
   </Block>
+)
 
-export const ContainerLogoXprog = ({ children }) =>
-  <Block
-    align='column'
-    lg={{
-      mr: '0px'
-    }}
-  >
+export const ContainerLogoXprog = ({ children }) => (
+  <Block align='column'>
     {children}
   </Block>
+)
 
 
 
