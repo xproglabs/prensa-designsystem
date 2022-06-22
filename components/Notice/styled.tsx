@@ -1,6 +1,7 @@
-import { Block, Button, Typography } from 'prensa'
+import { Button, Typography } from 'prensa'
 import React from 'react'
 
+import Block from '../NewBlock'
 import {
   ButtonWrapProps,
   ButtonFileProps,

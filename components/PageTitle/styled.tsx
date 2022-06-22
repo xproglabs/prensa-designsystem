@@ -1,6 +1,7 @@
-import { Block, Typography } from 'prensa'
+import { Typography } from 'prensa'
 import React from 'react'
 
+import Block from '../NewBlock'
 import {
   ContainerProps,
   ContainerSelectProps,

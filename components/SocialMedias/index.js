@@ -2,7 +2,7 @@ import { map } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Block from '../Block'
+import Block from '../NewBlock/index.tsx'
 
 const SocialMedias = props => {
   const { content } = props

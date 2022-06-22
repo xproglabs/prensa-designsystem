@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Block from '../Block'
 import Button from '../Button'
+import Block from '../NewBlock'
 import Typography from '../Typography'
 import {
   BUTTON_GO_BACK,
