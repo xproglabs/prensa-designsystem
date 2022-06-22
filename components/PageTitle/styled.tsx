@@ -35,8 +35,7 @@ export const ContainerSelect = ({ children }: ContainerSelectProps) => (
 export const ContentSelect = ({ children }: ContentSelectProps) => (
   <Block
     custom='select { border-color: #D7D7D7; width: 100%; height: 40px; }'
-    width='100%'
-    lg={{ width: '396px' }}
+    width={['100%', '396px']}
   >
     {children}
   </Block>
@@ -44,7 +43,7 @@ export const ContentSelect = ({ children }: ContentSelectProps) => (
 
 export const Title = ({ children, ...otherProps }: TitleProps) => (
   <Typography
-    custom='max-width: 1280px'
+    custom='max-width: 1280px;'
     width='100%'
     {...otherProps}
   >
