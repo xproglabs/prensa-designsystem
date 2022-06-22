@@ -1,3 +1,284 @@
+## [1.9.80](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.79...v1.9.80) (2022-06-15)
+
+
+### Bug Fixes
+
+* lint ([724282b](https://github.com/xproglabs/prensa-designsystem/commit/724282b021e04f374b6d15861acb472173ec7de4))
+* ordem de linhas de import ([13c8711](https://github.com/xproglabs/prensa-designsystem/commit/13c87113cbd59850dcd35f0c2e9ca8408be89db7))
+* remove item sem uso ([ec75254](https://github.com/xproglabs/prensa-designsystem/commit/ec75254beb919d0ee09827bcdf424df098dfd50b))
+* remove margin bottom do container de Tags ([9298c49](https://github.com/xproglabs/prensa-designsystem/commit/9298c493e7f334c51589e96d3c028370498ad08b))
+
+
+### Features
+
+* cria componente PageTitle ([e340db3](https://github.com/xproglabs/prensa-designsystem/commit/e340db33c3a9a7af9557d46b8da0ef15bdb0ff6b))
+* insere map e novas types ([6513f77](https://github.com/xproglabs/prensa-designsystem/commit/6513f778e44b72c52b7a61dde5c54b82e755947f))
+* move estilo dos blocks para o styled e cria novos types. ([efa91f7](https://github.com/xproglabs/prensa-designsystem/commit/efa91f7e7eea8e9a3700fb897e96f3b7d8d091d9))
+
+## [1.9.79](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.78...v1.9.79) (2022-06-03)
+
+
+### Bug Fixes
+
+* ajuste de fonts ([4a88d7d](https://github.com/xproglabs/prensa-designsystem/commit/4a88d7d4fa7357ace0d244f2cf8f7c6f601b95d1))
+* ajuste de tamanho da imagem no mobile ([d8e8820](https://github.com/xproglabs/prensa-designsystem/commit/d8e882039d74f218ed714896c8dba79b21e266a0))
+* ajuste de tamanho da imagem no mobile (2) ([be732db](https://github.com/xproglabs/prensa-designsystem/commit/be732db3270be73ddd277471a1c95d40fe20d0a3))
+* ajustes de estilo no teaser news_top_top ([2a1acd1](https://github.com/xproglabs/prensa-designsystem/commit/2a1acd1e9bbbe4293bf1569cf40725482c9fb8df))
+* espaçamentos box_wrap dos teasers ([3a9a0f9](https://github.com/xproglabs/prensa-designsystem/commit/3a9a0f94830bcd9e20b8b925a96ef413aeb65942))
+* remove teasers do suggestions ([b260489](https://github.com/xproglabs/prensa-designsystem/commit/b260489e4aca62f6c9d0432ebb9f5881748d30c3))
+* renomeia teasers ([ed08e3a](https://github.com/xproglabs/prensa-designsystem/commit/ed08e3a58b46be88fdb16cef09347b71e43680fd))
+
+
+### Features
+
+* adiciona cores ([a22cfeb](https://github.com/xproglabs/prensa-designsystem/commit/a22cfebb49c04f8dbf4a1111425bb925d4a7c132))
+* adiciona estilos no TeaserCartridges ([9caf581](https://github.com/xproglabs/prensa-designsystem/commit/9caf581beb1ab6d6ffbdbb6bde6d1694c96cd6c5))
+* adiciona fontWeight como props do more_button ([4d6aac2](https://github.com/xproglabs/prensa-designsystem/commit/4d6aac29ee222a6a90516f1fdde0c8d6584f7f0e))
+* atualiza cores dos tokens ([a46135b](https://github.com/xproglabs/prensa-designsystem/commit/a46135bea73ec7f8f93fca72b303d4ac1f7cea29))
+* cria bloco de Mais lidas ([c3eddc6](https://github.com/xproglabs/prensa-designsystem/commit/c3eddc6be20fa6366dc867d7450222849727f99c))
+* cria bloco Destaque ([42a3135](https://github.com/xproglabs/prensa-designsystem/commit/42a3135c7696f8358e71aaf77b02319417c63f4b))
+* cria bloco Destaque Topo (imagem) e ajusta estilo dos teasers ([2688e8d](https://github.com/xproglabs/prensa-designsystem/commit/2688e8d99369aa6df59ab81b8c0a0a4ffbc60e6b))
+* cria bloco Destaque Topo (padrão) ([5d1599f](https://github.com/xproglabs/prensa-designsystem/commit/5d1599fb5bc1052a2c66472e75d95d5f522b9ef5))
+* cria bloco Editorial ([96504b2](https://github.com/xproglabs/prensa-designsystem/commit/96504b24fb465b0f0cd706273199b58b6dce6a06))
+* cria index de teasers e estilos (default, right_right e top_top) ([7b3f0e7](https://github.com/xproglabs/prensa-designsystem/commit/7b3f0e760f3d3377bf0176a8dfa6905d893f20bf))
+* cria index.stories do projeto ([c09c43f](https://github.com/xproglabs/prensa-designsystem/commit/c09c43f02c6c75e90f826f36935bbbdeb251b0b2))
+* cria theme da folhadaregiao ([d3a5d3f](https://github.com/xproglabs/prensa-designsystem/commit/d3a5d3f9d9df1aaa0ae15295f42274c90c01a055))
+* cria variação 100 para o template featured_top ([929e645](https://github.com/xproglabs/prensa-designsystem/commit/929e6450caac6d9981e052e253bc42a350eaf25e))
+* estilizando bloco Destaque Topo ([642c8ed](https://github.com/xproglabs/prensa-designsystem/commit/642c8ed9ca4dd296066f87e134c485bbee6b15b8))
+* insere arquivo de fonts e subjects ([13ba568](https://github.com/xproglabs/prensa-designsystem/commit/13ba5685f048db3ccee8f2ffc5ab12a0ba1fca92))
+* insere arquivo de section_title ([bf24f85](https://github.com/xproglabs/prensa-designsystem/commit/bf24f857bba849c8a58e1d3b0aaaf3e082068bd9))
+* insere configurações do image ([5b079b4](https://github.com/xproglabs/prensa-designsystem/commit/5b079b43f26d705777cf75bed068c09c2cfab13d))
+
+## [1.9.78](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.77...v1.9.78) (2022-05-27)
+
+
+### Bug Fixes
+
+* ordenamento de imports (3) ([1fd7caa](https://github.com/xproglabs/prensa-designsystem/commit/1fd7caa38be29e45ad2e37877fc7e0327453aa0f))
+* ordenamento de imports (lint) ([470dd6b](https://github.com/xproglabs/prensa-designsystem/commit/470dd6b53568a02f2c73074626578f28a5a11a4e))
+* orderamento de imports (2) ([895e504](https://github.com/xproglabs/prensa-designsystem/commit/895e5045bd0dbdce1ee05ee769161fd246bd683f))
+
+
+### Features
+
+* atualiza tokens de cor da Folha da Região ([d45cb49](https://github.com/xproglabs/prensa-designsystem/commit/d45cb4931fdc171f28a814b9aff7c0f4402e795f))
+* atualiza tokens de cores de acordo com o styleguide ([6c2d1b1](https://github.com/xproglabs/prensa-designsystem/commit/6c2d1b1e02af237a2516eb48a84f6b03eb69dcd2))
+* configura estilo do Article da Folha da Região ([866e83e](https://github.com/xproglabs/prensa-designsystem/commit/866e83e8c969d1a4ce70db31155c03d21705753c))
+* cria Article exemplo da Folha da Região; insere novas fonts ([fbdd4b1](https://github.com/xproglabs/prensa-designsystem/commit/fbdd4b108cf3b4f8e195498d3097e5d93892ad0f))
+* insere estilo itálico no subtitle ([e71d6f1](https://github.com/xproglabs/prensa-designsystem/commit/e71d6f175f32415c492dfe1b1facd6dd3483e59b))
+
+## [1.9.77](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.76...v1.9.77) (2022-05-27)
+
+
+### Bug Fixes
+
+* espaço indentação ([7159f17](https://github.com/xproglabs/prensa-designsystem/commit/7159f17dbafa571fff862e5edec1c82fef7a31fd))
+
+
+### Features
+
+* adiciona props fontStyle no Typography e Subtitle ([125cc5a](https://github.com/xproglabs/prensa-designsystem/commit/125cc5a4211d0f7e1175c2afb8e368a3d2fa7290))
+
+## [1.9.76](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.75...v1.9.76) (2022-05-24)
+
+
+### Bug Fixes
+
+* code review ([22dccf7](https://github.com/xproglabs/prensa-designsystem/commit/22dccf739e1a251ceffb6d1996d0b0559f9c9d2c))
+* lint ([50683fc](https://github.com/xproglabs/prensa-designsystem/commit/50683fce9efc4d788f0f99c276f96c93ada4c1a5))
+* lint [2] ([f8b57f4](https://github.com/xproglabs/prensa-designsystem/commit/f8b57f403655b6fef500e8595e508d8789e239df))
+* lint [3] ([e0ba726](https://github.com/xproglabs/prensa-designsystem/commit/e0ba726b23e80f91f673a658630c058200063588))
+* post build ([1b600f5](https://github.com/xproglabs/prensa-designsystem/commit/1b600f5e5447ffbb67a79b84ac535c87d20ca78e))
+* post build [2] ([be34d46](https://github.com/xproglabs/prensa-designsystem/commit/be34d46f4c369f9e104b65f9860570454bfb32fd))
+* reinsere props específicas nos estilos dos componentes ([9906b90](https://github.com/xproglabs/prensa-designsystem/commit/9906b905211d83bc54862a390bb4586de181fd97))
+* remove estilo antigo das props ([c7ee47c](https://github.com/xproglabs/prensa-designsystem/commit/c7ee47c0293e39dce0efe1d4b2416eabf34027c4))
+
+
+### Features
+
+* Criar componente de Edital (Notice) ([ff812f2](https://github.com/xproglabs/prensa-designsystem/commit/ff812f21c5f9706d6aeedf317bf1dc0dbd27d32b))
+* testando nova estrutura do componente ([1ee3317](https://github.com/xproglabs/prensa-designsystem/commit/1ee3317e3431eba0431afb07e4ec4d20f8b432b4))
+
+## [1.9.75](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.74...v1.9.75) (2022-05-24)
+
+
+### Bug Fixes
+
+* ajusta nomenclatura da cor específica ([798ee22](https://github.com/xproglabs/prensa-designsystem/commit/798ee22c47cd33b8a0f711a0388637c4cfbe72ef))
+
+
+### Features
+
+* adiciona props para mudar cor individual do ícone ([50888eb](https://github.com/xproglabs/prensa-designsystem/commit/50888ebbb39b59d19d1d6e5ec426b29f125e80d9))
+
+## [1.9.74](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.73...v1.9.74) (2022-05-23)
+
+
+### Bug Fixes
+
+* formata estilo do author with link ([600a1be](https://github.com/xproglabs/prensa-designsystem/commit/600a1bea65c9b5d95f4bde9fc1176cd3a4ceac42))
+* lint ([9f387ca](https://github.com/xproglabs/prensa-designsystem/commit/9f387ca82bdb80a808393c3c637df31a72f34847))
+* lint ([c3d1715](https://github.com/xproglabs/prensa-designsystem/commit/c3d171571113af26a98265d5bdc139b5e18c1a15))
+* remove componente Link ([1f86403](https://github.com/xproglabs/prensa-designsystem/commit/1f86403609bd96b9d14b7dee54c284d7d35e84fd))
+* remove items name / path from default props ([d77b1f1](https://github.com/xproglabs/prensa-designsystem/commit/d77b1f12e4fbfe5d804cc9aa0b639d3e5206dd00))
+
+
+### Features
+
+* **articleAuthors:** add ManyAuthors into Article Byline ([9a59391](https://github.com/xproglabs/prensa-designsystem/commit/9a59391d24a3fdd1de38092d3daae5e99e0f2b5a))
+
+
+### Reverts
+
+* Revert "fix: install postcss" ([962bb37](https://github.com/xproglabs/prensa-designsystem/commit/962bb37a91aa5370b1a91a3c890f4b1a18c362d2))
+
+## [1.9.73](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.72...v1.9.73) (2022-05-20)
+
+
+### Bug Fixes
+
+* code review ([f149e8d](https://github.com/xproglabs/prensa-designsystem/commit/f149e8d00ee181484952dd7edec9ed4466b3a7c8))
+* indentação ([941781b](https://github.com/xproglabs/prensa-designsystem/commit/941781b5397c9c26afdc963c4ee1e67ae721624a))
+* insere SpacingType nas props de border ([d53f807](https://github.com/xproglabs/prensa-designsystem/commit/d53f807fdb9bc71ff7375bbd13e85835cc36f812))
+* virgula sobrando ([42a70ef](https://github.com/xproglabs/prensa-designsystem/commit/42a70ef2e61a8ee3ebbcedcfd940cafaac50456c))
+
+
+### Features
+
+* Adiciona min-height no componente Block e AuthorBio ([c3cbbb1](https://github.com/xproglabs/prensa-designsystem/commit/c3cbbb175ff5745e9fd99cef9b69c17333a34730))
+
+## [1.9.72](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.71...v1.9.72) (2022-05-16)
+
+
+### Features
+
+* adiciona campo de Cargo (position) no Authorbio ([6cea047](https://github.com/xproglabs/prensa-designsystem/commit/6cea0477ff0c15006934add9fbb7a58dd6ac1618))
+
+## [1.9.71](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.70...v1.9.71) (2022-05-16)
+
+
+### Features
+
+* **clickToOpen:** add click to textbody image ([62a985d](https://github.com/xproglabs/prensa-designsystem/commit/62a985d5d6c9026d90e774b75430a5e8a51351ea))
+* **clickToOpen:** add Link do image in article ([686862e](https://github.com/xproglabs/prensa-designsystem/commit/686862ee8bf151de5b6879504cf08f61b24db5a2))
+* **clickToOpen:** allow custom link in image ([00402f0](https://github.com/xproglabs/prensa-designsystem/commit/00402f02f4f630e82e54505f01a82242b216c314))
+
+## [1.9.70](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.69...v1.9.70) (2022-05-03)
+
+
+### Bug Fixes
+
+* telegramPath ([c7d3aae](https://github.com/xproglabs/prensa-designsystem/commit/c7d3aaee71e7082aa96e1983e880bbf8d0bebffd))
+
+## [1.9.69](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.68...v1.9.69) (2022-04-29)
+
+
+### Bug Fixes
+
+* adiciona mailto: no href do emailUrl ([8cd5520](https://github.com/xproglabs/prensa-designsystem/commit/8cd5520b534123860aaf2688f688c7945ab39f71))
+
+## [1.9.68](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.67...v1.9.68) (2022-04-28)
+
+
+### Bug Fixes
+
+* lint ([08a2862](https://github.com/xproglabs/prensa-designsystem/commit/08a28626e65c7a413de93ff45f8b0210f76bd284))
+
+
+### Features
+
+* adiciona e formata componente email ([0169147](https://github.com/xproglabs/prensa-designsystem/commit/0169147df00009c1a12f6100ff7271e1554697af))
+* adiciona novos types ([a4877a2](https://github.com/xproglabs/prensa-designsystem/commit/a4877a2673579bf4b9fb3e0ac9c540482ffb96dc))
+* atualiza Authorbio stories ([7eabfd6](https://github.com/xproglabs/prensa-designsystem/commit/7eabfd6f797424ddcc441945ae5e7e12c444acbb))
+* formata props ([cf48f03](https://github.com/xproglabs/prensa-designsystem/commit/cf48f03d56d8d7859f1dbdf5fe1390c871ca9f70))
+
+## [1.9.67](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.66...v1.9.67) (2022-04-23)
+
+
+### Bug Fixes
+
+* remove color fixas dos svgs ([fd819a5](https://github.com/xproglabs/prensa-designsystem/commit/fd819a5d2a0b5c8063f6eb6a6214af5c90009296))
+
+## [1.9.66](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.65...v1.9.66) (2022-04-23)
+
+
+### Bug Fixes
+
+* realoca textRights e remove types ([7cffc5e](https://github.com/xproglabs/prensa-designsystem/commit/7cffc5e14aa076d76123ac9356c0aab5c9c129e2))
+* remove arquivo de consts ([045b439](https://github.com/xproglabs/prensa-designsystem/commit/045b43925f9e5d66deb71f66d48bbea44e0878d4))
+
+
+### Features
+
+* adiciona props pb ([acde7a9](https://github.com/xproglabs/prensa-designsystem/commit/acde7a96c1351dc8aa5dd0e5231821d8008124da))
+
+## [1.9.65](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.64...v1.9.65) (2022-04-22)
+
+
+### Bug Fixes
+
+* ajusta indentação ([af390fd](https://github.com/xproglabs/prensa-designsystem/commit/af390fdc95e1f62667b10f72e0333df9aa473aa8))
+* ajusta indentação [#2](https://github.com/xproglabs/prensa-designsystem/issues/2) ([dc93304](https://github.com/xproglabs/prensa-designsystem/commit/dc93304091e08306c3a27fd592e7c3e9b0abe503))
+* ajusta tamanho dos logos e a distância do Typography ([dda6f60](https://github.com/xproglabs/prensa-designsystem/commit/dda6f60333cd23092bc031efc75871b9195a6e61))
+* ajustes na estrutura dos logos ([359957e](https://github.com/xproglabs/prensa-designsystem/commit/359957ea17071828292d56c08896e276a58e086e))
+* cria novo item para o ano ([2b9eb12](https://github.com/xproglabs/prensa-designsystem/commit/2b9eb1240ee89aa59e68d247e96b6f1399ff791d))
+* remove fontFamily dos types ([ba849e1](https://github.com/xproglabs/prensa-designsystem/commit/ba849e13d239dc977a0a1a06175a6d74adf0e47c))
+* remove FontTokens ([a7d0a9c](https://github.com/xproglabs/prensa-designsystem/commit/a7d0a9cde45585e6eebe12012ee59fb0c03c0245))
+* torna blocado o texto de direitos ([24e2628](https://github.com/xproglabs/prensa-designsystem/commit/24e2628e809368582db795333989fcf9395ec2ce))
+
+
+### Features
+
+* aplica getCurrentYear ([77d859f](https://github.com/xproglabs/prensa-designsystem/commit/77d859f577a8bc6257207ce06282b57650ddd9c0))
+* insere logo do Polopoly no componente Copyright ([3e6761e](https://github.com/xproglabs/prensa-designsystem/commit/3e6761efe7e2f060d8ead83d7f0e523f07aa7217))
+
+## [1.9.64](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.63...v1.9.64) (2022-04-14)
+
+
+### Bug Fixes
+
+* Remove spread de props dos botões de compartilhamento ([28336b6](https://github.com/xproglabs/prensa-designsystem/commit/28336b6f81ec9aa1e79a750adfca993d21f5c196))
+
+## [1.9.63](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.62...v1.9.63) (2022-04-04)
+
+
+### Bug Fixes
+
+* adapta peça para renderizacao condicional do telegram share ([9adb591](https://github.com/xproglabs/prensa-designsystem/commit/9adb591ee8398e61ea4595875cb4db7fb535c6b8))
+* change condition path ([147cbe1](https://github.com/xproglabs/prensa-designsystem/commit/147cbe165ed1a327e781d2cde5dc3e2c8d836d83))
+* nome do componente de style ([33b12e3](https://github.com/xproglabs/prensa-designsystem/commit/33b12e36d269a3535b1bfa71921965d64300e1be))
+* pr comment ([3c0b7bf](https://github.com/xproglabs/prensa-designsystem/commit/3c0b7bf3815b4e66d2107ea5339225804d430d06))
+
+
+### Features
+
+* aplica condição para renderizar o icone ([69ea66d](https://github.com/xproglabs/prensa-designsystem/commit/69ea66d3b4f9a38e281747d3fdcc50ad7cbfeebd))
+* aplica share para o telegram ([d501235](https://github.com/xproglabs/prensa-designsystem/commit/d501235ee3575f7ffd3787773e41f206770f0d7f))
+* Cria botão de compartilhamento para o Telegram e implementa no componente Share ([6f6812b](https://github.com/xproglabs/prensa-designsystem/commit/6f6812be40107ff37a4b1576759d8514ed5c3416))
+* upgrade branche ([90245d4](https://github.com/xproglabs/prensa-designsystem/commit/90245d429fd1874360e3c48a5ca065ff9e15b816))
+
+## [1.9.62](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.61...v1.9.62) (2022-04-04)
+
+
+### Bug Fixes
+
+* ajustes finos no amp-social-share ([0bcafc4](https://github.com/xproglabs/prensa-designsystem/commit/0bcafc4adb1a733a89e4ff0f2c5967b8a395230c))
+* ordem alfabetica ([48f755f](https://github.com/xproglabs/prensa-designsystem/commit/48f755f86dffadf90bca8a3807aae7053e448d41))
+
+
+### Features
+
+* create share for linkedin ([4b5377b](https://github.com/xproglabs/prensa-designsystem/commit/4b5377b6959a1fb53f7726657e59e4811af91106))
+* Cria botão de compartilhamento pelo Linkedin e implementa no Share ([eee62e9](https://github.com/xproglabs/prensa-designsystem/commit/eee62e9afe21836206910879d8a6668545ee71f5))
+* upgrande branche ([c437413](https://github.com/xproglabs/prensa-designsystem/commit/c4374139ca5fdda2b5b3b915574e71c5b42095c4))
+
+## [1.9.61](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.60...v1.9.61) (2022-03-29)
+
+
+### Bug Fixes
+
+* Permite dados string e number nas props de padding do Article/Subject ([2c0f76d](https://github.com/xproglabs/prensa-designsystem/commit/2c0f76d4a51cdaa90913dfd4325eda11b25a4e41))
+
 ## [1.9.60](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.59...v1.9.60) (2022-03-27)
 
 

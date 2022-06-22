@@ -15,51 +15,52 @@ const Component = styled.div`
 `
 
 const Block = ({
-  children,
-  className,
   align,
   alignx,
   aligny,
+  b,
+  bt,
+  br,
+  bb,
+  bl,
   bgColor,
+  borderColor,
+  borderStyle,
   boxShadow,
+  children,
+  className,
+  custom,
   customDef,
+  dangerouslySetInnerHTML,
   fontColor,
-  py,
-  px,
-  pt,
-  pr,
-  pb,
-  pl,
+  fullHeight,
+  height,
+  id,
+  maxWidth,
+  minHeight,
+  minWidth,
   my,
   mx,
   mt,
   mr,
   mb,
   ml,
-  typography,
   onClick,
-  // fullWidth,
-  fullHeight,
-  custom,
-  width,
-  height,
-  id,
-  bt,
-  br,
-  bb,
-  bl,
-  b,
-  borderColor,
-  borderStyle,
+  py,
+  px,
+  pt,
+  pr,
+  pb,
+  pl,
   radius,
-  dangerouslySetInnerHTML,
+  typography,
+  // fullWidth,
   xs,
   sm,
   md,
   lg,
   xl,
-  maxWidth,
-  minWidth
+  width
 }) => {
 
   const getXsProps = () => xs && ({
@@ -119,6 +120,7 @@ const Block = ({
       $height={height}
       maxWidth={maxWidth}
       minWidth={minWidth}
+      minHeight={minHeight}
       id={id}
       bt={bt}
       br={br}
@@ -239,6 +241,7 @@ Block.propTypes = {
    */
   id: PropTypes.string,
   maxWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  minHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   minWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   bt: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   br: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

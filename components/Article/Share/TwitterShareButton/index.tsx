@@ -17,7 +17,7 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
     twitterProps = {}
   } = props
 
-  const { mt, mb, mr, ml, ...otherProps } = twitterProps
+  const { color: specificColor, mt, mb, mr, ml, ...otherProps } = twitterProps
 
   const pageUrlParam = `url=${pageUrl}`
   const shareUrl = `https://twitter.com/intent/tweet?${pageUrlParam}`
@@ -35,7 +35,6 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
           type='twitter'
           width={size}
           height={size}
-          {...otherProps}
         />
       </TwitterAmpContainer>
     )
@@ -56,7 +55,7 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
           <IcTwitter
             width={size}
             height={size}
-            color={color}
+            color={specificColor || color}
             {...otherProps}
           />
         </Link>

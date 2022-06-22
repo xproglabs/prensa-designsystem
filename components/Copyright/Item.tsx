@@ -3,16 +3,16 @@ import React from 'react'
 import Typography from '../Typography'
 import { TextItemProps } from './types'
 
-const TextItem = ({ color, fontFamily, text } : TextItemProps) => {
+const TextItem = ({ color, text } : TextItemProps) => {
   return (
     <Typography 
       element='span'
-      fontSize='14px'
+      fontSize='12px'
       mb='4px'
       textAlign='start'
       width='100%'
       color={color}
-      fontFamily={fontFamily}
+      fontFamily='secondary'
     >
       {text}
     </Typography>

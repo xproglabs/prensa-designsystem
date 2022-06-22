@@ -18,7 +18,7 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
     size
   } = props
 
-  const { mt, mb, mr, ml, ...otherProps } = facebookProps
+  const { color: specificColor, mt, mb, mr, ml, ...otherProps } = facebookProps
 
   const displayParam = '&display=popup'
   const fbappidParam = `?app_id=${fbappid}`
@@ -40,7 +40,6 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
           width={size}
           height={size}
           data-param-app_id={fbappid}
-          {...otherProps}
         />
       </FacebookAmpContainer>
     )
@@ -61,7 +60,7 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
           <IcFacebook
             width={size}
             height={size}
-            color={color}
+            color={specificColor || color}
             {...otherProps}
           />
         </Link>

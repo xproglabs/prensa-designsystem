@@ -1,5 +1,3 @@
-import { FontTokens } from '@prensa_tokens'
-
 export type TextItemProps = {
   /**
    * @description Define text color
@@ -8,11 +6,7 @@ export type TextItemProps = {
   /**
    * @description Expects a font token (e.g. primary/secondary) 
    */
-  fontFamily?: FontTokens;
-  /**
-   * @description Define text to be rendered
-   */
-  text: string;
+  text?: string;
 }
 
 export interface CopyrightProps {
@@ -25,16 +19,12 @@ export interface CopyrightProps {
    */
   color?: string;
   /**
-   * @description Expects a font token (e.g. primary/secondary) 
-   */
-  fontFamily?: FontTokens;
-  /**
    * @description Define copyright message
    */
-  textCopyright?: string;
-  /**
-   * @description Define company message
-   */
+  pb?: Array<string | number>;
+   /**
+    * @description Define padding bottom
+    */
   textCompany?: string;
   /**
    * @description Define "rights reserved" message
@@ -43,9 +33,4 @@ export interface CopyrightProps {
   /**
    * @description Define ATEX message
    */
-  textAtex: string;
-  /**
-   * @description Define XPROG message
-   */
-  textXprog: string;
 }

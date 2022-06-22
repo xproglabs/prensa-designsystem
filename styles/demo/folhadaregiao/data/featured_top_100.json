@@ -1,0 +1,31 @@
+{
+  "cid": "7.132",
+  "name": "Bloco 100",
+  "type": "template100",
+  "slot1": {
+    "color": "",
+    "icon": "",
+    "link": "",
+    "len1": 1,
+    "len2": 0,
+    "list1": [
+      {
+        "cid": "7.133",
+        "img": {
+          "byl": "",
+          "cap": "",
+          "cid": "1.880203",
+          "sub": ""
+        },
+        "name": "PF aponta à Justiça elementos de 'pressão' para favorecer empresa na gestão de Barros na Saúde",
+        "path": "/palestra-reune-prefeitos-e-vereadores-1.880202",
+        "subject": "Polícia Federal",
+        "subtitle": "",
+        "pubdate": "2021-09-12 2:15:16",
+        "updated": "2021-09-24 23:17:42"
+      }
+    ],
+    "title": "BLOCO DESTAQUE TOPO 100 (PADRÃO)",
+    "type": "featured_top"
+  }
+}

@@ -2,6 +2,8 @@ import { ColorTokens } from '@prensa_tokens'
 
 import { StyledBlockProps } from '../../NewBlock/props'
 import { FacebookProps } from './FacebookShareButton/types'
+import { LinkedinProps } from './LinkedinShareButton/types'
+import { TelegramProps } from './TelegramShareButton/types'
 import { TwitterProps } from './TwitterShareButton/types'
 import { WhatsAppProps } from './WhatsAppShareButton/types'
 
@@ -15,6 +17,10 @@ export interface ShareProps {
   facebookPath?: string;
   facebookProps?: FacebookProps;
   fbappid: string;
+  linkedinPath?: string;
+  linkedinProps?: LinkedinProps;
+  telegramPath?: string;
+  telegramProps?: TelegramProps;
   twitterPath?: string;
   twitterProps?: TwitterProps;
   whatsappPath?: string;

@@ -21,6 +21,10 @@ amp-img img {
 amp-sidebar {
   max-width: unset;
 }
+.article_style p > a {
+  font-weight: 700;
+  text-decoration: underline;
+}
 .image-with-radius {
   border-radius: 100%;
 }

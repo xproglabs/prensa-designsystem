@@ -8,31 +8,39 @@ import { IcBioFacebook } from './IcBioFacebook'
 import { IcBioInstagram } from './IcBioInstagram'
 import { IcBioLinkedin } from './IcBioLinkedin'
 import { IcBioTwitter } from './IcBioTwitter'
+import { IcEmail } from './IcEmail'
+import { AuthorBioProps } from './props'
 import {
   Bio,
   Container,
   ContentWrap,
+  Email,
+  Name,
   ImageContainer,
   ImageWrap,
+  Position,
   TextWrap,
   SocialMediasWrap,
   Title,
-  Name
 } from './styled'
-import { AuthorBioProps } from './types'
 
 const AuthorBio = ({
   amp,
   bio,
   bioProps,
   containerProps,
+  email,
+  emailProps,
   href,
   imagePath,
   imageProps,
   name,
   nameProps,
+  position,
+  positionProps,
   title,
   titleProps,
+  emailUrl,
   facebookUrl,
   instagramUrl,
   linkedinUrl,
@@ -84,10 +92,20 @@ const AuthorBio = ({
               </Link>
             </Block>
           }
+          {email &&
+            <Email {...emailProps}>
+              {email}
+            </Email>
+          }
           {name &&
             <Name {...nameProps}>
               {name}
             </Name>
+          }
+          {position &&
+            <Position {...positionProps}>
+              {position}
+            </Position>
           }
           {bio &&
             <Bio {...bioProps}>
@@ -95,6 +113,7 @@ const AuthorBio = ({
             </Bio>
           }
           <SocialMediasWrap>
+            {emailUrl && <IcEmail href={`mailto:${emailUrl}`} />}
             {facebookUrl && <IcBioFacebook href={facebookUrl} />}
             {instagramUrl && <IcBioInstagram href={instagramUrl} />}
             {linkedinUrl && <IcBioLinkedin href={linkedinUrl} />}

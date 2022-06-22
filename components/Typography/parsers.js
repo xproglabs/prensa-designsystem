@@ -32,6 +32,10 @@ const handleHover = props => {
     return ''
   }
 }
+const parseFontStyle = ({ $fontStyle }) => {
+  if (!$fontStyle) return ''
+  return `font-style: ${$fontStyle};`
+}
 const parseFontWeight = ({ $fontWeight }) => {
   if (!$fontWeight) return ''
   return `font-weight: ${$fontWeight};`
@@ -73,6 +77,7 @@ const parseStyle = (props, theme) => {
     ${parseTextDecoration(props)};
     ${parseTextTransform(props)};
     ${parseTextAlign(props)};
+    ${parseFontStyle(props)};
     ${parseFontWeight(props)};
     ${parseLetterSpacing(props)};
   `

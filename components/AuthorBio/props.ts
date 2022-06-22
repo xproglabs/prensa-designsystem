@@ -13,20 +13,25 @@ export interface AuthorBioProps {
   bio?: string;
   bioProps?: BioProps;
   containerProps?: ContainerProps;
+  email?: string;
+  emailProps?: EmailProps;
   href?: string;
   imagePath: string;
   imageProps?: ImageProps;
   name?: string;
   nameProps?: NameProps;
+  position?: string;
+  positionProps?: PositionProps;
   title?: string;
   titleProps?: TitleProps;
+  emailUrl?: string;
   facebookUrl: string;
   instagramUrl: string;
   linkedinUrl: string;
   twitterUrl: string;
 }
 
-export type BioProps = {
+export interface BioProps {
   children?: ReactNode;
   color?: ColorTokens;
   element?: string;
@@ -35,7 +40,7 @@ export type BioProps = {
   fontWeight?: number;
   mb?: SpacingType;
 }
-export type NameProps = {
+export interface EmailProps {
   children?: ReactNode;
   color?: ColorTokens;
   element?: string;
@@ -44,7 +49,25 @@ export type NameProps = {
   fontWeight?: number;
   mb?: SpacingType;
 }
-export type TitleProps = {
+export interface NameProps {
+  children?: ReactNode;
+  color?: ColorTokens;
+  element?: string;
+  fontFamily?: FontTokens;
+  fontSize?: string;
+  fontWeight?: number;
+  mb?: SpacingType;
+}
+export interface PositionProps {
+  children?: ReactNode;
+  color?: ColorTokens;
+  element?: string;
+  fontFamily?: FontTokens;
+  fontSize?: string;
+  fontWeight?: number;
+  mb?: SpacingType;
+}
+export interface TitleProps {
   children?: ReactNode;
   color?: ColorTokens;
   element?: string;
@@ -55,9 +78,18 @@ export type TitleProps = {
 }
 
 // Containers
-export type ContainerProps = {
+export interface ContainerProps {
   children?: ReactNode;
+  bt?: SpacingType;
+  br?: SpacingType;
+  bb?: SpacingType;
+  bl?: SpacingType;
+  b?: SpacingType;
   bgColor?: ColorTokens;
+  borderColor?: ColorTokens;
+  borderStyle?: string;
+  minHeight?: string;
+  maxWidth?: string;
   mx?: SpacingType;
   my?: SpacingType;
   pt?: SpacingType;
@@ -68,38 +100,31 @@ export type ContainerProps = {
   mr?: SpacingType;
   mb?: SpacingType;
   ml?: SpacingType;
-  bt?: string;
-  br?: string;
-  bb?: string;
-  bl?: string;
-  b?: string;
-  borderColor?: ColorTokens;
-  borderStyle?: string;
   radius?: RadiusTokens;
   width?: string;
 }
-export type ImageContainerProps = {
+export interface ImageContainerProps {
   children?: ReactNode;
   mb?: ResponsiveSpacingType;
   mr?: ResponsiveSpacingType;
 }
 
 // Wraps
-export type ContentWrapProps = {
+export interface ContentWrapProps {
   children?: ReactNode;
 }
-export type ImageProps = {
+export interface ImageProps {
   children?: ReactNode;  
   size?: Array<string>;
 }
-export type SocialMediasWrapProps = {
+export interface SocialMediasWrapProps {
   children?: ReactNode;
 }
-export type TextWrapProps = {
+export interface TextWrapProps {
   children?: ReactNode;
 }
 
-export type IconProps = {
+export interface IconProps {
   color?: ColorTokens;
   href: string;
 }

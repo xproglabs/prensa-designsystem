@@ -6,13 +6,15 @@ import {
   BioProps,
   ContainerProps,
   ContentWrapProps,
+  EmailProps,
   ImageContainerProps,
   ImageProps,
   NameProps,
+  PositionProps,
   SocialMediasWrapProps,
   TextWrapProps,
   TitleProps,
-} from './types'
+} from './props'
 
 export const Bio = ({ children, ...otherProps }: BioProps) => (
   <Typography
@@ -26,7 +28,31 @@ export const Bio = ({ children, ...otherProps }: BioProps) => (
     {children}
   </Typography>
 )
+export const Email = ({ children, ...otherProps }: EmailProps) => (
+  <Typography
+    element='span'
+    mb={2}
+    textAlign='center'
+    width='100%'
+    lg={{ textAlign: 'left' }}
+    {...otherProps}
+  >
+    {children}
+  </Typography>
+)
 export const Name = ({ children, ...otherProps }: NameProps) => (
+  <Typography
+    element='span'
+    mb={2}
+    textAlign='center'
+    width='100%'
+    lg={{ textAlign: 'left' }}
+    {...otherProps}
+  >
+    {children}
+  </Typography>
+)
+export const Position = ({ children, ...otherProps }: PositionProps) => (
   <Typography
     element='span'
     mb={2}
@@ -56,7 +82,7 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
     align='column'
     aligny='middle'
     alignx='center'
-    width='calc(100% - 2px)'
+    width='100%'
     {...otherProps}
   >
     {children}

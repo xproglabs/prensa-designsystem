@@ -1,7 +1,10 @@
+import get from 'lodash/get'
 import React from 'react'
 
 import Block from '../../NewBlock'
 import { FacebookShareButton } from './FacebookShareButton'
+import { LinkedinShareButton } from './LinkedinShareButton'
+import { TelegramShareButton } from './TelegramShareButton'
 import { TwitterShareButton } from './TwitterShareButton'
 import { ShareProps } from './types'
 import { WhatsAppShareButton } from './WhatsAppShareButton'
@@ -18,13 +21,22 @@ const Share = (props: ShareProps) => {
     fbappid,
     facebookPath,
     facebookProps,
+    linkedinPath,
+    linkedinProps,
     twitterPath,
     twitterProps,
+    telegramPath,
+    telegramProps,
     whatsappPath,
     whatsappProps,
   } = props
 
-  if (!enabled) return null
+  if (!enabled) {
+    return null
+  }
+
+  const isLinkedinEnabled = get(linkedinProps, 'enabled', false)
+  const isTelegramEnabled = get(telegramProps, 'enabled', false)
 
   return (
     <Block
@@ -58,6 +70,26 @@ const Share = (props: ShareProps) => {
         whatsappProps={whatsappProps}
         size={size}
       />
+      {isLinkedinEnabled && 
+        <LinkedinShareButton 
+          amp={amp}
+          color={color}
+          pageUrl={pageUrl}
+          linkedinPath={linkedinPath}
+          linkedinProps={linkedinProps}
+          size={size}
+        />
+      }
+      {isTelegramEnabled && 
+        <TelegramShareButton 
+          amp={amp}
+          color={color}
+          pageUrl={pageUrl}
+          telegramPath={telegramPath}
+          telegramProps={telegramProps}
+          size={size}
+        />
+      }
     </Block>
   )
 }
