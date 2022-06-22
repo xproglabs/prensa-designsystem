@@ -26,8 +26,7 @@ export const ButtonWrap = ({ children }: ButtonWrapProps) => (
   <Block
     align='column'
     alignx='left'
-    width='100%'
-    lg={{ width: 'auto' }}
+    width={['100%', 'auto']}
   >
     {children}
   </Block>
@@ -35,19 +34,17 @@ export const ButtonWrap = ({ children }: ButtonWrapProps) => (
 
 export const Container = ({ children, ...otherProps }: ContainerProps) => (
   <Block
-    align='column'
-    aligny='middle'
-    alignx='center'
+    align={['column', 'row']}
+    aligny={['middle', 'middle']}
+    alignx={['center', 'center']}
     px={2}
     py={2}
-    custom='gap: 16px;'
-    lg={{ align: 'row', custom: 'flex: none; order: 0; flex-grow: 0; gap: 40px;' }}
+    custom={['gap: 16px;', 'flex: none; order: 0; flex-grow: 0; gap: 40px;']}
     {...otherProps}
   >
     {children}
   </Block>
 )
-
 
 export const TextWrap = ({ children }: TextWrapProps) => (
   <Block 
