@@ -7,5 +7,4 @@ export default [
   createBundle('styles/index.ts', 'dist/styles', 'styles'),
   createBundle('utils.ts', 'dist/utils', 'utils'),
   createBundle('components/NewBlock/index.tsx', 'dist/NewBlock', 'NewBlock'),
-  createBundle('newTheme.ts', 'dist/newTheme', 'newTheme')
 ]
