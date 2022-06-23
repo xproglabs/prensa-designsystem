@@ -23,9 +23,6 @@
       "prensa": [
         "index.ts"
       ],
-      "prensa/styled-system": [
-        "styled-system/index.ts"
-      ],
       "styles/*": [
         "styles/*"
       ],
@@ -40,7 +37,6 @@
   "include": [
     "components/**/*",
     "icons/**/*",
-    "styled-system/**/*",
     "styles/**/*",
     "stories/**/*",
     "index.ts",
