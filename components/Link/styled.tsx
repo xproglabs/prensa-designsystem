@@ -1,5 +1,10 @@
+import { align } from '@xprog/prensa-css-engine/align'
+import { border } from '@xprog/prensa-css-engine/border'
+import { height } from '@xprog/prensa-css-engine/height'
+import { margin } from '@xprog/prensa-css-engine/margin'
+import { padding } from '@xprog/prensa-css-engine/padding'
+import { width } from '@xprog/prensa-css-engine/width'
 import { get } from 'lodash'
-import { align, border, height, margin, padding, width } from 'prensa/styled-system'
 import { ComponentType } from 'react'
 import styled, { css } from 'styled-components'
 
@@ -42,7 +47,7 @@ function displayCSS({ $display }: any) {
   `
 }
 
-export const StyledLink: ComponentType<StyledLinkProps> | any = styled.a<StyledLinkProps>`
+export const StyledLink: ComponentType<StyledLinkProps> | any = styled.a`
   cursor: pointer;
   ${align};
   ${border};

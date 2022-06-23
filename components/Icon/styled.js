@@ -1,11 +1,10 @@
+import { color } from '@xprog/prensa-css-engine/color'
+import { margin } from '@xprog/prensa-css-engine/margin'
 import styled from 'styled-components'
-
-import { getColor } from '../../styled-system/color'
-import { margin } from '../../styled-system/margin'
 
 const Svg = styled.svg`
   ${margin};
-  fill: ${getColor};
+  fill: ${color};
 `
 
 export { Svg }

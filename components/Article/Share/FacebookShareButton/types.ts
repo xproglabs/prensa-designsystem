@@ -1,4 +1,5 @@
 import { ColorTokens } from '@prensa_tokens'
+import { HeightProps, WidthProps } from '@xprog/prensa-css-engine/props'
 
 export type FacebookProps = {
   color?: ColorTokens | string;
@@ -15,7 +16,7 @@ export type FacebookShareButtonProps = {
   facebookProps?: FacebookProps;
   fbappid: string;
   pageUrl: string;
-  size?: string;
+  size?: HeightProps['$height'] | WidthProps['$width'];
 }
 
 export type FacebookAmpContainerProps = {
@@ -25,5 +26,5 @@ export type FacebookAmpContainerProps = {
   mr?: number | string;
   mb?: number | string;
   ml?: number | string;
-  $size?: string;
+  $size?: HeightProps['$height'] | WidthProps['$width'];
 }

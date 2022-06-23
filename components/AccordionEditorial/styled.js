@@ -1,7 +1,7 @@
+import { color } from '@xprog/prensa-css-engine/color'
+import { padding } from '@xprog/prensa-css-engine/padding'
 import styled, { css } from 'styled-components'
 
-import { getColor } from '../../styled-system/color'
-import { padding } from '../../styled-system/padding'
 import { CONFIGS } from './consts'
 
 const Hyperlink = styled.a`
@@ -56,7 +56,7 @@ const GroupTitleContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   .${CONFIGS.GROUP_ICON_CLASS} {
-    fill: ${props => getColor({ ...props, $color: props.iconColor })};
+    fill: ${props => color({ ...props, $color: props.iconColor })};
   }
 `
 

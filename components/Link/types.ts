@@ -1,14 +1,14 @@
+/* eslint-disable */
 import { ColorTokens, RadiusTokens } from '@prensa_tokens'
+import { HeightProps } from '@xprog/prensa-css-engine/props'
 import { AlignStyledFunctionParam0 } from 'prensa'
 import { HTMLProps, ReactNode } from 'react'
-
-import { ResponsiveHeight } from '../../styled-system/height/types'
 
 /**
  * Prensa | Link component API
  * @description
  */
-export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
+export interface LinkProps extends Omit<HTMLProps<HTMLAnchorElement>, 'height'> {
   align?: AlignStyledFunctionParam0['align'];
   alignx?: AlignStyledFunctionParam0['alignx'];
   aligny?: AlignStyledFunctionParam0['aligny'];
@@ -18,7 +18,7 @@ export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
   children?: ReactNode;
   color?: ColorTokens;
   display?: string;
-  height?: ResponsiveHeight;
+  height?: HeightProps['$height'];
   href?: string;
   hoverOpacity?: number;
   mt?: string | number;
@@ -56,7 +56,7 @@ export type StyledLinkProps = {
   pl?: string | number;
   radius?: RadiusTokens;
   $color?: ColorTokens;
-  $height: ResponsiveHeight;
+  $height: HeightProps;
   $textDecoration?: string;
   $width?: string;
 }

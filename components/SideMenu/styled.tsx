@@ -1,5 +1,5 @@
+import { padding } from '@xprog/prensa-css-engine/padding'
 import { get } from 'lodash'
-import { padding } from 'prensa/styled-system'
 import { ComponentType } from 'react'
 import styled from 'styled-components'
 

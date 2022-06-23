@@ -17,6 +17,7 @@ export type UnorderedListProps = {
 export type ListItemProps = {
   $fontFamily?: FontTokens;
   $fontSize?: string;
+  color?: ColorTokens;
   mt?: string | number;
   mr?: string | number;
   mb?: string | number;

@@ -1,9 +1,9 @@
+import { color } from '@xprog/prensa-css-engine/color'
 import { get } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import { getColor } from '../../styled-system/color'
 import Block from '../NewBlock/index.tsx'
 
 const parseWidth = param => {
@@ -47,7 +47,7 @@ const AdBlock = ({ amp, content, containerProps, itemProps, theme, type }) => {
   const desktopWidth = object_desktop.size[0]
 
   const mobileItemCustomStyle = `
-    background-color: ${getColor({ theme, $color })};
+    background-color: ${color({ theme, $color })};
     min-height: ${mobileHeight}px;
     min-width: ${mobileWidth}px;
     @media (min-width: ${theme.queries.lg}) {
@@ -55,7 +55,7 @@ const AdBlock = ({ amp, content, containerProps, itemProps, theme, type }) => {
     }
   `
   const desktopItemCustomStyle = `
-    background-color: ${getColor({ theme, $color })};
+    background-color: ${color({ theme, $color })};
     min-height: ${desktopHeight}px;
     min-width: ${desktopWidth}px;
     @media (max-width: ${theme.queries.lg}) {

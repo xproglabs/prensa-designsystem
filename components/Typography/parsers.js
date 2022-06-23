@@ -1,10 +1,9 @@
+import { border } from '@xprog/prensa-css-engine/border'
+import { dimensions } from '@xprog/prensa-css-engine/dimensions'
+import { margin } from '@xprog/prensa-css-engine/margin'
+import { padding } from '@xprog/prensa-css-engine/padding'
 import { get } from 'lodash'
 import { css } from 'styled-components'
-
-import { border } from '../../styled-system/border'
-import { dimensions } from '../../styled-system/dimensions'
-import { margin } from '../../styled-system/margin'
-import { padding } from '../../styled-system/padding'
 
 export const parseFontFamily = props => {
   const fonts = get(props, 'theme.fonts', {})

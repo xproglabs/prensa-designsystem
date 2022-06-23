@@ -1,4 +1,9 @@
-import { align, height, margin, padding, width } from 'prensa/styled-system'
+// @ts-nocheck
+import { align } from '@xprog/prensa-css-engine/align'
+import { height } from '@xprog/prensa-css-engine/height'
+import { margin } from '@xprog/prensa-css-engine/margin'
+import { padding } from '@xprog/prensa-css-engine/padding'
+import { width } from '@xprog/prensa-css-engine/width'
 import React from 'react'
 import styled from 'styled-components'
 

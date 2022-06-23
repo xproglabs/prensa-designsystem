@@ -1,4 +1,4 @@
-import { margin } from 'prensa/styled-system'
+import { margin } from '@xprog/prensa-css-engine/margin'
 import { ComponentType } from 'react'
 import styled from 'styled-components'
 
