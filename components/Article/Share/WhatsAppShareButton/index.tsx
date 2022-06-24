@@ -2,7 +2,7 @@ import { IcWhatsApp } from 'icons'
 import { Link } from 'prensa'
 import React from 'react'
 
-import Block from '../../../NewBlock'
+import Block from '../../../Block'
 import { WhatsAppAmpContainer } from './styled'
 import { WhatsAppShareButtonProps } from './types'
 

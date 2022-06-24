@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Block from '../NewBlock/index.tsx'
+import Block from '../Block/index.tsx'
 
 export const ContainerCopyright = ({ bgColor, children, pb }) => (
   <Block

@@ -1,7 +1,7 @@
 import { Button } from 'prensa'
 import React from 'react'
 
-import Block from '../NewBlock'
+import Block from '../Block'
 export interface MoreButtonLayoutProps {
   color?: string,
   border?: string,

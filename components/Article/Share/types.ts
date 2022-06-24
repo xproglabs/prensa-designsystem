@@ -1,6 +1,6 @@
 import { ColorTokens } from '@prensa_tokens'
 
-import { StyledBlockProps } from '../../NewBlock/props'
+import { StyledBlockProps } from '../../Block/props'
 import { FacebookProps } from './FacebookShareButton/types'
 import { LinkedinProps } from './LinkedinShareButton/types'
 import { TelegramProps } from './TelegramShareButton/types'

@@ -3,7 +3,7 @@ import React from 'react'
 import { withTheme } from 'styled-components'
 
 import Link from '../Link'
-import Block from '../NewBlock'
+import Block from '../Block'
 import Typography from '../Typography'
 import { RelatedItemProps } from './RelatedTypes'
 

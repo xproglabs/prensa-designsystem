@@ -1,7 +1,7 @@
 import TeaserProfile from 'components/AuthorProfile/Profile'
 import React from 'react'
 
-import { BlockProps } from '../NewBlock/props'
+import { BlockProps } from '../Block/props'
 
 export type RenderProfileProps = {
   amp: boolean;

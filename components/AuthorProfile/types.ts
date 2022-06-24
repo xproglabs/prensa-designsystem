@@ -1,6 +1,6 @@
 import { ColorTokens, FontTokens } from '@prensa_tokens'
 
-import { BlockProps } from '../NewBlock/props'
+import { BlockProps } from '../Block/props'
 
 export type SpacingType = number | string
 

@@ -1,7 +1,7 @@
 import { get } from 'lodash'
 import React from 'react'
 
-import Block from '../../NewBlock'
+import Block from '../../Block'
 import { isBackgroundTransparent, selectBgColorFromSlot, selectMinHeightFromSlot } from '../../PageBlock/utils'
 import RenderSlot from '../../RenderSlot'
 import { renderSpaceSlot } from '../../RenderSlot/utils'

@@ -2,8 +2,8 @@ import { Typography } from 'prensa'
 import React from 'react'
 import styled from 'styled-components'
 
-import Block from '../NewBlock'
-import { BlockProps } from '../NewBlock/props'
+import Block from '../Block'
+import { BlockProps } from '../Block/props'
 import {
   AuthorNameProps,
   DateTimeProps,

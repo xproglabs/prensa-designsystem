@@ -2,10 +2,10 @@ import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
-import Block from '../../components/NewBlock'
+import Block from '../../components/Block'
 
 export default {
-  title: 'NewBlock',
+  title: 'Block',
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>

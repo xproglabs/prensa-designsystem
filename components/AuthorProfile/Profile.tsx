@@ -3,7 +3,7 @@ import { Image, parseImagePath } from 'prensa'
 import React from 'react'
 
 import Link from '../Link'
-import Block from '../NewBlock'
+import Block from '../Block'
 import * as S from './styled'
 import { AuthorProfileProps } from './types'
 

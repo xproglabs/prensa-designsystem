@@ -2,7 +2,7 @@ import { ColorTokens } from '@prensa_tokens'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import Block from '../NewBlock'
+import Block from '../Block'
 
 interface ContainerProps {
   background?: ColorTokens;

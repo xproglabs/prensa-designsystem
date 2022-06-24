@@ -1,7 +1,7 @@
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import Block from '../NewBlock'
+import Block from '../Block'
 import { CarouselProps } from './types'
 
 const Carousel = ({

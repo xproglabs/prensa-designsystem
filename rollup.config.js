@@ -5,5 +5,5 @@ export default [
   createBundle('icons/index.ts', 'dist/icons', 'icons'),
   createBundle('styles/index.ts', 'dist/styles', 'styles'),
   createBundle('utils.ts', 'dist/utils', 'utils'),
-  createBundle('components/NewBlock/index.tsx', 'dist/NewBlock', 'NewBlock'),
+  createBundle('components/Block/index.tsx', 'dist/Block', 'Block'),
 ]

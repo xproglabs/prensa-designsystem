@@ -4,7 +4,7 @@ import React from 'react'
 import { withTheme } from 'styled-components'
 
 import { ImageGallery } from '../../ImageGallery/index.tsx'
-import Block from '../../NewBlock/index.tsx'
+import Block from '../../Block/index.tsx'
 import Citation from '../Citation/Citation'
 import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed, TikTokEmbed } from '../Embeds'
 import Heading2 from '../Headings/Heading2'

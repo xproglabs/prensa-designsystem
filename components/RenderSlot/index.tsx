@@ -4,7 +4,7 @@ import React from 'react'
 import { withTheme } from 'styled-components'
 
 import Carousel from '../Carousel'
-import Block from '../NewBlock'
+import Block from '../Block'
 import Pagination from '../Pagination'
 import { PreviewProvider } from '../PreviewProvider'
 import Teaser from '../Teaser'

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Block from '../NewBlock'
+import Block from '../Block'
 import { ArrowButton } from './ArrowButton'
 import { PageIndicator } from './PageIndicator'
 import { PaginationComponentProps } from './types'

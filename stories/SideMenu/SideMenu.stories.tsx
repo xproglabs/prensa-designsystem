@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
-import Block from '../../components/NewBlock'
+import Block from '../../components/Block'
 import dataMock from './sidemenu_datamodel.json'
 
 export default {

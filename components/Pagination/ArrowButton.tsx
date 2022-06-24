@@ -1,7 +1,7 @@
 import { Link } from 'prensa'
 import React from 'react'
 
-import Block from '../NewBlock'
+import Block from '../Block'
 import { IcLeftPagination } from './IcLeftPagination'
 import { IcRightPagination } from './IcRightPagination'
 import { ArrowButtonProps } from './types'

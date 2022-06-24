@@ -1,7 +1,7 @@
 import { get } from 'lodash'
 import React from 'react'
 
-import Block from '../../NewBlock'
+import Block from '../../Block'
 import { selectMinHeightFromSlot } from '../../PageBlock/utils'
 import { ColorizedColumnProps, ColumnProps } from './types'
 

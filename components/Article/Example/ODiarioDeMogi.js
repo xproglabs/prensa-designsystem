@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { data } from '../../../mockup/template'
 import { theme as MogiTheme } from '../../../styles/demo/odiariodemogi'
-import Block from '../../NewBlock/index.tsx'
+import Block from '../../Block/index.tsx'
 import datePtBrFull from '../../Util/datePtBrFull'
 import { pathToImage } from '../../Util/pathToImage'
 import Article from '../Article'

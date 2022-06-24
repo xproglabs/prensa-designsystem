@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import Block from '../NewBlock/index.tsx'
+import Block from '../Block/index.tsx'
 
 const parseWidth = param => {
   try {

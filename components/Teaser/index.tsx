@@ -2,7 +2,7 @@ import { get } from 'lodash'
 import React from 'react'
 
 import { EditButtons } from '../EditArea'
-import Block from '../NewBlock'
+import Block from '../Block'
 import RelatedRender from './Related'
 import { RenderDatetime } from './RenderDateTime'
 import { RenderImage } from './RenderImage'

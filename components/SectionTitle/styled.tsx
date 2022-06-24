@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Block from '../NewBlock'
+import Block from '../Block'
 import Typography from '../Typography'
 import { StyledBoxProps, StyledTitleProps } from './types'
 

@@ -1,7 +1,7 @@
 import get from 'lodash/get'
 import React from 'react'
 
-import Block from '../../NewBlock'
+import Block from '../../Block'
 import { FacebookShareButton } from './FacebookShareButton'
 import { LinkedinShareButton } from './LinkedinShareButton'
 import { TelegramShareButton } from './TelegramShareButton'

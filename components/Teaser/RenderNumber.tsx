@@ -2,8 +2,8 @@ import { ColorTokens, FontTokens } from '@prensa_tokens'
 import { get } from 'lodash'
 import React from 'react'
 
-import Block from '../NewBlock'
-import { BlockProps } from '../NewBlock/props'
+import Block from '../Block'
+import { BlockProps } from '../Block/props'
 import Typography from '../Typography'
 import { SpacingType, LayoutProps } from './types'
 

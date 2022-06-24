@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { theme as folhadaregiao } from '../../../styles/demo/folhadaregiao'
 import AdPlaceholder from '../../AdBlock/placeholder'
-import Block from '../../NewBlock/index.tsx'
+import Block from '../../Block/index.tsx'
 import Article from '../Article'
 
 const dummyFacebook = () => '<p><a id="https://www.facebook.com/tecmundo/posts/4748374661907004" name="https://www.facebook.com/tecmundo/posts/4748374661907004">https://www.facebook.com/tecmundo/posts/4748374661907004</a></p>'

@@ -3,7 +3,7 @@ import React from 'react'
 import { withTheme } from 'styled-components'
 
 import Button from '../Button'
-import Block from '../NewBlock/index.tsx'
+import Block from '../Block/index.tsx'
 import Typography from '../Typography'
 
 export const Area = ({ children }) => (

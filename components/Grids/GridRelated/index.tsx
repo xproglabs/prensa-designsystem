@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Block from '../../NewBlock'
+import Block from '../../Block'
 import RenderSlot from '../../RenderSlot'
 import { RenderSlotProps } from '../../RenderSlot/types'
 

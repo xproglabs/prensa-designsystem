@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Block from '../../NewBlock'
+import Block from '../../Block'
 import { isBackgroundTransparent, selectBgColorFromSlot } from '../../PageBlock/utils'
 import RenderSlot from '../../RenderSlot'
 import { renderSpaceSlot } from '../../RenderSlot/utils'

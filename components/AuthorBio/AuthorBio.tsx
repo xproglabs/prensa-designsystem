@@ -3,7 +3,7 @@ import { Image } from 'prensa'
 import React from 'react'
 
 import Link from '../Link'
-import Block from '../NewBlock'
+import Block from '../Block'
 import { IcBioFacebook } from './IcBioFacebook'
 import { IcBioInstagram } from './IcBioInstagram'
 import { IcBioLinkedin } from './IcBioLinkedin'
