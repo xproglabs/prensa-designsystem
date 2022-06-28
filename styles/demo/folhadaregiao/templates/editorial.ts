@@ -4,6 +4,13 @@ export const TEMPLATES_EDITORIAL = {
       0: ['news_right_top']
     },
     min_height: ['auto', '350px'],
+    more_button: {
+      color: 'primary_main',
+      fontSize: 14,
+      border: 'primary_main',
+      variant: 'filled',
+      width: '100%'
+    },
     related: {
       enabled: false
     },
