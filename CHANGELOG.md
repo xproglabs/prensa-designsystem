@@ -1,3 +1,10 @@
+## [1.9.81](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.80...v1.9.81) (2022-06-28)
+
+
+### Features
+
+* disponibiliza o botão "VER MAIS" para o slot 100 ([8b1ce3e](https://github.com/xproglabs/prensa-designsystem/commit/8b1ce3e0b068b5cccfb7b5e9fc47c45d9a7169aa))
+
 ## [1.9.80](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.79...v1.9.80) (2022-06-15)
 
 
