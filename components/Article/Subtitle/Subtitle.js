@@ -7,6 +7,7 @@ import Typography from '../../Typography'
 const Subtitle = ({
   color,
   fontFamily,
+  fontStyle,
   fontSize,
   lineHeight,
   mb,
@@ -24,6 +25,7 @@ const Subtitle = ({
         dangerouslySetInnerHTML={value}
         element='p'
         fontFamily={fontFamily}
+        fontStyle={fontStyle}
         fontSize={fontSize[0]}
         lineHeight={lineHeight[0]}
         lg={{
@@ -37,6 +39,7 @@ const Subtitle = ({
 
 Subtitle.defaultProps = {
   color: 'neutral3',
+  fontStyle: 'normal',
   fontSize: ['18px', '18px'],
   fontFamily: 'secondary',
   lineHeight: ['150%', '150%'],
@@ -46,6 +49,7 @@ Subtitle.defaultProps = {
 Subtitle.propTypes = {
   color: PropTypes.string,
   fontFamily: PropTypes.string,
+  fontStyle: PropTypes.string,
   fontSize: PropTypes.array,
   lineHeight: PropTypes.array,
   mb: PropTypes.array,

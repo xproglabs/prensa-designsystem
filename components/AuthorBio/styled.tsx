@@ -13,7 +13,7 @@ import {
   SocialMediasWrapProps,
   TextWrapProps,
   TitleProps,
-} from './types'
+} from './props'
 
 export const Bio = ({ children, ...otherProps }: BioProps) => (
   <Typography
