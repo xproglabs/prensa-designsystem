@@ -75,7 +75,8 @@ const PageBlock = ({
     const slot100_block = selectTemplateFromTheme({ block: 'slot100', slot: slot1, templates })
     const slot100_layout = selectLayoutFromTemplate({ block: slot100_block, slot: slot1 })
     const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slot100_block.spaces)
-    const slot1_space_bottom = slot100_block.space_bottom
+    const slot1_space_bottom = get(slot100_block, 'space_bottom', [])
+    const slot1_more_button = get(slot100_block, 'more_button', {})
     const slot1_space_bottom_column = slot100_block.space_bottom_column
     const slot1_space_bottom_column_color = slot100_block.space_bottom_column_color
     const slotsHaveSecionTitle = slot1?.title !== ''
@@ -105,6 +106,7 @@ const PageBlock = ({
           min_height: slot100_block.min_height,
           order: slot1?.order,
           more: slot1?.more,
+          more_button: slot1_more_button,
           more_title: slot1?.more_title,
           more_link: slot1?.more_link,
           pagination: slot1?.pagination,
