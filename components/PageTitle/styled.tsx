@@ -15,6 +15,7 @@ export const Container = ({ children, ...otherProps }: ContainerProps) => (
     aligny='middle'
     px={2}
     width='calc(100% - 32px)'
+    xl={{ px: '0px', width: '100%' }}
     {...otherProps}
   >
     {children}
