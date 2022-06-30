@@ -82,8 +82,8 @@ const RenderImage = ({
       if (!fallback_image_url) {
         console.error('Prensa | Missing fallback_image_url prop in PageBlock component')
       } else {
-        image_path_mobile = fallback_image_url
-        image_path_desktop = fallback_image_url
+        image_path_mobile = get(fallback_image_url, 'path_mobile', fallback_image_url)
+        image_path_desktop = get(fallback_image_url, 'path_desktop', fallback_image_url)
       }
     } else {
       return null
