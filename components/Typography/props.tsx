@@ -25,22 +25,23 @@ import { TypographyElementTypes } from './types'
 export interface TypographyProps extends
   BorderProps,
   BorderStyleProps,
-  ColorProps,
   CustomCSSProps,
-  FontFamilyProps,
-  FontSizeProps,
-  FontStyleProps,
-  FontWeightProps,
-  LetterSpacingProps,
   LineHeightProps,
   MaxAndMinProps,
   MarginProps,
-  OpacityProps,
   PaddingProps,
   TextAlignProps,
-  TextDecorationProps,
   TextShadowProps,
   TextTransformProps {
   children: ReactNode;
+  bgColor?: ColorProps['$bgColor'];
+  color?: ColorProps['$color'];
   element?: TypographyElementTypes;
+  fontFamily?: FontFamilyProps['$fontFamily'];
+  fontSize?: FontSizeProps['$fontSize'];
+  fontStyle?: FontStyleProps['$fontStyle'];
+  fontWeight?: FontWeightProps['$fontWeight'];
+  letterSpacing: LetterSpacingProps['$letterSpacing'];
+  opacity: OpacityProps['$opacity'];
+  textDecoration: TextDecorationProps['$textDecoration'];
 }
