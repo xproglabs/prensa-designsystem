@@ -1,12 +1,7 @@
-import babel from '@rollup/plugin-babel'
-import commonjs from '@rollup/plugin-commonjs'
-import resolve from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import typescript from 'rollup-plugin-typescript2'
 
-import { createNetworkViz, createTreeMapViz } from './bundleVisualizer'
-
-function createBundle(inputDir, outputDir, name) {
+function createBundle(inputDir, outputDir, declarationInput) {
 
   const cjsOutDir = `${outputDir}.js`
   const esmOutDir = `${outputDir}.esm`
@@ -26,13 +21,8 @@ function createBundle(inputDir, outputDir, name) {
       }
     ],
     plugins: [
-      babel({ babelHelpers: 'bundled' }),
-      commonjs(),
       peerDepsExternal(),
-      resolve(),
-      typescript({ useTsconfigDeclarationDir: true }),
-      createNetworkViz(name),
-      createTreeMapViz(name)
+      typescript({ tsconfig: './tsconfig.json', include: [ declarationInput ] }),
     ]
   }
 }
