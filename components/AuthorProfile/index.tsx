@@ -1,9 +1,9 @@
 import { get } from 'lodash'
-import { Image } from 'prensa'
 import React from 'react'
 
-import Link from '../Link'
 import Block from '../Block'
+import Image from '../Image'
+import Link from '../Link'
 import * as S from './styled'
 import { AuthorProfileProps } from './types'
 

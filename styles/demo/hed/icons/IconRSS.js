@@ -1,5 +1,6 @@
-import { Icon } from 'prensa'
 import React from 'react'
+
+import Icon from '../../../../components/Icon/index.tsx'
 
 const IconRSS = props => {
   return (

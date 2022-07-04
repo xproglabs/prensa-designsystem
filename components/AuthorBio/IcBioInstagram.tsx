@@ -1,6 +1,7 @@
-import { Icon, Link } from 'prensa'
 import React from 'react'
 
+import Icon from '../Icon'
+import Link from '../Link'
 import { IconProps } from './props'
 
 const IcBioInstagram = ({ color, href }: IconProps) => {

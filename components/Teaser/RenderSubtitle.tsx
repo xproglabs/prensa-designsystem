@@ -1,6 +1,6 @@
-import { Typography } from 'prensa'
 import React from 'react'
 
+import Typography from '../Typography'
 import { LayoutProps } from './types'
 
 export type ItemProps = {

@@ -1,8 +1,8 @@
 import { IcTelegram } from 'icons'
-import { Link } from 'prensa'
 import React from 'react'
 
 import Block from '../../../Block'
+import Link from '../../../Link'
 import { TelegramAmpContainer } from './styled'
 import { TelegramShareButtonProps } from './types'
 

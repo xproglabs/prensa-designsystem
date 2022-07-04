@@ -1,7 +1,8 @@
-import { PageTitle } from 'prensa'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
+
+import { PageTitle } from '../PageTitle'
 
 export default {
   title: 'PageTitle'

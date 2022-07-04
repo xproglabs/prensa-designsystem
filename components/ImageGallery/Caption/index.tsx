@@ -1,7 +1,7 @@
-import { Typography } from 'prensa'
 import React from 'react'
 
 import Block from '../../Block'
+import Typography from '../../Typography'
 import { CaptionComponentProps } from './types'
 
 const Caption = ({

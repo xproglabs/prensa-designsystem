@@ -1,7 +1,6 @@
 /* eslint-disable */
 import { ColorTokens, RadiusTokens } from '@prensa_tokens'
-import { HeightProps } from '@xprog/prensa-css-engine/props'
-import { AlignStyledFunctionParam0 } from 'prensa'
+import { AlignProps, HeightProps } from '@xprog/prensa-css-engine/props'
 import { HTMLProps, ReactNode } from 'react'
 
 /**
@@ -9,9 +8,9 @@ import { HTMLProps, ReactNode } from 'react'
  * @description
  */
 export interface LinkProps extends Omit<HTMLProps<HTMLAnchorElement>, 'height'> {
-  align?: AlignStyledFunctionParam0['align'];
-  alignx?: AlignStyledFunctionParam0['alignx'];
-  aligny?: AlignStyledFunctionParam0['aligny'];
+  align?: AlignProps['align'];
+  alignx?: AlignProps['alignx'];
+  aligny?: AlignProps['aligny'];
   b?: string;
   borderColor?: ColorTokens;
   borderStyle?: string;
@@ -36,9 +35,9 @@ export interface LinkProps extends Omit<HTMLProps<HTMLAnchorElement>, 'height'> 
 }
 
 export type StyledLinkProps = {
-  align?: AlignStyledFunctionParam0['align'];
-  alignx?: AlignStyledFunctionParam0['alignx'];
-  aligny?: AlignStyledFunctionParam0['aligny'];
+  align?: AlignProps['align'];
+  alignx?: AlignProps['alignx'];
+  aligny?: AlignProps['aligny'];
   b?: string;
   borderColor?: ColorTokens;
   borderStyle?: string;

@@ -1,8 +1,8 @@
-import { AccordionEditorial } from 'prensa'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
+import AccordionEditorial from '../../components/AccordionEditorial'
 import data from './data.json'
 
 export default {

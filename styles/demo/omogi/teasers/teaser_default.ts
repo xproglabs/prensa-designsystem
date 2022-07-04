@@ -1,8 +1,7 @@
-import { CreateTeaser } from 'prensa'
-
 import { BORDER_DEFAULT } from '../border'
 import { parseResponsiveFont, NEWS_TITLE_TOKENS } from '../fonts'
 import { SUBJECT_DEFAULT } from '../subject'
+import { CreateTeaser } from '../../../teasers'
 
 export const TEASER_DEFAULT = CreateTeaser({
   box: {

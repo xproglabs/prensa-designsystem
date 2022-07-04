@@ -1,6 +1,6 @@
-import { Typography } from 'prensa'
 import React from 'react'
 
+import Typography from '../../Typography'
 import { ListItem } from './ListItem'
 import { OrderedList } from './OrderedList'
 import { ListComponentProps } from './types'

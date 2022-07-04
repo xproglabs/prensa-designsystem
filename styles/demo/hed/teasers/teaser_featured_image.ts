@@ -1,6 +1,5 @@
-import { CreateTeaser } from 'prensa'
-
 import { SUBJECT_FILLED } from '../tokens/subject'
+import { CreateTeaser } from '../../../teasers'
 
 export const TEASER_FEATURED_IMAGE = CreateTeaser({
   box: {

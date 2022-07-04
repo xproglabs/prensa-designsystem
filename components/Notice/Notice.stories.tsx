@@ -1,7 +1,8 @@
-import { Notice } from 'prensa'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
+
+import { Notice } from '../Notice'
 
 export default {
   title: 'Notice'
@@ -32,7 +33,7 @@ export const Default = () => {
         subtitleProps={{
           color: 'neutral2',
           fontSize: '12px',
-          fontWeight: 400, 
+          fontWeight: 400,
           mb: 2,
           lg: {
             mb: '0px'

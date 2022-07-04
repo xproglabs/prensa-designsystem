@@ -1,7 +1,8 @@
-import { Link } from 'prensa'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
+
+import Link from '../Link'
 
 export default {
   title: 'Link',

@@ -1,8 +1,8 @@
 import { get } from 'lodash'
-import { Link } from 'prensa'
 import React from 'react'
 
 import { ImagePreviewLink } from '../Image/preview'
+import Link from '../Link'
 
 const RenderOpacityMaskClickArea = ({
   align,

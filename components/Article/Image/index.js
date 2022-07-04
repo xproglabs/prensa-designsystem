@@ -1,8 +1,8 @@
 import { get } from 'lodash'
-import { Link } from 'prensa'
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import Link from '../../Link/index.ts'
 import { YouTubeEmbed } from '../Embeds'
 import * as S from './index.styled'
 

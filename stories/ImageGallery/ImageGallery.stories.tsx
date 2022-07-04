@@ -1,8 +1,8 @@
-import { ImageGallery } from 'prensa'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
+import { ImageGallery } from '../../components/ImageGallery'
 import data from './data.json'
 
 export default {

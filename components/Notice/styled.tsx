@@ -1,7 +1,8 @@
-import { Button, Typography } from 'prensa'
 import React from 'react'
 
 import Block from '../Block'
+import Button from '../Button'
+import Typography from '../Typography'
 import {
   ButtonWrapProps,
   ButtonFileProps,

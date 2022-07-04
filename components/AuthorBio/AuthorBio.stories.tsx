@@ -1,7 +1,8 @@
-import { AuthorBio } from 'prensa'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
+
+import { AuthorBio } from './AuthorBio'
 
 export default {
   title: 'AuthorBio'

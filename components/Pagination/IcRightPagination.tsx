@@ -1,6 +1,6 @@
-import { Icon } from 'prensa'
 import React from 'react'
 
+import Icon from '../Icon'
 import { IconProps } from './types'
 
 export const IcRightPagination = ({ color }: IconProps) => {

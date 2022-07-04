@@ -1,4 +1,4 @@
-import { CreateTemplate } from 'prensa'
+import { CreateTemplate } from '../../../../styles/templates'
 
 export const TEMPLATES_MOST_READ = CreateTemplate({
   slot70: {

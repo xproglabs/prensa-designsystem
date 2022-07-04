@@ -1,9 +1,10 @@
 import { get } from 'lodash'
-import { Image, parseImagePath } from 'prensa'
 import React from 'react'
 
-import Link from '../Link'
 import Block from '../Block'
+import Image from '../Image'
+import { parseImagePath } from '../Image/parser'
+import Link from '../Link'
 import * as S from './styled'
 import { AuthorProfileProps } from './types'
 
@@ -24,7 +25,7 @@ const TeaserProfile = ({
 
   const image_desktop_policy = get(image, 'desktop_path', '')
   const image_mobile_policy = get(image, 'mobile_path', '')
-  
+
   const image_desktop_url = parseImagePath('1x1', domain, image_desktop_policy, 40)
   const image_mobile_url = parseImagePath('1x1', domain, image_mobile_policy, 40)
 
@@ -89,7 +90,7 @@ const TeaserProfile = ({
             <S.AuthorName {...authorNameProps}>
               {name}
             </S.AuthorName>
-          } 
+          }
           {subtitleContainer && subtitleContainer()}
         </S.TitleWrapper>
       </S.Content>

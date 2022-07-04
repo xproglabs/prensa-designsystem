@@ -1,7 +1,6 @@
-import { CreateTeaser } from 'prensa'
-
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT_FEATURED } from '../tokens/subject'
+import { CreateTeaser } from '../../../teasers'
 
 export const FEATURED_RELATED = CreateTeaser({
   box: {
@@ -22,7 +21,7 @@ export const FEATURED_RELATED = CreateTeaser({
     ),
     font_weight: 700,
     line_height: ['110%', '110%'],
-    icon: {   
+    icon: {
       icon: 'IconRelacionadas',
       mr: 3,
       width: '24px'

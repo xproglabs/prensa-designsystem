@@ -1,4 +1,4 @@
-import { CreateTemplate } from 'prensa'
+import { CreateTemplate } from '../../../templates'
 
 export const TEMPLATE_FEATURED_IMAGE = CreateTemplate({
   slot70: {

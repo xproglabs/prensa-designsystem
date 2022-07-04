@@ -1,10 +1,9 @@
-import { CreateTheme } from 'prensa'
-
 import { MOGI_COLORS } from './colors'
 import { teasers } from './teasers'
 import { templates } from './templates'
 import { SECTION_TITLE } from './titles'
 import { TOPBAR_BRAND } from './topbar'
+import { CreateTheme } from '../../theme'
 
 export const theme = CreateTheme({
   buttons: {

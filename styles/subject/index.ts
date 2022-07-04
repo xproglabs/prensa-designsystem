@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { LayoutProps } from 'prensa'
+import { LayoutProps } from '../../components/Teaser/types'
 
 export const SUBJECT_DEFAULT: LayoutProps['subject'] = {
   bg_color: 'white',

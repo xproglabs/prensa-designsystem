@@ -1,5 +1,3 @@
-import { theme } from 'prensa'
-
 import { icons } from './icons'
 import {
   HED_FOOTER_LOGO,
@@ -15,6 +13,7 @@ import { SECTION_TITLE_DEFAULT } from './section_title'
 import { teasers } from './teasers'
 import { templates } from './templates'
 import { HED_COLORS } from './tokens/colors'
+import { theme } from '../../theme'
 
 export const hojeemdia_theme = {
   ...theme,

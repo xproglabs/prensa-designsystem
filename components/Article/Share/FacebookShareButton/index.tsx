@@ -1,8 +1,8 @@
 import { IcFacebook } from 'icons'
-import { Link } from 'prensa'
 import React from 'react'
 
 import Block from '../../../Block'
+import Link from '../../../Link'
 import { FacebookAmpContainer } from './styled'
 import { FacebookShareButtonProps } from './types'
 

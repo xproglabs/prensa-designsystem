@@ -1,6 +1,6 @@
-import { CreateTeaser } from 'prensa'
 import { parseFonts, tokensFonts } from '../tokens/fonts'
 import { SUBJECT_DEFAULT } from '../tokens/subjects'
+import { CreateTeaser } from '../../../../styles/teasers'
 
 export const TEASER_NEWS_MOST_READ = CreateTeaser({
   box: {
