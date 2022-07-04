@@ -33,7 +33,7 @@ export interface TypographyProps extends
   TextAlignProps,
   TextShadowProps,
   TextTransformProps {
-  children: ReactNode;
+  children?: ReactNode;
   bgColor?: ColorProps['$bgColor'];
   color?: ColorProps['$color'];
   element?: TypographyElementTypes;
@@ -41,7 +41,30 @@ export interface TypographyProps extends
   fontSize?: FontSizeProps['$fontSize'];
   fontStyle?: FontStyleProps['$fontStyle'];
   fontWeight?: FontWeightProps['$fontWeight'];
-  letterSpacing: LetterSpacingProps['$letterSpacing'];
-  opacity: OpacityProps['$opacity'];
-  textDecoration: TextDecorationProps['$textDecoration'];
+  letterSpacing?: LetterSpacingProps['$letterSpacing'];
+  opacity?: OpacityProps['$opacity'];
+  textDecoration?: TextDecorationProps['$textDecoration'];
+}
+
+export interface StyledTypographyProps extends 
+  BorderProps,
+  BorderStyleProps,
+  ColorProps,
+  CustomCSSProps,
+  FontFamilyProps,
+  FontSizeProps,
+  FontStyleProps,
+  FontWeightProps,
+  LetterSpacingProps,
+  LineHeightProps,
+  MaxAndMinProps,
+  MarginProps,
+  OpacityProps,
+  PaddingProps,
+  TextAlignProps,
+  TextDecorationProps,
+  TextShadowProps,
+  TextTransformProps {
+  children?: TypographyProps['children'];
+  element?: TypographyProps['element'];
 }

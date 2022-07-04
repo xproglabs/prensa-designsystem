@@ -17,7 +17,10 @@ import { textAlign } from '@xprog/prensa-css-engine/textAlign'
 import { textDecoration } from '@xprog/prensa-css-engine/textDecoration'
 import { textShadow } from '@xprog/prensa-css-engine/textShadow'
 import { textTransform } from '@xprog/prensa-css-engine/textTransform'
+import { ComponentType } from 'react'
 import styled, { css } from 'styled-components'
+
+import { StyledTypographyProps } from './props'
 
 const engine = css`
   ${border};
@@ -40,14 +43,13 @@ const engine = css`
   ${textTransform};
 `
 
-export const HeadingOne = styled.h1`${engine}`
-export const HeadingTwo = styled.h2`${engine}`
-export const HeadingThree = styled.h3`${engine}`
-export const HeadingFour = styled.h4`${engine}`
-export const HeadingFive = styled.h5`${engine}`
-export const HeadingSix = styled.h6`${engine}`
-export const Paragraph = styled.p`${engine}`
-export const Span = styled.span`${engine}`
-export const Label = styled.label`${engine}`
-export const Cite = styled.cite`${engine}`
-export const A = styled.a`${engine}`
+export const HeadingOne: ComponentType<StyledTypographyProps> = styled.h1<StyledTypographyProps>`${engine}`
+export const HeadingTwo: ComponentType<StyledTypographyProps> = styled.h2<StyledTypographyProps>`${engine}`
+export const HeadingThree: ComponentType<StyledTypographyProps> = styled.h3<StyledTypographyProps>`${engine}`
+export const HeadingFour: ComponentType<StyledTypographyProps> = styled.h4<StyledTypographyProps>`${engine}`
+export const HeadingFive: ComponentType<StyledTypographyProps> = styled.h5<StyledTypographyProps>`${engine}`
+export const HeadingSix: ComponentType<StyledTypographyProps> = styled.h6<StyledTypographyProps>`${engine}`
+export const Paragraph: ComponentType<StyledTypographyProps> = styled.p<StyledTypographyProps>`${engine}`
+export const Span: ComponentType<StyledTypographyProps> = styled.span<StyledTypographyProps>`${engine}`
+export const Label: ComponentType<StyledTypographyProps> = styled.label<StyledTypographyProps>`${engine}`
+export const Cite: ComponentType<StyledTypographyProps> = styled.cite<StyledTypographyProps>`${engine}`

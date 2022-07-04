@@ -11,35 +11,165 @@ import {
   Paragraph,
   Span,
   Label,
-  Cite,
-  A
+  Cite
 } from './styled'
 
-const Typography = (props: TypographyProps) => {
-  switch (props.element) {
+const Typography = ({
+  bgColor,
+  color,
+  element,
+  fontFamily,
+  fontSize,
+  fontStyle,
+  fontWeight,
+  letterSpacing,
+  opacity,
+  textDecoration,
+}: TypographyProps) => {
+
+
+  switch (element) {
     case 'h1':
-      return <HeadingOne {...props} />
+      return (
+        <HeadingOne
+          $bgColor={bgColor}
+          $color={color}
+          $fontFamily={fontFamily}
+          $fontSize={fontSize}
+          $fontStyle={fontStyle}
+          $fontWeight={fontWeight}
+          $letterSpacing={letterSpacing}
+          $opacity={opacity}
+          $textDecoration={textDecoration}
+        />
+      )
     case 'h2':
-      return <HeadingTwo {...props} />
+      return (
+        <HeadingTwo
+          $bgColor={bgColor}
+          $color={color}
+          $fontFamily={fontFamily}
+          $fontSize={fontSize}
+          $fontStyle={fontStyle}
+          $fontWeight={fontWeight}
+          $letterSpacing={letterSpacing}
+          $opacity={opacity}
+          $textDecoration={textDecoration}
+        />
+      )
     case 'h3':
-      return <HeadingThree {...props} />
+      return (
+        <HeadingThree
+          $bgColor={bgColor}
+          $color={color}
+          $fontFamily={fontFamily}
+          $fontSize={fontSize}
+          $fontStyle={fontStyle}
+          $fontWeight={fontWeight}
+          $letterSpacing={letterSpacing}
+          $opacity={opacity}
+          $textDecoration={textDecoration}
+        />
+      )
     case 'h4':
-      return <HeadingFour {...props} />
+      return (
+        <HeadingFour
+          $bgColor={bgColor}
+          $color={color}
+          $fontFamily={fontFamily}
+          $fontSize={fontSize}
+          $fontStyle={fontStyle}
+          $fontWeight={fontWeight}
+          $letterSpacing={letterSpacing}
+          $opacity={opacity}
+          $textDecoration={textDecoration}
+        />
+      )
     case 'h5':
-      return <HeadingFive {...props} />
+      return (
+        <HeadingFive
+          $bgColor={bgColor}
+          $color={color}
+          $fontFamily={fontFamily}
+          $fontSize={fontSize}
+          $fontStyle={fontStyle}
+          $fontWeight={fontWeight}
+          $letterSpacing={letterSpacing}
+          $opacity={opacity}
+          $textDecoration={textDecoration}
+        />
+      )
     case 'h6':
-      return <HeadingSix {...props} />
+      return (
+        <HeadingSix
+          $bgColor={bgColor}
+          $color={color}
+          $fontFamily={fontFamily}
+          $fontSize={fontSize}
+          $fontStyle={fontStyle}
+          $fontWeight={fontWeight}
+          $letterSpacing={letterSpacing}
+          $opacity={opacity}
+          $textDecoration={textDecoration}
+        />
+      )
     case 'p':
-      return <Paragraph {...props} />
+      return (
+        <Paragraph
+          $bgColor={bgColor}
+          $color={color}
+          $fontFamily={fontFamily}
+          $fontSize={fontSize}
+          $fontStyle={fontStyle}
+          $fontWeight={fontWeight}
+          $letterSpacing={letterSpacing}
+          $opacity={opacity}
+          $textDecoration={textDecoration}
+        />
+      )
     case 'label':
-      return <Label {...props} />
+      return (
+        <Label
+          $bgColor={bgColor}
+          $color={color}
+          $fontFamily={fontFamily}
+          $fontSize={fontSize}
+          $fontStyle={fontStyle}
+          $fontWeight={fontWeight}
+          $letterSpacing={letterSpacing}
+          $opacity={opacity}
+          $textDecoration={textDecoration}
+        />
+      )
     case 'cite':
-      return <Cite {...props} />
-    case 'a':
-      return <A {...props} />
+      return (
+        <Cite
+          $bgColor={bgColor}
+          $color={color}
+          $fontFamily={fontFamily}
+          $fontSize={fontSize}
+          $fontStyle={fontStyle}
+          $fontWeight={fontWeight}
+          $letterSpacing={letterSpacing}
+          $opacity={opacity}
+          $textDecoration={textDecoration}
+        />
+      )
     case 'span':
     default:
-      return <Span {...props} />
+      return (
+        <Span
+          $bgColor={bgColor}
+          $color={color}
+          $fontFamily={fontFamily}
+          $fontSize={fontSize}
+          $fontStyle={fontStyle}
+          $fontWeight={fontWeight}
+          $letterSpacing={letterSpacing}
+          $opacity={opacity}
+          $textDecoration={textDecoration}
+        />
+      )
   }
 }
 
