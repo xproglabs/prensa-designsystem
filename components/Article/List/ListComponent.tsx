@@ -34,7 +34,7 @@ const ListComponent = ({
           fontSize='20px'
           lineHeight='160%'
           element='span'
-          dangerouslySetInnerHTML={entry}
+          dangerouslySetInnerHTML={{ __html: entry }}
           {...textProps}
         />
       </ListItem>

@@ -6,7 +6,7 @@ import Typography from '../../Typography'
 export const TextBody = ({ color, children }) => (
   <Typography
     color={color}
-    dangerouslySetInnerHTML={children}
+    dangerouslySetInnerHTML={{ __html: children }}
     element='h3'
     fontFamily='primary'
     fontSize='18px'

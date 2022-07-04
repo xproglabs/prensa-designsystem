@@ -19,7 +19,7 @@ const Heading4 = ({
     <Block maxWidth={maxWidth} width='100%'>
       <Typography 
         color={color}
-        dangerouslySetInnerHTML={value}
+        dangerouslySetInnerHTML={{ __html: value }}
         element={element}
         fontFamily={fontFamily}
         fontSize={fontSize[0]}

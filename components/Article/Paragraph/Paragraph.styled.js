@@ -7,7 +7,7 @@ import Typography from '../../Typography'
 export const Paragraph = ({ color, children }) => (
   <Typography 
     color={color}
-    dangerouslySetInnerHTML={children}
+    dangerouslySetInnerHTML={{ __html: children }}
     element='p'
     fontFamily='primary'
     fontSize='14px'

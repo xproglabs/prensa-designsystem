@@ -78,7 +78,7 @@ export const Subtitle = ({
 }) => (
   <Typography 
     color='neutral4'
-    dangerouslySetInnerHTML={children}
+    dangerouslySetInnerHTML={{ __html: children }}
     element="p"
     fontFamily={fontFamily}
     fontSize={fontSize[0]}

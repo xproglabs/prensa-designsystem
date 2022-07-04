@@ -19,7 +19,7 @@ const Title = ({
     >
       <Typography 
         color={color}
-        dangerouslySetInnerHTML={value}
+        dangerouslySetInnerHTML={{ __html: value }}
         element='h1'
         fontFamily='primary'
         fontSize={fontSize[0]}

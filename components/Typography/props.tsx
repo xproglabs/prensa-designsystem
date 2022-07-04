@@ -36,6 +36,7 @@ export interface TypographyProps extends
   children?: ReactNode;
   bgColor?: ColorProps['$bgColor'];
   color?: ColorProps['$color'];
+  dangerouslySetInnerHTML?: { __html: Object };
   element?: TypographyElementTypes;
   fontFamily?: FontFamilyProps['$fontFamily'];
   fontSize?: FontSizeProps['$fontSize'];
@@ -66,5 +67,6 @@ export interface StyledTypographyProps extends
   TextShadowProps,
   TextTransformProps {
   children?: TypographyProps['children'];
+  dangerouslySetInnerHTML?: { __html: Object };
   element?: TypographyProps['element'];
 }

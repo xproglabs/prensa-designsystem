@@ -20,7 +20,7 @@ const Subtitle = ({
     >
       <Typography 
         color={color}
-        dangerouslySetInnerHTML={value}
+        dangerouslySetInnerHTML={{ __html: value }}
         element='p'
         fontFamily={fontFamily}
         fontStyle={fontStyle}

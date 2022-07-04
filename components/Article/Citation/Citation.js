@@ -33,7 +33,7 @@ const Citation = ({
     >
       <Typography 
         color={color}
-        dangerouslySetInnerHTML={value}
+        dangerouslySetInnerHTML={{ __html: value }}
         element='cite'
         fontFamily={fontFamily}
         fontSize={fontSize[0]}

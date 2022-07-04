@@ -100,7 +100,7 @@ Content.propTypes = {
 export const Message = ({ text }) => (
   <Typography 
     color="neutral2"
-    dangerouslySetInnerHTML={text}
+    dangerouslySetInnerHTML={{ __html: text }}
     element="p"
     fontFamily="secondary"
     fontSize="12px"
