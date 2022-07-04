@@ -1,13 +1,1 @@
 *.tgz
-.babelrc
-.eslintrc.json
-.gitignore
-.github
-.storybook
-rollup.config.js
-tsconfig.json
-prensa_tokens.d.ts
-
-/stories
-/styles/demo
-/dist
