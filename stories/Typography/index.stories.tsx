@@ -1,11 +1,11 @@
 import React from 'react'
-import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
 import Typography from '../../components/Typography'
+import { theme } from '../../storybook/theme'
 
 export default {
-  title: 'NewTypography',
+  title: 'Typography',
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>

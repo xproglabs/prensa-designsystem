@@ -25,6 +25,7 @@ const Typography = ({
   letterSpacing,
   opacity,
   textDecoration,
+  ...otherProps
 }: TypographyProps) => {
 
 
@@ -32,6 +33,7 @@ const Typography = ({
     case 'h1':
       return (
         <HeadingOne
+          {...otherProps}
           $bgColor={bgColor}
           $color={color}
           $fontFamily={fontFamily}
@@ -46,6 +48,7 @@ const Typography = ({
     case 'h2':
       return (
         <HeadingTwo
+          {...otherProps}
           $bgColor={bgColor}
           $color={color}
           $fontFamily={fontFamily}
@@ -60,6 +63,7 @@ const Typography = ({
     case 'h3':
       return (
         <HeadingThree
+          {...otherProps}
           $bgColor={bgColor}
           $color={color}
           $fontFamily={fontFamily}
@@ -74,6 +78,7 @@ const Typography = ({
     case 'h4':
       return (
         <HeadingFour
+          {...otherProps}
           $bgColor={bgColor}
           $color={color}
           $fontFamily={fontFamily}
@@ -88,6 +93,7 @@ const Typography = ({
     case 'h5':
       return (
         <HeadingFive
+          {...otherProps}
           $bgColor={bgColor}
           $color={color}
           $fontFamily={fontFamily}
@@ -102,6 +108,7 @@ const Typography = ({
     case 'h6':
       return (
         <HeadingSix
+          {...otherProps}
           $bgColor={bgColor}
           $color={color}
           $fontFamily={fontFamily}
@@ -116,6 +123,7 @@ const Typography = ({
     case 'p':
       return (
         <Paragraph
+          {...otherProps}
           $bgColor={bgColor}
           $color={color}
           $fontFamily={fontFamily}
@@ -130,6 +138,7 @@ const Typography = ({
     case 'label':
       return (
         <Label
+          {...otherProps}
           $bgColor={bgColor}
           $color={color}
           $fontFamily={fontFamily}
@@ -144,6 +153,7 @@ const Typography = ({
     case 'cite':
       return (
         <Cite
+          {...otherProps}
           $bgColor={bgColor}
           $color={color}
           $fontFamily={fontFamily}
@@ -159,6 +169,7 @@ const Typography = ({
     default:
       return (
         <Span
+          {...otherProps}
           $bgColor={bgColor}
           $color={color}
           $fontFamily={fontFamily}

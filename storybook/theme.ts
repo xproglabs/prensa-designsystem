@@ -1,4 +1,4 @@
-import { CreateTheme } from 'prensa'
+import { CreateTheme } from '../styles/theme'
 
 export const theme = CreateTheme({
   factors: {
