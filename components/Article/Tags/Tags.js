@@ -35,7 +35,7 @@ const Tags = ({
               fontFamily={fontFamily}
               fontSize={fontSize[0]}
               fontWeight={fontWeight}
-              transform={transform}
+              textTransform={transform}
               custom='white-space: nowrap;'
             >
               {item}

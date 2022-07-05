@@ -86,7 +86,7 @@ export const TitleText = ({
         fontSize: font_size[1],
         lineHeight: line_height[1],
       }}
-      transform={transform}>
+      textTransform={transform}>
       {children}
     </Typography> 
   )

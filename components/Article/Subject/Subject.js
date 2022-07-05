@@ -33,7 +33,7 @@ const Subject = ({
         fontWeight={fontWeight}
         lineHeight={lineHeight[0]}
         lg={{ fontSize: fontSize[1], lineHeight: lineHeight[1] }}
-        transform={transform}
+        textTransform={transform}
       >
         {value}
       </Typography>

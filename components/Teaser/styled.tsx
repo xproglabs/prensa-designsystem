@@ -48,7 +48,7 @@ const Subject = ({
         fontWeight={700}
         lineHeight={line_height[0]}
         lg={{ fontSize: font_size[1], lineHeight: line_height[1] }}
-        transform='uppercase'
+        textTransform='uppercase'
       >
         {children}
       </Typography> 
