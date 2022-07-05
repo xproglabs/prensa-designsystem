@@ -77,7 +77,7 @@ const RenderTitle = ({
       fontWeight={title_layout?.font_weight || 700 }
       lineHeight={title_layout.line_height?.[0]}
       mb={title_layout.mb?.[0]}
-      shadow={opacity_mask}
+      textShadow={opacity_mask ? '2px 2px 3px rgba(0, 0, 0, 0.5)' : ''}
       width='100%'
       lg={{
         fontSize: title_layout.font_size?.[1],
