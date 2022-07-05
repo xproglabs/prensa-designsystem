@@ -17,6 +17,7 @@ import { textAlign } from '@xprog/prensa-css-engine/textAlign'
 import { textDecoration } from '@xprog/prensa-css-engine/textDecoration'
 import { textShadow } from '@xprog/prensa-css-engine/textShadow'
 import { textTransform } from '@xprog/prensa-css-engine/textTransform'
+import { width } from '@xprog/prensa-css-engine/width'
 import { ComponentType } from 'react'
 import styled, { css } from 'styled-components'
 
@@ -41,6 +42,7 @@ const engine = css`
   ${textDecoration};
   ${textShadow};
   ${textTransform};
+  ${width};
 `
 
 export const HeadingOne: ComponentType<StyledTypographyProps> = styled.h1<StyledTypographyProps>`${engine}`

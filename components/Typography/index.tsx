@@ -25,6 +25,7 @@ const Typography = ({
   letterSpacing,
   opacity,
   textDecoration,
+  width,
   ...otherProps
 }: TypographyProps) => {
 
@@ -43,6 +44,7 @@ const Typography = ({
           $letterSpacing={letterSpacing}
           $opacity={opacity}
           $textDecoration={textDecoration}
+          $width={width}
         />
       )
     case 'h2':
@@ -58,6 +60,7 @@ const Typography = ({
           $letterSpacing={letterSpacing}
           $opacity={opacity}
           $textDecoration={textDecoration}
+          $width={width}
         />
       )
     case 'h3':
@@ -73,6 +76,7 @@ const Typography = ({
           $letterSpacing={letterSpacing}
           $opacity={opacity}
           $textDecoration={textDecoration}
+          $width={width}
         />
       )
     case 'h4':
@@ -88,6 +92,7 @@ const Typography = ({
           $letterSpacing={letterSpacing}
           $opacity={opacity}
           $textDecoration={textDecoration}
+          $width={width}
         />
       )
     case 'h5':
@@ -103,6 +108,7 @@ const Typography = ({
           $letterSpacing={letterSpacing}
           $opacity={opacity}
           $textDecoration={textDecoration}
+          $width={width}
         />
       )
     case 'h6':
@@ -118,6 +124,7 @@ const Typography = ({
           $letterSpacing={letterSpacing}
           $opacity={opacity}
           $textDecoration={textDecoration}
+          $width={width}
         />
       )
     case 'p':
@@ -133,6 +140,7 @@ const Typography = ({
           $letterSpacing={letterSpacing}
           $opacity={opacity}
           $textDecoration={textDecoration}
+          $width={width}
         />
       )
     case 'label':
@@ -148,6 +156,7 @@ const Typography = ({
           $letterSpacing={letterSpacing}
           $opacity={opacity}
           $textDecoration={textDecoration}
+          $width={width}
         />
       )
     case 'cite':
@@ -163,6 +172,7 @@ const Typography = ({
           $letterSpacing={letterSpacing}
           $opacity={opacity}
           $textDecoration={textDecoration}
+          $width={width}
         />
       )
     case 'span':
@@ -179,6 +189,7 @@ const Typography = ({
           $letterSpacing={letterSpacing}
           $opacity={opacity}
           $textDecoration={textDecoration}
+          $width={width}
         />
       )
   }

@@ -17,6 +17,7 @@ import {
   TextDecorationProps,
   TextShadowProps,
   TextTransformProps,
+  WidthProps
 } from '@xprog/prensa-css-engine/props'
 import { ReactNode } from 'react'
 
@@ -45,6 +46,7 @@ export interface TypographyProps extends
   letterSpacing?: LetterSpacingProps['$letterSpacing'];
   opacity?: OpacityProps['$opacity'];
   textDecoration?: TextDecorationProps['$textDecoration'];
+  width?: WidthProps['$width'];
 }
 
 export interface StyledTypographyProps extends 
@@ -65,7 +67,8 @@ export interface StyledTypographyProps extends
   TextAlignProps,
   TextDecorationProps,
   TextShadowProps,
-  TextTransformProps {
+  TextTransformProps,
+  WidthProps {
   children?: TypographyProps['children'];
   dangerouslySetInnerHTML?: { __html: Object };
   element?: TypographyProps['element'];
