@@ -13,7 +13,7 @@ const TextItemYear = ({ color } : TextItemProps) => {
       element='span'
       fontSize='12px'
       mb='4px'
-      textAlign='start'
+      textAlign='left'
       width='100%'
       color={color}
       fontFamily='secondary'
