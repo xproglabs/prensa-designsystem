@@ -24,16 +24,12 @@ const Subtitle = ({
       color={color}
       element='h2'
       fontFamily='secondary'
-      fontSize={font_size[0]}
+      fontSize={font_size}
       fontWeight={300}
-      lineHeight={line_height[0]}
-      lg={{
-        fontSize: font_size[1],
-        lineHeight: line_height[1],
-        mb: mb[1]
-      }}
-      mb={mb[0]}
-      width='100%'>
+      lineHeight={line_height}
+      mb={mb}
+      width='100%'
+    >
       {children}
     </Typography> 
   )
