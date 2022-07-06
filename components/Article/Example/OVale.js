@@ -104,7 +104,7 @@ const ArticleOV = () => {
           bgColor: 'primary1',
           color: 'white',
           mb: [3, 3],
-          transform: 'uppercase',
+          textTransform: 'uppercase',
           value: 'Especial'
         }}
         subtitle={{

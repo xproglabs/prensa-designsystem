@@ -17,7 +17,7 @@ const Tags = ({
   maxWidth,
   radius,
   termSlug,
-  transform
+  textTransform
 }) => {
   return (
     <S.Container maxWidth={maxWidth}>
@@ -35,7 +35,7 @@ const Tags = ({
               fontFamily={fontFamily}
               fontSize={fontSize[0]}
               fontWeight={fontWeight}
-              textTransform={transform}
+              textTransform={textTransform}
               custom='white-space: nowrap;'
             >
               {item}
@@ -65,7 +65,7 @@ Tags.propTypes = {
   items: PropTypes.array,
   maxWidth: PropTypes.string,
   radius: PropTypes.string,
-  transform: PropTypes.string,
+  textTransform: PropTypes.string,
 }
 
 export default Tags

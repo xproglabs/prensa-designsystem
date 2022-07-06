@@ -158,7 +158,7 @@ const ArticleHojeEmDia2 = () => {
           fontWeight: 900,
           px: '8px',
           mb: [2, 3],
-          transform: 'uppercase',
+          textTransform: 'uppercase',
           value: 'HOJE EM DIA'
         }}
         subtitle={{

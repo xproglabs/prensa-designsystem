@@ -18,7 +18,7 @@ export interface PageTitleProps {
   px?: SpacingType;
   title?: string;
   titleProps?: TitleProps;
-  transform?: string;
+  textTransform?: string;
   items?: any;
   item?: any;
 }
@@ -46,6 +46,6 @@ export type TitleProps = {
   fontWeight?: string | number;
   lineHeight?: string;
   mb?: SpacingType;
-  transform?: string;
+  textTransform?: string;
   title?: string;
 }

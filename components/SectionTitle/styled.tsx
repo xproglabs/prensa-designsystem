@@ -62,7 +62,7 @@ export const TitleEmpty = () => (
  * @param font_family expects a font family token
  * @param font_size expects a font size format
  * @param line_height expects a font size format
- * @param transform expects 'uppercase' || 'lowercase'
+ * @param textTransform expects 'uppercase' || 'lowercase'
  * @returns the title as a React element
  */
 export const TitleText = ({
@@ -72,7 +72,7 @@ export const TitleText = ({
   font_family,
   font_size,
   line_height,
-  transform
+  textTransform
 }: StyledTitleProps) => {
   return (
     <Typography
@@ -82,7 +82,7 @@ export const TitleText = ({
       fontSize={font_size}
       fontWeight={700}
       lineHeight={line_height}
-      textTransform={transform}
+      textTransform={textTransform}
     >
       {children}
     </Typography> 

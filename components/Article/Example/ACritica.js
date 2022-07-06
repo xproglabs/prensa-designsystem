@@ -115,7 +115,7 @@ const ArticleACritica = () => {
           color: 'white',
           fontSize: ['12px', '12px'],
           mb: [2, 3],
-          transform: 'uppercase',
+          textTransform: 'uppercase',
           value: 'A Crítica'
         }}
         subtitle={{

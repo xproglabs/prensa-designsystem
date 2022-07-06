@@ -12,7 +12,7 @@ const titleDefaultProps = {
   color: 'neutral3',
   fontFamily: 'secondary',
   fontSize: '14px',
-  transform: 'uppercase',
+  textTransform: 'uppercase',
   mb: 3,
 }
 

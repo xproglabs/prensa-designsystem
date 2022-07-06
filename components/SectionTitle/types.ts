@@ -35,7 +35,7 @@ interface TextLayout {
   font_family?: string;
   font_size?: [string, string];
   line_height?: [string, string];
-  transform?: string;
+  textTransform?: string;
 }
 
 /**

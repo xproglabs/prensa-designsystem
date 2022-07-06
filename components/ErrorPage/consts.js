@@ -32,7 +32,7 @@ const PAGE_TITLE = {
   fontWeight: 700,
   element: 'span',
   mb: 2,
-  transform: 'uppercase'
+  textTransform: 'uppercase'
 }
 
 export {

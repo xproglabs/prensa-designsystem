@@ -21,7 +21,7 @@ export const Default = () => {
           fontSize: '24px',
           fontWeight: 700,
           mb: 2,
-          transform: 'uppercase'
+          textTransform: 'uppercase'
         }}
         title='TESTE DE TÍTULO DE EDITORIA'>
       </PageTitle>

@@ -150,7 +150,7 @@ const ArticleFolhaDaRegiao = () => {
             color: 'white',
             fontSize: ['12px', '12px'],
             mb: ['2', '2'],
-            transform: 'uppercase',
+            textTransform: 'uppercase',
             value: 'TURISMO'
           }}
           subtitle={{

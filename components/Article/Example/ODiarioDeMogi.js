@@ -150,7 +150,7 @@ const ArticleOM = () => {
     bgColor: config.header_color,
     color: 'white',
     mb: [3, 3],
-    transform: 'uppercase',
+    textTransform: 'uppercase',
     value: subject
   }
   const props_subtitle = {

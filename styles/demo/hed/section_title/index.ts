@@ -11,6 +11,6 @@ export const SECTION_TITLE_DEFAULT: SectionTitleLayout = {
   text: {
     font_size: ['24px', '24px'],
     line_height: ['28px', '28px'],
-    transform: 'initial'
+    textTransform: 'initial'
   }
 }

@@ -16,7 +16,7 @@ const Subject = ({
   px,
   py,
   radius,
-  transform,
+  textTransform,
   value
 }) => {
 
@@ -32,7 +32,7 @@ const Subject = ({
         fontSize={fontSize}
         fontWeight={fontWeight}
         lineHeight={lineHeight}
-        textTransform={transform}
+        textTransform={textTransform}
       >
         {value}
       </Typography>

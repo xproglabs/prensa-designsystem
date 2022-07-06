@@ -94,7 +94,7 @@ const ArticleDR = () => {
           bgColor: 'primary1',
           color: 'white',
           mb: [2, 3],
-          transform: 'uppercase',
+          textTransform: 'uppercase',
           value: 'Diário da Região'
         }}
         subtitle={{
