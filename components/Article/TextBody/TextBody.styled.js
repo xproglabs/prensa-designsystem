@@ -9,14 +9,10 @@ export const TextBody = ({ color, children }) => (
     dangerouslySetInnerHTML={{ __html: children }}
     element='h3'
     fontFamily='primary'
-    fontSize='18px'
+    fontSize={['18px', '30px']}
     fontWeight={700}
-    lineHeight='22px'
+    lineHeight={['22px', '36px']}
     mb={4}
-    lg={{
-      fontSize: '30px',
-      lineHeight: '36px'
-    }}
   />
 )
 
