@@ -79,14 +79,11 @@ export const TitleText = ({
       color={color}
       element={element}
       fontFamily={font_family}
-      fontSize={font_size[0]}
+      fontSize={font_size}
       fontWeight={700}
-      lineHeight={line_height[0]}
-      lg={{
-        fontSize: font_size[1],
-        lineHeight: line_height[1],
-      }}
-      textTransform={transform}>
+      lineHeight={line_height}
+      textTransform={transform}
+    >
       {children}
     </Typography> 
   )
@@ -97,5 +94,5 @@ TitleText.defaultProps = {
   font_family: 'secondary',
   font_size: ['14px', '18px'],
   line_height: ['18px', '22px'],
-  transform: 'uppercase'
+  textTransform: 'uppercase'
 }
