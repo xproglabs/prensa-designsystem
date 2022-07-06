@@ -20,9 +20,8 @@ export const Bio = ({ children, ...otherProps }: BioProps) => (
   <Typography
     element='span'
     mb={2}
-    textAlign='center'
+    textAlign={['center', 'left']}
     width='100%'
-    lg={{ textAlign: 'left' }}
     {...otherProps}
   >
     {children}
@@ -32,9 +31,8 @@ export const Email = ({ children, ...otherProps }: EmailProps) => (
   <Typography
     element='span'
     mb={2}
-    textAlign='center'
+    textAlign={['center', 'left']}
     width='100%'
-    lg={{ textAlign: 'left' }}
     {...otherProps}
   >
     {children}
@@ -44,9 +42,8 @@ export const Name = ({ children, ...otherProps }: NameProps) => (
   <Typography
     element='span'
     mb={2}
-    textAlign='center'
+    textAlign={['center', 'left']}
     width='100%'
-    lg={{ textAlign: 'left' }}
     {...otherProps}
   >
     {children}
@@ -56,9 +53,8 @@ export const Position = ({ children, ...otherProps }: PositionProps) => (
   <Typography
     element='span'
     mb={2}
-    textAlign='center'
+    textAlign={['center', 'left']}
     width='100%'
-    lg={{ textAlign: 'left' }}
     {...otherProps}
   >
     {children}
@@ -67,9 +63,8 @@ export const Position = ({ children, ...otherProps }: PositionProps) => (
 export const Title = ({ children, ...otherProps }: TitleProps) => (
   <Typography
     element='span'
-    textAlign='center'
+    textAlign={['center', 'left']}
     width='100%'
-    lg={{ textAlign: 'left' }}
     {...otherProps}
   >
     {children}

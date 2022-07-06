@@ -1,6 +1,8 @@
 import { RadiusTokens, ColorTokens, FontTokens } from '@prensa_tokens'
 import { ReactNode } from 'react'
 
+import { TypographyElementTypes } from '../Typography/types'
+
 export type SpacingType = number | string
 export type ResponsiveSpacingType = Array<string | number>
 
@@ -34,7 +36,7 @@ export interface AuthorBioProps {
 export interface BioProps {
   children?: ReactNode;
   color?: ColorTokens;
-  element?: string;
+  element?: TypographyElementTypes;
   fontFamily?: FontTokens;
   fontSize?: string;
   fontWeight?: number;
@@ -43,7 +45,7 @@ export interface BioProps {
 export interface EmailProps {
   children?: ReactNode;
   color?: ColorTokens;
-  element?: string;
+  element?: TypographyElementTypes;
   fontFamily?: FontTokens;
   fontSize?: string;
   fontWeight?: number;
@@ -52,7 +54,7 @@ export interface EmailProps {
 export interface NameProps {
   children?: ReactNode;
   color?: ColorTokens;
-  element?: string;
+  element?: TypographyElementTypes;
   fontFamily?: FontTokens;
   fontSize?: string;
   fontWeight?: number;
@@ -61,7 +63,7 @@ export interface NameProps {
 export interface PositionProps {
   children?: ReactNode;
   color?: ColorTokens;
-  element?: string;
+  element?: TypographyElementTypes;
   fontFamily?: FontTokens;
   fontSize?: string;
   fontWeight?: number;
@@ -70,7 +72,7 @@ export interface PositionProps {
 export interface TitleProps {
   children?: ReactNode;
   color?: ColorTokens;
-  element?: string;
+  element?: TypographyElementTypes;
   fontFamily?: FontTokens;
   fontSize?: string;
   fontWeight?: number;
@@ -114,7 +116,7 @@ export interface ContentWrapProps {
   children?: ReactNode;
 }
 export interface ImageProps {
-  children?: ReactNode;  
+  children?: ReactNode;
   size?: Array<string>;
 }
 export interface SocialMediasWrapProps {
