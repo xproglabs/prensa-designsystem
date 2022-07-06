@@ -10,13 +10,9 @@ export const Paragraph = ({ color, children }) => (
     dangerouslySetInnerHTML={{ __html: children }}
     element='p'
     fontFamily='primary'
-    fontSize='14px'
-    lineHeight='18px'
+    fontSize={['14px', '18px']}
+    lineHeight={['18px', '22px']}
     mb={2}
-    lg={{
-      fontSize: '18px',
-      lineHeight: '22px'
-    }} 
   />
 )
 
