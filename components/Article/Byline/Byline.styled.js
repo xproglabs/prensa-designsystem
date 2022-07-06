@@ -10,27 +10,21 @@ export const Author = ({
   fontFamily,
   fontSize,
   lineHeight
-}) => 
+}) => (
   <Typography 
     color={color}
     element='span'
     fontFamily={fontFamily}
+    fontSize={fontSize}
     fontWeight={700}
-    fontSize={fontSize[0]}
-    lineHeight={lineHeight[0]}
-    lg={{
-      fontSize: fontSize[1],
-      lineHeight: lineHeight[1]
-    }}>
+    lineHeight={lineHeight}
+  >
     {children}
   </Typography>
+)
 
 Author.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.array, 
-    PropTypes.object, 
-    PropTypes.string
-  ]),
+  children: PropTypes.oneOfType([ PropTypes.array, PropTypes.object, PropTypes.string ]),
   color: PropTypes.string,
   fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
@@ -87,27 +81,21 @@ export const BylineText = ({
   fontSize,
   fontFamily,
   lineHeight
-}) => 
+}) => (
   <Typography 
     color={color}
     element='span'
     fontFamily={fontFamily}
+    fontSize={fontSize}
     fontWeight={400}
-    fontSize={fontSize[0]}
-    lineHeight={lineHeight[0]}
-    lg={{
-      fontSize: fontSize[1],
-      lineHeight: lineHeight[1]
-    }}>
+    lineHeight={lineHeight}
+  >
     {children}
   </Typography>
+)
 
 BylineText.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.array, 
-    PropTypes.object, 
-    PropTypes.string
-  ]),
+  children: PropTypes.oneOfType([ PropTypes.array, PropTypes.object, PropTypes.string ]),
   color: PropTypes.string,
   fontFamily: PropTypes.string,
   fontSize: PropTypes.array,
