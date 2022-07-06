@@ -73,17 +73,12 @@ const RenderTitle = ({
       color={title_layout?.color || 'neutral2'}
       element={title_layout?.element}
       fontFamily={title_layout?.font_family || 'primary'}
-      fontSize={title_layout.font_size?.[0]}
+      fontSize={title_layout?.font_size}
       fontWeight={title_layout?.font_weight || 700 }
-      lineHeight={title_layout.line_height?.[0]}
-      mb={title_layout.mb?.[0]}
+      lineHeight={title_layout?.line_height}
+      mb={title_layout?.mb}
       textShadow={opacity_mask ? '2px 2px 3px rgba(0, 0, 0, 0.5)' : ''}
       width='100%'
-      lg={{
-        fontSize: title_layout.font_size?.[1],
-        lineHeight: title_layout.line_height?.[1],
-        mb: title_layout.mb?.[1]
-      }}
     >
       <EditArea {...editable}>
         <Link
