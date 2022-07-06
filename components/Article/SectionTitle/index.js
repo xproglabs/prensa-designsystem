@@ -21,16 +21,12 @@ const SectionTitle = ({
         color={color}
         element={element}
         fontFamily={fontFamily}
-        fontSize={fontSize[0]}
+        fontSize={fontSize}
         fontWeight={fontWeight}
-        lineHeight={lineHeight[0]}
-        lg={{
-          fontSize: fontSize[1],
-          lineHeight: lineHeight[1],
-          mb: mb[1]
-        }}
-        mb={mb[0]}
-        mt={3}>
+        lineHeight={lineHeight}
+        mb={mb}
+        mt={3}
+      >
         {children} 
       </Typography>
     </Block>
