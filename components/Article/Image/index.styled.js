@@ -81,12 +81,8 @@ export const Subtitle = ({
     dangerouslySetInnerHTML={{ __html: children }}
     element="p"
     fontFamily={fontFamily}
-    fontSize={fontSize[0]}
-    lineHeight={lineHeight[0]}
-    lg={{
-      fontSize: fontSize[1],
-      lineHeight: lineHeight[1]
-    }}
+    fontSize={fontSize}
+    lineHeight={lineHeight}
   />
 )
 
