@@ -29,10 +29,9 @@ const Subject = ({
         color={color}
         element='span'
         fontFamily={fontFamily}
-        fontSize={fontSize[0]}
+        fontSize={fontSize}
         fontWeight={fontWeight}
-        lineHeight={lineHeight[0]}
-        lg={{ fontSize: fontSize[1], lineHeight: lineHeight[1] }}
+        lineHeight={lineHeight}
         textTransform={transform}
       >
         {value}
@@ -66,7 +65,7 @@ Subject.defaultProps = {
   px: 2,
   py: '4px',
   radius: 'default',
-  transform: 'none'
+  textTransform: 'none'
 }
 
 Subject.propTypes = {
@@ -81,7 +80,7 @@ Subject.propTypes = {
   px: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.array]),
   py: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.array]),
   radius: PropTypes.string,
-  transform: PropTypes.string,
+  textTransform: PropTypes.string,
   value: PropTypes.string
 }
 
