@@ -24,12 +24,8 @@ const Subtitle = ({
         element='p'
         fontFamily={fontFamily}
         fontStyle={fontStyle}
-        fontSize={fontSize[0]}
-        lineHeight={lineHeight[0]}
-        lg={{
-          fontSize: fontSize[1],
-          lineHeight: lineHeight[1]
-        }}
+        fontSize={fontSize}
+        lineHeight={lineHeight}
       />
     </Block>
   )
