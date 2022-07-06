@@ -36,15 +36,10 @@ const Citation = ({
         dangerouslySetInnerHTML={{ __html: value }}
         element='cite'
         fontFamily={fontFamily}
-        fontSize={fontSize[0]}
+        fontSize={fontSize}
         fontWeight={fontWeight}
-        lineHeight={lineHeight[0]}
-        pl={pl[0]}
-        lg={{
-          fontSize: fontSize[1],
-          lineHeight: lineHeight[1],
-          pl: pl[1]
-        }}
+        lineHeight={lineHeight}
+        pl={pl}
       />
     </Block>
   )
@@ -60,7 +55,6 @@ Citation.defaultProps = {
   fontSize: ['32px', '32px'],
   lineHeight: ['140%', '140%'],
   mb: [3, 3],
-  pl: [undefined, undefined],
   width: '100%'
 }
 
