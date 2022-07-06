@@ -2,8 +2,8 @@ import get from 'lodash/get'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import Link from '../Link'
 import Block from '../Block'
+import Link from '../Link'
 import Typography from '../Typography'
 import { RelatedItemProps } from './RelatedTypes'
 
@@ -65,10 +65,9 @@ const RelatedItem = ({
             color='neutral2'
             element={element}
             fontFamily='primary'
-            fontSize={font_size[0]}
+            fontSize={font_size}
             fontWeight={font_weight}
-            lineHeight={line_height[0]}
-            lg={{ fontSize: font_size[1], lineHeight: line_height[1] }}
+            lineHeight={line_height}
           >
             <Link path={item_path} hoverOpacity={0.9}>
               {children}
