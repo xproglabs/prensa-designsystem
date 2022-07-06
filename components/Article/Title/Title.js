@@ -22,14 +22,10 @@ const Title = ({
         dangerouslySetInnerHTML={{ __html: value }}
         element='h1'
         fontFamily='primary'
-        fontSize={fontSize[0]}
+        fontSize={fontSize}
         fontWeight={fontWeight}
-        lineHeight={lineHeight[0]}
-        lg={{
-          fontSize: fontSize[1],
-          lineHeight: lineHeight[1]
-        }}>
-      </Typography>
+        lineHeight={lineHeight}
+      />
     </Block>
   )
 }
