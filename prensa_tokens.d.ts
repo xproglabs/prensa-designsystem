@@ -1,5 +1,9 @@
 /** 
- * Autosuggestion types
+ * PRENSA TOKEN TYPES
+ * 
+ * Types for Prensa Token Language.
+ * This file is a default model.
+ * You can rewrite tokens values inside each type entity for customized use!
  */
 type ColorTokens =
   'primary1' |
@@ -40,7 +44,6 @@ type RadiusTokens =
 type TeaserCartridges =
   'default' 
 
-
 type TemplateCartridges =
   'default'
 
@@ -48,34 +51,43 @@ type IconTokens =
   'IconMenu'
 
 /**
- * Public types that are providing typing and autosuggestion to all components (can be rewritten in frontend)
+ * PRENSA THEME TYPES
+ * 
+ * Types for Prensa theme properties.
+ * This file is a default model.
+ * You can rewrite properties inside of IPrensaTheme interfaces for customized use!
  */
-export type Colors = {
+export type IPrensaThemeColors = {
   [key in ColorTokens]: string;
 }
-
-export type Factors = {
-  dimensions: number;
-  padding: number;
-  margin: number;
+export type IPrensaThemeFactors = {
+  dimensions?: number;
+  fontSize?: number;
+  lineHeight?: number;
+  letterSpacing?: number;
+  margin?: number;
+  padding?: number;
 }
-
-export type Fonts = {
+export type IPrensaThemeFonts = {
   [key in FontTokens]: string;
 }
-
-export type Queries = {
+export type IPrensaThemeQueries = {
   [key in QuerieTokens]: string;
 }
-
-export type Radius = {
+export type IPrensaThemeRadius = {
   [key in RadiusTokens]: string;
 }
-
-export type Teasers = {
+export type IPrensaThemeTeasers = {
   [key in TeaserCartridges];
 }
-
-export type Templates = {
+export type IPrensaThemeTemplates = {
   [key in TemplateCartridges];
+}
+export interface IPrensaThemeProps {
+  fonts?: IPrensaThemeFonts;
+  factors?: IPrensaThemeFactors;
+  queries?: IPrensaThemeQueries;
+  radius?: IPrensaThemeRadius;
+  teasers?: IPrensaThemeTeasers;
+  templates?: IPrensaThemeTemplates;
 }
