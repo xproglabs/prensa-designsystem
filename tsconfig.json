@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "declaration": true,
-    "declarationDir": ".",
+    "declarationDir": "dist",
     "esModuleInterop": true,
     "jsx": "react",
     "lib": [
@@ -19,29 +19,14 @@
     "target": "es5",
     "baseUrl": ".",
     "paths": {
-      "components/*": [
-        "components/*"
-      ],
-      "demo/*": [
-        "styles/demo/*"
-      ],
-      "prensa": [
-        "index.ts"
-      ],
-      "styles/*": [
-        "styles/*"
-      ],
-      "storybook/*": [
-        "storybook/*"
-      ],
       "@prensa_tokens": [
         "prensa_tokens.d.ts"
       ]
     }
   },
-  "exclude": [
-    "node_modules",
-    ".storyboook",
-    ".github"
+  "include": [
+    "components/Block/index.ts",
+    "components/Typography/index.ts",
+    "styles/theme/index.ts"
   ]
 }
