@@ -1,10 +1,13 @@
 import createBundle from './bundleEngine/bundleGenerator'
 
+/**
+ * Prensa JS output file
+ * All entities must have a index.ts file.
+ * This file generates javascript bundles for NPM distribution.
+ * Typescript declarations d.ts are NOT generated here, output is JS ONLY.
+ */
 export default [
-  // createBundle('index.ts', 'dist/index', 'index'),
-  // createBundle('icons/index.ts', 'dist/icons', 'icons'),
-  // createBundle('utils.ts', 'dist/utils', 'utils'),
-  createBundle('components/Block/index.tsx', 'dist/components/Block/index', 'components/Block/**/*'),
-  createBundle('components/Typography/index.tsx', 'dist/components/Typography/index', 'components/Typography/**/*'),
-  createBundle('styles/index.ts', 'dist/styles/index', 'styles/theme/**/*')
+  createBundle('components/Block/index.ts'),
+  createBundle('components/Typography/index.ts'),
+  createBundle('styles/theme/index.ts'),
 ]
