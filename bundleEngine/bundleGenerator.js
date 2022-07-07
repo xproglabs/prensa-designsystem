@@ -1,28 +1,37 @@
 import typescript from '@rollup/plugin-typescript'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 
-function createBundle(inputDir, outputDir, declarationInput) {
-
-  const cjsOutDir = `${outputDir}.js`
-  const esmOutDir = `${outputDir}.esm`
+/**
+ * Prensa | CreateBundle 
+ * Outputs Javascript bundles ready to publish in NPM.
+ * @param {*} inputDir 
+ * @param {*} outputDir 
+ * @returns 
+ */
+function createBundle(entityPath) {
+  const inputPath = entityPath.split('.ts')
+  const outputPath = 'dist'
+  const inputFile = `${entityPath}`
+  const cjsOutFile = `${outputPath}/${inputPath[0]}.js`
+  const esmOutFile = `${outputPath}/${inputPath[0]}.esm`
 
   return {
-    input: inputDir,
+    input: inputFile,
     output: [
       {
-        file: cjsOutDir,
+        file: cjsOutFile,
         format: 'cjs',
         sourcemap: true
       },
       {
-        file: esmOutDir,
+        file: esmOutFile,
         format: 'es',
         sourcemap: true
       }
     ],
     plugins: [
       peerDepsExternal(),
-      typescript({ tsconfig: './tsconfig.json', include: [ declarationInput ] }),
+      typescript()
     ]
   }
 }
