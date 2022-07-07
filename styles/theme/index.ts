@@ -1,1 +1,1 @@
-export * from './CreateFunction'
+export { default } from './CreateFunction'

@@ -1,24 +1,15 @@
-import { Colors, Fonts, Factors, Queries, Radius, Teasers, Templates } from '@prensa_tokens'
+import { IPrensaThemeProps } from '@prensa_tokens'
 import { merge } from 'lodash'
 
-import { default_theme } from './default_theme'
-
-export interface ThemeTypes {
-  colors: Colors;
-  fonts: Fonts;
-  factors: Factors;
-  queries: Queries;
-  radius: Radius;
-  teasers: Teasers;
-  templates: Templates;
-}
+import { PrensaDefaultTheme } from './default_theme'
 
 /**
- * CreateTheme function docs
- * @param {object} data - An object that defines/overrides properties in theme
+ * Prensa | CreateTheme
+ * @param {object} props - An object that defines/overrides properties in theme
  */
-export function CreateTheme(data: ThemeTypes | Object) {
-  return merge(default_theme, data)
+function CreateTheme(props: IPrensaThemeProps | Object) {
+  return merge(PrensaDefaultTheme, props)
 }
 
 export const theme = CreateTheme({})
+export default CreateTheme
