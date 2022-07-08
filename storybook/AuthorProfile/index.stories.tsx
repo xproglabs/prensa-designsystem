@@ -1,12 +1,13 @@
+//@ts-nocheck
 import { get, map } from 'lodash'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
-import DATA_OPINIAO from '../../styles/demo/hed/data/opiniao.json'
-import AuthorProfile from '../AuthorProfile'
-import { parseImagePath } from '../Image/parser'
-import TemplateContainer from '../Templates/TemplateContainer'
+import AuthorProfile from '../../components/AuthorProfile'
+import { parseImagePath } from '../../components/Image/parser'
+import TemplateContainer from '../../components/Templates/TemplateContainer'
+import DATA_OPINIAO from './data.json'
 
 export default {
   title: 'AuthorProfile',
