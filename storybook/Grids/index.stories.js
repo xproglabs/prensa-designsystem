@@ -2,8 +2,8 @@ import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
-import { data } from '../../mockup/template'
-import { GridRelated as GridRelatedComponent } from './GridRelated'
+import { GridRelated as GridRelatedComponent } from '../../components/Grids/GridRelated'
+import data from './data.json'
 
 export default {
   title: 'Grids',
