@@ -1,4 +1,4 @@
-import { CreateTheme } from '../styles/theme'
+import CreateTheme from '../styles/theme'
 
 export const theme = CreateTheme({
   factors: {
