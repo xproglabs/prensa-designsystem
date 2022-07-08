@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Block from '../Block/index.tsx'
+import Block from '../Block/index.ts'
 
 const AdPlaceholder = () => {
   const propsItem = {

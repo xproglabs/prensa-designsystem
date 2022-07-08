@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
-import Block from '../../Block/index.tsx'
+import Block from '../../Block/index.ts'
 import { ImageGallery } from '../../ImageGallery/index.tsx'
 import Citation from '../Citation/Citation'
 import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed, TikTokEmbed } from '../Embeds'

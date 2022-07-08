@@ -4,7 +4,7 @@ import React from 'react'
 import InputMask from 'react-input-mask'
 import { withTheme } from 'styled-components'
 
-import Block from '../Block/index.tsx'
+import Block from '../Block/index.ts'
 import FieldLabel from './FieldLabel'
 import FieldMessage from './FieldMessage'
 import { Input, InputContainer } from './styled'
