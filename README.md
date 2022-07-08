@@ -1,4 +1,6 @@
 
+<br/>
+
 ![Prensa Logo](./public/prensaLogo.png)
 
 ### Prensa is a Design System developed by xproglabs.
