@@ -1,11 +1,12 @@
+//@ts-nocheck
 import React, { useState } from 'react'
-import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
 import AccordionEditorial from '../../components/AccordionEditorial'
 import Block from '../../components/Block'
 import Button from '../../components/Button'
 import SideMenu from '../../components/SideMenu'
+import { theme } from '../theme'
 import dataMock from './sidemenu_datamodel.json'
 
 export default {

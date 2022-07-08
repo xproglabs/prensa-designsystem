@@ -1,8 +1,9 @@
+//@ts-nocheck
 import React from 'react'
-import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
 import Block from '../../components/Block'
+import { theme } from '../theme'
 
 export default {
   title: 'Block',
