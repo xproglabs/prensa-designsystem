@@ -1,11 +1,10 @@
 
 ![Prensa Logo](./public/prensaLogo.png)
 
-### Prensa is a Design System developed by xproglabs. Build your website using Blocks!
+### Prensa is a Design System developed by xproglabs.
+### Build your website using Blocks!
 
-![Prensa Box](./public/lettersBox.jpeg)
-
-> Prensa is inspired in Johannes Gutenberg printing press that was released in the year 1440 and started a revolution at the time. A person could print up to 3.600 pages per workday composing a page with the small letter blocks with ink. The printer applies pressure to the blocks that transfer ink to paper. This revolution introduces a Mass Comunication era where population could exchange more information faster.
+<br/>
 
 ## Getting Started
 
@@ -83,3 +82,9 @@ import Block from '@xprog/prensa/components/Block'
 - Typography
 
 ## Contributing
+
+## Abstract
+
+![Prensa Box](./public/lettersBox.jpeg)
+
+> Prensa is inspired in Johannes Gutenberg printing press that was released in the year 1440 and started a revolution at the time. A person could print up to 3.600 pages per workday composing a page with the small letter blocks with ink. The printer applies pressure to the blocks that transfer ink to paper. This revolution introduces a Mass Comunication era where population could exchange more information faster.
