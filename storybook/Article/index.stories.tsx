@@ -1,29 +1,28 @@
+//@ts-nocheck
 import React from 'react'
-import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
 
-import { data } from '../../../mockup/template'
-export { default as ACritica } from './ACritica'
-export { default as CorreioPopular } from './CorreioPopular'
-export { default as FolhaDaRegiao } from './FolhaDaRegiao'
-export { default as DiarioDaRegiao } from './DiarioDaRegiao'
-export { default as HojeEmDia } from './HojeEmDia'
-export { default as HojeEmDia2 } from './HojeEmDia2'
-export { default as ODiarioDeMogi } from './ODiarioDeMogi'
-export { default as OVale } from './OVale'
-import Article from '../Article'
-import adsMock from '../TextBody/mockAds.json'
+import Article from '../../components/Article/Article'
+import { theme } from '../theme'
+import adsData from './adsData.json'
+import data from './data.json'
 
 export default {
-  title: 'Article/Example',
-  component: Article,
+  title: 'Article',
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={theme}>
+        <Story />
+      </ThemeProvider>
+    )
+  ]
 }
 
 export const ArticleDefault = () => {
 
   const ads = {
     body: {
-      content: adsMock,
+      content: adsData,
       enabled: true,
       render: <pre id='teste' name='teste'>body intervention</pre>,
       interventionAmount: 2
