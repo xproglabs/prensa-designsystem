@@ -1,7 +1,7 @@
 {
   "name": "@xprog/prensa",
   "version": "1.9.80",
-  "description": "Prensa Design System",
+  "description": "React components library in blocks",
   "author": "XPROG",
   "license": "ISC",
   "repository": "https://github.com/xproglabs/prensa-designsystem.git",
