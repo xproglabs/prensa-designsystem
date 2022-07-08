@@ -2,9 +2,7 @@
 <br/>
 
 ![Prensa Logo](./public/prensaLogo.png)
-
-### Prensa is a Design System developed by xproglabs.
-### Build your website using Blocks!
+### Build websites using Blocks!
 
 <br/>
 
