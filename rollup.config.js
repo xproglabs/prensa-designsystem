@@ -9,5 +9,7 @@ import createBundle from './bundleEngine/bundleGenerator'
 export default [
   createBundle('components/Block/index.ts'),
   createBundle('components/Typography/index.ts'),
+  createBundle('styles/teasers/index.ts'),
+  createBundle('styles/templates/index.ts'),
   createBundle('styles/theme/index.ts'),
 ]

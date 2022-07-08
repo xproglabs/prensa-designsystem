@@ -1,9 +1,11 @@
-import { CreateTemplateTypes } from './types'
+import { ICreateTemplate } from './props'
 
 /**
- * CreateTemplate function docs
- * @param {object} data - An object that define properties for a new template
+ * Prensa | CreateTemplate
+ * @param {object} props - An object that define properties for a new template
  */
-export function CreateTemplate(data: CreateTemplateTypes): Object {
-  return data
+function CreateTemplate(props: ICreateTemplate) {
+  return props
 }
+
+export default CreateTemplate

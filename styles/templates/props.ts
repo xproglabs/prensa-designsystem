@@ -1,7 +1,7 @@
 import { TeaserCartridges } from '@prensa_tokens'
-import { MoreButtonLayoutProps } from 'components/RenderSlot/MoreButton'
+// import { MoreButtonLayoutProps } from 'components/RenderSlot/MoreButton'
 
-import { CarouselLayoutProps } from '../../components/Carousel/types'
+// import { CarouselLayoutProps } from '../../components/Carousel/types'
 
 type TeaserSuggestions = TeaserCartridges | 'hide'
 
@@ -20,8 +20,9 @@ type TemplateLayout = {
 type TemplateSpaces = [number] | [number, number, number, number]
 type TemplateSpacesBottom = [number, number]
 
-type TemplateSlotTypes = {
-  carousel?: CarouselLayoutProps;
+interface TemplateSlotTypes {
+  // carousel?: CarouselLayoutProps;
+  carousel?: any;
   /**
    * Prensa | CreateTemplate related
    */
@@ -41,14 +42,15 @@ type TemplateSlotTypes = {
    * [0, 1, 2, 3] -> is one column for one item, two column for two items and three cols for three items
    * [0, 2, 2, 2] -> is two column for one, two or three items
    */
-  more_button?: MoreButtonLayoutProps;
+  // more_button?: MoreButtonLayoutProps;
+  more_button?: any;
   spaces: TemplateSpaces;
   space_bottom?: TemplateSpacesBottom;
   space_bottom_column?: TemplateSpacesBottom;
   space_bottom_column_color?: TemplateSpacesBottom;
 }
 
-export type CreateTemplateTypes = {
+export interface ICreateTemplate {
   /**
    * Prensa | CreateTemplate slot100
    */

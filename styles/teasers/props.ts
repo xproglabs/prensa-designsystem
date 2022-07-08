@@ -1,3 +1,3 @@
 import { LayoutProps } from '../../components/Teaser/types'
 
-export type CreateTeaserTypes = LayoutProps
+export interface CreateTeaserProps extends LayoutProps {}

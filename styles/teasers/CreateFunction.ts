@@ -1,9 +1,9 @@
-import { CreateTeaserTypes } from './types'
+import { CreateTeaserProps } from './props'
 
 /**
- * CreateTeaser function docs
+ * Prensa | CreateTeaser 
  * @param {object} data - An object that define properties for a new teaser
  */
-export function CreateTeaser(data: CreateTeaserTypes): Object {
+export default function CreateTeaser(data: CreateTeaserProps): Object {
   return data
 }
