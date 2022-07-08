@@ -1,4 +1,4 @@
-const { onSuccessCI } = require('./notifications/cdNotification')
+const { onSuccessCI } = require('./cicd/cdNotification')
 
 module.exports = {
   branches: [
