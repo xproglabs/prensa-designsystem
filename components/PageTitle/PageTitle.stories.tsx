@@ -8,6 +8,11 @@ export default {
 }
 
 export const PageTitleDefault = () => {
+  const handleChange = event => {
+    if (event.target.value) {
+      location.href = event.target.value
+    } 
+  }
   return (
     <ThemeProvider theme={theme}>
       <PageTitle
@@ -25,6 +30,7 @@ export const PageTitleDefault = () => {
           }
         ]}
         hasSelect={true}
+        selectChange={handleChange}
         titleProps={{
           color: 'primary1',
           fontSize: '24px',

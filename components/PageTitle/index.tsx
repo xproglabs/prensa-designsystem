@@ -17,16 +17,12 @@ const SelectOption = ({ title, link }) => {
 
 const PageTitle = ({
   containerProps,
-  titleProps,
-  title,
   hasSelect,
-  items
+  items,
+  selectChange,
+  title,
+  titleProps
 }: PageTitleProps) => {
-  const handleChange = event => {
-    if (event.target.value) {
-      location.href = event.target.value
-    } 
-  }
   return (
     <Container {...containerProps}>
       {title &&
@@ -37,7 +33,7 @@ const PageTitle = ({
       {hasSelect &&
         <ContainerSelect>
           <ContentSelect>
-            <select onChange={handleChange}>
+            <select onChange={selectChange}>
               {map(items, (item, key) => {
                 return <SelectOption {...item} key={key}  />
               })}
