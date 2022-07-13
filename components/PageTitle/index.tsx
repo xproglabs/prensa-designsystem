@@ -14,10 +14,6 @@ const SelectOption = ({ title, link }) => {
     <option value={link}>{title}</option>
   )
 }
-SelectOption.defaultProps = {
-  title: '',
-  link: ''
-}
 
 const PageTitle = ({
   containerProps,

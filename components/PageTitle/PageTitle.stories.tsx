@@ -7,7 +7,7 @@ export default {
   title: 'PageTitle'
 }
 
-export const Default = () => {
+export const PageTitleDefault = () => {
   return (
     <ThemeProvider theme={theme}>
       <PageTitle
@@ -16,12 +16,12 @@ export const Default = () => {
         }}
         items={[
           {
-            "title": "Uberaba",
-            "link": "/uberaba"
+            'title': 'Uberaba',
+            'link': '/uberaba'
           },
           {
-            "title": "Goiânia",
-            "link": "/goiania"
+            'title': 'Goiânia',
+            'link': '/goiania'
           }
         ]}
         hasSelect={true}
