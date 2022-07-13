@@ -11,16 +11,17 @@ export interface PageTitleProps {
   fontSize?: string;
   fontWeight?: string | number;
   hasSelect?: boolean;
+  items?: any;
+  item?: any;
   lineHeight?: string;
   mb?: SpacingType;
   mbTitle?: SpacingType;
   mt?: SpacingType;
   px?: SpacingType;
+  selectChange?: (event) => void;
   title?: string;
   titleProps?: TitleProps;
   transform?: string;
-  items?: any;
-  item?: any;
 }
 
 export type ContainerProps = {
