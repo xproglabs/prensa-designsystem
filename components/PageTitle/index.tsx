@@ -28,7 +28,7 @@ const PageTitle = ({
 }: PageTitleProps) => {
   const handleChange = event => {
     if (event.target.value) {
-      location.reload(event.target.value)
+      location.href = event.target.value
     } 
   }
   return (
