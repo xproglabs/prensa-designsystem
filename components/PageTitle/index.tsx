@@ -9,6 +9,16 @@ import {
 } from './styled'
 import { PageTitleProps } from './types'
 
+const SelectOption = ({ title, link }) => {
+  return (
+    <option value={link}>{title}</option>
+  )
+}
+SelectOption.defaultProps = {
+  title: '',
+  link: ''
+}
+
 const PageTitle = ({
   containerProps,
   titleProps,
@@ -16,12 +26,10 @@ const PageTitle = ({
   hasSelect,
   items
 }: PageTitleProps) => {
-  const SelectOption = ({ item }) => {
-    return (
-      <>
-        <option>{item}</option>
-      </>
-    )
+  const handleChange = event => {
+    if (event.target.value) {
+      location.reload(event.target.value)
+    } 
   }
   return (
     <Container {...containerProps}>
@@ -33,9 +41,9 @@ const PageTitle = ({
       {hasSelect &&
         <ContainerSelect>
           <ContentSelect>
-            <select>
+            <select onChange={handleChange}>
               {map(items, (item, key) => {
-                return <SelectOption item={item} key={key}  />
+                return <SelectOption {...item} key={key}  />
               })}
             </select>
           </ContentSelect>   

@@ -14,6 +14,16 @@ export const Default = () => {
         containerProps={{
           mb: 5
         }}
+        items={[
+          {
+            "title": "Uberaba",
+            "link": "/uberaba"
+          },
+          {
+            "title": "Goiânia",
+            "link": "/goiania"
+          }
+        ]}
         hasSelect={true}
         titleProps={{
           color: 'primary1',

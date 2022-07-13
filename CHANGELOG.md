@@ -1,3 +1,17 @@
+## [1.9.83](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.82...v1.9.83) (2022-06-30)
+
+
+### Bug Fixes
+
+* ajusta width no responsivo ([32eddd1](https://github.com/xproglabs/prensa-designsystem/commit/32eddd19bb34d5c46c929fdc79864c78bb2f7ca7))
+
+## [1.9.82](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.81...v1.9.82) (2022-06-30)
+
+
+### Features
+
+* adiciona path responsivo no RenderImage ([b85c113](https://github.com/xproglabs/prensa-designsystem/commit/b85c113ffe8881d5bff1d12f8cd72924cf269bfa))
+
 ## [1.9.81](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.80...v1.9.81) (2022-06-28)
 
 
