@@ -1,9 +1,10 @@
 import { color } from '@xprog/prensa-css-engine/color'
+import { fontFamily } from '@xprog/prensa-css-engine/fontFamily'
+import { fontSize } from '@xprog/prensa-css-engine/fontSize'
 import { margin } from '@xprog/prensa-css-engine/margin'
 import { ComponentType } from 'react'
 import styled from 'styled-components'
 
-import { parseFontFamily } from '../../Typography/parsers'
 import { ListItemProps } from './types'
 
 export const ListItem: ComponentType<ListItemProps> = styled.li<ListItemProps>`
@@ -15,8 +16,8 @@ export const ListItem: ComponentType<ListItemProps> = styled.li<ListItemProps>`
     }
   }
   ::marker {
-    ${(props) => color({ $color: props.color, theme: props.theme })};
-    font-family: ${parseFontFamily};
-    font-size: ${props => props.$fontSize};
+    ${color};
+    ${fontFamily};
+    ${fontSize};
   }
 `

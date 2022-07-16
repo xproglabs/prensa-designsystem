@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
+import Block from '../Block/index.ts'
 import Button from '../Button'
-import Block from '../Block/index.tsx'
 import Typography from '../Typography'
 
 export const Area = ({ children }) => (
@@ -35,10 +35,7 @@ export const ButtonSubmit = ({ buttonAction, children }) => (
     alignx='center'
     bgColor='primary1'
     onClick={buttonAction}
-    width='100%'
-    sm={{
-      width: 'auto'
-    }}
+    width={['auto', '100%', '100%']}
   >
     {children}
   </Button>
@@ -106,10 +103,7 @@ export const Message = ({ text }) => (
     fontSize="12px"
     fontWeight={400}
     lineHeight="14px"
-    sm={{
-      mb: '0'
-    }}
-    mb={2}
+    mb={[0, 2, 2]}
     mr={2}
   />
 )
