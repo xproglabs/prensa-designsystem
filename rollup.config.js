@@ -12,4 +12,5 @@ export default [
   createBundle('styles/teasers/index.ts'),
   createBundle('styles/templates/index.ts'),
   createBundle('styles/theme/index.ts'),
+  createBundle('providers/ThemeProvider/index.ts'),
 ]
