@@ -1,16 +1,18 @@
-
 <br/>
 
-![Prensa Logo](./public/prensaLogo.png)
-### Build websites using Blocks!
+<div align='center'>
+  <img src='public/prensalogo.png' />
+</div>
+
+<h3 align='center'>Build your websites using Blocks!</h3>
 
 <br/>
 
 ## Getting Started
 
 ### Compatibility
-- NodeJS projects
-- React library
+- Javascript projects
+- React
 - Styled-components
 
 ### Installing prensa
@@ -19,6 +21,8 @@
 ```shell
 npm install @xprog/prensa
 ```
+
+<br/>
 
 2. Create a new theme
 ```jsx
@@ -32,6 +36,8 @@ export const theme = CreateTheme({
 })
 ```
 
+<br/>
+
 3. Configure your design-tokens language in global declaration file
 ```ts
 // prensa_tokens.d.ts
@@ -39,6 +45,8 @@ export const theme = CreateTheme({
 export type ColorTokens = 'orange500' | 'colorTest' 
 export type FontTokens = 'primary' | 'secondary'
 ```
+
+<br/>
 
 4. Components ready to use!
 ```jsx
@@ -85,6 +93,11 @@ import Block from '@xprog/prensa/components/Block'
 
 ## Abstract
 
-![Prensa Box](./public/lettersBox.jpeg)
-
 > Prensa is inspired in Johannes Gutenberg printing press that was released in the year 1440 and started a revolution at the time. A person could print up to 3.600 pages per workday composing a page with the small letter blocks with ink. The printer applies pressure to the blocks that transfer ink to paper. This revolution introduces a Mass Comunication era where population could exchange more information faster.
+
+<br/>
+
+<div align='center'>
+  <img src='public/lettersBox.jpeg' />
+</div>
+
