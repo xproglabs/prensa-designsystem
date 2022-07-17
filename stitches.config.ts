@@ -27,11 +27,12 @@ export const {
     xl: '(min-width: 1280px)',
   },
   theme: {
-    colors: {
-	  ...tokens.colors,
-      primary: '#D13135',
-      secondary: '#298D8C'
-    },
+    // colors: {
+	//   ...tokens.colors,
+    //   primary: '#D13135',
+    //   secondary: '#298D8C'
+    // },
+    ...tokens,
     radii: {
       alternative: '5px',
       circle: '50%',
