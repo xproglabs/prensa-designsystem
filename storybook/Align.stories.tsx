@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Block } from '../../primitives/Block/index';
-import { ThemeProvider } from '../../providers/Theme';
+import { Block } from '../primitives/Block/index';
+import { ThemeProvider } from '../providers/Theme';
 
 export default { title: 'PrensaDS/Alignment', component: Block } as ComponentMeta<typeof Block>
 const Template: ComponentStory<typeof Block> = (args) => <Block {...args} />;
