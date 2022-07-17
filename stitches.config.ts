@@ -64,17 +64,17 @@ export const {
   utils: {
     align,
     m,
+    mt,
+    mr,
     mb,
     ml,
-    mr,
-    mt,
     mx,
     my,
     p,
+    pt,
+    pr,
     pb,
     pl,
-    pr,
-    pt,
     px,
     py
   }
