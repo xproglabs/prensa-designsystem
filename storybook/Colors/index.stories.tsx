@@ -26,8 +26,10 @@ export const Default = () => {
   let lastType = '';
   return (Object.keys(tokens.colors)).map(color => {
     const selfType = color.replace(/\d+/g, '');
+    let isFirst = false;
     if (!lastType) {
-      lastType = selfType
+      lastType = selfType;
+      isFirst = true;
     }
 
     const isLast = lastType !== selfType;
@@ -36,16 +38,11 @@ export const Default = () => {
       lastType = selfType;
     }
 
-    console.log({
-      selfType,
-      lastType,
-      isLast
-    });
-
     return (
       <>
-      {isLast
-          ? <ColorBlock css={{height:'1rem', width: '100%'}}></ColorBlock> 
+      {}
+      {isLast || isFirst
+          ? <ColorBlock css={{height:'1rem', width: '100%', margin: '10px'}}>{selfType}</ColorBlock> 
           : null}
         <ColorBlock css={{$$size: '90px', display:'inline-block',width:'$$size', height: '$$size',backgroundColor: `$colors$${color}`}}>
           <ColorBlock css={{...textStyle}}>
