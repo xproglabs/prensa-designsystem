@@ -1,7 +1,6 @@
 import { get } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
-import InputMask from 'react-input-mask'
 import { withTheme } from 'styled-components'
 
 import Block from '../Block/index.ts'
@@ -124,13 +123,7 @@ const Field = React.forwardRef((props, ref) => {
     <Block {...styledFieldDefaultProps} width='100%'>
       {renderLabel()}
       <InputContainer validation={validation} {...styledInputDefaultProps}>
-        {mask ? 
-          <InputMask {...inputProps}>
-            <Input ref={ref} {...styledRootDefaultProps} />
-          </InputMask>
-          :
-          <Input ref={ref} {...inputProps} {...styledRootDefaultProps} />
-        }
+        <Input ref={ref} {...inputProps} {...styledRootDefaultProps} />
         {renderIcon()}
       </InputContainer>
       {renderMessage()}

@@ -1,4 +1,5 @@
 import { createStitches } from '@stitches/react'
+
 import { align } from '@xprog/prensa-css-engine/css-engine-v2/align'
 import { m, mb, ml, mr, mt, mx, my } from '@xprog/prensa-css-engine/css-engine-v2/margin'
 import { p, pb, pl, pr, pt, px, py } from '@xprog/prensa-css-engine/css-engine-v2/padding'
@@ -67,17 +68,17 @@ export const {
   utils: {
     align,
     m,
+    mt,
+    mr,
     mb,
     ml,
-    mr,
-    mt,
     mx,
     my,
     p,
+    pt,
+    pr,
     pb,
     pl,
-    pr,
-    pt,
     px,
     py
   }

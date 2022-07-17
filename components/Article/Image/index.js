@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Link from '../../Link/index.ts'
-import { YouTubeEmbed } from '../Embeds'
 import * as S from './index.styled'
 
 const Container = ({ children, featured, mb, value }) => {
@@ -36,17 +35,6 @@ const ArticleImage = ({
   const fontFamily = get(caption, 'fontFamily', '')
   const fontSize = get(caption, 'fontSize', '')
   const lineHeight = get(caption, 'lineHeight', '')
-
-  const Video = () => (
-    <YouTubeEmbed
-      amp={amp}
-      ampElementProps={ampElementProps}
-      url={value}
-      height={height}
-      width={width}
-      mb='0px'
-    />
-  )
 
   const Image = () => {
     if (amp) {
@@ -86,8 +74,6 @@ const ArticleImage = ({
 
   const RenderMedia = () => {
     switch (type) {
-      case 'video':
-        return <Video />
       default:
         return <Image />
     }
