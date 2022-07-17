@@ -28,7 +28,7 @@ export const {
   },
   theme: {
     colors: {
-	  ......tokens.colors,
+	  ...tokens.colors,
       primary: '#D13135',
       secondary: '#298D8C'
     },
