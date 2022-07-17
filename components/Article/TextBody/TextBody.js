@@ -6,7 +6,6 @@ import { withTheme } from 'styled-components'
 import Block from '../../Block/index.ts'
 import { ImageGallery } from '../../ImageGallery/index.tsx'
 import Citation from '../Citation/Citation'
-import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed, TikTokEmbed } from '../Embeds'
 import Heading2 from '../Headings/Heading2'
 import Heading3 from '../Headings/Heading3'
 import Heading4 from '../Headings/Heading4'
@@ -163,42 +162,6 @@ const TextBody = (props) => {
             maxWidth={bodyWidth}
             value={value}
             {...citation}
-          />
-        )
-      case 'Facebook':
-        return (
-          <FacebookEmbed
-            amp={amp}
-            fbappid={fbappid}
-            url={value}
-          />
-        )
-      case 'Instagram':
-        return (
-          <InstagramEmbed
-            amp={amp}
-            url={value}
-          />
-        )
-      case 'Tweet':
-        return (
-          <TwitterEmbed
-            amp={amp}
-            url={value}
-          />
-        )
-      case 'TikTok':
-        return (
-          <TikTokEmbed amp={amp} url={value} />
-        )
-      case 'Youtube':
-        return (
-          <YouTubeEmbed
-            amp={amp}
-            ampElementProps={{ height: '384px', width: '768px' }}
-            height={amp ? ['max-content', '384px'] : ['384px', '384px']}
-            url={value}
-            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
           />
         )
       case 'Image':

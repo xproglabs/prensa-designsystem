@@ -1,5 +1,0 @@
-export * from './Facebook'
-export * from './Instagram'
-export * from './Twitter'
-export * from './TikTok'
-export * from './YouTube'
