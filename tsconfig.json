@@ -33,6 +33,7 @@
     "styles/teasers/index.ts",
     "styles/templates/index.ts",
     "styles/theme/index.ts",
-    "providers/**/*"
+    "providers/**/*",
+    "storybook/**/*"
   ]
 }
