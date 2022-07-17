@@ -3,3 +3,5 @@
 .env
 *.tgz
 yarn.lock
+
+.DS_Store
