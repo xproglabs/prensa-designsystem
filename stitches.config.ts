@@ -5,14 +5,14 @@ import { createStitches } from '@stitches/react'
  * This file affects storybook only.
  */
 export const {
-  styled,
+  config,
+  createTheme,
   css,
+  getCssText,
   globalCss,
   keyframes,
-  getCssText,
-  theme,
-  createTheme,
-  config,
+  styled,
+  theme
 } = createStitches({
   prefix: 'prensa',
   media: {
@@ -28,11 +28,11 @@ export const {
       secondary: '#298D8C'
     },
     radii: {
-      unset: '0px',
       alternative: '5px',
+      circle: '50%',
       default: '3px',
       rounded: '99px',
-      circle: '50%'
+      unset: '0px'
     },
     space: {
       0: '0px',
