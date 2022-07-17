@@ -3,7 +3,7 @@ import { createStitches } from '@stitches/react'
 import { align } from '@xprog/prensa-css-engine/css-engine-v2/align'
 import { m, mb, ml, mr, mt, mx, my } from '@xprog/prensa-css-engine/css-engine-v2/margin'
 import { p, pb, pl, pr, pt, px, py } from '@xprog/prensa-css-engine/css-engine-v2/padding'
-import tokens from './tokens/default-tokens.json';
+import tokens from './tokens/theme.json';
 
 /**
  * Stitches.config file
