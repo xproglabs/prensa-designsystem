@@ -1,7 +1,7 @@
-import tokens from '../../tokens/theme.json';
-import Block from '../../components/Block'
+import tokens from '../tokens/theme.json';
+import Block from '../components/Block'
 
-import { styled } from '../../stitches.config';
+import { styled } from '../stitches.config';
 import { ComponentMeta } from '@storybook/react';
 
 
