@@ -1,7 +1,6 @@
 import React from 'react'
 import { ComponentMeta } from '@storybook/react'
 
-import { Block } from '../primitives/Block/index'
 import { Typography } from '../primitives/Typography/index'
 import { ThemeProvider } from '../providers/Theme'
 import theme from '../tokens/theme.json'
