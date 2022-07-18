@@ -1,53 +1,24 @@
-import React from 'react';
-import { styled } from '../../stitches.config';
+import { styled, theme } from '../../stitches.config'
+import { ITypeSystem } from '../../tokens/types'
 
-export interface TypographyProps {
-    as?: string;
-    variant?: string;
-    fontWeight?: string;
-    lineHeight?: string;
-    letterSpacing?: string;
-    fontSize?: string;
+function generateVariants(): ITypeSystem {
+  const variants: ITypeSystem = {}
+  const keys = Object.keys(theme.fontSizes)
+  keys.forEach((item, key) => {
+    variants[keys[key]] = {
+      fontSize: `$${item}`,
+      fontWeight: `$${item}`,
+      letterSpacing: `$${item}`,
+      lineHeight: `$${item}`
+    }
+  })
+  return { ...variants }
 }
 
-export const Typography: React.FC<TypographyProps> = ({
-    as = 'p', 
-    variant, 
-    fontWeight, 
-    lineHeight, 
-    letterSpacing,
-    fontSize,
-    ...props
-}) => {
-    let styledProps: Record<string, unknown> = {};
-
-    if (variant) {
-        const varName = `$${variant}`;
-        styledProps = {
-            fontWeight: varName,
-            lineHeight: varName,
-            letterSpacing: varName,
-            fontSize: varName
-        }
+export const Typography = styled('p', {
+  variants: { 
+    variant: {
+      ...generateVariants()
     }
-
-    if (fontWeight) {
-        styledProps.fontWeight = `$${fontWeight}`;
-    }
-
-    if (lineHeight) {
-        styledProps.lineHeight = `$${lineHeight}`;
-    }
-    
-    if (letterSpacing) {
-        styledProps.letterSpacing = `$${letterSpacing}`;
-    }
-
-    if (fontSize) {
-        styledProps.fontSize = `$${fontSize}`;
-    }
-
-    const Text = styled(as, styledProps);
-
-    return (<Text {...props} />);
-}
+  }
+})
