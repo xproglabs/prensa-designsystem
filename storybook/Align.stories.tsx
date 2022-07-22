@@ -13,9 +13,8 @@ const Circle = () => {
       css={{
         background: 'rgba(100,100,100,0.6)',
         borderRadius: '$circle',
-        height: '32px',
-        m: '$1',
-        width: '32px'
+        height: '12px',
+        width: '12px'
       }}>
     </Block>
   )
@@ -23,8 +22,8 @@ const Circle = () => {
 
 const blockDefaultProps = {
   background: '#CCC',
-  height: '256px',
-  width: '256px'
+  height: '96px',
+  width: '96px'
 }
 
 const blockErrorProps = {
