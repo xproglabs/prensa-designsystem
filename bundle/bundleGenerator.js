@@ -1,9 +1,9 @@
-import typescript from '@rollup/plugin-typescript'
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import json from '@rollup/plugin-json'
+import esbuild from 'rollup-plugin-esbuild'
 
 /**
  * Prensa | CreateBundle 
- * Outputs Javascript bundles ready to publish in NPM.
+ * Outputs .js bundles
  * @param {*} inputDir 
  * @param {*} outputDir 
  * @returns 
@@ -17,6 +17,7 @@ function createBundle(entityPath) {
 
   return {
     input: inputFile,
+    plugins: [json(), esbuild()],
     output: [
       {
         file: cjsOutFile,
@@ -29,10 +30,6 @@ function createBundle(entityPath) {
         sourcemap: true
       }
     ],
-    plugins: [
-      peerDepsExternal(),
-      typescript()
-    ]
   }
 }
 
