@@ -1,13 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-import { createTheme } from '../../stitches.config';
+import { createTheme } from '../../stitches.config'
 
 export const ThemeProvider = (props) => {
-  const { children, theme, ...otherProps } = props;
-
+  const { children, theme, ...otherProps } = props
   const defaultThemeProps = { colors: { primary: 'yellow' } }
   const darkThemeProps = { colors: { primary: 'blue' } }
-  
   const defaultTheme = createTheme('default-theme', defaultThemeProps)
   const darkTheme = createTheme('dark-theme', darkThemeProps)
 
@@ -22,11 +20,12 @@ export const ThemeProvider = (props) => {
     default:
       selectedTheme = defaultTheme
   }
+  
   return (
     <div className={selectedTheme}>
-      {React.Children.map(children, (item: any) =>
-        React.cloneElement(item, {...otherProps})
-      )}
+      {React.Children.map(children, (item: any) => {
+        React.cloneElement(item, { ...otherProps })
+      })}
     </div>
   )
 }
