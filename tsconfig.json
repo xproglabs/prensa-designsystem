@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "declarationDir": "dist",
     "esModuleInterop": true,
     "jsx": "react",
     "lib": [
@@ -16,24 +14,11 @@
     "noImplicitAny": false,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "target": "es5",
-    "baseUrl": ".",
-    "paths": {
-      "@styles-engine": [
-        "stitches.config.ts"
-      ],
-      "@prensa_tokens": [
-        "prensa_tokens.d.ts"
-      ]
-    }
+    "target": "ESNext",
+    // "baseUrl": ".",
+    // "paths": {
+    // }
   },
-  "include": [
-    "components/Block/index.ts",
-    "components/Typography/index.ts",
-    "styles/teasers/index.ts",
-    "styles/templates/index.ts",
-    "styles/theme/index.ts",
-    "providers/**/*",
-    "storybook/**/*"
-  ]
+  "exclude": ["node_modules", "dist"],
+  "include": [ "*ts", "*tsx" ]
 }
