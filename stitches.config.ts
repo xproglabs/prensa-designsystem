@@ -6,8 +6,8 @@ import { p, pb, pl, pr, pt, px, py } from '@xprog/prensa-css-engine/css-engine-v
 import tokens from './tokens/theme.json'
 
 /**
- * Stitches.config file
- * This file affects storybook only.
+ * Prensa stitches.config file
+ * This file provides default configurations for using Prensa-DS.
  */
 export const {
   config,
@@ -19,7 +19,7 @@ export const {
   styled,
   theme
 } = createStitches({
-  prefix: 'prensa',
+  prefix: 'pds',
   media: {
     xs: '(min-width: 360px)',
     sm: '(min-width: 460px)',
