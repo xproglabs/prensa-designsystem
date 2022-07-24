@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Block } from '../primitives/Block/index';
-import { ThemeProvider } from '../providers/Theme';
+import { PrensaThemeProvider } from '../providers/PrensaThemeProvider';
 
 export default { title: 'PrensaDS/Alignment', component: Block } as ComponentMeta<typeof Block>
 const Template: ComponentStory<typeof Block> = (args) => <Block {...args} />;
@@ -32,7 +32,7 @@ const blockErrorProps = {
 
 export const AlignColumn = () => {
   return (
-    <ThemeProvider theme='dark-theme'>
+    <PrensaThemeProvider theme='dark-theme'>
       <h3>column, left, top</h3>
       <Block css={{ align: ['column', 'left', 'top'], ...blockDefaultProps }}>
         <Circle /><Circle /><Circle />
@@ -113,13 +113,13 @@ export const AlignColumn = () => {
       <Block css={{ align: ['column', 'between', 'evenly'], ...blockDefaultProps }}>
         <Circle /><Circle /><Circle />
       </Block>
-    </ThemeProvider>
+    </PrensaThemeProvider>
   )
 }
 
 export const AlignRow = () => {
   return (
-    <ThemeProvider theme='dark-theme'>
+    <PrensaThemeProvider theme='dark-theme'>
       <h3>row, left, top</h3>
       <Block css={{ align: ['row', 'left', 'top'], ...blockDefaultProps }}>
         <Circle /><Circle /><Circle />
@@ -200,6 +200,6 @@ export const AlignRow = () => {
       <Block css={{ align: ['row', 'between', 'evenly'], ...blockDefaultProps, ...blockErrorProps }}>
         <Circle /><Circle /><Circle />
       </Block>
-    </ThemeProvider>
+    </PrensaThemeProvider>
   )
 }

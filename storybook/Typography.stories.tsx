@@ -1,62 +1,62 @@
 import React from 'react'
 
 import { Typography } from '../primitives/Typography/index'
-import { ThemeProvider } from '../providers/Theme'
+import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 import theme from '../tokens/theme.json'
 
 export default { title: 'PrensaDS/Typography', component: Typography }
 
 export const Variants = () => {
   return (
-    <ThemeProvider>
+    <PrensaThemeProvider>
       {Object.keys(theme.fontSizes).map((name) => (
         <Typography key={name} variant={name}>
           {name} variant
         </Typography>
       ))}
-    </ThemeProvider>
+    </PrensaThemeProvider>
   )
 }
 
 export const FontSize = () => {
   return (
-    <ThemeProvider>
+    <PrensaThemeProvider>
       {Object.keys(theme.fontSizes).map((name) => (
         <Typography key={name} css={{ fontSize: `$${name}` }}>
           {name} fontSize
         </Typography>
       ))}
-    </ThemeProvider>
+    </PrensaThemeProvider>
   )
 }
 
 export const LineHeight = () => {
   return (
-    <ThemeProvider>
+    <PrensaThemeProvider>
       {Object.keys(theme.lineHeights).map((name) => (
         <Typography key={name} css={{ lineHeight: `$${name}` }}>
           {name} lineHeight
         </Typography>
       ))}
-    </ThemeProvider>
+    </PrensaThemeProvider>
   )
 }
 
 export const FontWeight = () => {
   return (
-    <ThemeProvider>
+    <PrensaThemeProvider>
       {Object.keys(theme.fontWeights).map((name) => (
         <Typography key={name} css={{ fontWeight: `$${name}` }}>
           {name} fontWeight
         </Typography>
       ))}
-    </ThemeProvider>
+    </PrensaThemeProvider>
   )
 }
 
 export const Semantics = () => {
   return (
-    <ThemeProvider>
+    <PrensaThemeProvider>
       <Typography as='h1' variant='default-heading-2xl' >
         The quick brown fox
       </Typography>
@@ -75,6 +75,6 @@ export const Semantics = () => {
       <Typography as='h6' variant='default-heading-xs'>
         The quick brown fox
       </Typography>
-    </ThemeProvider>
+    </PrensaThemeProvider>
   )
 }
