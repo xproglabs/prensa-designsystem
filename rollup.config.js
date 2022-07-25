@@ -10,8 +10,8 @@ import createDeclaration from './bundle/declarationsGenerator'
 export default [
   createBundle('primitives/Block/index.ts'),
   createBundle('primitives/Typography/index.ts'),
-  createBundle('providers/PrensaStylesProvider/index.ts'),
+  createBundle('providers/PrensaThemeProvider/index.ts'),
   createDeclaration('primitives/Block/index.ts'),
   createDeclaration('primitives/Typography/index.ts'),
-  createDeclaration('providers/PrensaStylesProvider/index.ts'),
+  createDeclaration('providers/PrensaThemeProvider/index.ts'),
 ]
