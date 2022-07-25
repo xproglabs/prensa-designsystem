@@ -1,3 +1,3 @@
-import { styled } from '../../stitches.config'
+import { PrensaEngine } from '../../stitches.config'
 
-export const Block = styled('div', {})
+export const Block = PrensaEngine.styled('div', {})

@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { createTheme } from '../../stitches.config'
+import { PrensaEngine } from '../../stitches.config'
 
 export const PrensaThemeProvider = (props) => {
   const { children, theme, ...otherProps } = props
   const defaultThemeProps = { colors: { primary: 'yellow' } }
   const darkThemeProps = { colors: { primary: 'blue' } }
-  const defaultTheme = createTheme('default-theme', defaultThemeProps)
-  const darkTheme = createTheme('dark-theme', darkThemeProps)
+  const defaultTheme = PrensaEngine.createTheme('default-theme', defaultThemeProps)
+  const darkTheme = PrensaEngine.createTheme('dark-theme', darkThemeProps)
 
   let selectedTheme
   switch (theme) {

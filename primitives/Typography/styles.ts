@@ -1,10 +1,10 @@
-import { styled } from '../../stitches.config'
+import { PrensaEngine } from '../../stitches.config'
 import { CreatePropVariant } from './variants/variant'
 
 /**
  * Prensa | Typography
  */
-export const Typography = styled('p', {
+export const Typography = PrensaEngine.styled('p', {
   variants: {
     as: {
       h1: {},

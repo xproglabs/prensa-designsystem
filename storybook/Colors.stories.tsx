@@ -2,12 +2,12 @@ import { ComponentMeta } from '@storybook/react'
 import React from 'react'
 
 import { Block } from '../primitives/Block'
-import { styled } from '../stitches.config'
+import { PrensaEngine } from '../stitches.config'
 import tokens from '../tokens/theme.json'
 
 export default { title: "PrensaDS/Colors", component: Block } as ComponentMeta<typeof Block>
 
-const ColorBlock = styled('div')
+const ColorBlock = PrensaEngine.styled('div')
 
 const textStyle = {
   backgroundColor: 'rgb(255 255 255 / 75%)',
