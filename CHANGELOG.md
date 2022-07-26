@@ -1,3 +1,10 @@
+## [1.9.84](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.83...v1.9.84) (2022-07-26)
+
+
+### Bug Fixes
+
+* add prop rounded to button radius ([11df4ad](https://github.com/xproglabs/prensa-designsystem/commit/11df4ad0dd48041e2a6c05aa3c41a899ea7844cd))
+
 ## [1.9.83](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.82...v1.9.83) (2022-06-30)
 
 
