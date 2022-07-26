@@ -9,7 +9,7 @@ import tokens from './tokens/theme.json'
  * Prensa stitches.config file
  * This file provides default configurations for using Prensa-DS.
  */
-const stitches = createStitches({
+export const PrensaEngine = createStitches({
   prefix: 'pds',
   media: {
     xs: '(min-width: 360px)',
@@ -39,5 +39,3 @@ const stitches = createStitches({
     py
   }
 })
-
-export const PrensaEngine = stitches

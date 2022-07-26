@@ -11,7 +11,9 @@ export default [
   createBundle('primitives/Block/index.ts'),
   createBundle('primitives/Typography/index.ts'),
   createBundle('providers/PrensaThemeProvider/index.ts'),
+  createBundle('stitches.config.ts', 'index.js'),
   createDeclaration('primitives/Block/index.ts'),
   createDeclaration('primitives/Typography/index.ts'),
   createDeclaration('providers/PrensaThemeProvider/index.ts'),
+  createDeclaration('stitches.config.ts', 'index.d.ts'),
 ]
