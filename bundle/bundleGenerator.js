@@ -4,32 +4,30 @@ import esbuild from 'rollup-plugin-esbuild'
 /**
  * Prensa | CreateBundle 
  * Outputs .js bundles
- * @param {*} inputDir 
- * @param {*} outputDir 
+ * @param {string} entityPath 
+ * @param {string} customPath 
  * @returns 
  */
-function createBundle(entityPath) {
+function createBundle(entityPath, customPath) {
   const inputPath = entityPath.split('.ts')
   const outputPath = 'dist'
   const inputFile = `${entityPath}`
-  const cjsOutFile = `${outputPath}/${inputPath[0]}.js`
-  const esmOutFile = `${outputPath}/${inputPath[0]}.esm`
+  const cjsOutFile = customPath ? `${outputPath}/${customPath}` : `${outputPath}/${inputPath[0]}.js`
+  const esmOutFile = customPath ? `${outputPath}/${customPath}` : `${outputPath}/${inputPath[0]}.esm`
 
   return {
     input: inputFile,
-    plugins: [json(), esbuild()],
+    plugins: [json(), esbuild({ minify: true })],
     output: [
       {
         file: cjsOutFile,
-        format: 'cjs',
-        sourcemap: true
+        format: 'cjs'
       },
       {
         file: esmOutFile,
-        format: 'es',
-        sourcemap: true
+        format: 'es'
       }
-    ],
+    ]
   }
 }
 
