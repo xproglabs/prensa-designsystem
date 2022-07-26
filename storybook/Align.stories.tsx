@@ -1,11 +1,9 @@
-import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react'
 
-import { Block } from '../primitives/Block/index';
-import { PrensaThemeProvider } from '../providers/PrensaThemeProvider';
+import { Block } from '../primitives/Block/index'
+import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 
-export default { title: 'PrensaDS/Alignment', component: Block } as ComponentMeta<typeof Block>
-const Template: ComponentStory<typeof Block> = (args) => <Block {...args} />;
+export default { title: 'PrensaDS/Alignment', component: Block }
 
 const Circle = () => {
   return (

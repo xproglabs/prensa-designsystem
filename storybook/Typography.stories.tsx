@@ -9,7 +9,7 @@ export default { title: 'PrensaDS/Typography', component: Typography }
 export const Variants = () => {
   return (
     <PrensaThemeProvider>
-      {Object.keys(theme.fontSizes).map((name) => (
+      {Object.keys(theme.fontSizes).map((name: any) => (
         <Typography key={name} variant={name}>
           {name} variant
         </Typography>

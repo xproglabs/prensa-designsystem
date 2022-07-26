@@ -1,11 +1,10 @@
-import { ComponentMeta } from '@storybook/react'
 import React from 'react'
 
 import { Block } from '../primitives/Block'
 import { PrensaEngine } from '../stitches.config'
 import tokens from '../tokens/theme.json'
 
-export default { title: "PrensaDS/Colors", component: Block } as ComponentMeta<typeof Block>
+export default { title: 'PrensaDS/Colors', component: Block }
 
 const ColorBlock = PrensaEngine.styled('div')
 
