@@ -224,7 +224,7 @@ Button.propTypes = {
   /**
    * Permite a escolha do token para border-radius
    */
-  radius: PropTypes.oneOf(['unset', 'default', 'alternative']),
+  radius: PropTypes.oneOf(['unset', 'default', 'alternative', 'rounded']),
   /**
    * Permite a passagem de um ícone à direita
    */
