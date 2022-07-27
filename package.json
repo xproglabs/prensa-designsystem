@@ -6,6 +6,7 @@
   "license": "ISC",
   "repository": "https://github.com/xproglabs/prensa-designsystem.git",
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
