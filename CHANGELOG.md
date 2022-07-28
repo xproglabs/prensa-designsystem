@@ -1,3 +1,10 @@
+## [1.9.85](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.84...v1.9.85) (2022-07-28)
+
+
+### Features
+
+* allow articles to have images with link ([52aed74](https://github.com/xproglabs/prensa-designsystem/commit/52aed74a8483ed43bf1c3ea5a7f4fc7bc0165380))
+
 ## [1.9.84](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.83...v1.9.84) (2022-07-26)
 
 
