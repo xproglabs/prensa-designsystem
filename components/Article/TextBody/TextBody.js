@@ -71,6 +71,8 @@ const TextBody = (props) => {
       }
     })
     if (!image_data) return null
+    const customClickValue = value.customClick
+    const clickToOpenValue = customClickValue !== undefined
     return (
       <Block mb={3} maxWidth={bodyWidth} width="100%">
         <ArticleImage
@@ -80,6 +82,8 @@ const TextBody = (props) => {
             ...bodyImage.caption,
             value: value.caption || image_data.caption
           }}
+          clickToOpen={clickToOpenValue}
+          customClick={customClickValue}
           height={image_data.height}
           width={image_data.width}
           value={image_data.value}

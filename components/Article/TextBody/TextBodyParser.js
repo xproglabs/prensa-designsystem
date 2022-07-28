@@ -86,6 +86,9 @@ const parse_content = (content) => {
           'caption': subtitle,
           'byline': ''
         }
+        if (attr['data-href'] && attr['data-href'] !== '' && attr['data-href'] !== 'undefined') {
+          propsImage['customClick'] = attr['data-href']
+        }
         tagItems.push({ type: 'Image', value: propsImage })
         return true
       }
