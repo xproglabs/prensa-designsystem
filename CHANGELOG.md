@@ -1,3 +1,15 @@
+## [1.9.86](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.85...v1.9.86) (2022-07-29)
+
+
+### Bug Fixes
+
+* inclui novo type nas interfaces ([484fc99](https://github.com/xproglabs/prensa-designsystem/commit/484fc994cd5c895713040ad251ef9ff8a9d6608a))
+
+
+### Features
+
+* insere array de strings na config do height do SideMenuProps ([838a77d](https://github.com/xproglabs/prensa-designsystem/commit/838a77dc2b1830ebab5be07883d4d000564232c0))
+
 ## [1.9.85](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.84...v1.9.85) (2022-07-28)
 
 
