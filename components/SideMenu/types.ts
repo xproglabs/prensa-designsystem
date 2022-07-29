@@ -25,7 +25,7 @@ export interface SideMenuProps {
 export interface SideMenuAmpProps {
   backgroundColor?: ColorTokens;
   children?: ReactNode;
-  height?: string;
+  height?: SideMenuHeight;
   id?: string;
   layout?: string;
   menuAnchor?: SideMenuPositions;
@@ -38,7 +38,7 @@ export interface SideMenuWebProps {
   backgroundColor?: ColorTokens;
   children?: ReactNode;
   close?: SideMenuClickFunction;
-  height?: string;
+  height?: SideMenuHeight;
   menuAnchor?: SideMenuPositions;
   open?: boolean;
   px?: string;
@@ -61,7 +61,7 @@ export type ContentProps = {
   px?: string;
   py?: string;
   $backgroundColor?: ColorTokens;
-  $height?: string;
+  $height?: SideMenuHeight;
   $width?: SideMenuWidth;
 }
 export type AmpMenuContainerProps = {
@@ -69,7 +69,7 @@ export type AmpMenuContainerProps = {
   px?: string;
   py?: string;
   $backgroundColor?: ColorTokens;
-  $height?: string;
+  $height?: SideMenuHeight;
   $width?: SideMenuWidth;
 }
 export type WebMenuContainerProps = {
