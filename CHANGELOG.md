@@ -1,3 +1,10 @@
+## [1.9.87](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.86...v1.9.87) (2022-07-30)
+
+
+### Bug Fixes
+
+* insere condição na function getHeight ([8fbc5db](https://github.com/xproglabs/prensa-designsystem/commit/8fbc5db23326bb2a7e49a76426746d82302bef82))
+
 ## [1.9.86](https://github.com/xproglabs/prensa-designsystem/compare/v1.9.85...v1.9.86) (2022-07-29)
 
 
