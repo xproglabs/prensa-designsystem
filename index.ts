@@ -1,4 +1,5 @@
 export * from './primitives/Block'
 export * from './primitives/Typography'
 export * from './providers/PrensaThemeProvider'
-export * from './stitches.config'
+export * from './prensa.default.config'
+export * from './prensa.export.config'

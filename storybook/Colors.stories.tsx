@@ -1,7 +1,7 @@
 import React from 'react'
 
+import { PrensaEngine } from '../prensa.local.config'
 import { Block } from '../primitives/Block'
-import { PrensaEngine } from '../stitches.config'
 import tokens from '../tokens/theme.json'
 
 export default { title: 'PrensaDS/Colors', component: Block }

@@ -14,8 +14,13 @@
     "noImplicitAny": false,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "target": "ESNext"    
+    "baseUrl": ".",
+    "paths": {
+      "@PrensaEngine": [
+        "prensa.local.config.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "dist"],
-  "include": [ "*ts", "*tsx" ]
+  "include": [ "*" ]
 }

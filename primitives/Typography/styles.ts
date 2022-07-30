@@ -1,4 +1,5 @@
-import { PrensaEngine } from '../../stitches.config'
+import { PrensaEngine } from '@PrensaEngine'
+
 import { CreatePropVariant } from './variants/variant'
 
 /**

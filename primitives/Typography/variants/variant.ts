@@ -1,4 +1,5 @@
-import { PrensaEngine } from '../../../stitches.config'
+import { PrensaEngine } from '@PrensaEngine'
+
 import { ITypeSystem } from '../../../tokens/types'
 
 //Todo: Implementar tipagem proveniente de fonte automática (tokens brain)
