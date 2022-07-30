@@ -4,7 +4,7 @@ import { ReactNode, MouseEvent } from 'react'
 type SideMenuPositions = 'left' | 'right'
 type SideMenuClickFunction = (event: MouseEvent<HTMLElement>, value: any) => void
 type SideMenuWidth = [string, string];
-type SideMenuHeight = [string, string];
+type SideMenuHeight = [string, string] | string
 /**
  * Prensa | SideMenu API
  */
