@@ -23,8 +23,18 @@ function getBackgroundColor({ $backgroundColor, theme }: any) {
   return `background-color: ${color};`
 }
 
-function getHeight({ $height }: any) {
-  return `height: ${$height};`
+function getHeight({ theme, $height }: any) {
+    if(typeof $height === "string") {
+      return `height: ${$height};`
+    }
+    else {
+      return `
+      height: ${$height[0]};
+      @media (min-width: ${theme.queries.md}) {
+        height: ${$height[1]};
+      }
+    `
+  }
 }
 
 function getResponsiveWidth({ theme, $width }: any) {
