@@ -1,5 +1,4 @@
-import { PrensaEngine } from '@PrensaEngine'
-
+import { PrensaEngine } from '../../../prensa.default.config'
 import { ITypeSystem } from '../../../tokens/types'
 
 //Todo: Implementar tipagem proveniente de fonte automática (tokens brain)

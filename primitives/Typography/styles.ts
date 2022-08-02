@@ -1,5 +1,4 @@
-import { PrensaEngine } from '@PrensaEngine'
-
+import { PrensaEngine } from '../../prensa.default.config'
 import { CreatePropVariant } from './variants/variant'
 
 /**
