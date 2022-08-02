@@ -8,12 +8,6 @@ import createDeclaration from './bundle/declarationsGenerator'
  * This file also generates d.ts files using declarationsGenerator.
  */
 export default [
-  createBundle('primitives/Block/index.ts'),
-  createBundle('primitives/Typography/index.ts'),
-  createBundle('providers/PrensaThemeProvider/index.ts'),
-  createBundle('prensa.export.config.ts', 'index.js'),
-  createDeclaration('primitives/Block/index.ts'),
-  createDeclaration('primitives/Typography/index.ts'),
-  createDeclaration('providers/PrensaThemeProvider/index.ts'),
-  createDeclaration('prensa.export.config.ts', 'index.d.ts'),
+  createBundle('index.ts'),
+  createDeclaration('index.ts')
 ]
