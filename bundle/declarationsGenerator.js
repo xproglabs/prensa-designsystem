@@ -8,7 +8,7 @@ import ts from 'rollup-plugin-ts'
  * @param {string} customPath
  * @returns 
  */
-function createBundle(entityPath, customPath) {
+function createDeclarations(entityPath, customPath) {
   const inputPath = entityPath.split('.ts')
   const outputPath = 'dist'
   const inputFile = `${entityPath}`
@@ -26,4 +26,4 @@ function createBundle(entityPath, customPath) {
   }
 }
 
-export default createBundle
+export default createDeclarations

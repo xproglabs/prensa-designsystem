@@ -17,7 +17,7 @@ function createBundle(entityPath, customPath) {
 
   return {
     input: inputFile,
-    plugins: [json(), esbuild({ format: 'esm' })],
+    plugins: [json(), esbuild({ format: 'esm', exclude: ['node_modules'] })],
     output: [
       {
         file: cjsOutFile,
