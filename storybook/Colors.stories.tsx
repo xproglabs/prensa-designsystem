@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PrensaEngine } from '../prensa.local.config'
+import { PrensaEngine } from '../prensa.default.config'
 import { Block } from '../primitives/Block'
 import tokens from '../tokens/theme.json'
 
