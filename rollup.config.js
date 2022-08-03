@@ -1,5 +1,4 @@
 import createBundle from './bundle/bundleGenerator'
-import createDeclaration from './bundle/declarationsGenerator'
 
 /**
  * Prensa JS output file
@@ -9,5 +8,4 @@ import createDeclaration from './bundle/declarationsGenerator'
  */
 export default [
   createBundle('index.ts'),
-  createDeclaration('index.ts')
 ]
