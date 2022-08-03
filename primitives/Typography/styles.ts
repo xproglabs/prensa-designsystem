@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { PrensaEngine } from '../../prensa.default.config'
 import { CreatePropVariant } from './variants/variant'
 
@@ -16,6 +17,6 @@ export const Typography = PrensaEngine.styled('p', {
       p: {},
       span: {}
     },
-    variant: { ...CreatePropVariant() }
+    variant: CreatePropVariant()
   }
 })

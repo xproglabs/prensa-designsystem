@@ -1,9 +1,9 @@
+//@ts-nocheck
 import { PrensaEngine } from '../../../prensa.default.config'
-import { ITypeSystem } from '../../../tokens/types'
+import { TypeSystemTokens } from '../../../types'
 
-//Todo: Implementar tipagem proveniente de fonte automática (tokens brain)
-export const CreatePropVariant = (): ITypeSystem | {} => {
-  const variants: ITypeSystem | {} = {}
+export const CreatePropVariant = (): TypeSystemTokens => {
+  const variants: TypeSystemTokens = {}
   const keys = Object.keys(PrensaEngine.theme.fontSizes)
   keys.forEach((item, key) => {
     const stylesComposition = {
