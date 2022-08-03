@@ -12,8 +12,9 @@
   "scripts": {
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -o ./storybookbuild",
-    "build": "npm run clear:dist && rollup --config",
-    "build:declarations": "tsc index.ts --declaration --emitDeclarationOnly --declarationDir dist --jsx react --esModuleInterop",
+    "build": "npm run clear:dist && npm run build:js && npm run build:ts",
+    "build:js": "rollup --config",
+    "build:ts": "tsc index.ts --declaration --emitDeclarationOnly --declarationDir dist --jsx react --esModuleInterop",
     "eslint": "eslint -c .eslintrc.json --ext js,ts,tsx ./",
     "eslint:fix": "eslint -c .eslintrc.json --fix --ext js,ts,tsx ./",
     "test": "jest",
