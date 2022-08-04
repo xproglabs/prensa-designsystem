@@ -3,7 +3,8 @@ const { onSuccessCI } = require('./cicd/cdNotification')
 module.exports = {
   branches: [
     { name: 'master' },
-    { name: 'qa', prerelease: true }
+    { name: 'qa', prerelease: true },
+    { name: 'qav2', prerelease: true },
   ],
   plugins: [
     [
