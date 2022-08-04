@@ -3,6 +3,7 @@ name: prensa-bot continuous-deploy-qa
   push:
     branches:
       - qa
+      - qav2
 
 jobs:
   release:
