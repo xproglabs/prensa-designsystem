@@ -6,7 +6,7 @@ on:
       - 'packages/prensa/**'
 
 jobs:
-  Install-And-Build-Prensa-v1:
+  Install-And-Build-Prensa-v2:
     runs-on: ubuntu-20.04
 
     steps:
@@ -32,7 +32,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install
-        run: yarn deps:prensa:v1 && yarn deps:prensa:v2
+        run: yarn deps:prensa:v2
 
       - name: Build
-        run: yarn build:prensa:v1 && yarn build:prensa:v2
+        run: yarn build:prensa:v2
