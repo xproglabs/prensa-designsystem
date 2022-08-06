@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "author": "XPROG",
   "repository": "https://github.com/xproglabs/prensa-designsystem.git",
+  "scripts": {
+    "prensa:v1": "cd packages/prensa && npm run storybook",
+    "prensa:v2": "cd packages/xprog-prensa",
+    "build:prensav1": "cd packages/prensa && npm run build",
+    "build:prensav2": "cd packages/xprog-prensa && npm run build",
+    "release:local:prensav1": "cd packages/prensa && npm run release:local",
+    "release:local:prensav2": "cd packages/xprog-prensa && npm run build && npm run release:local"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
