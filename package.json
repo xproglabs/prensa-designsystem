@@ -6,10 +6,10 @@
   "scripts": {
     "prensa:v1": "cd packages/prensa && npm run storybook",
     "prensa:v2": "cd packages/xprog-prensa",
-    "build:prensav1": "cd packages/prensa && npm run build",
-    "build:prensav2": "cd packages/xprog-prensa && npm run build",
-    "release:local:prensav1": "cd packages/prensa && npm run release:local",
-    "release:local:prensav2": "cd packages/xprog-prensa && npm run build && npm run release:local"
+    "build:prensa:v1": "cd packages/prensa && npm run build",
+    "build:prensa:v2": "cd packages/xprog-prensa && npm run build",
+    "release:local:prensa:v1": "cd packages/prensa && npm run release:local",
+    "release:local:prensa:v2": "cd packages/xprog-prensa && npm run build && npm run release:local"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
