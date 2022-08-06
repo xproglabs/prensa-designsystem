@@ -1,5 +1,7 @@
 /dist
 /node_modules
+/packages/prensa/node-modules
+/packages/xprog-prensa/node-modules
 .env
 *.tgz
 yarn.lock
