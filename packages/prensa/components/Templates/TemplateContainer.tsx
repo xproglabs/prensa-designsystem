@@ -40,4 +40,5 @@ const TemplateContainer = ({
   )
 }
 
-export default withTheme(TemplateContainer)
+const ThemedTemplateContainer: any = withTheme(TemplateContainer)
+export default ThemedTemplateContainer

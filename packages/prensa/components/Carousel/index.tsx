@@ -61,4 +61,5 @@ Carousel.defaultProps = {
   type: 'slides'
 }
 
-export default withTheme(Carousel)
+const ThemedCarousel: any = withTheme(Carousel)
+export default ThemedCarousel

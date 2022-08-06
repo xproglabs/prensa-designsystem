@@ -1,11 +1,11 @@
 import { margin } from 'prensa/styled-system'
-import { ComponentType } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 import { getIconHeight, getMinWidthValue } from '../styled'
 import { FacebookAmpContainerProps } from './types'
 
-export const FacebookAmpContainer: ComponentType<FacebookAmpContainerProps> = styled.div<FacebookAmpContainerProps>`
+export const FacebookAmpContainer: FC<FacebookAmpContainerProps> = styled.div<FacebookAmpContainerProps>`
   amp-social-share[type="facebook"] {
     ${getIconHeight};
     ${getMinWidthValue};

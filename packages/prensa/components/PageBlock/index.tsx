@@ -438,4 +438,5 @@ const PageBlock = ({
   return <pre>template not found</pre>
 }
 
-export default withTheme(PageBlock)
+const ThemedPageBlock: any = withTheme(PageBlock)
+export default ThemedPageBlock

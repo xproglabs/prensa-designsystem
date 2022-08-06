@@ -1,5 +1,5 @@
 import { margin } from 'prensa/styled-system'
-import { ComponentType } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 type ContainerProps = {
@@ -37,7 +37,7 @@ function desktop_width({ $width }) {
  * @description A container for web/amp embeds
  * Do NOT use display: flex; in this container. It must render a display: block; property in order to render AMP content
  */
-const Container: ComponentType<ContainerProps> = styled.div<ContainerProps>`
+const Container: FC<ContainerProps> = styled.div<ContainerProps>`
   ${margin};
   ${mobile_height};
   ${mobile_width};

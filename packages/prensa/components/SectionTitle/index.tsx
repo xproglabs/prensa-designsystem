@@ -58,4 +58,6 @@ const SectionTitle = ({
   )
 }
 
-export default withTheme(SectionTitle)
+const ThemedSectionTitle: any = withTheme(SectionTitle)
+
+export default ThemedSectionTitle

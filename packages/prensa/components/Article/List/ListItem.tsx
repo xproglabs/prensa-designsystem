@@ -1,11 +1,11 @@
 import { getColor, margin } from 'prensa/styled-system'
-import { ComponentType } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 import { parseFontFamily } from '../../Typography/parsers'
 import { ListItemProps } from './types'
 
-export const ListItem: ComponentType<ListItemProps> = styled.li<ListItemProps>`
+export const ListItem: FC<ListItemProps> = styled.li<ListItemProps>`
   ${margin};
   a {
     text-decoration: underline;

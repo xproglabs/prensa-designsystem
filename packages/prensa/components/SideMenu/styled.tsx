@@ -1,6 +1,6 @@
 import { get } from 'lodash'
 import { padding } from 'prensa/styled-system'
-import { ComponentType } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 import { ContentProps, BackdropProps, AmpMenuContainerProps, WebMenuContainerProps } from './types'
@@ -24,11 +24,11 @@ function getBackgroundColor({ $backgroundColor, theme }: any) {
 }
 
 function getHeight({ theme, $height }: any) {
-    if(typeof $height === "string") {
-      return `height: ${$height};`
-    }
-    else {
-      return `
+  if (typeof $height === 'string') {
+    return `height: ${$height};`
+  }
+  else {
+    return `
       height: ${$height[0]};
       @media (min-width: ${theme.queries.md}) {
         height: ${$height[1]};
@@ -46,7 +46,7 @@ function getResponsiveWidth({ theme, $width }: any) {
   `
 }
 
-export const Backdrop: ComponentType<BackdropProps> = styled.div`
+export const Backdrop: FC<BackdropProps> = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   height: 100vh;
   position: fixed;
@@ -55,7 +55,7 @@ export const Backdrop: ComponentType<BackdropProps> = styled.div`
   width: 100vw;
   z-index: 10;
 `
-export const Content: ComponentType<ContentProps> = styled.div<ContentProps>`
+export const Content: FC<ContentProps> = styled.div<ContentProps>`
   ${padding};
   ${getMenuPosition};
   ${getBackgroundColor};
@@ -67,7 +67,7 @@ export const Content: ComponentType<ContentProps> = styled.div<ContentProps>`
   top: 0px;
   z-index: 100;
 `
-export const AmpMenuContainer: ComponentType<AmpMenuContainerProps> = styled.div<AmpMenuContainerProps>`
+export const AmpMenuContainer: FC<AmpMenuContainerProps> = styled.div<AmpMenuContainerProps>`
   amp-sidebar {
     ${padding};
     ${getBackgroundColor};
@@ -75,7 +75,7 @@ export const AmpMenuContainer: ComponentType<AmpMenuContainerProps> = styled.div
     ${getResponsiveWidth};
   }
 `
-export const WebMenuContainer: ComponentType<WebMenuContainerProps> = styled.div`
+export const WebMenuContainer: FC<WebMenuContainerProps> = styled.div`
   .Prensa_sidemenu_content[open] {
     animation-name: Prensa_Sidemenu_slideInLeft;
     animation-duration: 233ms;

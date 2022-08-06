@@ -1,11 +1,11 @@
 import { margin } from 'prensa/styled-system'
-import { ComponentType } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
 import { getIconHeight, getMinWidthValue } from '../styled'
 import { TelegramAmpContainerProps } from './types'
 
-export const TelegramAmpContainer: ComponentType<TelegramAmpContainerProps> = styled.div<TelegramAmpContainerProps>`
+export const TelegramAmpContainer: FC<TelegramAmpContainerProps> = styled.div<TelegramAmpContainerProps>`
   amp-social-share[type="telegram"] {
     ${getIconHeight};
     ${getMinWidthValue};

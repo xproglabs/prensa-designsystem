@@ -143,4 +143,5 @@ const RenderSlot = ({
   return <RenderList />
 }
 
-export default withTheme(RenderSlot)
+const ThemedRenderSlot: any = withTheme(RenderSlot)
+export default ThemedRenderSlot

@@ -86,4 +86,5 @@ RelatedItem.defaultProps = {
   mb: [2, 2]
 }
 
-export default withTheme(RelatedItem)
+const ThemedRelatedItem: any = withTheme(RelatedItem)
+export default ThemedRelatedItem

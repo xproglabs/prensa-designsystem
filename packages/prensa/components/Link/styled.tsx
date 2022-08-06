@@ -1,6 +1,6 @@
 import { get } from 'lodash'
 import { align, border, height, margin, padding, width } from 'prensa/styled-system'
-import { ComponentType } from 'react'
+import { FC } from 'react'
 import styled, { css } from 'styled-components'
 
 import { StyledLinkProps } from './types'
@@ -42,7 +42,7 @@ function displayCSS({ $display }: any) {
   `
 }
 
-export const StyledLink: ComponentType<StyledLinkProps> | any = styled.a<StyledLinkProps>`
+export const StyledLink: FC<StyledLinkProps> | any = styled.a<StyledLinkProps>`
   cursor: pointer;
   ${align};
   ${border};
