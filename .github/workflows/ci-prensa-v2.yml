@@ -3,7 +3,7 @@ name: Pull Request Check
 on:
   pull_request: 
     paths: 
-      - 'packages/prensa/**'
+      - 'packages/xprog-prensa/**'
 
 jobs:
   Install-And-Build-Prensa-v2:
