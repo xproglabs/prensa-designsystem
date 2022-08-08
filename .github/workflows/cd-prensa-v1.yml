@@ -1,9 +1,9 @@
 name: Prensa v1 Package Deploy
 
 on:
-  pull_request: 
-    paths: 
-      - 'packages/prensa/**'
+  push:
+    branches:
+      - monorepo
 
 jobs:
   Deploy-Prensa-Package-v1:
