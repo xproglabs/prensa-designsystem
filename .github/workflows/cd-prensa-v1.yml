@@ -48,9 +48,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           
-      - name: Commit release result
+      - name: Update git
         run: |
-          npm run postrelease:copyfiles
           git config --global user.name 'deploy-bot'
           git config --global user.email 'giovanni@xproglabs.com'
           git add .
