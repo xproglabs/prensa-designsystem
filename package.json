@@ -10,7 +10,7 @@
     "build:prensa:v2": "cd packages/xprog-prensa && yarn build",
     "release:local:prensa:v1": "cd packages/prensa && yarn release:local",
     "release:local:prensa:v2": "cd packages/xprog-prensa && yarn build && yarn release:local",
-    "release:prensa:v1": "cd packages/prensa && yarn semantic-release --branches monorepo && yarn postrelease:copyfiles",
+    "release:prensa:v1": "cd packages/prensa && yarn prerelease:copyfiles && yarn semantic-release --branches monorepo && yarn postrelease:copyfiles",
     "release:prensa:v2": "cd packages/xprog-prensa && yarn semantic-release",
     "deps:prensa:v1": "cd packages/prensa && yarn",
     "deps:prensa:v2": "cd packages/xprog-prensa && yarn"
