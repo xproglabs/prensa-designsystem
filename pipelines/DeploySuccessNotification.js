@@ -1,11 +1,9 @@
-const { get } = require('lodash')
-
-function onSuccessCI(pluginConfig, context) {
+function onDeploySuccess(pluginConfig, context) {
 
   //info search
-  const branchName = get(context, 'branch.name', false)
-  const releaseVersion = get(context, 'nextRelease.version', '')
-  const commitHead = get(context, 'nextRelease.gitHead', '')
+  const branchName = context && context.branch ? context.branch.name : false
+  const releaseVersion = context && context.nextRelease ? context.nextRelease.version : ''
+  const commitHead = context && context.nextRelease ? context.nextRelease.gitHead : ''
 
   //info mount
   const isQa = branchName === 'qa'
@@ -43,6 +41,4 @@ function onSuccessCI(pluginConfig, context) {
   return message
 }
 
-module.exports = {
-  onSuccessCI
-}
+module.exports = { onDeploySuccess }

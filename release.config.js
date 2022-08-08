@@ -1,32 +1,34 @@
-const { onSuccessCI } = require('./notifications/cdNotification')
+const { onDeploySuccess } = require('./pipelines/DeploySuccessNotification')
 
 module.exports = {
-  branches: [
-    { name: 'master' },
-    { name: 'qa', prerelease: true }
-  ],
+  // branches: [    
+  //   { name: 'master' },
+  //   { name: 'monorepo' },
+  //   { name: 'qa', prerelease: true }
+  // ],
   plugins: [
     [
-      '@semantic-release/changelog',
-      {
+      '@semantic-release/release-notes-generator',
+    ],
+    [
+      '@semantic-release/changelog', {
         changelogFile: 'CHANGELOG.md'
       }
     ],
     [
       '@semantic-release/commit-analyzer', {
         releaseRules: [
-          { type: 'feat', release: 'patch' },
-          { type: 'feat:major', release: 'minor' },
-          { type: 'fix', release: 'patch' }
+          { type: 'breaking', release: 'major' },
+          { type: 'feat', release: 'minor' },
+          { type: 'fix', release: 'patch' },
+          { type: 'add', release: 'patch' },
+          { type: 'remove', release: 'patch' },
         ],
       }
     ],
-    [
-      '@semantic-release/release-notes-generator',
-    ],
-    [
-      '@semantic-release/npm'
-    ],
+    // [
+    //   '@semantic-release/npm'
+    // ],
     [
       '@semantic-release/git', {
         assets: [
@@ -35,11 +37,10 @@ module.exports = {
       }
     ],
     [
-      'semantic-release-slack-bot',
-      {
+      'semantic-release-slack-bot', {
         notifyOnSuccess: true,
         notifyOnFail: true,
-        onSuccessFunction: onSuccessCI,
+        onSuccessFunction: onDeploySuccess,
       }
     ]
   ]

@@ -3,7 +3,7 @@ const { get } = require('lodash')
 
 const { getGitCommit } = require('./getGitCommit')
 
-async function onErrorCI() {
+async function onBuildError() {
 
   //info search
   const commitData = await getGitCommit()
@@ -66,4 +66,4 @@ async function onErrorCI() {
   })
 }
 
-onErrorCI()
+onBuildError()
