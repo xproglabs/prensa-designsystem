@@ -1,11 +1,10 @@
 const { onDeploySuccess } = require('./pipelines/DeploySuccessNotification')
 
 module.exports = {
-  // branches: [    
-  //   { name: 'master' },
-  //   { name: 'monorepo' },
-  //   { name: 'qa', prerelease: true }
-  // ],
+  branches: [    
+    { name: 'monorepo' },
+    { name: 'qa', prerelease: true }
+  ],
   plugins: [
     [
       '@semantic-release/release-notes-generator',
@@ -26,9 +25,9 @@ module.exports = {
         ],
       }
     ],
-    // [
-    //   '@semantic-release/npm'
-    // ],
+    [
+      '@semantic-release/npm'
+    ],
     [
       '@semantic-release/git', {
         assets: [
