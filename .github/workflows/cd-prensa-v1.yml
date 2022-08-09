@@ -1,4 +1,4 @@
-name: Prensa v1 Package Deploy
+name: Package Deploy - Prensa v1
 
 on:
   push:
