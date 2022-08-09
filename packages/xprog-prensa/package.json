@@ -22,8 +22,7 @@
     "prerelease:copyfiles": "cp -rf README.md dist && cp -rf CHANGELOG.md dist && cp -rf package.json dist && cp -rf .npmignore dist",
     "postrelease:copyfiles": "cp -rf dist/package.json . && cp -rf dist/CHANGELOG.md .",
     "release:local": "npm run prerelease:copyfiles && cd dist && npm pack",
-    "release": "npm run prerelease:copyfiles && cd dist && semantic-release && npm run postrelease:copyfiles",
-    "semantic-release": "cd dist && semantic-release"
+    "release": "npm run prerelease:copyfiles && semantic-release --extends ../../release.config.js && npm run postrelease:copyfiles"
   },
   "dependencies": {
     "@stitches/react": "1.2.8",
@@ -59,6 +58,7 @@
     "prop-types": "15.7.2",
     "rollup": "2.77.0",
     "rollup-plugin-esbuild": "4.9.1",
+    "semantic-release": "^19.0.3",
     "semantic-release-slack-bot": "3.5.3",
     "slackify-markdown": "4.3.1",
     "typescript": "4.7.4"

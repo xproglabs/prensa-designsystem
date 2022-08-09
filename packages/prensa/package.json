@@ -63,7 +63,7 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.30.0",
-    "semantic-release": "19.0.3",
+    "semantic-release": "^19.0.3",
     "semantic-release-slack-bot": "^3.4.1",
     "slackify-markdown": "^4.3.1",
     "styled-components": "^5.2.1",
@@ -84,8 +84,7 @@
     "prerelease:copyfiles": "cp -rf README.md dist && cp -rf CHANGELOG.md dist && cp -rf package.json dist && cp -rf .npmignore dist",
     "postrelease:copyfiles": "cp -rf dist/package.json . && cp -rf dist/CHANGELOG.md .",
     "release:local": "npm run clear:dist && npm run build && npm run prerelease:copyfiles && cd dist && npm pack",
-    "release": "npm run prerelease:copyfiles && cd dist && semantic-release && npm run postrelease:copyfiles",
-    "semantic-release": "cd dist && semantic-release"
+    "release": "npm run prerelease:copyfiles && semantic-release --extends ../../release.config.js && npm run postrelease:copyfiles"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
