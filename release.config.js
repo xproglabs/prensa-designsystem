@@ -2,7 +2,7 @@ const { onDeploySuccess } = require('./pipelines/DeploySuccessNotification')
 
 module.exports = {
   branches: [    
-    { name: 'monorepo' },
+    { name: 'monorepo', prerelease: true },
     { name: 'qa', prerelease: true }
   ],
   plugins: [

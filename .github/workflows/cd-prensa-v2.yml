@@ -1,9 +1,9 @@
 name: Package Deploy - Prensa v2
 
 on:
-  pull_request:
-    paths: 
-      - 'packages/xprog-prensa/**'
+  push:
+    branches:
+      - monorepo
 
 jobs:
   Package-Deploy-Prensa-v2:
