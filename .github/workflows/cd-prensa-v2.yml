@@ -1,14 +1,14 @@
-name: Package Deploy - Prensa v1
+name: Package Deploy - Prensa v2
 
 on:
   push:
     branches:
       - monorepo
     paths: 
-      - 'packages/prensa/**'
+      - 'packages/xprog-prensa/**'
 
 jobs:
-  Package-Deploy-Prensa-v1:
+  Package-Deploy-Prensa-v2:
     runs-on: ubuntu-20.04
 
     steps:
@@ -38,22 +38,23 @@ jobs:
         uses: Saionaro/extract-package-version@v1.0.6
 
       - name: Install
-        run: yarn deps:prensa:v1
+        run: yarn deps:prensa:v2
 
       - name: Build
-        run: yarn build:prensa:v1
+        run: yarn build:prensa:v2
 
       - name: Generate release
-        run: yarn release:prensa:v1
+        run: yarn release:prensa:v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           
-      - name: Update git
+      - name: Commit release result
         run: |
+          npm run postrelease:copyfiles
           git config --global user.name 'deploy-bot'
           git config --global user.email 'giovanni@xproglabs.com'
           git add .
-          git commit -m "[Deploy] prensa v${{ steps.extract_version.outputs.version }} [skip ci]"
+          git commit -m "[Deploy] xprog-prensa v${{ steps.extract_version.outputs.version }} [skip ci]"
           git push
