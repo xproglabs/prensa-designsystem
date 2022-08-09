@@ -2,8 +2,6 @@ name: Package Deploy - Prensa v2
 
 on:
   push:
-    branches:
-      - monorepo
     paths: 
       - 'packages/xprog-prensa/**'
 

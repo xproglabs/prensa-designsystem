@@ -2,8 +2,6 @@ name: Package Deploy - Prensa v1
 
 on:
   push:
-    branches:
-      - monorepo
     paths: 
       - 'packages/prensa/**'
 
