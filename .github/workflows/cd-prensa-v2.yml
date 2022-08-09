@@ -35,7 +35,6 @@ jobs:
           
       - name: Commit release result
         run: |
-          npm run postrelease:copyfiles
           git config --global user.name 'deploy-bot'
           git config --global user.email 'giovanni@xproglabs.com'
           git add .
