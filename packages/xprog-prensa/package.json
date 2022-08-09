@@ -15,13 +15,14 @@
     "build": "npm run clear:dist && npm run build:js && npm run build:ts",
     "build:js": "rollup --config",
     "build:ts": "tsc index.ts --declaration --emitDeclarationOnly --declarationDir dist --jsx react --esModuleInterop",
+    "build:tgz": "npm run prerelease:copyfiles && cd dist && npm pack",
     "eslint": "eslint -c .eslintrc.json --ext js,ts,tsx ./",
     "eslint:fix": "eslint -c .eslintrc.json --fix --ext js,ts,tsx ./",
     "test": "jest",
     "clear:dist": "rm -rf dist",
     "prerelease:copyfiles": "cp -rf README.md dist && cp -rf CHANGELOG.md dist && cp -rf package.json dist && cp -rf .npmignore dist",
     "postrelease:copyfiles": "cp -rf dist/package.json . && cp -rf dist/CHANGELOG.md .",
-    "release:local": "npm run prerelease:copyfiles && cd dist && npm pack",
+    "release:local": "npm run prerelease:copyfiles && semantic-release --extends ../../release.config.js --no-ci && npm run postrelease:copyfiles",
     "release": "npm run prerelease:copyfiles && semantic-release --extends ../../release.config.js && npm run postrelease:copyfiles"
   },
   "dependencies": {
