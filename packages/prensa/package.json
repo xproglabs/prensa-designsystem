@@ -79,8 +79,8 @@
     "clear:dist": "rm -rf dist",
     "prerelease:copyfiles": "cp -rf README.md dist && cp -rf CHANGELOG.md dist && cp -rf package.json dist && cp -rf .npmignore dist",
     "postrelease:copyfiles": "cp -rf dist/package.json . && cp -rf dist/CHANGELOG.md .",
-    "release:local": "npm run prerelease:copyfiles && semantic-release --extends ../../release.config.js --no-ci",
-    "release": "npm run prerelease:copyfiles && semantic-release --extends ../../release.config.js"
+    "release:local": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js --no-ci",
+    "release": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
