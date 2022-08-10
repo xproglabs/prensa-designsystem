@@ -16,10 +16,6 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Extract version
-        id: extract_version
-        uses: Saionaro/extract-package-version@v1.0.6
-
       - name: Install
         run: yarn deps:prensa:v1
 
@@ -32,11 +28,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          
-      - name: Update git
-        run: |
-          git config --global user.name 'deploy-bot'
-          git config --global user.email 'giovanni@xproglabs.com'
-          git add .
-          git commit -m "[Deploy] prensa v${{ steps.extract_version.outputs.version }} [skip ci]"
-          git push
