@@ -4,7 +4,7 @@ const { onDeploySuccess } = require('../../pipelines/DeploySuccessNotification')
  * Order of plugins matter - Commit analyzer must be first.
  */
 module.exports = {
-  tagFormat: 'pds-${version}',
+  tagFormat: 'pds-v${version}',
   branches: [    
     { name: 'master' },
     { name: 'monorepo', prerelease: true },
