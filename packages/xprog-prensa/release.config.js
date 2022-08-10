@@ -1,20 +1,16 @@
-const { onDeploySuccess } = require('./pipelines/DeploySuccessNotification')
-
+const { onDeploySuccess } = require('../../pipelines/DeploySuccessNotification')
+/**
+ * Exports configuration module.
+ * Order of plugins matter - Commit analyzer must be first.
+ */
 module.exports = {
+  tagFormat: 'pds-${version}',
   branches: [    
     { name: 'master' },
     { name: 'monorepo', prerelease: true },
     { name: 'qa', prerelease: true }
   ],
   plugins: [
-    [
-      '@semantic-release/release-notes-generator',
-    ],
-    [
-      '@semantic-release/changelog', {
-        changelogFile: 'CHANGELOG.md'
-      }
-    ],
     [
       '@semantic-release/commit-analyzer', {
         releaseRules: [
@@ -27,13 +23,20 @@ module.exports = {
       }
     ],
     [
+      '@semantic-release/changelog', {
+        changelogFile: 'CHANGELOG.md'
+      }
+    ],
+    [
+      '@semantic-release/release-notes-generator',
+    ],
+    [
       '@semantic-release/npm'
     ],
     [
       '@semantic-release/git', {
-        assets: [
-          '!dist/**/*'
-        ]
+        assets: [ '!dist/**/*', 'CHANGELOG.md', 'package.json', 'package-lock.json' ],
+        message: 'release(pdsv2): ${nextRelease.version} [skip ci]'
       }
     ],
     [
