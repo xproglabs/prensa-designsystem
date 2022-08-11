@@ -1,3 +1,5 @@
+## [2.0.1-monorepo.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.0.1-monorepo.1...pds-v2.0.1-monorepo.2) (2022-08-11)
+
 ## [2.0.1-monorepo.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.0.0...pds-v2.0.1-monorepo.1) (2022-08-10)
 
 
