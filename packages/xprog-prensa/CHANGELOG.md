@@ -1,3 +1,10 @@
+## [2.0.1-monorepo.3](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.0.1-monorepo.2...pds-v2.0.1-monorepo.3) (2022-08-11)
+
+
+### Bug Fixes
+
+* Import dos tokens de type system no Typography ([665e814](https://github.com/xproglabs/prensa-designsystem/commit/665e814946c4a8fe178fd69e7b0fe165c7189db5))
+
 ## [2.0.1-monorepo.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.0.1-monorepo.1...pds-v2.0.1-monorepo.2) (2022-08-11)
 
 ## [2.0.1-monorepo.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.0.0...pds-v2.0.1-monorepo.1) (2022-08-10)
