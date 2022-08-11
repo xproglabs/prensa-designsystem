@@ -9,3 +9,9 @@ export type PrensaLineHeightTokens = typeof PrensaEngine['config']['theme']['lin
 export type PrensaRadiiTokens = typeof PrensaEngine['config']['theme']['radii']
 export type PrensaSpaceTokens = typeof PrensaEngine['config']['theme']['space']
 export type PrensaTypeSystemTokens = typeof PrensaEngine['config']['theme']['fontSizes']
+
+export type PrensaColorTokensTypes = keyof PrensaColorTokens
+export type PrensaLineHeightTokensTypes = keyof PrensaLineHeightTokens
+export type PrensaRadiiTokensTypes = keyof PrensaRadiiTokens
+export type PrensaSpaceTokensTypes = keyof PrensaSpaceTokens
+export type PrensaTypeSystemTokensTypes = keyof PrensaTypeSystemTokens
