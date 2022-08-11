@@ -1,8 +1,10 @@
 import React from 'react'
 
+import { PrensaEngineDefaultConfig } from '../prensa.default.config'
 import { PrensaEngine } from '../prensa.default.config'
 import { Block } from '../primitives/Block'
-import tokens from '../tokens/theme.json'
+
+const { theme } = PrensaEngineDefaultConfig
 
 export default { title: 'PrensaDS/Colors', component: Block }
 
@@ -20,7 +22,7 @@ const textStyle = {
 
 export const Default = () => {
   let lastType = ''
-  return (Object.keys(tokens.colors)).map(color => {
+  return (Object.keys(theme.colors)).map(color => {
     const selfType = color.replace(/\d+/g, '')
     let isFirst = false
     if (!lastType) {
@@ -46,7 +48,7 @@ export const Default = () => {
           <ColorBlock css={{ ...textStyle }}>
             {color}
             <br />
-            {tokens.colors[color]}
+            {theme.colors[color]}
           </ColorBlock>
         </ColorBlock>
       </>

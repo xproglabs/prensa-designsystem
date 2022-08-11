@@ -1,8 +1,10 @@
 import React from 'react'
 
+import { PrensaEngineDefaultConfig } from '../prensa.default.config'
 import { Typography } from '../primitives/Typography/index'
 import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
-import theme from '../tokens/theme.json'
+
+const { theme } = PrensaEngineDefaultConfig
 
 export default { title: 'PrensaDS/Typography', component: Typography }
 
