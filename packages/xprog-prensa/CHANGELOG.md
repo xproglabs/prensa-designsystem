@@ -1,3 +1,10 @@
+# [2.1.0-monorepo.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.0.1-monorepo.4...pds-v2.1.0-monorepo.1) (2022-08-15)
+
+
+### Features
+
+* Novo componente Button ([0864b2e](https://github.com/xproglabs/prensa-designsystem/commit/0864b2ebe1be1a82dbb0d627b919c9b76759be5d))
+
 ## [2.0.1-monorepo.4](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.0.1-monorepo.3...pds-v2.0.1-monorepo.4) (2022-08-15)
 
 
