@@ -17,4 +17,5 @@ export type PrensaSpaceTokens = keyof PrensaSpaces
 export type PrensaTypeSystemTokens = keyof PrensaTypeSystem
 
 export * from './primitives/Block/props'
+export * from './primitives/Button/props'
 export * from './primitives/Typography/props'
