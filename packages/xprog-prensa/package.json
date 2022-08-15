@@ -14,7 +14,7 @@
     "build-storybook": "build-storybook -o ./storybookbuild",
     "build": "npm run clear:dist && npm run build:js && npm run build:ts",
     "build:js": "rollup --config",
-    "build:ts": "tsc index.ts --declaration --emitDeclarationOnly --declarationDir dist --jsx react --esModuleInterop",
+    "build:ts": "tsc index.ts --declaration --emitDeclarationOnly --declarationDir dist --jsx react --esModuleInterop --resolveJsonModule",
     "build:tgz": "npm run prerelease:copyfiles && cd dist && npm pack",
     "eslint": "eslint -c .eslintrc.json --ext js,ts,tsx ./",
     "eslint:fix": "eslint -c .eslintrc.json --fix --ext js,ts,tsx ./",
