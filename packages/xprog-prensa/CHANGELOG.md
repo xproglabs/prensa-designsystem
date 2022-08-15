@@ -1,3 +1,10 @@
+## [2.0.1-monorepo.4](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.0.1-monorepo.3...pds-v2.0.1-monorepo.4) (2022-08-15)
+
+
+### Bug Fixes
+
+* Adiciona option resolveJsonModule na geração de declarações ([045b08a](https://github.com/xproglabs/prensa-designsystem/commit/045b08a9762ea178d517056cc7009d9248fa5f36))
+
 ## [2.0.1-monorepo.3](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.0.1-monorepo.2...pds-v2.0.1-monorepo.3) (2022-08-11)
 
 
