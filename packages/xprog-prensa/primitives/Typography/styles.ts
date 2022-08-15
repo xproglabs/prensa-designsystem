@@ -20,3 +20,5 @@ export const Typography = PrensaEngine.styled('p', {
     variant: CreatePropVariant()
   }
 })
+
+export type TypographyStyledType = typeof Typography
