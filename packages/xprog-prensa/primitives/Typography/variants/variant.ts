@@ -1,14 +1,14 @@
 import { PrensaEngine } from '../../../prensa.default.config'
-import { PrensaTypeSystemTokens } from '../../../types'
+import { PrensaTypeSystem } from '../../../types'
 
-export const CreatePropVariant = (): PrensaTypeSystemTokens => {
-  let variants: PrensaTypeSystemTokens | any = {}
+export const CreatePropVariant = (): PrensaTypeSystem => {
+  let variants: any = {}
   const keys = Object.keys(PrensaEngine.theme.fontSizes)
   keys.forEach((item, key) => {
     const stylesComposition = {
+      fontFamily: '$primary',
       fontSize: `$${item}`,
       fontWeight: `$${item}`,
-      letterSpacing: `$${item}`,
       lineHeight: `$${item}`
     }
     variants[keys[key]] = stylesComposition
