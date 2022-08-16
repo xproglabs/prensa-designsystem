@@ -3,14 +3,14 @@ import React from 'react'
 import { PrensaEngineDefaultConfig } from '../prensa.default.config'
 import { Typography } from '../primitives/Typography/index'
 import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
-
-const { theme } = PrensaEngineDefaultConfig
+import { StorybookTheme } from './StorybookTheme'
 
 export default { title: 'PrensaDS/Typography', component: Typography }
+const { theme } = PrensaEngineDefaultConfig
 
 export const Variants = () => {
   return (
-    <PrensaThemeProvider>
+    <PrensaThemeProvider theme={StorybookTheme.className}>
       {Object.keys(theme.fontSizes).map((name: any) => (
         <Typography key={name} variant={name}>
           {name} variant
@@ -22,7 +22,7 @@ export const Variants = () => {
 
 export const FontSize = () => {
   return (
-    <PrensaThemeProvider>
+    <PrensaThemeProvider theme={StorybookTheme.className}>
       {Object.keys(theme.fontSizes).map((name) => (
         <Typography key={name} css={{ fontSize: `$${name}` }}>
           {name} fontSize
@@ -34,7 +34,7 @@ export const FontSize = () => {
 
 export const LineHeight = () => {
   return (
-    <PrensaThemeProvider>
+    <PrensaThemeProvider theme={StorybookTheme.className}>
       {Object.keys(theme.lineHeights).map((name) => (
         <Typography key={name} css={{ lineHeight: `$${name}` }}>
           {name} lineHeight
@@ -46,7 +46,7 @@ export const LineHeight = () => {
 
 export const FontWeight = () => {
   return (
-    <PrensaThemeProvider>
+    <PrensaThemeProvider theme={StorybookTheme.className}>
       {Object.keys(theme.fontWeights).map((name) => (
         <Typography key={name} css={{ fontWeight: `$${name}` }}>
           {name} fontWeight
@@ -58,7 +58,7 @@ export const FontWeight = () => {
 
 export const Semantics = () => {
   return (
-    <PrensaThemeProvider>
+    <PrensaThemeProvider theme={StorybookTheme.className}>
       <Typography as='h1' variant='default-heading-2xl' >
         The quick brown fox
       </Typography>
