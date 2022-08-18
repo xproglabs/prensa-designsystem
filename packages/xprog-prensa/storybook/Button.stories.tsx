@@ -12,6 +12,35 @@ const IconComponent = () => (
   </svg>
 )
 
+export const Variants = () => {
+  return (
+    <PrensaThemeProvider>
+      <Block css={{ align: ['row', 'evenly', 'middle'], height: '100vh' }}>
+        <Button
+          size='md'
+          variant='ghost'
+          roundedCorners
+        >
+          Medium fox
+        </Button>
+        <Button
+          size='md'
+          variant='outlined'
+          roundedCorners
+        >
+          Medium fox
+        </Button>
+        <Button
+          size='md'
+          roundedCorners
+        >
+          Medium fox
+        </Button>
+      </Block>
+    </PrensaThemeProvider>
+  )
+}
+
 export const Sizes = () => {
   return (
     <PrensaThemeProvider>
@@ -56,43 +85,26 @@ export const Sizes = () => {
   )
 }
 
-export const Filled = () => {
-  return (
-    <PrensaThemeProvider>
-      <Block css={{ align: ['row', 'evenly', 'middle'], height: '100vh' }}>
-        <Button
-          size='md'
-          variant='filled'
-          roundedCorners
-        >
-          Medium fox
-        </Button>
-      </Block>
-    </PrensaThemeProvider>
-  )
-}
-
-export const Outlined = () => {
-  return (
-    <PrensaThemeProvider>
-      <Block css={{ align: ['row', 'evenly', 'middle'], height: '100vh' }}>
-        <Button
-          size='md'
-          textColor='neutral2'
-          variant='outlined'
-          roundedCorners
-        >
-          Medium fox
-        </Button>
-      </Block>
-    </PrensaThemeProvider>
-  )
-}
-
 export const Disabled = () => {
   return (
     <PrensaThemeProvider>
       <Block css={{ align: ['row', 'evenly', 'middle'], height: '100vh' }}>
+        <Button
+          disabled
+          roundedCorners
+          size='md'
+          variant='ghost'
+        >
+          Medium fox
+        </Button>
+        <Button
+          disabled
+          roundedCorners
+          size='md'
+          variant='outlined'
+        >
+          Medium fox
+        </Button>
         <Button
           disabled
           roundedCorners
@@ -106,7 +118,7 @@ export const Disabled = () => {
   )
 }
 
-export const Icon = () => {
+export const UsingWithIcon = () => {
   return (
     <PrensaThemeProvider>
       <Block css={{ align: ['row', 'evenly', 'middle'], height: '100vh' }}>
@@ -136,7 +148,7 @@ export const Colored = () => {
         <Button
           roundedCorners
           size='md'
-          variant='filled'
+          variant='ghost'
           iconLeft={<IconComponent/>}
           color='errorMain'
         >
@@ -154,7 +166,7 @@ export const Colored = () => {
         <Button
           roundedCorners
           size='md'
-          variant='ghost'
+          variant='filled'
           iconLeft={<IconComponent/>}
           color='errorMain'
         >
