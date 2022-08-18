@@ -20,12 +20,8 @@ export const Button: React.FC<ButtonProps> = ({
         backgroundColor: `$${color}`,
         borderColor: `$${color}`,
         color: `$${textColor ? textColor : 'white'}`,
-        'svg': {
-          fill: `$${textColor ? textColor : 'white'}`,
-        },
-        '&:hover': {
-          opacity: '0.8'
-        }
+        'svg': { fill: `$${textColor ? textColor : 'white'}` },
+        '&:hover': { opacity: '0.8' }
       }
       break
     case 'outlined':
@@ -33,12 +29,8 @@ export const Button: React.FC<ButtonProps> = ({
         backgroundColor: 'transparent',
         borderColor: `$${color}`,
         color: `$${textColor ? textColor : color}`,
-        'svg': {
-          fill: `$${textColor ? textColor : color}`,
-        },
-        '&:hover': {
-          opacity: '0.8'
-        }
+        'svg': { fill: `$${textColor ? textColor : color}` },
+        '&:hover': { opacity: '0.8' }
       }
       break
     case 'ghost':
@@ -46,17 +38,13 @@ export const Button: React.FC<ButtonProps> = ({
         backgroundColor: 'transparent',
         borderColor: 'transparent',
         color: `$${textColor ? textColor : color}`,
-        'svg': {
-          fill: `$${textColor ? textColor : color}`,
-        },
-        '&:hover': {
-          opacity: '0.8'
-        }
+        'svg': { fill: `$${textColor ? textColor : color}` },
+        '&:hover': { opacity: '0.8' }
       }
   }
 
   return (
-    <StyledButton className='pds-button' {...otherProps} css={css}>
+    <StyledButton className='pds-Button-root' css={css} {...otherProps}>
       {iconLeft && iconLeft}
       {children}
       {iconRight && iconRight}
