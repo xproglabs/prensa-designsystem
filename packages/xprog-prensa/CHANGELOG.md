@@ -1,3 +1,15 @@
+# [2.1.0-monorepo.4](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.0-monorepo.3...pds-v2.1.0-monorepo.4) (2022-08-18)
+
+
+### Bug Fixes
+
+* **button:** Place css prop before otherProps to avoid misordering properties ([29360da](https://github.com/xproglabs/prensa-designsystem/commit/29360da721b89bde41a69ffa0e41113f823678c5))
+
+
+### Features
+
+* **iconButton:** New component IconButton ([d03ae1e](https://github.com/xproglabs/prensa-designsystem/commit/d03ae1edddc0e671d0e13ebdc2bb9c8dd209d6ae))
+
 # [2.1.0-monorepo.3](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.0-monorepo.2...pds-v2.1.0-monorepo.3) (2022-08-18)
 
 # [2.1.0-monorepo.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.0-monorepo.1...pds-v2.1.0-monorepo.2) (2022-08-16)
