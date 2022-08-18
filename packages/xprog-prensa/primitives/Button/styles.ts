@@ -19,12 +19,9 @@ export const StyledButton = PrensaEngine.styled('button', {
 
   variants: {
     roundedCorners: {
-      true: {
-        borderRadius: '$default'
-      },
-      false: {
-        borderRadius: '$unset'
-      }
+      unset: { borderRadius: '$unset' },
+      default: { borderRadius: '$default' },
+      alternative: { borderRadius: '$alternative' }
     },
     size: {
       xs: {
