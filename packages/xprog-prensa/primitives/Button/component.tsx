@@ -20,6 +20,9 @@ export const Button: React.FC<ButtonProps> = ({
         backgroundColor: `$${color}`,
         borderColor: `$${color}`,
         color: `$${textColor ? textColor : 'white'}`,
+        'svg': {
+          fill: `$${textColor ? textColor : 'white'}`,
+        },
         '&:hover': {
           opacity: '0.8'
         }
@@ -29,7 +32,10 @@ export const Button: React.FC<ButtonProps> = ({
       css = {
         backgroundColor: 'transparent',
         borderColor: `$${color}`,
-        color: `$${textColor ? textColor : 'neutral2'}`,
+        color: `$${textColor ? textColor : color}`,
+        'svg': {
+          fill: `$${textColor ? textColor : color}`,
+        },
         '&:hover': {
           opacity: '0.8'
         }
@@ -39,7 +45,10 @@ export const Button: React.FC<ButtonProps> = ({
       css = {
         backgroundColor: 'transparent',
         borderColor: 'transparent',
-        color: `$${textColor ? textColor : 'neutral2'}`,
+        color: `$${textColor ? textColor : color}`,
+        'svg': {
+          fill: `$${textColor ? textColor : color}`,
+        },
         '&:hover': {
           opacity: '0.8'
         }
@@ -47,7 +56,7 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <StyledButton {...otherProps} css={css}>
+    <StyledButton className='pds-button' {...otherProps} css={css}>
       {iconLeft && iconLeft}
       {children}
       {iconRight && iconRight}
