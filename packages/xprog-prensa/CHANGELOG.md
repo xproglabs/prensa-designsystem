@@ -1,3 +1,11 @@
+# [2.1.0-monorepo.6](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.0-monorepo.5...pds-v2.1.0-monorepo.6) (2022-08-18)
+
+
+### Bug Fixes
+
+* **button:** Customized CSS wrong rendering order ([900919d](https://github.com/xproglabs/prensa-designsystem/commit/900919d5ab60a5172aca225ce81ca9c0e7785012))
+* **iconButton:** Customized CSS worng rendering order ([cd38d73](https://github.com/xproglabs/prensa-designsystem/commit/cd38d73a33e36f30e282dbe5a0caf6b633d97f7d))
+
 # [2.1.0-monorepo.5](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.0-monorepo.4...pds-v2.1.0-monorepo.5) (2022-08-18)
 
 # [2.1.0-monorepo.4](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.0-monorepo.3...pds-v2.1.0-monorepo.4) (2022-08-18)
