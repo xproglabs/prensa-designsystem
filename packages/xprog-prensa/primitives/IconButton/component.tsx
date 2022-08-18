@@ -6,6 +6,7 @@ import { IconButtonProps } from './props'
 export const IconButton: React.FC<IconButtonProps> = ({
   children,
   color,
+  css,
   icon,
   iconColor,
   variant,
@@ -13,17 +14,17 @@ export const IconButton: React.FC<IconButtonProps> = ({
   ...otherProps
 }) => {
 
-  let css = {}
+  let css_variant = {}
   switch (variant) {
     case 'filled':
-      css = {
+      css_variant = {
         backgroundColor: `$${color}`,
         borderColor: `$${color}`,
         'svg': { fill: `$${iconColor ? iconColor : 'white'}` },
       }
       break
     case 'outlined':
-      css = {
+      css_variant = {
         backgroundColor: 'transparent',
         borderColor: `$${color}`,
         color: `$${iconColor ? iconColor : color}`,
@@ -32,7 +33,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
       }
       break
     case 'ghost':
-      css = {
+      css_variant = {
         backgroundColor: 'transparent',
         borderColor: `transparent`,
         color: `$${iconColor ? iconColor : color}`,
@@ -42,7 +43,11 @@ export const IconButton: React.FC<IconButtonProps> = ({
   }
 
   return (
-    <StyledIconButton className='pds-IconButton-root' css={css} {...otherProps}>
+    <StyledIconButton
+      className='pds-IconButton-root'
+      css={{ ...css_variant, ...css }}
+      {...otherProps}
+    >
       {children ? <svg viewBox={viewBox}>{children}</svg> : icon}
     </StyledIconButton>
   )
