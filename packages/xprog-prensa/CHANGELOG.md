@@ -1,3 +1,10 @@
+# [2.1.0-monorepo.7](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.0-monorepo.6...pds-v2.1.0-monorepo.7) (2022-08-18)
+
+
+### Features
+
+* **theme:** Change size tokens base scale to 4px ([b704239](https://github.com/xproglabs/prensa-designsystem/commit/b7042390f0aeb04f52c261be13494559ce44c5f2))
+
 # [2.1.0-monorepo.6](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.0-monorepo.5...pds-v2.1.0-monorepo.6) (2022-08-18)
 
 
