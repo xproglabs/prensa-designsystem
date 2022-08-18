@@ -9,8 +9,11 @@ export const StyledIconButton = PrensaEngine.styled('button', {
 
   variants: {
     roundedCorners: {
-      true: { borderRadius: '$default' },
-      false: { borderRadius: '$unset' }
+      unset: { borderRadius: '$unset' },
+      default: { borderRadius: '$default' },
+      alternative: { borderRadius: '$alternative' },
+      rounded: { borderRadius: '$rounded' },
+      circle: { borderRadius: '$circle' }
     },
     size: {
       sm: { height: '$8', width: '$8', 'svg': { height: '$4', width: '$4' } },
