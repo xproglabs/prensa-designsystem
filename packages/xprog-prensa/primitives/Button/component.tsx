@@ -6,6 +6,7 @@ import { ButtonProps } from './props'
 export const Button: React.FC<ButtonProps> = ({
   children,
   color,
+  css,
   iconLeft,
   iconRight,
   variant,
@@ -13,10 +14,10 @@ export const Button: React.FC<ButtonProps> = ({
   ...otherProps
 }) => {
 
-  let css = {}
+  let css_variant = {}
   switch (variant) {
     case 'filled':
-      css = {
+      css_variant = {
         backgroundColor: `$${color}`,
         borderColor: `$${color}`,
         color: `$${textColor ? textColor : 'white'}`,
@@ -25,7 +26,7 @@ export const Button: React.FC<ButtonProps> = ({
       }
       break
     case 'outlined':
-      css = {
+      css_variant = {
         backgroundColor: 'transparent',
         borderColor: `$${color}`,
         color: `$${textColor ? textColor : color}`,
@@ -34,7 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
       }
       break
     case 'ghost':
-      css = {
+      css_variant = {
         backgroundColor: 'transparent',
         borderColor: 'transparent',
         color: `$${textColor ? textColor : color}`,
@@ -44,7 +45,11 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <StyledButton className='pds-Button-root' css={css} {...otherProps}>
+    <StyledButton
+      className='pds-Button-root'
+      css={{ ...css_variant, ...css }}
+      {...otherProps}
+    >
       {iconLeft && iconLeft}
       {children}
       {iconRight && iconRight}
