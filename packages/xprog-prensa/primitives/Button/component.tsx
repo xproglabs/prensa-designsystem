@@ -6,6 +6,8 @@ import { ButtonProps } from './props'
 export const Button: React.FC<ButtonProps> = ({
   children,
   color,
+  iconLeft,
+  iconRight,
   variant,
   textColor,
   ...otherProps
@@ -17,7 +19,7 @@ export const Button: React.FC<ButtonProps> = ({
       css = {
         backgroundColor: `$${color}`,
         borderColor: `$${color}`,
-        color: `$${textColor}`,
+        color: `$${textColor ? textColor : 'white'}`,
         '&:hover': {
           opacity: '0.8'
         }
@@ -27,7 +29,7 @@ export const Button: React.FC<ButtonProps> = ({
       css = {
         backgroundColor: 'transparent',
         borderColor: `$${color}`,
-        color: `$${textColor}`,
+        color: `$${textColor ? textColor : 'neutral2'}`,
         '&:hover': {
           opacity: '0.8'
         }
@@ -37,7 +39,7 @@ export const Button: React.FC<ButtonProps> = ({
       css = {
         backgroundColor: 'transparent',
         borderColor: 'transparent',
-        color: `$${textColor}`,
+        color: `$${textColor ? textColor : 'neutral2'}`,
         '&:hover': {
           opacity: '0.8'
         }
@@ -46,7 +48,9 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <StyledButton {...otherProps} css={css}>
+      {iconLeft && iconLeft}
       {children}
+      {iconRight && iconRight}
     </StyledButton>
   )
 }
@@ -54,6 +58,5 @@ export const Button: React.FC<ButtonProps> = ({
 Button.defaultProps = {
   color: 'neutral2',
   size: 'md',
-  textColor: 'white',
   variant: 'filled'
 }
