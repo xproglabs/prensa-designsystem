@@ -21,6 +21,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
         backgroundColor: `$${color}`,
         borderColor: `$${color}`,
         'svg': { fill: `$${iconColor ? iconColor : 'white'}` },
+        '&:hover': { opacity: '0.8' }
       }
       break
     case 'outlined':
