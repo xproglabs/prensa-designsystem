@@ -46,11 +46,6 @@ export const Sizes = () => {
         <IconButton
           icon={<IconComponent/>}
           onClick={e => console.log(e)}
-          size='xs'
-        />
-        <IconButton
-          icon={<IconComponent/>}
-          onClick={e => console.log(e)}
           size='sm'
         />
         <IconButton
@@ -62,11 +57,6 @@ export const Sizes = () => {
           icon={<IconComponent/>}
           onClick={e => console.log(e)}
           size='lg'
-        />
-        <IconButton
-          icon={<IconComponent/>}
-          onClick={e => console.log(e)}
-          size='xl'
         />
       </Block>
     </PrensaThemeProvider>

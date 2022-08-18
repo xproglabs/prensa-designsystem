@@ -13,11 +13,9 @@ export const StyledIconButton = PrensaEngine.styled('button', {
       false: { borderRadius: '$unset' }
     },
     size: {
-      xs: { 'svg': { height: '$2', width: '$2' } },
-      sm: { 'svg': { height: '$4', width: '$4' } },
-      md: { 'svg': { height: '$6', width: '$6' } },
-      lg: { 'svg': { height: '$8', width: '$8' } },
-      xl: { 'svg': { height: '$10', width: '$10' } },
+      sm: { height: '$8', width: '$8', 'svg': { height: '$4', width: '$4' } },
+      md: { height: '$10', width: '$10', 'svg': { height: '$6', width: '$6' } },
+      lg: { height: '$12', width: '$12', 'svg': { height: '$8', width: '$8' } },
     }
   }
 })
