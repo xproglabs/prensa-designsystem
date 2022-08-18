@@ -63,6 +63,40 @@ export const Sizes = () => {
   )
 }
 
+export const RoundedCorners = () => {
+  return (
+    <PrensaThemeProvider>
+      <Block css={{ align: ['row', 'evenly', 'middle'], height: '100vh' }}>
+        <IconButton
+          icon={<IconComponent/>}
+          onClick={e => console.log(e)}
+          roundedCorners='unset'
+        />
+        <IconButton
+          icon={<IconComponent/>}
+          onClick={e => console.log(e)}
+          roundedCorners='default'
+        />
+        <IconButton
+          icon={<IconComponent/>}
+          onClick={e => console.log(e)}
+          roundedCorners='alternative'
+        />
+        <IconButton
+          icon={<IconComponent/>}
+          onClick={e => console.log(e)}
+          roundedCorners='rounded'
+        />
+        <IconButton
+          icon={<IconComponent/>}
+          onClick={e => console.log(e)}
+          roundedCorners='circle'
+        />
+      </Block>
+    </PrensaThemeProvider>
+  )
+}
+
 export const UsingIconProp = () => {
   return (
     <PrensaThemeProvider>
