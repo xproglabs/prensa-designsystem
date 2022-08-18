@@ -1,6 +1,7 @@
 import { PrensaEngine } from '../../prensa.default.config'
 
 export const StyledButton = PrensaEngine.styled('button', {
+  align: ['row', 'center', 'middle'],
   borderStyle: 'solid',
   borderWidth: '1px',
   cursor: 'pointer',
