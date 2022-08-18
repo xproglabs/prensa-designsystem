@@ -6,6 +6,12 @@ import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 
 export default { title: 'PrensaDS/Button', component: Button }
 
+const IconComponent = () => (
+  <svg xmlns='http://www.w3.org/2000/svg' height='24' width='24' viewBox='0 0 48 48'>
+    <path d='M19.95 42 22 27.9h-7.3q-.55 0-.8-.5t0-.95L26.15 6h2.05l-2.05 14.05h7.2q.55 0 .825.5.275.5.025.95L22 42Z'/>
+  </svg>
+)
+
 export const Sizes = () => {
   return (
     <PrensaThemeProvider>
@@ -101,11 +107,6 @@ export const Disabled = () => {
 }
 
 export const Icon = () => {
-  const IconComponent = () => (
-    <svg xmlns='http://www.w3.org/2000/svg' height='24' width='24' viewBox='0 0 48 48'>
-    <path d='M19.95 42 22 27.9h-7.3q-.55 0-.8-.5t0-.95L26.15 6h2.05l-2.05 14.05h7.2q.55 0 .825.5.275.5.025.95L22 42Z'/>
-    </svg>
-  )
   return (
     <PrensaThemeProvider>
       <Block css={{ align: ['row', 'evenly', 'middle'], height: '100vh' }}>
@@ -120,7 +121,42 @@ export const Icon = () => {
           size='md'
           variant='outlined'
           iconLeft={<IconComponent/>}
-          color='v1ColorError1'
+        >
+          Brown Fox
+        </Button>
+      </Block>
+    </PrensaThemeProvider>
+  )
+}
+
+export const Colored = () => {
+  return (
+    <PrensaThemeProvider>
+      <Block css={{ align: ['row', 'evenly', 'middle'], height: '100vh' }}>
+        <Button
+          roundedCorners
+          size='md'
+          variant='filled'
+          iconLeft={<IconComponent/>}
+          color='errorMain'
+        >
+          Brown Fox
+        </Button>
+        <Button
+          roundedCorners
+          size='md'
+          variant='outlined'
+          iconLeft={<IconComponent/>}
+          color='errorMain'
+        >
+          Brown Fox
+        </Button>
+        <Button
+          roundedCorners
+          size='md'
+          variant='ghost'
+          iconLeft={<IconComponent/>}
+          color='errorMain'
         >
           Brown Fox
         </Button>
