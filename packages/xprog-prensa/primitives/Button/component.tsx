@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Typography } from '../Typography'
 import { StyledButton } from './styles'
 import { ButtonProps } from './props'
 
@@ -11,6 +12,7 @@ export const Button: React.FC<ButtonProps> = ({
   iconRight,
   variant,
   textColor,
+  textVariant,
   ...otherProps
 }) => {
 
@@ -51,7 +53,9 @@ export const Button: React.FC<ButtonProps> = ({
       {...otherProps}
     >
       {iconLeft && iconLeft}
-      {children}
+      <Typography variant={textVariant}>
+        {children}
+      </Typography>
       {iconRight && iconRight}
     </StyledButton>
   )
@@ -60,5 +64,6 @@ export const Button: React.FC<ButtonProps> = ({
 Button.defaultProps = {
   color: 'neutral2',
   size: 'md',
-  variant: 'filled'
+  textVariant: 'default-texts-sm',
+  variant: 'filled',
 }
