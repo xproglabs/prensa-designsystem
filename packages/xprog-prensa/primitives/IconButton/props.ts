@@ -8,5 +8,4 @@ export type IconButtonProps = StyledIconButtonTypes['defaultProps'] & {
   iconColor?: PrensaColorTokens;
   variant?: 'filled' | 'outlined' | 'ghost';
   viewBox?: string;
-  roundedCorners?: boolean;
 }
