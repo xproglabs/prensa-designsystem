@@ -10,5 +10,4 @@ export type ButtonProps = StyledButtonTypes['defaultProps'] & {
   textColor?: PrensaColorTokens;
   textVariant?: PrensaTypeSystemTokens;
   variant?: 'filled' | 'outlined' | 'ghost';
-  roundedCorners?: boolean;
 }
