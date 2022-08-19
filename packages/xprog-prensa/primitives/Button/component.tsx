@@ -53,7 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
       {...otherProps}
     >
       {iconLeft && iconLeft}
-      <Typography variant={textVariant}>
+      <Typography as='span' variant={textVariant}>
         {children}
       </Typography>
       {iconRight && iconRight}
