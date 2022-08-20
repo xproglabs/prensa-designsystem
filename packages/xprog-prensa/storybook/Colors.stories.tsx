@@ -6,7 +6,7 @@ import { Block } from '../primitives/Block'
 
 const { theme } = PrensaEngineDefaultConfig
 
-export default { title: 'PrensaDS/Colors', component: Block }
+export default { title: 'Primitives/Colors', component: Block }
 
 const ColorBlock = PrensaEngine.styled('div')
 

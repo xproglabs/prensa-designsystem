@@ -4,7 +4,7 @@ import { Block } from '../primitives/Block/index'
 import { IconButton } from '../primitives/IconButton/index'
 import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 
-export default { title: 'PrensaDS/IconButton', component: IconButton }
+export default { title: 'Primitives/IconButton', component: IconButton }
 
 const IconComponent = () => (
   <svg xmlns='http://www.w3.org/2000/svg' height='24' width='24' viewBox='0 0 48 48'>
