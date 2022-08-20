@@ -16,7 +16,7 @@ const SideMenuTemplate = (args) => {
           Click me
         </Button>
         <SideMenu {...args} open={state} close={() => setState(false)}>
-          The quick brown fox jumps over the lazy dog
+          {args.children}
         </SideMenu>
       </Block>
     </PrensaThemeProvider>
@@ -24,13 +24,41 @@ const SideMenuTemplate = (args) => {
 }
 
 export const Default = SideMenuTemplate.bind({})
+Default.args = {
+  children: 'This component in default state will grow accordingly with his content'
+}
+
+export const Size = SideMenuTemplate.bind({})
+Size.args = {
+  children: 'SideMenu with size "md" and innerSpace "md" defined',
+  innerSpace: 'md',
+  size: 'md'
+}
+
 export const Customized = SideMenuTemplate.bind({})
 Customized.args = {
+  children: 'SideMenu with customizations using theme tokens',
   css: {
     content: {
       width: '$sideMenu$sizeFullwidth',
-      '@md': { width: '$sideMenu$sizeMd' }
+      '@md': { width: '$sideMenu$sizeLg' }
+    },
+    spacer: {
+      padding: '$sideMenu$innerSpaceLg'
     }
-  },
-  innerSpace: 'md',
+  }
+}
+
+export const CustomizedWithValues = SideMenuTemplate.bind({})
+CustomizedWithValues.args = {
+  children: 'SideMenu with customizations using aleatory values',
+  css: {
+    content: {
+      width: '280px',
+      '@md': { width: '380px' }
+    },
+    spacer: {
+      padding: '4px'
+    }
+  }
 }
