@@ -3,7 +3,7 @@ name: Package Deploy - Prensa v1
 on:
   push:
     branches:
-      - monorepo
+      - master
 
 jobs:
   Package-Deploy-Prensa-v1:

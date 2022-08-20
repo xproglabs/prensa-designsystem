@@ -7,7 +7,6 @@ module.exports = {
   tagFormat: 'pds-v${version}',
   branches: [    
     { name: 'master' },
-    { name: 'monorepo', prerelease: true },
     { name: 'qa', prerelease: true }
   ],
   plugins: [
