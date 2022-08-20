@@ -47,7 +47,7 @@ export const SideMenuContainer = PrensaEngine.styled('div', {
   }  
 })
 
-export const SideMenuContent = PrensaEngine.styled('div', {
+export const SideMenuContent = PrensaEngine.styled('aside', {
   backgroundColor: '$white',
   display: 'block',
   height: '100vh',
