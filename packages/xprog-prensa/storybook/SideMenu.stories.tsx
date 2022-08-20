@@ -8,7 +8,7 @@ import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 export default { title: 'News/SideMenu' }
 
 const SideMenuTemplate = (args) => {
-  const [state, setState] = React.useState(false)
+  const [state, setState] = React.useState(true)
   return (
     <PrensaThemeProvider>
       <Block css={{ align: ['column', 'center', 'middle'], height: '100vh' }}>
