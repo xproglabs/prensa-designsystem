@@ -7,4 +7,5 @@ import createBundle from './bundle/bundleGenerator'
  */
 export default [
   createBundle('index.ts'),
+  createBundle('news/index.ts')
 ]

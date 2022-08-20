@@ -91,6 +91,16 @@ export const PrensaEngineDefaultConfig = {
       alternative: '5px',
       rounded: '99px',
       circle: '50%'
+    },
+    sideMenu: {
+      sizeMaxcontent: 'max-content',
+      sizeSm: '320px',
+      sizeMd: '340px',
+      sizeLg: '360px',
+      sizeFullwidth: '100%',
+      innerSpaceSm: '$space$4',
+      innerSpaceMd: '$space$6',
+      innerSpaceLg: '$space$8',
     }
   },
   utils: {
