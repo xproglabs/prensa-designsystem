@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.0...pds-v2.1.1) (2022-08-21)
+
+
+### Bug Fixes
+
+* **button:** Remove excedent paddings ([c85b1c4](https://github.com/xproglabs/prensa-designsystem/commit/c85b1c47b1a86f18e85a680cd6e46ac16d5e9b93))
+
 # [2.1.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.0.0...pds-v2.1.0) (2022-08-20)
 
 
