@@ -5,7 +5,8 @@ export const StyledButton = PrensaEngine.styled('button', {
   borderStyle: 'solid',
   borderWidth: '1px',
   cursor: 'pointer',
-  px: '$4',
+  py: '$0',
+  px: '$3',
   width: 'max-content',
   '&:disabled': {
     backgroundColor: '$neutral10',
