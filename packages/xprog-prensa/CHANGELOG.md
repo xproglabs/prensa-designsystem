@@ -1,3 +1,15 @@
+# [2.2.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.1...pds-v2.2.0) (2022-08-21)
+
+
+### Bug Fixes
+
+* **stories:** Change PrensaDS title to Primitives ([33547bd](https://github.com/xproglabs/prensa-designsystem/commit/33547bde4bbe3e47eb5c2e64fc812c6efc90f272))
+
+
+### Features
+
+* **sideMenu:** New SideMenu component in news universe ([26b048b](https://github.com/xproglabs/prensa-designsystem/commit/26b048ba106dd82ed351f124c192dbd1efb7212e))
+
 ## [2.1.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.0...pds-v2.1.1) (2022-08-21)
 
 
