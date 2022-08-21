@@ -40,12 +40,26 @@ Customized.args = {
   children: 'SideMenu with customizations using theme tokens',
   css: {
     content: {
+      backgroundColor: '$basicSuccess500',
       width: '$sideMenu$sizeFullwidth',
       '@md': { width: '$sideMenu$sizeLg' }
     },
     spacer: {
-      padding: '$sideMenu$innerSpaceLg'
+      padding: '$sideMenu$innerSpaceSm'
     }
+  }
+}
+
+export const CustomizedWithTokens = SideMenuTemplate.bind({})
+CustomizedWithTokens.args = {
+  children: 'SideMenu with customizations using theme tokens',
+  innerSpace: 'lg',
+  size: 'lg',
+  css: {
+    content: {
+      width: '$sideMenu$sizeFullwidth',
+      '@md': { width: '$sideMenu$sizeLg' }
+    } 
   }
 }
 
@@ -54,11 +68,13 @@ CustomizedWithValues.args = {
   children: 'SideMenu with customizations using aleatory values',
   css: {
     content: {
+      backgroundColor: '#05299E',
+      color: '#FFFFFF',
       width: '280px',
       '@md': { width: '380px' }
     },
     spacer: {
-      padding: '4px'
+      padding: '60px'
     }
   }
 }
