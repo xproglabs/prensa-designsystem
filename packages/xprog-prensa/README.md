@@ -1,103 +1,32 @@
 <br/>
+<h1>Prensa Design System</h1>
 
-<div align='center'>
-  <img src='public/prensalogo.png' />
-</div>
+<h4>Repositório de codificação do Prensa Design System</h4>
 
-<h3 align='center'>Build your websites using Blocks!</h3>
+Este repositório fornece infraestrutura para construção do Prensa em um formato monorepo.
 
-<br/>
+O projeto possui três (3) arquivos `package.json`, sendo um deles o root - `@xprog/prensa-monorepo`.
 
-## Getting Started
+O restante é equivalente aos pacotes registrados no diretório `/packages` - um arquivo para cada pacote.
 
-### Compatibility
-- Javascript projects
-- React
-- Styled-components
+<h4>Mapa do repositório</h4>
 
-### Installing prensa
-
-1. Install prensa as a dependecy of your project
-```shell
-npm install @xprog/prensa
+```
+@xprog/prensa-monorepo
+  │
+  └── /packages ~ Diretório de pacotes (NPM)
+  │   └── prensa ~ Prensa DS v1
+  │   └── @xprog/prensa ~ Prensa DS v2
+  │
+  └── /.github ~ CI/CD
+  └── /pipelines ~ Utils CI/CD
 ```
 
-<br/>
+## Documentação
 
-2. Create a new theme
-```jsx
-// src/styles/theme.ts
 
-import CreateTheme from '@xprog/prensa/styles/theme'
-
-export const theme = CreateTheme({
-  colors: { orange500: '...', colorTest: '...' },
-  fonts: { primary: '...', secondary: '...' }
-})
-```
-
-<br/>
-
-3. Configure your design-tokens language in global declaration file
-```ts
-// prensa_tokens.d.ts
-
-export type ColorTokens = 'orange500' | 'colorTest' 
-export type FontTokens = 'primary' | 'secondary'
-```
-
-<br/>
-
-4. Components ready to use!
-```jsx
-import Block from '@xprog/prensa/components/Block'
-
-<Block color='orange500'></Block>
-```
-
-## Components List
-- AccordionEditorial
-- AdBlock
-- Article
-- AuthorBio
-- AuthorProfile
-- Block
-- Button
-- Carousel
-- Copyright
-- Dialog
-- EditArea
-- ErrorPage
-- Field
-- Form
-- Grids
-- Icon
-- Image
-- ImageGallery
-- Link
-- Notice
-- PageBlock
-- PageTitle
-- Pagination
-- PreviewProvider
-- RenderSlot
-- SectionTitle
-- SideMenu
-- SocialMedias
-- Subject
-- Teaser
-- Templates
-- Typography
-
-## Contributing
-
-## Abstract
-
-> Prensa is inspired in Johannes Gutenberg printing press that was released in the year 1440 and started a revolution at the time. A person could print up to 3.600 pages per workday composing a page with the small letter blocks with ink. The printer applies pressure to the blocks that transfer ink to paper. This revolution introduces a Mass Comunication era where population could exchange more information faster.
-
-<br/>
-
-<div align='center'>
-  <img src='public/lettersBox.jpeg' />
-</div>
-
+- ### <a href='https://docs.xprog.com.br/share/792940d5-d0bc-45a3-a66f-f2fb339bb565'>Índice</a>
+- ### <a href='https://docs.xprog.com.br/share/6d114bc3-f891-4ec9-814d-9cb728a90e91'>Instalação</a>
+- ### <a href='https://docs.xprog.com.br/share/3c06f6c5-5bd3-4176-9ae6-0ea4ca33f23e'>Prensa Engine</a>
+- ### <a href='https://docs.xprog.com.br/share/6a00e54d-3cf4-4655-aeb4-785cfc335f7a'>Componentes</a>
+- ### <a href='https://docs.xprog.com.br/share/2afe80eb-e341-4b41-b6d7-47e1f927b819'>Estilos</a>
