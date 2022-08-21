@@ -1,16 +1,3 @@
-# [1.12.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.11.0...v1.12.0) (2022-08-21)
-
-
-### Bug Fixes
-
-* **button:** Remove excedent paddings ([c85b1c4](https://github.com/xproglabs/prensa-designsystem/commit/c85b1c47b1a86f18e85a680cd6e46ac16d5e9b93))
-* **stories:** Change PrensaDS title to Primitives ([33547bd](https://github.com/xproglabs/prensa-designsystem/commit/33547bde4bbe3e47eb5c2e64fc812c6efc90f272))
-
-
-### Features
-
-* **sideMenu:** New SideMenu component in news universe ([26b048b](https://github.com/xproglabs/prensa-designsystem/commit/26b048ba106dd82ed351f124c192dbd1efb7212e))
-
 # [1.11.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.10.0...v1.11.0) (2022-08-20)
 
 
