@@ -13,13 +13,13 @@ O restante é equivalente aos pacotes registrados no diretório `/packages` - um
 
 ```
 @xprog/prensa-monorepo
-  │
-  └── /packages ~ Diretório de pacotes (NPM)
-  │   └── prensa ~ Prensa DS v1
-  │   └── @xprog/prensa ~ Prensa DS v2
-  │
-  └── /.github ~ CI/CD
-  └── /pipelines ~ Utils CI/CD
+│
+└── /packages ~ Diretório de pacotes (NPM)
+│     └── prensa ~ Prensa DS v1
+│     └── @xprog/prensa ~ Prensa DS v2
+│
+└── /.github ~ CI/CD
+└── /pipelines ~ Utils CI/CD
 ```
 
 ## Documentação
