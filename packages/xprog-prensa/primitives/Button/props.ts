@@ -5,7 +5,7 @@ import { StyledButtonTypes } from './styles'
 
 export type ButtonProps = StyledButtonTypes['defaultProps'] & {
   color?: PrensaColorTokens;
-  css?: { button: {}; label: {}; };
+  css?: { button?: {}; label?: {}; };
   labelSpacing?: PrensaSpaceTokens;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
