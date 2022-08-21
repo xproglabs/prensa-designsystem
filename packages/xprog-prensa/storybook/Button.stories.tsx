@@ -178,3 +178,23 @@ export const Colored = () => {
     </PrensaThemeProvider>
   )
 }
+
+export const Customizations = () => {
+  return (
+    <PrensaThemeProvider>
+      <Block css={{ align: ['row', 'evenly', 'middle'], height: '100vh' }}>
+        <Button
+          size='md'
+          variant='outlined'
+          iconLeft={<IconComponent/>}
+          color='errorMain'
+          labelSpacing='10'
+          textVariant='brand-newsTitle-sm'
+          css={{ button: { borderWidth: '3px' } }}
+        >
+          Brown Fox
+        </Button>
+      </Block>
+    </PrensaThemeProvider>
+  )
+}
