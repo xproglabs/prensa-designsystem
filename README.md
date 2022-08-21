@@ -1,19 +1,32 @@
-Prerequisites:
-- If you use Next.JS at least version 9.3.x
-- React and React-dom (16.13.x)
-- npm install sass (latest implementation dart-sass)
-- There is no need to use preprocessors like node-sass-chockidar. React team has built in the sass-loader in last updates.
+<br/>
+<h1>Prensa Design System</h1>
 
-Use prensa on your project:
-- npm install prensa
-- Create index.scss file (here you can redefine tokens [@forward 'prensa/styles']
-- Import prensa router in your index.scss file [@forward 'prensa/styles/router.scss']
-- Create router.scss file (here goes all imports from your components [@forward 'path-to-component']
-- Import router.scss in your root index.js file (pages.js for next)
-- For every file SCSS you want to use the prensa you must `@use 'path-to-your-index.scss' as *`; 
+<h4>Repositório de codificação do Prensa Design System</h4>
 
-<br>
+Este repositório fornece infraestrutura para construção do Prensa em um formato monorepo.
 
-**Lear about dart-sass implementation:**
-- https://sass-lang.com/documentation/at-rules
-- https://css-tricks.com/introducing-sass-modules/
+O projeto possui três (3) arquivos `package.json`, sendo um deles o root - `@xprog/prensa-monorepo`.
+
+O restante é equivalente aos pacotes registrados no diretório `/packages` - um arquivo para cada pacote.
+
+<h4>Mapa do repositório</h4>
+
+```
+@xprog/prensa-monorepo
+│
+└── /packages ~ Diretório de pacotes (NPM)
+│     └── prensa ~ Prensa DS v1
+│     └── @xprog/prensa ~ Prensa DS v2
+│
+└── /.github ~ CI/CD
+└── /pipelines ~ Utils CI/CD
+```
+
+## Documentação
+
+
+- ### <a href='https://docs.xprog.com.br/share/792940d5-d0bc-45a3-a66f-f2fb339bb565'>Índice</a>
+- ### <a href='https://docs.xprog.com.br/share/6d114bc3-f891-4ec9-814d-9cb728a90e91'>Instalação</a>
+- ### <a href='https://docs.xprog.com.br/share/3c06f6c5-5bd3-4176-9ae6-0ea4ca33f23e'>Prensa Engine</a>
+- ### <a href='https://docs.xprog.com.br/share/6a00e54d-3cf4-4655-aeb4-785cfc335f7a'>Componentes</a>
+- ### <a href='https://docs.xprog.com.br/share/2afe80eb-e341-4b41-b6d7-47e1f927b819'>Estilos</a>
