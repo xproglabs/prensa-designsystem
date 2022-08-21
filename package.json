@@ -5,7 +5,7 @@
   "repository": "https://github.com/xproglabs/prensa-designsystem.git",
   "scripts": {
     "prensa:v1": "cd packages/prensa && yarn storybook",
-    "prensa:v2": "cd packages/xprog-prensa",
+    "prensa:v2": "cd packages/xprog-prensa && yarn storybook",
     "build:prensa:v1": "cd packages/prensa && yarn build",
     "build:prensa:v2": "cd packages/xprog-prensa && yarn build",
     "release:local:prensa:v1": "cd packages/prensa && yarn release:local",
