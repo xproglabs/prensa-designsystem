@@ -5,7 +5,7 @@ import { Typography } from '../primitives/Typography/index'
 import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 import { StorybookTheme } from './StorybookTheme'
 
-export default { title: 'PrensaDS/Typography', component: Typography }
+export default { title: 'Primitives/Typography', component: Typography }
 const { theme } = PrensaEngineDefaultConfig
 
 export const Variants = () => {
