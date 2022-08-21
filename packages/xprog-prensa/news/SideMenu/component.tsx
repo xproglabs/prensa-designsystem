@@ -11,29 +11,50 @@ export const SideMenu: React.FC<SideMenuProps> = ({
   size,
   css,
 }) => {
+
+  let container_css = {}
+  let backdrop_css = {}
+  let content_css = {}
+  let spacer_css = {}
+
+  if (css) {
+    if (css.container) {
+      container_css = { ...css.container }
+    }
+    if (css.backdrop) {
+      backdrop_css = { ...css.backdrop }
+    }
+    if (css.content) {
+      content_css = { ...css.content }
+    }
+    if (css.spacer) {
+      spacer_css = { ...css.spacer }
+    }
+  }
+
   return (
     <SideMenuContainer
       className='pdsnews-SideMenu-root'
-      css={css && css.container && css.container}
+      css={container_css}
     >
       <SideMenuBackdrop
         className='pdsnews-SideMenu-backdrop'
         data-open-state={open}
         hidden={!open}
         onClick={close}
-        css={css && css.backdrop && css.backdrop}
+        css={backdrop_css}
       />
       <SideMenuContent
         className='pdsnews-SideMenu-content'
         data-open-state={open}
         hidden={!open}
         size={size}
-        css={css && css.content && css.content}
+        css={content_css}
       >
         <SideMenuSpacer
           className='pdsnews-SideMenu-spacer'
           innerSpace={innerSpace}
-          css={css && css.spacer && css.spacer}
+          css={spacer_css}
         >
           {children}
         </SideMenuSpacer>
