@@ -8,6 +8,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   color,
   css,
+  labelSpacing,
   iconLeft,
   iconRight,
   variant,
@@ -16,7 +17,10 @@ export const Button: React.FC<ButtonProps> = ({
   ...otherProps
 }) => {
 
+  // variants css defintion
+  let css_label_spacing = { px: `$${labelSpacing}` }
   let css_variant = {}
+
   switch (variant) {
     case 'filled':
       css_variant = {
@@ -46,16 +50,44 @@ export const Button: React.FC<ButtonProps> = ({
       }
   }
 
+  let button_css = { ...css_variant }
+  let label_css = { ...css_label_spacing }
+
+  if (css && css.button) {
+    button_css = { ...button_css, ...css.button }
+  }
+  if (css && css.label) {
+    label_css = { ...label_css, ...css.label }
+  }
+
+  const renderChildren = () => {
+    if (typeof children === 'string') {
+      return (
+        <Typography
+          as='span'
+          variant={textVariant}
+          css={label_css}
+        >
+          {children}
+        </Typography>
+      )
+    } else {
+      return (
+        <>
+          {children}
+        </>
+      )
+    }
+  }
+
   return (
     <StyledButton
       className='pds-Button-root'
-      css={{ ...css_variant, ...css }}
+      css={button_css}
       {...otherProps}
     >
       {iconLeft && iconLeft}
-      <Typography as='span' variant={textVariant}>
-        {children}
-      </Typography>
+      {renderChildren()}
       {iconRight && iconRight}
     </StyledButton>
   )
@@ -63,6 +95,7 @@ export const Button: React.FC<ButtonProps> = ({
 
 Button.defaultProps = {
   color: 'neutral2',
+  labelSpacing: '3',
   size: 'md',
   textVariant: 'default-texts-sm',
   variant: 'filled',
