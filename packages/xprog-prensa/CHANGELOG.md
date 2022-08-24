@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.2.0...pds-v2.3.0) (2022-08-24)
+
+
+### Features
+
+* New Accordion component ([0b9ec8e](https://github.com/xproglabs/prensa-designsystem/commit/0b9ec8e7beb1d11cf82c937d61cee8d0e7ec2f2a))
+
 # [2.2.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.1.1...pds-v2.2.0) (2022-08-21)
 
 
