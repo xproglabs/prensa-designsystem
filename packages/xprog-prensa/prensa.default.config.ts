@@ -101,6 +101,13 @@ export const PrensaEngineDefaultConfig = {
       innerSpaceSm: '$space$4',
       innerSpaceMd: '$space$6',
       innerSpaceLg: '$space$8',
+    },
+    accordion: {
+      sizeMaxContent: 'max-content',
+      sizeSm: '320px',
+      sizeMd: '340px',
+      sizeLg: '360px',
+      sizeFullWidth: '100%'
     }
   },
   utils: {
