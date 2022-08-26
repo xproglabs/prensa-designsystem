@@ -16,6 +16,7 @@ export type PrensaSpaceTokens = keyof PrensaSpaces
 export type PrensaTypeSystem = typeof PrensaEngine['config']['theme']['fontSizes']
 export type PrensaTypeSystemTokens = keyof PrensaTypeSystem
 
+export * from './primitives/Accordion/props'
 export * from './primitives/Block/props'
 export * from './primitives/Button/props'
 export * from './primitives/IconButton/props'
