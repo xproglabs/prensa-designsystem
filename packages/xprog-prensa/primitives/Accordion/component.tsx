@@ -13,6 +13,7 @@ export const Accordion: React.FC<AccordionProps> = ({
 
   const handleClick = (id: string) => {
     let itk = null
+
     const item = state.find((i, k) => {
       itk = k
       return i.id === id
@@ -28,15 +29,11 @@ export const Accordion: React.FC<AccordionProps> = ({
   let accordionitem_css = {}
 
   if (css) {
-    
-    //global accordion css
     if (css.accordionGroup) {
       accordiongroup_css = { ...css.accordionGroup }
     }
-
-    //global accordionItem css
-    if (css.accordionItem) {
-      accordionitem_css = { ...css.accordionItem }
+    if (css.accordionItemGroup) {
+      accordionitem_css = { ...css.accordionItemGroup }
     }
   }
 

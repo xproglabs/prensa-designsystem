@@ -62,14 +62,15 @@ Sizes.args = {
 export const Customized: { args: AccordionProps } = Template.bind({})
 Customized.args = {
   css: {
-    accordionItem: {
-      accordionButton: {
+    accordionItemGroup: {
+      accordionTitle: {
         button: {
           backgroundColor: 'neutral4'
         }
       },
       accordionContent: {
-        backgroundColor: '$neutral4'
+        backgroundColor: '$neutral4',
+        height: '$20'
       }
     }
   },

@@ -32,23 +32,17 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   const section_id = `pds-accordion-section-${id}`
 
   if (css) {
-    if (css.accordionButton) {
+    if (css.accordionTitle) {
       button_css = {
-        button: { ...button_css.button, ...css.accordionButton.button },
-        label: { ...button_css.label, ...css.accordionButton.label }
+        button: { ...button_css.button, ...css.accordionTitle.button },
+        label: { ...button_css.label, ...css.accordionTitle.label }
       }
     }
     if (css.accordionContent) {
-      content_css = {
-        ...content_css,
-        ...css.accordionContent
-      }
+      content_css = { ...content_css, ...css.accordionContent }
     }
     if (css.accordionTitle) {
-      title_css = {
-        ...title_css,
-        ...css.accordionTitle
-      }
+      title_css = { ...title_css, ...css.accordionTitle }
     }
   }
 

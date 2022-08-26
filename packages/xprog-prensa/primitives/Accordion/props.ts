@@ -2,23 +2,14 @@ import { ReactNode, MouseEventHandler } from 'react'
 
 import { AccordionGroupVariants } from './styles'
 
-export type AccordionItemCSSProp = {
-  accordionButton?: { button?: any; label?: any; };
+export type AccordionItemGroupCSSProp = {
+  accordionTitle?: { button?: any; label?: any; };
   accordionContent?: any;
-  accordionTitle?: any;
 }
 
 export type AccordionCSSProps = {
   accordionGroup?: any;
-  accordionItem?: AccordionItemCSSProp;
-}
-
-export type AccordionItem = {
-  id: string;
-  title: string;
-  titleAs?: any;
-  expanded: boolean;
-  children?: ReactNode;
+  accordionItemGroup?: AccordionItemGroupCSSProp;
 }
 
 export type AccordionItemGroupProps = {
@@ -26,7 +17,7 @@ export type AccordionItemGroupProps = {
   id: string;
   title: string;
   children?: ReactNode;
-  css?: AccordionItemCSSProp
+  css?: AccordionItemGroupCSSProp
   iconExpandedState?: ReactNode;
   iconFixed?: ReactNode;
   iconNotExpandedState?: ReactNode;
