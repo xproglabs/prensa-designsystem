@@ -133,3 +133,4 @@ export const PrensaEngineDefaultConfig = {
  * Prensa | Components engine
  */
 export const PrensaEngine = createStitches(PrensaEngineDefaultConfig)
+export type PrensaEngineType = typeof PrensaEngine
