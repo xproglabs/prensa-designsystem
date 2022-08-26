@@ -11,7 +11,7 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   children,
   expanded,
   iconExpandedState,
-  iconFixed,
+  icon,
   iconNotExpandedState,
   id,
   onClick,
@@ -47,8 +47,8 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   }
 
   const renderExpandedStateIcon = () => {
-    if (iconFixed) {
-      return iconFixed
+    if (icon) {
+      return icon
     }
     if (iconExpandedState) {
       return iconExpandedState
@@ -57,8 +57,8 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   }
 
   const renderNotExpandedStateIcon = () => {
-    if (iconFixed) {
-      return iconFixed
+    if (icon) {
+      return icon
     }
     if (iconNotExpandedState) {
       return iconNotExpandedState

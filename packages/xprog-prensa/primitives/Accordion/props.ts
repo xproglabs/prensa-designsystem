@@ -13,13 +13,13 @@ export type AccordionCSSProps = {
 }
 
 export type AccordionItemGroupProps = {
-  expanded: boolean;
   id: string;
   title: string;
   children?: ReactNode;
   css?: AccordionItemGroupCSSProp
+  expanded?: boolean;
+  icon?: ReactNode;
   iconExpandedState?: ReactNode;
-  iconFixed?: ReactNode;
   iconNotExpandedState?: ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   titleAs?: any;
