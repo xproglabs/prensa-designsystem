@@ -15,6 +15,8 @@ export type AccordionCSSProps = {
 export type AccordionItemGroupProps = {
   id: string;
   title: string;
+  accordionTitleAs?: any;
+  accordionContentAs?: any;
   children?: ReactNode;
   css?: AccordionItemGroupCSSProp
   expanded?: boolean;
@@ -22,7 +24,6 @@ export type AccordionItemGroupProps = {
   iconExpandedState?: ReactNode;
   iconNotExpandedState?: ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  titleAs?: any;
 }
 
 export type AccordionProps = {

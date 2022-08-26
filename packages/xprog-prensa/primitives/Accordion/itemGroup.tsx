@@ -8,15 +8,17 @@ import { AccordionItemGroupProps } from './props'
 import { AccordionContent } from './styles'
 
 export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
+  accordionContentAs,
+  accordionTitleAs,
   children,
+  css,
   expanded,
   iconExpandedState,
   icon,
   iconNotExpandedState,
   id,
   onClick,
-  title,
-  css
+  title
 }) => {
 
   const button_initial_css = {
@@ -68,7 +70,10 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
 
   return (
     <>
-      <Typography css={title_css}>
+      <Typography
+        as={accordionTitleAs}
+        css={title_css}
+      >
         <Button
           id={button_id}
           aria-controls={section_id}
@@ -81,6 +86,7 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
         </Button>
       </Typography>
       <AccordionContent
+        as={accordionContentAs}
         id={section_id}
         aria-labelledby={button_id}
         hidden={!expanded}
@@ -93,5 +99,6 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
 }
 
 AccordionItemGroup.defaultProps = {
-  titleAs: 'h3'
+  accordionTitleAs: 'h3',
+  accordionContentAs: 'section'
 }
