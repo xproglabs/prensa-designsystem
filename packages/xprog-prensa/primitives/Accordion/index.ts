@@ -1,3 +1,3 @@
-export * from './component'
-export * from './itemGroup'
-export * from './styles'
+export { Accordion } from './component'
+export { AccordionItemGroup } from './ItemGroup'
+export { AccordionContent, AccordionGroup } from './styles'

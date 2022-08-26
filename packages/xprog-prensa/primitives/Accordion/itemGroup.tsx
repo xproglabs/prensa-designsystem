@@ -4,8 +4,8 @@ import { Button } from '../Button'
 import { ExpandLessIcon } from './ExpandLessIcon'
 import { ExpandMoreIcon } from './ExpandMoreIcon'
 import { Typography } from '../Typography'
-import { AccordionItemGroupProps } from './props'
 import { AccordionContent } from './styles'
+import { AccordionItemGroupProps } from './types'
 
 export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   accordionContentAs,

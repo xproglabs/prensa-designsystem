@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Block } from '../primitives/Block'
 import { Accordion } from '../primitives/Accordion'
-import { AccordionProps } from '../primitives/Accordion/props'
+import { AccordionProps } from '../primitives/Accordion/types'
 import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 
 export default { title: 'Primitives/Accordion' }

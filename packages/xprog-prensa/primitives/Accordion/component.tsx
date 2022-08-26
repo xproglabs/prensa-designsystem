@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import { AccordionItemGroup } from './itemGroup'
-import { AccordionProps } from './props'
+import { AccordionItemGroup } from './ItemGroup'
 import { AccordionGroup } from './styles'
+import { AccordionProps } from './types'
 
 export const Accordion: React.FC<AccordionProps> = ({
   css,

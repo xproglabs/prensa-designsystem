@@ -16,9 +16,5 @@ export type PrensaEngineRadiiType = keyof PrensaEngineRadiis
 export type PrensaEngineSpaceType = keyof PrensaEngineSpaces
 export type PrensaEngineTypeSystemType = keyof PrensaEngineFontSizes
 
-export * from './primitives/Accordion/props'
-export * from './primitives/Block/props'
-export * from './primitives/Button/props'
-export * from './primitives/IconButton/props'
-export * from './primitives/Typography/props'
+export * from './primitives/types'
 export * from './news/types'
