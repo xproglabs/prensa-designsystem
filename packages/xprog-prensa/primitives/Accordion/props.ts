@@ -1,14 +1,15 @@
 import { ReactNode, MouseEventHandler } from 'react'
 
-import { AccordionGroupVariants } from './styles'
+import { AccordionGroupVariants } from './types'
+import { PrensaEngineCSSProp } from '../../types'
 
 export type AccordionItemGroupCSSProp = {
-  accordionTitle?: { button?: any; label?: any; };
-  accordionContent?: any;
+  accordionTitle?: { button?: PrensaEngineCSSProp; label?: PrensaEngineCSSProp; };
+  accordionContent?: PrensaEngineCSSProp;
 }
 
 export type AccordionCSSProps = {
-  accordionGroup?: any;
+  accordionGroup?: PrensaEngineCSSProp;
   accordionItemGroup?: AccordionItemGroupCSSProp;
 }
 
