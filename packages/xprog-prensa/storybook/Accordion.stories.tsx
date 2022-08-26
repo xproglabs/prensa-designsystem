@@ -2,11 +2,12 @@ import React from 'react'
 
 import { Block } from '../primitives/Block'
 import { Accordion } from '../primitives/Accordion'
+import { AccordionProps } from '../primitives/Accordion/props'
 import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 
 export default { title: 'Primitives/Accordion' }
 
-const SideMenuTemplate = (args) => {
+const Template = (args) => {
   return (
     <PrensaThemeProvider>
       <Block css={{ align: ['column', 'center', 'middle'], height: '100vh', px: '$2' }}>
@@ -16,27 +17,25 @@ const SideMenuTemplate = (args) => {
   )
 }
 
-const defaultItems = [
-  {
-    id: 'foxOne',
-    title: 'Fox one',
-    expanded: false,
-    children: <pre>The quick brown fox</pre>
-  },
-  {
-    id: 'foxTwo',
-    title: 'Fox two',
-    expanded: false,
-    children: <pre>The quick brown fox 2</pre>
-  }
-]
-
-export const Default = SideMenuTemplate.bind({})
+export const Default: { args: AccordionProps } = Template.bind({})
 Default.args = {
-  items: defaultItems
+  items: [
+    {
+      id: 'foxOne',
+      title: 'Fox one',
+      expanded: false,
+      children: <pre>The quick brown fox</pre>
+    },
+    {
+      id: 'foxTwo',
+      title: 'Fox two',
+      expanded: false,
+      children: <pre>The quick brown fox 2</pre>
+    }
+  ]
 }
 
-export const Sizes = SideMenuTemplate.bind({})
+export const Sizes: { args: AccordionProps } = Template.bind({})
 Sizes.args = {
   size: {
     '@initial': 'fullWidth',
@@ -44,10 +43,23 @@ Sizes.args = {
     '@md': 'md',
     '@lg': 'lg',
   },
-  items: defaultItems
+  items: [
+    {
+      id: 'foxOne',
+      title: 'Fox one',
+      expanded: false,
+      children: <pre>The quick brown fox</pre>
+    },
+    {
+      id: 'foxTwo',
+      title: 'Fox two',
+      expanded: false,
+      children: <pre>The quick brown fox 2</pre>
+    }
+  ]
 }
 
-export const Customized = SideMenuTemplate.bind({})
+export const Customized: { args: AccordionProps } = Template.bind({})
 Customized.args = {
   css: {
     accordionItem: {
@@ -61,5 +73,18 @@ Customized.args = {
       }
     }
   },
-  items: defaultItems
+  items: [
+    {
+      id: 'foxOne',
+      title: 'Fox one',
+      expanded: false,
+      children: <pre>The quick brown fox</pre>
+    },
+    {
+      id: 'foxTwo',
+      title: 'Fox two',
+      expanded: false,
+      children: <pre>The quick brown fox 2</pre>
+    }
+  ]
 }
