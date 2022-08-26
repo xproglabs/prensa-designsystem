@@ -2,41 +2,41 @@ import { ReactNode, MouseEventHandler } from 'react'
 
 import { AccordionGroupVariants } from './styles'
 
-interface AccordionItemCSSProp {
+export type AccordionItemCSSProp = {
   accordionButton?: { button?: any; label?: any; };
   accordionContent?: any;
   accordionTitle?: any;
 }
 
-interface AccordionCSSProps {
+export type AccordionCSSProps = {
   accordionGroup?: any;
   accordionItem?: AccordionItemCSSProp;
 }
 
-interface AccordionItem {
+export type AccordionItem = {
   id: string;
   title: string;
+  titleAs?: any;
   expanded: boolean;
   children?: ReactNode;
-  itk?: number;
 }
 
-export interface AccordionItemProps {
+export type AccordionItemGroupProps = {
+  expanded: boolean;
   id: string;
   title: string;
-  expanded: boolean;
-  onClick: MouseEventHandler<HTMLButtonElement>;
   children?: ReactNode;
-  iconExpandedState?: ReactNode;
-  iconNotExpandedState?: ReactNode;
   css?: AccordionItemCSSProp
+  iconExpandedState?: ReactNode;
+  iconFixed?: ReactNode;
+  iconNotExpandedState?: ReactNode;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  titleAs?: any;
 }
 
-export interface AccordionProps {
+export type AccordionProps = {
   children?: ReactNode;
   css?: AccordionCSSProps;
-  iconExpandedState?: ReactNode;
-  iconNotExpandedState?: ReactNode;
-  items?: Array<AccordionItem>;
+  items?: Array<AccordionItemGroupProps>;
   size?: AccordionGroupVariants['size'];
 }

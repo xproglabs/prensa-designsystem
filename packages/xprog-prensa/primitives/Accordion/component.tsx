@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
 
-import { AccordionItem } from './item'
+import { AccordionItemGroup } from './itemGroup'
 import { AccordionProps } from './props'
 import { AccordionGroup } from './styles'
 
 export const Accordion: React.FC<AccordionProps> = ({
   css,
   items,
-  iconExpandedState,
-  iconNotExpandedState,
   size
 }) => {
   const [state, setState] = useState(items)
@@ -30,9 +28,13 @@ export const Accordion: React.FC<AccordionProps> = ({
   let accordionitem_css = {}
 
   if (css) {
+    
+    //global accordion css
     if (css.accordionGroup) {
       accordiongroup_css = { ...css.accordionGroup }
     }
+
+    //global accordionItem css
     if (css.accordionItem) {
       accordionitem_css = { ...css.accordionItem }
     }
@@ -44,13 +46,11 @@ export const Accordion: React.FC<AccordionProps> = ({
       css={accordiongroup_css}
     >
       {state.map((accordionItem) => (
-        <AccordionItem
-          {...accordionItem}
+        <AccordionItemGroup
           key={accordionItem.id}
           onClick={() => handleClick(accordionItem.id)}
-          iconExpandedState={iconExpandedState}
-          iconNotExpandedState={iconNotExpandedState}
           css={accordionitem_css}
+          {...accordionItem}
         />
       ))}
     </AccordionGroup>

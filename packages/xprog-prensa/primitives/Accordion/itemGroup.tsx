@@ -4,13 +4,14 @@ import { Button } from '../Button'
 import { ExpandLessIcon } from './ExpandLessIcon'
 import { ExpandMoreIcon } from './ExpandMoreIcon'
 import { Typography } from '../Typography'
-import { AccordionItemProps } from './props'
+import { AccordionItemGroupProps } from './props'
 import { AccordionContent } from './styles'
 
-export const AccordionItem: React.FC<AccordionItemProps> = ({
+export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   children,
   expanded,
   iconExpandedState,
+  iconFixed,
   iconNotExpandedState,
   id,
   onClick,
@@ -52,27 +53,28 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
   }
 
   const renderExpandedStateIcon = () => {
+    if (iconFixed) {
+      return iconFixed
+    }
     if (iconExpandedState) {
       return iconExpandedState
-    } else {
-      return <ExpandLessIcon />
     }
+    return <ExpandLessIcon />
   }
 
   const renderNotExpandedStateIcon = () => {
+    if (iconFixed) {
+      return iconFixed
+    }
     if (iconNotExpandedState) {
       return iconNotExpandedState
-    } else {
-      return <ExpandMoreIcon />
     }
+    return <ExpandMoreIcon />
   }
 
   return (
     <>
-      <Typography
-        as='h3'
-        css={title_css}
-      >
+      <Typography css={title_css}>
         <Button
           id={button_id}
           aria-controls={section_id}
@@ -94,4 +96,8 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
       </AccordionContent>
     </>
   )
+}
+
+AccordionItemGroup.defaultProps = {
+  titleAs: 'h3'
 }
