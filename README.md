@@ -9,21 +9,8 @@ O projeto possui três (3) arquivos `package.json`, sendo um deles o root - `@xp
 
 O restante é equivalente aos pacotes registrados no diretório `/packages` - um arquivo para cada pacote.
 
-<h4>Mapa do repositório</h4>
-
-```
-@xprog/prensa-monorepo
-│
-└── /packages ~ Diretório de pacotes (NPM)
-│     └── prensa ~ Prensa DS v1
-│     └── @xprog/prensa ~ Prensa DS v2
-│
-└── /.github ~ CI/CD
-└── /pipelines ~ Utils CI/CD
-```
-
-## Documentação
-
+<br/>
+<h2>Documentação</h2>
 
 - ### <a href='https://docs.xprog.com.br/share/792940d5-d0bc-45a3-a66f-f2fb339bb565' target='_blank'>Índice</a>
 - ### <a href='https://docs.xprog.com.br/share/6d114bc3-f891-4ec9-814d-9cb728a90e91' target='_blank'>Instalação</a>
