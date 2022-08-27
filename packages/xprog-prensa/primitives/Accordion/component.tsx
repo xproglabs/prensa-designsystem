@@ -58,6 +58,7 @@ export const Accordion: React.FC<AccordionProps> = ({
 }
 
 Accordion.defaultProps = {
+  innerSpace: 'md',
   size: 'sm'
 }
 
