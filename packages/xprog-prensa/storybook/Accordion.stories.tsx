@@ -1,11 +1,32 @@
 import React from 'react'
+import { ArgsTable, Title } from '@storybook/addon-docs'
 
 import { Block } from '../primitives/Block'
-import { Accordion } from '../primitives/Accordion'
+import { Accordion, AccordionContent, AccordionGroup, AccordionItemGroup } from '../primitives/Accordion'
 import { AccordionProps } from '../primitives/Accordion/types'
 import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 
-export default { title: 'Primitives/Accordion' }
+export default {
+  title: 'Primitives/Accordion',
+  component: Accordion,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable
+            components={{
+              Accordion,
+              AccordionContent,
+              AccordionGroup,
+              AccordionItemGroup
+            }}
+          />
+        </>
+      )
+    }
+  }
+}
 
 const CircledArrowRightIcon = () => {
   return (
@@ -18,7 +39,7 @@ const CircledArrowRightIcon = () => {
 const Template = (args) => {
   return (
     <PrensaThemeProvider>
-      <Block css={{ align: ['column', 'center', 'middle'], height: '100vh', px: '$2' }}>
+      <Block css={{ align: ['column', 'center', 'middle'], px: '$2', py: '$10' }}>
         <Accordion {...args} />
       </Block>
     </PrensaThemeProvider>
