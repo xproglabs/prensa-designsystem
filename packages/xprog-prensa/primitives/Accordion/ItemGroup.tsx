@@ -18,6 +18,7 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   icon,
   iconNotExpandedState,
   id,
+  innerSpace,
   onClick,
   title
 }) => {
@@ -89,6 +90,7 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
       <AccordionContent
         as={accordionContentAs}
         id={section_id}
+        innerSpace={innerSpace}
         aria-labelledby={button_id}
         hidden={!expanded}
         css={content_css}

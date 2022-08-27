@@ -31,12 +31,14 @@ export type AccordionItemGroupProps = {
   icon?: ReactNode;
   iconExpandedState?: ReactNode;
   iconNotExpandedState?: ReactNode;
+  innerSpace?: AccordionContentVariants['innerSpace'];
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export type AccordionProps = {
   children?: ReactNode;
   css?: AccordionCSSProps;
+  innerSpace?: AccordionContentVariants['innerSpace'];
   items?: Array<AccordionItemGroupProps>;
   size?: AccordionGroupVariants['size'];
 }

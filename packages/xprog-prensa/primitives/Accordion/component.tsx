@@ -8,6 +8,7 @@ import { AccordionProps } from './types'
 export const Accordion: React.FC<AccordionProps> = ({
   css,
   items,
+  innerSpace,
   size
 }) => {
   const [state, setState] = useState(items)
@@ -48,6 +49,7 @@ export const Accordion: React.FC<AccordionProps> = ({
           key={accordionItem.id}
           onClick={() => handleClick(accordionItem.id)}
           css={accordionitem_css}
+          innerSpace={innerSpace}
           {...accordionItem}
         />
       ))}
