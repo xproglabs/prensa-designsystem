@@ -1,7 +1,7 @@
 import { PrensaEngine } from '../../../prensa.default.config'
-import { PrensaTypeSystem } from '../../../types'
+import { PrensaEngineTypeSystemType } from '../../../types'
 
-export const CreatePropVariant = (): PrensaTypeSystem => {
+export const CreatePropVariant = (): PrensaEngineTypeSystemType => {
   let variants: any = {}
   const keys = Object.keys(PrensaEngine.theme.fontSizes)
   keys.forEach((item, key) => {
