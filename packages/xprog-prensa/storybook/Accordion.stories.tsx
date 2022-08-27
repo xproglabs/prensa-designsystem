@@ -45,6 +45,39 @@ const Template = (args) => {
     </PrensaThemeProvider>
   )
 }
+const SizesTemplate = (args) => {
+  return (
+    <PrensaThemeProvider>
+      <Block
+        css={{
+          align: ['column', 'center', 'middle'],
+          px: '$2', py: '$10',
+        }}
+      >
+        <Block css={{ mb: '$6' }}>
+          maxContent
+          <Accordion {...args} size='maxContent' />
+        </Block>
+        <Block css={{ mb: '$6' }}>
+          sm
+          <Accordion {...args} size='sm' />
+        </Block>
+        <Block css={{ mb: '$6' }}>
+          md
+          <Accordion {...args} size='md' />
+        </Block>
+        <Block css={{ mb: '$6' }}>
+          lg
+          <Accordion {...args} size='lg' />
+        </Block>
+        <Block css={{ mb: '$6', maxWidth: '600px', width: '100%' }}>
+          fullWidth
+          <Accordion {...args} size='fullWidth' />
+        </Block>
+      </Block>
+    </PrensaThemeProvider>
+  )
+}
 
 export const Default: { args: AccordionProps } = Template.bind({})
 Default.args = {
@@ -64,8 +97,26 @@ Default.args = {
   ]
 }
 
-export const Sizes: { args: AccordionProps } = Template.bind({})
+export const Sizes: { args: AccordionProps } = SizesTemplate.bind({})
 Sizes.args = {
+  items: [
+    {
+      id: 'foxOne',
+      title: 'Fox one',
+      expanded: false,
+      children: <pre>The quick brown fox</pre>
+    },
+    {
+      id: 'foxTwo',
+      title: 'Fox two',
+      expanded: false,
+      children: <pre>The quick brown fox 2</pre>
+    }
+  ]
+}
+
+export const Responsive: { args: AccordionProps } = Template.bind({})
+Responsive.args = {
   size: {
     '@initial': 'fullWidth',
     '@sm': 'sm',
