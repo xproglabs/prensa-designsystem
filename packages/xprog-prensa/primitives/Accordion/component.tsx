@@ -66,5 +66,6 @@ Accordion.propTypes = {
   children: PropTypes.any,
   css: PropTypes.any,
   items: PropTypes.any,
+  innerSpace: PropTypes.any,
   size: PropTypes.any
 }

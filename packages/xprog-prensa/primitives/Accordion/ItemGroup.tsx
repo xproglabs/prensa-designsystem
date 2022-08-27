@@ -117,5 +117,6 @@ AccordionItemGroup.propTypes = {
   icon: PropTypes.any,
   iconExpandedState: PropTypes.any,
   iconNotExpandedState: PropTypes.any,
+  innerSpace: PropTypes.any,
   onClick: PropTypes.any,
 }
