@@ -19,9 +19,9 @@
     "eslint": "eslint -c .eslintrc.json --ext js,ts,tsx ./",
     "eslint:fix": "eslint -c .eslintrc.json --fix --ext js,ts,tsx ./",
     "test": "jest",
-    "clear:dist": "rm -rf dist",
-    "prerelease:copyfiles": "cp -rf README.md dist && cp -rf CHANGELOG.md dist && cp -rf package.json dist && cp -rf .npmignore dist",
-    "postrelease:copyfiles": "cp -rf dist/package.json . && cp -rf dist/CHANGELOG.md .",
+    "clear:dist": "rimraf dist",
+    "prerelease:copyfiles": "cpx README.md dist && cpx CHANGELOG.md dist && cpx package.json dist && cpx .npmignore dist",
+    "postrelease:copyfiles": "cpx dist/package.json . && cpx dist/CHANGELOG.md .",
     "release:local": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js --no-ci",
     "release": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js"
   },
@@ -33,6 +33,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "cpx": "^1.5.0",
     "@babel/preset-react": "7.14.5",
     "@mdx-js/react": "2.1.2",
     "@rollup/plugin-json": "^4.1.0",
@@ -57,6 +58,7 @@
     "jest": "26.6.3",
     "prensa-docs": "0.0.6",
     "prop-types": "15.7.2",
+    "rimraf": "^3.0.2",
     "rollup": "2.77.0",
     "rollup-plugin-esbuild": "4.9.1",
     "semantic-release": "^19.0.3",
