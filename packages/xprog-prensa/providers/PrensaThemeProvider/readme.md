@@ -1,6 +1,12 @@
 
 # Prensa Theme Management
 
+Figma extractor URL: https://github.com/xproglabs/prensa-figma-extractor
+
+<br/>
+
+Prensa Tokens URL: https://github.com/xproglabs/prensa-design-tokens
+
 ## Theme consume
 
 ### 1. Install Prensa Tokens repository
