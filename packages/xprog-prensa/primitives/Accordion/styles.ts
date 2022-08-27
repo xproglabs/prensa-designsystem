@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import { PrensaEngine } from '../../prensa.default.config'
 
 export const AccordionGroup = PrensaEngine.styled('div', {
@@ -17,6 +19,10 @@ export const AccordionGroup = PrensaEngine.styled('div', {
   }
 })
 
+AccordionGroup.propTypes = {
+  size: PropTypes.any
+}
+
 export const AccordionContent = PrensaEngine.styled('section', {
   variants: {
     innerSpace: {
@@ -26,6 +32,10 @@ export const AccordionContent = PrensaEngine.styled('section', {
     }
   }
 })
+
+AccordionContent.propTypes = {
+  innerSpace: PropTypes.any
+}
 
 export type AccordionGroupType = typeof AccordionGroup
 export type AccordionContentType = typeof AccordionContent

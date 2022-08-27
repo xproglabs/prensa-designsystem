@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
 import { AccordionItemGroup } from './ItemGroup'
@@ -56,4 +57,11 @@ export const Accordion: React.FC<AccordionProps> = ({
 
 Accordion.defaultProps = {
   size: 'sm'
+}
+
+Accordion.propTypes = {
+  children: PropTypes.any,
+  css: PropTypes.any,
+  items: PropTypes.any,
+  size: PropTypes.any
 }

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
 import { Button } from '../Button'
@@ -101,4 +102,18 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
 AccordionItemGroup.defaultProps = {
   accordionTitleAs: 'h3',
   accordionContentAs: 'section'
+}
+
+AccordionItemGroup.propTypes = {
+  id: PropTypes.any.isRequired,
+  title: PropTypes.any.isRequired,
+  accordionTitleAs: PropTypes.any,
+  accordionContentAs: PropTypes.any,
+  children: PropTypes.any,
+  css: PropTypes.any,
+  expanded: PropTypes.any,
+  icon: PropTypes.any,
+  iconExpandedState: PropTypes.any,
+  iconNotExpandedState: PropTypes.any,
+  onClick: PropTypes.any,
 }
