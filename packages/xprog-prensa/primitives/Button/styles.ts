@@ -9,9 +9,9 @@ export const StyledButton = PrensaEngine.styled('button', {
   px: '$3',
   width: 'max-content',
   '&:disabled': {
-    backgroundColor: '$neutral10',
-    borderColor: '$neutral10',
-    color: '$neutral7',
+    backgroundColor: '$basicBlackAlpha200',
+    borderColor: '$basicBlackAlpha200',
+    color: '$basicBlackAlpha300',
     '&:hover': {
       opacity: 1,
       cursor: 'not-allowed'
