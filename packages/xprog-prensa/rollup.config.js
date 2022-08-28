@@ -6,6 +6,5 @@ import createBundle from './bundle/bundleGenerator'
  * This file generates javascript bundles for NPM distribution using bundleGenerator.
  */
 export default [
-  createBundle('index.ts'),
-  createBundle('news/index.ts')
+  createBundle('index.ts')
 ]
