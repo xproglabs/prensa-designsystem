@@ -1,13 +1,27 @@
-import { ReactNode } from 'react'
+import { VariantProps } from '@stitches/react'
+import { ReactNode, MouseEventHandler } from 'react'
+
+import { PrensaEngineCSSProp } from '../../types'
 import { DrawerBackdropType, DrawerContainerType, DrawerContentType, DrawerSpacerType } from './styles'
 
+type DrawerContentTypeVariants = VariantProps<DrawerContentType>
+type DrawerSpacerTypeVariants = VariantProps<DrawerSpacerType>
+
+type DrawerCSSProp = {
+  backdrop?: PrensaEngineCSSProp;
+  container?: PrensaEngineCSSProp;
+  content?: PrensaEngineCSSProp;
+  spacer?: PrensaEngineCSSProp;
+}
+
 export type DrawerProps = {
-  close: () => void;
+  anchor: DrawerContentTypeVariants['anchor'];
+  close: MouseEventHandler<HTMLDivElement>;
   open: boolean;
   children?: ReactNode;
-  css?: { backdrop?: {}; container?: {}; content?: {}; spacer?: {}; };
-  innerSpace?: 'sm' | 'md' | 'lg';
-  size?: 'maxcontent' | 'sm' | 'md' | 'lg' | 'fullwidth';
+  css?: DrawerCSSProp;
+  innerSpace?: DrawerSpacerTypeVariants['innerSpace'];
+  size?: DrawerContentTypeVariants['size'];
 }
 export type DrawerContainerProps = DrawerContainerType
 export type DrawerContentProps = DrawerContentType
