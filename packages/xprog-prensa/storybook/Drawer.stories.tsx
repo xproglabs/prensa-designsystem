@@ -1,11 +1,9 @@
 import React from 'react'
 
-import { Block } from '../primitives/Block'
-import { Button } from '../primitives/Button'
-import { SideMenu } from '../news/SideMenu/index'
+import { Block, Button, Drawer } from '../primitives'
 import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 
-export default { title: 'News/SideMenu' }
+export default { title: 'Primitives/Drawer' }
 
 const SideMenuTemplate = (args) => {
   const [state, setState] = React.useState(true)
@@ -15,9 +13,9 @@ const SideMenuTemplate = (args) => {
         <Button onClick={() => setState(true)}>
           Click me
         </Button>
-        <SideMenu {...args} open={state} close={() => setState(false)}>
+        <Drawer {...args} open={state} close={() => setState(false)}>
           {args.children}
-        </SideMenu>
+        </Drawer>
       </Block>
     </PrensaThemeProvider>
   )

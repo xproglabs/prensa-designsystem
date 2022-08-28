@@ -1,31 +1,31 @@
 import { PrensaEngine } from '../../prensa.default.config'
 
-const Prensa_Sidemenu_slideInLeft = PrensaEngine.keyframes({
+const Prensa_Drawer_slideInLeft = PrensaEngine.keyframes({
   '0%': { transform: 'translateX(-100%)' },
   '100%': { transform: 'translateX(0%)' }
 })
-const Prensa_Sidemenu_slideOutLeft = PrensaEngine.keyframes({
+const Prensa_Drawer_slideOutLeft = PrensaEngine.keyframes({
   '0%': { transform: 'translateX(0%)' },
   '100%': { transform: 'translateX(-100%)' }
 })
-const Prensa_Sidemenu_backdropIn = PrensaEngine.keyframes({
+const Prensa_Drawer_backdropIn = PrensaEngine.keyframes({
   '0%': { opacity: 0 },
   '100%': { opacity: 1 }
 })
-const Prensa_Sidemenu_backdropOut = PrensaEngine.keyframes({
+const Prensa_Drawer_backdropOut = PrensaEngine.keyframes({
   '0%': { opacity: 1 },
   '100%': { opacity: 0 }
 })
 
-export const SideMenuContainer = PrensaEngine.styled('div', {
-  '.pdsnews-SideMenu-content[data-open-state=true]': {
-    animationName: Prensa_Sidemenu_slideInLeft,
+export const DrawerContainer = PrensaEngine.styled('div', {
+  '.pdsnews-Drawer-content[data-open-state=true]': {
+    animationName: Prensa_Drawer_slideInLeft,
     animationDuration: '233ms',
     animationFillMode: 'forwards',
     animationTimingFunction: 'cubic-bezier(0,0,.21,1)'
   },
-  '.pdsnews-SideMenu-content[hidden]': {
-    animationName: Prensa_Sidemenu_slideOutLeft,
+  '.pdsnews-Drawer-content[hidden]': {
+    animationName: Prensa_Drawer_slideOutLeft,
     animationDuration: '300ms',
     animationFillMode: 'forwards',
     animationTimingFunction: 'cubic-bezier(0,0,.21,1)',
@@ -33,21 +33,21 @@ export const SideMenuContainer = PrensaEngine.styled('div', {
     transform: 'translateX(-100%)',
     transition: 'top 0.01s 1s'
   },
-  '.pdsnews-SideMenu-backdrop[data-open-state=true]': {
-    animationName: Prensa_Sidemenu_backdropIn,
+  '.pdsnews-Drawer-backdrop[data-open-state=true]': {
+    animationName: Prensa_Drawer_backdropIn,
     animationDuration: '233ms',
     animationFillMode: 'forwards',
     animationTimingFunction: 'cubic-bezier(0,0,.21,1)'
   },
-  '.pdsnews-SideMenu-backdrop[hidden]': {
-    animationName: Prensa_Sidemenu_backdropOut,
+  '.pdsnews-Drawer-backdrop[hidden]': {
+    animationName: Prensa_Drawer_backdropOut,
     animationDuration: '300ms',
     animationFillMode: 'forwards',
     animationTimingFunction: 'cubic-bezier(0,0,.21,1)',
   }  
 })
 
-export const SideMenuContent = PrensaEngine.styled('aside', {
+export const DrawerContent = PrensaEngine.styled('aside', {
   backgroundColor: '$white',
   display: 'block',
   height: '100vh',
@@ -68,7 +68,7 @@ export const SideMenuContent = PrensaEngine.styled('aside', {
   }
 })
 
-export const SideMenuBackdrop = PrensaEngine.styled('div', {
+export const DrawerBackdrop = PrensaEngine.styled('div', {
   backgroundColor: 'rgba(0, 0, 0, 0.5)',
   height: '100vh',
   position: 'fixed',
@@ -78,7 +78,7 @@ export const SideMenuBackdrop = PrensaEngine.styled('div', {
   zIndex: 10
 })
 
-export const SideMenuSpacer = PrensaEngine.styled('div', {
+export const DrawerSpacer = PrensaEngine.styled('div', {
   variants: {
     innerSpace: {
       sm: { padding: '$sideMenu$innerSpaceSm' },
@@ -88,7 +88,7 @@ export const SideMenuSpacer = PrensaEngine.styled('div', {
   }
 })
 
-export type SideMenuContainerTypes = typeof SideMenuContainer
-export type SideMenuContentTypes = typeof SideMenuContent
-export type SideMenuBackdropTypes = typeof SideMenuBackdrop
-export type SideMenuSpacerTypes = typeof SideMenuSpacer
+export type DrawerContainerType = typeof DrawerContainer
+export type DrawerContentType = typeof DrawerContent
+export type DrawerBackdropType = typeof DrawerBackdrop
+export type DrawerSpacerType = typeof DrawerSpacer
