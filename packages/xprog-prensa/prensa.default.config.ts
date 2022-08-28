@@ -92,7 +92,14 @@ export const PrensaEngineDefaultConfig = {
       rounded: '99px',
       circle: '50%'
     },
-    sideMenu: {
+    accordion: {
+      sizeMaxContent: 'max-content',
+      sizeSm: '320px',
+      sizeMd: '340px',
+      sizeLg: '360px',
+      sizeFullWidth: '100%'
+    },
+    drawer: {
       sizeMaxcontent: 'max-content',
       sizeSm: '320px',
       sizeMd: '340px',
@@ -101,14 +108,9 @@ export const PrensaEngineDefaultConfig = {
       innerSpaceSm: '$space$4',
       innerSpaceMd: '$space$6',
       innerSpaceLg: '$space$8',
+      backdropZIndex: 10,
+      contentZIndex: 100
     },
-    accordion: {
-      sizeMaxContent: 'max-content',
-      sizeSm: '320px',
-      sizeMd: '340px',
-      sizeLg: '360px',
-      sizeFullWidth: '100%'
-    }
   },
   utils: {
     align,

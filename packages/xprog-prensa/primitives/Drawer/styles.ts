@@ -53,15 +53,15 @@ export const DrawerContent = PrensaEngine.styled('aside', {
   height: '100vh',
   overflowY: 'auto',
   position: 'fixed',
-  zIndex: 100,
+  zIndex: '$drawer$contentZIndex',
 
   variants: {
     size: {
-      maxcontent: { width: '$sideMenu$sizeMaxcontent' },
-      sm: { width: '$sideMenu$sizeSm' },
-      md: { width: '$sideMenu$sizeMd' },
-      lg: { width: '$sideMenu$sizeLg' },
-      fullwidth: { width: '$sideMenu$sizeFullwidth' }
+      maxcontent: { width: '$drawer$sizeMaxcontent' },
+      sm: { width: '$drawer$sizeSm' },
+      md: { width: '$drawer$sizeMd' },
+      lg: { width: '$drawer$sizeLg' },
+      fullwidth: { width: '$drawer$sizeFullwidth' }
     },
     anchor: {
       left: {
@@ -83,15 +83,15 @@ export const DrawerBackdrop = PrensaEngine.styled('div', {
   top: '0px',
   left: '0px',
   width: '100vw',
-  zIndex: 10
+  zIndex: '$drawer$backdropZIndex'
 })
 
 export const DrawerSpacer = PrensaEngine.styled('div', {
   variants: {
     innerSpace: {
-      sm: { padding: '$sideMenu$innerSpaceSm' },
-      md: { padding: '$sideMenu$innerSpaceMd' },
-      lg: { padding: '$sideMenu$innerSpaceLg' }
+      sm: { padding: '$drawer$innerSpaceSm' },
+      md: { padding: '$drawer$innerSpaceMd' },
+      lg: { padding: '$drawer$innerSpaceLg' }
     }
   }
 })
