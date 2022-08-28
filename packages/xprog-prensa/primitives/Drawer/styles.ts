@@ -18,13 +18,13 @@ const Prensa_Drawer_backdropOut = PrensaEngine.keyframes({
 })
 
 export const DrawerContainer = PrensaEngine.styled('div', {
-  '.pdsnews-Drawer-content[data-open-state=true]': {
+  '.pds-Drawer-content[data-open-state=true]': {
     animationName: Prensa_Drawer_slideInLeft,
     animationDuration: '233ms',
     animationFillMode: 'forwards',
     animationTimingFunction: 'cubic-bezier(0,0,.21,1)'
   },
-  '.pdsnews-Drawer-content[hidden]': {
+  '.pds-Drawer-content[hidden]': {
     animationName: Prensa_Drawer_slideOutLeft,
     animationDuration: '300ms',
     animationFillMode: 'forwards',
@@ -33,13 +33,13 @@ export const DrawerContainer = PrensaEngine.styled('div', {
     transform: 'translateX(-100%)',
     transition: 'top 0.01s 1s'
   },
-  '.pdsnews-Drawer-backdrop[data-open-state=true]': {
+  '.pds-Drawer-backdrop[data-open-state=true]': {
     animationName: Prensa_Drawer_backdropIn,
     animationDuration: '233ms',
     animationFillMode: 'forwards',
     animationTimingFunction: 'cubic-bezier(0,0,.21,1)'
   },
-  '.pdsnews-Drawer-backdrop[hidden]': {
+  '.pds-Drawer-backdrop[hidden]': {
     animationName: Prensa_Drawer_backdropOut,
     animationDuration: '300ms',
     animationFillMode: 'forwards',
@@ -53,8 +53,6 @@ export const DrawerContent = PrensaEngine.styled('aside', {
   height: '100vh',
   overflowY: 'auto',
   position: 'fixed',
-  top: '0px',
-  left: '0px',
   zIndex: 100,
 
   variants: {
@@ -64,6 +62,16 @@ export const DrawerContent = PrensaEngine.styled('aside', {
       md: { width: '$sideMenu$sizeMd' },
       lg: { width: '$sideMenu$sizeLg' },
       fullwidth: { width: '$sideMenu$sizeFullwidth' }
+    },
+    anchor: {
+      left: {
+        top: '0px',
+        left: '0px'
+      },
+      right: {
+        top: '0px',
+        right: '0px'
+      }
     }
   }
 })
