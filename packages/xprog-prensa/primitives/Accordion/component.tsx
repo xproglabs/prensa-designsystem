@@ -1,20 +1,21 @@
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
-import { AccordionItem } from './item'
-import { AccordionProps } from './props'
+import { AccordionItemGroup } from './ItemGroup'
 import { AccordionGroup } from './styles'
+import { AccordionProps } from './types'
 
 export const Accordion: React.FC<AccordionProps> = ({
   css,
   items,
-  iconExpandedState,
-  iconNotExpandedState,
+  innerSpace,
   size
 }) => {
   const [state, setState] = useState(items)
 
   const handleClick = (id: string) => {
     let itk = null
+
     const item = state.find((i, k) => {
       itk = k
       return i.id === id
@@ -33,8 +34,8 @@ export const Accordion: React.FC<AccordionProps> = ({
     if (css.accordionGroup) {
       accordiongroup_css = { ...css.accordionGroup }
     }
-    if (css.accordionItem) {
-      accordionitem_css = { ...css.accordionItem }
+    if (css.accordionItemGroup) {
+      accordionitem_css = { ...css.accordionItemGroup }
     }
   }
 
@@ -44,13 +45,12 @@ export const Accordion: React.FC<AccordionProps> = ({
       css={accordiongroup_css}
     >
       {state.map((accordionItem) => (
-        <AccordionItem
-          {...accordionItem}
+        <AccordionItemGroup
           key={accordionItem.id}
           onClick={() => handleClick(accordionItem.id)}
-          iconExpandedState={iconExpandedState}
-          iconNotExpandedState={iconNotExpandedState}
           css={accordionitem_css}
+          innerSpace={innerSpace}
+          {...accordionItem}
         />
       ))}
     </AccordionGroup>
@@ -58,5 +58,14 @@ export const Accordion: React.FC<AccordionProps> = ({
 }
 
 Accordion.defaultProps = {
+  innerSpace: 'md',
   size: 'sm'
+}
+
+Accordion.propTypes = {
+  children: PropTypes.any,
+  css: PropTypes.any,
+  items: PropTypes.any,
+  innerSpace: PropTypes.any,
+  size: PropTypes.any
 }

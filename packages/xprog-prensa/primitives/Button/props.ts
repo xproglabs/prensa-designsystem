@@ -1,15 +1,15 @@
 import { ReactNode } from 'react'
 
-import { PrensaColorTokens, PrensaTypeSystemTokens, PrensaSpaceTokens } from '../../types'
+import { PrensaEngineColorType, PrensaEngineSpaceType, TypographyVariantType } from '../../types'
 import { StyledButtonTypes } from './styles'
 
 export type ButtonProps = StyledButtonTypes['defaultProps'] & {
-  color?: PrensaColorTokens;
+  color?: PrensaEngineColorType;
   css?: { button?: {}; label?: {}; };
-  labelSpacing?: PrensaSpaceTokens;
+  labelSpacing?: PrensaEngineSpaceType;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
-  textColor?: PrensaColorTokens;
-  textVariant?: PrensaTypeSystemTokens;
+  textColor?: PrensaEngineColorType;
+  textVariant?: TypographyVariantType;
   variant?: 'filled' | 'outlined' | 'ghost';
 }

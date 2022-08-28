@@ -1,23 +1,19 @@
 import { CSS } from '@stitches/react'
 
-import { PrensaEngine } from './prensa.default.config'
+import { PrensaEngineType } from './prensa.default.config'
 
-type PrensaColors = typeof PrensaEngine['config']['theme']['colors']
-type PrensaLineHeights = typeof PrensaEngine['config']['theme']['lineHeights']
-type PrensaRadiis = typeof PrensaEngine['config']['theme']['radii']
-type PrensaSpaces = typeof PrensaEngine['config']['theme']['space']
+export type PrensaEngineColors = PrensaEngineType['config']['theme']['colors']
+export type PrensaEngineLineHeights = PrensaEngineType['config']['theme']['lineHeights']
+export type PrensaEngineRadiis = PrensaEngineType['config']['theme']['radii']
+export type PrensaEngineSpaces = PrensaEngineType['config']['theme']['space']
+export type PrensaEngineFontSizes = PrensaEngineType['config']['theme']['fontSizes']
 
-export type PrensaCSSProp = CSS<typeof PrensaEngine.config>
-export type PrensaThemeType = typeof PrensaEngine['theme']
-export type PrensaColorTokens = keyof PrensaColors
-export type PrensaLineHeightTokens = keyof PrensaLineHeights
-export type PrensaRadiiTokens = keyof PrensaRadiis
-export type PrensaSpaceTokens = keyof PrensaSpaces
-export type PrensaTypeSystem = typeof PrensaEngine['config']['theme']['fontSizes']
-export type PrensaTypeSystemTokens = keyof PrensaTypeSystem
+export type PrensaEngineColorType = keyof PrensaEngineColors
+export type PrensaEngineLineHeightType = keyof PrensaEngineLineHeights
+export type PrensaEngineRadiiType = keyof PrensaEngineRadiis
+export type PrensaEngineSpaceType = keyof PrensaEngineSpaces
+export type PrensaEngineCSSProp = CSS<PrensaEngineType['config']>
+export type PrensaEngineThemeType = PrensaEngineType['theme']
 
-export * from './primitives/Block/props'
-export * from './primitives/Button/props'
-export * from './primitives/IconButton/props'
-export * from './primitives/Typography/props'
+export * from './primitives/types'
 export * from './news/types'

@@ -1,4 +1,4 @@
-import { VariantProps } from '@stitches/react'
+import PropTypes from 'prop-types'
 
 import { PrensaEngine } from '../../prensa.default.config'
 
@@ -19,6 +19,10 @@ export const AccordionGroup = PrensaEngine.styled('div', {
   }
 })
 
+AccordionGroup.propTypes = {
+  size: PropTypes.any
+}
+
 export const AccordionContent = PrensaEngine.styled('section', {
   variants: {
     innerSpace: {
@@ -29,5 +33,9 @@ export const AccordionContent = PrensaEngine.styled('section', {
   }
 })
 
-export type AccordionGroupVariants = VariantProps<typeof AccordionGroup>
-export type AccordionContentVariants = VariantProps<typeof AccordionContent>
+AccordionContent.propTypes = {
+  innerSpace: PropTypes.any
+}
+
+export type AccordionGroupType = typeof AccordionGroup
+export type AccordionContentType = typeof AccordionContent

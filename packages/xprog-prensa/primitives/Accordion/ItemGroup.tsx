@@ -1,21 +1,26 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
 import { Button } from '../Button'
 import { ExpandLessIcon } from './ExpandLessIcon'
 import { ExpandMoreIcon } from './ExpandMoreIcon'
 import { Typography } from '../Typography'
-import { AccordionItemProps } from './props'
 import { AccordionContent } from './styles'
+import { AccordionItemGroupProps } from './types'
 
-export const AccordionItem: React.FC<AccordionItemProps> = ({
+export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
+  accordionContentAs,
+  accordionTitleAs,
   children,
+  css,
   expanded,
   iconExpandedState,
+  icon,
   iconNotExpandedState,
   id,
+  innerSpace,
   onClick,
-  title,
-  css
+  title
 }) => {
 
   const button_initial_css = {
@@ -31,46 +36,44 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
   const section_id = `pds-accordion-section-${id}`
 
   if (css) {
-    if (css.accordionButton) {
+    if (css.accordionTitle) {
       button_css = {
-        button: { ...button_css.button, ...css.accordionButton.button },
-        label: { ...button_css.label, ...css.accordionButton.label }
+        button: { ...button_css.button, ...css.accordionTitle.button },
+        label: { ...button_css.label, ...css.accordionTitle.label }
       }
     }
     if (css.accordionContent) {
-      content_css = {
-        ...content_css,
-        ...css.accordionContent
-      }
+      content_css = { ...content_css, ...css.accordionContent }
     }
     if (css.accordionTitle) {
-      title_css = {
-        ...title_css,
-        ...css.accordionTitle
-      }
+      title_css = { ...title_css, ...css.accordionTitle }
     }
   }
 
   const renderExpandedStateIcon = () => {
+    if (icon) {
+      return icon
+    }
     if (iconExpandedState) {
       return iconExpandedState
-    } else {
-      return <ExpandLessIcon />
     }
+    return <ExpandLessIcon />
   }
 
   const renderNotExpandedStateIcon = () => {
+    if (icon) {
+      return icon
+    }
     if (iconNotExpandedState) {
       return iconNotExpandedState
-    } else {
-      return <ExpandMoreIcon />
     }
+    return <ExpandMoreIcon />
   }
 
   return (
     <>
       <Typography
-        as='h3'
+        as={accordionTitleAs}
         css={title_css}
       >
         <Button
@@ -85,7 +88,9 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
         </Button>
       </Typography>
       <AccordionContent
+        as={accordionContentAs}
         id={section_id}
+        innerSpace={innerSpace}
         aria-labelledby={button_id}
         hidden={!expanded}
         css={content_css}
@@ -94,4 +99,24 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
       </AccordionContent>
     </>
   )
+}
+
+AccordionItemGroup.defaultProps = {
+  accordionTitleAs: 'h3',
+  accordionContentAs: 'section'
+}
+
+AccordionItemGroup.propTypes = {
+  id: PropTypes.any.isRequired,
+  title: PropTypes.any.isRequired,
+  accordionTitleAs: PropTypes.any,
+  accordionContentAs: PropTypes.any,
+  children: PropTypes.any,
+  css: PropTypes.any,
+  expanded: PropTypes.any,
+  icon: PropTypes.any,
+  iconExpandedState: PropTypes.any,
+  iconNotExpandedState: PropTypes.any,
+  innerSpace: PropTypes.any,
+  onClick: PropTypes.any,
 }

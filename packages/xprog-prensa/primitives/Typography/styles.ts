@@ -1,6 +1,5 @@
-//@ts-nocheck
 import { PrensaEngine } from '../../prensa.default.config'
-import { CreatePropVariant } from './variants/variant'
+import { extractVariantKeys } from './variantExtractor'
 
 /**
  * Prensa | Typography
@@ -17,8 +16,8 @@ export const Typography = PrensaEngine.styled('p', {
       p: {},
       span: {}
     },
-    variant: CreatePropVariant()
+    variant: extractVariantKeys()
   }
 })
 
-export type TypographyStyledType = typeof Typography
+export type TypographyType = typeof Typography

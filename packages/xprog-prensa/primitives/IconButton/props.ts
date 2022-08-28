@@ -1,11 +1,11 @@
 import { ReactNode } from 'react'
-import { PrensaColorTokens } from '../../types'
+import { PrensaEngineColorType } from '../../types'
 import { StyledIconButtonTypes } from './styles'
 
 export type IconButtonProps = StyledIconButtonTypes['defaultProps'] & {
-  color?: PrensaColorTokens;
+  color?: PrensaEngineColorType;
   icon?: ReactNode;
-  iconColor?: PrensaColorTokens;
+  iconColor?: PrensaEngineColorType;
   variant?: 'filled' | 'outlined' | 'ghost';
   viewBox?: string;
 }
