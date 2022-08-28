@@ -4,6 +4,7 @@ import { DrawerContainer, DrawerContent, DrawerBackdrop, DrawerSpacer } from './
 import { DrawerProps } from './types'
 
 export const Drawer: React.FC<DrawerProps> = ({
+  anchor,
   children,
   close,
   innerSpace,
@@ -48,6 +49,7 @@ export const Drawer: React.FC<DrawerProps> = ({
         className='pds-Drawer-content'
         data-open-state={open}
         hidden={!open}
+        anchor={anchor}
         size={size}
         css={content_css}
       >
@@ -61,4 +63,8 @@ export const Drawer: React.FC<DrawerProps> = ({
       </DrawerContent>
     </DrawerContainer>
   )
+}
+
+Drawer.defaultProps = {
+  anchor: 'left'
 }
