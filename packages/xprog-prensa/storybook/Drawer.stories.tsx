@@ -1,9 +1,30 @@
+import { ArgsTable, Title } from '@storybook/addon-docs'
 import React from 'react'
 
-import { Block, Button, Drawer } from '../primitives'
+import { Block, Button, Drawer, DrawerBackdrop, DrawerContainer, DrawerContent, DrawerSpacer } from '../primitives'
 import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 
-export default { title: 'Primitives/Drawer' }
+export default {
+  title: 'Primitives/Drawer',
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <ArgsTable
+            components={{
+              Drawer,
+              DrawerBackdrop,
+              DrawerContainer,
+              DrawerContent,
+              DrawerSpacer
+            }}
+          />
+        </>
+      )
+    }
+  }
+}
 
 const Template = (args) => {
   const [state, setState] = React.useState(false)
