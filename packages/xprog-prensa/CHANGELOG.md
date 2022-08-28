@@ -1,3 +1,17 @@
+# [2.4.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.3.0...pds-v2.4.0) (2022-08-28)
+
+
+### Bug Fixes
+
+* Typography types inconsistencies and remove PrensaEngineTypeSystemType ([817afcf](https://github.com/xproglabs/prensa-designsystem/commit/817afcf4c48810d33c7fe9990db0c443abd867e8))
+
+
+### Features
+
+* **engine:** Update name pattern in types export from xprog-prensa/types.ts ([a4594eb](https://github.com/xproglabs/prensa-designsystem/commit/a4594eb1859f53ec9c777a9653463ae697aeb982))
+* **monorepo:** New file export organization for components and types ([14e3a20](https://github.com/xproglabs/prensa-designsystem/commit/14e3a2058eb728ac933bf5f0bdb21f5c5f4565f6))
+* New documentation for PrensaThemeProvider ([a8b2add](https://github.com/xproglabs/prensa-designsystem/commit/a8b2add2d6ab942dc9fee236b60af8a90fd2e1fc))
+
 # [2.3.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.2.0...pds-v2.3.0) (2022-08-24)
 
 
