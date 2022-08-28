@@ -5,13 +5,13 @@ import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
 
 export default { title: 'Primitives/Drawer' }
 
-const SideMenuTemplate = (args) => {
-  const [state, setState] = React.useState(true)
+const Template = (args) => {
+  const [state, setState] = React.useState(false)
   return (
     <PrensaThemeProvider>
       <Block css={{ align: ['column', 'center', 'middle'], height: '100vh' }}>
         <Button onClick={() => setState(true)}>
-          Click me
+          Click to open Drawer
         </Button>
         <Drawer {...args} open={state} close={() => setState(false)}>
           {args.children}
@@ -21,19 +21,19 @@ const SideMenuTemplate = (args) => {
   )
 }
 
-export const Default = SideMenuTemplate.bind({})
+export const Default = Template.bind({})
 Default.args = {
   children: 'This component in default state will grow accordingly with his content'
 }
 
-export const Size = SideMenuTemplate.bind({})
+export const Size = Template.bind({})
 Size.args = {
   children: 'SideMenu with size "md" and innerSpace "md" defined',
   innerSpace: 'md',
   size: 'md'
 }
 
-export const Customized = SideMenuTemplate.bind({})
+export const Customized = Template.bind({})
 Customized.args = {
   children: 'SideMenu with customizations using theme tokens',
   css: {
@@ -48,7 +48,7 @@ Customized.args = {
   }
 }
 
-export const CustomizedWithTokens = SideMenuTemplate.bind({})
+export const CustomizedWithTokens = Template.bind({})
 CustomizedWithTokens.args = {
   children: 'SideMenu with customizations using theme tokens',
   innerSpace: 'lg',
@@ -61,7 +61,7 @@ CustomizedWithTokens.args = {
   }
 }
 
-export const CustomizedWithValues = SideMenuTemplate.bind({})
+export const CustomizedWithValues = Template.bind({})
 CustomizedWithValues.args = {
   children: 'SideMenu with customizations using aleatory values',
   css: {
