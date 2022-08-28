@@ -3214,9 +3214,10 @@
     react-dom "^17.0.1"
     rollup "^2.77.0"
 
-"@xprog/prensa-design-tokens@git+https://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@github.com/xproglabs/prensa-design-tokens.git#master":
-  version "1.0.0"
-  resolved "git+https://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@github.com/xproglabs/prensa-design-tokens.git#62fbcddb19db6fa9f6736c350e0cc0a3ef4321cc"
+"@xprog/prensa-design-tokens@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@xprog/prensa-design-tokens/-/prensa-design-tokens-1.1.0.tgz#c323404d9632e6e402a929f7c34defa0e279a054"
+  integrity sha512-oN32OLPBu5PtllaS+9S+FssqYH0VlKvF48XYTUH+yDbRgeh/ToqJ+eusXYzu6VpTO6QFdKdGjDzGQpMuIj6RBg==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"

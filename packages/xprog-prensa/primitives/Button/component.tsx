@@ -94,7 +94,7 @@ export const Button: React.FC<ButtonProps> = ({
 }
 
 Button.defaultProps = {
-  color: 'neutral2',
+  color: 'brandNeutral500',
   labelSpacing: '3',
   size: 'md',
   textVariant: 'default-texts-sm',

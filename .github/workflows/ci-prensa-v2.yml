@@ -33,16 +33,6 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Setup git
-        uses: oleksiyrudenko/gha-git-credentials@v2.1
-        with:
-          token: '${{ secrets.GH_TOKEN }}'
-          name: '${{ secrets.GH_USER }}'
-          email: '${{ secrets.GH_USER_EMAIL }}'
-
-      - name: Setup git keys
-        run: git config --global url."https://${{ secrets.GH_TOKEN }}@github.com/".insteadOf ssh://git@github.com/
-
       - name: Install
         run: yarn deps:prensa:v2
 

@@ -55,7 +55,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
 }
 
 IconButton.defaultProps = {
-  color: 'neutral2',
+  color: 'brandNeutral500',
   size: 'md',
   variant: 'filled',
   viewBox: '0 0 48 48'

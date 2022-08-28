@@ -145,11 +145,11 @@ Customized.args = {
     accordionItemGroup: {
       accordionTitle: {
         button: {
-          backgroundColor: 'neutral4'
+          backgroundColor: '$brandNeutral500'
         }
       },
       accordionContent: {
-        backgroundColor: '$neutral4',
+        backgroundColor: '$brandNeutral500',
         height: '$20'
       }
     }

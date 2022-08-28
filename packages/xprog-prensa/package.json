@@ -28,7 +28,7 @@
   "dependencies": {
     "@stitches/react": "1.2.8",
     "@xprog/prensa-css-engine": "1.0.39",
-    "@xprog/prensa-design-tokens": "git+https://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@github.com/xproglabs/prensa-design-tokens.git#master",
+    "@xprog/prensa-design-tokens": "^1.1.0",
     "lodash": "4.17.19",
     "react": "18.2.0",
     "react-dom": "18.2.0"
