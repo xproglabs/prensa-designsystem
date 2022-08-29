@@ -97,6 +97,6 @@ Button.defaultProps = {
   color: 'brandNeutral600',
   labelSpacing: '3',
   size: 'md',
-  textVariant: 'default-texts-sm',
+  textVariant: 'buttonLabel-default',
   variant: 'filled',
 }
