@@ -20,7 +20,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
       css_variant = {
         backgroundColor: `$${color}`,
         borderColor: `$${color}`,
-        'svg': { fill: `$${iconColor ? iconColor : 'white'}` },
+        'svg': { fill: `$${iconColor ? iconColor : 'basicWhite'}` },
         '&:hover': { opacity: '0.8' }
       }
       break
@@ -55,7 +55,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
 }
 
 IconButton.defaultProps = {
-  color: 'basicBlackAlpha500',
+  color: 'brandNeutral500',
   size: 'md',
   variant: 'filled',
   viewBox: '0 0 48 48'
