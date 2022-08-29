@@ -1,9 +1,10 @@
 import React from 'react'
 
-import { SideMenuContainer, SideMenuContent, SideMenuBackdrop, SideMenuSpacer } from './styles'
-import { SideMenuProps } from './props'
+import { DrawerContainer, DrawerContent, DrawerBackdrop, DrawerSpacer } from './styles'
+import { DrawerProps } from './types'
 
-export const SideMenu: React.FC<SideMenuProps> = ({
+export const Drawer: React.FC<DrawerProps> = ({
+  anchor,
   children,
   close,
   innerSpace,
@@ -33,32 +34,37 @@ export const SideMenu: React.FC<SideMenuProps> = ({
   }
 
   return (
-    <SideMenuContainer
-      className='pdsnews-SideMenu-root'
+    <DrawerContainer
+      className='pds-Drawer-container'
       css={container_css}
     >
-      <SideMenuBackdrop
-        className='pdsnews-SideMenu-backdrop'
+      <DrawerBackdrop
+        className='pds-Drawer-backdrop'
         data-open-state={open}
         hidden={!open}
         onClick={close}
         css={backdrop_css}
       />
-      <SideMenuContent
-        className='pdsnews-SideMenu-content'
+      <DrawerContent
+        className='pds-Drawer-content'
         data-open-state={open}
         hidden={!open}
+        anchor={anchor}
         size={size}
         css={content_css}
       >
-        <SideMenuSpacer
-          className='pdsnews-SideMenu-spacer'
+        <DrawerSpacer
+          className='pds-Drawer-spacer'
           innerSpace={innerSpace}
           css={spacer_css}
         >
           {children}
-        </SideMenuSpacer>
-      </SideMenuContent>
-    </SideMenuContainer>
+        </DrawerSpacer>
+      </DrawerContent>
+    </DrawerContainer>
   )
+}
+
+Drawer.defaultProps = {
+  anchor: 'left'
 }

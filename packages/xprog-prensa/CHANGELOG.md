@@ -1,3 +1,15 @@
+# [2.5.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.4.0...pds-v2.5.0) (2022-08-28)
+
+
+### Bug Fixes
+
+* **drawer:** Correspondency in theme level tokens for Drawer component ([17126a7](https://github.com/xproglabs/prensa-designsystem/commit/17126a7d88c5becd864de5903821d8def755e815))
+
+
+### Features
+
+* **drawer:** Migrate SideMenu from prensa/news to prensa/primitives with name Drawer ([53af141](https://github.com/xproglabs/prensa-designsystem/commit/53af1417cb9652383acfd56cf917c5abd182b3a8))
+
 # [2.4.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.3.0...pds-v2.4.0) (2022-08-28)
 
 
