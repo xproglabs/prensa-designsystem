@@ -154,7 +154,7 @@ export const Colored = () => {
           size='md'
           variant='ghost'
           iconLeft={<IconComponent/>}
-          color='errorMain'
+          color='basicError500'
         >
           Brown Fox
         </Button>
@@ -162,7 +162,7 @@ export const Colored = () => {
           size='md'
           variant='outlined'
           iconLeft={<IconComponent/>}
-          color='errorMain'
+          color='basicError500'
         >
           Brown Fox
         </Button>
@@ -170,7 +170,7 @@ export const Colored = () => {
           size='md'
           variant='filled'
           iconLeft={<IconComponent/>}
-          color='errorMain'
+          color='basicError500'
         >
           Brown Fox
         </Button>
@@ -187,7 +187,7 @@ export const Customizations = () => {
           size='md'
           variant='outlined'
           iconLeft={<IconComponent/>}
-          color='errorMain'
+          color='basicError500'
           labelSpacing='10'
           textVariant='brand-newsTitle-sm'
           css={{ button: { borderWidth: '3px' } }}

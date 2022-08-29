@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { PrensaEngine } from '../../prensa.default.config'
 
 export const AccordionGroup = PrensaEngine.styled('div', {
-  borderColor: '$neutral2',
+  borderColor: '$brandNeutral500',
   borderStyle: 'solid',
   borderWidth: '1px',
   borderRadius: '$alternative',

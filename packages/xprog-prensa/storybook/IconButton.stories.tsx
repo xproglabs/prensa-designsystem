@@ -151,19 +151,19 @@ export const Colored = () => {
     <PrensaThemeProvider>
       <Block css={{ align: ['row', 'evenly', 'middle'], height: '100vh' }}>
         <IconButton
-          color='errorMain'
+          color='basicError500'
           variant='ghost'
           icon={<IconComponent/>}
           onClick={e => console.log(e)}
         />
         <IconButton
-          color='errorMain'
+          color='basicError500'
           variant='outlined'
           icon={<IconComponent/>}
           onClick={e => console.log(e)}
         />
         <IconButton
-          color='errorMain'
+          color='basicError500'
           icon={<IconComponent/>}
           onClick={e => console.log(e)}
         />

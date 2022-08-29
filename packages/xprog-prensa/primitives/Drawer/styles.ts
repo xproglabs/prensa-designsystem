@@ -48,7 +48,7 @@ export const DrawerContainer = PrensaEngine.styled('div', {
 })
 
 export const DrawerContent = PrensaEngine.styled('aside', {
-  backgroundColor: '$white',
+  backgroundColor: '$basicWhite',
   display: 'block',
   height: '100vh',
   overflowY: 'auto',
