@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { PrensaEngineDefaultConfig } from '../prensa.default.config'
-import { PrensaEngine } from '../prensa.default.config'
-import { Block } from '../primitives/Block'
+import { PrensaEngineDefaultConfig } from '../../../prensa.default.config'
+import { PrensaEngine } from '../../../prensa.default.config'
+import { Block } from '../../../primitives/Block'
 
 const { theme } = PrensaEngineDefaultConfig
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { ArgsTable, Title } from '@storybook/addon-docs'
 
-import { Block } from '../primitives/Block'
-import { Accordion, AccordionContent, AccordionGroup, AccordionItemGroup } from '../primitives/Accordion'
-import { AccordionProps } from '../primitives/Accordion/types'
-import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
+import { Block } from '../../../primitives/Block'
+import { Accordion, AccordionContent, AccordionGroup, AccordionItemGroup } from '../../../primitives/Accordion'
+import { AccordionProps } from '../../../primitives/Accordion/types'
+import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 export default {
   title: 'Primitives/Accordion',

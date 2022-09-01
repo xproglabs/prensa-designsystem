@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Block } from '../primitives/Block/index'
-import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
+import { Block } from '../../../primitives/Block/index'
+import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 export default { title: 'Primitives/Alignment', component: Block }
 

@@ -1,8 +1,8 @@
 import { ArgsTable, Title } from '@storybook/addon-docs'
 import React from 'react'
 
-import { Block, Button, Drawer, DrawerBackdrop, DrawerContainer, DrawerContent, DrawerSpacer } from '../primitives'
-import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
+import { Block, Button, Drawer, DrawerBackdrop, DrawerContainer, DrawerContent, DrawerSpacer } from '../../../primitives'
+import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 export default {
   title: 'Primitives/Drawer',
