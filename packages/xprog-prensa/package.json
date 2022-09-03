@@ -11,7 +11,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -o ./storybookbuild",
+    "build-storybook": "NODE_OPTIONS=--max_old_space_size=4096 build-storybook -o ./storybookbuild",
     "build": "npm run clear:dist && npm run build:js && npm run build:ts",
     "build:js": "rollup --config",
     "build:ts": "tsc -p ./tsconfig.declarations.json",
