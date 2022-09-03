@@ -15,9 +15,9 @@ type DrawerCSSProp = {
 }
 
 export type DrawerProps = {
-  anchor: DrawerContentTypeVariants['anchor'];
   close: MouseEventHandler<HTMLDivElement>;
   open: boolean;
+  anchor?: DrawerContentTypeVariants['anchor'];
   children?: ReactNode;
   css?: DrawerCSSProp;
   innerSpace?: DrawerSpacerTypeVariants['innerSpace'];
