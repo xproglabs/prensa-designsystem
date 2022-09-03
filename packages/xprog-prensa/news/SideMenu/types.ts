@@ -7,7 +7,6 @@ export type SideMenuProps = {
   open: boolean;
   anchor?: DrawerProps['anchor'];
   css?: { header?: PrensaEngineCSSProp; content?: PrensaEngineCSSProp; footer?: PrensaEngineCSSProp; };
-  // navItems?: Array<any>;
   innerSpace?: DrawerProps['innerSpace'];
   sections?: { header?: ReactNode; content?: ReactNode; footer?: ReactNode; };
   size?: DrawerProps['size'];
