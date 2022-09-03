@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.6.0...pds-v2.7.0) (2022-09-03)
+
+
+### Features
+
+* New prensa-news component SideMenu ([6fedac6](https://github.com/xproglabs/prensa-designsystem/commit/6fedac62259e80d03e251e5edc81910f1156927f))
+
 # [2.6.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.5.0...pds-v2.6.0) (2022-08-29)
 
 
