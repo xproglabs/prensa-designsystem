@@ -16,3 +16,4 @@ export type PrensaEngineCSSProp = CSS<PrensaEngineType['config']>
 export type PrensaEngineThemeType = PrensaEngineType['theme']
 
 export * from './primitives/types'
+export * from './news/types'

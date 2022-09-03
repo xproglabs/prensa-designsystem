@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Block } from '../primitives/Block/index'
-import { IconButton } from '../primitives/IconButton/index'
-import { PrensaThemeProvider } from '../providers/PrensaThemeProvider'
+import { Block } from '../../../primitives/Block/index'
+import { IconButton } from '../../../primitives/IconButton/index'
+import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 export default { title: 'Primitives/IconButton', component: IconButton }
 
