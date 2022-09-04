@@ -1,14 +1,12 @@
 import React from 'react'
 
-import { PrensaEngineDefaultConfig } from '../../../prensa.default.config'
-import { PrensaEngine } from '../../../prensa.default.config'
-import { Block } from '../../../primitives/Block'
+import { PrensaEngineDefaultConfig, PrensaEngine } from '../../../prensa.default.config'
 
 const { theme } = PrensaEngineDefaultConfig
 
-export default { title: 'Primitives/Colors', component: Block }
-
 const ColorBlock = PrensaEngine.styled('div')
+
+export default { title: 'Primitives/Colors', component: ColorBlock }
 
 const textStyle = {
   backgroundColor: 'rgb(255 255 255 / 75%)',
@@ -39,12 +37,12 @@ export const Default = () => {
     return (
       <>
         {isLast || isFirst ?
-          <ColorBlock css={{ height: '1rem', width: '100%', margin: '10px' }}>
+          <ColorBlock css={{ paddingTop: '20px', clear: 'both', height: '1rem', width: '100%', margin: '10px' }}>
             {selfType}
           </ColorBlock>
           : null
         }
-        <ColorBlock css={{ $$size: '90px', display: 'inline-block', width: '$$size', height: '$$size', backgroundColor: `$colors$${color}` }}>
+        <ColorBlock css={{ $$size: '90px', float: 'left', display: 'inline-block', width: '$$size', height: '$$size', backgroundColor: `$colors$${color}`, border: '1px solid #000' }}>
           <ColorBlock css={{ ...textStyle }}>
             {color}
             <br />
