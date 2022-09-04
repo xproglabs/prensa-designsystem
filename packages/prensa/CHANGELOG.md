@@ -1,3 +1,33 @@
+# [1.12.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.11.0...v1.12.0) (2022-09-04)
+
+
+### Bug Fixes
+
+* ajusta width do teaser quando não possui image ([f93108f](https://github.com/xproglabs/prensa-designsystem/commit/f93108f15b37d5562395072e079b625b4f8e0aac))
+* **button:** Fix tokens update in textVariant prop ([4caad92](https://github.com/xproglabs/prensa-designsystem/commit/4caad929a64c2272d897153ef9dac4276810cdde))
+* **button:** Remove excedent paddings ([c85b1c4](https://github.com/xproglabs/prensa-designsystem/commit/c85b1c47b1a86f18e85a680cd6e46ac16d5e9b93))
+* **drawer:** Correspondency in theme level tokens for Drawer component ([17126a7](https://github.com/xproglabs/prensa-designsystem/commit/17126a7d88c5becd864de5903821d8def755e815))
+* fix build - remove cache from node step ([1d56849](https://github.com/xproglabs/prensa-designsystem/commit/1d56849862e50a9ac218824bbb9af90ba842a846))
+* **stories:** Change PrensaDS title to Primitives ([33547bd](https://github.com/xproglabs/prensa-designsystem/commit/33547bde4bbe3e47eb5c2e64fc812c6efc90f272))
+* Typography types inconsistencies and remove PrensaEngineTypeSystemType ([817afcf](https://github.com/xproglabs/prensa-designsystem/commit/817afcf4c48810d33c7fe9990db0c443abd867e8))
+
+
+### Features
+
+* adiciona more_button nos slots 50 e 30 ([ec72cd1](https://github.com/xproglabs/prensa-designsystem/commit/ec72cd13d9030db434900d18d71333b367cdb882))
+* ajusta suggestions do Teaser quando 0 ([39080cf](https://github.com/xproglabs/prensa-designsystem/commit/39080cf2e16999cbf7df3b9ed1e6e9bcab657228))
+* **drawer:** Migrate SideMenu from prensa/news to prensa/primitives with name Drawer ([53af141](https://github.com/xproglabs/prensa-designsystem/commit/53af1417cb9652383acfd56cf917c5abd182b3a8))
+* **engine:** Update name pattern in types export from xprog-prensa/types.ts ([a4594eb](https://github.com/xproglabs/prensa-designsystem/commit/a4594eb1859f53ec9c777a9653463ae697aeb982))
+* **monorepo:** New file export organization for components and types ([14e3a20](https://github.com/xproglabs/prensa-designsystem/commit/14e3a2058eb728ac933bf5f0bdb21f5c5f4565f6))
+* New Accordion component ([0b9ec8e](https://github.com/xproglabs/prensa-designsystem/commit/0b9ec8e7beb1d11cf82c937d61cee8d0e7ec2f2a))
+* New documentation for PrensaThemeProvider ([a8b2add](https://github.com/xproglabs/prensa-designsystem/commit/a8b2add2d6ab942dc9fee236b60af8a90fd2e1fc))
+* New prensa-news component SideMenu ([6fedac6](https://github.com/xproglabs/prensa-designsystem/commit/6fedac62259e80d03e251e5edc81910f1156927f))
+* **sideMenu:** New SideMenu component in news universe ([26b048b](https://github.com/xproglabs/prensa-designsystem/commit/26b048ba106dd82ed351f124c192dbd1efb7212e))
+* **splitSlot:** add featured_splitted template demo ([b396083](https://github.com/xproglabs/prensa-designsystem/commit/b39608343b6421654fb65470b294bd2ce180a705))
+* **splitSlot:** configure RenderListSplitted in RenderSlot ([d9574f1](https://github.com/xproglabs/prensa-designsystem/commit/d9574f18dffca1859557d806143e375900cb8050))
+* **splitSlot:** install splitSlot in template50 ([f22dd9c](https://github.com/xproglabs/prensa-designsystem/commit/f22dd9c135e1bebc84312787b927355cd45d6095))
+* update prensa design tokens ([f403185](https://github.com/xproglabs/prensa-designsystem/commit/f403185c5a9b129fccfabd8071c935db26f92e01))
+
 # [1.11.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.10.0...v1.11.0) (2022-08-20)
 
 
