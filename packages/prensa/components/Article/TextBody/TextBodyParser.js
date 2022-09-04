@@ -125,7 +125,8 @@ const parse_content = (content) => {
         }
       } else {
         let child_string = renderChildValue(child) || attr.href
-        tagItems.push({ 'type': 'text', 'value': `<a href="${attr.href}" target="_blank" rel="noreferrer">${child_string}</a>` })
+        const rel = attr.name == 'dofollow' ? 'dofollow' : 'noreferrer'
+        tagItems.push({ 'type': 'text', 'value': `<a href="${attr.href}" target="_blank" rel="${rel}">${child_string}</a>` })
         return true
       }
     }
