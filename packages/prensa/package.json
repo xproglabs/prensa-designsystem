@@ -71,9 +71,10 @@
     "typescript": "^4.3.5"
   },
   "scripts": {
-    "storybook": "start-storybook -p 9009 -s public",
+    "start": "start-storybook -p 9009 -s public",
     "build": "rollup --config",
     "build:tgz": "npm run build && npm run prerelease:copyfiles && cd dist && npm pack",
+    "build:sb": "build-storybook -o .storybook/dist",
     "eslint": "eslint -c .eslintrc.json --ext js,ts,tsx ./",
     "eslint:fix": "eslint -c .eslintrc.json --fix --ext js,ts,tsx ./",
     "test": "jest",
