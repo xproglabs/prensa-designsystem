@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.12.0...v1.13.0) (2022-09-04)
+
+
+### Features
+
+* **dofollow:** allow do follow properties in article link ([1aa731f](https://github.com/xproglabs/prensa-designsystem/commit/1aa731f8028b1fc898ecc09098e13f6cf977fe04))
+
 # [1.12.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.11.0...v1.12.0) (2022-09-04)
 
 
