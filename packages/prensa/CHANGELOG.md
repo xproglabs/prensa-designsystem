@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.13.0...v1.13.1) (2022-09-04)
+
+
+### Bug Fixes
+
+* ajusta o layout e tokens do story de typography e colors ([4995dc5](https://github.com/xproglabs/prensa-designsystem/commit/4995dc5198c5246800a20458c0d289a9cbd14a36))
+
 # [1.13.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.12.0...v1.13.0) (2022-09-04)
 
 
