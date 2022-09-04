@@ -130,12 +130,12 @@ const PageBlock = ({
     const slot30_block = selectTemplateFromTheme({ block: 'slot30', slot: slot2, templates })
     const slot70_layout = selectLayoutFromTemplate({ block: slot70_block, slot: slot1 })
     const slot30_layout = selectLayoutFromTemplate({ block: slot30_block, slot: slot2 })
+    const slot1_more_button = get(slot70_block, 'more_button', {})
+    const slot2_more_button = get(slot30_block, 'more_button', {})
     const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slot70_block.spaces)
     const slot2_spaces = selectLayoutColsFromSlot(slot2?.len1, slot30_block.spaces)
     const slot1_space_bottom = get(slot70_block, 'space_bottom', [])
-    const slot1_more_button = get(slot70_block, 'more_button', {})
     const slot2_space_bottom = get(slot30_block, 'space_bottom', [])
-    const slot2_more_button = get(slot30_block, 'more_button', {})
     const slot1_space_bottom_column = slot70_block.space_bottom_column
     const slot1_space_bottom_column_color = slot70_block.space_bottom_column_color
     const slot2_space_bottom_column = slot30_block.space_bottom_column
@@ -224,7 +224,9 @@ const PageBlock = ({
     const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slotLeft_block.spaces)
     const slot2_spaces = selectLayoutColsFromSlot(slot2?.len1, slotRight_block.spaces)
     const slotsHaveSecionTitle = slot1?.title !== '' || slot2?.title !== ''
+    const slot1_more_button = get(slotLeft_block, 'more_button', {})
     const slot1_space_bottom = get(slotLeft_block, 'space_bottom', [])
+    const slot2_more_button = get(slotRight_block, 'more_button', {})
     const slot2_space_bottom = get(slotRight_block, 'space_bottom', [])
     const slot1_space_bottom_column = slotLeft_block.space_bottom_column
     const slot1_space_bottom_column_color = slotLeft_block.space_bottom_column_color
@@ -257,6 +259,7 @@ const PageBlock = ({
           min_height: slotLeft_block.min_height,
           order: slot1?.order,
           more: slot1?.more,
+          more_button: slot1_more_button,
           more_title: slot1?.more_title,
           more_link: slot1?.more_link,
           pagination: slot1?.pagination,
@@ -266,6 +269,7 @@ const PageBlock = ({
           slot: slot1?.list1,
           slot_parser,
           slot_position: 1,
+          split_slot: slotLeft_block.split_slot,
           spaceA: slotsHaveSecionTitle ? slot1_title : null,
           spaceB: slot1_slotList,
           space_bottom: slot1_space_bottom,
@@ -285,6 +289,7 @@ const PageBlock = ({
           min_height: slotRight_block.min_height,
           order: slot2?.order,
           more: slot2?.more,
+          more_button: slot2_more_button,
           more_title: slot2?.more_title,
           more_link: slot2?.more_link,
           pagination: slot2?.pagination,
@@ -294,6 +299,7 @@ const PageBlock = ({
           slot: slot2?.list1,
           slot_parser,
           slot_position: 2,
+          split_slot: slotRight_block.split_slot,
           spaceA: slotsHaveSecionTitle ? slot2_title : null,
           spaceB: slot2_slotList,
           space_bottom: slot2_space_bottom,
@@ -310,10 +316,14 @@ const PageBlock = ({
     const slotLeft_layout = selectLayoutFromTemplate({ block: slotLeft_block, slot: slot1 })
     const slotCenter_layout = selectLayoutFromTemplate({ block: slotCenter_block, slot: slot2 })
     const slotRight_layout = selectLayoutFromTemplate({ block: slotRight_block, slot: slot3 })
+    const slot1_more_button = get(slotLeft_block, 'more_button', {})
+    const slot2_more_button = get(slotCenter_block, 'more_button', {})
+    const slot3_more_button = get(slotRight_block, 'more_button', {})
     const slot1_spaces = selectLayoutColsFromSlot(slot1?.len1, slotLeft_block.spaces)
     const slot2_spaces = selectLayoutColsFromSlot(slot2?.len1, slotCenter_block.spaces)
     const slot3_spaces = selectLayoutColsFromSlot(slot3?.len1, slotRight_block.spaces)
     const slotsHaveSecionTitle = slot1?.title !== '' || slot2?.title !== '' || slot3?.title !== ''
+
     /** * Carousel Props */
     const slotLeft_carousel = get(slotLeft_block, 'carousel', {})
     const slotCenter_carousel = get(slotCenter_block, 'carousel', {})
@@ -358,6 +368,7 @@ const PageBlock = ({
           min_height: slotLeft_block.min_height,
           order: slot1?.order,
           more: slot1?.more,
+          more_button: slot1_more_button,
           more_title: slot1?.more_title,
           more_link: slot1?.more_link,
           pagination: slot1?.pagination,
@@ -387,6 +398,7 @@ const PageBlock = ({
           min_height: slotCenter_block.min_height,
           order: slot2?.order,
           more: slot2?.more,
+          more_button: slot2_more_button,
           more_title: slot2?.more_title,
           more_link: slot2?.more_link,
           pagination: slot2?.pagination,
@@ -416,6 +428,7 @@ const PageBlock = ({
           min_height: slotRight_block.min_height,
           order: slot3?.order,
           more: slot3?.more,
+          more_button: slot3_more_button,
           more_title: slot3?.more_title,
           more_link: slot3?.more_link,
           pagination: slot3?.pagination,
