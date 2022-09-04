@@ -59,22 +59,34 @@ export const FontWeight = () => {
 export const Semantics = () => {
   return (
     <PrensaThemeProvider theme={StorybookTheme.className}>
-      <Typography as='h1' variant='default-heading-2xl' >
+      <Typography as='h1' variant='newstitle-6xl' >
         The quick brown fox
       </Typography>
-      <Typography as='h2' variant='default-heading-xl'>
+      <Typography as='h1' variant='newstitle-5xl' >
         The quick brown fox
       </Typography>
-      <Typography as='h3' variant='default-heading-lg'>
+      <Typography as='h2' variant='newstitle-4xl'>
         The quick brown fox
       </Typography>
-      <Typography as='h4' variant='default-heading-md'>
+      <Typography as='h3' variant='newstitle-3xl'>
         The quick brown fox
       </Typography>
-      <Typography as='h5' variant='default-heading-sm'>
+      <Typography as='h4' variant='newstitle-2xl'>
         The quick brown fox
       </Typography>
-      <Typography as='h6' variant='default-heading-xs'>
+      <Typography as='h5' variant='newstitle-xl'>
+        The quick brown fox
+      </Typography>
+      <Typography as='h6' variant='newstitle-lg'>
+        The quick brown fox
+      </Typography>
+      <Typography as='h6' variant='newstitle-md'>
+        The quick brown fox
+      </Typography>
+      <Typography as='h6' variant='newstitle-sm'>
+        The quick brown fox
+      </Typography>
+      <Typography as='h6' variant='newstitle-xs'>
         The quick brown fox
       </Typography>
     </PrensaThemeProvider>
