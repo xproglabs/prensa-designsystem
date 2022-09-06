@@ -13,7 +13,6 @@
     "react": ">=17.0.1",
     "react-contenteditable": ">=3.3.6",
     "react-dom": ">=17.0.1",
-    "react-facebook": ">=8.1.4",
     "react-input-mask": "3.0.0-alpha.2",
     "react-instagram-embed": ">=3.0.0",
     "react-responsive-carousel": ">=3.2.22",
@@ -89,7 +88,6 @@
   },
   "dependencies": {
     "react-contenteditable": ">=3.3.6",
-    "react-facebook": ">=8.1.4",
     "react-instagram-embed": ">=3.0.0",
     "react-responsive-carousel": ">=3.2.22",
     "react-social-media-embed": "^2.0.11",
