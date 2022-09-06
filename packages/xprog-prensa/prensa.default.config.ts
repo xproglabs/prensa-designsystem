@@ -3,7 +3,7 @@ import { align } from '@xprog/prensa-css-engine/css-engine-v2/align'
 import { m, mb, ml, mr, mt, mx, my } from '@xprog/prensa-css-engine/css-engine-v2/margin'
 import { p, pb, pl, pr, pt, px, py } from '@xprog/prensa-css-engine/css-engine-v2/padding'
 
-import * as DefaultTokens from './providers/PrensaThemeProvider/defaultTokens.json'
+import * as DefaultTokens from '@xprog/prensa-design-tokens/3-themes/default.json';
 
 export const PrensaEngineDefaultConfig = {
   prefix: 'pds',

@@ -10,7 +10,7 @@ type TemplateRelated = {
 }
 
 type TemplateLayout = {
-  0: [TeaserSuggestions];
+  0: [TeaserSuggestions] | TeaserSuggestions[];
   1?: [TeaserSuggestions];
   2?: [TeaserSuggestions] | [TeaserSuggestions, TeaserSuggestions];
   3?: [TeaserSuggestions] | [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];

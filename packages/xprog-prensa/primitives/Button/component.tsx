@@ -26,8 +26,8 @@ export const Button: React.FC<ButtonProps> = ({
       css_variant = {
         backgroundColor: `$${color}`,
         borderColor: `$${color}`,
-        color: `$${textColor ? textColor : 'white'}`,
-        'svg': { fill: `$${textColor ? textColor : 'white'}` },
+        color: `$${textColor ? textColor : 'basicWhite'}`,
+        'svg': { fill: `$${textColor ? textColor : 'basicWhite'}` },
         '&:hover': { opacity: '0.8' }
       }
       break
@@ -94,9 +94,9 @@ export const Button: React.FC<ButtonProps> = ({
 }
 
 Button.defaultProps = {
-  color: 'neutral2',
+  color: 'brandNeutral600',
   labelSpacing: '3',
   size: 'md',
-  textVariant: 'default-texts-sm',
+  textVariant: 'buttonLabel-default',
   variant: 'filled',
 }

@@ -1,4 +1,4 @@
-import createBundle from './bundle/bundleGenerator'
+import { createBundle } from './bundle/bundleGenerator'
 
 /**
  * Prensa JS output file
