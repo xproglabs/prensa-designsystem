@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/xproglabs/prensa-designsystem/compare/v1.13.1...v1.13.2) (2022-09-06)
+
+
+### Bug Fixes
+
+* BREAKING-CHANGE - Remove implementation of react-facebook in FacebookEmbed component ([c77fe02](https://github.com/xproglabs/prensa-designsystem/commit/c77fe02356491160c25fbc314cf87d116f64cd95))
+
 ## [1.13.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.13.0...v1.13.1) (2022-09-04)
 
 
