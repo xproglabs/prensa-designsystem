@@ -41,6 +41,7 @@ const Template = (args) => {
 
 export const Default: { args: Omit<SideMenuProps, 'close' | 'open'> } = Template.bind({})
 Default.args = {
+  innerSpace: 'lg',
   sections: {
     header: <div>header</div>,
     content: <div>content</div>,
