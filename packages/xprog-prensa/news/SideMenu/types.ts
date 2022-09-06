@@ -9,9 +9,14 @@ export type SideMenuHeaderProps = SideMenuHeaderType
 
 export type SideMenuProps = {
   close: MouseEventHandler<HTMLDivElement>;
+  css?: {
+    drawer?: DrawerProps['css'];
+    header?: PrensaEngineCSSProp;
+    content?: PrensaEngineCSSProp;
+    footer?: PrensaEngineCSSProp;
+  };
   open: boolean;
   anchor?: DrawerProps['anchor'];
-  css?: { header?: PrensaEngineCSSProp; content?: PrensaEngineCSSProp; footer?: PrensaEngineCSSProp; };
   innerSpace?: DrawerProps['innerSpace'];
   sections?: { header?: ReactNode; content?: ReactNode; footer?: ReactNode; };
   size?: DrawerProps['size'];
