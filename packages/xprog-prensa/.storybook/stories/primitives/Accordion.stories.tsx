@@ -144,6 +144,9 @@ Customized.args = {
   css: {
     accordionItemGroup: {
       accordionTitle: {
+        title: {
+          my: '$2'
+        },
         button: {
           backgroundColor: '$brandNeutral300'
         }

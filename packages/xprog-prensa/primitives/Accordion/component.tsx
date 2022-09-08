@@ -3,13 +3,13 @@ import React, { useState } from 'react'
 
 import { AccordionItemGroup } from './ItemGroup'
 import { AccordionGroup } from './styles'
-import { AccordionProps } from './types'
+import { AccordionProps, AccordionItemGroupProps } from './types'
 
 export const Accordion: React.FC<AccordionProps> = ({
   css,
   items,
   innerSpace,
-  size
+  size,
 }) => {
   const [state, setState] = useState(items)
 
@@ -44,13 +44,14 @@ export const Accordion: React.FC<AccordionProps> = ({
       size={size}
       css={accordiongroup_css}
     >
-      {state.map((accordionItem) => (
+      {state.map(({ id, onClick, ...otherProps }: AccordionItemGroupProps) => (
         <AccordionItemGroup
-          key={accordionItem.id}
-          onClick={() => handleClick(accordionItem.id)}
-          css={accordionitem_css}
+          key={id}
+          id={id}
           innerSpace={innerSpace}
-          {...accordionItem}
+          onClick={onClick ? onClick : () => handleClick(id)}
+          css={accordionitem_css}
+          {...otherProps}
         />
       ))}
     </AccordionGroup>
