@@ -63,7 +63,7 @@ const Teaser = (props: TeaserProps) => {
   const wrap_alignx = get(layout, 'box_wrap.alignx', ['left', 'left'])
   const wrap_aligny = get(layout, 'box_wrap.aligny', ['top', 'top'])
   const wrap_height = get(layout, 'box_wrap.height', ['auto', 'auto'])
-  const wrap_width = get(layout, 'box_wrap.width', ['100%', '100%'])
+  let wrap_width = get(layout, 'box_wrap.width', ['100%', '100%'])
   const wrap_ml = get(layout, 'box_wrap.ml', [undefined, undefined])
   const wrap_mr = get(layout, 'box_wrap.mr', [undefined, undefined])
   const wrap_mb = get(layout, 'box_wrap.mb', [undefined, undefined])
@@ -76,8 +76,13 @@ const Teaser = (props: TeaserProps) => {
   // image enabled
   const image_cid = get(item, 'img.cid', false)
   const image_contentid = get(item, 'img.contentId', image_cid)
-  const image_enabled = (image_contentid || fallback_image_url) && get(layout, 'image.enabled', false)
-
+  const image_fallback = get(layout, 'image.fallback_image', true)
+  const image_enabled = (image_contentid || (image_fallback && fallback_image_url)) && get(layout, 'image.enabled', false)
+  if(!image_enabled) {
+    const wrap_mx_mobile = wrap_ml[0] + wrap_mr[0]
+    const wrap_mx_desktop = wrap_ml[1] + wrap_mr[1]
+    wrap_width = [`calc(100% - ${wrap_mx_mobile*8}px)`, `calc(100% - ${wrap_mx_desktop*8}px)`]
+  }
   // image wrap
   const image_align = get(layout, 'image.align', ['column', 'column'])
   const image_alignx = get(layout, 'image.alignx', ['left', 'left'])

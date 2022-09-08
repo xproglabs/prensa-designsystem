@@ -42,12 +42,14 @@ const RenderSlot = ({
   slot_parser,
   slot_position,
   space_bottom,
+  split_slot,
   theme
 }: RenderSlotProps) => {
 
   const { teasers } = theme
   const column_width = `calc((100% - (${column_padding} * 24px)) / ${column_items})`
   const carousel_enabled = get(carousel, 'enabled', false)
+  const split_slot_enabled = get(split_slot, 'enabled', false)
   const space_bottom_mobile = get(space_bottom, '[0]', 2)
   const space_bottom_desktop = get(space_bottom, '[1]', 3)
 
@@ -107,31 +109,61 @@ const RenderSlot = ({
       </PreviewProvider>
     )
   }
-  const RenderList = () => (
-    <React.Fragment>
-      {map(slot_sorted, (item, key: number) => {
-        return (
-          <Block
-            key={key}
-            custom='align-self: flex-start;'
-            mb={space_bottom_mobile}
-            width='100%'
-            lg={{ mb: space_bottom_desktop, width: column_width }}>
-            <RenderTeaser item={item} number={key} />
-            <RenderSpace item={item} />
-          </Block>
-        )
-      })}
-      <MoreButton 
-        {...more_button}
-        more={more} 
-        more_link={more_link} 
-        more_title={more_title}  
-      />
-      <RenderPagination />
-    </React.Fragment>
-  )
 
+  const RenderListItems = ({ slotItems }) => {
+    return (
+      <React.Fragment>
+        {map(slotItems, (item, key: number) => {
+          if(item === null) return false
+          return (
+            <Block
+              key={key}
+              custom='align-self: flex-start;'
+              mb={space_bottom_mobile}
+              width='100%'
+              lg={{ mb: space_bottom_desktop, width: column_width }}>
+              <RenderTeaser item={item} number={key} />
+              <RenderSpace item={item} />
+            </Block>
+          )
+        })}
+      </React.Fragment>
+    )
+  }
+
+  const RenderListSplitted = () => {
+    const slotItemsLeft = [slot_sorted[0]]
+    const slotItemsRight = [null, slot_sorted[1], slot_sorted[2], slot_sorted[3]]
+    return (
+      <Block lg={{ align: 'row', alignx: 'between' }} width='100%'>
+        <Block width='calc(50% - 12px)'>
+          <RenderListItems slotItems={slotItemsLeft} />
+        </Block>
+        <Block width='calc(50% - 12px)'>
+          <RenderListItems slotItems={slotItemsRight} />
+        </Block>
+      </Block>
+    )
+  }
+
+  const RenderList = () => {
+    return (
+      <React.Fragment>
+        {split_slot_enabled && slot_sorted.length > 3 ? (
+          <RenderListSplitted />
+        ) : (
+          <RenderListItems slotItems={slot_sorted} />
+        )}
+        <MoreButton
+          {...more_button}
+          more={more}
+          more_link={more_link}
+          more_title={more_title}
+        />
+        <RenderPagination />
+      </React.Fragment>
+    )
+  }
   if (carousel_enabled) {
     return (
       <Carousel {...carousel}>

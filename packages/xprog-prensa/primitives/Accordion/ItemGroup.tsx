@@ -23,32 +23,28 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   title
 }) => {
 
-  const button_initial_css = {
-    button: { align: ['row', 'between', 'middle'], width: '100%' },
-    label: {}
-  }
-
-  let button_css: any = { ...button_initial_css }
+  let button_css: any = { button: { align: ['row', 'between', 'middle'], width: '100%' }, label: {} }
   let content_css: any = {}
   let title_css: any = {}
 
   const button_id = `pds-accordion-button-${id}`
   const section_id = `pds-accordion-section-${id}`
 
-  if (css) {
-    if (css.accordionTitle) {
-      button_css = {
-        button: { ...button_css.button, ...css.accordionTitle.button },
-        label: { ...button_css.label, ...css.accordionTitle.label }
-      }
+  if (css && css.accordionTitle) {
+    if (css.accordionTitle.title) {
+      title_css = { ...css.accordionTitle.title }
     }
-    if (css.accordionContent) {
-      content_css = { ...content_css, ...css.accordionContent }
+    if (css.accordionTitle.button) {
+      button_css = { button: { ...button_css.button, ...css.accordionTitle.button }, label: { ...button_css.label } }
     }
-    if (css.accordionTitle) {
-      title_css = { ...title_css, ...css.accordionTitle }
+    if (css.accordionTitle.label) {
+      button_css = { button: { ...button_css.button }, label: { ...css.accordionTitle.label } }
     }
   }
+
+  if (css && css.accordionContent) {
+    content_css = { ...content_css, ...css.accordionContent }
+  } 
 
   const renderExpandedStateIcon = () => {
     if (icon) {
@@ -73,10 +69,12 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   return (
     <>
       <Typography
+        className='pds-Accordion-ItemGroup-title'
         as={accordionTitleAs}
         css={title_css}
-      >
+      > 
         <Button
+          className='pds-Accordion-ItemGroup-button'
           id={button_id}
           aria-controls={section_id}
           variant='ghost'
@@ -88,6 +86,7 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
         </Button>
       </Typography>
       <AccordionContent
+        className='pds-Accordion-ItemGroup-content'
         as={accordionContentAs}
         id={section_id}
         innerSpace={innerSpace}

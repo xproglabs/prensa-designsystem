@@ -10,12 +10,12 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -o ./storybookbuild",
+    "start": "start-storybook -p 9009 -s public",
     "build": "npm run clear:dist && npm run build:js && npm run build:ts",
     "build:js": "rollup --config",
     "build:ts": "tsc -p ./tsconfig.declarations.json",
     "build:tgz": "npm run prerelease:copyfiles && cd dist && npm pack",
+    "build:sb": "build-storybook -o .storybook/dist",
     "eslint": "eslint -c .eslintrc.json --ext js,ts,tsx ./",
     "eslint:fix": "eslint -c .eslintrc.json --fix --ext js,ts,tsx ./",
     "test": "jest",

@@ -4,9 +4,15 @@ import { Drawer } from '../../primitives'
 import { SideMenuContent, SideMenuFooter, SideMenuHeader } from './styles'
 import { SideMenuProps } from './types'
 
-export const SideMenu: React.FC<SideMenuProps> = ({ css, open, close, sections, size }) => {
+export const SideMenu: React.FC<SideMenuProps> = ({ css, open, close, innerSpace, sections, size }) => {
   return (
-    <Drawer open={open} close={close} size={size}>
+    <Drawer
+      close={close}
+      open={open}
+      size={size}
+      innerSpace={innerSpace}
+      css={css.drawer}
+    >
       <SideMenuHeader css={css?.header}>
         {sections && sections.header}
       </SideMenuHeader>

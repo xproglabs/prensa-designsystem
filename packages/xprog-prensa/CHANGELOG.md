@@ -1,3 +1,39 @@
+## [2.8.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.0...pds-v2.8.1) (2022-09-08)
+
+
+### Bug Fixes
+
+* Create condition for avoid "external undefined onClick" overwrite default onClick ([63af1fc](https://github.com/xproglabs/prensa-designsystem/commit/63af1fc26a8ed62a792bd8c2a2f3ea1ea80e5ac9))
+
+# [2.8.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.7.1...pds-v2.8.0) (2022-09-06)
+
+
+### Bug Fixes
+
+* Add css.drawer property and connects innerSpace ([5c5c18e](https://github.com/xproglabs/prensa-designsystem/commit/5c5c18ee984dbc49c58df070c56e176f8b29015d))
+* ajusta o layout e tokens do story de typography e colors ([4995dc5](https://github.com/xproglabs/prensa-designsystem/commit/4995dc5198c5246800a20458c0d289a9cbd14a36))
+* ajusta width do teaser quando não possui image ([f93108f](https://github.com/xproglabs/prensa-designsystem/commit/f93108f15b37d5562395072e079b625b4f8e0aac))
+* BREAKING-CHANGE - Remove implementation of react-facebook in FacebookEmbed component ([c77fe02](https://github.com/xproglabs/prensa-designsystem/commit/c77fe02356491160c25fbc314cf87d116f64cd95))
+
+
+### Features
+
+* adiciona more_button nos slots 50 e 30 ([ec72cd1](https://github.com/xproglabs/prensa-designsystem/commit/ec72cd13d9030db434900d18d71333b367cdb882))
+* ajusta suggestions do Teaser quando 0 ([39080cf](https://github.com/xproglabs/prensa-designsystem/commit/39080cf2e16999cbf7df3b9ed1e6e9bcab657228))
+* **dofollow:** allow do follow properties in article link ([1aa731f](https://github.com/xproglabs/prensa-designsystem/commit/1aa731f8028b1fc898ecc09098e13f6cf977fe04))
+* **splitSlot:** add featured_splitted template demo ([b396083](https://github.com/xproglabs/prensa-designsystem/commit/b39608343b6421654fb65470b294bd2ce180a705))
+* **splitSlot:** configure RenderListSplitted in RenderSlot ([d9574f1](https://github.com/xproglabs/prensa-designsystem/commit/d9574f18dffca1859557d806143e375900cb8050))
+* **splitSlot:** install splitSlot in template50 ([f22dd9c](https://github.com/xproglabs/prensa-designsystem/commit/f22dd9c135e1bebc84312787b927355cd45d6095))
+
+## [2.7.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.7.0...pds-v2.7.1) (2022-09-03)
+
+# [2.7.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.6.0...pds-v2.7.0) (2022-09-03)
+
+
+### Features
+
+* New prensa-news component SideMenu ([6fedac6](https://github.com/xproglabs/prensa-designsystem/commit/6fedac62259e80d03e251e5edc81910f1156927f))
+
 # [2.6.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.5.0...pds-v2.6.0) (2022-08-29)
 
 
