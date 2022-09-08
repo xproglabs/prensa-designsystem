@@ -11,7 +11,7 @@ export const SideMenu: React.FC<SideMenuProps> = ({ css, open, close, innerSpace
       open={open}
       size={size}
       innerSpace={innerSpace}
-      css={css.drawer}
+      css={css?.drawer}
     >
       <SideMenuHeader css={css?.header}>
         {sections && sections.header}
