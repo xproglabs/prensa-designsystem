@@ -1,3 +1,10 @@
+## [2.8.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.1...pds-v2.8.2) (2022-09-08)
+
+
+### Bug Fixes
+
+* Undefined exception in css.drawer execution ([c35b31f](https://github.com/xproglabs/prensa-designsystem/commit/c35b31f8a4e6eea803da58e6e7e7ba998703c197))
+
 ## [2.8.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.0...pds-v2.8.1) (2022-09-08)
 
 
