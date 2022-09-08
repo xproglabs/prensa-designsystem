@@ -35,20 +35,21 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   const button_id = `pds-accordion-button-${id}`
   const section_id = `pds-accordion-section-${id}`
 
-  if (css) {
-    if (css.accordionTitle) {
-      button_css = {
-        button: { ...button_css.button, ...css.accordionTitle.button },
-        label: { ...button_css.label, ...css.accordionTitle.label }
-      }
+  if (css && css.accordionTitle) {
+    if (css.accordionTitle.title) {
+      title_css = { ...css.accordionTitle.title }
     }
-    if (css.accordionContent) {
-      content_css = { ...content_css, ...css.accordionContent }
+    if (css.accordionTitle.label) {
+      button_css = { button: { ...button_css.button, ...css.accordionTitle.button }, label: { ...button_css.label } }
     }
-    if (css.accordionTitle) {
-      title_css = { ...title_css, ...css.accordionTitle }
+    if (css.accordionTitle.button) {
+      button_css = { button: { ...button_css.button }, label: { ...css.accordionTitle.label } }
     }
   }
+
+  if (css && css.accordionContent) {
+    content_css = { ...content_css, ...css.accordionContent }
+  } 
 
   const renderExpandedStateIcon = () => {
     if (icon) {
@@ -73,10 +74,12 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   return (
     <>
       <Typography
+        className='pds-Accordion-ItemGroup-title'
         as={accordionTitleAs}
         css={title_css}
-      >
+      > 
         <Button
+          className='pds-Accordion-ItemGroup-button'
           id={button_id}
           aria-controls={section_id}
           variant='ghost'
@@ -88,6 +91,7 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
         </Button>
       </Typography>
       <AccordionContent
+        className='pds-Accordion-ItemGroup-content'
         as={accordionContentAs}
         id={section_id}
         innerSpace={innerSpace}
