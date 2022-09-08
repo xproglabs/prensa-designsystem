@@ -23,12 +23,7 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   title
 }) => {
 
-  const button_initial_css = {
-    button: { align: ['row', 'between', 'middle'], width: '100%' },
-    label: {}
-  }
-
-  let button_css: any = { ...button_initial_css }
+  let button_css: any = { button: { align: ['row', 'between', 'middle'], width: '100%' }, label: {} }
   let content_css: any = {}
   let title_css: any = {}
 
@@ -39,10 +34,10 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
     if (css.accordionTitle.title) {
       title_css = { ...css.accordionTitle.title }
     }
-    if (css.accordionTitle.label) {
+    if (css.accordionTitle.button) {
       button_css = { button: { ...button_css.button, ...css.accordionTitle.button }, label: { ...button_css.label } }
     }
-    if (css.accordionTitle.button) {
+    if (css.accordionTitle.label) {
       button_css = { button: { ...button_css.button }, label: { ...css.accordionTitle.label } }
     }
   }
