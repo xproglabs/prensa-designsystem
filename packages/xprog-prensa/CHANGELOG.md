@@ -1,3 +1,10 @@
+## [2.8.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.0...pds-v2.8.1) (2022-09-08)
+
+
+### Bug Fixes
+
+* Create condition for avoid "external undefined onClick" overwrite default onClick ([63af1fc](https://github.com/xproglabs/prensa-designsystem/commit/63af1fc26a8ed62a792bd8c2a2f3ea1ea80e5ac9))
+
 # [2.8.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.7.1...pds-v2.8.0) (2022-09-06)
 
 
