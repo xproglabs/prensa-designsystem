@@ -1,3 +1,12 @@
+## [2.8.3](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.2...pds-v2.8.3) (2022-09-10)
+
+
+### Bug Fixes
+
+* Button component css routes typing ([ff0c194](https://github.com/xproglabs/prensa-designsystem/commit/ff0c194e50c83e1ffae2403eaf756d548fe028cf))
+* Optmize Button component css property with PrensaEngineCSSProp for autosuggestion ([dbe5280](https://github.com/xproglabs/prensa-designsystem/commit/dbe5280f18b4cd7c3a687908d4c2c4324414cd37))
+* TypographyVariantType value using incorrect reference ([28eaea8](https://github.com/xproglabs/prensa-designsystem/commit/28eaea8f7c8de725b11f5b84030e817bf2bc1bf2))
+
 ## [2.8.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.1...pds-v2.8.2) (2022-09-08)
 
 
