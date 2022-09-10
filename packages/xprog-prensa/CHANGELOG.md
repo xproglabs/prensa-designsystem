@@ -1,3 +1,5 @@
+## [2.8.4](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.3...pds-v2.8.4) (2022-09-10)
+
 ## [2.8.3](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.2...pds-v2.8.3) (2022-09-10)
 
 
