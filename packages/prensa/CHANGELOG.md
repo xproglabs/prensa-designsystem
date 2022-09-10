@@ -1,3 +1,13 @@
+## [1.13.3](https://github.com/xproglabs/prensa-designsystem/compare/v1.13.2...v1.13.3) (2022-09-10)
+
+
+### Bug Fixes
+
+* Add css.drawer property and connects innerSpace ([5c5c18e](https://github.com/xproglabs/prensa-designsystem/commit/5c5c18ee984dbc49c58df070c56e176f8b29015d))
+* Create condition for avoid "external undefined onClick" overwrite default onClick ([63af1fc](https://github.com/xproglabs/prensa-designsystem/commit/63af1fc26a8ed62a792bd8c2a2f3ea1ea80e5ac9))
+* TypographyVariantType value using incorrect reference ([28eaea8](https://github.com/xproglabs/prensa-designsystem/commit/28eaea8f7c8de725b11f5b84030e817bf2bc1bf2))
+* Undefined exception in css.drawer execution ([c35b31f](https://github.com/xproglabs/prensa-designsystem/commit/c35b31f8a4e6eea803da58e6e7e7ba998703c197))
+
 ## [1.13.2](https://github.com/xproglabs/prensa-designsystem/compare/v1.13.1...v1.13.2) (2022-09-06)
 
 
