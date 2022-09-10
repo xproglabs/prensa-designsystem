@@ -154,6 +154,11 @@ Customized.args = {
       accordionContent: {
         backgroundColor: '$brandNeutral300',
         height: '$20'
+      },
+      accordionItemGroupContainer: {
+        borderBottomColor: '$basicBlackAlpha500',
+        borderBottomStyle: 'solid',
+        borderBottomWidth: '1px'
       }
     }
   },

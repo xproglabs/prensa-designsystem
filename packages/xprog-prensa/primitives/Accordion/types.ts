@@ -11,6 +11,7 @@ export type AccordionGroupProps = ComponentProps<AccordionContentType>
 export type AccordionGroupVariants = VariantProps<AccordionGroupType>
 
 export type AccordionItemGroupCSSProp = {
+  accordionItemGroupContainer?: PrensaEngineCSSProp;
   accordionTitle?: { title?: PrensaEngineCSSProp; button?: PrensaEngineCSSProp; label?: PrensaEngineCSSProp; };
   accordionContent?: PrensaEngineCSSProp;
 }
