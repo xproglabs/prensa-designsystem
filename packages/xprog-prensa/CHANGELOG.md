@@ -1,3 +1,26 @@
+## [2.8.3](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.2...pds-v2.8.3) (2022-09-10)
+
+
+### Bug Fixes
+
+* Button component css routes typing ([ff0c194](https://github.com/xproglabs/prensa-designsystem/commit/ff0c194e50c83e1ffae2403eaf756d548fe028cf))
+* Optmize Button component css property with PrensaEngineCSSProp for autosuggestion ([dbe5280](https://github.com/xproglabs/prensa-designsystem/commit/dbe5280f18b4cd7c3a687908d4c2c4324414cd37))
+* TypographyVariantType value using incorrect reference ([28eaea8](https://github.com/xproglabs/prensa-designsystem/commit/28eaea8f7c8de725b11f5b84030e817bf2bc1bf2))
+
+## [2.8.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.1...pds-v2.8.2) (2022-09-08)
+
+
+### Bug Fixes
+
+* Undefined exception in css.drawer execution ([c35b31f](https://github.com/xproglabs/prensa-designsystem/commit/c35b31f8a4e6eea803da58e6e7e7ba998703c197))
+
+## [2.8.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.0...pds-v2.8.1) (2022-09-08)
+
+
+### Bug Fixes
+
+* Create condition for avoid "external undefined onClick" overwrite default onClick ([63af1fc](https://github.com/xproglabs/prensa-designsystem/commit/63af1fc26a8ed62a792bd8c2a2f3ea1ea80e5ac9))
+
 # [2.8.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.7.1...pds-v2.8.0) (2022-09-06)
 
 
