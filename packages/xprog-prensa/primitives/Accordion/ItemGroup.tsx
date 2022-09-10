@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import { Block } from '../Block'
 import { Button } from '../Button'
 import { ExpandLessIcon } from './ExpandLessIcon'
 import { ExpandMoreIcon } from './ExpandMoreIcon'
@@ -23,12 +24,17 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   title
 }) => {
 
+  let container_css: any = {}
   let button_css: any = { button: { align: ['row', 'between', 'middle'], width: '100%' }, label: {} }
   let content_css: any = {}
   let title_css: any = {}
 
   const button_id = `pds-accordion-button-${id}`
   const section_id = `pds-accordion-section-${id}`
+
+  if (css && css.accordionItemGroupContainer) {
+    container_css = { ...css.accordionItemGroupContainer }
+  }
 
   if (css && css.accordionTitle) {
     if (css.accordionTitle.title) {
@@ -67,7 +73,10 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   }
 
   return (
-    <>
+    <Block
+      className='pds-Accordion-ItemGroup-container'
+      css={container_css}
+    >
       <Typography
         className='pds-Accordion-ItemGroup-title'
         as={accordionTitleAs}
@@ -96,7 +105,7 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
       >
         {children}
       </AccordionContent>
-    </>
+    </Block>
   )
 }
 
