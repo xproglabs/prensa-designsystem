@@ -44,4 +44,4 @@ export const StyledIconButton = PrensaEngine.styled('button', {
   }
 })
 
-export type StyledIconButtonTypes = typeof StyledIconButton
+export type StyledIconButtonType = typeof StyledIconButton

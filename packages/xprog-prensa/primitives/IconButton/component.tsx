@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { StyledIconButton } from './styles'
-import { IconButtonProps } from './props'
+import { IconButtonProps } from './types'
 
 export const IconButton: React.FC<IconButtonProps> = ({
   children,

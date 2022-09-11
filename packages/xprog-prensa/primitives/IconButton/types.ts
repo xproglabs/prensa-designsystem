@@ -1,15 +1,18 @@
 import { VariantProps } from '@stitches/react'
-import { ReactNode } from 'react'
+import { ReactNode, HTMLAttributes } from 'react'
 
-import { PrensaEngineColorType } from '../../types'
-import { StyledIconButtonTypes } from './styles'
+import { PrensaEngineColorType, PrensaEngineCSSProp } from '../../types'
+import { StyledIconButtonType } from './styles'
 
-type IconButtonVariants = VariantProps<StyledIconButtonTypes>
+type StyledIconButtonVariants = VariantProps<StyledIconButtonType>
 
-export type IconButtonProps = StyledIconButtonTypes['defaultProps'] & {
+export type IconButtonProps = HTMLAttributes<HTMLButtonElement> & {
   color?: PrensaEngineColorType;
+  css?: { button?: PrensaEngineCSSProp; icon?: PrensaEngineCSSProp; };
   icon?: ReactNode;
   iconColor?: PrensaEngineColorType;
-  variant?: IconButtonVariants['variant'];
+  roundedCorners?: StyledIconButtonVariants['roundedCorners'];
+  size?: StyledIconButtonVariants['size'];
+  variant?: 'filled' | 'outlined' | 'ghost';
   viewBox?: string;
 }
