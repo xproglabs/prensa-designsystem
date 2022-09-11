@@ -111,6 +111,14 @@ export const PrensaEngineDefaultConfig = {
       backdropZIndex: 10,
       contentZIndex: 100
     },
+    iconButton: {
+      sizeSmContainerSize: '$space$8',
+      sizeMdContainerSize: '$space$10',
+      sizeLgContainerSize: '$space$12',
+      sizeSmIconSize: '$space$4',
+      sizeMdIconSize: '$space$6',
+      sizeLgIconSize: '$space$8',
+    }
   },
   utils: {
     align,
