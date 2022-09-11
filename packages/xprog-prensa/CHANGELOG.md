@@ -1,3 +1,10 @@
+## [2.8.5](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.4...pds-v2.8.5) (2022-09-11)
+
+
+### Bug Fixes
+
+* IconButton variant type correspondency and change filename props to types ([290bd0f](https://github.com/xproglabs/prensa-designsystem/commit/290bd0f274d8c4329874b2cc65dba7f6ca569ba9))
+
 ## [2.8.4](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.3...pds-v2.8.4) (2022-09-10)
 
 ## [2.8.3](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.2...pds-v2.8.3) (2022-09-10)
