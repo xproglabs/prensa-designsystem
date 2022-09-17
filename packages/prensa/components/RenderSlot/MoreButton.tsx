@@ -45,7 +45,7 @@ const MoreButton = ({
         path={more_link}
         variant={variant}
         width={width}>
-        <Typography element='span' fontColor={fontColor}>
+        <Typography element='span' color={fontColor}>
           {more_title}
         </Typography>  
       </Button>
