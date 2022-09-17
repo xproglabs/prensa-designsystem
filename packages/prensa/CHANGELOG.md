@@ -1,3 +1,5 @@
+## [1.14.0] Update version to 14x avoiding NPM conflict (2022-09-17)
+
 ## [1.13.3](https://github.com/xproglabs/prensa-designsystem/compare/v1.13.2...v1.13.3) (2022-09-17)
 
 
