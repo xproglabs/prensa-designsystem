@@ -1,3 +1,17 @@
+## [1.13.3](https://github.com/xproglabs/prensa-designsystem/compare/v1.13.2...v1.13.3) (2022-09-17)
+
+
+### Bug Fixes
+
+* Add css.drawer property and connects innerSpace ([5c5c18e](https://github.com/xproglabs/prensa-designsystem/commit/5c5c18ee984dbc49c58df070c56e176f8b29015d))
+* Button component css routes typing ([ff0c194](https://github.com/xproglabs/prensa-designsystem/commit/ff0c194e50c83e1ffae2403eaf756d548fe028cf))
+* Create condition for avoid "external undefined onClick" overwrite default onClick ([63af1fc](https://github.com/xproglabs/prensa-designsystem/commit/63af1fc26a8ed62a792bd8c2a2f3ea1ea80e5ac9))
+* IconButton variant type correspondency and change filename props to types ([290bd0f](https://github.com/xproglabs/prensa-designsystem/commit/290bd0f274d8c4329874b2cc65dba7f6ca569ba9))
+* **moreButton:** use color as prop in button label ([e74d409](https://github.com/xproglabs/prensa-designsystem/commit/e74d409e08f0a251b3d7ad53e34e5ae8bc9922db))
+* Optmize Button component css property with PrensaEngineCSSProp for autosuggestion ([dbe5280](https://github.com/xproglabs/prensa-designsystem/commit/dbe5280f18b4cd7c3a687908d4c2c4324414cd37))
+* TypographyVariantType value using incorrect reference ([28eaea8](https://github.com/xproglabs/prensa-designsystem/commit/28eaea8f7c8de725b11f5b84030e817bf2bc1bf2))
+* Undefined exception in css.drawer execution ([c35b31f](https://github.com/xproglabs/prensa-designsystem/commit/c35b31f8a4e6eea803da58e6e7e7ba998703c197))
+
 ## [1.13.3](https://github.com/xproglabs/prensa-designsystem/compare/v1.13.2...v1.13.3) (2022-09-10)
 
 
