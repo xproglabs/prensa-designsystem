@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.14.0...v1.14.1) (2022-09-18)
+
+
+### Bug Fixes
+
+* **splitSlot:** adjust RenderSlot template and types ([f9047dd](https://github.com/xproglabs/prensa-designsystem/commit/f9047dd06a89fd615dfb6aadc5b1753009008138))
+
 ## [1.14.0] Update version to 14x avoiding NPM conflict (2022-09-17)
 
 ## [1.13.3](https://github.com/xproglabs/prensa-designsystem/compare/v1.13.2...v1.13.3) (2022-09-17)
