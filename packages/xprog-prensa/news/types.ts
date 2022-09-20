@@ -1,1 +1,2 @@
-export * from './SideMenu'
+export * from './PageBlock/types'
+export * from './SideMenu/types'
