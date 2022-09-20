@@ -13,7 +13,7 @@ const ControlButton = ({ isNext, onClick, ...otherProps }: ControlButtonProps) =
   }
 
   return (
-    <Button isNext={isNext} onClick={onClick} {...otherProps}>
+    <Button type='button' aria-label={isNext ? 'Avançar' : 'Retroceder'} isNext={isNext} onClick={onClick} {...otherProps}>
       {renderIcon()}
     </Button>
   )
