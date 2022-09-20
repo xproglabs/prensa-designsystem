@@ -217,7 +217,8 @@ const TextBody = (props) => {
   }
 
   const RenderMainColumn = () => {
-    const isGalleryVisible = gallery && gallery.items && gallery.items.length > 0
+    const galleryArray = get(gallery, 'items', [])
+    const isGalleryVisible = galleryArray.length > 0
     const isTagsSectionTitleVisible = get(tags, 'sectionTitle.enabled', false)
     const tagsSectionTitleValue = get(tags, 'sectionTitle.value', 'Assuntos')
     return (
@@ -229,13 +230,15 @@ const TextBody = (props) => {
             </React.Fragment>
           )
         })}
-        {isGalleryVisible &&
-          <ImageGallery
-            {...gallery}
-            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
-            amp={amp}
-          />
-        }
+        {isGalleryVisible && map(galleryArray, (galleryItems) => {
+          return (
+            <ImageGallery
+              items={galleryItems}
+              width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
+              amp={amp}
+            />
+          )
+        })}
         {isTagsSectionTitleVisible &&
           <SectionTitle
             element='h6'
