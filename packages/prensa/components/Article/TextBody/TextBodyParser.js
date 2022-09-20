@@ -68,9 +68,20 @@ const parse_content = (content) => {
         tagItems.push({ 'type': 'text', 'value': text })
       }
     }
-
-    // render image
-    if (tag === 'a' && attr.class && attr.class === 'p-smartembed') {
+    // render gallery image
+    if (tag === 'a' && attr.class && attr.class === 'p-imagegallery') {
+      tagItems.push({ type: 'ImageGallery', value: { 'gallery_id': attr.name } })
+      return true
+      // render legacyimage
+    } else if (tag === 'img' && attr.class && attr.class === 'p-legacyimage') {
+      tagItems.push({ type: 'ImageFromSrc', value: attr.src })
+      return true
+      // render legacy-image2
+    } else if (tag === 'img' && attr && attr.src && attr.src.startsWith('/legacy/image')) {
+      tagItems.push({ type: 'Image', value: { 'image-legacy': attr.src } })
+      return true
+      // render image
+    } else if (tag === 'a' && attr.class && attr.class === 'p-smartembed') {
       const childImage = find(child, { tag: 'img' })
       if (childImage) {
         let subtitle = ''
@@ -92,14 +103,6 @@ const parse_content = (content) => {
         tagItems.push({ type: 'Image', value: propsImage })
         return true
       }
-
-      // embeds
-    } else if (tag === 'img' && attr && attr.src && attr.src.startsWith('/legacy/image')) {
-      // let source = attr.src.startsWith('/legacy/image')
-      // if(source) {
-      tagItems.push({ type: 'Image', value: { 'image-legacy': attr.src } })
-      return true
-      // }
     } else if (attr && attr['data-oembed-url']) {
       if (attr['data-oembed-url'].indexOf('youtu.be') > -1) {
         tagItems.push({ type: 'Youtube', value: attr['data-oembed-url'] })

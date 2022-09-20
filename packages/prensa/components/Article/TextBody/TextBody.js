@@ -51,6 +51,11 @@ const TextBody = (props) => {
   const adsContent = get(adsBody, 'content', [])
   const adsRender = get(adsBody, 'render', null)
 
+  // gallery props
+  const galleryArray = get(gallery, 'items', [])
+  const galleryTextbody = []
+  const galleryHeight = get(gallery, 'height', [])
+
   let readmore = []
   let intervention_amount = get(adsBody, 'interventionAmount', 3)
   let intervention_readmore_inserted = false
@@ -87,6 +92,18 @@ const TextBody = (props) => {
           height={image_data.height}
           width={image_data.width}
           value={image_data.value}
+        />
+      </Block>
+    )
+  }
+  const render_image_src = (value) => {
+    if (!value) return null
+    return (
+      <Block mb={3} maxWidth={bodyWidth} width="100%">
+        <ArticleImage
+          {...bodyImage}
+          amp={amp}
+          value={value}
         />
       </Block>
     )
@@ -169,6 +186,18 @@ const TextBody = (props) => {
             url={value}
           />
         )
+      case 'ImageGallery':
+        const gallerySelected = get(galleryArray, `[${galleryTextbody.length}]`, [])
+        galleryTextbody.push(gallerySelected)
+        return (
+          <ImageGallery
+            amp={amp}
+            items={gallerySelected}
+            height={galleryHeight}
+            captionProps={{ enabled: true }}
+            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
+          />
+        )
       case 'Instagram':
         return (
           <InstagramEmbed
@@ -199,6 +228,8 @@ const TextBody = (props) => {
         )
       case 'Image':
         return render_image(value)
+      case 'ImageFromSrc':
+        return render_image_src(value)
       case 'Heading2':
         return <Heading2 {...heading2} maxWidth={bodyWidth} value={value} />
       case 'Heading3':
@@ -217,7 +248,6 @@ const TextBody = (props) => {
   }
 
   const RenderMainColumn = () => {
-    const galleryArray = get(gallery, 'items', [])
     const isGalleryVisible = galleryArray.length > 0
     const isTagsSectionTitleVisible = get(tags, 'sectionTitle.enabled', false)
     const tagsSectionTitleValue = get(tags, 'sectionTitle.value', 'Assuntos')
@@ -230,15 +260,22 @@ const TextBody = (props) => {
             </React.Fragment>
           )
         })}
-        {isGalleryVisible && map(galleryArray, (galleryItems) => {
-          return (
-            <ImageGallery
-              items={galleryItems}
-              width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
-              amp={amp}
-            />
-          )
-        })}
+        {isGalleryVisible && (
+          <div className='galleryArray'>
+            {map(galleryArray.slice(galleryTextbody.length, galleryArray.length), (galleryItems, key) => {
+              return (
+                <ImageGallery
+                  amp={amp}
+                  key={key}
+                  items={galleryItems}
+                  height={galleryHeight}
+                  captionProps={{ enabled: true }}
+                  width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
+                />
+              )
+            })}
+          </div>
+        )}
         {isTagsSectionTitleVisible &&
           <SectionTitle
             element='h6'
