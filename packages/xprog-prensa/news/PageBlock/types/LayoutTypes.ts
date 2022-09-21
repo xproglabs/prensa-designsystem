@@ -1,52 +1,54 @@
 import { PrensaEngineCSSProp } from '../../../types'
 
+type LayoutSlotConfig = PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
+
 type LayoutTypes = {
-  active?: boolean
-  customColumnCss?: PrensaEngineCSSProp
-  default?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '1'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '2'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '2:1'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '2:2'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '3'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '3:1'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '3:2'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '3:3'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '4'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '4:1'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '4:2'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '4:3'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '4:4'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '5'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '5:1'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '5:2'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '5:3'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '5:4'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '5:5'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '6'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '6:1'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '6:2'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '6:3'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '6:4'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '6:5'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '6:6'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '7'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '7:1'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '7:2'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '7:3'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '7:4'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '7:5'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '7:6'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '7:7'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '8'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '8:1'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '8:2'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '8:3'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '8:4'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '8:5'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '8:6'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '8:7'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-  '8:8'?: PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
+  active?: boolean,
+  customColumnCss?: PrensaEngineCSSProp,
+  default?: LayoutSlotConfig,
+  '1'?: LayoutSlotConfig,
+  '2'?: LayoutSlotConfig,
+  '2:1'?: LayoutSlotConfig,
+  '2:2'?: LayoutSlotConfig,
+  '3'?: LayoutSlotConfig,
+  '3:1'?: LayoutSlotConfig,
+  '3:2'?: LayoutSlotConfig,
+  '3:3'?: LayoutSlotConfig,
+  '4'?: LayoutSlotConfig,
+  '4:1'?: LayoutSlotConfig,
+  '4:2'?: LayoutSlotConfig,
+  '4:3'?: LayoutSlotConfig,
+  '4:4'?: LayoutSlotConfig,
+  '5'?: LayoutSlotConfig,
+  '5:1'?: LayoutSlotConfig,
+  '5:2'?: LayoutSlotConfig,
+  '5:3'?: LayoutSlotConfig,
+  '5:4'?: LayoutSlotConfig,
+  '5:5'?: LayoutSlotConfig,
+  '6'?: LayoutSlotConfig,
+  '6:1'?: LayoutSlotConfig,
+  '6:2'?: LayoutSlotConfig,
+  '6:3'?: LayoutSlotConfig,
+  '6:4'?: LayoutSlotConfig,
+  '6:5'?: LayoutSlotConfig,
+  '6:6'?: LayoutSlotConfig,
+  '7'?: LayoutSlotConfig,
+  '7:1'?: LayoutSlotConfig,
+  '7:2'?: LayoutSlotConfig,
+  '7:3'?: LayoutSlotConfig,
+  '7:4'?: LayoutSlotConfig,
+  '7:5'?: LayoutSlotConfig,
+  '7:6'?: LayoutSlotConfig,
+  '7:7'?: LayoutSlotConfig,
+  '8'?: LayoutSlotConfig,
+  '8:1'?: LayoutSlotConfig,
+  '8:2'?: LayoutSlotConfig,
+  '8:3'?: LayoutSlotConfig,
+  '8:4'?: LayoutSlotConfig,
+  '8:5'?: LayoutSlotConfig,
+  '8:6'?: LayoutSlotConfig,
+  '8:7'?: LayoutSlotConfig,
+  '8:8'?: LayoutSlotConfig
 }
 
 export { LayoutTypes }

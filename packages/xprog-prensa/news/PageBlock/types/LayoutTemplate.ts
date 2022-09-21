@@ -1,8 +1,9 @@
-import { PrensaEngineCSSProp } from '../../../types'
+// import { PrensaEngineCSSProp } from '../../../types'
 import { LayoutTypes } from './LayoutTypes'
 
 interface LayoutTemplate {
-  columns?: LayoutTypes[]
+  layouts?: LayoutTypes[],
+  templates?: LayoutTypes[],
   slots?: any
 }
 
