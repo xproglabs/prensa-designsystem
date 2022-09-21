@@ -3,6 +3,7 @@ import { ArgsTable, Title } from '@storybook/addon-docs'
 
 import { PageBlock } from '../../../news'
 import { PageBlockProps } from '../../../news/PageBlock/types'
+import { DefaultLayoutProvider } from '../../../providers/DefaultLayoutProvider'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 export default {
@@ -23,7 +24,9 @@ export default {
 const Template = (args) => {
   return (
     <PrensaThemeProvider>
-      <PageBlock {...args} />
+      <DefaultLayoutProvider>
+        <PageBlock {...args} />
+      </DefaultLayoutProvider>
     </PrensaThemeProvider>
   )
 }
@@ -32,48 +35,42 @@ export const Default: { args: PageBlockProps } = Template.bind({})
 Default.args = {
   customCss: {
     columnHolder: {
-      "@lg": {
-        align: [
-          "row",
-          "between",
-          "top"
-        ],
-        maxWidth: "1280px",
-        width: "calc(100% - $8)"
+      '@lg': {
+        align: ['row', 'between', 'top'],
+        maxWidth: '1280px',
+        width: 'calc(100% - $8)'
       }
     },
     container: {
-      backgroundColor: "rgba(0,0,0,0.04)",
-      pt: "$3",
-      width: "100%"
+      backgroundColor: 'rgba(0,0,0,0.04)',
+      pt: '$3',
+      width: '100%'
     }
   },
-  customProps: {
-
-  },
-  name: "Politics Pageblock",
-  title: "Economia > Template 50-50/100+S8",
-  className: "politicsPageBlock",
-  slotTemplate: "template7030",
+  customProps: {},
+  name: 'Politics Pageblock',
+  title: 'Economia > Template 50-50/100+S8',
+  className: 'politicsPageBlock',
+  slotTemplate: 'Template7030',
   slotAutoLeftElements: [
     {
-      name: "TeaserDefaultImageTop",
-      type: "com.atex.plugins.teaser.TeaserBean",
-      path: ""
+      name: 'TeaserDefaultImageTop',
+      type: 'com.atex.plugins.teaser.TeaserBean',
+      path: ''
     }
   ],
   slotAutoCenterElements: [
     {
-      name: "TeaserDefaultImageTop",
-      type: "com.atex.plugins.teaser.TeaserBean",
-      path: ""
+      name: 'TeaserDefaultImageTop',
+      type: 'com.atex.plugins.teaser.TeaserBean',
+      path: ''
     }
   ],
   slotAutoRightElements: [
     {
-      name: "TeaserDefaultImageTop",
-      type: "com.atex.plugins.teaser.TeaserBean",
-      path: ""
+      name: 'TeaserDefaultImageTop',
+      type: 'com.atex.plugins.teaser.TeaserBean',
+      path: ''
     }
   ],
   slotManualBottomLeft: [],
@@ -83,37 +80,37 @@ Default.args = {
   slotManualTopLeft: [],
   slotManualTopCenter: [],
   slotManualTopRight: [],
-  slotLeftComponent: "",
-  slotLeftIconValue: "",
+  slotLeftComponent: '',
+  slotLeftIconValue: '',
   slotLeftReadMoreEnabled: false,
-  slotLeftReadMoreLink: "",
-  slotLeftReadMoreTitle: "",
-  slotLeftTeaserBgColor: "background1",
-  slotLeftTeaserColor: "editorial1",
-  slotLeftTeaserValue: "TeaserFeaturedImageTop",
+  slotLeftReadMoreLink: '',
+  slotLeftReadMoreTitle: '',
+  slotLeftTeaserBgColor: 'background1',
+  slotLeftTeaserColor: 'editorial1',
+  slotLeftTeaserValue: 'LayoutFeatured',
   slotLeftTitleEnabled: false,
-  slotLeftTitleLink: "",
-  slotLeftTitleValue: "",
-  slotCenterComponent: "",
-  slotCenterIconValue: "",
+  slotLeftTitleLink: '',
+  slotLeftTitleValue: '',
+  slotCenterComponent: '',
+  slotCenterIconValue: '',
   slotCenterReadMoreEnabled: false,
-  slotCenterReadMoreLink: "",
-  slotCenterReadMoreTitle: "",
-  slotCenterTeaserColor: "editorial1",
-  slotCenterTeaserBgColor: "background1",
-  slotCenterTeaserValue: "TeaserDefaultImageLeft",
+  slotCenterReadMoreLink: '',
+  slotCenterReadMoreTitle: '',
+  slotCenterTeaserColor: 'editorial1',
+  slotCenterTeaserBgColor: 'background1',
+  slotCenterTeaserValue: 'LayoutDefault',
   slotCenterTitleEnabled: false,
-  slotCenterTitleLink: "",
-  slotCenterTitleValue: "",
-  slotRightComponent: "",
-  slotRightIconValue: "",
+  slotCenterTitleLink: '',
+  slotCenterTitleValue: '',
+  slotRightComponent: '',
+  slotRightIconValue: '',
   slotRightReadMoreEnabled: false,
-  slotRightReadMoreLink: "",
-  slotRightReadMoreTitle: "",
-  slotRightTeaserBgColor: "background1",
-  slotRightTeaserColor: "editorial1",
-  slotRightTeaserValue: "TeaserDefaultImageLeft",
-  slotRightTitleValue: "",
+  slotRightReadMoreLink: '',
+  slotRightReadMoreTitle: '',
+  slotRightTeaserBgColor: 'background1',
+  slotRightTeaserColor: 'editorial1',
+  slotRightTeaserValue: 'LayoutDefault',
+  slotRightTitleValue: '',
   slotRightTitleEnabled: false,
-  slotRightTitleLink: "",
+  slotRightTitleLink: ''
 }
