@@ -2,7 +2,7 @@ import React from 'react'
 import { ArgsTable, Title } from '@storybook/addon-docs'
 
 import { PageBlock } from '../../../news'
-import { PageBlockProps } from '../../../news/PageBlock/types'
+import { TemplateProps } from '../../../news/PageBlock/types'
 import { DefaultLayoutProvider } from '../../../providers/DefaultLayoutProvider'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
@@ -31,25 +31,23 @@ const Template = (args) => {
   )
 }
 
-export const Default: { args: PageBlockProps } = Template.bind({})
+export const Default: { args: TemplateProps } = Template.bind({})
 Default.args = {
   customCss: {
+    container: {
+      backgroundColor: 'rgba(0,0,0,0.04)',
+      pt: '$3',
+      width: '100%'
+    },
     columnHolder: {
       '@lg': {
         align: ['row', 'between', 'top'],
         maxWidth: '1280px',
         width: 'calc(100% - $8)'
       }
-    },
-    container: {
-      backgroundColor: 'rgba(0,0,0,0.04)',
-      pt: '$3',
-      width: '100%'
     }
   },
   customProps: {},
-  name: 'Politics Pageblock',
-  title: 'Economia > Template 50-50/100+S8',
   className: 'politicsPageBlock',
   slotTemplate: 'Template7030',
   slotAutoLeftElements: [

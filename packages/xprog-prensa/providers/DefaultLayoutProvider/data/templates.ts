@@ -1,6 +1,6 @@
-import { TemplateLayout } from '../../../news/PageBlock/types/TemplateLayout'
+import { TemplateProps } from '../../../news/PageBlock/types'
 
-const Template100: TemplateLayout = {
+const Template100: TemplateProps = {
   customCss: {
     container: {
       backgroundColor: 'rgba(0,0,0,0.04)',
@@ -17,22 +17,28 @@ const Template100: TemplateLayout = {
   }
 }
 
-const Template7030: TemplateLayout = {
+const Template7030: TemplateProps = {
   customCss: {
     container: {
-      backgroundColor: 'rgba(2000,200,0,0.4)',
       pt: '$3',
       width: '100%'
     },
     columnHolder: {
+      backgroundColor: 'rgba(2000,100,0,0.1)',
       '@lg': {
         align: ['row', 'between', 'top'],
         maxWidth: '1280px',
         width: 'calc(100% - $8)'
       }
     },
-    column: {
-      backgroundColor: '$basicError600'
+    column: {},
+    item: {
+      backgroundColor: 'rgba(2000,100,0,0.3)'
+    }
+  },
+  customProps: {
+    container: {
+      className: 'Template7030Container'
     }
   }
 }
