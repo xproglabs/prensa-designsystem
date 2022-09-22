@@ -3,15 +3,18 @@ import React from 'react'
 import { Block } from '../../index'
 import * as t from './types'
 
-const Container: React.FC<t.Container> = (props) => (
+const Container: React.FC<t.ContainerProps> = ({
+  css,
+  children,
+  customProps,
+  defaultCss
+}) => (
   <Block
-    className='PageBlock'
-    css={{
-      ...props.defaultCss,
-      ...props.customCss
-    }}
+    {...customProps}
+    className={`PageBlock ${customProps?.className || ''}`}
+    css={{ ...defaultCss, ...css }}
   >
-    {props.children}
+    {children}
   </Block>
 )
 

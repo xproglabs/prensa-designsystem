@@ -1,20 +1,26 @@
-import React, { ReactNode } from 'react'
+import { ReactNode, ElementType } from 'react'
 
 import { PrensaEngineCSSProp } from '../../../types'
-import { LayoutTemplate } from './LayoutTemplate'
-import { SlotConfigType } from './SlotConfigType'
-import { SlotItemType } from './SlotItemType'
+import * as ColumnTypes from '../Column/types'
+import { LayoutTypes } from './LayoutTypes'
+import { TemplateConfig } from './TemplateConfig'
 
-interface ContainerProps {
+interface BlockProps {
+  className?: string
+}
+
+interface ContainerDefault {
+  className?: string,
   children?: ReactNode,
-  customCss?: PrensaEngineCSSProp,
-  customProps?: any,
+  css?: PrensaEngineCSSProp,
   defaultCss?: PrensaEngineCSSProp
 }
 
-interface Container extends ContainerProps { }
+interface ContainerProps extends ContainerDefault {
+  customProps?: BlockProps
+}
 
-interface PageBlockProps extends ContainerProps, LayoutTemplate, SlotConfigType {
+interface TemplateProps extends ContainerDefault, TemplateConfig {
   customCss?: {
     container?: PrensaEngineCSSProp,
     columnHolder?: PrensaEngineCSSProp,
@@ -22,24 +28,23 @@ interface PageBlockProps extends ContainerProps, LayoutTemplate, SlotConfigType 
     item?: PrensaEngineCSSProp
   },
   customProps?: {
-    container?: any,
-    columnHolder?: any,
-    column?: any,
-    item?: any
+    container?: BlockProps,
+    columnHolder?: BlockProps,
+    column?: BlockProps,
+    item?: BlockProps
   },
-  className?: string,
-  itemComponent?: React.ElementType,
-  name?: string,
+  itemComponent?: ElementType,
+  layouts?: LayoutTypes[],
   teasers?: any,
-  template?: string,
-  title?: string
+  templates?: LayoutTypes[]
 }
 
 export {
-  Container,
+  ColumnTypes,
+  BlockProps as BlockType,
+  PrensaEngineCSSProp as CSSType,
+  ContainerDefault,
   ContainerProps,
-  LayoutTemplate,
-  PageBlockProps,
-  SlotConfigType,
-  SlotItemType
+  TemplateConfig,
+  TemplateProps
 }
