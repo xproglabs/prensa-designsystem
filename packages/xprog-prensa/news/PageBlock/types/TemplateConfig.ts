@@ -1,6 +1,10 @@
-import { SlotItemType } from './SlotItemType'
+interface SlotItemType {
+  name: string,
+  type: string,
+  path: string
+}
 
-interface SlotConfigType {
+interface TemplateConfig {
   slotTemplate?: string,
   slotAutoLeftElements?: SlotItemType[] | [],
   slotAutoCenterElements?: SlotItemType[] | [],
@@ -47,4 +51,4 @@ interface SlotConfigType {
   slotRightTitleValue?: string
 }
 
-export { SlotConfigType }
+export { TemplateConfig }
