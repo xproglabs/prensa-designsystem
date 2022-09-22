@@ -1,36 +1,52 @@
 import React from 'react'
 
 import { Block } from '../../../index'
-import * as t from './types'
+import * as t from '../types'
 
-const Column: React.FC<t.ColumnStyledProps> = (props) => (
+const Column: React.FC<t.ColumnTypes.ColumnStyledProps> = ({
+  css,
+  children,
+  customProps,
+  defaultCss
+}) => (
   <Block
-    className='Column'
-    css={{
-      ...props.defaultCss,
-      ...props.customCss
-    }}
-  >
-    {props.children}
+    {...customProps}
+    className={`Column ${customProps?.className || ''}`}
+    css={{ ...defaultCss, ...css }}>
+    {children}
   </Block>
 )
 
 Column.defaultProps = {
   defaultCss: {
     align: ['column', 'center', 'middle'],
-    width: '100%'
+    width: '100%',
+    '.desktop': {
+      display: 'none',
+      '@lg': {
+        display: 'flex'
+      }
+    },
+    '.mobile': {
+      '@lg': {
+        display: 'none'
+      }
+    }
   }
 }
 
-const ColumnHolder: React.FC<t.ColumnHolderProps> = (props) => (
+const ColumnHolder: React.FC<t.ColumnTypes.ColumnHolderProps> = ({
+  css,
+  children,
+  customProps,
+  defaultCss
+}) => (
   <Block
-    className='ColumnHolder'
-    css={{
-      ...props.defaultCss,
-      ...props.customCss
-    }}
+    {...customProps}
+    className={`ColumnHolder ${customProps?.className || ''}`}
+    css={{ ...defaultCss, ...css }}
   >
-    {props.children}
+    {children}
   </Block>
 )
 
