@@ -1,6 +1,7 @@
 export { pageblockConfig } from './config'
 export {
   slotLayouts,
+  slotLayoutArray,
   slotLayoutsTypes
 } from './layouts'
 

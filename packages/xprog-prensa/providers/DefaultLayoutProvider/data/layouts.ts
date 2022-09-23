@@ -46,9 +46,33 @@ const LayoutFeatured: t.SlotLayoutConfig = {
   default: [T.TDImgTop, T.TDImgTop]
 }
 
+
+const LayoutGrid: t.SlotLayoutConfig = {
+  customCss: {
+    column: {
+      '@lg': {
+        align: ['row', 'between', 'top'],
+        maxWidth: '1280px',
+        width: 'calc(100% - $8)',
+        '.Column:nth-child(1)': {
+          width: 'calc(100% - $8)'
+        }
+      },
+      '.Column:nth-child(2)': {
+        display: 'none'
+      },
+      '.Column:nth-child(3)': {
+        display: 'none'
+      }
+    }
+  },
+  default: [T.TDImgTop, T.TDImgTop]
+}
+
 export const slotLayouts = {
   LayoutDefault,
-  LayoutFeatured
+  LayoutFeatured,
+  LayoutGrid
 }
 
 export const slotLayoutArray: string[] = Object.keys(slotLayouts)

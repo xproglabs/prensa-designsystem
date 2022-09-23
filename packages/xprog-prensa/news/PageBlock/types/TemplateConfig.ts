@@ -22,6 +22,7 @@ interface TemplateConfig {
   slotLeftTeaserBgColor?: string,
   slotLeftTeaserColor?: string,
   slotLeftLayout?: string,
+  slotLeftItems?: number,
   slotLeftTitleEnabled?: boolean,
   slotLeftTitleLink?: string,
   slotLeftTitleValue?: string,
@@ -33,6 +34,7 @@ interface TemplateConfig {
   slotCenterTeaserBgColor?: string,
   slotCenterTeaserColor?: string,
   slotCenterLayout?: string,
+  slotCenterItems?: number,
   slotCenterTitleEnabled?: boolean,
   slotCenterTitleLink?: string,
   slotCenterTitleValue?: string,
@@ -44,6 +46,7 @@ interface TemplateConfig {
   slotRightTeaserBgColor?: string,
   slotRightTeaserColor?: string,
   slotRightLayout?: string,
+  slotRightItems?: number,
   slotRightTitleEnabled?: boolean,
   slotRightTitleLink?: string,
   slotRightTitleValue?: string

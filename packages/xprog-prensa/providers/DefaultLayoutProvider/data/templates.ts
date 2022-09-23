@@ -12,6 +12,12 @@ const Template100: t.TemplateProps = {
         align: ['row', 'between', 'top'],
         maxWidth: '1280px',
         width: 'calc(100% - $8)'
+      },
+      '.Column:nth-child(2)': {
+        display: 'none'
+      },
+      '.Column:nth-child(3)': {
+        display: 'none'
       }
     }
   }

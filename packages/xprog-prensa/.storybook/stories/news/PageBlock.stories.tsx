@@ -4,7 +4,10 @@ import { ArgsTable, Title } from '@storybook/addon-docs'
 import { PageBlock } from '../../../news'
 import { PageBlockTypes } from '../../../types'
 import { DefaultLayoutProvider } from '../../../providers/DefaultLayoutProvider'
-import { templatesArray } from '../../../providers/DefaultLayoutProvider/data'
+import {
+  slotLayoutArray,
+  templatesArray
+} from '../../../providers/DefaultLayoutProvider/data'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 export default {
@@ -15,6 +18,45 @@ export default {
       control: {
         type: 'select',
         options: templatesArray
+      }
+    },
+    slotLeftLayout: {
+      control: {
+        type: 'select',
+        options: slotLayoutArray
+      }
+    },
+    slotCenterLayout: {
+      control: {
+        type: 'select',
+        options: slotLayoutArray
+      }
+    },
+    slotRightLayout: {
+      control: {
+        type: 'select',
+        options: slotLayoutArray
+      }
+    },
+    slotLeftItems: {
+      control: {
+        type: 'range',
+        min: 0,
+        max: 20
+      }
+    },
+    slotCenterItems: {
+      control: {
+        type: 'range',
+        min: 0,
+        max: 20
+      }
+    },
+    slotRightItems: {
+      control: {
+        type: 'range',
+        min: 0,
+        max: 20
       }
     }
   },
@@ -30,11 +72,34 @@ export default {
   }
 }
 
+const itemObject = {
+  name: 'ImageTop',
+  type: 'com.atex.plugins.teaser.TeaserBean',
+  path: ''
+}
+
 const Template = (args) => {
+  const slotAutoLeftElements = []
+  const slotAutoCenterElements = []
+  const slotAutoRightElements = []
+  for (let i = 0; i < args?.slotLeftItems; i++) {
+    slotAutoLeftElements.push(itemObject)
+  }
+  for (let i = 0; i < args?.slotCenterItems; i++) {
+    slotAutoCenterElements.push(itemObject)
+  }
+  for (let i = 0; i < args?.slotRightItems; i++) {
+    slotAutoRightElements.push(itemObject)
+  }
   return (
     <PrensaThemeProvider>
       <DefaultLayoutProvider>
-        <PageBlock {...args} />
+        <PageBlock
+          {...args}
+          slotAutoLeftElements={slotAutoLeftElements}
+          slotAutoCenterElements={slotAutoCenterElements}
+          slotAutoRightElements={slotAutoRightElements}
+        />
       </DefaultLayoutProvider>
     </PrensaThemeProvider>
   )
@@ -42,5 +107,11 @@ const Template = (args) => {
 
 export const Default: { args: PageBlockTypes.TemplateProps } = Template.bind({})
 Default.args = {
-  slotTemplate: 'Template7030'
+  slotTemplate: 'Template7030',
+  slotLeftLayout: 'LayoutGrid',
+  slotCenterLayout: 'LayoutDefault',
+  slotRightLayout: 'LayoutDefault',
+  slotLeftItems: 1,
+  slotCenterItems: 3,
+  slotRightItems: 1
 }

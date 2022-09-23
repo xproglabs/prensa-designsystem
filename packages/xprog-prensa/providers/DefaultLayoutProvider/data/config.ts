@@ -1,37 +1,6 @@
 import * as t from '../../../news/PageBlock/types'
 
 const pageblockConfig: t.TemplateConfig = {
-  slotAutoLeftElements: [
-    {
-      name: 'Featured-TDImgTop',
-      type: 'com.atex.plugins.teaser.TeaserBean',
-      path: ''
-    }
-  ],
-  slotAutoCenterElements: [
-    {
-      name: 'ImageTop',
-      type: 'com.atex.plugins.teaser.TeaserBean',
-      path: ''
-    },
-    {
-      name: 'ImageTop',
-      type: 'com.atex.plugins.teaser.TeaserBean',
-      path: ''
-    },
-    {
-      name: 'ImageTop',
-      type: 'com.atex.plugins.teaser.TeaserBean',
-      path: ''
-    }
-  ],
-  slotAutoRightElements: [
-    {
-      name: 'ImageTop',
-      type: 'com.atex.plugins.teaser.TeaserBean',
-      path: ''
-    }
-  ],
   slotManualBottomLeft: [],
   slotManualBottomCenter: [],
   slotManualBottomRight: [],
@@ -46,7 +15,6 @@ const pageblockConfig: t.TemplateConfig = {
   slotLeftReadMoreTitle: '',
   slotLeftTeaserBgColor: 'background1',
   slotLeftTeaserColor: 'editorial1',
-  slotLeftLayout: 'LayoutFeatured',
   slotLeftTitleEnabled: false,
   slotLeftTitleLink: '',
   slotLeftTitleValue: '',
@@ -57,7 +25,6 @@ const pageblockConfig: t.TemplateConfig = {
   slotCenterReadMoreTitle: '',
   slotCenterTeaserColor: 'editorial1',
   slotCenterTeaserBgColor: 'background1',
-  slotCenterLayout: 'LayoutDefault',
   slotCenterTitleEnabled: false,
   slotCenterTitleLink: '',
   slotCenterTitleValue: '',
@@ -68,7 +35,6 @@ const pageblockConfig: t.TemplateConfig = {
   slotRightReadMoreTitle: '',
   slotRightTeaserBgColor: 'background1',
   slotRightTeaserColor: 'editorial1',
-  slotRightLayout: 'LayoutDefault',
   slotRightTitleValue: '',
   slotRightTitleEnabled: false,
   slotRightTitleLink: ''
