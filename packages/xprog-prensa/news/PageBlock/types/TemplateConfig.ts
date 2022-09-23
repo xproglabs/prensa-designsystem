@@ -1,21 +1,19 @@
-interface SlotItemType {
-  name: string,
-  type: string,
-  path: string
-}
+import * as t from '../types'
+
+type SlotItemsType = t.ItemTypes.ItemDefaultProps[] | []
 
 interface TemplateConfig {
   slotTemplate?: string,
-  slotAutoLeftElements?: SlotItemType[] | [],
-  slotAutoCenterElements?: SlotItemType[] | [],
-  slotAutoRightElements?: SlotItemType[] | [],
-  slotManualBottomLeft?: SlotItemType[] | [],
-  slotManualBottomCenter?: SlotItemType[] | [],
-  slotManualBottomRight?: SlotItemType[] | [],
-  slotManualExtra?: SlotItemType[] | [],
-  slotManualTopLeft?: SlotItemType[] | [],
-  slotManualTopCenter?: SlotItemType[] | [],
-  slotManualTopRight?: SlotItemType[] | [],
+  slotAutoLeftElements?: SlotItemsType,
+  slotAutoCenterElements?: SlotItemsType,
+  slotAutoRightElements?: SlotItemsType,
+  slotManualBottomLeft?: SlotItemsType,
+  slotManualBottomCenter?: SlotItemsType,
+  slotManualBottomRight?: SlotItemsType,
+  slotManualExtra?: SlotItemsType,
+  slotManualTopLeft?: SlotItemsType,
+  slotManualTopCenter?: SlotItemsType,
+  slotManualTopRight?: SlotItemsType,
   slotLeftComponent?: string,
   slotLeftIconValue?: string,
   slotLeftReadMoreEnabled?: boolean,
@@ -23,7 +21,7 @@ interface TemplateConfig {
   slotLeftReadMoreTitle?: string,
   slotLeftTeaserBgColor?: string,
   slotLeftTeaserColor?: string,
-  slotLeftTeaserValue?: string,
+  slotLeftLayout?: string,
   slotLeftTitleEnabled?: boolean,
   slotLeftTitleLink?: string,
   slotLeftTitleValue?: string,
@@ -34,7 +32,7 @@ interface TemplateConfig {
   slotCenterReadMoreTitle?: string,
   slotCenterTeaserBgColor?: string,
   slotCenterTeaserColor?: string,
-  slotCenterTeaserValue?: string,
+  slotCenterLayout?: string,
   slotCenterTitleEnabled?: boolean,
   slotCenterTitleLink?: string,
   slotCenterTitleValue?: string,
@@ -45,10 +43,10 @@ interface TemplateConfig {
   slotRightReadMoreTitle?: string,
   slotRightTeaserBgColor?: string,
   slotRightTeaserColor?: string,
-  slotRightTeaserValue?: string,
+  slotRightLayout?: string,
   slotRightTitleEnabled?: boolean,
   slotRightTitleLink?: string,
   slotRightTitleValue?: string
 }
 
-export { TemplateConfig }
+export { SlotItemsType, TemplateConfig }
