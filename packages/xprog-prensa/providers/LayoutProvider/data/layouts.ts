@@ -1,8 +1,8 @@
 import * as t from '../../../news/PageBlock/types'
 import T from './teasers'
 
-const LayoutDefault: t.SlotLayoutConfig = {
-  customCss: {
+const LayoutDefault: t.SlotConfigProps = {
+  css: {
     column: {
       align: ['row', 'center', 'top'],
       flexWrap: 'wrap',
@@ -24,8 +24,8 @@ const LayoutDefault: t.SlotLayoutConfig = {
   default: [T.TDNoImg, T.TDNoImg]
 }
 
-const LayoutFeatured: t.SlotLayoutConfig = {
-  customCss: {
+const LayoutFeatured: t.SlotConfigProps = {
+  css: {
     column: {
       align: ['row', 'center', 'top'],
       width: '100%',
@@ -38,8 +38,8 @@ const LayoutFeatured: t.SlotLayoutConfig = {
 }
 
 
-const LayoutGrid: t.SlotLayoutConfig = {
-  customCss: {
+const LayoutGrid: t.SlotConfigProps = {
+  css: {
     column: {
       '@lg': {
         display: 'grid',

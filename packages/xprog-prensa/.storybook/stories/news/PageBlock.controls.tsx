@@ -4,7 +4,7 @@ import { PageBlockTypes as t } from '../../../types'
 import {
   slotLayoutArray,
   templatesArray
-} from '../../../providers/DefaultLayoutProvider/data'
+} from '../../../providers/LayoutProvider/data'
 
 const getArgsTableForPageBlock = (components) => {
   <>

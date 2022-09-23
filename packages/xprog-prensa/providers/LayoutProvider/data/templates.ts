@@ -1,7 +1,7 @@
-import * as t from '../../../news/PageBlock/types'
+import { PageBlockProps } from '../../../news/PageBlock/types'
 
-const Template100: t.TemplateProps = {
-  customCss: {
+const Template100: PageBlockProps = {
+  css: {
     container: {
       backgroundColor: 'rgba(0,0,0,0.04)',
       py: '$3',
@@ -23,8 +23,8 @@ const Template100: t.TemplateProps = {
   }
 }
 
-const Template7030: t.TemplateProps = {
-  customCss: {
+const Template7030: PageBlockProps = {
+  css: {
     container: {
       backgroundColor: '$basicBlackAlpha100',
       py: '$3',
@@ -65,8 +65,8 @@ const Template7030: t.TemplateProps = {
   }
 }
 
-const Template30: t.TemplateProps = {
-  customCss: {
+const Template30: PageBlockProps = {
+  css: {
     container: {
       backgroundColor: '$basicBlackAlpha100',
       py: '$3',

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { PageBlock } from '../../../news'
 import { PageBlockTypes } from '../../../types'
-import { DefaultLayoutProvider } from '../../../providers/DefaultLayoutProvider'
+import { LayoutProvider } from '../../../providers/LayoutProvider'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 import {
@@ -30,14 +30,14 @@ const Template = (args) => {
   })
   return (
     <PrensaThemeProvider>
-      <DefaultLayoutProvider>
+      <LayoutProvider>
         <PageBlock
           {...args}
           slotAutoLeftElements={slotAutoLeftElements}
           slotAutoCenterElements={slotAutoCenterElements}
           slotAutoRightElements={slotAutoRightElements}
         />
-      </DefaultLayoutProvider>
+      </LayoutProvider>
     </PrensaThemeProvider>
   )
 }

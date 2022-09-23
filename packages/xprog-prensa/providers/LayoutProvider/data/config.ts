@@ -1,6 +1,6 @@
-import * as t from '../../../news/PageBlock/types'
+import { PageBlockConfig } from '../../../news/PageBlock/types'
 
-const pageblockConfig: t.TemplateConfig = {
+const pageblockConfig: PageBlockConfig = {
   slotManualBottomLeft: [],
   slotManualBottomCenter: [],
   slotManualBottomRight: [],
