@@ -2,17 +2,17 @@ import * as t from '../../../news/PageBlock/types'
 
 const TDNoImg: t.CSSType = {
   backgroundColor: 'white',
-  width: '100%',
   height: '80px',
+  width: '100%',
   '@lg': {
     height: '300px'
   }
 }
 
 const TDImgTop: t.CSSType = {
-  backgroundColor: '$basicSuccess700',
-  width: '100%',
+  backgroundColor: '$basicSuccess400',
   height: '120px',
+  width: '100%',
   '@lg': {
     height: '272px !important'
   }
