@@ -3,9 +3,8 @@ import { PageBlockProps } from '../../../news/PageBlock/types'
 const Template100: PageBlockProps = {
   css: {
     container: {
-      backgroundColor: 'rgba(0,0,0,0.04)',
       py: '$3',
-      mb: '$8'
+      width: '100%'
     },
     columnHolder: {
       '@lg': {
@@ -49,17 +48,8 @@ const Template7030: PageBlockProps = {
     },
     column: {
       align: ['row', 'between', 'top'],
-      backgroundColor: '$basicBlackAlpha100',
       '@lg': {
         width: 'calc(calc(100% - $6) / 3)'
-      }
-    },
-    item: {
-      backgroundColor: '$basicBlackAlpha100',
-      mb: '$4',
-      width: '100%',
-      '@lg': {
-        mb: '$0'
       }
     }
   }
@@ -91,17 +81,8 @@ const Template30: PageBlockProps = {
     },
     column: {
       align: ['row', 'between', 'top'],
-      backgroundColor: '$basicBlackAlpha100',
       '@lg': {
         width: 'calc(calc(100% - $6) / 3)'
-      }
-    },
-    item: {
-      backgroundColor: '$basicBlackAlpha100',
-      mb: '$4',
-      width: '100%',
-      '@lg': {
-        mb: '$0'
       }
     }
   },
