@@ -1,21 +1,26 @@
 import React from 'react'
 
+import * as t from '../types'
 import * as S from './styles'
-import * as t from './types'
 
-const Item: React.FC<t.ItemProps> = (props) => {
+const Item: React.FC<t.ItemTypes.ItemProps> = ({
+  children,
+  customProps,
+  customCss,
+  name,
+  path
+}) => {
   return (
-    <S.Item
-      className={props.className}
-      customCss={{ ...props.defaultCss, ...props.customCss }}
-      {...props.customProps}
+    <S.ItemStyled
+      css={customCss}
+      customProps={customProps}
     >
-      <a href={props.path}>
-        <S.ItemLabel name={props.name} path={props.path}>
-          {props.name}
-        </S.ItemLabel>
-      </a>
-    </S.Item>
+      {children || (
+        <a href={path}>
+          <S.ItemLabel>{name}</S.ItemLabel>
+        </a>
+      )}
+    </S.ItemStyled>
   )
 }
 

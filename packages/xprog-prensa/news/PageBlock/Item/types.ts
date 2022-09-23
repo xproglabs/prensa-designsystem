@@ -1,27 +1,33 @@
-import { ReactNode } from 'react'
+import { ElementType } from 'react'
 
-import { PrensaEngineCSSProp } from '../../../types'
 import { TypographyVariantType } from '../../../types'
+import * as t from '../types'
 
-interface ContainerProps {
-  children?: ReactNode,
-  customCss?: PrensaEngineCSSProp,
-  customProps?: any,
-  defaultCss?: PrensaEngineCSSProp
+interface ItemProps extends ItemDefaultProps, ItemStyled {
+  customCss?: t.CSSType,
 }
 
-export interface ItemProps extends ContainerProps {
-  children?: any,
-  className?: string,
-  name: string,
-  path: string
+interface ItemDefaultProps {
+  name?: string,
+  path?: string,
+  type?: string
 }
 
-export interface ItemLabelProps {
-  children?: ReactNode,
-  customCss?: any,
-  defaultCss?: any,
-  name: string,
-  path: string,
+interface ItemStyled extends t.ContainerDefault {
+  customProps?: t.BlockType
+}
+
+interface ItemLabelProps extends t.ContainerDefault {
+  customProps?: t.BlockType,
   variants?: TypographyVariantType | [TypographyVariantType, TypographyVariantType]
+}
+
+type ItemDefaultType = ElementType
+
+export {
+  ItemDefaultProps,
+  ItemDefaultType,
+  ItemLabelProps,
+  ItemProps,
+  ItemStyled
 }

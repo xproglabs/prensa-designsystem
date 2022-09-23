@@ -1,38 +1,23 @@
 import React from 'react'
 
 import { Block, Typography } from '../../../index'
-import { parseVariants } from '../Column/parser'
-import * as t from './types'
+import * as p from '../Column/parser'
+import * as t from '../types'
 
-const Item: React.FC<t.ItemProps> = (props) => (
-  <Block
-    className={`Item ${props.className}`}
-    css={{
-      ...props.defaultCss,
-      ...props.customCss
-    }}
-  >
-    {props.children}
-  </Block>
-)
-
-Item.defaultProps = {
-  defaultCss: {
-    align: ['column', 'center', 'middle'],
-    width: '100%'
-  }
-}
-
-const ItemLabel: React.FC<t.ItemLabelProps> = (props) => (
+const ItemLabel: React.FC<t.ItemTypes.ItemLabelProps> = ({
+  css,
+  children,
+  customProps,
+  defaultCss,
+  variants
+}) => (
   <Typography
-    className='ItemLabel'
-    css={{
-      ...props.defaultCss,
-      ...props.customCss
-    }}
-    variant={parseVariants(props.variants)}
+    {...customProps}
+    className={`ItemLabel ${customProps?.className || ''}`}
+    css={{ ...defaultCss, ...css }}
+    variant={p.getResponsiveStyle(variants)}
   >
-    {props.children}
+    {children}
   </Typography>
 )
 
@@ -43,7 +28,28 @@ ItemLabel.defaultProps = {
   variants: ['menuTag-default', 'menuTag-desktop']
 }
 
+const ItemStyled: React.FC<t.ItemTypes.ItemStyled> = ({
+  css,
+  children,
+  customProps,
+  defaultCss
+}) => (
+  <Block
+    {...customProps}
+    className={`Item ${customProps?.className || ''}`}
+    css={{ ...defaultCss, ...css }}>
+    {children}
+  </Block>
+)
+
+ItemStyled.defaultProps = {
+  defaultCss: {
+    align: ['column', 'center', 'middle'],
+    width: '100%'
+  }
+}
+
 export {
-  Item,
-  ItemLabel
+  ItemLabel,
+  ItemStyled
 }
