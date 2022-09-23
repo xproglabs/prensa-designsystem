@@ -6,7 +6,7 @@ import { Item as DefaultItem } from './Item'
 import * as S from './styles'
 import * as t from './types'
 
-const PageBlock: React.FC<t.TemplateProps> = ({
+const PageBlock: React.FC<t.PageBlockProps> = ({
   customCss,
   customProps,
   itemComponent,
@@ -54,7 +54,7 @@ const PageBlock: React.FC<t.TemplateProps> = ({
     css: columnHolderCss
   }
 
-  const columnProps: t.ColumnTypes.ColumnProps = {
+  const columnProps: t.ColumnProps = {
     customCss: {
       column: {
         ...customCss?.column,
@@ -86,19 +86,19 @@ const PageBlock: React.FC<t.TemplateProps> = ({
     itemComponent
   }
 
-  const columnLeftProps: t.ColumnTypes.ColumnProps = {
+  const columnLeftProps: t.ColumnProps = {
     ...columnProps,
     items: slotAutoLeftElements,
     layout: get(slotLayouts, slotLeftLayout),
     name: 'Left'
   }
-  const columnCenterProps: t.ColumnTypes.ColumnProps = {
+  const columnCenterProps: t.ColumnProps = {
     ...columnProps,
     items: slotAutoCenterElements,
     layout: get(slotLayouts, slotCenterLayout),
     name: 'Center'
   }
-  const columnRightProps: t.ColumnTypes.ColumnProps = {
+  const columnRightProps: t.ColumnProps = {
     ...columnProps,
     items: slotAutoRightElements,
     layout: get(slotLayouts, slotRightLayout),

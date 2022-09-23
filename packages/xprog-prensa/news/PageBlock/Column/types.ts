@@ -1,28 +1,28 @@
 import * as t from '../types'
 
-interface ColumnHolderProps extends t.ContainerDefault {
-  customCss?: t.CSSType,
-  customProps?: t.BlockType
+interface ColumnHolderProps extends t.ContainerDefaultProps {
+  customCss?: t.CSSType;
+  customProps?: t.BlockType;
 }
 
-interface ColumnStyledProps extends t.ContainerDefault {
-  customCss?: t.CSSType,
-  customProps?: t.BlockType,
+interface ColumnStyledProps extends t.ContainerDefaultProps {
+  customCss?: t.CSSType;
+  customProps?: t.BlockType;
 }
 
 interface ColumnProps {
   customCss?: {
-    column?: t.CSSType,
-    item?: t.CSSType,
+    column?: t.CSSType;
+    item?: t.CSSType;
   },
   customProps?: {
-    column?: t.BlockType,
-    item?: t.BlockType
+    column?: t.BlockType;
+    item?: t.BlockType;
   },
-  itemComponent?: t.ItemTypes.ItemDefaultType,
-  items?: t.SlotItemsType,
-  layout?: t.SlotLayoutConfig,
-  name?: string,
+  itemComponent?: t.ItemDefaultType;
+  items?: t.SlotItemsType;
+  layout?: t.SlotConfigProps;
+  name?: string;
 }
 
 export {

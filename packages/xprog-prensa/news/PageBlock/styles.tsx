@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Block } from '../../index'
+import { Block } from '../../primitives/Block'
 import * as t from './types'
 
 const Container: React.FC<t.ContainerProps> = ({

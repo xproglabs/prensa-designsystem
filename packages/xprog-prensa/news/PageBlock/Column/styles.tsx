@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { Block } from '../../../index'
+import { Block } from '../../../primitives/Block'
 import * as t from '../types'
 
-const Column: React.FC<t.ColumnTypes.ColumnStyledProps> = ({
+const Column: React.FC<t.ColumnStyledProps> = ({
   css,
   children,
   customProps,
@@ -35,7 +35,7 @@ Column.defaultProps = {
   }
 }
 
-const ColumnHolder: React.FC<t.ColumnTypes.ColumnHolderProps> = ({
+const ColumnHolder: React.FC<t.ColumnHolderProps> = ({
   css,
   children,
   customProps,

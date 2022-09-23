@@ -3,7 +3,7 @@ import React from 'react'
 import * as t from '../types'
 import * as S from './styles'
 
-const Item: React.FC<t.ItemTypes.ItemProps> = ({
+const Item: React.FC<t.ItemProps> = ({
   children,
   customProps,
   customCss,

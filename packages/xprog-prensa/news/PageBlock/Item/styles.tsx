@@ -1,25 +1,33 @@
+import { first, isArray, last } from 'lodash'
 import React from 'react'
 
-import { Block, Typography } from '../../../index'
-import * as p from '../Column/parser'
+import { Block } from '../../../primitives/Block'
+import { Typography } from '../../../primitives/Typography'
 import * as t from '../types'
 
-const ItemLabel: React.FC<t.ItemTypes.ItemLabelProps> = ({
+const ItemLabel: React.FC<t.ItemLabelProps> = ({
   css,
   children,
   customProps,
   defaultCss,
   variants
-}) => (
-  <Typography
-    {...customProps}
-    className={`ItemLabel ${customProps?.className || ''}`}
-    css={{ ...defaultCss, ...css }}
-    variant={p.getResponsiveStyle(variants)}
-  >
-    {children}
-  </Typography>
-)
+}) => {
+  return (
+    <Typography
+      {...customProps}
+      className={`ItemLabel ${customProps?.className || ''}`}
+      css={{ ...defaultCss, ...css }}
+      // @ts-ignore 
+      variant={
+        isArray(variants)
+          ? { '@initial': first(variants), '@lg': last(variants) }
+          : variants
+      }
+    >
+      {children}
+    </Typography>
+  )
+}
 
 ItemLabel.defaultProps = {
   defaultCss: {
@@ -28,7 +36,7 @@ ItemLabel.defaultProps = {
   variants: ['menuTag-default', 'menuTag-desktop']
 }
 
-const ItemStyled: React.FC<t.ItemTypes.ItemStyled> = ({
+const ItemStyled: React.FC<t.ItemStyled> = ({
   css,
   children,
   customProps,
@@ -37,7 +45,8 @@ const ItemStyled: React.FC<t.ItemTypes.ItemStyled> = ({
   <Block
     {...customProps}
     className={`Item ${customProps?.className || ''}`}
-    css={{ ...defaultCss, ...css }}>
+    css={{ ...defaultCss, ...css }}
+  >
     {children}
   </Block>
 )
@@ -49,7 +58,4 @@ ItemStyled.defaultProps = {
   }
 }
 
-export {
-  ItemLabel,
-  ItemStyled
-}
+export { ItemLabel, ItemStyled }

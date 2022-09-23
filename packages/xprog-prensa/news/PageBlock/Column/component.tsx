@@ -2,10 +2,9 @@ import { get, map } from 'lodash'
 import React from 'react'
 
 import * as t from '../types'
-import * as p from './parser'
 import * as S from './styles'
 
-const Column: React.FC<t.ColumnTypes.ColumnProps> = ({
+const Column: React.FC<t.ColumnProps> = ({
   customCss,
   customProps,
   items,
@@ -13,7 +12,7 @@ const Column: React.FC<t.ColumnTypes.ColumnProps> = ({
   layout,
   name
 }) => {
-  const Item: t.ItemTypes.ItemDefaultType = itemComponent
+  const Item: t.ItemDefaultType = itemComponent
   const columnProps = {
     css: {
       ...customCss?.column,
@@ -28,17 +27,23 @@ const Column: React.FC<t.ColumnTypes.ColumnProps> = ({
       `
     }
   }
+  const getColumnItemLayout = ({ layout, position, size }): t.SlotConfigProps => {
+    const defaultLayout = get(layout, 'default')
+    const defaultBySize = get(layout, `[${size}]`)
+    const defaultByNumber = get(layout, `[${size}:${position + 1}]`)
+    return defaultByNumber || defaultBySize || defaultLayout
+  }
   return (
     <S.Column {...columnProps}>
       {map(items, (item: t.SlotItemsType, position: number) => {
-        const itemLayout: t.SlotLayoutConfig = p.getColumnItemLayout(
+        const itemLayout: t.SlotConfigProps = getColumnItemLayout({
           layout,
           position,
-          items.length
-        )
+          size: items.length
+        })
         const itemMobile: t.CSSType = get(itemLayout, [0])
         const itemDesktop: t.CSSType = get(itemLayout, [1])
-        const itemMobileProps: t.ItemTypes.ItemProps = {
+        const itemMobileProps: t.ItemProps = {
           customCss: {
             ...customCss?.item,
             ...itemMobile
@@ -53,7 +58,7 @@ const Column: React.FC<t.ColumnTypes.ColumnProps> = ({
           },
           ...item
         }
-        const itemDesktopProps: t.ItemTypes.ItemProps = {
+        const itemDesktopProps: t.ItemProps = {
           customCss: {
             ...customCss?.item,
             ...itemDesktop
@@ -70,8 +75,8 @@ const Column: React.FC<t.ColumnTypes.ColumnProps> = ({
         }
         return (
           <React.Fragment key={position}>
-            {React.cloneElement(<Item {...itemMobileProps} />)}
-            {React.cloneElement(<Item {...itemDesktopProps} />)}
+            <Item {...itemMobileProps} />
+            <Item {...itemDesktopProps} />
           </React.Fragment>
         )
       })}
