@@ -1,10 +1,10 @@
-import { TemplateProps } from '../../../news/PageBlock/types'
+import * as t from '../../../news/PageBlock/types'
 
-const Template100: TemplateProps = {
+const Template100: t.TemplateProps = {
   customCss: {
     container: {
       backgroundColor: 'rgba(0,0,0,0.04)',
-      pt: '$3',
+      py: '$3',
       mb: '$8'
     },
     columnHolder: {
@@ -17,35 +17,99 @@ const Template100: TemplateProps = {
   }
 }
 
-const Template7030: TemplateProps = {
+const Template7030: t.TemplateProps = {
   customCss: {
     container: {
-      pt: '$3',
+      backgroundColor: '$basicBlackAlpha100',
+      py: '$3',
       width: '100%'
     },
     columnHolder: {
-      backgroundColor: 'rgba(2000,100,0,0.1)',
       '@lg': {
         align: ['row', 'between', 'top'],
+        backgroundColor: '$basicBlackAlpha100',
         maxWidth: '1280px',
-        width: 'calc(100% - $8)'
+        width: 'calc(100% - $8)',
+        '.Column:nth-child(1)': {
+          width: 'calc(calc(calc(100% - $4) / 3) * 2)'
+        },
+        '.Column:nth-child(2)': {
+          width: 'calc(calc(calc(100% - $4) / 3) * 1)'
+        }
+      },
+      '.Column:nth-child(3)': {
+        display: 'none'
       }
     },
-    column: {},
+    column: {
+      align: ['row', 'between', 'top'],
+      backgroundColor: '$basicBlackAlpha100',
+      '@lg': {
+        width: 'calc(calc(100% - $6) / 3)'
+      }
+    },
     item: {
-      backgroundColor: 'rgba(2000,100,0,0.3)'
+      backgroundColor: '$basicBlackAlpha100',
+      mb: '$4',
+      width: '100%',
+      '@lg': {
+        mb: '$0'
+      }
+    }
+  }
+}
+
+const Template30: t.TemplateProps = {
+  customCss: {
+    container: {
+      backgroundColor: '$basicBlackAlpha100',
+      py: '$3',
+      width: '100%'
+    },
+    columnHolder: {
+      '@lg': {
+        align: ['row', 'between', 'top'],
+        backgroundColor: '$basicBlackAlpha100',
+        maxWidth: '1280px',
+        width: 'calc(100% - $8)',
+        '.Column:nth-child(1)': {
+          width: 'calc(calc(calc(100% - $8) / 3) * 1)'
+        },
+        '.Column:nth-child(2)': {
+          width: 'calc(calc(calc(100% - $8) / 3) * 1)'
+        },
+        '.Column:nth-child(3)': {
+          width: 'calc(calc(calc(100% - $8) / 3) * 1)'
+        }
+      }
+    },
+    column: {
+      align: ['row', 'between', 'top'],
+      backgroundColor: '$basicBlackAlpha100',
+      '@lg': {
+        width: 'calc(calc(100% - $6) / 3)'
+      }
+    },
+    item: {
+      backgroundColor: '$basicBlackAlpha100',
+      mb: '$4',
+      width: '100%',
+      '@lg': {
+        mb: '$0'
+      }
     }
   },
   customProps: {
     container: {
-      className: 'Template7030Container'
+      className: 'Template7030'
     }
   }
 }
 
 export const templates = {
   Template100,
-  Template7030
+  Template7030,
+  Template30
 }
 
 export const templatesArray: string[] = Object.keys(templates)

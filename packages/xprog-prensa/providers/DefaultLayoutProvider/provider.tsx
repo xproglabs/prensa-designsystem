@@ -8,7 +8,7 @@ export const DefaultLayoutProvider = (props: DefaultLayoutProviderProps) => {
   return (
     <div className={'defaultLayoutProvider'}>
       {React.Children.map(children, (item: any) =>
-        React.cloneElement(item, { ...data, ...otherProps })
+        React.cloneElement(item, { ...data.pageblockConfig, ...data, ...otherProps })
       )}
     </div>
   )

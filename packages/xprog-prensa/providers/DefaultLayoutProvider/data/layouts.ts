@@ -1,40 +1,56 @@
-import { LayoutTypes } from '../../../news/PageBlock/types/LayoutTypes'
-import * as t from './teasers'
+import * as t from '../../../news/PageBlock/types'
+import T from './teasers'
 
-const LayoutDefault: LayoutTypes = {
-  active: true,
-  customColumnCss: {
-    align: ['row', 'center', 'top'],
-    flexWrap: 'wrap',
-    mb: '$3',
-    width: '100%',
-    '@lg': {
-      align: ['row', 'between', 'top']
+const LayoutDefault: t.SlotLayoutConfig = {
+  customCss: {
+    column: {
+      align: ['row', 'center', 'top'],
+      backgroundColor: '$basicSuccess300',
+      flexWrap: 'wrap',
+      mb: '$3',
+      width: '100%',
+      '@lg': {
+        align: ['row', 'between', 'top']
+      }
     }
   },
-  default: [t.TDImgTop, t.TDImgTop]
-}
-
-const LayoutFeatured: LayoutTypes = {
-  active: true,
-  customColumnCss: {
-    align: ['row', 'center', 'top'],
-    backgroundColor: '$basicSuccess300',
-    flexWrap: 'wrap',
-    mb: '$3',
-    width: '100%',
-    '@lg': {
-      align: ['row', 'between', 'top']
+  customProps: {
+    column: {
+      className: 'MyLayoutColumn'
+    },
+    item: {
+      className: 'MyLayoutItem'
     }
   },
-  default: [t.TDImgTop, t.TDImgTop]
+  default: [T.TDNoImg, T.TDNoImg]
 }
 
-export const layouts = {
+const LayoutFeatured: t.SlotLayoutConfig = {
+  customCss: {
+    column: {
+      align: ['row', 'center', 'top'],
+      width: '100%',
+      '@lg': {
+        align: ['row', 'between', 'top'],
+      }
+    }
+  },
+  customProps: {
+    column: {
+      className: 'MyLayoutColumn'
+    },
+    item: {
+      className: 'MyLayoutItem'
+    }
+  },
+  default: [T.TDImgTop, T.TDImgTop]
+}
+
+export const slotLayouts = {
   LayoutDefault,
   LayoutFeatured
 }
 
-export const layoutArray: string[] = Object.keys(layouts)
+export const slotLayoutArray: string[] = Object.keys(slotLayouts)
 
-export type layoutsTypes = typeof layoutArray
+export type slotLayoutsTypes = typeof slotLayoutArray
