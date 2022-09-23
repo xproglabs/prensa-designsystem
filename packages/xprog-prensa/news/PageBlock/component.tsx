@@ -7,7 +7,7 @@ import * as S from './styles'
 import * as t from './types'
 
 const PageBlock: React.FC<t.PageBlockProps> = ({
-  customCss,
+  css,
   customProps,
   itemComponent,
   slotAutoLeftElements,
@@ -23,8 +23,8 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
   const template = get(templates, slotTemplate)
 
   const containerCss: t.CSSType = {
-    ...customCss?.container,
-    ...template?.customCss?.container
+    ...css?.container,
+    ...template?.css?.container
   }
   const containerProps = {
     customProps: {
@@ -39,8 +39,8 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
   }
 
   const columnHolderCss: t.CSSType = {
-    ...customCss?.columnHolder,
-    ...template?.customCss?.columnHolder
+    ...css?.columnHolder,
+    ...template?.css?.columnHolder
   }
   const columnHolderProps = {
     customProps: {
@@ -55,14 +55,14 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
   }
 
   const columnProps: t.ColumnProps = {
-    customCss: {
+    css: {
       column: {
-        ...customCss?.column,
-        ...template?.customCss?.column
+        ...css?.column,
+        ...template?.css?.column
       },
       item: {
-        ...customCss?.item,
-        ...template?.customCss?.item
+        ...css?.item,
+        ...template?.css?.item
       }
     },
     customProps: {

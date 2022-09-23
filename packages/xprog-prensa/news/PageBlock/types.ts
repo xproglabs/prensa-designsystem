@@ -32,7 +32,7 @@ interface ContainerProps extends ContainerDefaultProps {
 }
 
 interface PageBlockProps extends ContainerDefaultProps, PageBlockConfig {
-  customCss?: {
+  css?: {
     container?: CSSType;
     columnHolder?: CSSType;
     column?: CSSType;

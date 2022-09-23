@@ -6,13 +6,13 @@ import * as S from './styles'
 const Item: React.FC<t.ItemProps> = ({
   children,
   customProps,
-  customCss,
+  css,
   name,
   path
 }) => {
   return (
     <S.ItemStyled
-      css={customCss}
+      css={css}
       customProps={customProps}
     >
       {children || (

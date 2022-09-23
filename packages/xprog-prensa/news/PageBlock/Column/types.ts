@@ -1,17 +1,17 @@
 import * as t from '../types'
 
 interface ColumnHolderProps extends t.ContainerDefaultProps {
-  customCss?: t.CSSType;
+  css?: t.CSSType;
   customProps?: t.BlockType;
 }
 
 interface ColumnStyledProps extends t.ContainerDefaultProps {
-  customCss?: t.CSSType;
+  css?: t.CSSType;
   customProps?: t.BlockType;
 }
 
 interface ColumnProps {
-  customCss?: {
+  css?: {
     column?: t.CSSType;
     item?: t.CSSType;
   },

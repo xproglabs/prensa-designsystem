@@ -5,7 +5,7 @@ import * as t from '../types'
 import * as S from './styles'
 
 const Column: React.FC<t.ColumnProps> = ({
-  customCss,
+  css,
   customProps,
   items,
   itemComponent,
@@ -15,8 +15,8 @@ const Column: React.FC<t.ColumnProps> = ({
   const Item: t.ItemDefaultType = itemComponent
   const columnProps = {
     css: {
-      ...customCss?.column,
-      ...layout?.customCss?.column
+      ...css?.column,
+      ...layout?.css?.column
     },
     customProps: {
       ...customProps?.column,
@@ -44,8 +44,8 @@ const Column: React.FC<t.ColumnProps> = ({
         const itemMobile: t.CSSType = get(itemLayout, [0])
         const itemDesktop: t.CSSType = get(itemLayout, [1])
         const itemMobileProps: t.ItemProps = {
-          customCss: {
-            ...customCss?.item,
+          css: {
+            ...css?.item,
             ...itemMobile
           },
           customProps: {
@@ -59,8 +59,8 @@ const Column: React.FC<t.ColumnProps> = ({
           ...item
         }
         const itemDesktopProps: t.ItemProps = {
-          customCss: {
-            ...customCss?.item,
+          css: {
+            ...css?.item,
             ...itemDesktop
           },
           customProps: {

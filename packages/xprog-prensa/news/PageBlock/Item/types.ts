@@ -17,7 +17,7 @@ interface ItemLabelProps extends t.ContainerDefaultProps {
 }
 
 interface ItemProps extends ItemDefaultProps, ItemStyled {
-  customCss?: t.CSSType;
+  css?: t.CSSType;
 }
 
 interface ItemStyled extends t.ContainerDefaultProps {
