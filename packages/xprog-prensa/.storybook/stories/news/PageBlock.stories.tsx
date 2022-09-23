@@ -9,7 +9,7 @@ import {
   getArgsTableForPageBlock,
   getArgTypesForPageBlock,
   getSlotsMockForPageBlock
-} from './PageBlock.controls.tsx'
+} from './PageBlock.controls'
 
 export default {
   title: 'News/PageBlock',

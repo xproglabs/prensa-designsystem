@@ -42,6 +42,8 @@ const LayoutGrid: t.SlotLayoutConfig = {
   customCss: {
     column: {
       '@lg': {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
         gap: '$4'
       }
     }
