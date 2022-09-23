@@ -1,27 +1,28 @@
-import { ElementType } from 'react'
-
-import { PrensaEngineCSSProp } from '../../../types'
 import * as t from '../types'
 
 interface ColumnHolderProps extends t.ContainerDefault {
-  customCss?: PrensaEngineCSSProp,
+  customCss?: t.CSSType,
   customProps?: t.BlockType
 }
 
 interface ColumnStyledProps extends t.ContainerDefault {
-  customCss?: PrensaEngineCSSProp,
+  customCss?: t.CSSType,
   customProps?: t.BlockType,
 }
 
 interface ColumnProps {
-  css?: PrensaEngineCSSProp,
+  customCss?: {
+    column?: t.CSSType,
+    item?: t.CSSType,
+  },
   customProps?: {
     column?: t.BlockType,
+    item?: t.BlockType
   },
-  layouts?: any,
-  itemComponent: ElementType,
+  itemComponent?: t.ItemTypes.ItemDefaultType,
+  items?: t.SlotItemsType,
+  layout?: t.SlotLayoutConfig,
   name?: string,
-  slot?: any
 }
 
 export {

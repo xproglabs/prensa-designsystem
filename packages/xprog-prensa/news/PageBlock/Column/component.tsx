@@ -1,63 +1,77 @@
 import { get, map } from 'lodash'
 import React from 'react'
 
-import { ItemProps } from '../Item/types'
 import * as t from '../types'
 import * as p from './parser'
 import * as S from './styles'
 
 const Column: React.FC<t.ColumnTypes.ColumnProps> = ({
-  css,
+  customCss,
   customProps,
+  items,
   itemComponent,
-  name,
-  layouts,
-  slot
+  layout,
+  name
 }) => {
-  
-  const Item: React.ElementType<ItemProps> = itemComponent
-
-  // const slotLayoutName = p.getConfigForSlot({ slotConfig, slotPosition })
-  // const slotLayout = get(columns, slotLayoutName, false)
-  // console.log('templates', templates)
-  if (!layouts) return null
-
-  const columnCss: t.CSSType = {
-    ...css
-  }
-
+  const Item: t.ItemTypes.ItemDefaultType = itemComponent
   const columnProps = {
-    ...customProps?.column,
-    css: columnCss
+    css: {
+      ...customCss?.column,
+      ...layout?.customCss?.column
+    },
+    customProps: {
+      ...customProps?.column,
+      ...layout?.customProps?.column,
+      className: `Column ${name || ''}
+        ${layout?.customProps?.column?.className || ''}
+        ${customProps?.column?.className || ''}
+      `
+    }
   }
-
   return (
     <S.Column {...columnProps}>
-      {map(slot, (item: ItemProps, key) => {
-        const length = slot.length
-        const itemLayout = p.getTemplateForTeaser(key, layouts, length)
-        const itemMobile = get(itemLayout, [0])
-        const itemDesktop = get(itemLayout, [1])
+      {map(items, (item: t.SlotItemsType, position: number) => {
+        const itemLayout: t.SlotLayoutConfig = p.getColumnItemLayout(
+          layout,
+          position,
+          items.length
+        )
+        const itemMobile: t.CSSType = get(itemLayout, [0])
+        const itemDesktop: t.CSSType = get(itemLayout, [1])
+        const itemMobileProps: t.ItemTypes.ItemProps = {
+          customCss: {
+            ...customCss?.item,
+            ...itemMobile
+          },
+          customProps: {
+            ...customProps?.item,
+            className: `
+              ${customProps?.item?.className || ''}
+              ${layout?.customProps?.item?.className || ''}
+              mobile
+            `
+          },
+          ...item
+        }
+        const itemDesktopProps: t.ItemTypes.ItemProps = {
+          customCss: {
+            ...customCss?.item,
+            ...itemDesktop
+          },
+          customProps: {
+            ...customProps?.item,
+            className: `
+              ${customProps?.item?.className || ''}
+              ${layout?.customProps?.item?.className || ''}
+              desktop
+            `
+          },
+          ...item
+        }
         return (
-          <React.Fragment key={key}>
-            {React.cloneElement(
-              <Item
-                defaultCss={itemMobile}
-                className={`${name || ''} mobile`}
-                // customCss={props.customCss.item}
-                // {...customItemProps}
-                {...item}
-              />
-            )}
-            {React.cloneElement(
-              <Item
-                defaultCss={itemDesktop}
-                className={`${name || ''} desktop`}
-                // customCss={props.customCss.item}
-                // {...customItemProps}
-                {...item}
-              />
-            )}
+          <React.Fragment key={position}>
+            {React.cloneElement(<Item {...itemMobileProps} />)}
+            {React.cloneElement(<Item {...itemDesktopProps} />)}
           </React.Fragment>
         )
       })}
