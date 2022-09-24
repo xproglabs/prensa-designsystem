@@ -1,24 +1,35 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import * as S from './styles'
 import * as t from './types'
+import { Title } from './Title'
 
 const Teaser: React.FC<t.TeaserProps> = ({
   css,
+  components,
   customProps,
-  name,
-  path
+  title,
+  titleVariants
 }) => {
+  const TeaserTitle: React.FC<t.TitleProps> = components?.title
+  const TeaserTitleProps: t.TitleProps = {
+    title,
+    variants: titleVariants
+  }
   return (
     <S.TeaserStyled
       css={css}
       customProps={customProps}
     >
-      <a href={path}>
-        <S.TeaserLabel>{name}</S.TeaserLabel>
-      </a>
+      <TeaserTitle {...TeaserTitleProps} />
     </S.TeaserStyled>
   )
+}
+
+Teaser.defaultProps = {
+  components: {
+    title: Title
+  }
 }
 
 export { Teaser }

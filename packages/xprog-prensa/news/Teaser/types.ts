@@ -1,50 +1,69 @@
-import { ElementType, ReactNode } from 'react'
+import { ElementType, FC, ReactNode } from 'react'
 
 import {
   PrensaEngineCSSProp,
   TypographyVariantType
 } from '../../types'
 
-type CSSType = PrensaEngineCSSProp
+import {
+  TitleContainerProps,
+  TitleStyledProps,
+  TitleProps,
+} from './Title/types'
 
-interface BlockType {
-  className?: string
+type BlockType = {
+  className?: string;
 }
 
-interface ContainerDefault {
-  className?: string,
-  css?: CSSType,
-  defaultCss?: CSSType
+type CSSType = PrensaEngineCSSProp
+
+type CSSVariant = TypographyVariantType
+
+interface ContainerDefaultProps {
+  className?: string;
+  css?: CSSType;
+  defaultCss?: CSSType;
 }
 
 interface TeaserDefaultProps {
-  name?: string,
-  path?: string,
-  type?: string
+  title?: string;
+  path?: string;
+  type?: string;
 }
 
 type TeaserDefaultType = ElementType
 
-interface TeaserLabelProps extends ContainerDefault {
-  children?: ReactNode,
-  customProps?: BlockType,
-  variants?: TypographyVariantType | [TypographyVariantType, TypographyVariantType]
+interface TeaserLabelProps extends ContainerDefaultProps {
+  children?: ReactNode;
+  customProps?: BlockType;
+  variants?: CSSVariant | [CSSVariant, CSSVariant];
+}
+
+interface TeaserStyledProps extends ContainerDefaultProps {
+  children?: ReactNode;
+  customProps?: BlockType;
 }
 
 interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
-  css?: CSSType,
+  css?: CSSType;
+  components?: {
+    title?: FC<TitleProps>;
+  };
+  title?: string;
+  titleVariants?: CSSVariant;
 }
-
-interface TeaserStyledProps extends ContainerDefault {
-  children?: ReactNode,
-  customProps?: BlockType
-}
-
 
 export {
+  BlockType,
+  CSSType,
+  CSSVariant,
+  ContainerDefaultProps,
   TeaserDefaultProps,
   TeaserDefaultType,
   TeaserLabelProps,
+  TeaserStyledProps,
   TeaserProps,
-  TeaserStyledProps
+  TitleContainerProps,
+  TitleStyledProps,
+  TitleProps
 }
