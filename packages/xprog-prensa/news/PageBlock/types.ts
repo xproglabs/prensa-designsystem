@@ -101,8 +101,6 @@ interface PageBlockConfig {
   slotRightTitleValue?: string;
 }
 
-type SlotConfigType = PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-
 interface SlotConfigProps extends ColumnProps {
   default?: SlotConfigType;
   '1'?: SlotConfigType;
@@ -150,7 +148,9 @@ interface SlotConfigProps extends ColumnProps {
   '8:8'?: SlotConfigType;
 }
 
-type SlotItemsType = ItemDefaultProps[] | []
+type SlotConfigType = any;
+
+type SlotItemsType = ItemDefaultProps[] | [];
 
 export {
   BlockType,

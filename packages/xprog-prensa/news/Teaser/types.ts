@@ -4,7 +4,6 @@ import {
   PrensaEngineCSSProp,
   TypographyVariantType
 } from '../../types'
-
 import {
   TitleContainerProps,
   TitleStyledProps,
@@ -36,7 +35,7 @@ type TeaserDefaultType = ElementType
 interface TeaserLabelProps extends ContainerDefaultProps {
   children?: ReactNode;
   customProps?: BlockType;
-  variants?: CSSVariant | [CSSVariant, CSSVariant];
+  // variants?: CSSVariant | [CSSVariant, CSSVariant];
 }
 
 interface TeaserStyledProps extends ContainerDefaultProps {
@@ -50,7 +49,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
     title?: FC<TitleProps>;
   };
   title?: string;
-  titleVariants?: CSSVariant;
+  titleVariant?: CSSVariant;
 }
 
 export {

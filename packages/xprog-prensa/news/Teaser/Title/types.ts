@@ -13,7 +13,7 @@ interface TitleContainerProps extends ContainerDefaultProps {
 }
 
 interface TitleStyledProps extends TitleContainerProps {
-  variant?: CSSVariant | [CSSVariant, CSSVariant];
+  variant?: CSSVariant;
 }
 
 interface TitleProps extends TitleContainerProps {

@@ -1,69 +1,25 @@
 import React from 'react'
 import { ArgsTable, Title } from '@storybook/addon-docs'
-import { TeaserTypes as t } from '../../../types'
-import {
-  slotLayoutArray,
-  templatesArray
-} from '../../../providers/LayoutProvider/data'
+import DefaultTokens from '@xprog/prensa-design-tokens/3-themes/default.json';
 
 const getArgsTableForTeaser = (components) => {
-  <>
+  ;<>
     <Title />
     <ArgsTable components={components} />
   </>
 }
 
+const TokensVariants = Object.keys(DefaultTokens.fontSizes)
+
 const getArgTypesForTeaser = {
   argTypes: {
-    slotTemplate: {
+    titleVariant: {
       control: {
         type: 'select',
-        options: templatesArray
-      }
-    },
-    slotLeftLayout: {
-      control: {
-        type: 'select',
-        options: slotLayoutArray
-      }
-    },
-    slotCenterLayout: {
-      control: {
-        type: 'select',
-        options: slotLayoutArray
-      }
-    },
-    slotRightLayout: {
-      control: {
-        type: 'select',
-        options: slotLayoutArray
-      }
-    },
-    slotLeftItems: {
-      control: {
-        type: 'range',
-        min: 0,
-        max: 8
-      }
-    },
-    slotCenterItems: {
-      control: {
-        type: 'range',
-        min: 0,
-        max: 8
-      }
-    },
-    slotRightItems: {
-      control: {
-        type: 'range',
-        min: 0,
-        max: 8
+        options: TokensVariants
       }
     }
   }
 }
 
-export {
-  getArgsTableForTeaser,
-  getArgTypesForTeaser
-}
+export { getArgsTableForTeaser, getArgTypesForTeaser }

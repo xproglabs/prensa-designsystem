@@ -46,7 +46,7 @@ TitleStyled.defaultProps = {
   defaultCss: {
     align: ['column', 'center', 'middle']
   },
-  variants: ['menuTag-default', 'menuTag-desktop']
+  variant: 'newstitle-sm'
 }
 
 
