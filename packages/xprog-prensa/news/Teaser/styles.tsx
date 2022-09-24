@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { Block, Typography } from '../../index'
+import { Block } from '../../primitives/Block'
+import { Typography } from '../../primitives/Typography'
 import * as t from './types'
 
 const TeaserLabel: React.FC<t.TeaserLabelProps> = ({
@@ -25,7 +26,7 @@ TeaserLabel.defaultProps = {
   variants: ['menuTag-default', 'menuTag-desktop']
 }
 
-const TeaserStyled: React.FC<t.TeaserStyled> = ({
+const TeaserStyled: React.FC<t.TeaserStyledProps> = ({
   css,
   children,
   customProps,

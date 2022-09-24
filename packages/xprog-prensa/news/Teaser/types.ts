@@ -17,20 +17,13 @@ interface ContainerDefault {
   defaultCss?: CSSType
 }
 
-interface TeaserProps extends TeaserDefaultProps, TeaserStyled {
-  customCss?: CSSType,
-}
-
 interface TeaserDefaultProps {
   name?: string,
   path?: string,
   type?: string
 }
 
-interface TeaserStyled extends ContainerDefault {
-  children?: ReactNode,
-  customProps?: BlockType
-}
+type TeaserDefaultType = ElementType
 
 interface TeaserLabelProps extends ContainerDefault {
   children?: ReactNode,
@@ -38,12 +31,20 @@ interface TeaserLabelProps extends ContainerDefault {
   variants?: TypographyVariantType | [TypographyVariantType, TypographyVariantType]
 }
 
-type TeaserDefaultType = ElementType
+interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
+  css?: CSSType,
+}
+
+interface TeaserStyledProps extends ContainerDefault {
+  children?: ReactNode,
+  customProps?: BlockType
+}
+
 
 export {
   TeaserDefaultProps,
   TeaserDefaultType,
   TeaserLabelProps,
   TeaserProps,
-  TeaserStyled
+  TeaserStyledProps
 }

@@ -17,7 +17,7 @@ const ItemLabel: React.FC<t.ItemLabelProps> = ({
       {...customProps}
       className={`ItemLabel ${customProps?.className || ''}`}
       css={{ ...defaultCss, ...css }}
-      // @ts-ignore 
+      // @ts-ignore
       variant={
         isArray(variants)
           ? { '@initial': first(variants), '@lg': last(variants) }

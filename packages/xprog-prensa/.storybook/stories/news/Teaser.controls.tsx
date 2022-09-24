@@ -4,7 +4,7 @@ import { TeaserTypes as t } from '../../../types'
 import {
   slotLayoutArray,
   templatesArray
-} from '../../../providers/DefaultLayoutProvider/data'
+} from '../../../providers/LayoutProvider/data'
 
 const getArgsTableForTeaser = (components) => {
   <>

@@ -4,14 +4,14 @@ import * as S from './styles'
 import * as t from './types'
 
 const Teaser: React.FC<t.TeaserProps> = ({
+  css,
   customProps,
-  customCss,
   name,
   path
 }) => {
   return (
     <S.TeaserStyled
-      css={customCss}
+      css={css}
       customProps={customProps}
     >
       <a href={path}>

@@ -3,12 +3,14 @@ import { PageBlockProps } from '../../../news/PageBlock/types'
 const Template100: PageBlockProps = {
   css: {
     container: {
+      backgroundColor: '$basicBlackAlpha100',
       py: '$3',
       width: '100%'
     },
     columnHolder: {
       '@lg': {
         align: ['row', 'between', 'top'],
+        backgroundColor: '$basicBlackAlpha100',
         maxWidth: '1280px',
         width: 'calc(100% - $8)'
       },

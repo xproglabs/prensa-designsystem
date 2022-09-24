@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { PageBlock, Teaser } from '../../../news'
-import { TeaserTypes } from '../../../types'
-import { DefaultLayoutProvider } from '../../../providers/DefaultLayoutProvider'
+import { LayoutProvider } from '../../../providers/LayoutProvider'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
+import { PageBlock } from '../../../news/PageBlock'
+import { Teaser } from '../../../news/Teaser'
+import { TeaserProps } from '../../../news/Teaser/types'
 
 import { getArgsTableForTeaser, getArgTypesForTeaser } from './Teaser.controls'
-import { ItemDefaultProps } from '../../../news/PageBlock/Item/types'
 
 export default {
   title: 'News/Teaser',
@@ -15,52 +15,41 @@ export default {
   parameters: { docs: { page: () => getArgsTableForTeaser({ Teaser }) } }
 }
 
-const ComponentTeaser: React.FC<TeaserTypes.TeaserProps> = ({
-  css,
-  name,
-  path,
-  type
-}) => {
-  const item: TeaserTypes.TeaserDefaultProps = {
+const ComponentTeaser: React.FC<TeaserProps> = ({ css, name, path, type }) => {
+  const item: TeaserProps = {
+    css,
     name,
     path,
     type
   }
   return (
     <PrensaThemeProvider>
-      <DefaultLayoutProvider>
+      <LayoutProvider>
         <PageBlock
           slotTemplate='Template100'
           slotAutoLeftElements={[item]}
-          slotLeftLayout={'teaser'}
-          slotLayouts={[{
-            default: {
-              backgroundColor: '$basicBlackAlpha400'
-            }
-          }]}
           itemComponent={Teaser}
         />
-      </DefaultLayoutProvider>
-      <DefaultLayoutProvider>
+      </LayoutProvider>
+      <LayoutProvider>
         <PageBlock
           slotTemplate='Template7030'
           slotAutoLeftElements={[item]}
           itemComponent={Teaser}
         />
-      </DefaultLayoutProvider>
-      <DefaultLayoutProvider>
+      </LayoutProvider>
+      <LayoutProvider>
         <PageBlock
           slotTemplate='Template30'
           slotAutoLeftElements={[item]}
           itemComponent={Teaser}
         />
-      </DefaultLayoutProvider>
+      </LayoutProvider>
     </PrensaThemeProvider>
   )
 }
 
-export const Teaser100: { args: TeaserTypes.TeaserProps } =
-  ComponentTeaser.bind({})
+export const Teaser100: { args: TeaserProps } = ComponentTeaser.bind({})
 Teaser100.args = {
   className: 'Teaser100',
   css: {
@@ -71,8 +60,7 @@ Teaser100.args = {
   type: ''
 }
 
-export const Teaser7030: { args: TeaserTypes.TeaserProps } =
-  ComponentTeaser.bind({})
+export const Teaser7030: { args: TeaserProps } = ComponentTeaser.bind({})
 Teaser7030.args = {
   className: 'Teaser7030',
   name: 'Titulo1',
@@ -80,8 +68,7 @@ Teaser7030.args = {
   type: ''
 }
 
-export const Playground: { args: TeaserTypes.TeaserProps } =
-  ComponentTeaser.bind({})
+export const Playground: { args: TeaserProps } = ComponentTeaser.bind({})
 Playground.args = {
   className: 'Playground',
   name: 'Titulo1',
