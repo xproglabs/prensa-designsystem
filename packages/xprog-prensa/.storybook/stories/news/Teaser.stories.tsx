@@ -12,8 +12,8 @@ import { getArgsTableForTeaser, getArgTypesForTeaser } from './Teaser.controls'
 export default {
   title: 'News/Teaser',
   component: Teaser,
-  ...getArgTypesForTeaser,
-  parameters: { docs: { page: () => getArgsTableForTeaser({ Teaser }) } }
+  parameters: { docs: { page: () => getArgsTableForTeaser({ Teaser }) } },
+  ...getArgTypesForTeaser
 }
 
 const ComponentTeaser: React.FC<TeaserProps> = (props) => {
@@ -45,37 +45,51 @@ const ComponentTeaser: React.FC<TeaserProps> = (props) => {
   )
 }
 
+const TeaserData = {
+  subject: '🍀 Sorteio é hoje 🍀',
+  subtitle: 'Apostas podem ser feitas até as 19h em lotéricas ou pela internet. Valor da aposta mínima é de R$ 4,50.',
+  title: 'Mega-Sena pode pagar R$ 170 milhões hoje, um dos maiores prêmios do ano',
+  path: 'https://g1.globo.com/loterias/noticia/2022/09/24/mega-sena-pode-pagar-r-170-milhoes-neste-sabado.ghtml'
+}
+
 export const TeaserHeadlineSm: { args: TeaserProps } = ComponentTeaser.bind({})
 TeaserHeadlineSm.args = {
   ...T.TeaserHeadlineSm,
-  // 🍀 Sorteio é hoje 🍀
-  title: 'Mega-Sena pode pagar R$ 170 milhões hoje, um dos maiores prêmios do ano',
-  // Apostas podem ser feitas até as 19h em lotéricas ou pela internet. Valor da aposta mínima é de R$ 4,50.
-  path: 'https://g1.globo.com/loterias/noticia/2022/09/24/mega-sena-pode-pagar-r-170-milhoes-neste-sabado.ghtml',
-  type: ''
-
+  ...TeaserData
 }
+
 export const TeaserHeadlineLg: { args: TeaserProps } = ComponentTeaser.bind({})
 TeaserHeadlineLg.args = {
   ...T.TeaserHeadlineLg,
-  title: 'Mega-Sena pode pagar R$ 170 milhões hoje, um dos maiores prêmios do ano',
-  // Apostas podem ser feitas até as 19h em lotéricas ou pela internet. Valor da aposta mínima é de R$ 4,50.
-  path: 'https://g1.globo.com/loterias/noticia/2022/09/24/mega-sena-pode-pagar-r-170-milhoes-neste-sabado.ghtml',
-  type: ''
+  ...TeaserData
 }
 
-export const Teaser7030: { args: TeaserProps } = ComponentTeaser.bind({})
-Teaser7030.args = {
-  title: 'Bebês no útero \'sorriem\' para cenouras e \'fazem careta\' para couve, dizem cientistas',
-  // Estudos anteriores indicaram que preferências alimentares podem começar antes mesmo do nascimento, pois o líquido amniótico que envolve o feto pode ter sabores diferentes, a depender da dieta da gestante.
-  path: 'https://g1.globo.com/ciencia/noticia/2022/09/23/bebes-no-utero-sorriem-para-cenouras-e-fazem-careta-para-couve-dizem-cientistas.ghtml',
-  type: ''
+export const TeaserImageBottom: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserImageBottom.args = {
+  ...T.TeaserImageBottom,
+  ...TeaserData
 }
 
-export const Playground: { args: TeaserProps } = ComponentTeaser.bind({})
-Playground.args = {
-  ...T.TeaserHeadlineSm,
-  title: 'Mega-Sena pode pagar R$ 170 milhões hoje, um dos maiores prêmios do ano',
-  path: '/',
-  type: ''
+export const TeaserImageLeft: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserImageLeft.args = {
+  ...T.TeaserImageLeft,
+  ...TeaserData
+}
+
+export const TeaserImageRight: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserImageRight.args = {
+  ...T.TeaserImageRight,
+  ...TeaserData
+}
+
+export const TeaserImageTop: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserImageTop.args = {
+  ...T.TeaserImageTop,
+  ...TeaserData
+}
+
+export const TeaserRelated: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserRelated.args = {
+  ...T.TeaserRelated,
+  ...TeaserData
 }

@@ -1,5 +1,5 @@
 import * as t from '../../../news/PageBlock/types'
-import * as T from './teasers'
+import { teasers as T } from './teasers'
 
 const LayoutDefault: t.SlotConfigProps = {
   css: {
@@ -21,7 +21,7 @@ const LayoutDefault: t.SlotConfigProps = {
       className: 'MyLayoutItem'
     }
   },
-  default: [T.TDNoImg, T.TDNoImg]
+  default: [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
 }
 
 const LayoutFeatured: t.SlotConfigProps = {
@@ -34,7 +34,7 @@ const LayoutFeatured: t.SlotConfigProps = {
       }
     }
   },
-  default: [T.TDImgTop, T.TDImgTop]
+  default: [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
 }
 
 
@@ -48,7 +48,7 @@ const LayoutGrid: t.SlotConfigProps = {
       }
     }
   },
-  default: [T.TDImgTop, T.TDImgTop]
+  default: [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
 }
 
 export const slotLayouts = {

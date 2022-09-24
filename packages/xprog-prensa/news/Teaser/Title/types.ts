@@ -12,7 +12,7 @@ interface TitleContainerProps extends ContainerDefaultProps {
   customProps?: BlockType;
 }
 
-interface TitleStyledProps extends TitleContainerProps {
+interface TitleTextProps extends TitleContainerProps {
   variant?: CSSVariant;
 }
 
@@ -22,8 +22,11 @@ interface TitleProps extends TitleContainerProps {
   variant?: CSSVariant;
 }
 
+type TitleVariant = CSSVariant
+
 export {
   TitleContainerProps,
-  TitleStyledProps,
-  TitleProps
+  TitleTextProps,
+  TitleProps,
+  TitleVariant
 }

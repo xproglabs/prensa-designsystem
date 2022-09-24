@@ -1,30 +1,7 @@
 import React from 'react'
 
 import { Block } from '../../primitives/Block'
-import { Typography } from '../../primitives/Typography'
 import * as t from './types'
-
-const TeaserLabel: React.FC<t.TeaserLabelProps> = ({
-  css,
-  children,
-  customProps,
-  defaultCss
-}) => (
-  <Typography
-    {...customProps}
-    className={`TeaserLabel ${customProps?.className || ''}`}
-    css={{ ...defaultCss, ...css }}
-  >
-    {children}
-  </Typography>
-)
-
-TeaserLabel.defaultProps = {
-  defaultCss: {
-    align: ['column', 'center', 'middle']
-  },
-  variants: ['menuTag-default', 'menuTag-desktop']
-}
 
 const TeaserStyled: React.FC<t.TeaserStyledProps> = ({
   css,
@@ -35,19 +12,19 @@ const TeaserStyled: React.FC<t.TeaserStyledProps> = ({
   <Block
     {...customProps}
     className={`Teaser ${customProps?.className || ''}`}
-    css={{ ...defaultCss, ...css }}>
+    css={{ ...defaultCss, ...css }}
+  >
     {children}
   </Block>
 )
 
 TeaserStyled.defaultProps = {
   defaultCss: {
-    align: ['column', 'center', 'middle'],
-    width: '100%'
+    align: ['column', 'left', 'top'],
+    backgroundColor: '$basicWhiteAlpha900',
+    p: '$4',
+    width: 'calc(100% - $8)'
   }
 }
 
-export {
-  TeaserLabel,
-  TeaserStyled
-}
+export { TeaserStyled }

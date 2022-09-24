@@ -3,23 +3,23 @@ import React from 'react'
 import * as S from './styles'
 import * as t from './types'
 
-const Title: React.FC<t.TitleProps> = ({
+const Image: React.FC<t.ImageProps> = ({
   children,
   css,
   customProps,
-  title,
+  Image,
   variant
 }) => {
   return (
-    <S.TitleContainer
+    <S.ImageContainer
       css={css}
       customProps={customProps}
     >
-      <S.TitleText variant={variant}>
-        {title || children}
-      </S.TitleText>
-    </S.TitleContainer>
+      <S.ImageText variant={variant}>
+        {Image || children}
+      </S.ImageText>
+    </S.ImageContainer>
   )
 }
 
-export { Title }
+export { Image }
