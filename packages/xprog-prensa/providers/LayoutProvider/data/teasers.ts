@@ -1,4 +1,5 @@
 import { CSSType } from '../../../news/PageBlock/types'
+import { TeaserProps } from '../../../news/Teaser/types'
 
 const TDNoImg: CSSType = {
   backgroundColor: '$basicWhiteAlpha800',
@@ -18,9 +19,12 @@ const TDImgTop: CSSType = {
   }
 }
 
-const teasers = {
+const TeaserHeadline: TeaserProps = {
+  titleVariants: 'newstitle-6xl'
+}
+
+export {
+  TeaserHeadline,
   TDNoImg,
   TDImgTop
 }
-
-export default teasers

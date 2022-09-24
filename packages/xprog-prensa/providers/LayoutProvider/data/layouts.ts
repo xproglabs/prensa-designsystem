@@ -1,5 +1,5 @@
 import * as t from '../../../news/PageBlock/types'
-import T from './teasers'
+import * as T from './teasers'
 
 const LayoutDefault: t.SlotConfigProps = {
   css: {
