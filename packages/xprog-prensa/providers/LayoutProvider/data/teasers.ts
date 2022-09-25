@@ -13,6 +13,7 @@ const alignToCenter: CSSType = {
 const TeaserHeadlineSm: TeaserProps = {
   css: {
     ...alignToCenter,
+    mb: '$3'
   },
   className: 'TeaserHeadlineSm',
   subjectVariant: 'subject-default',
@@ -22,6 +23,7 @@ const TeaserHeadlineSm: TeaserProps = {
 const TeaserHeadlineLg: TeaserProps = {
   css: {
     ...alignToCenter,
+    mb: '$3'
   },
   className: 'TeaserHeadlineLg',
   subjectVariant: 'subject-default',
@@ -29,24 +31,36 @@ const TeaserHeadlineLg: TeaserProps = {
   titleVariant: 'newstitle-6xl'
 }
 const TeaserImageBottom: TeaserProps = {
+  css: {
+    mb: '$3'
+  },
   className: 'TeaserImageBottom',
   subtitleVariant: 'subtitle-desktop',
   subjectVariant: 'subject-default',
   titleVariant: 'newstitle-5xl'
 }
 const TeaserImageLeft: TeaserProps = {
+  css: {
+    mb: '$3'
+  },
   className: 'TeaserImageLeft',
   subjectVariant: 'subject-default',
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-md'
 }
 const TeaserImageRight: TeaserProps = {
+  css: {
+    mb: '$3'
+  },
   className: 'TeaserImageRight',
   subjectVariant: 'subject-default',
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-md'
 }
 const TeaserImageTop: TeaserProps = {
+  css: {
+    mb: '$3'
+  },
   className: 'TeaserImageTop',
   subjectVariant: 'subject-default',
   subtitleVariant: 'subtitle-desktop',

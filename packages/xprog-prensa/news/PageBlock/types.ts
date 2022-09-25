@@ -14,6 +14,11 @@ import {
   ItemStyled
 } from './Item/types'
 
+import {
+  templatesArray,
+  templatesTypes
+} from '../../providers/LayoutProvider/data/templates'
+
 type BlockType = {
   className?: string
 }
@@ -47,12 +52,11 @@ interface PageBlockProps extends ContainerDefaultProps, PageBlockConfig {
   },
   itemComponent?: ItemDefaultType;
   slotLayouts?: SlotConfigProps[];
-  teasers?: any;
+  slotTemplate?: string;
   templates?: SlotConfigProps[];
 }
 
 interface PageBlockConfig {
-  slotTemplate?: string;
   slotAutoLeftElements?: SlotItemsType;
   slotAutoCenterElements?: SlotItemsType;
   slotAutoRightElements?: SlotItemsType;
@@ -102,6 +106,16 @@ interface PageBlockConfig {
 }
 
 interface SlotConfigProps extends ColumnProps {
+  slotConfig?: {
+    [key in templatesTypes]?: {
+      'slotLeft'?: SlotConfigTemplate,
+      'slotCenter'?: SlotConfigTemplate,
+      'slotRight'?: SlotConfigTemplate
+    }
+  }
+}
+
+type SlotConfigTemplate = {
   default?: SlotConfigType;
   '1'?: SlotConfigType;
   '2'?: SlotConfigType;

@@ -47,12 +47,6 @@ const Template7030: PageBlockProps = {
       '.Column:nth-child(3)': {
         display: 'none'
       }
-    },
-    column: {
-      align: ['row', 'between', 'top'],
-      '@lg': {
-        width: 'calc(calc(100% - $6) / 3)'
-      }
     }
   }
 }
@@ -82,7 +76,6 @@ const Template30: PageBlockProps = {
       }
     },
     column: {
-      align: ['row', 'between', 'top'],
       '@lg': {
         width: 'calc(calc(100% - $6) / 3)'
       }
@@ -101,6 +94,10 @@ export const templates = {
   Template30
 }
 
-export const templatesArray: string[] = Object.keys(templates)
+export const templatesArray = [
+  'Template100',
+  'Template7030',
+  'Template30'
+] as const
 
-export type templatesTypes = typeof templatesArray
+export type templatesTypes = typeof templatesArray[number]

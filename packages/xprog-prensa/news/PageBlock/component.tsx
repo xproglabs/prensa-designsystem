@@ -86,22 +86,28 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
     itemComponent
   }
 
+  const getLayoutBySlotAndTemplate = (name, slot) => {
+    const layoutSelected = get(slotLayouts, slot)
+    const layoutSlotConfig = get(layoutSelected, `slotConfig[${slotTemplate}][slot${name}]`)
+    return layoutSlotConfig
+  }
+
   const columnLeftProps: t.ColumnProps = {
     ...columnProps,
     items: slotAutoLeftElements,
-    layout: get(slotLayouts, slotLeftLayout),
+    layout: getLayoutBySlotAndTemplate('Left', slotLeftLayout),
     name: 'Left'
   }
   const columnCenterProps: t.ColumnProps = {
     ...columnProps,
     items: slotAutoCenterElements,
-    layout: get(slotLayouts, slotCenterLayout),
+    layout: getLayoutBySlotAndTemplate('Center', slotCenterLayout),
     name: 'Center'
   }
   const columnRightProps: t.ColumnProps = {
     ...columnProps,
     items: slotAutoRightElements,
-    layout: get(slotLayouts, slotRightLayout),
+    layout: getLayoutBySlotAndTemplate('Right', slotRightLayout),
     name: 'Right'
   }
 

@@ -2,18 +2,15 @@ export { pageblockConfig } from './config'
 
 export {
   slotLayouts,
-  slotLayoutArray,
-  slotLayoutsTypes
+  slotLayoutArray
 } from './layouts'
 
 export {
   teasers,
-  teasersArray,
-  teasersTypes
+  teasersArray
 } from './teasers'
 
 export {
   templates,
-  templatesArray,
-  templatesTypes
+  templatesArray
 } from './templates'

@@ -6,7 +6,6 @@ const LayoutDefault: t.SlotConfigProps = {
     column: {
       align: ['row', 'center', 'top'],
       flexWrap: 'wrap',
-      mb: '$3',
       width: '100%',
       '@lg': {
         align: ['row', 'between', 'top']
@@ -21,22 +20,72 @@ const LayoutDefault: t.SlotConfigProps = {
       className: 'MyLayoutItem'
     }
   },
-  default: [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+  slotConfig: {
+    Template100: {
+      slotLeft: {
+        default: [T.TeaserHeadlineSm, T.TeaserImageRight]
+      }
+    }
+  }
 }
 
 const LayoutFeatured: t.SlotConfigProps = {
   css: {
     column: {
-      align: ['row', 'center', 'top'],
-      width: '100%',
-      '@lg': {
-        align: ['row', 'between', 'top'],
-      }
+      align: ['column', 'center', 'top'],
+      width: '100%'
+    },
+    item: {
+      mb: '$3'
     }
   },
-  default: [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+  slotConfig: {
+    Template100: {
+      slotLeft: {
+        default: [T.TeaserHeadlineSm, T.TeaserHeadlineLg]
+      }
+    },
+    Template7030: {
+      slotLeft: {
+        "default": [T.TeaserImageRight, T.TeaserImageRight],
+        "1": [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
+        "2": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        "2:1": [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
+        "3:1": [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
+        "3:2": [T.TeaserImageRight, T.TeaserHeadlineSm],
+        "4:1": [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
+        "4:2": [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+      },
+      slotCenter: {
+        default: [T.TeaserImageRight, T.TeaserImageRight],
+        "1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+      }
+    },
+    Template30: {
+      slotLeft: {
+        default: [T.TeaserImageRight, T.TeaserImageRight],
+        "1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        "2:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        "3:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        "4:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+      },
+      slotCenter: {
+        default: [T.TeaserImageRight, T.TeaserImageRight],
+        "1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        "2:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        "3:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        "4:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+      },
+      slotRight: {
+        default: [T.TeaserImageRight, T.TeaserImageRight],
+        "1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        "2:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        "3:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        "4:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+      }
+    }
+  }
 }
-
 
 const LayoutGrid: t.SlotConfigProps = {
   css: {
@@ -47,8 +96,7 @@ const LayoutGrid: t.SlotConfigProps = {
         gap: '$4'
       }
     }
-  },
-  default: [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+  }
 }
 
 export const slotLayouts = {

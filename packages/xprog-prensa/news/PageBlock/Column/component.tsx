@@ -41,12 +41,14 @@ const Column: React.FC<t.ColumnProps> = ({
           position,
           size: items.length
         })
-        const itemMobile: t.CSSType = get(itemLayout, [0])
-        const itemDesktop: t.CSSType = get(itemLayout, [1])
+        const itemMobile: t.SlotConfigProps = get(itemLayout, [0])
+        const itemDesktop: t.SlotConfigProps = get(itemLayout, [1])
         const itemMobileProps: t.ItemProps = {
+          ...itemMobile,
           css: {
             ...css?.item,
-            ...itemMobile
+            ...layout?.css?.item,
+            ...itemMobile?.css
           },
           customProps: {
             ...customProps?.item,
@@ -59,9 +61,11 @@ const Column: React.FC<t.ColumnProps> = ({
           ...item
         }
         const itemDesktopProps: t.ItemProps = {
+          ...itemDesktop,
           css: {
             ...css?.item,
-            ...itemDesktop
+            ...layout?.css?.item,
+            ...itemDesktop?.css
           },
           customProps: {
             ...customProps?.item,

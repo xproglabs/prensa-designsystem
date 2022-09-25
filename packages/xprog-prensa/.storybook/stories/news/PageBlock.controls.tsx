@@ -1,10 +1,12 @@
 import React from 'react'
 import { ArgsTable, Title } from '@storybook/addon-docs'
-import { PageBlockTypes as t } from '../../../types'
+import * as t from '../../../news/PageBlock/types'
 import {
   slotLayoutArray,
   templatesArray
 } from '../../../providers/LayoutProvider/data'
+import { getDataForTeaser } from './Teaser.controls'
+import { TeaserProps } from '../../../news/Teaser/types'
 
 const getArgsTableForPageBlock = (components) => {
   <>
@@ -43,23 +45,50 @@ const getArgTypesForPageBlock = {
       control: {
         type: 'range',
         min: 0,
-        max: 8
+        max: 12
       }
     },
     slotCenterItems: {
       control: {
         type: 'range',
         min: 0,
-        max: 8
+        max: 12
       }
     },
     slotRightItems: {
       control: {
         type: 'range',
         min: 0,
-        max: 8
+        max: 12
       }
     }
+  }
+}
+
+const getSlotsMockForPageBlock = ({
+  slotLeftItems,
+  slotCenterItems,
+  slotRightItems
+}: MockForPageBlockProps): MockForPageBlock => {
+
+  const TeaserData: TeaserProps = getDataForTeaser
+
+  const slotAutoLeftElements: TeaserProps[] = []
+  const slotAutoCenterElements: TeaserProps[] = []
+  const slotAutoRightElements: TeaserProps[] = []
+  for (let i = 0; i < slotLeftItems; i++) {
+    slotAutoLeftElements.push(TeaserData)
+  }
+  for (let i = 0; i < slotCenterItems; i++) {
+    slotAutoCenterElements.push(TeaserData)
+  }
+  for (let i = 0; i < slotRightItems; i++) {
+    slotAutoRightElements.push(TeaserData)
+  }
+  return {
+    slotAutoLeftElements,
+    slotAutoCenterElements,
+    slotAutoRightElements
   }
 }
 
@@ -73,35 +102,6 @@ interface MockForPageBlockProps {
   slotLeftItems: Number,
   slotCenterItems: Number,
   slotRightItems
-}
-
-const getSlotsMockForPageBlock = ({
-  slotLeftItems,
-  slotCenterItems,
-  slotRightItems
-}: MockForPageBlockProps): MockForPageBlock => {
-  const itemObject: t.ItemTypes.ItemDefaultProps = {
-    name: 'ImageTop',
-    type: 'com.atex.plugins.teaser.TeaserBean',
-    path: ''
-  }
-  const slotAutoLeftElements: t.ItemTypes.ItemProps[] = []
-  const slotAutoCenterElements: t.ItemTypes.ItemProps[] = []
-  const slotAutoRightElements: t.ItemTypes.ItemProps[] = []
-  for (let i = 0; i < slotLeftItems; i++) {
-    slotAutoLeftElements.push(itemObject)
-  }
-  for (let i = 0; i < slotCenterItems; i++) {
-    slotAutoCenterElements.push(itemObject)
-  }
-  for (let i = 0; i < slotRightItems; i++) {
-    slotAutoRightElements.push(itemObject)
-  }
-  return {
-    slotAutoLeftElements,
-    slotAutoCenterElements,
-    slotAutoRightElements
-  }
 }
 
 export {

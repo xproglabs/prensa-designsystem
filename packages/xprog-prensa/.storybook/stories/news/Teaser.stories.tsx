@@ -7,7 +7,7 @@ import { Teaser } from '../../../news/Teaser'
 import { TeaserProps } from '../../../news/Teaser/types'
 import { teasers as T } from '../../../providers/LayoutProvider/data/teasers'
 
-import { getArgsTableForTeaser, getArgTypesForTeaser } from './Teaser.controls'
+import { getArgsTableForTeaser, getArgTypesForTeaser, getDataForTeaser } from './Teaser.controls'
 
 export default {
   title: 'News/Teaser',
@@ -45,12 +45,7 @@ const ComponentTeaser: React.FC<TeaserProps> = (props) => {
   )
 }
 
-const TeaserData = {
-  subject: '🍀 Sorteio é hoje 🍀',
-  subtitle: 'Apostas podem ser feitas até as 19h em lotéricas ou pela internet. Valor da aposta mínima é de R$ 4,50.',
-  title: 'Mega-Sena pode pagar R$ 170 milhões hoje, um dos maiores prêmios do ano',
-  path: 'https://g1.globo.com/loterias/noticia/2022/09/24/mega-sena-pode-pagar-r-170-milhoes-neste-sabado.ghtml'
-}
+const TeaserData = getDataForTeaser
 
 export const TeaserHeadlineSm: { args: TeaserProps } = ComponentTeaser.bind({})
 TeaserHeadlineSm.args = {

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { PageBlock } from '../../../news'
-import { PageBlockTypes } from '../../../types'
+import { PageBlock, Teaser } from '../../../news'
+import { PageBlockProps } from '../../../news/PageBlock/types'
 import { LayoutProvider } from '../../../providers/LayoutProvider'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
@@ -33,6 +33,7 @@ const Template = (args) => {
       <LayoutProvider>
         <PageBlock
           {...args}
+          itemComponent={Teaser}
           slotAutoLeftElements={slotAutoLeftElements}
           slotAutoCenterElements={slotAutoCenterElements}
           slotAutoRightElements={slotAutoRightElements}
@@ -42,34 +43,45 @@ const Template = (args) => {
   )
 }
 
-export const Template100: { args: PageBlockTypes.TemplateProps } = Template.bind({})
+export const Template100: { args: PageBlockProps } = Template.bind({})
 Template100.args = {
   slotTemplate: 'Template100',
-  slotLeftLayout: 'LayoutGrid',
-  slotCenterLayout: 'LayoutDefault',
-  slotRightLayout: 'LayoutDefault',
+  slotLeftLayout: 'LayoutFeatured',
+  slotCenterLayout: 'LayoutFeatured',
+  slotRightLayout: 'LayoutFeatured',
   slotLeftItems: 1,
   slotCenterItems: 3,
   slotRightItems: 1
 }
 
-export const Template7030: { args: PageBlockTypes.TemplateProps } = Template.bind({})
+export const Template7030: { args: PageBlockProps } = Template.bind({})
 Template7030.args = {
   slotTemplate: 'Template7030',
-  slotLeftLayout: 'LayoutGrid',
-  slotCenterLayout: 'LayoutDefault',
-  slotRightLayout: 'LayoutDefault',
+  slotLeftLayout: 'LayoutFeatured',
+  slotCenterLayout: 'LayoutFeatured',
+  slotRightLayout: 'LayoutFeatured',
   slotLeftItems: 1,
   slotCenterItems: 3,
   slotRightItems: 1
 }
 
-export const Playground: { args: PageBlockTypes.TemplateProps } = Template.bind({})
+export const Template30: { args: PageBlockProps } = Template.bind({})
+Template30.args = {
+  slotTemplate: 'Template30',
+  slotLeftLayout: 'LayoutFeatured',
+  slotCenterLayout: 'LayoutFeatured',
+  slotRightLayout: 'LayoutFeatured',
+  slotLeftItems: 1,
+  slotCenterItems: 3,
+  slotRightItems: 1
+}
+
+export const Playground: { args: PageBlockProps } = Template.bind({})
 Playground.args = {
   slotTemplate: 'Template7030',
-  slotLeftLayout: 'LayoutGrid',
-  slotCenterLayout: 'LayoutDefault',
-  slotRightLayout: 'LayoutDefault',
+  slotLeftLayout: 'LayoutFeatured',
+  slotCenterLayout: 'LayoutFeatured',
+  slotRightLayout: 'LayoutFeatured',
   slotLeftItems: 1,
   slotCenterItems: 3,
   slotRightItems: 1
