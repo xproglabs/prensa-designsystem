@@ -56,11 +56,6 @@ interface TeaserLabelProps extends ContainerDefaultProps {
   customProps?: BlockType;
 }
 
-interface TeaserStyledProps extends ContainerDefaultProps {
-  children?: ReactNode;
-  customProps?: BlockType;
-}
-
 interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   css?: CSSType;
   components?: {
@@ -70,12 +65,23 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
     title?: FC<TitleProps>;
   };
   image?: string;
+  imageVariant?: ImageVariant;
   subject?: string;
   subjectVariant?: SubjectVariant;
   subtitle?: string;
   subtitleVariant?: SubtitleVariant;
   title?: string;
   titleVariant?: TitleVariant;
+}
+
+interface TeaserStyledProps extends ContainerDefaultProps {
+  children?: ReactNode;
+  customProps?: BlockType;
+}
+
+interface TeaserWrapProps extends ContainerDefaultProps {
+  children?: ReactNode;
+  customProps?: BlockType;
 }
 
 export {
@@ -98,8 +104,9 @@ export {
   TeaserDefaultProps,
   TeaserDefaultType,
   TeaserLabelProps,
-  TeaserStyledProps,
   TeaserProps,
+  TeaserStyledProps,
+  TeaserWrapProps,
   TitleContainerProps,
   TitleTextProps,
   TitleProps,

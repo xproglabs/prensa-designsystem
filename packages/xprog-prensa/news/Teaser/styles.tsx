@@ -27,4 +27,25 @@ TeaserStyled.defaultProps = {
   }
 }
 
-export { TeaserStyled }
+const TeaserWrap: React.FC<t.TeaserStyledProps> = ({
+  css,
+  children,
+  customProps,
+  defaultCss
+}) => (
+  <Block
+    {...customProps}
+    className={`TeaserWrap ${customProps?.className || ''}`}
+    css={{ ...defaultCss, ...css }}
+  >
+    {children}
+  </Block>
+)
+
+TeaserWrap.defaultProps = {
+  defaultCss: {
+    align: ['column', 'left', 'top']
+  }
+}
+
+export { TeaserStyled, TeaserWrap }

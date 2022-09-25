@@ -15,9 +15,9 @@ const Image: React.FC<t.ImageProps> = ({
       css={css}
       customProps={customProps}
     >
-      <S.ImageText variant={variant}>
+      <S.ImageFile variant={variant}>
         {image || children}
-      </S.ImageText>
+      </S.ImageFile>
     </S.ImageContainer>
   )
 }

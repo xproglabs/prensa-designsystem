@@ -19,7 +19,7 @@ const Column: React.FC<t.ColumnStyledProps> = ({
 
 Column.defaultProps = {
   defaultCss: {
-    align: ['column', 'center', 'middle'],
+    align: ['column', 'center', 'top'],
     width: '100%',
     '.desktop': {
       display: 'none',

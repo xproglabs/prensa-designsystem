@@ -12,7 +12,7 @@ const ImageContainer: React.FC<t.ImageContainerProps> = ({
 }) => (
   <Block
     {...customProps}
-    className={`TeaserImage ${customProps?.className || ''}`}
+    className={`TeaserImageContainer ${customProps?.className || ''}`}
     css={{ ...defaultCss, ...css }}
   >
     {children}
@@ -22,33 +22,32 @@ const ImageContainer: React.FC<t.ImageContainerProps> = ({
 ImageContainer.defaultProps = {
   defaultCss: {
     align: ['column', 'left', 'top'],
-    width: '100%'
+    backgroundColor: '$basicBlackAlpha100'
   }
 }
 
-const ImageText: React.FC<t.ImageTextProps> = ({
+const ImageFile: React.FC<t.ImageFileProps> = ({
   css,
   children,
   customProps,
-  defaultCss,
-  variant
+  defaultCss
 }) => (
   <Typography
     as='p'
-    className={`TeaserImageText ${customProps?.className || ''}`}
+    className={`TeaserImage ${customProps?.className || ''}`}
     css={{ ...defaultCss, ...css }}
-    variant={variant}
   >
     {children}
   </Typography>
 )
 
-ImageText.defaultProps = {
+ImageFile.defaultProps = {
   defaultCss: {
     align: ['column', 'center', 'top'],
-    my: 0
-  },
-  variant: 'newstitle-xs'
+    my: 0,
+    height: '120px',
+    width: '1em'
+  }
 }
 
-export { ImageContainer, ImageText }
+export { ImageContainer, ImageFile }

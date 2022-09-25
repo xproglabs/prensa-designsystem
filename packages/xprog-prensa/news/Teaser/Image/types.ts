@@ -3,7 +3,6 @@ import { ReactNode } from 'react'
 import {
   BlockType,
   CSSType,
-  CSSVariant,
   ContainerDefaultProps
 } from '../types'
 
@@ -12,21 +11,24 @@ interface ImageContainerProps extends ContainerDefaultProps {
   customProps?: BlockType;
 }
 
-interface ImageTextProps extends ImageContainerProps {
-  variant?: CSSVariant;
+interface ImageFileProps extends ImageContainerProps {
+  variant?: ImageVariant;
 }
 
 interface ImageProps extends ImageContainerProps {
   css?: CSSType;
   image?: string;
-  variant?: CSSVariant;
+  variant?: ImageVariant;
 }
 
-type ImageVariant = CSSVariant
+type ImageDerivative = '1x1' | '2x1' | '3x1' | '3x2' | '1x2' | '1x3' | '2x3'
+
+type ImageVariant = 'top' | 'right' | 'bottom' | 'left'
 
 export {
   ImageContainerProps,
-  ImageTextProps,
+  ImageDerivative,
+  ImageFileProps,
   ImageProps,
   ImageVariant
 }
