@@ -11,14 +11,12 @@ interface ImageContainerProps extends ContainerDefaultProps {
   customProps?: BlockType;
 }
 
-interface ImageFileProps extends ImageContainerProps {
-  variant?: ImageVariant;
-}
+interface ImageFileProps extends ImageContainerProps { }
 
-interface ImageProps extends ImageContainerProps {
+interface ImageProps extends ImageContainerProps, ImageFileProps {
   css?: CSSType;
+  derivative?: ImageDerivative,
   image?: string;
-  variant?: ImageVariant;
 }
 
 type ImageDerivative = '1x1' | '2x1' | '3x1' | '3x2' | '1x2' | '1x3' | '2x3'

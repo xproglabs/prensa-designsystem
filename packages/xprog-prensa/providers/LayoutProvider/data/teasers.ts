@@ -38,9 +38,13 @@ const TeaserHeadlineLg: TeaserProps = {
 }
 const TeaserImageBottom: TeaserProps = {
   css: {
-    mb: '$3'
+    mb: '$3',
+    '.TeaserImageContainer': {
+      mt: '$3'
+    }
   },
   className: 'TeaserImageBottom',
+  imageDerivative: '3x1',
   imageVariant: 'bottom',
   subtitleVariant: 'subtitle-desktop',
   subjectVariant: 'subject-default',
@@ -48,9 +52,14 @@ const TeaserImageBottom: TeaserProps = {
 }
 const TeaserImageLeft: TeaserProps = {
   css: {
-    mb: '$3'
+    mb: '$3',
+    '.TeaserImageContainer': {
+      maxWidth: '140px',
+      mr: '$3'
+    }
   },
   className: 'TeaserImageLeft',
+  imageDerivative: '1x1',
   imageVariant: 'left',
   subjectVariant: 'subject-default',
   subtitleVariant: 'subtitle-desktop',
@@ -58,9 +67,14 @@ const TeaserImageLeft: TeaserProps = {
 }
 const TeaserImageRight: TeaserProps = {
   css: {
-    mb: '$3'
+    mb: '$3',
+    '.TeaserImageContainer': {
+      maxWidth: '100px',
+      ml: '$3'
+    }
   },
   className: 'TeaserImageRight',
+  imageDerivative: '1x1',
   imageVariant: 'right',
   subjectVariant: 'subject-default',
   subtitleVariant: 'subtitle-desktop',
@@ -68,9 +82,13 @@ const TeaserImageRight: TeaserProps = {
 }
 const TeaserImageTop: TeaserProps = {
   css: {
-    mb: '$3'
+    mb: '$3',
+    '.TeaserImageContainer': {
+      mb: '$3'
+    }
   },
   className: 'TeaserImageTop',
+  imageDerivative: '3x1',
   imageVariant: 'top',
   subjectVariant: 'subject-default',
   subtitleVariant: 'subtitle-desktop',

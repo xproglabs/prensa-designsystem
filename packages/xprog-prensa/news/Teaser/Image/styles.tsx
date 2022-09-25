@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { Block } from '../../../primitives/Block'
-import { Typography } from '../../../primitives/Typography'
 import * as t from './types'
 
 const ImageContainer: React.FC<t.ImageContainerProps> = ({
@@ -22,7 +21,9 @@ const ImageContainer: React.FC<t.ImageContainerProps> = ({
 ImageContainer.defaultProps = {
   defaultCss: {
     align: ['column', 'left', 'top'],
-    backgroundColor: '$basicBlackAlpha100'
+    aspectRatio: 2 / 1,
+    backgroundColor: '$basicBlackAlpha100',
+    width: '100%'
   }
 }
 
@@ -32,21 +33,19 @@ const ImageFile: React.FC<t.ImageFileProps> = ({
   customProps,
   defaultCss
 }) => (
-  <Typography
-    as='p'
+  <Block
     className={`TeaserImage ${customProps?.className || ''}`}
     css={{ ...defaultCss, ...css }}
   >
     {children}
-  </Typography>
+  </Block>
 )
 
 ImageFile.defaultProps = {
   defaultCss: {
     align: ['column', 'center', 'top'],
     my: 0,
-    height: '120px',
-    width: '1em'
+    width: '100%'
   }
 }
 

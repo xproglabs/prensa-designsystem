@@ -6,7 +6,8 @@ import {
 } from '../../types'
 import {
   ImageContainerProps,
-  ImageTextProps,
+  ImageDerivative,
+  ImageFileProps,
   ImageProps,
   ImageVariant
 } from './Image/types'
@@ -65,6 +66,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
     title?: FC<TitleProps>;
   };
   image?: string;
+  imageDerivative?: ImageDerivative;
   imageVariant?: ImageVariant;
   subject?: string;
   subjectVariant?: SubjectVariant;
@@ -90,7 +92,8 @@ export {
   CSSVariant,
   ContainerDefaultProps,
   ImageContainerProps,
-  ImageTextProps,
+  ImageDerivative,
+  ImageFileProps,
   ImageProps,
   ImageVariant,
   SubjectContainerProps,

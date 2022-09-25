@@ -7,7 +7,11 @@ import { Teaser } from '../../../news/Teaser'
 import { TeaserProps } from '../../../news/Teaser/types'
 import { teasers as T } from '../../../providers/LayoutProvider/data/teasers'
 
-import { getArgsTableForTeaser, getArgTypesForTeaser, getDataForTeaser } from './Teaser.controls'
+import {
+  getArgsTableForTeaser,
+  getArgTypesForTeaser,
+  getDataForTeaser
+} from './Teaser.controls'
 
 export default {
   title: 'News/Teaser',
@@ -22,7 +26,7 @@ const ComponentTeaser: React.FC<TeaserProps> = (props) => {
     <PrensaThemeProvider>
       <LayoutProvider>
         <PageBlock
-          slotTemplate='Template100'
+          slotTemplate='Template30'
           slotAutoLeftElements={[item]}
           itemComponent={Teaser}
         />
@@ -36,7 +40,7 @@ const ComponentTeaser: React.FC<TeaserProps> = (props) => {
       </LayoutProvider>
       <LayoutProvider>
         <PageBlock
-          slotTemplate='Template30'
+          slotTemplate='Template100'
           slotAutoLeftElements={[item]}
           itemComponent={Teaser}
         />

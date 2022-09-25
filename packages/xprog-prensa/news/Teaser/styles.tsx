@@ -44,7 +44,8 @@ const TeaserWrap: React.FC<t.TeaserStyledProps> = ({
 
 TeaserWrap.defaultProps = {
   defaultCss: {
-    align: ['column', 'left', 'top']
+    align: ['column', 'left', 'top'],
+    width: '100%'
   }
 }
 
