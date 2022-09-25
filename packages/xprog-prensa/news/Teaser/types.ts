@@ -5,6 +5,12 @@ import {
   TypographyVariantType
 } from '../../types'
 import {
+  ImageContainerProps,
+  ImageTextProps,
+  ImageProps,
+  ImageVariant
+} from './Image/types'
+import {
   SubjectContainerProps,
   SubjectTextProps,
   SubjectProps,
@@ -58,10 +64,12 @@ interface TeaserStyledProps extends ContainerDefaultProps {
 interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   css?: CSSType;
   components?: {
+    image?: FC<ImageProps>;
     subject?: FC<SubjectProps>;
     subtitle?: FC<SubtitleProps>;
     title?: FC<TitleProps>;
   };
+  image?: string;
   subject?: string;
   subjectVariant?: SubjectVariant;
   subtitle?: string;
@@ -75,6 +83,10 @@ export {
   CSSType,
   CSSVariant,
   ContainerDefaultProps,
+  ImageContainerProps,
+  ImageTextProps,
+  ImageProps,
+  ImageVariant,
   SubjectContainerProps,
   SubjectTextProps,
   SubjectProps,

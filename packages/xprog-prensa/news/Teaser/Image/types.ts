@@ -18,7 +18,7 @@ interface ImageTextProps extends ImageContainerProps {
 
 interface ImageProps extends ImageContainerProps {
   css?: CSSType;
-  Image?: string;
+  image?: string;
   variant?: CSSVariant;
 }
 

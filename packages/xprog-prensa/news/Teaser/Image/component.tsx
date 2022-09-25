@@ -7,7 +7,7 @@ const Image: React.FC<t.ImageProps> = ({
   children,
   css,
   customProps,
-  Image,
+  image,
   variant
 }) => {
   return (
@@ -16,7 +16,7 @@ const Image: React.FC<t.ImageProps> = ({
       customProps={customProps}
     >
       <S.ImageText variant={variant}>
-        {Image || children}
+        {image || children}
       </S.ImageText>
     </S.ImageContainer>
   )
