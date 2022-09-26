@@ -179,6 +179,7 @@ export {
   PageBlockConfig,
   PageBlockProps,
   SlotConfigProps,
+  SlotConfigTemplate,
   SlotItemsType,
   SlotConfigType
 }

@@ -5,7 +5,7 @@ import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 import { PageBlock } from '../../../news/PageBlock'
 import { Teaser } from '../../../news/Teaser'
 import { TeaserProps } from '../../../news/Teaser/types'
-import { teasers as T } from '../../../providers/LayoutProvider/data/teasers'
+import { teasers as T } from '../../../providers/LayoutProvider/data'
 
 import {
   getArgsTableForTeaser,

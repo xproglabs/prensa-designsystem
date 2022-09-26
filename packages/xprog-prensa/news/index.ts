@@ -1,3 +1,16 @@
 export { PageBlock } from './PageBlock'
+
+export {
+  slotLayouts,
+  slotLayoutArray,
+  templates,
+  templatesArray
+} from './PageBlock'
+
 export { SideMenu } from './SideMenu'
-export { Teaser } from './Teaser'
+
+export {
+  Teaser,
+  teasers,
+  teasersArray
+} from './Teaser'

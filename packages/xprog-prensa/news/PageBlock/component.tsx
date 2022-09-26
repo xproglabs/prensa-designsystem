@@ -89,7 +89,10 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
   const getLayoutBySlotAndTemplate = (name, slot) => {
     const layoutSelected = get(slotLayouts, slot)
     const layoutSlotConfig = get(layoutSelected, `slotConfig[${slotTemplate}][slot${name}]`)
-    return layoutSlotConfig
+    return {
+      css: layoutSelected?.css,
+      ...layoutSlotConfig
+    }
   }
 
   const columnLeftProps: t.ColumnProps = {

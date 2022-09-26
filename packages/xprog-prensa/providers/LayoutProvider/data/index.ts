@@ -3,14 +3,14 @@ export { pageblockConfig } from './config'
 export {
   slotLayouts,
   slotLayoutArray
-} from './layouts'
+} from '../../../news/PageBlock/layouts'
 
 export {
   teasers,
   teasersArray
-} from './teasers'
+} from '../../../news/Teaser/teasers'
 
 export {
   templates,
   templatesArray
-} from './templates'
+} from '../../../news/PageBlock/templates'

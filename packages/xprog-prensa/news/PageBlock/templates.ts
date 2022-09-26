@@ -1,4 +1,4 @@
-import { PageBlockProps } from '../../../news/PageBlock/types'
+import { PageBlockProps } from './types'
 
 const Template100: PageBlockProps = {
   css: {

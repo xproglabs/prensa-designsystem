@@ -1,4 +1,4 @@
-import { CSSType, TeaserProps } from '../../../news/Teaser/types'
+import { CSSType, TeaserProps } from '../Teaser/types'
 
 const alignToCenter: CSSType = {
   textAlign: 'center',
