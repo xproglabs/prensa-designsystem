@@ -98,6 +98,6 @@ export const templatesArray = [
   'Template100',
   'Template7030',
   'Template30'
-] as const
+] as const 
 
 export type templatesTypes = typeof templatesArray[number]

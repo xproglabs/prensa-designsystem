@@ -47,41 +47,41 @@ const LayoutFeatured: t.SlotConfigProps = {
     },
     Template7030: {
       slotLeft: {
-        "default": [T.TeaserImageRight, T.TeaserImageRight],
-        "1": [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
-        "2": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
-        "2:1": [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
-        "3:1": [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
-        "3:2": [T.TeaserImageRight, T.TeaserHeadlineSm],
-        "4:1": [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
-        "4:2": [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+        'default': [T.TeaserImageRight, T.TeaserImageRight],
+        '1': [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
+        '2': [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        '2:1': [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
+        '3:1': [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
+        '3:2': [T.TeaserImageRight, T.TeaserHeadlineSm],
+        '4:1': [T.TeaserHeadlineSm, T.TeaserHeadlineLg],
+        '4:2': [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
       },
       slotCenter: {
         default: [T.TeaserImageRight, T.TeaserImageRight],
-        "1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+        '1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
       }
     },
     Template30: {
       slotLeft: {
         default: [T.TeaserImageRight, T.TeaserImageRight],
-        "1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
-        "2:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
-        "3:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
-        "4:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+        '1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        '2:1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        '3:1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        '4:1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
       },
       slotCenter: {
         default: [T.TeaserImageRight, T.TeaserImageRight],
-        "1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
-        "2:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
-        "3:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
-        "4:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+        '1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        '2:1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        '3:1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        '4:1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
       },
       slotRight: {
         default: [T.TeaserImageRight, T.TeaserImageRight],
-        "1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
-        "2:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
-        "3:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
-        "4:1": [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+        '1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        '2:1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        '3:1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm],
+        '4:1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
       }
     }
   }

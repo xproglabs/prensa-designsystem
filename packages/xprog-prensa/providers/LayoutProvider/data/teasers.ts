@@ -10,6 +10,33 @@ const alignToCenter: CSSType = {
   }
 }
 
+const TeaserRelated: TeaserProps = {
+  css: {
+    p: 0,
+    '.TeaserImageContainer': {
+      display: 'none'
+    },
+    '.TeaserSubject': {
+      display: 'none'
+    },
+    '.TeaserSubtitle': {
+      display: 'none'
+    },
+    '.TeaserTitle': {
+      align: ['row', 'center', 'top'],
+    },
+    '.TeaserTitleText': {
+      align: ['row', 'center', 'top'],
+      mb: '$2'
+    },
+    '.TeaserTitleText:before': {
+      content: '🍀'
+    }
+  },
+  className: 'TeaserRelated',
+  titleVariant: 'newstitle-md'
+}
+
 const TeaserHeadlineSm: TeaserProps = {
   css: {
     ...alignToCenter,
@@ -19,6 +46,7 @@ const TeaserHeadlineSm: TeaserProps = {
     }
   },
   className: 'TeaserHeadlineSm',
+  relatedLayout: TeaserRelated,
   subjectVariant: 'subject-default',
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-5xl'
@@ -29,9 +57,13 @@ const TeaserHeadlineLg: TeaserProps = {
     mb: '$3',
     '.TeaserImage': {
       display: 'none'
+    },
+    '.TeaserRelated': {
+      align: ['row', 'center', 'top'],
     }
   },
   className: 'TeaserHeadlineLg',
+  relatedLayout: TeaserRelated,
   subjectVariant: 'subject-default',
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-6xl'
@@ -56,7 +88,8 @@ const TeaserImageLeft: TeaserProps = {
     '.TeaserImageContainer': {
       maxWidth: '140px',
       mr: '$3'
-    }
+    },
+
   },
   className: 'TeaserImageLeft',
   imageDerivative: '1x1',
@@ -80,6 +113,19 @@ const TeaserImageRight: TeaserProps = {
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-md'
 }
+const TeaserImageRightLg: TeaserProps = {
+  ...TeaserImageRight,
+  css: {
+    mb: '$3',
+    '.TeaserImageContainer': {
+      maxWidth: '240px',
+      ml: '$3'
+    }
+  },
+  imageDerivative: '3x2',
+  titleVariant: 'newstitle-3xl'
+}
+
 const TeaserImageTop: TeaserProps = {
   css: {
     mb: '$3',
@@ -94,18 +140,6 @@ const TeaserImageTop: TeaserProps = {
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-xl'
 }
-const TeaserRelated: TeaserProps = {
-  css: {
-    '.TeaserSubject': {
-      display: 'none'
-    },
-    '.TeaserSubtitle': {
-      display: 'none'
-    }
-  },
-  className: 'TeaserRelated',
-  titleVariant: 'newstitle-lg'
-}
 
 export const teasers = {
   TeaserHeadlineSm,
@@ -113,6 +147,7 @@ export const teasers = {
   TeaserImageBottom,
   TeaserImageLeft,
   TeaserImageRight,
+  TeaserImageRightLg,
   TeaserImageTop,
   TeaserRelated
 }

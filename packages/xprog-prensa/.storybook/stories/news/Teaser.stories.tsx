@@ -81,6 +81,12 @@ TeaserImageRight.args = {
   ...TeaserData
 }
 
+export const TeaserImageRightLg: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserImageRightLg.args = {
+  ...T.TeaserImageRightLg,
+  ...TeaserData
+}
+
 export const TeaserImageTop: { args: TeaserProps } = ComponentTeaser.bind({})
 TeaserImageTop.args = {
   ...T.TeaserImageTop,
