@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { Block } from '../../primitives/Block'
-import * as t from './types'
+import { Block } from '../../../primitives/Block'
+import { PageBlockContainerProps } from './types'
 
-const Container: React.FC<t.ContainerProps> = ({
+export const PageBlockContainer: React.FC<PageBlockContainerProps> = ({
   css,
   children,
   customProps,
@@ -18,12 +18,10 @@ const Container: React.FC<t.ContainerProps> = ({
   </Block>
 )
 
-Container.defaultProps = {
+PageBlockContainer.defaultProps = {
   defaultCss: {
     align: ['column', 'center', 'middle'],
     mb: '$4',
     width: '100%'
   }
 }
-
-export { Container }
