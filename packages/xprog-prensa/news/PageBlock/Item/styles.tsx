@@ -3,9 +3,9 @@ import React from 'react'
 
 import { Block } from '../../../primitives/Block'
 import { Typography } from '../../../primitives/Typography'
-import * as t from '../types'
+import { ItemLabelProps, ItemStyledProps } from './types'
 
-const ItemLabel: React.FC<t.ItemLabelProps> = ({
+export const ItemLabel: React.FC<ItemLabelProps> = ({
   css,
   children,
   customProps,
@@ -36,7 +36,7 @@ ItemLabel.defaultProps = {
   variants: ['menuTag-default', 'menuTag-desktop']
 }
 
-const ItemStyled: React.FC<t.ItemStyled> = ({
+export const ItemStyled: React.FC<ItemStyledProps> = ({
   css,
   children,
   customProps,
@@ -57,5 +57,3 @@ ItemStyled.defaultProps = {
     width: '100%'
   }
 }
-
-export { ItemLabel, ItemStyled }
