@@ -14,10 +14,7 @@ import {
   ItemStyled
 } from './Item/types'
 
-import {
-  templatesArray,
-  templatesTypes
-} from '../../providers/LayoutProvider/data/templates'
+import { templatesTypes } from '../../providers/LayoutProvider/data/templates'
 
 type BlockType = {
   className?: string

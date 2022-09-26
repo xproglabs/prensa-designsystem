@@ -38,14 +38,9 @@ type BlockType = {
   className?: string;
 }
 
-type CSSType = PrensaEngineCSSProp | TeaserClassType
+type CSSType = PrensaEngineCSSProp
 
 type CSSVariant = TypographyVariantType
-
-
-type TeaserClassType = {
-  [K in TeaserClass]: CSSType;
-}
 
 interface ContainerDefaultProps {
   css?: CSSType;
@@ -98,8 +93,6 @@ interface TeaserWrapProps extends ContainerDefaultProps {
   children?: ReactNode;
   customProps?: BlockType;
 }
-
-type TeaserArray = '.TeaserImage' | '.TeaserImageContainer' | '.TeaserSubject' | '.TeaserSubtitle' | '.TeaserTitle' | '.TeaserRelated' as const
 
 export {
   BlockType,
