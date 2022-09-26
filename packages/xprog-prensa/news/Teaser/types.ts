@@ -12,6 +12,10 @@ import {
   ImageVariant
 } from './Image/types'
 import {
+  RelatedContainerProps,
+  RelatedProps
+} from './Related/types'
+import {
   SubjectContainerProps,
   SubjectTextProps,
   SubjectProps,
@@ -34,9 +38,14 @@ type BlockType = {
   className?: string;
 }
 
-type CSSType = PrensaEngineCSSProp
+type CSSType = PrensaEngineCSSProp | TeaserClassType
 
 type CSSVariant = TypographyVariantType
+
+
+type TeaserClassType = {
+  [K in TeaserClass]: CSSType;
+}
 
 interface ContainerDefaultProps {
   css?: CSSType;
@@ -61,6 +70,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   css?: CSSType;
   components?: {
     image?: FC<ImageProps>;
+    related?: FC<RelatedProps>;
     subject?: FC<SubjectProps>;
     subtitle?: FC<SubtitleProps>;
     title?: FC<TitleProps>;
@@ -68,6 +78,8 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   image?: string;
   imageDerivative?: ImageDerivative;
   imageVariant?: ImageVariant;
+  relatedItems?: TeaserProps[];
+  relatedLayout?: TeaserProps;
   subject?: string;
   subjectVariant?: SubjectVariant;
   subtitle?: string;
@@ -86,6 +98,8 @@ interface TeaserWrapProps extends ContainerDefaultProps {
   customProps?: BlockType;
 }
 
+type TeaserArray = '.TeaserImage' | '.TeaserImageContainer' | '.TeaserSubject' | '.TeaserSubtitle' | '.TeaserTitle' | '.TeaserRelated' as const
+
 export {
   BlockType,
   CSSType,
@@ -96,6 +110,8 @@ export {
   ImageFileProps,
   ImageProps,
   ImageVariant,
+  RelatedContainerProps,
+  RelatedProps,
   SubjectContainerProps,
   SubjectTextProps,
   SubjectProps,

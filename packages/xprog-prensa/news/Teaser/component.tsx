@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Image } from './Image'
+import { Related } from './Related'
 import * as S from './styles'
 import { Subject } from './Subject'
 import { Subtitle } from './Subtitle'
@@ -14,6 +15,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
   image,
   imageDerivative,
   imageVariant,
+  relatedItems,
+  relatedLayout,
   subject,
   subjectVariant,
   subtitle,
@@ -26,12 +29,17 @@ const Teaser: React.FC<t.TeaserProps> = ({
     derivative: imageDerivative,
     image
   }
+  const TeaserRelated: React.FC<t.RelatedProps> = components?.related
+  const TeaserRelatedProps: t.RelatedProps = {
+    items: relatedItems,
+    layout: relatedLayout
+  }
   const TeaserSubject: React.FC<t.SubjectProps> = components?.subject
   const TeaserSubjectProps: t.SubjectProps = {
     subject,
     variant: subjectVariant
   }
-  const TeaerSubtitle: React.FC<t.SubtitleProps> = components?.subtitle
+  const TeaserSubtitle: React.FC<t.SubtitleProps> = components?.subtitle
   const TeaserSubtitleProps: t.SubtitleProps = {
     subtitle,
     variant: subtitleVariant
@@ -65,7 +73,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
       <TeaserWrapContent>
         <TeaserSubject {...TeaserSubjectProps} />
         <TeaserTitle {...TeaserTitleProps} />
-        <TeaerSubtitle {...TeaserSubtitleProps} />
+        <TeaserSubtitle {...TeaserSubtitleProps} />
+        {relatedItems && relatedLayout && <TeaserRelated {...TeaserRelatedProps} />}
       </TeaserWrapContent>
     </S.TeaserStyled>
   )
@@ -74,6 +83,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
 Teaser.defaultProps = {
   components: {
     image: Image,
+    related: Related,
     subject: Subject,
     subtitle: Subtitle,
     title: Title
