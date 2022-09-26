@@ -78,6 +78,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   image?: string;
   imageDerivative?: ImageDerivative;
   imageVariant?: ImageVariant;
+  path?: string,
   relatedItems?: TeaserProps[];
   relatedLayout?: TeaserProps;
   subject?: string;

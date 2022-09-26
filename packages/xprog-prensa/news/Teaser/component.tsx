@@ -15,6 +15,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
   image,
   imageDerivative,
   imageVariant,
+  path,
   relatedItems,
   relatedLayout,
   subject,
@@ -46,6 +47,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
   }
   const TeaserTitle: React.FC<t.TitleProps> = components?.title
   const TeaserTitleProps: t.TitleProps = {
+    path,
     title,
     variant: titleVariant
   }
