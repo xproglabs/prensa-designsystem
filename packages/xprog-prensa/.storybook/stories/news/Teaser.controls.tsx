@@ -15,6 +15,7 @@ const getDataForTeaser: TeaserProps = {
   subtitle: 'Apostas podem ser feitas até as 19h em lotéricas ou pela internet. Valor da aposta mínima é de R$ 4,50.',
   title: 'Mega-Sena pode pagar R$ 170 milhões hoje, um dos maiores prêmios do ano',
   path: '/',
+  image: '/news_image.jpg',
   relatedItems: [
     { title: 'Assista os vídeos mais assistidos nos últimos 7 dias', path: '/' },
     { title: 'Veja a galeria de imagens com as principais fotos', path: '/' },

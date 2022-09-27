@@ -31,13 +31,14 @@ const ImageFile: React.FC<t.ImageFileProps> = ({
   css,
   children,
   customProps,
-  defaultCss
+  defaultCss,
+  src
 }) => (
   <Block
     className={`TeaserImage ${customProps?.className || ''}`}
     css={{ ...defaultCss, ...css }}
   >
-    {children}
+    {(src && <img src={src} />)}
   </Block>
 )
 
@@ -45,7 +46,10 @@ ImageFile.defaultProps = {
   defaultCss: {
     align: ['column', 'center', 'top'],
     my: 0,
-    width: '100%'
+    width: '100%',
+    'img': {
+      width: '100%'
+    }
   }
 }
 

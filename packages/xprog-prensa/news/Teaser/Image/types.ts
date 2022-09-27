@@ -11,9 +11,11 @@ interface ImageContainerProps extends ContainerDefaultProps {
   customProps?: BlockType;
 }
 
-interface ImageFileProps extends ImageContainerProps { }
+interface ImageFileProps extends ImageContainerProps {
+  src?: string;
+}
 
-interface ImageProps extends ImageContainerProps, ImageFileProps {
+interface ImageProps extends ImageContainerProps {
   css?: CSSType;
   derivative?: ImageDerivative,
   image?: string;
