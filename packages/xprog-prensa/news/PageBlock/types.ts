@@ -1,57 +1,30 @@
-import { ReactNode } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 
-import { PrensaEngineCSSProp } from '../../types'
-import {
-  ColumnProps,
-  ColumnHolderProps,
-  ColumnStyledProps
-} from './Column/types'
-import {
-  ItemDefaultProps,
-  ItemDefaultType,
-  ItemLabelProps,
-  ItemProps,
-  ItemStyled
-} from './Item/types'
+import { BlockProps, PrensaEngineCSSProp } from '../../types'
+import { ColumnProps } from './Column/types'
+import { ContainerDefaultProps } from './Container/types'
+import { ItemDefaultProps } from './Item/types'
 
-type BlockType = {
-  className?: string
+export type BlockType = BlockProps;
+export type PageBlockCSSType = PrensaEngineCSSProp;
+export type SlotConfigType = PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp];
+export type SlotItemsType = Array<ItemDefaultProps> | [];
+
+type PageBlockCSSProp = {
+  container?: PageBlockCSSType;
+  columnHolder?: PageBlockCSSType;
+  column?: PageBlockCSSType;
+  item?: PageBlockCSSType;
 }
-
-type CSSType = PrensaEngineCSSProp
-
-interface ContainerDefaultProps {
+type PageBlockCustomProps = {
   className?: string;
-  children?: ReactNode;
-  css?: CSSType;
-  defaultCss?: CSSType;
+  container?: BlockType;
+  columnHolder?: BlockType;
+  column?: BlockType;
+  item?: BlockType;
 }
 
-interface ContainerProps extends ContainerDefaultProps {
-  customProps?: BlockType;
-}
-
-interface PageBlockProps extends ContainerDefaultProps, PageBlockConfig {
-  css?: {
-    container?: CSSType;
-    columnHolder?: CSSType;
-    column?: CSSType;
-    item?: CSSType;
-  },
-  customProps?: {
-    className?: string;
-    container?: BlockType;
-    columnHolder?: BlockType;
-    column?: BlockType;
-    item?: BlockType;
-  },
-  itemComponent?: ItemDefaultType;
-  slotLayouts?: SlotConfigProps[];
-  teasers?: any;
-  templates?: SlotConfigProps[];
-}
-
-interface PageBlockConfig {
+export interface PageBlockConfig {
   slotTemplate?: string;
   slotAutoLeftElements?: SlotItemsType;
   slotAutoCenterElements?: SlotItemsType;
@@ -100,10 +73,7 @@ interface PageBlockConfig {
   slotRightTitleLink?: string;
   slotRightTitleValue?: string;
 }
-
-type SlotConfigType = PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp]
-
-interface SlotConfigProps extends ColumnProps {
+export interface SlotConfigProps extends ColumnProps {
   default?: SlotConfigType;
   '1'?: SlotConfigType;
   '2'?: SlotConfigType;
@@ -149,25 +119,15 @@ interface SlotConfigProps extends ColumnProps {
   '8:7'?: SlotConfigType;
   '8:8'?: SlotConfigType;
 }
-
-type SlotItemsType = ItemDefaultProps[] | []
-
-export {
-  BlockType,
-  CSSType,
-  ColumnProps,
-  ColumnHolderProps,
-  ColumnStyledProps,
-  ContainerDefaultProps,
-  ContainerProps,
-  ItemDefaultProps,
-  ItemDefaultType,
-  ItemLabelProps,
-  ItemProps,
-  ItemStyled,
-  PageBlockConfig,
-  PageBlockProps,
-  SlotConfigProps,
-  SlotItemsType,
-  SlotConfigType
+export interface PageBlockProps extends ContainerDefaultProps, PageBlockConfig {
+  css?: PageBlockCSSProp;
+  customProps?: PageBlockCustomProps;
+  itemComponent?: FunctionComponent | ReactNode;
+  slotLayouts?: Array<SlotConfigProps>;
+  teasers?: any;
+  templates?: Array<SlotConfigProps>;
 }
+
+export * from './Column/types'
+export * from './Container/types'
+export * from './Item/types'

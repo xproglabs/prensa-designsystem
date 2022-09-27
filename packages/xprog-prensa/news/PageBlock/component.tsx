@@ -1,12 +1,14 @@
 import { get } from 'lodash'
 import React from 'react'
 
+import { PrensaEngineCSSProp } from '../../types'
 import { Column, ColumnHolder } from './Column'
+import { ColumnProps } from './Column/types'
+import { PageBlockContainer as Container } from './Container'
 import { Item as DefaultItem } from './Item'
-import * as S from './styles'
-import * as t from './types'
+import { PageBlockProps } from './types'
 
-const PageBlock: React.FC<t.PageBlockProps> = ({
+export const PageBlock: React.FC<PageBlockProps> = ({
   css,
   customProps,
   itemComponent,
@@ -22,7 +24,7 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
 }) => {
   const template = get(templates, slotTemplate)
 
-  const containerCss: t.CSSType = {
+  const containerCss: PrensaEngineCSSProp = {
     ...css?.container,
     ...template?.css?.container
   }
@@ -38,7 +40,7 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
     css: containerCss
   }
 
-  const columnHolderCss: t.CSSType = {
+  const columnHolderCss: PrensaEngineCSSProp = {
     ...css?.columnHolder,
     ...template?.css?.columnHolder
   }
@@ -54,7 +56,7 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
     css: columnHolderCss
   }
 
-  const columnProps: t.ColumnProps = {
+  const columnProps: ColumnProps = {
     css: {
       column: {
         ...css?.column,
@@ -86,19 +88,19 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
     itemComponent
   }
 
-  const columnLeftProps: t.ColumnProps = {
+  const columnLeftProps: ColumnProps = {
     ...columnProps,
     items: slotAutoLeftElements,
     layout: get(slotLayouts, slotLeftLayout),
     name: 'Left'
   }
-  const columnCenterProps: t.ColumnProps = {
+  const columnCenterProps: ColumnProps = {
     ...columnProps,
     items: slotAutoCenterElements,
     layout: get(slotLayouts, slotCenterLayout),
     name: 'Center'
   }
-  const columnRightProps: t.ColumnProps = {
+  const columnRightProps: ColumnProps = {
     ...columnProps,
     items: slotAutoRightElements,
     layout: get(slotLayouts, slotRightLayout),
@@ -106,18 +108,16 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
   }
 
   return (
-    <S.Container {...containerProps} css={containerCss}>
+    <Container {...containerProps} css={containerCss}>
       <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
         <Column {...columnLeftProps} />
         <Column {...columnCenterProps} />
         <Column {...columnRightProps} />
       </ColumnHolder>
-    </S.Container>
+    </Container>
   )
 }
 
 PageBlock.defaultProps = {
   itemComponent: DefaultItem
 }
-
-export { PageBlock }

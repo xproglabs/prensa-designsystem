@@ -1,9 +1,9 @@
 import React from 'react'
 
-import * as t from '../types'
 import * as S from './styles'
+import { ItemProps } from './types'
 
-const Item: React.FC<t.ItemProps> = ({
+export const Item: React.FC<ItemProps> = ({
   children,
   customProps,
   css,
@@ -23,5 +23,3 @@ const Item: React.FC<t.ItemProps> = ({
     </S.ItemStyled>
   )
 }
-
-export { Item }

@@ -42,7 +42,7 @@ const Template = (args) => {
   )
 }
 
-export const Template100: { args: PageBlockTypes.TemplateProps } = Template.bind({})
+export const Template100: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
 Template100.args = {
   slotTemplate: 'Template100',
   slotLeftLayout: 'LayoutGrid',
@@ -53,7 +53,7 @@ Template100.args = {
   slotRightItems: 1
 }
 
-export const Template7030: { args: PageBlockTypes.TemplateProps } = Template.bind({})
+export const Template7030: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
 Template7030.args = {
   slotTemplate: 'Template7030',
   slotLeftLayout: 'LayoutGrid',
@@ -64,7 +64,7 @@ Template7030.args = {
   slotRightItems: 1
 }
 
-export const Playground: { args: PageBlockTypes.TemplateProps } = Template.bind({})
+export const Playground: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
 Playground.args = {
   slotTemplate: 'Template7030',
   slotLeftLayout: 'LayoutGrid',

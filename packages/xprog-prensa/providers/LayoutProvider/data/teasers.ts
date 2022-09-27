@@ -1,6 +1,6 @@
-import { CSSType } from '../../../news/PageBlock/types'
+import { PageBlockCSSType } from '../../../news/PageBlock/types'
 
-const TDNoImg: CSSType = {
+const TDNoImg: PageBlockCSSType = {
   backgroundColor: 'white',
   height: '80px',
   width: '100%',
@@ -9,7 +9,7 @@ const TDNoImg: CSSType = {
   }
 }
 
-const TDImgTop: CSSType = {
+const TDImgTop: PageBlockCSSType = {
   backgroundColor: '$basicSuccess400',
   height: '120px',
   width: '100%',

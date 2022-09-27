@@ -1,10 +1,8 @@
-import React from 'react'
 import { ArgsTable, Title } from '@storybook/addon-docs'
+import React from 'react'
+
+import { slotLayoutArray, templatesArray } from '../../../providers/LayoutProvider/data'
 import { PageBlockTypes as t } from '../../../types'
-import {
-  slotLayoutArray,
-  templatesArray
-} from '../../../providers/LayoutProvider/data'
 
 const getArgsTableForPageBlock = (components) => {
   <>
@@ -80,14 +78,14 @@ const getSlotsMockForPageBlock = ({
   slotCenterItems,
   slotRightItems
 }: MockForPageBlockProps): MockForPageBlock => {
-  const itemObject: t.ItemTypes.ItemDefaultProps = {
+  const itemObject: t.ItemDefaultProps = {
     name: 'ImageTop',
     type: 'com.atex.plugins.teaser.TeaserBean',
     path: ''
   }
-  const slotAutoLeftElements: t.ItemTypes.ItemProps[] = []
-  const slotAutoCenterElements: t.ItemTypes.ItemProps[] = []
-  const slotAutoRightElements: t.ItemTypes.ItemProps[] = []
+  const slotAutoLeftElements: Array<t.ItemProps> = []
+  const slotAutoCenterElements: Array<t.ItemProps> = []
+  const slotAutoRightElements: Array<t.ItemProps> = []
   for (let i = 0; i < slotLeftItems; i++) {
     slotAutoLeftElements.push(itemObject)
   }
