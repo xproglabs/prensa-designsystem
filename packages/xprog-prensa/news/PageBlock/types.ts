@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { PrensaEngineCSSProp } from '../../types'
+import { PrensaEngineColorType, PrensaEngineCSSProp } from '../../types'
 import {
   ColumnProps,
   ColumnHolderProps,
@@ -64,42 +64,43 @@ interface PageBlockConfig {
   slotManualTopLeft?: SlotItemsType;
   slotManualTopCenter?: SlotItemsType;
   slotManualTopRight?: SlotItemsType;
+  slotLeftBgColor?: PrensaEngineColorType;
   slotLeftComponent?: string;
   slotLeftIconValue?: string;
   slotLeftReadMoreEnabled?: boolean;
   slotLeftReadMoreLink?: string;
   slotLeftReadMoreTitle?: string;
   slotLeftTeaserBgColor?: string;
-  slotLeftTeaserColor?: string;
   slotLeftLayout?: string;
   slotLeftItems?: number;
   slotLeftTitleEnabled?: boolean;
   slotLeftTitleLink?: string;
   slotLeftTitleValue?: string;
+  slotCenterBgColor?: PrensaEngineColorType;
   slotCenterComponent?: string;
   slotCenterIconValue?: string;
   slotCenterReadMoreEnabled?: boolean;
   slotCenterReadMoreLink?: string;
   slotCenterReadMoreTitle?: string;
   slotCenterTeaserBgColor?: string;
-  slotCenterTeaserColor?: string;
   slotCenterLayout?: string;
   slotCenterItems?: number;
   slotCenterTitleEnabled?: boolean;
   slotCenterTitleLink?: string;
   slotCenterTitleValue?: string;
+  slotRightBgColor?: PrensaEngineColorType;
   slotRightComponent?: string;
   slotRightIconValue?: string;
   slotRightReadMoreEnabled?: boolean;
   slotRightReadMoreLink?: string;
   slotRightReadMoreTitle?: string;
   slotRightTeaserBgColor?: string;
-  slotRightTeaserColor?: string;
   slotRightLayout?: string;
   slotRightItems?: number;
   slotRightTitleEnabled?: boolean;
   slotRightTitleLink?: string;
   slotRightTitleValue?: string;
+  templateBgColor?: PrensaEngineColorType
 }
 
 interface SlotConfigProps extends ColumnProps {

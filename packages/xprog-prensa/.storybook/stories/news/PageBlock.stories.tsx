@@ -37,6 +37,7 @@ const Template = (args) => {
           slotAutoLeftElements={slotAutoLeftElements}
           slotAutoCenterElements={slotAutoCenterElements}
           slotAutoRightElements={slotAutoRightElements}
+          templateBgColor={args?.templateBgColor}
         />
       </LayoutProvider>
     </PrensaThemeProvider>
@@ -47,11 +48,13 @@ export const Template100: { args: PageBlockProps } = Template.bind({})
 Template100.args = {
   slotTemplate: 'Template100',
   slotLeftLayout: 'LayoutFeatured',
+  slotLeftBgColor: 'basicSuccess400',
   slotCenterLayout: 'LayoutFeatured',
   slotRightLayout: 'LayoutFeatured',
   slotLeftItems: 1,
   slotCenterItems: 3,
-  slotRightItems: 1
+  slotRightItems: 1,
+  templateBgColor: 'basicError300'
 }
 
 export const Template7030: { args: PageBlockProps } = Template.bind({})

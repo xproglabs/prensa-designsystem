@@ -13,18 +13,27 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
   slotAutoLeftElements,
   slotAutoCenterElements,
   slotAutoRightElements,
+  slotLeftBgColor,
   slotLeftLayout,
+  slotCenterBgColor,
   slotCenterLayout,
+  slotRightBgColor,
   slotRightLayout,
   slotLayouts,
   slotTemplate,
-  templates
+  templates,
+  templateBgColor
 }) => {
   const template = get(templates, slotTemplate)
+  const templateBgColorValue: t.CSSType = templateBgColor ? { backgroundColor: `$${templateBgColor}` } : {}
+  const slotLeftBgColorValue: t.CSSType = slotLeftBgColor ? { backgroundColor: `$${slotLeftBgColor}` } : {}
+  const slotCenterBgColorValue: t.CSSType = slotCenterBgColor ? { backgroundColor: `$${slotCenterBgColor}` } : {}
+  const slotRightBgColorValue: t.CSSType = slotRightBgColor ? { backgroundColor: `$${slotRightBgColor}` } : {}
 
   const containerCss: t.CSSType = {
     ...css?.container,
-    ...template?.css?.container
+    ...template?.css?.container,
+    ...templateBgColorValue
   }
   const containerProps = {
     customProps: {
@@ -55,16 +64,6 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
   }
 
   const columnProps: t.ColumnProps = {
-    css: {
-      column: {
-        ...css?.column,
-        ...template?.css?.column
-      },
-      item: {
-        ...css?.item,
-        ...template?.css?.item
-      }
-    },
     customProps: {
       column: {
         ...customProps?.column,
@@ -97,18 +96,51 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
 
   const columnLeftProps: t.ColumnProps = {
     ...columnProps,
+    css: {
+      column: {
+        ...css?.column,
+        ...template?.css?.column,
+        ...slotLeftBgColorValue
+      },
+      item: {
+        ...css?.item,
+        ...template?.css?.item
+      }
+    },
     items: slotAutoLeftElements,
     layout: getLayoutBySlotAndTemplate('Left', slotLeftLayout),
     name: 'Left'
   }
   const columnCenterProps: t.ColumnProps = {
     ...columnProps,
+    css: {
+      column: {
+        ...css?.column,
+        ...template?.css?.column,
+        ...slotCenterBgColorValue
+      },
+      item: {
+        ...css?.item,
+        ...template?.css?.item
+      }
+    },
     items: slotAutoCenterElements,
     layout: getLayoutBySlotAndTemplate('Center', slotCenterLayout),
     name: 'Center'
   }
   const columnRightProps: t.ColumnProps = {
     ...columnProps,
+    css: {
+      column: {
+        ...css?.column,
+        ...template?.css?.column,
+        ...slotRightBgColorValue
+      },
+      item: {
+        ...css?.item,
+        ...template?.css?.item
+      }
+    },
     items: slotAutoRightElements,
     layout: getLayoutBySlotAndTemplate('Right', slotRightLayout),
     name: 'Right'
