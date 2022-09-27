@@ -1,0 +1,1 @@
+export { PageBlock } from './component'
