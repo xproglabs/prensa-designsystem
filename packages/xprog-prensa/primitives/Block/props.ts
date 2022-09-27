@@ -1,3 +1,5 @@
-import { BlockStyledComponent } from './styles'
+import { ComponentProps } from '@stitches/react'
 
-export type BlockProps = BlockStyledComponent['propTypes']
+import { BlockStyledTypes } from './styles'
+
+export type BlockProps = ComponentProps<BlockStyledTypes>
