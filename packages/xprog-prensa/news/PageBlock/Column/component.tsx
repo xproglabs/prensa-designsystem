@@ -13,7 +13,7 @@ const Column: React.FC<ColumnProps> = ({
   layout,
   name
 }) => {
-  const Item = itemComponent
+  const Item: any = itemComponent
   const columnProps = {
     css: {
       ...css?.column,

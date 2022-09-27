@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { Block } from '../../../primitives/Block'
-import { PageBlockContainerProps } from './types'
+import { ContainerProps } from './types'
 
-export const PageBlockContainer: React.FC<PageBlockContainerProps> = ({
+export const PageBlockContainer: React.FC<ContainerProps> = ({
   css,
   children,
   customProps,
