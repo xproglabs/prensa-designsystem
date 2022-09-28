@@ -47,7 +47,9 @@ const TeaserHeadlineSm: TeaserProps = {
   },
   className: 'TeaserHeadlineSm',
   relatedLayout: TeaserRelated,
-  subjectVariant: 'subject-default',
+  subjectBgColor: 'basicSuccess800',
+  subjectColor: 'basicWhite',
+  subjectVariant: 'filled',
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-5xl'
 }
@@ -64,7 +66,8 @@ const TeaserHeadlineLg: TeaserProps = {
   },
   className: 'TeaserHeadlineLg',
   relatedLayout: TeaserRelated,
-  subjectVariant: 'subject-default',
+  subjectColor: 'brandTertiary400',
+  subjectVariant: 'default',
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-6xl'
 }
@@ -79,7 +82,7 @@ const TeaserImageBottom: TeaserProps = {
   imageDerivative: '3x1',
   imageVariant: 'bottom',
   subtitleVariant: 'subtitle-desktop',
-  subjectVariant: 'subject-default',
+  subjectVariant: 'filled',
   titleVariant: 'newstitle-5xl'
 }
 const TeaserImageLeft: TeaserProps = {
@@ -94,7 +97,7 @@ const TeaserImageLeft: TeaserProps = {
   className: 'TeaserImageLeft',
   imageDerivative: '1x1',
   imageVariant: 'left',
-  subjectVariant: 'subject-default',
+  subjectVariant: 'filled',
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-md'
 }
@@ -109,7 +112,7 @@ const TeaserImageRight: TeaserProps = {
   className: 'TeaserImageRight',
   imageDerivative: '1x1',
   imageVariant: 'right',
-  subjectVariant: 'subject-default',
+  subjectVariant: 'filled',
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-md'
 }
@@ -136,7 +139,7 @@ const TeaserImageTop: TeaserProps = {
   className: 'TeaserImageTop',
   imageDerivative: '3x1',
   imageVariant: 'top',
-  subjectVariant: 'subject-default',
+  subjectVariant: 'filled',
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-xl'
 }

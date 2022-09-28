@@ -15,6 +15,7 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
   slotAutoRightElements,
   slotLeftBgColor,
   slotLeftLayout,
+  slotLeftTitleValue,
   slotCenterBgColor,
   slotCenterLayout,
   slotRightBgColor,
@@ -96,6 +97,13 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
 
   const columnLeftProps: t.ColumnProps = {
     ...columnProps,
+    customProps: {
+      ...columnProps?.customProps,
+      item: {
+        ...columnProps?.customProps?.item,
+        
+      }
+    },
     css: {
       column: {
         ...css?.column,

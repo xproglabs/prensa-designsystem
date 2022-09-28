@@ -76,7 +76,10 @@ Template30.args = {
   slotRightLayout: 'LayoutFeatured',
   slotLeftItems: 1,
   slotCenterItems: 3,
-  slotRightItems: 1
+  slotRightItems: 1,
+  slotLeftTitleEnabled: true,
+  slotLeftTitleLink: '/',
+  slotLeftTitleValue: 'Template 30'
 }
 
 export const Playground: { args: PageBlockProps } = Template.bind({})

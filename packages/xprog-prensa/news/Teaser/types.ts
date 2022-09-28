@@ -2,6 +2,7 @@ import { ElementType, FC, ReactNode } from 'react'
 
 import {
   PrensaEngineCSSProp,
+  PrensaEngineColorType,
   TypographyVariantType
 } from '../../types'
 import {
@@ -77,6 +78,8 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   relatedItems?: TeaserProps[];
   relatedLayout?: TeaserProps;
   subject?: string;
+  subjectBgColor?: PrensaEngineColorType;
+  subjectColor?: PrensaEngineColorType;
   subjectVariant?: SubjectVariant;
   subtitle?: string;
   subtitleVariant?: SubtitleVariant;

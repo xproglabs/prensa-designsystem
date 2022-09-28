@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { PrensaEngineColorType } from '../../../types';
 
 import {
   BlockType,
@@ -17,15 +18,19 @@ interface SubjectTextProps extends SubjectContainerProps {
 }
 
 interface SubjectProps extends SubjectContainerProps {
+  bgColor?: PrensaEngineColorType;
+  color?: PrensaEngineColorType;
   css?: CSSType;
   subject?: string;
   variant?: SubjectVariant;
 }
 
-type SubjectVariant = CSSVariant
+type SubjectCSSType = CSSType;
+type SubjectVariant = 'default' | 'filled'
 
 export {
   SubjectContainerProps,
+  SubjectCSSType,
   SubjectTextProps,
   SubjectProps,
   SubjectVariant

@@ -64,6 +64,7 @@ interface PageBlockConfig {
   slotManualTopLeft?: SlotItemsType;
   slotManualTopCenter?: SlotItemsType;
   slotManualTopRight?: SlotItemsType;
+  slotLeftColor?: PrensaEngineColorType;
   slotLeftBgColor?: PrensaEngineColorType;
   slotLeftComponent?: string;
   slotLeftIconValue?: string;
@@ -76,6 +77,7 @@ interface PageBlockConfig {
   slotLeftTitleEnabled?: boolean;
   slotLeftTitleLink?: string;
   slotLeftTitleValue?: string;
+  slotCenterColor?: PrensaEngineColorType;
   slotCenterBgColor?: PrensaEngineColorType;
   slotCenterComponent?: string;
   slotCenterIconValue?: string;
@@ -88,6 +90,7 @@ interface PageBlockConfig {
   slotCenterTitleEnabled?: boolean;
   slotCenterTitleLink?: string;
   slotCenterTitleValue?: string;
+  slotRightColor?: PrensaEngineColorType;
   slotRightBgColor?: PrensaEngineColorType;
   slotRightComponent?: string;
   slotRightIconValue?: string;
