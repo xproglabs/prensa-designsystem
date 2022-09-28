@@ -80,6 +80,8 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   subject?: string;
   subjectBgColor?: PrensaEngineColorType;
   subjectColor?: PrensaEngineColorType;
+  subjectCss?: CSSType;
+  subjectTextVariant?: CSSVariant;
   subjectVariant?: SubjectVariant;
   subtitle?: string;
   subtitleVariant?: SubtitleVariant;

@@ -21,6 +21,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
   subject,
   subjectBgColor,
   subjectColor,
+  subjectCss,
+  subjectTextVariant,
   subjectVariant,
   subtitle,
   subtitleVariant,
@@ -41,7 +43,9 @@ const Teaser: React.FC<t.TeaserProps> = ({
   const TeaserSubjectProps: t.SubjectProps = {
     bgColor: subjectBgColor,
     color: subjectColor,
+    css: subjectCss,
     subject,
+    textVariant: subjectTextVariant,
     variant: subjectVariant
   }
   const TeaserSubtitle: React.FC<t.SubtitleProps> = components?.subtitle

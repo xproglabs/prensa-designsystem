@@ -10,6 +10,7 @@ const Subject: React.FC<t.SubjectProps> = ({
   css,
   customProps,
   subject,
+  textVariant,
   variant
 }) => {
   let variantCss: t.SubjectCSSType = {}
@@ -29,7 +30,7 @@ const Subject: React.FC<t.SubjectProps> = ({
       css={css}
       customProps={customProps}
     >
-      <S.SubjectText css={variantCss} variant={variant}>
+      <S.SubjectText css={variantCss} variant={textVariant}>
         {subject || children}
       </S.SubjectText>
     </S.SubjectContainer>

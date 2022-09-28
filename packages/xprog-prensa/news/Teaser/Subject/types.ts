@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
-import { PrensaEngineColorType } from '../../../types';
 
+import { PrensaEngineColorType } from '../../../types';
 import {
   BlockType,
   CSSType,
@@ -14,7 +14,7 @@ interface SubjectContainerProps extends ContainerDefaultProps {
 }
 
 interface SubjectTextProps extends SubjectContainerProps {
-  variant?: SubjectVariant;
+  variant?: CSSVariant;
 }
 
 interface SubjectProps extends SubjectContainerProps {
@@ -22,6 +22,7 @@ interface SubjectProps extends SubjectContainerProps {
   color?: PrensaEngineColorType;
   css?: CSSType;
   subject?: string;
+  textVariant?: CSSVariant;
   variant?: SubjectVariant;
 }
 
