@@ -1,32 +1,29 @@
-import * as t from '../types'
+import { FunctionComponent, ReactNode } from 'react'
 
-interface ColumnHolderProps extends t.ContainerDefaultProps {
-  css?: t.CSSType;
-  customProps?: t.BlockType;
+import { ContainerDefaultProps } from '../Container/types'
+import { BlockType, PageBlockCSSType, SlotConfigProps, SlotItemsType } from '../types'
+
+export type ColumnCSSProp = {
+  column?: PageBlockCSSType;
+  item?: PageBlockCSSType;
 }
-
-interface ColumnStyledProps extends t.ContainerDefaultProps {
-  css?: t.CSSType;
-  customProps?: t.BlockType;
+export type ColumnCustomPropsProp = {
+  column?: BlockType;
+  item?: BlockType;
 }
-
-interface ColumnProps {
-  css?: {
-    column?: t.CSSType;
-    item?: t.CSSType;
-  },
-  customProps?: {
-    column?: t.BlockType;
-    item?: t.BlockType;
-  },
-  itemComponent?: t.ItemDefaultType;
-  items?: t.SlotItemsType;
-  layout?: t.SlotConfigProps;
+export interface ColumnHolderProps extends ContainerDefaultProps {
+  css?: PageBlockCSSType;
+  customProps?: BlockType;
+}
+export interface ColumnStyledProps extends ContainerDefaultProps {
+  css?: PageBlockCSSType;
+  customProps?: BlockType;
+}
+export interface ColumnProps {
+  css?: ColumnCSSProp,
+  customProps?: ColumnCustomPropsProp,
+  itemComponent?: FunctionComponent | ReactNode;
+  items?: SlotItemsType;
+  layout?: SlotConfigProps;
   name?: string;
-}
-
-export {
-  ColumnProps,
-  ColumnHolderProps,
-  ColumnStyledProps
 }

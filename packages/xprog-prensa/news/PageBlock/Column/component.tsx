@@ -1,10 +1,11 @@
 import { get, map } from 'lodash'
 import React from 'react'
 
-import * as t from '../types'
+import { ItemProps, PageBlockCSSType, SlotConfigProps, SlotItemsType } from '../types'
 import * as S from './styles'
+import { ColumnProps } from './types'
 
-const Column: React.FC<t.ColumnProps> = ({
+const Column: React.FC<ColumnProps> = ({
   css,
   customProps,
   items,
@@ -12,7 +13,7 @@ const Column: React.FC<t.ColumnProps> = ({
   layout,
   name
 }) => {
-  const Item: t.ItemDefaultType = itemComponent
+  const Item: any = itemComponent
   const columnProps = {
     css: {
       ...css?.column,
@@ -27,7 +28,7 @@ const Column: React.FC<t.ColumnProps> = ({
       `
     }
   }
-  const getColumnItemLayout = ({ layout, position, size }): t.SlotConfigProps => {
+  const getColumnItemLayout = ({ layout, position, size }): SlotConfigProps => {
     const defaultLayout = get(layout, 'default')
     const defaultBySize = get(layout, `[${size}]`)
     const defaultByNumber = get(layout, `[${size}:${position + 1}]`)
@@ -35,16 +36,15 @@ const Column: React.FC<t.ColumnProps> = ({
   }
   return (
     <S.Column {...columnProps}>
-      {map(items, (item: t.SlotItemsType, position: number) => {
-        const itemLayout: t.SlotConfigProps = getColumnItemLayout({
+      {map(items, (item: SlotItemsType, position: number) => {
+        const itemLayout: SlotConfigProps = getColumnItemLayout({
           layout,
           position,
           size: items.length
         })
-        const itemMobile: t.SlotConfigProps = get(itemLayout, [0])
-        const itemDesktop: t.SlotConfigProps = get(itemLayout, [1])
-        const itemMobileProps: t.ItemProps = {
-          ...itemMobile,
+        const itemMobile: PageBlockCSSType = get(itemLayout, [0])
+        const itemDesktop: PageBlockCSSType = get(itemLayout, [1])
+        const itemMobileProps: ItemProps = {
           css: {
             ...css?.item,
             ...layout?.css?.item,
@@ -60,8 +60,7 @@ const Column: React.FC<t.ColumnProps> = ({
           },
           ...item
         }
-        const itemDesktopProps: t.ItemProps = {
-          ...itemDesktop,
+        const itemDesktopProps: ItemProps = {
           css: {
             ...css?.item,
             ...layout?.css?.item,
