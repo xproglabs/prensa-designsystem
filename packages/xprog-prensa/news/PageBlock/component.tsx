@@ -1,12 +1,11 @@
 import { get } from 'lodash'
 import React from 'react'
 
-import { PrensaEngineCSSProp } from '../../types'
 import { Column, ColumnHolder } from './Column'
 import { ColumnProps } from './Column/types'
-import { PageBlockContainer as Container } from './Container'
+import { PageBlockContainer } from './Container'
 import { Item as DefaultItem } from './Item'
-import { PageBlockProps } from './types'
+import { PageBlockProps, PageBlockCSSType } from './types'
 
 export const PageBlock: React.FC<PageBlockProps> = ({
   css,
@@ -28,12 +27,12 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   templateBgColor
 }) => {
   const template = get(templates, slotTemplate)
-  const templateBgColorValue: t.CSSType = templateBgColor ? { backgroundColor: `$${templateBgColor}` } : {}
-  const slotLeftBgColorValue: t.CSSType = slotLeftBgColor ? { backgroundColor: `$${slotLeftBgColor}` } : {}
-  const slotCenterBgColorValue: t.CSSType = slotCenterBgColor ? { backgroundColor: `$${slotCenterBgColor}` } : {}
-  const slotRightBgColorValue: t.CSSType = slotRightBgColor ? { backgroundColor: `$${slotRightBgColor}` } : {}
+  const templateBgColorValue: PageBlockCSSType = templateBgColor ? { backgroundColor: `$${templateBgColor}` } : {}
+  const slotLeftBgColorValue: PageBlockCSSType = slotLeftBgColor ? { backgroundColor: `$${slotLeftBgColor}` } : {}
+  const slotCenterBgColorValue: PageBlockCSSType = slotCenterBgColor ? { backgroundColor: `$${slotCenterBgColor}` } : {}
+  const slotRightBgColorValue: PageBlockCSSType = slotRightBgColor ? { backgroundColor: `$${slotRightBgColor}` } : {}
 
-  const containerCss: PrensaEngineCSSProp = {
+  const containerCss: PageBlockCSSType = {
     ...css?.container,
     ...template?.css?.container,
     ...templateBgColorValue
@@ -50,7 +49,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     css: containerCss
   }
 
-  const columnHolderCss: PrensaEngineCSSProp = {
+  const columnHolderCss: PageBlockCSSType = {
     ...css?.columnHolder,
     ...template?.css?.columnHolder
   }
@@ -67,16 +66,6 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   }
 
   const columnProps: ColumnProps = {
-    css: {
-      column: {
-        ...css?.column,
-        ...template?.css?.column
-      },
-      item: {
-        ...css?.item,
-        ...template?.css?.item
-      }
-    },
     customProps: {
       column: {
         ...customProps?.column,
@@ -98,13 +87,22 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemComponent
   }
 
+  const getLayoutBySlotAndTemplate = (name, slot) => {
+    const layoutSelected = get(slotLayouts, slot)
+    const layoutSlotConfig = get(layoutSelected, `slotConfig[${slotTemplate}][slot${name}]`)
+    return {
+      css: layoutSelected?.css,
+      ...layoutSlotConfig
+    }
+  }
+
   const columnLeftProps: ColumnProps = {
     ...columnProps,
     customProps: {
       ...columnProps?.customProps,
       item: {
         ...columnProps?.customProps?.item,
-        
+
       }
     },
     css: {
@@ -158,13 +156,13 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   }
 
   return (
-    <Container {...containerProps} css={containerCss}>
+    <PageBlockContainer {...containerProps} css={containerCss}>
       <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
         <Column {...columnLeftProps} />
         <Column {...columnCenterProps} />
         <Column {...columnRightProps} />
       </ColumnHolder>
-    </Container>
+    </PageBlockContainer>
   )
 }
 

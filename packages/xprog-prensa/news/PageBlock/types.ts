@@ -2,13 +2,14 @@ import { FunctionComponent, ReactNode } from 'react'
 
 import { TemplatesType } from '../../providers/LayoutProvider'
 import { BlockProps, PrensaEngineColorType, PrensaEngineCSSProp } from '../../types'
+import { TeaserProps } from '../Teaser/types'
 import { ColumnProps } from './Column/types'
 import { ContainerDefaultProps } from './Container/types'
 import { ItemDefaultProps } from './Item/types'
 
 export type BlockType = BlockProps;
 export type PageBlockCSSType = PrensaEngineCSSProp;
-export type SlotConfigType = PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp];
+export type SlotConfigType = TeaserProps | [TeaserProps, TeaserProps];
 export type SlotItemsType = Array<ItemDefaultProps> | [];
 
 type PageBlockCSSProp = {

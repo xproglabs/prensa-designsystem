@@ -1,5 +1,5 @@
-import { teasers as T } from './teasers'
 import { PageBlockTypes } from '../../../types'
+import { teasers as T } from './teasers'
 
 const LayoutDefault: PageBlockTypes.SlotConfigProps = {
   css: {

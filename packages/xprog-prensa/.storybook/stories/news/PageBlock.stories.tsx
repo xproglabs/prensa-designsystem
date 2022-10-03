@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { PageBlock, Teaser } from '../../../news'
-import { PageBlockProps } from '../../../news/PageBlock/types'
+import { PageBlockTypes } from '../../../types'
 import { LayoutProvider } from '../../../providers/LayoutProvider'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
