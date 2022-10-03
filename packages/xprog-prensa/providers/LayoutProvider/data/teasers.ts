@@ -1,6 +1,6 @@
-import { CSSType, TeaserProps } from '../Teaser/types'
+import { Teaser, PageBlockTypes } from '../../../types'
 
-const alignToCenter: CSSType = {
+const alignToCenter: PageBlockTypes.PageBlockCSSType = {
   textAlign: 'center',
   '.TeaserSubject': {
     align: ['column', 'center', 'top']
@@ -10,7 +10,7 @@ const alignToCenter: CSSType = {
   }
 }
 
-const TeaserRelated: TeaserProps = {
+const TeaserRelated: Teaser.TeaserProps = {
   css: {
     p: 0,
     '.TeaserImageContainer': {
@@ -37,7 +37,7 @@ const TeaserRelated: TeaserProps = {
   titleVariant: 'newstitle-md'
 }
 
-const TeaserHeadlineSm: TeaserProps = {
+const TeaserHeadlineSm: Teaser.TeaserProps = {
   css: {
     ...alignToCenter,
     mb: '$3',
@@ -53,7 +53,8 @@ const TeaserHeadlineSm: TeaserProps = {
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-5xl'
 }
-const TeaserHeadlineLg: TeaserProps = {
+
+const TeaserHeadlineLg: Teaser.TeaserProps = {
   css: {
     ...alignToCenter,
     mb: '$3',
@@ -71,7 +72,8 @@ const TeaserHeadlineLg: TeaserProps = {
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-6xl'
 }
-const TeaserImageBottom: TeaserProps = {
+
+const TeaserImageBottom: Teaser.TeaserProps = {
   css: {
     mb: '$3',
     '.TeaserImageContainer': {
@@ -85,7 +87,8 @@ const TeaserImageBottom: TeaserProps = {
   subjectVariant: 'filled',
   titleVariant: 'newstitle-5xl'
 }
-const TeaserImageLeft: TeaserProps = {
+
+const TeaserImageLeft: Teaser.TeaserProps = {
   css: {
     mb: '$3',
     '.TeaserImageContainer': {
@@ -101,7 +104,8 @@ const TeaserImageLeft: TeaserProps = {
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-md'
 }
-const TeaserImageRight: TeaserProps = {
+
+const TeaserImageRight: Teaser.TeaserProps = {
   css: {
     mb: '$3',
     '.TeaserImageContainer': {
@@ -116,7 +120,8 @@ const TeaserImageRight: TeaserProps = {
   subtitleVariant: 'subtitle-desktop',
   titleVariant: 'newstitle-md'
 }
-const TeaserImageRightLg: TeaserProps = {
+
+const TeaserImageRightLg: Teaser.TeaserProps = {
   ...TeaserImageRight,
   css: {
     mb: '$3',
@@ -129,7 +134,7 @@ const TeaserImageRightLg: TeaserProps = {
   titleVariant: 'newstitle-3xl'
 }
 
-const TeaserImageTop: TeaserProps = {
+const TeaserImageTop: Teaser.TeaserProps = {
   css: {
     mb: '$3',
     '.TeaserImageContainer': {
@@ -154,7 +159,5 @@ export const teasers = {
   TeaserImageTop,
   TeaserRelated
 }
-
-export const teasersArray: string[] = Object.keys(teasers)
-
-export type teasersTypes = typeof teasersArray
+export const teasersKeys = Object.keys(teasers)
+export type TeasersType = typeof teasersKeys

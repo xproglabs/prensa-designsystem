@@ -1,6 +1,7 @@
 import { FunctionComponent, ReactNode } from 'react'
 
-import { BlockProps, PrensaEngineCSSProp } from '../../types'
+import { TemplatesType } from '../../providers/LayoutProvider'
+import { BlockProps, PrensaEngineColorType, PrensaEngineCSSProp } from '../../types'
 import { ColumnProps } from './Column/types'
 import { ContainerDefaultProps } from './Container/types'
 import { ItemDefaultProps } from './Item/types'
@@ -75,9 +76,9 @@ export interface PageBlockConfig {
   slotRightTitleEnabled?: boolean;
   slotRightTitleLink?: string;
   slotRightTitleValue?: string;
-  templateBgColor?: PrensaEngineColorType
+  templateBgColor?: PrensaEngineColorType;
 }
-export interface SlotConfigProps extends ColumnProps {
+export type SlotConfigTemplate = {
   default?: SlotConfigType;
   '1'?: SlotConfigType;
   '2'?: SlotConfigType;
@@ -122,6 +123,15 @@ export interface SlotConfigProps extends ColumnProps {
   '8:6'?: SlotConfigType;
   '8:7'?: SlotConfigType;
   '8:8'?: SlotConfigType;
+}
+export interface SlotConfigProps extends ColumnProps {
+  slotConfig?: {
+    [key in TemplatesType]?: {
+      slotLeft?: SlotConfigTemplate;
+      slotCenter?: SlotConfigTemplate;
+      slotRight?: SlotConfigTemplate;
+    }
+  }
 }
 export interface PageBlockProps extends ContainerDefaultProps, PageBlockConfig {
   css?: PageBlockCSSProp;

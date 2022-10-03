@@ -1,7 +1,7 @@
-import { teasers as T } from '../Teaser/teasers'
-import * as t from './types'
+import { teasers as T } from './teasers'
+import { PageBlockTypes } from '../../../types'
 
-const LayoutDefault: t.SlotConfigProps = {
+const LayoutDefault: PageBlockTypes.SlotConfigProps = {
   css: {
     column: {
       align: ['row', 'center', 'top'],
@@ -29,7 +29,7 @@ const LayoutDefault: t.SlotConfigProps = {
   }
 }
 
-const LayoutFeatured: t.SlotConfigProps = {
+const LayoutFeatured: PageBlockTypes.SlotConfigProps = {
   css: {
     column: {
       align: ['column', 'center', 'top'],
@@ -87,7 +87,7 @@ const LayoutFeatured: t.SlotConfigProps = {
   }
 }
 
-const LayoutGrid: t.SlotConfigProps = {
+const LayoutGrid: PageBlockTypes.SlotConfigProps = {
   css: {
     column: {
       '@lg': {
@@ -99,12 +99,6 @@ const LayoutGrid: t.SlotConfigProps = {
   }
 }
 
-export const slotLayouts = {
-  LayoutDefault,
-  LayoutFeatured,
-  LayoutGrid
-}
-
-export const slotLayoutArray: string[] = Object.keys(slotLayouts)
-
-export type slotLayoutsTypes = typeof slotLayoutArray
+export const layouts = { LayoutDefault, LayoutFeatured, LayoutGrid }
+export const layoutsKeys = Object.keys(layouts)
+export type LayoutsType = typeof layoutsKeys
