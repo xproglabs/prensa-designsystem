@@ -1,17 +1,18 @@
 import React from 'react'
 
-import { PrensaEngineDefaultConfig } from '../../prensa.default.config'
+import { PrensaEngine } from '../../stitches.config'
 import { PrensaThemeProviderProps } from './props'
 
 export const PrensaThemeProvider = (props: PrensaThemeProviderProps) => {
   const { children, theme, ...otherProps } = props
+
+  const selectedTheme = theme ?
+    PrensaEngine.createTheme('prensa-ds', theme) :
+    PrensaEngine.createTheme('prensa-ds', PrensaEngine.config.theme)
+
   return (
-    <div className={theme}>
+    <div className={selectedTheme.className}>
       {React.Children.map(children, (item: any) => React.cloneElement(item, otherProps))}
     </div>
   )
-}
-
-PrensaThemeProvider.defaultProps = {
-  theme: PrensaEngineDefaultConfig.theme
 }

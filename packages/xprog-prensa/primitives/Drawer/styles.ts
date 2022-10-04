@@ -1,4 +1,4 @@
-import { PrensaEngine } from '../../prensa.default.config'
+import { PrensaEngine } from '../../stitches.config'
 
 const Prensa_Drawer_slideInLeft = PrensaEngine.keyframes({
   '0%': { transform: 'translateX(-100%)' },

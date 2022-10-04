@@ -1,4 +1,4 @@
-import { PrensaEngine } from '../../prensa.default.config'
+import { PrensaEngine } from '../../stitches.config'
 
 export const StyledIconButton = PrensaEngine.styled('button', {
   align: ['row', 'center', 'middle'],
