@@ -26,6 +26,19 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   templates,
   templateBgColor
 }) => {
+
+  const getLayoutBySlotAndTemplate = (name, slot) => {
+    const layoutSelected = get(slotLayouts, slot)
+    const layoutSlotConfig = get(layoutSelected, `slotConfig[${slotTemplate}][slot${name}]`)
+    return {
+      css: layoutSelected?.css,
+      ...layoutSlotConfig
+    }
+  }
+  const leftColumnLayout = getLayoutBySlotAndTemplate('Left', slotLeftLayout)
+  const centerColumnLayout = getLayoutBySlotAndTemplate('Center', slotCenterLayout)
+  const rightColumnLayout = getLayoutBySlotAndTemplate('Right', slotRightLayout)
+
   const template = get(templates, slotTemplate)
   const templateBgColorValue: PageBlockCSSType = templateBgColor ? { backgroundColor: `$${templateBgColor}` } : {}
   const slotLeftBgColorValue: PageBlockCSSType = slotLeftBgColor ? { backgroundColor: `$${slotLeftBgColor}` } : {}
@@ -87,15 +100,6 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemComponent
   }
 
-  const getLayoutBySlotAndTemplate = (name, slot) => {
-    const layoutSelected = get(slotLayouts, slot)
-    const layoutSlotConfig = get(layoutSelected, `slotConfig[${slotTemplate}][slot${name}]`)
-    return {
-      css: layoutSelected?.css,
-      ...layoutSlotConfig
-    }
-  }
-
   const columnLeftProps: ColumnProps = {
     ...columnProps,
     customProps: {
@@ -117,7 +121,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
       }
     },
     items: slotAutoLeftElements,
-    layout: getLayoutBySlotAndTemplate('Left', slotLeftLayout),
+    layout: leftColumnLayout,
     name: 'Left'
   }
   const columnCenterProps: ColumnProps = {
@@ -134,7 +138,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
       }
     },
     items: slotAutoCenterElements,
-    layout: getLayoutBySlotAndTemplate('Center', slotCenterLayout),
+    layout: centerColumnLayout,
     name: 'Center'
   }
   const columnRightProps: ColumnProps = {
@@ -151,7 +155,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
       }
     },
     items: slotAutoRightElements,
-    layout: getLayoutBySlotAndTemplate('Right', slotRightLayout),
+    layout: rightColumnLayout,
     name: 'Right'
   }
 
