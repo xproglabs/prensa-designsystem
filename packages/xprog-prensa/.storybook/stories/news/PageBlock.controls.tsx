@@ -1,8 +1,10 @@
 import { ArgsTable, Title } from '@storybook/addon-docs'
 import React from 'react'
 
-import { slotLayoutArray, templatesArray } from '../../../providers/LayoutProvider/data'
+import { getDataForTeaser } from './Teaser.controls'
+import { layouts, templates } from '../../../providers/LayoutProvider/data'
 import { PageBlockTypes as t } from '../../../types'
+
 
 const getArgsTableForPageBlock = (components) => {
   <>
@@ -16,25 +18,25 @@ const getArgTypesForPageBlock = {
     slotTemplate: {
       control: {
         type: 'select',
-        options: templatesArray
+        options: templates
       }
     },
     slotLeftLayout: {
       control: {
         type: 'select',
-        options: slotLayoutArray
+        options: layouts
       }
     },
     slotCenterLayout: {
       control: {
         type: 'select',
-        options: slotLayoutArray
+        options: layouts
       }
     },
     slotRightLayout: {
       control: {
         type: 'select',
-        options: slotLayoutArray
+        options: layouts
       }
     },
     slotLeftItems: {
@@ -71,6 +73,7 @@ const getSlotsMockForPageBlock = ({
     type: 'com.atex.plugins.teaser.TeaserBean',
     path: ''
   }
+  const TeaserData = getDataForTeaser
   const slotAutoLeftElements: Array<t.ItemProps> = []
   const slotAutoCenterElements: Array<t.ItemProps> = []
   const slotAutoRightElements: Array<t.ItemProps> = []
