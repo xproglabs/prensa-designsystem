@@ -15,12 +15,7 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "target": "ES6",
-    "baseUrl": ".",
-    "paths": {
-      "@prensa-config": [
-        "prensa.config.d.ts"
-      ]
-    }
+    "strict": true
   },
   "exclude": [
     "node_modules",
