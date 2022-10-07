@@ -98,3 +98,22 @@ TeaserRelated.args = {
   ...T.TeaserRelated,
   ...TeaserData
 }
+
+export const TeaserNumberDefault: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserNumberDefault.args = {
+  ...T.TeaserNumber,
+  ...TeaserData,
+  numberColor: 'basicSuccess800',
+  numberVariant: 'default',
+  numberValue: '1'
+}
+
+export const TeaserNumberFilled: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserNumberFilled.args = {
+  ...T.TeaserNumber,
+  ...TeaserData,
+  numberBgColor: 'basicError300',
+  numberColor: 'basicWhiteAlpha800',
+  numberVariant: 'filled',
+  numberValue: '2'
+}

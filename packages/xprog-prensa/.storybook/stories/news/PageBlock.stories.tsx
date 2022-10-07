@@ -3,6 +3,7 @@ import React from 'react'
 import { PageBlock, Teaser } from '../../../news'
 import { PageBlockTypes } from '../../../types'
 import { LayoutProvider } from '../../../providers/LayoutProvider'
+import { layouts, templates } from '../../../providers/LayoutProvider'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 import {
@@ -10,6 +11,7 @@ import {
   getArgTypesForPageBlock,
   getSlotsMockForPageBlock
 } from './PageBlock.controls'
+import { get } from 'lodash'
 
 export default {
   title: 'News/PageBlock',
@@ -38,6 +40,8 @@ const Template = (args) => {
           slotAutoCenterElements={slotAutoCenterElements}
           slotAutoRightElements={slotAutoRightElements}
           templateBgColor={args?.templateBgColor}
+          slotLayouts={layouts}
+          templates={templates}
         />
       </LayoutProvider>
     </PrensaThemeProvider>
@@ -74,6 +78,17 @@ Playground.args = {
   slotLeftLayout: 'LayoutFeatured',
   slotCenterLayout: 'LayoutFeatured',
   slotRightLayout: 'LayoutFeatured',
+  slotLeftItems: 1,
+  slotCenterItems: 3,
+  slotRightItems: 1
+}
+
+export const MostRead: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
+MostRead.args = {
+  slotTemplate: 'Template7030',
+  slotLeftLayout: 'LayoutFeatured',
+  slotCenterLayout: 'LayoutMostRead',
+  slotRightLayout: 'LayoutMostRead',
   slotLeftItems: 1,
   slotCenterItems: 3,
   slotRightItems: 1
