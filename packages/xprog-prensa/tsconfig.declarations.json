@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
     "declaration": true,
     "declarationDir": "dist",
     "esModuleInterop": true,
@@ -10,11 +9,9 @@
     "jsx": "react",
     "listEmittedFiles": true,
     "listFiles": true,
-    "paths": {
-      "@prensa-config": [
-        "prensa.config.d.ts"
-      ]
-    },
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "preserveSymlinks": true,
     "resolveJsonModule": true,
     "strict": true
   },
