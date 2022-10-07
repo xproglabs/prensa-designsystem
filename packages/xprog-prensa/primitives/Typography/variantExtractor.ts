@@ -1,4 +1,4 @@
-import { PrensaEngine } from '../../stitches.config'
+import { PrensaEngine } from '../../prensa.default.config'
 import { TypographyVariantKeysType } from './types'
 
 export const extractVariantKeys = (): TypographyVariantKeysType => {

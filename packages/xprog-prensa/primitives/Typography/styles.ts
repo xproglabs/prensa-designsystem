@@ -1,4 +1,5 @@
-import { PrensaEngine } from '../../stitches.config'
+import { PrensaEngine } from '../../prensa.default.config'
+
 import { extractVariantKeys } from './variantExtractor'
 
 /**

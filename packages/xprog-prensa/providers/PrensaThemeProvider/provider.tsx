@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PrensaEngine } from '../../stitches.config'
+import { PrensaEngine } from '../../prensa.default.config'
 import { PrensaThemeProviderProps } from './props'
 
 export const PrensaThemeProvider = (props: PrensaThemeProviderProps) => {

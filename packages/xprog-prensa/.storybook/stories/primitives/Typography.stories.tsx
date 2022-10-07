@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PrensaEngine } from '../../../stitches.config'
+import { PrensaEngine } from '../../../prensa.default.config'
 import { Typography } from '../../../primitives/Typography/index'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 import { StorybookTheme } from '../../StorybookTheme'

@@ -1,4 +1,4 @@
-import { PrensaEngine } from '../../stitches.config'
+import { PrensaEngine } from '../../prensa.default.config'
 
 export const SideMenuHeader = PrensaEngine.styled('header', {})
 export const SideMenuContent = PrensaEngine.styled('section', {})
