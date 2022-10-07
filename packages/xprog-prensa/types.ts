@@ -1,5 +1,5 @@
-import { DynamicCssType } from '@prensa-config'
-import { PrensaEngineType } from './stitches.config'
+import type * as Stitches from '@stitches/react';
+import { PrensaEngineType } from './prensa.default.config'
 
 export type PrensaEngineColors = PrensaEngineType['theme']['colors']
 export type PrensaEngineLineHeights = PrensaEngineType['theme']['lineHeights']
@@ -12,7 +12,7 @@ export type PrensaEngineLineHeightType = keyof PrensaEngineLineHeights
 export type PrensaEngineRadiiType = keyof PrensaEngineRadiis
 export type PrensaEngineSpaceType = keyof PrensaEngineSpaces
 export type PrensaEngineThemeType = PrensaEngineType['theme']
-export type PrensaEngineCSSProp = DynamicCssType
+export type PrensaEngineCSSProp = Stitches.CSS<PrensaEngineType>
 
 export * from './primitives/types'
 export * from './news/types'
