@@ -1,13 +1,15 @@
 import { FunctionComponent, ReactNode } from 'react'
 
-import { BlockProps, PrensaEngineCSSProp } from '../../types'
+import { TemplatesType } from '../../providers/LayoutProvider'
+import { BlockProps, PrensaEngineColorType, PrensaEngineCSSProp } from '../../types'
+import { TeaserProps } from '../Teaser/types'
 import { ColumnProps } from './Column/types'
 import { ContainerDefaultProps } from './Container/types'
 import { ItemDefaultProps } from './Item/types'
 
 export type BlockType = BlockProps;
 export type PageBlockCSSType = PrensaEngineCSSProp;
-export type SlotConfigType = PrensaEngineCSSProp | [PrensaEngineCSSProp, PrensaEngineCSSProp];
+export type SlotConfigType = TeaserProps | [TeaserProps, TeaserProps];
 export type SlotItemsType = Array<ItemDefaultProps> | [];
 
 type PageBlockCSSProp = {
@@ -36,44 +38,48 @@ export interface PageBlockConfig {
   slotManualTopLeft?: SlotItemsType;
   slotManualTopCenter?: SlotItemsType;
   slotManualTopRight?: SlotItemsType;
+  slotLeftColor?: PrensaEngineColorType;
+  slotLeftBgColor?: PrensaEngineColorType;
   slotLeftComponent?: string;
   slotLeftIconValue?: string;
   slotLeftReadMoreEnabled?: boolean;
   slotLeftReadMoreLink?: string;
   slotLeftReadMoreTitle?: string;
   slotLeftTeaserBgColor?: string;
-  slotLeftTeaserColor?: string;
   slotLeftLayout?: string;
   slotLeftItems?: number;
   slotLeftTitleEnabled?: boolean;
   slotLeftTitleLink?: string;
   slotLeftTitleValue?: string;
+  slotCenterColor?: PrensaEngineColorType;
+  slotCenterBgColor?: PrensaEngineColorType;
   slotCenterComponent?: string;
   slotCenterIconValue?: string;
   slotCenterReadMoreEnabled?: boolean;
   slotCenterReadMoreLink?: string;
   slotCenterReadMoreTitle?: string;
   slotCenterTeaserBgColor?: string;
-  slotCenterTeaserColor?: string;
   slotCenterLayout?: string;
   slotCenterItems?: number;
   slotCenterTitleEnabled?: boolean;
   slotCenterTitleLink?: string;
   slotCenterTitleValue?: string;
+  slotRightColor?: PrensaEngineColorType;
+  slotRightBgColor?: PrensaEngineColorType;
   slotRightComponent?: string;
   slotRightIconValue?: string;
   slotRightReadMoreEnabled?: boolean;
   slotRightReadMoreLink?: string;
   slotRightReadMoreTitle?: string;
   slotRightTeaserBgColor?: string;
-  slotRightTeaserColor?: string;
   slotRightLayout?: string;
   slotRightItems?: number;
   slotRightTitleEnabled?: boolean;
   slotRightTitleLink?: string;
   slotRightTitleValue?: string;
+  templateBgColor?: PrensaEngineColorType;
 }
-export interface SlotConfigProps extends ColumnProps {
+export type SlotConfigTemplate = {
   default?: SlotConfigType;
   '1'?: SlotConfigType;
   '2'?: SlotConfigType;
@@ -118,6 +124,15 @@ export interface SlotConfigProps extends ColumnProps {
   '8:6'?: SlotConfigType;
   '8:7'?: SlotConfigType;
   '8:8'?: SlotConfigType;
+}
+export interface SlotConfigProps extends ColumnProps {
+  slotConfig?: {
+    [key in TemplatesType]?: {
+      slotLeft?: SlotConfigTemplate;
+      slotCenter?: SlotConfigTemplate;
+      slotRight?: SlotConfigTemplate;
+    }
+  }
 }
 export interface PageBlockProps extends ContainerDefaultProps, PageBlockConfig {
   css?: PageBlockCSSProp;

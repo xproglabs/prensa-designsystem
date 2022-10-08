@@ -1,12 +1,5 @@
 export { pageblockConfig } from './config'
-export {
-  slotLayouts,
-  slotLayoutArray,
-  slotLayoutsTypes
-} from './layouts'
 
-export {
-  templates,
-  templatesArray,
-  templatesTypes
-} from './templates'
+export * from './layouts'
+export * from './teasers'
+export * from './templates'

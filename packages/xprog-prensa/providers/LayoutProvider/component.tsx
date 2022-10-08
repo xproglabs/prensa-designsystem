@@ -1,7 +1,7 @@
 import React from 'react'
 
 import * as data from './data'
-import { LayoutProviderProps } from './props'
+import { LayoutProviderProps } from './types'
 
 export const LayoutProvider = (props: LayoutProviderProps) => {
   const { children, ...otherProps } = props

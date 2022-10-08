@@ -1,15 +1,16 @@
-import { PageBlockProps } from '../../../news/PageBlock/types'
+import { PageBlockTypes } from '../../../types'
 
-const Template100: PageBlockProps = {
+const Template100: PageBlockTypes.PageBlockProps = {
   css: {
     container: {
-      backgroundColor: 'rgba(0,0,0,0.04)',
+      backgroundColor: '$basicBlackAlpha100',
       py: '$3',
-      mb: '$8'
+      width: '100%'
     },
     columnHolder: {
       '@lg': {
         align: ['row', 'between', 'top'],
+        backgroundColor: '$basicBlackAlpha100',
         maxWidth: '1280px',
         width: 'calc(100% - $8)'
       },
@@ -23,7 +24,7 @@ const Template100: PageBlockProps = {
   }
 }
 
-const Template7030: PageBlockProps = {
+const Template7030: PageBlockTypes.PageBlockProps = {
   css: {
     container: {
       backgroundColor: '$basicBlackAlpha100',
@@ -46,26 +47,11 @@ const Template7030: PageBlockProps = {
       '.Column:nth-child(3)': {
         display: 'none'
       }
-    },
-    column: {
-      align: ['row', 'between', 'top'],
-      backgroundColor: '$basicBlackAlpha100',
-      '@lg': {
-        width: 'calc(calc(100% - $6) / 3)'
-      }
-    },
-    item: {
-      backgroundColor: '$basicBlackAlpha100',
-      mb: '$4',
-      width: '100%',
-      '@lg': {
-        mb: '$0'
-      }
     }
   }
 }
 
-const Template30: PageBlockProps = {
+const Template30: PageBlockTypes.PageBlockProps = {
   css: {
     container: {
       backgroundColor: '$basicBlackAlpha100',
@@ -90,18 +76,8 @@ const Template30: PageBlockProps = {
       }
     },
     column: {
-      align: ['row', 'between', 'top'],
-      backgroundColor: '$basicBlackAlpha100',
       '@lg': {
         width: 'calc(calc(100% - $6) / 3)'
-      }
-    },
-    item: {
-      backgroundColor: '$basicBlackAlpha100',
-      mb: '$4',
-      width: '100%',
-      '@lg': {
-        mb: '$0'
       }
     }
   },
@@ -112,12 +88,6 @@ const Template30: PageBlockProps = {
   }
 }
 
-export const templates = {
-  Template100,
-  Template7030,
-  Template30
-}
-
-export const templatesArray: string[] = Object.keys(templates)
-
-export type templatesTypes = typeof templatesArray
+export const templates = { Template100, Template7030, Template30 }
+export const templatesKeys = ['Template100', 'Template7030', 'Template30'] as const
+export type TemplatesType = typeof templatesKeys[number]

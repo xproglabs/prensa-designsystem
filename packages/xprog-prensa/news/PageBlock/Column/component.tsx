@@ -1,7 +1,7 @@
 import { get, map } from 'lodash'
 import React from 'react'
 
-import { ItemProps, PageBlockCSSType, SlotConfigProps, SlotItemsType } from '../types'
+import { ItemProps, SlotConfigProps, SlotItemsType } from '../types'
 import * as S from './styles'
 import { ColumnProps } from './types'
 
@@ -13,6 +13,7 @@ const Column: React.FC<ColumnProps> = ({
   layout,
   name
 }) => {
+
   const Item: any = itemComponent
   const columnProps = {
     css: {
@@ -28,26 +29,26 @@ const Column: React.FC<ColumnProps> = ({
       `
     }
   }
+
   const getColumnItemLayout = ({ layout, position, size }): SlotConfigProps => {
     const defaultLayout = get(layout, 'default')
     const defaultBySize = get(layout, `[${size}]`)
     const defaultByNumber = get(layout, `[${size}:${position + 1}]`)
     return defaultByNumber || defaultBySize || defaultLayout
   }
+
   return (
     <S.Column {...columnProps}>
       {map(items, (item: SlotItemsType, position: number) => {
-        const itemLayout: SlotConfigProps = getColumnItemLayout({
-          layout,
-          position,
-          size: items ? items.length : 0
-        })
-        const itemMobile: PageBlockCSSType = get(itemLayout, [0])
-        const itemDesktop: PageBlockCSSType = get(itemLayout, [1])
+        const itemLayout: SlotConfigProps = getColumnItemLayout({ layout, position, size: items ? items.length : 0 })
+        const itemMobile: SlotConfigProps = get(itemLayout, [0])
+        const itemDesktop: SlotConfigProps = get(itemLayout, [1])
         const itemMobileProps: ItemProps = {
+          ...itemMobile,
           css: {
             ...css?.item,
-            ...itemMobile
+            ...layout?.css?.item,
+            ...itemMobile?.css
           },
           customProps: {
             ...customProps?.item,
@@ -57,12 +58,15 @@ const Column: React.FC<ColumnProps> = ({
               mobile
             `
           },
-          ...item
+          ...item,
+          numberValue: (position + 1).toString()
         }
         const itemDesktopProps: ItemProps = {
+          ...itemDesktop,
           css: {
             ...css?.item,
-            ...itemDesktop
+            ...layout?.css?.item,
+            ...itemDesktop?.css
           },
           customProps: {
             ...customProps?.item,
@@ -72,7 +76,8 @@ const Column: React.FC<ColumnProps> = ({
               desktop
             `
           },
-          ...item
+          ...item,
+          numberValue: (position + 1).toString()
         }
         return (
           <React.Fragment key={position}>

@@ -1,12 +1,11 @@
 import { get } from 'lodash'
 import React from 'react'
 
-import { PrensaEngineCSSProp } from '../../types'
 import { Column, ColumnHolder } from './Column'
 import { ColumnProps } from './Column/types'
-import { PageBlockContainer as Container } from './Container'
+import { PageBlockContainer } from './Container'
 import { Item as DefaultItem } from './Item'
-import { PageBlockProps } from './types'
+import { PageBlockProps, PageBlockCSSType } from './types'
 
 export const PageBlock: React.FC<PageBlockProps> = ({
   css,
@@ -15,18 +14,40 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   slotAutoLeftElements,
   slotAutoCenterElements,
   slotAutoRightElements,
+  slotLeftBgColor,
   slotLeftLayout,
+  slotCenterBgColor,
   slotCenterLayout,
+  slotRightBgColor,
   slotRightLayout,
   slotLayouts,
   slotTemplate,
-  templates
+  templates,
+  templateBgColor
 }) => {
-  const template = get(templates, slotTemplate || '')
 
-  const containerCss: PrensaEngineCSSProp = {
+  const getLayoutBySlotAndTemplate = (name, slot) => {
+    const layoutSelected = get(slotLayouts, slot)
+    const layoutSlotConfig = get(layoutSelected, `slotConfig[${slotTemplate}][slot${name}]`)
+    return {
+      css: layoutSelected?.css,
+      ...layoutSlotConfig
+    }
+  }
+  const leftColumnLayout = getLayoutBySlotAndTemplate('Left', slotLeftLayout)
+  const centerColumnLayout = getLayoutBySlotAndTemplate('Center', slotCenterLayout)
+  const rightColumnLayout = getLayoutBySlotAndTemplate('Right', slotRightLayout)
+
+  const template = get(templates, slotTemplate || '')
+  const templateBgColorValue: PageBlockCSSType = templateBgColor ? { backgroundColor: `$${templateBgColor}` } : {}
+  const slotLeftBgColorValue: PageBlockCSSType = slotLeftBgColor ? { backgroundColor: `$${slotLeftBgColor}` } : {}
+  const slotCenterBgColorValue: PageBlockCSSType = slotCenterBgColor ? { backgroundColor: `$${slotCenterBgColor}` } : {}
+  const slotRightBgColorValue: PageBlockCSSType = slotRightBgColor ? { backgroundColor: `$${slotRightBgColor}` } : {}
+
+  const containerCss: PageBlockCSSType = {
     ...css?.container,
-    ...template?.css?.container
+    ...template?.css?.container,
+    ...templateBgColorValue
   }
   const containerProps = {
     customProps: {
@@ -40,7 +61,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     css: containerCss
   }
 
-  const columnHolderCss: PrensaEngineCSSProp = {
+  const columnHolderCss: PageBlockCSSType = {
     ...css?.columnHolder,
     ...template?.css?.columnHolder
   }
@@ -57,16 +78,6 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   }
 
   const columnProps: ColumnProps = {
-    css: {
-      column: {
-        ...css?.column,
-        ...template?.css?.column
-      },
-      item: {
-        ...css?.item,
-        ...template?.css?.item
-      }
-    },
     customProps: {
       column: {
         ...customProps?.column,
@@ -90,31 +101,71 @@ export const PageBlock: React.FC<PageBlockProps> = ({
 
   const columnLeftProps: ColumnProps = {
     ...columnProps,
+    customProps: {
+      ...columnProps?.customProps,
+      item: {
+        ...columnProps?.customProps?.item,
+
+      }
+    },
+    css: {
+      column: {
+        ...css?.column,
+        ...template?.css?.column,
+        ...slotLeftBgColorValue
+      },
+      item: {
+        ...css?.item,
+        ...template?.css?.item
+      }
+    },
     items: slotAutoLeftElements,
-    layout: get(slotLayouts, slotLeftLayout || ''),
+    layout: leftColumnLayout,
     name: 'Left'
   }
   const columnCenterProps: ColumnProps = {
     ...columnProps,
+    css: {
+      column: {
+        ...css?.column,
+        ...template?.css?.column,
+        ...slotCenterBgColorValue
+      },
+      item: {
+        ...css?.item,
+        ...template?.css?.item
+      }
+    },
     items: slotAutoCenterElements,
-    layout: get(slotLayouts, slotCenterLayout || ''),
+    layout: centerColumnLayout,
     name: 'Center'
   }
   const columnRightProps: ColumnProps = {
     ...columnProps,
+    css: {
+      column: {
+        ...css?.column,
+        ...template?.css?.column,
+        ...slotRightBgColorValue
+      },
+      item: {
+        ...css?.item,
+        ...template?.css?.item
+      }
+    },
     items: slotAutoRightElements,
-    layout: get(slotLayouts, slotRightLayout || ''),
+    layout: rightColumnLayout,
     name: 'Right'
   }
 
   return (
-    <Container {...containerProps} css={containerCss}>
+    <PageBlockContainer {...containerProps} css={containerCss}>
       <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
         <Column {...columnLeftProps} />
         <Column {...columnCenterProps} />
         <Column {...columnRightProps} />
       </ColumnHolder>
-    </Container>
+    </PageBlockContainer>
   )
 }
 

@@ -1,1 +1,2 @@
-export * from './provider'
+export * from './component'
+export * from './data'

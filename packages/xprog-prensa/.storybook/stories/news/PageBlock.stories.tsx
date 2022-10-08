@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { PageBlock } from '../../../news'
+import { PageBlock, Teaser } from '../../../news'
 import { PageBlockTypes } from '../../../types'
 import { LayoutProvider } from '../../../providers/LayoutProvider'
+import { layouts, templates } from '../../../providers/LayoutProvider'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 import {
@@ -10,6 +11,7 @@ import {
   getArgTypesForPageBlock,
   getSlotsMockForPageBlock
 } from './PageBlock.controls'
+import { get } from 'lodash'
 
 export default {
   title: 'News/PageBlock',
@@ -33,9 +35,13 @@ const Template = (args) => {
       <LayoutProvider>
         <PageBlock
           {...args}
+          itemComponent={Teaser}
           slotAutoLeftElements={slotAutoLeftElements}
           slotAutoCenterElements={slotAutoCenterElements}
           slotAutoRightElements={slotAutoRightElements}
+          templateBgColor={args?.templateBgColor}
+          slotLayouts={layouts}
+          templates={templates}
         />
       </LayoutProvider>
     </PrensaThemeProvider>
@@ -45,31 +51,58 @@ const Template = (args) => {
 export const Template100: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
 Template100.args = {
   slotTemplate: 'Template100',
-  slotLeftLayout: 'LayoutGrid',
-  slotCenterLayout: 'LayoutDefault',
-  slotRightLayout: 'LayoutDefault',
+  slotLeftLayout: 'LayoutFeatured',
+  slotLeftBgColor: 'basicSuccess400',
+  slotCenterLayout: 'LayoutFeatured',
+  slotRightLayout: 'LayoutFeatured',
   slotLeftItems: 1,
   slotCenterItems: 3,
-  slotRightItems: 1
+  slotRightItems: 1,
+  templateBgColor: 'basicError300'
 }
 
 export const Template7030: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
 Template7030.args = {
   slotTemplate: 'Template7030',
-  slotLeftLayout: 'LayoutGrid',
-  slotCenterLayout: 'LayoutDefault',
-  slotRightLayout: 'LayoutDefault',
+  slotLeftLayout: 'LayoutFeatured',
+  slotCenterLayout: 'LayoutFeatured',
+  slotRightLayout: 'LayoutFeatured',
   slotLeftItems: 1,
   slotCenterItems: 3,
   slotRightItems: 1
 }
 
+export const Template30: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
+Template30.args = {
+  slotTemplate: 'Template30',
+  slotLeftLayout: 'LayoutFeatured',
+  slotCenterLayout: 'LayoutFeatured',
+  slotRightLayout: 'LayoutFeatured',
+  slotLeftItems: 1,
+  slotCenterItems: 3,
+  slotRightItems: 1,
+  slotLeftTitleEnabled: true,
+  slotLeftTitleLink: '/',
+  slotLeftTitleValue: 'Template 30'
+}
+
 export const Playground: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
 Playground.args = {
   slotTemplate: 'Template7030',
-  slotLeftLayout: 'LayoutGrid',
-  slotCenterLayout: 'LayoutDefault',
-  slotRightLayout: 'LayoutDefault',
+  slotLeftLayout: 'LayoutFeatured',
+  slotCenterLayout: 'LayoutFeatured',
+  slotRightLayout: 'LayoutFeatured',
+  slotLeftItems: 1,
+  slotCenterItems: 3,
+  slotRightItems: 1
+}
+
+export const MostRead: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
+MostRead.args = {
+  slotTemplate: 'Template7030',
+  slotLeftLayout: 'LayoutFeatured',
+  slotCenterLayout: 'LayoutMostRead',
+  slotRightLayout: 'LayoutMostRead',
   slotLeftItems: 1,
   slotCenterItems: 3,
   slotRightItems: 1

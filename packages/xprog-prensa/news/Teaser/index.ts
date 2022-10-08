@@ -1,0 +1,1 @@
+export { Teaser } from './component'
