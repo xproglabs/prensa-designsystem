@@ -1,3 +1,34 @@
+# [2.12.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.11.0...pds-v2.12.0) (2022-10-08)
+
+
+### Bug Fixes
+
+* **subject:** add css variant to subject component ([23fba08](https://github.com/xproglabs/prensa-designsystem/commit/23fba083e4160b01a79a7121db4105819be7ba71))
+* **subject:** add subject variant custom styles ([a09fd56](https://github.com/xproglabs/prensa-designsystem/commit/a09fd56b89aa137910290a403719e7a6e3299908))
+* **teaser:** adjust incorrect or missing types ([00ec830](https://github.com/xproglabs/prensa-designsystem/commit/00ec830a49ed35facd13b74b002402a5d413a6d1))
+* **teaser:** move layouts and templates to news folder ([407cca6](https://github.com/xproglabs/prensa-designsystem/commit/407cca662688b8d0cbf065b909cfa0c934ac907d))
+
+
+### Features
+
+* **bgColor:** add backgroundColor into templates and columns ([84a2014](https://github.com/xproglabs/prensa-designsystem/commit/84a2014dddbb23b710b1d8d7fb8b8b99b9cf3a3b))
+* **imgSrc:** add img tag with src prop inside a teaser image ([a5520cc](https://github.com/xproglabs/prensa-designsystem/commit/a5520cc0c48623d177f389496e4b6802bd9aeab8))
+* **path:** add path with link to teaser and related ([a83b578](https://github.com/xproglabs/prensa-designsystem/commit/a83b578bf42db3606d26739c1c9259dd769592d0))
+* **related:** add teaser related styles and examples ([9f39944](https://github.com/xproglabs/prensa-designsystem/commit/9f39944f3a44b11c61f4a488ac773bd2d068129b))
+* **related:** create teaser related component ([73ed73d](https://github.com/xproglabs/prensa-designsystem/commit/73ed73d79afc84bc401fb9c7b2d3f0cb2e45204a))
+* **teaser:** add aspectRatio parser to TeaserImage ([0e5e241](https://github.com/xproglabs/prensa-designsystem/commit/0e5e241fb678a4303ee79556eb3013b18485b15a))
+* **teaser:** add image component to teaser ([e3049b5](https://github.com/xproglabs/prensa-designsystem/commit/e3049b5fe1563998df2fe34fb2256b3bdca8e9c5))
+* **teaser:** add teaser title component ([a790fc7](https://github.com/xproglabs/prensa-designsystem/commit/a790fc707963d6fa50df82b1a0374aaa3595280b))
+* **teaser:** add TeaserImage component do teaser ([a379703](https://github.com/xproglabs/prensa-designsystem/commit/a37970374f0ef563f9f80a5b35e7948aa0297d23))
+* **teaser:** add templates and layout styles ([ec755d3](https://github.com/xproglabs/prensa-designsystem/commit/ec755d3fadf5a2494fb87f7f4e6cc54bd97aefdc))
+* **teaser:** adjust layout provider data teasers ([def5857](https://github.com/xproglabs/prensa-designsystem/commit/def5857d727086527a2ea3345b998b28b7efea4e))
+* **teaser:** adjust title component and styles ([b5fd191](https://github.com/xproglabs/prensa-designsystem/commit/b5fd191d450b33cd8b380bcf4af56319dcf1c4c4))
+* **teaserNumber:** add teaser number variation ([4ece4e6](https://github.com/xproglabs/prensa-designsystem/commit/4ece4e6673e536274968b32a03714f2c0b504a48))
+* **teasers:** add teaser component and styles ([07687eb](https://github.com/xproglabs/prensa-designsystem/commit/07687eb98b22fb421aa4d2cdeef28aec0d85595f))
+* **teasers:** add teaser stories and controls ([fe689ad](https://github.com/xproglabs/prensa-designsystem/commit/fe689ad7f0e9e9baa70f8806cba3ae5cfb3fa209))
+* **teasers:** create teaser component and types ([67d47b1](https://github.com/xproglabs/prensa-designsystem/commit/67d47b175b3d9c42a822d18f7a7cdb0780626dd5))
+* **teaser:** update teaser provider examples ([2dc4583](https://github.com/xproglabs/prensa-designsystem/commit/2dc458399f87c5e9d98532f55f38840685044bcf))
+
 # [2.11.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.10.0...pds-v2.11.0) (2022-10-08)
 
 
