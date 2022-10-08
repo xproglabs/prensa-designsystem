@@ -1,33 +1,21 @@
-import { ElementType } from 'react'
-
 import { TypographyVariantType } from '../../../types'
-import * as t from '../types'
+import { BlockType, ContainerDefaultProps, PageBlockCSSType } from '../types'
 
-interface ItemDefaultProps {
+export interface ItemDefaultProps {
   name?: string;
   path?: string;
   type?: string;
+  numberValue?: string;
+}
+export interface ItemLabelProps extends ContainerDefaultProps {
+  customProps?: BlockType;
+  variants?: TypographyVariantType | [ TypographyVariantType, TypographyVariantType ];
 }
 
-type ItemDefaultType = ElementType
-
-interface ItemLabelProps extends t.ContainerDefaultProps {
-  customProps?: t.BlockType;
-  variants?: TypographyVariantType | [TypographyVariantType, TypographyVariantType];
+export interface ItemStyledProps extends ContainerDefaultProps {
+  customProps?: BlockType;
 }
 
-interface ItemProps extends ItemDefaultProps, ItemStyled {
-  css?: t.CSSType;
-}
-
-interface ItemStyled extends t.ContainerDefaultProps {
-  customProps?: t.BlockType;
-}
-
-export {
-  ItemDefaultProps,
-  ItemDefaultType,
-  ItemLabelProps,
-  ItemProps,
-  ItemStyled
+export interface ItemProps extends ItemDefaultProps, ItemStyledProps {
+  css?: PageBlockCSSType;
 }

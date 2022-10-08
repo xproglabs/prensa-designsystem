@@ -1,3 +1,39 @@
+# [1.15.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.14.1...v1.15.0) (2022-09-27)
+
+
+### Bug Fixes
+
+* **mainCss:** add main.css to prevent console warning ([d1a46a3](https://github.com/xproglabs/prensa-designsystem/commit/d1a46a398c5cdc8c94dd20a5536d2e4f4ca00ac3))
+* Optmize names and type individuality for each component ([238ccbf](https://github.com/xproglabs/prensa-designsystem/commit/238ccbf74b0c151ebc9cecbfc51524a2475bc199))
+* **pageBlock:** add DefaultLayoutProvider data and stories ([f9d8490](https://github.com/xproglabs/prensa-designsystem/commit/f9d8490cea5e36e5de0f95697dc101ef845403d9))
+* **pageBlock:** add range control to slot items ([b127ab7](https://github.com/xproglabs/prensa-designsystem/commit/b127ab73f43f8186f957cf224b6f84c9a0c3f769))
+* **pageBlock:** adjust custom props in column element ([399d005](https://github.com/xproglabs/prensa-designsystem/commit/399d0058d7132ced88adf71ae9e0ec44508f8ed7))
+* **pageBlock:** adjust custom styles and props ([933aa3d](https://github.com/xproglabs/prensa-designsystem/commit/933aa3dd16cafc4a690fc6a74005b0e2f00da737))
+* **pageBlock:** adjust customProps in pageblock components ([fdeeac7](https://github.com/xproglabs/prensa-designsystem/commit/fdeeac73c4d3bb7357102db636aa66b0c69823e7))
+* **pageBlock:** adjust props in Column components ([9461dca](https://github.com/xproglabs/prensa-designsystem/commit/9461dca0f1970e438fe8b20efcd382442e0f353d))
+* **pageBlock:** adjust template default styles ([80bb725](https://github.com/xproglabs/prensa-designsystem/commit/80bb725efd34386f407ee2e3c108990e886197d4))
+* **pageBlock:** adjust TemplateConfig and SlotLayoutConfig ([8be1512](https://github.com/xproglabs/prensa-designsystem/commit/8be151255979fdfc3189ec00bad5e3bbbeb5e3eb))
+* **pageBlock:** minor adjust template styles ([5b211f9](https://github.com/xproglabs/prensa-designsystem/commit/5b211f99882f74345c26802e76e3e3124995bb77))
+* **pageBlock:** remove / rename template types ([e1d65b4](https://github.com/xproglabs/prensa-designsystem/commit/e1d65b4428c19241de67536c6b9729fc316103f7))
+* **pageBlock:** remove deprecated parser file ([251c4d1](https://github.com/xproglabs/prensa-designsystem/commit/251c4d162e3b7f8f36bbd38f651a8f59a0bf496a))
+* **pageBlocks:** adjust types and name props ([5351def](https://github.com/xproglabs/prensa-designsystem/commit/5351def46aa32c1425dccddc1701a43f64959e7c))
+* **pageBlocks:** rename DefaultLayoutProvider to LayoutProvider ([831252d](https://github.com/xproglabs/prensa-designsystem/commit/831252d837de632a8c06612423bfda427fc6dc95))
+* **pageBlocks:** rename layout prop customCss to css ([30de2b6](https://github.com/xproglabs/prensa-designsystem/commit/30de2b670ed1ea51cbf1d385d3459cb1b387d633))
+* **pageBlock:** update example templates / stories ([fb1e6e9](https://github.com/xproglabs/prensa-designsystem/commit/fb1e6e974b58f76814667e8478bffb3a11d7691c))
+* Update Block types reference from propTypes to ComponentProps function ([b613dd5](https://github.com/xproglabs/prensa-designsystem/commit/b613dd5b882f16582f55a0f89b7fe37f9d0b694e))
+
+
+### Features
+
+* add size props in more_button ([e28483f](https://github.com/xproglabs/prensa-designsystem/commit/e28483f298453b1ed2f1f8052cdaf1ce78b549e4))
+* **controls:** add templates to prop controls ([916cad7](https://github.com/xproglabs/prensa-designsystem/commit/916cad729bc7aece16dd19cf4656be512883637b))
+* **pageBlock:** add PageBlock component and types ([c34653c](https://github.com/xproglabs/prensa-designsystem/commit/c34653c5d41e65f02015d6efb3412585b95ab5ff))
+* **pageBlock:** add PageBlock stories example ([7f2773c](https://github.com/xproglabs/prensa-designsystem/commit/7f2773cc157865ab5e6d83bff6f72931db20a9b2))
+* **pageBlock:** add PageBlock/Column component ([e2e22b3](https://github.com/xproglabs/prensa-designsystem/commit/e2e22b39abf08b8c622c7a06255ed2aff7370074))
+* **pageBlock:** add PageBlock/Item component ([ce7d9e5](https://github.com/xproglabs/prensa-designsystem/commit/ce7d9e5fc628eaadc14c5b5a45f46589baeea594))
+* **pageBlock:** add theme / DefaultLayoutProvider ([56df8ee](https://github.com/xproglabs/prensa-designsystem/commit/56df8ee54148f92e541800750c3df8a2ec569999))
+* **pageBlocks:** add pageblock component and types ([ab117fb](https://github.com/xproglabs/prensa-designsystem/commit/ab117fb820d53ccb1564bb28f062ec6558d524b0))
+
 ## [1.14.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.14.0...v1.14.1) (2022-09-18)
 
 

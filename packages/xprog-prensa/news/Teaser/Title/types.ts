@@ -18,6 +18,7 @@ interface TitleTextProps extends TitleContainerProps {
 
 interface TitleProps extends TitleContainerProps {
   css?: CSSType;
+  path?: string;
   title?: string;
   variant?: CSSVariant;
 }

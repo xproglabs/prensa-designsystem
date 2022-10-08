@@ -1,0 +1,1 @@
+export { Related } from './component'

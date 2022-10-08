@@ -2,6 +2,7 @@ import { ElementType, FC, ReactNode } from 'react'
 
 import {
   PrensaEngineCSSProp,
+  PrensaEngineColorType,
   TypographyVariantType
 } from '../../types'
 import {
@@ -11,6 +12,17 @@ import {
   ImageProps,
   ImageVariant
 } from './Image/types'
+import {
+  NumberContainerProps,
+  NumberCSSType,
+  NumberTextProps,
+  NumberProps,
+  NumberVariant
+} from './Number/types'
+import {
+  RelatedContainerProps,
+  RelatedProps
+} from './Related/types'
 import {
   SubjectContainerProps,
   SubjectTextProps,
@@ -61,6 +73,8 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   css?: CSSType;
   components?: {
     image?: FC<ImageProps>;
+    number?: FC<NumberProps>;
+    related?: FC<RelatedProps>;
     subject?: FC<SubjectProps>;
     subtitle?: FC<SubtitleProps>;
     title?: FC<TitleProps>;
@@ -68,7 +82,18 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   image?: string;
   imageDerivative?: ImageDerivative;
   imageVariant?: ImageVariant;
+  numberBgColor?: PrensaEngineColorType;
+  numberColor?: PrensaEngineColorType;
+  numberValue?: string;
+  numberVariant?: NumberVariant;
+  path?: string,
+  relatedItems?: TeaserProps[];
+  relatedLayout?: TeaserProps;
   subject?: string;
+  subjectBgColor?: PrensaEngineColorType;
+  subjectColor?: PrensaEngineColorType;
+  subjectCss?: CSSType;
+  subjectTextVariant?: CSSVariant;
   subjectVariant?: SubjectVariant;
   subtitle?: string;
   subtitleVariant?: SubtitleVariant;
@@ -96,6 +121,13 @@ export {
   ImageFileProps,
   ImageProps,
   ImageVariant,
+  NumberContainerProps,
+  NumberCSSType,
+  NumberTextProps,
+  NumberProps,
+  NumberVariant,
+  RelatedContainerProps,
+  RelatedProps,
   SubjectContainerProps,
   SubjectTextProps,
   SubjectProps,

@@ -7,6 +7,7 @@ const Title: React.FC<t.TitleProps> = ({
   children,
   css,
   customProps,
+  path,
   title,
   variant
 }) => {
@@ -15,9 +16,11 @@ const Title: React.FC<t.TitleProps> = ({
       css={css}
       customProps={customProps}
     >
-      <S.TitleText variant={variant}>
-        {title || children}
-      </S.TitleText>
+      <a href={path} title={title}>
+        <S.TitleText variant={variant}>
+          {title || children}
+        </S.TitleText>
+      </a>
     </S.TitleContainer>
   )
 }

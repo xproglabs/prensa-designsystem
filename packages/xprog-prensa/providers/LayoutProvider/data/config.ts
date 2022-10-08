@@ -14,7 +14,6 @@ const pageblockConfig: PageBlockConfig = {
   slotLeftReadMoreLink: '',
   slotLeftReadMoreTitle: '',
   slotLeftTeaserBgColor: 'background1',
-  slotLeftTeaserColor: 'editorial1',
   slotLeftTitleEnabled: false,
   slotLeftTitleLink: '',
   slotLeftTitleValue: '',
@@ -23,7 +22,6 @@ const pageblockConfig: PageBlockConfig = {
   slotCenterReadMoreEnabled: false,
   slotCenterReadMoreLink: '',
   slotCenterReadMoreTitle: '',
-  slotCenterTeaserColor: 'editorial1',
   slotCenterTeaserBgColor: 'background1',
   slotCenterTitleEnabled: false,
   slotCenterTitleLink: '',
@@ -34,7 +32,6 @@ const pageblockConfig: PageBlockConfig = {
   slotRightReadMoreLink: '',
   slotRightReadMoreTitle: '',
   slotRightTeaserBgColor: 'background1',
-  slotRightTeaserColor: 'editorial1',
   slotRightTitleValue: '',
   slotRightTitleEnabled: false,
   slotRightTitleLink: ''

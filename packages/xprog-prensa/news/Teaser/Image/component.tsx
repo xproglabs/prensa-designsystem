@@ -27,9 +27,7 @@ const Image: React.FC<t.ImageProps> = ({
       }}
       customProps={customProps}
     >
-      <S.ImageFile>
-        {image || children}
-      </S.ImageFile>
+      <S.ImageFile src={image} />
     </S.ImageContainer>
   )
 }

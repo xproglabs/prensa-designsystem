@@ -5,7 +5,7 @@ import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 import { PageBlock } from '../../../news/PageBlock'
 import { Teaser } from '../../../news/Teaser'
 import { TeaserProps } from '../../../news/Teaser/types'
-import { teasers as T } from '../../../providers/LayoutProvider/data/teasers'
+import { teasers as T } from '../../../providers/LayoutProvider/data'
 
 import {
   getArgsTableForTeaser,
@@ -81,6 +81,12 @@ TeaserImageRight.args = {
   ...TeaserData
 }
 
+export const TeaserImageRightLg: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserImageRightLg.args = {
+  ...T.TeaserImageRightLg,
+  ...TeaserData
+}
+
 export const TeaserImageTop: { args: TeaserProps } = ComponentTeaser.bind({})
 TeaserImageTop.args = {
   ...T.TeaserImageTop,
@@ -91,4 +97,23 @@ export const TeaserRelated: { args: TeaserProps } = ComponentTeaser.bind({})
 TeaserRelated.args = {
   ...T.TeaserRelated,
   ...TeaserData
+}
+
+export const TeaserNumberDefault: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserNumberDefault.args = {
+  ...T.TeaserNumber,
+  ...TeaserData,
+  numberColor: 'basicSuccess800',
+  numberVariant: 'default',
+  numberValue: '1'
+}
+
+export const TeaserNumberFilled: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserNumberFilled.args = {
+  ...T.TeaserNumber,
+  ...TeaserData,
+  numberBgColor: 'basicError300',
+  numberColor: 'basicWhiteAlpha800',
+  numberVariant: 'filled',
+  numberValue: '2'
 }
