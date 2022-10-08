@@ -22,7 +22,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   slotTemplate,
   templates
 }) => {
-  const template = get(templates, slotTemplate)
+  const template = get(templates, slotTemplate || '')
 
   const containerCss: PrensaEngineCSSProp = {
     ...css?.container,
@@ -91,19 +91,19 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   const columnLeftProps: ColumnProps = {
     ...columnProps,
     items: slotAutoLeftElements,
-    layout: get(slotLayouts, slotLeftLayout),
+    layout: get(slotLayouts, slotLeftLayout || ''),
     name: 'Left'
   }
   const columnCenterProps: ColumnProps = {
     ...columnProps,
     items: slotAutoCenterElements,
-    layout: get(slotLayouts, slotCenterLayout),
+    layout: get(slotLayouts, slotCenterLayout || ''),
     name: 'Center'
   }
   const columnRightProps: ColumnProps = {
     ...columnProps,
     items: slotAutoRightElements,
-    layout: get(slotLayouts, slotRightLayout),
+    layout: get(slotLayouts, slotRightLayout || ''),
     name: 'Right'
   }
 

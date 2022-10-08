@@ -40,7 +40,7 @@ const Column: React.FC<ColumnProps> = ({
         const itemLayout: SlotConfigProps = getColumnItemLayout({
           layout,
           position,
-          size: items.length
+          size: items ? items.length : 0
         })
         const itemMobile: PageBlockCSSType = get(itemLayout, [0])
         const itemDesktop: PageBlockCSSType = get(itemLayout, [1])

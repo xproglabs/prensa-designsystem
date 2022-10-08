@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { PrensaEngineDefaultConfig } from '../../../prensa.default.config'
+import { PrensaEngine } from '../../../prensa.default.config'
 import { Typography } from '../../../primitives/Typography/index'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 import { StorybookTheme } from '../../StorybookTheme'
 
 export default { title: 'Primitives/Typography', component: Typography }
-const { theme } = PrensaEngineDefaultConfig
+const theme = PrensaEngine.config.theme
 
 export const Variants = () => {
   return (
