@@ -1,12 +1,10 @@
-import React from 'react'
 import { ArgsTable, Title } from '@storybook/addon-docs'
-import * as t from '../../../news/PageBlock/types'
-import {
-  slotLayoutArray,
-  templatesArray
-} from '../../../providers/LayoutProvider/data'
+import React from 'react'
+
 import { getDataForTeaser } from './Teaser.controls'
-import { TeaserProps } from '../../../news/Teaser/types'
+import { layouts, templates } from '../../../providers/LayoutProvider/data'
+import { PageBlockTypes as t } from '../../../types'
+
 
 const getArgsTableForPageBlock = (components) => {
   <>
@@ -20,25 +18,25 @@ const getArgTypesForPageBlock = {
     slotTemplate: {
       control: {
         type: 'select',
-        options: templatesArray
+        options: templates
       }
     },
     slotLeftLayout: {
       control: {
         type: 'select',
-        options: slotLayoutArray
+        options: layouts
       }
     },
     slotCenterLayout: {
       control: {
         type: 'select',
-        options: slotLayoutArray
+        options: layouts
       }
     },
     slotRightLayout: {
       control: {
         type: 'select',
-        options: slotLayoutArray
+        options: layouts
       }
     },
     slotLeftItems: {
@@ -70,12 +68,10 @@ const getSlotsMockForPageBlock = ({
   slotCenterItems,
   slotRightItems
 }: MockForPageBlockProps): MockForPageBlock => {
-
-  const TeaserData: TeaserProps = getDataForTeaser
-
-  const slotAutoLeftElements: TeaserProps[] = []
-  const slotAutoCenterElements: TeaserProps[] = []
-  const slotAutoRightElements: TeaserProps[] = []
+  const TeaserData = getDataForTeaser
+  const slotAutoLeftElements: Array<t.ItemProps> = []
+  const slotAutoCenterElements: Array<t.ItemProps> = []
+  const slotAutoRightElements: Array<t.ItemProps> = []
   for (let i = 0; i < slotLeftItems; i++) {
     slotAutoLeftElements.push(TeaserData)
   }

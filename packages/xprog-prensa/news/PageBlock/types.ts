@@ -1,59 +1,33 @@
-import { ReactNode } from 'react'
+import { FunctionComponent, ReactNode } from 'react'
 
-import { PrensaEngineColorType, PrensaEngineCSSProp } from '../../types'
-import {
-  ColumnProps,
-  ColumnHolderProps,
-  ColumnStyledProps
-} from './Column/types'
-import {
-  ItemDefaultProps,
-  ItemDefaultType,
-  ItemLabelProps,
-  ItemProps,
-  ItemStyled
-} from './Item/types'
+import { TemplatesType } from '../../providers/LayoutProvider'
+import { BlockProps, PrensaEngineColorType, PrensaEngineCSSProp } from '../../types'
+import { TeaserProps } from '../Teaser/types'
+import { ColumnProps } from './Column/types'
+import { ContainerDefaultProps } from './Container/types'
+import { ItemDefaultProps } from './Item/types'
 
-import { templatesTypes } from '../../providers/LayoutProvider/data/templates'
+export type BlockType = BlockProps;
+export type PageBlockCSSType = PrensaEngineCSSProp;
+export type SlotConfigType = TeaserProps | [TeaserProps, TeaserProps];
+export type SlotItemsType = Array<ItemDefaultProps> | [];
 
-type BlockType = {
-  className?: string
+type PageBlockCSSProp = {
+  container?: PageBlockCSSType;
+  columnHolder?: PageBlockCSSType;
+  column?: PageBlockCSSType;
+  item?: PageBlockCSSType;
 }
-
-type CSSType = PrensaEngineCSSProp
-
-interface ContainerDefaultProps {
+type PageBlockCustomProps = {
   className?: string;
-  children?: ReactNode;
-  css?: CSSType;
-  defaultCss?: CSSType;
+  container?: BlockType;
+  columnHolder?: BlockType;
+  column?: BlockType;
+  item?: BlockType;
 }
 
-interface ContainerProps extends ContainerDefaultProps {
-  customProps?: BlockType;
-}
-
-interface PageBlockProps extends ContainerDefaultProps, PageBlockConfig {
-  css?: {
-    container?: CSSType;
-    columnHolder?: CSSType;
-    column?: CSSType;
-    item?: CSSType;
-  },
-  customProps?: {
-    className?: string;
-    container?: BlockType;
-    columnHolder?: BlockType;
-    column?: BlockType;
-    item?: BlockType;
-  },
-  itemComponent?: ItemDefaultType;
-  slotLayouts?: SlotConfigProps[];
+export interface PageBlockConfig {
   slotTemplate?: string;
-  templates?: SlotConfigProps[];
-}
-
-interface PageBlockConfig {
   slotAutoLeftElements?: SlotItemsType;
   slotAutoCenterElements?: SlotItemsType;
   slotAutoRightElements?: SlotItemsType;
@@ -103,20 +77,9 @@ interface PageBlockConfig {
   slotRightTitleEnabled?: boolean;
   slotRightTitleLink?: string;
   slotRightTitleValue?: string;
-  templateBgColor?: PrensaEngineColorType
+  templateBgColor?: PrensaEngineColorType;
 }
-
-interface SlotConfigProps extends ColumnProps {
-  slotConfig?: {
-    [key in templatesTypes]?: {
-      'slotLeft'?: SlotConfigTemplate,
-      'slotCenter'?: SlotConfigTemplate,
-      'slotRight'?: SlotConfigTemplate
-    }
-  }
-}
-
-type SlotConfigTemplate = {
+export type SlotConfigTemplate = {
   default?: SlotConfigType;
   '1'?: SlotConfigType;
   '2'?: SlotConfigType;
@@ -162,28 +125,24 @@ type SlotConfigTemplate = {
   '8:7'?: SlotConfigType;
   '8:8'?: SlotConfigType;
 }
-
-type SlotConfigType = any;
-
-type SlotItemsType = ItemDefaultProps[] | [];
-
-export {
-  BlockType,
-  CSSType,
-  ColumnProps,
-  ColumnHolderProps,
-  ColumnStyledProps,
-  ContainerDefaultProps,
-  ContainerProps,
-  ItemDefaultProps,
-  ItemDefaultType,
-  ItemLabelProps,
-  ItemProps,
-  ItemStyled,
-  PageBlockConfig,
-  PageBlockProps,
-  SlotConfigProps,
-  SlotConfigTemplate,
-  SlotItemsType,
-  SlotConfigType
+export interface SlotConfigProps extends ColumnProps {
+  slotConfig?: {
+    [key in TemplatesType]?: {
+      slotLeft?: SlotConfigTemplate;
+      slotCenter?: SlotConfigTemplate;
+      slotRight?: SlotConfigTemplate;
+    }
+  }
 }
+export interface PageBlockProps extends ContainerDefaultProps, PageBlockConfig {
+  css?: PageBlockCSSProp;
+  customProps?: PageBlockCustomProps;
+  itemComponent?: FunctionComponent | ReactNode;
+  slotLayouts?: Array<SlotConfigProps>;
+  teasers?: any;
+  templates?: Array<SlotConfigProps>;
+}
+
+export * from './Column/types'
+export * from './Container/types'
+export * from './Item/types'

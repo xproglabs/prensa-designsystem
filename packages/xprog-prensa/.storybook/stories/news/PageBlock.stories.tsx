@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { PageBlock, Teaser } from '../../../news'
-import { PageBlockProps } from '../../../news/PageBlock/types'
+import { PageBlockTypes } from '../../../types'
 import { LayoutProvider } from '../../../providers/LayoutProvider'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
@@ -44,7 +44,7 @@ const Template = (args) => {
   )
 }
 
-export const Template100: { args: PageBlockProps } = Template.bind({})
+export const Template100: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
 Template100.args = {
   slotTemplate: 'Template100',
   slotLeftLayout: 'LayoutFeatured',
@@ -57,7 +57,7 @@ Template100.args = {
   templateBgColor: 'basicError300'
 }
 
-export const Template7030: { args: PageBlockProps } = Template.bind({})
+export const Template7030: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
 Template7030.args = {
   slotTemplate: 'Template7030',
   slotLeftLayout: 'LayoutFeatured',
@@ -68,7 +68,7 @@ Template7030.args = {
   slotRightItems: 1
 }
 
-export const Template30: { args: PageBlockProps } = Template.bind({})
+export const Template30: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
 Template30.args = {
   slotTemplate: 'Template30',
   slotLeftLayout: 'LayoutFeatured',
@@ -82,7 +82,7 @@ Template30.args = {
   slotLeftTitleValue: 'Template 30'
 }
 
-export const Playground: { args: PageBlockProps } = Template.bind({})
+export const Playground: { args: PageBlockTypes.PageBlockProps } = Template.bind({})
 Playground.args = {
   slotTemplate: 'Template7030',
   slotLeftLayout: 'LayoutFeatured',

@@ -1,6 +1,6 @@
-import { PageBlockProps } from './types'
+import { PageBlockTypes } from '../../../types'
 
-const Template100: PageBlockProps = {
+const Template100: PageBlockTypes.PageBlockProps = {
   css: {
     container: {
       backgroundColor: '$basicBlackAlpha100',
@@ -24,7 +24,7 @@ const Template100: PageBlockProps = {
   }
 }
 
-const Template7030: PageBlockProps = {
+const Template7030: PageBlockTypes.PageBlockProps = {
   css: {
     container: {
       backgroundColor: '$basicBlackAlpha100',
@@ -51,7 +51,7 @@ const Template7030: PageBlockProps = {
   }
 }
 
-const Template30: PageBlockProps = {
+const Template30: PageBlockTypes.PageBlockProps = {
   css: {
     container: {
       backgroundColor: '$basicBlackAlpha100',
@@ -88,16 +88,6 @@ const Template30: PageBlockProps = {
   }
 }
 
-export const templates = {
-  Template100,
-  Template7030,
-  Template30
-}
-
-export const templatesArray = [
-  'Template100',
-  'Template7030',
-  'Template30'
-] as const 
-
-export type templatesTypes = typeof templatesArray[number]
+export const templates = { Template100, Template7030, Template30 }
+export const templatesKeys = ['Template100', 'Template7030', 'Template30'] as const
+export type TemplatesType = typeof templatesKeys[number]

@@ -2,11 +2,12 @@ import { get } from 'lodash'
 import React from 'react'
 
 import { Column, ColumnHolder } from './Column'
+import { ColumnProps } from './Column/types'
+import { PageBlockContainer } from './Container'
 import { Item as DefaultItem } from './Item'
-import * as S from './styles'
-import * as t from './types'
+import { PageBlockProps, PageBlockCSSType } from './types'
 
-const PageBlock: React.FC<t.PageBlockProps> = ({
+export const PageBlock: React.FC<PageBlockProps> = ({
   css,
   customProps,
   itemComponent,
@@ -25,13 +26,26 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
   templates,
   templateBgColor
 }) => {
-  const template = get(templates, slotTemplate)
-  const templateBgColorValue: t.CSSType = templateBgColor ? { backgroundColor: `$${templateBgColor}` } : {}
-  const slotLeftBgColorValue: t.CSSType = slotLeftBgColor ? { backgroundColor: `$${slotLeftBgColor}` } : {}
-  const slotCenterBgColorValue: t.CSSType = slotCenterBgColor ? { backgroundColor: `$${slotCenterBgColor}` } : {}
-  const slotRightBgColorValue: t.CSSType = slotRightBgColor ? { backgroundColor: `$${slotRightBgColor}` } : {}
 
-  const containerCss: t.CSSType = {
+  const getLayoutBySlotAndTemplate = (name, slot) => {
+    const layoutSelected = get(slotLayouts, slot)
+    const layoutSlotConfig = get(layoutSelected, `slotConfig[${slotTemplate}][slot${name}]`)
+    return {
+      css: layoutSelected?.css,
+      ...layoutSlotConfig
+    }
+  }
+  const leftColumnLayout = getLayoutBySlotAndTemplate('Left', slotLeftLayout)
+  const centerColumnLayout = getLayoutBySlotAndTemplate('Center', slotCenterLayout)
+  const rightColumnLayout = getLayoutBySlotAndTemplate('Right', slotRightLayout)
+
+  const template = get(templates, slotTemplate)
+  const templateBgColorValue: PageBlockCSSType = templateBgColor ? { backgroundColor: `$${templateBgColor}` } : {}
+  const slotLeftBgColorValue: PageBlockCSSType = slotLeftBgColor ? { backgroundColor: `$${slotLeftBgColor}` } : {}
+  const slotCenterBgColorValue: PageBlockCSSType = slotCenterBgColor ? { backgroundColor: `$${slotCenterBgColor}` } : {}
+  const slotRightBgColorValue: PageBlockCSSType = slotRightBgColor ? { backgroundColor: `$${slotRightBgColor}` } : {}
+
+  const containerCss: PageBlockCSSType = {
     ...css?.container,
     ...template?.css?.container,
     ...templateBgColorValue
@@ -48,7 +62,7 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
     css: containerCss
   }
 
-  const columnHolderCss: t.CSSType = {
+  const columnHolderCss: PageBlockCSSType = {
     ...css?.columnHolder,
     ...template?.css?.columnHolder
   }
@@ -64,7 +78,7 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
     css: columnHolderCss
   }
 
-  const columnProps: t.ColumnProps = {
+  const columnProps: ColumnProps = {
     customProps: {
       column: {
         ...customProps?.column,
@@ -86,22 +100,13 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
     itemComponent
   }
 
-  const getLayoutBySlotAndTemplate = (name, slot) => {
-    const layoutSelected = get(slotLayouts, slot)
-    const layoutSlotConfig = get(layoutSelected, `slotConfig[${slotTemplate}][slot${name}]`)
-    return {
-      css: layoutSelected?.css,
-      ...layoutSlotConfig
-    }
-  }
-
-  const columnLeftProps: t.ColumnProps = {
+  const columnLeftProps: ColumnProps = {
     ...columnProps,
     customProps: {
       ...columnProps?.customProps,
       item: {
         ...columnProps?.customProps?.item,
-        
+
       }
     },
     css: {
@@ -116,10 +121,10 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
       }
     },
     items: slotAutoLeftElements,
-    layout: getLayoutBySlotAndTemplate('Left', slotLeftLayout),
+    layout: leftColumnLayout,
     name: 'Left'
   }
-  const columnCenterProps: t.ColumnProps = {
+  const columnCenterProps: ColumnProps = {
     ...columnProps,
     css: {
       column: {
@@ -133,10 +138,10 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
       }
     },
     items: slotAutoCenterElements,
-    layout: getLayoutBySlotAndTemplate('Center', slotCenterLayout),
+    layout: centerColumnLayout,
     name: 'Center'
   }
-  const columnRightProps: t.ColumnProps = {
+  const columnRightProps: ColumnProps = {
     ...columnProps,
     css: {
       column: {
@@ -150,23 +155,21 @@ const PageBlock: React.FC<t.PageBlockProps> = ({
       }
     },
     items: slotAutoRightElements,
-    layout: getLayoutBySlotAndTemplate('Right', slotRightLayout),
+    layout: rightColumnLayout,
     name: 'Right'
   }
 
   return (
-    <S.Container {...containerProps} css={containerCss}>
+    <PageBlockContainer {...containerProps} css={containerCss}>
       <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
         <Column {...columnLeftProps} />
         <Column {...columnCenterProps} />
         <Column {...columnRightProps} />
       </ColumnHolder>
-    </S.Container>
+    </PageBlockContainer>
   )
 }
 
 PageBlock.defaultProps = {
   itemComponent: DefaultItem
 }
-
-export { PageBlock }
