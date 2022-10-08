@@ -2,8 +2,7 @@ import { createStitches } from '@stitches/react'
 import { align } from '@xprog/prensa-css-engine/css-engine-v2/align'
 import { m, mb, ml, mr, mt, mx, my } from '@xprog/prensa-css-engine/css-engine-v2/margin'
 import { p, pb, pl, pr, pt, px, py } from '@xprog/prensa-css-engine/css-engine-v2/padding'
-
-import * as DefaultTokens from '@xprog/prensa-design-tokens/3-themes/default.json';
+import * as DefaultTokens from '@xprog/prensa-design-tokens/3-themes/default.json'
 
 export const PrensaEngine = createStitches({
   prefix: 'pds',
