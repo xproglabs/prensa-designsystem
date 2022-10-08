@@ -5,7 +5,7 @@ import Medias from './providers/PrensaThemeProvider/medias'
 import Radii from './providers/PrensaThemeProvider/radius'
 import Sizes from './providers/PrensaThemeProvider/sizes'
 import Spaces from './providers/PrensaThemeProvider/sizes'
-import * as Utils from './providers/PrensaThemeProvider/utils'
+import { Utils } from './providers/PrensaThemeProvider/utils'
 
 export const PrensaEngine = createStitches({
   prefix: 'pds',

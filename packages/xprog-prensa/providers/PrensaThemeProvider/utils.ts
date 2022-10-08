@@ -189,3 +189,21 @@ export const align = (value: [AlignValues, AlignXValues, AlignYValues]) => {
   }
   return { display: 'flex', ...a, ...ax, ...ay }
 }
+
+export const Utils = {
+  align,
+  p,
+  pt,
+  pr,
+  pb,
+  pl,
+  px,
+  py,
+  m,
+  mt,
+  mr,
+  mb,
+  ml,
+  mx,
+  my
+}
