@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { PrensaEngineDefaultConfig, PrensaEngine } from '../../../prensa.default.config'
+import { PrensaEngine } from '../../../prensa.default.config'
 
-const { theme } = PrensaEngineDefaultConfig
+const theme = PrensaEngine.config.theme
 
 const ColorBlock = PrensaEngine.styled('div')
 

@@ -1,6 +1,7 @@
 import { get } from 'lodash'
 import React from 'react'
 
+import { PrensaEngineCSSProp } from '../../types'
 import { Column, ColumnHolder } from './Column'
 import { ColumnProps } from './Column/types'
 import { PageBlockContainer } from './Container'

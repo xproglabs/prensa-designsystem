@@ -1,3 +1,23 @@
+# [2.11.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.10.0...pds-v2.11.0) (2022-10-08)
+
+
+### Features
+
+* Create unique configuration file for medias, radius, sizes, spaces and utils functions ([0468eff](https://github.com/xproglabs/prensa-designsystem/commit/0468eff360d416944e679fd0b44f69dca438008c))
+* New export Utils from PrensaThemeProvider ([bc5e266](https://github.com/xproglabs/prensa-designsystem/commit/bc5e26646fc0bcf609b17f2cb6ed5788424704f1))
+
+# [2.10.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.9.0...pds-v2.10.0) (2022-10-08)
+
+
+### Bug Fixes
+
+* Extensive build time using typescript strict true configuration ([f951842](https://github.com/xproglabs/prensa-designsystem/commit/f951842d2446aa0f5404324d83a2dbf20cb38912))
+
+
+### Features
+
+* add size props in more_button ([e28483f](https://github.com/xproglabs/prensa-designsystem/commit/e28483f298453b1ed2f1f8052cdaf1ce78b549e4))
+
 # [2.9.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.8.5...pds-v2.9.0) (2022-09-27)
 
 
