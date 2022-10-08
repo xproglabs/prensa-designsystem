@@ -40,7 +40,7 @@ const Column: React.FC<ColumnProps> = ({
   return (
     <S.Column {...columnProps}>
       {map(items, (item: SlotItemsType, position: number) => {
-        const itemLayout: SlotConfigProps = getColumnItemLayout({ layout, position, size: items.length })
+        const itemLayout: SlotConfigProps = getColumnItemLayout({ layout, position, size: items ? items.length : 0 })
         const itemMobile: SlotConfigProps = get(itemLayout, [0])
         const itemDesktop: SlotConfigProps = get(itemLayout, [1])
         const itemMobileProps: ItemProps = {

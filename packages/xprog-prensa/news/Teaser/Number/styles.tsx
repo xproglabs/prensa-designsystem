@@ -47,8 +47,7 @@ NumberText.defaultProps = {
   defaultCss: {
     align: ['column', 'center', 'top'],
     my: 0
-  },
-  variant: ''
+  }
 }
 
 export { NumberContainer, NumberText }

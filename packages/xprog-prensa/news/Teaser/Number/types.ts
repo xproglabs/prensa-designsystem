@@ -1,12 +1,7 @@
 import { ReactNode } from 'react'
 
-import { PrensaEngineColorType } from '../../../types';
-import {
-  BlockType,
-  CSSType,
-  CSSVariant,
-  ContainerDefaultProps
-} from '../types'
+import { PrensaEngineColorType } from '../../../types'
+import { BlockType, CSSType, CSSVariant, ContainerDefaultProps } from '../types'
 
 interface NumberContainerProps extends ContainerDefaultProps {
   children?: ReactNode;
@@ -26,7 +21,7 @@ interface NumberProps extends NumberContainerProps {
 }
 
 type NumberCSSType = CSSType;
-type NumberVariant = 'none' | 'default' | 'filled'
+type NumberVariant = 'none' | 'default' | 'filled';
 
 export {
   NumberContainerProps,

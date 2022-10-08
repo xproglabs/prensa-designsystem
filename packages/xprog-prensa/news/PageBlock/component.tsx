@@ -1,7 +1,6 @@
 import { get } from 'lodash'
 import React from 'react'
 
-import { PrensaEngineCSSProp } from '../../types'
 import { Column, ColumnHolder } from './Column'
 import { ColumnProps } from './Column/types'
 import { PageBlockContainer } from './Container'
@@ -17,7 +16,6 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   slotAutoRightElements,
   slotLeftBgColor,
   slotLeftLayout,
-  slotLeftTitleValue,
   slotCenterBgColor,
   slotCenterLayout,
   slotRightBgColor,
@@ -40,7 +38,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   const centerColumnLayout = getLayoutBySlotAndTemplate('Center', slotCenterLayout)
   const rightColumnLayout = getLayoutBySlotAndTemplate('Right', slotRightLayout)
 
-  const template = get(templates, slotTemplate)
+  const template = get(templates, slotTemplate || '')
   const templateBgColorValue: PageBlockCSSType = templateBgColor ? { backgroundColor: `$${templateBgColor}` } : {}
   const slotLeftBgColorValue: PageBlockCSSType = slotLeftBgColor ? { backgroundColor: `$${slotLeftBgColor}` } : {}
   const slotCenterBgColorValue: PageBlockCSSType = slotCenterBgColor ? { backgroundColor: `$${slotCenterBgColor}` } : {}
