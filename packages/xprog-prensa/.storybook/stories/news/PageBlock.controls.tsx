@@ -68,11 +68,6 @@ const getSlotsMockForPageBlock = ({
   slotCenterItems,
   slotRightItems
 }: MockForPageBlockProps): MockForPageBlock => {
-  const itemObject: t.ItemDefaultProps = {
-    name: 'ImageTop',
-    type: 'com.atex.plugins.teaser.TeaserBean',
-    path: ''
-  }
   const TeaserData = getDataForTeaser
   const slotAutoLeftElements: Array<t.ItemProps> = []
   const slotAutoCenterElements: Array<t.ItemProps> = []
