@@ -5,6 +5,7 @@ import { Related } from './Related'
 import * as S from './styles'
 import { Subject } from './Subject'
 import { Subtitle } from './Subtitle'
+import { Number } from './Number'
 import { Title } from './Title'
 import * as t from './types'
 
@@ -15,6 +16,10 @@ const Teaser: React.FC<t.TeaserProps> = ({
   image,
   imageDerivative,
   imageVariant,
+  numberBgColor,
+  numberColor,
+  numberVariant,
+  numberValue,
   path,
   relatedItems,
   relatedLayout,
@@ -29,6 +34,15 @@ const Teaser: React.FC<t.TeaserProps> = ({
   title,
   titleVariant
 }) => {
+
+  const TeaserNumber: React.FC<t.NumberProps> = components?.number
+  const TeaserNumberProps: t.NumberProps = {
+    bgColor: numberBgColor,
+    color: numberColor,
+    children: numberValue,
+    variant: numberVariant
+  }
+
   const TeaserImage: React.FC<t.ImageProps> = components?.image
   const TeaserImageProps: t.ImageProps = {
     derivative: imageDerivative,
@@ -77,7 +91,10 @@ const Teaser: React.FC<t.TeaserProps> = ({
 
   return (
     <S.TeaserStyled {...TeaserStyledProps}>
-      {imageVariant && (
+      {numberVariant !== 'none' && (
+        <TeaserNumber {...TeaserNumberProps} />
+      )}
+      {numberVariant == 'none' && imageVariant && (
         <TeaserImage {...TeaserImageProps} />
       )}
       <TeaserWrapContent>
@@ -93,11 +110,13 @@ const Teaser: React.FC<t.TeaserProps> = ({
 Teaser.defaultProps = {
   components: {
     image: Image,
+    number: Number,
     related: Related,
     subject: Subject,
     subtitle: Subtitle,
     title: Title
-  }
+  },
+  numberVariant: 'none'
 }
 
 export { Teaser }

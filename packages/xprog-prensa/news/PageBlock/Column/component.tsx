@@ -58,7 +58,8 @@ const Column: React.FC<ColumnProps> = ({
               mobile
             `
           },
-          ...item
+          ...item,
+          numberValue: (position + 1).toString()
         }
         const itemDesktopProps: ItemProps = {
           ...itemDesktop,
@@ -75,7 +76,8 @@ const Column: React.FC<ColumnProps> = ({
               desktop
             `
           },
-          ...item
+          ...item,
+          numberValue: (position + 1).toString()
         }
         return (
           <React.Fragment key={position}>

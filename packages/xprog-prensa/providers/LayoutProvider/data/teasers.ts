@@ -149,6 +149,32 @@ const TeaserImageTop: Teaser.TeaserProps = {
   titleVariant: 'newstitle-xl'
 }
 
+const TeaserNumber: Teaser.TeaserProps = {
+  className: 'TeaserNumber',
+  imageVariant: 'left',
+  numberBgColor: 'basicError300',
+  numberColor: 'basicWhiteAlpha800',
+  numberVariant: 'filled',
+  numberValue: '222',
+  css: {
+    '.TeaserSubtitle': {
+      display: 'none'
+    },
+    '.TeaserNumber': {
+      align: ['row', 'center', 'middle'],
+      borderRadius: '$circle',
+      fontFamily: '$primary',
+      fontSize: '24px',
+      height: '100px',
+      width: '100px'
+    },
+    '.TeaserWrap': {
+      ml: '24px',
+      width: 'calc(100% - 124px)'
+    }
+  }
+}
+
 export const teasers = {
   TeaserHeadlineSm,
   TeaserHeadlineLg,
@@ -157,7 +183,8 @@ export const teasers = {
   TeaserImageRight,
   TeaserImageRightLg,
   TeaserImageTop,
-  TeaserRelated
+  TeaserRelated,
+  TeaserNumber
 }
 export const teasersKeys = Object.keys(teasers)
 export type TeasersType = typeof teasersKeys

@@ -99,6 +99,44 @@ const LayoutGrid: PageBlockTypes.SlotConfigProps = {
   }
 }
 
-export const layouts = { LayoutDefault, LayoutFeatured, LayoutGrid }
+const LayoutMostRead: PageBlockTypes.SlotConfigProps = {
+  css: {
+    column: {
+      align: ['column', 'center', 'top'],
+      width: '100%'
+    },
+    item: {
+      mb: '$3'
+    }
+  },
+  slotConfig: {
+    Template100: {
+      slotLeft: {
+        default: [T.TeaserNumber, T.TeaserNumber]
+      }
+    },
+    Template7030: {
+      slotLeft: {
+        default: [T.TeaserNumber, T.TeaserNumber]
+      },
+      slotCenter: {
+        default: [T.TeaserNumber, T.TeaserNumber]
+      }
+    },
+    Template30: {
+      slotLeft: {
+        default: [T.TeaserNumber, T.TeaserNumber]
+      },
+      slotCenter: {
+        default: [T.TeaserNumber, T.TeaserNumber]
+      },
+      slotRight: {
+        default: [T.TeaserNumber, T.TeaserNumber]
+      }
+    }
+  }
+}
+
+export const layouts = { LayoutDefault, LayoutFeatured, LayoutGrid, LayoutMostRead }
 export const layoutsKeys = Object.keys(layouts)
 export type LayoutsType = typeof layoutsKeys

@@ -5,6 +5,7 @@ export interface ItemDefaultProps {
   name?: string;
   path?: string;
   type?: string;
+  numberValue?: string;
 }
 export interface ItemLabelProps extends ContainerDefaultProps {
   customProps?: BlockType;
