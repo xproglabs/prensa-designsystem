@@ -14,7 +14,7 @@ const Number: React.FC<t.NumberProps> = ({
 }) => {
   let containerCss: t.NumberCSSType = {}
   let variantCss: t.NumberCSSType = css
-  if(variant === 'default') {
+  if (variant === 'default') {
     variantCss = {
       color: `$${color}`
     }
