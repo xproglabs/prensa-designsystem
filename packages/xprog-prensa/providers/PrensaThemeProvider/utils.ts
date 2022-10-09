@@ -4,91 +4,91 @@ import { AlignValues, AlignXValues, AlignYValues } from './types'
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const p = (value: string | number) => ({ padding: value })
+const p = (value: string | number) => ({ padding: value })
 /**
  * Prensa | paddingTop
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const pt = (value: string | number) => ({ paddingTop: value })
+const pt = (value: string | number) => ({ paddingTop: value })
 /**
  * Prensa | paddingRight
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const pr = (value: string | number) => ({ paddingRight: value })
+const pr = (value: string | number) => ({ paddingRight: value })
 /**
  * Prensa | paddingBottom
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const pb = (value: string | number) => ({ paddingBottom: value })
+const pb = (value: string | number) => ({ paddingBottom: value })
 /**
  * Prensa | paddingLeft
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const pl = (value: string | number) => ({ paddingLeft: value })
+const pl = (value: string | number) => ({ paddingLeft: value })
 /**
  * Prensa | paddingX - paddingLeft + paddingRight
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const px = (value: string | number) => ({ paddingLeft: value, paddingRight: value })
+const px = (value: string | number) => ({ paddingLeft: value, paddingRight: value })
 /**
  * Prensa | paddingY - paddingTop + paddingBottom
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const py = (value: string | number) => ({ paddingTop: value, paddingBottom: value })
+const py = (value: string | number) => ({ paddingTop: value, paddingBottom: value })
 /**
  * Prensa | margin
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const m = (value: string | number) => ({ margin: value })
+const m = (value: string | number) => ({ margin: value })
 /**
  * Prensa | marginTop
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const mt = (value: string | number) => ({ marginTop: value })
+const mt = (value: string | number) => ({ marginTop: value })
 /**
  * Prensa | marginRight
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const mr = (value: string | number) => ({ marginRight: value })
+const mr = (value: string | number) => ({ marginRight: value })
 /**
  * Prensa | marginBottom
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const mb = (value: string | number) => ({ marginBottom: value })
+const mb = (value: string | number) => ({ marginBottom: value })
 /**
  * Prensa | marginLeft
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const ml = (value: string | number) => ({ marginLeft: value })
+const ml = (value: string | number) => ({ marginLeft: value })
 /**
  * Prensa | marginX - marginLeft + marginRight
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const mx = (value: string | number) => ({ marginLeft: value, marginRight: value })
+const mx = (value: string | number) => ({ marginLeft: value, marginRight: value })
 /**
  * Prensa | marginY - marginTop + marginBottom
  * @param value string | number
  * @returns CSS-in-JS property | Object with CSS-in-JS properties
  */
-export const my = (value: string | number) => ({ marginTop: value, marginBottom: value })
+const my = (value: string | number) => ({ marginTop: value, marginBottom: value })
 /**
 * Prensa | align
 * @param value [AlignValues, AlignXValues, AlignYValues]
 * @returns CSS-in-JS property | Object with CSS-in-JS properties
 */
-export const align = (value: [AlignValues, AlignXValues, AlignYValues]) => {
+const align = (value: [AlignValues, AlignXValues, AlignYValues]) => {
   let a = {}
   let ax = {}
   let ay = {}
