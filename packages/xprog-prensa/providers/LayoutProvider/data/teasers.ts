@@ -175,7 +175,98 @@ const TeaserNumber: Teaser.TeaserProps = {
   }
 }
 
+const TeaserHeadlineImageSm: Teaser.TeaserProps = {
+  className: 'TeaserHeadlineImage',
+  imageDerivative: '1x1',
+  imageVariant: 'background',
+  subjectVariant: 'filled',
+  titleVariant: 'newstitle-2xl',
+  css: {
+    position: 'relative',
+    '.TeaserImage': {
+      backgroundColor: '$basicBlackAlpha400'
+    },
+    '.TeaserSubtitle': {
+      display: 'none'
+    },
+    '.TeaserTitleText': {
+      color: '$basicWhite',
+      textShadow: 'rgb(0 0 0 / 50%) 2px 2px 3px'
+    },
+    '.TeaserWrap': {
+      align: ['column', 'left', 'bottom'],
+      aspectRatio: '1 / 1',
+      background: 'linear-gradient(rgba(0, 0, 0, 0) 43.75%, rgb(0, 0, 0) 100%)',
+      position: 'absolute',
+      p: '$4',
+      height: 'calc(100% - 64px)',
+      width: 'calc(100% - 64px)'
+    }
+  }
+}
+
+const TeaserHeadlineImageMd: Teaser.TeaserProps = {
+  className: 'TeaserHeadlineImage',
+  imageDerivative: '1x1',
+  imageVariant: 'background',
+  subjectVariant: 'filled',
+  titleVariant: 'newstitle-4xl',
+  css: {
+    position: 'relative',
+    '.TeaserImage': {
+    },
+    '.TeaserSubtitle': {
+      display: 'none'
+    },
+    '.TeaserTitleText': {
+      color: '$basicWhite',
+      textShadow: 'rgb(0 0 0 / 50%) 2px 2px 3px'
+    },
+    '.TeaserWrap': {
+      align: ['column', 'left', 'bottom'],
+      aspectRatio: '1 / 1',
+      background: 'linear-gradient(rgba(0, 0, 0, 0) 43.75%, rgb(0, 0, 0) 100%)',
+      position: 'absolute',
+      p: '$4',
+      height: 'calc(100% - 64px)',
+      width: 'calc(100% - 64px)'
+    }
+  }
+}
+
+const TeaserHeadlineImageLg: Teaser.TeaserProps = {
+  className: 'TeaserHeadlineImage',
+  imageDerivative: '3x1',
+  imageVariant: 'background',
+  subtitleVariant: 'newstitle-3xl',
+  subjectVariant: 'filled',
+  titleVariant: 'newstitle-6xl',
+  css: {
+    position: 'relative',
+    '.TeaserSubtitleText': {
+      color: '$basicWhite',
+      textShadow: 'rgb(0 0 0 / 50%) 2px 2px 3px'
+    },
+    '.TeaserTitleText': {
+      color: '$basicWhite',
+      textShadow: 'rgb(0 0 0 / 50%) 2px 2px 3px'
+    },
+    '.TeaserWrap': {
+      align: ['column', 'left', 'bottom'],
+      aspectRatio: '3 / 1',
+      background: 'linear-gradient(rgba(0, 0, 0, 0) 43.75%, rgb(0, 0, 0) 100%)',
+      position: 'absolute',
+      p: '$4',
+      height: 'calc(100% - 64px)',
+      width: 'calc(100% - 64px)'
+    }
+  }
+}
+
 export const teasers = {
+  TeaserHeadlineImageSm,
+  TeaserHeadlineImageMd,
+  TeaserHeadlineImageLg,
   TeaserHeadlineSm,
   TeaserHeadlineLg,
   TeaserImageBottom,

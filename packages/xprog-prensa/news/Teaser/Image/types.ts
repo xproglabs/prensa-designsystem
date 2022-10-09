@@ -23,7 +23,7 @@ interface ImageProps extends ImageContainerProps {
 
 type ImageDerivative = '1x1' | '2x1' | '3x1' | '3x2' | '1x2' | '1x3' | '2x3'
 
-type ImageVariant = 'top' | 'right' | 'bottom' | 'left'
+type ImageVariant = 'top' | 'right' | 'bottom' | 'left' | 'background'
 
 export {
   ImageContainerProps,

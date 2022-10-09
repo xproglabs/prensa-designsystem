@@ -58,7 +58,7 @@ const LayoutFeatured: PageBlockTypes.SlotConfigProps = {
       },
       slotCenter: {
         default: [T.TeaserImageRight, T.TeaserImageRight],
-        '1': [T.TeaserHeadlineSm, T.TeaserHeadlineSm]
+        '1': [T.TeaserHeadlineSm, T.TeaserHeadlineImageSm]
       }
     },
     Template30: {
