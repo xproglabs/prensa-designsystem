@@ -1,3 +1,10 @@
+# [2.13.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.12.0...pds-v2.13.0) (2022-10-10)
+
+
+### Features
+
+* **headlineImage:** add TeaserHeadlineImage sm md lg ([425e916](https://github.com/xproglabs/prensa-designsystem/commit/425e916340699b2e1de2966264253511b61dd9e1))
+
 # [2.12.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.11.0...pds-v2.12.0) (2022-10-08)
 
 
