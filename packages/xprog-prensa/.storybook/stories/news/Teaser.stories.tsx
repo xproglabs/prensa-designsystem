@@ -117,3 +117,21 @@ TeaserNumberFilled.args = {
   numberVariant: 'filled',
   numberValue: '2'
 }
+
+export const TeaserHeadlineImageSm: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserHeadlineImageSm.args = {
+  ...T.TeaserHeadlineImageSm,
+  ...TeaserData
+}
+
+export const TeaserHeadlineImageMd: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserHeadlineImageMd.args = {
+  ...T.TeaserHeadlineImageMd,
+  ...TeaserData
+}
+
+export const TeaserHeadlineImageLg: { args: TeaserProps } = ComponentTeaser.bind({})
+TeaserHeadlineImageLg.args = {
+  ...T.TeaserHeadlineImageLg,
+  ...TeaserData
+}
