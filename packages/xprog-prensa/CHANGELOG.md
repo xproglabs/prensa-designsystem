@@ -1,3 +1,19 @@
+# [2.14.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.13.0...pds-v2.14.0) (2022-10-10)
+
+
+### Bug Fixes
+
+* Optimize export Utils ([8b1d32a](https://github.com/xproglabs/prensa-designsystem/commit/8b1d32a3a3f119132e7df193397daf2a5a3672f9))
+* Remove exports in each individual util function ([ce28606](https://github.com/xproglabs/prensa-designsystem/commit/ce286061a0bd59fa8321346b570b121437d39ea8))
+
+
+### Features
+
+* Create LayoutProviderDefaults grouping ([c5ebf8d](https://github.com/xproglabs/prensa-designsystem/commit/c5ebf8d1b1c00d1944c5d61127a6b860f4a3c56b))
+* **galleryArray:** use gallery as an array of galleries ([4f4eff9](https://github.com/xproglabs/prensa-designsystem/commit/4f4eff92ef0d4879e235a04832f2c47119861cd4))
+* **imageGallery:** add gallery inside textbody and legacy img ([920acdf](https://github.com/xproglabs/prensa-designsystem/commit/920acdf3c2f37bc13112bd1d8381a1270e13d2f8))
+* **imageGallery:** allow to set height and width ([0a8cac7](https://github.com/xproglabs/prensa-designsystem/commit/0a8cac7738bf037306376fbbc5912b3a49521e8d))
+
 # [2.13.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.12.0...pds-v2.13.0) (2022-10-10)
 
 
