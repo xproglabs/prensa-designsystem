@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactNode } from 'react'
 
-import { TemplatesType } from '../../providers/LayoutProvider'
+import { TemplatesType } from '../../providers/LayoutProvider/types'
 import { BlockProps, PrensaEngineColorType, PrensaEngineCSSProp } from '../../types'
 import { TeaserProps } from '../Teaser/types'
 import { ColumnProps } from './Column/types'
@@ -127,7 +127,7 @@ export type SlotConfigTemplate = {
 }
 export interface SlotConfigProps extends ColumnProps {
   slotConfig?: {
-    [key in TemplatesType]?: {
+    [key in keyof TemplatesType]?: {
       slotLeft?: SlotConfigTemplate;
       slotCenter?: SlotConfigTemplate;
       slotRight?: SlotConfigTemplate;

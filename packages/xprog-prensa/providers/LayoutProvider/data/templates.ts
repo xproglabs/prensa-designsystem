@@ -89,5 +89,5 @@ const Template30: PageBlockTypes.PageBlockProps = {
 }
 
 export const templates = { Template100, Template7030, Template30 }
-export const templatesKeys = ['Template100', 'Template7030', 'Template30'] as const
-export type TemplatesType = typeof templatesKeys[number]
+export const templatesKeys = Object.keys(templates)
+export type TemplatesType = typeof templates
