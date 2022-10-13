@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ElementType, ReactNode } from 'react'
 
 import {
   BlockType,
@@ -21,6 +21,7 @@ interface TitleProps extends TitleContainerProps {
   path?: string;
   title?: string;
   variant?: CSSVariant;
+  wrapTitle?: ElementType;
 }
 
 type TitleVariant = CSSVariant

@@ -32,7 +32,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
   subtitle,
   subtitleVariant,
   title,
-  titleVariant
+  titleVariant,
+  wrapTitle
 }) => {
 
   const TeaserNumber: React.FC<t.NumberProps> | undefined = components?.number
@@ -70,7 +71,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
   const TeaserTitleProps: t.TitleProps = {
     path,
     title,
-    variant: titleVariant
+    variant: titleVariant,
+    wrapTitle
   }
 
   const TeaserStyledAlign: t.CSSType =

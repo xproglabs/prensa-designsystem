@@ -99,6 +99,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   subtitleVariant?: SubtitleVariant;
   title?: string;
   titleVariant?: TitleVariant;
+  wrapTitle?: ElementType;
 }
 
 interface TeaserStyledProps extends ContainerDefaultProps {

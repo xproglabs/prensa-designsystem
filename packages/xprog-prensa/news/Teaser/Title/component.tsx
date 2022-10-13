@@ -9,8 +9,27 @@ const Title: React.FC<t.TitleProps> = ({
   customProps,
   path,
   title,
-  variant
+  variant,
+  wrapTitle
 }) => {
+  if (wrapTitle) {
+    const WrapTitle = wrapTitle
+    return (
+      <S.TitleContainer
+        css={css}
+        customProps={customProps}
+      >
+        <WrapTitle>
+          <a href={path} title={title}>
+            <S.TitleText variant={variant}>
+              {title || children}
+            </S.TitleText>
+          </a>
+        </WrapTitle>
+      </S.TitleContainer>
+    )
+    
+  }
   return (
     <S.TitleContainer
       css={css}
