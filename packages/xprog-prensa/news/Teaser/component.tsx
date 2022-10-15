@@ -74,7 +74,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
     customLinkProps,
     path,
     title,
-    variant: titleVariant,
+    variant: titleVariant
   }
 
   const TeaserStyledAlign: t.CSSType =
