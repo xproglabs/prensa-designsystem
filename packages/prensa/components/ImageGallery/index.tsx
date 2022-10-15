@@ -1,3 +1,4 @@
+import { get } from 'lodash'
 import React from 'react'
 
 import { AmpImageGallery } from './AmpImageGallery'
@@ -19,22 +20,23 @@ const ImageGallery = ({
   height,
   width
 }: ImageGalleryProps) => {
-
   const RenderGallery = () => {
     if (amp) {
       return (
         <AmpImageGallery
-          captionProps={{ 
+          captionProps={{
             ...captionDefaultProps,
             ...captionProps
           }}
           items={items}
+          height={get(height, '[1]', '').replace('px', '')}
+          width={get(width, '[1]', '').replace('px', '')}
         />
       )
     } else {
       return (
         <WebImageGallery
-          captionProps={{ 
+          captionProps={{
             ...captionDefaultProps,
             ...captionProps
           }}

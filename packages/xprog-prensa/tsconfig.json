@@ -14,8 +14,14 @@
     "noImplicitAny": false,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "target": "ES6"
+    "target": "ES6",
+    "strict": true
   },
-  "exclude": ["node_modules", "dist"],
-  "include": ["*"]
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "include": [
+    "*"
+  ]
 }

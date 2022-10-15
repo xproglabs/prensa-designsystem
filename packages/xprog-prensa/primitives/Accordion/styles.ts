@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types'
-
 import { PrensaEngine } from '../../prensa.default.config'
+import PropTypes from 'prop-types'
 
 export const AccordionGroup = PrensaEngine.styled('div', {
   borderColor: '$brandNeutral500',

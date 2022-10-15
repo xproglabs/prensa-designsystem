@@ -11,10 +11,10 @@ export const Accordion: React.FC<AccordionProps> = ({
   innerSpace,
   size,
 }) => {
-  const [state, setState] = useState(items)
+  const [state, setState] = useState(items || [])
 
   const handleClick = (id: string) => {
-    let itk = null
+    let itk: number = 0
 
     const item = state.find((i, k) => {
       itk = k
@@ -22,7 +22,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     })
 
     const currentState = Object.assign({}, state)
-    const updatedItem = { ...item, expanded: !item.expanded }
+    const updatedItem = { ...item, expanded: item ? !item.expanded : false }
     const updatedState = { ...currentState, [itk]: updatedItem }
     setState(Object.keys(updatedState).map(key => updatedState[key]))
   }

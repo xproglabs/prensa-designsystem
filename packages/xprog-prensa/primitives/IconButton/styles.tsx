@@ -16,11 +16,32 @@ export const StyledIconButton = PrensaEngine.styled('button', {
       circle: { borderRadius: '$circle' }
     },
     size: {
-      sm: { height: '$8', width: '$8', 'svg': { height: '$4', width: '$4' } },
-      md: { height: '$10', width: '$10', 'svg': { height: '$6', width: '$6' } },
-      lg: { height: '$12', width: '$12', 'svg': { height: '$8', width: '$8' } },
+      sm: {
+        height: '$iconButton$sizeSmContainerSize',
+        width: '$iconButton$sizeSmContainerSize',
+        'svg': {
+          height: '$iconButton$sizeSmIconSize',
+          width: '$iconButton$sizeSmIconSize'
+        }
+      },
+      md: {
+        height: '$iconButton$sizeMdContainerSize',
+        width: '$iconButton$sizeMdContainerSize',
+        'svg': {
+          height: '$iconButton$sizeMdIconSize',
+          width: '$iconButton$sizeMdIconSize'
+        }
+      },
+      lg: {
+        height: '$iconButton$sizeLgContainerSize',
+        width: '$iconButton$sizeLgContainerSize',
+        'svg': {
+          height: '$iconButton$sizeLgIconSize',
+          width: '$iconButton$sizeLgIconSize'
+        }
+      },
     }
   }
 })
 
-export type StyledIconButtonTypes = typeof StyledIconButton
+export type StyledIconButtonType = typeof StyledIconButton

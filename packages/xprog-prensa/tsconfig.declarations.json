@@ -5,8 +5,15 @@
     "declarationDir": "dist",
     "esModuleInterop": true,
     "emitDeclarationOnly": true,
+    "extendedDiagnostics": true,
     "jsx": "react",
-    "resolveJsonModule": true
+    "listEmittedFiles": true,
+    "listFiles": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "preserveSymlinks": true,
+    "resolveJsonModule": true,
+    "strict": true
   },
   "exclude": [
     "node_modules",

@@ -6,26 +6,28 @@ import { Caption } from './Caption'
 import { Content } from './styled'
 import { AmpImageGalleryProps } from './types'
 
-const AmpImageGallery = ({ captionProps, items }: AmpImageGalleryProps) => {
+const AmpImageGallery = ({
+  captionProps,
+  height='548',
+  width='768',
+  items
+}: AmpImageGalleryProps) => {
   return (
     <amp-carousel
       lightbox={true}
-      height='548'
+      height={height}
       layout='responsive'
       type='slides'
-      width='768'
+      width={width}
     >
       {map(items, (item, key) => (
         <Content key={key}>
-          <AmpImage
-            alt={item.caption}
-            src={item.value}
-          />
-          {captionProps?.enabled && 
+          <AmpImage alt={item.caption} src={item.value} />
+          {captionProps?.enabled && (
             <Caption amp={true} {...captionProps}>
               {item.caption}
             </Caption>
-          }
+          )}
         </Content>
       ))}
     </amp-carousel>

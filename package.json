@@ -10,6 +10,8 @@
     "build:prensa:v2": "cd packages/xprog-prensa && yarn build",
     "build:prensa:v1:sb": "cd packages/prensa && yarn build:sb",
     "build:prensa:v2:sb": "cd packages/xprog-prensa && yarn build:sb",
+    "build:prensa:v1:tgz": "cd packages/prensa && yarn build:tgz",
+    "build:prensa:v2:tgz": "cd packages/xprog-prensa && yarn build:tgz",
     "release:local:prensa:v1": "cd packages/prensa && yarn release:local",
     "release:local:prensa:v2": "cd packages/xprog-prensa && yarn build && yarn release:local",
     "release:prensa:v1": "cd packages/prensa && yarn run release",

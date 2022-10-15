@@ -171,3 +171,19 @@ export const Colored = () => {
     </PrensaThemeProvider>
   )
 }
+
+export const Customized = () => {
+  return (
+    <PrensaThemeProvider>
+      <Block css={{ align: ['row', 'evenly', 'middle'], height: '100vh' }}>
+        <IconButton
+          variant='outlined'
+          icon={<IconComponent/>}
+          onClick={e => console.log(e)}
+          css={{ button: { background: 'yellow' }, icon: { fill: 'green' } }}
+          size='lg'
+        />
+      </Block>
+    </PrensaThemeProvider>
+  )
+}
