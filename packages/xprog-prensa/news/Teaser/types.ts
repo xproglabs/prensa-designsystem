@@ -80,6 +80,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
     title?: FC<TitleProps>;
   };
   customLink?: any;
+  customLinkProps?: any;
   image?: string;
   imageDerivative?: ImageDerivative;
   imageVariant?: ImageVariant;
@@ -100,7 +101,6 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   subtitleVariant?: SubtitleVariant;
   title?: string;
   titleVariant?: TitleVariant;
-  wrapTitle?: ElementType;
 }
 
 interface TeaserStyledProps extends ContainerDefaultProps {

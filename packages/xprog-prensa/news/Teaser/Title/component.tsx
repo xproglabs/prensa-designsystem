@@ -8,6 +8,7 @@ const Title: React.FC<t.TitleProps> = ({
   children,
   css,
   customLink,
+  customLinkProps,
   customProps,
   path,
   title,
@@ -18,7 +19,13 @@ const Title: React.FC<t.TitleProps> = ({
       css={css}
       customProps={customProps}
     >
-      {useLink({ title: title, href: path, component: customLink },
+      {useLink(
+        {
+          title: title,
+          href: path,
+          component: customLink,
+          ...customLinkProps
+        },
         <S.TitleText variant={variant}>
           {title || children}
         </S.TitleText>

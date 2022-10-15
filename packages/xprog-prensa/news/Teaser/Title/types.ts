@@ -1,4 +1,4 @@
-import { ElementType, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 import {
   BlockType,
@@ -19,6 +19,7 @@ interface TitleTextProps extends TitleContainerProps {
 interface TitleProps extends TitleContainerProps {
   css?: CSSType;
   customLink: any;
+  customLinkProps: any;
   path?: string;
   title?: string;
   variant?: CSSVariant;  
