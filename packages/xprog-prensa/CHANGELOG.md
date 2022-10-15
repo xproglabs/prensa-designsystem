@@ -1,3 +1,10 @@
+## [2.16.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.16.0...pds-v2.16.1) (2022-10-15)
+
+
+### Bug Fixes
+
+* Add customLinkProps to Accordion and AccordionItemGroup ([a8bbc72](https://github.com/xproglabs/prensa-designsystem/commit/a8bbc72c446cfd3751be12264c1345abd905561a))
+
 # [2.16.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.15.0...pds-v2.16.0) (2022-10-15)
 
 
