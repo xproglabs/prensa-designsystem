@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import { useLink } from '../../hooks/useLink'
 import { Block } from '../Block'
 import { Button } from '../Button'
 import { Typography } from '../Typography'
@@ -15,11 +16,13 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   children,
   css,
   expanded,
+  href,
   iconExpandedState,
   icon,
   iconNotExpandedState,
   id,
   innerSpace,
+  linkProps,
   onClick,
   title
 }) => {
@@ -50,7 +53,7 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
 
   if (css && css.accordionContent) {
     content_css = { ...content_css, ...css.accordionContent }
-  } 
+  }
 
   const renderExpandedStateIcon = () => {
     if (icon) {
@@ -72,39 +75,51 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
     return <ExpandMoreIcon />
   }
 
+  const handleClick = (e) => {
+    if (onClick && !href) { 
+      onClick && onClick(e)
+    }
+  }
+
   return (
     <Block
       className='pds-Accordion-ItemGroup-container'
       css={container_css}
     >
-      <Typography
-        className='pds-Accordion-ItemGroup-title'
-        as={accordionTitleAs}
-        css={title_css}
-      > 
-        <Button
-          className='pds-Accordion-ItemGroup-button'
-          id={button_id}
-          aria-controls={section_id}
-          variant='ghost'
-          onClick={onClick}
-          iconRight={expanded ? renderExpandedStateIcon() : renderNotExpandedStateIcon()}
-          css={button_css}
-        >
-          {title}
-        </Button>
-      </Typography>
-      <AccordionContent
-        className='pds-Accordion-ItemGroup-content'
-        as={accordionContentAs}
-        id={section_id}
-        innerSpace={innerSpace}
-        aria-labelledby={button_id}
-        hidden={!expanded}
-        css={content_css}
-      >
-        {children}
-      </AccordionContent>
+      {useLink({ bypass: href ? false : true, href, ...linkProps },
+        (
+          <React.Fragment>
+            <Typography
+              className='pds-Accordion-ItemGroup-title'
+              as={accordionTitleAs}
+              css={title_css}
+            >
+              <Button
+                className='pds-Accordion-ItemGroup-button'
+                id={button_id}
+                aria-controls={section_id}
+                variant='ghost'
+                onClick={handleClick}
+                iconRight={expanded ? renderExpandedStateIcon() : renderNotExpandedStateIcon()}
+                css={button_css}
+              >
+                {title}
+              </Button>
+            </Typography>
+            <AccordionContent
+              className='pds-Accordion-ItemGroup-content'
+              as={accordionContentAs}
+              id={section_id}
+              innerSpace={innerSpace}
+              aria-labelledby={button_id}
+              hidden={!expanded}
+              css={content_css}
+            >
+              {children}
+            </AccordionContent>
+          </React.Fragment>
+        )
+      )}
     </Block>
   )
 }
