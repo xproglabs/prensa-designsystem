@@ -1,3 +1,11 @@
+# [2.15.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.14.0...pds-v2.15.0) (2022-10-15)
+
+
+### Features
+
+* Create new hook useLink ([423ddf8](https://github.com/xproglabs/prensa-designsystem/commit/423ddf8c3e34045e35d0bc548c6a856ef240d104))
+* **teaserTitleWrap:** allow next/link to wrap title ([64c48f0](https://github.com/xproglabs/prensa-designsystem/commit/64c48f0c1d425e16181259aee0a69ef3216af4c7))
+
 # [2.14.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.13.0...pds-v2.14.0) (2022-10-10)
 
 
