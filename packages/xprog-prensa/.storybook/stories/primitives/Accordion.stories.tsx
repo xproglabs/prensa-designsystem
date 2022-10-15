@@ -180,6 +180,12 @@ Customized.args = {
       title: 'Fox Customized',
       onClick: (e) => console.log(e),
       icon: <CircledArrowRightIcon/>
+    },
+    {
+      id: 'foxLink',
+      title: 'Fox Link',
+      href: 'https://google.com',
+      icon: <CircledArrowRightIcon/>
     }
   ]
 }
