@@ -1,11 +1,14 @@
 import React from 'react'
 
+import { useLink } from '../../../hooks'
 import * as S from './styles'
 import * as t from './types'
 
 const Title: React.FC<t.TitleProps> = ({
   children,
   css,
+  customLink,
+  customLinkProps,
   customProps,
   path,
   title,
@@ -16,11 +19,17 @@ const Title: React.FC<t.TitleProps> = ({
       css={css}
       customProps={customProps}
     >
-      <a href={path} title={title}>
+      {useLink(
+        {
+          title: title,
+          href: path,
+          component: customLink,
+          ...customLinkProps
+        },
         <S.TitleText variant={variant}>
           {title || children}
         </S.TitleText>
-      </a>
+      )}
     </S.TitleContainer>
   )
 }

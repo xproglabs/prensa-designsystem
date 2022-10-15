@@ -12,6 +12,8 @@ import * as t from './types'
 const Teaser: React.FC<t.TeaserProps> = ({
   css,
   components,
+  customLink,
+  customLinkProps,
   customProps,
   image,
   imageDerivative,
@@ -68,6 +70,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
   }
   const TeaserTitle: React.FC<t.TitleProps> | undefined = components?.title
   const TeaserTitleProps: t.TitleProps = {
+    customLink,
+    customLinkProps,
     path,
     title,
     variant: titleVariant
