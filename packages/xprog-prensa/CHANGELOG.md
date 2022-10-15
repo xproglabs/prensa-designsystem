@@ -1,3 +1,11 @@
+# [2.16.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.15.0...pds-v2.16.0) (2022-10-15)
+
+
+### Features
+
+* Add bypass property to useLink hook ([7d9eaa3](https://github.com/xproglabs/prensa-designsystem/commit/7d9eaa33849c78a6c9c168c3e0de2a4f36be1274))
+* Add new properties href and linkProps to AccordionItemGroup component ([d3ac662](https://github.com/xproglabs/prensa-designsystem/commit/d3ac66259929460b2c26e6e00a21e7bca6574f81))
+
 # [2.15.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.14.0...pds-v2.15.0) (2022-10-15)
 
 
