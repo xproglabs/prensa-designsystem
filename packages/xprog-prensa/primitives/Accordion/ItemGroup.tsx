@@ -3,9 +3,9 @@ import React from 'react'
 
 import { Block } from '../Block'
 import { Button } from '../Button'
+import { Typography } from '../Typography'
 import { ExpandLessIcon } from './ExpandLessIcon'
 import { ExpandMoreIcon } from './ExpandMoreIcon'
-import { Typography } from '../Typography'
 import { AccordionContent } from './styles'
 import { AccordionItemGroupProps } from './types'
 
