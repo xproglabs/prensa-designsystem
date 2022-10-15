@@ -26,6 +26,8 @@ export type AccordionItemGroupProps = {
   title: string;
   accordionTitleAs?: any;
   accordionContentAs?: any;
+  customLink?: any;
+  customLinkProps?: any;
   children?: ReactNode;
   css?: AccordionItemGroupCSSProp;
   expanded?: boolean;
@@ -39,6 +41,8 @@ export type AccordionItemGroupProps = {
 }
 
 export type AccordionProps = {
+  customLink?: any;
+  customLinkProps?: any;
   children?: ReactNode;
   css?: AccordionCSSProps;
   innerSpace?: AccordionContentVariants['innerSpace'];
