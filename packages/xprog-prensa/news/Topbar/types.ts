@@ -1,6 +1,6 @@
 import { ReactNode, ElementType } from 'react'
 
-export type TopbarCSSType = {
+export type TopbarCSSProp = {
   cssContainer?: any;
   cssContainerTop?: any;
   cssContainerTopSlotLeft?: any;
@@ -16,9 +16,9 @@ export type TopbarCSSType = {
   cssContainerBottomRight?: any;
 }
 
-export type TopbarTypes = {
+export type TopbarProps = {
   children?: ReactNode;
-  css?: TopbarCSSType;
+  css?: TopbarCSSProp;
   slotTopLeft?: ElementType;
   slotTopCenter?: ElementType;
   slotTopRight?: ElementType;

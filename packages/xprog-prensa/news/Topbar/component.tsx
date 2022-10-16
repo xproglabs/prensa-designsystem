@@ -1,9 +1,9 @@
 import React from 'react'
 
 import * as S from './styled'
-import { TopbarTypes } from './types'
+import { TopbarProps } from './types'
 
-export const Topbar: React.FC<TopbarTypes> = (props) => {
+export const Topbar: React.FC<TopbarProps> = (props) => {
 
   const {
     children,
