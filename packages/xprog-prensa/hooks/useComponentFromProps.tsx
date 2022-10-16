@@ -1,8 +1,9 @@
 import React, { cloneElement, isValidElement } from 'react'
 
+export type ComponentFromPropsType = React.ElementType | React.ReactNode | React.FC<any> | any;
 export interface UseComponentFromPropsProps {
   bypass?: boolean;
-  component?: React.ElementType | React.ReactNode | React.FC<any> | any;
+  component?: ComponentFromPropsType;
   componentProps?: any;
 }
 

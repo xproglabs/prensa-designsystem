@@ -1,4 +1,6 @@
-import { ReactNode, ElementType } from 'react'
+import { ReactNode } from 'react'
+
+import { ComponentFromPropsType } from '../../hooks'
 
 export type TopbarCSSProp = {
   cssContainer?: any;
@@ -19,13 +21,13 @@ export type TopbarCSSProp = {
 export type TopbarProps = {
   children?: ReactNode;
   css?: TopbarCSSProp;
-  slotTopLeft?: ElementType;
-  slotTopCenter?: ElementType;
-  slotTopRight?: ElementType;
-  slotMiddleLeft?: ElementType;
-  slotMiddleCenter?: ElementType;
-  slotMiddleRight?: ElementType;
-  slotBottomLeft?: ElementType;
-  slotBottomCenter?: ElementType;
-  slotBottomRight?: ElementType;
+  slotTopLeft?: ComponentFromPropsType;
+  slotTopCenter?: ComponentFromPropsType;
+  slotTopRight?: ComponentFromPropsType;
+  slotMiddleLeft?: ComponentFromPropsType;
+  slotMiddleCenter?: ComponentFromPropsType;
+  slotMiddleRight?: ComponentFromPropsType;
+  slotBottomLeft?: ComponentFromPropsType;
+  slotBottomCenter?: ComponentFromPropsType;
+  slotBottomRight?: ComponentFromPropsType;
 }

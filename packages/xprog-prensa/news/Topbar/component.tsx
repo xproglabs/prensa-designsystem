@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useComponentFromProps } from '../../hooks'
 import * as S from './styled'
 import { TopbarProps } from './types'
 
@@ -41,7 +42,7 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
               className='pds-Topbar-SlotTopLeftContainer'
               css={css?.cssContainerTopSlotLeft}
             >
-              <SlotTopLeft />
+              {useComponentFromProps({ component: SlotTopLeft, componentProps: {} })}
             </S.SlotTopLeftContainer>
           }
           {SlotTopCenter &&
@@ -49,7 +50,7 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
               className='pds-Topbar-SlotTopCenterContainer'
               css={css?.cssContainerTopSlotCenter}
             >
-              <SlotTopCenter />
+              {useComponentFromProps({ component: SlotTopCenter, componentProps: {} })}
             </S.SlotTopCenterContainer>
           }
           {SlotTopRight &&
@@ -57,7 +58,7 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
               className='pds-Topbar-SlotTopRightContainer'
               css={css?.cssContainerTopSlotRight}
             >
-              <SlotTopRight />
+              {useComponentFromProps({ component: SlotTopRight, componentProps: {} })}
             </S.SlotTopRightContainer>
           }
         </S.SlotTopContainer>
@@ -76,7 +77,7 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
             className='pds-Topbar-SlotMiddleLeftContainer'
             css={css?.cssContainerMiddleSlotLeft}
           >
-            <SlotMiddleLeft />
+            {useComponentFromProps({ component: SlotMiddleLeft, componentProps: {} })}
           </S.SlotMiddleLeftContainer>
         }
         {SlotMiddleCenter &&
@@ -84,7 +85,7 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
             className='pds-Topbar-SlotMiddleCenterContainer'
             css={css?.cssContainerMiddleSlotCenter}
           >
-            <SlotMiddleCenter />
+            {useComponentFromProps({ component: SlotMiddleCenter, componentProps: {} })}
           </S.SlotMiddleCenterContainer>
         }
         {SlotMiddleRight &&
@@ -92,7 +93,7 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
             className='pds-Topbar-SlotMiddleRightContainer'
             css={css?.cssContainerMiddleSlotRight}
           >
-            <SlotMiddleRight />
+            {useComponentFromProps({ component: SlotMiddleRight, componentProps: {} })}
           </S.SlotMiddleRightContainer>
         }
       </S.SlotMiddleContainer>
@@ -111,7 +112,7 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
               className='pds-Topbar-SlotBottomLeftContainer'
               css={css?.cssContainerBottomLeft}
             >
-              <SlotBottomLeft />
+              {useComponentFromProps({ component: SlotBottomLeft, componentProps: {} })}
             </S.SlotBottomLeftContainer>
           }
           {SlotBottomCenter &&
@@ -119,7 +120,7 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
               className='pds-Topbar-SlotBottomCenterContainer'
               css={css?.cssContainerBottomCenter}
             >
-              <SlotBottomCenter />
+              {useComponentFromProps({ component: SlotBottomCenter, componentProps: {} })}
             </S.SlotBottomCenterContainer>
           }
           {SlotBottomRight &&
@@ -127,7 +128,7 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
               className='pds-Topbar-SlotBottomRightContainer'
               css={css?.cssContainerBottomRight}
             >
-              <SlotBottomRight />
+              {useComponentFromProps({ component: SlotBottomRight, componentProps: {} })}
             </S.SlotBottomRightContainer>
           }
         </S.SlotBottomContainer>

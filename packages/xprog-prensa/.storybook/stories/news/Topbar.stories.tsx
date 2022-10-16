@@ -18,7 +18,7 @@ const Template: React.FC<TopbarProps> = (props) => {
   )
 }
 
-const PinkBox = ({ title }) => (
+const PinkBox = ({ title = 'teste' }) => (
   <Block css={{
     height: 'calc(100% - 2px)',
     borderColor: 'rgba(239, 71, 111, 1)',
@@ -32,9 +32,9 @@ const PinkBox = ({ title }) => (
 
 export const Default: { args: TopbarProps } = Template.bind({})
 Default.args = {
-  slotMiddleLeft: () => PinkBox({ title: 'slotMiddleLeft' }),
-  slotMiddleCenter: () => PinkBox({ title: 'slotMiddleCenter' }),
-  slotMiddleRight: () => PinkBox({ title: 'slotMiddleRight' })
+  slotMiddleLeft: PinkBox,
+  slotMiddleCenter: <PinkBox title='slotMiddleCenter' />,
+  slotMiddleRight: () => PinkBox({ title: 'slotMiddleLeft' })
 }
 
 export const Expanded: { args: TopbarProps } = Template.bind({})
