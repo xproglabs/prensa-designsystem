@@ -41,8 +41,7 @@ export const Topbar: React.FC<TopbarTypes> = (props) => {
               className='pds-Topbar-SlotTopLeftContainer'
               css={css?.cssContainerTopSlotLeft}
             >
-              <SlotTopLeft>
-              </SlotTopLeft>
+              <SlotTopLeft />
             </S.SlotTopLeftContainer>
           }
           {SlotTopCenter &&
@@ -50,8 +49,7 @@ export const Topbar: React.FC<TopbarTypes> = (props) => {
               className='pds-Topbar-SlotTopCenterContainer'
               css={css?.cssContainerTopSlotCenter}
             >
-              <SlotTopCenter>
-              </SlotTopCenter>
+              <SlotTopCenter />
             </S.SlotTopCenterContainer>
           }
           {SlotTopRight &&
@@ -59,8 +57,7 @@ export const Topbar: React.FC<TopbarTypes> = (props) => {
               className='pds-Topbar-SlotTopRightContainer'
               css={css?.cssContainerTopSlotRight}
             >
-              <SlotTopRight>
-              </SlotTopRight>
+              <SlotTopRight />
             </S.SlotTopRightContainer>
           }
         </S.SlotTopContainer>
@@ -79,8 +76,7 @@ export const Topbar: React.FC<TopbarTypes> = (props) => {
             className='pds-Topbar-SlotMiddleLeftContainer'
             css={css?.cssContainerMiddleSlotLeft}
           >
-            <SlotMiddleLeft>
-            </SlotMiddleLeft>
+            <SlotMiddleLeft />
           </S.SlotMiddleLeftContainer>
         }
         {SlotMiddleCenter &&
@@ -88,8 +84,7 @@ export const Topbar: React.FC<TopbarTypes> = (props) => {
             className='pds-Topbar-SlotMiddleCenterContainer'
             css={css?.cssContainerMiddleSlotCenter}
           >
-            <SlotMiddleCenter>
-            </SlotMiddleCenter>
+            <SlotMiddleCenter />
           </S.SlotMiddleCenterContainer>
         }
         {SlotMiddleRight &&
@@ -97,8 +92,7 @@ export const Topbar: React.FC<TopbarTypes> = (props) => {
             className='pds-Topbar-SlotMiddleRightContainer'
             css={css?.cssContainerMiddleSlotRight}
           >
-            <SlotMiddleRight>
-            </SlotMiddleRight>
+            <SlotMiddleRight />
           </S.SlotMiddleRightContainer>
         }
       </S.SlotMiddleContainer>
@@ -117,8 +111,7 @@ export const Topbar: React.FC<TopbarTypes> = (props) => {
               className='pds-Topbar-SlotBottomLeftContainer'
               css={css?.cssContainerBottomLeft}
             >
-              <SlotBottomLeft>
-              </SlotBottomLeft>
+              <SlotBottomLeft />
             </S.SlotBottomLeftContainer>
           }
           {SlotBottomCenter &&
@@ -126,8 +119,7 @@ export const Topbar: React.FC<TopbarTypes> = (props) => {
               className='pds-Topbar-SlotBottomCenterContainer'
               css={css?.cssContainerBottomCenter}
             >
-              <SlotBottomCenter>
-              </SlotBottomCenter>
+              <SlotBottomCenter />
             </S.SlotBottomCenterContainer>
           }
           {SlotBottomRight &&
@@ -135,8 +127,7 @@ export const Topbar: React.FC<TopbarTypes> = (props) => {
               className='pds-Topbar-SlotBottomRightContainer'
               css={css?.cssContainerBottomRight}
             >
-              <SlotBottomRight>
-              </SlotBottomRight>
+              <SlotBottomRight />
             </S.SlotBottomRightContainer>
           }
         </S.SlotBottomContainer>
