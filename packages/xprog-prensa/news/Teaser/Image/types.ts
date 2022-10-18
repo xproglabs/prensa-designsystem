@@ -12,10 +12,12 @@ interface ImageContainerProps extends ContainerDefaultProps {
 }
 
 interface ImageFileProps extends ImageContainerProps {
+  alt?: string;
   src?: string;
 }
 
 interface ImageProps extends ImageContainerProps {
+  alt?: string;
   css?: CSSType;
   derivative?: ImageDerivative,
   image?: string;

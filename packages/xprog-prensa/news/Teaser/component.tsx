@@ -46,6 +46,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
   }
   const TeaserImage: React.FC<t.ImageProps> | undefined = components?.image
   const TeaserImageProps: t.ImageProps = {
+    alt: title,
     derivative: imageDerivative,
     image
   }

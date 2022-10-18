@@ -28,6 +28,7 @@ ImageContainer.defaultProps = {
 }
 
 const ImageFile: React.FC<t.ImageFileProps> = ({
+  alt,
   css,
   children,
   customProps,
@@ -38,7 +39,7 @@ const ImageFile: React.FC<t.ImageFileProps> = ({
     className={`TeaserImage ${customProps?.className || ''}`}
     css={{ ...defaultCss, ...css }}
   >
-    {(src && <img src={src} />)}
+    {(src && <img alt={alt} src={src} />)}
   </Block>
 )
 
