@@ -4,6 +4,7 @@ import * as S from './styles'
 import * as t from './types'
 
 const Image: React.FC<t.ImageProps> = ({
+  alt,
   children,
   css,
   customProps,
@@ -19,6 +20,7 @@ const Image: React.FC<t.ImageProps> = ({
               : derivative === '1x3' ? 1 / 3
                 : derivative === '2x3' ? 2 / 3
                   : css?.aspectRatio
+  const imageSrc = `${image}&f=${derivative}`
   return (
     <S.ImageContainer
       css={{
@@ -27,7 +29,7 @@ const Image: React.FC<t.ImageProps> = ({
       }}
       customProps={customProps}
     >
-      <S.ImageFile src={image} />
+      <S.ImageFile alt={alt} src={imageSrc} />
     </S.ImageContainer>
   )
 }
