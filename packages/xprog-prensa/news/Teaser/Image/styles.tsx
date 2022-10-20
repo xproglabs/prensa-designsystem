@@ -28,7 +28,6 @@ ImageContainer.defaultProps = {
 }
 
 const ImageFile: React.FC<t.ImageFileProps> = ({
-  alt,
   css,
   customProps,
   defaultCss,
