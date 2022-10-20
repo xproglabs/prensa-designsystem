@@ -1,3 +1,17 @@
+# [2.17.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.16.1...pds-v2.17.0) (2022-10-20)
+
+
+### Bug Fixes
+
+* **imageDerivative:** add derivative to img url ([80eebb2](https://github.com/xproglabs/prensa-designsystem/commit/80eebb237935b9958105a625a84659b9ff754f58))
+* **imageDerivative:** add image alt to teaer ([40d7ccd](https://github.com/xproglabs/prensa-designsystem/commit/40d7ccd3ad3dd1b8e9f5dcf81b55c673885222a1))
+
+
+### Features
+
+* **imageWrap:** add teaser image wrap ([83158f9](https://github.com/xproglabs/prensa-designsystem/commit/83158f9cf2020f73597e540f1a692d7137f3aa53))
+* **imageWrap:** adjust image derivative in image ([e54feb5](https://github.com/xproglabs/prensa-designsystem/commit/e54feb5d33d9ecb9c50af1a3d5995c7c53cb9da1))
+
 ## [2.16.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.16.0...pds-v2.16.1) (2022-10-15)
 
 

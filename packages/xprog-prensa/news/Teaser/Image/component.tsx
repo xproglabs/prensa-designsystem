@@ -4,11 +4,11 @@ import * as S from './styles'
 import * as t from './types'
 
 const Image: React.FC<t.ImageProps> = ({
-  children,
   css,
   customProps,
   derivative,
   image,
+  wrapImage
 }) => {
   const aspectRatio =
     derivative === '1x1' ? 1 / 1
@@ -19,6 +19,9 @@ const Image: React.FC<t.ImageProps> = ({
               : derivative === '1x3' ? 1 / 3
                 : derivative === '2x3' ? 2 / 3
                   : css?.aspectRatio
+
+  const imageUrl = image?.url?.endsWith('?') ? `${image?.url}f=${derivative}` : `${image?.url}&f=${derivative}`
+  const imageParsed = { ...image, url: imageUrl }
   return (
     <S.ImageContainer
       css={{
@@ -27,7 +30,7 @@ const Image: React.FC<t.ImageProps> = ({
       }}
       customProps={customProps}
     >
-      <S.ImageFile src={image} />
+      <S.ImageFile image={imageParsed} wrapImage={wrapImage} />
     </S.ImageContainer>
   )
 }
