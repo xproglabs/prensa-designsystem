@@ -4,12 +4,11 @@ import * as S from './styles'
 import * as t from './types'
 
 const Image: React.FC<t.ImageProps> = ({
-  alt,
-  children,
   css,
   customProps,
   derivative,
   image,
+  wrapImage
 }) => {
   const aspectRatio =
     derivative === '1x1' ? 1 / 1
@@ -29,7 +28,7 @@ const Image: React.FC<t.ImageProps> = ({
       }}
       customProps={customProps}
     >
-      <S.ImageFile alt={alt} src={imageSrc} />
+      <S.ImageFile image={image} wrapImage={wrapImage} />
     </S.ImageContainer>
   )
 }

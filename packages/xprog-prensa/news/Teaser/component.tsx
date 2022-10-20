@@ -34,7 +34,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
   subtitle,
   subtitleVariant,
   title,
-  titleVariant
+  titleVariant,
+  wrapImage
 }) => {
 
   const TeaserNumber: React.FC<t.NumberProps> | undefined = components?.number
@@ -48,7 +49,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
   const TeaserImageProps: t.ImageProps = {
     alt: title,
     derivative: imageDerivative,
-    image
+    image,
+    wrapImage
   }
   const TeaserRelated: React.FC<t.RelatedProps> | undefined = components?.related
   const TeaserRelatedProps: t.RelatedProps = {
