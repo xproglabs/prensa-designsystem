@@ -29,25 +29,27 @@ ImageContainer.defaultProps = {
 
 const ImageFile: React.FC<t.ImageFileProps> = ({
   css,
-  children,
   customProps,
   defaultCss,
-  src
-}) => (
-  <Block
-    className={`TeaserImage ${customProps?.className || ''}`}
-    css={{ ...defaultCss, ...css }}
-  >
-    {(src && <img src={src} />)}
-  </Block>
-)
+  image,
+  wrapImage
+}) => {
+  const WrapImage = wrapImage
+  return (
+    <Block
+      className={`TeaserImage ${customProps?.className || ''}`}
+      css={{ ...defaultCss, ...css }}>
+      {WrapImage ? <WrapImage {...image} /> : <img src={image?.url} />}
+    </Block>
+  )
+}
 
 ImageFile.defaultProps = {
   defaultCss: {
     align: ['column', 'center', 'top'],
     my: 0,
     width: '100%',
-    'img': {
+    img: {
       width: '100%'
     }
   }
