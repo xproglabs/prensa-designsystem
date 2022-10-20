@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useComponentFromProps } from '../../hooks'
+import { Block } from '../../primitives/Block'
 import * as S from './styled'
 import { TopbarProps } from './types'
 
@@ -138,9 +139,15 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
 
   return (
     <S.TopbarContainer className='pds-Topbar-Container' css={css?.cssContainer}>
-      {renderTopContainer()}
-      {renderMainContainer()}
-      {renderBottomContainer()}
+      <Block css={css?.cssContainerTopHolder}>
+        {renderTopContainer()}
+      </Block>
+      <Block css={css?.cssContainerMiddleHolder}>
+        {renderMainContainer()}
+      </Block>
+      <Block css={css?.cssContainerBottomHolder}>
+        {renderBottomContainer()}
+      </Block>
       {children}
     </S.TopbarContainer>
   )
