@@ -1,24 +1,25 @@
 import { ReactNode } from 'react'
 
 import { ComponentFromPropsType } from '../../hooks'
+import { PrensaEngineCSSProp } from '../../types'
 
 export type TopbarCSSProp = {
-  cssContainer?: any;
-  cssContainerTopHolder?: any;
-  cssContainerTop?: any;
-  cssContainerTopSlotLeft?: any;
-  cssContainerTopSlotCenter?: any;
-  cssContainerTopSlotRight?: any;
-  cssContainerMiddleHolder?: any;
-  cssContainerMiddle?: any;
-  cssContainerMiddleSlotLeft?: any;
-  cssContainerMiddleSlotCenter?: any;
-  cssContainerMiddleSlotRight?: any;
-  cssContainerBottomHolder?: any;
-  cssContainerBottom?: any;
-  cssContainerBottomLeft?: any;
-  cssContainerBottomCenter?: any;
-  cssContainerBottomRight?: any;
+  cssContainer?: PrensaEngineCSSProp;
+  cssContainerTopHolder?: PrensaEngineCSSProp;
+  cssContainerTop?: PrensaEngineCSSProp;
+  cssContainerTopSlotLeft?: PrensaEngineCSSProp;
+  cssContainerTopSlotCenter?: PrensaEngineCSSProp;
+  cssContainerTopSlotRight?: PrensaEngineCSSProp;
+  cssContainerMiddleHolder?: PrensaEngineCSSProp;
+  cssContainerMiddle?: PrensaEngineCSSProp;
+  cssContainerMiddleSlotLeft?: PrensaEngineCSSProp;
+  cssContainerMiddleSlotCenter?: PrensaEngineCSSProp;
+  cssContainerMiddleSlotRight?: PrensaEngineCSSProp;
+  cssContainerBottomHolder?: PrensaEngineCSSProp;
+  cssContainerBottom?: PrensaEngineCSSProp;
+  cssContainerBottomLeft?: PrensaEngineCSSProp;
+  cssContainerBottomCenter?: PrensaEngineCSSProp;
+  cssContainerBottomRight?: PrensaEngineCSSProp;
 }
 
 export type TopbarProps = {
