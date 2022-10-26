@@ -51,27 +51,27 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
   return (
     <S.TopbarContainer className='pds-Topbar-Container' css={css?.cssContainer}>
       <Block css={css?.cssContainerTopHolder}>
-        {renderTopbarSlot({
+        {slotTopLeft || slotTopCenter || slotTopRight ? renderTopbarSlot({
           name: 'SlotTop',
           css: {
             containerCss: css?.cssContainerTop,
-            leftContainer: css?.cssContainerTopSlotLeft,
-            centerContainer: css?.cssContainerTopSlotCenter,
-            rightContainer: css?.cssContainerTopSlotRight
+            leftContainerCss: css?.cssContainerTopSlotLeft,
+            centerContainerCss: css?.cssContainerTopSlotCenter,
+            rightContainerCss: css?.cssContainerTopSlotRight
           },
           SlotLeft: SlotTopLeft,
           SlotCenter: SlotTopCenter,
           SlotRight: SlotTopRight
-        })}
+        }) : null}
       </Block>
       <Block css={css?.cssContainerMiddleHolder}>
         {renderTopbarSlot({
           name: 'SlotMiddle',
           css: {
             containerCss: css?.cssContainerMiddle,
-            leftContainer: css?.cssContainerMiddleSlotLeft,
-            centerContainer: css?.cssContainerMiddleSlotCenter,
-            rightContainer: css?.cssContainerMiddleSlotRight
+            leftContainerCss: css?.cssContainerMiddleSlotLeft,
+            centerContainerCss: css?.cssContainerMiddleSlotCenter,
+            rightContainerCss: css?.cssContainerMiddleSlotRight
           },
           SlotLeft: SlotMiddleLeft,
           SlotCenter: SlotMiddleCenter,
@@ -79,18 +79,18 @@ export const Topbar: React.FC<TopbarProps> = (props) => {
         })}
       </Block>
       <Block css={css?.cssContainerBottomHolder}>
-        {renderTopbarSlot({
+        {slotBottomLeft || slotBottomCenter || slotBottomRight ? renderTopbarSlot({
           name: 'SlotBottom',
           css: {
             containerCss: css?.cssContainerBottom,
-            leftContainer: css?.cssContainerBottomLeft,
-            centerContainer: css?.cssContainerBottomCenter,
-            rightContainer: css?.cssContainerBottomRight
+            leftContainerCss: css?.cssContainerBottomLeft,
+            centerContainerCss: css?.cssContainerBottomCenter,
+            rightContainerCss: css?.cssContainerBottomRight
           },
           SlotLeft: SlotBottomLeft,
           SlotCenter: SlotBottomCenter,
           SlotRight: SlotBottomRight
-        })}
+        }) : null}
       </Block>
       {children}
     </S.TopbarContainer>
