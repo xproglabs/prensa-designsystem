@@ -1,3 +1,12 @@
+# [2.18.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.17.0...pds-v2.18.0) (2022-10-26)
+
+
+### Features
+
+* Create Topbar component and stories ([376f02f](https://github.com/xproglabs/prensa-designsystem/commit/376f02f239eaf97898898cf44c207a89a8742095))
+* New hook function useComponentFromProps ([119c640](https://github.com/xproglabs/prensa-designsystem/commit/119c64098292a643d5e852c75ee833909363adf2))
+* New type ComponentFromProps and implements useComponentFromProps in Topbar ([ec1ff1c](https://github.com/xproglabs/prensa-designsystem/commit/ec1ff1cc45e20d66c5c2adb4c03697619d6b6e2f))
+
 # [2.17.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.16.1...pds-v2.17.0) (2022-10-20)
 
 
