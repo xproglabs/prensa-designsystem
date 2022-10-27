@@ -1,3 +1,10 @@
+# [2.19.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.18.0...pds-v2.19.0) (2022-10-27)
+
+
+### Features
+
+* Create new bundle for hooks ([e191041](https://github.com/xproglabs/prensa-designsystem/commit/e1910419227c8e85688eca573d36c4419450f9fe))
+
 # [2.18.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.17.0...pds-v2.18.0) (2022-10-26)
 
 
