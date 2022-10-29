@@ -9,6 +9,8 @@ const Column: React.FC<ColumnProps> = ({
   css,
   customProps,
   items,
+  itemsBottom,
+  itemsTop,
   itemComponent,
   layout,
   name
@@ -37,55 +39,64 @@ const Column: React.FC<ColumnProps> = ({
     return defaultByNumber || defaultBySize || defaultLayout
   }
 
+  const renderItem = ({ item, position }) => {
+    const itemLayout: SlotConfigProps = getColumnItemLayout({ layout, position, size: items ? items.length : 0 })
+    const itemMobile: SlotConfigProps = get(itemLayout, [0])
+    const itemDesktop: SlotConfigProps = get(itemLayout, [1])
+    const itemMobileProps: ItemProps = {
+      ...itemMobile,
+      css: {
+        ...css?.item,
+        ...layout?.css?.item,
+        ...itemMobile?.css
+      },
+      customProps: {
+        ...customProps?.item,
+        className: `
+          ${customProps?.item?.className || ''}
+          ${layout?.customProps?.item?.className || ''}
+          mobile
+        `
+      },
+      ...item,
+      numberValue: (position + 1).toString()
+    }
+    const itemDesktopProps: ItemProps = {
+      ...itemDesktop,
+      css: {
+        ...css?.item,
+        ...layout?.css?.item,
+        ...itemDesktop?.css
+      },
+      customProps: {
+        ...customProps?.item,
+        className: `
+          ${customProps?.item?.className || ''}
+          ${layout?.customProps?.item?.className || ''}
+          desktop
+        `
+      },
+      ...item,
+      numberValue: (position + 1).toString()
+    }
+    return (
+      <React.Fragment key={position}>
+        <Item {...itemMobileProps} />
+        <Item {...itemDesktopProps} />
+      </React.Fragment>
+    )
+  }
+
   return (
     <S.Column {...columnProps}>
-      {map(items, (item: SlotItemsType, position: number) => {
-        const itemLayout: SlotConfigProps = getColumnItemLayout({ layout, position, size: items ? items.length : 0 })
-        const itemMobile: SlotConfigProps = get(itemLayout, [0])
-        const itemDesktop: SlotConfigProps = get(itemLayout, [1])
-        const itemMobileProps: ItemProps = {
-          ...itemMobile,
-          css: {
-            ...css?.item,
-            ...layout?.css?.item,
-            ...itemMobile?.css
-          },
-          customProps: {
-            ...customProps?.item,
-            className: `
-              ${customProps?.item?.className || ''}
-              ${layout?.customProps?.item?.className || ''}
-              mobile
-            `
-          },
-          ...item,
-          numberValue: (position + 1).toString()
-        }
-        const itemDesktopProps: ItemProps = {
-          ...itemDesktop,
-          css: {
-            ...css?.item,
-            ...layout?.css?.item,
-            ...itemDesktop?.css
-          },
-          customProps: {
-            ...customProps?.item,
-            className: `
-              ${customProps?.item?.className || ''}
-              ${layout?.customProps?.item?.className || ''}
-              desktop
-            `
-          },
-          ...item,
-          numberValue: (position + 1).toString()
-        }
-        return (
-          <React.Fragment key={position}>
-            <Item {...itemMobileProps} />
-            <Item {...itemDesktopProps} />
-          </React.Fragment>
-        )
-      })}
+      {map(itemsTop, (item: SlotItemsType, position: number) =>
+        renderItem({ item, position }))}
+      
+      {map(items, (item: SlotItemsType, position: number) =>
+        renderItem({ item, position }))}
+      
+      {map(itemsBottom, (item: SlotItemsType, position: number) =>
+        renderItem({ item, position }))}
     </S.Column>
   )
 }
