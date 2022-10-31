@@ -14,6 +14,13 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   slotAutoLeftElements,
   slotAutoCenterElements,
   slotAutoRightElements,
+  slotManualTopLeft,
+  slotManualTopCenter,
+  slotManualTopRight,
+  slotManualBottomLeft,
+  slotManualBottomCenter,
+  slotManualBottomRight,
+  slotManualExtra,
   slotLeftBgColor,
   slotLeftLayout,
   slotCenterBgColor,
@@ -120,6 +127,8 @@ export const PageBlock: React.FC<PageBlockProps> = ({
       }
     },
     items: slotAutoLeftElements,
+    itemsBottom: slotManualBottomLeft,
+    itemsTop: slotManualTopLeft,
     layout: leftColumnLayout,
     name: 'Left'
   }
@@ -137,6 +146,8 @@ export const PageBlock: React.FC<PageBlockProps> = ({
       }
     },
     items: slotAutoCenterElements,
+    itemsBottom: slotManualBottomCenter,
+    itemsTop: slotManualTopCenter,
     layout: centerColumnLayout,
     name: 'Center'
   }
@@ -154,8 +165,25 @@ export const PageBlock: React.FC<PageBlockProps> = ({
       }
     },
     items: slotAutoRightElements,
+    itemsBottom: slotManualBottomRight,
+    itemsTop: slotManualTopRight,
     layout: rightColumnLayout,
     name: 'Right'
+  }
+  const columnExtraProps: ColumnProps = {
+    ...columnProps,
+    css: {
+      column: {
+        ...css?.column,
+        ...template?.css?.column,
+      },
+      item: {
+        ...css?.item,
+        ...template?.css?.item
+      }
+    },
+    items: slotManualExtra,
+    name: 'Extra'
   }
 
   return (
@@ -164,6 +192,9 @@ export const PageBlock: React.FC<PageBlockProps> = ({
         <Column {...columnLeftProps} />
         <Column {...columnCenterProps} />
         <Column {...columnRightProps} />
+      </ColumnHolder>
+      <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
+        <Column {...columnExtraProps} />
       </ColumnHolder>
     </PageBlockContainer>
   )
