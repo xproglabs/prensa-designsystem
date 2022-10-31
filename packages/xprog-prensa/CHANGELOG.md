@@ -1,3 +1,10 @@
+# [2.20.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.19.0...pds-v2.20.0) (2022-10-31)
+
+
+### Features
+
+* **pageBlocks:** Add extra slots to pageblocks component ([ec6687a](https://github.com/xproglabs/prensa-designsystem/commit/ec6687ab6a6654e52d2ab4ed8a78b8aee3130ed0))
+
 # [2.19.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.18.0...pds-v2.19.0) (2022-10-27)
 
 
