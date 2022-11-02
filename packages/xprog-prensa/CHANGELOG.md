@@ -1,3 +1,10 @@
+# [2.21.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.20.0...pds-v2.21.0) (2022-11-02)
+
+
+### Features
+
+* New Footer component ([c56b025](https://github.com/xproglabs/prensa-designsystem/commit/c56b025dbbbd0c0d0dd8b05e0abfe916d807fdfc))
+
 # [2.20.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.19.0...pds-v2.20.0) (2022-10-31)
 
 
