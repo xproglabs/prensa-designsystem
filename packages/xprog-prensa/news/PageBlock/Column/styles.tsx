@@ -35,6 +35,69 @@ Column.defaultProps = {
   }
 }
 
+export const ColumnTop: React.FC<ColumnHolderProps> = ({
+  css,
+  children,
+  customProps,
+  defaultCss
+}) => (
+  <Block
+    {...customProps}
+    className={`ColumnTop ${customProps?.className || ''}`}
+    css={{ ...defaultCss, ...css }}
+  >
+    {children}
+  </Block>
+)
+
+ColumnTop.defaultProps = {
+  defaultCss: {
+    width: '100%'
+  }
+}
+
+export const ColumnContent: React.FC<ColumnHolderProps> = ({
+  css,
+  children,
+  customProps,
+  defaultCss
+}) => (
+  <Block
+    {...customProps}
+    className={`ColumnContent ${customProps?.className || ''}`}
+    css={{ ...defaultCss, ...css }}
+  >
+    {children}
+  </Block>
+)
+
+ColumnContent.defaultProps = {
+  defaultCss: {
+    width: '100%'
+  }
+}
+
+export const ColumnBottom: React.FC<ColumnHolderProps> = ({
+  css,
+  children,
+  customProps,
+  defaultCss
+}) => (
+  <Block
+    {...customProps}
+    className={`ColumnBottom ${customProps?.className || ''}`}
+    css={{ ...defaultCss, ...css }}
+  >
+    {children}
+  </Block>
+)
+
+ColumnBottom.defaultProps = {
+  defaultCss: {
+    width: '100%'
+  }
+}
+
 export const ColumnHolder: React.FC<ColumnHolderProps> = ({
   css,
   children,
