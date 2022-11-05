@@ -15,7 +15,6 @@ const Column: React.FC<ColumnProps> = ({
   layout,
   name
 }) => {
-
   const Item: any = itemComponent
   const columnProps = {
     css: {
@@ -31,7 +30,16 @@ const Column: React.FC<ColumnProps> = ({
       `
     }
   }
-
+  const columnGroupProps = {
+    css: {
+      ...css?.column,
+      ...layout?.css?.column
+    },
+    customProps: {
+      ...customProps?.column,
+      ...layout?.customProps?.column
+    }
+  }
   const getColumnItemLayout = ({ layout, position, size }): SlotConfigProps => {
     const defaultLayout = get(layout, 'default')
     const defaultBySize = get(layout, `[${size}]`)
@@ -40,7 +48,11 @@ const Column: React.FC<ColumnProps> = ({
   }
 
   const renderItem = ({ item, position }) => {
-    const itemLayout: SlotConfigProps = getColumnItemLayout({ layout, position, size: items ? items.length : 0 })
+    const itemLayout: SlotConfigProps = getColumnItemLayout({
+      layout,
+      position,
+      size: items ? items.length : 0
+    })
     const itemMobile: SlotConfigProps = get(itemLayout, [0])
     const itemDesktop: SlotConfigProps = get(itemLayout, [1])
     const itemMobileProps: ItemProps = {
@@ -89,14 +101,21 @@ const Column: React.FC<ColumnProps> = ({
 
   return (
     <S.Column {...columnProps}>
-      {map(itemsTop, (item: SlotItemsType, position: number) =>
-        renderItem({ item, position }))}
-      
-      {map(items, (item: SlotItemsType, position: number) =>
-        renderItem({ item, position }))}
-      
-      {map(itemsBottom, (item: SlotItemsType, position: number) =>
-        renderItem({ item, position }))}
+      <S.ColumnTop {...columnGroupProps}>
+        {map(itemsTop, (item: SlotItemsType, position: number) =>
+          renderItem({ item, position })
+        )}
+      </S.ColumnTop>
+      <S.ColumnContent {...columnGroupProps}>
+        {map(items, (item: SlotItemsType, position: number) =>
+          renderItem({ item, position })
+        )}
+      </S.ColumnContent>
+      <S.ColumnBottom {...columnGroupProps}>
+        {map(itemsBottom, (item: SlotItemsType, position: number) =>
+          renderItem({ item, position })
+        )}
+      </S.ColumnBottom>
     </S.Column>
   )
 }
