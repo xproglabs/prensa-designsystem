@@ -1,3 +1,10 @@
+# [2.22.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.21.0...pds-v2.22.0) (2022-11-05)
+
+
+### Features
+
+* **pageBlocks:** add columnTop and columnGroup ([bfcb036](https://github.com/xproglabs/prensa-designsystem/commit/bfcb0360bae6cc93013e4d51dba4079105bd48ad))
+
 # [2.21.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.20.0...pds-v2.21.0) (2022-11-02)
 
 
