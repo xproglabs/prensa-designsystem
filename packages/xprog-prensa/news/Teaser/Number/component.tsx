@@ -22,7 +22,7 @@ const Number: React.FC<t.NumberProps> = ({
   if (variant === 'filled') {
     containerCss = {
       ...css,
-      backgroundColor: `$${bgColor}`
+      backgroundColor: `$${color}`
     }
     variantCss = {
       color: `$${color}`
