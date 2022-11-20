@@ -7,7 +7,8 @@
   "repository": "https://github.com/xproglabs/prensa-designsystem.git",
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.pkg.github.com/",
+    "pkgRoot": "dist"
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
