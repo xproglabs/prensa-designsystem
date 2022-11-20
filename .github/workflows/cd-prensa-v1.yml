@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths-ignore:
-      - packages/xprog-prensa
+      - packages/prensa
 
 jobs:
   Package-Deploy-Prensa-v1:
