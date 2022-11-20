@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - packages/prensa
+      - packages/prensa/**
 
 jobs:
   Package-Deploy-Prensa-v1:

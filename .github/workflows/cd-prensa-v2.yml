@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - packages/xprog-prensa
+      - packages/xprog-prensa/**
 
 jobs:
   Package-Deploy-Prensa-v2:
