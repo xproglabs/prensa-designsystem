@@ -1,4 +1,5 @@
 const { onDeploySuccess } = require('../../pipelines/DeploySuccessNotification')
+
 /**
  * Exports configuration module.
  * Order of plugins matter - Commit analyzer must be first.
@@ -30,13 +31,11 @@ module.exports = {
       '@semantic-release/release-notes-generator',
     ],
     [
-      '@semantic-release/npm', {
-        pkgRoot: 'dist'
-      }
+      '@semantic-release/npm'
     ],
     [
       '@semantic-release/git', {
-        assets: [ '!dist/**/*', 'CHANGELOG.md', 'package.json', 'package-lock.json' ],
+        assets: [ 'CHANGELOG.md', 'package.json', 'package-lock.json' ],
         message: 'release(pdsv2): ${nextRelease.version} [skip ci]'
       }
     ],
