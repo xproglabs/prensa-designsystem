@@ -1,3 +1,10 @@
+# [2.23.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.22.0...pds-v2.23.0) (2022-12-02)
+
+
+### Features
+
+* Allow unique link for AccordionItemGroupTitle and icon ([b16ee07](https://github.com/xproglabs/prensa-designsystem/commit/b16ee0723d4159226423287fbd559501a823d0f8))
+
 # [2.22.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.21.0...pds-v2.22.0) (2022-11-05)
 
 
