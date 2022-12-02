@@ -3,7 +3,7 @@ import React from 'react'
 
 import { useLink } from '../../hooks/useLink'
 import { Block } from '../Block'
-import { Button } from '../Button'
+import { IconButton } from '../IconButton'
 import { Typography } from '../Typography'
 import { ExpandLessIcon } from './ExpandLessIcon'
 import { ExpandMoreIcon } from './ExpandMoreIcon'
@@ -13,6 +13,7 @@ import { AccordionItemGroupProps } from './types'
 export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   accordionContentAs,
   accordionTitleAs,
+  accordionTitleVariant,
   children,
   css,
   expanded,
@@ -28,9 +29,10 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
 }) => {
 
   let container_css: any = {}
-  let button_css: any = { button: { align: ['row', 'between', 'middle'], width: '100%' }, label: {} }
   let content_css: any = {}
-  let title_css: any = {}
+  let title_css: any = { align: ['row', 'between', 'middle'] }
+  let icon_button_css: any = {}
+  let icon_css: any = {}
 
   const button_id = `pds-accordion-button-${id}`
   const section_id = `pds-accordion-section-${id}`
@@ -41,13 +43,13 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
 
   if (css && css.accordionTitle) {
     if (css.accordionTitle.title) {
-      title_css = { ...css.accordionTitle.title }
+      title_css = { ...title_css, ...css.accordionTitle.title }
     }
-    if (css.accordionTitle.button) {
-      button_css = { button: { ...button_css.button, ...css.accordionTitle.button }, label: { ...button_css.label } }
+    if (css.accordionTitle.iconButton) {
+      icon_button_css = { ...css.accordionTitle.iconButton } 
     }
-    if (css.accordionTitle.label) {
-      button_css = { button: { ...button_css.button }, label: { ...css.accordionTitle.label } }
+    if (css.accordionTitle.icon) {
+      icon_css = { ...css.accordionTitle.icon } 
     }
   }
 
@@ -76,56 +78,55 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   }
 
   const handleClick = (e) => {
-    if (onClick && !href) { 
+    if (onClick) {
       onClick && onClick(e)
     }
   }
+
+  const itemIcon = expanded ? renderExpandedStateIcon() : renderNotExpandedStateIcon()
 
   return (
     <Block
       className='pds-Accordion-ItemGroup-container'
       css={container_css}
     >
-      {useLink({ bypass: href ? false : true, href, ...linkProps },
-        (
-          <React.Fragment>
-            <Typography
-              className='pds-Accordion-ItemGroup-title'
-              as={accordionTitleAs}
-              css={title_css}
-            >
-              <Button
-                className='pds-Accordion-ItemGroup-button'
-                id={button_id}
-                aria-controls={section_id}
-                variant='ghost'
-                onClick={handleClick}
-                iconRight={expanded ? renderExpandedStateIcon() : renderNotExpandedStateIcon()}
-                css={button_css}
-              >
-                {title}
-              </Button>
-            </Typography>
-            <AccordionContent
-              className='pds-Accordion-ItemGroup-content'
-              as={accordionContentAs}
-              id={section_id}
-              innerSpace={innerSpace}
-              aria-labelledby={button_id}
-              hidden={!expanded}
-              css={content_css}
-            >
-              {children}
-            </AccordionContent>
-          </React.Fragment>
-        )
-      )}
+      <Typography
+        as={accordionTitleAs}
+        aria-controls={section_id}
+        className='pds-Accordion-ItemGroup-title'
+        id={button_id}
+        variant={accordionTitleVariant}
+        css={title_css}
+      >
+        {useLink({ bypass: !href ? true : false, href, ...linkProps }, title)}
+        {useLink({ bypass: children ? true : false, href, ...linkProps }, (
+          <IconButton
+            className='pds-Accordion-ItemGroup-IconButton'
+            variant='ghost'
+            onClick={handleClick}
+            icon={itemIcon}
+            css={{ button: icon_button_css, icon: icon_css }}
+          />
+        ))}
+      </Typography>
+      <AccordionContent
+        className='pds-Accordion-ItemGroup-content'
+        as={accordionContentAs}
+        id={section_id}
+        innerSpace={innerSpace}
+        aria-labelledby={button_id}
+        hidden={!expanded}
+        css={content_css}
+      >
+        {children}
+      </AccordionContent>
     </Block>
   )
 }
 
 AccordionItemGroup.defaultProps = {
   accordionTitleAs: 'h3',
+  accordionTitleVariant: 'buttonLabel-default',
   accordionContentAs: 'section'
 }
 
