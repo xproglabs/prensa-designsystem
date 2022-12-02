@@ -7,7 +7,8 @@
   "repository": "https://github.com/xproglabs/prensa-designsystem.git",
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "pkgRoot": "dist"
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
@@ -22,6 +23,7 @@
     "clear:dist": "rimraf dist",
     "prerelease:copyfiles": "cpx README.md dist && cpx CHANGELOG.md dist && cpx package.json dist && cpx .npmignore dist",
     "postrelease:copyfiles": "cpx dist/package.json . && cpx dist/CHANGELOG.md .",
+    "release:dry": "npm run prerelease:copyfiles && semantic-release --extends ./release.local.config.js --no-ci --dry-run",
     "release:local": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js --no-ci",
     "release": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js"
   },

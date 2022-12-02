@@ -24,6 +24,8 @@ export interface ColumnProps {
   customProps?: ColumnCustomPropsProp,
   itemComponent?: FunctionComponent | ReactNode;
   items?: SlotItemsType;
+  itemsBottom?: SlotItemsType;
+  itemsTop?: SlotItemsType;
   layout?: SlotConfigProps;
   name?: string;
 }

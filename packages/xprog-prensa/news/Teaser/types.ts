@@ -9,6 +9,7 @@ import {
   ImageContainerProps,
   ImageDerivative,
   ImageFileProps,
+  ImageObjectProps,
   ImageProps,
   ImageVariant
 } from './Image/types'
@@ -81,7 +82,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   };
   customLink?: any;
   customLinkProps?: any;
-  image?: string;
+  image?: ImageObjectProps;
   imageDerivative?: ImageDerivative;
   imageVariant?: ImageVariant;
   numberBgColor?: PrensaEngineColorType;
@@ -101,6 +102,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   subtitleVariant?: SubtitleVariant;
   title?: string;
   titleVariant?: TitleVariant;
+  wrapImage?: ElementType;
 }
 
 interface TeaserStyledProps extends ContainerDefaultProps {

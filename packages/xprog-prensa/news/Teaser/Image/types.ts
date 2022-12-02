@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ElementType, ReactNode } from 'react'
 
 import {
   BlockType,
@@ -6,19 +6,28 @@ import {
   ContainerDefaultProps
 } from '../types'
 
+interface ImageObjectProps {
+  alt?: string;
+  byline?: string;
+  url?: string
+}
+
 interface ImageContainerProps extends ContainerDefaultProps {
   children?: ReactNode;
   customProps?: BlockType;
 }
 
 interface ImageFileProps extends ImageContainerProps {
-  src?: string;
+  image?: ImageObjectProps;
+  wrapImage?: ElementType;
 }
 
 interface ImageProps extends ImageContainerProps {
+  alt?: string;
   css?: CSSType;
   derivative?: ImageDerivative,
-  image?: string;
+  image?: ImageObjectProps;
+  wrapImage?: ElementType;
 }
 
 type ImageDerivative = '1x1' | '2x1' | '3x1' | '3x2' | '1x2' | '1x3' | '2x3'
@@ -29,6 +38,7 @@ export {
   ImageContainerProps,
   ImageDerivative,
   ImageFileProps,
+  ImageObjectProps,
   ImageProps,
   ImageVariant
 }
