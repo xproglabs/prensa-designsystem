@@ -12,7 +12,7 @@ export type AccordionGroupVariants = VariantProps<AccordionGroupType>
 
 export type AccordionItemGroupCSSProp = {
   accordionItemGroupContainer?: PrensaEngineCSSProp;
-  accordionTitle?: { title?: PrensaEngineCSSProp; button?: PrensaEngineCSSProp; label?: PrensaEngineCSSProp; };
+  accordionTitle?: { title?: PrensaEngineCSSProp; iconButton?: PrensaEngineCSSProp; icon?: PrensaEngineCSSProp; };
   accordionContent?: PrensaEngineCSSProp;
 }
 
@@ -25,6 +25,7 @@ export type AccordionItemGroupProps = {
   id: string;
   title: string;
   accordionTitleAs?: any;
+  accordionTitleVariant?: any;
   accordionContentAs?: any;
   customLink?: any;
   customLinkProps?: any;
