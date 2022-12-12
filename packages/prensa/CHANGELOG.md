@@ -1,3 +1,34 @@
+# [1.18.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.17.0...v1.18.0) (2022-12-12)
+
+
+### Bug Fixes
+
+* Add customLinkProps to Accordion and AccordionItemGroup ([a8bbc72](https://github.com/xproglabs/prensa-designsystem/commit/a8bbc72c446cfd3751be12264c1345abd905561a))
+* **imageDerivative:** add derivative to img url ([80eebb2](https://github.com/xproglabs/prensa-designsystem/commit/80eebb237935b9958105a625a84659b9ff754f58))
+* **imageDerivative:** add image alt to teaer ([40d7ccd](https://github.com/xproglabs/prensa-designsystem/commit/40d7ccd3ad3dd1b8e9f5dcf81b55c673885222a1))
+* insert mr props in related item ([1eccafe](https://github.com/xproglabs/prensa-designsystem/commit/1eccafe0939679eb0ac02f2b25900a0f1414332a))
+* Optimize export Utils ([8b1d32a](https://github.com/xproglabs/prensa-designsystem/commit/8b1d32a3a3f119132e7df193397daf2a5a3672f9))
+* Remove exports in each individual util function ([ce28606](https://github.com/xproglabs/prensa-designsystem/commit/ce286061a0bd59fa8321346b570b121437d39ea8))
+
+
+### Features
+
+* Add bypass property to useLink hook ([7d9eaa3](https://github.com/xproglabs/prensa-designsystem/commit/7d9eaa33849c78a6c9c168c3e0de2a4f36be1274))
+* Add new properties href and linkProps to AccordionItemGroup component ([d3ac662](https://github.com/xproglabs/prensa-designsystem/commit/d3ac66259929460b2c26e6e00a21e7bca6574f81))
+* Allow unique link for AccordionItemGroupTitle and icon ([b16ee07](https://github.com/xproglabs/prensa-designsystem/commit/b16ee0723d4159226423287fbd559501a823d0f8))
+* Create LayoutProviderDefaults grouping ([c5ebf8d](https://github.com/xproglabs/prensa-designsystem/commit/c5ebf8d1b1c00d1944c5d61127a6b860f4a3c56b))
+* Create new bundle for hooks ([e191041](https://github.com/xproglabs/prensa-designsystem/commit/e1910419227c8e85688eca573d36c4419450f9fe))
+* Create new hook useLink ([423ddf8](https://github.com/xproglabs/prensa-designsystem/commit/423ddf8c3e34045e35d0bc548c6a856ef240d104))
+* Create Topbar component and stories ([376f02f](https://github.com/xproglabs/prensa-designsystem/commit/376f02f239eaf97898898cf44c207a89a8742095))
+* **imageWrap:** add teaser image wrap ([83158f9](https://github.com/xproglabs/prensa-designsystem/commit/83158f9cf2020f73597e540f1a692d7137f3aa53))
+* **imageWrap:** adjust image derivative in image ([e54feb5](https://github.com/xproglabs/prensa-designsystem/commit/e54feb5d33d9ecb9c50af1a3d5995c7c53cb9da1))
+* New Footer component ([c56b025](https://github.com/xproglabs/prensa-designsystem/commit/c56b025dbbbd0c0d0dd8b05e0abfe916d807fdfc))
+* New hook function useComponentFromProps ([119c640](https://github.com/xproglabs/prensa-designsystem/commit/119c64098292a643d5e852c75ee833909363adf2))
+* New type ComponentFromProps and implements useComponentFromProps in Topbar ([ec1ff1c](https://github.com/xproglabs/prensa-designsystem/commit/ec1ff1cc45e20d66c5c2adb4c03697619d6b6e2f))
+* **pageBlocks:** add columnTop and columnGroup ([bfcb036](https://github.com/xproglabs/prensa-designsystem/commit/bfcb0360bae6cc93013e4d51dba4079105bd48ad))
+* **pageBlocks:** Add extra slots to pageblocks component ([ec6687a](https://github.com/xproglabs/prensa-designsystem/commit/ec6687ab6a6654e52d2ab4ed8a78b8aee3130ed0))
+* **teaserTitleWrap:** allow next/link to wrap title ([64c48f0](https://github.com/xproglabs/prensa-designsystem/commit/64c48f0c1d425e16181259aee0a69ef3216af4c7))
+
 # [1.16.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.15.0...v1.16.0) (2022-10-10)
 
 
