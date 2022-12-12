@@ -27,6 +27,7 @@ const Related = ({
             line_height={layout.line_height}
             item_path={item_path}
             mb={layout.mb}
+            mr={layout.mr}
           >
             {item.name}
           </RelatedItem>

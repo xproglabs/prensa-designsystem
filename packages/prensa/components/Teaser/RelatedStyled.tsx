@@ -32,8 +32,8 @@ const RelatedItem = ({
   line_height,
   item_path,
   theme,
-  mr,
-  mb
+  mb,
+  mr
 }: RelatedItemProps) => {
 
   const icon_token = icon?.icon
@@ -50,7 +50,8 @@ const RelatedItem = ({
   return (
     <Block
       mb={mb[0]}
-      lg={{ mb: mb[1] }}
+      mr={mr[0]}
+      lg={{ mb: mb[1], mr: mr[1] }}
       width='100%'
     >
       <Block align='row'>
@@ -83,7 +84,8 @@ RelatedItem.defaultProps = {
   font_size: ['14px', '14px'],
   font_weight: 400,
   line_height: ['16px', '16px'],
-  mb: [2, 2]
+  mb: [2, 2],
+  mr: ['0px', 1]
 }
 
 const ThemedRelatedItem: any = withTheme(RelatedItem)
