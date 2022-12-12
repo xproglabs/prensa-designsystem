@@ -85,7 +85,7 @@ RelatedItem.defaultProps = {
   font_weight: 400,
   line_height: ['16px', '16px'],
   mb: [2, 2],
-  mr: ['0px', 1]
+  mr: ['0px', '0px']
 }
 
 const ThemedRelatedItem: any = withTheme(RelatedItem)
