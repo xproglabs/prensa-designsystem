@@ -6,7 +6,7 @@ import { withTheme } from 'styled-components'
 import Block from '../../Block'
 import { ImageGallery } from '../../ImageGallery/index.tsx'
 import Citation from '../Citation/Citation'
-import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed, TikTokEmbed } from '../Embeds'
+import { FacebookEmbed, IframeEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed, TikTokEmbed } from '../Embeds'
 import Heading2 from '../Headings/Heading2'
 import Heading3 from '../Headings/Heading3'
 import Heading4 from '../Headings/Heading4'
@@ -176,6 +176,13 @@ const TextBody = (props) => {
             maxWidth={bodyWidth}
             value={value}
             {...citation}
+          />
+        )
+      case 'iframe':
+        return (
+          <IframeEmbed
+            maxWidth={bodyWidth}
+            url={value?.src}
           />
         )
       case 'Facebook':

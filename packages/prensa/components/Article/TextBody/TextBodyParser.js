@@ -51,6 +51,10 @@ const parse_content = (content) => {
       tagItems.push({ 'type': 'blockquote', 'value': `${BlockquoteHTMLParser(child)}` })
       return true
     }
+    if (tag === 'iframe') {
+      tagItems.push({ 'type': 'iframe', 'value': attr })
+      return true
+    }
     if (tag === 'h2') {
       tagItems.push({ 'type': 'h2', 'value': `${renderChildValue(child)}` })
       return true
