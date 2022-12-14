@@ -48,6 +48,7 @@ const Article = (props) => {
 
   // prepare article slots
   const adsBody = get(ads, 'body', {})
+  const adsBottom = get(ads, 'bottom', false)
   const adsSideBar = get(ads, 'sideBar', false)
   const adsTopImage = get(ads, 'topImage', false)
   const adsTopBody = get(ads, 'topBody', false)
@@ -112,6 +113,7 @@ const Article = (props) => {
         >
           <TextBody
             adsBody={adsBody}
+            adsBottom={adsBottom}
             adsSide={adsSideBar}
             amp={amp}
             bodyImage={bodyImage}
@@ -162,6 +164,9 @@ Article.defaultProps = {
 
 Article.propTypes = {
   ads: PropTypes.shape({
+    bottom: PropTypes.shape({
+      enabled: PropTypes.bool
+    }),
     body: PropTypes.shape({
       content: PropTypes.array,
       enabled: PropTypes.bool,
