@@ -1,3 +1,17 @@
+# [1.19.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.18.0...v1.19.0) (2022-12-14)
+
+
+### Bug Fixes
+
+* add condition to show ads markup ([9a3166a](https://github.com/xproglabs/prensa-designsystem/commit/9a3166a86abcd15f98619a638764097cb3dd9a78))
+* add missed shape in textbody type ([eb45eb4](https://github.com/xproglabs/prensa-designsystem/commit/eb45eb420a9eab0258b5407806e285e825c8181c))
+
+
+### Features
+
+* add ads_article_bottom space ([48323b6](https://github.com/xproglabs/prensa-designsystem/commit/48323b688d3e0078a7681260b451ce7523d647a4))
+* new Iframe component into article textbody ([dbfa95b](https://github.com/xproglabs/prensa-designsystem/commit/dbfa95b05bc4a2780d09c10a7e04eb1c52f4b87e))
+
 # [1.18.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.17.0...v1.18.0) (2022-12-12)
 
 
