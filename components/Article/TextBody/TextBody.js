@@ -22,6 +22,7 @@ import { parse_content } from './TextBodyParser'
 const TextBody = (props) => {
   const {
     adsBody,
+    adsBottom,
     adsSide,
     amp,
     bodyImage,
@@ -213,6 +214,7 @@ const TextBody = (props) => {
   }
 
   const RenderMainColumn = () => {
+    const isAdsArticleBottomVisible = get(adsBottom, 'enabled', false)
     const isGalleryVisible = gallery && gallery.items && gallery.items.length > 0
     const isTagsSectionTitleVisible = get(tags, 'sectionTitle.enabled', false)
     const tagsSectionTitleValue = get(tags, 'sectionTitle.value', 'Assuntos')
@@ -252,6 +254,7 @@ const TextBody = (props) => {
           sectionTitle={sectionTitle}
           share={share}
         />
+        {isAdsArticleBottomVisible && <div id='ads_article_bottom' />}
       </React.Fragment>
     )
   }
@@ -299,6 +302,9 @@ TextBody.propTypes = {
     enabled: PropTypes.bool,
     render: PropTypes.node,
     interventionAmount: PropTypes.number
+  }),
+  adsBottom: PropTypes.shape({
+    enabled: PropTypes.bool,
   }),
   adsSide: PropTypes.node,
   amp: PropTypes.bool,
