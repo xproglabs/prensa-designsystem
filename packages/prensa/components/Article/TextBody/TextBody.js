@@ -347,6 +347,9 @@ TextBody.propTypes = {
     render: PropTypes.node,
     interventionAmount: PropTypes.number
   }),
+  adsBottom: PropTypes.shape({
+    enabled: PropTypes.bool,
+  }),
   adsSide: PropTypes.node,
   amp: PropTypes.bool,
   bodyImage: PropTypes.object,
