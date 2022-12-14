@@ -296,6 +296,7 @@ const TextBody = (props) => {
           sectionTitle={sectionTitle}
           share={share}
         />
+        <div id='ads_article_bottom' />
       </React.Fragment>
     )
   }
