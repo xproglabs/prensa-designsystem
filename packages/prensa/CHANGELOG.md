@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.19.0...v1.20.0) (2022-12-15)
+
+
+### Features
+
+* add byline image to article byline ([74d5071](https://github.com/xproglabs/prensa-designsystem/commit/74d5071a5e8beb0fbac7553ed552dc72ff277fd4))
+
 # [1.19.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.18.0...v1.19.0) (2022-12-14)
 
 
