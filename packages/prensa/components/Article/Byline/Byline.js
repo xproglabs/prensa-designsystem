@@ -14,6 +14,7 @@ const Byline = ({
   content,
   dateline,
   datetime,
+  image,
   isExpanded,
   fbappid,
   pageUrl,
@@ -84,15 +85,18 @@ const Byline = ({
     <S.Container>
       <S.Content {...content}>
         <S.BylineContainer {...dateline}>
-          {authors.items.length > 0 ? (
-            <ManyAuthors items={authors.items} />
-          ) : (
-            <>
-              <S.Author {...author}>{author.value}</S.Author>
-              <AuthorInfo />
-            </>
-          )}
-          {isExpanded ? <BylineExpanded /> : <BylineReduced />}
+          <S.BylineImage {...image} />
+          <S.BylineContent>
+            {authors.items.length > 0 ? (
+              <ManyAuthors items={authors.items} />
+            ) : (
+              <>
+                <S.Author {...author}>{author.value}</S.Author>
+                <AuthorInfo />
+              </>
+            )}
+            {isExpanded ? <BylineExpanded /> : <BylineReduced />}
+          </S.BylineContent>
         </S.BylineContainer>
         <Share
           amp={amp}
@@ -130,6 +134,9 @@ Byline.defaultProps = {
     fontFamily: 'secondary',
     fontSize: ['12px', '12px'],
     lineHeight: ['16px', '16px']
+  },
+  image: {
+    enabled: false
   }
 }
 
@@ -138,6 +145,7 @@ Byline.propTypes = {
   author: PropTypes.object,
   authors: PropTypes.object,
   datetime: PropTypes.object,
+  image: PropTypes.object,
   share: PropTypes.object,
   isExpanded: PropTypes.bool,
 }

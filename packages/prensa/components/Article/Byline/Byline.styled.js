@@ -66,19 +66,57 @@ Content.propTypes = {
   mb: PropTypes.array
 }
 
-export const BylineContainer = ({ children, mb }) => 
-  <Block 
+export const BylineContainer = ({ children, mb, width }) => (
+  <Block
+    align={['row', 'left', 'left']}
     mb={mb[0]}
     lg={{
       mb: mb[1]
     }}
-    width='100%'>
+    width={width}
+  >
     {children}
   </Block>
+)
+
+BylineContainer.defaultProps = {
+  mb: [0, 0],
+  width: '100%'
+}
 
 BylineContainer.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  mb: PropTypes.array,
+  mb: PropTypes.array
+}
+
+export const BylineContent = ({ children, width }) => (
+  <Block width={width}>{children}</Block>
+)
+
+BylineContent.defaultProps = {
+  width: '100%'
+}
+
+export const BylineImage = ({ customProps, imageProps, name, path, url }) => {
+  if (!path || path == '') {
+    return (
+      <Block {...customProps}>
+        <img src={url} {...imageProps} title={name} />
+      </Block>
+    )
+  }
+  return (
+    <Block {...customProps}>
+      <a href={path} alt={name}>
+        <img src={url} {...imageProps} title={name} />
+      </a>
+    </Block>
+  )
+}
+
+BylineImage.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  mb: PropTypes.array
 }
 
 export const BylineText = ({

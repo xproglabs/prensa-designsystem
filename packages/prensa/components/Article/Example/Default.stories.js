@@ -38,6 +38,63 @@ export const ArticleDefault = () => {
     <ThemeProvider theme={theme}>
       <Article
         ads={ads}
+        byline={{
+          author: {
+            color: 'neutral2',
+            email: 'suporte@jmonline.com',
+            fontFamily: 'secondary',
+            fontSize: ['16px', '16px'],
+            lineHeight: ['120%', '120%'],
+            socialMedias: '',
+            value: 'legacy_article_1042'
+          },
+          dateline: {
+            mb: ['12px', '0px'],
+            width: 'calc(100% - 64px)'
+          },
+          datetime: {
+            color: 'neutral4',
+            fontFamily: 'secondary',
+            fontSize: ['16px', '16px'],
+            fontWeight: 400,
+            lineHeight: ['120%', '120%'],
+            time_modified: '',
+            time_published: '25/10/2429 às 15:22'
+          },
+          image: {
+            customProps: {
+              mr: '12px',
+              height: '64px',
+              width: '64px'
+            },
+            imageProps: {
+              height: '64px',
+              width: '64px'
+            },
+            name: 'Colunista nome',
+            path: 'http://localhost:2999/colunas',
+            url: 'http://localhost:2999/image/policy:1.622.1671057503:1671057503/image.jpg?f=default&w=1000&',
+            enabled: true
+          },
+        }}
+        share={{
+          size: '32px',
+          byline: {
+            enabled: true,
+            twitterPath: '/assets/IconTwitter.svg',
+            whatsappPath: '/assets/IconWhats.svg',
+            facebookProps: { mr: 4 },
+            twitterProps: { mr: 4 }
+          },
+          textBody: {
+            enabled: true,
+            sectionTitle: true,
+            twitterPath: '/assets/IconTwitter.svg',
+            whatsappPath: '/assets/IconWhats.svg',
+            facebookProps: { mr: 4 },
+            twitterProps: { mr: 4 }
+          }
+        }}
         subject={{
           bgColor: 'neutral3',
           color: 'white',
