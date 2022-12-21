@@ -1,3 +1,12 @@
+## [1.20.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.20.0...v1.20.1) (2022-12-21)
+
+
+### Bug Fixes
+
+* instagram embed - use fbclienttoken ([0172772](https://github.com/xproglabs/prensa-designsystem/commit/0172772c845d6cc557348fa230d5f6942b92a02e))
+* maxWidth in Typography propTypes ([9ae85d4](https://github.com/xproglabs/prensa-designsystem/commit/9ae85d4e2785b1e0168d851861bc6f27efcfde4c))
+* use of align in BylineContainer ([83831c6](https://github.com/xproglabs/prensa-designsystem/commit/83831c601b652eb70c791938a934a3a35341ebcc))
+
 # [1.20.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.19.0...v1.20.0) (2022-12-15)
 
 
