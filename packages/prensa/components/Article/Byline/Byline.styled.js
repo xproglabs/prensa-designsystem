@@ -68,7 +68,9 @@ Content.propTypes = {
 
 export const BylineContainer = ({ children, mb, width }) => (
   <Block
-    align={['row', 'left', 'left']}
+    align='row'
+    alignx='left'
+    aligny='middle'
     mb={mb[0]}
     lg={{
       mb: mb[1]
