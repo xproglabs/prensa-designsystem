@@ -30,6 +30,7 @@ const TextBody = (props) => {
     citation,
     content,
     fbappid,
+    fbclienttoken,
     gallery,
     hasColumnRight,
     heading2,
@@ -210,6 +211,8 @@ const TextBody = (props) => {
         return (
           <InstagramEmbed
             amp={amp}
+            fbappid={fbappid}
+            fbclienttoken={fbclienttoken}
             url={value}
           />
         )
@@ -363,6 +366,8 @@ TextBody.propTypes = {
   bodyWidth: PropTypes.string,
   content: PropTypes.string,
   citation: PropTypes.object,
+  fbappid: PropTypes.string,
+  fbclienttoken: PropTypes.string,
   gallery: PropTypes.shape({
     captionProps: PropTypes.object,
     items: PropTypes.array,

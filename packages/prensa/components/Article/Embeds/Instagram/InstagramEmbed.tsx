@@ -10,8 +10,8 @@ const InstagramEmbed = ({
   amp,
   ampElementProps,
   elementProps,
-  clientToken,
   fbappid,
+  fbclienttoken,
   height,
   mb,
   ml,
@@ -27,7 +27,7 @@ const InstagramEmbed = ({
   }
 
   const dataShortcode = getInstagramShortcode(url)
-  const accessToken = `${fbappid}|${clientToken}`
+  const accessToken = `${fbappid}|${fbclienttoken}`
 
   const Amp = () => (
     <amp-instagram
