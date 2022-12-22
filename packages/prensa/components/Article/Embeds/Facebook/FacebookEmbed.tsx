@@ -1,4 +1,5 @@
 import React from 'react'
+import { EmbeddedPost, FacebookProvider } from 'react-facebook'
 
 import { Container } from '../styled'
 import { FacebookEmbedProps } from './types'
@@ -32,6 +33,12 @@ const FacebookEmbed = ({
     />
   )
 
+  const Web = () => (
+    <FacebookProvider appId={fbappid}>
+      <EmbeddedPost href={url} {...elementProps} />
+    </FacebookProvider>
+  )
+
   return (
     <Container
       $height={height}
@@ -41,7 +48,7 @@ const FacebookEmbed = ({
       mb={mb}
       ml={ml}
     >
-      {amp ? <Amp /> : <></>}
+      {amp ? <Amp /> : <Web />}
     </Container>
   )
 }
