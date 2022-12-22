@@ -1,4 +1,4 @@
-//@ts-nocheck
+// @ts-nocheck
 import React from 'react'
 import Instagram from 'react-instagram-embed'
 
@@ -26,7 +26,7 @@ const InstagramEmbed = ({
     return null
   }
 
-  const dataShortcode = getInstagramShortcode(url)
+  const dataShortcode = amp && getInstagramShortcode(url)
   const accessToken = `${fbappid}|${fbclienttoken}`
 
   const Amp = () => (
@@ -42,7 +42,7 @@ const InstagramEmbed = ({
 
   const Web = () => (
     <Instagram
-      url={dataShortcode}
+      url={url}
       clientAccessToken={accessToken}
       {...elementProps}
     />
