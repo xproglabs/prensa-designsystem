@@ -1,3 +1,15 @@
+# [1.21.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.20.1...v1.21.0) (2022-12-22)
+
+
+### Bug Fixes
+
+* Update InstagramEmbed web url property ([b78d4d6](https://github.com/xproglabs/prensa-designsystem/commit/b78d4d668f6d8294bb54059bbaa8f117c665fa43))
+
+
+### Features
+
+* Implements react-facebook Provider and EmbedPost in FacebookEmbed component ([1c653f4](https://github.com/xproglabs/prensa-designsystem/commit/1c653f4d9bf94396ea082e379db14b956b504006))
+
 ## [1.20.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.20.0...v1.20.1) (2022-12-21)
 
 
