@@ -85,7 +85,9 @@ const Byline = ({
     <S.Container>
       <S.Content {...content}>
         <S.BylineContainer {...dateline}>
-          <S.BylineImage {...image} />
+          {(image && image.enabled) && (
+            <S.BylineImage {...image} />
+          )}
           <S.BylineContent>
             {authors.items.length > 0 ? (
               <ManyAuthors items={authors.items} />
