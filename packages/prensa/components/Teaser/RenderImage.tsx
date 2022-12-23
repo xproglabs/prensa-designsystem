@@ -7,6 +7,7 @@ import { parseImagePath } from '../Image/parser'
 import { ImagePreviewLink } from '../Image/preview'
 import { parseContentId } from '../Util/parseContentId'
 import { RenderOpacityMask } from './RenderOpacityMask'
+import Link from '../Link'
 import * as S from './styled'
 
 type RenderImageProps = {
@@ -165,9 +166,13 @@ const RenderImage = ({
       )
     }
     return (
-      <S.AreaLink href={item_path}>
+      <Link 
+        ariaLabel='Imagem da Notícia'
+        hoverOpacity={0.8}
+        href={item_path}
+        width='100%'>
         <RenderImageElement />
-      </S.AreaLink>
+      </Link>
     )
   }
   if (editable && editable.enabled) {
