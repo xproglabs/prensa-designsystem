@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.21.0...v1.21.1) (2022-12-23)
+
+
+### Bug Fixes
+
+* use imageByline only when image is enabled ([d039481](https://github.com/xproglabs/prensa-designsystem/commit/d0394813f5784d7ffceaf08a1e9732f050cae7ca))
+
 # [1.21.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.20.1...v1.21.0) (2022-12-22)
 
 
