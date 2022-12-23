@@ -1,3 +1,10 @@
+## [1.21.2](https://github.com/xproglabs/prensa-designsystem/compare/v1.21.1...v1.21.2) (2022-12-23)
+
+
+### Bug Fixes
+
+* change Arealink to Link in RenderImage ([603c6c7](https://github.com/xproglabs/prensa-designsystem/commit/603c6c7a75236405aa3dca61eb520bf303241a37))
+
 ## [1.21.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.21.0...v1.21.1) (2022-12-23)
 
 
