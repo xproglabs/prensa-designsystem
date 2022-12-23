@@ -8,6 +8,7 @@ import { LinkProps } from './types'
  * @description Link component is an abstraction for <a/>
  */
 const Link = ({
+  ariaLabel,
   children,
   color,
   display,
@@ -30,6 +31,7 @@ const Link = ({
 
   return (
     <StyledLink
+      aria-label={ariaLabel}
       href={path || href}
       $color={color}
       $display={display}
