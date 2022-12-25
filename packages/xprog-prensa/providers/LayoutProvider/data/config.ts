@@ -5,6 +5,7 @@ const pageblockConfig: PageBlockConfig = {
   slotManualBottomCenter: [],
   slotManualBottomRight: [],
   slotManualExtra: [],
+  slotManualExtraTop: [],
   slotManualTopLeft: [],
   slotManualTopCenter: [],
   slotManualTopRight: [],
