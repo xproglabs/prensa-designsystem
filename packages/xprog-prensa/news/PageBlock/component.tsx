@@ -21,6 +21,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   slotManualBottomCenter,
   slotManualBottomRight,
   slotManualExtra,
+  slotManualExtraTop,
   slotLeftBgColor,
   slotLeftLayout,
   slotCenterBgColor,
@@ -32,7 +33,6 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   templates,
   templateBgColor
 }) => {
-
   const getLayoutBySlotAndTemplate = (name, slot) => {
     const layoutSelected = get(slotLayouts, slot)
     const layoutSlotConfig = get(layoutSelected, `slotConfig[${slotTemplate}][slot${name}]`)
@@ -111,8 +111,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     customProps: {
       ...columnProps?.customProps,
       item: {
-        ...columnProps?.customProps?.item,
-
+        ...columnProps?.customProps?.item
       }
     },
     css: {
@@ -175,7 +174,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     css: {
       column: {
         ...css?.column,
-        ...template?.css?.column,
+        ...template?.css?.column
       },
       item: {
         ...css?.item,
@@ -185,17 +184,39 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     items: slotManualExtra,
     name: 'Extra'
   }
+  const columnExtraTopProps: ColumnProps = {
+    ...columnProps,
+    css: {
+      column: {
+        ...css?.column,
+        ...template?.css?.column
+      },
+      item: {
+        ...css?.item,
+        ...template?.css?.item
+      }
+    },
+    items: slotManualExtraTop,
+    name: 'ExtraTop'
+  }
 
   return (
     <PageBlockContainer {...containerProps} css={containerCss}>
+      {slotManualExtraTop && slotManualExtraTop.length > 0 && (
+        <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
+          <Column {...columnExtraTopProps} />
+        </ColumnHolder>
+      )}
       <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
         <Column {...columnLeftProps} />
         <Column {...columnCenterProps} />
         <Column {...columnRightProps} />
       </ColumnHolder>
-      <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
-        <Column {...columnExtraProps} />
-      </ColumnHolder>
+      {slotManualExtra && slotManualExtra.length > 0 && (
+        <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
+          <Column {...columnExtraProps} />
+        </ColumnHolder>
+      )}
     </PageBlockContainer>
   )
 }

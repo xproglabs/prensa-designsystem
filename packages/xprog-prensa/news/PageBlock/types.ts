@@ -35,6 +35,7 @@ export interface PageBlockConfig {
   slotManualBottomCenter?: SlotItemsType;
   slotManualBottomRight?: SlotItemsType;
   slotManualExtra?: SlotItemsType;
+  slotManualExtraTop?: SlotItemsType;
   slotManualTopLeft?: SlotItemsType;
   slotManualTopCenter?: SlotItemsType;
   slotManualTopRight?: SlotItemsType;
