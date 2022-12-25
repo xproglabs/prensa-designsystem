@@ -1,3 +1,27 @@
+# [2.24.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.23.0...pds-v2.24.0) (2022-12-25)
+
+
+### Bug Fixes
+
+* add condition to show ads markup ([9a3166a](https://github.com/xproglabs/prensa-designsystem/commit/9a3166a86abcd15f98619a638764097cb3dd9a78))
+* add missed shape in textbody type ([eb45eb4](https://github.com/xproglabs/prensa-designsystem/commit/eb45eb420a9eab0258b5407806e285e825c8181c))
+* change Arealink to Link in RenderImage ([603c6c7](https://github.com/xproglabs/prensa-designsystem/commit/603c6c7a75236405aa3dca61eb520bf303241a37))
+* insert mr props in related item ([1eccafe](https://github.com/xproglabs/prensa-designsystem/commit/1eccafe0939679eb0ac02f2b25900a0f1414332a))
+* instagram embed - use fbclienttoken ([0172772](https://github.com/xproglabs/prensa-designsystem/commit/0172772c845d6cc557348fa230d5f6942b92a02e))
+* maxWidth in Typography propTypes ([9ae85d4](https://github.com/xproglabs/prensa-designsystem/commit/9ae85d4e2785b1e0168d851861bc6f27efcfde4c))
+* Update InstagramEmbed web url property ([b78d4d6](https://github.com/xproglabs/prensa-designsystem/commit/b78d4d668f6d8294bb54059bbaa8f117c665fa43))
+* use imageByline only when image is enabled ([d039481](https://github.com/xproglabs/prensa-designsystem/commit/d0394813f5784d7ffceaf08a1e9732f050cae7ca))
+* use of align in BylineContainer ([83831c6](https://github.com/xproglabs/prensa-designsystem/commit/83831c601b652eb70c791938a934a3a35341ebcc))
+
+
+### Features
+
+* add ads_article_bottom space ([48323b6](https://github.com/xproglabs/prensa-designsystem/commit/48323b688d3e0078a7681260b451ce7523d647a4))
+* add byline image to article byline ([74d5071](https://github.com/xproglabs/prensa-designsystem/commit/74d5071a5e8beb0fbac7553ed552dc72ff277fd4))
+* add slotManualExtraTop in pageblock ([842e270](https://github.com/xproglabs/prensa-designsystem/commit/842e2706fdbb1d0ecc41d714ca204cab86d0fc9a))
+* Implements react-facebook Provider and EmbedPost in FacebookEmbed component ([1c653f4](https://github.com/xproglabs/prensa-designsystem/commit/1c653f4d9bf94396ea082e379db14b956b504006))
+* new Iframe component into article textbody ([dbfa95b](https://github.com/xproglabs/prensa-designsystem/commit/dbfa95b05bc4a2780d09c10a7e04eb1c52f4b87e))
+
 # [2.23.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.22.0...pds-v2.23.0) (2022-12-02)
 
 
