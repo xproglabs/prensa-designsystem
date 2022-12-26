@@ -1,3 +1,16 @@
+# [1.22.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.21.2...v1.22.0) (2022-12-26)
+
+
+### Bug Fixes
+
+* adjust id proos ([6f9f696](https://github.com/xproglabs/prensa-designsystem/commit/6f9f696a3e45ac94a83287511237e4a93dcf6dc6))
+
+
+### Features
+
+* add slotManualExtraTop in pageblock ([842e270](https://github.com/xproglabs/prensa-designsystem/commit/842e2706fdbb1d0ecc41d714ca204cab86d0fc9a))
+* create id props in Icon component ([ba588bf](https://github.com/xproglabs/prensa-designsystem/commit/ba588bfaf535cb0453cadbff21bb9a1531a03f54))
+
 ## [1.21.2](https://github.com/xproglabs/prensa-designsystem/compare/v1.21.1...v1.21.2) (2022-12-23)
 
 
