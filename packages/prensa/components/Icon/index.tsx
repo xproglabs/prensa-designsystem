@@ -7,6 +7,7 @@ const Icon = ({
   children,
   color,
   height,
+  id,
   viewBox,
   width,
   ...otherProps
@@ -18,6 +19,7 @@ const Icon = ({
       $color={color}
       height={height}
       viewBox={viewBox}
+      id={id}
       width={width}
       {...otherProps}
     >
@@ -25,7 +27,6 @@ const Icon = ({
     </Svg>
   )
 }
-
 Icon.defaultProps = {
   height: '24px',
   viewBox: '0 0 24 24',
