@@ -12,15 +12,15 @@ const Icon = ({
   width,
   ...otherProps
 }: IconProps) => {
-
+  const propId = id ? { id } : { }
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
       $color={color}
       height={height}
       viewBox={viewBox}
-      id={id}
       width={width}
+      {...propId}
       {...otherProps}
     >
       {children}
