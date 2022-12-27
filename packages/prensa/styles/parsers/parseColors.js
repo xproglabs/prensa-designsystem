@@ -19,7 +19,7 @@ const parseColor = (props, theme, propName) => {
   const propValue = get(props, propName, 'activeColor')
   if (propValue.startsWith('#')) return propValue
   const parsedValue = get(theme, `colors.${propValue}`, '')
-  if (!parsedValue) return console.error(`PRENSA :: Não existe valor correspondente para a prop de nome ${propName} passada na função parseColor`)
+  // if (!parsedValue) return console.error(`PRENSA :: Não existe valor correspondente para a prop de nome ${propName} passada na função parseColor`)
   return parsedValue
 }
 
