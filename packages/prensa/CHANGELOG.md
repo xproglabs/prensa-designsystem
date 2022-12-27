@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.22.1...v1.23.0) (2022-12-27)
+
+
+### Features
+
+* add image handler to image article ([ea3c409](https://github.com/xproglabs/prensa-designsystem/commit/ea3c4098e51fead71751843617a8faf9495e6d01))
+
 ## [1.22.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.22.0...v1.22.1) (2022-12-27)
 
 
