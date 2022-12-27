@@ -1,3 +1,10 @@
+## [1.22.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.22.0...v1.22.1) (2022-12-27)
+
+
+### Bug Fixes
+
+* allow custom props in button component ([5fec4e8](https://github.com/xproglabs/prensa-designsystem/commit/5fec4e8fdd6fec4c97103ea23c8053d741635c69))
+
 # [1.22.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.21.2...v1.22.0) (2022-12-26)
 
 
