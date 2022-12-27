@@ -18,6 +18,7 @@ const ArticleImage = ({
   clickToOpen,
   customClick,
   featured,
+  handleImage,
   height,
   image,
   mb,
@@ -47,6 +48,14 @@ const ArticleImage = ({
   )
 
   const Image = () => {
+    if (handleImage) {
+      return handleImage({
+        alt: captionValue,
+        height,
+        src: value,
+        width
+      })
+    }
     if (amp) {
       return (
         <amp-img
@@ -130,6 +139,7 @@ ArticleImage.defaultProps = {
   },
   clickToOpen: false,
   customClick: '',
+  handleImage: false,
   height: '640px',
   mb: [2, 2],
   px: [3, 4],
@@ -146,6 +156,7 @@ ArticleImage.propTypes = {
   customClick: PropTypes.string,
   featured: PropTypes.bool,
   height: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+  handleImage: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
   image: PropTypes.bool,
   mb: PropTypes.array,
   px: PropTypes.array,

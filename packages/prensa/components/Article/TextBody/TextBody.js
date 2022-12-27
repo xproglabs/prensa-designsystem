@@ -70,6 +70,7 @@ const TextBody = (props) => {
   const render_image = (value) => {
     if (!value) return null
     const image_items = get(images, 'items', [])
+    const handleImage = get(images, 'render', false)
     let image_data = undefined
     map(image_items, (item) => {
       const item_value = get(item, 'contentId', '')
@@ -91,6 +92,7 @@ const TextBody = (props) => {
           }}
           clickToOpen={clickToOpenValue}
           customClick={customClickValue}
+          handleImage={handleImage}
           height={image_data.height}
           width={image_data.width}
           value={image_data.value}
