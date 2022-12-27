@@ -3,6 +3,7 @@ import React from 'react'
 
 export interface MoreButtonLayoutProps {
   color?: string,
+  custom?: string,
   fontColor?: string,
   border?: string,
   fontSize?: number,
@@ -21,6 +22,7 @@ interface MoreButtonProps extends MoreButtonLayoutProps {
 const MoreButton = ({
   border,
   color,
+  custom,
   fontColor,
   fontSize,
   fontWeight,
@@ -36,6 +38,7 @@ const MoreButton = ({
   }
   return (
     <Block
+      custom={custom}
       mb={3}
       width='100%'>
       <Button
