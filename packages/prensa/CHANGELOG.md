@@ -1,3 +1,10 @@
+## [1.23.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.23.0...v1.23.1) (2022-12-27)
+
+
+### Bug Fixes
+
+* remove color warning to avoid webvitals error ([df98634](https://github.com/xproglabs/prensa-designsystem/commit/df9863474337f630298bd23ec9228521f3c8e318))
+
 # [1.23.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.22.1...v1.23.0) (2022-12-27)
 
 
