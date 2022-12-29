@@ -1,3 +1,10 @@
+## [1.23.2](https://github.com/xproglabs/prensa-designsystem/compare/v1.23.1...v1.23.2) (2022-12-29)
+
+
+### Bug Fixes
+
+* lodash import replacements ([620248c](https://github.com/xproglabs/prensa-designsystem/commit/620248c3c1158cf509bfc94814c6b3dcd9778485))
+
 ## [1.23.1](https://github.com/xproglabs/prensa-designsystem/compare/v1.23.0...v1.23.1) (2022-12-27)
 
 
