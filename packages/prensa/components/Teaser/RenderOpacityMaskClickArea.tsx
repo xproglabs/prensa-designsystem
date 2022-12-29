@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 import { Link } from 'prensa'
 import React from 'react'
 

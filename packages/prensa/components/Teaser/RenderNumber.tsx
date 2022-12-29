@@ -1,5 +1,5 @@
 import { ColorTokens, FontTokens, RadiusTokens } from '@prensa_tokens'
-import { get } from 'lodash'
+import get from 'lodash/get'
 import { Block, Typography } from 'prensa'
 import React from 'react'
 

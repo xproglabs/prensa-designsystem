@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 
 const parseBgColor = (props, theme) => {
   if (!props || !props.bgColor) return '' 

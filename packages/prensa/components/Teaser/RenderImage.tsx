@@ -1,5 +1,5 @@
 import { ImageProps } from 'components/Image/types'
-import { get } from 'lodash'
+import get from 'lodash/get'
 import React from 'react'
 
 import ImageElement from '../Image'

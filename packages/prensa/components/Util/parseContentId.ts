@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 /**
  * Transform contentId or contentIdVersioned in a contentIdString
  * @param contentId contentId or contentIdVersioned

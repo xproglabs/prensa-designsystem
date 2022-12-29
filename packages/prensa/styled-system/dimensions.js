@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 
 //ToDo: Allow default props by object, second param
 export const dimensions = ({

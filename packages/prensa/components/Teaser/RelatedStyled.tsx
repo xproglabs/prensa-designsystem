@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 import { Block, Link, Typography } from 'prensa'
 import React from 'react'
 import { withTheme } from 'styled-components'

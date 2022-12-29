@@ -1,4 +1,5 @@
-import { get, isArray } from 'lodash'
+import get from 'lodash/get'
+import isArray from 'lodash/isArray'
 
 import { generateNewMediaQuerie } from '../responsiveEngine'
 import { generateMT, generateMR, generateMB, generateML, generateMX, generateMY, generateM } from './parsers'
