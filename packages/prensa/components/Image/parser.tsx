@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 
 /**
  * @description set the image dimension (i.e. 2x1, 1x1, 3x2)

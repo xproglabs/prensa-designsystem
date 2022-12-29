@@ -1,5 +1,5 @@
 import { Colors, Fonts, Factors, Queries, Radius, Teasers, Templates } from '@prensa_tokens'
-import { merge } from 'lodash'
+import merge from 'lodash/merge'
 
 import { default_theme } from './default_theme'
 

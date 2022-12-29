@@ -1,4 +1,4 @@
-import { replace } from 'lodash'
+import replace from 'lodash/replace'
 
 export const removeSpaces = value => {
   if (typeof value === 'string') {

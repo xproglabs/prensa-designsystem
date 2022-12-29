@@ -1,4 +1,5 @@
-import { get, map } from 'lodash'
+import get from 'lodash/get'
+import map from 'lodash/map'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'

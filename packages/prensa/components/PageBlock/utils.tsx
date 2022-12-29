@@ -1,4 +1,5 @@
-import { get, map } from 'lodash'
+import get from 'lodash/get'
+import map from 'lodash/map'
 import React, { cloneElement } from 'react'
 
 import SectionTitle from '../SectionTitle'
