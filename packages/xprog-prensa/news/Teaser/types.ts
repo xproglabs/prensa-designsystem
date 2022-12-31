@@ -8,7 +8,7 @@ import {
 import {
   ImageContainerProps,
   ImageDerivative,
-  ImageFileProps,
+  ImageWrapProps,
   ImageObjectProps,
   ImageProps,
   ImageVariant
@@ -122,7 +122,7 @@ export {
   ContainerDefaultProps,
   ImageContainerProps,
   ImageDerivative,
-  ImageFileProps,
+  ImageWrapProps,
   ImageProps,
   ImageVariant,
   NumberContainerProps,

@@ -17,7 +17,7 @@ interface ImageContainerProps extends ContainerDefaultProps {
   customProps?: BlockType;
 }
 
-interface ImageFileProps extends ImageContainerProps {
+interface ImageWrapProps extends ImageContainerProps {
   image?: ImageObjectProps;
   wrapImage?: ElementType;
 }
@@ -37,7 +37,7 @@ type ImageVariant = 'top' | 'right' | 'bottom' | 'left' | 'background'
 export {
   ImageContainerProps,
   ImageDerivative,
-  ImageFileProps,
+  ImageWrapProps,
   ImageObjectProps,
   ImageProps,
   ImageVariant
