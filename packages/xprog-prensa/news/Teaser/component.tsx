@@ -16,6 +16,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
   customLinkProps,
   customProps,
   image,
+  imageLink,
+  imageLinkProps,
   imageDerivative,
   imageVariant,
   numberBgColor,
@@ -50,6 +52,9 @@ const Teaser: React.FC<t.TeaserProps> = ({
     alt: title,
     derivative: imageDerivative,
     image,
+    imageLink,
+    imageLinkProps,
+    imageHref: path,
     wrapImage
   }
   const TeaserRelated: React.FC<t.RelatedProps> | undefined = components?.related

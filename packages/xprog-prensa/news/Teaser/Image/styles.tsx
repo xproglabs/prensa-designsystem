@@ -39,7 +39,7 @@ const ImageWrap: React.FC<t.ImageWrapProps> = ({
     <Block
       className={`TeaserImage ${customProps?.className || ''}`}
       css={{ ...defaultCss, ...css }}>
-      {WrapImage ? <WrapImage {...image} /> : <img src={image?.url} />}
+      {WrapImage ? <WrapImage {...image} /> : <img alt={image?.alt} src={image?.url} />}
     </Block>
   )
 }

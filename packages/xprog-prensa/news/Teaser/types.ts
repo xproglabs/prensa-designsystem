@@ -83,6 +83,8 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   customLink?: any;
   customLinkProps?: any;
   image?: ImageObjectProps;
+  imageLink?: any;
+  imageLinkProps?: any;
   imageDerivative?: ImageDerivative;
   imageVariant?: ImageVariant;
   numberBgColor?: PrensaEngineColorType;

@@ -25,8 +25,11 @@ interface ImageWrapProps extends ImageContainerProps {
 interface ImageProps extends ImageContainerProps {
   alt?: string;
   css?: CSSType;
-  derivative?: ImageDerivative,
+  derivative?: ImageDerivative;
   image?: ImageObjectProps;
+  imageLink?: any;
+  imageLinkProps?: any;
+  imageHref?: string;
   wrapImage?: ElementType;
 }
 
