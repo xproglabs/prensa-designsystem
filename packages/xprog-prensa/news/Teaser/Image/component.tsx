@@ -1,18 +1,13 @@
 import React from 'react'
 
-import { useLink } from '../../../hooks'
 import * as S from './styles'
 import * as t from './types'
 
 const Image: React.FC<t.ImageProps> = ({
-  alt,
   css,
   customProps,
   derivative,
   image,
-  imageHref,
-  imageLink,
-  imageLinkProps,
   wrapImage
 }) => {
   const aspectRatio =
@@ -35,18 +30,10 @@ const Image: React.FC<t.ImageProps> = ({
       }}
       customProps={customProps}
     >
-      {useLink(
-        {
-          title: alt,
-          href: imageHref,
-          component: imageLink,
-          ...imageLinkProps
-        },
-        <S.ImageWrap
-          image={imageParsed}
-          wrapImage={wrapImage}
-        />
-      )}
+      <S.ImageWrap
+        image={imageParsed}
+        wrapImage={wrapImage}
+      />
     </S.ImageContainer>
   )
 }

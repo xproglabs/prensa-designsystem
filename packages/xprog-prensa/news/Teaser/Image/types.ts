@@ -27,9 +27,6 @@ interface ImageProps extends ImageContainerProps {
   css?: CSSType;
   derivative?: ImageDerivative;
   image?: ImageObjectProps;
-  imageLink?: any;
-  imageLinkProps?: any;
-  imageHref?: string;
   wrapImage?: ElementType;
 }
 
