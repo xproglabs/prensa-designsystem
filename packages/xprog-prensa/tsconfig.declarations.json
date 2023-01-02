@@ -21,6 +21,7 @@
   ],
   "include": [
     "index.ts",
-    "types.ts"
+    "types.ts",
+    "react-responsive-carousel/lib/ts/components/Carousel/types"
   ]
 }
