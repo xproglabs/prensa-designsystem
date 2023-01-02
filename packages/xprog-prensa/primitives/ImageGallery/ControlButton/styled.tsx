@@ -1,23 +1,28 @@
 import { PrensaEngine } from '../../../prensa.default.config'
+import { PrensaEngineCSSProp } from '../../../types'
 
-// const renderXPosition = ({ isNext }) => {
-//   if (isNext) return 'right: 0;'
-//   return 'left: 0;'
-// }
-
-// const renderYPosition = () => {
-//   // calc(50% - buttonHeight / 2 - buttonMargin)
-//   return 'top: calc(50% - 17px - 16px);'
-// }
-
-export const Button = PrensaEngine.styled('button', {
-  align: ['row', 'center', 'top'],
-  backgroundColor: 'rgba(0,0,0,.5)',
+const buttonProps: PrensaEngineCSSProp = {
+  align: ['row', 'center', 'middle'],
+  backgroundColor: 'white',
+  borderColor: 'rgba(0,0,0,0.8)',
+  borderStyle: 'solid',
   borderRadius: '2px',
+  borderWidth: '1px',
   border: 'unset',
   width: '34px',
   height: '34px',
   margin: '16px',
   position: 'absolute',
+  top: 'calc(50% - 64px)',
   zIndex: '10',
+}
+
+export const ButtonLeft = PrensaEngine.styled('button', {
+  ...buttonProps,
+  left: '0px'
+})
+
+export const ButtonRight = PrensaEngine.styled('button', {
+  ...buttonProps,
+  right: '0px'
 })

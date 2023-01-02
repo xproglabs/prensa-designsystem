@@ -2,7 +2,7 @@ import React from 'react'
 
 import { LeftArrowIcon } from './LeftArrowIcon'
 import { RightArrowIcon } from './RightArrowIcon'
-import { Button } from './styled'
+import { ButtonLeft, ButtonRight } from './styled'
 import { ControlButtonProps } from './types'
 
 const ControlButton = ({
@@ -15,15 +15,17 @@ const ControlButton = ({
     return <LeftArrowIcon />
   }
 
+  const ButtonElement = isNext ? ButtonRight : ButtonLeft
+
   return (
-    <Button
+    <ButtonElement
       type='button'
       aria-label={isNext ? 'Avançar' : 'Retroceder'}
       onClick={onClick}
       {...otherProps}
     >
       {renderIcon()}
-    </Button>
+    </ButtonElement>
   )
 }
 
