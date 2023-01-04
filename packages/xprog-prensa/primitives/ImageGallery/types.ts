@@ -1,5 +1,3 @@
-import { CaptionProps } from '../ImageGallery/Caption/types'
-
 export type ItemProps = {
   caption: string;
   url: string;
@@ -10,17 +8,10 @@ export type ContainerProps = {
   $height: string;
 }
 
-// AMP Image Gallery component
-export type AmpImageGalleryProps = {
-  captionProps?: CaptionProps;
-  items: Array<ItemProps>;
-  height: string;
-  width: string;
-}
-
 // WEB Image Gallery component
 export type WebImageGalleryProps = {
-  captionProps?: CaptionProps;
+  captionProps?: any;
+  componentCaption?: any;
   componentImage?: any;
   items: Array<ItemProps>;
 }
@@ -29,7 +20,7 @@ export type WebImageGalleryProps = {
  * Prensa | Image Gallery
  */
 export interface ImageGalleryProps {
-  captionProps?: CaptionProps;
+  captionProps?: any;
   items: Array<ItemProps>;
   height?: string;
   width?: string;

@@ -6,8 +6,12 @@ import { Caption } from './Caption'
 import { ControlButton } from './ControlButton'
 import { WebImageGalleryProps } from './types'
 
-const WebImageGallery = ({ captionProps, componentImage: Image, items }: WebImageGalleryProps) => {
-
+const WebImageGallery = ({
+  captionProps,
+  componentCaption: RenderCaption,
+  componentImage: Image,
+  items
+}: WebImageGalleryProps) => {
   const renderArrowPrev = (onClick, hasArrow) => {
     return hasArrow && <ControlButton onClick={onClick} />
   }
@@ -24,16 +28,17 @@ const WebImageGallery = ({ captionProps, componentImage: Image, items }: WebImag
       renderArrowPrev={renderArrowPrev}
       renderArrowNext={renderArrowNext}
     >
-      {map(items, (item, key) =>
+      {map(items, (item, key) => (
         <React.Fragment key={key}>
           <Image alt={item?.caption} src={item?.url} />
-          {captionProps?.enabled && 
-            <Caption {...captionProps}>
-              {item.caption}
-            </Caption>
-          }
+          {captionProps?.enabled && RenderCaption && (
+            <RenderCaption captionProps={captionProps} textValue={item.caption} />
+          )}
+          {captionProps?.enabled && !RenderCaption && (
+            <Caption {...captionProps}>{item.caption}</Caption>
+          )}
         </React.Fragment>
-      )}
+      ))}
     </Carousel>
   )
 }
