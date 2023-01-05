@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { WebImageGallery } from '../../../primitives/ImageGallery/index'
+import { ImageGallery } from '../../../primitives/ImageGallery/index'
 
-export default { title: 'Primitives/ImageGallery', component: WebImageGallery }
+export default { title: 'Primitives/ImageGallery', component: ImageGallery }
 
 const RenderImage = ({ alt, src }) => <img alt={alt} src={src} width='100%' />
 
@@ -130,7 +130,7 @@ export const Default = () => {
           `}
         </style>
       </head>
-      <WebImageGallery
+      <ImageGallery
         componentImage={RenderImage}
         captionProps={{ enabled: true }}
         items={galleryList}

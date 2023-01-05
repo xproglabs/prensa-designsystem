@@ -4,14 +4,14 @@ import { Carousel } from 'react-responsive-carousel'
 
 import { Caption } from './Caption'
 import { ControlButton } from './ControlButton'
-import { WebImageGalleryProps } from './types'
+import { ImageGalleryProps } from './types'
 
-const WebImageGallery = ({
+const ImageGallery = ({
   captionProps,
   componentCaption,
   componentImage,
   items
-}: WebImageGalleryProps) => {
+}: ImageGalleryProps) => {
 
   const RenderCaption = componentCaption
   const RenderImage = componentImage
@@ -59,4 +59,4 @@ const WebImageGallery = ({
   )
 }
 
-export { WebImageGallery }
+export { ImageGallery }
