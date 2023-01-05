@@ -1,3 +1,25 @@
+# [2.25.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.24.0...pds-v2.25.0) (2023-01-05)
+
+
+### Bug Fixes
+
+* adjust id proos ([6f9f696](https://github.com/xproglabs/prensa-designsystem/commit/6f9f696a3e45ac94a83287511237e4a93dcf6dc6))
+* adjust image wrap name ([a11e932](https://github.com/xproglabs/prensa-designsystem/commit/a11e932010150f45e1ad5ed0731edcaac853182b))
+* allow custom props in button component ([5fec4e8](https://github.com/xproglabs/prensa-designsystem/commit/5fec4e8fdd6fec4c97103ea23c8053d741635c69))
+* change position alt -> title ([b917604](https://github.com/xproglabs/prensa-designsystem/commit/b91760483826a45453a2528bf5dc55fcd13e90d8))
+* lodash import replacements ([620248c](https://github.com/xproglabs/prensa-designsystem/commit/620248c3c1158cf509bfc94814c6b3dcd9778485))
+* remove alt in byline anchor image ([318d7d4](https://github.com/xproglabs/prensa-designsystem/commit/318d7d4a2c7cccdaeaefbac12bc8f96f18858289))
+* remove color warning to avoid webvitals error ([df98634](https://github.com/xproglabs/prensa-designsystem/commit/df9863474337f630298bd23ec9228521f3c8e318))
+* remove custom imageLink ([a7a62a4](https://github.com/xproglabs/prensa-designsystem/commit/a7a62a4bb1ba513d19f2db5885eb19717ed46dac))
+* update teaser stories import ([d364269](https://github.com/xproglabs/prensa-designsystem/commit/d364269554b8ed1df00d2451a5b49b837325c581))
+
+
+### Features
+
+* add image handler to image article ([ea3c409](https://github.com/xproglabs/prensa-designsystem/commit/ea3c4098e51fead71751843617a8faf9495e6d01))
+* add useLink in teaser image ([932b46b](https://github.com/xproglabs/prensa-designsystem/commit/932b46b4905f1ed7c12ac1b0b053895194c8c082))
+* create id props in Icon component ([ba588bf](https://github.com/xproglabs/prensa-designsystem/commit/ba588bfaf535cb0453cadbff21bb9a1531a03f54))
+
 # [2.24.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.23.0...pds-v2.24.0) (2022-12-25)
 
 
