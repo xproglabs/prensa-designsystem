@@ -109,8 +109,8 @@ export const BylineImage = ({ customProps, imageProps, name, path, url }) => {
   }
   return (
     <Block {...customProps}>
-      <a href={path}>
-        <img src={url} {...imageProps} title={name} />
+      <a href={path} title={name}>
+        <img src={url} {...imageProps} alt={name} />
       </a>
     </Block>
   )
