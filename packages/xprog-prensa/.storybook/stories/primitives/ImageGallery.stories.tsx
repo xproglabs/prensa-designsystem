@@ -4,9 +4,8 @@ import { WebImageGallery } from '../../../primitives/ImageGallery/index'
 
 export default { title: 'Primitives/ImageGallery', component: WebImageGallery }
 
-const RenderImage = ({ alt, src }) => (
-  <img alt={alt} src={`http://localhost:3000/${src}&f=3x2`} width='100%' />
-)
+const RenderImage = ({ alt, src }) => <img alt={alt} src={src} width='100%' />
+
 export const Default = () => {
   const galleryList = [
     {
@@ -14,9 +13,8 @@ export const Default = () => {
       type: 'com.atex.standard.image.ImageContentDataBean',
       version: 'policy:1.1036593:1672580521',
       byline: 'Divulgação/Assembleia SP',
-      caption:
-        'Cerimônia de posse de Tarcísio como novo governador do Estado de São Paulo',
-      url: '/image/policy:1.1036593:1672580521/image.jpg?'
+      caption: 'Cerimônia de posse de Tarcísio como novo governador do Estado de São Paulo',
+      url: 'https://images.unsplash.com/photo-1616959313137-186688889054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4170&q=80'
     },
     {
       id: 'policy:1.1036587',
@@ -24,34 +22,31 @@ export const Default = () => {
       version: 'policy:1.1036587:1672578473',
       byline: 'Reprodução/Rede Alesp',
       caption: 'Tarcísio de Freitas e o presidente da Alesp, Carlão Pignatari',
-      url: '/image/policy:1.1036587:1672578473/image.jpg?'
+      url: 'https://images.unsplash.com/photo-1628586165208-0ac525a54757?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80'
     },
     {
       id: 'policy:1.1036594',
       type: 'com.atex.standard.image.ImageContentDataBean',
       version: 'policy:1.1036594:1672580549',
       byline: 'Divulgação/Assembleia SP',
-      caption:
-        'Cerimônia de posse de Tarcísio como novo governador do Estado de São Paulo',
-      url: '/image/policy:1.1036594:1672580549/image.jpg?'
+      caption: 'Cerimônia de posse de Tarcísio como novo governador do Estado de São Paulo',
+      url: 'https://images.unsplash.com/photo-1628586165208-0ac525a54757?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80'
     },
     {
       id: 'policy:1.1036596',
       type: 'com.atex.standard.image.ImageContentDataBean',
       version: 'policy:1.1036596:1672580575',
       byline: 'Divulgação/Assembleia SP',
-      caption:
-        'Cerimônia de posse de Tarcísio como novo governador do Estado de São Paulo',
-      url: '/image/policy:1.1036596:1672580575/image.jpg?'
+      caption: 'Cerimônia de posse de Tarcísio como novo governador do Estado de São Paulo',
+      url: 'https://images.unsplash.com/photo-1628586165208-0ac525a54757?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80'
     },
     {
       id: 'policy:1.1036597',
       type: 'com.atex.standard.image.ImageContentDataBean',
       version: 'policy:1.1036597:1672580604',
       byline: 'Divulgação/Assembleia SP',
-      caption:
-        'Cerimônia de posse de Tarcísio como novo governador do Estado de São Paulo',
-      url: '/image/policy:1.1036597:1672580604/image.jpg?'
+      caption: 'Cerimônia de posse de Tarcísio como novo governador do Estado de São Paulo',
+      url: 'https://images.unsplash.com/photo-1628586165208-0ac525a54757?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80'
     }
   ]
   return (
@@ -137,9 +132,7 @@ export const Default = () => {
       </head>
       <WebImageGallery
         componentImage={RenderImage}
-        captionProps={{
-          enabled: true
-        }}
+        captionProps={{ enabled: true }}
         items={galleryList}
       />
     </>
