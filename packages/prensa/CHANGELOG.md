@@ -1,3 +1,11 @@
+## [1.23.3](https://github.com/xproglabs/prensa-designsystem/compare/v1.23.2...v1.23.3) (2023-01-05)
+
+
+### Bug Fixes
+
+* change position alt -> title ([b917604](https://github.com/xproglabs/prensa-designsystem/commit/b91760483826a45453a2528bf5dc55fcd13e90d8))
+* remove alt in byline anchor image ([318d7d4](https://github.com/xproglabs/prensa-designsystem/commit/318d7d4a2c7cccdaeaefbac12bc8f96f18858289))
+
 ## [1.23.2](https://github.com/xproglabs/prensa-designsystem/compare/v1.23.1...v1.23.2) (2022-12-29)
 
 
