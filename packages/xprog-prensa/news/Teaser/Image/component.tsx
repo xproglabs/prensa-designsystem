@@ -30,7 +30,10 @@ const Image: React.FC<t.ImageProps> = ({
       }}
       customProps={customProps}
     >
-      <S.ImageFile image={imageParsed} wrapImage={wrapImage} />
+      <S.ImageWrap
+        image={imageParsed}
+        wrapImage={wrapImage}
+      />
     </S.ImageContainer>
   )
 }

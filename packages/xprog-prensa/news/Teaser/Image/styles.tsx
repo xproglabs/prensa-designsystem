@@ -27,7 +27,7 @@ ImageContainer.defaultProps = {
   }
 }
 
-const ImageFile: React.FC<t.ImageFileProps> = ({
+const ImageWrap: React.FC<t.ImageWrapProps> = ({
   css,
   customProps,
   defaultCss,
@@ -39,12 +39,12 @@ const ImageFile: React.FC<t.ImageFileProps> = ({
     <Block
       className={`TeaserImage ${customProps?.className || ''}`}
       css={{ ...defaultCss, ...css }}>
-      {WrapImage ? <WrapImage {...image} /> : <img src={image?.url} />}
+      {WrapImage ? <WrapImage {...image} /> : <img alt={image?.alt} src={image?.url} />}
     </Block>
   )
 }
 
-ImageFile.defaultProps = {
+ImageWrap.defaultProps = {
   defaultCss: {
     align: ['column', 'center', 'top'],
     my: 0,
@@ -55,4 +55,4 @@ ImageFile.defaultProps = {
   }
 }
 
-export { ImageContainer, ImageFile }
+export { ImageContainer, ImageWrap }
