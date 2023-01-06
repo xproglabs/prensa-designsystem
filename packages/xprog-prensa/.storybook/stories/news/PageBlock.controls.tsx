@@ -2,7 +2,8 @@ import { ArgsTable, Title } from '@storybook/addon-docs'
 import React from 'react'
 
 import { getDataForTeaser } from './Teaser.controls'
-import { layouts, templates } from '../../../providers/LayoutProvider/data'
+import { layouts } from '../../../providers/LayoutProvider/data/layouts'
+import { templates } from '../../../providers/LayoutProvider/data/templates'
 import { PageBlockTypes as t } from '../../../types'
 
 
