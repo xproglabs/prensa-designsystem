@@ -1,3 +1,18 @@
+# [2.26.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.25.0...pds-v2.26.0) (2023-01-06)
+
+
+### Bug Fixes
+
+* add react-carousel types to project ([ceff54d](https://github.com/xproglabs/prensa-designsystem/commit/ceff54dc5dc7b2c55e78d4862f68e8f4b7a25fa6))
+* adjust buttons controls in image gallery ([c94fce7](https://github.com/xproglabs/prensa-designsystem/commit/c94fce79269010f3cec5e902035aa27f5d5c9c12))
+* import templates in pageblock and teaser ([72d6386](https://github.com/xproglabs/prensa-designsystem/commit/72d6386084bcbb6ae92d995d9807f7a8f9b8c0e5))
+
+
+### Features
+
+* add image caption properties ([992da48](https://github.com/xproglabs/prensa-designsystem/commit/992da48105fb319075eda5a5e43b1ac81345b915))
+* add main component image gallery ([43d69ee](https://github.com/xproglabs/prensa-designsystem/commit/43d69eeb9d59d8f01e11750c5ae07210f08dfaf4))
+
 # [2.25.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.24.0...pds-v2.25.0) (2023-01-05)
 
 
