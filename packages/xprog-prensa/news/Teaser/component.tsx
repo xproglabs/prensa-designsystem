@@ -27,7 +27,6 @@ const Teaser: React.FC<t.TeaserProps> = ({
   relatedItems,
   relatedLayout,
   slotColor,
-  slotName,
   subject,
   subjectBgColor,
   subjectColor,
@@ -59,6 +58,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
     items: relatedItems,
     layout: {
       ...relatedLayout,
+      customLink,
+      customLinkProps,
       slotColor
     }
   }
