@@ -47,7 +47,9 @@ const LinkedinShareButton = (props: LinkedinShareButtonProps) => {
         ml={ml}
       >
         <Link
+          ariaLabel="Compartilhar no Linkedin"
           height={size}
+          hoverOpacity={0.8}
           path={shareUrl}
           target='_blank'
         >

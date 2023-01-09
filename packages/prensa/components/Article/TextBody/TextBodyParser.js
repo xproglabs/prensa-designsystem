@@ -1,5 +1,7 @@
 import { html2json } from 'html2json'
-import { find, filter, map } from 'lodash'
+import find from 'lodash/find'
+import filter from 'lodash/filter'
+import map from 'lodash/map'
 
 import { BlockquoteHTMLParser } from './BlockquoteHTMLParser'
 import { EmHTMLParser } from './EmHTMLParser'
@@ -49,6 +51,10 @@ const parse_content = (content) => {
     }
     if (tag === 'blockquote') {
       tagItems.push({ 'type': 'blockquote', 'value': `${BlockquoteHTMLParser(child)}` })
+      return true
+    }
+    if (tag === 'iframe') {
+      tagItems.push({ 'type': 'iframe', 'value': attr })
       return true
     }
     if (tag === 'h2') {

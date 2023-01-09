@@ -4,6 +4,7 @@ export interface IconProps {
   children?: any;
   color?: string;
   height?: string;
+  id?: string;
   viewBox?: string;
   width?: string;
   path?: IconTokens;

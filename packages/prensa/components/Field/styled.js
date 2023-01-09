@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 import styled from 'styled-components'
 
 const handleFontFamily = props => {

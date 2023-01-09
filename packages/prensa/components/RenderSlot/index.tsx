@@ -1,5 +1,7 @@
 import { selectComponentFromSlotList } from 'components/PageBlock/utils'
-import { get, map, orderBy } from 'lodash'
+import get from 'lodash/get'
+import map from 'lodash/map'
+import orderBy from 'lodash/orderBy'
 import React from 'react'
 import { withTheme } from 'styled-components'
 

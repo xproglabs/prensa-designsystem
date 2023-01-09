@@ -23,5 +23,6 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {}
 }

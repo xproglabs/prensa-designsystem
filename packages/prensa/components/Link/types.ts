@@ -12,6 +12,7 @@ export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
   align?: AlignStyledFunctionParam0['align'];
   alignx?: AlignStyledFunctionParam0['alignx'];
   aligny?: AlignStyledFunctionParam0['aligny'];
+  ariaLabel?: string;
   b?: string;
   borderColor?: ColorTokens;
   borderStyle?: string;

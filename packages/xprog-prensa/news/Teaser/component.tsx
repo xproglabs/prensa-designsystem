@@ -23,8 +23,10 @@ const Teaser: React.FC<t.TeaserProps> = ({
   numberVariant,
   numberValue,
   path,
+  relatedIcon,
   relatedItems,
   relatedLayout,
+  slotColor,
   subject,
   subjectBgColor,
   subjectColor,
@@ -37,7 +39,6 @@ const Teaser: React.FC<t.TeaserProps> = ({
   titleVariant,
   wrapImage
 }) => {
-
   const TeaserNumber: React.FC<t.NumberProps> | undefined = components?.number
   const TeaserNumberProps: t.NumberProps = {
     bgColor: numberBgColor,
@@ -55,7 +56,12 @@ const Teaser: React.FC<t.TeaserProps> = ({
   const TeaserRelated: React.FC<t.RelatedProps> | undefined = components?.related
   const TeaserRelatedProps: t.RelatedProps = {
     items: relatedItems,
-    layout: relatedLayout
+    layout: {
+      ...relatedLayout,
+      customLink,
+      customLinkProps,
+      slotColor
+    }
   }
   const TeaserSubject: React.FC<t.SubjectProps> | undefined = components?.subject
   const TeaserSubjectProps: t.SubjectProps = {
@@ -75,6 +81,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
   const TeaserTitleProps: t.TitleProps = {
     customLink,
     customLinkProps,
+    color: slotColor,
+    icon: relatedIcon,
     path,
     title,
     variant: titleVariant

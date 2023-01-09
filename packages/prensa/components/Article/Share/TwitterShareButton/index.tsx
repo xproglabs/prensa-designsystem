@@ -47,7 +47,9 @@ const TwitterShareButton = (props: TwitterShareButtonProps) => {
         ml={ml}
       >
         <Link
+          ariaLabel='Compartilhar no Twitter'
           height={size}
+          hoverOpacity={0.8}
           path={shareUrl}
           target='_blank'
         >

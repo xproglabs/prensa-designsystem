@@ -1,4 +1,6 @@
-import { find, get, map } from 'lodash'
+import find from 'lodash/find'
+import get from 'lodash/get'
+import map from 'lodash/map'
 import React from 'react'
 import { ThemeProvider, StyleSheetManager } from 'styled-components'
 

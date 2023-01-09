@@ -1,5 +1,5 @@
 import { ColorTokens } from '@prensa_tokens'
-import { get } from 'lodash'
+import get from 'lodash/get'
 import React from 'react'
 
 import { EditArea } from '../EditArea'

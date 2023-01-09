@@ -1,4 +1,5 @@
-import { get, isArray } from 'lodash'
+import get from 'lodash/get'
+import isArray from 'lodash/isArray'
 
 import { responsiveEngine } from '../responsiveEngine'
 import { parseNumberHeight, parseStringHeight } from './parsers'

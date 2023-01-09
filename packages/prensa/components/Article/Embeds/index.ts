@@ -1,4 +1,5 @@
 export * from './Facebook'
+export * from './Iframe'
 export * from './Instagram'
 export * from './Twitter'
 export * from './TikTok'
