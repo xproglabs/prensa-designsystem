@@ -15,6 +15,8 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   accordionTitleAs,
   accordionTitleVariant,
   children,
+  customLink,
+  customLinkProps,
   css,
   expanded,
   href,
@@ -98,8 +100,18 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
         variant={accordionTitleVariant}
         css={title_css}
       >
-        {useLink({ bypass: !href ? true : false, href, ...linkProps }, title)}
-        {useLink({ bypass: children ? true : false, href, ...linkProps }, (
+        {useLink({
+          bypass: !href ? true : false,
+          component: customLink,
+          componentProps: customLinkProps,
+          href, ...linkProps
+        }, title)}
+        {useLink({
+          bypass: children ? true : false,
+          component: customLink,
+          componentProps: customLinkProps,
+          href, ...linkProps
+        }, (
           <IconButton
             className='pds-Accordion-ItemGroup-IconButton'
             variant='ghost'
