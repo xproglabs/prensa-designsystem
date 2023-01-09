@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 
+import { PrensaEngineColorType } from '../../../types'
 import {
   BlockType,
   CSSType,
@@ -20,9 +21,15 @@ interface TitleProps extends TitleContainerProps {
   css?: CSSType;
   customLink: any;
   customLinkProps: any;
+  color?: PrensaEngineColorType;
+  icon?: {
+    enabled: boolean;
+    name: string;
+    useIcon: (P: { icon: string; color: string }) => void;
+  };
   path?: string;
   title?: string;
-  variant?: CSSVariant;  
+  variant?: CSSVariant;
 }
 
 type TitleVariant = CSSVariant

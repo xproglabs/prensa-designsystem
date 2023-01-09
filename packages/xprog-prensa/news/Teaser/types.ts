@@ -89,9 +89,16 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   numberColor?: PrensaEngineColorType;
   numberValue?: string;
   numberVariant?: NumberVariant;
-  path?: string,
+  path?: string;
+  relatedIcon?: {
+    enabled: boolean;
+    name: string;
+    useIcon: (P: { icon: string; color: string }) => void;
+  };
   relatedItems?: TeaserProps[];
   relatedLayout?: TeaserProps;
+  slotColor?: PrensaEngineColorType;
+  slotName?: string;
   subject?: string;
   subjectBgColor?: PrensaEngineColorType;
   subjectColor?: PrensaEngineColorType;

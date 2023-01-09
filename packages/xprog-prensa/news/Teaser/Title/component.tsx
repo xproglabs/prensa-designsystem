@@ -10,6 +10,8 @@ const Title: React.FC<t.TitleProps> = ({
   customLink,
   customLinkProps,
   customProps,
+  color,
+  icon,
   path,
   title,
   variant
@@ -19,6 +21,7 @@ const Title: React.FC<t.TitleProps> = ({
       css={css}
       customProps={customProps}
     >
+      {icon?.enabled && icon?.useIcon({ icon: icon.name, color: color || '' })}
       {useLink(
         {
           title: title,

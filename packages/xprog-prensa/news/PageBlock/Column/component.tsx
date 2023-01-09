@@ -8,6 +8,7 @@ import { ColumnProps } from './types'
 const Column: React.FC<ColumnProps> = ({
   css,
   customProps,
+  color,
   items,
   itemsBottom,
   itemsTop,
@@ -71,7 +72,9 @@ const Column: React.FC<ColumnProps> = ({
         `
       },
       ...item,
-      numberValue: (position + 1).toString()
+      numberValue: (position + 1).toString(),
+      slotColor: color,
+      slotName: name
     }
     const itemDesktopProps: ItemProps = {
       ...itemDesktop,
@@ -89,7 +92,9 @@ const Column: React.FC<ColumnProps> = ({
         `
       },
       ...item,
-      numberValue: (position + 1).toString()
+      numberValue: (position + 1).toString(),
+      slotColor: color,
+      slotName: name
     }
     return (
       <React.Fragment key={position}>

@@ -23,10 +23,13 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   slotManualExtra,
   slotManualExtraTop,
   slotLeftBgColor,
+  slotLeftColor,
   slotLeftLayout,
   slotCenterBgColor,
+  slotCenterColor,
   slotCenterLayout,
   slotRightBgColor,
+  slotRightColor,
   slotRightLayout,
   slotLayouts,
   slotTemplate,
@@ -125,6 +128,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
         ...template?.css?.item
       }
     },
+    color: slotLeftColor,
     items: slotAutoLeftElements,
     itemsBottom: slotManualBottomLeft,
     itemsTop: slotManualTopLeft,
@@ -144,6 +148,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
         ...template?.css?.item
       }
     },
+    color: slotCenterColor,
     items: slotAutoCenterElements,
     itemsBottom: slotManualBottomCenter,
     itemsTop: slotManualTopCenter,
@@ -163,6 +168,7 @@ export const PageBlock: React.FC<PageBlockProps> = ({
         ...template?.css?.item
       }
     },
+    color: slotRightColor,
     items: slotAutoRightElements,
     itemsBottom: slotManualBottomRight,
     itemsTop: slotManualTopRight,
