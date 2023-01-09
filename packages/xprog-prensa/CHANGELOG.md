@@ -1,3 +1,10 @@
+# [2.28.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.27.0...pds-v2.28.0) (2023-01-09)
+
+
+### Features
+
+* Customizations regarding customized Link (a) component for Accordion ([bd3743e](https://github.com/xproglabs/prensa-designsystem/commit/bd3743e4cb276a690e561b586df53d1417fa857c))
+
 # [2.27.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.26.0...pds-v2.27.0) (2023-01-09)
 
 
