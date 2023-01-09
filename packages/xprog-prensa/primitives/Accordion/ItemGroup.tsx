@@ -104,13 +104,15 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
           bypass: !href ? true : false,
           component: customLink,
           componentProps: customLinkProps,
-          href, ...linkProps
+          href,
+          ...linkProps
         }, title)}
         {useLink({
           bypass: children ? true : false,
           component: customLink,
           componentProps: customLinkProps,
-          href, ...linkProps
+          href,
+          ...linkProps
         }, (
           <IconButton
             className='pds-Accordion-ItemGroup-IconButton'

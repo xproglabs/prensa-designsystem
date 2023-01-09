@@ -29,6 +29,10 @@ export default {
   }
 }
 
+const CustomLink = ({ children }) => {
+  return <a style={{ backgroundColor: 'red', opacity: 0.5 }}>{children}</a>
+}
+
 const CircledArrowRightIcon = () => {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' height='24' width='24' viewBox='0 0 48 48'>
@@ -197,6 +201,14 @@ Customized.args = {
     {
       id: 'foxLink',
       title: 'Fox Link',
+      href: 'https://google.com',
+      icon: <CircledArrowRightIcon />
+    },
+    {
+      id: 'foxLink',
+      customLink: CustomLink,
+      customLinkProps: { id: 'custom-link-element' },
+      title: 'Fox custom Link component',
       href: 'https://google.com',
       icon: <CircledArrowRightIcon />
     }
