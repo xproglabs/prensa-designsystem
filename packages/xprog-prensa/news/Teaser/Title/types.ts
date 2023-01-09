@@ -25,7 +25,7 @@ interface TitleProps extends TitleContainerProps {
   icon?: {
     enabled: boolean;
     name: string;
-    useIcon: (P: { name: string; color: string }) => void;
+    useIcon: (P: { icon: string; color: string }) => void;
   };
   path?: string;
   title?: string;

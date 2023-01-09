@@ -93,7 +93,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   relatedIcon?: {
     enabled: boolean;
     name: string;
-    useIcon: (P: { name: string; color: string }) => void;
+    useIcon: (P: { icon: string; color: string }) => void;
   };
   relatedItems?: TeaserProps[];
   relatedLayout?: TeaserProps;
