@@ -1,3 +1,15 @@
+# [2.27.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.26.0...pds-v2.27.0) (2023-01-09)
+
+
+### Bug Fixes
+
+* use customLink in related ([ae421dd](https://github.com/xproglabs/prensa-designsystem/commit/ae421dd9452744c3b6e27dbf1a500c1ee33104dd))
+
+
+### Features
+
+* add slotColor to renderItem/teaser ([057ed68](https://github.com/xproglabs/prensa-designsystem/commit/057ed68928c64f448ed44b82f2552c22eda9ee93))
+
 # [2.26.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.25.0...pds-v2.26.0) (2023-01-06)
 
 
