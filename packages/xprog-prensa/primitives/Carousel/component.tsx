@@ -287,6 +287,10 @@ export const Carousel: React.FC<CarouselProps> = ({
   return (
     <Block className='pds-Carousel-container' css={styles}>
       <ReactResponsiveCarousel
+        showStatus={false}
+        showThumbs={false}
+        swipeable={true}
+        emulateTouch={true}
         centerSlidePercentage={centerSlidePercentage}
         {...otherProps}
       >

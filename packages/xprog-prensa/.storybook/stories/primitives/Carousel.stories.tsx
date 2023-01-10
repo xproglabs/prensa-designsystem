@@ -13,9 +13,6 @@ const Template: ComponentStory<any> = (args) => {
       <Carousel
         axis='horizontal'
         labels={{ item: 'Item', leftArrow: 'Retroceder', rightArrow: 'Avançar' }}
-        showStatus={false}
-        showThumbs={false}
-        swipeable={true}
         {...args}
       >
         <div key='slide1'>
