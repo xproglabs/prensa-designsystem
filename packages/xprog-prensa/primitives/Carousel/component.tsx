@@ -4,9 +4,85 @@ import { Carousel as ReactResponsiveCarousel } from 'react-responsive-carousel'
 import { Block } from '../Block'
 import { CarouselProps } from './types'
 
-export const Carousel: React.FC<CarouselProps> = ({ children, ...otherProps }) => {
+export const Carousel: React.FC<CarouselProps> = ({ css, children, width, ...otherProps }) => {
 
-  const converted = {
+  const styles = {
+    '.carousel-root': {
+      outline: 'none',
+      ...css?.root
+    },
+    '.carousel .slider': {
+      margin: '0',
+      padding: '0',
+      position: 'relative',
+      listStyle: 'none',
+      width: '100%',
+      ...css?.slider
+    },
+    '.carousel .slide': {
+      align: ['row', 'center', 'middle'],
+      minWidth: '100%',
+      margin: '0',
+      position: 'relative',
+      textAlign: 'center',
+      ...css?.slide
+    },
+    '.carousel .control-dots': {
+      position: 'absolute',
+      bottom: '0',
+      margin: '10px 0',
+      padding: '0',
+      textAlign: 'center',
+      width: '100%',
+      zIndex: 1,
+      ...css?.controlDots
+    },
+    '.carousel .control-dots .dot': {
+      WebkitTransition: 'opacity 0.25s ease-in',
+      MozTransition: 'opacity 0.25s ease-in',
+      msTransition: 'opacity 0.25s ease-in',
+      OTransition: 'opacity 0.25s ease-in',
+      transition: 'opacity 0.25s ease-in',
+      opacity: 0.3,
+      filter: 'alpha(opacity=30)',
+      boxShadow: '1px 1px 2px rgba(0, 0, 0, 0.9)',
+      background: '#fff',
+      borderRadius: '50%',
+      width: '8px',
+      height: '8px',
+      cursor: 'pointer',
+      display: 'inline-block',
+      margin: '0 8px',
+      ...css?.controlDotsDot
+    },
+    '.carousel': {
+      position: 'relative',
+      width: '100%',
+      ...css?.carousel
+    },
+    '.carousel .thumbs-wrapper': {
+      margin: '20px',
+      overflow: 'hidden',
+      ...css?.sliderThumbsWrapper
+    },
+    '.carousel .thumbs': {
+      align: ['row', 'left', 'middle'],
+      paddingLeft: '0px',
+      WebkitTransition: 'all 0.15s ease-in',
+      MozTransition: 'all 0.15s ease-in',
+      msTransition: 'all 0.15s ease-in',
+      OTransition: 'all 0.15s ease-in',
+      transition: 'all 0.15s ease-in',
+      WebkitTransform: 'translate3d(0, 0, 0)',
+      MozTransform: 'translate3d(0, 0, 0)',
+      msTransform: 'translate3d(0, 0, 0)',
+      OTransform: 'translate3d(0, 0, 0)',
+      transform: 'translate3d(0, 0, 0)',
+      position: 'relative',
+      listStyle: 'none',
+      whiteSpace: 'nowrap',
+      ...css?.sliderThumbsAnimated
+    },
     '.carousel.carousel-slider .control-arrow': {
       WebkitTransition: 'all 0.25s ease-in',
       MozTransition: 'all 0.25s ease-in',
@@ -60,8 +136,6 @@ export const Carousel: React.FC<CarouselProps> = ({ children, ...otherProps }) =
     '.carousel .control-next.control-arrow:before': {
       borderLeft: '8px solid #fff'
     },
-    '.carousel-root': { outline: 'none' },
-    '.carousel': { position: 'relative', width: '100%' },
     '.carousel *': {
       WebkitBoxSizing: 'border-box',
       MozBoxSizing: 'border-box',
@@ -72,22 +146,8 @@ export const Carousel: React.FC<CarouselProps> = ({ children, ...otherProps }) =
       display: 'inline-block',
       pointerEvents: 'none'
     },
-    '.carousel .carousel': { position: 'relative' },
-    '.carousel .thumbs-wrapper': { margin: '20px', overflow: 'hidden' },
-    '.carousel .thumbs': {
-      WebkitTransition: 'all 0.15s ease-in',
-      MozTransition: 'all 0.15s ease-in',
-      msTransition: 'all 0.15s ease-in',
-      OTransition: 'all 0.15s ease-in',
-      transition: 'all 0.15s ease-in',
-      WebkitTransform: 'translate3d(0, 0, 0)',
-      MozTransform: 'translate3d(0, 0, 0)',
-      msTransform: 'translate3d(0, 0, 0)',
-      OTransform: 'translate3d(0, 0, 0)',
-      transform: 'translate3d(0, 0, 0)',
-      position: 'relative',
-      listStyle: 'none',
-      whiteSpace: 'nowrap'
+    '.carousel .carousel': {
+      position: 'relative'
     },
     '.carousel .thumb': {
       WebkitTransition: 'border 0.15s ease-in',
@@ -100,7 +160,9 @@ export const Carousel: React.FC<CarouselProps> = ({ children, ...otherProps }) =
       whiteSpace: 'nowrap',
       overflow: 'hidden',
       border: '3px solid #fff',
-      padding: '2px'
+      padding: '2px',
+      height: '48px',
+      width: '48px'
     },
     '.carousel .thumb:focus': { border: '3px solid #ccc', outline: 'none' },
     '.carousel .thumb:hover': {
@@ -109,7 +171,11 @@ export const Carousel: React.FC<CarouselProps> = ({ children, ...otherProps }) =
     '.carousel .thumb.selected': {
       border: '3px solid #333'
     },
-    '.carousel .thumb img': { verticalAlign: 'top' },
+    '.carousel .thumb img': {
+      verticalAlign: 'top',
+      height: '100%',
+      width: '100%'
+    },
     '.carousel.carousel-slider': {
       position: 'relative',
       margin: '0',
@@ -145,27 +211,12 @@ export const Carousel: React.FC<CarouselProps> = ({ children, ...otherProps }) =
       WebkitFlexDirection: 'column',
       flexDirection: 'column'
     },
-    '.carousel .slider': {
-      margin: '0',
-      padding: '0',
-      position: 'relative',
-      listStyle: 'none',
-      width: '100%'
-    },
     '.carousel .slider.animated': {
       WebkitTransition: 'all 0.35s ease-in-out',
       MozTransition: 'all 0.35s ease-in-out',
       msTransition: 'all 0.35s ease-in-out',
       OTransition: 'all 0.35s ease-in-out',
       transition: 'all 0.35s ease-in-out'
-    },
-    '.carousel .slide': {
-      align: ['row', 'center', 'middle'],
-      backgroundColor: 'purple',
-      minWidth: '100%',
-      margin: '0',
-      position: 'relative',
-      textAlign: 'center'
     },
     '.carousel .slide img': {
       width: '100%',
@@ -197,32 +248,10 @@ export const Carousel: React.FC<CarouselProps> = ({ children, ...otherProps }) =
       textAlign: 'center',
       opacity: 0.25
     },
-    '.carousel .control-dots': {
-      position: 'absolute',
-      bottom: '0',
-      margin: '10px 0',
-      padding: '0',
-      textAlign: 'center',
-      width: '100%',
-      zIndex: 1
-    },
-    '@media (min-width: 960px)': { '.carousel .control-dots': { bottom: '0' } },
-    '.carousel .control-dots .dot': {
-      WebkitTransition: 'opacity 0.25s ease-in',
-      MozTransition: 'opacity 0.25s ease-in',
-      msTransition: 'opacity 0.25s ease-in',
-      OTransition: 'opacity 0.25s ease-in',
-      transition: 'opacity 0.25s ease-in',
-      opacity: 0.3,
-      filter: 'alpha(opacity=30)',
-      boxShadow: '1px 1px 2px rgba(0, 0, 0, 0.9)',
-      background: '#fff',
-      borderRadius: '50%',
-      width: '8px',
-      height: '8px',
-      cursor: 'pointer',
-      display: 'inline-block',
-      margin: '0 8px'
+    '@media (min-width: 960px)': {
+      '.carousel .control-dots': {
+        bottom: '0'
+      }
     },
     '.carousel .control-dots .dot:hover': {
       opacity: 1,
@@ -245,7 +274,7 @@ export const Carousel: React.FC<CarouselProps> = ({ children, ...otherProps }) =
   }  
 
   return (
-    <Block className='pds-Carousel-container' css={converted}>
+    <Block className='pds-Carousel-container' css={styles}>
       <ReactResponsiveCarousel
         {...otherProps}
       >
