@@ -4,11 +4,14 @@ import { Carousel as ReactResponsiveCarousel } from 'react-responsive-carousel'
 import { Block } from '../Block'
 import { CarouselProps } from './types'
 
-export const Carousel: React.FC<CarouselProps> = ({ css, children, width, ...otherProps }) => {
+export const Carousel: React.FC<CarouselProps> = ({ css, children, height, width, ...otherProps }) => {
 
   const styles = {
+    height: height,
+    width: width,
     '.carousel-root': {
       outline: 'none',
+      height: height,
       ...css?.root
     },
     '.carousel .slider': {
@@ -16,6 +19,7 @@ export const Carousel: React.FC<CarouselProps> = ({ css, children, width, ...oth
       padding: '0',
       position: 'relative',
       listStyle: 'none',
+      height: height,
       width: '100%',
       ...css?.slider
     },

@@ -54,6 +54,7 @@ export interface CarouselProps {
   transitionTime?: number;
   useKeyboardArrows?: boolean;
   verticalSwipe?: 'natural' | 'standard';
+  height?: number | string;
   width?: number | string;
   animationHandler?: 'slide' | 'fade';
   // swipeAnimationHandler: SwipeAnimationHandler;
