@@ -1,3 +1,10 @@
+# [2.30.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.29.0...pds-v2.30.0) (2023-01-10)
+
+
+### Features
+
+* Connects centerSlidePercentage property with Carousel slide fixing UI inconsistency ([9d2d7a2](https://github.com/xproglabs/prensa-designsystem/commit/9d2d7a2009bfec6636d680e9b414273cd81ff595))
+
 # [2.29.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.28.0...pds-v2.29.0) (2023-01-10)
 
 
