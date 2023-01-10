@@ -1,6 +1,7 @@
 export * from './Accordion/types'
 export * from './Block/props'
 export * from './Button/props'
+export * from './Carousel/types'
 export * from './Drawer/types'
 export * from './IconButton/types'
 export * from './Typography/types'
