@@ -4,7 +4,14 @@ import { Carousel as ReactResponsiveCarousel } from 'react-responsive-carousel'
 import { Block } from '../Block'
 import { CarouselProps } from './types'
 
-export const Carousel: React.FC<CarouselProps> = ({ css, children, height, width, ...otherProps }) => {
+export const Carousel: React.FC<CarouselProps> = ({
+  css,
+  centerSlidePercentage,
+  children,
+  height,
+  width,
+  ...otherProps
+}) => {
 
   const styles = {
     height: height,
@@ -25,7 +32,7 @@ export const Carousel: React.FC<CarouselProps> = ({ css, children, height, width
     },
     '.carousel .slide': {
       align: ['row', 'center', 'middle'],
-      minWidth: '100%',
+      minWidth: centerSlidePercentage ? `${centerSlidePercentage}%` : '100%',
       margin: '0',
       position: 'relative',
       textAlign: 'center',
@@ -280,6 +287,11 @@ export const Carousel: React.FC<CarouselProps> = ({ css, children, height, width
   return (
     <Block className='pds-Carousel-container' css={styles}>
       <ReactResponsiveCarousel
+        showStatus={false}
+        showThumbs={false}
+        swipeable={true}
+        emulateTouch={true}
+        centerSlidePercentage={centerSlidePercentage}
         {...otherProps}
       >
         {children}

@@ -13,9 +13,6 @@ const Template: ComponentStory<any> = (args) => {
       <Carousel
         axis='horizontal'
         labels={{ item: 'Item', leftArrow: 'Retroceder', rightArrow: 'Avançar' }}
-        showStatus={false}
-        showThumbs={false}
-        swipeable={true}
         {...args}
       >
         <div key='slide1'>
@@ -45,10 +42,10 @@ const TemplateWithDivs: ComponentStory<any> = (args) => {
         swipeable={true}
         {...args}
       >
-        <Block key='1' css={{ backgroundColor: '$basicError500', height: '100px', width: '100px' }} />
-        <Block key='2' css={{ backgroundColor: '$basicError400', height: '100px', width: '100px' }} />
-        <Block key='3' css={{ backgroundColor: '$basicError300', height: '100px', width: '100px' }} />
-        <Block key='4' css={{ backgroundColor: '$basicError200', height: '100px', width: '100px' }} />
+        <Block key='1' css={{ backgroundColor: '$basicError500', borderRadius: '$alternative', height: '200px', width: '200px' }} />
+        <Block key='2' css={{ backgroundColor: '$basicError400', borderRadius: '$alternative', height: '200px', width: '200px' }} />
+        <Block key='3' css={{ backgroundColor: '$basicError300', borderRadius: '$alternative', height: '200px', width: '200px' }} />
+        <Block key='4' css={{ backgroundColor: '$basicError200', borderRadius: '$alternative', height: '200px', width: '200px' }} />
       </Carousel>
     </div>
   )
@@ -59,10 +56,12 @@ Default.args = {}
 export const WithThumbs = Template.bind({})
 WithThumbs.args = { showThumbs: true }
 export const Customized = TemplateWithDivs.bind({})
-Customized.args = {
-  height: '800px',
-  width: '100%',
+Customized.args = {  
+  height: '600px',
+  width: '400px',
   showArrows: false,
+  centerMode: true,
+  centerSlidePercentage: 60,
   css: {
     controlDotsDot: {
       backgroundColor: '$basicError500',
