@@ -1,3 +1,10 @@
+# [2.29.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.28.0...pds-v2.29.0) (2023-01-10)
+
+
+### Features
+
+* Create Carousel component ([e9357ac](https://github.com/xproglabs/prensa-designsystem/commit/e9357ac520a483f5e4877341573c84af0671f9f9))
+
 # [2.28.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.27.0...pds-v2.28.0) (2023-01-09)
 
 
