@@ -1,6 +1,7 @@
 export * from './Accordion/index'
 export * from './Block/index'
 export * from './Button/index'
+export * from './Carousel/index'
 export * from './Drawer/index'
 export * from './ImageGallery/index'
 export * from './IconButton/index'
