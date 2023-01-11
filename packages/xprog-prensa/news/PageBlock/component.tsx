@@ -25,21 +25,12 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   slotLeftBgColor,
   slotLeftColor,
   slotLeftLayout,
-  slotLeftColumnTopRenderWrapper,
-  slotLeftColumnContentRenderWrapper,
-  slotLeftColumnBottomtRenderWrapper,  
   slotCenterBgColor,
   slotCenterColor,
   slotCenterLayout,
-  slotCenterColumnTopRenderWrapper,
-  slotCenterColumnContentRenderWrapper,
-  slotCenterColumnBottomRenderWrapper,
   slotRightBgColor,
   slotRightColor,
   slotRightLayout,
-  slotRightColumnTopRenderWrapper,
-  slotRightColumnCenterRenderWrapper,
-  slotRightColumnBottomRenderWrapper,
   slotLayouts,
   slotTemplate,
   templates,
@@ -146,18 +137,9 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemsTop: slotManualTopLeft,
     layout: leftColumnLayout,
     name: 'Left',
-    wrapperTop: {
-      enabled: leftColumnLayout.wrapperTop?.enabled || false,
-      component: slotLeftColumnTopRenderWrapper
-    },
-    wrapperContent: {
-      enabled: leftColumnLayout.wrapperContent?.enabled || false,
-      component: slotLeftColumnContentRenderWrapper
-    },
-    wrapperBottom: {
-      enabled: leftColumnLayout.wrapperBottom?.enabled || false,
-      component: slotLeftColumnBottomtRenderWrapper
-    }
+    wrapperTop: leftColumnLayout.wrapperTop,
+    wrapperContent: leftColumnLayout.wrapperContent,
+    wrapperBottom: leftColumnLayout.wrapperBottom
   }
   const columnCenterProps: ColumnProps = {
     ...columnProps,
@@ -178,18 +160,9 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemsTop: slotManualTopCenter,
     layout: centerColumnLayout,
     name: 'Center',
-    wrapperTop: {
-      enabled: centerColumnLayout.wrapperTop?.enabled || false,
-      component: slotCenterColumnTopRenderWrapper
-    },
-    wrapperContent: {
-      enabled: centerColumnLayout.wrapperContent?.enabled || false,
-      component: slotCenterColumnContentRenderWrapper
-    },
-    wrapperBottom: {
-      enabled: centerColumnLayout.wrapperBottom?.enabled || false,
-      component: slotCenterColumnBottomRenderWrapper
-    }
+    wrapperTop: centerColumnLayout.wrapperTop,
+    wrapperContent: centerColumnLayout.wrapperContent,
+    wrapperBottom: centerColumnLayout.wrapperBottom
   }
   const columnRightProps: ColumnProps = {
     ...columnProps,
@@ -210,18 +183,9 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemsTop: slotManualTopRight,
     layout: rightColumnLayout,
     name: 'Right',
-    wrapperTop: {
-      enabled: rightColumnLayout.wrapperTop?.enabled || false,
-      component: slotRightColumnTopRenderWrapper
-    },
-    wrapperContent: {
-      enabled: rightColumnLayout.wrapperContent?.enabled || false,
-      component: slotRightColumnCenterRenderWrapper
-    },
-    wrapperBottom: {
-      enabled: rightColumnLayout.wrapperBottom?.enabled || false,
-      component: slotRightColumnBottomRenderWrapper
-    }
+    wrapperTop: rightColumnLayout.wrapperTop,
+    wrapperContent: rightColumnLayout.wrapperContent,
+    wrapperBottom: rightColumnLayout.wrapperBottom
   }
   const columnExtraProps: ColumnProps = {
     ...columnProps,

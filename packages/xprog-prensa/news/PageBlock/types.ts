@@ -49,9 +49,6 @@ export interface PageBlockConfig {
   slotLeftTeaserBgColor?: string;
   slotLeftLayout?: string;
   slotLeftItems?: number;
-  slotLeftColumnTopRenderWrapper?: (P: Array<any>) => ReactNode | undefined;
-  slotLeftColumnContentRenderWrapper?: (P: Array<any>) => ReactNode | undefined;
-  slotLeftColumnBottomtRenderWrapper?: (P: Array<any>) => ReactNode | undefined;
   slotLeftTitleEnabled?: boolean;
   slotLeftTitleLink?: string;
   slotLeftTitleValue?: string;
@@ -65,9 +62,6 @@ export interface PageBlockConfig {
   slotCenterTeaserBgColor?: string;
   slotCenterLayout?: string;
   slotCenterItems?: number;
-  slotCenterColumnTopRenderWrapper?: (P: Array<any>) => ReactNode | undefined;
-  slotCenterColumnContentRenderWrapper?: (P: Array<any>) => ReactNode | undefined;
-  slotCenterColumnBottomRenderWrapper?: (P: Array<any>) => ReactNode | undefined;
   slotCenterTitleEnabled?: boolean;
   slotCenterTitleLink?: string;
   slotCenterTitleValue?: string;
@@ -78,9 +72,6 @@ export interface PageBlockConfig {
   slotRightReadMoreEnabled?: boolean;
   slotRightReadMoreLink?: string;
   slotRightReadMoreTitle?: string;
-  slotRightColumnTopRenderWrapper?: (P: Array<any>) => ReactNode | undefined;
-  slotRightColumnCenterRenderWrapper?: (P: Array<any>) => ReactNode | undefined;
-  slotRightColumnBottomRenderWrapper?: (P: Array<any>) => ReactNode | undefined;
   slotRightTeaserBgColor?: string;
   slotRightLayout?: string;
   slotRightItems?: number;
