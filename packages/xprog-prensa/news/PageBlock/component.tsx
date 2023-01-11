@@ -41,7 +41,10 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     const layoutSlotConfig = get(layoutSelected, `slotConfig[${slotTemplate}][slot${name}]`)
     return {
       css: layoutSelected?.css,
-      ...layoutSlotConfig
+      ...layoutSlotConfig,
+      wrapperTop: layoutSelected?.wrapperTop,
+      wrapperContent: layoutSelected?.wrapperContent,
+      wrapperBottom: layoutSelected?.wrapperBottom
     }
   }
   const leftColumnLayout = getLayoutBySlotAndTemplate('Left', slotLeftLayout)
@@ -133,7 +136,10 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemsBottom: slotManualBottomLeft,
     itemsTop: slotManualTopLeft,
     layout: leftColumnLayout,
-    name: 'Left'
+    name: 'Left',
+    wrapperTop: leftColumnLayout.wrapperTop,
+    wrapperContent: leftColumnLayout.wrapperContent,
+    wrapperBottom: leftColumnLayout.wrapperBottom
   }
   const columnCenterProps: ColumnProps = {
     ...columnProps,
@@ -153,7 +159,10 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemsBottom: slotManualBottomCenter,
     itemsTop: slotManualTopCenter,
     layout: centerColumnLayout,
-    name: 'Center'
+    name: 'Center',
+    wrapperTop: centerColumnLayout.wrapperTop,
+    wrapperContent: centerColumnLayout.wrapperContent,
+    wrapperBottom: centerColumnLayout.wrapperBottom
   }
   const columnRightProps: ColumnProps = {
     ...columnProps,
@@ -173,7 +182,10 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemsBottom: slotManualBottomRight,
     itemsTop: slotManualTopRight,
     layout: rightColumnLayout,
-    name: 'Right'
+    name: 'Right',
+    wrapperTop: rightColumnLayout.wrapperTop,
+    wrapperContent: rightColumnLayout.wrapperContent,
+    wrapperBottom: rightColumnLayout.wrapperBottom
   }
   const columnExtraProps: ColumnProps = {
     ...columnProps,

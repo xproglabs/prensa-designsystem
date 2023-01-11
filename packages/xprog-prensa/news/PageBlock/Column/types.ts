@@ -30,4 +30,7 @@ export interface ColumnProps {
   itemsTop?: SlotItemsType;
   layout?: SlotConfigProps;
   name?: string;
+  wrapperTop?: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+  wrapperContent?: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+  wrapperBottom?: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
 }
