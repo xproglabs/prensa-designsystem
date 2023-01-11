@@ -1,3 +1,10 @@
+# [2.31.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.30.0...pds-v2.31.0) (2023-01-11)
+
+
+### Features
+
+* Allow wrapper components in all PageBlock Columns ([46626ee](https://github.com/xproglabs/prensa-designsystem/commit/46626ee171121490cd06d5ab9813935fb0d0f9b7))
+
 # [2.30.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.29.0...pds-v2.30.0) (2023-01-10)
 
 
