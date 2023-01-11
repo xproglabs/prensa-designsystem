@@ -2,7 +2,9 @@ import { DetailedHTMLProps, AnchorHTMLAttributes, ReactElement, ReactNode } from
 
 import { PrensaEngineCSSProp } from '../../types'
 
-export interface LinkProps extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
+type LinkExtendedProps = Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, 'ref'>
+
+export interface LinkProps extends LinkExtendedProps {
   bypass?: boolean;
   children?: ReactElement | ReactNode | any;
   component?: ReactElement | ReactNode | any;
