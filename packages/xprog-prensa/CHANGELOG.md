@@ -1,3 +1,27 @@
+## [2.32.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.0...pds-v2.32.1) (2023-01-12)
+
+
+### Bug Fixes
+
+* Connects css.container and add css.controlArrow in Carousel component ([ef5b7cb](https://github.com/xproglabs/prensa-designsystem/commit/ef5b7cb464ae56e506716ecdf0d6c27b85ffdcc7))
+
+# [2.32.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.31.0...pds-v2.32.0) (2023-01-11)
+
+
+### Features
+
+* Create Link component ([e207c1b](https://github.com/xproglabs/prensa-designsystem/commit/e207c1be11c1c09b4ccc539dace95fb9b91dea7f))
+* Implements Link component to Teaser/Title ([4626fc7](https://github.com/xproglabs/prensa-designsystem/commit/4626fc72a40ab2c91af448cb8ca44f796e5cd0a6))
+* Implements new Link component over deprecated useLinks and change linkProps to customLinkProps property in Accordion component ([d3bdcc2](https://github.com/xproglabs/prensa-designsystem/commit/d3bdcc20b473a48c8aba4058eac79d3c111f7339))
+* Omit ref property from Link component to fix exception ([252df09](https://github.com/xproglabs/prensa-designsystem/commit/252df09f8352525423e984abfadc2129d4f5ec60))
+
+# [2.31.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.30.0...pds-v2.31.0) (2023-01-11)
+
+
+### Features
+
+* Allow wrapper components in all PageBlock Columns ([46626ee](https://github.com/xproglabs/prensa-designsystem/commit/46626ee171121490cd06d5ab9813935fb0d0f9b7))
+
 # [2.30.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.29.0...pds-v2.30.0) (2023-01-10)
 
 

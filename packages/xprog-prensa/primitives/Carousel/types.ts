@@ -10,6 +10,7 @@ export type CarouselCSSProp = {
   sliderThumbsWrapper?: PrensaEngineCSSProp;
   sliderThumbsAnimated?: PrensaEngineCSSProp;
   slide?: PrensaEngineCSSProp;
+  controlArrow?: PrensaEngineCSSProp;
   controlDots?: PrensaEngineCSSProp;
   controlDotsDot?: PrensaEngineCSSProp;
 }

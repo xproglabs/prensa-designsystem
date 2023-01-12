@@ -104,12 +104,12 @@ export const Carousel: React.FC<CarouselProps> = ({
       filter: 'alpha(opacity=40)',
       position: 'absolute',
       zIndex: 2,
-      background: 'red',
       border: '0',
       fontSize: '32px',
       cursor: 'pointer',
       outline: '0',
       top: '50%',
+      ...css?.controlArrow
     },
     '.carousel .control-arrow:hover': {
       opacity: 1,
@@ -139,11 +139,15 @@ export const Carousel: React.FC<CarouselProps> = ({
       cursor: 'inherit',
       display: 'none'
     },
-    '.carousel .control-prev.control-arrow': { left: '0' },
+    '.carousel .control-prev.control-arrow': {
+      left: '0'
+    },
     '.carousel .control-prev.control-arrow:before': {
       borderRight: '8px solid #fff'
     },
-    '.carousel .control-next.control-arrow': { right: '0' },
+    '.carousel .control-next.control-arrow': {
+      right: '0'
+    },
     '.carousel .control-next.control-arrow:before': {
       borderLeft: '8px solid #fff'
     },
@@ -281,7 +285,10 @@ export const Carousel: React.FC<CarouselProps> = ({
       textShadow: '1px 1px 1px rgba(0, 0, 0, 0.9)',
       color: '#fff'
     },
-    '.carousel:hover .slide .legend': { opacity: 1 }
+    '.carousel:hover .slide .legend': {
+      opacity: 1
+    },
+    ...css?.container
   }  
 
   return (

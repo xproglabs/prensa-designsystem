@@ -1,15 +1,9 @@
-import { ReactNode } from 'react'
-
+import { LinkProps } from '../../../primitives/Link/types'
 import { PrensaEngineColorType } from '../../../types'
-import {
-  BlockType,
-  CSSType,
-  CSSVariant,
-  ContainerDefaultProps
-} from '../types'
+import { BlockType, CSSType, CSSVariant, ContainerDefaultProps } from '../types'
 
 interface TitleContainerProps extends ContainerDefaultProps {
-  children?: ReactNode;
+  children?: any;
   customProps?: BlockType;
 }
 
@@ -18,9 +12,9 @@ interface TitleTextProps extends TitleContainerProps {
 }
 
 interface TitleProps extends TitleContainerProps {
-  css?: CSSType;
   customLink: any;
-  customLinkProps: any;
+  css?: CSSType;
+  customLinkProps?: LinkProps;
   color?: PrensaEngineColorType;
   icon?: {
     enabled: boolean;
