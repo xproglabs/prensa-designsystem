@@ -54,7 +54,17 @@ const TemplateWithDivs: ComponentStory<any> = (args) => {
 export const Default = Template.bind({})
 Default.args = {}
 export const WithThumbs = Template.bind({})
-WithThumbs.args = { showThumbs: true }
+WithThumbs.args = {
+  showThumbs: true,
+  css: {
+    container: {
+      backgroundColor: '$basicBlackAlpha500'
+    },
+    controlArrow: {
+      backgroundColor: 'red'
+    }
+  }
+}
 export const Customized = TemplateWithDivs.bind({})
 Customized.args = {  
   height: '600px',
