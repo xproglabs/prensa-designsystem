@@ -1,3 +1,10 @@
+## [2.32.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.0...pds-v2.32.1) (2023-01-12)
+
+
+### Bug Fixes
+
+* Connects css.container and add css.controlArrow in Carousel component ([ef5b7cb](https://github.com/xproglabs/prensa-designsystem/commit/ef5b7cb464ae56e506716ecdf0d6c27b85ffdcc7))
+
 # [2.32.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.31.0...pds-v2.32.0) (2023-01-11)
 
 
