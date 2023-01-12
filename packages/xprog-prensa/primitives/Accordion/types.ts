@@ -1,7 +1,8 @@
 import { ComponentProps, VariantProps } from '@stitches/react'
-import { AnchorHTMLAttributes, DetailedHTMLProps, ReactNode, MouseEventHandler } from 'react'
+import { ReactNode, MouseEventHandler } from 'react'
 
 import { PrensaEngineCSSProp } from '../../types'
+import { LinkProps } from '../Link/types'
 import { AccordionContentType, AccordionGroupType } from './styles'
 
 export type AccordionContentProps = ComponentProps<AccordionContentType>
@@ -28,7 +29,7 @@ export type AccordionItemGroupProps = {
   accordionTitleVariant?: any;
   accordionContentAs?: any;
   customLink?: any;
-  customLinkProps?: any;
+  customLinkProps?: LinkProps;
   children?: ReactNode;
   css?: AccordionItemGroupCSSProp;
   expanded?: boolean;
@@ -37,7 +38,6 @@ export type AccordionItemGroupProps = {
   iconExpandedState?: ReactNode;
   iconNotExpandedState?: ReactNode;
   innerSpace?: AccordionContentVariants['innerSpace'];
-  linkProps?: DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
