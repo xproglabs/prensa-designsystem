@@ -27,7 +27,7 @@ const Title: React.FC<t.TitleProps> = ({
           title={title}
           href={path}
           component={customLink}
-          {...customLinkProps}
+          componentProps={customLinkProps}
         >
           {title || children}
         </Link>
