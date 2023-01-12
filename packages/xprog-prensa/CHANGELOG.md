@@ -1,3 +1,10 @@
+## [2.32.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.1...pds-v2.32.2) (2023-01-12)
+
+
+### Bug Fixes
+
+* Fixed inconsistency in Teaser/Title Link implementation ([95d198d](https://github.com/xproglabs/prensa-designsystem/commit/95d198d08eb26c51e189c84dbf008ee84ae9de9b))
+
 ## [2.32.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.0...pds-v2.32.1) (2023-01-12)
 
 
