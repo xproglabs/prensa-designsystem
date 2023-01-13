@@ -1,3 +1,10 @@
+# [2.33.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.2...pds-v2.33.0) (2023-01-13)
+
+
+### Features
+
+* New rule allowing icon definition in AccordionProps ([da34441](https://github.com/xproglabs/prensa-designsystem/commit/da3444186cd569f8beee67a55d32974ce1b38be6))
+
 ## [2.32.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.1...pds-v2.32.2) (2023-01-12)
 
 
