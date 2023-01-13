@@ -1,4 +1,6 @@
-import { map, get, replace } from 'lodash'
+import get from 'lodash/get'
+import map from 'lodash/map'
+import replace from 'lodash/replace'
 import PropTypes from 'prop-types'
 import React from 'react'
 

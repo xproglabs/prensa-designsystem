@@ -14,6 +14,8 @@ export type ContainerProps = {
 export type AmpImageGalleryProps = {
   captionProps?: CaptionProps;
   items: Array<ItemProps>;
+  height: string;
+  width: string;
 }
 
 // WEB Image Gallery component

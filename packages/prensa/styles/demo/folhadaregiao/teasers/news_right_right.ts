@@ -19,6 +19,7 @@ export const TEASER_NEWS_RIGHT_RIGHT = CreateTeaser({
   },
   image: {
     enabled: true,
+    fallback_image: false,
     dimension: ['1x1', '1x1'],
     height: ['104px', '120px'],
     mb: '0px',

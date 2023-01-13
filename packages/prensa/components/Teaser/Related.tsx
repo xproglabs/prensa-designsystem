@@ -1,4 +1,5 @@
-import { get, map } from 'lodash'
+import get from 'lodash/get'
+import map from 'lodash/map'
 import React from 'react'
 
 import RelatedItem, { RelatedArea } from './RelatedStyled'
@@ -27,6 +28,7 @@ const Related = ({
             line_height={layout.line_height}
             item_path={item_path}
             mb={layout.mb}
+            mr={layout.mr}
           >
             {item.name}
           </RelatedItem>

@@ -14,7 +14,9 @@ export const Typography = PrensaEngine.styled('p', {
       h5: {},
       h6: {},
       p: {},
-      span: {}
+      span: {},
+      cite: {},
+      li: {}
     },
     variant: extractVariantKeys()
   }

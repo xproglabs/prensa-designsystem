@@ -14,7 +14,6 @@ const Caption = ({
 
   const mobileWidth = amp ? 'calc(100% - 16px)' : '100%'
   const desktopWidth = amp ? 'calc(100% - 32px)' : '100%'
-
   return (
     <Block
       align='row'
@@ -22,9 +21,11 @@ const Caption = ({
       aligny='middle'
       bgColor='neutral9'
       height={height}
+      pt={1}
       px={1}
       width={mobileWidth}
       lg={{
+        pt: 2,
         px: 2,
         width: desktopWidth
       }}

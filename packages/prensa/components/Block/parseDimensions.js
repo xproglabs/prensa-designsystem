@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 
 //ToDo: Deprecate parseDimensions
 // export const parseWidth = (props, theme) => {

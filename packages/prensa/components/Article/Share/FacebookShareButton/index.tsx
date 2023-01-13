@@ -52,7 +52,9 @@ const FacebookShareButton = (props: FacebookShareButtonProps) => {
         ml={ml}
       >
         <Link
+          ariaLabel="Compartilhar no Facebook"
           height={size}
+          hoverOpacity={0.8}
           path={shareUrl}
           target='_blank'
         >

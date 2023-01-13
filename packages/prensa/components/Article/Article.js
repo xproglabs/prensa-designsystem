@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
@@ -22,6 +22,7 @@ const Article = (props) => {
     byline,
     citation,
     fbappid,
+    fbclienttoken,
     featured,
     gallery,
     headWidth,
@@ -48,6 +49,7 @@ const Article = (props) => {
 
   // prepare article slots
   const adsBody = get(ads, 'body', {})
+  const adsBottom = get(ads, 'bottom', false)
   const adsSideBar = get(ads, 'sideBar', false)
   const adsTopImage = get(ads, 'topImage', false)
   const adsTopBody = get(ads, 'topBody', false)
@@ -112,6 +114,7 @@ const Article = (props) => {
         >
           <TextBody
             adsBody={adsBody}
+            adsBottom={adsBottom}
             adsSide={adsSideBar}
             amp={amp}
             bodyImage={bodyImage}
@@ -120,6 +123,7 @@ const Article = (props) => {
             citation={citation}
             content={textbody}
             fbappid={fbappid}
+            fbclienttoken={fbclienttoken}
             gallery={gallery}
             hasColumnRight={hasColumnRight}
             heading2={heading2}
@@ -162,6 +166,9 @@ Article.defaultProps = {
 
 Article.propTypes = {
   ads: PropTypes.shape({
+    bottom: PropTypes.shape({
+      enabled: PropTypes.bool
+    }),
     body: PropTypes.shape({
       content: PropTypes.array,
       enabled: PropTypes.bool,
@@ -179,6 +186,7 @@ Article.propTypes = {
   byline: PropTypes.object,
   citation: PropTypes.object,
   fbappid: PropTypes.string.isRequired,
+  fbclienttoken: PropTypes.string,
   featured: PropTypes.object,
   gallery: PropTypes.shape({
     captionProps: PropTypes.object,

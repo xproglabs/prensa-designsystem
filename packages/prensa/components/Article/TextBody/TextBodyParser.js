@@ -1,5 +1,7 @@
 import { html2json } from 'html2json'
-import { find, filter, map } from 'lodash'
+import find from 'lodash/find'
+import filter from 'lodash/filter'
+import map from 'lodash/map'
 
 import { BlockquoteHTMLParser } from './BlockquoteHTMLParser'
 import { EmHTMLParser } from './EmHTMLParser'
@@ -51,6 +53,10 @@ const parse_content = (content) => {
       tagItems.push({ 'type': 'blockquote', 'value': `${BlockquoteHTMLParser(child)}` })
       return true
     }
+    if (tag === 'iframe') {
+      tagItems.push({ 'type': 'iframe', 'value': attr })
+      return true
+    }
     if (tag === 'h2') {
       tagItems.push({ 'type': 'h2', 'value': `${renderChildValue(child)}` })
       return true
@@ -68,9 +74,20 @@ const parse_content = (content) => {
         tagItems.push({ 'type': 'text', 'value': text })
       }
     }
-
-    // render image
-    if (tag === 'a' && attr.class && attr.class === 'p-smartembed') {
+    // render gallery image
+    if (tag === 'a' && attr.class && attr.class === 'p-imagegallery') {
+      tagItems.push({ type: 'ImageGallery', value: { 'gallery_id': attr.name } })
+      return true
+      // render legacyimage
+    } else if (tag === 'img' && attr.class && attr.class === 'p-legacyimage') {
+      tagItems.push({ type: 'ImageFromSrc', value: attr.src })
+      return true
+      // render legacy-image2
+    } else if (tag === 'img' && attr && attr.src && attr.src.startsWith('/legacy/image')) {
+      tagItems.push({ type: 'Image', value: { 'image-legacy': attr.src } })
+      return true
+      // render image
+    } else if (tag === 'a' && attr.class && attr.class === 'p-smartembed') {
       const childImage = find(child, { tag: 'img' })
       if (childImage) {
         let subtitle = ''
@@ -92,14 +109,6 @@ const parse_content = (content) => {
         tagItems.push({ type: 'Image', value: propsImage })
         return true
       }
-
-      // embeds
-    } else if (tag === 'img' && attr && attr.src && attr.src.startsWith('/legacy/image')) {
-      // let source = attr.src.startsWith('/legacy/image')
-      // if(source) {
-      tagItems.push({ type: 'Image', value: { 'image-legacy': attr.src } })
-      return true
-      // }
     } else if (attr && attr['data-oembed-url']) {
       if (attr['data-oembed-url'].indexOf('youtu.be') > -1) {
         tagItems.push({ type: 'Youtube', value: attr['data-oembed-url'] })
@@ -125,7 +134,8 @@ const parse_content = (content) => {
         }
       } else {
         let child_string = renderChildValue(child) || attr.href
-        tagItems.push({ 'type': 'text', 'value': `<a href="${attr.href}" target="_blank" rel="noreferrer">${child_string}</a>` })
+        const rel = attr.name == 'dofollow' ? 'dofollow' : 'noreferrer'
+        tagItems.push({ 'type': 'text', 'value': `<a href="${attr.href}" target="_blank" rel="${rel}">${child_string}</a>` })
         return true
       }
     }

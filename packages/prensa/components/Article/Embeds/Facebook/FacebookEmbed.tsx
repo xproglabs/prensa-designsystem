@@ -1,5 +1,5 @@
 import React from 'react'
-import { FacebookProvider, EmbeddedPost } from 'react-facebook'
+import { EmbeddedPost, FacebookProvider } from 'react-facebook'
 
 import { Container } from '../styled'
 import { FacebookEmbedProps } from './types'
@@ -35,11 +35,7 @@ const FacebookEmbed = ({
 
   const Web = () => (
     <FacebookProvider appId={fbappid}>
-      <EmbeddedPost
-        href={url}
-        width={width[1]}
-        {...elementProps}
-      />
+      <EmbeddedPost href={url} {...elementProps} />
     </FacebookProvider>
   )
 

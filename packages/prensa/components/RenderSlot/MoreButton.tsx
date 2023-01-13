@@ -1,11 +1,14 @@
-import { Button, Block } from 'prensa'
+import { Button, Block, Typography } from 'prensa'
 import React from 'react'
 
 export interface MoreButtonLayoutProps {
   color?: string,
+  custom?: string,
+  fontColor?: string,
   border?: string,
   fontSize?: number,
   fontWeight?: number,
+  size?: string | number;
   variant?: string,
   width?: string
 }
@@ -17,13 +20,16 @@ interface MoreButtonProps extends MoreButtonLayoutProps {
 }
 
 const MoreButton = ({
-  more,
-  color,
   border,
+  color,
+  custom,
+  fontColor,
   fontSize,
   fontWeight,
+  more,
   more_link,
   more_title,
+  size,
   variant,
   width,
 }: MoreButtonProps ) => {
@@ -32,6 +38,7 @@ const MoreButton = ({
   }
   return (
     <Block
+      custom={custom}
       mb={3}
       width='100%'>
       <Button
@@ -39,11 +46,13 @@ const MoreButton = ({
         borderColor={border}
         fontSize={fontSize}
         fontWeight={fontWeight}
-        size={6}
+        size={size}
         path={more_link}
         variant={variant}
         width={width}>
-        {more_title}
+        <Typography element='span' color={fontColor}>
+          {more_title}
+        </Typography>  
       </Button>
     </Block>
   )
@@ -52,8 +61,10 @@ const MoreButton = ({
 MoreButton.defaultProps = {
   color: 'primary1',
   border: 'primary1',
+  fontColor: 'primary1',
   fontSize: 12,
   fontWeight: 700,
+  size: 6,
   variant: 'outlined',
   width: '100%'
 }

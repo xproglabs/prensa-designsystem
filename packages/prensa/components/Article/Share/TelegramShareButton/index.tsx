@@ -49,7 +49,9 @@ const TelegramShareButton = (props: TelegramShareButtonProps) => {
         ml={ml}
       >
         <Link
+          ariaLabel='Compartilhar no Telegram'
           height={size}
+          hoverOpacity={0.8}
           path={shareUrl}
           target='_blank'
         >

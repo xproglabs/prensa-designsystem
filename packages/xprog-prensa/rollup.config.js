@@ -1,4 +1,4 @@
-import createBundle from './bundle/bundleGenerator'
+import { createBundle } from './bundle/bundleGenerator'
 
 /**
  * Prensa JS output file
@@ -7,5 +7,5 @@ import createBundle from './bundle/bundleGenerator'
  */
 export default [
   createBundle('index.ts'),
-  createBundle('news/index.ts')
+  createBundle('hooks/index.ts'),
 ]

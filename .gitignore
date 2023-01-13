@@ -4,4 +4,3 @@
 /packages/xprog-prensa/node-modules
 .env
 *.tgz
-yarn.lock

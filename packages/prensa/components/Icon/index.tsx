@@ -7,11 +7,12 @@ const Icon = ({
   children,
   color,
   height,
+  id,
   viewBox,
   width,
   ...otherProps
 }: IconProps) => {
-
+  const propId = id ? { id } : { }
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,13 +20,13 @@ const Icon = ({
       height={height}
       viewBox={viewBox}
       width={width}
+      {...propId}
       {...otherProps}
     >
       {children}
     </Svg>
   )
 }
-
 Icon.defaultProps = {
   height: '24px',
   viewBox: '0 0 24 24',

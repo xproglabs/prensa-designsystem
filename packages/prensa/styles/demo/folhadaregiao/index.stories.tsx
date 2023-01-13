@@ -1,4 +1,6 @@
-import { find, get, map } from 'lodash'
+import find from 'lodash/find'
+import get from 'lodash/get'
+import map from 'lodash/map'
 import React from 'react'
 import { ThemeProvider, StyleSheetManager } from 'styled-components'
 
@@ -8,6 +10,7 @@ import TemplateContainer from '../../../components/Templates/TemplateContainer'
 import Typography from '../../../components/Typography'
 import EDITORIAL from './data/editorial.json'
 import FEATURED from './data/featured.json'
+import FEATURED_SPLITTED from './data/featured_splitted.json'
 import FEATURED_TOP from './data/featured_top.json'
 import FEATURED_TOP_100 from './data/featured_top_100.json'
 import FEATURED_TOP_IMAGE from './data/featured_top_image.json'
@@ -136,6 +139,24 @@ export const FeaturedTopImage = () => {
       />
       <PageBlock
         {...FEATURED_TOP_IMAGE_100}
+        amp={false}
+        domain={domain}
+        fallback_image_url={fallback_image_url}
+        preview={preview_editable}
+        slot_parser={slot_parser}
+      />
+    </TemplateContainer>
+  )
+}
+
+export const FeaturedSplitted = () => {
+  return (
+    <TemplateContainer
+      background='neutral10'
+      mb={[2, 2]}
+      mt={[2, 2]}>
+      <PageBlock
+        {...FEATURED_SPLITTED}
         amp={false}
         domain={domain}
         fallback_image_url={fallback_image_url}

@@ -3,18 +3,19 @@ import React, { useState } from 'react'
 
 import { AccordionItemGroup } from './ItemGroup'
 import { AccordionGroup } from './styles'
-import { AccordionProps } from './types'
+import { AccordionProps, AccordionItemGroupProps } from './types'
 
 export const Accordion: React.FC<AccordionProps> = ({
+  customLink,
   css,
   items,
   innerSpace,
-  size
+  size,
 }) => {
-  const [state, setState] = useState(items)
+  const [state, setState] = useState(items || [])
 
   const handleClick = (id: string) => {
-    let itk = null
+    let itk: number = 0
 
     const item = state.find((i, k) => {
       itk = k
@@ -22,7 +23,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     })
 
     const currentState = Object.assign({}, state)
-    const updatedItem = { ...item, expanded: !item.expanded }
+    const updatedItem = { ...item, expanded: item ? !item.expanded : false }
     const updatedState = { ...currentState, [itk]: updatedItem }
     setState(Object.keys(updatedState).map(key => updatedState[key]))
   }
@@ -44,13 +45,15 @@ export const Accordion: React.FC<AccordionProps> = ({
       size={size}
       css={accordiongroup_css}
     >
-      {state.map((accordionItem) => (
+      {state.map(({ id, onClick, ...otherProps }: AccordionItemGroupProps) => (
         <AccordionItemGroup
-          key={accordionItem.id}
-          onClick={() => handleClick(accordionItem.id)}
+          customLink={customLink}
           css={accordionitem_css}
+          key={id}
+          id={id}
           innerSpace={innerSpace}
-          {...accordionItem}
+          onClick={onClick ? onClick : () => handleClick(id)}
+          {...otherProps}
         />
       ))}
     </AccordionGroup>

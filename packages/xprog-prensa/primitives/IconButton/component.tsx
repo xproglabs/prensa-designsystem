@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { StyledIconButton } from './styles'
-import { IconButtonProps } from './props'
+import { IconButtonProps } from './types'
 
 export const IconButton: React.FC<IconButtonProps> = ({
   children,
@@ -14,13 +14,16 @@ export const IconButton: React.FC<IconButtonProps> = ({
   ...otherProps
 }) => {
 
+  let css_button = {}
+  let css_icon = {}
   let css_variant = {}
+
   switch (variant) {
     case 'filled':
       css_variant = {
         backgroundColor: `$${color}`,
         borderColor: `$${color}`,
-        'svg': { fill: `$${iconColor ? iconColor : 'white'}` },
+        'svg': { fill: `$${iconColor ? iconColor : 'basicWhite'}` },
         '&:hover': { opacity: '0.8' }
       }
       break
@@ -43,10 +46,19 @@ export const IconButton: React.FC<IconButtonProps> = ({
       }
   }
 
+  if (css) {
+    if (css.button) {
+      css_button = { ...css.button }
+    }
+    if (css.icon) {
+      css_icon = { 'svg': { ...css.icon } }
+    }
+  }
+
   return (
     <StyledIconButton
       className='pds-IconButton-root'
-      css={{ ...css_variant, ...css }}
+      css={{ ...css_variant, ...css_button, ...css_icon }}
       {...otherProps}
     >
       {children ? <svg viewBox={viewBox}>{children}</svg> : icon}
@@ -55,7 +67,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
 }
 
 IconButton.defaultProps = {
-  color: 'neutral2',
+  color: 'brandNeutral500',
   size: 'md',
   variant: 'filled',
   viewBox: '0 0 48 48'

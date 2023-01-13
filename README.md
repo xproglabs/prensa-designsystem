@@ -1,7 +1,7 @@
 <br/>
 <h1>Prensa Design System</h1>
 
-<h4>Repositório de codificação do Prensa Design System</h4>
+<h4>Repositório de codificação</h4>
 
 Este repositório fornece infraestrutura para construção do Prensa em um formato monorepo.
 

@@ -10,7 +10,7 @@ type TemplateRelated = {
 }
 
 type TemplateLayout = {
-  0: [TeaserSuggestions];
+  0: [TeaserSuggestions] | TeaserSuggestions[];
   1?: [TeaserSuggestions];
   2?: [TeaserSuggestions] | [TeaserSuggestions, TeaserSuggestions];
   3?: [TeaserSuggestions] | [TeaserSuggestions, TeaserSuggestions, TeaserSuggestions];
@@ -46,6 +46,9 @@ type TemplateSlotTypes = {
   space_bottom?: TemplateSpacesBottom;
   space_bottom_column?: TemplateSpacesBottom;
   space_bottom_column_color?: TemplateSpacesBottom;
+  split_slot?: {
+    enabled: boolean
+  };
 }
 
 export type CreateTemplateTypes = {

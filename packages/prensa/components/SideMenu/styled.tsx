@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 import { padding } from 'prensa/styled-system'
 import { FC } from 'react'
 import styled from 'styled-components'

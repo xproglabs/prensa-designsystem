@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 import { align, border, height, margin, padding, width } from 'prensa/styled-system'
 import { FC } from 'react'
 import styled, { css } from 'styled-components'

@@ -1,4 +1,5 @@
-import { get, map } from 'lodash'
+import get from 'lodash/get'
+import map from 'lodash/map'
 import React from 'react'
 import { theme } from 'storybook/theme'
 import { ThemeProvider } from 'styled-components'
