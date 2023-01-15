@@ -1,7 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import React from 'react'
 
-import { Block } from '../../../primitives/Block'
 import { Calendar } from '../../../primitives/Calendar'
 import { StorybookTheme } from '../../StorybookTheme'
 

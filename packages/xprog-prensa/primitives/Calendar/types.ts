@@ -1,8 +1,6 @@
 export interface CalendarProps {
   onChange: (P: Date) => void;
   children?: any;
-  date?: Date;
-  selectedDate?: Date;
   css?: {
     container?: {};
     headerGroup?: {};
@@ -14,4 +12,8 @@ export interface CalendarProps {
     day?: {};
     dayButton?: {};
   };
-};
+  date?: Date;
+  icBackward?: any;
+  icForward?: any;
+  selectedDate?: Date;
+}

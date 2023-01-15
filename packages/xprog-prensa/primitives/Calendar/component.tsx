@@ -89,10 +89,10 @@ function calculateDatesForPicker(d) {
 
 const LOCALE_DAYS_OF_WEEK = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
 
-export const Calendar: React.FC<CalendarProps> = ({ css, date, selectedDate, onChange }) => {
+export const Calendar: React.FC<CalendarProps> = ({ css, date, selectedDate, onChange, icBackward, icForward }) => {
 
   const rendertime = Date.now()
-  const dates = calculateDatesForPicker(rendertime)
+  const dates = calculateDatesForPicker(date ? date : rendertime)
   const [state, setState] = useState(dates)
 
   const handleChange = (e: React.MouseEvent, d: Date) => {
@@ -133,7 +133,7 @@ export const Calendar: React.FC<CalendarProps> = ({ css, date, selectedDate, onC
           }}
           onClick={handlePrev}
         >
-          {'<'}
+          {icBackward ? icBackward : '<'}
         </IconButton>
         <Typography
           as='span'
@@ -160,7 +160,7 @@ export const Calendar: React.FC<CalendarProps> = ({ css, date, selectedDate, onC
           }}
           onClick={handleNext}
         >
-          {'>'}
+          {icForward ? icForward : '>'}
         </IconButton>
       </Block>
     )
