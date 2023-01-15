@@ -1,3 +1,10 @@
+## [2.33.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.33.0...pds-v2.33.1) (2023-01-15)
+
+
+### Bug Fixes
+
+* Remove svg container for IconButton children slot and update IconButtonProps interface root ([e7b2784](https://github.com/xproglabs/prensa-designsystem/commit/e7b2784aa9a98e74e7560d8031fb274a0852998e))
+
 # [2.33.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.2...pds-v2.33.0) (2023-01-13)
 
 
