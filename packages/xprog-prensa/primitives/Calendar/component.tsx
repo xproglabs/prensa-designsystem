@@ -222,6 +222,10 @@ export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange
                     '&:disabled': {
                       backgroundColor: 'none',
                       color: '$brandNeutral400',
+                      '&:hover': {
+                        backgroundColor: 'unset',
+                        cursor: 'not-allowed'
+                      }
                     }
                   }
                 }}
