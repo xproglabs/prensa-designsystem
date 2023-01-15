@@ -10,7 +10,6 @@ export const IconButton: React.FC<IconButtonProps> = ({
   icon,
   iconColor,
   variant,
-  viewBox,
   ...otherProps
 }) => {
 
@@ -39,7 +38,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
     case 'ghost':
       css_variant = {
         backgroundColor: 'transparent',
-        borderColor: `transparent`,
+        borderColor: 'transparent',
         color: `$${iconColor ? iconColor : color}`,
         'svg': { fill: `$${iconColor ? iconColor : color}` },
         '&:hover': { opacity: '0.8' }
@@ -61,7 +60,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
       css={{ ...css_variant, ...css_button, ...css_icon }}
       {...otherProps}
     >
-      {children ? <svg viewBox={viewBox}>{children}</svg> : icon}
+      {children ? children : icon}
     </StyledIconButton>
   )
 }
@@ -69,6 +68,5 @@ export const IconButton: React.FC<IconButtonProps> = ({
 IconButton.defaultProps = {
   color: 'brandNeutral500',
   size: 'md',
-  variant: 'filled',
-  viewBox: '0 0 48 48'
+  variant: 'filled'
 }
