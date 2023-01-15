@@ -187,7 +187,7 @@ export const Calendar: React.FC<CalendarProps> = () => {
           'list-style-type': 'none'
         }}
       >
-        {state.renderDays.map((d, k) => {
+        {state.renderDays.map((d) => {
           return (
             <Li
               key={d.getTime()}
@@ -199,6 +199,23 @@ export const Calendar: React.FC<CalendarProps> = () => {
             >
               <IconButton
                 variant='ghost'
+                disabled={d.getMonth() !== state.month}
+                css={{
+                  button: {
+                    borderRadius: '$circle',
+                    color: '$brandNeutral800',
+                    '&:hover': {
+                      backgroundColor: '$basicBlackAlpha300'
+                    },
+                    '&:active': {
+                      backgroundColor: '$basicBlackAlpha400'
+                    },
+                    '&:disabled': {
+                      backgroundColor: 'none',
+                      color: '$brandNeutral400',
+                    }
+                  }
+                }}
               >
                 {d.getDate()}
               </IconButton>
