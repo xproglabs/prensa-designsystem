@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 import { cloneElement, ReactElement } from 'react'
 
 export const parseTeaserProps = (key, layout, layouts, slot, teasers) => {

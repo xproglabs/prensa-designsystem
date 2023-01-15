@@ -3,10 +3,12 @@ import React from 'react'
 
 export interface MoreButtonLayoutProps {
   color?: string,
+  custom?: string,
   fontColor?: string,
   border?: string,
   fontSize?: number,
   fontWeight?: number,
+  size?: string | number;
   variant?: string,
   width?: string
 }
@@ -20,12 +22,14 @@ interface MoreButtonProps extends MoreButtonLayoutProps {
 const MoreButton = ({
   border,
   color,
+  custom,
   fontColor,
   fontSize,
   fontWeight,
   more,
   more_link,
   more_title,
+  size,
   variant,
   width,
 }: MoreButtonProps ) => {
@@ -34,6 +38,7 @@ const MoreButton = ({
   }
   return (
     <Block
+      custom={custom}
       mb={3}
       width='100%'>
       <Button
@@ -41,11 +46,11 @@ const MoreButton = ({
         borderColor={border}
         fontSize={fontSize}
         fontWeight={fontWeight}
-        size={6}
+        size={size}
         path={more_link}
         variant={variant}
         width={width}>
-        <Typography element='span' fontColor={fontColor}>
+        <Typography element='span' color={fontColor}>
           {more_title}
         </Typography>  
       </Button>
@@ -59,6 +64,7 @@ MoreButton.defaultProps = {
   fontColor: 'primary1',
   fontSize: 12,
   fontWeight: 700,
+  size: 6,
   variant: 'outlined',
   width: '100%'
 }

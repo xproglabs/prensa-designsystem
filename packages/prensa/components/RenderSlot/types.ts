@@ -47,6 +47,8 @@ export type RenderSlotProps = {
   space_bottom?: Array<number | string>;
   space_bottom_column?: Array<number | string>;
   space_bottom_column_color?: Array<number | string>;
-  split_slot?: any;
+  split_slot?: {
+    enabled: boolean
+  };
   theme?: any;
 }

@@ -46,6 +46,9 @@ type TemplateSlotTypes = {
   space_bottom?: TemplateSpacesBottom;
   space_bottom_column?: TemplateSpacesBottom;
   space_bottom_column_color?: TemplateSpacesBottom;
+  split_slot?: {
+    enabled: boolean
+  };
 }
 
 export type CreateTemplateTypes = {

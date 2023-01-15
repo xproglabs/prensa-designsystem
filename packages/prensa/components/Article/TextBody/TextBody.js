@@ -1,4 +1,5 @@
-import { get, map } from 'lodash'
+import get from 'lodash/get'
+import map from 'lodash/map'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { withTheme } from 'styled-components'
@@ -6,7 +7,7 @@ import { withTheme } from 'styled-components'
 import Block from '../../Block'
 import { ImageGallery } from '../../ImageGallery/index.tsx'
 import Citation from '../Citation/Citation'
-import { FacebookEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed, TikTokEmbed } from '../Embeds'
+import { FacebookEmbed, IframeEmbed, InstagramEmbed, TwitterEmbed, YouTubeEmbed, TikTokEmbed } from '../Embeds'
 import Heading2 from '../Headings/Heading2'
 import Heading3 from '../Headings/Heading3'
 import Heading4 from '../Headings/Heading4'
@@ -22,6 +23,7 @@ import { parse_content } from './TextBodyParser'
 const TextBody = (props) => {
   const {
     adsBody,
+    adsBottom,
     adsSide,
     amp,
     bodyImage,
@@ -29,6 +31,7 @@ const TextBody = (props) => {
     citation,
     content,
     fbappid,
+    fbclienttoken,
     gallery,
     hasColumnRight,
     heading2,
@@ -51,6 +54,11 @@ const TextBody = (props) => {
   const adsContent = get(adsBody, 'content', [])
   const adsRender = get(adsBody, 'render', null)
 
+  // gallery props
+  const galleryArray = get(gallery, 'items', [])
+  const galleryTextbody = []
+  const galleryHeight = get(gallery, 'height', [])
+
   let readmore = []
   let intervention_amount = get(adsBody, 'interventionAmount', 3)
   let intervention_readmore_inserted = false
@@ -63,6 +71,7 @@ const TextBody = (props) => {
   const render_image = (value) => {
     if (!value) return null
     const image_items = get(images, 'items', [])
+    const handleImage = get(images, 'render', false)
     let image_data = undefined
     map(image_items, (item) => {
       const item_value = get(item, 'contentId', '')
@@ -84,9 +93,22 @@ const TextBody = (props) => {
           }}
           clickToOpen={clickToOpenValue}
           customClick={customClickValue}
+          handleImage={handleImage}
           height={image_data.height}
           width={image_data.width}
           value={image_data.value}
+        />
+      </Block>
+    )
+  }
+  const render_image_src = (value) => {
+    if (!value) return null
+    return (
+      <Block mb={3} maxWidth={bodyWidth} width="100%">
+        <ArticleImage
+          {...bodyImage}
+          amp={amp}
+          value={value}
         />
       </Block>
     )
@@ -161,6 +183,13 @@ const TextBody = (props) => {
             {...citation}
           />
         )
+      case 'iframe':
+        return (
+          <IframeEmbed
+            maxWidth={bodyWidth}
+            url={value?.src}
+          />
+        )
       case 'Facebook':
         return (
           <FacebookEmbed
@@ -169,10 +198,24 @@ const TextBody = (props) => {
             url={value}
           />
         )
+      case 'ImageGallery':
+        const gallerySelected = get(galleryArray, `[${galleryTextbody.length}]`, [])
+        galleryTextbody.push(gallerySelected)
+        return (
+          <ImageGallery
+            amp={amp}
+            items={gallerySelected}
+            height={galleryHeight}
+            captionProps={{ enabled: true }}
+            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
+          />
+        )
       case 'Instagram':
         return (
           <InstagramEmbed
             amp={amp}
+            fbappid={fbappid}
+            fbclienttoken={fbclienttoken}
             url={value}
           />
         )
@@ -199,6 +242,8 @@ const TextBody = (props) => {
         )
       case 'Image':
         return render_image(value)
+      case 'ImageFromSrc':
+        return render_image_src(value)
       case 'Heading2':
         return <Heading2 {...heading2} maxWidth={bodyWidth} value={value} />
       case 'Heading3':
@@ -217,7 +262,8 @@ const TextBody = (props) => {
   }
 
   const RenderMainColumn = () => {
-    const isGalleryVisible = gallery && gallery.items && gallery.items.length > 0
+    const isGalleryVisible = galleryArray.length > 0
+    const isAdsArticleBottomVisible = get(adsBottom, 'enabled', false)
     const isTagsSectionTitleVisible = get(tags, 'sectionTitle.enabled', false)
     const tagsSectionTitleValue = get(tags, 'sectionTitle.value', 'Assuntos')
     return (
@@ -229,13 +275,22 @@ const TextBody = (props) => {
             </React.Fragment>
           )
         })}
-        {isGalleryVisible &&
-          <ImageGallery
-            {...gallery}
-            width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
-            amp={amp}
-          />
-        }
+        {isGalleryVisible && (
+          <div className='galleryArray'>
+            {map(galleryArray.slice(galleryTextbody.length, galleryArray.length), (galleryItems, key) => {
+              return (
+                <ImageGallery
+                  amp={amp}
+                  key={key}
+                  items={galleryItems}
+                  height={galleryHeight}
+                  captionProps={{ enabled: true }}
+                  width={bodyWidth ? ['100%', bodyWidth] : ['100%', '100%']}
+                />
+              )
+            })}
+          </div>
+        )}
         {isTagsSectionTitleVisible &&
           <SectionTitle
             element='h6'
@@ -256,6 +311,7 @@ const TextBody = (props) => {
           sectionTitle={sectionTitle}
           share={share}
         />
+        {isAdsArticleBottomVisible && <div id='ads_article_bottom' />}
       </React.Fragment>
     )
   }
@@ -304,12 +360,17 @@ TextBody.propTypes = {
     render: PropTypes.node,
     interventionAmount: PropTypes.number
   }),
+  adsBottom: PropTypes.shape({
+    enabled: PropTypes.bool,
+  }),
   adsSide: PropTypes.node,
   amp: PropTypes.bool,
   bodyImage: PropTypes.object,
   bodyWidth: PropTypes.string,
   content: PropTypes.string,
   citation: PropTypes.object,
+  fbappid: PropTypes.string,
+  fbclienttoken: PropTypes.string,
   gallery: PropTypes.shape({
     captionProps: PropTypes.object,
     items: PropTypes.array,

@@ -1,5 +1,7 @@
 import { selectComponentFromSlotList } from 'components/PageBlock/utils'
-import { get, map, orderBy } from 'lodash'
+import get from 'lodash/get'
+import map from 'lodash/map'
+import orderBy from 'lodash/orderBy'
 import React from 'react'
 import { withTheme } from 'styled-components'
 
@@ -136,10 +138,10 @@ const RenderSlot = ({
     const slotItemsRight = [null, slot_sorted[1], slot_sorted[2], slot_sorted[3]]
     return (
       <Block lg={{ align: 'row', alignx: 'between' }} width='100%'>
-        <Block width='calc(50% - 12px)'>
+        <Block lg={{ width: 'calc(50% - 12px)'}} width='100%'>
           <RenderListItems slotItems={slotItemsLeft} />
         </Block>
-        <Block width='calc(50% - 12px)'>
+        <Block lg={{ width: 'calc(50% - 12px)'}} width='100%'>
           <RenderListItems slotItems={slotItemsRight} />
         </Block>
       </Block>

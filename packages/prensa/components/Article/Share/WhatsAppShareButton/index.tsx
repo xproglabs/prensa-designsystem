@@ -48,7 +48,9 @@ const WhatsAppShareButton = (props: WhatsAppShareButtonProps) => {
         ml={ml}
       >
         <Link
+          ariaLabel='Compartilhar no WhatsApp'
           height={size}
+          hoverOpacity={0.8}
           path={shareUrl}
           target='_blank'
         >

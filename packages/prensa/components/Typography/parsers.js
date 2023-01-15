@@ -1,4 +1,4 @@
-import { get } from 'lodash'
+import get from 'lodash/get'
 import { css } from 'styled-components'
 
 import { border } from '../../styled-system/border'

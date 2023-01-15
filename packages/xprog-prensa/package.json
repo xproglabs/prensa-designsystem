@@ -1,13 +1,14 @@
 {
   "name": "@xprog/prensa",
-  "version": "2.0.0",
+  "version": "2.33.0",
   "description": "React components library in blocks",
   "author": "XPROG",
   "license": "ISC",
   "repository": "https://github.com/xproglabs/prensa-designsystem.git",
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "pkgRoot": "dist"
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
@@ -22,16 +23,17 @@
     "clear:dist": "rimraf dist",
     "prerelease:copyfiles": "cpx README.md dist && cpx CHANGELOG.md dist && cpx package.json dist && cpx .npmignore dist",
     "postrelease:copyfiles": "cpx dist/package.json . && cpx dist/CHANGELOG.md .",
+    "release:dry": "npm run prerelease:copyfiles && semantic-release --extends ./release.local.config.js --no-ci --dry-run",
     "release:local": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js --no-ci",
     "release": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js"
   },
   "dependencies": {
     "@stitches/react": "1.2.8",
-    "@xprog/prensa-css-engine": "1.0.39",
     "@xprog/prensa-design-tokens": "^1.1.0",
     "lodash": "4.17.19",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-responsive-carousel": "^3.2.23"
   },
   "devDependencies": {
     "@babel/preset-react": "7.14.5",

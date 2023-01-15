@@ -6,15 +6,19 @@ import { AccordionGroup } from './styles'
 import { AccordionProps, AccordionItemGroupProps } from './types'
 
 export const Accordion: React.FC<AccordionProps> = ({
+  customLink,
   css,
   items,
   innerSpace,
+  icon,
+  iconExpandedState,
+  iconNotExpandedState,
   size,
 }) => {
-  const [state, setState] = useState(items)
+  const [state, setState] = useState(items || [])
 
   const handleClick = (id: string) => {
-    let itk = null
+    let itk: number = 0
 
     const item = state.find((i, k) => {
       itk = k
@@ -22,7 +26,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     })
 
     const currentState = Object.assign({}, state)
-    const updatedItem = { ...item, expanded: !item.expanded }
+    const updatedItem = { ...item, expanded: item ? !item.expanded : false }
     const updatedState = { ...currentState, [itk]: updatedItem }
     setState(Object.keys(updatedState).map(key => updatedState[key]))
   }
@@ -46,11 +50,15 @@ export const Accordion: React.FC<AccordionProps> = ({
     >
       {state.map(({ id, onClick, ...otherProps }: AccordionItemGroupProps) => (
         <AccordionItemGroup
+          customLink={customLink}
+          css={accordionitem_css}
           key={id}
           id={id}
           innerSpace={innerSpace}
+          icon={otherProps.icon ? otherProps.icon : icon}
+          iconExpandedState={otherProps.iconExpandedState ? otherProps.iconExpandedState : iconExpandedState}
+          iconNotExpandedState={otherProps.iconNotExpandedState ? otherProps.iconNotExpandedState : iconNotExpandedState}
           onClick={onClick ? onClick : () => handleClick(id)}
-          css={accordionitem_css}
           {...otherProps}
         />
       ))}
