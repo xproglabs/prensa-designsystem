@@ -89,11 +89,15 @@ function calculateDatesForPicker(d) {
 
 const LOCALE_DAYS_OF_WEEK = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
 
-export const Calendar: React.FC<CalendarProps> = () => {
+export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange }) => {
 
   const rendertime = Date.now()
   const dates = calculateDatesForPicker(rendertime)
   const [state, setState] = useState(dates)
+
+  const handleChange = (e: React.MouseEvent, d: Date) => {
+    onChange(d)
+  }
 
   const renderHeader = () => {
     const handlePrev = () => {
@@ -199,11 +203,16 @@ export const Calendar: React.FC<CalendarProps> = () => {
             >
               <IconButton
                 variant='ghost'
+                data-selected-state={d === selectedDate}
                 disabled={d.getMonth() !== state.month}
+                onClick={(e) => handleChange(e, d)}
                 css={{
                   button: {
                     borderRadius: '$circle',
                     color: '$brandNeutral800',
+                    '&[data-selected-state=true]': {
+                      backgroundColor: '$brandPrimary400'
+                    },
                     '&:hover': {
                       backgroundColor: '$basicBlackAlpha300'
                     },
