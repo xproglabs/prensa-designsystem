@@ -89,7 +89,7 @@ function calculateDatesForPicker(d) {
 
 const LOCALE_DAYS_OF_WEEK = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
 
-export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange }) => {
+export const Calendar: React.FC<CalendarProps> = ({ css, date, selectedDate, onChange }) => {
 
   const rendertime = Date.now()
   const dates = calculateDatesForPicker(rendertime)
@@ -111,12 +111,15 @@ export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange
     return (
       <Block
         as='header'
+        className='pds-Calendar-headerGroup'
         css={{
           align: ['row', 'between', 'middle'],
-          width: '100%'
+          width: '100%',
+          ...css?.headerGroup
         }}
       >
         <IconButton
+          className='pds-Calendar-headerButton'
           variant='ghost'
           css={{
             button: {
@@ -124,7 +127,8 @@ export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange
               // backgroundColor: '$basicBlackAlpha400',
               borderRadius: '$circle',
               height: '$11',
-              width: '$11'
+              width: '$11',
+              ...css?.headerButton
             }
           }}
           onClick={handlePrev}
@@ -133,13 +137,16 @@ export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange
         </IconButton>
         <Typography
           as='span'
+          className='pds-Calendar-headerTitle'
           css={{
-            fontFamily: '$primary'
+            fontFamily: '$primary',
+            ...css?.headerTitle
           }}
         >
           {parseMonthToLocale(state.month)} de {state.year}
         </Typography>
         <IconButton
+          className='pds-Calendar-headerButton'
           variant='ghost'
           css={{
             button: {
@@ -147,7 +154,8 @@ export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange
               // backgroundColor: '$basicBlackAlpha400',
               borderRadius: '$circle',
               height: '$11',
-              width: '$11'
+              width: '$11',
+              ...css?.headerButton
             }
           }}
           onClick={handleNext}
@@ -160,15 +168,23 @@ export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange
 
   const renderDaysOfWeek = () => {
     return (
-      <Block css={{ align: ['row', 'between', 'middle'] }}>
+      <Block
+        className='pds-Calendar-weekGroup'
+        css={{
+          align: ['row', 'between', 'middle'],
+          ...css?.weekGroup
+        }}
+      >
         {LOCALE_DAYS_OF_WEEK.map((d, k) => (
           <Typography
             as='span'
+            className='pds-Calendar-weekDay'
             key={`${d}-${k}`}
             css={{
               align: ['row', 'center', 'middle'],
               height: '39px', width: '39px',
-              fontFamily: '$primary'
+              fontFamily: '$primary',
+              ...css?.weekDay
             }}
           >
             {d}
@@ -181,6 +197,7 @@ export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange
   const renderDays = () => {
     return (
       <Ol
+        className='pds-Calendar-dayGroup'
         css={{
           align: ['row', 'left', 'top'],
           flexWrap: 'wrap',
@@ -188,20 +205,24 @@ export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange
           maxWidth: 'calc(273px + $8)',
           mt: '$0',
           mb: '$4',
-          'list-style-type': 'none'
+          'list-style-type': 'none',
+          ...css?.dayGroup
         }}
       >
         {state.renderDays.map((d) => {
           return (
             <Li
+              className='pds-Calendar-day'
               key={d.getTime()}
               css={{
                 align: ['row', 'center', 'middle'],
                 height: '39px',
-                width: '39px'
+                width: '39px',
+                ...css?.day
               }}
             >
               <IconButton
+                className='pds-Calendar-dayButton'
                 variant='ghost'
                 data-selected-state={d === selectedDate}
                 disabled={d.getMonth() !== state.month}
@@ -226,7 +247,8 @@ export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange
                         backgroundColor: 'unset',
                         cursor: 'not-allowed'
                       }
-                    }
+                    },
+                    ...css?.dayButton
                   }
                 }}
               >
@@ -241,6 +263,7 @@ export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange
 
   return (
     <Block
+      className='pds-Calendar-container'
       css={{
         align: ['column', 'center', 'top'],
         borderColor: '$basicBlackAlpha500',
@@ -248,7 +271,8 @@ export const Calendar: React.FC<CalendarProps> = ({ date, selectedDate, onChange
         borderWidth: '1px',
         borderRadius: 'calc($alternative * 3)',
         p: '$4',
-        maxWidth: '273px'
+        maxWidth: '273px',
+        ...css?.container
       }}
     >
       {renderHeader()}

@@ -16,7 +16,15 @@ const Template: ComponentStory<any> = (args) => {
 
   return (
     <div className={StorybookTheme.className}>
-      <Calendar selectedDate={selected} onChange={handleChange} />
+      <Calendar
+        selectedDate={selected}
+        onChange={handleChange}
+        css={{
+          dayButton: {
+            fontWeight: 700
+          }
+        }}
+      />
     </div>
   )
 }
