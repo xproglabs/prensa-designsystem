@@ -1,14 +1,9 @@
-import { ReactNode } from 'react'
-
-import {
-  BlockType,
-  CSSType,
-  CSSVariant,
-  ContainerDefaultProps
-} from '../types'
+import { LinkProps } from '../../../primitives/Link/types'
+import { PrensaEngineColorType } from '../../../types'
+import { BlockType, CSSType, CSSVariant, ContainerDefaultProps } from '../types'
 
 interface TitleContainerProps extends ContainerDefaultProps {
-  children?: ReactNode;
+  children?: any;
   customProps?: BlockType;
 }
 
@@ -17,12 +12,18 @@ interface TitleTextProps extends TitleContainerProps {
 }
 
 interface TitleProps extends TitleContainerProps {
-  css?: CSSType;
   customLink: any;
-  customLinkProps: any;
+  css?: CSSType;
+  customLinkProps?: LinkProps;
+  color?: PrensaEngineColorType;
+  icon?: {
+    enabled: boolean;
+    name: string;
+    useIcon: (P: { icon: string; color: string }) => void;
+  };
   path?: string;
   title?: string;
-  variant?: CSSVariant;  
+  variant?: CSSVariant;
 }
 
 type TitleVariant = CSSVariant

@@ -45,7 +45,7 @@ export interface PageBlockConfig {
   slotLeftIconValue?: string;
   slotLeftReadMoreEnabled?: boolean;
   slotLeftReadMoreLink?: string;
-  slotLeftReadMoreTitle?: string;
+  slotLeftReadMoreTitle?: string;  
   slotLeftTeaserBgColor?: string;
   slotLeftLayout?: string;
   slotLeftItems?: number;

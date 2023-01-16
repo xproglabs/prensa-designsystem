@@ -8,12 +8,16 @@ import { ColumnProps } from './types'
 const Column: React.FC<ColumnProps> = ({
   css,
   customProps,
+  color,
   items,
   itemsBottom,
   itemsTop,
   itemComponent,
   layout,
-  name
+  name,
+  wrapperTop = { enabled: false, component: null },
+  wrapperContent = { enabled: false, component: null },
+  wrapperBottom = { enabled: false, component: null },
 }) => {
   const Item: any = itemComponent
   const columnProps = {
@@ -71,7 +75,9 @@ const Column: React.FC<ColumnProps> = ({
         `
       },
       ...item,
-      numberValue: (position + 1).toString()
+      numberValue: (position + 1).toString(),
+      slotColor: color,
+      slotName: name
     }
     const itemDesktopProps: ItemProps = {
       ...itemDesktop,
@@ -89,7 +95,9 @@ const Column: React.FC<ColumnProps> = ({
         `
       },
       ...item,
-      numberValue: (position + 1).toString()
+      numberValue: (position + 1).toString(),
+      slotColor: color,
+      slotName: name
     }
     return (
       <React.Fragment key={position}>
@@ -99,22 +107,22 @@ const Column: React.FC<ColumnProps> = ({
     )
   }
 
+  const columnTop = map(itemsTop, (item: SlotItemsType, position: number) => renderItem({ item, position }))
+  const columnContent = map(items, (item: SlotItemsType, position: number) => renderItem({ item, position }))
+  const columnBottom = map(itemsBottom, (item: SlotItemsType, position: number) => renderItem({ item, position }))
+
+  const renderWrapper = (d, p) => d.component ? d.component(p) : p
+
   return (
     <S.Column {...columnProps}>
       <S.ColumnTop {...columnGroupProps}>
-        {map(itemsTop, (item: SlotItemsType, position: number) =>
-          renderItem({ item, position })
-        )}
+        {wrapperTop.enabled ? renderWrapper(wrapperTop, columnTop) : columnTop}
       </S.ColumnTop>
       <S.ColumnContent {...columnGroupProps}>
-        {map(items, (item: SlotItemsType, position: number) =>
-          renderItem({ item, position })
-        )}
+        {wrapperContent.enabled ? renderWrapper(wrapperContent, columnContent) : columnContent}
       </S.ColumnContent>
       <S.ColumnBottom {...columnGroupProps}>
-        {map(itemsBottom, (item: SlotItemsType, position: number) =>
-          renderItem({ item, position })
-        )}
+        {wrapperBottom.enabled ? renderWrapper(wrapperBottom, columnBottom) : columnBottom}
       </S.ColumnBottom>
     </S.Column>
   )

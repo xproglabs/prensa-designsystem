@@ -1,3 +1,125 @@
+# [2.34.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.33.1...pds-v2.34.0) (2023-01-15)
+
+
+### Features
+
+* Create Calendar component ([4660c77](https://github.com/xproglabs/prensa-designsystem/commit/4660c77323d11ac6547d22b78286bf757280a6ce))
+
+## [2.33.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.33.0...pds-v2.33.1) (2023-01-15)
+
+
+### Bug Fixes
+
+* Remove svg container for IconButton children slot and update IconButtonProps interface root ([e7b2784](https://github.com/xproglabs/prensa-designsystem/commit/e7b2784aa9a98e74e7560d8031fb274a0852998e))
+
+# [2.33.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.2...pds-v2.33.0) (2023-01-13)
+
+
+### Features
+
+* New rule allowing icon definition in AccordionProps ([da34441](https://github.com/xproglabs/prensa-designsystem/commit/da3444186cd569f8beee67a55d32974ce1b38be6))
+
+## [2.32.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.1...pds-v2.32.2) (2023-01-12)
+
+
+### Bug Fixes
+
+* Fixed inconsistency in Teaser/Title Link implementation ([95d198d](https://github.com/xproglabs/prensa-designsystem/commit/95d198d08eb26c51e189c84dbf008ee84ae9de9b))
+
+## [2.32.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.0...pds-v2.32.1) (2023-01-12)
+
+
+### Bug Fixes
+
+* Connects css.container and add css.controlArrow in Carousel component ([ef5b7cb](https://github.com/xproglabs/prensa-designsystem/commit/ef5b7cb464ae56e506716ecdf0d6c27b85ffdcc7))
+
+# [2.32.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.31.0...pds-v2.32.0) (2023-01-11)
+
+
+### Features
+
+* Create Link component ([e207c1b](https://github.com/xproglabs/prensa-designsystem/commit/e207c1be11c1c09b4ccc539dace95fb9b91dea7f))
+* Implements Link component to Teaser/Title ([4626fc7](https://github.com/xproglabs/prensa-designsystem/commit/4626fc72a40ab2c91af448cb8ca44f796e5cd0a6))
+* Implements new Link component over deprecated useLinks and change linkProps to customLinkProps property in Accordion component ([d3bdcc2](https://github.com/xproglabs/prensa-designsystem/commit/d3bdcc20b473a48c8aba4058eac79d3c111f7339))
+* Omit ref property from Link component to fix exception ([252df09](https://github.com/xproglabs/prensa-designsystem/commit/252df09f8352525423e984abfadc2129d4f5ec60))
+
+# [2.31.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.30.0...pds-v2.31.0) (2023-01-11)
+
+
+### Features
+
+* Allow wrapper components in all PageBlock Columns ([46626ee](https://github.com/xproglabs/prensa-designsystem/commit/46626ee171121490cd06d5ab9813935fb0d0f9b7))
+
+# [2.30.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.29.0...pds-v2.30.0) (2023-01-10)
+
+
+### Features
+
+* Connects centerSlidePercentage property with Carousel slide fixing UI inconsistency ([9d2d7a2](https://github.com/xproglabs/prensa-designsystem/commit/9d2d7a2009bfec6636d680e9b414273cd81ff595))
+
+# [2.29.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.28.0...pds-v2.29.0) (2023-01-10)
+
+
+### Features
+
+* Create Carousel component ([e9357ac](https://github.com/xproglabs/prensa-designsystem/commit/e9357ac520a483f5e4877341573c84af0671f9f9))
+
+# [2.28.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.27.0...pds-v2.28.0) (2023-01-09)
+
+
+### Features
+
+* Customizations regarding customized Link (a) component for Accordion ([bd3743e](https://github.com/xproglabs/prensa-designsystem/commit/bd3743e4cb276a690e561b586df53d1417fa857c))
+
+# [2.27.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.26.0...pds-v2.27.0) (2023-01-09)
+
+
+### Bug Fixes
+
+* use customLink in related ([ae421dd](https://github.com/xproglabs/prensa-designsystem/commit/ae421dd9452744c3b6e27dbf1a500c1ee33104dd))
+
+
+### Features
+
+* add slotColor to renderItem/teaser ([057ed68](https://github.com/xproglabs/prensa-designsystem/commit/057ed68928c64f448ed44b82f2552c22eda9ee93))
+
+# [2.26.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.25.0...pds-v2.26.0) (2023-01-06)
+
+
+### Bug Fixes
+
+* add react-carousel types to project ([ceff54d](https://github.com/xproglabs/prensa-designsystem/commit/ceff54dc5dc7b2c55e78d4862f68e8f4b7a25fa6))
+* adjust buttons controls in image gallery ([c94fce7](https://github.com/xproglabs/prensa-designsystem/commit/c94fce79269010f3cec5e902035aa27f5d5c9c12))
+* import templates in pageblock and teaser ([72d6386](https://github.com/xproglabs/prensa-designsystem/commit/72d6386084bcbb6ae92d995d9807f7a8f9b8c0e5))
+
+
+### Features
+
+* add image caption properties ([992da48](https://github.com/xproglabs/prensa-designsystem/commit/992da48105fb319075eda5a5e43b1ac81345b915))
+* add main component image gallery ([43d69ee](https://github.com/xproglabs/prensa-designsystem/commit/43d69eeb9d59d8f01e11750c5ae07210f08dfaf4))
+
+# [2.25.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.24.0...pds-v2.25.0) (2023-01-05)
+
+
+### Bug Fixes
+
+* adjust id proos ([6f9f696](https://github.com/xproglabs/prensa-designsystem/commit/6f9f696a3e45ac94a83287511237e4a93dcf6dc6))
+* adjust image wrap name ([a11e932](https://github.com/xproglabs/prensa-designsystem/commit/a11e932010150f45e1ad5ed0731edcaac853182b))
+* allow custom props in button component ([5fec4e8](https://github.com/xproglabs/prensa-designsystem/commit/5fec4e8fdd6fec4c97103ea23c8053d741635c69))
+* change position alt -> title ([b917604](https://github.com/xproglabs/prensa-designsystem/commit/b91760483826a45453a2528bf5dc55fcd13e90d8))
+* lodash import replacements ([620248c](https://github.com/xproglabs/prensa-designsystem/commit/620248c3c1158cf509bfc94814c6b3dcd9778485))
+* remove alt in byline anchor image ([318d7d4](https://github.com/xproglabs/prensa-designsystem/commit/318d7d4a2c7cccdaeaefbac12bc8f96f18858289))
+* remove color warning to avoid webvitals error ([df98634](https://github.com/xproglabs/prensa-designsystem/commit/df9863474337f630298bd23ec9228521f3c8e318))
+* remove custom imageLink ([a7a62a4](https://github.com/xproglabs/prensa-designsystem/commit/a7a62a4bb1ba513d19f2db5885eb19717ed46dac))
+* update teaser stories import ([d364269](https://github.com/xproglabs/prensa-designsystem/commit/d364269554b8ed1df00d2451a5b49b837325c581))
+
+
+### Features
+
+* add image handler to image article ([ea3c409](https://github.com/xproglabs/prensa-designsystem/commit/ea3c4098e51fead71751843617a8faf9495e6d01))
+* add useLink in teaser image ([932b46b](https://github.com/xproglabs/prensa-designsystem/commit/932b46b4905f1ed7c12ac1b0b053895194c8c082))
+* create id props in Icon component ([ba588bf](https://github.com/xproglabs/prensa-designsystem/commit/ba588bfaf535cb0453cadbff21bb9a1531a03f54))
+
 # [2.24.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.23.0...pds-v2.24.0) (2022-12-25)
 
 

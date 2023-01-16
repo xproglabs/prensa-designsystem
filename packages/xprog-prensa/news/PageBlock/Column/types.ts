@@ -1,5 +1,6 @@
 import { FunctionComponent, ReactNode } from 'react'
 
+import { PrensaEngineColorType } from '../../../types'
 import { ContainerDefaultProps } from '../Container/types'
 import { BlockType, PageBlockCSSType, SlotConfigProps, SlotItemsType } from '../types'
 
@@ -22,10 +23,14 @@ export interface ColumnStyledProps extends ContainerDefaultProps {
 export interface ColumnProps {
   css?: ColumnCSSProp,
   customProps?: ColumnCustomPropsProp,
+  color?: PrensaEngineColorType;
   itemComponent?: FunctionComponent | ReactNode;
   items?: SlotItemsType;
   itemsBottom?: SlotItemsType;
   itemsTop?: SlotItemsType;
   layout?: SlotConfigProps;
   name?: string;
+  wrapperTop?: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+  wrapperContent?: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+  wrapperBottom?: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
 }

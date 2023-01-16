@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useLink } from '../../../hooks'
+import { Link } from '../../../primitives/Link'
 import * as S from './styles'
 import * as t from './types'
 
@@ -10,6 +10,8 @@ const Title: React.FC<t.TitleProps> = ({
   customLink,
   customLinkProps,
   customProps,
+  color,
+  icon,
   path,
   title,
   variant
@@ -19,17 +21,17 @@ const Title: React.FC<t.TitleProps> = ({
       css={css}
       customProps={customProps}
     >
-      {useLink(
-        {
-          title: title,
-          href: path,
-          component: customLink,
-          ...customLinkProps
-        },
-        <S.TitleText variant={variant}>
+      {icon?.enabled && icon?.useIcon({ icon: icon.name, color: color || '' })}
+      <S.TitleText variant={variant}>
+        <Link
+          title={title}
+          href={path}
+          component={customLink}
+          componentProps={customLinkProps}
+        >
           {title || children}
-        </S.TitleText>
-      )}
+        </Link>
+      </S.TitleText>
     </S.TitleContainer>
   )
 }

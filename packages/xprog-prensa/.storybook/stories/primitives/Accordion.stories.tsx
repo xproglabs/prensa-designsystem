@@ -1,9 +1,10 @@
 import React from 'react'
 import { ArgsTable, Title } from '@storybook/addon-docs'
 
-import { Block } from '../../../primitives/Block'
 import { Accordion, AccordionContent, AccordionGroup, AccordionItemGroup } from '../../../primitives/Accordion'
 import { AccordionProps } from '../../../primitives/Accordion/types'
+import { Block } from '../../../primitives/Block'
+import { Link } from '../../../primitives/Link/component'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 import { StorybookTheme } from '../../StorybookTheme'
 
@@ -27,6 +28,14 @@ export default {
       )
     }
   }
+}
+
+const CustomLink = ({ children }) => {
+  return (
+    <Link href='https://google.com.br' css={{ backgroundColor: 'red', opacity: 0.5 }}>
+      {children}
+    </Link>
+  )
 }
 
 const CircledArrowRightIcon = () => {
@@ -197,6 +206,14 @@ Customized.args = {
     {
       id: 'foxLink',
       title: 'Fox Link',
+      href: 'https://google.com',
+      icon: <CircledArrowRightIcon />
+    },
+    {
+      id: 'foxLink',
+      customLink: CustomLink,
+      customLinkProps: { id: 'custom-link-element', componentOptions: { renderOnlyCustomLink: true } },
+      title: 'Fox custom Link component',
       href: 'https://google.com',
       icon: <CircledArrowRightIcon />
     }
