@@ -1,6 +1,9 @@
+/* eslint-disable no-undef */
 import { PrensaEngineCSSProp } from '../../types'
 
-export interface TabProps {
+interface StateProperties { selected?: string; setSelected?: (P: any) => void; }
+
+export interface TabProps extends StateProperties {
   children: any;
   css?: {
     container?: PrensaEngineCSSProp;
@@ -9,7 +12,6 @@ export interface TabProps {
     tabSlot?: PrensaEngineCSSProp;
     tabSlots?: PrensaEngineCSSProp;
   };
-  setSelected?: (P: any) => void;
 }
 export interface TabsProps {
   children: any;
@@ -22,7 +24,7 @@ export interface TabsProps {
     tabSlots?: PrensaEngineCSSProp;
   };
 }
-export interface TabListProps {
+export interface TabListProps extends StateProperties {
   children: any;
   css?: {
     container?: PrensaEngineCSSProp;
@@ -31,8 +33,6 @@ export interface TabListProps {
     tabSlot?: PrensaEngineCSSProp;
     tabSlots?: PrensaEngineCSSProp;
   };
-  selected?: string;
-  setSelected?: (P: any) => void;
 }
 export interface TabSlotProps {
   children: any;
@@ -43,9 +43,8 @@ export interface TabSlotProps {
     tabSlot?: PrensaEngineCSSProp;
     tabSlots?: PrensaEngineCSSProp;
   };
-  setSelected?: (P: any) => void;
 }
-export interface TabSlotsProps {
+export interface TabSlotsProps extends StateProperties {
   children: any;
   css?: {
     container?: PrensaEngineCSSProp;
@@ -54,6 +53,4 @@ export interface TabSlotsProps {
     tabSlot?: PrensaEngineCSSProp;
     tabSlots?: PrensaEngineCSSProp;
   };
-  selected?: string;
-  setSelected?: (P: any) => void;
 }
