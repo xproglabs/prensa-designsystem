@@ -1,3 +1,10 @@
+# [2.35.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.34.1...pds-v2.35.0) (2023-01-18)
+
+
+### Features
+
+* New Tabs component ([5d01765](https://github.com/xproglabs/prensa-designsystem/commit/5d0176579e4d7ddbb453749d2edf76df0428f2e7))
+
 ## [2.34.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.34.0...pds-v2.34.1) (2023-01-16)
 
 
