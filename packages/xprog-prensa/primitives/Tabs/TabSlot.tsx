@@ -1,8 +1,9 @@
 import React from 'react'
 
 import { Block } from '../Block'
+import { TabSlotProps } from './types'
 
-export const TabSlot = props => {
+export const TabSlot: React.FC<TabSlotProps> = props => {
   return (
     <Block
       className='pds-TabSlot-container'

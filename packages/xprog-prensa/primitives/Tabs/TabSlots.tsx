@@ -1,8 +1,9 @@
 import React from 'react'
 
 import { Block } from '../Block'
+import { TabSlotsProps } from './types'
 
-export const TabSlots = props => {
+export const TabSlots: React.FC<TabSlotsProps> = props => {
   const tabsid = props['data-tabs-id']
   return (
     <Block

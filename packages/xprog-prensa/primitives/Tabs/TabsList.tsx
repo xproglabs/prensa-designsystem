@@ -1,8 +1,9 @@
 import React from 'react'
 
 import { Block } from '../Block'
+import { TabListProps } from './types'
 
-export const TabList = props => {
+export const TabList: React.FC<TabListProps> = props => {
   const tabsid = props['data-tabs-id']
   return (
     <Block
