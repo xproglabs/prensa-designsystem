@@ -46,6 +46,9 @@ export type AccordionProps = {
   customLinkProps?: any;
   children?: ReactNode;
   css?: AccordionCSSProps;
+  icon?: ReactNode;
+  iconExpandedState?: ReactNode;
+  iconNotExpandedState?: ReactNode;
   innerSpace?: AccordionContentVariants['innerSpace'];
   items?: Array<AccordionItemGroupProps>;
   size?: AccordionGroupVariants['size'];

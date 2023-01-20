@@ -1,3 +1,45 @@
+# [2.35.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.34.1...pds-v2.35.0) (2023-01-18)
+
+
+### Features
+
+* New Tabs component ([5d01765](https://github.com/xproglabs/prensa-designsystem/commit/5d0176579e4d7ddbb453749d2edf76df0428f2e7))
+
+## [2.34.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.34.0...pds-v2.34.1) (2023-01-16)
+
+
+### Bug Fixes
+
+* Update react-responsive-carousel implementation in ImageGallery with new prensa Carousel component ([fd3c355](https://github.com/xproglabs/prensa-designsystem/commit/fd3c35552c8321ae9eca550262be659c19d1a964))
+
+# [2.34.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.33.1...pds-v2.34.0) (2023-01-15)
+
+
+### Features
+
+* Create Calendar component ([4660c77](https://github.com/xproglabs/prensa-designsystem/commit/4660c77323d11ac6547d22b78286bf757280a6ce))
+
+## [2.33.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.33.0...pds-v2.33.1) (2023-01-15)
+
+
+### Bug Fixes
+
+* Remove svg container for IconButton children slot and update IconButtonProps interface root ([e7b2784](https://github.com/xproglabs/prensa-designsystem/commit/e7b2784aa9a98e74e7560d8031fb274a0852998e))
+
+# [2.33.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.2...pds-v2.33.0) (2023-01-13)
+
+
+### Features
+
+* New rule allowing icon definition in AccordionProps ([da34441](https://github.com/xproglabs/prensa-designsystem/commit/da3444186cd569f8beee67a55d32974ce1b38be6))
+
+## [2.32.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.1...pds-v2.32.2) (2023-01-12)
+
+
+### Bug Fixes
+
+* Fixed inconsistency in Teaser/Title Link implementation ([95d198d](https://github.com/xproglabs/prensa-designsystem/commit/95d198d08eb26c51e189c84dbf008ee84ae9de9b))
+
 ## [2.32.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.0...pds-v2.32.1) (2023-01-12)
 
 
