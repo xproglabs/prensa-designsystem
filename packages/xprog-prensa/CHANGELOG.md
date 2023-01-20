@@ -1,3 +1,10 @@
+## [2.35.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.35.0...pds-v2.35.1) (2023-01-20)
+
+
+### Bug Fixes
+
+* Incorrect order for "customProps" property data flux in PageBlock/Column ([b4fe600](https://github.com/xproglabs/prensa-designsystem/commit/b4fe600fea2c66b330e7ed30e6bb6a2064a30c21))
+
 # [2.35.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.34.1...pds-v2.35.0) (2023-01-18)
 
 
