@@ -61,6 +61,7 @@ const Column: React.FC<ColumnProps> = ({
     const itemDesktop: SlotConfigProps = get(itemLayout, [1])
     const itemMobileProps: ItemProps = {
       ...itemMobile,
+      ...item,
       css: {
         ...css?.item,
         ...layout?.css?.item,
@@ -68,19 +69,20 @@ const Column: React.FC<ColumnProps> = ({
       },
       customProps: {
         ...customProps?.item,
+        ...item?.customProps,
         className: `
           ${customProps?.item?.className || ''}
           ${layout?.customProps?.item?.className || ''}
           mobile
         `
       },
-      ...item,
       numberValue: (position + 1).toString(),
       slotColor: color,
       slotName: name
     }
     const itemDesktopProps: ItemProps = {
       ...itemDesktop,
+      ...item,
       css: {
         ...css?.item,
         ...layout?.css?.item,
@@ -88,13 +90,13 @@ const Column: React.FC<ColumnProps> = ({
       },
       customProps: {
         ...customProps?.item,
+        ...item?.customProps,
         className: `
           ${customProps?.item?.className || ''}
           ${layout?.customProps?.item?.className || ''}
           desktop
         `
       },
-      ...item,
       numberValue: (position + 1).toString(),
       slotColor: color,
       slotName: name
