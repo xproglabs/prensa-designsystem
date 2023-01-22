@@ -34,7 +34,8 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   slotLayouts,
   slotTemplate,
   templates,
-  templateBgColor
+  templateBgColor,
+  wrappers
 }) => {
   const getLayoutBySlotAndTemplate = (name, slot) => {
     const layoutSelected = get(slotLayouts, slot)
@@ -222,17 +223,42 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     <PageBlockContainer {...containerProps} css={containerCss}>
       {slotManualExtraTop && slotManualExtraTop.length > 0 && (
         <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
-          <Column {...columnExtraTopProps} />
+          <Column
+            {...columnExtraTopProps}
+            wrapperTop={wrappers?.columnExtraTop?.slotTop}
+            wrapperContent={wrappers?.columnExtraTop?.slotMiddle}
+            wrapperBottom={wrappers?.columnExtraTop?.slotBottom}
+          />
         </ColumnHolder>
       )}
       <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
-        <Column {...columnLeftProps} />
-        <Column {...columnCenterProps} />
-        <Column {...columnRightProps} />
+        <Column
+          {...columnLeftProps}
+          wrapperTop={wrappers?.columnLeft?.slotTop}
+          wrapperContent={wrappers?.columnLeft?.slotMiddle}
+          wrapperBottom={wrappers?.columnLeft?.slotBottom}
+        />
+        <Column
+          {...columnCenterProps}
+          wrapperTop={wrappers?.columnCenter?.slotTop}
+          wrapperContent={wrappers?.columnCenter?.slotMiddle}
+          wrapperBottom={wrappers?.columnCenter?.slotBottom}
+        />
+        <Column
+          {...columnRightProps}
+          wrapperTop={wrappers?.columnRight?.slotTop}
+          wrapperContent={wrappers?.columnRight?.slotMiddle}
+          wrapperBottom={wrappers?.columnRight?.slotBottom}
+        />
       </ColumnHolder>
       {slotManualExtra && slotManualExtra.length > 0 && (
         <ColumnHolder {...columnHolderProps} css={columnHolderCss}>
-          <Column {...columnExtraProps} />
+          <Column
+            {...columnExtraProps}
+            wrapperTop={wrappers?.columnExtraTop?.slotTop}
+            wrapperContent={wrappers?.columnExtraTop?.slotMiddle}
+            wrapperBottom={wrappers?.columnExtraTop?.slotBottom}
+          />
         </ColumnHolder>
       )}
     </PageBlockContainer>
