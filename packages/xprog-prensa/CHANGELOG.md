@@ -1,3 +1,11 @@
+# [2.36.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.35.1...pds-v2.36.0) (2023-01-22)
+
+
+### Features
+
+* Add Column component renderItem function as second param for renderWrapper method ([de30630](https://github.com/xproglabs/prensa-designsystem/commit/de306300fe45f18089ed36e2a3e190a8bf0b64bc))
+* New property "wrappers" in PageBlock and Column components ([bf4e5ab](https://github.com/xproglabs/prensa-designsystem/commit/bf4e5ab2a66f10ef76b2597a11658205262643f5))
+
 ## [2.35.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.35.0...pds-v2.35.1) (2023-01-20)
 
 
