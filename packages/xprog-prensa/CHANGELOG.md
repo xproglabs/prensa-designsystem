@@ -1,3 +1,46 @@
+# [2.36.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.35.1...pds-v2.36.0) (2023-01-22)
+
+
+### Features
+
+* Add Column component renderItem function as second param for renderWrapper method ([de30630](https://github.com/xproglabs/prensa-designsystem/commit/de306300fe45f18089ed36e2a3e190a8bf0b64bc))
+* New property "wrappers" in PageBlock and Column components ([bf4e5ab](https://github.com/xproglabs/prensa-designsystem/commit/bf4e5ab2a66f10ef76b2597a11658205262643f5))
+
+## [2.35.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.35.0...pds-v2.35.1) (2023-01-20)
+
+
+### Bug Fixes
+
+* Incorrect order for "customProps" property data flux in PageBlock/Column ([b4fe600](https://github.com/xproglabs/prensa-designsystem/commit/b4fe600fea2c66b330e7ed30e6bb6a2064a30c21))
+
+# [2.35.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.34.1...pds-v2.35.0) (2023-01-18)
+
+
+### Features
+
+* New Tabs component ([5d01765](https://github.com/xproglabs/prensa-designsystem/commit/5d0176579e4d7ddbb453749d2edf76df0428f2e7))
+
+## [2.34.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.34.0...pds-v2.34.1) (2023-01-16)
+
+
+### Bug Fixes
+
+* Update react-responsive-carousel implementation in ImageGallery with new prensa Carousel component ([fd3c355](https://github.com/xproglabs/prensa-designsystem/commit/fd3c35552c8321ae9eca550262be659c19d1a964))
+
+# [2.34.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.33.1...pds-v2.34.0) (2023-01-15)
+
+
+### Features
+
+* Create Calendar component ([4660c77](https://github.com/xproglabs/prensa-designsystem/commit/4660c77323d11ac6547d22b78286bf757280a6ce))
+
+## [2.33.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.33.0...pds-v2.33.1) (2023-01-15)
+
+
+### Bug Fixes
+
+* Remove svg container for IconButton children slot and update IconButtonProps interface root ([e7b2784](https://github.com/xproglabs/prensa-designsystem/commit/e7b2784aa9a98e74e7560d8031fb274a0852998e))
+
 # [2.33.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.32.2...pds-v2.33.0) (2023-01-13)
 
 

@@ -142,6 +142,33 @@ export interface PageBlockProps extends ContainerDefaultProps, PageBlockConfig {
   slotLayouts?: Array<SlotConfigProps>;
   teasers?: any;
   templates?: Array<SlotConfigProps>;
+  wrappers?: {
+    columnExtraTop: {
+      slotTop: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+      slotMiddle: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+      slotBottom: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+    },
+    columnLeft: {
+      slotTop: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+      slotMiddle: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+      slotBottom: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+    },
+    columnCenter: {
+      slotTop: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+      slotMiddle: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+      slotBottom: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+    },
+    columnRight: {
+      slotTop: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+      slotMiddle: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+      slotBottom: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+    },
+    columnExtra: {
+      slotTop: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+      slotMiddle: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+      slotBottom: { enabled: boolean; component?: (P: Array<any>) => ReactNode | undefined; };
+    };
+  };
 }
 
 export * from './Column/types'
