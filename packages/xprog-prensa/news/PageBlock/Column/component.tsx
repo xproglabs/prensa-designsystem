@@ -113,7 +113,7 @@ const Column: React.FC<ColumnProps> = ({
   const columnContent = map(items, (item: SlotItemsType, position: number) => renderItem({ item, position }))
   const columnBottom = map(itemsBottom, (item: SlotItemsType, position: number) => renderItem({ item, position }))
 
-  const renderWrapper = (d, p) => d.component ? d.component(p) : p
+  const renderWrapper = (d, p) => d.component ? d.component(p, renderItem) : p
 
   return (
     <S.Column {...columnProps}>
