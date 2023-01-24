@@ -54,7 +54,7 @@ const RelatedItem = ({
       lg={{ mb: mb[1], mr: mr[1] }}
       width='100%'
     >
-      <Block align='row'>
+      <Block align='row' aligny='middle'>
         <Block mr={mr || 1} width={icon_width || '42px'}>
           {icon_component && React.cloneElement(icon_component, { color, ...icon })}
         </Block>
