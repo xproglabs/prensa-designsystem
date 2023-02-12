@@ -1,3 +1,15 @@
+# [2.37.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.36.0...pds-v2.37.0) (2023-02-12)
+
+
+### Bug Fixes
+
+* adjust align in RelatedStyled ([2d70606](https://github.com/xproglabs/prensa-designsystem/commit/2d706060a66e04509074a4ed934714137fe03fab))
+
+
+### Features
+
+* Add wrappers to columnExtraTop and columnExtra in PageBlock ([9d4a5a3](https://github.com/xproglabs/prensa-designsystem/commit/9d4a5a39ff236799d948cf9f0d16ef7643ec8f2b))
+
 # [2.36.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.35.1...pds-v2.36.0) (2023-01-22)
 
 
