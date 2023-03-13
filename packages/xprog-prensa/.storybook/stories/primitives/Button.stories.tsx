@@ -90,6 +90,12 @@ export const RoundedCorners = () => {
         <Button roundedCorners='alternative'>
           Medium fox
         </Button>
+        <Button roundedCorners='rounded'>
+          Medium fox
+        </Button>
+        <Button roundedCorners='circle'>
+          Medium fox
+        </Button>
       </Block>
     </PrensaThemeProvider>
   )
