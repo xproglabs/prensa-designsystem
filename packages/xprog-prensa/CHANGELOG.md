@@ -1,3 +1,10 @@
+## [2.37.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.37.0...pds-v2.37.1) (2023-03-13)
+
+
+### Bug Fixes
+
+* add roundCorners variants in Button styles ([2178fba](https://github.com/xproglabs/prensa-designsystem/commit/2178fbaef9ea18572b468f6c277d80e6d935f42a))
+
 # [2.37.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.36.0...pds-v2.37.0) (2023-02-12)
 
 
