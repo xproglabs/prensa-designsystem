@@ -14,7 +14,10 @@ const Column: React.FC<ColumnProps> = ({
   itemsTop,
   itemComponent,
   layout,
-  name
+  name,
+  wrapperTop = { enabled: false, component: null },
+  wrapperContent = { enabled: false, component: null },
+  wrapperBottom = { enabled: false, component: null },
 }) => {
   const Item: any = itemComponent
   const columnProps = {
@@ -58,6 +61,7 @@ const Column: React.FC<ColumnProps> = ({
     const itemDesktop: SlotConfigProps = get(itemLayout, [1])
     const itemMobileProps: ItemProps = {
       ...itemMobile,
+      ...item,
       css: {
         ...css?.item,
         ...layout?.css?.item,
@@ -65,19 +69,20 @@ const Column: React.FC<ColumnProps> = ({
       },
       customProps: {
         ...customProps?.item,
+        ...item?.customProps,
         className: `
           ${customProps?.item?.className || ''}
           ${layout?.customProps?.item?.className || ''}
           mobile
         `
       },
-      ...item,
       numberValue: (position + 1).toString(),
       slotColor: color,
       slotName: name
     }
     const itemDesktopProps: ItemProps = {
       ...itemDesktop,
+      ...item,
       css: {
         ...css?.item,
         ...layout?.css?.item,
@@ -85,13 +90,13 @@ const Column: React.FC<ColumnProps> = ({
       },
       customProps: {
         ...customProps?.item,
+        ...item?.customProps,
         className: `
           ${customProps?.item?.className || ''}
           ${layout?.customProps?.item?.className || ''}
           desktop
         `
       },
-      ...item,
       numberValue: (position + 1).toString(),
       slotColor: color,
       slotName: name
@@ -104,22 +109,22 @@ const Column: React.FC<ColumnProps> = ({
     )
   }
 
+  const columnTop = map(itemsTop, (item: SlotItemsType, position: number) => renderItem({ item, position }))
+  const columnContent = map(items, (item: SlotItemsType, position: number) => renderItem({ item, position }))
+  const columnBottom = map(itemsBottom, (item: SlotItemsType, position: number) => renderItem({ item, position }))
+
+  const renderWrapper = (d, p) => d.component ? d.component(p, renderItem) : p
+
   return (
     <S.Column {...columnProps}>
       <S.ColumnTop {...columnGroupProps}>
-        {map(itemsTop, (item: SlotItemsType, position: number) =>
-          renderItem({ item, position })
-        )}
+        {wrapperTop.enabled ? renderWrapper(wrapperTop, columnTop) : columnTop}
       </S.ColumnTop>
       <S.ColumnContent {...columnGroupProps}>
-        {map(items, (item: SlotItemsType, position: number) =>
-          renderItem({ item, position })
-        )}
+        {wrapperContent.enabled ? renderWrapper(wrapperContent, columnContent) : columnContent}
       </S.ColumnContent>
       <S.ColumnBottom {...columnGroupProps}>
-        {map(itemsBottom, (item: SlotItemsType, position: number) =>
-          renderItem({ item, position })
-        )}
+        {wrapperBottom.enabled ? renderWrapper(wrapperBottom, columnBottom) : columnBottom}
       </S.ColumnBottom>
     </S.Column>
   )

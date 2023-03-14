@@ -1,6 +1,6 @@
 {
   "name": "@xprog/prensa",
-  "version": "2.27.0",
+  "version": "2.37.1",
   "description": "React components library in blocks",
   "author": "XPROG",
   "license": "ISC",
@@ -33,7 +33,7 @@
     "lodash": "4.17.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "3.2.23"
   },
   "devDependencies": {
     "@babel/preset-react": "7.14.5",
@@ -47,8 +47,8 @@
     "@storybook/addons": "6.5.9",
     "@storybook/react": "6.5.9",
     "@types/lodash": "4.14.172",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
     "babel-eslint": "10.1.0",
     "core-js": "3.6.5",
     "cpx": "^1.5.0",

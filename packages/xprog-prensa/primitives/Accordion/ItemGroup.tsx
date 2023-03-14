@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { useLink } from '../../hooks/useLink'
 import { Block } from '../Block'
 import { IconButton } from '../IconButton'
+import { Link } from '../Link'
 import { Typography } from '../Typography'
 import { ExpandLessIcon } from './ExpandLessIcon'
 import { ExpandMoreIcon } from './ExpandMoreIcon'
@@ -16,6 +16,7 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   accordionTitleVariant,
   children,
   customLink,
+  customLinkProps,
   css,
   expanded,
   href,
@@ -24,7 +25,6 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
   iconNotExpandedState,
   id,
   innerSpace,
-  linkProps,
   onClick,
   title
 }) => {
@@ -99,18 +99,20 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
         variant={accordionTitleVariant}
         css={title_css}
       >
-        {useLink({
-          bypass: !href ? true : false,
-          component: customLink,
-          href,
-          ...linkProps
-        }, title)}
-        {useLink({
-          bypass: children ? true : false,
-          component: customLink,
-          href,
-          ...linkProps
-        }, (
+        <Link
+          bypass={!href}
+          component={customLink}
+          href={href}
+          {...customLinkProps}
+        >
+          {title}
+        </Link>
+        <Link
+          bypass={children ? true : false}
+          component={customLink}
+          href={href}
+          {...customLinkProps}
+        >
           <IconButton
             className='pds-Accordion-ItemGroup-IconButton'
             variant='ghost'
@@ -118,7 +120,7 @@ export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
             icon={itemIcon}
             css={{ button: icon_button_css, icon: icon_css }}
           />
-        ))}
+        </Link>
       </Typography>
       <AccordionContent
         className='pds-Accordion-ItemGroup-content'
