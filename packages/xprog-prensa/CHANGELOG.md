@@ -1,3 +1,10 @@
+# [2.38.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.37.1...pds-v2.38.0) (2023-03-14)
+
+
+### Features
+
+* Allow accordionTitle and accordionContent customization props from high order Accordion component ([dba43f8](https://github.com/xproglabs/prensa-designsystem/commit/dba43f8780efd8b37dcf0c1e0e8bdd94e0f3c007))
+
 ## [2.37.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.37.0...pds-v2.37.1) (2023-03-13)
 
 
