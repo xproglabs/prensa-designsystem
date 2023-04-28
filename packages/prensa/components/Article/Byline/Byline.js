@@ -5,6 +5,7 @@ import React from 'react'
 import Block from '../../Block'
 import Share from '../Share/index.tsx'
 import ManyAuthors from './Authors'
+import SectionTitle from '../SectionTitle'
 import * as S from './Byline.styled'
 
 const Byline = ({
@@ -14,17 +15,20 @@ const Byline = ({
   content,
   dateline,
   datetime,
+  maxWidth,
   image,
   isExpanded,
   fbappid,
   pageUrl,
+  sectionTitle,
   share
 }) => {
-
   const shareData = get(share, 'byline', {})
   const shareColor = get(share, 'color', undefined)
   const shareSize = get(share, 'size', undefined)
   const shareEnabled = get(shareData, 'enabled', false)
+  const shareHasSectionTitle = get(shareData, 'sectionTitle', false)
+  const shareSectionTitleProps = get(shareData, 'sectionTitleProps', {})
 
   const AuthorInfo = () => {
     const hasAuthorEmail = author && author.email && author.email !== ''
@@ -100,6 +104,21 @@ const Byline = ({
             {isExpanded ? <BylineExpanded /> : <BylineReduced />}
           </S.BylineContent>
         </S.BylineContainer>
+        <Block
+          align='column'
+          lg={{align: 'row', alignx: 'center'}}
+        >
+        {shareHasSectionTitle === true &&
+        <SectionTitle
+          mt={[2, 0]}
+          element='h6'
+          maxWidth={maxWidth}
+          {...sectionTitle}
+          {...shareSectionTitleProps}
+        >
+          Compartilhar
+        </SectionTitle>
+      }
         <Share
           amp={amp}
           color={shareColor}
@@ -109,6 +128,7 @@ const Byline = ({
           size={shareSize}
           {...shareData}
         />
+        </Block>
       </S.Content>
     </S.Container>
   )
