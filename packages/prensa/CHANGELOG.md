@@ -1,3 +1,23 @@
+# [1.25.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.24.0...v1.25.0) (2023-05-02)
+
+
+### Bug Fixes
+
+* add roundCorners variants in Button styles ([2178fba](https://github.com/xproglabs/prensa-designsystem/commit/2178fbaef9ea18572b468f6c277d80e6d935f42a))
+* apply suggestions ([15683c7](https://github.com/xproglabs/prensa-designsystem/commit/15683c75592140782900c69434240a3fa815ec5d))
+
+
+### Features
+
+* add SectionTitle to Byline component ([e7aeaa7](https://github.com/xproglabs/prensa-designsystem/commit/e7aeaa7c086152ce5e840d6b481be9e8e69158a2))
+* Add wrappers to columnExtraTop and columnExtra in PageBlock ([9d4a5a3](https://github.com/xproglabs/prensa-designsystem/commit/9d4a5a39ff236799d948cf9f0d16ef7643ec8f2b))
+* Allow accordionTitle and accordionContent customization props from high order Accordion component ([dba43f8](https://github.com/xproglabs/prensa-designsystem/commit/dba43f8780efd8b37dcf0c1e0e8bdd94e0f3c007))
+
+
+### Reverts
+
+* Revert "Fix lib versions for packages/prensa" ([f502ac2](https://github.com/xproglabs/prensa-designsystem/commit/f502ac2c2288d8159e4f2bd2a79b21fd392a187f))
+
 # [1.24.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.23.3...v1.24.0) (2023-01-24)
 
 
