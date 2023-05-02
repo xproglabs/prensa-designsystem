@@ -15,7 +15,6 @@ const Byline = ({
   content,
   dateline,
   datetime,
-  maxWidth,
   image,
   isExpanded,
   fbappid,
@@ -106,28 +105,27 @@ const Byline = ({
         </S.BylineContainer>
         <Block
           align='column'
-          lg={{align: 'row', alignx: 'center'}}
+          lg={{ align: 'row', alignx: 'center' }}
         >
-        {shareHasSectionTitle === true &&
-        <SectionTitle
-          mt={[2, 0]}
-          element='h6'
-          maxWidth={maxWidth}
-          {...sectionTitle}
-          {...shareSectionTitleProps}
-        >
-          Compartilhar
-        </SectionTitle>
-      }
-        <Share
-          amp={amp}
-          color={shareColor}
-          enabled={shareEnabled}
-          fbappid={fbappid}
-          pageUrl={pageUrl}
-          size={shareSize}
-          {...shareData}
-        />
+          {shareHasSectionTitle === true &&
+          <SectionTitle
+            mt={[2, 0]}
+            element='h6'
+            {...sectionTitle}
+            {...shareSectionTitleProps}
+          >
+            Compartilhar
+          </SectionTitle>
+          }
+          <Share
+            amp={amp}
+            color={shareColor}
+            enabled={shareEnabled}
+            fbappid={fbappid}
+            pageUrl={pageUrl}
+            size={shareSize}
+            {...shareData}
+          />
         </Block>
       </S.Content>
     </S.Container>

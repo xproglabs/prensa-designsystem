@@ -47,7 +47,7 @@ SectionTitle.defaultProps = {
   fontWeight: 700,
   lineHeight: ['120%', '120%'],
   mb: [2, 2],
-  mt: [3, 3]
+  mt: [3, 0]
 }
 
 SectionTitle.propTypes = {
