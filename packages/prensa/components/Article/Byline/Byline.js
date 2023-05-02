@@ -108,14 +108,14 @@ const Byline = ({
           lg={{ align: 'row', alignx: 'center' }}
         >
           {shareHasSectionTitle === true &&
-          <SectionTitle
-            mt={[2, 0]}
-            element='h6'
-            {...sectionTitle}
-            {...shareSectionTitleProps}
-          >
-            Compartilhar
-          </SectionTitle>
+            <SectionTitle
+              mt={[2, 0]}
+              element='h6'
+              {...sectionTitle}
+              {...shareSectionTitleProps}
+            >
+              Compartilhar
+            </SectionTitle>
           }
           <Share
             amp={amp}
