@@ -1,3 +1,15 @@
+# [1.26.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.25.0...v1.26.0) (2023-05-05)
+
+
+### Bug Fixes
+
+* minor fixes ([ffeb629](https://github.com/xproglabs/prensa-designsystem/commit/ffeb62992261b4d7e31becff4e4db216ef1259a7))
+
+
+### Features
+
+* add ml and mr to SectionTitle ([03eedf0](https://github.com/xproglabs/prensa-designsystem/commit/03eedf05a97499d55623b281c440c3499f0210b2))
+
 # [1.25.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.24.0...v1.25.0) (2023-05-02)
 
 
