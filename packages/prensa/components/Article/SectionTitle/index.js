@@ -14,8 +14,11 @@ const SectionTitle = ({
   lineHeight,
   maxWidth,
   mb,
+  ml,
+  mr,
   mt
 }) => {
+  console.log('mr', mr)
   return (
     <Block maxWidth={maxWidth} width='100%'>
       <Typography 
@@ -29,10 +32,15 @@ const SectionTitle = ({
           fontSize: fontSize[1],
           lineHeight: lineHeight[1],
           mb: mb[1],
+          ml:ml[1],
+          mr:mr[1],
           mt: mt[1]
         }}
         mb={mb[0]}
-        mt={mt[0]}>
+        ml={ml[0]}
+        mr={mr[0]}
+        mt={mt[0]}
+        >
         {children} 
       </Typography>
     </Block>
@@ -47,7 +55,9 @@ SectionTitle.defaultProps = {
   fontWeight: 700,
   lineHeight: ['120%', '120%'],
   mb: [2, 2],
-  mt: [3, 0]
+  ml: [0, 0],
+  mr: [0, 0],
+  mt: [3, 0],
 }
 
 SectionTitle.propTypes = {
@@ -59,6 +69,9 @@ SectionTitle.propTypes = {
   lineHeight: PropTypes.array,
   maxWidth: PropTypes.string,
   mb: PropTypes.array,
+  ml: PropTypes.array,
+  mr: PropTypes.array,
+  mt: PropTypes.array
 }
 
 export default SectionTitle
