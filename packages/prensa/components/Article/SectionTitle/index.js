@@ -18,7 +18,6 @@ const SectionTitle = ({
   mr,
   mt
 }) => {
-  console.log('mr', mr)
   return (
     <Block maxWidth={maxWidth} width='100%'>
       <Typography 
