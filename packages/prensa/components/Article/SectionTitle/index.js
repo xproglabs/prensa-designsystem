@@ -31,15 +31,15 @@ const SectionTitle = ({
           fontSize: fontSize[1],
           lineHeight: lineHeight[1],
           mb: mb[1],
-          ml:ml[1],
-          mr:mr[1],
+          ml: ml[1],
+          mr: mr[1],
           mt: mt[1]
         }}
         mb={mb[0]}
         ml={ml[0]}
         mr={mr[0]}
         mt={mt[0]}
-        >
+      >
         {children} 
       </Typography>
     </Block>
