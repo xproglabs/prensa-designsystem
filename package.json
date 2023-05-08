@@ -8,6 +8,7 @@
     "prensa:v2": "cd packages/xprog-prensa && yarn start",
     "build:prensa:v1": "cd packages/prensa && yarn build",
     "build:prensa:v2": "cd packages/xprog-prensa && yarn build",
+    "build:prensa:sys": "cd packages/xprog-prensa-system && yarn build",
     "build:prensa:v1:sb": "cd packages/prensa && yarn build:sb",
     "build:prensa:v2:sb": "cd packages/xprog-prensa && yarn build:sb",
     "build:prensa:v1:tgz": "cd packages/prensa && yarn build:tgz",
