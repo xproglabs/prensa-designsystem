@@ -15,20 +15,23 @@
     "build:ts": "tsc -p ./tsconfig.declarations.json",
     "build:tgz": "cd dist && npm pack",
     "clear:dist": "rimraf dist",
-    "prerelease:tgz": "npm run prerelease:copyfiles && npm run build:tgz",
-    "prerelease:copyfiles": "cpx package.json dist"
+    "prerelease:copyfiles": "cpx package.json dist",
+    "release:dry": "npm run prerelease:copyfiles && semantic-release --extends ./release.dry.config.js --no-ci --dry-run",
+    "release:local": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js --no-ci",
+    "release": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js"
   },
   "dependencies": {
     "@stitches/react": "1.2.8",
-    "@types/react": "^18.2.5",
-    "@types/react-dom": "^18.2.4",
-    "@xprog/prensa-design-tokens": "./xprog-prensa-design-tokens-1.7.0.tgz",
+    "@xprog/prensa-design-tokens": "1.9.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
     "cpx": "1.5.0",
     "rimraf": "3.0.2",
+    "semantic-release": "19.0.3",
     "typescript": "4.7.4"
   },
   "types": "types.d.ts"
