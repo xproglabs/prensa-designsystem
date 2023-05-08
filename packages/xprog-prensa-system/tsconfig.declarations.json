@@ -5,6 +5,7 @@
     "declarationDir": "dist",
     "esModuleInterop": true,
     "emitDeclarationOnly": true,
+    "extendedDiagnostics": true,
     "moduleResolution": "node",
     "noImplicitAny": false,
     "outDir": "dist",

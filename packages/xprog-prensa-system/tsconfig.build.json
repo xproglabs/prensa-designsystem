@@ -3,6 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "declaration": false,
     "esModuleInterop": true,
+    "extendedDiagnostics": true,
     "jsx": "react",
     "lib": [
       "dom",
