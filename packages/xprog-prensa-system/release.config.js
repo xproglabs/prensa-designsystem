@@ -1,4 +1,5 @@
 module.exports = {
+  tagFormat: 'pds-sys-v${version}',
   branches: [
     { name: 'master' },
   ],
