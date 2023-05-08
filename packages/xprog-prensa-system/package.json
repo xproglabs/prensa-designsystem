@@ -15,6 +15,7 @@
     "build:ts": "tsc -p ./tsconfig.declarations.json",
     "build:tgz": "cd dist && npm pack",
     "clear:dist": "rimraf dist",
+    "prerelease:tgz": "npm run prerelease:copyfiles && npm run build:tgz",
     "prerelease:copyfiles": "cpx package.json dist",
     "release:dry": "npm run prerelease:copyfiles && semantic-release --extends ./release.dry.config.js --no-ci --dry-run",
     "release:local": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js --no-ci",
