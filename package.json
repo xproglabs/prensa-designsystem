@@ -12,12 +12,16 @@
     "build:prensa:v2:sb": "cd packages/xprog-prensa && yarn build:sb",
     "build:prensa:v1:tgz": "cd packages/prensa && yarn build:tgz",
     "build:prensa:v2:tgz": "cd packages/xprog-prensa && yarn build:tgz",
+    "build:prensa:sys:tgz": "cd packages/xprog-prensa-system && yarn build:tgz",
     "release:local:prensa:v1": "cd packages/prensa && yarn release:local",
     "release:local:prensa:v2": "cd packages/xprog-prensa && yarn build && yarn release:local",
+    "release:local:sys": "cd packages/xprog-prensa-system && yarn run release:local",
     "release:prensa:v1": "cd packages/prensa && yarn run release",
     "release:prensa:v2": "cd packages/xprog-prensa && yarn run release",
+    "release:prensa:sys": "cd packages/xprog-prensa-system && yarn run release",
     "deps:prensa:v1": "cd packages/prensa && yarn",
-    "deps:prensa:v2": "cd packages/xprog-prensa && yarn"
+    "deps:prensa:v2": "cd packages/xprog-prensa && yarn",
+    "deps:prensa:sys": "cd packages/xprog-prensa-system && yarn"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
