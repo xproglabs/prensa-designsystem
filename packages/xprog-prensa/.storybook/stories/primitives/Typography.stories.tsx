@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PrensaEngine } from '../../../prensa.default.config'
+import { PrensaEngine } from '@xprog/prensa-system'
 import { Typography } from '../../../primitives/Typography/index'
 import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 import { StorybookTheme } from '../../StorybookTheme'
