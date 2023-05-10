@@ -3419,10 +3419,20 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@xprog/prensa-design-tokens@^1.1.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@xprog/prensa-design-tokens/-/prensa-design-tokens-1.6.0.tgz#f181bc3a71b1ca809cf9d8ca0c6caa3a57124ff4"
-  integrity sha512-Z3HlqMdi2LXvUczMdJES5QdB4PeqD8Yva2pEbdspSP3jPZaA6RPnpHHFQeEEgUS7ZoFoFgQNY7QdHJ1QouhGfg==
+"@xprog/prensa-design-tokens@1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@xprog/prensa-design-tokens/-/prensa-design-tokens-1.9.0.tgz#9eab06fa5b5cd2a2c776c37181be8ac011628d8a"
+  integrity sha512-I/5P6XOtTnNyjaUcFI6AnNR0oWA1hwQuryAMDmXy6ODTrvM5kf2DIPU/RF5pUHbn7nsMAWs0eUKMnJQkR0uKMQ==
+
+"@xprog/prensa-system@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@xprog/prensa-system/-/prensa-system-1.0.0.tgz#310f85f35851dfd063c67710ab67955444cc5013"
+  integrity sha512-rsStj5TfwILn4oZ4X5XVkmK1x4Mv23BgahQ8SkJlgZ7SwIaToitkd6syE/S3T6geJ/lsaXHypJ8Vhem7TrhQVQ==
+  dependencies:
+    "@stitches/react" "1.2.8"
+    "@xprog/prensa-design-tokens" "1.9.0"
+    react "18.2.0"
+    react-dom "18.2.0"
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
