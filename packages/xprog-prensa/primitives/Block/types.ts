@@ -1,5 +1,5 @@
-import { BlockTypeof } from './styled'
+import { IBlockStyled } from './styled'
 
-export interface IBlock extends BlockTypeof {
+export interface IBlock extends IBlockStyled {
   children?: any;
 }
