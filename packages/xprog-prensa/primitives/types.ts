@@ -1,4 +1,3 @@
-export * from './Accordion/types'
 export * from './Button/props'
 export * from './Calendar/types'
 export * from './Carousel/types'
@@ -8,4 +7,7 @@ export * from './Link/types'
 export * from './Tabs/index'
 export * from './Typography/types'
 
+export * from './Accordion/types'
+export * from './Accordion/content'
+export * from './Accordion/group'
 export * from './Block/types'
