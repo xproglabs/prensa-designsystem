@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PrensaEngine } from '../../prensa.default.config'
+import { PrensaEngine } from '@xprog/prensa-system'
 import { PrensaThemeProviderProps } from './props'
 
 export const PrensaThemeProvider = (props: PrensaThemeProviderProps) => {

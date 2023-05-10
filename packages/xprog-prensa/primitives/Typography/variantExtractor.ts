@@ -1,4 +1,4 @@
-import { PrensaEngine } from '../../prensa.default.config'
+import { PrensaEngine } from '@xprog/prensa-system'
 import { TypographyVariantKeysType } from './types'
 
 export const extractVariantKeys = (): TypographyVariantKeysType => {

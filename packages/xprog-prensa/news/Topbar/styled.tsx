@@ -1,4 +1,4 @@
-import { PrensaEngine } from '../../prensa.default.config'
+import { PrensaEngine } from '@xprog/prensa-system'
 
 export const TopbarContainer = PrensaEngine.styled('header', {
   align: ['column', 'center', 'middle'],

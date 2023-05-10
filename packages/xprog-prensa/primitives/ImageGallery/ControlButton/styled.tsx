@@ -1,4 +1,4 @@
-import { PrensaEngine } from '../../../prensa.default.config'
+import { PrensaEngine } from '@xprog/prensa-system'
 import { PrensaEngineCSSProp } from '../../../types'
 
 const buttonProps: PrensaEngineCSSProp = {
