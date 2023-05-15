@@ -1,4 +1,4 @@
-import { Teaser, PageBlockTypes } from '../../../types'
+import { Teaser, PageBlockTypes } from '../../../news/types'
 
 const alignToCenter: PageBlockTypes.PageBlockCSSType = {
   textAlign: 'center',

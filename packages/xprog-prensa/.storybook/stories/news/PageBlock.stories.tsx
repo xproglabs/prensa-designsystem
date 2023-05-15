@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { PageBlock, Teaser } from '../../../news'
-import { PageBlockTypes } from '../../../types'
+import { PageBlockTypes } from '../../../news/types'
 import { LayoutProvider } from '../../../providers/LayoutProvider'
 import { layouts } from '../../../providers/LayoutProvider/data/layouts'
 import { templates } from '../../../providers/LayoutProvider/data/templates'
