@@ -1,14 +1,15 @@
+import { PrensaEngineCSS, PrensaEngineTypeof } from '@xprog/prensa-system'
 import { FunctionComponent, ReactNode } from 'react'
 
+import { IBlock } from '../../primitives/Block/types'
 import { TemplatesType } from '../../providers/LayoutProvider/types'
-import { BlockProps, PrensaEngineColorType, PrensaEngineCSSProp } from '../../types'
 import { TeaserProps } from '../Teaser/types'
 import { ColumnProps } from './Column/types'
 import { ContainerDefaultProps } from './Container/types'
 import { ItemDefaultProps } from './Item/types'
 
-export type BlockType = BlockProps;
-export type PageBlockCSSType = PrensaEngineCSSProp;
+export type BlockType = IBlock;
+export type PageBlockCSSType = PrensaEngineCSS;
 export type SlotConfigType = TeaserProps | [TeaserProps, TeaserProps];
 export type SlotItemsType = Array<ItemDefaultProps> | [];
 
@@ -39,8 +40,8 @@ export interface PageBlockConfig {
   slotManualTopLeft?: SlotItemsType;
   slotManualTopCenter?: SlotItemsType;
   slotManualTopRight?: SlotItemsType;
-  slotLeftColor?: PrensaEngineColorType;
-  slotLeftBgColor?: PrensaEngineColorType;
+  slotLeftColor?: keyof PrensaEngineTypeof['config']['theme']['colors'];
+  slotLeftBgColor?: keyof PrensaEngineTypeof['config']['theme']['colors'];
   slotLeftComponent?: string;
   slotLeftIconValue?: string;
   slotLeftReadMoreEnabled?: boolean;
@@ -52,8 +53,8 @@ export interface PageBlockConfig {
   slotLeftTitleEnabled?: boolean;
   slotLeftTitleLink?: string;
   slotLeftTitleValue?: string;
-  slotCenterColor?: PrensaEngineColorType;
-  slotCenterBgColor?: PrensaEngineColorType;
+  slotCenterColor?: keyof PrensaEngineTypeof['config']['theme']['colors'];
+  slotCenterBgColor?: keyof PrensaEngineTypeof['config']['theme']['colors'];
   slotCenterComponent?: string;
   slotCenterIconValue?: string;
   slotCenterReadMoreEnabled?: boolean;
@@ -65,8 +66,8 @@ export interface PageBlockConfig {
   slotCenterTitleEnabled?: boolean;
   slotCenterTitleLink?: string;
   slotCenterTitleValue?: string;
-  slotRightColor?: PrensaEngineColorType;
-  slotRightBgColor?: PrensaEngineColorType;
+  slotRightColor?: keyof PrensaEngineTypeof['config']['theme']['colors'];
+  slotRightBgColor?: keyof PrensaEngineTypeof['config']['theme']['colors'];
   slotRightComponent?: string;
   slotRightIconValue?: string;
   slotRightReadMoreEnabled?: boolean;
@@ -78,7 +79,7 @@ export interface PageBlockConfig {
   slotRightTitleEnabled?: boolean;
   slotRightTitleLink?: string;
   slotRightTitleValue?: string;
-  templateBgColor?: PrensaEngineColorType;
+  templateBgColor?: keyof PrensaEngineTypeof['config']['theme']['colors'];
 }
 export type SlotConfigTemplate = {
   default?: SlotConfigType;

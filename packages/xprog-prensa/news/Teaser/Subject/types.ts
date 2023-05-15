@@ -1,12 +1,7 @@
+import { PrensaEngineTypeof } from '@xprog/prensa-system'
 import { ReactNode } from 'react'
 
-import { PrensaEngineColorType } from '../../../types';
-import {
-  BlockType,
-  CSSType,
-  CSSVariant,
-  ContainerDefaultProps
-} from '../types'
+import { BlockType, CSSType, CSSVariant, ContainerDefaultProps } from '../types'
 
 interface SubjectContainerProps extends ContainerDefaultProps {
   children?: ReactNode;
@@ -18,8 +13,8 @@ interface SubjectTextProps extends SubjectContainerProps {
 }
 
 interface SubjectProps extends SubjectContainerProps {
-  bgColor?: PrensaEngineColorType;
-  color?: PrensaEngineColorType;
+  bgColor?: keyof PrensaEngineTypeof['config']['theme']['colors'];
+  color?: keyof PrensaEngineTypeof['config']['theme']['colors'];
   css?: CSSType;
   subject?: string;
   textVariant?: CSSVariant;

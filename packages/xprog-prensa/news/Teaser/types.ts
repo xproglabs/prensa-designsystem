@@ -1,10 +1,6 @@
+import { PrensaEngineCSS, PrensaEngineTypeof } from '@xprog/prensa-system'
 import { ElementType, FC, ReactNode } from 'react'
 
-import {
-  PrensaEngineCSSProp,
-  PrensaEngineColorType,
-  TypographyVariantType
-} from '../../types'
 import {
   ImageContainerProps,
   ImageDerivative,
@@ -47,9 +43,9 @@ type BlockType = {
   className?: string;
 }
 
-type CSSType = PrensaEngineCSSProp
-
-type CSSVariant = TypographyVariantType
+type CSSType = PrensaEngineCSS
+type CSSColorType = keyof PrensaEngineTypeof['config']['theme']['colors']
+type CSSVariant = keyof PrensaEngineTypeof['config']['theme']['fontSizes']
 
 interface ContainerDefaultProps {
   css?: CSSType;
@@ -85,8 +81,8 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   image?: ImageObjectProps;
   imageDerivative?: ImageDerivative;
   imageVariant?: ImageVariant;
-  numberBgColor?: PrensaEngineColorType;
-  numberColor?: PrensaEngineColorType;
+  numberBgColor?: CSSColorType;
+  numberColor?: CSSColorType;
   numberValue?: string;
   numberVariant?: NumberVariant;
   path?: string;
@@ -97,11 +93,11 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   };
   relatedItems?: TeaserProps[];
   relatedLayout?: TeaserProps;
-  slotColor?: PrensaEngineColorType;
+  slotColor?: CSSColorType;
   slotName?: string;
   subject?: string;
-  subjectBgColor?: PrensaEngineColorType;
-  subjectColor?: PrensaEngineColorType;
+  subjectBgColor?: CSSColorType;
+  subjectColor?: CSSColorType;
   subjectCss?: CSSType;
   subjectTextVariant?: CSSVariant;
   subjectVariant?: SubjectVariant;

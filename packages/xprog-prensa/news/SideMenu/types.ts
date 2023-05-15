@@ -1,6 +1,7 @@
+import { PrensaEngineCSS } from '@xprog/prensa-system'
 import { ReactNode, MouseEventHandler } from 'react'
 
-import { DrawerProps, PrensaEngineCSSProp } from '../../types'
+import { DrawerProps } from '../../primitives/types'
 import { SideMenuContentType, SideMenuFooterType, SideMenuHeaderType } from './styles'
 
 export type SideMenuContentProps = SideMenuContentType
@@ -11,9 +12,9 @@ export type SideMenuProps = {
   close: MouseEventHandler<HTMLDivElement>;
   css?: {
     drawer?: DrawerProps['css'];
-    header?: PrensaEngineCSSProp;
-    content?: PrensaEngineCSSProp;
-    footer?: PrensaEngineCSSProp;
+    header?: PrensaEngineCSS;
+    content?: PrensaEngineCSS;
+    footer?: PrensaEngineCSS;
   };
   open: boolean;
   anchor?: DrawerProps['anchor'];
