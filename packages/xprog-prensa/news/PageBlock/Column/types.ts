@@ -1,6 +1,6 @@
+import { PrensaEngineTypeof } from '@xprog/prensa-system/types'
 import { FunctionComponent, ReactNode } from 'react'
 
-import { PrensaEngineColorType } from '../../../types'
 import { ContainerDefaultProps } from '../Container/types'
 import { BlockType, PageBlockCSSType, SlotConfigProps, SlotItemsType } from '../types'
 
@@ -23,7 +23,7 @@ export interface ColumnStyledProps extends ContainerDefaultProps {
 export interface ColumnProps {
   css?: ColumnCSSProp,
   customProps?: ColumnCustomPropsProp,
-  color?: PrensaEngineColorType;
+  color?: keyof PrensaEngineTypeof['config']['theme']['colors'];
   itemComponent?: FunctionComponent | ReactNode;
   items?: SlotItemsType;
   itemsBottom?: SlotItemsType;

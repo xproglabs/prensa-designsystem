@@ -1,18 +1,22 @@
+import { PrensaEngineCSS } from '@xprog/prensa-system/types'
 import { ReactNode, MouseEventHandler } from 'react'
 
 import { AccordionContentVariants } from './content'
 import { AccordionGroupVariants } from './group'
-import { PrensaEngineCSSProp } from '../../types'
 import { LinkProps } from '../Link/types'
 
 export type AccordionItemGroupCSS = {
-  accordionItemGroupContainer?: PrensaEngineCSSProp;
-  accordionTitle?: { title?: PrensaEngineCSSProp; iconButton?: PrensaEngineCSSProp; icon?: PrensaEngineCSSProp; };
-  accordionContent?: PrensaEngineCSSProp;
+  accordionItemGroupContainer?: PrensaEngineCSS;
+  accordionTitle?: {
+    title?: PrensaEngineCSS;
+    iconButton?: PrensaEngineCSS;
+    icon?: PrensaEngineCSS;
+  };
+  accordionContent?: PrensaEngineCSS;
 }
 
 export type AccordionCSS = {
-  accordionGroup?: PrensaEngineCSSProp;
+  accordionGroup?: PrensaEngineCSS;
   accordionItemGroup?: AccordionItemGroupCSS;
 }
 

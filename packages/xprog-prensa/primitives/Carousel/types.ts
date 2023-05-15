@@ -1,18 +1,17 @@
+import { PrensaEngineCSS } from '@xprog/prensa-system/types'
 import React from 'react'
 
-import { PrensaEngineCSSProp } from '../../types'
-
 export type CarouselCSSProp = {
-  container?: PrensaEngineCSSProp;
-  root?: PrensaEngineCSSProp;
-  carousel?: PrensaEngineCSSProp;
-  slider?: PrensaEngineCSSProp;
-  sliderThumbsWrapper?: PrensaEngineCSSProp;
-  sliderThumbsAnimated?: PrensaEngineCSSProp;
-  slide?: PrensaEngineCSSProp;
-  controlArrow?: PrensaEngineCSSProp;
-  controlDots?: PrensaEngineCSSProp;
-  controlDotsDot?: PrensaEngineCSSProp;
+  container?: PrensaEngineCSS;
+  root?: PrensaEngineCSS;
+  carousel?: PrensaEngineCSS;
+  slider?: PrensaEngineCSS;
+  sliderThumbsWrapper?: PrensaEngineCSS;
+  sliderThumbsAnimated?: PrensaEngineCSS;
+  slide?: PrensaEngineCSS;
+  controlArrow?: PrensaEngineCSS;
+  controlDots?: PrensaEngineCSS;
+  controlDotsDot?: PrensaEngineCSS;
 }
 
 export interface CarouselProps {

@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
 
-import { PrensaEngineThemeType } from '../../types'
+import { PrensaEngineTypeof } from '@xprog/prensa-system/types'
 
 export interface PrensaThemeProviderProps {
   children?: ReactNode;
-  theme?: PrensaEngineThemeType;
+  theme?: PrensaEngineTypeof['config']['theme'];
 }

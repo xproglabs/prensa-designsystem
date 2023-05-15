@@ -1,15 +1,20 @@
+import { PrensaEngineCSS, PrensaEngineTypeof } from '@xprog/prensa-system/types'
 import { ReactNode } from 'react'
 
-import { PrensaEngineCSSProp, PrensaEngineColorType, PrensaEngineSpaceType, TypographyVariantType } from '../../types'
 import { StyledButtonTypes } from './styles'
 
+export type ButtonCSS = {
+  button?: PrensaEngineCSS;
+  label?: PrensaEngineCSS;
+}
+
 export type ButtonProps = StyledButtonTypes['defaultProps'] & {
-  color?: PrensaEngineColorType;
-  css?: { button?: PrensaEngineCSSProp; label?: PrensaEngineCSSProp; };
-  labelSpacing?: PrensaEngineSpaceType;
+  color?: keyof PrensaEngineTypeof['config']['theme']['colors'];
+  css?: ButtonCSS;
+  labelSpacing?: keyof PrensaEngineTypeof['config']['theme']['space'];
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
-  textColor?: PrensaEngineColorType;
-  textVariant?: TypographyVariantType;
+  textColor?: keyof PrensaEngineTypeof['config']['theme']['colors'];
+  textVariant?: keyof PrensaEngineTypeof['config']['theme']['fontSizes'];
   variant?: 'filled' | 'outlined' | 'ghost';
 }

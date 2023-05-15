@@ -1,7 +1,7 @@
 import { PrensaEngine } from '@xprog/prensa-system'
-import { PrensaEngineCSSProp } from '../../../types'
+import { PrensaEngineCSS } from '@xprog/prensa-system/types'
 
-const buttonProps: PrensaEngineCSSProp = {
+const buttonProps: PrensaEngineCSS = {
   align: ['row', 'center', 'middle'],
   backgroundColor: 'white',
   borderColor: 'rgba(0,0,0,0.8)',

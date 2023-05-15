@@ -1,17 +1,17 @@
 import { VariantProps } from '@stitches/react'
+import { PrensaEngineCSS } from '@xprog/prensa-system/types'
 import { ReactNode, MouseEventHandler } from 'react'
 
-import { PrensaEngineCSSProp } from '../../types'
 import { DrawerBackdropType, DrawerContainerType, DrawerContentType, DrawerSpacerType } from './styles'
 
 type DrawerContentTypeVariants = VariantProps<DrawerContentType>
 type DrawerSpacerTypeVariants = VariantProps<DrawerSpacerType>
 
 type DrawerCSSProp = {
-  backdrop?: PrensaEngineCSSProp;
-  container?: PrensaEngineCSSProp;
-  content?: PrensaEngineCSSProp;
-  spacer?: PrensaEngineCSSProp;
+  backdrop?: PrensaEngineCSS;
+  container?: PrensaEngineCSS;
+  content?: PrensaEngineCSS;
+  spacer?: PrensaEngineCSS;
 }
 
 export type DrawerProps = {
