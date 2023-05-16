@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { PrensaEngineCSS } from '@xprog/prensa-system'
 
 interface StateProperties { selected?: string; setSelected?: (P: any) => void; }

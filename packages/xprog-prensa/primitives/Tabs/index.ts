@@ -1,1 +1,5 @@
-export * from './component'
+export { Tabs } from './component'
+export { Tab } from './Tab'
+export { TabSlot } from './TabSlot'
+export { TabSlots } from './TabSlots'
+export { TabList } from './TabsList'
