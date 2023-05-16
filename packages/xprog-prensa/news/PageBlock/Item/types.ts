@@ -8,7 +8,7 @@ export interface ItemDefaultProps {
   numberValue?: string;
 }
 
-type TypographyVariants = keyof PrensaEngineTypeof['config']['theme']['colors']
+type TypographyVariants = keyof PrensaEngineTypeof['config']['theme']['fontSizes']
 
 export interface ItemLabelProps extends ContainerDefaultProps {
   customProps?: BlockType;
