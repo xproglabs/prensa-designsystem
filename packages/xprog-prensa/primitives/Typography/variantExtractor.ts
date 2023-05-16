@@ -1,7 +1,7 @@
 import { PrensaEngine } from '@xprog/prensa-system'
-import { TypographyVariantKeysType } from './types'
+import { TypographyVariantKeys } from './types'
 
-export const extractVariantKeys = (): TypographyVariantKeysType => {
+export const extractVariantKeys = (): TypographyVariantKeys => {
   let variants: any = {}
   const keys = Object.keys(PrensaEngine.theme.fontSizes)
   keys.forEach((item, key) => {
