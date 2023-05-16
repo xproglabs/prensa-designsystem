@@ -7,8 +7,6 @@
     "emitDeclarationOnly": true,
     "extendedDiagnostics": true,
     "jsx": "react",
-    "listEmittedFiles": true,
-    "listFiles": true,
     "moduleResolution": "node",
     "noImplicitAny": false,
     "preserveSymlinks": true,
@@ -20,8 +18,8 @@
     "dist"
   ],
   "include": [
-    "index.ts",
-    "types.ts",
+    "news/types.ts",
+    "primitives/types.ts",
     "react-responsive-carousel/lib/ts/components/Carousel/types"
   ]
 }
