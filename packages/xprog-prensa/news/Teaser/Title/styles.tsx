@@ -48,7 +48,7 @@ TitleText.defaultProps = {
     align: ['column', 'center', 'top'],
     my: 0
   },
-  variant: 'newstitle-sm'
+  variant: 'newsTitle-sm'
 }
 
 export { TitleContainer, TitleText }

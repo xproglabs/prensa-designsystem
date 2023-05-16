@@ -34,7 +34,7 @@ const TeaserRelated: Teaser.TeaserProps = {
     }
   },
   className: 'TeaserRelated',
-  titleVariant: 'newstitle-md'
+  titleVariant: 'newsTitle-md'
 }
 
 const TeaserHeadlineSm: Teaser.TeaserProps = {
@@ -50,8 +50,8 @@ const TeaserHeadlineSm: Teaser.TeaserProps = {
   subjectBgColor: 'basicSuccess800',
   subjectColor: 'basicWhite',
   subjectVariant: 'filled',
-  subtitleVariant: 'subtitle-desktop',
-  titleVariant: 'newstitle-5xl'
+  subtitleVariant: 'subTitle-desktop',
+  titleVariant: 'newsTitle-5xl'
 }
 
 const TeaserHeadlineLg: Teaser.TeaserProps = {
@@ -67,10 +67,10 @@ const TeaserHeadlineLg: Teaser.TeaserProps = {
   },
   className: 'TeaserHeadlineLg',
   relatedLayout: TeaserRelated,
-  subjectColor: 'brandTertiary400',
+  subjectColor: 'basicNeutral500',
   subjectVariant: 'default',
-  subtitleVariant: 'subtitle-desktop',
-  titleVariant: 'newstitle-6xl'
+  subtitleVariant: 'subTitle-desktop',
+  titleVariant: 'newsTitle-6xl'
 }
 
 const TeaserImageBottom: Teaser.TeaserProps = {
@@ -83,9 +83,9 @@ const TeaserImageBottom: Teaser.TeaserProps = {
   className: 'TeaserImageBottom',
   imageDerivative: '3x1',
   imageVariant: 'bottom',
-  subtitleVariant: 'subtitle-desktop',
+  subtitleVariant: 'subTitle-desktop',
   subjectVariant: 'filled',
-  titleVariant: 'newstitle-5xl'
+  titleVariant: 'newsTitle-5xl'
 }
 
 const TeaserImageLeft: Teaser.TeaserProps = {
@@ -101,8 +101,8 @@ const TeaserImageLeft: Teaser.TeaserProps = {
   imageDerivative: '1x1',
   imageVariant: 'left',
   subjectVariant: 'filled',
-  subtitleVariant: 'subtitle-desktop',
-  titleVariant: 'newstitle-md'
+  subtitleVariant: 'subTitle-desktop',
+  titleVariant: 'newsTitle-md'
 }
 
 const TeaserImageRight: Teaser.TeaserProps = {
@@ -117,8 +117,8 @@ const TeaserImageRight: Teaser.TeaserProps = {
   imageDerivative: '1x1',
   imageVariant: 'right',
   subjectVariant: 'filled',
-  subtitleVariant: 'subtitle-desktop',
-  titleVariant: 'newstitle-md'
+  subtitleVariant: 'subTitle-desktop',
+  titleVariant: 'newsTitle-md'
 }
 
 const TeaserImageRightLg: Teaser.TeaserProps = {
@@ -131,7 +131,7 @@ const TeaserImageRightLg: Teaser.TeaserProps = {
     }
   },
   imageDerivative: '3x2',
-  titleVariant: 'newstitle-3xl'
+  titleVariant: 'newsTitle-3xl'
 }
 
 const TeaserImageTop: Teaser.TeaserProps = {
@@ -145,8 +145,8 @@ const TeaserImageTop: Teaser.TeaserProps = {
   imageDerivative: '3x1',
   imageVariant: 'top',
   subjectVariant: 'filled',
-  subtitleVariant: 'subtitle-desktop',
-  titleVariant: 'newstitle-xl'
+  subtitleVariant: 'subTitle-desktop',
+  titleVariant: 'newsTitle-xl'
 }
 
 const TeaserNumber: Teaser.TeaserProps = {
@@ -180,7 +180,7 @@ const TeaserHeadlineImageSm: Teaser.TeaserProps = {
   imageDerivative: '1x1',
   imageVariant: 'background',
   subjectVariant: 'filled',
-  titleVariant: 'newstitle-2xl',
+  titleVariant: 'newsTitle-2xl',
   css: {
     position: 'relative',
     '.TeaserImage': {
@@ -210,7 +210,7 @@ const TeaserHeadlineImageMd: Teaser.TeaserProps = {
   imageDerivative: '1x1',
   imageVariant: 'background',
   subjectVariant: 'filled',
-  titleVariant: 'newstitle-4xl',
+  titleVariant: 'newsTitle-4xl',
   css: {
     position: 'relative',
     '.TeaserImage': {
@@ -238,9 +238,9 @@ const TeaserHeadlineImageLg: Teaser.TeaserProps = {
   className: 'TeaserHeadlineImage',
   imageDerivative: '3x1',
   imageVariant: 'background',
-  subtitleVariant: 'newstitle-3xl',
+  subtitleVariant: 'newsTitle-3xl',
   subjectVariant: 'filled',
-  titleVariant: 'newstitle-6xl',
+  titleVariant: 'newsTitle-6xl',
   css: {
     position: 'relative',
     '.TeaserSubtitleText': {

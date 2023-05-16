@@ -48,7 +48,7 @@ SubtitleText.defaultProps = {
     align: ['column', 'center', 'top'],
     my: 0
   },
-  variant: 'subtitle-default'
+  variant: 'subTitle-default'
 }
 
 export { SubtitleContainer, SubtitleText }
