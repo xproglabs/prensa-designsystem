@@ -1,4 +1,4 @@
-import { PrensaEngineCSS } from '@xprog/prensa-system/types'
+import { PrensaEngineCSS } from '@xprog/prensa-system'
 
 export type FooterCSSPropType = {
   containerCss?: PrensaEngineCSS;

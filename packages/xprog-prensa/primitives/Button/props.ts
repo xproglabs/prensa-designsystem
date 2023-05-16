@@ -1,4 +1,4 @@
-import { PrensaEngineCSS, PrensaEngineTypeof } from '@xprog/prensa-system/types'
+import { PrensaEngineCSS, PrensaEngineTypeof } from '@xprog/prensa-system'
 import { ReactNode } from 'react'
 
 import { StyledButtonTypes } from './styles'

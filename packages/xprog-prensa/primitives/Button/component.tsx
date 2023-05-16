@@ -1,4 +1,4 @@
-import { PrensaEngineCSS } from '@xprog/prensa-system/types'
+import { PrensaEngineCSS } from '@xprog/prensa-system'
 import React from 'react'
 
 import { Typography } from '../Typography'

@@ -1,4 +1,4 @@
-import { PrensaEngineCSS } from '@xprog/prensa-system/types'
+import { PrensaEngineCSS } from '@xprog/prensa-system'
 import { ReactNode } from 'react'
 
 import { ComponentFromPropsType } from '../../hooks'

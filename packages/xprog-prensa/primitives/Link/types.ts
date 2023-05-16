@@ -1,4 +1,4 @@
-import { PrensaEngineCSS } from '@xprog/prensa-system/types'
+import { PrensaEngineCSS } from '@xprog/prensa-system'
 import { DetailedHTMLProps, AnchorHTMLAttributes, ReactElement, ReactNode } from 'react'
 
 type LinkExtendedProps = Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, 'ref'>

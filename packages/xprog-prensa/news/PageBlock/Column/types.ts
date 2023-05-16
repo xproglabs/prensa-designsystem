@@ -1,4 +1,4 @@
-import { PrensaEngineTypeof } from '@xprog/prensa-system/types'
+import { PrensaEngineTypeof } from '@xprog/prensa-system'
 import { FunctionComponent, ReactNode } from 'react'
 
 import { ContainerDefaultProps } from '../Container/types'

@@ -1,5 +1,5 @@
 import { PrensaEngine } from '@xprog/prensa-system'
-import { PrensaEngineCSS } from '@xprog/prensa-system/types'
+import { PrensaEngineCSS } from '@xprog/prensa-system'
 
 const buttonProps: PrensaEngineCSS = {
   align: ['row', 'center', 'middle'],
