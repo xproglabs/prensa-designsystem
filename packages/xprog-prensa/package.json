@@ -12,9 +12,7 @@
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
-    "build": "npm run clear:dist && npm run build:js && npm run build:ts",
-    "build:js": "tsc -p ./tsconfig.build.json",
-    "build:ts": "tsc -p ./tsconfig.declarations.json",
+    "build": "npm run clear:dist && tsc -p ./tsconfig.build.json",
     "build:tgz": "npm run prerelease:copyfiles && cd dist && npm pack",
     "build:sb": "build-storybook -o .storybook/dist",
     "eslint": "eslint -c .eslintrc.json --ext js,ts,tsx ./",

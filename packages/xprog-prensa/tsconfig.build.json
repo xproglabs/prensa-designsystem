@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "declaration": false,
+    "declaration": true,
     "esModuleInterop": true,
     "extendedDiagnostics": true,
     "jsx": "react",
@@ -26,5 +26,6 @@
     "hooks/index.ts",
     "primitives/index.ts",
     "news/index.ts",
+    "react-responsive-carousel/lib/ts/components/Carousel/types"
   ]
 }
