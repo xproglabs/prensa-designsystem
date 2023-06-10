@@ -5,8 +5,8 @@ import AccordionContent from './content'
 import { IconButton } from '../IconButton'
 import { Link } from '../Link'
 import { Typography } from '../Typography'
-import ExpandLessIcon from './expandLessIcon'
-import ExpandMoreIcon from './expandMoreIcon'
+import ExpandLessIcon from './ExpandLessIcon'
+import ExpandMoreIcon from './ExpandMoreIcon'
 import { IAccordionItemGroup } from './types'
 
 const AccordionItemGroup: React.FC<IAccordionItemGroup> = ({
