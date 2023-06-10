@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import AccordionGroup from './group'
-import AccordionItemGroup from './itemGroup'
+import AccordionItemGroup from './groupItem'
 import { IAccordion, IAccordionItemGroup } from './types'
 
 const Accordion: React.FC<IAccordion> = ({
