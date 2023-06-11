@@ -36,6 +36,7 @@ async function run() {
     target: [
       'node13'
     ],
+    logLevel: 'info',
     outdir: 'dist',
     packages: 'external',
     platform: 'node',
