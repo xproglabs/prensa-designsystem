@@ -2,21 +2,18 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "declaration": true,
-    "esModuleInterop": true,
+    "emitDeclarationOnly": true,
     "extendedDiagnostics": true,
     "jsx": "react",
     "lib": [
       "dom",
       "ES2017"
     ],
-    "module": "CommonJS",
     "moduleResolution": "node",
     "noImplicitAny": false,
     "outDir": "dist",
     "resolveJsonModule": true,
-    "sourceMap": true,
     "strict": true,
-    "target": "ES6",
   },
   "exclude": [
     "node_modules",
