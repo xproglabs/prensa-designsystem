@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 import { Topbar } from '../../../news/Topbar'
 import { TopbarProps } from '../../../news/Topbar/types'
 import { Block } from '../../../primitives/Block'
@@ -12,9 +11,7 @@ export default {
 
 const Template: React.FC<TopbarProps> = (props) => {
   return (
-    <PrensaThemeProvider>
-      <Topbar {...props} />
-    </PrensaThemeProvider>
+    <Topbar {...props} />
   )
 }
 

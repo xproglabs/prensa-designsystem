@@ -5,7 +5,6 @@ import { PageBlockTypes } from '../../../news/types'
 import { LayoutProvider } from '../../../providers/LayoutProvider'
 import { layouts } from '../../../providers/LayoutProvider/data/layouts'
 import { templates } from '../../../providers/LayoutProvider/data/templates'
-import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 import {
   getArgsTableForPageBlock,
@@ -32,20 +31,18 @@ const Template = (args) => {
     slotRightItems: args?.slotRightItems
   })
   return (
-    <PrensaThemeProvider>
-      <LayoutProvider>
-        <PageBlock
-          {...args}
-          itemComponent={Teaser}
-          slotAutoLeftElements={slotAutoLeftElements}
-          slotAutoCenterElements={slotAutoCenterElements}
-          slotAutoRightElements={slotAutoRightElements}
-          templateBgColor={args?.templateBgColor}
-          slotLayouts={layouts}
-          templates={templates}
-        />
-      </LayoutProvider>
-    </PrensaThemeProvider>
+    <LayoutProvider>
+      <PageBlock
+        {...args}
+        itemComponent={Teaser}
+        slotAutoLeftElements={slotAutoLeftElements}
+        slotAutoCenterElements={slotAutoCenterElements}
+        slotAutoRightElements={slotAutoRightElements}
+        templateBgColor={args?.templateBgColor}
+        slotLayouts={layouts}
+        templates={templates}
+      />
+    </LayoutProvider>    
   )
 }
 

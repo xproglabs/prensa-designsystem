@@ -4,7 +4,6 @@ import { ArgsTable, Title } from '@storybook/addon-docs'
 import { SideMenu } from '../../../news'
 import { Block, Button } from '../../../primitives'
 import { SideMenuProps } from '../../../news/SideMenu/types'
-import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 export default {
   title: 'News/SideMenu',
@@ -24,18 +23,16 @@ export default {
 const Template = (args) => {
   const [state, setState] = React.useState(false)
   return (
-    <PrensaThemeProvider>
-      <Block css={{ align: ['column', 'center', 'middle'], px: '$2', py: '$10' }}>
-        <Button onClick={() => setState(true)}>
-          Click to open SideMenu
-        </Button>
-        <SideMenu
-          {...args}
-          open={state}
-          close={() => setState(false)}
-        />
-      </Block>
-    </PrensaThemeProvider>
+    <Block css={{ align: ['column', 'center', 'middle'], px: '$2', py: '$10' }}>
+      <Button onClick={() => setState(true)}>
+        Click to open SideMenu
+      </Button>
+      <SideMenu
+        {...args}
+        open={state}
+        close={() => setState(false)}
+      />
+    </Block>
   )
 }
 
