@@ -11,7 +11,7 @@
     "pkgRoot": "dist"
   },
   "scripts": {
-    "start": "start-storybook -p 9009 -s public",
+    "start": "start-storybook -p 9009",
     "build": "npm run clear:dist && npm run build:js && npm run build:ts",
     "build:js": "node build.js",
     "build:ts": "tsc -p ./tsconfig.declarations.json",
