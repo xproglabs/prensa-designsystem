@@ -16,6 +16,7 @@ const copyrightMessage = `/**
 async function run() {
   await esbuild.build({
     entryPoints: [
+      { in: 'hooks/index.ts', out: 'hooks' },
       { in: 'primitives/Accordion/index.ts', out: 'primitives/Accordion' },
       { in: 'primitives/Block/index.ts', out: 'primitives/Block' },
       { in: 'primitives/Button/index.ts', out: 'primitives/Button' },
