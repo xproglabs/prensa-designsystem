@@ -1,3 +1,24 @@
+# [2.39.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.38.0...pds-v2.39.0) (2023-07-20)
+
+
+### Bug Fixes
+
+* apply suggestions ([15683c7](https://github.com/xproglabs/prensa-designsystem/commit/15683c75592140782900c69434240a3fa815ec5d))
+* minor fixes ([ffeb629](https://github.com/xproglabs/prensa-designsystem/commit/ffeb62992261b4d7e31becff4e4db216ef1259a7))
+* Remove date property from Calendar and update days calculation ([1921f28](https://github.com/xproglabs/prensa-designsystem/commit/1921f282e225cf5d38805b477326a487b4a6b1b1))
+
+
+### Features
+
+* add ml and mr to SectionTitle ([03eedf0](https://github.com/xproglabs/prensa-designsystem/commit/03eedf05a97499d55623b281c440c3499f0210b2))
+* add SectionTitle to Byline component ([e7aeaa7](https://github.com/xproglabs/prensa-designsystem/commit/e7aeaa7c086152ce5e840d6b481be9e8e69158a2))
+* Implements new package xprog-prensa-system ([6814af0](https://github.com/xproglabs/prensa-designsystem/commit/6814af0eed241c9ed5c9f9aaff98030882d67643))
+
+
+### Reverts
+
+* Revert "Fix lib versions for packages/prensa" ([f502ac2](https://github.com/xproglabs/prensa-designsystem/commit/f502ac2c2288d8159e4f2bd2a79b21fd392a187f))
+
 # [2.38.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.37.1...pds-v2.38.0) (2023-03-14)
 
 
