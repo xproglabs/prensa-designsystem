@@ -5,7 +5,6 @@ import { Accordion, AccordionContent, AccordionGroup, AccordionItemGroup } from 
 import { AccordionProps } from '../../../primitives/Accordion/types'
 import { Block } from '../../../primitives/Block'
 import { Link } from '../../../primitives/Link/component'
-import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 import { StorybookTheme } from '../../StorybookTheme'
 
 export default {
@@ -151,6 +150,7 @@ Responsive.args = {
 
 export const Customized: { args: AccordionProps } = Template.bind({})
 Customized.args = {
+  accordionTitleAs: 'span',
   css: {
     accordionItemGroup: {
       accordionTitle: {
@@ -204,13 +204,13 @@ Customized.args = {
       icon: <CircledArrowRightIcon />
     },
     {
-      id: 'foxLink',
+      id: 'foxLink1',
       title: 'Fox Link',
       href: 'https://google.com',
       icon: <CircledArrowRightIcon />
     },
     {
-      id: 'foxLink',
+      id: 'foxLink2',
       customLink: CustomLink,
       customLinkProps: { id: 'custom-link-element', componentOptions: { renderOnlyCustomLink: true } },
       title: 'Fox custom Link component',

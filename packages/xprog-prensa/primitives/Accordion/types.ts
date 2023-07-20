@@ -42,6 +42,9 @@ export type AccordionItemGroupProps = {
 }
 
 export type AccordionProps = {
+  accordionTitleAs?: any;
+  accordionTitleVariant?: any;
+  accordionContentAs?: any;
   customLink?: any;
   customLinkProps?: any;
   children?: ReactNode;

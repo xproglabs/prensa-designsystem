@@ -1,22 +1,25 @@
-name: Package Deploy - Prensa v1
+name: Package Deploy - Prensa System
 
 on:
   push:
     branches:
       - master
     paths:
-      - packages/prensa/**
+      - packages/xprog-prensa-system/**
 
 jobs:
-  Package-Deploy-Prensa-v1:
+  Package-Deploy-Prensa-System:
     runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2
+        with:
+            fetch-depth: 0
+            persist-credentials: false
 
       - uses: actions/setup-node@v2
         with:
-          node-version: '16.13.1'
+          node-version: 16.13.1
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -26,20 +29,20 @@ jobs:
           path: |
             ~/.npm
             # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-${{ hashFiles('packages/prensa/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          key: ${{ runner.os }}-${{ hashFiles('packages/xprog-prensa-system/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
+          
       - name: Install
-        run: yarn deps:prensa:v1
+        run: yarn deps:prensa:sys
 
       - name: Build
-        run: yarn build:prensa:v1
+        run: yarn build:prensa:sys
 
       - name: Generate release
-        run: yarn release:prensa:v1
+        run: yarn release:prensa:sys
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

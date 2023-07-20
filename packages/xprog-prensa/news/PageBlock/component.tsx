@@ -139,7 +139,10 @@ export const PageBlock: React.FC<PageBlockProps> = ({
       }
     },
     items: slotManualExtraTop,
-    name: 'ExtraTop'
+    name: 'ExtraTop',
+    wrapperTop: getWrapperComponent(wrappers?.columnExtraTop?.slotTop, leftColumnLayout.wrapperTop),
+    wrapperContent: getWrapperComponent(wrappers?.columnExtraTop?.slotMiddle ,leftColumnLayout.wrapperContent),
+    wrapperBottom: getWrapperComponent(wrappers?.columnExtraTop?.slotBottom ,leftColumnLayout.wrapperBottom)
   }
   const columnLeftProps: ColumnProps = {
     ...columnProps,
@@ -229,7 +232,10 @@ export const PageBlock: React.FC<PageBlockProps> = ({
       }
     },
     items: slotManualExtra,
-    name: 'Extra'
+    name: 'Extra',
+    wrapperTop: getWrapperComponent(wrappers?.columnExtra?.slotTop, leftColumnLayout.wrapperTop),
+    wrapperContent: getWrapperComponent(wrappers?.columnExtra?.slotMiddle ,leftColumnLayout.wrapperContent),
+    wrapperBottom: getWrapperComponent(wrappers?.columnExtra?.slotBottom ,leftColumnLayout.wrapperBottom)
   }
 
   return (

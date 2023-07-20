@@ -80,6 +80,7 @@ const Article = (props) => {
                 <Byline
                   amp={amp}
                   share={share}
+                  sectionTitle={sectionTitle}
                   {...byline}
                 />
               </S.Content>
@@ -98,6 +99,7 @@ const Article = (props) => {
                   fbappid={fbappid}
                   pageUrl={url}
                   share={share}
+                  sectionTitle={sectionTitle}
                   {...byline}
                 />
               </S.Content>
