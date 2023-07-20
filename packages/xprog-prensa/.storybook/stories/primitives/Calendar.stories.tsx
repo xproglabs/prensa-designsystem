@@ -7,7 +7,7 @@ import { StorybookTheme } from '../../StorybookTheme'
 export default { title: 'Primitives/Calendar', component: Calendar }
 
 const Template: ComponentStory<any> = (args) => {
-  const [selected, setSelected] = React.useState(new Date)
+  const [selected, setSelected] = React.useState(new Date(Date.now()))
 
   const handleChange = (d) => {
     setSelected(d)
@@ -20,7 +20,11 @@ const Template: ComponentStory<any> = (args) => {
         onChange={handleChange}
         css={{
           dayButton: {
-            fontWeight: 700
+            fontWeight: 700,
+            '&[data-selected-state=true]': {
+              color: '$basicWhite',
+              backgroundColor: 'red',
+            },
           }
         }}
       />
