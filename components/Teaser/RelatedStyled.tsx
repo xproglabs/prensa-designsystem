@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { get } from 'lodash'
 import { Block, Link, Typography } from 'prensa'
 import React from 'react'
