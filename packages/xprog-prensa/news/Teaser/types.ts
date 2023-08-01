@@ -1,6 +1,9 @@
 import { ElementType, FC, ReactNode } from 'react'
 
 import {
+  LinkProps
+} from '../../primitives/Link/types'
+import {
   PrensaEngineCSSProp,
   PrensaEngineColorType,
   TypographyVariantType
@@ -85,6 +88,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   image?: ImageObjectProps;
   imageDerivative?: ImageDerivative;
   imageVariant?: ImageVariant;
+  linkProps?: LinkProps;
   numberBgColor?: PrensaEngineColorType;
   numberColor?: PrensaEngineColorType;
   numberValue?: string;

@@ -18,6 +18,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
   image,
   imageDerivative,
   imageVariant,
+  linkProps,
   numberBgColor,
   numberColor,
   numberVariant,
@@ -83,6 +84,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
     customLinkProps,
     color: slotColor,
     icon: relatedIcon,
+    linkProps,
     path,
     title,
     variant: titleVariant
