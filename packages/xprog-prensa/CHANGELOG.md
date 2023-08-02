@@ -1,3 +1,10 @@
+# [2.41.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.40.0...pds-v2.41.0) (2023-08-02)
+
+
+### Features
+
+* New CircularProgress component for building load states ([f7c7baf](https://github.com/xproglabs/prensa-designsystem/commit/f7c7baf99fe2ab65f888796d9f162d45e4882b64))
+
 # [2.40.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.39.0...pds-v2.40.0) (2023-08-02)
 
 
