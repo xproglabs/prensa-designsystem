@@ -1,3 +1,10 @@
+# [2.40.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.39.0...pds-v2.40.0) (2023-08-02)
+
+
+### Features
+
+* New property linkProps in Teaser and TeaserTitle allowing props control for Link component use cases ([8712c7c](https://github.com/xproglabs/prensa-designsystem/commit/8712c7c0d89c7b5800649edf607a731c233eb0cb))
+
 # [2.39.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.38.0...pds-v2.39.0) (2023-07-20)
 
 
