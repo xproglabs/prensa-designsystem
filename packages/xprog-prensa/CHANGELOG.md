@@ -1,3 +1,10 @@
+## [2.41.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.41.1...pds-v2.41.2) (2023-08-02)
+
+
+### Bug Fixes
+
+* Add direct connection for href property in Link component ([28313eb](https://github.com/xproglabs/prensa-designsystem/commit/28313eb635d7ba0984e1cdd320aaf19140de0f02))
+
 ## [2.41.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.41.0...pds-v2.41.1) (2023-08-02)
 
 
