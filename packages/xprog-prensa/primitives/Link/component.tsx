@@ -18,7 +18,7 @@ export const Link = React.forwardRef<React.ElementRef<typeof StyledA>, LinkProps
 
   if (CustomLink) {
     return (
-      <CustomLink {...rest} {...componentProps}>
+      <CustomLink {...componentProps}>
         {componentOptions?.renderOnlyCustomLink ?
           <React.Fragment>
             {children}
