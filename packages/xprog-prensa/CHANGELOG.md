@@ -1,3 +1,10 @@
+## [2.41.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.41.0...pds-v2.41.1) (2023-08-02)
+
+
+### Bug Fixes
+
+* [BREAKING] Remove "rest" connection with CustomLink in Link component ([21594a3](https://github.com/xproglabs/prensa-designsystem/commit/21594a362f3318b1e0c5700a08bed90c892898c1))
+
 # [2.41.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.40.0...pds-v2.41.0) (2023-08-02)
 
 
