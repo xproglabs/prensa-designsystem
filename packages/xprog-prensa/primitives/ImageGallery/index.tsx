@@ -1,7 +1,6 @@
-import map from 'lodash/map'
 import React from 'react'
-import { Carousel } from 'react-responsive-carousel'
 
+import { Carousel } from '../Carousel'
 import { Caption } from './Caption'
 import { ControlButton } from './ControlButton'
 import { ImageGalleryProps } from './types'
@@ -10,7 +9,8 @@ const ImageGallery = ({
   captionProps,
   componentCaption,
   componentImage,
-  items
+  items,
+  ...otherProps
 }: ImageGalleryProps) => {
 
   const RenderCaption = componentCaption
@@ -43,15 +43,28 @@ const ImageGallery = ({
 
   return (
     <Carousel
+      axis='horizontal'
+      labels={{ item: '', leftArrow: 'Retroceder', rightArrow: 'Avançar' }}
       showIndicators={false}
       showStatus={false}
       showThumbs={false}
       renderArrowPrev={renderArrowPrev}
       renderArrowNext={renderArrowNext}
+      {...otherProps}
     >
-      {map(items, (item, key) => (
-        <React.Fragment key={key}>
-          <RenderImage alt={item?.caption} src={item?.url} />
+      {items.map((item, key) => (
+        <React.Fragment key={`slide${key}`}>
+          {componentImage ?
+            <RenderImage
+              alt={item?.caption}
+              src={item?.url}
+            />
+            :
+            <img
+              alt={item?.caption}
+              src={item?.url}
+            />
+          }
           {renderCaptionOriginalOrCustom(item)}
         </React.Fragment>
       ))}

@@ -6,10 +6,16 @@ import { AccordionGroup } from './styles'
 import { AccordionProps, AccordionItemGroupProps } from './types'
 
 export const Accordion: React.FC<AccordionProps> = ({
+  accordionContentAs,
+  accordionTitleAs,
+  accordionTitleVariant,
   customLink,
   css,
   items,
   innerSpace,
+  icon,
+  iconExpandedState,
+  iconNotExpandedState,
   size,
 }) => {
   const [state, setState] = useState(items || [])
@@ -47,11 +53,17 @@ export const Accordion: React.FC<AccordionProps> = ({
     >
       {state.map(({ id, onClick, ...otherProps }: AccordionItemGroupProps) => (
         <AccordionItemGroup
+          accordionContentAs={otherProps.accordionContentAs ? otherProps.accordionContentAs : accordionContentAs}
+          accordionTitleAs={otherProps.accordionTitleAs ? otherProps.accordionTitleAs : accordionTitleAs}
+          accordionTitleVariant={otherProps.accordionTitleVariant ? otherProps.accordionTitleVariant : accordionTitleVariant}
           customLink={customLink}
           css={accordionitem_css}
           key={id}
           id={id}
           innerSpace={innerSpace}
+          icon={otherProps.icon ? otherProps.icon : icon}
+          iconExpandedState={otherProps.iconExpandedState ? otherProps.iconExpandedState : iconExpandedState}
+          iconNotExpandedState={otherProps.iconNotExpandedState ? otherProps.iconNotExpandedState : iconNotExpandedState}
           onClick={onClick ? onClick : () => handleClick(id)}
           {...otherProps}
         />

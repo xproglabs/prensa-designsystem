@@ -1,0 +1,42 @@
+{
+  "name": "@xprog/prensa-system",
+  "version": "1.0.0",
+  "description": "PDS Core System",
+  "author": "XPROG",
+  "license": "ISC",
+  "repository": "https://github.com/xproglabs/prensa-designsystem.git",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "npm run clear:dist && npm run build:js && npm run build:ts",
+    "build:js": "tsc -p ./tsconfig.build.json",
+    "build:ts": "tsc -p ./tsconfig.declarations.json",
+    "build:tgz": "cd dist && npm pack",
+    "clear:dist": "rimraf dist",
+    "prerelease:tgz": "npm run prerelease:copyfiles && npm run build:tgz",
+    "prerelease:copyfiles": "cpx package.json dist",
+    "release:dry": "npm run prerelease:copyfiles && semantic-release --extends ./release.dry.config.js --no-ci --dry-run",
+    "release:local": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js --no-ci",
+    "release": "npm run prerelease:copyfiles && semantic-release --extends ./release.config.js"
+  },
+  "dependencies": {
+    "@stitches/react": "1.2.8",
+    "@xprog/prensa-design-tokens": "1.9.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/git": "10.0.1",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "cpx": "1.5.0",
+    "rimraf": "3.0.2",
+    "semantic-release": "19.0.3",
+    "semantic-release-slack-bot": "3.5.3",
+    "typescript": "4.7.4"
+  },
+  "types": "types.d.ts"
+}

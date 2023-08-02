@@ -42,10 +42,16 @@ export type AccordionItemGroupProps = {
 }
 
 export type AccordionProps = {
+  accordionTitleAs?: any;
+  accordionTitleVariant?: any;
+  accordionContentAs?: any;
   customLink?: any;
   customLinkProps?: any;
   children?: ReactNode;
   css?: AccordionCSSProps;
+  icon?: ReactNode;
+  iconExpandedState?: ReactNode;
+  iconNotExpandedState?: ReactNode;
   innerSpace?: AccordionContentVariants['innerSpace'];
   items?: Array<AccordionItemGroupProps>;
   size?: AccordionGroupVariants['size'];

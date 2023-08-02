@@ -34,8 +34,22 @@ export const PageBlock: React.FC<PageBlockProps> = ({
   slotLayouts,
   slotTemplate,
   templates,
-  templateBgColor
+  templateBgColor,
+  wrappers
 }) => {
+  const getWrapperComponent = (wrapperFromProps, wrapperFromTemplate) => {
+    const wrapperTemplateEnabled = get(wrapperFromTemplate, 'enabled', false)
+    const wrapperPropsEnabled = get(wrapperFromProps, 'enabled', false)
+    if (wrapperTemplateEnabled) {
+      return wrapperFromTemplate
+    }
+    else if (wrapperPropsEnabled) {
+      return wrapperFromProps
+    }
+    else {
+      return undefined
+    }
+  }
   const getLayoutBySlotAndTemplate = (name, slot) => {
     const layoutSelected = get(slotLayouts, slot)
     const layoutSlotConfig = get(layoutSelected, `slotConfig[${slotTemplate}][slot${name}]`)
@@ -112,6 +126,24 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemComponent
   }
 
+  const columnExtraTopProps: ColumnProps = {
+    ...columnProps,
+    css: {
+      column: {
+        ...css?.column,
+        ...template?.css?.column
+      },
+      item: {
+        ...css?.item,
+        ...template?.css?.item
+      }
+    },
+    items: slotManualExtraTop,
+    name: 'ExtraTop',
+    wrapperTop: getWrapperComponent(wrappers?.columnExtraTop?.slotTop, leftColumnLayout.wrapperTop),
+    wrapperContent: getWrapperComponent(wrappers?.columnExtraTop?.slotMiddle ,leftColumnLayout.wrapperContent),
+    wrapperBottom: getWrapperComponent(wrappers?.columnExtraTop?.slotBottom ,leftColumnLayout.wrapperBottom)
+  }
   const columnLeftProps: ColumnProps = {
     ...columnProps,
     customProps: {
@@ -137,9 +169,9 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemsTop: slotManualTopLeft,
     layout: leftColumnLayout,
     name: 'Left',
-    wrapperTop: leftColumnLayout.wrapperTop,
-    wrapperContent: leftColumnLayout.wrapperContent,
-    wrapperBottom: leftColumnLayout.wrapperBottom
+    wrapperTop: getWrapperComponent(wrappers?.columnLeft?.slotTop, leftColumnLayout.wrapperTop),
+    wrapperContent: getWrapperComponent(wrappers?.columnLeft?.slotMiddle ,leftColumnLayout.wrapperContent),
+    wrapperBottom: getWrapperComponent(wrappers?.columnLeft?.slotBottom ,leftColumnLayout.wrapperBottom)
   }
   const columnCenterProps: ColumnProps = {
     ...columnProps,
@@ -160,9 +192,9 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemsTop: slotManualTopCenter,
     layout: centerColumnLayout,
     name: 'Center',
-    wrapperTop: centerColumnLayout.wrapperTop,
-    wrapperContent: centerColumnLayout.wrapperContent,
-    wrapperBottom: centerColumnLayout.wrapperBottom
+    wrapperTop: getWrapperComponent(wrappers?.columnCenter?.slotTop, centerColumnLayout.wrapperTop),
+    wrapperContent: getWrapperComponent(wrappers?.columnCenter?.slotMiddle, centerColumnLayout.wrapperContent),
+    wrapperBottom: getWrapperComponent(wrappers?.columnCenter?.slotBottom, centerColumnLayout.wrapperBottom)
   }
   const columnRightProps: ColumnProps = {
     ...columnProps,
@@ -183,9 +215,9 @@ export const PageBlock: React.FC<PageBlockProps> = ({
     itemsTop: slotManualTopRight,
     layout: rightColumnLayout,
     name: 'Right',
-    wrapperTop: rightColumnLayout.wrapperTop,
-    wrapperContent: rightColumnLayout.wrapperContent,
-    wrapperBottom: rightColumnLayout.wrapperBottom
+    wrapperTop: getWrapperComponent(wrappers?.columnRight?.slotTop, rightColumnLayout.wrapperTop),
+    wrapperContent: getWrapperComponent(wrappers?.columnRight?.slotMiddle, rightColumnLayout.wrapperContent),
+    wrapperBottom: getWrapperComponent(wrappers?.columnRight?.slotBottom, rightColumnLayout.wrapperBottom)
   }
   const columnExtraProps: ColumnProps = {
     ...columnProps,
@@ -200,22 +232,10 @@ export const PageBlock: React.FC<PageBlockProps> = ({
       }
     },
     items: slotManualExtra,
-    name: 'Extra'
-  }
-  const columnExtraTopProps: ColumnProps = {
-    ...columnProps,
-    css: {
-      column: {
-        ...css?.column,
-        ...template?.css?.column
-      },
-      item: {
-        ...css?.item,
-        ...template?.css?.item
-      }
-    },
-    items: slotManualExtraTop,
-    name: 'ExtraTop'
+    name: 'Extra',
+    wrapperTop: getWrapperComponent(wrappers?.columnExtra?.slotTop, leftColumnLayout.wrapperTop),
+    wrapperContent: getWrapperComponent(wrappers?.columnExtra?.slotMiddle ,leftColumnLayout.wrapperContent),
+    wrapperBottom: getWrapperComponent(wrappers?.columnExtra?.slotBottom ,leftColumnLayout.wrapperBottom)
   }
 
   return (
