@@ -9,6 +9,7 @@ export const Link = React.forwardRef<React.ElementRef<typeof StyledA>, LinkProps
   component: CustomLink,
   componentProps,
   componentOptions,
+  href,
   ...rest
 }, ref: any) => {
 
@@ -18,13 +19,13 @@ export const Link = React.forwardRef<React.ElementRef<typeof StyledA>, LinkProps
 
   if (CustomLink) {
     return (
-      <CustomLink {...componentProps}>
+      <CustomLink href={href} {...componentProps}>
         {componentOptions?.renderOnlyCustomLink ?
           <React.Fragment>
             {children}
           </React.Fragment>
           :
-          <StyledA ref={ref} {...rest}>
+          <StyledA ref={ref} href={href} {...rest}>
             {children}
           </StyledA>
         }
