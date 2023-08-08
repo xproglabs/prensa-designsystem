@@ -22,6 +22,7 @@ async function run() {
       { in: 'primitives/Button/index.ts', out: 'primitives/Button' },
       { in: 'primitives/Calendar/index.tsx', out: 'primitives/Calendar' },
       { in: 'primitives/Carousel/index.ts', out: 'primitives/Carousel' },
+      { in: 'primitives/CircularProgress/index.ts', out: 'primitives/CircularProgress' },
       { in: 'primitives/Drawer/index.ts', out: 'primitives/Drawer' },
       { in: 'primitives/IconButton/index.ts', out: 'primitives/IconButton' },
       { in: 'primitives/ImageGallery/index.tsx', out: 'primitives/ImageGallery' },
