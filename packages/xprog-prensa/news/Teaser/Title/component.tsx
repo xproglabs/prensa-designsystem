@@ -12,6 +12,7 @@ const Title: React.FC<t.TitleProps> = ({
   customProps,
   color,
   icon,
+  linkProps,
   path,
   title,
   variant
@@ -28,6 +29,7 @@ const Title: React.FC<t.TitleProps> = ({
           href={path}
           component={customLink}
           componentProps={customLinkProps}
+          {...linkProps}
         >
           {title || children}
         </Link>

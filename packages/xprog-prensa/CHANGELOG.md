@@ -1,3 +1,52 @@
+## [2.41.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.41.1...pds-v2.41.2) (2023-08-02)
+
+
+### Bug Fixes
+
+* Add direct connection for href property in Link component ([28313eb](https://github.com/xproglabs/prensa-designsystem/commit/28313eb635d7ba0984e1cdd320aaf19140de0f02))
+
+## [2.41.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.41.0...pds-v2.41.1) (2023-08-02)
+
+
+### Bug Fixes
+
+* [BREAKING] Remove "rest" connection with CustomLink in Link component ([21594a3](https://github.com/xproglabs/prensa-designsystem/commit/21594a362f3318b1e0c5700a08bed90c892898c1))
+
+# [2.41.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.40.0...pds-v2.41.0) (2023-08-02)
+
+
+### Features
+
+* New CircularProgress component for building load states ([f7c7baf](https://github.com/xproglabs/prensa-designsystem/commit/f7c7baf99fe2ab65f888796d9f162d45e4882b64))
+
+# [2.40.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.39.0...pds-v2.40.0) (2023-08-02)
+
+
+### Features
+
+* New property linkProps in Teaser and TeaserTitle allowing props control for Link component use cases ([8712c7c](https://github.com/xproglabs/prensa-designsystem/commit/8712c7c0d89c7b5800649edf607a731c233eb0cb))
+
+# [2.39.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.38.0...pds-v2.39.0) (2023-07-20)
+
+
+### Bug Fixes
+
+* apply suggestions ([15683c7](https://github.com/xproglabs/prensa-designsystem/commit/15683c75592140782900c69434240a3fa815ec5d))
+* minor fixes ([ffeb629](https://github.com/xproglabs/prensa-designsystem/commit/ffeb62992261b4d7e31becff4e4db216ef1259a7))
+* Remove date property from Calendar and update days calculation ([1921f28](https://github.com/xproglabs/prensa-designsystem/commit/1921f282e225cf5d38805b477326a487b4a6b1b1))
+
+
+### Features
+
+* add ml and mr to SectionTitle ([03eedf0](https://github.com/xproglabs/prensa-designsystem/commit/03eedf05a97499d55623b281c440c3499f0210b2))
+* add SectionTitle to Byline component ([e7aeaa7](https://github.com/xproglabs/prensa-designsystem/commit/e7aeaa7c086152ce5e840d6b481be9e8e69158a2))
+* Implements new package xprog-prensa-system ([6814af0](https://github.com/xproglabs/prensa-designsystem/commit/6814af0eed241c9ed5c9f9aaff98030882d67643))
+
+
+### Reverts
+
+* Revert "Fix lib versions for packages/prensa" ([f502ac2](https://github.com/xproglabs/prensa-designsystem/commit/f502ac2c2288d8159e4f2bd2a79b21fd392a187f))
+
 # [2.38.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.37.1...pds-v2.38.0) (2023-03-14)
 
 

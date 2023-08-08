@@ -1,6 +1,7 @@
 export * from './Button/props'
 export * from './Calendar/types'
 export * from './Carousel/types'
+export * from './CircularProgress/types'
 export * from './Drawer/types'
 export * from './IconButton/types'
 export * from './Link/types'

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { PrensaEngine } from '@xprog/prensa-system'
 import { Block } from '../Block'
@@ -89,15 +89,25 @@ function calculateDatesForPicker(d) {
 
 const LOCALE_DAYS_OF_WEEK = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
 
-export const Calendar: React.FC<CalendarProps> = ({ css, date, selectedDate, onChange, icBackward, icForward }) => {
+export const Calendar: React.FC<CalendarProps> = ({ css, selectedDate, onChange, icBackward, icForward }) => {
 
-  const rendertime = Date.now()
-  const dates = calculateDatesForPicker(date ? date : rendertime)
+  const dates = calculateDatesForPicker(selectedDate)
   const [state, setState] = useState(dates)
 
   const handleChange = (e: React.MouseEvent, d: Date) => {
     onChange(d)
   }
+
+  function isSameDay(first, second): boolean {
+    return first.getFullYear() === second.getFullYear() &&
+      first.getMonth() === second.getMonth() &&
+      first.getDate() === second.getDate()
+  }
+
+  useEffect(() => {
+    const dates = calculateDatesForPicker(selectedDate)
+    setState(dates)
+  }, [selectedDate])
 
   const renderHeader = () => {
     const handlePrev = () => {
@@ -224,7 +234,7 @@ export const Calendar: React.FC<CalendarProps> = ({ css, date, selectedDate, onC
               <IconButton
                 className='pds-Calendar-dayButton'
                 variant='ghost'
-                data-selected-state={d === selectedDate}
+                data-selected-state={isSameDay(d, selectedDate)}
                 disabled={d.getMonth() !== state.month}
                 onClick={(e) => handleChange(e, d)}
                 css={{

@@ -22,6 +22,7 @@ interface TitleProps extends TitleContainerProps {
     name: string;
     useIcon: (P: { icon: string; color: string }) => void;
   };
+  linkProps?: LinkProps;
   path?: string;
   title?: string;
   variant?: CSSVariant;

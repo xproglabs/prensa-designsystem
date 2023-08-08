@@ -1,3 +1,15 @@
+# [1.27.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.26.0...v1.27.0) (2023-07-25)
+
+
+### Bug Fixes
+
+* Remove date property from Calendar and update days calculation ([1921f28](https://github.com/xproglabs/prensa-designsystem/commit/1921f282e225cf5d38805b477326a487b4a6b1b1))
+
+
+### Features
+
+* Implements new package xprog-prensa-system ([6814af0](https://github.com/xproglabs/prensa-designsystem/commit/6814af0eed241c9ed5c9f9aaff98030882d67643))
+
 # [1.26.0](https://github.com/xproglabs/prensa-designsystem/compare/v1.25.0...v1.26.0) (2023-05-05)
 
 
