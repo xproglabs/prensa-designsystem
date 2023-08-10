@@ -1,3 +1,30 @@
+# [2.42.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.41.2...pds-v2.42.0) (2023-08-10)
+
+
+### Bug Fixes
+
+* Fix TypographyTokenKeys for Teaser and LayoutProvider ([26d1d9b](https://github.com/xproglabs/prensa-designsystem/commit/26d1d9b54c7da4150f39cffcdacaa8fc9cdcfaad))
+* Update AccordionItemGroup filename from itemGroup to groupItem avoiding git camel case bug ([37acdd3](https://github.com/xproglabs/prensa-designsystem/commit/37acdd30f3c603bf35f0867046e76a69b9deb8ef))
+* Update PrensaEngineCSS and theme keys imports to require from @xprog/prensa-system/types ([2f579ea](https://github.com/xproglabs/prensa-designsystem/commit/2f579eac8617fe12d22a3738dfea1c0324c624d4))
+* Update types for as prop in Typography component ([7eebf4b](https://github.com/xproglabs/prensa-designsystem/commit/7eebf4ba6ad9e58715dc70fba9cdb3c1238b5861))
+* Update types for prop as in Block ([c885487](https://github.com/xproglabs/prensa-designsystem/commit/c885487b47dc5e727b536f671d1a36fb18814f81))
+* Update types for Typography as and variant properties ([bca3a05](https://github.com/xproglabs/prensa-designsystem/commit/bca3a054d9d5fc045c0ac6e6fb2d0edfe36f19df))
+
+
+### Features
+
+* Add dependency @xprog/prensa-system, update @xprog/prensa-design-tokens and fix versions for some libs ([723c46b](https://github.com/xproglabs/prensa-designsystem/commit/723c46b32ecc8e5019c1f4dcd1528aafaba80ed8))
+* Connects CircularProgress to buildfile ([f294f6e](https://github.com/xproglabs/prensa-designsystem/commit/f294f6e344c6a7e14c61251350b7a1d54bf33742))
+* New build file for transpiling TS in JS using Typescript only ([ea41866](https://github.com/xproglabs/prensa-designsystem/commit/ea418669428cc35a36d58724f19b4accb457226c))
+* Refactor Accordion component ([af10a61](https://github.com/xproglabs/prensa-designsystem/commit/af10a61628b2662ded3d98a9bd100206182f1b1e))
+* Refactor Block component using new PrensaEngine [BREAKING] ([8ad5492](https://github.com/xproglabs/prensa-designsystem/commit/8ad5492d7fa21f56a1528a9cc7101402e2a7da7f))
+* Refactor Typography component decoupling variant prop from stitches variants logic ([933a147](https://github.com/xproglabs/prensa-designsystem/commit/933a1471c14c0b31faf4dd35b2dcd6d9f1b373c0))
+* Update build config for bundling CJS output for @xprog/prensa and @xprog/prensa-system ([4951f29](https://github.com/xproglabs/prensa-designsystem/commit/4951f2927fc303ce88637e79f7c233616edcb016))
+* Update build:js script execution to use Typescript ([dc4a083](https://github.com/xproglabs/prensa-designsystem/commit/dc4a08352cb28a9ee7327d0d8bd9252d005a358a))
+* Update export for Block component ([bfd0483](https://github.com/xproglabs/prensa-designsystem/commit/bfd04839ad1ac6b27c2cf2b3f67c4527c4251ac1))
+* Update exports for Tabs component ([8e28236](https://github.com/xproglabs/prensa-designsystem/commit/8e282361e9357e88315379b9b78b18be28973d31))
+* Update inputs for tsconfig.declarations ([3049249](https://github.com/xproglabs/prensa-designsystem/commit/30492491fa7a67797d5e38421a09340288031c9e))
+
 ## [2.41.2](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.41.1...pds-v2.41.2) (2023-08-02)
 
 
