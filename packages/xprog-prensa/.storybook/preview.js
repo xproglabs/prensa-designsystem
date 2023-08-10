@@ -1,16 +1,15 @@
-import "./main.css"
+import './main.css'
+import { StorybookThemeProvider } from './StorybookThemeProvider'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
-  layout: 'fullscreen',
-  // options: {
-  //   storySort: {
-  //     order: [
-  //       'Introduction',
-  //       ['Introduction', 'Getting Started'],
-  //       'Edit',
-  //       ['HTML', 'Lazy Loading']
-  //     ]
-  //   }
-  // }
+  layout: 'fullscreen'
 }
+
+export const decorators = [
+  Story => (
+    <StorybookThemeProvider>
+      <Story />
+    </StorybookThemeProvider>
+  )
+]

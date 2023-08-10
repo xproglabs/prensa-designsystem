@@ -1,10 +1,10 @@
-import { PrensaEngineCSSProp } from '../../types'
+import { PrensaEngineCSS } from '@xprog/prensa-system'
 
 export type FooterCSSPropType = {
-  containerCss?: PrensaEngineCSSProp;
-  slotTopCss?: PrensaEngineCSSProp;
-  slotMiddleCss?: PrensaEngineCSSProp;
-  slotBottomCss?: PrensaEngineCSSProp;
+  containerCss?: PrensaEngineCSS;
+  slotTopCss?: PrensaEngineCSS;
+  slotMiddleCss?: PrensaEngineCSS;
+  slotBottomCss?: PrensaEngineCSS;
 }
 
 export interface FooterProps {

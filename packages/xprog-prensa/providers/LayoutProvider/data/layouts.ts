@@ -1,4 +1,4 @@
-import { PageBlockTypes } from '../../../types'
+import { PageBlockTypes } from '../../../news/types'
 import { teasers as T } from './teasers'
 
 const LayoutDefault: PageBlockTypes.SlotConfigProps = {

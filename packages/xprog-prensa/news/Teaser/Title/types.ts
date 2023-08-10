@@ -1,5 +1,6 @@
+import { PrensaEngineTypeof } from '@xprog/prensa-system'
+
 import { LinkProps } from '../../../primitives/Link/types'
-import { PrensaEngineColorType } from '../../../types'
 import { BlockType, CSSType, CSSVariant, ContainerDefaultProps } from '../types'
 
 interface TitleContainerProps extends ContainerDefaultProps {
@@ -15,7 +16,7 @@ interface TitleProps extends TitleContainerProps {
   customLink: any;
   css?: CSSType;
   customLinkProps?: LinkProps;
-  color?: PrensaEngineColorType;
+  color?: keyof PrensaEngineTypeof['config']['theme']['colors'];
   icon?: {
     enabled: boolean;
     name: string;

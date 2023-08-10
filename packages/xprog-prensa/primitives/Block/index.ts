@@ -1,1 +1,1 @@
-export * from './styles'
+export { Block } from './component'

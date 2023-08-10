@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { PrensaEngineColorType } from '../../../types'
+import { PrensaEngineTypeof } from '@xprog/prensa-system'
 import { BlockType, CSSType, CSSVariant, ContainerDefaultProps } from '../types'
 
 interface NumberContainerProps extends ContainerDefaultProps {
@@ -13,8 +13,8 @@ interface NumberTextProps extends NumberContainerProps {
 }
 
 interface NumberProps extends NumberContainerProps {
-  bgColor?: PrensaEngineColorType;
-  color?: PrensaEngineColorType;
+  bgColor?: keyof PrensaEngineTypeof['config']['theme']['colors'];
+  color?: keyof PrensaEngineTypeof['config']['theme']['colors'];
   css?: CSSType;
   textVariant?: CSSVariant;
   variant?: NumberVariant;

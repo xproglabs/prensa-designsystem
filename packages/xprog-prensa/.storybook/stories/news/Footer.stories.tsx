@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 import { Footer } from '../../../news/Footer'
 import { FooterProps } from '../../../news/Footer/types'
 import { Block } from '../../../primitives/Block'
@@ -12,9 +11,7 @@ export default {
 
 const Template: React.FC<FooterProps> = (props) => {
   return (
-    <PrensaThemeProvider>
-      <Footer {...props} />
-    </PrensaThemeProvider>
+    <Footer {...props} />
   )
 }
 

@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
-import { AccordionItemGroup } from './ItemGroup'
-import { AccordionGroup } from './styles'
-import { AccordionProps, AccordionItemGroupProps } from './types'
+import AccordionGroup from './group'
+import AccordionItemGroup from './groupItem'
+import { IAccordion, IAccordionItemGroup } from './types'
 
-export const Accordion: React.FC<AccordionProps> = ({
+const Accordion: React.FC<IAccordion> = ({
   accordionContentAs,
   accordionTitleAs,
   accordionTitleVariant,
@@ -51,7 +50,7 @@ export const Accordion: React.FC<AccordionProps> = ({
       size={size}
       css={accordiongroup_css}
     >
-      {state.map(({ id, onClick, ...otherProps }: AccordionItemGroupProps) => (
+      {state.map(({ id, onClick, ...otherProps }: IAccordionItemGroup) => (
         <AccordionItemGroup
           accordionContentAs={otherProps.accordionContentAs ? otherProps.accordionContentAs : accordionContentAs}
           accordionTitleAs={otherProps.accordionTitleAs ? otherProps.accordionTitleAs : accordionTitleAs}
@@ -77,10 +76,4 @@ Accordion.defaultProps = {
   size: 'sm'
 }
 
-Accordion.propTypes = {
-  children: PropTypes.any,
-  css: PropTypes.any,
-  items: PropTypes.any,
-  innerSpace: PropTypes.any,
-  size: PropTypes.any
-}
+export default Accordion

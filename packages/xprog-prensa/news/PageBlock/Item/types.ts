@@ -1,4 +1,4 @@
-import { TypographyVariantType } from '../../../types'
+import { PrensaEngineTypeof } from '@xprog/prensa-system'
 import { BlockType, ContainerDefaultProps, PageBlockCSSType } from '../types'
 
 export interface ItemDefaultProps {
@@ -7,9 +7,12 @@ export interface ItemDefaultProps {
   type?: string;
   numberValue?: string;
 }
+
+type TypographyVariants = keyof PrensaEngineTypeof['config']['theme']['fontSizes']
+
 export interface ItemLabelProps extends ContainerDefaultProps {
   customProps?: BlockType;
-  variants?: TypographyVariantType | [ TypographyVariantType, TypographyVariantType ];
+  variants?: TypographyVariants | [ TypographyVariants, TypographyVariants ];
 }
 
 export interface ItemStyledProps extends ContainerDefaultProps {

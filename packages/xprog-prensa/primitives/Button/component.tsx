@@ -1,6 +1,6 @@
+import { PrensaEngineCSS } from '@xprog/prensa-system'
 import React from 'react'
 
-import { PrensaEngineCSSProp } from '../../types'
 import { Typography } from '../Typography'
 import { StyledButton } from './styles'
 import { ButtonProps } from './props'
@@ -18,9 +18,11 @@ export const Button: React.FC<ButtonProps> = ({
   ...otherProps
 }) => {
 
+  
+
   // variants css defintion
-  let css_label_spacing: PrensaEngineCSSProp = { px: `$${labelSpacing}` }
-  let css_variant: PrensaEngineCSSProp = {}
+  let css_label_spacing: PrensaEngineCSS = { px: `$${labelSpacing}` }
+  let css_variant: PrensaEngineCSS = {}
 
   switch (variant) {
     case 'filled':
@@ -95,9 +97,9 @@ export const Button: React.FC<ButtonProps> = ({
 }
 
 Button.defaultProps = {
-  color: 'brandNeutral600',
-  labelSpacing: '3',
+  color: 'basicNeutral600',
+  labelSpacing: 3,
   size: 'md',
   textVariant: 'buttonLabel-default',
-  variant: 'filled',
+  variant: 'filled'
 }

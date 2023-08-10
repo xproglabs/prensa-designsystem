@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { LayoutProvider } from '../../../providers/LayoutProvider'
-import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 import { PageBlock } from '../../../news/PageBlock'
 import { Teaser } from '../../../news/Teaser'
 import { TeaserProps } from '../../../news/Teaser/types'
@@ -23,7 +22,7 @@ export default {
 const ComponentTeaser: React.FC<TeaserProps> = (props) => {
   const item: TeaserProps = props
   return (
-    <PrensaThemeProvider>
+    <>
       <LayoutProvider>
         <PageBlock
           slotTemplate='Template30'
@@ -45,7 +44,7 @@ const ComponentTeaser: React.FC<TeaserProps> = (props) => {
           itemComponent={Teaser}
         />
       </LayoutProvider>
-    </PrensaThemeProvider>
+    </>
   )
 }
 

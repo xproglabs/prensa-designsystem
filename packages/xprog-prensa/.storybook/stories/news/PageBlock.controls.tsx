@@ -4,7 +4,7 @@ import React from 'react'
 import { getDataForTeaser } from './Teaser.controls'
 import { layouts } from '../../../providers/LayoutProvider/data/layouts'
 import { templates } from '../../../providers/LayoutProvider/data/templates'
-import { PageBlockTypes as t } from '../../../types'
+import { PageBlockTypes as t } from '../../../news/types'
 
 
 const getArgsTableForPageBlock = (components) => {

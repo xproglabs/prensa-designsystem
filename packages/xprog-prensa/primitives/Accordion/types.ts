@@ -1,28 +1,26 @@
-import { ComponentProps, VariantProps } from '@stitches/react'
+import { PrensaEngineCSS } from '@xprog/prensa-system'
 import { ReactNode, MouseEventHandler } from 'react'
 
-import { PrensaEngineCSSProp } from '../../types'
+import { AccordionContentVariants } from './content'
+import { AccordionGroupVariants } from './group'
 import { LinkProps } from '../Link/types'
-import { AccordionContentType, AccordionGroupType } from './styles'
 
-export type AccordionContentProps = ComponentProps<AccordionContentType>
-export type AccordionContentVariants = VariantProps<AccordionContentType>
-
-export type AccordionGroupProps = ComponentProps<AccordionContentType>
-export type AccordionGroupVariants = VariantProps<AccordionGroupType>
-
-export type AccordionItemGroupCSSProp = {
-  accordionItemGroupContainer?: PrensaEngineCSSProp;
-  accordionTitle?: { title?: PrensaEngineCSSProp; iconButton?: PrensaEngineCSSProp; icon?: PrensaEngineCSSProp; };
-  accordionContent?: PrensaEngineCSSProp;
+export type AccordionItemGroupCSS = {
+  accordionItemGroupContainer?: PrensaEngineCSS;
+  accordionTitle?: {
+    title?: PrensaEngineCSS;
+    iconButton?: PrensaEngineCSS;
+    icon?: PrensaEngineCSS;
+  };
+  accordionContent?: PrensaEngineCSS;
 }
 
-export type AccordionCSSProps = {
-  accordionGroup?: PrensaEngineCSSProp;
-  accordionItemGroup?: AccordionItemGroupCSSProp;
+export type AccordionCSS = {
+  accordionGroup?: PrensaEngineCSS;
+  accordionItemGroup?: AccordionItemGroupCSS;
 }
 
-export type AccordionItemGroupProps = {
+export interface IAccordionItemGroup {
   id: string;
   title: string;
   accordionTitleAs?: any;
@@ -31,7 +29,7 @@ export type AccordionItemGroupProps = {
   customLink?: any;
   customLinkProps?: LinkProps;
   children?: ReactNode;
-  css?: AccordionItemGroupCSSProp;
+  css?: AccordionItemGroupCSS;
   expanded?: boolean;
   href?: string;
   icon?: ReactNode;
@@ -41,18 +39,18 @@ export type AccordionItemGroupProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-export type AccordionProps = {
+export interface IAccordion {
   accordionTitleAs?: any;
   accordionTitleVariant?: any;
   accordionContentAs?: any;
   customLink?: any;
   customLinkProps?: any;
   children?: ReactNode;
-  css?: AccordionCSSProps;
+  css?: AccordionCSS;
   icon?: ReactNode;
   iconExpandedState?: ReactNode;
   iconNotExpandedState?: ReactNode;
   innerSpace?: AccordionContentVariants['innerSpace'];
-  items?: Array<AccordionItemGroupProps>;
+  items?: Array<IAccordionItemGroup>;
   size?: AccordionGroupVariants['size'];
 }

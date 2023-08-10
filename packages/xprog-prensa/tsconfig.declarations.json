@@ -2,26 +2,27 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "declaration": true,
-    "declarationDir": "dist",
-    "esModuleInterop": true,
     "emitDeclarationOnly": true,
     "extendedDiagnostics": true,
     "jsx": "react",
-    "listEmittedFiles": true,
-    "listFiles": true,
+    "lib": [
+      "dom",
+      "ES2017"
+    ],
     "moduleResolution": "node",
     "noImplicitAny": false,
-    "preserveSymlinks": true,
+    "outDir": "dist",
     "resolveJsonModule": true,
-    "strict": true
+    "strict": true,
   },
   "exclude": [
     "node_modules",
     "dist"
   ],
   "include": [
-    "index.ts",
-    "types.ts",
+    "hooks/index.ts",
+    "primitives/index.ts",
+    "news/index.ts",
     "react-responsive-carousel/lib/ts/components/Carousel/types"
   ]
 }

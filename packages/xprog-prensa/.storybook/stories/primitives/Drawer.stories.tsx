@@ -2,7 +2,6 @@ import { ArgsTable, Title } from '@storybook/addon-docs'
 import React from 'react'
 
 import { Block, Button, Drawer, DrawerBackdrop, DrawerContainer, DrawerContent, DrawerSpacer } from '../../../primitives'
-import { PrensaThemeProvider } from '../../../providers/PrensaThemeProvider'
 
 export default {
   title: 'Primitives/Drawer',
@@ -29,16 +28,14 @@ export default {
 const Template = (args) => {
   const [state, setState] = React.useState(false)
   return (
-    <PrensaThemeProvider>
-      <Block css={{ align: ['column', 'center', 'middle'], height: '100vh' }}>
-        <Button onClick={() => setState(true)}>
-          Click to open Drawer
-        </Button>
-        <Drawer {...args} open={state} close={() => setState(false)}>
-          {args.children}
-        </Drawer>
-      </Block>
-    </PrensaThemeProvider>
+    <Block css={{ align: ['column', 'center', 'middle'], height: '100vh' }}>
+      <Button onClick={() => setState(true)}>
+        Click to open Drawer
+      </Button>
+      <Drawer {...args} open={state} close={() => setState(false)}>
+        {args.children}
+      </Drawer>
+    </Block>
   )
 }
 

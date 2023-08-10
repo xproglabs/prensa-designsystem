@@ -1,11 +1,10 @@
-import { VariantProps } from '@stitches/react'
+import { PrensaEngineTypeof } from '@xprog/prensa-system'
+import { ITypographyStyled } from './styled'
 
-import { PrensaEngineThemeType, PrensaEngineCSSProp } from '../../types'
-import { TypographyType } from './styles'
+export type TypographyVariantKeys = keyof PrensaEngineTypeof['config']['theme']['fontSizes'];
+export type TypographyElementKeys = keyof Pick<JSX.IntrinsicElements, 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'cite' | 'li'>;
 
-type TypographyVariantsType = VariantProps<TypographyType>
-type TypographyVariantKeys = PrensaEngineThemeType['fontSizes']
-
-export type TypographyProps = TypographyType['propTypes']
-export type TypographyVariantKeysType = { [K in keyof TypographyVariantKeys]: PrensaEngineCSSProp }
-export type TypographyVariantType = TypographyVariantsType['variant']
+export interface ITypography extends ITypographyStyled {
+  as?: TypographyElementKeys;
+  variant?: TypographyVariantKeys;
+}

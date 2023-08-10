@@ -1,16 +1,15 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import { Block } from '../Block'
+import AccordionContent from './content'
 import { IconButton } from '../IconButton'
 import { Link } from '../Link'
 import { Typography } from '../Typography'
-import { ExpandLessIcon } from './ExpandLessIcon'
-import { ExpandMoreIcon } from './ExpandMoreIcon'
-import { AccordionContent } from './styles'
-import { AccordionItemGroupProps } from './types'
+import ExpandLessIcon from './ExpandLessIcon'
+import ExpandMoreIcon from './ExpandMoreIcon'
+import { IAccordionItemGroup } from './types'
 
-export const AccordionItemGroup: React.FC<AccordionItemGroupProps> = ({
+const AccordionItemGroup: React.FC<IAccordionItemGroup> = ({
   accordionContentAs,
   accordionTitleAs,
   accordionTitleVariant,
@@ -143,17 +142,4 @@ AccordionItemGroup.defaultProps = {
   accordionContentAs: 'section'
 }
 
-AccordionItemGroup.propTypes = {
-  id: PropTypes.any.isRequired,
-  title: PropTypes.any.isRequired,
-  accordionTitleAs: PropTypes.any,
-  accordionContentAs: PropTypes.any,
-  children: PropTypes.any,
-  css: PropTypes.any,
-  expanded: PropTypes.any,
-  icon: PropTypes.any,
-  iconExpandedState: PropTypes.any,
-  iconNotExpandedState: PropTypes.any,
-  innerSpace: PropTypes.any,
-  onClick: PropTypes.any,
-}
+export default AccordionItemGroup
