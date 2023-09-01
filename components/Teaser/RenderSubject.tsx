@@ -25,7 +25,7 @@ export type RenderSubjectProps = {
   color?: ColorTokens | string;
   editable?: any;
   hasIcon?: boolean;
-  iconComponent?: any
+  iconComponent?: any;
   item?: any;
   layout?: LayoutProps;
 }
