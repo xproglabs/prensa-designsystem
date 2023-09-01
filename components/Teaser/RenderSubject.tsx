@@ -15,7 +15,7 @@ export type SubjectLayout = {
   enabled?: boolean;
   font_size?: [string, string];
   hasIcon?: boolean;
-  iconComponent?: any
+  iconComponent?: any;
   line_height?: [string, string];
   mb?: SpacingType;
   variant: VariantTypes;
