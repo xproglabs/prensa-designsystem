@@ -85,7 +85,7 @@ const RenderSubject = ({
   if (hasIcon) {
     return (
       <Block
-      align='row'
+        align='row'
       alignx='center'
       >
         {iconComponent()}
