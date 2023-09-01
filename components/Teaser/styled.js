@@ -140,11 +140,12 @@ const Subject = ({
   bg_color='transparent',
   color,
   font_size,
+  hasIcon = false,
   line_height,
   mb
 }) => {
   const subject_px = bg_color !== 'transparent' ? 1 : 0
-  const subject_py = bg_color !== 'transparent' ? 0.5 : 0
+  const subject_py = bg_color !== 'transparent' || hasIcon ? 0.5 : 0
   return (
     <Block 
       align='row'
