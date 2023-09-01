@@ -86,7 +86,7 @@ const RenderSubject = ({
     return (
       <Block
         align='row'
-      alignx='center'
+        alignx='center'
       >
         {iconComponent()}
         <S.Subject
