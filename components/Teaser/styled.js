@@ -140,7 +140,7 @@ const Subject = ({
   bg_color='transparent',
   color,
   font_size,
-  hasIcon=false,
+  hasIcon = false,
   line_height,
   mb
 }) => {
