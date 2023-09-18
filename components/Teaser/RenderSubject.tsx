@@ -14,7 +14,6 @@ export type SubjectLayout = {
   color?: ColorTokens;
   enabled?: boolean;
   font_size?: [string, string];
-  hasIcon?: boolean,
   iconComponent?: any
   line_height?: [string, string];
   mb?: SpacingType;
@@ -24,7 +23,6 @@ export type SubjectLayout = {
 export type RenderSubjectProps = {
   color?: ColorTokens | string;
   editable?: any;
-  hasIcon?: boolean,
   iconComponent?: any
   item?: any;
   layout?: LayoutProps;
@@ -36,16 +34,15 @@ const RenderSubject = ({
   item,
   layout,
 }: RenderSubjectProps) => {
-
   const font_size = get(layout, 'subject.font_size', ['14px', '14px'])
   const line_height = get(layout, 'subject.line_height', ['16px', '16px'])
   const mb = get(layout, 'subject.mb', ['0px', '0px'])
   const subject_enabled = get(layout, 'subject.enabled', false)
   const subject_variant = get(layout, 'subject.variant', '')
-  const hasIcon = get(layout, 'subject.hasIcon', false)
   const iconComponent = get(layout, 'subject.iconComponent', false)
   
   let subject_value = get(item, 'subject', '')
+  let hasIcon = get(item, 'video', false)
 
   if (!subject_enabled) {
     return null
@@ -85,10 +82,10 @@ const RenderSubject = ({
   if (hasIcon) {
     return (
       <Block
-      align='row'
-      alignx='center'
+        align='row'
+        alignx='center'
       >
-        {iconComponent()}
+        {iconComponent(item)}
         <S.Subject
           bg_color={bg_color}
           color={font_color}

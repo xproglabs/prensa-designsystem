@@ -1,7 +1,7 @@
 import { Block } from 'prensa'
 import React from 'react'
 
-export const renderIcon = () => {
+export const renderIcon = (props) => {
   return (
     <Block mr='8px'>
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 33" fill="none">
