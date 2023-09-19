@@ -9,7 +9,6 @@ export const SUBJECT_DEFAULT: LayoutProps['subject'] = {
   line_height: ['16px', '16px'],
   mb: ['4px', '4px'],
   variant: 'default',
-  hasIcon: true,
   iconComponent: renderIcon
 }
 export const SUBJECT_DEFAULT_FEATURED: LayoutProps['subject'] = {
@@ -18,7 +17,8 @@ export const SUBJECT_DEFAULT_FEATURED: LayoutProps['subject'] = {
   font_size: ['12px', '16px'],
   line_height: ['16px', '16px'],
   mb: [1, 1],
-  variant: 'default'
+  variant: 'default',
+  iconComponent: renderIcon
 }
 export const SUBJECT_FILLED: LayoutProps['subject'] = {
   color: 'white',
@@ -26,5 +26,6 @@ export const SUBJECT_FILLED: LayoutProps['subject'] = {
   font_size: ['16px', '16px'],
   line_height: ['18px', '18px'],
   mb: [1, 1],
-  variant: 'filled'
+  variant: 'filled',
+  iconComponent: renderIcon
 }
