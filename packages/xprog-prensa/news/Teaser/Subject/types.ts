@@ -16,6 +16,11 @@ interface SubjectProps extends SubjectContainerProps {
   bgColor?: keyof PrensaEngineTypeof['config']['theme']['colors'];
   color?: keyof PrensaEngineTypeof['config']['theme']['colors'];
   css?: CSSType;
+  icon?: {
+    enabled: boolean;
+    name: string;
+    useIcon: (P: { icon: string; color: string }) => void;
+  };
   subject?: string;
   textVariant?: CSSVariant;
   variant?: SubjectVariant;
