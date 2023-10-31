@@ -9,6 +9,7 @@ const Subject: React.FC<t.SubjectProps> = ({
   children,
   css,
   customProps,
+  icon,
   subject,
   textVariant,
   variant
@@ -33,6 +34,7 @@ const Subject: React.FC<t.SubjectProps> = ({
       <S.SubjectText css={variantCss} variant={textVariant}>
         {subject || children}
       </S.SubjectText>
+      {icon?.enabled && icon?.useIcon({ icon: icon.name, color: color || '' }) || null}
     </S.SubjectContainer>
   )
 }

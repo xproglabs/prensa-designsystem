@@ -68,6 +68,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
     bgColor: subjectBgColor,
     color: subjectColor,
     css: subjectCss,
+    icon: relatedIcon,
     subject,
     textVariant: subjectTextVariant,
     variant: subjectVariant
