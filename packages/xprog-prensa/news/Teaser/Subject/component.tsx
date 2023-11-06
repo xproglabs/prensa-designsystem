@@ -14,6 +14,7 @@ const Subject: React.FC<t.SubjectProps> = ({
   textVariant,
   variant
 }) => {
+
   let variantCss: t.SubjectCSSType = {}
   if(variant === 'default') {
     variantCss = {
@@ -26,15 +27,32 @@ const Subject: React.FC<t.SubjectProps> = ({
       color: `$${color}`
     }
   }
+  
+  const renderSubjectContent = (icon) => {
+    if (icon?.enabled) {
+      return (
+        <S.SubjectContainer css={{ align: ['row', 'left', 'middle'] }}>
+          <S.SubjectText css={{...variantCss, mr: '8px'}} variant={textVariant}>
+            {subject || children}
+          </S.SubjectText>
+          {icon.useIcon()}
+        </S.SubjectContainer>
+      );
+    } else {
+      return (
+        <S.SubjectText css={variantCss} variant={textVariant}>
+          {subject || children}
+        </S.SubjectText>
+      )
+    }
+  };
+
   return (
     <S.SubjectContainer
       css={css}
       customProps={customProps}
     >
-      <S.SubjectText css={variantCss} variant={textVariant}>
-        {subject || children}
-      </S.SubjectText>
-      {icon?.enabled && icon?.useIcon({ icon: icon.name, color: color || '' }) || null}
+      {renderSubjectContent(icon)}
     </S.SubjectContainer>
   )
 }
