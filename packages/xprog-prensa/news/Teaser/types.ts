@@ -95,6 +95,10 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
     name: string;
     useIcon: (P: { icon: string; color: string }) => void;
   };
+  icon?: {
+    enabled: boolean;
+    useIcon: () => void
+  };
   relatedItems?: TeaserProps[];
   relatedLayout?: TeaserProps;
   slotColor?: CSSColorType;

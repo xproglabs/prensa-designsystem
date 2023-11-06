@@ -25,6 +25,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
   numberValue,
   path,
   relatedIcon,
+  icon,
   relatedItems,
   relatedLayout,
   slotColor,
@@ -69,7 +70,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
     bgColor: subjectBgColor,
     color: subjectColor,
     css: subjectCss,
-    icon: relatedIcon,
+    icon: icon,
     subject,
     textVariant: subjectTextVariant,
     variant: subjectVariant
@@ -96,7 +97,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
       : imageVariant === 'top' ? { align: ['column', 'left', 'top'] }
         : imageVariant === 'right' ? { align: ['row-reverse', 'right', 'top'] }
           : imageVariant === 'bottom' ? { align: ['column-reverse', 'left', 'top'] } : {}
-  
+
   const TeaserStyledProps: t.TeaserStyledProps = {
     css: {
       ...css,

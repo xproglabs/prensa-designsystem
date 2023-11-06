@@ -18,8 +18,7 @@ interface SubjectProps extends SubjectContainerProps {
   css?: CSSType;
   icon?: {
     enabled: boolean;
-    name: string;
-    useIcon: (P: { icon: string; color: string }) => void;
+    useIcon: () => void
   };
   subject?: string;
   textVariant?: CSSVariant;
