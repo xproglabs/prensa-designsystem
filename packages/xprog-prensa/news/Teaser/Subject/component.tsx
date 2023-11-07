@@ -9,7 +9,7 @@ const Subject: React.FC<t.SubjectProps> = ({
   children,
   css,
   customProps,
-  icon,
+  subjectIcon,
   subject,
   textVariant,
   variant
@@ -28,14 +28,14 @@ const Subject: React.FC<t.SubjectProps> = ({
     }
   }
   
-  const renderSubjectContent = (icon) => {
-    if (icon?.enabled) {
+  const renderSubjectContent = (subjectIcon) => {
+    if (subjectIcon?.enabled) {
       return (
         <S.SubjectContainer css={{ align: ['row', 'left', 'middle'] }}>
           <S.SubjectText css={{...variantCss, mr: '8px'}} variant={textVariant}>
             {subject || children}
           </S.SubjectText>
-          {icon.useIcon()}
+          {subjectIcon.useIcon()}
         </S.SubjectContainer>
       );
     } else {
@@ -52,7 +52,7 @@ const Subject: React.FC<t.SubjectProps> = ({
       css={css}
       customProps={customProps}
     >
-      {renderSubjectContent(icon)}
+      {renderSubjectContent(subjectIcon)}
     </S.SubjectContainer>
   )
 }

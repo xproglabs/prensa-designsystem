@@ -21,7 +21,7 @@ interface SubjectProps extends SubjectContainerProps {
   bgColor?: PrensaEngineColorType;
   color?: PrensaEngineColorType;
   css?: CSSType;
-  icon?: {
+  subjectIcon?: {
     enabled: boolean;
     useIcon: () => void
   };

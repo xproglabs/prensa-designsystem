@@ -24,7 +24,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
   numberValue,
   path,
   relatedIcon,
-  icon,
+  subjectIcon,
   relatedItems,
   relatedLayout,
   slotColor,
@@ -69,7 +69,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
     bgColor: subjectBgColor,
     color: subjectColor,
     css: subjectCss,
-    icon: icon,
+    subjectIcon: subjectIcon,
     subject,
     textVariant: subjectTextVariant,
     variant: subjectVariant
