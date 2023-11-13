@@ -9,12 +9,13 @@ const Related: React.FC<t.RelatedProps> = ({
   css,
   customProps,
   items,
-  layout
+  layout,
+  linkProps
 }) => {
   return (
     <S.RelatedContainer css={css} customProps={customProps}>
       {map(items, (item, key) => (
-        <Teaser {...layout} {...item} key={key} />
+        <Teaser {...layout} {...item} linkProps={linkProps} key={key} />
       ))}
     </S.RelatedContainer>
   )
