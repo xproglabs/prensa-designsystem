@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { LinkProps } from '../../../primitives/Link/types'
 
 import {
   BlockType,
@@ -16,7 +17,8 @@ interface RelatedContainerProps extends ContainerDefaultProps {
 interface RelatedProps extends RelatedContainerProps {
   css?: CSSType;
   items?: TeaserProps[];
-  layout?: TeaserProps
+  layout?: TeaserProps,
+  linkProps?: LinkProps;
 }
 
 type RelatedVariant = CSSVariant

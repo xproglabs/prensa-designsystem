@@ -62,7 +62,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
       customLink,
       customLinkProps,
       slotColor
-    }
+    },
+    linkProps
   }
   const TeaserSubject: React.FC<t.SubjectProps> | undefined = components?.subject
   const TeaserSubjectProps: t.SubjectProps = {
