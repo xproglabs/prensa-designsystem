@@ -3,8 +3,8 @@ import React from 'react'
 
 const IconTwitter = (props) => {
   return (
-    <Icon xmlns="http://www.w3.org/2000/svg" {...props}>
-      <path d="M20.23 6.679a7.21 7.21 0 01-2 .56 3.51 3.51 0 001.55-2 7.18 7.18 0 01-2.24.86 3.53 3.53 0 00-6 3.22 10 10 0 01-7.34-3.65 3.54 3.54 0 001.1 4.72 3.55 3.55 0 01-1.6-.45 3.54 3.54 0 002.83 3.47 3.649 3.649 0 01-1.6.06 3.54 3.54 0 003.3 2.47A7.1 7.1 0 013 17.409a10.06 10.06 0 0015.48-8.47v-.46a7.29 7.29 0 001.76-1.83l-.01.03z"/>
+    <Icon xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" {...props}>
+      <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"><g transform="scale(5.33333,5.33333)"><path d="M41,6l-31.071,36h-3.714l31.072,-36z" fill="#a8a8a8" fill-rule="nonzero"></path><path d="M31.143,41l-23.323,-34h8.957l23.323,34z" fill="transparent" fill-rule="evenodd"></path><path d="M15.724,9l20.578,30h-4.106l-20.578,-30h4.106M17.304,6h-11.382l24.694,36h11.382l-24.694,-36z" fill="#a8a8a8" fill-rule="nonzero"></path></g></g>
     </Icon>
   )
 }
