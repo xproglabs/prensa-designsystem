@@ -39,8 +39,12 @@ import {
   TitleContainerProps,
   TitleTextProps,
   TitleProps,
-  TitleVariant
+  TitleVariant,
 } from './Title/types'
+import {
+  DateContainerProps,
+  DateProps,
+} from './PublishedDate/types'
 
 type BlockType = {
   className?: string;
@@ -78,6 +82,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
     subject?: FC<SubjectProps>;
     subtitle?: FC<SubtitleProps>;
     title?: FC<TitleProps>;
+    dateToParse?: FC<DateProps>;
   };
   customLink?: any;
   customLinkProps?: any;
@@ -90,6 +95,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   numberValue?: string;
   numberVariant?: NumberVariant;
   path?: string;
+  publishedDate?: number;
   relatedIcon?: {
     enabled: boolean;
     name: string;
@@ -156,5 +162,7 @@ export {
   TitleContainerProps,
   TitleTextProps,
   TitleProps,
-  TitleVariant
+  TitleVariant,
+  DateContainerProps,
+  DateProps,
 }

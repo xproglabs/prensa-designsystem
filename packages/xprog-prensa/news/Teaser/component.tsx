@@ -38,7 +38,8 @@ const Teaser: React.FC<t.TeaserProps> = ({
   subtitleVariant,
   title,
   titleVariant,
-  wrapImage
+  wrapImage,
+  publishedDate,
 }) => {
   const TeaserNumber: React.FC<t.NumberProps> | undefined = components?.number
   const TeaserNumberProps: t.NumberProps = {
@@ -90,6 +91,16 @@ const Teaser: React.FC<t.TeaserProps> = ({
     variant: titleVariant
   }
 
+  const TeaserPublishedDate: React.FC<t.DateProps> | undefined = components?.dateToParse
+  const TeaserPublishedDateProps: t.DateProps = {
+    customLink,
+    customLinkProps,
+    linkProps,
+    path,
+    dateToParse: publishedDate,
+    variant: titleVariant
+  }
+
   const TeaserStyledAlign: t.CSSType =
     imageVariant === 'left' ? { align: ['row', 'left', 'top'] }
       : imageVariant === 'top' ? { align: ['column', 'left', 'top'] }
@@ -117,6 +128,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
         {TeaserSubject && <TeaserSubject {...TeaserSubjectProps} />}
         {TeaserTitle && <TeaserTitle {...TeaserTitleProps} />}
         {TeaserSubtitle && <TeaserSubtitle {...TeaserSubtitleProps} />}
+        {TeaserPublishedDate && <TeaserPublishedDate {...TeaserPublishedDateProps} />}
         {TeaserRelated && relatedItems && relatedLayout && <TeaserRelated {...TeaserRelatedProps} />}
       </TeaserWrapContent>
     </S.TeaserStyled>
