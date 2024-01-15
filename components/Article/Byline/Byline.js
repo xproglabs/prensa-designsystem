@@ -11,6 +11,7 @@ const Byline = ({
   amp,
   author,
   authors,
+  avatar,
   content,
   dateline,
   datetime,
@@ -20,6 +21,8 @@ const Byline = ({
   share
 }) => {
 
+  const hasAvatar = get(avatar, 'enabled', false)
+  const AvatarComponent = get(avatar, 'component', false)
   const shareData = get(share, 'byline', {})
   const shareColor = get(share, 'color', undefined)
   const shareSize = get(share, 'size', undefined)
@@ -31,20 +34,21 @@ const Byline = ({
     if (!hasAuthorEmail && !hasAuthorSocialMedias) {
       return null
     }
-
     return (
-      <Block mb={1}>
-        {hasAuthorSocialMedias && (
-          <S.BylineText {...datetime}>
-            {author.socialMedias}
-          </S.BylineText>
-        )}
-        {hasAuthorEmail && (
-          <S.BylineText {...datetime}>
-            {author.email}
-          </S.BylineText>
-        )}
-      </Block>
+      <>
+        <Block mb={1}>
+          {hasAuthorSocialMedias && (
+            <S.BylineText {...datetime}>
+              {author.socialMedias}
+            </S.BylineText>
+          )}
+          {hasAuthorEmail && (
+            <S.BylineText {...datetime}>
+              {author.email}
+            </S.BylineText>
+          )}
+        </Block>
+      </>
     )
   }
 
@@ -79,10 +83,14 @@ const Byline = ({
       </Block>
     )
   }
-
   return (
     <S.Container>
       <S.Content {...content}>
+        <S.ContentAvatar>
+          {hasAvatar && ( 
+            <AvatarComponent />
+          )}
+        </S.ContentAvatar>  
         <S.BylineContainer {...dateline}>
           {authors.items.length > 0 ? (
             <ManyAuthors items={authors.items} />

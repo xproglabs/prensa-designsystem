@@ -66,6 +66,19 @@ Content.propTypes = {
   mb: PropTypes.array
 }
 
+export const ContentAvatar = ({ children }) => 
+  <Block
+    mb='16px'
+    lg={{ mb: '0px', mr: '16px' }}
+  >
+    {children}
+  </Block>
+
+ContentAvatar.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  mb: PropTypes.array
+}
+
 export const BylineContainer = ({ children, mb }) => 
   <Block 
     mb={mb[0]}
