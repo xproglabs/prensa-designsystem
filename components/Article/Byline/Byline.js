@@ -22,7 +22,7 @@ const Byline = ({
 }) => {
 
   const hasAvatar = get(avatar, 'enabled', false)
-  const AvatarComponent = get(avatar, 'component', false)
+  const AvatarComponent = get(avatar, 'component', null)
   const shareData = get(share, 'byline', {})
   const shareColor = get(share, 'color', undefined)
   const shareSize = get(share, 'size', undefined)
