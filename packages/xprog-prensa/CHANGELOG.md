@@ -1,3 +1,10 @@
+## [2.42.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.42.0...pds-v2.42.1) (2023-11-13)
+
+
+### Bug Fixes
+
+* Add linkProps connection in Teaser/TeaserRelated props ([9c03ec3](https://github.com/xproglabs/prensa-designsystem/commit/9c03ec39e7d6a8fac56f0723e72a0e61c3f396df))
+
 # [2.42.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.41.2...pds-v2.42.0) (2023-08-10)
 
 
