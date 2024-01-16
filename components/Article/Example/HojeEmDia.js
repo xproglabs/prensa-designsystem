@@ -82,6 +82,10 @@ const citation = `
   <cite>Estamos vivenciando um cen\u00E1rio onde o apoio a uma causa ou projeto social est\u00E1 deixando de ser uma op\u00E7\u00E3o para neg\u00F3cios que buscam um futuro sustent\u00E1vel, lucrativo e buscam impactar significativamente seus clientes</cite>
 `
 
+const AvatarByline = () => {
+  return <img src='/logo-publica.png' alt='AVATAR BYLINE'/>
+}
+
 const ArticleHJD = () => {
   return (
     <ThemeProvider theme={hojeemdia}>
@@ -110,6 +114,10 @@ const ArticleHJD = () => {
             lineHeight: ['16px', '16px'],
             time_modified: '18 dias atrás',
             time_published: '21/05/2021 às 23:20'
+          },
+          avatar: {
+            enabled: true,
+            component: AvatarByline
           }
         }}
         citation={{
