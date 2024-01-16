@@ -44,6 +44,7 @@ import {
 import {
   DateContainerProps,
   DateProps,
+  PublishedDateVariant
 } from './PublishedDate/types'
 
 type BlockType = {
@@ -82,7 +83,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
     subject?: FC<SubjectProps>;
     subtitle?: FC<SubtitleProps>;
     title?: FC<TitleProps>;
-    dateToParse?: FC<DateProps>;
+    publishedDate?: FC<DateProps>;
   };
   customLink?: any;
   customLinkProps?: any;
@@ -96,6 +97,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   numberVariant?: NumberVariant;
   path?: string;
   publishedDate?: number;
+  publishedDateVariant?: PublishedDateVariant;
   relatedIcon?: {
     enabled: boolean;
     name: string;

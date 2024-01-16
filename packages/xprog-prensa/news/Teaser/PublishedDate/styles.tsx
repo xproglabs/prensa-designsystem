@@ -4,7 +4,7 @@ import { Block } from '../../../primitives/Block'
 import { Typography } from '../../../primitives/Typography'
 import * as t from './types'
 
-const TitleContainer: React.FC<t.TitleContainerProps> = ({
+const PublishedContainer: React.FC<t.DateContainerProps> = ({
   css,
   children,
   customProps,
@@ -12,21 +12,21 @@ const TitleContainer: React.FC<t.TitleContainerProps> = ({
 }) => (
   <Block
     {...customProps}
-    className={`TeaserTitle ${customProps?.className || ''}`}
+    className={`TeaserPublishedDate ${customProps?.className || ''}`}
     css={{ ...defaultCss, ...css }}
   >
     {children}
   </Block>
 )
 
-TitleContainer.defaultProps = {
+PublishedContainer.defaultProps = {
   defaultCss: {
     align: ['column', 'left', 'top'],
     width: '100%'
   }
 }
 
-const TitleText: React.FC<t.TitleTextProps> = ({
+const PublishedText: React.FC<t.DateProps> = ({
   css,
   children,
   customProps,
@@ -35,7 +35,7 @@ const TitleText: React.FC<t.TitleTextProps> = ({
 }) => (
   <Typography
     as='p'
-    className={`TeaserTitleText ${customProps?.className || ''}`}
+    className={`TeaserPublishedDateText ${customProps?.className || ''}`}
     css={{ ...defaultCss, ...css }}
     variant={variant}
   >
@@ -43,7 +43,7 @@ const TitleText: React.FC<t.TitleTextProps> = ({
   </Typography>
 )
 
-TitleText.defaultProps = {
+PublishedText.defaultProps = {
   defaultCss: {
     align: ['column', 'center', 'top'],
     my: 0
@@ -51,4 +51,4 @@ TitleText.defaultProps = {
   variant: 'newsTitle-sm'
 }
 
-export { TitleContainer, TitleText }
+export { PublishedContainer, PublishedText }

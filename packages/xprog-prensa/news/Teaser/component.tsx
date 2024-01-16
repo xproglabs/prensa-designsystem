@@ -8,6 +8,7 @@ import { Subject } from './Subject'
 import { Subtitle } from './Subtitle'
 import { Title } from './Title'
 import * as t from './types'
+import { PublishedDate } from './PublishedDate/component'
 
 const Teaser: React.FC<t.TeaserProps> = ({
   css,
@@ -40,6 +41,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
   titleVariant,
   wrapImage,
   publishedDate,
+  publishedDateVariant
 }) => {
   const TeaserNumber: React.FC<t.NumberProps> | undefined = components?.number
   const TeaserNumberProps: t.NumberProps = {
@@ -91,14 +93,15 @@ const Teaser: React.FC<t.TeaserProps> = ({
     variant: titleVariant
   }
 
-  const TeaserPublishedDate: React.FC<t.DateProps> | undefined = components?.dateToParse
+  const TeaserPublishedDate: React.FC<t.DateProps> | undefined = components?.publishedDate
   const TeaserPublishedDateProps: t.DateProps = {
     customLink,
     customLinkProps,
+    css: subjectCss,
     linkProps,
     path,
-    dateToParse: publishedDate,
-    variant: titleVariant
+    publishedDate,
+    variant: publishedDateVariant
   }
 
   const TeaserStyledAlign: t.CSSType =
@@ -115,7 +118,6 @@ const Teaser: React.FC<t.TeaserProps> = ({
     customProps
   }
   const TeaserWrapContent: React.FC<t.TeaserWrapProps> = S.TeaserWrap
-
   return (
     <S.TeaserStyled {...TeaserStyledProps}>
       {TeaserNumber && numberVariant !== 'none' && (
@@ -142,7 +144,8 @@ Teaser.defaultProps = {
     related: Related,
     subject: Subject,
     subtitle: Subtitle,
-    title: Title
+    title: Title,
+    publishedDate: PublishedDate
   },
   numberVariant: 'none'
 }
