@@ -96,7 +96,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   numberValue?: string;
   numberVariant?: NumberVariant;
   path?: string;
-  publishedDate?: number;
+  publishedDate?: string;
   publishedDateVariant?: PublishedDateVariant;
   relatedIcon?: {
     enabled: boolean;

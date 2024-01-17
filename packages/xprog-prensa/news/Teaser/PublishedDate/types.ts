@@ -14,7 +14,7 @@ interface DateProps extends DateContainerProps {
   customLinkProps?: LinkProps;
   linkProps?: LinkProps;
   path?: string;
-  publishedDate?: number;
+  publishedDate?: string;
   variant?: CSSVariant;
 }
 type PublishedDateVariant = CSSVariant
