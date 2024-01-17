@@ -4,7 +4,7 @@ import { Block } from '../../../primitives/Block'
 import { Typography } from '../../../primitives/Typography'
 import * as t from './types'
 
-const PublishedContainer: React.FC<t.DateContainerProps> = ({
+const Container: React.FC<t.DateContainerProps> = ({
   css,
   children,
   customProps,
@@ -19,14 +19,14 @@ const PublishedContainer: React.FC<t.DateContainerProps> = ({
   </Block>
 )
 
-PublishedContainer.defaultProps = {
+Container.defaultProps = {
   defaultCss: {
     align: ['column', 'left', 'top'],
     width: '100%'
   }
 }
 
-const PublishedText: React.FC<t.DateProps> = ({
+const Text: React.FC<t.DateProps> = ({
   css,
   children,
   customProps,
@@ -43,7 +43,7 @@ const PublishedText: React.FC<t.DateProps> = ({
   </Typography>
 )
 
-PublishedText.defaultProps = {
+Text.defaultProps = {
   defaultCss: {
     align: ['column', 'center', 'top'],
     my: 0
@@ -51,4 +51,4 @@ PublishedText.defaultProps = {
   variant: 'newsTitle-sm'
 }
 
-export { PublishedContainer, PublishedText }
+export { Container, Text }

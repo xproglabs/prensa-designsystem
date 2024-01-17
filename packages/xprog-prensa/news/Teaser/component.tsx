@@ -142,11 +142,11 @@ Teaser.defaultProps = {
   components: {
     image: Image,
     number: Number,
+    publishedDate: PublishedDate,
     related: Related,
     subject: Subject,
     subtitle: Subtitle,
     title: Title,
-    publishedDate: PublishedDate
   },
   numberVariant: 'none'
 }

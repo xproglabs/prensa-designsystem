@@ -135,6 +135,8 @@ export {
   CSSType,
   CSSVariant,
   ContainerDefaultProps,
+  DateContainerProps,
+  DateProps,
   ImageContainerProps,
   ImageDerivative,
   ImageWrapProps,
@@ -165,6 +167,4 @@ export {
   TitleTextProps,
   TitleProps,
   TitleVariant,
-  DateContainerProps,
-  DateProps,
 }
