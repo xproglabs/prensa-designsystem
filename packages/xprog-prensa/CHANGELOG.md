@@ -1,3 +1,10 @@
+# [2.43.0](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.42.1...pds-v2.43.0) (2024-01-22)
+
+
+### Features
+
+* Add PublishedDate to Teaser component ([2ec895f](https://github.com/xproglabs/prensa-designsystem/commit/2ec895fa75f357591ecec9eb0c2815ef1b474e5a))
+
 ## [2.42.1](https://github.com/xproglabs/prensa-designsystem/compare/pds-v2.42.0...pds-v2.42.1) (2023-11-13)
 
 
