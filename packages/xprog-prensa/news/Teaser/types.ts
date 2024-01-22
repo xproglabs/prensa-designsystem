@@ -111,6 +111,7 @@ interface TeaserProps extends TeaserDefaultProps, TeaserStyledProps {
   subjectBgColor?: CSSColorType;
   subjectColor?: CSSColorType;
   subjectCss?: CSSType;
+  publishedDateCSS?: CSSType;
   subjectTextVariant?: CSSVariant;
   subjectVariant?: SubjectVariant;
   subtitle?: string;

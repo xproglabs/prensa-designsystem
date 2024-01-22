@@ -41,6 +41,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
   titleVariant,
   wrapImage,
   publishedDate,
+  publishedDateCSS,
   publishedDateVariant
 }) => {
   const TeaserNumber: React.FC<t.NumberProps> | undefined = components?.number
@@ -96,11 +97,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
 
   const TeaserPublishedDate: React.FC<t.DateProps> | undefined = components?.publishedDate
   const TeaserPublishedDateProps: t.DateProps = {
-    customLink,
-    customLinkProps,
-    css: subjectCss,
-    linkProps,
-    path,
+    css: publishedDateCSS,
     publishedDate,
     variant: publishedDateVariant
   }

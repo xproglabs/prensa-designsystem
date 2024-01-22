@@ -1,5 +1,3 @@
-import { PrensaEngineTypeof } from '@xprog/prensa-system'
-
 import { LinkProps } from '../../../primitives/Link/types'
 import { BlockType, CSSType, CSSVariant, ContainerDefaultProps } from '../types'
 
@@ -9,18 +7,17 @@ interface DateContainerProps extends ContainerDefaultProps {
 }
 
 interface DateProps extends DateContainerProps {
-  customLink?: any;
   css?: CSSType;
-  customLinkProps?: LinkProps;
-  linkProps?: LinkProps;
-  path?: string;
   publishedDate?: string;
   variant?: CSSVariant;
 }
+
+type PublishedDateCSSType = CSSType;
 type PublishedDateVariant = CSSVariant
 
 export {
   DateContainerProps,
   DateProps,
+  PublishedDateCSSType,
   PublishedDateVariant
 }
