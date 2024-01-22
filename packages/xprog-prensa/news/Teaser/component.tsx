@@ -8,6 +8,7 @@ import { Subject } from './Subject'
 import { Subtitle } from './Subtitle'
 import { Title } from './Title'
 import * as t from './types'
+import { PublishedDate } from './PublishedDate/component'
 
 const Teaser: React.FC<t.TeaserProps> = ({
   css,
@@ -38,7 +39,10 @@ const Teaser: React.FC<t.TeaserProps> = ({
   subtitleVariant,
   title,
   titleVariant,
-  wrapImage
+  wrapImage,
+  publishedDate,
+  publishedDateCSS,
+  publishedDateVariant
 }) => {
   const TeaserNumber: React.FC<t.NumberProps> | undefined = components?.number
   const TeaserNumberProps: t.NumberProps = {
@@ -91,6 +95,13 @@ const Teaser: React.FC<t.TeaserProps> = ({
     variant: titleVariant
   }
 
+  const TeaserPublishedDate: React.FC<t.DateProps> | undefined = components?.publishedDate
+  const TeaserPublishedDateProps: t.DateProps = {
+    css: publishedDateCSS,
+    publishedDate,
+    variant: publishedDateVariant
+  }
+
   const TeaserStyledAlign: t.CSSType =
     imageVariant === 'left' ? { align: ['row', 'left', 'top'] }
       : imageVariant === 'top' ? { align: ['column', 'left', 'top'] }
@@ -105,7 +116,6 @@ const Teaser: React.FC<t.TeaserProps> = ({
     customProps
   }
   const TeaserWrapContent: React.FC<t.TeaserWrapProps> = S.TeaserWrap
-
   return (
     <S.TeaserStyled {...TeaserStyledProps}>
       {TeaserNumber && numberVariant !== 'none' && (
@@ -118,6 +128,7 @@ const Teaser: React.FC<t.TeaserProps> = ({
         {TeaserSubject && <TeaserSubject {...TeaserSubjectProps} />}
         {TeaserTitle && <TeaserTitle {...TeaserTitleProps} />}
         {TeaserSubtitle && <TeaserSubtitle {...TeaserSubtitleProps} />}
+        {TeaserPublishedDate && <TeaserPublishedDate {...TeaserPublishedDateProps} />}
         {TeaserRelated && relatedItems && relatedLayout && <TeaserRelated {...TeaserRelatedProps} />}
       </TeaserWrapContent>
     </S.TeaserStyled>
@@ -128,10 +139,11 @@ Teaser.defaultProps = {
   components: {
     image: Image,
     number: Number,
+    publishedDate: PublishedDate,
     related: Related,
     subject: Subject,
     subtitle: Subtitle,
-    title: Title
+    title: Title,
   },
   numberVariant: 'none'
 }
