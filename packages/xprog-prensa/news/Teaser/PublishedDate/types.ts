@@ -1,4 +1,3 @@
-import { LinkProps } from '../../../primitives/Link/types'
 import { BlockType, CSSType, CSSVariant, ContainerDefaultProps } from '../types'
 
 interface DateContainerProps extends ContainerDefaultProps {
